@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [Extension("KHR_gl_event")]
-    public abstract unsafe partial class KhrGlEvent : NativeExtension<CL>
+    public unsafe partial class KhrGlEvent : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_gl_event";
         [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
-        public abstract unsafe IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
-        public abstract IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
+        public partial IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         public unsafe IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
@@ -37,8 +37,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return CreateEventFromGLsync(new IntPtr(context), new IntPtr(sync), errcode_ret);
         }
 
-        public KhrGlEvent(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrGlEvent(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

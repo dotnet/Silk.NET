@@ -6,27 +6,27 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_reference_plane")]
-    public abstract unsafe partial class SgixReferencePlane : NativeExtension<GL>
+    public unsafe partial class SgixReferencePlane : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_reference_plane";
         [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
-        public abstract unsafe void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] double* equation);
+        public unsafe partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
         [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
-        public abstract void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] Span<double> equation);
+        public partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] Span<double> equation);
 
-        public SgixReferencePlane(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixReferencePlane(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

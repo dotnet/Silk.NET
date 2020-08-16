@@ -88,11 +88,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         /// <inheritdoc cref="ToString()" />
-        public string ToString(bool? @unsafe)
+        public string ToString(bool? @unsafe, bool partial = false)
         {
             var sb = new StringBuilder();
 
-            GetDeclarationString(sb, @unsafe);
+            GetDeclarationString(sb, @unsafe, partial);
 
             sb.Append("(");
             if (Parameters.Count > 0)
@@ -134,11 +134,16 @@ namespace Silk.NET.BuildTools.Common.Functions
             return sb.ToString();
         }
 
-        private void GetDeclarationString(StringBuilder sb, bool? @unsafe)
+        private void GetDeclarationString(StringBuilder sb, bool? @unsafe, bool partial = false)
         {
             if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)
             {
                 sb.Append("unsafe ");
+            }
+
+            if (partial)
+            {
+                sb.Append("partial ");
             }
 
             sb.Append(ReturnType);

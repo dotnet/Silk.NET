@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_EGL_image")]
-    public abstract unsafe partial class OesEglImage : NativeExtension<GL>
+    public unsafe partial class OesEglImage : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_EGL_image";
         [NativeApi(EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
-        public abstract void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
+        public partial void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
 
         [NativeApi(EntryPoint = "glEGLImageTargetTexture2DOES")]
-        public abstract void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
+        public partial void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
 
         public unsafe void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int image)
         {
@@ -37,8 +37,8 @@ namespace Silk.NET.OpenGLES.Extensions.OES
             EglimageTargetTexture2D(target, new IntPtr(image));
         }
 
-        public OesEglImage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesEglImage(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

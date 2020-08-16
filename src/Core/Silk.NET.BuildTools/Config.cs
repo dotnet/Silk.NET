@@ -35,7 +35,7 @@ namespace Silk.NET.BuildTools
         [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
         [JsonProperty("namespace")] public string Namespace { get; set; }
         [JsonProperty("extensionsNamespace")] public string ExtensionsNamespace { get; set; }
-        [JsonProperty("legacyNameContainer")] public NameContainer NameContainer { get; set; }
+        [JsonProperty("nameContainer")] public NameContainer NameContainer { get; set; }
         [JsonProperty("typeMaps")] public List<Dictionary<string, string>> TypeMaps { get; set; }
         // TODO the following 2 properties are only implemented in Clang. implement on ConvertConstruct?
         [JsonProperty("exclude")] public List<string> ExcludedNativeNames { get; set; }

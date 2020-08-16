@@ -6,30 +6,30 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_bindable_uniform")]
-    public abstract unsafe partial class ExtBindableUniform : NativeExtension<GL>
+    public unsafe partial class ExtBindableUniform : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_bindable_uniform";
         [NativeApi(EntryPoint = "glGetUniformBufferSizeEXT")]
-        public abstract int GetUniformBufferSize([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+        public partial int GetUniformBufferSize([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
 
         [NativeApi(EntryPoint = "glGetUniformOffsetEXT")]
-        public abstract IntPtr GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+        public partial IntPtr GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
 
         [NativeApi(EntryPoint = "glUniformBufferEXT")]
-        public abstract void UniformBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint buffer);
+        public partial void UniformBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint buffer);
 
-        public ExtBindableUniform(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtBindableUniform(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

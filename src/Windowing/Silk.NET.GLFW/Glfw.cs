@@ -6,19 +6,18 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
-using Ultz.SuperInvoke.InteropServices;
 
 namespace Silk.NET.GLFW
 {
     /// <summary>
     /// Provides access to the GLFW API.
     /// </summary>
-    //public abstract class Glfw : NativeAPI, IGlfw
+    //public partial class Glfw : NativeAPI, IGlfw
     [NativeApi(Prefix = "glfw")]
-    public abstract class Glfw : NativeAPI
+    public partial class Glfw : NativeAPI
     {
         /// <summary>
         /// Gets an integer equal to GLFW_DONT_CARE. This can be used for several window hints to use the platform default.
@@ -29,8 +28,8 @@ namespace Silk.NET.GLFW
         private static readonly List<Exception> _exceptions = new List<Exception>();
 
         /// <inheritdoc />
-        protected Glfw(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected Glfw(INativeContext ctx)
+            : base(ctx)
         {
         }
 
@@ -74,7 +73,7 @@ namespace Silk.NET.GLFW
         }
 
         /// <inheritdoc />
-        public override SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();
+        public SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();
 
         /// <summary>
         /// <para>
@@ -106,7 +105,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract bool Init();
+        public partial bool Init();
 
         /// <summary>
         /// <para>
@@ -139,7 +138,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract void Terminate();
+        public partial void Terminate();
 
         /// <summary>
         /// <para>
@@ -171,7 +170,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.InvalidEnum" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// </remarks>
-        public abstract void InitHint(InitHint hint, bool value);
+        public partial void InitHint(InitHint hint, bool value);
 
         /// <summary>
         /// <para>
@@ -194,7 +193,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// </remarks>
-        public abstract void GetVersion(out int major, out int minor, out int revision);
+        public partial void GetVersion(out int major, out int minor, out int revision);
 
         /// <summary>
         /// <para>
@@ -220,7 +219,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetVersion" />
-        public abstract string GetVersionString();
+        public partial string GetVersionString();
 
         /// <summary>
         /// <para>
@@ -247,7 +246,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetErrorCallback" />
-        public abstract unsafe ErrorCode GetError(out char* description);
+        public unsafe partial ErrorCode GetError(out char* description);
 
         /// <summary>
         /// <para>
@@ -277,7 +276,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetPrimaryMonitor" />
-        public abstract unsafe Monitor** GetMonitors(out int count);
+        public unsafe partial Monitor** GetMonitors(out int count);
 
         /// <summary>
         /// <para>
@@ -295,7 +294,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void GetMonitorPos(Monitor* monitor, out int x, out int y);
+        public unsafe partial void GetMonitorPos(Monitor* monitor, out int x, out int y);
 
         /// <summary>
         /// <para>
@@ -330,7 +329,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void GetMonitorPhysicalSize(Monitor* monitor, out int width, out int height);
+        public unsafe partial void GetMonitorPhysicalSize(Monitor* monitor, out int width, out int height);
 
         /// <summary>
         /// <para>
@@ -352,7 +351,7 @@ namespace Silk.NET.GLFW
         /// <param name="xscale">Where to store the x-axis content scale, or <c>out _</c>.</param>
         /// <param name="yscale">Where to store the y-axis content scale, or <c>out _</c>.</param>
         // ReSharper disable IdentifierTypo
-        public abstract unsafe void GetMonitorContentScale(Monitor* monitor, out float xscale, out float yscale);
+        public unsafe partial void GetMonitorContentScale(Monitor* monitor, out float xscale, out float yscale);
         // ReSharper enable IdentifierTypo
 
         /// <summary>
@@ -376,7 +375,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe string GetMonitorName(Monitor* monitor);
+        public unsafe partial string GetMonitorName(Monitor* monitor);
 
         /// <summary>
         /// <para>
@@ -398,7 +397,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetMonitorUserPointer(Monitor* monitor, IntPtr pointer);
+        public unsafe partial void SetMonitorUserPointer(Monitor* monitor, IntPtr pointer);
 
         /// <summary>
         /// <para>
@@ -419,7 +418,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe IntPtr GetMonitorUserPointer(Monitor* monitor);
+        public unsafe partial IntPtr GetMonitorUserPointer(Monitor* monitor);
 
         /// <summary>
         /// <para>
@@ -448,7 +447,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetVideoMode" />
-        public abstract unsafe VideoMode* GetVideoModes(Monitor* monitor, out int count);
+        public unsafe partial VideoMode* GetVideoModes(Monitor* monitor, out int count);
 
         /// <summary>
         /// <para>
@@ -467,7 +466,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetGamma(Monitor* monitor, float gamma);
+        public unsafe partial void SetGamma(Monitor* monitor, float gamma);
 
         /// <summary>
         /// <para>
@@ -489,7 +488,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GammaRamp* GetGammaRamp(Monitor* monitor);
+        public unsafe partial GammaRamp* GetGammaRamp(Monitor* monitor);
 
         /// <summary>
         /// <para>
@@ -519,7 +518,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetGammaRamp(Monitor* monitor, ref GammaRamp ramp);
+        public unsafe partial void SetGammaRamp(Monitor* monitor, ref GammaRamp ramp);
 
         /// <summary>
         /// <para>
@@ -531,7 +530,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// </remarks>
-        public abstract void DefaultWindowHints();
+        public partial void DefaultWindowHints();
 
         /// <summary>
         /// <para>
@@ -566,7 +565,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// </remarks>
-        public abstract void WindowHintString(int hint, string value);
+        public partial void WindowHintString(int hint, string value);
 
         /// <summary>
         /// <para>
@@ -611,7 +610,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetWindowSizeLimits
+        public unsafe partial void SetWindowSizeLimits
         (
             WindowHandle* window,
             int minwidth,
@@ -656,7 +655,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetWindowAspectRatio(WindowHandle* window, int numer, int denom);
+        public unsafe partial void SetWindowAspectRatio(WindowHandle* window, int numer, int denom);
 
         /// <summary>
         /// <para>
@@ -696,7 +695,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void GetWindowFrameSize
+        public unsafe partial void GetWindowFrameSize
         (
             WindowHandle* window,
             out int left,
@@ -731,7 +730,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetWindowOpacity" />
-        public abstract unsafe float GetWindowOpacity(WindowHandle* window);
+        public unsafe partial float GetWindowOpacity(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -760,7 +759,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetWindowOpacity" />
-        public abstract unsafe void SetWindowOpacity(WindowHandle* window, float opacity);
+        public unsafe partial void SetWindowOpacity(WindowHandle* window, float opacity);
 
         /// <summary>
         /// <para>
@@ -784,7 +783,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void RequestWindowAttention(WindowHandle* window);
+        public unsafe partial void RequestWindowAttention(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -820,7 +819,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.InvalidValue" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetWindowAttrib(WindowHandle* window, WindowAttributeSetter attrib, bool value);
+        public unsafe partial void SetWindowAttrib(WindowHandle* window, WindowAttributeSetter attrib, bool value);
 
         /// <summary>
         /// <para>
@@ -847,7 +846,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract bool RawMouseMotionSupported();
+        public partial bool RawMouseMotionSupported();
 
         /// <summary>
         /// <para>
@@ -995,7 +994,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract string GetKeyName(int key, int scancode);
+        public partial string GetKeyName(int key, int scancode);
 
         /// <summary>
         /// <para>
@@ -1016,7 +1015,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract int GetKeyScancode(int key);
+        public partial int GetKeyScancode(int key);
 
         /// <summary>
         /// <para>
@@ -1054,7 +1053,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe int GetKey(WindowHandle* window, Keys key);
+        public unsafe partial int GetKey(WindowHandle* window, Keys key);
 
         /// <summary>
         /// <para>
@@ -1078,7 +1077,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe int GetMouseButton(WindowHandle* window, int button);
+        public unsafe partial int GetMouseButton(WindowHandle* window, int button);
 
         /// <summary>
         /// <para>
@@ -1113,7 +1112,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void GetCursorPos(WindowHandle* window, out double xpos, out double ypos);
+        public unsafe partial void GetCursorPos(WindowHandle* window, out double xpos, out double ypos);
 
         /// <summary>
         /// <para>
@@ -1151,7 +1150,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         // ReSharper disable IdentifierTypo
-        public abstract unsafe void SetCursorPos(WindowHandle* window, double xpos, double ypos);
+        public unsafe partial void SetCursorPos(WindowHandle* window, double xpos, double ypos);
         // ReSharper restore IdentifierTypo
 
         /// <summary>
@@ -1188,7 +1187,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         // ReSharper disable IdentifierTypo
-        public abstract unsafe Cursor* CreateCursor(Image* image, int xhot, int yhot);
+        public unsafe partial Cursor* CreateCursor(Image* image, int xhot, int yhot);
         // ReSharper restore IdentifierTypo
 
         /// <summary>
@@ -1207,7 +1206,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe Cursor* CreateStandardCursor(CursorShape shape);
+        public unsafe partial Cursor* CreateStandardCursor(CursorShape shape);
 
         /// <summary>
         /// <para>
@@ -1231,7 +1230,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void DestroyCursor(Cursor* cursor);
+        public unsafe partial void DestroyCursor(Cursor* cursor);
 
         /// <summary>
         /// <para>
@@ -1256,7 +1255,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetCursor(WindowHandle* window, Cursor* cursor);
+        public unsafe partial void SetCursor(WindowHandle* window, Cursor* cursor);
 
         /// <summary>
         /// <para>
@@ -1278,7 +1277,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract bool JoystickPresent(int jid);
+        public partial bool JoystickPresent(int jid);
 
         /// <summary>
         /// <para>
@@ -1313,7 +1312,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe float* GetJoystickAxes(int jid, out int count);
+        public unsafe partial float* GetJoystickAxes(int jid, out int count);
 
         /// <summary>
         /// <para>
@@ -1358,7 +1357,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe byte* GetJoystickButtons(int jid, out int count);
+        public unsafe partial byte* GetJoystickButtons(int jid, out int count);
 
         /// <summary>
         /// <para>
@@ -1402,7 +1401,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe JoystickHats* GetJoystickHats(int jid, out int count);
+        public unsafe partial JoystickHats* GetJoystickHats(int jid, out int count);
 
         /// <summary>
         /// <para>
@@ -1430,7 +1429,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract string GetJoystickName(int jid);
+        public partial string GetJoystickName(int jid);
 
         /// <summary>
         /// <para>
@@ -1471,7 +1470,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract string GetJoystickGUID(int jid);
+        public partial string GetJoystickGUID(int jid);
 
         /// <summary>
         /// <para>
@@ -1493,7 +1492,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract void SetJoystickUserPointer(int jid, IntPtr ptr);
+        public partial void SetJoystickUserPointer(int jid, IntPtr ptr);
 
         /// <summary>
         /// <para>
@@ -1514,7 +1513,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract IntPtr GetJoystickUserPointer(int jid);
+        public partial IntPtr GetJoystickUserPointer(int jid);
 
         /// <summary>
         /// <para>
@@ -1541,7 +1540,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetGamepadState" />
-        public abstract bool JoystickIsGamepad(int jid);
+        public partial bool JoystickIsGamepad(int jid);
 
         /// <summary>
         /// <para>
@@ -1574,7 +1573,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// </remarks>
-        public abstract bool UpdateGamepadMappings(string newMapping);
+        public partial bool UpdateGamepadMappings(string newMapping);
 
         /// <summary>
         /// <para>
@@ -1604,7 +1603,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// </remarks>
-        public abstract string GetGamepadName(int jid);
+        public partial string GetGamepadName(int jid);
 
         /// <summary>
         /// <para>
@@ -1637,7 +1636,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        public abstract bool GetGamepadState(int jid, out GamepadState state);
+        public partial bool GetGamepadState(int jid, out GamepadState state);
 
         /// <summary>
         /// <para>
@@ -1665,7 +1664,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract double GetTime();
+        public partial double GetTime();
 
         /// <summary>
         /// <para>
@@ -1689,7 +1688,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// </remarks>
-        public abstract void SetTime(double time);
+        public partial void SetTime(double time);
 
         /// <summary>
         /// <para>
@@ -1706,7 +1705,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract long GetTimerValue();
+        public partial long GetTimerValue();
 
         /// <summary>
         /// <para>
@@ -1722,7 +1721,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract long GetTimerFrequency();
+        public partial long GetTimerFrequency();
 
         /// <summary>
         /// <para>
@@ -1738,7 +1737,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe WindowHandle* GetCurrentContext();
+        public unsafe partial WindowHandle* GetCurrentContext();
 
         /// <summary>
         /// <para>
@@ -1767,7 +1766,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SwapBuffers(WindowHandle* window);
+        public unsafe partial void SwapBuffers(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -1796,7 +1795,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.InvalidValue" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract bool ExtensionSupported(string extensionName);
+        public partial bool ExtensionSupported(string extensionName);
 
         /// <summary>
         /// <para>
@@ -1922,7 +1921,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe WindowHandle* CreateWindow
+        public unsafe partial WindowHandle* CreateWindow
         (
             int width,
             int height,
@@ -1951,7 +1950,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe Monitor* GetPrimaryMonitor();
+        public unsafe partial Monitor* GetPrimaryMonitor();
 
         /// <summary>
         /// <para>
@@ -1978,7 +1977,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="CreateWindow" />
-        public abstract unsafe void DestroyWindow(WindowHandle* window);
+        public unsafe partial void DestroyWindow(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -2004,7 +2003,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void FocusWindow(WindowHandle* window);
+        public unsafe partial void FocusWindow(WindowHandle* window);
 
         /// /// <summary>
         /// <para>
@@ -2027,7 +2026,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void GetFramebufferSize(WindowHandle* window, out int width, out int height);
+        public unsafe partial void GetFramebufferSize(WindowHandle* window, out int width, out int height);
 
         /// <summary>
         /// <para>
@@ -2050,7 +2049,7 @@ namespace Silk.NET.GLFW
         /// </remarks>
         /// <seealso cref="SetInputMode(WindowHandle*, CursorStateAttribute, CursorModeValue)" />
         /// <seealso cref="SetInputMode(WindowHandle*, CursorStateAttribute, bool)" />
-        public abstract unsafe int GetInputMode(WindowHandle* window, CursorStateAttribute mode);
+        public unsafe partial int GetInputMode(WindowHandle* window, CursorStateAttribute mode);
 
         /// <summary>
         /// <para>
@@ -2072,7 +2071,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetInputMode(WindowHandle*, StickyAttributes, bool)" />
-        public abstract unsafe bool GetInputMode(WindowHandle* window, StickyAttributes mode);
+        public unsafe partial bool GetInputMode(WindowHandle* window, StickyAttributes mode);
 
         /// <summary>
         /// <para>
@@ -2093,7 +2092,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void RestoreWindow(WindowHandle* window);
+        public unsafe partial void RestoreWindow(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -2120,7 +2119,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetVideoModes" />
-        public abstract unsafe VideoMode* GetVideoMode(Monitor* monitor);
+        public unsafe partial VideoMode* GetVideoMode(Monitor* monitor);
 
         /// <summary>
         /// <para>
@@ -2146,7 +2145,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe bool GetWindowAttrib(WindowHandle* window, WindowAttributeGetter attribute);
+        public unsafe partial bool GetWindowAttrib(WindowHandle* window, WindowAttributeGetter attribute);
 
         /// <summary>
         /// <para>
@@ -2170,7 +2169,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetWindowSize" />
-        public abstract unsafe void GetWindowSize(WindowHandle* window, out int width, out int height);
+        public unsafe partial void GetWindowSize(WindowHandle* window, out int width, out int height);
 
         /// <summary>
         /// <para>
@@ -2194,7 +2193,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetWindowPos" />
-        public abstract unsafe void GetWindowPos(WindowHandle* window, out int x, out int y);
+        public unsafe partial void GetWindowPos(WindowHandle* window, out int x, out int y);
 
         /// <summary>
         /// <para>
@@ -2212,7 +2211,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetWindowMonitor" />
-        public abstract unsafe Monitor* GetWindowMonitor(WindowHandle* window);
+        public unsafe partial Monitor* GetWindowMonitor(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -2229,7 +2228,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void HideWindow(WindowHandle* window);
+        public unsafe partial void HideWindow(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -2250,7 +2249,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void IconifyWindow(WindowHandle* window);
+        public unsafe partial void IconifyWindow(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -2286,7 +2285,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetCurrentContext" />
-        public abstract unsafe void MakeContextCurrent(WindowHandle* window);
+        public unsafe partial void MakeContextCurrent(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -2306,7 +2305,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void MaximizeWindow(WindowHandle* window);
+        public unsafe partial void MaximizeWindow(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -2339,7 +2338,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract void PollEvents();
+        public partial void PollEvents();
 
         /// <summary>
         /// <para>
@@ -2359,7 +2358,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract void PostEmptyEvent();
+        public partial void PostEmptyEvent();
 
         /// <summary>
         /// <para>
@@ -2385,7 +2384,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="DefaultWindowHints" />
-        public abstract void WindowHint(WindowHintInt hint, int value);
+        public partial void WindowHint(WindowHintInt hint, int value);
 
         /// <summary>
         /// <para>
@@ -2411,7 +2410,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="DefaultWindowHints" />
-        public abstract void WindowHint(WindowHintBool hint, bool value);
+        public partial void WindowHint(WindowHintBool hint, bool value);
 
         /// <summary>
         /// <para>
@@ -2437,7 +2436,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="DefaultWindowHints" />
-        public abstract void WindowHint(WindowHintClientApi hint, ClientApi value);
+        public partial void WindowHint(WindowHintClientApi hint, ClientApi value);
 
         /// <summary>
         /// <para>
@@ -2463,7 +2462,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="DefaultWindowHints" />
-        public abstract void WindowHint(WindowHintReleaseBehavior hint, ReleaseBehavior value);
+        public partial void WindowHint(WindowHintReleaseBehavior hint, ReleaseBehavior value);
 
         /// <summary>
         /// <para>
@@ -2489,7 +2488,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="DefaultWindowHints" />
-        public abstract void WindowHint(WindowHintContextApi hint, ContextApi value);
+        public partial void WindowHint(WindowHintContextApi hint, ContextApi value);
 
         /// <summary>
         /// <para>
@@ -2515,7 +2514,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="DefaultWindowHints" />
-        public abstract void WindowHint(WindowHintRobustness hint, Robustness value);
+        public partial void WindowHint(WindowHintRobustness hint, Robustness value);
 
         /// <summary>
         /// <para>
@@ -2541,7 +2540,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="DefaultWindowHints" />
-        public abstract void WindowHint(WindowHintOpenGlProfile hint, OpenGlProfile value);
+        public partial void WindowHint(WindowHintOpenGlProfile hint, OpenGlProfile value);
 
         /// <summary>
         /// <para>
@@ -2558,7 +2557,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe bool WindowShouldClose(WindowHandle* window);
+        public unsafe partial bool WindowShouldClose(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -2594,7 +2593,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.CharCallback SetCharCallback
+        public unsafe partial GlfwCallbacks.CharCallback SetCharCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CharCallback callback
@@ -2630,7 +2629,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.CharModsCallback SetCharModsCallback
+        public unsafe partial GlfwCallbacks.CharModsCallback SetCharModsCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CharModsCallback callback
@@ -2655,7 +2654,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.CursorEnterCallback SetCursorEnterCallback
+        public unsafe partial GlfwCallbacks.CursorEnterCallback SetCursorEnterCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CursorEnterCallback callback
@@ -2684,7 +2683,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.CursorPosCallback SetCursorPosCallback
+        public unsafe partial GlfwCallbacks.CursorPosCallback SetCursorPosCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CursorPosCallback callback
@@ -2714,7 +2713,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.DropCallback SetDropCallback
+        public unsafe partial GlfwCallbacks.DropCallback SetDropCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.DropCallback callback
@@ -2748,7 +2747,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// </remarks>
-        public abstract GlfwCallbacks.ErrorCallback SetErrorCallback
+        public partial GlfwCallbacks.ErrorCallback SetErrorCallback
             ([PinObject(PinMode.UntilNextCall)] GlfwCallbacks.ErrorCallback callback);
 
         /// <summary>
@@ -2777,7 +2776,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetInputMode
+        public unsafe partial void SetInputMode
         (
             WindowHandle* window,
             CursorStateAttribute mode,
@@ -2802,7 +2801,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetInputMode
+        public unsafe partial void SetInputMode
         (
             WindowHandle* window,
             CursorStateAttribute mode,
@@ -2848,7 +2847,7 @@ namespace Silk.NET.GLFW
         /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetInputMode(WindowHandle* window, StickyAttributes mode, bool value);
+        public unsafe partial void SetInputMode(WindowHandle* window, StickyAttributes mode, bool value);
 
         /// <summary>
         /// <para>
@@ -2868,7 +2867,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract GlfwCallbacks.JoystickCallback SetJoystickCallback
+        public partial GlfwCallbacks.JoystickCallback SetJoystickCallback
             ([PinObject(PinMode.UntilNextCall)] GlfwCallbacks.JoystickCallback callback);
 
         /// <summary>
@@ -2910,7 +2909,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.KeyCallback SetKeyCallback
+        public unsafe partial GlfwCallbacks.KeyCallback SetKeyCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.KeyCallback callback
@@ -2938,7 +2937,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.ScrollCallback SetScrollCallback
+        public unsafe partial GlfwCallbacks.ScrollCallback SetScrollCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.ScrollCallback callback
@@ -2962,7 +2961,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract GlfwCallbacks.MonitorCallback SetMonitorCallback
+        public partial GlfwCallbacks.MonitorCallback SetMonitorCallback
             ([PinObject(PinMode.UntilNextCall)] GlfwCallbacks.MonitorCallback callback);
 
         /// <summary>
@@ -2991,7 +2990,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.MouseButtonCallback SetMouseButtonCallback
+        public unsafe partial GlfwCallbacks.MouseButtonCallback SetMouseButtonCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.MouseButtonCallback callback
@@ -3027,7 +3026,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.WindowCloseCallback SetWindowCloseCallback
+        public unsafe partial GlfwCallbacks.WindowCloseCallback SetWindowCloseCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowCloseCallback callback
@@ -3057,7 +3056,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.WindowFocusCallback SetWindowFocusCallback
+        public unsafe partial GlfwCallbacks.WindowFocusCallback SetWindowFocusCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowFocusCallback callback
@@ -3094,7 +3093,7 @@ namespace Silk.NET.GLFW
         /// see the Bundle Programming Guide in the Mac Developer Library.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetWindowIcon(WindowHandle* window, int count, Image* images);
+        public unsafe partial void SetWindowIcon(WindowHandle* window, int count, Image* images);
 
         /// <summary>
         /// <para>
@@ -3115,7 +3114,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback
+        public unsafe partial GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowIconifyCallback callback
@@ -3140,7 +3139,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.WindowMaximizeCallback SetWindowMaximizeCallback
+        public unsafe partial GlfwCallbacks.WindowMaximizeCallback SetWindowMaximizeCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowMaximizeCallback callback
@@ -3164,7 +3163,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetWindowTitle(WindowHandle* window, string title);
+        public unsafe partial void SetWindowTitle(WindowHandle* window, string title);
 
         /// <summary>
         /// <para>
@@ -3184,7 +3183,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="HideWindow" />
-        public abstract unsafe void ShowWindow(WindowHandle* window);
+        public unsafe partial void ShowWindow(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -3219,7 +3218,7 @@ namespace Silk.NET.GLFW
         /// </remarks>
         /// <seealso cref="GetWindowSize" />
         /// <seealso cref="SetWindowMonitor" />
-        public abstract unsafe void SetWindowSize(WindowHandle* window, int width, int height);
+        public unsafe partial void SetWindowSize(WindowHandle* window, int width, int height);
 
         /// <summary>
         /// <para>
@@ -3240,7 +3239,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback
+        public unsafe partial GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowSizeCallback callback
@@ -3264,7 +3263,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.FramebufferSizeCallback SetFramebufferSizeCallback
+        public unsafe partial GlfwCallbacks.FramebufferSizeCallback SetFramebufferSizeCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.FramebufferSizeCallback callback
@@ -3288,7 +3287,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe void SetWindowShouldClose(WindowHandle* window, bool value);
+        public unsafe partial void SetWindowShouldClose(WindowHandle* window, bool value);
 
         /// <summary>
         /// <para>
@@ -3333,7 +3332,7 @@ namespace Silk.NET.GLFW
         /// </remarks>
         /// <seealso cref="GetWindowMonitor" />
         /// <seealso cref="SetWindowSize" />
-        public abstract unsafe void SetWindowMonitor
+        public unsafe partial void SetWindowMonitor
         (
             WindowHandle* window,
             Monitor* monitor,
@@ -3373,7 +3372,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetWindowPos" />
-        public abstract unsafe void SetWindowPos(WindowHandle* window, int x, int y);
+        public unsafe partial void SetWindowPos(WindowHandle* window, int x, int y);
 
         /// <summary>
         /// <para>
@@ -3396,7 +3395,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.WindowPosCallback SetWindowPosCallback
+        public unsafe partial GlfwCallbacks.WindowPosCallback SetWindowPosCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowPosCallback callback
@@ -3430,7 +3429,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public abstract unsafe GlfwCallbacks.WindowRefreshCallback SetWindowRefreshCallback
+        public unsafe partial GlfwCallbacks.WindowRefreshCallback SetWindowRefreshCallback
         (
             WindowHandle* window,
             [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowRefreshCallback callback
@@ -3477,7 +3476,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SwapBuffers" />
-        public abstract void SwapInterval(int interval);
+        public partial void SwapInterval(int interval);
 
         /// <summary>
         /// <para>
@@ -3520,7 +3519,7 @@ namespace Silk.NET.GLFW
         /// </remarks>
         /// <seealso cref="PollEvents" />
         /// <seealso cref="WaitEventsTimeout" />
-        public abstract void WaitEvents();
+        public partial void WaitEvents();
 
         /// <summary>
         /// <para>
@@ -3575,7 +3574,7 @@ namespace Silk.NET.GLFW
         /// </remarks>
         /// <seealso cref="PollEvents" />
         /// <seealso cref="WaitEvents" />
-        public abstract void WaitEventsTimeout(double timeout);
+        public partial void WaitEventsTimeout(double timeout);
 
         /// <summary>
         /// <para>
@@ -3601,7 +3600,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetClipboardString" />
-        public abstract unsafe string GetClipboardString(WindowHandle* window);
+        public unsafe partial string GetClipboardString(WindowHandle* window);
 
         /// <summary>
         /// <para>
@@ -3622,7 +3621,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="GetClipboardString" />
-        public abstract unsafe void SetClipboardString(WindowHandle* window, string data);
+        public unsafe partial void SetClipboardString(WindowHandle* window, string data);
 
         /// <summary>
         /// Returns whether the Vulkan loader and an ICD have been found.
@@ -3649,7 +3648,7 @@ namespace Silk.NET.GLFW
         /// <returns>
         /// <c>true</c> if Vulkan is minimally available, or <c>false</c> otherwise.
         /// </returns>
-        public abstract bool VulkanSupported();
+        public partial bool VulkanSupported();
 
         /// <summary>
         /// Returns the Vulkan instance extensions required by GLFW.
@@ -3696,7 +3695,7 @@ namespace Silk.NET.GLFW
         /// <returns>
         /// An array of ASCII encoded extension names, or <c>null</c> if an error occurred.
         /// </returns>
-        public abstract unsafe byte** GetRequiredInstanceExtensions(out uint count);
+        public unsafe partial byte** GetRequiredInstanceExtensions(out uint count);
 
         /// <summary>
         /// Returns the address of the specified Vulkan instance function.
@@ -3744,7 +3743,7 @@ namespace Silk.NET.GLFW
         /// </param>
         /// <param name="procName">The ASCII encoded name of the function.</param>
         /// <returns>The address of the function, or <c>null</c> if an error occurred.</returns>
-        public abstract unsafe IntPtr GetInstanceProcAddress(VkHandle instance, byte* procName);
+        public unsafe partial IntPtr GetInstanceProcAddress(VkHandle instance, byte* procName);
 
         /// <summary>
         /// Returns whether the specified queue family can present images.
@@ -3777,7 +3776,7 @@ namespace Silk.NET.GLFW
         /// <param name="device">The physical device that the queue family belongs to.</param>
         /// <param name="queueFamily">The index of the queue family to query.</param>
         /// <returns><c>true</c> if the queue family supports presentation, or <c>false</c> otherwise.</returns>
-        public abstract bool GetPhysicalDevicePresentationSupport(VkHandle instance, VkHandle device, int queueFamily);
+        public partial bool GetPhysicalDevicePresentationSupport(VkHandle instance, VkHandle device, int queueFamily);
 
         /// <summary>
         /// Creates a Vulkan surface for the specified window.
@@ -3840,7 +3839,7 @@ namespace Silk.NET.GLFW
         /// <returns>
         /// <c>VK_SUCCESS</c> if successful, or a Vulkan error code if an error occurred.
         /// </returns>
-        public abstract unsafe int CreateWindowSurface
+        public unsafe partial int CreateWindowSurface
         (
             VkHandle instance,
             WindowHandle* window,
@@ -3884,7 +3883,7 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="name">The ASCII encoded name of the function.</param>
         /// <returns>The address of the function, or IntPtr.Zero if an error occurred.</returns>
-        public abstract IntPtr GetProcAddress(string name);
+        public partial IntPtr GetProcAddress(string name);
 
         /// <summary>Retrieves the work area of the monitor.</summary>
         /// <remarks>
@@ -3906,7 +3905,7 @@ namespace Silk.NET.GLFW
         /// <param name="y">Where to store the monitor y-coordinate, or <code>null</code>.</param>
         /// <param name="width">Where to store the monitor width, or <code>null</code>.</param>
         /// <param name="height">Where to store the monitor height, or <code>null</code>.</param>
-        public abstract unsafe void GetMonitorWorkarea
+        public unsafe partial void GetMonitorWorkarea
             (Monitor* monitor, out int x, out int y, out int width, out int height);
 
         /// <summary>
@@ -3915,7 +3914,7 @@ namespace Silk.NET.GLFW
         /// <returns>The instance.</returns>
         public static Glfw GetApi()
         {
-            return LibraryActivator.CreateInstance<Glfw>(new GlfwLibraryNameContainer().GetLibraryName());
+            return new Glfw(new DefaultNativeContext(new GlfwLibraryNameContainer().GetLibraryName()));
         }
 
         /// <inheritdoc />

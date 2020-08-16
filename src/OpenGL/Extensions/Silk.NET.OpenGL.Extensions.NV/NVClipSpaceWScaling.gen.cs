@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_clip_space_w_scaling")]
-    public abstract unsafe partial class NVClipSpaceWScaling : NativeExtension<GL>
+    public unsafe partial class NVClipSpaceWScaling : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_clip_space_w_scaling";
         [NativeApi(EntryPoint = "glViewportPositionWScaleNV")]
-        public abstract void ViewportPositionWScale([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float xcoeff, [Flow(FlowDirection.In)] float ycoeff);
+        public partial void ViewportPositionWScale([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float xcoeff, [Flow(FlowDirection.In)] float ycoeff);
 
-        public NVClipSpaceWScaling(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVClipSpaceWScaling(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

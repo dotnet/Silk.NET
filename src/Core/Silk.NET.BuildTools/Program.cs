@@ -137,7 +137,8 @@ namespace Silk.NET.BuildTools
                         IOS = "libapi.dylib",
                         Linux = "libapi.so",
                         MacOS = "libapi.dylib",
-                        Windows = "api.dll"
+                        Windows64 = "api.dll",
+                        Windows86 = "api.dll"
                     },
                     OutputOpts = new OutputOptions
                     {

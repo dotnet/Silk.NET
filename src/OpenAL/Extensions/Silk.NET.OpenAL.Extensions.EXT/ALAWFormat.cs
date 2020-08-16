@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
+
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
@@ -12,11 +14,11 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_ALAW")]
     [NativeApi(Prefix = "al")]
-    public abstract class ALAWFormat : FormatExtensionBase<ALAWBufferFormat>
+    public partial class ALAWFormat : FormatExtensionBase<ALAWBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected ALAWFormat(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected ALAWFormat(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

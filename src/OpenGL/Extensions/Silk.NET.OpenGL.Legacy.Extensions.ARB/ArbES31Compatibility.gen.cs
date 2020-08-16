@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_ES3_1_compatibility")]
-    public abstract unsafe partial class ArbES31Compatibility : NativeExtension<GL>
+    public unsafe partial class ArbES31Compatibility : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_ES3_1_compatibility";
         [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
-        public abstract void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
+        public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
 
-        public ArbES31Compatibility(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbES31Compatibility(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

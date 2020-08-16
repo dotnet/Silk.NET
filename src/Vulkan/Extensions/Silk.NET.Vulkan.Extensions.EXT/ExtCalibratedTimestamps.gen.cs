@@ -6,37 +6,37 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_calibrated_timestamps")]
-    public abstract unsafe partial class ExtCalibratedTimestamps : NativeExtension<Vk>
+    public unsafe partial class ExtCalibratedTimestamps : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_calibrated_timestamps";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
-        public abstract unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Computed = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Computed = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Computed = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Computed = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
-        public abstract Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Computed = "timestampCount"), Flow(FlowDirection.In)] ref CalibratedTimestampInfoEXT pTimestampInfos, [Count(Computed = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation);
+        public partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Computed = "timestampCount"), Flow(FlowDirection.In)] ref CalibratedTimestampInfoEXT pTimestampInfos, [Count(Computed = "timestampCount")] ref ulong pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
-        public abstract unsafe Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Computed = "pTimeDomainCount"), Flow(FlowDirection.Out)] TimeDomainEXT* pTimeDomains);
+        public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Computed = "pTimeDomainCount"), Flow(FlowDirection.Out)] TimeDomainEXT* pTimeDomains);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
-        public abstract Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Computed = "pTimeDomainCount"), Flow(FlowDirection.Out)] out TimeDomainEXT pTimeDomains);
+        public partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Computed = "pTimeDomainCount"), Flow(FlowDirection.Out)] out TimeDomainEXT pTimeDomains);
 
-        public ExtCalibratedTimestamps(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtCalibratedTimestamps(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

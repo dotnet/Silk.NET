@@ -6,25 +6,25 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.AMD
 {
     [Extension("VK_AMD_buffer_marker")]
-    public abstract unsafe partial class AmdBufferMarker : NativeExtension<Vk>
+    public unsafe partial class AmdBufferMarker : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_AMD_buffer_marker";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteBufferMarkerAMD")]
-        public abstract void CmdWriteBufferMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags pipelineStage, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] uint marker);
+        public partial void CmdWriteBufferMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags pipelineStage, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] uint marker);
 
-        public AmdBufferMarker(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AmdBufferMarker(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

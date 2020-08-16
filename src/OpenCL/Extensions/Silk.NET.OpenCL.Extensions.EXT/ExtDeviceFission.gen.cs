@@ -6,30 +6,30 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL.Extensions.EXT
 {
     [Extension("EXT_device_fission")]
-    public abstract unsafe partial class ExtDeviceFission : NativeExtension<CL>
+    public unsafe partial class ExtDeviceFission : NativeExtension<CL>
     {
         public const string ExtensionName = "EXT_device_fission";
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
-        public abstract unsafe int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
-        public abstract int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] Span<ulong> properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<IntPtr> out_devices, [Flow(FlowDirection.Out)] Span<uint> num_devices);
+        public partial int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] Span<ulong> properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<IntPtr> out_devices, [Flow(FlowDirection.Out)] Span<uint> num_devices);
 
         [NativeApi(EntryPoint = "clReleaseDeviceEXT")]
-        public abstract int ReleaseDevice([Flow(FlowDirection.In)] IntPtr device);
+        public partial int ReleaseDevice([Flow(FlowDirection.In)] IntPtr device);
 
         [NativeApi(EntryPoint = "clRetainDeviceEXT")]
-        public abstract int RetainDevice([Flow(FlowDirection.In)] IntPtr device);
+        public partial int RetainDevice([Flow(FlowDirection.In)] IntPtr device);
 
         public unsafe int CreateSubDevices([Flow(FlowDirection.In)] int in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* out_devices, [Flow(FlowDirection.Out)] uint* num_devices)
         {
@@ -55,8 +55,8 @@ namespace Silk.NET.OpenCL.Extensions.EXT
             return RetainDevice(new IntPtr(device));
         }
 
-        public ExtDeviceFission(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtDeviceFission(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

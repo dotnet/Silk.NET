@@ -6,36 +6,36 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_separate_shader_objects")]
-    public abstract unsafe partial class ExtSeparateShaderObjects : NativeExtension<GL>
+    public unsafe partial class ExtSeparateShaderObjects : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_separate_shader_objects";
         [NativeApi(EntryPoint = "glActiveProgramEXT")]
-        public abstract void ActiveProgram([Flow(FlowDirection.In)] uint program);
+        public partial void ActiveProgram([Flow(FlowDirection.In)] uint program);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] byte* @string);
+        public unsafe partial uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] byte* @string);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public abstract uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] Span<byte> @string);
+        public partial uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] Span<byte> @string);
 
         [NativeApi(EntryPoint = "glUseShaderProgramEXT")]
-        public abstract void UseShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint program);
+        public partial void UseShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint program);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public abstract uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] string @string);
+        public partial uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] string @string);
 
-        public ExtSeparateShaderObjects(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtSeparateShaderObjects(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

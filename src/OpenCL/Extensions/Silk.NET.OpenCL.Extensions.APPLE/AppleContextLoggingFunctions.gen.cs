@@ -6,54 +6,54 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL.Extensions.APPLE
 {
     [Extension("APPLE_ContextLoggingFunctions")]
-    public abstract unsafe partial class AppleContextLoggingFunctions : NativeExtension<CL>
+    public unsafe partial class AppleContextLoggingFunctions : NativeExtension<CL>
     {
         public const string ExtensionName = "APPLE_ContextLoggingFunctions";
         [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
-        public abstract unsafe void LogMessagesToStderr([Flow(FlowDirection.In)] char* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial void LogMessagesToStderr([Flow(FlowDirection.In)] char* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
-        public abstract void LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] Span<char> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
+        public partial void LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] Span<char> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
-        public abstract unsafe void LogMessagesToStdout([Flow(FlowDirection.In)] char* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial void LogMessagesToStdout([Flow(FlowDirection.In)] char* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
-        public abstract void LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] Span<char> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
+        public partial void LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] Span<char> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
-        public abstract unsafe void LogMessagesToSystemLog([Flow(FlowDirection.In)] char* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial void LogMessagesToSystemLog([Flow(FlowDirection.In)] char* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
-        public abstract void LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] Span<char> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
+        public partial void LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] Span<char> errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
-        public abstract unsafe void LogMessagesToStderr([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial void LogMessagesToStderr([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
-        public abstract void LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
+        public partial void LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
-        public abstract unsafe void LogMessagesToStdout([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial void LogMessagesToStdout([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
-        public abstract void LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
+        public partial void LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
-        public abstract unsafe void LogMessagesToSystemLog([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial void LogMessagesToSystemLog([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
-        public abstract void LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
+        public partial void LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] Span<T0> private_info, [Flow(FlowDirection.In)] UIntPtr cb, [Flow(FlowDirection.Out)] Span<T1> user_data) where T0 : unmanaged where T1 : unmanaged;
 
         public unsafe void LogMessagesToStderr([Flow(FlowDirection.In)] char* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] uint cb, [Flow(FlowDirection.Out)] void* user_data)
         {
@@ -127,8 +127,8 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
             LogMessagesToSystemLog(errstr, private_info, new UIntPtr(cb), user_data);
         }
 
-        public AppleContextLoggingFunctions(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleContextLoggingFunctions(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

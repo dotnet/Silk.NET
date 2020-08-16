@@ -6,27 +6,27 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_index_func")]
-    public abstract unsafe partial class ExtIndexFunc : NativeExtension<GL>
+    public unsafe partial class ExtIndexFunc : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_index_func";
         [NativeApi(EntryPoint = "glIndexFuncEXT")]
-        public abstract void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
+        public partial void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
 
         [NativeApi(EntryPoint = "glIndexFuncEXT")]
-        public abstract void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
+        public partial void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
 
-        public ExtIndexFunc(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtIndexFunc(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

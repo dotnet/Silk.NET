@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
-using LibraryLoader = Ultz.SuperInvoke.Loader.LibraryLoader;
+using LibraryLoader = Silk.NET.Core.Loader.LibraryLoader;
 
 namespace Silk.NET.Vulkan
 {
     public partial class Vk
     {
-        private VkExtensionLoaderSource _extensionLoaders;
         private readonly Dictionary<IntPtr, List<string>> _extensions = new Dictionary<IntPtr, List<string>>();
         public Instance? CurrentInstance { get; set; }
         public Device? CurrentDevice { get; set; }
@@ -25,10 +24,29 @@ namespace Silk.NET.Vulkan
 
         public static Vk GetApi()
         {
-            var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryActivator.CreateInstance<Vk>(new VulkanLibraryNameContainer().GetLibraryName(), sym);
-            sym.Vulkan = ret;
-            ret._extensionLoaders = new VkExtensionLoaderSource(ret);
+            var ctx = new MultiNativeContext
+                (new DefaultNativeContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+            var ret = new Vk(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext
+            (
+                x =>
+                {
+                    if (x.EndsWith("ProcAddr"))
+                    {
+                        return default;
+                    }
+
+                    IntPtr ptr = default;
+                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
+                    if (ptr != default)
+                    {
+                        return ptr;
+                    }
+
+                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
+                    return ptr;
+                }
+            );
             return ret;
         }
 
@@ -36,9 +54,30 @@ namespace Silk.NET.Vulkan
 
         public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
         {
-            var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryActivator.CreateInstance<Vk>(new VulkanLibraryNameContainer().GetLibraryName(), sym);
-            sym.Vulkan = ret;
+            var ctx = new MultiNativeContext
+                (new DefaultNativeContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+            var ret = new Vk(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext
+            (
+                x =>
+                {
+                    if (x.EndsWith("ProcAddr"))
+                    {
+                        return default;
+                    }
+
+                    IntPtr ptr = default;
+                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
+                    if (ptr != default)
+                    {
+                        return ptr;
+                    }
+
+                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
+                    return ptr;
+                }
+            );
+
             fixed (InstanceCreateInfo* infoPtr = &info)
             {
                 fixed (Instance* instancePtr = &instance)
@@ -52,9 +91,31 @@ namespace Silk.NET.Vulkan
 
         public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
         {
-            var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryActivator.CreateInstance<Vk>(new VulkanLibraryNameContainer().GetLibraryName(), sym);
-            sym.Vulkan = ret;
+            var ctx = new MultiNativeContext
+                (new DefaultNativeContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+            var ret = new Vk(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext
+            (
+                x =>
+                {
+                    if (x.EndsWith("ProcAddr"))
+                    {
+                        return default;
+                    }
+
+                    IntPtr ptr = default;
+                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
+                    if (ptr != default)
+                    {
+                        return ptr;
+                    }
+
+                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
+                    return ptr;
+                }
+            );
+
+            instance = default;
             ret.CreateInstance(ref info, ref callbacks, out instance);
             return ret;
         }
@@ -72,8 +133,8 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the extension is available and loaded.</returns>
         public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T:NativeExtension<Vk> =>
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                ? LibraryActivator.CreateInstance<T>
-                    (SearchPaths.GetLibraryName(), _extensionLoaders.Get(instance, null))
+                ? (T)Activator.CreateInstance
+                (typeof(T), new LamdaNativeContext(x => GetInstanceProcAddr(instance, x)))
                 : null) is null);
 
         /// <summary>
@@ -91,8 +152,8 @@ namespace Silk.NET.Vulkan
         public bool TryGetDeviceExtension<T>
             (Instance instance, Device device, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsDeviceExtensionPresent(instance, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                ? LibraryActivator.CreateInstance<T>
-                    (SearchPaths.GetLibraryName(), _extensionLoaders.Get(instance, device))
+                ? (T)Activator.CreateInstance
+                    (typeof(T), new LamdaNativeContext(x => GetDeviceProcAddr(device, x)))
                 : null) is null);
 
         /// <inheritdoc />

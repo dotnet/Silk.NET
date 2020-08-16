@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
+
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
@@ -12,11 +14,11 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_vorbis")]
     [NativeApi(Prefix = "al")]
-    public abstract class VorbisFormat : FormatExtensionBase<VorbisBufferFormat>
+    public partial class VorbisFormat : FormatExtensionBase<VorbisBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected VorbisFormat(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected VorbisFormat(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

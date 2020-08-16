@@ -6,21 +6,21 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [Extension("KHR_terminate_context")]
-    public abstract unsafe partial class KhrTerminateContext : NativeExtension<CL>
+    public unsafe partial class KhrTerminateContext : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_terminate_context";
         [NativeApi(EntryPoint = "clTerminateContextKHR")]
-        public abstract int TerminateContext([Flow(FlowDirection.In)] IntPtr context);
+        public partial int TerminateContext([Flow(FlowDirection.In)] IntPtr context);
 
         public unsafe int TerminateContext([Flow(FlowDirection.In)] int context)
         {
@@ -28,8 +28,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return TerminateContext(new IntPtr(context));
         }
 
-        public KhrTerminateContext(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrTerminateContext(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

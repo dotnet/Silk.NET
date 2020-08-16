@@ -18,7 +18,7 @@ namespace Silk.NET.BuildTools.Overloading
                 parameter.Type.ToString() == "GLchar*" || parameter.Type.ToString() == "GLbyte*" ||
                 parameter.Type.ToString() == "GLubyte*")
             {
-                variant = new ParameterSignatureBuilder(parameter)
+                var variantBuilder = new ParameterSignatureBuilder(parameter)
                     .WithType
                     (
                         new Type
@@ -27,31 +27,15 @@ namespace Silk.NET.BuildTools.Overloading
                             IsOut = parameter.Flow == FlowDirection.Out &&
                                     ((parameter.Count?.IsStatic ?? false) || (parameter.Count?.IsReference ?? false))
                         }
-                    )
-                    .WithCount(null) // scrap the count as it causes trouble later down the line
-                    .Build();
-
-                if (variant.Type.IsOut)
-                {
-                    variant.Attributes.Add
-                    (
-                        new Attribute
-                        {
-                            Name = "Ultz.SuperInvoke.InteropServices.CountAttribute",
-                            Arguments = new List<string>
-                            {
-                                parameter.Count.IsStatic
-                                    ? "Ultz.SuperInvoke.InteropServices.CountType.Constant"
-                                    : "Ultz.SuperInvoke.InteropServices.CountType.ParameterReference",
-                                (parameter.Count.IsStatic
-                                    ? parameter.Count.StaticCount
-                                    : parameter.Origin.Parameters.FindIndex
-                                          (x => x.Name == parameter.Count.ValueReference) -
-                                      parameter.Origin.Parameters.IndexOf(parameter)).ToString()
-                            }
-                        }
                     );
+                
+                if (!(parameter.Flow == FlowDirection.Out &&
+                    ((parameter.Count?.IsStatic ?? false) || (parameter.Count?.IsReference ?? false))))
+                {
+                    variantBuilder = variantBuilder.WithCount(null);
                 }
+
+                variant = variantBuilder.Build();
 
                 return true;
             }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenGL.Legacy
 {
@@ -23,16 +23,15 @@ namespace Silk.NET.OpenGL.Legacy
         public static GL GetApi(IGLContext ctx) => GetApi((INativeContext) ctx);
         public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
 
-        public static GL GetApi(INativeContext ctx) => LibraryActivator.CreateInstance<GL>
-            (new OpenGLLibraryNameContainer().GetLibraryName(), TemporarySuperInvokeClass.GetLoader(ctx));
+        public static GL GetApi(INativeContext ctx) => new GL(ctx);
 
         public bool TryGetExtension<T>(out T ext)
-            where T:NativeExtension<GL>
+            where T : NativeExtension<GL>
         {
-             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                 ? LibraryActivator.CreateInstance<T>(Library)
-                 : null;
-             return ext != null;
+            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T)Activator.CreateInstance(typeof(T), Context)
+                : null;
+            return ext != null;
         }
 
         private List<string> _extensions;

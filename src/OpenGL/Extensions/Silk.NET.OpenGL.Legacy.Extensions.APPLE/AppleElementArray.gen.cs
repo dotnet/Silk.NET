@@ -6,69 +6,69 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [Extension("APPLE_element_array")]
-    public abstract unsafe partial class AppleElementArray : NativeExtension<GL>
+    public unsafe partial class AppleElementArray : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_element_array";
         [NativeApi(EntryPoint = "glDrawElementArrayAPPLE")]
-        public abstract void DrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        public partial void DrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glDrawRangeElementArrayAPPLE")]
-        public abstract void DrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        public partial void DrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glElementPointerAPPLE")]
-        public abstract unsafe void ElementPointer([Flow(FlowDirection.In)] APPLE type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void ElementPointer([Flow(FlowDirection.In)] APPLE type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glElementPointerAPPLE")]
-        public abstract void ElementPointer<T0>([Flow(FlowDirection.In)] APPLE type, [Count(Computed = "type"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] APPLE type, [Count(Computed = "type"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementArrayAPPLE")]
-        public abstract unsafe void MultiDrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementArrayAPPLE")]
-        public abstract void MultiDrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<uint> count, [Flow(FlowDirection.In)] uint primcount);
+        public partial void MultiDrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<uint> count, [Flow(FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawRangeElementArrayAPPLE")]
-        public abstract unsafe void MultiDrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawRangeElementArrayAPPLE")]
-        public abstract void MultiDrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<uint> count, [Flow(FlowDirection.In)] uint primcount);
+        public partial void MultiDrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<uint> count, [Flow(FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glDrawElementArrayAPPLE")]
-        public abstract void DrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        public partial void DrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glDrawRangeElementArrayAPPLE")]
-        public abstract void DrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        public partial void DrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glElementPointerAPPLE")]
-        public abstract unsafe void ElementPointer([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glElementPointerAPPLE")]
-        public abstract void ElementPointer<T0>([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementArrayAPPLE")]
-        public abstract unsafe void MultiDrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElementArrayAPPLE")]
-        public abstract void MultiDrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<uint> count, [Flow(FlowDirection.In)] uint primcount);
+        public partial void MultiDrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<uint> count, [Flow(FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawRangeElementArrayAPPLE")]
-        public abstract unsafe void MultiDrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
+        public unsafe partial void MultiDrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount);
 
         [NativeApi(EntryPoint = "glMultiDrawRangeElementArrayAPPLE")]
-        public abstract void MultiDrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<uint> count, [Flow(FlowDirection.In)] uint primcount);
+        public partial void MultiDrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] Span<uint> count, [Flow(FlowDirection.In)] uint primcount);
 
-        public AppleElementArray(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleElementArray(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

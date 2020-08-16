@@ -103,7 +103,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("using System.Text;");
             sw.WriteLine("using Silk.NET.Core.Native;");
             sw.WriteLine("using Silk.NET.Core.Attributes;");
-            sw.WriteLine("using Ultz.SuperInvoke;");
+            sw.WriteLine("using Silk.NET.Core.Contexts;");
+            sw.WriteLine("using Silk.NET.Core.Loader;");
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
@@ -311,10 +312,10 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"        public override string IOS => \"{task.NameContainer.IOS}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows64 => \"{task.NameContainer.Windows}\";");
+            sw.WriteLine($"        public override string Windows64 => \"{task.NameContainer.Windows64}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows86 => \"{task.NameContainer.Windows}\";");
+            sw.WriteLine($"        public override string Windows86 => \"{task.NameContainer.Windows86}\";");
             sw.WriteLine("    }");
             sw.WriteLine("}");
         }
@@ -341,15 +342,15 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("using System.Text;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine("using Silk.NET.Core.Attributes;");
+                    sw.WriteLine("using Silk.NET.Core.Contexts;");
                     sw.WriteLine("using Silk.NET.Core.Loader;");
-                    sw.WriteLine("using Ultz.SuperInvoke;");
                     sw.WriteLine();
                     sw.WriteLine("#pragma warning disable 1591");
                     sw.WriteLine();
                     sw.WriteLine($"namespace {task.Namespace}{project.Namespace}");
                     sw.WriteLine("{");
                     sw.WriteLine
-                        ($"    public abstract unsafe partial class {@class.ClassName} : NativeAPI");
+                        ($"    public unsafe partial class {@class.ClassName} : NativeAPI");
                     sw.WriteLine("    {");
                     foreach (var constant in @class.Constants)
                     {
@@ -381,10 +382,10 @@ namespace Silk.NET.BuildTools.Bind
                         }
 
                         sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
-                        using (var sr = new StringReader(function.ToString()))
+                        using (var sr = new StringReader(function.ToString(null, true)))
                         {
                             string line;
-                            var flPrefix = "public abstract ";
+                            var flPrefix = "public ";
                             while ((line = sr.ReadLine()) != null)
                             {
                                 sw.WriteLine($"        {flPrefix}{line}");
@@ -422,19 +423,9 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine();
                     }
 
-                    if (!(task.NameContainer is null))
-                    {
-                        sw.WriteLine("        private SearchPathContainer _searchPaths;");
-                        sw.WriteLine
-                        (
-                            "        public override SearchPathContainer SearchPaths => _searchPaths ??= " +
-                            $"new {task.NameContainer.ClassName}();"
-                        );
-                    }
-
                     sw.WriteLine();
-                    sw.WriteLine($"        public {@class.ClassName}(ref NativeApiContext ctx)");
-                    sw.WriteLine("            : base(ref ctx)");
+                    sw.WriteLine($"        public {@class.ClassName}(INativeContext ctx)");
+                    sw.WriteLine("            : base(ctx)");
                     sw.WriteLine("        {");
                     sw.WriteLine("        }");
                     sw.WriteLine("    }");
@@ -458,17 +449,28 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("    {");
                         sw.WriteLine($"        public static {@class.ClassName} GetApi()");
                         sw.WriteLine("        {");
-                        sw.WriteLine
-                        (
-                            $"             return LibraryLoader<{@class.ClassName}>.Load(new {task.NameContainer.ClassName}());"
-                        );
+                        if (!(task.NameContainer is null))
+                        {
+                            sw.WriteLine
+                            (
+                                $"             return new {@class.ClassName}(new DefaultNativeContext" +
+                                $"(new {task.NameContainer.ClassName}().GetName()));"
+                            );
+                        }
+                        else
+                        {
+                            sw.WriteLine("             throw new NotImplementedException();");
+                        }
                         sw.WriteLine("        }");
                         sw.WriteLine();
                         sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
                         sw.WriteLine($"            where T:NativeExtension<{@class.ClassName}>");
                         sw.WriteLine("        {");
-                        sw.WriteLine($"             ext = LibraryLoader<{@class.ClassName}>.Load<T>(this);");
-                        sw.WriteLine("             return ext != null;");
+                        sw.WriteLine("             ext = IsExtensionPresent(" +
+                                     "ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)");
+                        sw.WriteLine("                 ? Activator.CreateInstance<T>(Context)");
+                        sw.WriteLine("                 : null;");
+                        sw.WriteLine("             return !(ext is null);");
                         sw.WriteLine("        }");
                         sw.WriteLine();
                         sw.WriteLine("        public override bool IsExtensionPresent(string extension)");
@@ -482,7 +484,11 @@ namespace Silk.NET.BuildTools.Bind
                         sw.Dispose();
                     }
 
-                    project.WriteNameContainer(profile, Path.Combine(folder, $"{task.NameContainer.ClassName}.cs"), task);
+                    if (!(task.NameContainer is null))
+                    {
+                        project.WriteNameContainer
+                            (profile, Path.Combine(folder, $"{task.NameContainer.ClassName}.cs"), task);
+                    }
                 }
                 else
                 {
@@ -495,10 +501,10 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("using System.Runtime.InteropServices;");
                         sw.WriteLine("using System.Text;");
                         sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(task)};");
-                        sw.WriteLine("using Silk.NET.Core.Loader;");
                         sw.WriteLine("using Silk.NET.Core.Native;");
                         sw.WriteLine("using Silk.NET.Core.Attributes;");
-                        sw.WriteLine("using Ultz.SuperInvoke;");
+                        sw.WriteLine("using Silk.NET.Core.Contexts;");
+                        sw.WriteLine("using Silk.NET.Core.Loader;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
                         sw.WriteLine();
@@ -507,7 +513,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"    [Extension(\"{key}\")]");
                         sw.WriteLine
                         (
-                            $"    public abstract unsafe partial class {name} : NativeExtension<{@class.ClassName}>"
+                            $"    public unsafe partial class {name} : NativeExtension<{@class.ClassName}>"
                         );
                         sw.WriteLine("    {");
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
@@ -528,10 +534,10 @@ namespace Silk.NET.BuildTools.Bind
                             }
 
                             sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
-                            using (var sr = new StringReader(function.ToString()))
+                            using (var sr = new StringReader(function.ToString(null, true)))
                             {
                                 string line;
-                                var flPrefix = "public abstract ";
+                                var flPrefix = "public ";
                                 while ((line = sr.ReadLine()) != null)
                                 {
                                     sw.WriteLine($"        {flPrefix}{line}");
@@ -570,8 +576,8 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine();
                         }
 
-                        sw.WriteLine($"        public {name}(ref NativeApiContext ctx)");
-                        sw.WriteLine("            : base(ref ctx)");
+                        sw.WriteLine($"        public {name}(INativeContext ctx)");
+                        sw.WriteLine("            : base(ctx)");
                         sw.WriteLine("        {");
                         sw.WriteLine("        }");
                         sw.WriteLine("    }");

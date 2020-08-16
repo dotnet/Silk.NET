@@ -4,35 +4,36 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// Exposes the public API of functions added by OpenAL Soft.
     /// </summary>
     [NativeApi(Prefix = "al")]
-    public abstract class Soft : NativeExtension<AL>
+    public partial class Soft : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Soft(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected Soft(INativeContext ctx)
+            : base(ctx)
         {
         }
 
         /// <inheritdoc />
-        public abstract bool GetBoolean(SoftStateBoolean param);
+        public partial bool GetBoolean(SoftStateBoolean param);
 
         /// <inheritdoc />
-        public abstract double GetDouble(SoftStateDouble param);
+        public partial double GetDouble(SoftStateDouble param);
 
         /// <inheritdoc />
-        public abstract float GetFloat(SoftStateFloat param);
+        public partial float GetFloat(SoftStateFloat param);
 
         /// <inheritdoc />
-        public abstract int GetInteger(SoftStateInteger param);
+        public partial int GetInteger(SoftStateInteger param);
 
         /// <inheritdoc />
-        public abstract IntPtr GetPointer(StatePointer param);
+        public partial IntPtr GetPointer(StatePointer param);
     }
 }
