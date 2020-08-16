@@ -59,7 +59,7 @@ namespace Silk.NET.SilkTouch
 
                 var name = $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                File.WriteAllText(name, s);
+                // File.WriteAllText(name, s);
             }
         }
 
