@@ -217,7 +217,7 @@ namespace Silk.NET.SilkTouch
                
                if (declaration.Modifiers.All(x => x.Text != "unsafe"))
                {
-                   // this is not done as a middleware to allow middlewares to prepend any variable declaration, even if it's unsafe
+                   // this is not done as a middleware to allow middleware to prepend any variable declaration, even if it's unsafe
                    block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
                }
 
