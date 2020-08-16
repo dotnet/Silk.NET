@@ -292,7 +292,7 @@ namespace Silk.NET.SDL
 
         public static int Versionnum(int x, int y, int z)
         {
-            return new SDL(new DefaultNativeContext(new SDLLibraryNameContainer().GetLibraryName()));
+            return x * 1000 + y * 100 + z;
         }
 
         public static int WindowposUndefinedDisplay(int x)
@@ -913,7 +913,7 @@ namespace Silk.NET.SDL
 
         public static Sdl GetApi()
         {
-            return LibraryActivator.CreateInstance<Sdl>(new SDLLibraryNameContainer().GetLibraryName());
+            return new Sdl(new DefaultNativeContext(new SDLLibraryNameContainer().GetLibraryName()));
         }
 
         public override bool IsExtensionPresent(string extension) => GLExtensionSupported(extension) == SdlBool.True;
