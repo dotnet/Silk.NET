@@ -28,6 +28,7 @@ namespace Silk.NET.Input.Glfw
 
         public bool IsConnected => GlfwProvider.GLFW.Value.JoystickPresent(Index) &&
                                    !GlfwProvider.GLFW.Value.JoystickIsGamepad(Index);
+
         public IReadOnlyList<Axis> Axes { get; private set; }
         public IReadOnlyList<Button> Buttons { get; private set; }
         public IReadOnlyList<Hat> Hats { get; private set; }
@@ -36,6 +37,7 @@ namespace Silk.NET.Input.Glfw
         public event Action<IJoystick, Button>? ButtonUp;
         public event Action<IJoystick, Axis>? AxisMoved;
         public event Action<IJoystick, Hat>? HatMoved;
+
         public unsafe void Update()
         {
             if (!IsConnected)
@@ -44,7 +46,7 @@ namespace Silk.NET.Input.Glfw
                 {
                     OnConnectionChanged?.Invoke(this, _connected = false);
                 }
-                
+
                 return;
             }
 
@@ -57,17 +59,17 @@ namespace Silk.NET.Input.Glfw
 
             for (var i = 0; i < btnCount; i++)
             {
-                ((Button[])Buttons)[i] = new Button(ButtonName.Unknown, i, btn[i] == (int) InputAction.Press);
+                ((Button[]) Buttons)[i] = new Button(ButtonName.Unknown, i, btn[i] == (int) InputAction.Press);
             }
 
             for (var i = 0; i < axisCount; i++)
             {
-                ((Axis[])Axes)[i] = new Axis(i, axes[i]);
+                ((Axis[]) Axes)[i] = new Axis(i, axes[i]);
             }
 
             for (var i = 0; i < hatCount; i++)
             {
-                ((Hat[])Hats)[i] = new Hat
+                ((Hat[]) Hats)[i] = new Hat
                 (
                     i, hats[i] switch
                     {
@@ -98,7 +100,7 @@ namespace Silk.NET.Input.Glfw
                 return;
             }
 
-            var axes = (Axis[])Axes;
+            var axes = (Axis[]) Axes;
             Array.Resize(ref axes, count);
             Axes = axes;
         }

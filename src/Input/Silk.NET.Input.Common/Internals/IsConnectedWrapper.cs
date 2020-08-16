@@ -6,15 +6,15 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Glfw
+namespace Silk.NET.Input.Internals
 {
     internal struct IsConnectedWrapper<T> : IReadOnlyList<T>
-        where T:IInputDevice
+        where T : IInputDevice
     {
         private readonly IReadOnlyList<T> _list;
 
         public IsConnectedWrapper(IReadOnlyList<T> list) => _list = list;
-        public IEnumerator<T> GetEnumerator() => new IsConnectedEnumerator<T>(new ReadOnlyListEnumerator<T>(_list));
+        public IEnumerator<T> GetEnumerator() => new IsConnectedEnumerator<T>(_list.GetEnumerator());
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 

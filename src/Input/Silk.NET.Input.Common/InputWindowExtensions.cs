@@ -23,7 +23,7 @@ namespace Silk.NET.Input
         static InputWindowExtensions()
         {
             TryAdd("Silk.NET.Input.Glfw");
-            TryAdd("Silk.NET.Input.Glvf");
+            TryAdd("Silk.NET.Input.Sdl");
         }
 
         /// <summary>
@@ -44,10 +44,10 @@ namespace Silk.NET.Input
                     return inputPlatform.CreateInput(view);
                 }
             }
-            
+
             throw new NotSupportedException("Couldn't find a suitable input platform for this view.");
         }
-        
+
         /// <summary>
         /// Adds this input platform to the platform list. Shouldn't be used unless writing your own input backend.
         /// </summary>
@@ -81,7 +81,7 @@ namespace Silk.NET.Input
                 {
                     return false;
                 }
-                
+
                 Add((IInputPlatform) Activator.CreateInstance(attr.Type, true));
                 return true;
             }

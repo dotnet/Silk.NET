@@ -53,13 +53,19 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// The default graphics API. This is OpenGL 3.3 core profile, with forward compatability enabled.
         /// </summary>
-        public static GraphicsAPI Default => new GraphicsAPI(ContextAPI.OpenGL, ContextProfile.Core,
-            ContextFlags.ForwardCompatible, new APIVersion(3, 3));
+        public static GraphicsAPI Default => new GraphicsAPI
+        (
+            ContextAPI.OpenGL, ContextProfile.Core,
+            ContextFlags.ForwardCompatible, new APIVersion(3, 3)
+        );
 
         /// <summary>
         /// The default vulkan graphics API. This is Vulkan 1.1.
         /// </summary>
-        public static GraphicsAPI DefaultVulkan => new GraphicsAPI(ContextAPI.Vulkan, ContextProfile.Core,
-            ContextFlags.ForwardCompatible, new APIVersion(1, 1));
+        public static GraphicsAPI DefaultVulkan => new GraphicsAPI
+        (
+            ContextAPI.Vulkan, ContextProfile.Core,
+            ContextFlags.ForwardCompatible, new APIVersion(1, 1)
+        );
     }
 }

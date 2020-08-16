@@ -19,27 +19,28 @@ namespace Silk.NET.Input.Glfw
         public GlfwGamepad(int i)
         {
             var hasState = GlfwProvider.GLFW.Value.GetGamepadState(i, out var state);
-            
+
             Index = i;
             Buttons = new Button[GamepadButtonCount];
             Thumbsticks = new Thumbstick[GamepadThumbstickCount];
             Triggers = new Trigger[GamepadTriggerCount];
 
             _connected = hasState;
-            
+
             for (int j = 0; j < GamepadButtonCount; j++)
             {
-                ((Button[])Buttons)[j] = new Button((ButtonName) j, j, hasState && state.Buttons[j] == (int) InputAction.Press);
+                ((Button[]) Buttons)[j] = new Button
+                    ((ButtonName) j, j, hasState && state.Buttons[j] == (int) InputAction.Press);
             }
 
             for (int j = 0; j < GamepadThumbstickCount; j++)
             {
-                ((Thumbstick[])Thumbsticks)[j] = new Thumbstick(j, 0, 0);
+                ((Thumbstick[]) Thumbsticks)[j] = new Thumbstick(j, 0, 0);
             }
 
             for (int j = 0; j < GamepadTriggerCount; j++)
             {
-                ((Trigger[])Triggers)[j] = new Trigger(j, 0);
+                ((Trigger[]) Triggers)[j] = new Trigger(j, 0);
             }
         }
 
@@ -51,10 +52,10 @@ namespace Silk.NET.Input.Glfw
         public IReadOnlyList<Trigger> Triggers { get; }
         public IReadOnlyList<IMotor> VibrationMotors { get; } = new IMotor[0];
         public Deadzone Deadzone { get; set; }
-        public event Action<IGamepad, Button> ButtonDown;
-        public event Action<IGamepad, Button> ButtonUp;
-        public event Action<IGamepad, Thumbstick> ThumbstickMoved;
-        public event Action<IGamepad, Trigger> TriggerMoved;
+        public event Action<IGamepad, Button>? ButtonDown;
+        public event Action<IGamepad, Button>? ButtonUp;
+        public event Action<IGamepad, Thumbstick>? ThumbstickMoved;
+        public event Action<IGamepad, Trigger>? TriggerMoved;
 
         public void Update()
         {
@@ -83,10 +84,10 @@ namespace Silk.NET.Input.Glfw
                 if ((Buttons[i].Pressed ? 1 : 0) != state.Buttons[i])
                 {
                     (Buttons[i].Pressed ? ButtonUp : ButtonDown)?.Invoke
-                        (this, ((Button[])Buttons)[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1));
+                        (this, ((Button[]) Buttons)[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1));
                 }
-                
-                ((Button[])Buttons)[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1);
+
+                ((Button[]) Buttons)[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1);
             }
 
             // Left Thumbstick
@@ -100,7 +101,7 @@ namespace Silk.NET.Input.Glfw
                 );
             }
 
-            ((Thumbstick[])Thumbsticks)[0] = thumbstick0;
+            ((Thumbstick[]) Thumbsticks)[0] = thumbstick0;
 
             // Right Thumbstick
             var thumbstick1 = new Thumbstick(1, Deadzone.Apply(state.Axes[2]), Deadzone.Apply(state.Axes[3]));
@@ -113,8 +114,8 @@ namespace Silk.NET.Input.Glfw
                 );
             }
 
-            ((Thumbstick[])Thumbsticks)[1] = thumbstick1;
-            
+            ((Thumbstick[]) Thumbsticks)[1] = thumbstick1;
+
             // Left Trigger
             var trigger0 = new Trigger(0, Deadzone.Apply(state.Axes[4]));
             if (Triggers[0].Position != trigger0.Position)
@@ -122,7 +123,7 @@ namespace Silk.NET.Input.Glfw
                 TriggerMoved?.Invoke(this, trigger0);
             }
 
-            ((Trigger[])Triggers)[0] = trigger0;
+            ((Trigger[]) Triggers)[0] = trigger0;
 
             // Right Trigger
             var trigger1 = new Trigger(1, Deadzone.Apply(state.Axes[5]));
@@ -131,7 +132,7 @@ namespace Silk.NET.Input.Glfw
                 TriggerMoved?.Invoke(this, trigger1);
             }
 
-            ((Trigger[])Triggers)[1] = trigger1;
+            ((Trigger[]) Triggers)[1] = trigger1;
         }
 
         public void Dispose()

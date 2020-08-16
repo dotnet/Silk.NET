@@ -9,11 +9,11 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.GLFW;
-using MouseButton = Silk.NET.Input.MouseButton;
+using Silk.NET.Input.Internals;
 
 namespace Silk.NET.Input.Glfw
 {
-    internal class GlfwMouse : IMouse, IGlfwSubscriber, IDisposable
+    internal class GlfwMouse : MouseImplementationBase, IGlfwSubscriber, IDisposable
     {
         private static readonly MouseButton[] _buttons = ((MouseButton[]) Enum.GetValues(typeof(MouseButton)))
             .Where(x => x != (MouseButton) (-1))
@@ -23,23 +23,21 @@ namespace Silk.NET.Input.Glfw
         private GlfwCallbacks.ScrollCallback? _scroll;
         private GlfwCallbacks.CursorPosCallback? _cursorPos;
         private GlfwCallbacks.MouseButtonCallback? _mouseButton;
-        private bool _firstClick = true;
         private bool _scrollModified = false;
-        private MouseButton? _firstClickButton = null;
-        private PointF _firstClickPosition = PointF.Empty;
-        private DateTime? _firstClickTime = null;
+        private ICursor? _cursor;
 
         public unsafe GlfwMouse()
         {
             ScrollWheels = new ScrollWheel[1];
         }
-        public string Name { get; } = "Silk.NET Mouse (via GLFW)";
-        public int Index { get; } = 0;
-        public bool IsConnected { get; } = true;
-        public IReadOnlyList<MouseButton> SupportedButtons { get; } = _buttons;
-        public IReadOnlyList<ScrollWheel> ScrollWheels { get; }
 
-        public unsafe PointF Position
+        public override string Name { get; } = "Silk.NET Mouse (via GLFW)";
+        public override int Index { get; } = 0;
+        public override bool IsConnected { get; } = true;
+        public override IReadOnlyList<MouseButton> SupportedButtons { get; } = _buttons;
+        public override IReadOnlyList<ScrollWheel> ScrollWheels { get; }
+
+        public override unsafe PointF Position
         {
             get
             {
@@ -49,11 +47,9 @@ namespace Silk.NET.Input.Glfw
             set => GlfwProvider.GLFW.Value.SetCursorPos(_handle, value.X, value.Y);
         }
 
-        public ICursor Cursor { get; private set; }
-        public int DoubleClickTime { get; set; } = 500;
-        public int DoubleClickRange { get; set; } = 4;
+        public override ICursor Cursor => _cursor!;
 
-        public unsafe bool IsButtonPressed(MouseButton button)
+        public override unsafe bool IsButtonPressed(MouseButton button)
         {
             var index = GetButton(button);
 
@@ -65,12 +61,8 @@ namespace Silk.NET.Input.Glfw
             return GlfwProvider.GLFW.Value.GetMouseButton(_handle, index) == (int) InputAction.Press;
         }
 
-        public event Action<IMouse, MouseButton> MouseDown;
-        public event Action<IMouse, MouseButton> MouseUp;
-        public event Action<IMouse, MouseButton, PointF> Click;
-        public event Action<IMouse, MouseButton, PointF> DoubleClick;
-        public event Action<IMouse, PointF> MouseMove;
-        public event Action<IMouse, ScrollWheel> Scroll;
+        public override event Action<IMouse, PointF>? MouseMove;
+        public override event Action<IMouse, ScrollWheel>? Scroll;
 
         public unsafe void Dispose()
         {
@@ -88,19 +80,27 @@ namespace Silk.NET.Input.Glfw
                     _scrollModified = true;
                 }
 
-                ((ScrollWheel[])ScrollWheels)[0] = val;
+                ((ScrollWheel[]) ScrollWheels)[0] = val;
                 Scroll?.Invoke(this, val);
             };
             events.CursorPos += _cursorPos = (_, x, y) => MouseMove?.Invoke(this, new PointF((float) x, (float) y));
             events.MouseButton += _mouseButton = (_, btn, action, mods) =>
-                (action switch
+            {
+                switch (action)
                 {
-                    InputAction.Press => HandleMouseDown,
-                    InputAction.Release => MouseUp,
-                    InputAction.Repeat => null,
-                    _ => null
-                })?.Invoke(this, GetButton(btn));
-            Cursor = new GlfwCursor(_handle);
+                    case InputAction.Press:
+                    {
+                        HandleMouseDown(this, GetButton(btn));
+                        break;
+                    }
+                    case InputAction.Release:
+                    {
+                        HandleMouseUp(this, GetButton(btn));
+                        break;
+                    }
+                }
+            };
+            _cursor = new GlfwCursor(_handle);
         }
 
         public void Unsubscribe(GlfwEvents events)
@@ -110,96 +110,15 @@ namespace Silk.NET.Input.Glfw
             events.MouseButton -= _mouseButton;
         }
 
-        private void HandleMouseDown(IMouse mouse, MouseButton button)
-        {
-            MouseDown?.Invoke(mouse, button);
-
-            if (_firstClick || (_firstClickButton != null && _firstClickButton != button))
-            {
-                // This is the first click with the given mouse button.
-                _firstClickTime = null;
-
-                if (!_firstClick && !(_firstClickButton is null))
-                {
-                    // Only the mouse buttons differ so treat last click as a single click.
-                    Click?.Invoke(mouse, _firstClickButton.Value, Position);
-                }
-
-                ProcessFirstClick(button);
-            }
-            else
-            {
-                // This is the second click with the same mouse button.
-                if (_firstClickTime != null &&
-                    (DateTime.Now - _firstClickTime.Value).TotalMilliseconds <= DoubleClickTime)
-                {
-                    // Within the maximum double click time.
-                    _firstClickTime = null;
-
-                    var position = Position;
-                    if (Math.Abs(position.X - _firstClickPosition.X) < DoubleClickRange &&
-                        Math.Abs(position.Y - _firstClickPosition.Y) < DoubleClickRange)
-                    {
-                        // Second click was in time and in range -> double click.
-                        _firstClick = true;
-                        DoubleClick?.Invoke(mouse, button, position);
-                    }
-                    else
-                    {
-                        // Second click was in time but outside range -> single click.
-                        // The second click is another "first click".
-                        Click?.Invoke(mouse, button, position);
-                        ProcessFirstClick(button);
-                    }
-                }
-                else
-                {
-                    // The double click time elapsed.
-
-                    // If Update() would have detected the time elapse before,
-                    // it would have set _firstClick back to true and we won't be here.
-                    // Therefore Update() has not detected time elapse here and we have
-                    // to handle it.
-                    HandleDoubleClickTimeElapse();
-
-                    // Now process the second click as another "first click".
-                    ProcessFirstClick(button);
-                }
-            }
-        }
-
-        private void ProcessFirstClick(MouseButton button)
-        {
-            _firstClick = false;
-            _firstClickButton = button;
-            _firstClickPosition = Position;
-            _firstClickTime = DateTime.Now;
-        }
-
-        private void HandleDoubleClickTimeElapse()
-        {
-            _firstClickTime = null;
-            _firstClick = true;
-            if (!(_firstClickButton is null))
-            {
-                Click?.Invoke(this, _firstClickButton.Value, Position);
-            }
-        }
-
         public void Update()
         {
             if (!_scrollModified)
             {
-                ((ScrollWheel[])ScrollWheels)[0] = default;
+                ((ScrollWheel[]) ScrollWheels)[0] = default;
             }
 
             _scrollModified = false;
-            if (_firstClickTime != null &&
-                (DateTime.Now - _firstClickTime.Value).TotalMilliseconds > DoubleClickTime)
-            {
-                // No second click in maximum double click time.
-                HandleDoubleClickTimeElapse();
-            }
+            HandleUpdate();
         }
 
         private static int GetButton(MouseButton btn) => btn switch

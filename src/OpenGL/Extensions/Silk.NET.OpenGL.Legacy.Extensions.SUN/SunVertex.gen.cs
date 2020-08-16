@@ -200,28 +200,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         public partial void TexCoord4fVertex4([Count(Count = 4), Flow(FlowDirection.In)] Span<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glColor4ubVertex2fvSUN")]
-        public unsafe partial void Color4ubVertex2([Count(Count = 4), Flow(FlowDirection.In)] string c, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void Color4ubVertex2([Flow(FlowDirection.In)] string c, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glColor4ubVertex2fvSUN")]
-        public partial void Color4ubVertex2([Count(Count = 4), Flow(FlowDirection.In)] string c, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
+        public partial void Color4ubVertex2([Flow(FlowDirection.In)] string c, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glColor4ubVertex3fvSUN")]
-        public unsafe partial void Color4ubVertex3([Count(Count = 4), Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void Color4ubVertex3([Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glColor4ubVertex3fvSUN")]
-        public partial void Color4ubVertex3([Count(Count = 4), Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        public partial void Color4ubVertex3([Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glReplacementCodeuiColor4ubVertex3fvSUN")]
-        public unsafe partial void ReplacementCodeuiColor4ubVertex3([Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Count(Count = 4), Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void ReplacementCodeuiColor4ubVertex3([Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glReplacementCodeuiColor4ubVertex3fvSUN")]
-        public partial void ReplacementCodeuiColor4ubVertex3([Count(Count = 1), Flow(FlowDirection.In)] ref uint rc, [Count(Count = 4), Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        public partial void ReplacementCodeuiColor4ubVertex3([Count(Count = 1), Flow(FlowDirection.In)] ref uint rc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glTexCoord2fColor4ubVertex3fvSUN")]
-        public unsafe partial void TexCoord2fColor4ubVertex3([Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void TexCoord2fColor4ubVertex3([Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glTexCoord2fColor4ubVertex3fvSUN")]
-        public partial void TexCoord2fColor4ubVertex3([Count(Count = 2), Flow(FlowDirection.In)] Span<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        public partial void TexCoord2fColor4ubVertex3([Count(Count = 2), Flow(FlowDirection.In)] Span<float> tc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
         public SunVertex(INativeContext ctx)
             : base(ctx)

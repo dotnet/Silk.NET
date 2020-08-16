@@ -182,8 +182,62 @@ namespace Silk.NET.SilkTouch
                 }
             }
 
+            var marshalReturn = !ctx.ReturnsVoid && SymbolEqualityComparer.Default.Equals(ctx.ReturnLoadType, @string);
+            var returnName = $"smo{ctx.Slot}res";
+            var returnMarshalAs = ctx.ReturnMarshalOptions?.MarshalAs ?? UnmanagedType.LPStr;
+            if (marshalReturn)
+            {
+                ctx.DeclareVariable(@string, returnName);
+                ctx.ReturnLoadType = ctx.Compilation.CreatePointerTypeSymbol
+                (
+                    returnMarshalAs switch
+                    {
+                        UnmanagedType.BStr => ctx.Compilation.GetSpecialType(SpecialType.System_Char),
+                        UnmanagedType.LPWStr => ctx.Compilation.GetSpecialType(SpecialType.System_Char),
+                        UnmanagedType.LPStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
+                        UnmanagedType.LPTStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
+                    }
+                );
+            }
             next();
-            
+
+            if (marshalReturn)
+            {
+                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                (
+                    ExpressionStatement
+                    (
+                        AssignmentExpression
+                        (
+                            SyntaxKind.SimpleAssignmentExpression, IdentifierName(returnName),
+                            InvocationExpression
+                            (
+                                _stringFromPtr[returnMarshalAs],
+                                ArgumentList
+                                (
+                                    SingletonSeparatedList
+                                    (
+                                        Argument
+                                        (
+                                            CastExpression
+                                            (
+                                                IdentifierName
+                                                (
+                                                    ctx.Compilation.GetSpecialType
+                                                            (SpecialType.System_IntPtr)
+                                                        .ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
+                                                ), ctx.ResultExpression
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                );
+                ctx.ResultExpression = IdentifierName(returnName);
+            }
+
             for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
             {
                 if (b[index]) continue;

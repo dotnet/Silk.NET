@@ -28,7 +28,7 @@ namespace Silk.NET.Windowing
         /// Elapsed time in seconds since the View was initialized.
         /// </summary>
         double Time { get; }
-        
+
         /// <summary>
         /// The size of the framebuffer. May differ from the window size.
         /// </summary>

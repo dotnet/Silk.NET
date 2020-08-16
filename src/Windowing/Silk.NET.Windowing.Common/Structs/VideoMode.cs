@@ -13,13 +13,13 @@ namespace Silk.NET.Windowing
         public VideoMode(int refreshRate)
             : this(null, refreshRate)
         {
-
         }
 
         /// <summary>
         /// Resolution of the full screen window.
         /// </summary>
         public Size? Resolution { get; }
+
         /// <summary>
         /// Refresh rate of the full screen window in Hz.
         /// </summary>

@@ -6,24 +6,24 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Glfw
+namespace Silk.NET.Input.Internals
 {
     internal struct IsConnectedEnumerator<T> : IEnumerator<T>
-        where T:IInputDevice
+        where T : IInputDevice
     {
-        private ReadOnlyListEnumerator<T> _base;
+        private IEnumerator<T> _base;
 
-        public IsConnectedEnumerator(in ReadOnlyListEnumerator<T> @base)
+        public IsConnectedEnumerator(IEnumerator<T> @base)
         {
             _base = @base;
-            Current = default;
+            Current = default!;
         }
-        
+
         public bool MoveNext()
         {
             while (_base.MoveNext())
             {
-                if (_base.Current.IsConnected)
+                if (_base.Current?.IsConnected ?? false)
                 {
                     Current = _base.Current;
                     return true;

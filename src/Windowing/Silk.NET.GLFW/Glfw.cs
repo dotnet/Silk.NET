@@ -3844,7 +3844,7 @@ namespace Silk.NET.GLFW
             VkHandle instance,
             WindowHandle* window,
             void* allocator,
-            VkHandle* surface
+            VkNonDispatchableHandle* surface
         );
 
         /// <summary>

@@ -22,7 +22,7 @@ namespace Silk.NET.Windowing.Glfw
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private readonly GlfwWindow? _parent;
         private readonly GlfwMonitor? _initialMonitor;
-        
+
         // Callbacks
         private GlfwCallbacks.WindowPosCallback? _onMove;
         private GlfwCallbacks.WindowSizeCallback? _onResize;
@@ -32,6 +32,8 @@ namespace Silk.NET.Windowing.Glfw
         private GlfwCallbacks.WindowFocusCallback? _onFocusChanged;
         private GlfwCallbacks.WindowIconifyCallback? _onMinimized;
         private GlfwCallbacks.WindowMaximizeCallback? _onMaximized;
+        private Point _nonFullscreenPosition;
+        private Size _nonFullscreenSize;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -58,7 +60,7 @@ namespace Silk.NET.Windowing.Glfw
             {
                 return;
             }
-            
+
             try
             {
                 _glfw.DestroyWindow(_glfwWindow);
@@ -76,6 +78,7 @@ namespace Silk.NET.Windowing.Glfw
             => API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES ? this : null;
 
         public override IVkSurface? VkSurface => API.API == ContextAPI.Vulkan && _glfw.VulkanSupported() ? this : null;
+
         protected override bool CoreIsVisible
         {
             get => _glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Visible);
@@ -107,8 +110,111 @@ namespace Silk.NET.Windowing.Glfw
             get => _localTitleCache;
             set => _glfw.SetWindowTitle(_glfwWindow, _localTitleCache = value);
         }
-        protected override WindowState CoreWindowState { get; set; }
-        protected override WindowBorder CoreWindowBorder { get; set; }
+
+        protected override WindowState CoreWindowState
+        {
+            get
+            {
+                if (_glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Iconified))
+                {
+                    return WindowState.Minimized;
+                }
+
+                if (_glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Maximized))
+                {
+                    return WindowState.Maximized;
+                }
+
+                if (_glfw.GetWindowMonitor(_glfwWindow) != null)
+                {
+                    return WindowState.Fullscreen;
+                }
+
+                return WindowState.Normal;
+            }
+            set
+            {
+                if (ExtendedOptionsCache.WindowState == WindowState.Normal)
+                {
+                    _nonFullscreenPosition = CorePosition;
+                    _nonFullscreenSize = CoreSize;
+                }
+                else if (ExtendedOptionsCache.WindowState == WindowState.Fullscreen &&
+                         value != WindowState.Fullscreen)
+                {
+                    _glfw.SetWindowMonitor
+                    (
+                        _glfwWindow, null,
+                        _nonFullscreenPosition.X,
+                        _nonFullscreenPosition.Y,
+                        _nonFullscreenSize.Width,
+                        _nonFullscreenSize.Height,
+                        0
+                    );
+                }
+
+                switch (value)
+                {
+                    case WindowState.Normal:
+                        _glfw.RestoreWindow(_glfwWindow);
+                        break;
+                    case WindowState.Minimized:
+                        _glfw.IconifyWindow(_glfwWindow);
+                        break;
+                    case WindowState.Maximized:
+                        _glfw.MaximizeWindow(_glfwWindow);
+                        break;
+                    case WindowState.Fullscreen:
+                        var monitor = _glfw.GetPrimaryMonitor();
+                        var mode = _glfw.GetVideoMode(monitor);
+                        var videoMode = _optionsCache.VideoMode;
+                        var resolution = videoMode.Resolution;
+                        _glfw.SetWindowMonitor
+                        (
+                            _glfwWindow, monitor, 0, 0,
+                            resolution?.Width ?? mode->Width,
+                            resolution?.Height ?? mode->Height,
+                            videoMode.RefreshRate ?? mode->RefreshRate
+                        );
+                        break;
+                }
+            }
+        }
+
+        protected override WindowBorder CoreWindowBorder
+        {
+            get
+            {
+                if (_glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Resizable))
+                {
+                    return WindowBorder.Resizable;
+                }
+
+                return _glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Decorated)
+                    ? WindowBorder.Fixed
+                    : WindowBorder.Hidden;
+            }
+            set
+            {
+                switch (value)
+                {
+                    case WindowBorder.Hidden:
+                        _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Decorated, false);
+                        _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Resizable, false);
+                        break;
+
+                    case WindowBorder.Resizable:
+                        _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Decorated, true);
+                        _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Resizable, true);
+                        break;
+
+                    case WindowBorder.Fixed:
+                        _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Decorated, true);
+                        _glfw.SetWindowAttrib(_glfwWindow, WindowAttributeSetter.Resizable, false);
+                        break;
+                }
+            }
+        }
 
         protected override bool IsClosingSettable
         {
@@ -129,7 +235,7 @@ namespace Silk.NET.Windowing.Glfw
                     "Attempted to initialize a Vulkan window using GLFW, which doesn't support Vulkan on this computer."
                 );
             }
-            
+
             // Set window border.
             switch (opts.WindowBorder)
             {
@@ -202,7 +308,7 @@ namespace Silk.NET.Windowing.Glfw
                 !(_initialMonitor is null) ? _initialMonitor.Handle : null,
                 null
             );
-            
+
             if (opts.IsVisible)
             {
                 _glfw.ShowWindow(_glfwWindow);
@@ -223,6 +329,7 @@ namespace Silk.NET.Windowing.Glfw
         public override event Action<Point>? Move;
         public override event Action<WindowState>? StateChanged;
         public override event Action<string[]>? FileDrop;
+
         public override void SetWindowIcon(ReadOnlySpan<RawImage> icons)
         {
             if (!IsInitialized)
@@ -245,9 +352,9 @@ namespace Silk.NET.Windowing.Glfw
                     images[i] = new Image
                     {
                         Width = icon.Width, Height = icon.Height,
-                        Pixels = (byte*)Unsafe.AsPointer(ref iconMemory[0])
+                        Pixels = (byte*) Unsafe.AsPointer(ref iconMemory[0])
                     };
-                    
+
                     icon.Pixels.Span.CopyTo(iconMemory);
                 }
 
@@ -258,7 +365,8 @@ namespace Silk.NET.Windowing.Glfw
 
         public override IWindow CreateWindow(WindowOptions opts) => new GlfwWindow(opts, this, null);
 
-        public override IWindowHost? Parent => (IWindowHost?)_parent ?? Monitor;
+        public override IWindowHost? Parent => (IWindowHost?) _parent ?? Monitor;
+
         public override IMonitor? Monitor
         {
             get
@@ -350,10 +458,12 @@ namespace Silk.NET.Windowing.Glfw
 
             return -1;
         }
+
         public override bool IsClosing => _glfw.WindowShouldClose(_glfwWindow);
 
         public override VideoMode VideoMode
             => IsInitialized ? CachedVideoMode = Monitor?.VideoMode ?? CachedVideoMode : CachedVideoMode;
+
         public override bool IsEventDriven { get; set; }
 
         public override Size FramebufferSize
@@ -376,6 +486,7 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.PollEvents();
             }
         }
+
         public override void ContinueEvents() => _glfw.PostEmptyEvent();
 
         public override void Dispose()
@@ -408,10 +519,7 @@ namespace Silk.NET.Windowing.Glfw
                 Resize?.Invoke(size);
             };
 
-            _onFramebufferResize = (window, width, height) =>
-            {
-                FramebufferResize?.Invoke(new Size(width, height));
-            };
+            _onFramebufferResize = (window, width, height) => { FramebufferResize?.Invoke(new Size(width, height)); };
 
             _onClosing = window => Closing?.Invoke();
 
@@ -427,7 +535,7 @@ namespace Silk.NET.Windowing.Glfw
                 }
                 else
                 {
-                    // Otherwise, we have to querry a few things to figure out out.
+                    // Otherwise, we have to query a few things to figure out out.
                     if (_glfw.GetWindowAttrib(_glfwWindow, WindowAttributeGetter.Maximized))
                     {
                         state = WindowState.Maximized;
@@ -537,9 +645,9 @@ namespace Silk.NET.Windowing.Glfw
         public void MakeCurrent() => _glfw.MakeContextCurrent(_glfwWindow);
         public void Clear() => _glfw.MakeContextCurrent(null);
 
-        public VkHandle Create<T>(VkHandle instance, T* allocator) where T : unmanaged
+        public VkNonDispatchableHandle Create<T>(VkHandle instance, T* allocator) where T : unmanaged
         {
-            var surface = stackalloc VkHandle[1];
+            var surface = stackalloc VkNonDispatchableHandle[1];
             int ec;
             if ((ec = _glfw.CreateWindowSurface(instance, _glfwWindow, allocator, surface)) != 0)
             {

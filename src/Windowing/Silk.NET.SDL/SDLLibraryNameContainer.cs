@@ -16,7 +16,7 @@ namespace Silk.NET.SDL
         public override string Linux => "libSDL2-2.0.so.0";
 
         /// <inheritdoc />
-        public override string MacOS => "libSDL2-2.0.0.dylib";
+        public override string MacOS => "libSDL2-2.0.dylib";
 
         /// <inheritdoc />
         public override string Android => "libSDL2-2.0.so.0";

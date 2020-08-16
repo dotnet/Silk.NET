@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public unsafe partial class SDL : NativeAPI
+    public unsafe partial class Sdl : NativeAPI
     {
 
         /// <summary>To be added.</summary>
@@ -23,1654 +23,789 @@ namespace Silk.NET.SDL
         public unsafe partial byte* GetPlatform();
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 361, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 361, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_malloc")]
         public unsafe partial void* Malloc(uint size);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 362, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 362, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_calloc")]
         public unsafe partial void* Calloc(uint nmemb, uint size);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 363, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 363, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_realloc")]
         public unsafe partial void* Realloc(void* mem, uint size);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 363, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 363, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_realloc")]
         public unsafe partial void* Realloc<T0>(Span<T0> mem, uint size) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 364, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 364, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_free")]
         public unsafe partial void Free(void* mem);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 364, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 364, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_free")]
         public partial void Free<T0>(Span<T0> mem) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
         public unsafe partial void GetMemoryFunctions(void** malloc_func, void** calloc_func, void** realloc_func, void** free_func);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
         public unsafe partial int SetMemoryFunctions(void* malloc_func, void* calloc_func, void* realloc_func, void* free_func);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
         public partial int SetMemoryFunctions<T0, T1, T2, T3>(Span<T0> malloc_func, Span<T1> calloc_func, Span<T2> realloc_func, Span<T3> free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetNumAllocations")]
         public partial int GetNumAllocations();
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 397, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 397, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_getenv")]
         public unsafe partial byte* Getenv(byte* name);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 397, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 397, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_getenv")]
         public unsafe partial byte* Getenv(Span<byte> name);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 398, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 398, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
         public unsafe partial int Setenv(byte* name, byte* value, int overwrite);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 398, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 398, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_setenv")]
         public partial int Setenv(Span<byte> name, Span<byte> value, int overwrite);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_qsort")]
         public unsafe partial void Qsort(void* @base, uint nmemb, uint size, void* compare);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_qsort")]
         public partial void Qsort<T0, T1>(Span<T0> @base, uint nmemb, uint size, Span<T1> compare) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 402, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 402, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_abs")]
         public partial int Abs(int x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 409, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 409, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_isdigit")]
         public partial int Isdigit(int x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 410, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 410, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_isspace")]
         public partial int Isspace(int x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 411, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 411, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_isupper")]
         public partial int Isupper(int x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 412, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 412, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_islower")]
         public partial int Islower(int x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 413, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 413, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_toupper")]
         public partial int Toupper(int x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 414, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 414, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_tolower")]
         public partial int Tolower(int x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 416, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 416, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memset")]
         public unsafe partial void* Memset(void* dst, int c, uint len);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 416, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 416, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memset")]
         public unsafe partial void* Memset<T0>(Span<T0> dst, int c, uint len) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 453, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 453, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcpy")]
         public unsafe partial void* Memcpy(void* dst, void* src, uint len);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 453, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 453, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcpy")]
         public unsafe partial void* Memcpy<T0, T1>(Span<T0> dst, Span<T1> src, uint len) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 455, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 455, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memmove")]
         public unsafe partial void* Memmove(void* dst, void* src, uint len);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 455, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 455, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memmove")]
         public unsafe partial void* Memmove<T0, T1>(Span<T0> dst, Span<T1> src, uint len) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 456, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 456, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcmp")]
         public unsafe partial int Memcmp(void* s1, void* s2, uint len);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 456, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 456, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_memcmp")]
         public partial int Memcmp<T0, T1>(Span<T0> s1, Span<T1> s2, uint len) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 458, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 458, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslen")]
         public unsafe partial uint Wcslen(char* wstr);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 458, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 458, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslen")]
         public partial uint Wcslen(Span<char> wstr);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 459, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
         public unsafe partial uint Wcslcpy(char* dst, char* src, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 459, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 459, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcpy")]
         public partial uint Wcslcpy(Span<char> dst, Span<char> src, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 460, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 460, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
         public unsafe partial uint Wcslcat(char* dst, char* src, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 460, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 460, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcslcat")]
         public partial uint Wcslcat(Span<char> dst, Span<char> src, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 461, Column 34 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 461, Column 34 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsdup")]
         public unsafe partial char* Wcsdup(char* wstr);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 461, Column 34 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 461, Column 34 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsdup")]
         public unsafe partial char* Wcsdup(Span<char> wstr);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 462, Column 34 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 462, Column 34 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
         public unsafe partial char* Wcsstr(char* haystack, char* needle);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 462, Column 34 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 462, Column 34 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsstr")]
         public unsafe partial char* Wcsstr(Span<char> haystack, Span<char> needle);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 464, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 464, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
         public unsafe partial int Wcscmp(char* str1, char* str2);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 464, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 464, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcscmp")]
         public partial int Wcscmp(Span<char> str1, Span<char> str2);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 465, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 465, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
         public unsafe partial int Wcsncmp(char* str1, char* str2, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 465, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 465, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_wcsncmp")]
         public partial int Wcsncmp(Span<char> str1, Span<char> str2, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 467, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 467, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlen")]
         public unsafe partial uint Strlen(byte* str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 467, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 467, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlen")]
         public partial uint Strlen(Span<byte> str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 468, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 468, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
         public unsafe partial uint Strlcpy(byte* dst, byte* src, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 468, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 468, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcpy")]
         public partial uint Strlcpy(Span<byte> dst, Span<byte> src, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 469, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
         public unsafe partial uint Utf8strlcpy(byte* dst, byte* src, uint dst_bytes);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 469, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 469, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
         public partial uint Utf8strlcpy(Span<byte> dst, Span<byte> src, uint dst_bytes);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 470, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 470, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
         public unsafe partial uint Strlcat(byte* dst, byte* src, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 470, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 470, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlcat")]
         public partial uint Strlcat(Span<byte> dst, Span<byte> src, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 471, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 471, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strdup")]
         public unsafe partial byte* Strdup(byte* str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 471, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 471, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strdup")]
         public unsafe partial byte* Strdup(Span<byte> str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 472, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 472, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strrev")]
         public unsafe partial byte* Strrev(byte* str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 472, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 472, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strrev")]
         public unsafe partial byte* Strrev(Span<byte> str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 473, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 473, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strupr")]
         public unsafe partial byte* Strupr(byte* str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 473, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 473, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strupr")]
         public unsafe partial byte* Strupr(Span<byte> str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 474, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 474, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlwr")]
         public unsafe partial byte* Strlwr(byte* str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 474, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 474, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strlwr")]
         public unsafe partial byte* Strlwr(Span<byte> str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 475, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 475, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strchr")]
         public unsafe partial byte* Strchr(byte* str, int c);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 475, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 475, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strchr")]
         public unsafe partial byte* Strchr(Span<byte> str, int c);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 476, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 476, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strrchr")]
         public unsafe partial byte* Strrchr(byte* str, int c);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 476, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 476, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strrchr")]
         public unsafe partial byte* Strrchr(Span<byte> str, int c);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 477, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 477, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
         public unsafe partial byte* Strstr(byte* haystack, byte* needle);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 477, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 477, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strstr")]
         public unsafe partial byte* Strstr(Span<byte> haystack, Span<byte> needle);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial byte* Strtokr(byte* s1, byte* s2, byte** saveptr);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtokr")]
         public unsafe partial byte* Strtokr(Span<byte> s1, Span<byte> s2, byte** saveptr);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 479, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 479, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlen")]
         public unsafe partial uint Utf8strlen(byte* str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 479, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 479, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_utf8strlen")]
         public partial uint Utf8strlen(Span<byte> str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 481, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 481, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_itoa")]
         public unsafe partial byte* Itoa(int value, byte* str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 481, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 481, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_itoa")]
         public unsafe partial byte* Itoa(int value, Span<byte> str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 482, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 482, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_uitoa")]
         public unsafe partial byte* Uitoa(uint value, byte* str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 482, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 482, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_uitoa")]
         public unsafe partial byte* Uitoa(uint value, Span<byte> str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 483, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 483, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ltoa")]
         public unsafe partial byte* Ltoa(int value, byte* str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 483, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 483, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ltoa")]
         public unsafe partial byte* Ltoa(int value, Span<byte> str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 484, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 484, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ultoa")]
         public unsafe partial byte* Ultoa(uint value, byte* str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 484, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 484, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ultoa")]
         public unsafe partial byte* Ultoa(uint value, Span<byte> str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 485, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 485, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_lltoa")]
         public unsafe partial byte* Lltoa(long value, byte* str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 485, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 485, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_lltoa")]
         public unsafe partial byte* Lltoa(long value, Span<byte> str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 486, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 486, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ulltoa")]
         public unsafe partial byte* Ulltoa(ulong value, byte* str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 486, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 486, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ulltoa")]
         public unsafe partial byte* Ulltoa(ulong value, Span<byte> str, int radix);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 488, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 488, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atoi")]
         public unsafe partial int Atoi(byte* str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 488, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 488, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atoi")]
         public partial int Atoi(Span<byte> str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 489, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 489, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atof")]
         public unsafe partial double Atof(byte* str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 489, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 489, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atof")]
         public partial double Atof(Span<byte> str);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtol")]
         public unsafe partial int Strtol(byte* str, byte** endp, int @base);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtol")]
         public unsafe partial int Strtol(Span<byte> str, byte** endp, int @base);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoul")]
         public unsafe partial uint Strtoul(byte* str, byte** endp, int @base);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoul")]
         public unsafe partial uint Strtoul(Span<byte> str, byte** endp, int @base);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoll")]
         public unsafe partial long Strtoll(byte* str, byte** endp, int @base);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoll")]
         public unsafe partial long Strtoll(Span<byte> str, byte** endp, int @base);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoull")]
         public unsafe partial ulong Strtoull(byte* str, byte** endp, int @base);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtoull")]
         public unsafe partial ulong Strtoull(Span<byte> str, byte** endp, int @base);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtod")]
         public unsafe partial double Strtod(byte* str, byte** endp);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strtod")]
         public unsafe partial double Strtod(Span<byte> str, byte** endp);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 496, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 496, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
         public unsafe partial int Strcmp(byte* str1, byte* str2);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 496, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 496, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcmp")]
         public partial int Strcmp(Span<byte> str1, Span<byte> str2);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 497, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 497, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
         public unsafe partial int Strncmp(byte* str1, byte* str2, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 497, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 497, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncmp")]
         public partial int Strncmp(Span<byte> str1, Span<byte> str2, uint maxlen);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
         public unsafe partial int Strcasecmp(byte* str1, byte* str2);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strcasecmp")]
         public partial int Strcasecmp(Span<byte> str1, Span<byte> str2);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 499, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 499, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
         public unsafe partial int Strncasecmp(byte* str1, byte* str2, uint len);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 499, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 499, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_strncasecmp")]
         public partial int Strncasecmp(Span<byte> str1, Span<byte> str2, uint len);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
         public unsafe partial int Sscanf(byte* text, byte* fmt);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sscanf")]
         public partial int Sscanf(Span<byte> text, Span<byte> fmt);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 502, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 502, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
         public unsafe partial int Vsscanf(byte* text, byte* fmt, byte* ap);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 502, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 502, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsscanf")]
         public partial int Vsscanf(Span<byte> text, Span<byte> fmt, Span<byte> ap);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 503, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 503, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
         public unsafe partial int Snprintf(byte* text, uint maxlen, byte* fmt);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 503, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 503, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_snprintf")]
         public partial int Snprintf(Span<byte> text, uint maxlen, Span<byte> fmt);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 504, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 504, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
         public unsafe partial int Vsnprintf(byte* text, uint maxlen, byte* fmt, byte* ap);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 504, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 504, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_vsnprintf")]
         public partial int Vsnprintf(Span<byte> text, uint maxlen, Span<byte> fmt, Span<byte> ap);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 512, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 512, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_acos")]
         public partial double Acos(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 513, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 513, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_acosf")]
         public partial float Acosf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_asin")]
         public partial double Asin(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 515, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 515, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_asinf")]
         public partial float Asinf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 516, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atan")]
         public partial double Atan(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 517, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 517, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atanf")]
         public partial float Atanf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 518, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 518, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atan2")]
         public partial double Atan2(double x, double y);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 519, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 519, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_atan2f")]
         public partial float Atan2f(float x, float y);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 520, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 520, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ceil")]
         public partial double Ceil(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 521, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 521, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_ceilf")]
         public partial float Ceilf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 522, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 522, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_copysign")]
         public partial double Copysign(double x, double y);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 523, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_copysignf")]
         public partial float Copysignf(float x, float y);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 524, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 524, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_cos")]
         public partial double Cos(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 525, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 525, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_cosf")]
         public partial float Cosf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 526, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 526, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_exp")]
         public partial double Exp(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 527, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 527, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_expf")]
         public partial float Expf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 528, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 528, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_fabs")]
         public partial double Fabs(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 529, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 529, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_fabsf")]
         public partial float Fabsf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 530, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 530, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_floor")]
         public partial double Floor(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 531, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 531, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_floorf")]
         public partial float Floorf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 532, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 532, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_fmod")]
         public partial double Fmod(double x, double y);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 533, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 533, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_fmodf")]
         public partial float Fmodf(float x, float y);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 534, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 534, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_log")]
         public partial double Log(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 535, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 535, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_logf")]
         public partial float Logf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 536, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 536, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_log10")]
         public partial double Log10(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 537, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 537, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_log10f")]
         public partial float Log10f(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 538, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 538, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_pow")]
         public partial double Pow(double x, double y);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 539, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 539, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_powf")]
         public partial float Powf(float x, float y);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 540, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 540, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_scalbn")]
         public partial double Scalbn(double x, int n);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 541, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 541, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_scalbnf")]
         public partial float Scalbnf(float x, int n);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 542, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 542, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sin")]
         public partial double Sin(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 543, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 543, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sinf")]
         public partial float Sinf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 544, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 544, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sqrt")]
         public partial double Sqrt(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 545, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 545, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_sqrtf")]
         public partial float Sqrtf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 546, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 546, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_tan")]
         public partial double Tan(double x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 547, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 547, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_tanf")]
         public partial float Tanf(float x);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
         public unsafe partial Icon* IconvOpen(byte* tocode, byte* fromcode);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
         public unsafe partial Icon* IconvOpen(Span<byte> tocode, Span<byte> fromcode);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 559, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 559, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_close")]
         public unsafe partial int IconvClose(Icon* cd);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 559, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 559, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_close")]
         public partial int IconvClose(Span<Icon> cd);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
         public unsafe partial uint Iconv(Icon* cd, byte** inbuf, uint* inbytesleft, byte** outbuf, uint* outbytesleft);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
         public unsafe partial uint Iconv(Span<Icon> cd, byte** inbuf, Span<uint> inbytesleft, byte** outbuf, Span<uint> outbytesleft);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 567, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 567, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial byte* IconvString(byte* tocode, byte* fromcode, byte* inbuf, uint inbytesleft);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 567, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 567, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_string")]
         public unsafe partial byte* IconvString(Span<byte> tocode, Span<byte> fromcode, Span<byte> inbuf, uint inbytesleft);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 121, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_main")]
-        public unsafe partial int Main(int argc, byte** argv);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 131, Column 30 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_SetMainReady")]
-        public partial void SetMainReady();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_RegisterApp")]
-        public unsafe partial int RegisterApp(byte* name, uint style, void* hInst);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_RegisterApp")]
-        public partial int RegisterApp<T0>(Span<byte> name, uint style, Span<T0> hInst) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 139, Column 30 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_UnregisterApp")]
-        public partial void UnregisterApp();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public unsafe partial int WinRTRunApp(void* mainFunction, void* reserved);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public partial int WinRTRunApp<T0, T1>(Span<T0> mainFunction, Span<T1> reserved) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
-        public unsafe partial int UIKitRunApp(int argc, byte** argv, void* mainFunction);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
-        public unsafe partial int UIKitRunApp<T0>(int argc, byte** argv, Span<T0> mainFunction) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 52, Column 25 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "__debugbreak")]
-        public partial void Debugbreak();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 125, Column 41 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public unsafe partial AssertState ReportAssertion(AssertData* arg0, byte* arg1, byte* arg2, int arg3);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 125, Column 41 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_ReportAssertion")]
-        public partial AssertState ReportAssertion(Span<AssertData> arg0, Span<byte> arg1, Span<byte> arg2, int arg3);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public unsafe partial void SetAssertionHandler(void* handler, void* userdata);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public partial void SetAssertionHandler<T0, T1>(Span<T0> handler, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 225, Column 46 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_GetDefaultAssertionHandler")]
-        public unsafe partial void* GetDefaultAssertionHandler();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 242, Column 46 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_GetAssertionHandler")]
-        public unsafe partial void* GetAssertionHandler(void** puserdata);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 266, Column 48 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_GetAssertionReport")]
-        public unsafe partial AssertData* GetAssertionReport();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 275, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_ResetAssertionReport")]
-        public partial void ResetAssertionReport();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 98, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicTryLock")]
-        public unsafe partial SdlBool AtomicTryLock(int* @lock);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 98, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicTryLock")]
-        public partial SdlBool AtomicTryLock(Span<int> @lock);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 105, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicLock")]
-        public unsafe partial void AtomicLock(int* @lock);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 105, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicLock")]
-        public partial void AtomicLock(Span<int> @lock);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 112, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicUnlock")]
-        public unsafe partial void AtomicUnlock(int* @lock);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 112, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicUnlock")]
-        public partial void AtomicUnlock(Span<int> @lock);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 155, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_MemoryBarrierReleaseFunction")]
-        public partial void MemoryBarrierReleaseFunction();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 156, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_MemoryBarrierAcquireFunction")]
-        public partial void MemoryBarrierAcquireFunction();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 225, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCAS")]
-        public unsafe partial SdlBool AtomicCAS(AtomicT* a, int oldval, int newval);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 225, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCAS")]
-        public partial SdlBool AtomicCAS(Span<AtomicT> a, int oldval, int newval);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 232, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicSet")]
-        public unsafe partial int AtomicSet(AtomicT* a, int v);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 232, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicSet")]
-        public partial int AtomicSet(Span<AtomicT> a, int v);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicGet")]
-        public unsafe partial int AtomicGet(AtomicT* a);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicGet")]
-        public partial int AtomicGet(Span<AtomicT> a);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 246, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicAdd")]
-        public unsafe partial int AtomicAdd(AtomicT* a, int v);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 246, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicAdd")]
-        public partial int AtomicAdd(Span<AtomicT> a, int v);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 272, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial SdlBool AtomicCASPtr(void** a, void* oldval, void* newval);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 272, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial SdlBool AtomicCASPtr<T0, T1, T2>(void** a, Span<T1> oldval, Span<T2> newval) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 279, Column 31 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicSetPtr")]
-        public unsafe partial void* AtomicSetPtr(void** a, void* v);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 279, Column 31 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicSetPtr")]
-        public unsafe partial void* AtomicSetPtr<T0, T1>(void** a, Span<T1> v) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 284, Column 31 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
-        [NativeApi(EntryPoint = "SDL_AtomicGetPtr")]
-        public unsafe partial void* AtomicGetPtr(void** a);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 41, Column 29 in build/submodules/SDL-mirror/include\\SDL_error.h")]
-        [NativeApi(EntryPoint = "SDL_SetError")]
-        public unsafe partial int SetError(byte* fmt);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 41, Column 29 in build/submodules/SDL-mirror/include\\SDL_error.h")]
-        [NativeApi(EntryPoint = "SDL_SetError")]
-        public partial int SetError(Span<byte> fmt);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 42, Column 37 in build/submodules/SDL-mirror/include\\SDL_error.h")]
-        [NativeApi(EntryPoint = "SDL_GetError")]
-        public unsafe partial byte* GetError();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 43, Column 30 in build/submodules/SDL-mirror/include\\SDL_error.h")]
-        [NativeApi(EntryPoint = "SDL_ClearError")]
-        public partial void ClearError();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 65, Column 29 in build/submodules/SDL-mirror/include\\SDL_error.h")]
-        [NativeApi(EntryPoint = "SDL_Error")]
-        public partial int Error(Errorcode code);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 64, Column 36 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CreateMutex")]
-        public unsafe partial Mutex* CreateMutex();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 72, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_LockMutex")]
-        public unsafe partial int LockMutex(Mutex* mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 72, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_LockMutex")]
-        public partial int LockMutex(Span<Mutex> mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 79, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_TryLockMutex")]
-        public unsafe partial int TryLockMutex(Mutex* mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 79, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_TryLockMutex")]
-        public partial int TryLockMutex(Span<Mutex> mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 90, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_UnlockMutex")]
-        public unsafe partial int UnlockMutex(Mutex* mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 90, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_UnlockMutex")]
-        public partial int UnlockMutex(Span<Mutex> mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 95, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyMutex")]
-        public unsafe partial void DestroyMutex(Mutex* mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 95, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyMutex")]
-        public partial void DestroyMutex(Span<Mutex> mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 112, Column 34 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CreateSemaphore")]
-        public unsafe partial Semaphore* CreateSemaphore(uint initial_value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 117, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroySemaphore")]
-        public unsafe partial void DestroySemaphore(Semaphore* sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 117, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroySemaphore")]
-        public partial void DestroySemaphore(Span<Semaphore> sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 124, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemWait")]
-        public unsafe partial int SemWait(Semaphore* sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 124, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemWait")]
-        public partial int SemWait(Span<Semaphore> sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 132, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemTryWait")]
-        public unsafe partial int SemTryWait(Semaphore* sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 132, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemTryWait")]
-        public partial int SemTryWait(Span<Semaphore> sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 143, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemWaitTimeout")]
-        public unsafe partial int SemWaitTimeout(Semaphore* sem, uint ms);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 143, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemWaitTimeout")]
-        public partial int SemWaitTimeout(Span<Semaphore> sem, uint ms);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 150, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemPost")]
-        public unsafe partial int SemPost(Semaphore* sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 150, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemPost")]
-        public partial int SemPost(Span<Semaphore> sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 155, Column 32 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemValue")]
-        public unsafe partial uint SemValue(Semaphore* sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 155, Column 32 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_SemValue")]
-        public partial uint SemValue(Span<Semaphore> sem);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 197, Column 35 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CreateCond")]
-        public unsafe partial Cond* CreateCond();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 202, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyCond")]
-        public unsafe partial void DestroyCond(Cond* cond);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 202, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_DestroyCond")]
-        public partial void DestroyCond(Span<Cond> cond);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 209, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondSignal")]
-        public unsafe partial int CondSignal(Cond* cond);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 209, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondSignal")]
-        public partial int CondSignal(Span<Cond> cond);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 216, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondBroadcast")]
-        public unsafe partial int CondBroadcast(Cond* cond);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 216, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondBroadcast")]
-        public partial int CondBroadcast(Span<Cond> cond);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 227, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWait")]
-        public unsafe partial int CondWait(Cond* cond, Mutex* mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 227, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWait")]
-        public partial int CondWait(Span<Cond> cond, Span<Mutex> mutex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWaitTimeout")]
-        public unsafe partial int CondWaitTimeout(Cond* cond, Mutex* mutex, uint ms);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
-        [NativeApi(EntryPoint = "SDL_CondWaitTimeout")]
-        public partial int CondWaitTimeout(Span<Cond> cond, Span<Mutex> mutex, uint ms);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(void* fn, byte* name, void* data, void* pfnBeginThread, void* pfnEndThread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2, T3>(Span<T0> fn, Span<byte> name, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize(void* fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2, T3>(Span<T0> fn, Span<byte> name, uint stacksize, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 227, Column 37 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_GetThreadName")]
-        public unsafe partial byte* GetThreadName(Thread* thread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 227, Column 37 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_GetThreadName")]
-        public unsafe partial byte* GetThreadName(Span<Thread> thread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 232, Column 38 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_ThreadID")]
-        public partial uint ThreadID();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 239, Column 38 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_GetThreadID")]
-        public unsafe partial uint GetThreadID(Thread* thread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 239, Column 38 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_GetThreadID")]
-        public partial uint GetThreadID(Span<Thread> thread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 244, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_SetThreadPriority")]
-        public partial int SetThreadPriority(ThreadPriority priority);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_WaitThread")]
-        public unsafe partial void WaitThread(Thread* thread, int* status);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_WaitThread")]
-        public partial void WaitThread(Span<Thread> thread, Span<int> status);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 292, Column 30 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_DetachThread")]
-        public unsafe partial void DetachThread(Thread* thread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 292, Column 30 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_DetachThread")]
-        public partial void DetachThread(Span<Thread> thread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 324, Column 35 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_TLSCreate")]
-        public partial uint TLSCreate();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 336, Column 32 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_TLSGet")]
-        public unsafe partial void* TLSGet(uint id);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_TLSSet")]
-        public unsafe partial int TLSSet(uint id, void* value, void* destructor);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_TLSSet")]
-        public partial int TLSSet<T0, T1>(uint id, Span<T0> value, Span<T1> destructor) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 251, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_GetNumAudioDrivers")]
-        public partial int GetNumAudioDrivers();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 252, Column 37 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_GetAudioDriver")]
-        public unsafe partial byte* GetAudioDriver(int index);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 263, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioInit")]
-        public unsafe partial int AudioInit(byte* driver_name);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 263, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioInit")]
-        public partial int AudioInit(Span<byte> driver_name);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioQuit")]
-        public partial void AudioQuit();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 271, Column 37 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_GetCurrentAudioDriver")]
-        public unsafe partial byte* GetCurrentAudioDriver();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 318, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_OpenAudio")]
-        public unsafe partial int OpenAudio(AudioSpec* desired, AudioSpec* obtained);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 318, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_OpenAudio")]
-        public partial int OpenAudio(Span<AudioSpec> desired, Span<AudioSpec> obtained);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 344, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_GetNumAudioDevices")]
-        public partial int GetNumAudioDevices(int iscapture);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 359, Column 37 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_GetAudioDeviceName")]
-        public unsafe partial byte* GetAudioDeviceName(int index, int iscapture);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 376, Column 43 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public unsafe partial uint OpenAudioDevice(byte* device, int iscapture, AudioSpec* desired, AudioSpec* obtained, int allowed_changes);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 376, Column 43 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
-        public partial uint OpenAudioDevice(Span<byte> device, int iscapture, Span<AudioSpec> desired, Span<AudioSpec> obtained, int allowed_changes);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 401, Column 41 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_GetAudioStatus")]
-        public partial AudioStatus GetAudioStatus();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 404, Column 1 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_GetAudioDeviceStatus")]
-        public partial AudioStatus GetAudioDeviceStatus(uint dev);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 417, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_PauseAudio")]
-        public partial void PauseAudio(int pause_on);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 418, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_PauseAudioDevice")]
-        public partial void PauseAudioDevice(uint dev, int pause_on);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 474, Column 40 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_LoadWAV_RW")]
-        public unsafe partial AudioSpec* LoadWAVRW(RWops* src, int freesrc, AudioSpec* spec, byte** audio_buf, uint* audio_len);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 474, Column 40 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_LoadWAV_RW")]
-        public unsafe partial AudioSpec* LoadWAVRW(Span<RWops> src, int freesrc, Span<AudioSpec> spec, byte** audio_buf, Span<uint> audio_len);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_FreeWAV")]
-        public unsafe partial void FreeWAV(byte* audio_buf);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_FreeWAV")]
-        public partial void FreeWAV(Span<byte> audio_buf);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_BuildAudioCVT")]
-        public unsafe partial int BuildAudioCVT(AudioCVT* cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_BuildAudioCVT")]
-        public partial int BuildAudioCVT(Span<AudioCVT> cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 521, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_ConvertAudio")]
-        public unsafe partial int ConvertAudio(AudioCVT* cvt);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 521, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_ConvertAudio")]
-        public partial int ConvertAudio(Span<AudioCVT> cvt);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 552, Column 43 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_NewAudioStream")]
-        public unsafe partial AudioStream* NewAudioStream(ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 574, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamPut")]
-        public unsafe partial int AudioStreamPut(AudioStream* stream, void* buf, int len);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 574, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamPut")]
-        public partial int AudioStreamPut<T0>(Span<AudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 591, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
-        public unsafe partial int AudioStreamGet(AudioStream* stream, void* buf, int len);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 591, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
-        public partial int AudioStreamGet<T0>(Span<AudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamAvailable")]
-        public unsafe partial int AudioStreamAvailable(AudioStream* stream);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamAvailable")]
-        public partial int AudioStreamAvailable(Span<AudioStream> stream);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 623, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamFlush")]
-        public unsafe partial int AudioStreamFlush(AudioStream* stream);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 623, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamFlush")]
-        public partial int AudioStreamFlush(Span<AudioStream> stream);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 635, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamClear")]
-        public unsafe partial void AudioStreamClear(AudioStream* stream);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 635, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_AudioStreamClear")]
-        public partial void AudioStreamClear(Span<AudioStream> stream);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 647, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_FreeAudioStream")]
-        public unsafe partial void FreeAudioStream(AudioStream* stream);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 647, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_FreeAudioStream")]
-        public partial void FreeAudioStream(Span<AudioStream> stream);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 657, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public unsafe partial void MixAudio(byte* dst, byte* src, uint len, int volume);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 657, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_MixAudio")]
-        public partial void MixAudio(Span<byte> dst, Span<byte> src, uint len, int volume);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 665, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public unsafe partial void MixAudioFormat(byte* dst, byte* src, ushort format, uint len, int volume);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 665, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
-        public partial void MixAudioFormat(Span<byte> dst, Span<byte> src, ushort format, uint len, int volume);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 709, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_QueueAudio")]
-        public unsafe partial int QueueAudio(uint dev, void* data, uint len);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 709, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_QueueAudio")]
-        public partial int QueueAudio<T0>(uint dev, Span<T0> data, uint len) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 755, Column 32 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_DequeueAudio")]
-        public unsafe partial uint DequeueAudio(uint dev, void* data, uint len);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 755, Column 32 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_DequeueAudio")]
-        public partial uint DequeueAudio<T0>(uint dev, Span<T0> data, uint len) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 791, Column 32 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_GetQueuedAudioSize")]
-        public partial uint GetQueuedAudioSize(uint dev);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 827, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_ClearQueuedAudio")]
-        public partial void ClearQueuedAudio(uint dev);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 839, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_LockAudio")]
-        public partial void LockAudio();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 840, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_LockAudioDevice")]
-        public partial void LockAudioDevice(uint dev);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 841, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_UnlockAudio")]
-        public partial void UnlockAudio();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 842, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_UnlockAudioDevice")]
-        public partial void UnlockAudioDevice(uint dev);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 848, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_CloseAudio")]
-        public partial void CloseAudio();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 849, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        [NativeApi(EntryPoint = "SDL_CloseAudioDevice")]
-        public partial void CloseAudioDevice(uint dev);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 46, Column 29 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
-        [NativeApi(EntryPoint = "SDL_SetClipboardText")]
-        public unsafe partial int SetClipboardText(byte* text);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 46, Column 29 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
-        [NativeApi(EntryPoint = "SDL_SetClipboardText")]
-        public partial int SetClipboardText(Span<byte> text);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 53, Column 32 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
-        [NativeApi(EntryPoint = "SDL_GetClipboardText")]
-        public unsafe partial byte* GetClipboardText();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 60, Column 34 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
-        [NativeApi(EntryPoint = "SDL_HasClipboardText")]
-        public partial SdlBool HasClipboardText();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 119, Column 29 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_GetCPUCount")]
-        public partial int GetCPUCount();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 127, Column 29 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_GetCPUCacheLineSize")]
-        public partial int GetCPUCacheLineSize();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 132, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasRDTSC")]
-        public partial SdlBool HasRDTSC();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 137, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasAltiVec")]
-        public partial SdlBool HasAltiVec();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 142, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasMMX")]
-        public partial SdlBool HasMMX();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 147, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_Has3DNow")]
-        public partial SdlBool Has3DNow();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 152, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasSSE")]
-        public partial SdlBool HasSSE();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 157, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasSSE2")]
-        public partial SdlBool HasSSE2();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 162, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasSSE3")]
-        public partial SdlBool HasSSE3();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 167, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasSSE41")]
-        public partial SdlBool HasSSE41();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 172, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasSSE42")]
-        public partial SdlBool HasSSE42();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 177, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasAVX")]
-        public partial SdlBool HasAVX();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 182, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasAVX2")]
-        public partial SdlBool HasAVX2();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 187, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasAVX512F")]
-        public partial SdlBool HasAVX512F();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 192, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasARMSIMD")]
-        public partial SdlBool HasARMSIMD();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 197, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_HasNEON")]
-        public partial SdlBool HasNEON();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 202, Column 29 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_GetSystemRAM")]
-        public partial int GetSystemRAM();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 216, Column 32 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_SIMDGetAlignment")]
-        public partial uint SIMDGetAlignment();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 251, Column 32 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_SIMDAlloc")]
-        public unsafe partial void* SIMDAlloc(uint len);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_SIMDFree")]
-        public unsafe partial void SIMDFree(void* ptr);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
-        [NativeApi(EntryPoint = "SDL_SIMDFree")]
-        public partial void SIMDFree<T0>(Span<T0> ptr) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 344, Column 37 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
@@ -1791,6 +926,31 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 462, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_CalculateGammaRamp")]
         public partial void CalculateGammaRamp(float gamma, Span<ushort> ramp);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 41, Column 29 in build/submodules/SDL-mirror/include/SDL_error.h")]
+        [NativeApi(EntryPoint = "SDL_SetError")]
+        public unsafe partial int SetError(byte* fmt);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 41, Column 29 in build/submodules/SDL-mirror/include/SDL_error.h")]
+        [NativeApi(EntryPoint = "SDL_SetError")]
+        public partial int SetError(Span<byte> fmt);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 42, Column 37 in build/submodules/SDL-mirror/include/SDL_error.h")]
+        [NativeApi(EntryPoint = "SDL_GetError")]
+        public unsafe partial byte* GetError();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 43, Column 30 in build/submodules/SDL-mirror/include/SDL_error.h")]
+        [NativeApi(EntryPoint = "SDL_ClearError")]
+        public partial void ClearError();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 65, Column 29 in build/submodules/SDL-mirror/include/SDL_error.h")]
+        [NativeApi(EntryPoint = "SDL_Error")]
+        public partial int Error(Errorcode code);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 127, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
@@ -2911,6 +2071,1266 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 1262, Column 30 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_DeleteContext")]
         public partial void GLDeleteContext<T0>(Span<T0> context) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 116, Column 29 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_LoadLibrary")]
+        public unsafe partial int VulkanLoadLibrary(byte* path);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 116, Column 29 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_LoadLibrary")]
+        public partial int VulkanLoadLibrary(Span<byte> path);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 124, Column 31 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_GetVkGetInstanceProcAddr")]
+        public unsafe partial void* VulkanGetVkGetInstanceProcAddr();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 132, Column 30 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_UnloadLibrary")]
+        public partial void VulkanUnloadLibrary();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 207, Column 34 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, uint* pCount, byte** pNames);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 207, Column 34 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(Span<Window> window, Span<uint> pCount, byte** pNames);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 241, Column 34 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
+        public unsafe partial SdlBool VulkanCreateSurface(Window* window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 241, Column 34 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
+        public partial SdlBool VulkanCreateSurface(Span<Window> window, Silk.NET.Core.Native.VkHandle instance, Span<Silk.NET.Core.Native.VkNonDispatchableHandle> surface);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 267, Column 30 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_GetDrawableSize")]
+        public unsafe partial void VulkanGetDrawableSize(Window* window, int* w, int* h);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 267, Column 30 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_GetDrawableSize")]
+        public partial void VulkanGetDrawableSize(Span<Window> window, Span<int> w, Span<int> h);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 188, Column 38 in build/submodules/SDL-mirror/include/SDL_platform.h")]
+        [NativeApi(EntryPoint = "SDL_GetPlatform")]
+        public partial string GetPlatformS();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 397, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_getenv")]
+        public partial string Getenv(string name);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 398, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_setenv")]
+        public partial int Setenv(string name, string value, int overwrite);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 458, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_wcslen")]
+        public partial uint Wcslen(string wstr);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 459, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_wcslcpy")]
+        public partial uint Wcslcpy(string dst, string src, uint maxlen);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 460, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_wcslcat")]
+        public partial uint Wcslcat(string dst, string src, uint maxlen);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 461, Column 34 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_wcsdup")]
+        public partial string Wcsdup(string wstr);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 462, Column 34 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_wcsstr")]
+        public partial string Wcsstr(string haystack, string needle);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 464, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_wcscmp")]
+        public partial int Wcscmp(string str1, string str2);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 465, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_wcsncmp")]
+        public partial int Wcsncmp(string str1, string str2, uint maxlen);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 467, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strlen")]
+        public partial uint Strlen(string str);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 468, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strlcpy")]
+        public partial uint Strlcpy(string dst, string src, uint maxlen);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 469, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
+        public partial uint Utf8strlcpy(string dst, string src, uint dst_bytes);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 470, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strlcat")]
+        public partial uint Strlcat(string dst, string src, uint maxlen);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 471, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strdup")]
+        public partial string Strdup(string str);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 472, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strrev")]
+        public partial string Strrev(string str);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 473, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strupr")]
+        public partial string Strupr(string str);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 474, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strlwr")]
+        public partial string Strlwr(string str);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 475, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strchr")]
+        public partial string Strchr(string str, int c);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 476, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strrchr")]
+        public partial string Strrchr(string str, int c);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 477, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strstr")]
+        public partial string Strstr(string haystack, string needle);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strtokr")]
+        public unsafe partial string Strtokr(string s1, string s2, byte** saveptr);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 479, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_utf8strlen")]
+        public partial uint Utf8strlen(string str);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 481, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_itoa")]
+        public partial string Itoa(int value, string str, int radix);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 482, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_uitoa")]
+        public partial string Uitoa(uint value, string str, int radix);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 483, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_ltoa")]
+        public partial string Ltoa(int value, string str, int radix);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 484, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_ultoa")]
+        public partial string Ultoa(uint value, string str, int radix);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 485, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_lltoa")]
+        public partial string Lltoa(long value, string str, int radix);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 486, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_ulltoa")]
+        public partial string Ulltoa(ulong value, string str, int radix);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 488, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_atoi")]
+        public partial int Atoi(string str);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 489, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_atof")]
+        public partial double Atof(string str);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strtol")]
+        public unsafe partial int Strtol(string str, byte** endp, int @base);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strtoul")]
+        public unsafe partial uint Strtoul(string str, byte** endp, int @base);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strtoll")]
+        public unsafe partial long Strtoll(string str, byte** endp, int @base);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strtoull")]
+        public unsafe partial ulong Strtoull(string str, byte** endp, int @base);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strtod")]
+        public unsafe partial double Strtod(string str, byte** endp);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 496, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strcmp")]
+        public partial int Strcmp(string str1, string str2);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 497, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strncmp")]
+        public partial int Strncmp(string str1, string str2, uint maxlen);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strcasecmp")]
+        public partial int Strcasecmp(string str1, string str2);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 499, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_strncasecmp")]
+        public partial int Strncasecmp(string str1, string str2, uint len);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_sscanf")]
+        public partial int Sscanf(string text, string fmt);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 502, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_vsscanf")]
+        public partial int Vsscanf(string text, string fmt, string ap);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 503, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_snprintf")]
+        public partial int Snprintf(string text, uint maxlen, string fmt);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 504, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_vsnprintf")]
+        public partial int Vsnprintf(string text, uint maxlen, string fmt, string ap);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_iconv_open")]
+        public unsafe partial Icon* IconvOpen(string tocode, string fromcode);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 567, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        [NativeApi(EntryPoint = "SDL_iconv_string")]
+        public partial string IconvString(string tocode, string fromcode, string inbuf, uint inbytesleft);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 344, Column 37 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
+        [NativeApi(EntryPoint = "SDL_GetPixelFormatName")]
+        public partial string GetPixelFormatNameS(uint format);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 445, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
+        [NativeApi(EntryPoint = "SDL_GetRGB")]
+        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, string g, string b);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 445, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
+        [NativeApi(EntryPoint = "SDL_GetRGB")]
+        public partial void GetRGB(uint pixel, Span<PixelFormat> format, string r, string g, string b);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
+        [NativeApi(EntryPoint = "SDL_GetRGBA")]
+        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, string b, string a);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
+        [NativeApi(EntryPoint = "SDL_GetRGBA")]
+        public partial void GetRGBA(uint pixel, Span<PixelFormat> format, string r, string g, string b, string a);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 41, Column 29 in build/submodules/SDL-mirror/include/SDL_error.h")]
+        [NativeApi(EntryPoint = "SDL_SetError")]
+        public partial int SetError(string fmt);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 42, Column 37 in build/submodules/SDL-mirror/include/SDL_error.h")]
+        [NativeApi(EntryPoint = "SDL_GetError")]
+        public partial string GetErrorS();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 300, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
+        [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
+        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, string g, string b);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 300, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
+        [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
+        public partial int GetSurfaceColorMod(Span<Surface> surface, string r, string g, string b);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 327, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
+        [NativeApi(EntryPoint = "SDL_GetSurfaceAlphaMod")]
+        public unsafe partial int GetSurfaceAlphaMod(Surface* surface, string alpha);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 327, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
+        [NativeApi(EntryPoint = "SDL_GetSurfaceAlphaMod")]
+        public partial int GetSurfaceAlphaMod(Span<Surface> surface, string alpha);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 272, Column 37 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GetVideoDriver")]
+        public partial string GetVideoDriverS(int index);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 288, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_VideoInit")]
+        public partial int VideoInit(string driver_name);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 308, Column 37 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GetCurrentVideoDriver")]
+        public partial string GetCurrentVideoDriverS();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 324, Column 38 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GetDisplayName")]
+        public partial string GetDisplayNameS(int displayIndex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 514, Column 38 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_CreateWindow")]
+        public unsafe partial Window* CreateWindow(string title, int x, int y, int w, int h, uint flags);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 549, Column 30 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_SetWindowTitle")]
+        public unsafe partial void SetWindowTitle(Window* window, string title);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 549, Column 30 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_SetWindowTitle")]
+        public partial void SetWindowTitle(Span<Window> window, string title);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
+        public unsafe partial string GetWindowTitleS(Window* window);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
+        public partial string GetWindowTitleS(Span<Window> window);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 581, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_SetWindowData")]
+        public unsafe partial void* SetWindowData(Window* window, string name, void* userdata);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 581, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_SetWindowData")]
+        public unsafe partial void* SetWindowData<T0>(Span<Window> window, string name, Span<T0> userdata) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 595, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GetWindowData")]
+        public unsafe partial void* GetWindowData(Window* window, string name);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 595, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GetWindowData")]
+        public unsafe partial void* GetWindowData(Span<Window> window, string name);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 1137, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GL_LoadLibrary")]
+        public partial int GLLoadLibrary(string path);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 1142, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GL_GetProcAddress")]
+        public unsafe partial void* GLGetProcAddress(string proc);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 1155, Column 34 in build/submodules/SDL-mirror/include\\SDL_video.h")]
+        [NativeApi(EntryPoint = "SDL_GL_ExtensionSupported")]
+        public partial SdlBool GLExtensionSupported(string extension);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 116, Column 29 in SDL_vulkan.h")]
+        [NativeApi(EntryPoint = "SDL_Vulkan_LoadLibrary")]
+        public partial int VulkanLoadLibrary(string path);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 121, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_main")]
+        public unsafe partial int Main(int argc, byte** argv);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 131, Column 30 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_SetMainReady")]
+        public partial void SetMainReady();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_RegisterApp")]
+        public unsafe partial int RegisterApp(byte* name, uint style, void* hInst);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_RegisterApp")]
+        public partial int RegisterApp<T0>(Span<byte> name, uint style, Span<T0> hInst) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 139, Column 30 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_UnregisterApp")]
+        public partial void UnregisterApp();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
+        public unsafe partial int WinRTRunApp(void* mainFunction, void* reserved);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
+        public partial int WinRTRunApp<T0, T1>(Span<T0> mainFunction, Span<T1> reserved) where T0 : unmanaged where T1 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
+        public unsafe partial int UIKitRunApp(int argc, byte** argv, void* mainFunction);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
+        public unsafe partial int UIKitRunApp<T0>(int argc, byte** argv, Span<T0> mainFunction) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 52, Column 25 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "__debugbreak")]
+        public partial void Debugbreak();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 125, Column 41 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "SDL_ReportAssertion")]
+        public unsafe partial AssertState ReportAssertion(AssertData* arg0, byte* arg1, byte* arg2, int arg3);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 125, Column 41 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "SDL_ReportAssertion")]
+        public partial AssertState ReportAssertion(Span<AssertData> arg0, Span<byte> arg1, Span<byte> arg2, int arg3);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
+        public unsafe partial void SetAssertionHandler(void* handler, void* userdata);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
+        public partial void SetAssertionHandler<T0, T1>(Span<T0> handler, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 225, Column 46 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "SDL_GetDefaultAssertionHandler")]
+        public unsafe partial void* GetDefaultAssertionHandler();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 242, Column 46 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "SDL_GetAssertionHandler")]
+        public unsafe partial void* GetAssertionHandler(void** puserdata);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 266, Column 48 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "SDL_GetAssertionReport")]
+        public unsafe partial AssertData* GetAssertionReport();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 275, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [NativeApi(EntryPoint = "SDL_ResetAssertionReport")]
+        public partial void ResetAssertionReport();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 98, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicTryLock")]
+        public unsafe partial SdlBool AtomicTryLock(int* @lock);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 98, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicTryLock")]
+        public partial SdlBool AtomicTryLock(Span<int> @lock);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 105, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicLock")]
+        public unsafe partial void AtomicLock(int* @lock);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 105, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicLock")]
+        public partial void AtomicLock(Span<int> @lock);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 112, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicUnlock")]
+        public unsafe partial void AtomicUnlock(int* @lock);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 112, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicUnlock")]
+        public partial void AtomicUnlock(Span<int> @lock);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 155, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_MemoryBarrierReleaseFunction")]
+        public partial void MemoryBarrierReleaseFunction();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 156, Column 30 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_MemoryBarrierAcquireFunction")]
+        public partial void MemoryBarrierAcquireFunction();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 225, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicCAS")]
+        public unsafe partial SdlBool AtomicCAS(AtomicT* a, int oldval, int newval);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 225, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicCAS")]
+        public partial SdlBool AtomicCAS(Span<AtomicT> a, int oldval, int newval);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 232, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicSet")]
+        public unsafe partial int AtomicSet(AtomicT* a, int v);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 232, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicSet")]
+        public partial int AtomicSet(Span<AtomicT> a, int v);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicGet")]
+        public unsafe partial int AtomicGet(AtomicT* a);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicGet")]
+        public partial int AtomicGet(Span<AtomicT> a);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 246, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicAdd")]
+        public unsafe partial int AtomicAdd(AtomicT* a, int v);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 246, Column 29 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicAdd")]
+        public partial int AtomicAdd(Span<AtomicT> a, int v);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 272, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
+        public unsafe partial SdlBool AtomicCASPtr(void** a, void* oldval, void* newval);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 272, Column 34 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
+        public unsafe partial SdlBool AtomicCASPtr<T0, T1, T2>(void** a, Span<T1> oldval, Span<T2> newval) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 279, Column 31 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicSetPtr")]
+        public unsafe partial void* AtomicSetPtr(void** a, void* v);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 279, Column 31 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicSetPtr")]
+        public unsafe partial void* AtomicSetPtr<T0, T1>(void** a, Span<T1> v) where T0 : unmanaged where T1 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 284, Column 31 in build/submodules/SDL-mirror/include/SDL_atomic.h")]
+        [NativeApi(EntryPoint = "SDL_AtomicGetPtr")]
+        public unsafe partial void* AtomicGetPtr(void** a);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 64, Column 36 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CreateMutex")]
+        public unsafe partial Mutex* CreateMutex();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 72, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_LockMutex")]
+        public unsafe partial int LockMutex(Mutex* mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 72, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_LockMutex")]
+        public partial int LockMutex(Span<Mutex> mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 79, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_TryLockMutex")]
+        public unsafe partial int TryLockMutex(Mutex* mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 79, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_TryLockMutex")]
+        public partial int TryLockMutex(Span<Mutex> mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 90, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_UnlockMutex")]
+        public unsafe partial int UnlockMutex(Mutex* mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 90, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_UnlockMutex")]
+        public partial int UnlockMutex(Span<Mutex> mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 95, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_DestroyMutex")]
+        public unsafe partial void DestroyMutex(Mutex* mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 95, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_DestroyMutex")]
+        public partial void DestroyMutex(Span<Mutex> mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 112, Column 34 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CreateSemaphore")]
+        public unsafe partial Semaphore* CreateSemaphore(uint initial_value);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 117, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_DestroySemaphore")]
+        public unsafe partial void DestroySemaphore(Semaphore* sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 117, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_DestroySemaphore")]
+        public partial void DestroySemaphore(Span<Semaphore> sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 124, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemWait")]
+        public unsafe partial int SemWait(Semaphore* sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 124, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemWait")]
+        public partial int SemWait(Span<Semaphore> sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 132, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemTryWait")]
+        public unsafe partial int SemTryWait(Semaphore* sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 132, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemTryWait")]
+        public partial int SemTryWait(Span<Semaphore> sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 143, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemWaitTimeout")]
+        public unsafe partial int SemWaitTimeout(Semaphore* sem, uint ms);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 143, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemWaitTimeout")]
+        public partial int SemWaitTimeout(Span<Semaphore> sem, uint ms);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 150, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemPost")]
+        public unsafe partial int SemPost(Semaphore* sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 150, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemPost")]
+        public partial int SemPost(Span<Semaphore> sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 155, Column 32 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemValue")]
+        public unsafe partial uint SemValue(Semaphore* sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 155, Column 32 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_SemValue")]
+        public partial uint SemValue(Span<Semaphore> sem);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 197, Column 35 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CreateCond")]
+        public unsafe partial Cond* CreateCond();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 202, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_DestroyCond")]
+        public unsafe partial void DestroyCond(Cond* cond);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 202, Column 30 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_DestroyCond")]
+        public partial void DestroyCond(Span<Cond> cond);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 209, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CondSignal")]
+        public unsafe partial int CondSignal(Cond* cond);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 209, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CondSignal")]
+        public partial int CondSignal(Span<Cond> cond);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 216, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CondBroadcast")]
+        public unsafe partial int CondBroadcast(Cond* cond);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 216, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CondBroadcast")]
+        public partial int CondBroadcast(Span<Cond> cond);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 227, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CondWait")]
+        public unsafe partial int CondWait(Cond* cond, Mutex* mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 227, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CondWait")]
+        public partial int CondWait(Span<Cond> cond, Span<Mutex> mutex);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CondWaitTimeout")]
+        public unsafe partial int CondWaitTimeout(Cond* cond, Mutex* mutex, uint ms);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include\\SDL_mutex.h")]
+        [NativeApi(EntryPoint = "SDL_CondWaitTimeout")]
+        public partial int CondWaitTimeout(Span<Cond> cond, Span<Mutex> mutex, uint ms);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_CreateThread")]
+        public unsafe partial Thread* CreateThread(void* fn, byte* name, void* data, void* pfnBeginThread, void* pfnEndThread);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_CreateThread")]
+        public unsafe partial Thread* CreateThread<T0, T1, T2, T3>(Span<T0> fn, Span<byte> name, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
+        public unsafe partial Thread* CreateThreadWithStackSize(void* fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
+        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2, T3>(Span<T0> fn, Span<byte> name, uint stacksize, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 227, Column 37 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_GetThreadName")]
+        public unsafe partial byte* GetThreadName(Thread* thread);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 227, Column 37 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_GetThreadName")]
+        public unsafe partial byte* GetThreadName(Span<Thread> thread);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 232, Column 38 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_ThreadID")]
+        public partial uint ThreadID();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 239, Column 38 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_GetThreadID")]
+        public unsafe partial uint GetThreadID(Thread* thread);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 239, Column 38 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_GetThreadID")]
+        public partial uint GetThreadID(Span<Thread> thread);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 244, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_SetThreadPriority")]
+        public partial int SetThreadPriority(ThreadPriority priority);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_WaitThread")]
+        public unsafe partial void WaitThread(Thread* thread, int* status);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_WaitThread")]
+        public partial void WaitThread(Span<Thread> thread, Span<int> status);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 292, Column 30 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_DetachThread")]
+        public unsafe partial void DetachThread(Thread* thread);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 292, Column 30 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_DetachThread")]
+        public partial void DetachThread(Span<Thread> thread);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 324, Column 35 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_TLSCreate")]
+        public partial uint TLSCreate();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 336, Column 32 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_TLSGet")]
+        public unsafe partial void* TLSGet(uint id);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_TLSSet")]
+        public unsafe partial int TLSSet(uint id, void* value, void* destructor);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
+        [NativeApi(EntryPoint = "SDL_TLSSet")]
+        public partial int TLSSet<T0, T1>(uint id, Span<T0> value, Span<T1> destructor) where T0 : unmanaged where T1 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 251, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_GetNumAudioDrivers")]
+        public partial int GetNumAudioDrivers();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 252, Column 37 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_GetAudioDriver")]
+        public unsafe partial byte* GetAudioDriver(int index);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 263, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioInit")]
+        public unsafe partial int AudioInit(byte* driver_name);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 263, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioInit")]
+        public partial int AudioInit(Span<byte> driver_name);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioQuit")]
+        public partial void AudioQuit();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 271, Column 37 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_GetCurrentAudioDriver")]
+        public unsafe partial byte* GetCurrentAudioDriver();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 318, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_OpenAudio")]
+        public unsafe partial int OpenAudio(AudioSpec* desired, AudioSpec* obtained);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 318, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_OpenAudio")]
+        public partial int OpenAudio(Span<AudioSpec> desired, Span<AudioSpec> obtained);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 344, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_GetNumAudioDevices")]
+        public partial int GetNumAudioDevices(int iscapture);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 359, Column 37 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_GetAudioDeviceName")]
+        public unsafe partial byte* GetAudioDeviceName(int index, int iscapture);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 376, Column 43 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
+        public unsafe partial uint OpenAudioDevice(byte* device, int iscapture, AudioSpec* desired, AudioSpec* obtained, int allowed_changes);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 376, Column 43 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_OpenAudioDevice")]
+        public partial uint OpenAudioDevice(Span<byte> device, int iscapture, Span<AudioSpec> desired, Span<AudioSpec> obtained, int allowed_changes);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 401, Column 41 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_GetAudioStatus")]
+        public partial AudioStatus GetAudioStatus();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 404, Column 1 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_GetAudioDeviceStatus")]
+        public partial AudioStatus GetAudioDeviceStatus(uint dev);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 417, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_PauseAudio")]
+        public partial void PauseAudio(int pause_on);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 418, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_PauseAudioDevice")]
+        public partial void PauseAudioDevice(uint dev, int pause_on);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 474, Column 40 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_LoadWAV_RW")]
+        public unsafe partial AudioSpec* LoadWAVRW(RWops* src, int freesrc, AudioSpec* spec, byte** audio_buf, uint* audio_len);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 474, Column 40 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_LoadWAV_RW")]
+        public unsafe partial AudioSpec* LoadWAVRW(Span<RWops> src, int freesrc, Span<AudioSpec> spec, byte** audio_buf, Span<uint> audio_len);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_FreeWAV")]
+        public unsafe partial void FreeWAV(byte* audio_buf);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_FreeWAV")]
+        public partial void FreeWAV(Span<byte> audio_buf);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_BuildAudioCVT")]
+        public unsafe partial int BuildAudioCVT(AudioCVT* cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_BuildAudioCVT")]
+        public partial int BuildAudioCVT(Span<AudioCVT> cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 521, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_ConvertAudio")]
+        public unsafe partial int ConvertAudio(AudioCVT* cvt);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 521, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_ConvertAudio")]
+        public partial int ConvertAudio(Span<AudioCVT> cvt);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 552, Column 43 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_NewAudioStream")]
+        public unsafe partial AudioStream* NewAudioStream(ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 574, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamPut")]
+        public unsafe partial int AudioStreamPut(AudioStream* stream, void* buf, int len);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 574, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamPut")]
+        public partial int AudioStreamPut<T0>(Span<AudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 591, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
+        public unsafe partial int AudioStreamGet(AudioStream* stream, void* buf, int len);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 591, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
+        public partial int AudioStreamGet<T0>(Span<AudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamAvailable")]
+        public unsafe partial int AudioStreamAvailable(AudioStream* stream);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamAvailable")]
+        public partial int AudioStreamAvailable(Span<AudioStream> stream);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 623, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamFlush")]
+        public unsafe partial int AudioStreamFlush(AudioStream* stream);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 623, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamFlush")]
+        public partial int AudioStreamFlush(Span<AudioStream> stream);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 635, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamClear")]
+        public unsafe partial void AudioStreamClear(AudioStream* stream);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 635, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_AudioStreamClear")]
+        public partial void AudioStreamClear(Span<AudioStream> stream);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 647, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_FreeAudioStream")]
+        public unsafe partial void FreeAudioStream(AudioStream* stream);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 647, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_FreeAudioStream")]
+        public partial void FreeAudioStream(Span<AudioStream> stream);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 657, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_MixAudio")]
+        public unsafe partial void MixAudio(byte* dst, byte* src, uint len, int volume);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 657, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_MixAudio")]
+        public partial void MixAudio(Span<byte> dst, Span<byte> src, uint len, int volume);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 665, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
+        public unsafe partial void MixAudioFormat(byte* dst, byte* src, ushort format, uint len, int volume);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 665, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_MixAudioFormat")]
+        public partial void MixAudioFormat(Span<byte> dst, Span<byte> src, ushort format, uint len, int volume);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 709, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_QueueAudio")]
+        public unsafe partial int QueueAudio(uint dev, void* data, uint len);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 709, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_QueueAudio")]
+        public partial int QueueAudio<T0>(uint dev, Span<T0> data, uint len) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 755, Column 32 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_DequeueAudio")]
+        public unsafe partial uint DequeueAudio(uint dev, void* data, uint len);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 755, Column 32 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_DequeueAudio")]
+        public partial uint DequeueAudio<T0>(uint dev, Span<T0> data, uint len) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 791, Column 32 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_GetQueuedAudioSize")]
+        public partial uint GetQueuedAudioSize(uint dev);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 827, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_ClearQueuedAudio")]
+        public partial void ClearQueuedAudio(uint dev);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 839, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_LockAudio")]
+        public partial void LockAudio();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 840, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_LockAudioDevice")]
+        public partial void LockAudioDevice(uint dev);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 841, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_UnlockAudio")]
+        public partial void UnlockAudio();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 842, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_UnlockAudioDevice")]
+        public partial void UnlockAudioDevice(uint dev);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 848, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_CloseAudio")]
+        public partial void CloseAudio();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 849, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
+        [NativeApi(EntryPoint = "SDL_CloseAudioDevice")]
+        public partial void CloseAudioDevice(uint dev);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 46, Column 29 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
+        [NativeApi(EntryPoint = "SDL_SetClipboardText")]
+        public unsafe partial int SetClipboardText(byte* text);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 46, Column 29 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
+        [NativeApi(EntryPoint = "SDL_SetClipboardText")]
+        public partial int SetClipboardText(Span<byte> text);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 53, Column 32 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
+        [NativeApi(EntryPoint = "SDL_GetClipboardText")]
+        public unsafe partial byte* GetClipboardText();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 60, Column 34 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
+        [NativeApi(EntryPoint = "SDL_HasClipboardText")]
+        public partial SdlBool HasClipboardText();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 119, Column 29 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_GetCPUCount")]
+        public partial int GetCPUCount();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 127, Column 29 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_GetCPUCacheLineSize")]
+        public partial int GetCPUCacheLineSize();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 132, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasRDTSC")]
+        public partial SdlBool HasRDTSC();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 137, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasAltiVec")]
+        public partial SdlBool HasAltiVec();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 142, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasMMX")]
+        public partial SdlBool HasMMX();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 147, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_Has3DNow")]
+        public partial SdlBool Has3DNow();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 152, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasSSE")]
+        public partial SdlBool HasSSE();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 157, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasSSE2")]
+        public partial SdlBool HasSSE2();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 162, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasSSE3")]
+        public partial SdlBool HasSSE3();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 167, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasSSE41")]
+        public partial SdlBool HasSSE41();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 172, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasSSE42")]
+        public partial SdlBool HasSSE42();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 177, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasAVX")]
+        public partial SdlBool HasAVX();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 182, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasAVX2")]
+        public partial SdlBool HasAVX2();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 187, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasAVX512F")]
+        public partial SdlBool HasAVX512F();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 192, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasARMSIMD")]
+        public partial SdlBool HasARMSIMD();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 197, Column 34 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_HasNEON")]
+        public partial SdlBool HasNEON();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 202, Column 29 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_GetSystemRAM")]
+        public partial int GetSystemRAM();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 216, Column 32 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_SIMDGetAlignment")]
+        public partial uint SIMDGetAlignment();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 251, Column 32 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_SIMDAlloc")]
+        public unsafe partial void* SIMDAlloc(uint len);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_SIMDFree")]
+        public unsafe partial void SIMDFree(void* ptr);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 264, Column 30 in build/submodules/SDL-mirror/include\\SDL_cpuinfo.h")]
+        [NativeApi(EntryPoint = "SDL_SIMDFree")]
+        public partial void SIMDFree<T0>(Span<T0> ptr) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 60, Column 38 in build/submodules/SDL-mirror/include/SDL_keyboard.h")]
@@ -5538,234 +5958,29 @@ namespace Silk.NET.SDL
         public partial int GetRevisionNumber();
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 188, Column 38 in build/submodules/SDL-mirror/include/SDL_platform.h")]
-        [NativeApi(EntryPoint = "SDL_GetPlatform")]
-        public partial string GetPlatformS();
+        [NativeName("Src", "Line 96, Column 29 in SDL.h")]
+        [NativeApi(EntryPoint = "SDL_Init")]
+        public partial int Init(uint flags);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 397, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_getenv")]
-        public partial string Getenv(string name);
+        [NativeName("Src", "Line 107, Column 29 in SDL.h")]
+        [NativeApi(EntryPoint = "SDL_InitSubSystem")]
+        public partial int InitSubSystem(uint flags);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 398, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_setenv")]
-        public partial int Setenv(string name, string value, int overwrite);
+        [NativeName("Src", "Line 112, Column 30 in SDL.h")]
+        [NativeApi(EntryPoint = "SDL_QuitSubSystem")]
+        public partial void QuitSubSystem(uint flags);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 458, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcslen")]
-        public partial uint Wcslen(string wstr);
+        [NativeName("Src", "Line 120, Column 32 in SDL.h")]
+        [NativeApi(EntryPoint = "SDL_WasInit")]
+        public partial uint WasInit(uint flags);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 459, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcslcpy")]
-        public partial uint Wcslcpy(string dst, string src, uint maxlen);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 460, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcslcat")]
-        public partial uint Wcslcat(string dst, string src, uint maxlen);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 461, Column 34 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcsdup")]
-        public partial string Wcsdup(string wstr);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 462, Column 34 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcsstr")]
-        public partial string Wcsstr(string haystack, string needle);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 464, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcscmp")]
-        public partial int Wcscmp(string str1, string str2);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 465, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_wcsncmp")]
-        public partial int Wcsncmp(string str1, string str2, uint maxlen);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 467, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strlen")]
-        public partial uint Strlen(string str);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 468, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strlcpy")]
-        public partial uint Strlcpy(string dst, string src, uint maxlen);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 469, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_utf8strlcpy")]
-        public partial uint Utf8strlcpy(string dst, string src, uint dst_bytes);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 470, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strlcat")]
-        public partial uint Strlcat(string dst, string src, uint maxlen);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 471, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strdup")]
-        public partial string Strdup(string str);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 472, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strrev")]
-        public partial string Strrev(string str);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 473, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strupr")]
-        public partial string Strupr(string str);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 474, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strlwr")]
-        public partial string Strlwr(string str);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 475, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strchr")]
-        public partial string Strchr(string str, int c);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 476, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strrchr")]
-        public partial string Strrchr(string str, int c);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 477, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strstr")]
-        public partial string Strstr(string haystack, string needle);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtokr")]
-        public unsafe partial string Strtokr(string s1, string s2, byte** saveptr);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 479, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_utf8strlen")]
-        public partial uint Utf8strlen(string str);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 481, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_itoa")]
-        public partial string Itoa(int value, string str, int radix);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 482, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_uitoa")]
-        public partial string Uitoa(uint value, string str, int radix);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 483, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_ltoa")]
-        public partial string Ltoa(int value, string str, int radix);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 484, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_ultoa")]
-        public partial string Ultoa(uint value, string str, int radix);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 485, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_lltoa")]
-        public partial string Lltoa(long value, string str, int radix);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 486, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_ulltoa")]
-        public partial string Ulltoa(ulong value, string str, int radix);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 488, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_atoi")]
-        public partial int Atoi(string str);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 489, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_atof")]
-        public partial double Atof(string str);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtol")]
-        public unsafe partial int Strtol(string str, byte** endp, int @base);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtoul")]
-        public unsafe partial uint Strtoul(string str, byte** endp, int @base);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtoll")]
-        public unsafe partial long Strtoll(string str, byte** endp, int @base);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtoull")]
-        public unsafe partial ulong Strtoull(string str, byte** endp, int @base);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strtod")]
-        public unsafe partial double Strtod(string str, byte** endp);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 496, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strcmp")]
-        public partial int Strcmp(string str1, string str2);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 497, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strncmp")]
-        public partial int Strncmp(string str1, string str2, uint maxlen);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strcasecmp")]
-        public partial int Strcasecmp(string str1, string str2);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 499, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_strncasecmp")]
-        public partial int Strncasecmp(string str1, string str2, uint len);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_sscanf")]
-        public partial int Sscanf(string text, string fmt);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 502, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_vsscanf")]
-        public partial int Vsscanf(string text, string fmt, string ap);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 503, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_snprintf")]
-        public partial int Snprintf(string text, uint maxlen, string fmt);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 504, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_vsnprintf")]
-        public partial int Vsnprintf(string text, uint maxlen, string fmt, string ap);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public unsafe partial Icon* IconvOpen(string tocode, string fromcode);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 567, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_iconv_string")]
-        public partial string IconvString(string tocode, string fromcode, string inbuf, uint inbytesleft);
+        [NativeName("Src", "Line 126, Column 30 in SDL.h")]
+        [NativeApi(EntryPoint = "SDL_Quit")]
+        public partial void Quit();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
@@ -5786,16 +6001,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 125, Column 41 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_ReportAssertion")]
         public partial AssertState ReportAssertion(Span<AssertData> arg0, string arg1, string arg2, int arg3);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 41, Column 29 in build/submodules/SDL-mirror/include\\SDL_error.h")]
-        [NativeApi(EntryPoint = "SDL_SetError")]
-        public partial int SetError(string fmt);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 42, Column 37 in build/submodules/SDL-mirror/include\\SDL_error.h")]
-        [NativeApi(EntryPoint = "SDL_GetError")]
-        public partial string GetErrorS();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
@@ -5881,131 +6086,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 53, Column 32 in build/submodules/SDL-mirror/include\\SDL_clipboard.h")]
         [NativeApi(EntryPoint = "SDL_GetClipboardText")]
         public partial string GetClipboardTextS();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 344, Column 37 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
-        [NativeApi(EntryPoint = "SDL_GetPixelFormatName")]
-        public partial string GetPixelFormatNameS(uint format);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 445, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
-        [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public unsafe partial void GetRGB(uint pixel, PixelFormat* format, string r, string g, string b);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 445, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
-        [NativeApi(EntryPoint = "SDL_GetRGB")]
-        public partial void GetRGB(uint pixel, Span<PixelFormat> format, string r, string g, string b);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
-        [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public unsafe partial void GetRGBA(uint pixel, PixelFormat* format, string r, string g, string b, string a);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL-mirror/include/SDL_pixels.h")]
-        [NativeApi(EntryPoint = "SDL_GetRGBA")]
-        public partial void GetRGBA(uint pixel, Span<PixelFormat> format, string r, string g, string b, string a);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 300, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public unsafe partial int GetSurfaceColorMod(Surface* surface, string r, string g, string b);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 300, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        [NativeApi(EntryPoint = "SDL_GetSurfaceColorMod")]
-        public partial int GetSurfaceColorMod(Span<Surface> surface, string r, string g, string b);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 327, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        [NativeApi(EntryPoint = "SDL_GetSurfaceAlphaMod")]
-        public unsafe partial int GetSurfaceAlphaMod(Surface* surface, string alpha);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 327, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        [NativeApi(EntryPoint = "SDL_GetSurfaceAlphaMod")]
-        public partial int GetSurfaceAlphaMod(Span<Surface> surface, string alpha);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 272, Column 37 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetVideoDriver")]
-        public partial string GetVideoDriverS(int index);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 288, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_VideoInit")]
-        public partial int VideoInit(string driver_name);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 308, Column 37 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetCurrentVideoDriver")]
-        public partial string GetCurrentVideoDriverS();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 324, Column 38 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetDisplayName")]
-        public partial string GetDisplayNameS(int displayIndex);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 514, Column 38 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_CreateWindow")]
-        public unsafe partial Window* CreateWindow(string title, int x, int y, int w, int h, uint flags);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 549, Column 30 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowTitle")]
-        public unsafe partial void SetWindowTitle(Window* window, string title);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 549, Column 30 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowTitle")]
-        public partial void SetWindowTitle(Span<Window> window, string title);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
-        public unsafe partial string GetWindowTitleS(Window* window);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowTitle")]
-        public partial string GetWindowTitleS(Span<Window> window);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 581, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowData")]
-        public unsafe partial void* SetWindowData(Window* window, string name, void* userdata);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 581, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowData")]
-        public unsafe partial void* SetWindowData<T0>(Span<Window> window, string name, Span<T0> userdata) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 595, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowData")]
-        public unsafe partial void* GetWindowData(Window* window, string name);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 595, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GetWindowData")]
-        public unsafe partial void* GetWindowData(Span<Window> window, string name);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 1137, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_LoadLibrary")]
-        public partial int GLLoadLibrary(string path);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 1142, Column 31 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_GetProcAddress")]
-        public unsafe partial void* GLGetProcAddress(string proc);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 1155, Column 34 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_GL_ExtensionSupported")]
-        public partial SdlBool GLExtensionSupported(string extension);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 77, Column 38 in build/submodules/SDL-mirror/include/SDL_keyboard.h")]
@@ -6343,7 +6423,7 @@ namespace Silk.NET.SDL
         public partial string GetRevisionS();
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe byte* Strtokr(byte* s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
@@ -6354,7 +6434,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe byte* Strtokr(Span<byte> s1, Span<byte> s2, string[] saveptrSa)
         {
             // StringArrayOverloader
@@ -6365,7 +6445,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe int Strtol(byte* str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
@@ -6376,7 +6456,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe int Strtol(Span<byte> str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
@@ -6387,7 +6467,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe uint Strtoul(byte* str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
@@ -6398,7 +6478,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe uint Strtoul(Span<byte> str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
@@ -6409,7 +6489,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe long Strtoll(byte* str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
@@ -6420,7 +6500,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe long Strtoll(Span<byte> str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
@@ -6431,7 +6511,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe ulong Strtoull(byte* str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
@@ -6442,7 +6522,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe ulong Strtoull(Span<byte> str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
@@ -6453,7 +6533,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe double Strtod(byte* str, string[] endpSa)
         {
             // StringArrayOverloader
@@ -6464,7 +6544,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe double Strtod(Span<byte> str, string[] endpSa)
         {
             // StringArrayOverloader
@@ -6475,7 +6555,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, uint* inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
@@ -6488,7 +6568,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
+        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         public unsafe uint Iconv(Span<Icon> cd, string[] inbufSa, Span<uint> inbytesleft, string[] outbufSa, Span<uint> outbytesleft)
         {
             // StringArrayOverloader
@@ -6497,6 +6577,94 @@ namespace Silk.NET.SDL
             var ret = Iconv(cd, inbuf, inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 207, Column 34 in SDL_vulkan.h")]
+        public unsafe SdlBool VulkanGetInstanceExtensions(Window* window, uint* pCount, string[] pNamesSa)
+        {
+            // StringArrayOverloader
+            var pNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(pNamesSa);
+            var ret = VulkanGetInstanceExtensions(window, pCount, pNames);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) pNames, pNamesSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 207, Column 34 in SDL_vulkan.h")]
+        public unsafe SdlBool VulkanGetInstanceExtensions(Span<Window> window, Span<uint> pCount, string[] pNamesSa)
+        {
+            // StringArrayOverloader
+            var pNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(pNamesSa);
+            var ret = VulkanGetInstanceExtensions(window, pCount, pNames);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) pNames, pNamesSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public unsafe string Strtokr(string s1, string s2, string[] saveptrSa)
+        {
+            // StringArrayOverloader
+            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var ret = Strtokr(s1, s2, saveptr);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public unsafe int Strtol(string str, string[] endpSa, int @base)
+        {
+            // StringArrayOverloader
+            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var ret = Strtol(str, endp, @base);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public unsafe uint Strtoul(string str, string[] endpSa, int @base)
+        {
+            // StringArrayOverloader
+            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var ret = Strtoul(str, endp, @base);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public unsafe long Strtoll(string str, string[] endpSa, int @base)
+        {
+            // StringArrayOverloader
+            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var ret = Strtoll(str, endp, @base);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public unsafe ulong Strtoull(string str, string[] endpSa, int @base)
+        {
+            // StringArrayOverloader
+            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var ret = Strtoull(str, endp, @base);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public unsafe double Strtod(string str, string[] endpSa)
+        {
+            // StringArrayOverloader
+            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var ret = Strtod(str, endp);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
             return ret;
         }
 
@@ -6555,74 +6723,8 @@ namespace Silk.NET.SDL
             return ret;
         }
 
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 478, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        public unsafe string Strtokr(string s1, string s2, string[] saveptrSa)
-        {
-            // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
-            var ret = Strtokr(s1, s2, saveptr);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
-            return ret;
-        }
 
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 490, Column 30 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        public unsafe int Strtol(string str, string[] endpSa, int @base)
-        {
-            // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
-            var ret = Strtol(str, endp, @base);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
-            return ret;
-        }
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 491, Column 39 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        public unsafe uint Strtoul(string str, string[] endpSa, int @base)
-        {
-            // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
-            var ret = Strtoul(str, endp, @base);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
-            return ret;
-        }
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 492, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        public unsafe long Strtoll(string str, string[] endpSa, int @base)
-        {
-            // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
-            var ret = Strtoll(str, endp, @base);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
-            return ret;
-        }
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 493, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        public unsafe ulong Strtoull(string str, string[] endpSa, int @base)
-        {
-            // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
-            var ret = Strtoull(str, endp, @base);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
-            return ret;
-        }
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 494, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        public unsafe double Strtod(string str, string[] endpSa)
-        {
-            // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
-            var ret = Strtod(str, endp);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
-            return ret;
-        }
-
-
-        public SDL(INativeContext ctx)
+        public Sdl(INativeContext ctx)
             : base(ctx)
         {
         }

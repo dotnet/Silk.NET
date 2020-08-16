@@ -9,7 +9,6 @@ using Silk.NET.GLFW;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Glfw;
 
-[assembly: InternalsVisibleTo("Silk.NET.Input.Glfw")]
 [assembly: WindowPlatform(typeof(GlfwPlatform))]
 
 namespace Silk.NET.Windowing.Glfw
@@ -27,10 +26,12 @@ namespace Silk.NET.Windowing.Glfw
         {
             get
             {
-                try {
+                try
+                {
                     GLFW.Glfw.GetApi(); // activate the class so we can determine if we can activate the class
                 }
-                catch {
+                catch
+                {
                     return false;
                 }
 

@@ -34,6 +34,14 @@ namespace Silk.NET.Input
         CursorMode CursorMode { get; set; }
 
         /// <summary>
+        /// Determines whether the cursor is locked to the bounds of the view/window of this input context.
+        /// </summary>
+        /// <remarks>
+        /// Only supported by SDL, will have no effect on GLFW.
+        /// </remarks>
+        bool IsConfined { get; set; }
+
+        /// <summary>
         /// Hotspot on the X axis.
         /// </summary>
         /// <remarks>

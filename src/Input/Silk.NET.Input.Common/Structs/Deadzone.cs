@@ -16,7 +16,7 @@ namespace Silk.NET.Input
         /// The size of the deadzone to use.
         /// </summary>
         public float Value { get; }
-        
+
         /// <summary>
         /// The deadzone method to use.
         /// </summary>

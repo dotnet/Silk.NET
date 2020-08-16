@@ -15,6 +15,8 @@ namespace BlankWindow
 {
     internal class Program
     {
+        public const bool Quieter = false;
+        
         public static IWindow window;
 
         private static void Main()
@@ -25,6 +27,7 @@ namespace BlankWindow
 
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond = 60.0;
+            options.VSync = true;
             // options.VSync = VSyncMode.On;
 
             // options.WindowState = WindowState.Fullscreen;
@@ -102,7 +105,10 @@ namespace BlankWindow
 
         public static void Render(double delta)
         {
-            Console.WriteLine($"Render {1 / delta}");
+            if (!Quieter)
+            {
+                Console.WriteLine($"Render {1 / delta}");
+            }
         }
 
         public static void Update(double delta)
@@ -113,7 +119,11 @@ namespace BlankWindow
             //    _rsz = false;
             //}
 
-            Console.WriteLine($"Update {1 / delta}");
+            if (!Quieter)
+            {
+                Console.WriteLine($"Update {1 / delta}");
+            }
+
             //Debug.WriteLine(window.VSync);
         }
     }

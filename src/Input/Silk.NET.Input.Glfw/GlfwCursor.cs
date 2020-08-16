@@ -15,15 +15,17 @@ namespace Silk.NET.Input.Glfw
     /// </summary>
     internal class GlfwCursor : ICursor, IDisposable
     {
-        private static readonly Dictionary<StandardCursor, CursorShape> _cursorShapes = new Dictionary<StandardCursor, CursorShape>
-        {
-            { StandardCursor.Arrow, CursorShape.Arrow },
-            { StandardCursor.IBeam, CursorShape.IBeam },
-            { StandardCursor.Crosshair, CursorShape.Crosshair },
-            { StandardCursor.Hand, CursorShape.Hand },
-            { StandardCursor.HResize, CursorShape.HResize },
-            { StandardCursor.VResize, CursorShape.VResize },
-        };
+        private static readonly Dictionary<StandardCursor, CursorShape> _cursorShapes =
+            new Dictionary<StandardCursor, CursorShape>
+            {
+                {StandardCursor.Arrow, CursorShape.Arrow},
+                {StandardCursor.IBeam, CursorShape.IBeam},
+                {StandardCursor.Crosshair, CursorShape.Crosshair},
+                {StandardCursor.Hand, CursorShape.Hand},
+                {StandardCursor.HResize, CursorShape.HResize},
+                {StandardCursor.VResize, CursorShape.VResize},
+            };
+
         private const int BytesPerCursorPixel = 4;
 
         private readonly unsafe WindowHandle* _handle;
@@ -77,7 +79,7 @@ namespace Silk.NET.Input.Glfw
                 if (_standardCursor != value)
                 {
                     _standardCursor = value;
-                    UpdateStandardCursor();                    
+                    UpdateStandardCursor();
                 }
             }
         }
@@ -85,15 +87,23 @@ namespace Silk.NET.Input.Glfw
         /// <inheritdoc />
         public unsafe CursorMode CursorMode
         {
-            get => GetCursorMode(
-                (CursorModeValue)GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.Cursor),
+            get => GetCursorMode
+            (
+                (CursorModeValue) GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.Cursor),
                 GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.RawMouseMotion) != 0
             );
             set
             {
-                GlfwProvider.GLFW.Value.SetInputMode(_handle, CursorStateAttribute.Cursor, GetCursorMode(value, out bool raw));
+                GlfwProvider.GLFW.Value.SetInputMode
+                    (_handle, CursorStateAttribute.Cursor, GetCursorMode(value, out bool raw));
                 GlfwProvider.GLFW.Value.SetInputMode(_handle, CursorStateAttribute.RawMouseMotion, raw);
             }
+        }
+
+        public bool IsConfined
+        {
+            get => false;
+            set { }
         }
 
         /// <inheritdoc />
@@ -109,7 +119,7 @@ namespace Silk.NET.Input.Glfw
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public int HotspotY
         {
@@ -123,7 +133,7 @@ namespace Silk.NET.Input.Glfw
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public RawImage Image
         {
@@ -215,7 +225,8 @@ namespace Silk.NET.Input.Glfw
                 return null;
 
             if (_image.Pixels.Length % BytesPerCursorPixel != 0)
-                throw new ArgumentOutOfRangeException($"Pixel data must provide a multiple of {BytesPerCursorPixel} bytes.");
+                throw new ArgumentOutOfRangeException
+                    ($"Pixel data must provide a multiple of {BytesPerCursorPixel} bytes.");
 
             // the user might setup the values step-by-step, so use the
             // default cursor as long as the custom cursor state is not valid

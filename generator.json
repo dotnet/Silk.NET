@@ -513,7 +513,8 @@
         {
             "profileName": "SDL",
             "sources": [
-                "build/submodules/SDL-mirror/include/SDL.h"
+                "build/submodules/SDL-mirror/include/SDL.h",
+                "build/submodules/SDL-mirror/include/SDL_vulkan.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -550,10 +551,13 @@
                     "build/submodules/SDL-mirror/include/*.h"
                 ],
                 "classes": {
-                    "SDL.h": "[Core]SDL"
+                    "SDL.h": "[Core]Sdl",
+                    "SDL_vulkan.h": "[Core]Sdl"
                 }
             },
             "exclude": [
+                "VkSurfaceKHR",
+                "VkInstance"
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
@@ -569,7 +573,8 @@
             },
             "bakery": {
                 "profileNames": [
-                    "SDL"
+                    "SDL",
+                    "SDL_vulkan"
                 ]
             },
             "output": {
@@ -581,11 +586,11 @@
             "namespace": "Silk.NET.SDL",
             "extensionsNamespace": "Silk.NET.SDL.Extensions",
             "nameContainer": {
-                "linux-x64": "libSDL2-2.0.so.0",
+                "linux-x64": "libSDL2-2.0.so",
                 "win-x64": "SDL2.dll",
                 "win-x86": "SDL2.dll",
-                "osx-x64": "libSDL2-2.0.0.dylib",
-                "android": "libSDL2-2.0.so.0",
+                "osx-x64": "libSDL2-2.0.dylib",
+                "android": "libSDL2-2.0.so",
                 "iOS": "__Internal",
                 "className": "SDLLibraryNameContainer"
             },
@@ -594,7 +599,9 @@
                     "$typemapPrecedesInjections": "true",
                     "WindowShapeMode": "WindowShapeModeVal",
                     "SDL_bool": "SdlBool",
-                    "SDL_RWops": "RWops"
+                    "SDL_RWops": "RWops",
+                    "VkInstance": "Silk.NET.Core.Native.VkHandle",
+                    "VkSurfaceKHR": "Silk.NET.Core.Native.VkNonDispatchableHandle"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

@@ -140,7 +140,11 @@ namespace Silk.NET.BuildTools.Cpp
             {
                 foreach (var decl in decls)
                 {
-                    if (task.ClangOpts.Traverse.Length == 0)
+                    if (decl.Location.IsFromMainFile)
+                    {
+                        Visit(decl);
+                    }
+                    else if (task.ClangOpts.Traverse.Length == 0)
                     {
                         if (!decl.Location.IsFromMainFile)
                         {

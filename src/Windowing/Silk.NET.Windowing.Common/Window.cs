@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Silk.NET.Windowing.Internals;
 
@@ -15,7 +16,12 @@ namespace Silk.NET.Windowing
     /// </summary>
     public static class Window
     {
+        private const string GlfwBackendNamespace = "Silk.NET.Windowing.Glfw";
+        private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
+        private const string GlfwBackendName = "GlfwPlatform";
+        private const string SdlBackendName = "SdlPlatform";
         public static IReadOnlyList<IWindowPlatform> Platforms { get; } = new List<IWindowPlatform>();
+
         internal static Exception NoPlatformException => new PlatformNotSupportedException
         (
             "Couldn't find a suitable window platform. " +
@@ -25,8 +31,8 @@ namespace Silk.NET.Windowing
         static Window()
         {
             // Try add the first-party backends
-            TryAdd("Silk.NET.Windowing.Glfw");
-            TryAdd("Silk.NET.Windowing.Glvf");
+            TryAdd(GlfwBackendNamespace);
+            TryAdd(SdlBackendNamespace);
         }
 
         /// <summary>
@@ -65,7 +71,7 @@ namespace Silk.NET.Windowing
                 return true;
             }
         }
-        
+
         /// <summary>
         /// Create a window on the current platform.
         /// </summary>
@@ -77,7 +83,7 @@ namespace Silk.NET.Windowing
             {
                 throw NoPlatformException;
             }
-            
+
             if (IsViewOnly)
             {
                 throw new NotSupportedException
@@ -132,7 +138,7 @@ namespace Silk.NET.Windowing
                 }
             }
         }
-        
+
         // Registrar functions
 
         /// <summary>
@@ -146,12 +152,44 @@ namespace Silk.NET.Windowing
         }
 
         /// <summary>
+        /// If added, moves the GLFW platform to the top of the platform list, to ensure that <see cref="Window"/>
+        /// functions check/use the provided platform first.
+        /// </summary>
+        public static void PrioritizeGlfw()
+        {
+            var platform = Platforms.FirstOrDefault
+                (x => x.GetType().FullName == GlfwBackendNamespace + "." + GlfwBackendName);
+            if (platform is null)
+            {
+                return;
+            }
+
+            Prioritize(platform);
+        }
+
+        /// <summary>
+        /// If added, moves the SDL platform to the top of the platform list, to ensure that <see cref="Window"/>
+        /// functions check/use the provided platform first.
+        /// </summary>
+        public static void PrioritizeSdl()
+        {
+            var platform = Platforms.FirstOrDefault
+                (x => x.GetType().FullName == SdlBackendNamespace + "." + SdlBackendName);
+            if (platform is null)
+            {
+                return;
+            }
+
+            Prioritize(platform);
+        }
+
+        /// <summary>
         /// Adds this window platform to the platform list. Shouldn't be used unless writing your own windowing backend.
         /// </summary>
         /// <param name="platform">The platform to add.</param>
         public static void Add(IWindowPlatform platform)
         {
-            if (!((List<IWindowPlatform>)Platforms).Contains(platform))
+            if (!((List<IWindowPlatform>) Platforms).Contains(platform))
             {
                 ((List<IWindowPlatform>) Platforms).Add(platform);
             }
@@ -184,7 +222,7 @@ namespace Silk.NET.Windowing
                 {
                     return false;
                 }
-                
+
                 Add((IWindowPlatform) Activator.CreateInstance(attr.Type, true));
                 return true;
             }

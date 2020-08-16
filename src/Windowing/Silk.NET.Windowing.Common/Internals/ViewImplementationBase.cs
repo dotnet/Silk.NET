@@ -23,10 +23,10 @@ namespace Silk.NET.Windowing.Internals
     internal abstract class ViewImplementationBase : IView
     {
         private const int InitialInvocationRental = 2;
-        
+
         // Cache the options for when the window is closed
-        private ViewOptions _optionsCache;
-        
+        protected ViewOptions _optionsCache;
+
         // Game loop fields
         private readonly Stopwatch _renderStopwatch = new Stopwatch();
         private readonly Stopwatch _updateStopwatch = new Stopwatch();
@@ -49,14 +49,14 @@ namespace Silk.NET.Windowing.Internals
         protected ViewImplementationBase(ViewOptions opts)
         {
             _optionsCache = opts;
-            _renderPeriod = 1 / opts.FramesPerSecond;
-            _updatePeriod = 1 / opts.UpdatesPerSecond;
+            FramesPerSecond = opts.FramesPerSecond;
+            UpdatesPerSecond = opts.UpdatesPerSecond;
         }
-        
+
         // Property bases - these have extra functionality baked into their getters and setters
         protected abstract Size CoreSize { get; }
         protected abstract IntPtr CoreHandle { get; }
-        
+
         // Function bases - again extra functionality on top
         protected abstract void CoreInitialize(ViewOptions opts);
         protected abstract void CoreReset();
@@ -76,7 +76,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract void Close();
         protected abstract void RegisterCallbacks();
         protected abstract void UnregisterCallbacks();
-        
+
         // Events
         public abstract event Action<Size>? Resize;
         public abstract event Action<Size>? FramebufferResize;
@@ -85,7 +85,7 @@ namespace Silk.NET.Windowing.Internals
         public event Action? Load;
         public event Action<double>? Update;
         public event Action<double>? Render;
-        
+
         // Lifetime controls
         public void Initialize()
         {
@@ -101,8 +101,12 @@ namespace Silk.NET.Windowing.Internals
             _updateStopwatch.Start();
             _lifetimeStopwatch.Start();
             IsInitialized = true;
+            IsEventDriven = _optionsCache.IsEventDriven;
+            GLContext?.MakeCurrent();
+            _swapIntervalChanged = true;
             Load?.Invoke();
         }
+
         public void Reset()
         {
             _renderStopwatch.Reset();
@@ -114,10 +118,20 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Game loop controls
-        public double FramesPerSecond { get => 1 / _renderPeriod; set => _renderPeriod = 1 / value; }
-        public double UpdatesPerSecond { get => 1 / _updatePeriod; set => _updatePeriod = 1 / value; }
+        public double FramesPerSecond
+        {
+            get => _renderPeriod <= double.Epsilon ? 0 : 1 / _renderPeriod;
+            set => _renderPeriod = value <= double.Epsilon ? 0 : 1 / value;
+        }
+
+        public double UpdatesPerSecond
+        {
+            get => _updatePeriod <= double.Epsilon ? 0 : 1 / _updatePeriod;
+            set => _updatePeriod = value <= double.Epsilon ? 0 : 1 / value;
+        }
+
         public bool ShouldSwapAutomatically => _optionsCache.ShouldSwapAutomatically /* TODO set? */;
-        
+
         // Cache controls for derived classes
         protected VideoMode CachedVideoMode
         {
@@ -144,19 +158,19 @@ namespace Silk.NET.Windowing.Internals
                 {
                     GLContext.MakeCurrent();
                 }
-                
+
                 if (_swapIntervalChanged)
                 {
                     GLContext?.SwapInterval(VSync ? 1 : 0);
                     _swapIntervalChanged = false;
                 }
-                
+
                 Render?.Invoke(_renderStopwatch.Elapsed.TotalSeconds);
                 if (ShouldSwapAutomatically)
                 {
                     GLContext?.SwapBuffers();
                 }
-                
+
                 _renderStopwatch.Restart();
             }
         }
@@ -170,7 +184,7 @@ namespace Silk.NET.Windowing.Internals
                 _updateStopwatch.Restart();
             }
         }
-        
+
         // Misc properties
         protected bool IsInitialized { get; private set; }
         public Size Size => IsInitialized ? CoreSize : default;
@@ -188,9 +202,9 @@ namespace Silk.NET.Windowing.Internals
                 _optionsCache.VSync = value;
             }
         }
-        
+
         // Misc implementations
-        [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
         public Point PointToFramebuffer(Point point)
         {
             // TODO this monstrosity will be gone once Silk.NET.Maths is in
@@ -255,7 +269,7 @@ namespace Silk.NET.Windowing.Internals
             {
                 return;
             }
-            
+
             var completed = 0;
             for (var i = 0; i < _rented + completed && i < _pendingInvocations.Length; i++)
             {

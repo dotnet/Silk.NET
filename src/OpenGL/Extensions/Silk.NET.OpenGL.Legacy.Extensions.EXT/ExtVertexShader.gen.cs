@@ -314,7 +314,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
 
         [NativeApi(EntryPoint = "glVariantubvEXT")]
-        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] string addr);
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] string addr);
 
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
         public unsafe partial void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
