@@ -73,8 +73,8 @@ namespace Silk.NET.SilkTouch
                         @false = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0));
                     }
 
-                    @true = CastExpression(IdentifierName(ctx.LoadTypes[index].ToDisplayString()), @true);
-                    @false = CastExpression(IdentifierName(ctx.LoadTypes[index].ToDisplayString()), @false);
+                    @true = CastExpression(IdentifierName(ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), @true);
+                    @false = CastExpression(IdentifierName(ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), @false);
 
                     var name = $"bmp{ctx.Slot}{index}";
                     ctx.DeclareVariable(ctx.LoadTypes[index], name);

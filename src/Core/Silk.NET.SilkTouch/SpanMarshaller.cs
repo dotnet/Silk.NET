@@ -66,7 +66,7 @@ namespace Silk.NET.SilkTouch
                 (
                     VariableDeclaration
                     (
-                        IdentifierName(ctx.LoadTypes[index].ToDisplayString()),
+                        IdentifierName(ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
                         SingletonSeparatedList
                             (VariableDeclarator(Identifier(name), null, EqualsValueClause(oldParameterExpressions[index])))
                     ), block

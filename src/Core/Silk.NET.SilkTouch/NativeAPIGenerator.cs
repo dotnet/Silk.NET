@@ -140,7 +140,7 @@ namespace Silk.NET.SilkTouch
                                 FunctionPointerType
                                 (
                                     Identifier(GetCallingConvention(callingConvention)),
-                                    SeparatedList(ctx.LoadTypes.Select(x => Parameter(Identifier(x.ToDisplayString()))))
+                                    SeparatedList(ctx.LoadTypes.Select(x => Parameter(Identifier(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))))
                                 ), InvocationExpression
                                 (
                                     IdentifierName("Load"), ArgumentList

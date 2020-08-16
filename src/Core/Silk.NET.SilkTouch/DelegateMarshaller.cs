@@ -119,7 +119,7 @@ namespace Silk.NET.SilkTouch
                                             TypeArgumentList
                                             (
                                                 SingletonSeparatedList
-                                                    ((TypeSyntax) IdentifierName(oldReturnLoadType.ToDisplayString()))
+                                                    ((TypeSyntax) IdentifierName(oldReturnLoadType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))
                                             )
                                         )
                                     ), ArgumentList(SingletonSeparatedList(Argument(ctx.ResultExpression)))

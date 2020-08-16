@@ -113,7 +113,7 @@ namespace Silk.NET.SilkTouch
                             index, name,
                             CastExpression
                             (
-                                IdentifierName(charType.ToDisplayString()),
+                                IdentifierName(charType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
                                 InvocationExpression
                                 (
                                     _stringToPtr[marshalAs],
@@ -146,7 +146,7 @@ namespace Silk.NET.SilkTouch
                             index, name,
                             CastExpression
                             (
-                                IdentifierName(charType.ToDisplayString()),
+                                IdentifierName(charType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
                                 InvocationExpression
                                 (
                                     _allocString[marshalAs],
@@ -203,7 +203,7 @@ namespace Silk.NET.SilkTouch
                                             Argument
                                             (
                                                 CastExpression
-                                                    (IdentifierName(intptr.ToDisplayString()), IdentifierName(name))
+                                                    (IdentifierName(intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), IdentifierName(name))
                                             )
                                         )
                                     )
@@ -225,7 +225,7 @@ namespace Silk.NET.SilkTouch
                                 SingletonSeparatedList
                                 (
                                     Argument
-                                        (CastExpression(IdentifierName(intptr.ToDisplayString()), IdentifierName(name)))
+                                        (CastExpression(IdentifierName(intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), IdentifierName(name)))
                                 )
                             )
                         )

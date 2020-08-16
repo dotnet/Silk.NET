@@ -103,7 +103,7 @@ namespace Silk.NET.SilkTouch
                     LocalDeclarationStatement
                     (
                         VariableDeclaration
-                            (IdentifierName(type.ToDisplayString()), SingletonSeparatedList(VariableDeclarator(name)))
+                            (IdentifierName(type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), SingletonSeparatedList(VariableDeclarator(name)))
                     )
                 );
             }
