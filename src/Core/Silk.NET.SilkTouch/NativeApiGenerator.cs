@@ -23,7 +23,6 @@ namespace Silk.NET.SilkTouch
     [Generator]
     public partial class NativeApiGenerator : ISourceGenerator
     {
-        private static volatile int _slot = 0;
         public void Initialize(InitializationContext context)
         {
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
@@ -99,6 +98,7 @@ namespace Silk.NET.SilkTouch
 
             var newMembers = new List<MemberDeclarationSyntax>();
 
+            int slot = 0;
             var methods = classDeclaration.Members.Where
                     (x => x.IsKind(SyntaxKind.MethodDeclaration))
                 .Select(x => (MethodDeclarationSyntax) x)
@@ -201,7 +201,7 @@ namespace Silk.NET.SilkTouch
                 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                var slot = Interlocked.Increment(ref _slot);
+                slot++;
 
                var context = new MarshalContext(compilation, symbol, slot);
 
@@ -239,6 +239,18 @@ namespace Silk.NET.SilkTouch
                     method
                 );
             }
+
+            newMembers.Add
+            (
+                MethodDeclaration
+                (
+                    List<AttributeListSyntax>(),
+                    TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
+                    PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGetSlotCount"),
+                    TypeParameterList(), ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
+                    ArrowExpressionClause(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slot)))
+                )
+            );
                            
             if (newMembers.Count == 0)
                 return null;
