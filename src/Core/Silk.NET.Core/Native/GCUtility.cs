@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
@@ -11,30 +12,48 @@ namespace Silk.NET.Core.Native
 {
     public class GcUtility
     {
-        public Dictionary<int, List<GCHandle>> Pins { get; } = new Dictionary<int, List<GCHandle>>();
+        public ConcurrentDictionary<int, List<GCHandle>> Pins { get; }
 
+        public GcUtility(int concurrencyLevel, int slotCount)
+        {
+            Pins = new ConcurrentDictionary<int, List<GCHandle>>(concurrencyLevel, slotCount);
+        }
+        
         public void PinUntilNextCall(object obj, int slot)
         {
-            if (!Pins.ContainsKey(slot))
-            {
-                Pins[slot] = new List<GCHandle>();
-            }
-
-            Pins[slot].Clear();
-            Pins[slot].Add(GCHandle.Alloc(obj));
+            Pins.AddOrUpdate
+            (
+                slot, i =>
+                {
+                    var list = new List<GCHandle>();
+                    list.Add(GCHandle.Alloc(obj));
+                    return list;
+                }, (i, list) =>
+                {
+                    list.Clear();
+                    list.Add(GCHandle.Alloc(obj));
+                    return list;
+                }
+            );
         }
 
         public void Pin(object obj, int slot = -1)
         {
-            if (!Pins.ContainsKey(slot))
-            {
-                Pins[slot] = new List<GCHandle>();
-            }
-
-            Pins[slot].Add(GCHandle.Alloc(obj));
+            Pins.AddOrUpdate
+            (
+                slot, i =>
+                {
+                    var list = new List<GCHandle>();
+                    list.Add(GCHandle.Alloc(obj));
+                    return list;
+                }, (i, list) =>
+                {
+                    list.Add(GCHandle.Alloc(obj));
+                    return list;
+                }
+            );
         }
 
-        [SuppressMessage("ReSharper", "ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator")]
         public void Unpin(object obj, int? slot = null)
         {
             if (slot == null)

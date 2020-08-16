@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -99,7 +100,7 @@ namespace Silk.NET.SilkTouch
 
             var newMembers = new List<MemberDeclarationSyntax>();
 
-            int slot = 0;
+            int slotCount = 0;
             var methods = classDeclaration.Members.Where
                     (x => x.IsKind(SyntaxKind.MethodDeclaration))
                 .Select(x => (MethodDeclarationSyntax) x)
@@ -202,9 +203,9 @@ namespace Silk.NET.SilkTouch
                 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                slot++;
+                slotCount++;
 
-               var context = new MarshalContext(compilation, symbol, slot);
+               var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slotCount);
 
                marshalBuilder.Run(context);
                context.ApplyPostProcessing();
@@ -241,28 +242,46 @@ namespace Silk.NET.SilkTouch
                 );
             }
 
-            if (!classSymbol.GetMembers().Any(x => x.Kind == SymbolKind.Method && x.Name == "CoreGetSlotCount") && !processedSymbols.Contains(classSymbol))
+            if (slotCount > 0)
             {
-                newMembers.Add
-                (
-                    MethodDeclaration
+                if (!processedSymbols.Contains(classSymbol))
+                {
+                    newMembers.Add
                     (
-                        List<AttributeListSyntax>(),
-                        TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
-                        PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGetSlotCount"), null,
-                        ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
-                        ArrowExpressionClause(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slot))),
-                        Token(SyntaxKind.SemicolonToken)
-                    )
-                );
-            }               
+                        MethodDeclaration
+                        (
+                            List<AttributeListSyntax>(),
+                            TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
+                            PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGetSlotCount"), null,
+                            ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
+                            ArrowExpressionClause
+                            (
+                                BinaryExpression
+                                (
+                                    SyntaxKind.AddExpression,
+                                    LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slotCount)),
+                                    InvocationExpression
+                                    (
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression, BaseExpression(),
+                                            IdentifierName("CoreGetSlotCount")
+                                        )
+                                    )
+                                )
+                            ), Token(SyntaxKind.SemicolonToken)
+                        )
+                    );
+                }
+                processedSymbols.Add(classSymbol);
+            }
+
             if (newMembers.Count == 0)
                 return null;
 
             var newNamespace = namespaceDeclaration.WithMembers
                 (List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers)).WithAttributeLists(List<AttributeListSyntax>())})).WithUsings(compilationUnit.Usings);
-
-            processedSymbols.Add(classSymbol);
+            
             return newNamespace.NormalizeWhitespace().ToFullString();
         }
 

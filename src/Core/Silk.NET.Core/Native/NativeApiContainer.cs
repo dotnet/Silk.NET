@@ -4,14 +4,17 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 using Silk.NET.Core.Contexts;
 
 namespace Silk.NET.Core.Native
 {
     public abstract class NativeApiContainer : IDisposable
     {
+        private const int ConcurrencyLevel = 1;
         private readonly INativeContext _ctx;
-        private readonly IntPtr[] _entryPoints;
+        private readonly ConcurrentDictionary<int, IntPtr> _entryPoints;
 
         protected NativeApiContainer(INativeContext ctx)
         {
@@ -19,8 +22,8 @@ namespace Silk.NET.Core.Native
             // Virtual member call should be fine unless we have a rogue implementer
             // The only implementer of this function should be SilkTouch
             // ReSharper disable once VirtualMemberCallInConstructor
-            _entryPoints = new IntPtr[CoreGetSlotCount()];
-            if (_entryPoints.Length == 0)
+            var slotCount = CoreGetSlotCount();
+            if (slotCount == 0)
             {
                 throw new InvalidOperationException
                 (
@@ -28,9 +31,11 @@ namespace Silk.NET.Core.Native
                     "This could be because of a SilkTouch bug, or because you're not using SilkTouch at all."
                 );
             }
+            _entryPoints = new ConcurrentDictionary<int, IntPtr>(ConcurrencyLevel, slotCount);
+            GcUtility = new GcUtility(ConcurrencyLevel, slotCount);
         }
 
-        public GcUtility GcUtility { get; } = new GcUtility();
+        public GcUtility GcUtility { get; }
 
         public void Dispose()
         {
@@ -56,28 +61,25 @@ namespace Silk.NET.Core.Native
 
         public void PurgeEntryPoints()
         {
-            for (var i = 0; i < _entryPoints.Length; i++)
-            {
-                _entryPoints[i] = IntPtr.Zero;
-            }
+            _entryPoints.Clear();
         }
 
         protected IntPtr Load(int slot, string entryPoint)
         {
-            var ptr = _entryPoints[slot];
-            if (ptr != IntPtr.Zero)
+            return _entryPoints.GetOrAdd(slot, i =>
             {
-                return ptr;
-            }
+                var v = _ctx.GetProcAddress(entryPoint);
 
-            ptr = _ctx.GetProcAddress(entryPoint);
-            if (ptr == IntPtr.Zero)
-            {
-                throw new EntryPointNotFoundException($"Native symbol \"{entryPoint}\" not found (slot {slot})");
-            }
+                if (v == IntPtr.Zero)
+                    ThrowEntryPointNotFound(entryPoint, i);
 
-            _entryPoints[slot] = ptr;
-            return ptr;
+                return v;
+            });
+        }
+
+        private void ThrowEntryPointNotFound(string entryPoint, int slot)
+        {
+            throw new EntryPointNotFoundException($"Native symbol \"{entryPoint}\" not found (slot {slot})");
         }
     }
 }
