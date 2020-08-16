@@ -20,7 +20,7 @@ namespace Silk.NET.SilkTouch
             for (int index = 0; index < ctx.MethodSymbol.Parameters.Length; index++)
             {
                 var symbol = ctx.MethodSymbol.Parameters[index];
-                if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.None)
+                if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.None && !ctx.MethodSymbol.Parameters[index].Type.IsReferenceType)
                 {
                     var name = $"dp{ctx.Slot}{index}";
                     ctx.DeclareVariable(symbol.Type, name);
@@ -28,7 +28,7 @@ namespace Silk.NET.SilkTouch
                 }
                 else
                 {
-                    // the rest of the initialization should be typically done by the PinMiddleware
+                    // the parameter is by ref of some sort, leave to other initializer
                     ctx.ParameterExpressions[index] = IdentifierName(FormatName(symbol.Name));
                 }
             }
