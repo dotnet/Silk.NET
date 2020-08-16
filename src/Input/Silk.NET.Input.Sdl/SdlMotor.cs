@@ -3,6 +3,7 @@
     internal class SdlMotor : IMotor
     {
         private readonly SdlGamepad _gp;
+        private float _speedVal;
 
         public SdlMotor(int i, SdlGamepad gp)
         {
@@ -14,14 +15,12 @@
 
         public float Speed
         {
-            get => SpeedVal;
+            get => _speedVal;
             set
             {
                 _gp.VibrationChanged = true;
-                SpeedVal = value;
+                _speedVal = value;
             }
         }
-
-        public float SpeedVal { get; private set; }
     }
 }
