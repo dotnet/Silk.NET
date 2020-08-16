@@ -44,6 +44,7 @@ namespace Silk.NET.SilkTouch
             _marshalBuilder = new MarshalBuilder();
 
             _marshalBuilder.Use(ParameterInitMiddleware);
+            _marshalBuilder.Use(StringMarshaller);
             _marshalBuilder.Use(PinMiddleware);
             _marshalBuilder.Use(SpanMarshaller);
             _marshalBuilder.Use(BoolMarshaller);
