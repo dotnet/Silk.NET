@@ -37,8 +37,6 @@ namespace Silk.NET.SilkTouch
             
             if (nativeApiAttribute is null)
                 return;
-
-            Debugger.Launch();
             
             marshalBuilder = new MarshalBuilder();
 
