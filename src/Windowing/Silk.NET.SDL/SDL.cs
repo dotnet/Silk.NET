@@ -75,11 +75,11 @@ namespace Silk.NET.SDL
         public const string HintRenderScaleQuality =
             "SDL_RENDER_SCALE_QUALITY";
 
-        /* Only available in SDL 2.0.1 or higher. */
+        /// <remarks>Only available in SDL 2.0.1 or higher.</remarks>
         public const string HintVideoHighdpiDisabled =
             "SDL_VIDEO_HIGHDPI_DISABLED";
 
-        /* Only available in SDL 2.0.2 or higher. */
+        /// <remarks>Only available in SDL 2.0.2 or higher.</remarks>
         public const string HintCtrlClickEmulateRightClick =
             "SDL_CTRL_CLICK_EMULATE_RIGHT_CLICK";
 
@@ -101,7 +101,7 @@ namespace Silk.NET.SDL
         public const string HintVideoMacFullscreenSpaces =
             "SDL_VIDEO_MAC_FULLSCREEN_SPACES";
 
-        /* Only available in SDL 2.0.3 or higher. */
+        /// <remarks>Only available in SDL 2.0.3 or higher.</remarks>
         public const string HintWinrtPrivacyPolicyUrl =
             "SDL_WINRT_PRIVACY_POLICY_URL";
 
@@ -111,7 +111,7 @@ namespace Silk.NET.SDL
         public const string HintWinrtHandleBackButton =
             "SDL_WINRT_HANDLE_BACK_BUTTON";
 
-        /* Only available in SDL 2.0.4 or higher. */
+        /// <remarks>Only available in SDL 2.0.4 or higher.</remarks>
         public const string HintNoSignalHandlers =
             "SDL_NO_SIGNAL_HANDLERS";
 
@@ -151,7 +151,7 @@ namespace Silk.NET.SDL
         public const string HintAndroidApkExpansionPatchFileVersion =
             "SDL_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION";
 
-        /* Only available in 2.0.5 or higher. */
+        /// <remarks>Only available in 2.0.5 or higher.</remarks>
         public const string HintMouseFocusClickthrough =
             "SDL_MOUSE_FOCUS_CLICKTHROUGH";
 
@@ -164,7 +164,7 @@ namespace Silk.NET.SDL
         public const string HintAppleTvRemoteAllowRotation =
             "SDL_APPLE_TV_REMOTE_ALLOW_ROTATION";
 
-        /* Only available in 2.0.6 or higher. */
+        /// <remarks>Only available in 2.0.6 or higher.</remarks>
         public const string HintAudioResamplingMode =
             "SDL_AUDIO_RESAMPLING_MODE";
 
@@ -186,14 +186,14 @@ namespace Silk.NET.SDL
         public const string HintWindowsIntresourceIconSmall =
             "SDL_WINDOWS_INTRESOURCE_ICON_SMALL";
 
-        /* Only available in 2.0.8 or higher. */
+        /// <remarks>Only available in 2.0.8 or higher.</remarks>
         public const string HintIOSHideHomeIndicator =
             "SDL_IOS_HIDE_HOME_INDICATOR";
 
         public const string HintTvRemoteAsJoystick =
             "SDL_TV_REMOTE_AS_JOYSTICK";
 
-        /* Only available in 2.0.9 or higher. */
+        /// <remarks>Only available in 2.0.9 or higher.</remarks>
         public const string HintMouseDoubleClickTime =
             "SDL_MOUSE_DOUBLE_CLICK_TIME";
 
@@ -224,7 +224,7 @@ namespace Silk.NET.SDL
         public const string HintAndroidTrapBackButton =
             "SDL_ANDROID_TRAP_BACK_BUTTON";
 
-        /* Only available in 2.0.10 or higher. */
+        /// <remarks>Only available in 2.0.10 or higher.</remarks>
         public const string HintMouseTouchEvents =
             "SDL_MOUSE_TOUCH_EVENTS";
 
@@ -249,7 +249,7 @@ namespace Silk.NET.SDL
         public const string HintWaveFactChunk =
             "SDL_WAVE_FACT_CHUNK";
 
-        /* Only available in 2.0.11 or higher. */
+        /// <remarks>Only available in 2.0.11 or higher.</remarks>
         public const string HintVidoX11WindowVisualid =
             "SDL_VIDEO_X11_WINDOW_VISUALID";
 
