@@ -6,7 +6,7 @@
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
     /// <summary>
-    /// This enum is used to partial the need of using AL.GetEnumValue() with the extension. The values do not
+    /// This enum is used to abstract the need of using AL.GetEnumValue() with the extension. The values do not
     /// correspond to the actual tokens.
     /// </summary>
     public enum BufferStorageMode

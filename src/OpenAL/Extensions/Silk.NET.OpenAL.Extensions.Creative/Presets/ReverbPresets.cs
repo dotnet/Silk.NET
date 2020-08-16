@@ -2883,7 +2883,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         );
 
         /// <summary>
-        /// A reverb preset (approximating an partial memory).
+        /// A reverb preset (approximating an abstract memory).
         /// </summary>
         public static readonly ReverbProperties MoodMemory = new ReverbProperties
         (
