@@ -59,7 +59,7 @@ namespace Silk.NET.SilkTouch
 
                 var name = $"{receiverClassDeclaration.Identifier.Text}.gen";
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                // File.WriteAllText(name, s);
+                File.WriteAllText(name, s);
             }
         }
 
@@ -224,9 +224,10 @@ namespace Silk.NET.SilkTouch
                        ParameterList
                        (
                            SeparatedList
-                               (declaration.ParameterList.Parameters.Select(x => x.WithAttributeLists(default)))
+                               (declaration.ParameterList.Parameters.Select((x, i) => x.WithAttributeLists(default).WithType(IdentifierName(symbol.Parameters[i].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))))
                        )
-                   );
+                   )
+                   .WithReturnType(IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)));
 
                // append to members
                 newMembers.Add
