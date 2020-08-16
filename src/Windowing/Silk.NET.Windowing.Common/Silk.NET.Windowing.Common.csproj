@@ -9,6 +9,15 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>Silk.NET.Windowing.Glfw</_Parameter1>
+        </AssemblyAttribute>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>Silk.NET.Windowing.Sdl</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
     </ItemGroup>
 

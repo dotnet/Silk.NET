@@ -9,7 +9,6 @@ using Silk.NET.GLFW;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Glfw;
 
-[assembly: InternalsVisibleTo("Silk.NET.Input.Glfw")]
 [assembly: WindowPlatform(typeof(GlfwPlatform))]
 
 namespace Silk.NET.Windowing.Glfw
