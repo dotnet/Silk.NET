@@ -6,8 +6,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-// TODO when Core 2 is merged in the feature/new-interop branch, find a better place for this struct
-namespace Silk.NET.Core
+namespace Silk.NET.Core.Native
 {
     /// <summary>
     ///     A handle to a Vulkan object.

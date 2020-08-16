@@ -7,7 +7,7 @@ using System;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
-using Silk.NET.GLFW;
+using Silk.NET.Core.Native;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.Sdl

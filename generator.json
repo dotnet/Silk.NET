@@ -600,8 +600,8 @@
                     "WindowShapeMode": "WindowShapeModeVal",
                     "SDL_bool": "SdlBool",
                     "SDL_RWops": "RWops",
-                    "VkInstance": "Silk.NET.GLFW.VkHandle",
-                    "VkSurfaceKHR": "Silk.NET.Core.VkNonDispatchableHandle"
+                    "VkInstance": "Silk.NET.Core.Native.VkHandle",
+                    "VkSurfaceKHR": "Silk.NET.Core.Native.VkNonDispatchableHandle"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

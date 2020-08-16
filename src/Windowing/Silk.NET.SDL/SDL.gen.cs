@@ -2105,12 +2105,12 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 241, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
-        public unsafe partial SdlBool VulkanCreateSurface(Window* window, Silk.NET.GLFW.VkHandle instance, Silk.NET.Core.VkNonDispatchableHandle* surface);
+        public unsafe partial SdlBool VulkanCreateSurface(Window* window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 241, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
-        public partial SdlBool VulkanCreateSurface(Span<Window> window, Silk.NET.GLFW.VkHandle instance, Span<Silk.NET.Core.VkNonDispatchableHandle> surface);
+        public partial SdlBool VulkanCreateSurface(Span<Window> window, Silk.NET.Core.Native.VkHandle instance, Span<Silk.NET.Core.Native.VkNonDispatchableHandle> surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 267, Column 30 in SDL_vulkan.h")]
