@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -36,6 +37,8 @@ namespace Silk.NET.SilkTouch
             
             if (nativeApiAttribute is null)
                 return;
+
+            Debugger.Launch();
             
             marshalBuilder = new MarshalBuilder();
 
@@ -47,13 +50,15 @@ namespace Silk.NET.SilkTouch
             marshalBuilder.Use(DelegateMarshaller);
             marshalBuilder.Use(PinObjectMarshaller);
 
+            List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
+
             foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
             {
-                var s = ProcessClassDeclaration(receiverClassDeclaration, context.Compilation, nativeApiAttribute, marshalBuilder);
+                var s = ProcessClassDeclaration(receiverClassDeclaration, context.Compilation, nativeApiAttribute, marshalBuilder, ref processedSymbols);
                 
                 if (s is null) continue;
 
-                var name = $"{receiverClassDeclaration.Identifier.Text}.gen";
+                var name = $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
                 // File.WriteAllText(name, s);
             }
@@ -64,7 +69,8 @@ namespace Silk.NET.SilkTouch
             ClassDeclarationSyntax classDeclaration,
             Compilation compilation,
             INamedTypeSymbol nativeApiAttributeSymbol,
-            MarshalBuilder rootMarshalBuilder
+            MarshalBuilder rootMarshalBuilder,
+            ref List<ITypeSymbol> processedSymbols
         )
         {
             if (!classDeclaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
@@ -237,24 +243,28 @@ namespace Silk.NET.SilkTouch
                 );
             }
 
-            newMembers.Add
-            (
-                MethodDeclaration
+            if (!classSymbol.GetMembers().Any(x => x.Kind == SymbolKind.Method && x.Name == "CoreGetSlotCount") && !processedSymbols.Contains(classSymbol))
+            {
+                newMembers.Add
                 (
-                    List<AttributeListSyntax>(),
-                    TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
-                    PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGetSlotCount"),
-                    TypeParameterList(), ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
-                    ArrowExpressionClause(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slot)))
-                )
-            );
-                           
+                    MethodDeclaration
+                    (
+                        List<AttributeListSyntax>(),
+                        TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
+                        PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGetSlotCount"), null,
+                        ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
+                        ArrowExpressionClause(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slot))),
+                        Token(SyntaxKind.SemicolonToken)
+                    )
+                );
+            }               
             if (newMembers.Count == 0)
                 return null;
 
             var newNamespace = namespaceDeclaration.WithMembers
                 (List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers)).WithAttributeLists(List<AttributeListSyntax>())})).WithUsings(compilationUnit.Usings);
 
+            processedSymbols.Add(classSymbol);
             return newNamespace.NormalizeWhitespace().ToFullString();
         }
 
