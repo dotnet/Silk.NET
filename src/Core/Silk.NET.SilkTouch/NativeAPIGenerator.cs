@@ -24,7 +24,6 @@ namespace Silk.NET.SilkTouch
     public partial class NativeAPIGenerator : ISourceGenerator
     {
         private static volatile int _slot = 0;
-        private MarshalBuilder _marshalBuilder;
         public void Initialize(InitializationContext context)
         {
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
@@ -32,6 +31,8 @@ namespace Silk.NET.SilkTouch
 
         public void Execute(SourceGeneratorContext context)
         {
+            MarshalBuilder marshalBuilder;
+            
             if (!(context.SyntaxReceiver is SyntaxReceiver receiver))
                 return;
 
@@ -40,25 +41,25 @@ namespace Silk.NET.SilkTouch
             if (nativeApiAttribute is null)
                 return;
             
-            _marshalBuilder = new MarshalBuilder();
+            marshalBuilder = new MarshalBuilder();
 
-            _marshalBuilder.Use(ParameterInitMiddleware);
-            _marshalBuilder.Use(StringMarshaller);
-            _marshalBuilder.Use(PinMiddleware);
-            _marshalBuilder.Use(SpanMarshaller);
-            _marshalBuilder.Use(BoolMarshaller);
-            _marshalBuilder.Use(DelegateMarshaller);
-            _marshalBuilder.Use(PinObjectMarshaller);
+            marshalBuilder.Use(ParameterInitMiddleware);
+            marshalBuilder.Use(StringMarshaller);
+            marshalBuilder.Use(PinMiddleware);
+            marshalBuilder.Use(SpanMarshaller);
+            marshalBuilder.Use(BoolMarshaller);
+            marshalBuilder.Use(DelegateMarshaller);
+            marshalBuilder.Use(PinObjectMarshaller);
 
             foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
             {
-                var s = ProcessClassDeclaration(receiverClassDeclaration, context.Compilation, nativeApiAttribute);
+                var s = ProcessClassDeclaration(receiverClassDeclaration, context.Compilation, nativeApiAttribute, marshalBuilder);
                 
                 if (s is null) continue;
 
-                var name = $"{receiverClassDeclaration.Identifier.Text}.gen.cs.gen";
+                var name = $"{receiverClassDeclaration.Identifier.Text}.gen";
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                File.WriteAllText(name, s);
+                // File.WriteAllText(name, s);
             }
         }
 
@@ -66,7 +67,8 @@ namespace Silk.NET.SilkTouch
         (
             ClassDeclarationSyntax classDeclaration,
             Compilation compilation,
-            INamedTypeSymbol nativeApiAttributeSymbol
+            INamedTypeSymbol nativeApiAttributeSymbol,
+            MarshalBuilder rootMarshalBuilder
         )
         {
             if (!classDeclaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
@@ -112,7 +114,7 @@ namespace Silk.NET.SilkTouch
                 )
                 .Where(x => x.attribute != default)
                 .Select(x => (x.declaration, x.symbol, ToNativeApiAttribute(x.attribute)))
-                .Where(x => x.declaration.Modifiers.Any(x2 => x2.IsKind(SyntaxKind.PartialKeyword)))
+                .Where(x => x.declaration.Modifiers.Any(x2 => x2.IsKind(SyntaxKind.PartialKeyword)) && x.symbol.PartialImplementationPart is null)
                 .Select
                 (
                     x => (declaration: x.declaration, symbol: x.symbol,
@@ -122,7 +124,7 @@ namespace Silk.NET.SilkTouch
                 .ToArray();
             foreach (var (declaration, symbol, entryPoint, callingConvention) in methods)
             {
-                var marshalBuilder = _marshalBuilder.Clone();
+                var marshalBuilder = rootMarshalBuilder.Clone();
 
                 void BuildLoadInvoke(ref MarshalContext ctx, Action next)
                 {
@@ -237,7 +239,7 @@ namespace Silk.NET.SilkTouch
                 return null;
 
             var newNamespace = namespaceDeclaration.WithMembers
-                (List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers))})).WithUsings(compilationUnit.Usings);
+                (List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers)).WithAttributeLists(List<AttributeListSyntax>())})).WithUsings(compilationUnit.Usings);
 
             return newNamespace.NormalizeWhitespace().ToFullString();
         }
