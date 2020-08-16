@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_framezoom")]
-    public abstract unsafe partial class SgixFramezoom : NativeExtension<GL>
+    public unsafe partial class SgixFramezoom : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_framezoom";
         [NativeApi(EntryPoint = "glFrameZoomSGIX")]
-        public abstract void FrameZoom([Flow(FlowDirection.In)] int factor);
+        public partial void FrameZoom([Flow(FlowDirection.In)] int factor);
 
-        public SgixFramezoom(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixFramezoom(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

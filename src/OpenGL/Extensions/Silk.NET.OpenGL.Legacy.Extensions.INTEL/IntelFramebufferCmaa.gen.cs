@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
 {
     [Extension("INTEL_framebuffer_CMAA")]
-    public abstract unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
+    public unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
     {
         public const string ExtensionName = "INTEL_framebuffer_CMAA";
         [NativeApi(EntryPoint = "glApplyFramebufferAttachmentCMAAINTEL")]
-        public abstract void ApplyFramebufferAttachmentCmaa();
+        public partial void ApplyFramebufferAttachmentCmaa();
 
-        public IntelFramebufferCmaa(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelFramebufferCmaa(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

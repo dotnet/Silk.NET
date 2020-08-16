@@ -1,5 +1,8 @@
 using System;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
 
 #pragma warning disable 1591
 
@@ -289,7 +292,7 @@ namespace Silk.NET.SDL
 
         public static int Versionnum(int x, int y, int z)
         {
-            return x * 1000 + y * 100 + z;
+            return new SDL(new DefaultNativeContext(new SDLLibraryNameContainer().GetLibraryName()));
         }
 
         public static int WindowposUndefinedDisplay(int x)

@@ -6,34 +6,34 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_acquire_xlib_display")]
-    public abstract unsafe partial class ExtAcquireXlibDisplay : NativeExtension<Vk>
+    public unsafe partial class ExtAcquireXlibDisplay : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_acquire_xlib_display";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAcquireXlibDisplayEXT")]
-        public abstract unsafe Result AcquireXlibDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] DisplayKHR display);
+        public unsafe partial Result AcquireXlibDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] DisplayKHR display);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAcquireXlibDisplayEXT")]
-        public abstract Result AcquireXlibDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] DisplayKHR display);
+        public partial Result AcquireXlibDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] DisplayKHR display);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
-        public abstract unsafe Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
+        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
-        public abstract Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
+        public partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
 
         /// <summary>To be added.</summary>
         public unsafe Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] int rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay)
@@ -49,8 +49,8 @@ namespace Silk.NET.Vulkan.Extensions.EXT
             return GetRandROutputDisplay(physicalDevice, ref dpy, new IntPtr(rrOutput), out pDisplay);
         }
 
-        public ExtAcquireXlibDisplay(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtAcquireXlibDisplay(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

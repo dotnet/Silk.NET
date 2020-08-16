@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_sample_shading")]
-    public abstract unsafe partial class ArbSampleShading : NativeExtension<GL>
+    public unsafe partial class ArbSampleShading : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sample_shading";
         [NativeApi(EntryPoint = "glMinSampleShadingARB")]
-        public abstract void MinSampleShading([Flow(FlowDirection.In)] float value);
+        public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
 
-        public ArbSampleShading(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbSampleShading(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

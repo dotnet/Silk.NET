@@ -192,7 +192,7 @@ namespace Silk.NET.BuildTools
                     );
                 }
                 using var memoryStream = new MemoryStream();
-                using var fileStream = File.OpenWrite(file);
+                using var fileStream = File.OpenRead(file);
                 using var gzStream = new GZipStream(fileStream, CompressionMode.Decompress);
                 gzStream.CopyTo(memoryStream);
                 profile = JsonConvert.DeserializeObject<Profile>(Encoding.UTF8.GetString(memoryStream.ToArray()));

@@ -4,8 +4,10 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Extensions;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL.Native.Extensions.EXT
 {
     /// <summary>
@@ -13,11 +15,11 @@ namespace Silk.NET.OpenAL.Native.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_IMA4")]
     [NativeApi(Prefix = "al")]
-    public abstract class IMA4Format : FormatExtensionBase<IMA4BufferFormat>
+    public partial class IMA4Format : FormatExtensionBase<IMA4BufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected IMA4Format(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected IMA4Format(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

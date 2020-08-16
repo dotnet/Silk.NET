@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
+
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
     /// <summary>
@@ -12,11 +14,11 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// </summary>
     [Extension("AL_EXT_EFX")]
     [NativeApi(Prefix = "al")]
-    public abstract class MultiChannelBuffers : FormatExtensionBase<MultiChannelBufferFormat>
+    public partial class MultiChannelBuffers : FormatExtensionBase<MultiChannelBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected MultiChannelBuffers(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected MultiChannelBuffers(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

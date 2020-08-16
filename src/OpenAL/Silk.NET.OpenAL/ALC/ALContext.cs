@@ -4,89 +4,101 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Extensions;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL
 {
     /// <summary>
     /// Provides access to the OpenAL 1.1 context API.
     /// </summary>
     [NativeApi(Prefix = "alc")]
-    public abstract class ALContext : NativeAPI
+    public partial class ALContext : NativeAPI
     {
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected ALContext(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected ALContext(INativeContext ctx)
+            : base(ctx)
         {
         }
 
-        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+        public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
-        public abstract override bool IsExtensionPresent(string name);
-
-        /// <inheritdoc />
-        public abstract unsafe Context* CreateContext(Device* device, int* attributeList);
+        public override partial bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
-        public abstract unsafe bool MakeContextCurrent(Context* context);
+        public unsafe partial Context* CreateContext(Device* device, int* attributeList);
 
         /// <inheritdoc />
-        public abstract unsafe void ProcessContext(Context* context);
+        public unsafe partial bool MakeContextCurrent(Context* context);
 
         /// <inheritdoc />
-        public abstract unsafe void SuspendContext(Context* context);
+        public unsafe partial void ProcessContext(Context* context);
 
         /// <inheritdoc />
-        public abstract unsafe void DestroyContext(Context* context);
+        public unsafe partial void SuspendContext(Context* context);
 
         /// <inheritdoc />
-        public abstract unsafe Context* GetCurrentContext();
+        public unsafe partial void DestroyContext(Context* context);
 
         /// <inheritdoc />
-        public abstract unsafe Device* GetContextsDevice(Context* context);
+        public unsafe partial Context* GetCurrentContext();
 
         /// <inheritdoc />
-        public abstract unsafe Device* OpenDevice(string deviceName);
+        public unsafe partial Device* GetContextsDevice(Context* context);
 
         /// <inheritdoc />
-        public abstract unsafe bool CloseDevice(Device* device);
+        public unsafe partial Device* OpenDevice(string deviceName);
 
         /// <inheritdoc />
-        public abstract unsafe ContextError GetError(Device* device);
+        public unsafe partial bool CloseDevice(Device* device);
 
         /// <inheritdoc />
-        public abstract unsafe bool IsExtensionPresent(Device* device, string name);
+        public unsafe partial ContextError GetError(Device* device);
 
         /// <inheritdoc />
-        public abstract unsafe void* GetProcAddress(Device* device, string name);
+        public unsafe partial bool IsExtensionPresent(Device* device, string name);
 
         /// <inheritdoc />
-        public abstract unsafe int GetEnumValue(Device* device, string name);
+        public unsafe partial void* GetProcAddress(Device* device, string name);
+
+        /// <inheritdoc />
+        public unsafe partial int GetEnumValue(Device* device, string name);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetString")]
-        public abstract unsafe string GetContextProperty(Device* device, GetContextString param);
+        public unsafe partial string GetContextProperty(Device* device, GetContextString param);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public abstract unsafe void GetContextProperty(Device* device, GetContextInteger param, int count, IntPtr data);
+        public unsafe partial void GetContextProperty(Device* device, GetContextInteger param, int count, IntPtr data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public abstract unsafe void GetContextProperty(Device* device, GetContextInteger param, int count, int* data);
+        public unsafe partial void GetContextProperty(Device* device, GetContextInteger param, int count, int* data);
 
         /// <summary>
         /// Gets an instance of the API.
         /// </summary>
         /// <returns>The instance.</returns>
-        public static ALContext GetApi()
+        public static unsafe ALContext GetApi()
         {
-            var loader = new ALLoader();
-            var ret = LibraryActivator.CreateInstance<ALContext>
-                (new OpenALLibraryNameContainer().GetLibraryName(), loader);
-            loader.Alc = ret;
+            var ctx = new MultiNativeContext
+                (new DefaultNativeContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+            var ret = new ALContext(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext(
+                x =>
+                {
+                    if (x.EndsWith("GetProcAddress") ||
+                        x.EndsWith("GetContextsDevice") ||
+                        x.EndsWith("GetCurrentContext"))
+                    {
+                        return default;
+                    }
+
+                    return (IntPtr) ret.GetProcAddress(ret.GetContextsDevice(ret.GetCurrentContext()), x);
+                });
             return ret;
         }
 

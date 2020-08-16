@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
 {
     [Extension("KHR_blend_equation_advanced")]
-    public abstract unsafe partial class KhrBlendEquationAdvanced : NativeExtension<GL>
+    public unsafe partial class KhrBlendEquationAdvanced : NativeExtension<GL>
     {
         public const string ExtensionName = "KHR_blend_equation_advanced";
         [NativeApi(EntryPoint = "glBlendBarrierKHR")]
-        public abstract void BlendBarrier();
+        public partial void BlendBarrier();
 
-        public KhrBlendEquationAdvanced(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrBlendEquationAdvanced(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

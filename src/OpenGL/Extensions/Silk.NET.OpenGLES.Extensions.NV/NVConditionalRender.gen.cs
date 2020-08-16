@@ -6,30 +6,30 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_conditional_render")]
-    public abstract unsafe partial class NVConditionalRender : NativeExtension<GL>
+    public unsafe partial class NVConditionalRender : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_conditional_render";
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
+        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
 
         [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
-        public abstract void EndConditionalRender();
+        public partial void EndConditionalRender();
 
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
+        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
 
-        public NVConditionalRender(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVConditionalRender(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

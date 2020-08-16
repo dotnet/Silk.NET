@@ -6,69 +6,69 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_bindless_texture")]
-    public abstract unsafe partial class NVBindlessTexture : NativeExtension<GL>
+    public unsafe partial class NVBindlessTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_bindless_texture";
         [NativeApi(EntryPoint = "glGetImageHandleNV")]
-        public abstract ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] NV format);
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] NV format);
 
         [NativeApi(EntryPoint = "glGetTextureHandleNV")]
-        public abstract ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
+        public partial ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
 
         [NativeApi(EntryPoint = "glGetTextureSamplerHandleNV")]
-        public abstract ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler);
+        public partial ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler);
 
         [NativeApi(EntryPoint = "glIsImageHandleResidentNV")]
-        public abstract bool IsImageHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial bool IsImageHandleResident([Flow(FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glIsTextureHandleResidentNV")]
-        public abstract bool IsTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial bool IsTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeImageHandleNonResidentNV")]
-        public abstract void MakeImageHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeImageHandleNonResident([Flow(FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeImageHandleResidentNV")]
-        public abstract void MakeImageHandleResident([Flow(FlowDirection.In)] ulong handle, [Flow(FlowDirection.In)] NV access);
+        public partial void MakeImageHandleResident([Flow(FlowDirection.In)] ulong handle, [Flow(FlowDirection.In)] NV access);
 
         [NativeApi(EntryPoint = "glMakeTextureHandleNonResidentNV")]
-        public abstract void MakeTextureHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeTextureHandleNonResident([Flow(FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glMakeTextureHandleResidentNV")]
-        public abstract void MakeTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+        public partial void MakeTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64NV")]
-        public abstract void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vNV")]
-        public abstract unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values);
+        public unsafe partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values);
 
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vNV")]
-        public abstract void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> values);
+        public partial void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> values);
 
         [NativeApi(EntryPoint = "glUniformHandleui64NV")]
-        public abstract void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
 
         [NativeApi(EntryPoint = "glUniformHandleui64vNV")]
-        public abstract unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
+        public unsafe partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
 
         [NativeApi(EntryPoint = "glUniformHandleui64vNV")]
-        public abstract void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value);
+        public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value);
 
         [NativeApi(EntryPoint = "glGetImageHandleNV")]
-        public abstract ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
 
-        public NVBindlessTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVBindlessTexture(INativeContext ctx)
+            : base(ctx)
         {
         }
     }
