@@ -503,8 +503,7 @@
                     "EGLConfig": "IntPtr",
                     "EGLContext": "IntPtr",
                     "GLXFBConfig": "IntPtr",
-                    "VkFormat": "uint",
-                    "IUnknown*": "IntPtr"
+                    "VkFormat": "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -581,13 +580,14 @@
             },
             "namespace": "Silk.NET.SDL",
             "extensionsNamespace": "Silk.NET.SDL.Extensions",
-            "legacyNameContainer": {
-                "Linux": "libSDL2-2.0.so.0",
-                "Windows": "SDL2.dll",
-                "MacOS": "libSDL2-2.0.0.dylib",
-                "Android": "libSDL2-2.0.so.0",
-                "IOS": "__Internal",
-                "ClassName": "SDLLibraryNameContainer"
+            "nameContainer": {
+                "linux-x64": "libSDL2-2.0.so.0",
+                "win-x64": "SDL2.dll",
+                "win-x86": "SDL2.dll",
+                "osx-x64": "libSDL2-2.0.0.dylib",
+                "android": "libSDL2-2.0.so.0",
+                "iOS": "__Internal",
+                "className": "SDLLibraryNameContainer"
             },
             "typeMaps": [
                 {
