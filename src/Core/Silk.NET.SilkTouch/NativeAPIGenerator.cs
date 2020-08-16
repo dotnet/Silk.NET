@@ -200,6 +200,7 @@ namespace Silk.NET.SilkTouch
                var context = new MarshalContext(compilation, symbol, slot);
 
                marshalBuilder.Run(context);
+               context.ApplyPostProcessing();
 
                if (!context.ReturnsVoid)
                    context.CurrentStatements = context.CurrentStatements.Append(ReturnStatement(context.ResultExpression));

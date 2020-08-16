@@ -83,6 +83,8 @@ namespace Silk.NET.SilkTouch
             /// </summary>
             public MarshalOptions? ReturnMarshalOptions { get; }
 
+            private readonly List<StatementSyntax> _postPrelude = new List<StatementSyntax>();
+
             public class MarshalOptions
             {
                 public MarshalOptions(UnmanagedType marshalAs)
@@ -92,9 +94,11 @@ namespace Silk.NET.SilkTouch
                 public UnmanagedType MarshalAs { get; }
             }
 
+            public void AddPrelude(StatementSyntax statement) => _postPrelude.Add(statement);
+
             public void DeclareVariable(ITypeSymbol type, string name)
             {
-                CurrentStatements = CurrentStatements.Prepend
+                AddPrelude
                 (
                     LocalDeclarationStatement
                     (
@@ -136,6 +140,12 @@ namespace Silk.NET.SilkTouch
             public bool TryGetAttribute<T>
                 (int index, out AttributeData? attributeData) where T : Attribute
                 => TryGetAttribute(index, typeof(T), out attributeData);
+
+            public void ApplyPostProcessing()
+            {
+                _postPrelude.AddRange(CurrentStatements);
+                CurrentStatements = _postPrelude;
+            }
 
             public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol, int slot)
             {
