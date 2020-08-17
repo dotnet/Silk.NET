@@ -222,6 +222,26 @@ namespace Silk.NET.GLFW
         public partial string GetVersionString();
 
         /// <summary>
+        /// Use <see cref="GetError(out byte*)"/> instead.
+        /// </summary>
+        /// <param name="description">
+        /// Where to store the error description pointer, or <c>out _</c>"/>.
+        /// This is actually a <see cref="byte"/> pointer.
+        /// </param>
+        /// <returns>The last error code for the calling thread, or <see cref="ErrorCode.NoError" /> (zero).</returns>
+        /// <remarks>
+        /// <para>
+        /// This method has an incorrect parameter type.
+        /// </para>
+        /// <para>
+        /// Will be removed in v2.0.
+        /// </para>
+        /// </remarks>
+        /// <seealso cref="GetError(out byte*)" />
+        [Obsolete("Use GetError(out byte* description) instead.")]
+        public unsafe partial ErrorCode GetError(out char* description);
+
+        /// <summary>
         /// <para>
         /// This function returns and clears the error code of the last error that occurred on the calling thread,
         /// and optionally a UTF-8 encoded human-readable description of it.
@@ -246,7 +266,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetErrorCallback" />
-        public unsafe partial ErrorCode GetError(out char* description);
+        public unsafe partial ErrorCode GetError(out byte* description);
 
         /// <summary>
         /// <para>

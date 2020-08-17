@@ -22,11 +22,13 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0 -p:ContinuousIntegrationBuild=true
     - name: Setup NuGet
+      if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
       uses: nuget/setup-nuget@v1
       with:
         nuget-version: '5.x'
     - name: Setup Feed
+      if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
       run: nuget sources add -Name Experimental -Source https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json -username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} -password ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
     - name: Push Experimental Packages
-      if: ${{ github.repository == 'Ultz/Silk.NET' }}
+      if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
       run: nuget push "build/output_packages/*.nupkg" -Source Experimental -ApiKey ${{ secrets.AZDO_ARTIFACTS_TOKEN }}

@@ -134,10 +134,10 @@ namespace Tutorial
             Gl.LinkProgram(Shader);
 
             //Checking the linking for errors.
-            string shader = Gl.GetProgramInfoLog(Shader);
-            if (!string.IsNullOrWhiteSpace(shader))
+            Gl.GetProgram(Shader, GLEnum.LinkStatus, out var status);
+            if (status == 0)
             {
-                Console.WriteLine($"Error linking shader {infoLog}");
+                Console.WriteLine($"Error linking shader {Gl.GetProgramInfoLog(Shader)}");
             }
 
             //Delete the no longer useful individual shaders;
