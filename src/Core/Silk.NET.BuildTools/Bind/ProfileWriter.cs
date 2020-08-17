@@ -382,14 +382,12 @@ namespace Silk.NET.BuildTools.Bind
                         }
 
                         sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
-                        using (var sr = new StringReader(function.ToString(null, true)))
+                        using (var sr = new StringReader(function.ToString(null, true, true)))
                         {
                             string line;
-                            var flPrefix = "public ";
                             while ((line = sr.ReadLine()) != null)
                             {
-                                sw.WriteLine($"        {flPrefix}{line}");
-                                flPrefix = string.Empty;
+                                sw.WriteLine($"        {line}");
                             }
                         }
 
@@ -534,21 +532,19 @@ namespace Silk.NET.BuildTools.Bind
                             }
 
                             sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
-                            using (var sr = new StringReader(function.ToString(null, true)))
+                            using (var sr = new StringReader(function.ToString(null, true, true)))
                             {
                                 string line;
-                                var flPrefix = "public ";
                                 while ((line = sr.ReadLine()) != null)
                                 {
-                                    sw.WriteLine($"        {flPrefix}{line}");
-                                    flPrefix = string.Empty;
+                                    sw.WriteLine($"        {line}");
                                 }
                             }
 
                             sw.WriteLine();
                         }
 
-                        foreach (var overload in Overloader.GetOverloads(i, profile.Projects["Core"]))
+                        foreach (var overload in Overloader.GetOverloads(i.Functions, profile.Projects["Core"]))
                         {
                             using (var sr = new StringReader(overload.Signature.Doc))
                             {

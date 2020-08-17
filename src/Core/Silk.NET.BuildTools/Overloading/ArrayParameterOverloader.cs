@@ -16,7 +16,7 @@ using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Overloading
 {
-    public class ArrayParameterOverloader : IFunctionOverloader
+    public class ArrayParameterOverloader : IComplexFunctionOverloader
     {
         /// <summary>
         /// Determines whether or not the overloader is applicable for the given function.
@@ -75,26 +75,8 @@ namespace Silk.NET.BuildTools.Overloading
             return true;
         }
 
-        public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
-        {
-            variant = null;
-            return false;
-        }
-
-        public bool TryCreateVariant(Type returnType, out Type variant, Project core)
-        {
-            variant = null;
-            return false;
-        }
-
-        public bool TryCreateVariant(Function function, out Function variant, Project core)
-        {
-            variant = null;
-            return false;
-        }
-
         /// <inheritdoc/>
-        public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
+        public bool TryGetFunctionVariant(Function function, out ImplementedFunction overload, Project core)
         {
             if (!IsApplicable(function))
             {

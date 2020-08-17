@@ -15,9 +15,9 @@ using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Overloading
 {
-    public class ReturnTypeOverloader : IFunctionOverloader
+    public class ReturnTypeOverloader : IComplexFunctionOverloader
     {
-         private static bool IsApplicable(Function function)
+        private static bool IsApplicable(Function function)
         {
             // function has 1 - 2 parameters
             var parameterCount = function.Parameters.Count;
@@ -77,27 +77,9 @@ namespace Silk.NET.BuildTools.Overloading
             return true;
         }
 
-         public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
-         {
-             variant = null;
-             return false;
-         }
-
-         public bool TryCreateVariant(Type returnType, out Type variant, Project core)
-         {
-             variant = null;
-             return false;
-         }
-
-         public bool TryCreateVariant(Function function, out Function variant, Project core)
-         {
-             variant = null;
-             return false;
-         }
-
-         /// <inheritdoc/>
-         public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
-         {
+        /// <inheritdoc/>
+        public bool TryGetFunctionVariant(Function function, out ImplementedFunction overload, Project core)
+        {
             if (!IsApplicable(function))
             {
                 overload = null;
@@ -118,7 +100,7 @@ namespace Silk.NET.BuildTools.Overloading
                 .WithReturnType(newReturnType);
 
             var sb = new StringBuilder();
-            var strParams = newParameters.Select(Convert).Concat(new[] { "&ret" });
+            var strParams = newParameters.Select(Convert).Concat(new[] {"&ret"});
 
             sb.AppendLine("// ReturnTypeOverloader");
             sb.AppendLine($"{newReturnType} ret = default;");
@@ -129,9 +111,12 @@ namespace Silk.NET.BuildTools.Overloading
 
             if (!newParameters.Any())
             {
-                overload = new ImplementedFunction(functionBuilder
-                    .WithParameters(newParameters)
-                    .Build(), sb, function, true);
+                overload = new ImplementedFunction
+                (
+                    functionBuilder
+                        .WithParameters(newParameters)
+                        .Build(), sb, function, true
+                );
 
                 return true;
             }
@@ -139,16 +124,21 @@ namespace Silk.NET.BuildTools.Overloading
             var sizeParameterType = newParameters.Last().Type;
             if ((sizeParameterType.Name != "int" && sizeParameterType.Name != "uint") || sizeParameterType.IsPointer)
             {
-                overload = new ImplementedFunction(functionBuilder
-                    .WithParameters(newParameters)
-                    .Build(), sb, function, true);
+                overload = new ImplementedFunction
+                (
+                    functionBuilder
+                        .WithParameters(newParameters)
+                        .Build(), sb, function, true
+                );
 
                 return true;
             }
 
             var n = newParameters.Last().Name;
 
-            sb.Insert(0,
+            sb.Insert
+            (
+                0,
                 $"const {(sizeParameterType.Name == "uint" ? "uint " : "int ")}{(Utilities.CSharpKeywords.Contains(n) ? "@" : "")}{n} = 1;\n"
             );
             newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
@@ -165,6 +155,6 @@ namespace Silk.NET.BuildTools.Overloading
                 var pre = x.Type.IsOut ? "out " : string.Empty;
                 return pre + (Utilities.CSharpKeywords.Contains(x.Name) ? $"@{x.Name}" : x.Name);
             }
-}
+        }
     }
 }
