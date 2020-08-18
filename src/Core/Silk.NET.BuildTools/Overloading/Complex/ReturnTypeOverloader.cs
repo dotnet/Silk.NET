@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Humanizer;
@@ -19,6 +20,12 @@ namespace Silk.NET.BuildTools.Overloading
     {
         private static bool IsApplicable(Function function)
         {
+            // function is in its original form
+            if (function.Kind != SignatureKind.Normal)
+            {
+                return false;
+            }
+            
             // function has 1 - 2 parameters
             var parameterCount = function.Parameters.Count;
             if (parameterCount == 0 || parameterCount > 2)

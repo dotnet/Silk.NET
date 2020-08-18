@@ -213,10 +213,10 @@ namespace Silk.NET.BuildTools.Baking
                             {
                                 if (existingToken.Value != token.Value)
                                 {
-                                    Debug.WriteLine("Warning: Two tokens with the same name but different values.");
-                                    Debug.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
-                                    Debug.WriteLine($"    {token.Name} = {token.Value}");
-                                    Debug.WriteLine($"{existingToken.Value} will be used.");
+                                    Console.WriteLine("Warning: Two tokens with the same name but different values.");
+                                    Console.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
+                                    Console.WriteLine($"    {token.Name} = {token.Value}");
+                                    Console.WriteLine($"{existingToken.Value} will be used.");
                                 }
 
                                 continue;

@@ -25,6 +25,12 @@ namespace Silk.NET.BuildTools.Overloading
         /// <returns>true if the overloader is applicable; otherwise, false.</returns>
         public static bool IsApplicable(Function function)
         {
+            // function is in its original form
+            if (function.Kind != SignatureKind.Normal)
+            {
+                return false;
+            }
+            
             // function has exactly two parameters
             var parameterCount = function.Parameters.Count;
             if (parameterCount != 2)

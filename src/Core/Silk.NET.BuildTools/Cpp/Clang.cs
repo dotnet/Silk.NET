@@ -25,6 +25,7 @@ namespace Silk.NET.BuildTools.Cpp
 {
     public static class Clang
     {
+        private static FlowDirection _f; // a throwaway variable to store flows where we don't need them
         public static unsafe Profile GenerateProfile(string fileName, Stream input, BindTask task)
         {
             var profile = new Profile
@@ -388,15 +389,16 @@ namespace Silk.NET.BuildTools.Cpp
                 return CallingConvention.StdCall;
             }
 
-            Type GetType(ClangSharp.Type type, out Count count, out bool success)
+            Type GetType(ClangSharp.Type type, out Count count, ref FlowDirection flow, out bool success)
             {
+                FlowDirection ignoreFlow = default;
                 success = true;
                 count = null;
                 Type ret = new Type {Name = "void", IndirectionLevels = 1};
 
                 if (type is ArrayType arrayType)
                 {
-                    ret = GetType(arrayType.ElementType, out var currentCount, out _);
+                    ret = GetType(arrayType.ElementType, out var currentCount, ref flow, out _);
                     ret.IndirectionLevels++;
                     var asize = arrayType.Handle.ArraySize;
                     if (asize != -1)
@@ -411,7 +413,7 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (type is AttributedType attributedType)
                 {
-                    ret = GetType(attributedType.ModifiedType, out _, out _);
+                    ret = GetType(attributedType.ModifiedType, out _, ref flow, out _);
                 }
                 else if (type is BuiltinType)
                 {
@@ -547,12 +549,12 @@ namespace Silk.NET.BuildTools.Cpp
                                     (
                                         (x, i) => new Parameter
                                         {
-                                            Name = $"parameter{i}", Type = GetType(x, out var count2, out _),
+                                            Name = $"arg{i}", Type = GetType(x, out var count2, ref ignoreFlow, out _),
                                             Count = count2
                                         }
                                     )
                                     .ToList(),
-                                ReturnType = GetType(functionProtoType.ReturnType, out _, out _)
+                                ReturnType = GetType(functionProtoType.ReturnType, out _, ref ignoreFlow, out _)
                             }
                         };
                     }
@@ -563,12 +565,12 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (type is PointerType pointerType)
                 {
-                    ret = GetType(pointerType.PointeeType, out _, out _);
+                    ret = GetType(pointerType.PointeeType, out _, ref flow, out _);
                     ret.IndirectionLevels++;
                 }
                 else if (type is ReferenceType referenceType)
                 {
-                    ret = GetType(referenceType.PointeeType, out _, out _);
+                    ret = GetType(referenceType.PointeeType, out _, ref flow, out _);
                     ret.IndirectionLevels++;
                 }
                 else if (type is TagType tagType)
@@ -579,7 +581,12 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else if (tagType.Handle.IsConstQualified)
                     {
-                        ret = GetType(tagType.Decl.TypeForDecl, out _, out _);
+                        if (flow == FlowDirection.Undefined)
+                        {
+                            flow = FlowDirection.In;
+                        }
+
+                        ret = GetType(tagType.Decl.TypeForDecl, out _, ref flow, out _);
                     }
                     else
                     {
@@ -597,7 +604,7 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = GetType(typedefType.Decl.UnderlyingType, out _, out var getTypeSuccess);
+                        ret = GetType(typedefType.Decl.UnderlyingType, out _, ref flow, out var getTypeSuccess);
                         if (!getTypeSuccess)
                         {
                             ret = new Type {Name = typedefType.Decl.Name};
@@ -716,7 +723,7 @@ namespace Silk.NET.BuildTools.Cpp
                                         }
                                     )
                                     .ToList(),
-                                EnumBaseType = GetType(enumDecl.TypeForDecl, out _, out _)
+                                EnumBaseType = GetType(enumDecl.TypeForDecl, out _, ref _f, out _)
                             }
                         );
                         break;
@@ -773,7 +780,7 @@ namespace Silk.NET.BuildTools.Cpp
                                             Name = Naming.TranslateLite
                                                 (Naming.TrimName(x.Name, task), task.FunctionPrefix),
                                             NativeName = x.Name,
-                                            Type = GetType(x.Type, out var count, out _),
+                                            Type = GetType(x.Type, out var count, ref _f, out _),
                                             NativeType = x.Type.AsString.Replace("\\", "\\\\"), Count = count,
                                             Attributes = recordDecl.IsUnion
                                                 ? new List<Attribute>
@@ -871,14 +878,20 @@ namespace Silk.NET.BuildTools.Cpp
                                 ),
                                 Parameters = functionDecl.Parameters.Select
                                     (
-                                        (x, i) => new Parameter
+                                        (x, i) =>
                                         {
-                                            Name = string.IsNullOrWhiteSpace(x.Name) ? $"arg{i}" : x.Name,
-                                            Type = GetType(x.Type, out var count, out _), Count = count
+                                            var parameterFlow = FlowDirection.Undefined;
+                                            return new Parameter
+                                            {
+                                                Name = string.IsNullOrWhiteSpace(x.Name) ? $"arg{i}" : x.Name,
+                                                Type = GetType(x.Type, out var count, ref parameterFlow, out _),
+                                                Flow = parameterFlow,
+                                                Count = count
+                                            };
                                         }
                                     )
                                     .ToList(),
-                                ReturnType = GetType(functionDecl.ReturnType, out _, out _),
+                                ReturnType = GetType(functionDecl.ReturnType, out _, ref _f, out _),
                                 Attributes = new List<Attribute>
                                 {
                                     new Attribute

@@ -3,8 +3,10 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 
@@ -12,28 +14,75 @@ namespace Silk.NET.BuildTools.Overloading
 {
     public static class Overloader
     {
-        public static ISimpleParameterOverloader[] ParameterOverloaders { get; }
-        public static IComplexFunctionOverloader[] FunctionOverloaders { get; }
+        public static ISimpleParameterOverloader[][] ParameterOverloaders { get; } =
+        {
+            new ISimpleParameterOverloader[]
+            {
+                new GroupOverloader()
+            },
+            new ISimpleParameterOverloader[]
+            {
+                new RefOverloader(),
+                new StringOverloader()
+            }
+        };
+
+        public static ISimpleReturnOverloader[] ReturnOverloaders { get; } =
+        {
+            new StringOverloader()
+        };
+
+        public static IComplexFunctionOverloader[] FunctionOverloaders { get; } =
+        {
+            new ReturnTypeOverloader(),
+            new ArrayParameterOverloader()
+        };
+
 
         public static IEnumerable<Function> GetWithVariants(IEnumerable<Function> functions, Project core)
         {
-            foreach (var function in functions)
+            var enumerable = functions;
+            foreach (var overloaders in ParameterOverloaders)
             {
-                foreach (var overload in SimpleParameterOverloader.GetWithOverloads
-                    (function, core, ParameterOverloaders))
+                enumerable = Get(enumerable, overloaders);
+            }
+
+            foreach (var overload in enumerable)
+            {
+                foreach (var final in SimpleReturnOverloader.GetWithOverloads(overload, core, ReturnOverloaders))
                 {
-                    yield return overload;
+                    yield return final;
+                }
+            }
+
+            IEnumerable<Function> Get(IEnumerable<Function> functions, ISimpleParameterOverloader[] overloaders)
+            {
+                foreach (var function in functions)
+                {
+                    foreach (var overload in SimpleParameterOverloader.GetWithOverloads(function, core, overloaders))
+                    {
+                        yield return overload;
+                    }
                 }
             }
         }
 
         public static IEnumerable<ImplementedFunction> GetOverloads(IEnumerable<Function> allFunctions, Project core)
         {
-            foreach (var function in allFunctions)
+            return Get().RemoveDuplicates(CheckDuplicate);
+
+            static bool CheckDuplicate(ImplementedFunction left, ImplementedFunction right)
+                => left.Signature.Equals(right.Signature);
+
+            IEnumerable<ImplementedFunction> Get()
             {
-                foreach (var overload in ComplexFunctionOverloader.GetOverloads(function, core, FunctionOverloaders))
+                foreach (var function in allFunctions)
                 {
-                    yield return overload;
+                    foreach (var overload in ComplexFunctionOverloader.GetOverloads
+                        (function, core, FunctionOverloaders))
+                    {
+                        yield return overload;
+                    }
                 }
             }
         }

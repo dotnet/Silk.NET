@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Common.Functions
 {
@@ -85,6 +86,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// The accessibility modifier to add to this function's declaration.
         /// </summary>
         public Accessibility Accessibility { get; set; }
+
+        /// <summary>
+        /// The signature kind of this function, used to determine whether unique steps are needed in binding.
+        /// </summary>
+        public SignatureKind Kind { get; set; }
 
         /// <inheritdoc />
         public override string ToString()

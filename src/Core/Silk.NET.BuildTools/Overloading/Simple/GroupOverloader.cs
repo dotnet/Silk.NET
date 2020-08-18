@@ -36,33 +36,5 @@ namespace Silk.NET.BuildTools.Overloading
                 ;
             return true;
         }
-
-        public bool TryCreateVariant(Type returnType, out Type variant, Project core)
-        {
-            if (returnType.OriginalGroup is null || core.Enums.All
-                    (x => x.Name != returnType.OriginalGroup) || returnType.OriginalName != "GLenum" ||
-                returnType.OriginalName != "CLenum")
-            {
-                variant = null;
-                return false;
-            }
-
-            variant = new TypeSignatureBuilder(returnType).WithName
-                    (returnType.OriginalGroup)
-                .Build();
-            return true;
-        }
-
-        public bool TryCreateVariant(Function function, out Function variant, Project core)
-        {
-            variant = null;
-            return false;
-        }
-
-        public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
-        {
-            overload = null;
-            return false;
-        }
     }
 }

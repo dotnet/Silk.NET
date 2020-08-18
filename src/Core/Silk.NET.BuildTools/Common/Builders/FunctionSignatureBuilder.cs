@@ -34,6 +34,8 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         [NotNull] private Type _newReturnType;
 
+        private Accessibility _newAccessibility;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionSignatureBuilder" /> class.
         /// </summary>
@@ -49,6 +51,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newReturnType = functionSignature.ReturnType;
             _newGenericTypeParameters = functionSignature.GenericTypeParameters;
             _newDoc = functionSignature.Doc;
+            _newAccessibility = functionSignature.Accessibility;
         }
 
         /// <summary>
@@ -151,6 +154,18 @@ namespace Silk.NET.BuildTools.Common.Builders
         }
 
         /// <summary>
+        /// Sets a new accessibility for the function.
+        /// </summary>
+        /// <param name="newAccessibility">The new accessibility.</param>
+        /// <returns>The builder, with the change applied.</returns>
+        [NotNull]
+        public FunctionSignatureBuilder WithReturnType(Accessibility newAccessibility)
+        {
+            _newAccessibility = newAccessibility;
+            return this;
+        }
+
+        /// <summary>
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
@@ -166,7 +181,9 @@ namespace Silk.NET.BuildTools.Common.Builders
                 ReturnType = _newReturnType,
                 Parameters = _newParameters?.ToList(),
                 GenericTypeParameters = _newGenericTypeParameters?.ToList() ?? new List<GenericTypeParameter>(),
-                Attributes = _newAttributes, Doc = _newDoc
+                Attributes = _newAttributes,
+                Doc = _newDoc,
+                Accessibility = _newAccessibility
             };
         }
     }

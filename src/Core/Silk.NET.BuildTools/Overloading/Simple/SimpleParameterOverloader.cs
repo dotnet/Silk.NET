@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
@@ -33,10 +34,19 @@ namespace Silk.NET.BuildTools.Overloading
         /// <param name="core">The core project for this profile. May be used by some overloads.</param>
         /// <param name="overloaders">The overloaders to use in getting function overloads.</param>
         /// <returns>An enumerable containing the original function signature and all overloads.</returns>
-        public static IEnumerable<Function> GetWithOverloads(Function original,
+        public static IEnumerable<Function> GetWithOverloads
+        (
+            Function original,
             Project core,
-            params ISimpleParameterOverloader[] overloaders)
+            params ISimpleParameterOverloader[] overloaders
+        )
         {
+            if (original.Parameters.Count == 0)
+            {
+                yield return original;
+                yield break;
+            }
+            
             var parameters = original.Parameters.Select(x => new List<Parameter> {x}).ToList();
             foreach (var parameter in parameters)
             {
@@ -51,10 +61,41 @@ namespace Silk.NET.BuildTools.Overloading
 
             foreach (var combination in Combinations(parameters))
             {
-                yield return new FunctionSignatureBuilder(original).WithParameters(combination).Build();
+                var numGenericTypeParams = 0;
+                var ret = new FunctionSignatureBuilder(original).WithParameters
+                    (
+                        combination.Select
+                            (
+                                x => !x.Type.IsGenericTypeParameterReference
+                                    ? x
+                                    : new ParameterSignatureBuilder(x).WithType
+                                        (
+                                            new TypeSignatureBuilder(x.Type).WithName("T" + numGenericTypeParams++)
+                                                .Build()
+                                        )
+                                        .Build()
+                            )
+                            .ToList()
+                    )
+                    .WithGenericTypeParameters
+                    (
+                        Enumerable.Range(0, numGenericTypeParams)
+                            .Select
+                            (
+                                x => new GenericTypeParameter
+                                    {Name = "T" + x, Constraints = new List<string> {"unmanaged"}}
+                            )
+                            .ToList()
+                    )
+                    .Build();
+                ret.Kind = original.Kind == SignatureKind.Normal ? ret.Parameters.SequenceEqual
+                    (original.Parameters)
+                    ? SignatureKind.Normal
+                    : SignatureKind.SimpleOverload : original.Kind;
+                yield return ret;
             }
         }
-        
+
         [SuppressMessage("ReSharper", "PossibleMultipleEnumeration")]
         private static IEnumerable<IReadOnlyList<T>> Combinations<T>(IEnumerable<IReadOnlyList<T>> collections)
         {
@@ -62,13 +103,13 @@ namespace Silk.NET.BuildTools.Overloading
             if (collections.Count() == 1)
             {
                 foreach (var item in collections.Single())
-                    yield return new List<T> { item };
+                    yield return new List<T> {item};
             }
             else if (collections.Count() > 1)
             {
                 foreach (var item in collections.First())
                 foreach (var tail in Combinations(collections.Skip(1)))
-                    yield return new[] { item }.Concat(tail).ToList();
+                    yield return new[] {item}.Concat(tail).ToList();
             }
         }
     }

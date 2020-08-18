@@ -48,7 +48,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             {
                 if (value < 0)
                 {
-                    Debug.WriteLine($"Negative indirection levels assigned at:\n{Environment.StackTrace}");
+                    Console.WriteLine($"Negative indirection levels assigned at:\n{Environment.StackTrace}");
                 }
 
                 _indirectionLevels = value;
@@ -105,6 +105,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the function pointer signature if this type is a function pointer. May be null.
         /// </summary>
         public Function FunctionPointerSignature { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether this type references a generic type parameter defined in the function.
+        /// </summary>
+        public bool IsGenericTypeParameterReference { get; set; }
 
         /// <inheritdoc />
         public override string ToString()
