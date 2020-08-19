@@ -102,6 +102,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         public bool IsIn { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether this type is a "this" type (i.e. an extension method type reference)
+        /// </summary>
+        public bool IsThis { get; set; }
+
+        /// <summary>
         /// Gets or sets the function pointer signature if this type is a function pointer. May be null.
         /// </summary>
         public Function FunctionPointerSignature { get; set; }
@@ -114,7 +119,8 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <inheritdoc />
         public override string ToString()
         {
-            return (IsIn ? "in " : string.Empty) +
+            return (IsThis ? "this " : string.Empty) +
+                   (IsIn ? "in " : string.Empty) +
                    (IsOut ? "out " : string.Empty) +
                    (IsByRef ? "ref " : string.Empty) +
                    Name +

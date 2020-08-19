@@ -99,11 +99,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         /// <inheritdoc cref="ToString()" />
-        public string ToString(bool? @unsafe, bool partial = false, bool accessibility = false)
+        public string ToString(bool? @unsafe, bool partial = false, bool accessibility = false, bool @static = false)
         {
             var sb = new StringBuilder();
 
-            GetDeclarationString(sb, @unsafe, partial, accessibility);
+            GetDeclarationString(sb, @unsafe, partial, accessibility, @static);
 
             sb.Append("(");
             if (Parameters.Count > 0)
@@ -148,7 +148,8 @@ namespace Silk.NET.BuildTools.Common.Functions
         private void GetDeclarationString(StringBuilder sb,
             bool? @unsafe,
             bool partial = false,
-            bool accessibility = false)
+            bool accessibility = false,
+            bool @static = false)
         {
             if (accessibility)
             {
@@ -161,6 +162,11 @@ namespace Silk.NET.BuildTools.Common.Functions
                         _ => string.Empty
                     }
                 );
+            }
+
+            if (@static)
+            {
+                sb.Append("static ");
             }
             
             if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)

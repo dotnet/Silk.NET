@@ -5,6 +5,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
@@ -35,7 +37,7 @@ namespace Silk.NET.BuildTools.Overloading
                 var name = (Utilities.CSharpKeywords.Contains(parameter.Name)
                     ? "@"
                     : string.Empty) + parameter.Name;
-                if (parameter.Type.IsIn)
+                if (parameter.Type.IsIn && !parameter.Type.IsPointer)
                 {
                     applicable = true;
                     parameters[i] = new ParameterSignatureBuilder(parameter).WithType
@@ -51,7 +53,7 @@ namespace Silk.NET.BuildTools.Overloading
                         .Build();
                     invocationParameters.Add($"in {name}.GetPinnableReference()");
                 }
-                else if (parameter.Type.IsOut)
+                else if (parameter.Type.IsOut && !parameter.Type.IsPointer)
                 {
                     applicable = true;
                     parameters[i] = new ParameterSignatureBuilder(parameter).WithType
@@ -67,7 +69,7 @@ namespace Silk.NET.BuildTools.Overloading
                         .Build();
                     invocationParameters.Add($"out {name}.GetPinnableReference()");
                 }
-                else if (parameter.Type.IsByRef)
+                else if (parameter.Type.IsByRef && !parameter.Type.IsPointer)
                 {
                     applicable = true;
                     parameters[i] = new ParameterSignatureBuilder(parameter).WithType
@@ -92,6 +94,28 @@ namespace Silk.NET.BuildTools.Overloading
                             parameter.Type.IsByRef ? "ref " : string.Empty) + name
                     );
                 }
+            }
+
+            if (applicable)
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("// SpanOverloader");
+                if (original.ReturnType.ToString() != "void")
+                {
+                    sb.Append("return ");
+                }
+                
+                sb.Append("thisApi." + original.Name);
+                sb.Append("(");
+                sb.Append(string.Join(", ", invocationParameters));
+                sb.Append(");");
+                varied = new ImplementedFunction
+                (
+                    new FunctionSignatureBuilder(original)
+                        .WithParameters(parameters)
+                        .WithKind(SignatureKind.PotentiallyConflictingOverload)
+                        .Build(), sb, original
+                );
             }
 
             return applicable;

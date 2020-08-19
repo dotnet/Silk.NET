@@ -35,7 +35,8 @@ namespace Silk.NET.BuildTools.Overloading
         public static IComplexFunctionOverloader[] FunctionOverloaders { get; } =
         {
             new ReturnTypeOverloader(),
-            new ArrayParameterOverloader()
+            new ArrayParameterOverloader(),
+            new SpanOverloader()
         };
 
 

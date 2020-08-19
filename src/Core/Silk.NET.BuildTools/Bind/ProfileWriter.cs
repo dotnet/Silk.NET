@@ -10,6 +10,7 @@ using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
+using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
@@ -336,6 +337,7 @@ namespace Silk.NET.BuildTools.Bind
                 if (project.IsRoot)
                 {
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs"));
+                    StreamWriter? swOverloads = null;
                     sw.Write(task.LicenseText());
                     sw.WriteLine("using System;");
                     sw.WriteLine("using System.Runtime.InteropServices;");
@@ -396,29 +398,45 @@ namespace Silk.NET.BuildTools.Bind
 
                     foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"]))
                     {
+                        var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
+                            ? swOverloads ??= CreateOverloadsFile(folder, @class.ClassName, false)
+                            : sw;
+                        if (sw2u == swOverloads)
+                        {
+                            overload.Signature.Parameters.Insert
+                            (
+                                0,
+                                new Parameter
+                                {
+                                    Name = "thisApi",
+                                    Type = new Common.Functions.Type {Name = @class.ClassName, IsThis = true}
+                                }
+                            );
+                        }
+
                         using (var sr = new StringReader(overload.Signature.Doc))
                         {
                             string line;
                             while ((line = sr.ReadLine()) != null)
                             {
-                                sw.WriteLine($"        {line}");
+                                sw2u.WriteLine($"        {line}");
                             }
                         }
 
                         foreach (var attr in overload.Signature.Attributes)
                         {
-                            sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                            sw2u.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                         }
 
-                        sw.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe).TrimEnd(';')}");
-                        sw.WriteLine("        {");
+                        sw2u.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe, @static: sw2u == swOverloads).TrimEnd(';')}");
+                        sw2u.WriteLine("        {");
                         foreach (var line in overload.Body)
                         {
-                            sw.WriteLine($"            {line}");
+                            sw2u.WriteLine($"            {line}");
                         }
 
-                        sw.WriteLine("        }");
-                        sw.WriteLine();
+                        sw2u.WriteLine("        }");
+                        sw2u.WriteLine();
                     }
 
                     sw.WriteLine();
@@ -429,6 +447,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("    }");
                     sw.WriteLine("}");
                     sw.WriteLine();
+                    FinishOverloadsFile(swOverloads);
                     sw.Flush();
                     sw.Dispose();
                     if (!File.Exists(Path.Combine(folder, $"{@class.ClassName}.cs")))
@@ -494,6 +513,7 @@ namespace Silk.NET.BuildTools.Bind
                     {
                         var name = i.Name.Substring(1);
                         var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs"));
+                        StreamWriter? swOverloads = null;
                         sw.Write(task.LicenseText());
                         sw.WriteLine("using System;");
                         sw.WriteLine("using System.Runtime.InteropServices;");
@@ -546,30 +566,45 @@ namespace Silk.NET.BuildTools.Bind
 
                         foreach (var overload in Overloader.GetOverloads(i.Functions, profile.Projects["Core"]))
                         {
+                            var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
+                                ? swOverloads ??= CreateOverloadsFile(folder, name, true)
+                                : sw;
+                            if (sw2u == swOverloads)
+                            {
+                                overload.Signature.Parameters.Insert
+                                (
+                                    0,
+                                    new Parameter
+                                    {
+                                        Name = "thisApi",
+                                        Type = new Common.Functions.Type {Name = name, IsThis = true}
+                                    }
+                                );
+                            }
+
                             using (var sr = new StringReader(overload.Signature.Doc))
                             {
                                 string line;
                                 while ((line = sr.ReadLine()) != null)
                                 {
-                                    sw.WriteLine($"        {line}");
+                                    sw2u.WriteLine($"        {line}");
                                 }
                             }
 
                             foreach (var attr in overload.Signature.Attributes)
                             {
-                                sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                                sw2u.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                             }
 
-                            sw.WriteLine
-                                ($"        public {overload.Signature.ToString(overload.IsUnsafe).TrimEnd(';')}");
-                            sw.WriteLine("        {");
+                            sw2u.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe, @static: sw2u == swOverloads).TrimEnd(';')}");
+                            sw2u.WriteLine("        {");
                             foreach (var line in overload.Body)
                             {
-                                sw.WriteLine($"            {line}");
+                                sw2u.WriteLine($"            {line}");
                             }
 
-                            sw.WriteLine("        }");
-                            sw.WriteLine();
+                            sw2u.WriteLine("        }");
+                            sw2u.WriteLine();
                         }
 
                         sw.WriteLine($"        public {name}(INativeContext ctx)");
@@ -580,8 +615,40 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("}");
                         sw.WriteLine();
                         sw.Flush();
+                        FinishOverloadsFile(swOverloads);
                     }
                 }
+            }
+
+            StreamWriter CreateOverloadsFile(string folder, string @class, bool isExtension)
+            {
+                var ns = isExtension ? task.ExtensionsNamespace : task.Namespace;
+                var swOverloads = new StreamWriter(Path.Combine(folder, $"{@class}Overloads.gen.cs"));
+                swOverloads.Write(task.LicenseText());
+                swOverloads.WriteLine("using System;");
+                swOverloads.WriteLine("using System.Runtime.InteropServices;");
+                swOverloads.WriteLine("using System.Text;");
+                swOverloads.WriteLine("using Silk.NET.Core.Native;");
+                swOverloads.WriteLine("using Silk.NET.Core.Attributes;");
+                swOverloads.WriteLine("using Silk.NET.Core.Contexts;");
+                swOverloads.WriteLine("using Silk.NET.Core.Loader;");
+                swOverloads.WriteLine();
+                swOverloads.WriteLine("#pragma warning disable 1591");
+                swOverloads.WriteLine();
+                swOverloads.WriteLine($"namespace {ns}{project.Namespace}");
+                swOverloads.WriteLine("{");
+                swOverloads.WriteLine($"    public static class {@class}Overloads");
+                swOverloads.WriteLine("    {");
+                return swOverloads;
+            }
+
+            static void FinishOverloadsFile(StreamWriter? swOverloads)
+            {
+                swOverloads?.WriteLine("    }");
+                swOverloads?.WriteLine("}");
+                swOverloads?.WriteLine();
+                swOverloads?.Flush();
+                swOverloads?.Dispose();
             }
         }
 
