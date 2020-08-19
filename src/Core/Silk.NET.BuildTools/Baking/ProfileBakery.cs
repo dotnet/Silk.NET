@@ -74,8 +74,6 @@ namespace Silk.NET.BuildTools.Baking
                 {
                     foreach (var @interface in @class.NativeApis.Values)
                     {
-                        //@interface.Functions.AddRange
-                        //    (Overloader.GetEarlyVariants(@interface.Functions, profile.Projects["Core"]));
                         @interface.Functions = Overloader.GetWithVariants
                                 (@interface.Functions, profile.Projects["Core"])
                             .ToList();
