@@ -18,6 +18,11 @@ Please:
 ## Breaking changes
 Contributions must maintain API signature and behavioral compatibility. Contributions that include breaking changes will be rejected. There are exceptions to this, such as if the contribution is made against a major/breaking version branch (such as `2.0` instead of `master`), however this is subject to the team's approval. At risk of sounding like a broken record, talk to us about your idea first!
 
+### Generated bindings
+Sometimes upstream specification changes happen while working on your contribution. Unfortunately, we are not in control of breaking changes created by the upstream spec sources, and if one happens while working on your contribution it is not a cause for concern.
+
+If your contribution affects binder output, let us know by commenting on the pull request. If the change isn't as a result of your modifications to the BuildTools (if any), it is recommended that you don't commit the .gen.cs files and instead do this in a separate PR.
+
 ## Suggested workflow
 Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-blend/pull-request-first-f6bb667a9b6). Please don't wait until you're done to open a PR!
 
