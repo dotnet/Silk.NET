@@ -65,11 +65,6 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the name of this type.
         /// </summary>
         public string Name { get; set; }
-        
-        /// <summary>
-        /// Gets or sets the group of this type.
-        /// </summary>
-        public string Group { get; set; }
 
         /// <summary>
         /// Gets or sets the original name of this type, before mapping.

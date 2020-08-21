@@ -104,67 +104,6 @@ namespace Silk.NET.BuildTools.Common
         };
 
         /// <summary>
-        /// Gets a namespace suffix from the given category name. This will convert something
-        /// like EXT_extension_name to EXT.ExtensionName.
-        /// </summary>
-        /// <param name="name">The category name.</param>
-        /// <returns>The namespace name for this category.</returns>
-        public static string ConvertExtensionNameToNamespace(string name)
-        {
-            var ret = string.Empty;
-            var split = name.Split('_');
-            foreach (var chunk in split)
-            {
-                var cl = chunk.ToList();
-                cl[0] = chunk.Substring(0, 1).ToUpper()[0];
-                ret += $"{new string(cl.ToArray())}.";
-            }
-
-            var firstDot = ret.IndexOf('.');
-            var firstHalf = ret.Substring(0, firstDot);
-            var secondHalf = ret.Substring(firstDot).Replace(".", string.Empty);
-
-            return $"{firstHalf}.{secondHalf}";
-        }
-
-        /// <summary>
-        /// Gets the given category name formatted as CamelCase. This will convert something
-        /// like EXT_extension_name to EXTExtensionName.
-        /// </summary>
-        /// <param name="name">The category name.</param>
-        /// <returns>The CamelCase version of the category name.</returns>
-        public static string ConvertCategoryNameToCamel(string name)
-        {
-            var ret = string.Empty;
-            var split = name.Split('_');
-            foreach (var chunk in split)
-            {
-                var cl = chunk.ToList();
-                cl[0] = chunk.Substring(0, 1).ToUpper()[0];
-                ret += new string(cl.ToArray());
-            }
-
-            return ret;
-        }
-
-        /// <summary>
-        /// Reads all lines from the given string.
-        /// </summary>
-        /// <param name="s">The string.</param>
-        /// <returns>The individual lines in the string.</returns>
-        public static IEnumerable<string> ReadAllLines(this string s)
-        {
-            using (var sr = new StringReader(s))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    yield return line;
-                }
-            }
-        }
-
-        /// <summary>
         /// An extension method which returns the given enumerable without duplicate elements.
         /// </summary>
         /// <param name="enumerable">The enumerable to process.</param>

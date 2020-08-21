@@ -74,67 +74,6 @@ namespace Silk.NET.BuildTools.Converters
             }
         }
 
-        private static Stream OpenPath(string path)
-        {
-            if (path.StartsWith("http://") || path.StartsWith("https://"))
-            {
-                // Download from the specified url into a temporary file
-                using var wb = new HttpClient();
-                return wb.GetStreamAsync(path).GetAwaiter().GetResult();
-            }
-
-            return File.OpenRead(path);
-        }
-
-        public static void WriteProfiles(CommandLineOptions opts, BindTask task)
-        {
-            if (!Directory.Exists(opts.OutputFolder))
-            {
-                Directory.CreateDirectory(opts.OutputFolder);
-            }
-
-            var reader = opts.Reader.ToLower() switch
-            {
-                "gl" => (IReader) new OpenGLReader(),
-                "cl" => (IReader) new OpenCLReader(),
-                "vk" => (IReader) new VulkanReader(),
-                _ => throw new ArgumentException("Couldn't find a reader with that name")
-            };
-
-            var constructor = opts.Constructor.ToLower() switch
-            {
-                "gl" => (IConstructor) new OpenGLConstructor(),
-                "cl" => (IConstructor) new OpenCLConstructor(),
-                "vk" => (IConstructor) new VulkanConstructor(),
-                _ => throw new ArgumentException("Couldn't find a constructor with that name")
-            };
-
-            foreach (var file in opts.InputFiles.Select(OpenPath))
-            {
-                foreach (var profile in ReadProfiles
-                (
-                    reader, constructor, file, task
-                ))
-                {
-                    using var outStream = opts.OutputFolder == null
-                        ? Console.Out
-                        : new StreamWriter
-                        (
-                            Path.Combine
-                            (
-                                opts.OutputFolder,
-                                $"api-{profile.Name}{(!string.IsNullOrEmpty(profile.Version) ? $"-{profile.Version}" : null)}.json"
-                            )
-                        );
-                    outStream.Write
-                    (
-                        JsonConvert.SerializeObject(profile, opts.PrettyPrinted ? Formatting.Indented : Formatting.None)
-                    );
-                    outStream.Flush();
-                }
-            }
-        }
-
         private static Profile CreateBlankProfile(string name, Version version)
         {
             return new Profile

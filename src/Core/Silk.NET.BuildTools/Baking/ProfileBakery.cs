@@ -228,22 +228,5 @@ namespace Silk.NET.BuildTools.Baking
                 }
             }
         }
-
-        /// <summary>
-        /// Deletes all of the unbaked/raw APIs in a folder.
-        /// </summary>
-        /// <param name="folder">The folder to search and destroy APIs in.</param>
-        // For some reason, ReSharper thinks that this is "Ap Is", not "APIs", so it won't
-        // accept "API" being in the abbreviation dictionary.
-        // ReSharper disable once InconsistentNaming
-        public static void DeleteRawAPIs(string folder)
-        {
-            foreach (var file in Directory.GetFiles
-                    (folder)
-                .Where(x => Path.GetFileName(x).StartsWith("api-") && x.EndsWith(".json")))
-            {
-                File.Delete(file);
-            }
-        }
     }
 }
