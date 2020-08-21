@@ -5,7 +5,13 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>preview</LangVersion>
         <PackageReleaseNotes>
-            Includes Assimp and experimental OpenXR bindings.
+            Includes everything from the last previews, as well as:
+            - SDL bindings
+            - A SDL windowing backend
+            - A new, AOT-friendly interop system
+            - A new and improved overload system and bindings API surface
+            - Miscellaneous OpenXR and GLFW fixes
+            - Miscellaneous windowing and input fixes and refactorings
         </PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
