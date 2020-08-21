@@ -34,38 +34,74 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glPixelTransformParameteriEXT")]
         public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glPixelTransformParameterfEXT")]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
+        [NativeApi(EntryPoint = "glPixelTransformParameteriEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
-
-        [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] ref int @params);
-
-        [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
-        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
-
-        [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] ref float @params);
+        [NativeApi(EntryPoint = "glPixelTransformParameteriEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameteriEXT")]
         public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfEXT")]
         public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
+        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
+        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
+        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
         public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterivEXT")]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] ref int @params);
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
+        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
+        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
+        public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
         public unsafe partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPixelTransformParameterfvEXT")]
-        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] ref float @params);
+        public partial void PixelTransformParameter([Flow(FlowDirection.In)] PixelTransformTargetEXT target, [Flow(FlowDirection.In)] PixelTransformPNameEXT pname, [Count(Count = 1), Flow(FlowDirection.In)] in float @params);
 
         public ExtPixelTransform(INativeContext ctx)
             : base(ctx)

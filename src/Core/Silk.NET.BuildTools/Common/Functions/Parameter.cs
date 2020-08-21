@@ -41,12 +41,6 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
         
-        /// <summary>
-        /// The function this parameter originates from.
-        /// </summary>
-        [JsonIgnore]
-        public Function Origin { get; set; }
-        
         /// <inheritdoc />
         public override int GetHashCode()
         {

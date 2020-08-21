@@ -22,11 +22,11 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
         public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
 
-        [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
-        public partial void EndConditionalRender();
-
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
         public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
+
+        [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
+        public partial void EndConditionalRender();
 
         public NVConditionalRender(INativeContext ctx)
             : base(ctx)

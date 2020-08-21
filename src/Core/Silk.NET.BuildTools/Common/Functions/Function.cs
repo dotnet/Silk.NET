@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Common.Functions
 {
@@ -81,6 +82,16 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public CallingConvention Convention { get; set; }
 
+        /// <summary>
+        /// The accessibility modifier to add to this function's declaration.
+        /// </summary>
+        public Accessibility Accessibility { get; set; }
+
+        /// <summary>
+        /// The signature kind of this function, used to determine whether unique steps are needed in binding.
+        /// </summary>
+        public SignatureKind Kind { get; set; }
+
         /// <inheritdoc />
         public override string ToString()
         {
@@ -88,11 +99,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         /// <inheritdoc cref="ToString()" />
-        public string ToString(bool? @unsafe, bool partial = false)
+        public string ToString(bool? @unsafe, bool partial = false, bool accessibility = false, bool @static = false)
         {
             var sb = new StringBuilder();
 
-            GetDeclarationString(sb, @unsafe, partial);
+            GetDeclarationString(sb, @unsafe, partial, accessibility, @static);
 
             sb.Append("(");
             if (Parameters.Count > 0)
@@ -134,8 +145,30 @@ namespace Silk.NET.BuildTools.Common.Functions
             return sb.ToString();
         }
 
-        private void GetDeclarationString(StringBuilder sb, bool? @unsafe, bool partial = false)
+        private void GetDeclarationString(StringBuilder sb,
+            bool? @unsafe,
+            bool partial = false,
+            bool accessibility = false,
+            bool @static = false)
         {
+            if (accessibility)
+            {
+                sb.Append
+                (
+                    Accessibility switch
+                    {
+                        Accessibility.Public => "public ",
+                        Accessibility.Protected => "protected ",
+                        _ => string.Empty
+                    }
+                );
+            }
+
+            if (@static)
+            {
+                sb.Append("static ");
+            }
+            
             if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)
             {
                 sb.Append("unsafe ");

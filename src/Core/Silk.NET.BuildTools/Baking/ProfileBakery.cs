@@ -74,8 +74,6 @@ namespace Silk.NET.BuildTools.Baking
                 {
                     foreach (var @interface in @class.NativeApis.Values)
                     {
-                        @interface.Functions.AddRange
-                            (Overloader.GetEarlyVariants(@interface.Functions, profile.Projects["Core"]));
                         @interface.Functions = Overloader.GetWithVariants
                                 (@interface.Functions, profile.Projects["Core"])
                             .ToList();
@@ -213,10 +211,10 @@ namespace Silk.NET.BuildTools.Baking
                             {
                                 if (existingToken.Value != token.Value)
                                 {
-                                    Debug.WriteLine("Warning: Two tokens with the same name but different values.");
-                                    Debug.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
-                                    Debug.WriteLine($"    {token.Name} = {token.Value}");
-                                    Debug.WriteLine($"{existingToken.Value} will be used.");
+                                    Console.WriteLine("Warning: Two tokens with the same name but different values.");
+                                    Console.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
+                                    Console.WriteLine($"    {token.Name} = {token.Value}");
+                                    Console.WriteLine($"{existingToken.Value} will be used.");
                                 }
 
                                 continue;
@@ -228,23 +226,6 @@ namespace Silk.NET.BuildTools.Baking
                         @enum.Tokens = tokens;
                     }
                 }
-            }
-        }
-
-        /// <summary>
-        /// Deletes all of the unbaked/raw APIs in a folder.
-        /// </summary>
-        /// <param name="folder">The folder to search and destroy APIs in.</param>
-        // For some reason, ReSharper thinks that this is "Ap Is", not "APIs", so it won't
-        // accept "API" being in the abbreviation dictionary.
-        // ReSharper disable once InconsistentNaming
-        public static void DeleteRawAPIs(string folder)
-        {
-            foreach (var file in Directory.GetFiles
-                    (folder)
-                .Where(x => Path.GetFileName(x).StartsWith("api-") && x.EndsWith(".json")))
-            {
-                File.Delete(file);
             }
         }
     }

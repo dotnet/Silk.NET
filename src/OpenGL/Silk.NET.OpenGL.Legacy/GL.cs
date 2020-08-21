@@ -38,7 +38,7 @@ namespace Silk.NET.OpenGL.Legacy
         public override bool IsExtensionPresent(string extension)
         {
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
-                .Select(x => GetString(StringName.Extensions, (uint) x)).ToList();
+                .Select(x => GetStringS(StringName.Extensions, (uint) x)).ToList();
 
             return _extensions.Contains("GL_" + (extension.StartsWith("GL_") ? extension.Substring(3) : extension));
         }

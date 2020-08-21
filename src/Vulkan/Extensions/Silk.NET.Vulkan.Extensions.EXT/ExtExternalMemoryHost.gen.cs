@@ -25,6 +25,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
+        public unsafe partial Result GetMemoryHostPointerProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] void* pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryHostPointerPropertiesEXT pMemoryHostPointerProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
+        public unsafe partial Result GetMemoryHostPointerProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] ref T0 pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
         public partial Result GetMemoryHostPointerProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] ref T0 pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryHostPointerPropertiesEXT pMemoryHostPointerProperties) where T0 : unmanaged;
 
         public ExtExternalMemoryHost(INativeContext ctx)

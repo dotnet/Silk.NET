@@ -22,17 +22,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glApplyTextureEXT")]
         public partial void ApplyTexture([Flow(FlowDirection.In)] EXT mode);
 
-        [NativeApi(EntryPoint = "glTextureLightEXT")]
-        public partial void TextureLight([Flow(FlowDirection.In)] EXT pname);
-
-        [NativeApi(EntryPoint = "glTextureMaterialEXT")]
-        public partial void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
-
         [NativeApi(EntryPoint = "glApplyTextureEXT")]
         public partial void ApplyTexture([Flow(FlowDirection.In)] LightTextureModeEXT mode);
 
         [NativeApi(EntryPoint = "glTextureLightEXT")]
+        public partial void TextureLight([Flow(FlowDirection.In)] EXT pname);
+
+        [NativeApi(EntryPoint = "glTextureLightEXT")]
         public partial void TextureLight([Flow(FlowDirection.In)] LightTexturePNameEXT pname);
+
+        [NativeApi(EntryPoint = "glTextureMaterialEXT")]
+        public partial void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
+
+        [NativeApi(EntryPoint = "glTextureMaterialEXT")]
+        public partial void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter mode);
+
+        [NativeApi(EntryPoint = "glTextureMaterialEXT")]
+        public partial void TextureMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glTextureMaterialEXT")]
         public partial void TextureMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter mode);

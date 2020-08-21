@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         public unsafe partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
 
         [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
-        public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> fences);
+        public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint fences);
 
         [NativeApi(EntryPoint = "glFinishFenceAPPLE")]
         public partial void FinishFence([Flow(FlowDirection.In)] uint fence);
@@ -31,11 +31,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
         public partial void FinishObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] int name);
 
+        [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
+        public partial void FinishObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] int name);
+
         [NativeApi(EntryPoint = "glGenFencesAPPLE")]
         public unsafe partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
 
         [NativeApi(EntryPoint = "glGenFencesAPPLE")]
-        public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences);
+        public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint fences);
 
         [NativeApi(EntryPoint = "glIsFenceAPPLE")]
         public partial bool IsFence([Flow(FlowDirection.In)] uint fence);
@@ -48,9 +51,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 
         [NativeApi(EntryPoint = "glTestObjectAPPLE")]
         public partial bool TestObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] uint name);
-
-        [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
-        public partial void FinishObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] int name);
 
         [NativeApi(EntryPoint = "glTestObjectAPPLE")]
         public partial bool TestObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] uint name);

@@ -22,12 +22,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glImportSyncEXT")]
         public partial IntPtr ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] IntPtr external_sync, [Flow(FlowDirection.In)] uint flags);
 
-        public unsafe IntPtr ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] int external_sync, [Flow(FlowDirection.In)] uint flags)
-        {
-            // IntPtrOverloader
-            return ImportSync(external_sync_type, new IntPtr(external_sync), flags);
-        }
-
         public ExtX11SyncObject(INativeContext ctx)
             : base(ctx)
         {

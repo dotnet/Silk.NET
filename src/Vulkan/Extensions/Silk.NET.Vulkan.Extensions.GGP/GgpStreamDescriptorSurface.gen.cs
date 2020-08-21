@@ -25,7 +25,31 @@ namespace Silk.NET.Vulkan.Extensions.GGP
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]
-        public partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref StreamDescriptorSurfaceCreateInfoGGP pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+        public unsafe partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] StreamDescriptorSurfaceCreateInfoGGP* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]
+        public unsafe partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] StreamDescriptorSurfaceCreateInfoGGP* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]
+        public unsafe partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] StreamDescriptorSurfaceCreateInfoGGP* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]
+        public unsafe partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in StreamDescriptorSurfaceCreateInfoGGP pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]
+        public unsafe partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in StreamDescriptorSurfaceCreateInfoGGP pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]
+        public unsafe partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in StreamDescriptorSurfaceCreateInfoGGP pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]
+        public partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in StreamDescriptorSurfaceCreateInfoGGP pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         public GgpStreamDescriptorSurface(INativeContext ctx)
             : base(ctx)

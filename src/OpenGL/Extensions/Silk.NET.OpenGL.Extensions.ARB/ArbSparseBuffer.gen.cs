@@ -25,18 +25,6 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glNamedBufferPageCommitmentEXT")]
         public partial void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] bool commit);
 
-        public unsafe void BufferPageCommitment([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] bool commit)
-        {
-            // IntPtrOverloader
-            BufferPageCommitment(target, new IntPtr(offset), new UIntPtr(size), commit);
-        }
-
-        public unsafe void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] bool commit)
-        {
-            // IntPtrOverloader
-            NamedBufferPageCommitment(buffer, new IntPtr(offset), new UIntPtr(size), commit);
-        }
-
         public ArbSparseBuffer(INativeContext ctx)
             : base(ctx)
         {

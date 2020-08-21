@@ -79,10 +79,6 @@ namespace Silk.NET.BuildTools
 
     public struct OutputOptions
     {
-        [JsonProperty("mode")]
-        [JsonConverter(typeof(StringEnumConverter))]
-        public OutputMode Mode { get; set; }
-
         /// <summary>
         /// Gets or sets the base output path where the binder will write the generated files.
         /// </summary>
@@ -106,11 +102,5 @@ namespace Silk.NET.BuildTools
     {
         ConvertConstruct,
         Clang
-    }
-
-    public enum OutputMode
-    {
-        Default = 1, // fnptrs, for now just use super invoke
-        Legacy = 1 // super invoke
     }
 }

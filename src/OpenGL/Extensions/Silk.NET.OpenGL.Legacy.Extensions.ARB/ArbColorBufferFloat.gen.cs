@@ -23,6 +23,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void ClampColor([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB clamp);
 
         [NativeApi(EntryPoint = "glClampColorARB")]
+        public partial void ClampColor([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ClampColorModeARB clamp);
+
+        [NativeApi(EntryPoint = "glClampColorARB")]
+        public partial void ClampColor([Flow(FlowDirection.In)] ClampColorTargetARB target, [Flow(FlowDirection.In)] ARB clamp);
+
+        [NativeApi(EntryPoint = "glClampColorARB")]
         public partial void ClampColor([Flow(FlowDirection.In)] ClampColorTargetARB target, [Flow(FlowDirection.In)] ClampColorModeARB clamp);
 
         public ArbColorBufferFloat(INativeContext ctx)

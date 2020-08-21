@@ -22,11 +22,17 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] APPLE internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        [NativeApi(EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
-        public partial void ResolveMultisampleFramebuffer();
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
+        public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
+        public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] APPLE internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleAPPLE")]
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+        [NativeApi(EntryPoint = "glResolveMultisampleFramebufferAPPLE")]
+        public partial void ResolveMultisampleFramebuffer();
 
         public AppleFramebufferMultisample(INativeContext ctx)
             : base(ctx)

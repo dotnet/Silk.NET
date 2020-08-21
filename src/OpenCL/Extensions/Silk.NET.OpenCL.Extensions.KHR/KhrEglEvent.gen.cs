@@ -23,19 +23,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public unsafe partial IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR")]
-        public partial IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
-
-        public unsafe IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.In)] int display, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // IntPtrOverloader
-            return CreateEventFromEglsync(new IntPtr(context), new IntPtr(sync), new IntPtr(display), errcode_ret);
-        }
-
-        public unsafe IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.In)] int display, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // IntPtrOverloader
-            return CreateEventFromEglsync(new IntPtr(context), new IntPtr(sync), new IntPtr(display), errcode_ret);
-        }
+        public partial IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         public KhrEglEvent(INativeContext ctx)
             : base(ctx)

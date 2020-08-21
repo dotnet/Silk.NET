@@ -143,7 +143,7 @@ namespace Silk.NET.BuildTools
                     OutputOpts = new OutputOptions
                     {
                         Folder = "/path/to/outputFolder", License = "/path/to/licenseFile",
-                        Mode = OutputMode.Legacy, Props = "/path/to/customMSBuild.props"
+                        Props = "/path/to/customMSBuild.props"
                     },
                     TypeMaps = new List<Dictionary<string, string>>
                         {new Dictionary<string, string> {{"HWND", "nint"}}}

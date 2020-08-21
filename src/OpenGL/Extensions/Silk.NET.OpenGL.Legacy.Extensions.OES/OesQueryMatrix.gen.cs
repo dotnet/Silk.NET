@@ -23,7 +23,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
 
         [NativeApi(EntryPoint = "glQueryMatrixxOES")]
-        public partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] Span<int> mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] Span<int> exponent);
+        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] out int exponent);
+
+        [NativeApi(EntryPoint = "glQueryMatrixxOES")]
+        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] out int mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
+
+        [NativeApi(EntryPoint = "glQueryMatrixxOES")]
+        public partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] out int mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] out int exponent);
 
         public OesQueryMatrix(INativeContext ctx)
             : base(ctx)

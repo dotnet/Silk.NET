@@ -22,38 +22,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT")]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
 
-        [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
-        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
-
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT")]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
 
         [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
+        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+
+        [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
         public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
-
-        public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length)
-        {
-            // IntPtrOverloader
-            FlushMappedBufferRange(target, new IntPtr(offset), new UIntPtr(length));
-        }
-
-        public unsafe void* MapBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] uint access)
-        {
-            // IntPtrOverloader
-            return MapBufferRange(target, new IntPtr(offset), new UIntPtr(length), access);
-        }
-
-        public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length)
-        {
-            // IntPtrOverloader
-            FlushMappedBufferRange(target, new IntPtr(offset), new UIntPtr(length));
-        }
-
-        public unsafe void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] uint access)
-        {
-            // IntPtrOverloader
-            return MapBufferRange(target, new IntPtr(offset), new UIntPtr(length), access);
-        }
 
         public ExtMapBufferRange(INativeContext ctx)
             : base(ctx)

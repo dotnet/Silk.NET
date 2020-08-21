@@ -48,7 +48,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             {
                 if (value < 0)
                 {
-                    Debug.WriteLine($"Negative indirection levels assigned at:\n{Environment.StackTrace}");
+                    Console.WriteLine($"Negative indirection levels assigned at:\n{Environment.StackTrace}");
                 }
 
                 _indirectionLevels = value;
@@ -65,11 +65,6 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the name of this type.
         /// </summary>
         public string Name { get; set; }
-        
-        /// <summary>
-        /// Gets or sets the group of this type.
-        /// </summary>
-        public string Group { get; set; }
 
         /// <summary>
         /// Gets or sets the original name of this type, before mapping.
@@ -102,14 +97,25 @@ namespace Silk.NET.BuildTools.Common.Functions
         public bool IsIn { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether this type is a "this" type (i.e. an extension method type reference)
+        /// </summary>
+        public bool IsThis { get; set; }
+
+        /// <summary>
         /// Gets or sets the function pointer signature if this type is a function pointer. May be null.
         /// </summary>
         public Function FunctionPointerSignature { get; set; }
 
+        /// <summary>
+        /// Gets or sets whether this type references a generic type parameter defined in the function.
+        /// </summary>
+        public bool IsGenericTypeParameterReference { get; set; }
+
         /// <inheritdoc />
         public override string ToString()
         {
-            return (IsIn ? "in " : string.Empty) +
+            return (IsThis ? "this " : string.Empty) +
+                   (IsIn ? "in " : string.Empty) +
                    (IsOut ? "out " : string.Empty) +
                    (IsByRef ? "ref " : string.Empty) +
                    Name +

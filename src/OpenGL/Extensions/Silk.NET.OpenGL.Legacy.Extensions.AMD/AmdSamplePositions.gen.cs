@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         public unsafe partial void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* val);
 
         [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
-        public partial void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> val);
+        public partial void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] in float val);
 
         public AmdSamplePositions(INativeContext ctx)
             : base(ctx)

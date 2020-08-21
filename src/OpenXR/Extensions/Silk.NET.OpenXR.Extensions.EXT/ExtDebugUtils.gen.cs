@@ -25,7 +25,15 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
-        public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
+        public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT createInfo, [Count(Count = 0)] ref DebugUtilsMessengerEXT messenger);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrDestroyDebugUtilsMessengerEXT")]
@@ -37,7 +45,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT")]
-        public partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsLabelEXT labelInfo);
+        public partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT labelInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSessionEndDebugUtilsLabelRegionEXT")]
@@ -49,7 +57,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT")]
-        public partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsLabelEXT labelInfo);
+        public partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT labelInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT")]
@@ -57,7 +65,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT")]
-        public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsObjectNameInfoEXT nameInfo);
+        public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsObjectNameInfoEXT nameInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT")]
@@ -65,7 +73,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT")]
-        public partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsMessengerCallbackDataEXT callbackData);
+        public partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCallbackDataEXT callbackData);
 
         public ExtDebugUtils(INativeContext ctx)
             : base(ctx)

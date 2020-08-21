@@ -31,24 +31,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectCountNV")]
         public partial void MultiDrawMeshTasksIndirectCount([Flow(FlowDirection.In)] IntPtr indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
-        public unsafe void DrawMeshTasksIndirect([Flow(FlowDirection.In)] int indirect)
-        {
-            // IntPtrOverloader
-            DrawMeshTasksIndirect(new IntPtr(indirect));
-        }
-
-        public unsafe void MultiDrawMeshTasksIndirect([Flow(FlowDirection.In)] int indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride)
-        {
-            // IntPtrOverloader
-            MultiDrawMeshTasksIndirect(new IntPtr(indirect), drawcount, stride);
-        }
-
-        public unsafe void MultiDrawMeshTasksIndirectCount([Flow(FlowDirection.In)] int indirect, [Flow(FlowDirection.In)] int drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride)
-        {
-            // IntPtrOverloader
-            MultiDrawMeshTasksIndirectCount(new IntPtr(indirect), new IntPtr(drawcount), maxdrawcount, stride);
-        }
-
         public NVMeshShader(INativeContext ctx)
             : base(ctx)
         {

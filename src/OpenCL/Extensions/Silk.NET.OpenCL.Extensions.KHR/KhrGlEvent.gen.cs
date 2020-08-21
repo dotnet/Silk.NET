@@ -23,19 +23,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         public unsafe partial IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
-        public partial IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
-
-        public unsafe IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.Out)] int* errcode_ret)
-        {
-            // IntPtrOverloader
-            return CreateEventFromGLsync(new IntPtr(context), new IntPtr(sync), errcode_ret);
-        }
-
-        public unsafe IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // IntPtrOverloader
-            return CreateEventFromGLsync(new IntPtr(context), new IntPtr(sync), errcode_ret);
-        }
+        public partial IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         public KhrGlEvent(INativeContext ctx)
             : base(ctx)

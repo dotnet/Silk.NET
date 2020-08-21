@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         public unsafe partial void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* box);
 
         [NativeApi(EntryPoint = "glWindowRectanglesEXT")]
-        public partial void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int box);
+        public partial void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int box);
 
         public ExtWindowRectangles(INativeContext ctx)
             : base(ctx)

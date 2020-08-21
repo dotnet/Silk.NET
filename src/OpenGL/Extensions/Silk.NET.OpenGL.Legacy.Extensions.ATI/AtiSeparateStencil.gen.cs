@@ -22,11 +22,59 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glStencilFuncSeparateATI")]
         public partial void StencilFuncSeparate([Flow(FlowDirection.In)] ATI frontfunc, [Flow(FlowDirection.In)] ATI backfunc, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
-        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
-        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] ATI dppass);
+        [NativeApi(EntryPoint = "glStencilFuncSeparateATI")]
+        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] ATI frontfunc, [Flow(FlowDirection.In)] StencilFunction backfunc, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+
+        [NativeApi(EntryPoint = "glStencilFuncSeparateATI")]
+        public partial void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFunction frontfunc, [Flow(FlowDirection.In)] ATI backfunc, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glStencilFuncSeparateATI")]
         public partial void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFunction frontfunc, [Flow(FlowDirection.In)] StencilFunction backfunc, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] ATI dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] ATI dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] ATI dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] ATI dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] ATI dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] ATI dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] ATI dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+
+        [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
+        public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] ATI dppass);
 
         [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
         public partial void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);

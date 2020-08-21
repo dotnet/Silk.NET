@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
         public unsafe partial void StringMarker([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] void* @string);
 
         [NativeApi(EntryPoint = "glStringMarkerGREMEDY")]
-        public partial void StringMarker<T0>([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] Span<T0> @string) where T0 : unmanaged;
+        public partial void StringMarker<T0>([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] in T0 @string) where T0 : unmanaged;
 
         public GremedyStringMarker(INativeContext ctx)
             : base(ctx)

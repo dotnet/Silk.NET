@@ -25,12 +25,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
         public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] IntPtr indirect);
 
-        public unsafe void DispatchComputeIndirect([Flow(FlowDirection.In)] int indirect)
-        {
-            // IntPtrOverloader
-            DispatchComputeIndirect(new IntPtr(indirect));
-        }
-
         public ArbComputeShader(INativeContext ctx)
             : base(ctx)
         {

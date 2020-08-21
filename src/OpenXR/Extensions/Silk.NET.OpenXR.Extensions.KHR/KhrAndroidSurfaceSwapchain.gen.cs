@@ -25,7 +25,31 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
-        public partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref SwapchainCreateInfo info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] ref IntPtr surface);
+        public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] ref IntPtr surface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] IntPtr* surface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] ref IntPtr surface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] IntPtr* surface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] ref IntPtr surface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] IntPtr* surface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        public partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] ref IntPtr surface);
 
         public KhrAndroidSurfaceSwapchain(INativeContext ctx)
             : base(ctx)

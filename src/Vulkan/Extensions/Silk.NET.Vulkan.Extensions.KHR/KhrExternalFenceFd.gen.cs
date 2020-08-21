@@ -25,7 +25,15 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
-        public partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref FenceGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
+        public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
+        public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FenceGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
+        public partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in FenceGetFdInfoKHR pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out int pFd);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkImportFenceFdKHR")]
@@ -33,7 +41,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkImportFenceFdKHR")]
-        public partial Result ImportFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImportFenceFdInfoKHR pImportFenceFdInfo);
+        public partial Result ImportFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImportFenceFdInfoKHR pImportFenceFdInfo);
 
         public KhrExternalFenceFd(INativeContext ctx)
             : base(ctx)

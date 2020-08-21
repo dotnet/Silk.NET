@@ -26,7 +26,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public partial IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
+        public partial IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
+        public partial IntPtr GetVkProcAddr([Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glSignalVkFenceNV")]
         public partial void SignalVkFence([Flow(FlowDirection.In)] ulong vkFence);
@@ -36,9 +39,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 
         [NativeApi(EntryPoint = "glWaitVkSemaphoreNV")]
         public partial void WaitVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore);
-
-        [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public partial IntPtr GetVkProcAddr([Flow(FlowDirection.In)] string name);
 
         public NVDrawVulkanImage(INativeContext ctx)
             : base(ctx)

@@ -26,6 +26,8 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private bool _newIsIn;
 
+        private bool _newIsGenericType;
+
         private readonly string _newOriginalName;
 
         [NotNull] private string _newName;
@@ -43,6 +45,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newIsIn = typeSignature.IsIn;
             _newIsOut = typeSignature.IsOut;
             _newOriginalName = typeSignature.OriginalName;
+            _newIsGenericType = typeSignature.IsGenericTypeParameterReference;
         }
 
         /// <summary>
@@ -106,6 +109,18 @@ namespace Silk.NET.BuildTools.Common.Builders
         }
 
         /// <summary>
+        /// Sets a new IsGenericType value for the type signature.
+        /// </summary>
+        /// <param name="isGenericType">The new IsGenericType value.</param>
+        /// <returns>The builder, with the IsGenericType value.</returns>
+        [NotNull]
+        public TypeSignatureBuilder WithIsGenericType(bool isGenericType)
+        {
+            _newIsGenericType = isGenericType;
+            return this;
+        }
+
+        /// <summary>
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
@@ -120,7 +135,8 @@ namespace Silk.NET.BuildTools.Common.Builders
                 IsByRef = _newIsByRef,
                 IsOut = _newIsOut,
                 IsIn = _newIsIn,
-                OriginalName = _newOriginalName
+                OriginalName = _newOriginalName,
+                IsGenericTypeParameterReference = _newIsGenericType
             };
         }
 

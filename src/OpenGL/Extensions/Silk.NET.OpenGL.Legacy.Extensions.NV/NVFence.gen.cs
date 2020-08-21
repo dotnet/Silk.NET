@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
 
         [NativeApi(EntryPoint = "glDeleteFencesNV")]
-        public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> fences);
+        public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint fences);
 
         [NativeApi(EntryPoint = "glFinishFenceNV")]
         public partial void FinishFence([Flow(FlowDirection.In)] uint fence);
@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
 
         [NativeApi(EntryPoint = "glGenFencesNV")]
-        public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences);
+        public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint fences);
 
         [NativeApi(EntryPoint = "glGetFenceivNV")]
         public unsafe partial void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
@@ -40,23 +40,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glGetFenceivNV")]
         public partial void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glIsFenceNV")]
-        public partial bool IsFence([Flow(FlowDirection.In)] uint fence);
-
-        [NativeApi(EntryPoint = "glSetFenceNV")]
-        public partial void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV condition);
-
-        [NativeApi(EntryPoint = "glTestFenceNV")]
-        public partial bool TestFence([Flow(FlowDirection.In)] uint fence);
-
         [NativeApi(EntryPoint = "glGetFenceivNV")]
         public unsafe partial void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFenceivNV")]
         public partial void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
+        [NativeApi(EntryPoint = "glIsFenceNV")]
+        public partial bool IsFence([Flow(FlowDirection.In)] uint fence);
+
+        [NativeApi(EntryPoint = "glSetFenceNV")]
+        public partial void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV condition);
+
         [NativeApi(EntryPoint = "glSetFenceNV")]
         public partial void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceConditionNV condition);
+
+        [NativeApi(EntryPoint = "glTestFenceNV")]
+        public partial bool TestFence([Flow(FlowDirection.In)] uint fence);
 
         public unsafe void DeleteFence([Count(Parameter = "n"), Flow(FlowDirection.In)] uint fences)
         {

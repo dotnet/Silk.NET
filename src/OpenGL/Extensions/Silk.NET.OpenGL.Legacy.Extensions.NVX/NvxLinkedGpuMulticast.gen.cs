@@ -29,19 +29,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
         public unsafe partial void LgpunamedBufferSubData([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX")]
-        public partial void LgpunamedBufferSubData<T0>([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
-
-        public unsafe void LgpunamedBufferSubData([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] void* data)
-        {
-            // IntPtrOverloader
-            LgpunamedBufferSubData(gpuMask, buffer, new IntPtr(offset), new UIntPtr(size), data);
-        }
-
-        public unsafe void LgpunamedBufferSubData<T0>([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
-        {
-            // IntPtrOverloader
-            LgpunamedBufferSubData(gpuMask, buffer, new IntPtr(offset), new UIntPtr(size), data);
-        }
+        public partial void LgpunamedBufferSubData<T0>([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         public NvxLinkedGpuMulticast(INativeContext ctx)
             : base(ctx)

@@ -22,12 +22,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeApi(EntryPoint = "clTerminateContextKHR")]
         public partial int TerminateContext([Flow(FlowDirection.In)] IntPtr context);
 
-        public unsafe int TerminateContext([Flow(FlowDirection.In)] int context)
-        {
-            // IntPtrOverloader
-            return TerminateContext(new IntPtr(context));
-        }
-
         public KhrTerminateContext(INativeContext ctx)
             : base(ctx)
         {
