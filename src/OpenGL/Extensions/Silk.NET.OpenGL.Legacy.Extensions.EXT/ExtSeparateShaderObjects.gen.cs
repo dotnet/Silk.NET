@@ -26,13 +26,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] byte* @string);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public partial uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] Span<byte> @string);
+        public partial uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] in byte @string);
 
-        [NativeApi(EntryPoint = "glUseShaderProgramEXT")]
-        public partial void UseShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint program);
+        [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
+        public partial uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] string @string);
+
+        [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
+        public unsafe partial uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] byte* @string);
+
+        [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
+        public partial uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] in byte @string);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
         public partial uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] string @string);
+
+        [NativeApi(EntryPoint = "glUseShaderProgramEXT")]
+        public partial void UseShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint program);
 
         public ExtSeparateShaderObjects(INativeContext ctx)
             : base(ctx)

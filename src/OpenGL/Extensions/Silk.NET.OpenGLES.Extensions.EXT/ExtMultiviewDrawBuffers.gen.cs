@@ -23,13 +23,19 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe partial void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* indices);
 
         [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT")]
-        public partial void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<EXT> location, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<int> indices);
+        public unsafe partial void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(FlowDirection.In)] in int indices);
+
+        [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT")]
+        public unsafe partial void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in EXT location, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* indices);
+
+        [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT")]
+        public partial void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in EXT location, [Count(Parameter = "n"), Flow(FlowDirection.In)] in int indices);
 
         [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
         public unsafe partial void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
-        public partial void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<int> data);
+        public partial void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glReadBufferIndexedEXT")]
         public partial void ReadBufferIndexed([Flow(FlowDirection.In)] EXT src, [Flow(FlowDirection.In)] int index);

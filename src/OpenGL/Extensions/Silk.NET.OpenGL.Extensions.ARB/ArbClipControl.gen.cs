@@ -23,6 +23,12 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void ClipControl([Flow(FlowDirection.In)] ARB origin, [Flow(FlowDirection.In)] ARB depth);
 
         [NativeApi(EntryPoint = "glClipControl")]
+        public partial void ClipControl([Flow(FlowDirection.In)] ARB origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
+
+        [NativeApi(EntryPoint = "glClipControl")]
+        public partial void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ARB depth);
+
+        [NativeApi(EntryPoint = "glClipControl")]
         public partial void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
 
         public ArbClipControl(INativeContext ctx)

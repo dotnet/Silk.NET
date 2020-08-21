@@ -25,6 +25,14 @@ namespace Silk.NET.Vulkan.Extensions.GOOGLE
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
+        public unsafe partial Result GetPastPresentationTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pPresentationTimingCount, [Count(Computed = "pPresentationTimingCount"), Flow(FlowDirection.Out)] out PastPresentationTimingGOOGLE pPresentationTimings);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
+        public unsafe partial Result GetPastPresentationTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pPresentationTimingCount, [Count(Computed = "pPresentationTimingCount"), Flow(FlowDirection.Out)] PastPresentationTimingGOOGLE* pPresentationTimings);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
         public partial Result GetPastPresentationTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ref uint pPresentationTimingCount, [Count(Computed = "pPresentationTimingCount"), Flow(FlowDirection.Out)] out PastPresentationTimingGOOGLE pPresentationTimings);
 
         /// <summary>To be added.</summary>

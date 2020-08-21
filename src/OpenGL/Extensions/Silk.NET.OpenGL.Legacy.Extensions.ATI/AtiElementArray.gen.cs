@@ -22,26 +22,26 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glDrawElementArrayATI")]
         public partial void DrawElementArray([Flow(FlowDirection.In)] ATI mode, [Flow(FlowDirection.In)] uint count);
 
-        [NativeApi(EntryPoint = "glDrawRangeElementArrayATI")]
-        public partial void DrawRangeElementArray([Flow(FlowDirection.In)] ATI mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count);
-
-        [NativeApi(EntryPoint = "glElementPointerATI")]
-        public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glElementPointerATI")]
-        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
-
         [NativeApi(EntryPoint = "glDrawElementArrayATI")]
         public partial void DrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count);
+
+        [NativeApi(EntryPoint = "glDrawRangeElementArrayATI")]
+        public partial void DrawRangeElementArray([Flow(FlowDirection.In)] ATI mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glDrawRangeElementArrayATI")]
         public partial void DrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glElementPointerATI")]
+        public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
+
+        [NativeApi(EntryPoint = "glElementPointerATI")]
+        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glElementPointerATI")]
         public unsafe partial void ElementPointer([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glElementPointerATI")]
-        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void ElementPointer<T0>([Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         public AtiElementArray(INativeContext ctx)
             : base(ctx)

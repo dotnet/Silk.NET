@@ -25,7 +25,31 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateXcbSurfaceKHR")]
-        public partial Result CreateXcbSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref XcbSurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+        public unsafe partial Result CreateXcbSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] XcbSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateXcbSurfaceKHR")]
+        public unsafe partial Result CreateXcbSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] XcbSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateXcbSurfaceKHR")]
+        public unsafe partial Result CreateXcbSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] XcbSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateXcbSurfaceKHR")]
+        public unsafe partial Result CreateXcbSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in XcbSurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateXcbSurfaceKHR")]
+        public unsafe partial Result CreateXcbSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in XcbSurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateXcbSurfaceKHR")]
+        public unsafe partial Result CreateXcbSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in XcbSurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateXcbSurfaceKHR")]
+        public partial Result CreateXcbSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in XcbSurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
@@ -34,20 +58,6 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
         public partial Bool32 GetPhysicalDeviceXcbPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] ref IntPtr connection, [Count(Count = 0)] IntPtr visual_id);
-
-        /// <summary>To be added.</summary>
-        public unsafe Bool32 GetPhysicalDeviceXcbPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] IntPtr* connection, [Count(Count = 0)] int visual_id)
-        {
-            // IntPtrOverloader
-            return GetPhysicalDeviceXcbPresentationSupport(physicalDevice, queueFamilyIndex, connection, new IntPtr(visual_id));
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe Bool32 GetPhysicalDeviceXcbPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] ref IntPtr connection, [Count(Count = 0)] int visual_id)
-        {
-            // IntPtrOverloader
-            return GetPhysicalDeviceXcbPresentationSupport(physicalDevice, queueFamilyIndex, ref connection, new IntPtr(visual_id));
-        }
 
         public KhrXcbSurface(INativeContext ctx)
             : base(ctx)

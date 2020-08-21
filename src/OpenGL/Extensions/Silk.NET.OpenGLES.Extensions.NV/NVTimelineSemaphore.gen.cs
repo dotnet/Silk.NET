@@ -23,31 +23,31 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         public unsafe partial void CreateSemaphores([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* semaphores);
 
         [NativeApi(EntryPoint = "glCreateSemaphoresNV")]
-        public partial void CreateSemaphores([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> semaphores);
+        public partial void CreateSemaphores([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint semaphores);
 
         [NativeApi(EntryPoint = "glGetSemaphoreParameterivNV")]
         public unsafe partial void GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetSemaphoreParameterivNV")]
-        public partial void GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.Out)] Span<int> @params);
-
-        [NativeApi(EntryPoint = "glSemaphoreParameterivNV")]
-        public unsafe partial void SemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int* @params);
-
-        [NativeApi(EntryPoint = "glSemaphoreParameterivNV")]
-        public partial void SemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] Span<int> @params);
+        public partial void GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetSemaphoreParameterivNV")]
         public unsafe partial void GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetSemaphoreParameterivNV")]
-        public partial void GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname, [Flow(FlowDirection.Out)] Span<int> @params);
+        public partial void GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname, [Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glSemaphoreParameterivNV")]
+        public unsafe partial void SemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glSemaphoreParameterivNV")]
+        public partial void SemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glSemaphoreParameterivNV")]
         public unsafe partial void SemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname, [Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glSemaphoreParameterivNV")]
-        public partial void SemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname, [Flow(FlowDirection.In)] Span<int> @params);
+        public partial void SemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname, [Flow(FlowDirection.In)] in int @params);
 
         public unsafe uint CreateSemaphore()
         {

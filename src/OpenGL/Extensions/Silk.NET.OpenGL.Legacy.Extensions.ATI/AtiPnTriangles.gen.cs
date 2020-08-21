@@ -22,11 +22,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glPNTrianglesiATI")]
         public partial void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] int param);
 
-        [NativeApi(EntryPoint = "glPNTrianglesfATI")]
-        public partial void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] float param);
-
         [NativeApi(EntryPoint = "glPNTrianglesiATI")]
         public partial void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] int param);
+
+        [NativeApi(EntryPoint = "glPNTrianglesfATI")]
+        public partial void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPNTrianglesfATI")]
         public partial void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] float param);

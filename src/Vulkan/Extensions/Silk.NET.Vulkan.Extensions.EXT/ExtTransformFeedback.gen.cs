@@ -29,7 +29,15 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
-        public partial void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] ref Buffer pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] ref ulong pCounterBufferOffsets);
+        public unsafe partial void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] Buffer* pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
+        public unsafe partial void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] ulong* pCounterBufferOffsets);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBeginTransformFeedbackEXT")]
+        public partial void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
@@ -37,7 +45,31 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
-        public partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ref Buffer pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ref ulong pOffsets, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ref ulong pSizes);
+        public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        public unsafe partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindTransformFeedbackBuffersEXT")]
+        public partial void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawIndirectByteCountEXT")]
@@ -53,7 +85,15 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
-        public partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] ref Buffer pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] ref ulong pCounterBufferOffsets);
+        public unsafe partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] Buffer* pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
+        public unsafe partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] ulong* pCounterBufferOffsets);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
+        public partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
 
         public ExtTransformFeedback(INativeContext ctx)
             : base(ctx)

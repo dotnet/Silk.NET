@@ -23,34 +23,43 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
-        public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
-
-        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
-        public unsafe partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte* name);
-
-        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
-        public partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<byte> name);
-
-        [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
-        public unsafe partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
-
-        [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
-        public partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<byte> name);
-
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
-        public unsafe partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
-
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
-        public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
+        public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
         [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
         public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
+        public unsafe partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte* name);
+
+        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
+        public partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
         public partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
+        public unsafe partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
+        public partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
         public partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        public unsafe partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Flow(FlowDirection.In)] string name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        public unsafe partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
+        public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
         public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);

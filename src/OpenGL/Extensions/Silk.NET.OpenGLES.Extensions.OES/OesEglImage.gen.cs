@@ -25,18 +25,6 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glEGLImageTargetTexture2DOES")]
         public partial void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
 
-        public unsafe void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int image)
-        {
-            // IntPtrOverloader
-            EglimageTargetRenderbufferStorage(target, new IntPtr(image));
-        }
-
-        public unsafe void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int image)
-        {
-            // IntPtrOverloader
-            EglimageTargetTexture2D(target, new IntPtr(image));
-        }
-
         public OesEglImage(INativeContext ctx)
             : base(ctx)
         {

@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public unsafe partial void GetShadingRateSampleLocation([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.Out)] int* location);
 
         [NativeApi(EntryPoint = "glGetShadingRateSampleLocationivNV")]
-        public partial void GetShadingRateSampleLocation([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.Out)] Span<int> location);
+        public partial void GetShadingRateSampleLocation([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.Out)] out int location);
 
         [NativeApi(EntryPoint = "glShadingRateImageBarrierNV")]
         public partial void ShadingRateImageBarrier([Flow(FlowDirection.In)] bool synchronize);
@@ -41,7 +41,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public unsafe partial void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] NV* rates);
 
         [NativeApi(EntryPoint = "glShadingRateImagePaletteNV")]
-        public partial void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<NV> rates);
+        public partial void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in NV rates);
 
         [NativeApi(EntryPoint = "glShadingRateSampleOrderNV")]
         public partial void ShadingRateSampleOrder([Flow(FlowDirection.In)] NV order);
@@ -50,7 +50,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public unsafe partial void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] int* locations);
 
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV")]
-        public partial void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] ref int locations);
+        public partial void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] in int locations);
 
         public NVShadingRateImage(INativeContext ctx)
             : base(ctx)

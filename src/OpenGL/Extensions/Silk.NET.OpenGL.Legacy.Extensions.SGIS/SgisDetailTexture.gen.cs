@@ -23,19 +23,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         public unsafe partial void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
-        public partial void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
+        public partial void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
+
+        [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
+        public unsafe partial void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+
+        [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
+        public partial void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
 
         [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
         public unsafe partial void GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
 
         [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
         public partial void GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
-
-        [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
-        public unsafe partial void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
-
-        [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
-        public partial void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
 
         [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
         public unsafe partial void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
@@ -44,14 +44,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         public partial void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
 
         public unsafe float GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target)
-        {
-            // ReturnTypeOverloader
-            float ret = default;
-            GetDetailTexFunc(target, &ret);
-            return ret;
-        }
-
-        public unsafe float GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target)
         {
             // ReturnTypeOverloader
             float ret = default;

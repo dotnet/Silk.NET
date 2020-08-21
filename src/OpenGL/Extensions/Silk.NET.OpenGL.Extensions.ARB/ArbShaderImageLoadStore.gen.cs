@@ -22,11 +22,17 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glBindImageTexture")]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB access, [Flow(FlowDirection.In)] ARB format);
 
-        [NativeApi(EntryPoint = "glMemoryBarrier")]
-        public partial void MemoryBarrier([Flow(FlowDirection.In)] uint barriers);
+        [NativeApi(EntryPoint = "glBindImageTexture")]
+        public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB access, [Flow(FlowDirection.In)] InternalFormat format);
+
+        [NativeApi(EntryPoint = "glBindImageTexture")]
+        public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] ARB format);
 
         [NativeApi(EntryPoint = "glBindImageTexture")]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] InternalFormat format);
+
+        [NativeApi(EntryPoint = "glMemoryBarrier")]
+        public partial void MemoryBarrier([Flow(FlowDirection.In)] uint barriers);
 
         public ArbShaderImageLoadStore(INativeContext ctx)
             : base(ctx)

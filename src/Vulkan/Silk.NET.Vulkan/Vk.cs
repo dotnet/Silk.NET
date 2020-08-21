@@ -116,7 +116,7 @@ namespace Silk.NET.Vulkan
             );
 
             instance = default;
-            ret.CreateInstance(ref info, ref callbacks, out instance);
+            ret.CreateInstance(in info, in callbacks, out instance);
             return ret;
         }
 

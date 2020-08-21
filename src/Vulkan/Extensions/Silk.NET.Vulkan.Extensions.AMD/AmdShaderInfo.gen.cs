@@ -25,6 +25,14 @@ namespace Silk.NET.Vulkan.Extensions.AMD
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetShaderInfoAMD")]
+        public unsafe partial Result GetShaderInfo<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] ShaderStageFlags shaderStage, [Count(Count = 0)] ShaderInfoTypeAMD infoType, [Count(Count = 0)] UIntPtr* pInfoSize, [Count(Computed = "pInfoSize")] ref T0 pInfo) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetShaderInfoAMD")]
+        public unsafe partial Result GetShaderInfo([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] ShaderStageFlags shaderStage, [Count(Count = 0)] ShaderInfoTypeAMD infoType, [Count(Count = 0)] ref UIntPtr pInfoSize, [Count(Computed = "pInfoSize")] void* pInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetShaderInfoAMD")]
         public partial Result GetShaderInfo<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] ShaderStageFlags shaderStage, [Count(Count = 0)] ShaderInfoTypeAMD infoType, [Count(Count = 0)] ref UIntPtr pInfoSize, [Count(Computed = "pInfoSize")] ref T0 pInfo) where T0 : unmanaged;
 
         public AmdShaderInfo(INativeContext ctx)

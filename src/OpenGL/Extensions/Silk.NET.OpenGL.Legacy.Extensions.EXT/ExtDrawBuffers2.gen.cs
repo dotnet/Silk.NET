@@ -25,14 +25,38 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glDisableIndexedEXT")]
         public partial void DisableIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index);
 
+        [NativeApi(EntryPoint = "glDisableIndexedEXT")]
+        public partial void DisableIndexed([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+
         [NativeApi(EntryPoint = "glEnableIndexedEXT")]
         public partial void EnableIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index);
+
+        [NativeApi(EntryPoint = "glEnableIndexedEXT")]
+        public partial void EnableIndexed([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
         public unsafe partial void GetBooleanIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
         public partial void GetBooleanIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
+
+        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
+        public unsafe partial void GetBooleanIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Boolean* data);
+
+        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
+        public partial void GetBooleanIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out Boolean data);
+
+        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
+        public unsafe partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
+
+        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
+        public partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
+
+        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
+        public unsafe partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Boolean* data);
+
+        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
+        public partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out Boolean data);
 
         [NativeApi(EntryPoint = "glGetIntegerIndexedvEXT")]
         public unsafe partial void GetIntegerIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] int* data);
@@ -42,18 +66,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 
         [NativeApi(EntryPoint = "glIsEnabledIndexedEXT")]
         public partial bool IsEnabledIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index);
-
-        [NativeApi(EntryPoint = "glDisableIndexedEXT")]
-        public partial void DisableIndexed([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
-
-        [NativeApi(EntryPoint = "glEnableIndexedEXT")]
-        public partial void EnableIndexed([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
-
-        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
-        public unsafe partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
-
-        [NativeApi(EntryPoint = "glGetBooleanIndexedvEXT")]
-        public partial void GetBooleanIndexed([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glIsEnabledIndexedEXT")]
         public partial bool IsEnabledIndexed([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);

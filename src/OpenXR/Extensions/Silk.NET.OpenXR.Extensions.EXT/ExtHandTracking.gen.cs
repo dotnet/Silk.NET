@@ -25,7 +25,15 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateHandTrackerEXT")]
-        public partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref HandTrackerCreateInfoEXT createInfo, [Count(Count = 0)] ref HandTrackerEXT handTracker);
+        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HandTrackerCreateInfoEXT* createInfo, [Count(Count = 0)] ref HandTrackerEXT handTracker);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateHandTrackerEXT")]
+        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HandTrackerCreateInfoEXT createInfo, [Count(Count = 0)] HandTrackerEXT* handTracker);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateHandTrackerEXT")]
+        public partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in HandTrackerCreateInfoEXT createInfo, [Count(Count = 0)] ref HandTrackerEXT handTracker);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrDestroyHandTrackerEXT")]
@@ -37,7 +45,15 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrLocateHandJointsEXT")]
-        public partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ref HandJointsLocateInfoEXT locateInfo, [Count(Count = 0)] ref HandJointLocationsEXT locations);
+        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandJointsLocateInfoEXT* locateInfo, [Count(Count = 0)] ref HandJointLocationsEXT locations);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrLocateHandJointsEXT")]
+        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in HandJointsLocateInfoEXT locateInfo, [Count(Count = 0)] HandJointLocationsEXT* locations);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrLocateHandJointsEXT")]
+        public partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in HandJointsLocateInfoEXT locateInfo, [Count(Count = 0)] ref HandJointLocationsEXT locations);
 
         public ExtHandTracking(INativeContext ctx)
             : base(ctx)

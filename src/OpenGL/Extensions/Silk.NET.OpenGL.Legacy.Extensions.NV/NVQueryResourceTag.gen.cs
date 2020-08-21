@@ -23,19 +23,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void DeleteQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* tagIds);
 
         [NativeApi(EntryPoint = "glDeleteQueryResourceTagNV")]
-        public partial void DeleteQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<int> tagIds);
+        public partial void DeleteQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in int tagIds);
 
         [NativeApi(EntryPoint = "glGenQueryResourceTagNV")]
         public unsafe partial void GenQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] int* tagIds);
 
         [NativeApi(EntryPoint = "glGenQueryResourceTagNV")]
-        public partial void GenQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<int> tagIds);
+        public partial void GenQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out int tagIds);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
         public unsafe partial void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] byte* tagString);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
-        public partial void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] Span<byte> tagString);
+        public partial void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] in byte tagString);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
         public partial void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] string tagString);

@@ -22,20 +22,26 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glBindTransformFeedbackNV")]
         public partial void BindTransformFeedback([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint id);
 
+        [NativeApi(EntryPoint = "glBindTransformFeedbackNV")]
+        public partial void BindTransformFeedback([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint id);
+
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV")]
         public unsafe partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV")]
-        public partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids);
+        public partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint ids);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackNV")]
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint id);
+
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackNV")]
+        public partial void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glGenTransformFeedbacksNV")]
         public unsafe partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
         [NativeApi(EntryPoint = "glGenTransformFeedbacksNV")]
-        public partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
+        public partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint ids);
 
         [NativeApi(EntryPoint = "glIsTransformFeedbackNV")]
         public partial bool IsTransformFeedback([Flow(FlowDirection.In)] uint id);
@@ -45,12 +51,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 
         [NativeApi(EntryPoint = "glResumeTransformFeedbackNV")]
         public partial void ResumeTransformFeedback();
-
-        [NativeApi(EntryPoint = "glBindTransformFeedbackNV")]
-        public partial void BindTransformFeedback([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint id);
-
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackNV")]
-        public partial void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
 
         public unsafe void DeleteTransformFeedback([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)
         {

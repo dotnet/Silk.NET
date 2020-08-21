@@ -25,7 +25,15 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialGraphNodeSpaceMSFT")]
-        public partial Result CreateSpatialGraphNodeSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref SpatialGraphNodeSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
+        public unsafe partial Result CreateSpatialGraphNodeSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialGraphNodeSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] ref Space space);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateSpatialGraphNodeSpaceMSFT")]
+        public unsafe partial Result CreateSpatialGraphNodeSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialGraphNodeSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] Space* space);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateSpatialGraphNodeSpaceMSFT")]
+        public partial Result CreateSpatialGraphNodeSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SpatialGraphNodeSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
 
         public MsftSpatialGraphBridge(INativeContext ctx)
             : base(ctx)

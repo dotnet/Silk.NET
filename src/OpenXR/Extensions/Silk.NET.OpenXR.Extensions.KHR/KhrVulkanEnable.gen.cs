@@ -25,7 +25,23 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
-        public partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, Span<byte> buffer);
+        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, ref byte buffer);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
+        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
+        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, byte* buffer);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
+        public partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, ref byte buffer);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
+        public partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, string buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR")]
@@ -49,19 +65,19 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]
-        public partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, Span<byte> buffer);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
-        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
-        public partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, string buffer);
+        public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, ref byte buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]
         public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]
+        public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, byte* buffer);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]
+        public partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, ref byte buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]

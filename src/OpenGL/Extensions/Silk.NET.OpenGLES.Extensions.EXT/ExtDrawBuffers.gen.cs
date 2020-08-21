@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffersEXT")]
-        public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<EXT> bufs);
+        public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in EXT bufs);
 
         public ExtDrawBuffers(INativeContext ctx)
             : base(ctx)

@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glWindowPos2dvMESA")]
-        public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
+        public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glWindowPos2fMESA")]
         public partial void WindowPos2([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
@@ -35,7 +35,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glWindowPos2fvMESA")]
-        public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
+        public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glWindowPos2iMESA")]
         public partial void WindowPos2([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
@@ -44,7 +44,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glWindowPos2ivMESA")]
-        public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
+        public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in int v);
 
         [NativeApi(EntryPoint = "glWindowPos2sMESA")]
         public partial void WindowPos2([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
@@ -53,7 +53,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glWindowPos2svMESA")]
-        public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
+        public partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] in short v);
 
         [NativeApi(EntryPoint = "glWindowPos3dMESA")]
         public partial void WindowPos3([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
@@ -62,7 +62,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glWindowPos3dvMESA")]
-        public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
+        public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glWindowPos3fMESA")]
         public partial void WindowPos3([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
@@ -71,7 +71,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glWindowPos3fvMESA")]
-        public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glWindowPos3iMESA")]
         public partial void WindowPos3([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
@@ -80,7 +80,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glWindowPos3ivMESA")]
-        public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
+        public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in int v);
 
         [NativeApi(EntryPoint = "glWindowPos3sMESA")]
         public partial void WindowPos3([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
@@ -89,7 +89,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glWindowPos3svMESA")]
-        public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
+        public partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] in short v);
 
         [NativeApi(EntryPoint = "glWindowPos4dMESA")]
         public partial void WindowPos4([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
@@ -98,7 +98,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glWindowPos4dvMESA")]
-        public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
+        public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] in double v);
 
         [NativeApi(EntryPoint = "glWindowPos4fMESA")]
         public partial void WindowPos4([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
@@ -107,7 +107,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glWindowPos4fvMESA")]
-        public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
         [NativeApi(EntryPoint = "glWindowPos4iMESA")]
         public partial void WindowPos4([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
@@ -116,7 +116,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glWindowPos4ivMESA")]
-        public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] in int v);
 
         [NativeApi(EntryPoint = "glWindowPos4sMESA")]
         public partial void WindowPos4([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
@@ -125,7 +125,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         public unsafe partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glWindowPos4svMESA")]
-        public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
+        public partial void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] in short v);
 
         public MesaWindowPos(INativeContext ctx)
             : base(ctx)

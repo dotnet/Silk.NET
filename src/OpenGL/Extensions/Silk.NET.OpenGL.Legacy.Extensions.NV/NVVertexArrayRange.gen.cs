@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
-        public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         public NVVertexArrayRange(INativeContext ctx)
             : base(ctx)

@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.NVX
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewHandleNVX")]
-        public partial uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImageViewHandleInfoNVX pInfo);
+        public partial uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageViewHandleInfoNVX pInfo);
 
         public NvxImageViewHandle(INativeContext ctx)
             : base(ctx)

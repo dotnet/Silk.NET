@@ -28,18 +28,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE")]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
 
-        public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size)
-        {
-            // IntPtrOverloader
-            FlushMappedBufferRange(target, new IntPtr(offset), new UIntPtr(size));
-        }
-
-        public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size)
-        {
-            // IntPtrOverloader
-            FlushMappedBufferRange(target, new IntPtr(offset), new UIntPtr(size));
-        }
-
         public AppleFlushBufferRange(INativeContext ctx)
             : base(ctx)
         {

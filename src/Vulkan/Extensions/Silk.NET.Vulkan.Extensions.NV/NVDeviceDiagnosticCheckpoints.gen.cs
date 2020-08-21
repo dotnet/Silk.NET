@@ -33,6 +33,14 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
+        public unsafe partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] out CheckpointDataNV pCheckpointData);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
+        public unsafe partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointDataNV* pCheckpointData);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
         public partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] out CheckpointDataNV pCheckpointData);
 
         public NVDeviceDiagnosticCheckpoints(INativeContext ctx)

@@ -33,21 +33,15 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
+        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
+        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
         public partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
-
-        /// <summary>To be added.</summary>
-        public unsafe Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] int rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay)
-        {
-            // IntPtrOverloader
-            return GetRandROutputDisplay(physicalDevice, dpy, new IntPtr(rrOutput), pDisplay);
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] int rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay)
-        {
-            // IntPtrOverloader
-            return GetRandROutputDisplay(physicalDevice, ref dpy, new IntPtr(rrOutput), out pDisplay);
-        }
 
         public ExtAcquireXlibDisplay(INativeContext ctx)
             : base(ctx)

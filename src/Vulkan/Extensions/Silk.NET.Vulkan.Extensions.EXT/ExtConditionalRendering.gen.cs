@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginConditionalRenderingEXT")]
-        public partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref ConditionalRenderingBeginInfoEXT pConditionalRenderingBegin);
+        public partial void CmdBeginConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in ConditionalRenderingBeginInfoEXT pConditionalRenderingBegin);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdEndConditionalRenderingEXT")]

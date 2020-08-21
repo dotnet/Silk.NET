@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
-        public partial void CmdBeginDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsLabelEXT pLabelInfo);
+        public partial void CmdBeginDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdEndDebugUtilsLabelEXT")]
@@ -37,7 +37,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
-        public partial void CmdInsertDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsLabelEXT pLabelInfo);
+        public partial void CmdInsertDebugUtilsLabel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
@@ -45,7 +45,31 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
-        public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DebugUtilsMessengerEXT* pMessenger);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
+        public partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DebugUtilsMessengerEXT pMessenger);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
@@ -53,7 +77,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
-        public partial void DestroyDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessengerEXT messenger, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator);
+        public partial void DestroyDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessengerEXT messenger, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
@@ -61,7 +85,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
-        public partial void QueueBeginDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsLabelEXT pLabelInfo);
+        public partial void QueueBeginDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueEndDebugUtilsLabelEXT")]
@@ -73,7 +97,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
-        public partial void QueueInsertDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsLabelEXT pLabelInfo);
+        public partial void QueueInsertDebugUtilsLabel([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsLabelEXT pLabelInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
@@ -81,7 +105,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
-        public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsObjectNameInfoEXT pNameInfo);
+        public partial Result SetDebugUtilsObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsObjectNameInfoEXT pNameInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
@@ -89,7 +113,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
-        public partial Result SetDebugUtilsObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsObjectTagInfoEXT pTagInfo);
+        public partial Result SetDebugUtilsObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsObjectTagInfoEXT pTagInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
@@ -97,7 +121,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
-        public partial void SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugUtilsMessengerCallbackDataEXT pCallbackData);
+        public partial void SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] in DebugUtilsMessengerCallbackDataEXT pCallbackData);
 
         public ExtDebugUtils(INativeContext ctx)
             : base(ctx)

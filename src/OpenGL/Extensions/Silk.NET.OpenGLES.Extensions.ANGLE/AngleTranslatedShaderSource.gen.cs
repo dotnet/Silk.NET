@@ -23,10 +23,16 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
         public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] byte* source);
 
         [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] Span<byte> source);
+        public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out byte source);
 
         [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
         public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] string source);
+
+        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+        public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] byte* source);
+
+        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+        public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out byte source);
 
         [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
         public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] string source);

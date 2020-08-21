@@ -22,38 +22,14 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glFlushMappedBufferRange")]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
 
-        [NativeApi(EntryPoint = "glMapBufferRange")]
-        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
-
         [NativeApi(EntryPoint = "glFlushMappedBufferRange")]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
 
         [NativeApi(EntryPoint = "glMapBufferRange")]
+        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+
+        [NativeApi(EntryPoint = "glMapBufferRange")]
         public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
-
-        public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length)
-        {
-            // IntPtrOverloader
-            FlushMappedBufferRange(target, new IntPtr(offset), new UIntPtr(length));
-        }
-
-        public unsafe void* MapBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] uint access)
-        {
-            // IntPtrOverloader
-            return MapBufferRange(target, new IntPtr(offset), new UIntPtr(length), access);
-        }
-
-        public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length)
-        {
-            // IntPtrOverloader
-            FlushMappedBufferRange(target, new IntPtr(offset), new UIntPtr(length));
-        }
-
-        public unsafe void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] uint access)
-        {
-            // IntPtrOverloader
-            return MapBufferRange(target, new IntPtr(offset), new UIntPtr(length), access);
-        }
 
         public ArbMapBufferRange(INativeContext ctx)
             : base(ctx)

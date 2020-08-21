@@ -23,19 +23,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void GetMultisample([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] float* val);
 
         [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
-        public partial void GetMultisample([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] Span<float> val);
+        public partial void GetMultisample([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] out float val);
+
+        [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
+        public unsafe partial void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] float* val);
+
+        [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
+        public partial void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] out float val);
 
         [NativeApi(EntryPoint = "glSampleMaskIndexedNV")]
         public partial void SampleMaskIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint mask);
 
         [NativeApi(EntryPoint = "glTexRenderbufferNV")]
         public partial void TexRenderbuffer([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint renderbuffer);
-
-        [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
-        public unsafe partial void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] float* val);
-
-        [NativeApi(EntryPoint = "glGetMultisamplefvNV")]
-        public partial void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.Out)] Span<float> val);
 
         [NativeApi(EntryPoint = "glTexRenderbufferNV")]
         public partial void TexRenderbuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint renderbuffer);

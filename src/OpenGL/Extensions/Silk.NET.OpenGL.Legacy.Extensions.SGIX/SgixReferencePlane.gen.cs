@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         public unsafe partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
         [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
-        public partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] Span<double> equation);
+        public partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] in double equation);
 
         public SgixReferencePlane(INativeContext ctx)
             : base(ctx)

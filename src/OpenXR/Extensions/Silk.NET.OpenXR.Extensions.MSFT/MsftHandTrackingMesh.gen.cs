@@ -25,7 +25,15 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateHandMeshSpaceMSFT")]
-        public partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ref HandMeshSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
+        public unsafe partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] ref Space space);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateHandMeshSpaceMSFT")]
+        public unsafe partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in HandMeshSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] Space* space);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrCreateHandMeshSpaceMSFT")]
+        public partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in HandMeshSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT")]
@@ -33,7 +41,15 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT")]
-        public partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ref HandMeshUpdateInfoMSFT updateInfo, [Count(Count = 0)] ref HandMeshMSFT handMesh);
+        public unsafe partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshUpdateInfoMSFT* updateInfo, [Count(Count = 0)] ref HandMeshMSFT handMesh);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT")]
+        public unsafe partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in HandMeshUpdateInfoMSFT updateInfo, [Count(Count = 0)] HandMeshMSFT* handMesh);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT")]
+        public partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] in HandMeshUpdateInfoMSFT updateInfo, [Count(Count = 0)] ref HandMeshMSFT handMesh);
 
         public MsftHandTrackingMesh(INativeContext ctx)
             : base(ctx)

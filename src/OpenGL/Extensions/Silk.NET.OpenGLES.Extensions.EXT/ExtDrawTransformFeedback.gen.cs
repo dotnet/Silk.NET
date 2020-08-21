@@ -22,11 +22,11 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
-        public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
-
         [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
+
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
+        public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
         public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);

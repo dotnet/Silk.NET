@@ -22,17 +22,41 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glGetBufferPointervOES")]
         public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.Out)] void** @params);
 
-        [NativeApi(EntryPoint = "glMapBufferOES")]
-        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES access);
+        [NativeApi(EntryPoint = "glGetBufferPointervOES")]
+        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.Out)] out void* @params);
 
-        [NativeApi(EntryPoint = "glUnmapBufferOES")]
-        public partial bool UnmapBuffer([Flow(FlowDirection.In)] OES target);
+        [NativeApi(EntryPoint = "glGetBufferPointervOES")]
+        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] void** @params);
+
+        [NativeApi(EntryPoint = "glGetBufferPointervOES")]
+        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] out void* @params);
+
+        [NativeApi(EntryPoint = "glGetBufferPointervOES")]
+        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.Out)] void** @params);
+
+        [NativeApi(EntryPoint = "glGetBufferPointervOES")]
+        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointervOES")]
         public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] void** @params);
 
+        [NativeApi(EntryPoint = "glGetBufferPointervOES")]
+        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] out void* @params);
+
+        [NativeApi(EntryPoint = "glMapBufferOES")]
+        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES access);
+
+        [NativeApi(EntryPoint = "glMapBufferOES")]
+        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] BufferAccessARB access);
+
+        [NativeApi(EntryPoint = "glMapBufferOES")]
+        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] OES access);
+
         [NativeApi(EntryPoint = "glMapBufferOES")]
         public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferAccessARB access);
+
+        [NativeApi(EntryPoint = "glUnmapBufferOES")]
+        public partial bool UnmapBuffer([Flow(FlowDirection.In)] OES target);
 
         public OesMapbuffer(INativeContext ctx)
             : base(ctx)
