@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    
+    <!-- Basic properties -->
+    <PropertyGroup>
+        <Tutorial>3.3 - Specular Lighting</Tutorial>
+    </PropertyGroup>
+    
+    <!-- Tutorial directory resolution --> 
+    <PropertyGroup>
+        <TutorialBaseDir>$(MSBuildThisFileDirectory)../../../examples/CSharp/Tutorial $(Tutorial)/</TutorialBaseDir>
+    </PropertyGroup>
+
+    <!-- .NET properties -->
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <RootNamespace>Tutorial</RootNamespace>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <!-- Some tutorials need ImageSharp -->
+    <ItemGroup>
+        <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-rc0003" />
+    </ItemGroup>
+
+    <!-- Reference Silk.NET -->
+    <ItemGroup>
+        <ProjectReference Include="..\..\Core\Silk.NET\Silk.NET.csproj" />
+    </ItemGroup>
+
+    <!-- Include all tutorial files -->
+    <ItemGroup>
+        <Compile Include="$(TutorialBaseDir)*.cs" />
+        <Content Include="$(TutorialBaseDir)*.frag" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="$(TutorialBaseDir)*.vert" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="$(TutorialBaseDir)*.png" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+
+    <!-- Reference the CoreRT toolchain -->
+    <PropertyGroup>
+        <RestoreSources>https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json;$(RestoreSources)</RestoreSources>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="1.0.0-alpha-*" />
+    </ItemGroup>
+
+</Project>
