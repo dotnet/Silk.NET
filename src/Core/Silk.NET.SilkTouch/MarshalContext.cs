@@ -54,11 +54,6 @@ namespace Silk.NET.SilkTouch
             public IMethodSymbol MethodSymbol { get; }
 
             /// <summary>
-            /// Based on whether this is before or after invoking of `next` this refers to the pre/post Load invoke
-            /// </summary>
-            public IEnumerable<StatementSyntax> CurrentStatements { get; set; }
-
-            /// <summary>
             /// Indicates whether the source method returns void (and therefore whether there is a Result Expression)
             /// </summary>
             public bool ReturnsVoid => MethodSymbol.ReturnsVoid;
@@ -83,7 +78,8 @@ namespace Silk.NET.SilkTouch
             /// </summary>
             public MarshalOptions? ReturnMarshalOptions { get; }
 
-            private readonly List<StatementSyntax> _postPrelude = new List<StatementSyntax>();
+            private readonly List<StatementSyntax> _prelude = new List<StatementSyntax>();
+            private List<StatementSyntax> _statements = new List<StatementSyntax>();
 
             public class MarshalOptions
             {
@@ -94,8 +90,17 @@ namespace Silk.NET.SilkTouch
                 public UnmanagedType MarshalAs { get; }
             }
 
-            public void AddPrelude(StatementSyntax statement) => _postPrelude.Add(statement);
+            public void AddPrelude(StatementSyntax statement) => _prelude.Add(statement);
 
+            public void AddStatement(StatementSyntax statement) => _statements.Add(statement);
+
+            public void AddBlock(Func<IEnumerable<StatementSyntax>, StatementSyntax> func)
+            {
+                var s = func(_statements);
+                _statements.Clear();
+                _statements.Add(s);
+            }
+            
             public void DeclareVariable(ITypeSymbol type, string name)
             {
                 AddPrelude
@@ -111,7 +116,7 @@ namespace Silk.NET.SilkTouch
             public void SetParameterToVariableAndAssign(int index, string variableName, ExpressionSyntax assign)
             {
                 var identifer = IdentifierName(variableName);
-                CurrentStatements = CurrentStatements.Append(ExpressionStatement(AssignmentExpression(SyntaxKind.SimpleAssignmentExpression, identifer, assign)));
+               AddStatement(ExpressionStatement(AssignmentExpression(SyntaxKind.SimpleAssignmentExpression, identifer, assign)));
                 ParameterExpressions[index] = identifer;
             }
 
@@ -141,18 +146,13 @@ namespace Silk.NET.SilkTouch
                 (int index, out AttributeData? attributeData) where T : Attribute
                 => TryGetAttribute(index, typeof(T), out attributeData);
 
-            public void ApplyPostProcessing()
-            {
-                _postPrelude.AddRange(CurrentStatements);
-                CurrentStatements = _postPrelude;
-            }
+            public BlockSyntax BuildLastBlock() => Block(_prelude.Concat(_statements));
 
             public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol, int slot)
             {
                 Compilation = compilation;
                 MethodSymbol = methodSymbol;
                 Slot = slot;
-                CurrentStatements = Enumerable.Empty<StatementSyntax>();
                 ParameterExpressions = new ExpressionSyntax[MethodSymbol.Parameters.Length];
 
                 LoadTypes = MethodSymbol.Parameters.Select

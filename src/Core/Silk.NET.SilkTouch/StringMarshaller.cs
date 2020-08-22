@@ -203,7 +203,7 @@ namespace Silk.NET.SilkTouch
 
             if (marshalReturn)
             {
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                ctx.AddStatement
                 (
                     ExpressionStatement
                     (
@@ -249,7 +249,7 @@ namespace Silk.NET.SilkTouch
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Ref ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Out)
                 {
-                    ctx.CurrentStatements = ctx.CurrentStatements.Append
+                    ctx.AddStatement
                     (
                         ExpressionStatement
                         (
@@ -276,7 +276,7 @@ namespace Silk.NET.SilkTouch
                     );
                 }
 
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                ctx.AddStatement
                 (
                     ExpressionStatement
                     (

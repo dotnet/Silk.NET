@@ -31,7 +31,7 @@ namespace Silk.NET.SilkTouch
                     _ => throw new Exception()
                 };
 
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                ctx.AddStatement
                 (
                     ExpressionStatement
                     (
@@ -75,7 +75,7 @@ namespace Silk.NET.SilkTouch
                     _ => throw new Exception()
                 };
 
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                ctx.AddStatement
                 (
                     ExpressionStatement
                     (

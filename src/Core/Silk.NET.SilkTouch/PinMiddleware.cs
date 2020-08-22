@@ -16,8 +16,6 @@ namespace Silk.NET.SilkTouch
     {
         private static void PinMiddleware(ref MarshalContext ctx, Action next)
         {
-            var statementsToHere = ctx.CurrentStatements.ToList();
-            ctx.CurrentStatements = Enumerable.Empty<StatementSyntax>();
             var oldParameterExpressions = (ExpressionSyntax[])ctx.ParameterExpressions.Clone();
 
             for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
@@ -45,21 +43,17 @@ namespace Silk.NET.SilkTouch
                 if (!shouldPin) continue;
 
                 var name = $"pp{ctx.Slot}{index}";
-                var block = Block(ctx.CurrentStatements.ToArray());
-                ctx.CurrentStatements = Enumerable.Empty<StatementSyntax>();
-                ctx.CurrentStatements = ctx.CurrentStatements.Append(FixedStatement
+                var loadType = ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat);
+                ctx.AddBlock(x => FixedStatement
                 (
                     VariableDeclaration
                     (
-                        IdentifierName(ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
+                        IdentifierName(loadType),
                         SingletonSeparatedList
                             (VariableDeclarator(Identifier(name), null, EqualsValueClause(PrefixUnaryExpression(SyntaxKind.AddressOfExpression, oldParameterExpressions[index]))))
-                    ), block
+                    ), Block(x)
                 ));
             }
-
-            statementsToHere.AddRange(ctx.CurrentStatements);
-            ctx.CurrentStatements = statementsToHere;
         }
     }
 }

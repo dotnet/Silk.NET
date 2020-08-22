@@ -77,7 +77,7 @@ namespace Silk.NET.SilkTouch
 
             if (processReturn)
             {
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                ctx.AddStatement
                 (
                     ExpressionStatement
                     (

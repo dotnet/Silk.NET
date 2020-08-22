@@ -115,7 +115,7 @@ namespace Silk.NET.SilkTouch
                     @false = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0));
                 }
 
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                ctx.AddStatement
                 (
                     ExpressionStatement
                     (

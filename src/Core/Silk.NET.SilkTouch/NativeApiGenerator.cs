@@ -197,7 +197,7 @@ namespace Silk.NET.SilkTouch
                             (SyntaxKind.SimpleAssignmentExpression, ctx.ResultExpression, expression));
                     }
 
-                    ctx.CurrentStatements = ctx.CurrentStatements.Append(statement);
+                    ctx.AddStatement(statement);
                     ctx.CurrentResultType = ctx.ReturnLoadType;
                 }
                 
@@ -208,12 +208,11 @@ namespace Silk.NET.SilkTouch
                var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slotCount);
 
                marshalBuilder.Run(context);
-               context.ApplyPostProcessing();
 
                if (!context.ReturnsVoid)
-                   context.CurrentStatements = context.CurrentStatements.Append(ReturnStatement(context.ResultExpression));
+                   context.AddStatement(ReturnStatement(context.ResultExpression));
 
-               var block = Block(context.CurrentStatements);
+               var block = context.BuildLastBlock();
                
                if (declaration.Modifiers.All(x => x.Text != "unsafe"))
                {
