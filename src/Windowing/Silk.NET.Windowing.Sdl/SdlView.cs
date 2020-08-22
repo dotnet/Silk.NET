@@ -104,6 +104,9 @@ namespace Silk.NET.Windowing.Sdl
             switch (opts.API.API)
             {
                 case ContextAPI.None:
+                {
+                    break;
+                }
                 case ContextAPI.Vulkan:
                 {
                     flags |= WindowFlags.WindowVulkan;
