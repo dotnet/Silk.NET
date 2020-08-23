@@ -10,6 +10,7 @@ using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
+using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
@@ -103,7 +104,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("using System.Text;");
             sw.WriteLine("using Silk.NET.Core.Native;");
             sw.WriteLine("using Silk.NET.Core.Attributes;");
-            sw.WriteLine("using Ultz.SuperInvoke;");
+            sw.WriteLine("using Silk.NET.Core.Contexts;");
+            sw.WriteLine("using Silk.NET.Core.Loader;");
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
@@ -281,6 +283,11 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write the class to.</param>
         public static void WriteNameContainer(this Project project, Profile profile, string file, BindTask task)
         {
+            if (File.Exists(file))
+            {
+                return;
+            }
+            
             using var sw = new StreamWriter(file);
             
             sw.WriteLine(task.LicenseText());
@@ -306,10 +313,10 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"        public override string IOS => \"{task.NameContainer.IOS}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows64 => \"{task.NameContainer.Windows}\";");
+            sw.WriteLine($"        public override string Windows64 => \"{task.NameContainer.Windows64}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows86 => \"{task.NameContainer.Windows}\";");
+            sw.WriteLine($"        public override string Windows86 => \"{task.NameContainer.Windows86}\";");
             sw.WriteLine("    }");
             sw.WriteLine("}");
         }
@@ -330,21 +337,22 @@ namespace Silk.NET.BuildTools.Bind
                 if (project.IsRoot)
                 {
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs"));
+                    StreamWriter? swOverloads = null;
                     sw.Write(task.LicenseText());
                     sw.WriteLine("using System;");
                     sw.WriteLine("using System.Runtime.InteropServices;");
                     sw.WriteLine("using System.Text;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine("using Silk.NET.Core.Attributes;");
+                    sw.WriteLine("using Silk.NET.Core.Contexts;");
                     sw.WriteLine("using Silk.NET.Core.Loader;");
-                    sw.WriteLine("using Ultz.SuperInvoke;");
                     sw.WriteLine();
                     sw.WriteLine("#pragma warning disable 1591");
                     sw.WriteLine();
                     sw.WriteLine($"namespace {task.Namespace}{project.Namespace}");
                     sw.WriteLine("{");
                     sw.WriteLine
-                        ($"    public abstract unsafe partial class {@class.ClassName} : NativeAPI");
+                        ($"    public unsafe partial class {@class.ClassName} : NativeAPI");
                     sw.WriteLine("    {");
                     foreach (var constant in @class.Constants)
                     {
@@ -376,23 +384,7 @@ namespace Silk.NET.BuildTools.Bind
                         }
 
                         sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
-                        using (var sr = new StringReader(function.ToString()))
-                        {
-                            string line;
-                            var flPrefix = "public abstract ";
-                            while ((line = sr.ReadLine()) != null)
-                            {
-                                sw.WriteLine($"        {flPrefix}{line}");
-                                flPrefix = string.Empty;
-                            }
-                        }
-
-                        sw.WriteLine();
-                    }
-
-                    foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"]))
-                    {
-                        using (var sr = new StringReader(overload.Signature.Doc))
+                        using (var sr = new StringReader(function.ToString(null, true, true)))
                         {
                             string line;
                             while ((line = sr.ReadLine()) != null)
@@ -401,40 +393,61 @@ namespace Silk.NET.BuildTools.Bind
                             }
                         }
 
-                        foreach (var attr in overload.Signature.Attributes)
-                        {
-                            sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
-                        }
-
-                        sw.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe).TrimEnd(';')}");
-                        sw.WriteLine("        {");
-                        foreach (var line in overload.Body)
-                        {
-                            sw.WriteLine($"            {line}");
-                        }
-
-                        sw.WriteLine("        }");
                         sw.WriteLine();
                     }
 
-                    if (!(task.NameContainer is null))
+                    foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"]))
                     {
-                        sw.WriteLine("        private SearchPathContainer _searchPaths;");
-                        sw.WriteLine
-                        (
-                            "        public override SearchPathContainer SearchPaths => _searchPaths ??= " +
-                            $"new {task.NameContainer.ClassName}();"
-                        );
+                        var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
+                            ? swOverloads ??= CreateOverloadsFile(folder, @class.ClassName, false)
+                            : sw;
+                        if (sw2u == swOverloads)
+                        {
+                            overload.Signature.Parameters.Insert
+                            (
+                                0,
+                                new Parameter
+                                {
+                                    Name = "thisApi",
+                                    Type = new Common.Functions.Type {Name = @class.ClassName, IsThis = true}
+                                }
+                            );
+                        }
+
+                        using (var sr = new StringReader(overload.Signature.Doc))
+                        {
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                sw2u.WriteLine($"        {line}");
+                            }
+                        }
+
+                        foreach (var attr in overload.Signature.Attributes)
+                        {
+                            sw2u.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                        }
+
+                        sw2u.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe, @static: sw2u == swOverloads).TrimEnd(';')}");
+                        sw2u.WriteLine("        {");
+                        foreach (var line in overload.Body)
+                        {
+                            sw2u.WriteLine($"            {line}");
+                        }
+
+                        sw2u.WriteLine("        }");
+                        sw2u.WriteLine();
                     }
 
                     sw.WriteLine();
-                    sw.WriteLine($"        public {@class.ClassName}(ref NativeApiContext ctx)");
-                    sw.WriteLine("            : base(ref ctx)");
+                    sw.WriteLine($"        public {@class.ClassName}(INativeContext ctx)");
+                    sw.WriteLine("            : base(ctx)");
                     sw.WriteLine("        {");
                     sw.WriteLine("        }");
                     sw.WriteLine("    }");
                     sw.WriteLine("}");
                     sw.WriteLine();
+                    FinishOverloadsFile(swOverloads);
                     sw.Flush();
                     sw.Dispose();
                     if (!File.Exists(Path.Combine(folder, $"{@class.ClassName}.cs")))
@@ -453,17 +466,28 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("    {");
                         sw.WriteLine($"        public static {@class.ClassName} GetApi()");
                         sw.WriteLine("        {");
-                        sw.WriteLine
-                        (
-                            $"             return LibraryLoader<{@class.ClassName}>.Load(new {task.NameContainer.ClassName}());"
-                        );
+                        if (!(task.NameContainer is null))
+                        {
+                            sw.WriteLine
+                            (
+                                $"             return new {@class.ClassName}(new DefaultNativeContext" +
+                                $"(new {task.NameContainer.ClassName}().GetName()));"
+                            );
+                        }
+                        else
+                        {
+                            sw.WriteLine("             throw new NotImplementedException();");
+                        }
                         sw.WriteLine("        }");
                         sw.WriteLine();
                         sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
                         sw.WriteLine($"            where T:NativeExtension<{@class.ClassName}>");
                         sw.WriteLine("        {");
-                        sw.WriteLine($"             ext = LibraryLoader<{@class.ClassName}>.Load<T>(this);");
-                        sw.WriteLine("             return ext != null;");
+                        sw.WriteLine("             ext = IsExtensionPresent(" +
+                                     "ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)");
+                        sw.WriteLine("                 ? Activator.CreateInstance<T>(Context)");
+                        sw.WriteLine("                 : null;");
+                        sw.WriteLine("             return !(ext is null);");
                         sw.WriteLine("        }");
                         sw.WriteLine();
                         sw.WriteLine("        public override bool IsExtensionPresent(string extension)");
@@ -477,7 +501,11 @@ namespace Silk.NET.BuildTools.Bind
                         sw.Dispose();
                     }
 
-                    project.WriteNameContainer(profile, Path.Combine(folder, $"{task.NameContainer.ClassName}.cs"), task);
+                    if (!(task.NameContainer is null))
+                    {
+                        project.WriteNameContainer
+                            (profile, Path.Combine(folder, $"{task.NameContainer.ClassName}.cs"), task);
+                    }
                 }
                 else
                 {
@@ -485,15 +513,16 @@ namespace Silk.NET.BuildTools.Bind
                     {
                         var name = i.Name.Substring(1);
                         var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs"));
+                        StreamWriter? swOverloads = null;
                         sw.Write(task.LicenseText());
                         sw.WriteLine("using System;");
                         sw.WriteLine("using System.Runtime.InteropServices;");
                         sw.WriteLine("using System.Text;");
                         sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(task)};");
-                        sw.WriteLine("using Silk.NET.Core.Loader;");
                         sw.WriteLine("using Silk.NET.Core.Native;");
                         sw.WriteLine("using Silk.NET.Core.Attributes;");
-                        sw.WriteLine("using Ultz.SuperInvoke;");
+                        sw.WriteLine("using Silk.NET.Core.Contexts;");
+                        sw.WriteLine("using Silk.NET.Core.Loader;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
                         sw.WriteLine();
@@ -502,7 +531,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"    [Extension(\"{key}\")]");
                         sw.WriteLine
                         (
-                            $"    public abstract unsafe partial class {name} : NativeExtension<{@class.ClassName}>"
+                            $"    public unsafe partial class {name} : NativeExtension<{@class.ClassName}>"
                         );
                         sw.WriteLine("    {");
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
@@ -523,23 +552,7 @@ namespace Silk.NET.BuildTools.Bind
                             }
 
                             sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
-                            using (var sr = new StringReader(function.ToString()))
-                            {
-                                string line;
-                                var flPrefix = "public abstract ";
-                                while ((line = sr.ReadLine()) != null)
-                                {
-                                    sw.WriteLine($"        {flPrefix}{line}");
-                                    flPrefix = string.Empty;
-                                }
-                            }
-
-                            sw.WriteLine();
-                        }
-
-                        foreach (var overload in Overloader.GetOverloads(i, profile.Projects["Core"]))
-                        {
-                            using (var sr = new StringReader(overload.Signature.Doc))
+                            using (var sr = new StringReader(function.ToString(null, true, true)))
                             {
                                 string line;
                                 while ((line = sr.ReadLine()) != null)
@@ -548,33 +561,94 @@ namespace Silk.NET.BuildTools.Bind
                                 }
                             }
 
-                            foreach (var attr in overload.Signature.Attributes)
-                            {
-                                sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
-                            }
-
-                            sw.WriteLine
-                                ($"        public {overload.Signature.ToString(overload.IsUnsafe).TrimEnd(';')}");
-                            sw.WriteLine("        {");
-                            foreach (var line in overload.Body)
-                            {
-                                sw.WriteLine($"            {line}");
-                            }
-
-                            sw.WriteLine("        }");
                             sw.WriteLine();
                         }
 
-                        sw.WriteLine($"        public {name}(ref NativeApiContext ctx)");
-                        sw.WriteLine("            : base(ref ctx)");
+                        foreach (var overload in Overloader.GetOverloads(i.Functions, profile.Projects["Core"]))
+                        {
+                            var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
+                                ? swOverloads ??= CreateOverloadsFile(folder, name, true)
+                                : sw;
+                            if (sw2u == swOverloads)
+                            {
+                                overload.Signature.Parameters.Insert
+                                (
+                                    0,
+                                    new Parameter
+                                    {
+                                        Name = "thisApi",
+                                        Type = new Common.Functions.Type {Name = name, IsThis = true}
+                                    }
+                                );
+                            }
+
+                            using (var sr = new StringReader(overload.Signature.Doc))
+                            {
+                                string line;
+                                while ((line = sr.ReadLine()) != null)
+                                {
+                                    sw2u.WriteLine($"        {line}");
+                                }
+                            }
+
+                            foreach (var attr in overload.Signature.Attributes)
+                            {
+                                sw2u.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                            }
+
+                            sw2u.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe, @static: sw2u == swOverloads).TrimEnd(';')}");
+                            sw2u.WriteLine("        {");
+                            foreach (var line in overload.Body)
+                            {
+                                sw2u.WriteLine($"            {line}");
+                            }
+
+                            sw2u.WriteLine("        }");
+                            sw2u.WriteLine();
+                        }
+
+                        sw.WriteLine($"        public {name}(INativeContext ctx)");
+                        sw.WriteLine("            : base(ctx)");
                         sw.WriteLine("        {");
                         sw.WriteLine("        }");
                         sw.WriteLine("    }");
                         sw.WriteLine("}");
                         sw.WriteLine();
                         sw.Flush();
+                        FinishOverloadsFile(swOverloads);
                     }
                 }
+            }
+
+            StreamWriter CreateOverloadsFile(string folder, string @class, bool isExtension)
+            {
+                var ns = isExtension ? task.ExtensionsNamespace : task.Namespace;
+                var swOverloads = new StreamWriter(Path.Combine(folder, $"{@class}Overloads.gen.cs"));
+                swOverloads.Write(task.LicenseText());
+                swOverloads.WriteLine("using System;");
+                swOverloads.WriteLine("using System.Runtime.InteropServices;");
+                swOverloads.WriteLine("using System.Text;");
+                swOverloads.WriteLine("using Silk.NET.Core.Native;");
+                swOverloads.WriteLine("using Silk.NET.Core.Attributes;");
+                swOverloads.WriteLine("using Silk.NET.Core.Contexts;");
+                swOverloads.WriteLine("using Silk.NET.Core.Loader;");
+                swOverloads.WriteLine();
+                swOverloads.WriteLine("#pragma warning disable 1591");
+                swOverloads.WriteLine();
+                swOverloads.WriteLine($"namespace {ns}{project.Namespace}");
+                swOverloads.WriteLine("{");
+                swOverloads.WriteLine($"    public static class {@class}Overloads");
+                swOverloads.WriteLine("    {");
+                return swOverloads;
+            }
+
+            static void FinishOverloadsFile(StreamWriter? swOverloads)
+            {
+                swOverloads?.WriteLine("    }");
+                swOverloads?.WriteLine("}");
+                swOverloads?.WriteLine();
+                swOverloads?.Flush();
+                swOverloads?.Dispose();
             }
         }
 

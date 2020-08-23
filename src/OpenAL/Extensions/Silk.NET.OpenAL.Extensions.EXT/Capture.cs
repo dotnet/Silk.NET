@@ -5,8 +5,10 @@
 
 using System;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Attributes;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
@@ -14,38 +16,38 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("ALC_EXT_CAPTURE")]
     [NativeApi(Prefix = "alc")]
-    public abstract class Capture : ContextExtensionBase
+    public partial class Capture : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Capture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected Capture(INativeContext ctx)
+            : base(ctx)
         {
         }
 
         /// <inheritdoc />
-        public abstract unsafe Device* CaptureOpenDevice(string deviceName, uint frequency, BufferFormat format,
+        public unsafe partial Device* CaptureOpenDevice(string deviceName, uint frequency, BufferFormat format,
             int size);
 
         /// <inheritdoc />
-        public abstract unsafe bool CaptureCloseDevice(Device* device);
+        public unsafe partial bool CaptureCloseDevice(Device* device);
 
         /// <inheritdoc />
-        public abstract unsafe void CaptureStart(Device* device);
+        public unsafe partial void CaptureStart(Device* device);
 
         /// <inheritdoc />
-        public abstract unsafe void CaptureStop(Device* device);
+        public unsafe partial void CaptureStop(Device* device);
 
         /// <inheritdoc />
-        public abstract unsafe void CaptureSamples(Device* device, void* buffer, int sampleCount);
+        public unsafe partial void CaptureSamples(Device* device, void* buffer, int sampleCount);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public abstract unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
+        public unsafe partial void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
             void* data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public abstract unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
+        public unsafe partial void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
             int* data);
 
         /// <inheritdoc cref="CaptureOpenDevice" />

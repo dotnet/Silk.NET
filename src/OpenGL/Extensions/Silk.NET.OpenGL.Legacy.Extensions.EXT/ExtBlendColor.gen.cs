@@ -6,24 +6,24 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_blend_color")]
-    public abstract unsafe partial class ExtBlendColor : NativeExtension<GL>
+    public unsafe partial class ExtBlendColor : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_color";
         [NativeApi(EntryPoint = "glBlendColorEXT")]
-        public abstract void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
+        public partial void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
 
-        public ExtBlendColor(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtBlendColor(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

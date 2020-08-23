@@ -18,14 +18,14 @@ namespace Silk.NET.Input.Glfw
     /// <inheritdoc />
     internal class GlfwInputPlatform : IInputPlatform
     {
-        public GlfwInputPlatform(){}
-        private static Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
+        private static readonly Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
+
         /// <inheritdoc />
         public bool IsApplicable(IView window) => window is GlfwWindow;
 
         /// <inheritdoc />
         public IInputContext CreateInput(IView window) => new GlfwInputContext(window);
-        
+
         internal static unsafe void RegisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
             var events = _subs.ContainsKey
@@ -37,7 +37,7 @@ namespace Silk.NET.Input.Glfw
                 subscriber.Subscribe(events);
             }
         }
-        
+
         internal static unsafe void UnregisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
             var events = _subs.ContainsKey

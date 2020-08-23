@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenGLES
 {
@@ -23,23 +23,22 @@ namespace Silk.NET.OpenGLES
         public static GL GetApi(IGLContext ctx) => GetApi((INativeContext) ctx);
         public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
 
-        public static GL GetApi(INativeContext ctx) => LibraryActivator.CreateInstance<GL>
-            (new OpenGLESLibraryNameContainer().GetLibraryName(), TemporarySuperInvokeClass.GetLoader(ctx));
+        public static GL GetApi(INativeContext ctx) => new GL(ctx);
 
         public bool TryGetExtension<T>(out T ext)
-            where T:NativeExtension<GL>
+            where T : NativeExtension<GL>
         {
-             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                 ? LibraryActivator.CreateInstance<T>(Library)
-                 : null;
-             return ext != null;
+            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T)Activator.CreateInstance(typeof(T), Context)
+                : null;
+            return ext != null;
         }
 
         private List<string> _extensions;
         public override bool IsExtensionPresent(string extension)
         {
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
-                .Select(x => GetString(StringName.Extensions, (uint) x)).ToList();
+                .Select(x => GetStringS(StringName.Extensions, (uint) x)).ToList();
 
             return _extensions.Contains("GL_" + (extension.StartsWith("GL_") ? extension.Substring(3) : extension));
         }
@@ -129,7 +128,7 @@ namespace Silk.NET.OpenGLES
             GetProgram(program, GLEnum.ActiveAttributeMaxLength, out var lengthTmp);
             length = (uint) lengthTmp;
 
-            GetActiveAttrib(program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out var str);
+            GetActiveAttrib(program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out string str);
 
             return str.Substring(0, (int) length);
         }

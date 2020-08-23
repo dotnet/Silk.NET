@@ -3,10 +3,10 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenAL.Extensions
 {
@@ -27,7 +27,7 @@ namespace Silk.NET.OpenAL.Extensions
             where TContextExtension : NativeExtension<ALContext>
         {
             return baseApi.IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(TContextExtension)).Name)
-                ? LibraryActivator.CreateInstance<TContextExtension>(baseApi.Library)
+                ? (TContextExtension)Activator.CreateInstance(typeof(TContextExtension), baseApi.Context)
                 : null;
         }
     }

@@ -15,15 +15,19 @@ namespace Silk.NET.Windowing
     {
         /// <inheritdoc />
         public bool ShouldSwapAutomatically { get; set; }
+
         /// <inheritdoc />
         public bool IsEventDriven { get; set; }
 
         /// <inheritdoc />
         Size IViewProperties.Size => throw new InvalidOperationException("Can't get the size of a non-existent view.");
+
         /// <inheritdoc />
         public double FramesPerSecond { get; set; }
+
         /// <inheritdoc />
         public double UpdatesPerSecond { get; set; }
+
         /// <inheritdoc />
         public GraphicsAPI API { get; set; }
 
@@ -32,6 +36,7 @@ namespace Silk.NET.Windowing
 
         /// <inheritdoc />
         public VideoMode VideoMode { get; set; }
+
         /// <inheritdoc />
         public int? PreferredDepthBufferBits { get; set; }
 

@@ -3,8 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenAL.Extensions
 {
@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL.Extensions
     public abstract class ContextExtensionBase : NativeExtension<ALContext>
     {
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected ContextExtensionBase(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected ContextExtensionBase(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

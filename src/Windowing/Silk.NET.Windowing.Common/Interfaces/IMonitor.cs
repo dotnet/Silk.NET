@@ -17,25 +17,28 @@ namespace Silk.NET.Windowing
         /// The name of this monitor.
         /// </summary>
         string Name { get; }
-        
+
         /// <summary>
         /// The index of this monitor.
         /// </summary>
         int Index { get; }
-        
+
         /// <summary>
         /// The bounds of this monitor.
         /// </summary>
         Rectangle Bounds { get; }
-        
+
         /// <summary>
         /// The current video mode of this monitor.
         /// </summary>
         VideoMode VideoMode { get; }
-        
+
         /// <summary>
         /// This monitor's gamma correction.
         /// </summary>
+        /// <remarks>
+        /// Only supported by GLFW, has no effect on SDL.
+        /// </remarks>
         float Gamma { get; set; }
 
         /// <summary>

@@ -1,8 +1,8 @@
 # Everything
-*                       @Perksey
+*                       			@Perksey
 
 # Maths
-/src/Maths/             @HurricanKai
+/src/Maths/             			@HurricanKai
 
-# Windowing
-/src/Windowing/         @Perksey @devvoid
+# SilkTouch
+/src/Core/Silk.NET.SilkTouch		@HurricanKai

@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using Silk.NET.Core;
 
 namespace Silk.NET.Windowing
 {
@@ -43,15 +44,18 @@ namespace Silk.NET.Windowing
         public static void Run(this IView view)
         {
             view.Initialize();
-            while (!view.IsClosing)
-            {
-                view.DoEvents();
-                if (!view.IsClosing)
+            view.Run
+            (
+                () =>
                 {
-                    view.DoUpdate();
-                    view.DoRender();
+                    view.DoEvents();
+                    if (!view.IsClosing)
+                    {
+                        view.DoUpdate();
+                        view.DoRender();
+                    }
                 }
-            }
+            );
 
             view.DoEvents();
             view.Reset();
@@ -72,7 +76,11 @@ namespace Silk.NET.Windowing
         /// </summary>
         /// <param name="window">The window.</param>
         /// <param name="icon">The icon to set.</param>
-        public static void SetWindowIcon(this IWindow window, ref WindowIcon icon) => window.SetWindowIcon
+        public static void SetWindowIcon(this IWindow window, ref RawImage icon) => window.SetWindowIcon
+#if NETSTANDARD2_1
+            (System.Runtime.InteropServices.MemoryMarshal.CreateReadOnlySpan(ref icon, 1));
+#else
             (new[] {icon});
+#endif
     }
 }

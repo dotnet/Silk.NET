@@ -460,8 +460,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     {
                         new Attribute
                         {
-                            Arguments = new List<string> {"Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"},
-                            Name = "Ultz.SuperInvoke.InteropServices.PinObjectAttribute"
+                            Arguments = new List<string> {"PinMode.UntilNextCall"},
+                            Name = "PinObjectAttribute"
                         }
                     }
                     : new List<Attribute>()

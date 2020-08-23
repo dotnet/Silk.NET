@@ -49,7 +49,7 @@ namespace Silk.NET.Input
         /// The 0 key.
         /// </summary>
         Number0 = 48,
-        
+
         /// <summary>
         /// The 0 key; alias for <see cref="Number0"/>
         /// </summary>
@@ -618,11 +618,6 @@ namespace Silk.NET.Input
         /// <summary>
         /// The menu key.
         /// </summary>
-        Menu = 348,
-
-        /// <summary>
-        /// The last valid key in this enum.
-        /// </summary>
-        LastKey = Menu
+        Menu = 348
     }
 }

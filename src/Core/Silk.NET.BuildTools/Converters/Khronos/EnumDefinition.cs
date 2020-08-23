@@ -43,12 +43,6 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         }
         
         /// <summary>
-        /// Clone the enum.
-        /// </summary>
-        /// <returns>A clone of the enum.</returns>
-        public EnumDefinition Clone() => new EnumDefinition(Name, Type, Values);
-        
-        /// <summary>
         /// Clone the enum, with a new name.
         /// </summary>
         /// <param name="newName">The new name.</param>

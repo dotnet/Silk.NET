@@ -14,7 +14,7 @@ namespace Silk.NET.Windowing.Glfw
     internal unsafe class GlfwMonitor : IMonitor
     {
         private float _gamma = 1.0f;
-        
+
         public NativeMonitor* Handle { get; }
 
         public GlfwMonitor(NativeMonitor* monitor, int index)
@@ -29,7 +29,7 @@ namespace Silk.NET.Windowing.Glfw
             {
                 return new GlfwWindow(opts, null, this);
             }
-            
+
             opts.Position = new Point(opts.Position.X + Bounds.X, opts.Position.Y + Bounds.Y);
             return new GlfwWindow(opts, null, null);
         }
@@ -51,7 +51,8 @@ namespace Silk.NET.Windowing.Glfw
             get
             {
                 var videoMode = GlfwProvider.GLFW.Value.GetVideoMode(Handle);
-                return new VideoMode(
+                return new VideoMode
+                (
                     new Size(videoMode->Width, videoMode->Height),
                     videoMode->RefreshRate
                 );
@@ -76,7 +77,11 @@ namespace Silk.NET.Windowing.Glfw
 
             for (var i = 0; i < count; i++)
             {
-                videoModes.Add(new VideoMode(new Size(rawVideoModes[i].Width, rawVideoModes[i].Height), rawVideoModes[i].RefreshRate));
+                videoModes.Add
+                (
+                    new VideoMode
+                        (new Size(rawVideoModes[i].Width, rawVideoModes[i].Height), rawVideoModes[i].RefreshRate)
+                );
             }
 
             return videoModes;

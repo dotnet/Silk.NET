@@ -34,6 +34,10 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         [NotNull] private Type _newReturnType;
 
+        private Accessibility _newAccessibility;
+
+        private SignatureKind _newKind;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionSignatureBuilder" /> class.
         /// </summary>
@@ -49,6 +53,8 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newReturnType = functionSignature.ReturnType;
             _newGenericTypeParameters = functionSignature.GenericTypeParameters;
             _newDoc = functionSignature.Doc;
+            _newAccessibility = functionSignature.Accessibility;
+            _newKind = functionSignature.Kind;
         }
 
         /// <summary>
@@ -151,6 +157,29 @@ namespace Silk.NET.BuildTools.Common.Builders
         }
 
         /// <summary>
+        /// Sets a new accessibility for the function.
+        /// </summary>
+        /// <param name="newAccessibility">The new accessibility.</param>
+        /// <returns>The builder, with the change applied.</returns>
+        [NotNull]
+        public FunctionSignatureBuilder WithReturnType(Accessibility newAccessibility)
+        {
+            _newAccessibility = newAccessibility;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets a new function signature kind.
+        /// </summary>
+        /// <param name="kind">The new signature kind.</param>
+        /// <returns>The builder, with the change applied.</returns>
+        public FunctionSignatureBuilder WithKind(SignatureKind kind)
+        {
+            _newKind = kind;
+            return this;
+        }
+
+        /// <summary>
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
@@ -166,7 +195,10 @@ namespace Silk.NET.BuildTools.Common.Builders
                 ReturnType = _newReturnType,
                 Parameters = _newParameters?.ToList(),
                 GenericTypeParameters = _newGenericTypeParameters?.ToList() ?? new List<GenericTypeParameter>(),
-                Attributes = _newAttributes, Doc = _newDoc
+                Attributes = _newAttributes,
+                Doc = _newDoc,
+                Accessibility = _newAccessibility,
+                Kind = _newKind
             };
         }
     }

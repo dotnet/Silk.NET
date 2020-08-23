@@ -1,0 +1,25 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
+
+using System;
+using Silk.NET.Core.Attributes;
+
+#pragma warning disable 1591
+
+namespace Silk.NET.SDL
+{
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L121_C9")]
+    [NativeName("Name", "SDL_RendererFlip")]
+    public enum RendererFlip
+    {
+        [NativeName("Name", "SDL_FLIP_NONE")]
+        FlipNone = 0x0,
+        [NativeName("Name", "SDL_FLIP_HORIZONTAL")]
+        FlipHorizontal = 0x1,
+        [NativeName("Name", "SDL_FLIP_VERTICAL")]
+        FlipVertical = 0x2,
+    }
+}

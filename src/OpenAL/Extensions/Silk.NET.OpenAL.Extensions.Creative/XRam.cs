@@ -8,8 +8,9 @@ using System.Buffers;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+
 // ReSharper disable VirtualMemberCallInConstructor
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
@@ -18,7 +19,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// </summary>
     [Extension("EAX-RAM")]
     [NativeApi(Prefix = "EAX")]
-    public abstract class XRam : NativeExtension<AL>
+    public partial class XRam : NativeExtension<AL>
     {
         private readonly int _bufferStorageModeAccessible;
         private readonly int _bufferStorageModeAutomatic;
@@ -28,8 +29,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         private readonly int _ramSize;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected XRam(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected XRam(INativeContext ctx)
+            : base(ctx)
         {
             _bufferStorageModeAutomatic = GetEnumValue("AL_STORAGE_AUTOMATIC");
             _bufferStorageModeHardware = GetEnumValue("AL_STORAGE_HARDWARE");
@@ -40,14 +41,14 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         }
 
         /// <inheritdoc />
-        public abstract int GetInteger(int param);
+        public partial int GetInteger(int param);
 
         /// <inheritdoc />
         [return: MarshalAs(UnmanagedType.I4)]
-        public abstract bool SetBufferMode(int count, ReadOnlySpan<uint> buffers, int mode);
+        public partial bool SetBufferMode(int count, ReadOnlySpan<uint> buffers, int mode);
 
         /// <inheritdoc />
-        public abstract int GetBufferMode(uint buffer, IntPtr reserved);
+        public partial int GetBufferMode(uint buffer, IntPtr reserved);
 
         /// <inheritdoc cref="GetInteger(int)" />
         public int GetInteger(XRamGetInteger param)
@@ -171,7 +172,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         }
 
         /// <summary>
-        /// Gets the abstracted enum value for the given OpenAL value.
+        /// Gets the partialed enum value for the given OpenAL value.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The enum.</returns>
@@ -194,8 +195,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         }
 
         [return: MarshalAs(UnmanagedType.I4)]
-        public abstract bool IsExtensionPresent(string name);
-        public abstract IntPtr GetProcAddress(string name);
-        public abstract int GetEnumValue(string name);
+        public partial bool IsExtensionPresent(string name);
+        public partial IntPtr GetProcAddress(string name);
+        public partial int GetEnumValue(string name);
     }
 }

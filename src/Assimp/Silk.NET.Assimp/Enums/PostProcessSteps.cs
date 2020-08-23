@@ -21,6 +21,7 @@
 */
 
 using System;
+using System.Drawing;
 
 namespace Silk.NET.Assimp
 {

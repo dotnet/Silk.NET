@@ -6,332 +6,334 @@
 using System;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL
 {
     /// <summary>
     /// Provides access to the OpenAL 1.1 API.
     /// </summary>
     [NativeApi(Prefix = "al")]
-    public abstract class AL : NativeAPI
+    public partial class AL : NativeAPI
     {
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected AL(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected AL(INativeContext ctx)
+            : base(ctx)
         {
         }
 
         /// <inheritdoc />
-        public abstract override bool IsExtensionPresent(string name);
+        public override partial bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
-        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+        public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
         /// <inheritdoc />
-        public abstract IntPtr GetProcAddress(string name);
+        public partial IntPtr GetProcAddress(string name);
 
         /// <inheritdoc />
-        public abstract int GetEnumValue(string name);
+        public partial int GetEnumValue(string name);
 
         /// <inheritdoc />
-        public abstract unsafe void GenBuffers(int count, uint* buffers);
+        public unsafe partial void GenBuffers(int count, uint* buffers);
 
         /// <inheritdoc />
-        public abstract unsafe void DeleteBuffers(int count, uint* buffers);
+        public unsafe partial void DeleteBuffers(int count, uint* buffers);
 
         /// <inheritdoc />
-        public abstract bool IsBuffer(uint buffer);
+        public partial bool IsBuffer(uint buffer);
 
         /// <inheritdoc />
-        public abstract unsafe void BufferData(uint buffer, BufferFormat format, void* data, int size, int frequency);
+        public unsafe partial void BufferData(uint buffer, BufferFormat format, void* data, int size, int frequency);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferf")]
-        public abstract void SetBufferProperty(uint buffer, BufferFloat param, float value);
+        public partial void SetBufferProperty(uint buffer, BufferFloat param, float value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Buffer3f")]
-        public abstract void SetBufferProperty(uint buffer, BufferVector3 param, float value1, float value2,
+        public partial void SetBufferProperty(uint buffer, BufferVector3 param, float value1, float value2,
             float value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferfv")]
-        public abstract void SetBufferProperty(uint buffer, BufferVector3 param, in Vector3 value);
+        public partial void SetBufferProperty(uint buffer, BufferVector3 param, in Vector3 value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferfv")]
-        public abstract unsafe void SetBufferProperty(uint buffer, BufferVector3 param, float* value);
+        public unsafe partial void SetBufferProperty(uint buffer, BufferVector3 param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferi")]
-        public abstract void SetBufferProperty(uint buffer, BufferInteger param, int value);
+        public partial void SetBufferProperty(uint buffer, BufferInteger param, int value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Buffer3i")]
-        public abstract void SetBufferProperty(uint buffer, BufferInteger param, int value1, int value2, int value3);
+        public partial void SetBufferProperty(uint buffer, BufferInteger param, int value1, int value2, int value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferiv")]
-        public abstract unsafe void SetBufferProperty(uint buffer, BufferInteger param, int* value);
+        public unsafe partial void SetBufferProperty(uint buffer, BufferInteger param, int* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferf")]
-        public abstract void GetBufferProperty(uint buffer, BufferFloat param, out float value);
+        public partial void GetBufferProperty(uint buffer, BufferFloat param, out float value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBuffer3f")]
-        public abstract void GetBufferProperty(uint buffer, BufferVector3 param, out float value1, out float value2,
+        public partial void GetBufferProperty(uint buffer, BufferVector3 param, out float value1, out float value2,
             out float value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferfv")]
-        public abstract void GetBufferProperty(uint buffer, BufferVector3 param, out Vector3 value);
+        public partial void GetBufferProperty(uint buffer, BufferVector3 param, out Vector3 value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferfv")]
-        public abstract unsafe void GetBufferProperty(uint buffer, BufferFloat param, float* value);
+        public unsafe partial void GetBufferProperty(uint buffer, BufferFloat param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferi")]
-        public abstract void GetBufferProperty(uint buffer, GetBufferInteger param, out int value);
+        public partial void GetBufferProperty(uint buffer, GetBufferInteger param, out int value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBuffer3i")]
-        public abstract void GetBufferProperty(uint buffer, GetBufferInteger param, out int value1, out int value2,
+        public partial void GetBufferProperty(uint buffer, GetBufferInteger param, out int value1, out int value2,
             out int value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferiv")]
-        public abstract unsafe void GetBufferProperty(uint buffer, GetBufferInteger param, int* value);
+        public unsafe partial void GetBufferProperty(uint buffer, GetBufferInteger param, int* value);
 
         /// <inheritdoc />
-        public abstract AudioError GetError();
+        public partial AudioError GetError();
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listenerf")]
-        public abstract void SetListenerProperty(ListenerFloat param, float value);
+        public partial void SetListenerProperty(ListenerFloat param, float value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listener3f")]
-        public abstract void SetListenerProperty(ListenerVector3 param, float value1, float value2, float value3);
+        public partial void SetListenerProperty(ListenerVector3 param, float value1, float value2, float value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listenerfv")]
-        public abstract void SetListenerProperty(ListenerVector3 param, in Vector3 value);
+        public partial void SetListenerProperty(ListenerVector3 param, in Vector3 value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listenerfv")]
-        public abstract unsafe void SetListenerProperty(ListenerFloatArray param, float* value);
+        public unsafe partial void SetListenerProperty(ListenerFloatArray param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listeneri")]
-        public abstract void SetListenerProperty(ListenerInteger param, int value);
+        public partial void SetListenerProperty(ListenerInteger param, int value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listener3i")]
-        public abstract void SetListenerProperty(ListenerInteger param, int value1, int value2, int value3);
+        public partial void SetListenerProperty(ListenerInteger param, int value1, int value2, int value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listeneriv")]
-        public abstract unsafe void SetListenerProperty(ListenerInteger param, int* value);
+        public unsafe partial void SetListenerProperty(ListenerInteger param, int* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListenerf")]
-        public abstract void GetListenerProperty(ListenerFloat param, out float value);
+        public partial void GetListenerProperty(ListenerFloat param, out float value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListener3f")]
-        public abstract void GetListenerProperty(ListenerVector3 param, out float value1, out float value2,
+        public partial void GetListenerProperty(ListenerVector3 param, out float value1, out float value2,
             out float value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListenerfv")]
-        public abstract void GetListenerProperty(ListenerVector3 param, out Vector3 value);
+        public partial void GetListenerProperty(ListenerVector3 param, out Vector3 value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListenerfv")]
-        public abstract unsafe void GetListenerProperty(ListenerFloatArray param, float* value);
+        public unsafe partial void GetListenerProperty(ListenerFloatArray param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListeneri")]
-        public abstract void GetListenerProperty(ListenerInteger param, out int value);
+        public partial void GetListenerProperty(ListenerInteger param, out int value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListener3i")]
-        public abstract void GetListenerProperty(ListenerInteger param, out int value1, out int value2, out int value3);
+        public partial void GetListenerProperty(ListenerInteger param, out int value1, out int value2, out int value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListeneriv")]
-        public abstract unsafe void GetListenerProperty(ListenerInteger param, int* value);
+        public unsafe partial void GetListenerProperty(ListenerInteger param, int* value);
 
         /// <inheritdoc />
-        public abstract unsafe void GenSources(int count, uint* sources);
+        public unsafe partial void GenSources(int count, uint* sources);
 
         /// <inheritdoc />
-        public abstract unsafe void DeleteSources(int count, uint* sources);
+        public unsafe partial void DeleteSources(int count, uint* sources);
 
         /// <inheritdoc />
-        public abstract bool IsSource(uint source);
+        public partial bool IsSource(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcef")]
-        public abstract void SetSourceProperty(uint source, SourceFloat param, float value);
+        public partial void SetSourceProperty(uint source, SourceFloat param, float value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Source3f")]
-        public abstract void SetSourceProperty(uint source, SourceVector3 param, float value1, float value2,
+        public partial void SetSourceProperty(uint source, SourceVector3 param, float value1, float value2,
             float value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcefv")]
-        public abstract void SetSourceProperty(uint source, SourceVector3 param, in Vector3 value);
+        public partial void SetSourceProperty(uint source, SourceVector3 param, in Vector3 value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcefv")]
-        public abstract unsafe void SetSourceProperty(uint source, SourceVector3 param, float* value);
+        public unsafe partial void SetSourceProperty(uint source, SourceVector3 param, float* value);
 
         /// <inheritdoc />
         [Obsolete("Kept in for backwards compatibility. Please use the signature that takes a bool instead of an int.")]
         [NativeApi(EntryPoint = "Sourcei")]
-        public abstract void SetSourceProperty(uint source, SourceBoolean param, int value);
+        public partial void SetSourceProperty(uint source, SourceBoolean param, int value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
-        public abstract void SetSourceProperty(uint source, SourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
+        public partial void SetSourceProperty(uint source, SourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
         
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
-        public abstract void SetSourceProperty(uint source, SourceInteger param, int value);
+        public partial void SetSourceProperty(uint source, SourceInteger param, int value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Source3i")]
-        public abstract void SetSourceProperty(uint source, SourceInteger param, int value1, int value2, int value3);
+        public partial void SetSourceProperty(uint source, SourceInteger param, int value1, int value2, int value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourceiv")]
-        public abstract unsafe void SetSourceProperty(uint source, SourceInteger param, int* value);
+        public unsafe partial void SetSourceProperty(uint source, SourceInteger param, int* value);
         
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
-        public abstract void SetSourceProperty(uint source, SourceInteger param, uint value);
+        public partial void SetSourceProperty(uint source, SourceInteger param, uint value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Source3i")]
-        public abstract void SetSourceProperty(uint source, SourceInteger param, uint value1, uint value2, uint value3);
+        public partial void SetSourceProperty(uint source, SourceInteger param, uint value1, uint value2, uint value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourceiv")]
-        public abstract unsafe void SetSourceProperty(uint source, SourceInteger param, uint* value);
+        public unsafe partial void SetSourceProperty(uint source, SourceInteger param, uint* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcef")]
-        public abstract void GetSourceProperty(uint source, SourceFloat param, out float value);
+        public partial void GetSourceProperty(uint source, SourceFloat param, out float value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcei")]
-        public abstract void GetSourceProperty(uint source, SourceBoolean param,
+        public partial void GetSourceProperty(uint source, SourceBoolean param,
             [MarshalAs(UnmanagedType.I4)] out bool value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSource3f")]
-        public abstract void GetSourceProperty(uint source, SourceVector3 param, out float value1, out float value2,
+        public partial void GetSourceProperty(uint source, SourceVector3 param, out float value1, out float value2,
             out float value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcefv")]
-        public abstract void GetSourceProperty(uint source, SourceVector3 param, out Vector3 value);
+        public partial void GetSourceProperty(uint source, SourceVector3 param, out Vector3 value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcefv")]
-        public abstract unsafe void GetSourceProperty(uint source, SourceFloat param, float* value);
+        public unsafe partial void GetSourceProperty(uint source, SourceFloat param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcei")]
-        public abstract void GetSourceProperty(uint source, GetSourceInteger param, out int value);
+        public partial void GetSourceProperty(uint source, GetSourceInteger param, out int value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSource3i")]
-        public abstract void GetSourceProperty(uint source, GetSourceInteger param, out int value1, out int value2,
+        public partial void GetSourceProperty(uint source, GetSourceInteger param, out int value1, out int value2,
             out int value3);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourceiv")]
-        public abstract unsafe void GetSourceProperty(uint source, GetSourceInteger param, int* value);
+        public unsafe partial void GetSourceProperty(uint source, GetSourceInteger param, int* value);
 
         /// <inheritdoc />
-        public abstract void SourcePlay(uint source);
+        public partial void SourcePlay(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "SourcePlayv")]
-        public abstract unsafe void SourcePlay(int count, uint* sources);
+        public unsafe partial void SourcePlay(int count, uint* sources);
 
         /// <inheritdoc />
-        public abstract void SourcePause(uint source);
+        public partial void SourcePause(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "SourcePausev")]
-        public abstract unsafe void SourcePause(int count, uint* sources);
+        public unsafe partial void SourcePause(int count, uint* sources);
 
         /// <inheritdoc />
-        public abstract void SourceStop(uint source);
+        public partial void SourceStop(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "SourceStopv")]
-        public abstract unsafe void SourceStop(int count, uint* sources);
+        public unsafe partial void SourceStop(int count, uint* sources);
 
         /// <inheritdoc />
-        public abstract void SourceRewind(uint source);
+        public partial void SourceRewind(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "SourceRewindv")]
-        public abstract unsafe void SourceRewind(int count, uint* sources);
+        public unsafe partial void SourceRewind(int count, uint* sources);
 
         /// <inheritdoc />
-        public abstract unsafe void SourceQueueBuffers(uint source, int count, uint* buffers);
+        public unsafe partial void SourceQueueBuffers(uint source, int count, uint* buffers);
 
         /// <inheritdoc />
-        public abstract unsafe void SourceUnqueueBuffers(uint source, int count, uint* buffers);
+        public unsafe partial void SourceUnqueueBuffers(uint source, int count, uint* buffers);
 
         /// <inheritdoc />
-        public abstract void Enable(Capability capability);
+        public partial void Enable(Capability capability);
 
         /// <inheritdoc />
-        public abstract void Disable(Capability capability);
+        public partial void Disable(Capability capability);
 
         /// <inheritdoc />
-        public abstract bool IsEnabled(Capability capability);
+        public partial bool IsEnabled(Capability capability);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBoolean")]
-        public abstract bool GetStateProperty(StateBoolean param);
+        public partial bool GetStateProperty(StateBoolean param);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetDouble")]
-        public abstract double GetStateProperty(StateDouble param);
+        public partial double GetStateProperty(StateDouble param);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetFloat")]
-        public abstract float GetStateProperty(StateFloat param);
+        public partial float GetStateProperty(StateFloat param);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetInteger")]
-        public abstract int GetStateProperty(StateInteger param);
+        public partial int GetStateProperty(StateInteger param);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetString")]
-        public abstract string GetStateProperty(StateString param);
+        public partial string GetStateProperty(StateString param);
 
         /// <inheritdoc />
-        public abstract void DistanceModel(DistanceModel distanceModel);
+        public partial void DistanceModel(DistanceModel distanceModel);
 
         /// <inheritdoc />
-        public abstract void DopplerFactor(float value);
+        public partial void DopplerFactor(float value);
 
         /// <inheritdoc />
-        public abstract void SpeedOfSound(float value);
+        public partial void SpeedOfSound(float value);
 
         /// <summary>
         /// Gets an instance of the API.
@@ -339,8 +341,12 @@ namespace Silk.NET.OpenAL
         /// <returns>The instance.</returns>
         public static AL GetApi()
         {
-            return LibraryActivator.CreateInstance<AL>
-                (new OpenALLibraryNameContainer().GetLibraryName(), new ALLoader());
+            var ctx = new MultiNativeContext
+                (new DefaultNativeContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+            var ret = new AL(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext
+                (x => x.EndsWith("GetProcAddress") ? default : ret.GetProcAddress(x));
+            return ret;
         }
 
         /// <summary>
@@ -352,7 +358,7 @@ namespace Silk.NET.OpenAL
             where TExtension : NativeExtension<AL>
         {
             return IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(TExtension)).Name)
-                ? LibraryActivator.CreateInstance<TExtension>(Library)
+                ? (TExtension)Activator.CreateInstance(typeof(TExtension), Context)
                 : null;
         }
 

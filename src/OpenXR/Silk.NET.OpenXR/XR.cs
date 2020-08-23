@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Linq;
 using System.Runtime.InteropServices;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 using ExtensionAttribute = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
@@ -16,15 +15,13 @@ namespace Silk.NET.OpenXR
         public Instance? CurrentInstance { get; set; }
         public static XR GetApi()
         {
-             var ret = LibraryActivator.CreateInstance<XR>(new OpenXRLibraryNameContainer().GetLibraryName());
-             ret._extensionLoaders = new XrExtensionLoaderSource(ret);
+             var ret = new XR(new DefaultNativeContext(new OpenXRLibraryNameContainer().GetLibraryName()));
              return ret;
         }
 
         [Obsolete("Use IsInstanceExtensionPresent instead.", true)]
         public override bool IsExtensionPresent(string extension) => IsInstanceExtensionPresent(null, extension);
         private Dictionary<string, List<string>> _cachedInstanceExtensions = new Dictionary<string, List<string>>();
-        private XrExtensionLoaderSource _extensionLoaders;
 
         /// <summary>
         /// Attempts to load the given instance extension.
@@ -39,8 +36,19 @@ namespace Silk.NET.OpenXR
         /// <returns>Whether the extension is available and loaded.</returns>
         public bool TryGetInstanceExtension<T>(string layer, Instance instance, out T ext) where T:NativeExtension<XR> =>
             !((ext = IsInstanceExtensionPresent(layer, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                ? LibraryActivator.CreateInstance<T>
-                    (SearchPaths.GetLibraryName(), _extensionLoaders.Get(instance))
+                ? (T)Activator.CreateInstance
+                    (typeof(T), new LamdaNativeContext(
+                    x =>
+                    {
+                        FuncPtr ptr = default;
+                        var result = GetInstanceProcAddr(instance, x, ref ptr);
+                        if (result != Result.Success)
+                        {
+                            throw new InvalidOperationException($"Symbol loading failed with XrResult {result}");
+                        }
+
+                        return ptr.Value;
+                    }))
                 : null) is null);
 
         /// <summary>
@@ -59,14 +67,7 @@ namespace Silk.NET.OpenXR
             var l = new List<string>();
             if (string.IsNullOrWhiteSpace(layer))
             {
-                var layerCount = 0u;
-                EnumerateApiLayerProperties(0, ref layerCount, ref Unsafe.AsRef<ApiLayerProperties>(null));
-                var layers = stackalloc ApiLayerProperties[(int)layerCount];
-                EnumerateApiLayerProperties(0, ref layerCount, ref layers[0]);
-                for (var i = 0; i < layerCount; i++)
-                {
-                    Add(l, layers[i].LayerName);
-                }
+                Add(l, null);
             }
             else
             {
@@ -85,6 +86,12 @@ namespace Silk.NET.OpenXR
             var extensionCount = 0u;
             EnumerateInstanceExtensionProperties(layerName, extensionCount, &extensionCount, null);
             var exts = stackalloc ExtensionProperties[(int)extensionCount];
+
+            for (int i = 0; i < extensionCount; i++)
+            {
+                exts[i] = new ExtensionProperties(StructureType.TypeExtensionProperties);
+            }
+            
             EnumerateInstanceExtensionProperties(layerName, extensionCount, &extensionCount, exts);
             for (var i = 0; i < extensionCount; i++)
             {

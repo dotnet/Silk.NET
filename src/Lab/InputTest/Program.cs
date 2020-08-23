@@ -13,6 +13,8 @@ namespace InputTest
     {
         private static void Main()
         {
+            //Window.PrioritizeSdl();
+            
             var opts = WindowOptions.Default;
             opts.FramesPerSecond = 60;
             opts.UpdatesPerSecond = 60;
@@ -110,9 +112,9 @@ namespace InputTest
                     gamepad.ButtonUp += InputGamepadOnButtonUp;
                     gamepad.ThumbstickMoved += GamepadOnThumbstickMoved;
                     gamepad.TriggerMoved += GamepadOnTriggerMoved;
-                    Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
-                    GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
-                    Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
+                    //Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
+                    //GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
+                    //Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
                 }
                 else
                 {
@@ -191,6 +193,8 @@ namespace InputTest
                     mouse.MouseMove -= MouseOnMouseMove;
                 }
 
+                mouse.Cursor.IsConfined = true;
+
                 Console.Write("    Buttons: ");
                 Console.WriteLine(string.Join(", ", mouse.SupportedButtons.Select(x => x)));
                 Console.WriteLine($"    {mouse.ScrollWheels.Count} scroll wheels.");
@@ -222,12 +226,12 @@ namespace InputTest
             Console.WriteLine($"M{arg1.Index}> {arg2} up.");
         }
 
-        private static void MouseOnClick(IMouse arg1, MouseButton arg2)
+        private static void MouseOnClick(IMouse arg1, MouseButton arg2, PointF pos)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} single click.");
         }
 
-        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2)
+        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2, PointF pos)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} double click.");
         }
