@@ -107,9 +107,7 @@ namespace Silk.NET.SilkTouch
         /// <returns>Expression used to access the value</returns>
         Lazy<ExpressionSyntax> ResolveVariable(int id);
 
-        void BeginBlock();
-
-        void EndBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> block);
+        void BeginBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock);
 
         /// <summary>
         /// Declare a special variable that cannot be processed by the context.
@@ -182,7 +180,8 @@ namespace Silk.NET.SilkTouch
 
         private readonly List<Variable> _variables = new List<Variable>();
         private readonly List<StatementSyntax> _statements = new List<StatementSyntax>();
-        private readonly Stack<int> _blocks = new Stack<int>(); // _blocks contains the start of current blocks
+        private readonly Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)> _blocks = new Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)>(); // _blocks contains the start of current blocks + how to apply the block
+        private IMarshalContext _marshalContextImplementation;
 
         private class Variable
         {
@@ -227,14 +226,13 @@ namespace Silk.NET.SilkTouch
             ParameterVariables[parameter] = variable;
         }
 
-        public void BeginBlock()
+        public void BeginBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)
         {
-            _blocks.Push(_statements.Count);
+            _blocks.Push((_statements.Count, applyBlock));
         }
 
-        public void EndBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> block)
+        private void EndBlock(int start, Func<StatementSyntax, IMarshalContext, StatementSyntax> block)
         {
-            var start = _blocks.Pop();
             var end = _statements.Count;
             var length = end - start;
 
@@ -251,7 +249,7 @@ namespace Silk.NET.SilkTouch
                     break;
                 default:
                 {
-                    var elements = _statements.Skip(start - 1).ToArray();
+                    var elements = _statements.GetRange(start, length);
                     _statements.RemoveRange(start, length);
                     arg = Block(elements);
                     break;
@@ -378,9 +376,6 @@ namespace Silk.NET.SilkTouch
 
         public BlockSyntax BuildFinalBlock()
         {
-            if (_blocks.Count < 0)
-                throw new Exception("Cannot build final block when blocks are still open");
-            
             if (!ReturnsVoid)
             {
                 if (!ResultVariable.HasValue)
@@ -389,6 +384,12 @@ namespace Silk.NET.SilkTouch
                 var expr = ResolveVariable(ResultVariable.Value).Value;
                 
                 _statements.Add(ReturnStatement(expr));
+            }
+         
+            while (_blocks.Count > 0)
+            {
+                var (start, func) = _blocks.Pop();
+                EndBlock(start, func);
             }
             
             return Block(_statements);

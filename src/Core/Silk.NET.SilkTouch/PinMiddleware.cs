@@ -16,7 +16,6 @@ namespace Silk.NET.SilkTouch
     {
         private static void PinMiddleware(ref IMarshalContext ctx, Action next)
         {
-            var vars = new (int, string)[ctx.ParameterVariables.Length];
             for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 // in this loop, update all types & expressions
@@ -30,32 +29,20 @@ namespace Silk.NET.SilkTouch
 
                 var (id, name) = ctx.DeclareSpecialVariableNoInlining(loadType, false);
                 ctx.SetParameterToVariable(index, id);
-                ctx.BeginBlock();
-                vars[index] = (id, name);
-            }
-
-            next();
-
-            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
-            {
-                // in this loop, actually emit the `fixed` statements, with the statements of `next()` as body
-
-                var (id, name) = vars[index];
-                var shouldPin = ctx.ShouldPinParameter[index];
-                if (!shouldPin) continue;
-
-                var loadType = ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat);
                 var symbolName = ctx.MethodSymbol.Parameters[index].Name;
-                ctx.EndBlock((x, ctx) => FixedStatement
+                var l =ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat);
+                ctx.BeginBlock((x, ctx) => FixedStatement
                 (
                     VariableDeclaration
                     (
-                        IdentifierName(loadType),
+                        IdentifierName(l),
                         SingletonSeparatedList
                             (VariableDeclarator(Identifier(name), null, EqualsValueClause(PrefixUnaryExpression(SyntaxKind.AddressOfExpression, IdentifierName(FormatName(symbolName))))))
                     ), x
                 ));
             }
+
+            next();
         }
     }
 }
