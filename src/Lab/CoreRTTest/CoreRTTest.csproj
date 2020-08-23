@@ -38,7 +38,7 @@
 
     <!-- Reference the CoreRT toolchain -->
     <PropertyGroup>
-        <RestoreSources>$(RestoreSources);https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json</RestoreSources>
+        <RestoreAdditionalProjectSources>https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
     </PropertyGroup>
 
     <ItemGroup>
