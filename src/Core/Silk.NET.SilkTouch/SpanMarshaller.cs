@@ -13,11 +13,11 @@ namespace Silk.NET.SilkTouch
 {
     public partial class NativeApiGenerator
     {
-        private static void SpanMarshaller(ref MarshalContext ctx, Action next)
+        private static void SpanMarshaller(ref IMarshalContext ctx, Action next)
         {
-            bool[] b = new bool[ctx.ParameterExpressions.Length];
+            bool[] b = new bool[ctx.ParameterVariables.Length];
             
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
+            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 if (!(ctx.LoadTypes[index] is INamedTypeSymbol named))
                     continue;
@@ -28,42 +28,49 @@ namespace Silk.NET.SilkTouch
 
                 b[index] = true;
             }
-            var oldParameterExpressions = (ExpressionSyntax[])ctx.ParameterExpressions.Clone();
 
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
+            var oldParameterIds = ctx.ParameterVariables.ToArray();
+
+            var vars = new (int, string)[ctx.ParameterVariables.Length];
+            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 // in this loop, update all types & expressions
 
                 var shouldPin = b[index];
                 if (!shouldPin) continue;
                 
+                ctx.DeclareExtraRef(oldParameterIds[index], 1); // ref
+                
                 var loadType = ctx.LoadTypes[index];
                 loadType = ctx.Compilation.CreatePointerTypeSymbol((loadType as INamedTypeSymbol)!.TypeArguments[0]);
                 ctx.LoadTypes[index] = loadType;
-                
-                var name = $"sp{ctx.Slot}{index}";
-                ctx.ParameterExpressions[index] = IdentifierName(name);
+
+                var (id, name) = ctx.DeclareSpecialVariableNoInlining(loadType, false);
+                ctx.SetParameterToVariable(index, id);
+                ctx.BeginBlock();
+                vars[index] = (id, name);
             }
 
             next();
 
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
+            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 // in this loop, actually emit the `fixed` statements, with the statements of `next()` as body
-                
+
+                var (id, name) = vars[index];
                 var shouldPin = b[index];
                 if (!shouldPin) continue;
 
-                var name = $"sp{ctx.Slot}{index}";
                 var loadType = ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat);
-                ctx.AddBlock(x => FixedStatement
+                var old = ctx.ResolveVariable(oldParameterIds[index]);
+                ctx.EndBlock((x, ctx) => FixedStatement
                 (
                     VariableDeclaration
                     (
                         IdentifierName(loadType),
                         SingletonSeparatedList
-                            (VariableDeclarator(Identifier(name), null, EqualsValueClause(oldParameterExpressions[index])))
-                    ), Block(x)
+                            (VariableDeclarator(Identifier(name), null, EqualsValueClause(old.Value)))
+                    ), x
                 ));
             }
         }

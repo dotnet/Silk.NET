@@ -86,22 +86,21 @@ namespace Silk.NET.SilkTouch
                 [UnmanagedType.LPTStr] = _allocHGlobal,
             };
 
-        private static void StringMarshaller(ref MarshalContext ctx, Action next)
+        private static void StringMarshaller(ref IMarshalContext ctx, Action next)
         {
             var @string = ctx.Compilation.GetSpecialType(SpecialType.System_String);
             var intptr = ctx.Compilation.GetSpecialType(SpecialType.System_IntPtr);
-            var oldParamExpressions = ctx.ParameterExpressions.ToArray();
-            bool[] b = new bool[ctx.ParameterExpressions.Length];
+
+            var oldVariables = ctx.ParameterVariables.ToArray();
+            bool[] b = new bool[ctx.ParameterVariables.Length];
             Dictionary<int, ExpressionSyntax> readback = new Dictionary<int, ExpressionSyntax>();
             
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
+            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 b[index] = !SymbolEqualityComparer.Default.Equals(ctx.LoadTypes[index], @string);
                 if (b[index]) continue;
                 
                 var marshalAs = ctx.ParameterMarshalOptions[index]?.MarshalAs ?? UnmanagedType.LPStr;
-
-                var name = $"smptr{ctx.Slot}{index}";
 
                 var charType = ctx.Compilation.CreatePointerTypeSymbol(marshalAs switch
                 {
@@ -111,30 +110,32 @@ namespace Silk.NET.SilkTouch
                     UnmanagedType.LPTStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
                 });
                 
-                ctx.DeclareVariable(charType, name);
+                var id = ctx.DeclareVariable(charType);
+                var parameter = ctx.ResolveVariable(ctx.ParameterVariables[index]);
                 switch (ctx.MethodSymbol.Parameters[index].RefKind)
                 {
                     case RefKind.None:
                     case RefKind.In:
                     case RefKind.Ref:
-                        ctx.SetParameterToVariableAndAssign
+                        ctx.SetVariable
                         (
-                            index, name,
-                            CastExpression
+                            id,
+                            ctx => CastExpression
                             (
                                 IdentifierName(charType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
                                 InvocationExpression
                                 (
                                     _stringToPtr[marshalAs],
-                                    ArgumentList(SingletonSeparatedList(Argument(ctx.ParameterExpressions[index])))
+                                    ArgumentList
+                                        (SingletonSeparatedList(Argument(parameter.Value)))
                                 )
                             )
                         );
-                        ctx.LoadTypes[index] = charType;
+                        ctx.DeclareExtraRef(id, 1); // readback
+                        ctx.SetParameterToVariable(index, id);
                         break;
                     case RefKind.Out:
-                        ExpressionSyntax count;
-
+                    {
                         if (!ctx.TryGetAttribute(index, "Silk.NET.Core.Attributes.CountAttribute", out var countData))
                         {
                             continue; // diagnostic?
@@ -142,7 +143,7 @@ namespace Silk.NET.SilkTouch
 
                         var c = countData.NamedArguments[0];
 
-                        count = c.Key switch
+                        ExpressionSyntax count = c.Key switch
                         {
                             "Count" => LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal((int)c.Value.Value)),
                             "Parameter" => IdentifierName((string)c.Value.Value),
@@ -150,10 +151,10 @@ namespace Silk.NET.SilkTouch
                             _ => throw new ArgumentOutOfRangeException(c.Key)
                         };
 
-                        ctx.SetParameterToVariableAndAssign
+                        ctx.SetVariable
                         (
-                            index, name,
-                            CastExpression
+                            id,
+                            ctx => CastExpression
                             (
                                 IdentifierName(charType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
                                 InvocationExpression
@@ -172,22 +173,24 @@ namespace Silk.NET.SilkTouch
                         );
                         
                         // second address of
-                        var name2 = $"smo{ctx.Slot}{index}";
                         var pp = ctx.Compilation.CreatePointerTypeSymbol(charType);
-                        ctx.DeclareVariable(pp, name2);
-                        ctx.SetParameterToVariableAndAssign(index, name2, PrefixUnaryExpression(SyntaxKind.AddressOfExpression, ctx.ParameterExpressions[index]));
-                        ctx.LoadTypes[index] = pp;
+                        var id2 = ctx.DeclareVariable(pp);
+                        var parameter2 = ctx.ResolveVariable(id);
+                        ctx.SetVariable(id2, ctx => PrefixUnaryExpression(SyntaxKind.AddressOfExpression, parameter2.Value));
+                        ctx.SetParameterToVariable(index, id2);
                         ctx.ShouldPinParameter[index] = false;
                         break;
+                    }
                 }
+                ctx.DeclareExtraRef(ctx.ParameterVariables[index], 1); // free
             }
 
             var marshalReturn = !ctx.ReturnsVoid && SymbolEqualityComparer.Default.Equals(ctx.ReturnLoadType, @string);
-            var returnName = $"smo{ctx.Slot}res";
+            int returnLocal = default;
             var returnMarshalAs = ctx.ReturnMarshalOptions?.MarshalAs ?? UnmanagedType.LPStr;
             if (marshalReturn)
             {
-                ctx.DeclareVariable(@string, returnName);
+                returnLocal = ctx.DeclareVariable(@string);
                 ctx.ReturnLoadType = ctx.Compilation.CreatePointerTypeSymbol
                 (
                     returnMarshalAs switch
@@ -203,82 +206,78 @@ namespace Silk.NET.SilkTouch
 
             if (marshalReturn)
             {
-                ctx.AddStatement
+                var resultVariable = ctx.ResolveVariable(ctx.ResultVariable.Value);
+                ctx.SetVariable
                 (
-                    ExpressionStatement
+                    returnLocal,
+                    ctx => InvocationExpression
                     (
-                        AssignmentExpression
+                        _stringFromPtr[returnMarshalAs],
+                        ArgumentList
                         (
-                            SyntaxKind.SimpleAssignmentExpression, IdentifierName(returnName),
-                            InvocationExpression
+                            SingletonSeparatedList
                             (
-                                _stringFromPtr[returnMarshalAs],
-                                ArgumentList
+                                Argument
                                 (
-                                    SingletonSeparatedList
+                                    CastExpression
                                     (
-                                        Argument
+                                        IdentifierName
                                         (
-                                            CastExpression
-                                            (
-                                                IdentifierName
-                                                (
-                                                    ctx.Compilation.GetSpecialType
-                                                            (SpecialType.System_IntPtr)
-                                                        .ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
-                                                ), ctx.ResultExpression
-                                            )
-                                        )
+                                            ctx.Compilation.GetSpecialType
+                                                    (SpecialType.System_IntPtr)
+                                                .ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
+                                        ), resultVariable.Value
                                     )
                                 )
                             )
                         )
                     )
                 );
-                ctx.ResultExpression = IdentifierName(returnName);
+                ctx.ResultVariable = returnLocal;
             }
 
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
+            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 if (b[index]) continue;
                 
                 var marshalAs = ctx.ParameterMarshalOptions[index]?.MarshalAs ?? UnmanagedType.LPStr;
 
-                var name = $"smptr{ctx.Slot}{index}";
+                var p1 = ctx.ResolveVariable(ctx.ParameterVariables[index]);
+                
                 if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.None ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Ref ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Out)
                 {
-                    ctx.AddStatement
+                    var p2 = ctx.ResolveVariable(ctx.ParameterVariables[index]);
+                    ctx.SetVariable
                     (
-                        ExpressionStatement
+                        oldVariables[index],
+                        ctx => InvocationExpression
                         (
-                            AssignmentExpression
+                            _stringFromPtr[marshalAs],
+                            ArgumentList
                             (
-                                SyntaxKind.SimpleAssignmentExpression, oldParamExpressions[index],
-                                InvocationExpression
+                                SingletonSeparatedList
                                 (
-                                    _stringFromPtr[marshalAs],
-                                    ArgumentList
+                                    Argument
                                     (
-                                        SingletonSeparatedList
+                                        CastExpression
                                         (
-                                            Argument
-                                            (
-                                                CastExpression
-                                                    (IdentifierName(intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), IdentifierName(name))
-                                            )
+                                            IdentifierName
+                                                (intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
+                                            p2.Value
                                         )
                                     )
                                 )
                             )
                         )
                     );
+                    ctx.SetParameterToVariable(index, oldVariables[index]);
                 }
 
-                ctx.AddStatement
+                ctx.AddSideEffect
                 (
-                    ExpressionStatement
+                    ctx => ExpressionStatement
                     (
                         InvocationExpression
                         (
@@ -288,7 +287,7 @@ namespace Silk.NET.SilkTouch
                                 SingletonSeparatedList
                                 (
                                     Argument
-                                        (CastExpression(IdentifierName(intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), IdentifierName(name)))
+                                        (CastExpression(IdentifierName(intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), p1.Value))
                                 )
                             )
                         )

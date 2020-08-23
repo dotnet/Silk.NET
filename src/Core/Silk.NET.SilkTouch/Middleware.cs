@@ -7,5 +7,5 @@ using System;
 
 namespace Silk.NET.SilkTouch
 {
-    public delegate void Middleware(ref MarshalContext ctx, Action next);
+    public delegate void Middleware(ref IMarshalContext ctx, Action next);
 }

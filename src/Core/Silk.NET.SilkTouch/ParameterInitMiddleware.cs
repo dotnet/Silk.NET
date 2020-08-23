@@ -12,22 +12,14 @@ namespace Silk.NET.SilkTouch
 {
     public partial class NativeApiGenerator
     {
-        private void ParameterInitMiddleware(ref MarshalContext ctx, Action next)
+        private void ParameterInitMiddleware(ref IMarshalContext ctx, Action next)
         {
             for (int index = 0; index < ctx.MethodSymbol.Parameters.Length; index++)
             {
                 var symbol = ctx.MethodSymbol.Parameters[index];
-                if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.None && !ctx.MethodSymbol.Parameters[index].Type.IsReferenceType)
-                {
-                    var name = $"dp{ctx.Slot}{index}";
-                    ctx.DeclareVariable(symbol.Type, name);
-                    ctx.SetParameterToVariableAndAssign(index, name, IdentifierName(FormatName(symbol.Name)));
-                }
-                else
-                {
-                    // the parameter is by ref of some sort, leave to other initializer
-                    ctx.ParameterExpressions[index] = IdentifierName(FormatName(symbol.Name));
-                }
+                var id = ctx.DeclareVariable(symbol.Type);
+                ctx.SetVariable(id, _ => IdentifierName(FormatName(symbol.Name)));
+                ctx.SetParameterToVariable(index, id);
             }
 
             next();
