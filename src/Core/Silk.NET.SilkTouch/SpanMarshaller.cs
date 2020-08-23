@@ -39,8 +39,6 @@ namespace Silk.NET.SilkTouch
                 var shouldPin = b[index];
                 if (!shouldPin) continue;
                 
-                ctx.DeclareExtraRef(oldParameterIds[index], 1); // ref
-                
                 var loadType = ctx.LoadTypes[index];
                 loadType = ctx.Compilation.CreatePointerTypeSymbol((loadType as INamedTypeSymbol)!.TypeArguments[0]);
                 ctx.LoadTypes[index] = loadType;
