@@ -104,8 +104,9 @@ namespace Silk.NET.SilkTouch
         /// Resolve variable
         /// </summary>
         /// <param name="id">The variable id</param>
+        /// <param name="ignoreRef">Setting this to true will ignore the reference</param>
         /// <returns>Expression used to access the value</returns>
-        Lazy<ExpressionSyntax> ResolveVariable(int id);
+        Lazy<ExpressionSyntax> ResolveVariable(int id, bool ignoreRef = false);
 
         void BeginBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock);
 
@@ -186,8 +187,9 @@ namespace Silk.NET.SilkTouch
         private class Variable
         {
             public ITypeSymbol Type { get; }
-            public Func<IMarshalContext, ExpressionSyntax> LatestValue { get; set; }
+            public Func<IMarshalContext, ExpressionSyntax>? LatestValue { get; set; }
             public int ReadCount { get; set; }
+            public List<Lazy<ExpressionSyntax>> RelatedLazies { get; } = new List<Lazy<ExpressionSyntax>>();
             public bool ForceInline { get; set; } = false;
             public bool AllowInline { get; set; } = true;
             public ExpressionSyntax? AccessExpression { get; set; }
@@ -216,7 +218,20 @@ namespace Silk.NET.SilkTouch
         /// <inheritdoc />
         public void SetVariable(int id, Func<IMarshalContext, ExpressionSyntax> expressionFunc)
         {
+            if (_variables[id].LatestValue is not null && _variables[id].ReadCount != 0)
+            {
+                // this happens when setting a value that has been previously set AND someone is interested
+                foreach (var l in _variables[id].RelatedLazies)
+                {
+                    if (!l.IsValueCreated)
+                        _ = l.Value; // ensure value created
+                }
+            }
+
+            _variables[id].ReadCount = 0;
+            _variables[id].RelatedLazies.Clear();
             _variables[id].LatestValue = expressionFunc;
+            _variables[id].AccessExpression = null;
         }
 
         /// <inheritdoc />
@@ -281,10 +296,13 @@ namespace Silk.NET.SilkTouch
         }
 
         /// <inheritdoc />
-        public Lazy<ExpressionSyntax> ResolveVariable(int id)
+        public Lazy<ExpressionSyntax> ResolveVariable(int id, bool ignoreRef = false)
         {
-            _variables[id].ReadCount++;
-            return new Lazy<ExpressionSyntax>(() => ResolveVariableFinal(id));
+            if (!ignoreRef)
+                _variables[id].ReadCount++;
+            var l = new Lazy<ExpressionSyntax>(() => ResolveVariableFinal(id));
+            _variables[id].RelatedLazies.Add(l);
+            return l;
         }
 
         private ExpressionSyntax ResolveVariableFinal(int id)
@@ -312,11 +330,11 @@ namespace Silk.NET.SilkTouch
             );
             if (_variables[id].IsResolving)
                 throw new Exception($"Variable {id} is already resolving. This indicates a recursive variable dependency");
-            
-            _variables[id].IsResolving = true;
-            
+
             if (_variables[id].ReadCount <= 0)
                 throw new ArgumentOutOfRangeException(nameof(id));
+            
+            _variables[id].IsResolving = true;
 
             var value = _variables[id].LatestValue(this);
             
@@ -361,7 +379,7 @@ namespace Silk.NET.SilkTouch
 
         public IEnumerable<Lazy<ExpressionSyntax>> ResolveAllLoadParameters()
         {
-            return ParameterVariables.Select(ResolveVariable);
+            return ParameterVariables.Select(x => ResolveVariable(x));
         }
 
         public void AddSideEffect(Func<IMarshalContext, StatementSyntax> expression)

@@ -204,18 +204,16 @@ namespace Silk.NET.SilkTouch
 
                         if (ctx.ReturnsVoid)
                         {
-                            ctx.AddSideEffect(ctx => ExpressionStatement(expression(ctx)));
+                            var exp = expression(ctx); // this forces evaluation of everything until this point.
+                            ctx.AddSideEffect(ctx => ExpressionStatement(exp));
                             ctx.ResultVariable = null;
                         }
                         else
                         {
-                            // declare variable in outer scope
-                            var name = $"res{ctx.Slot}";
-
                             var id = ctx.DeclareVariable(ctx.ReturnLoadType, false);
-
                             ctx.ResultVariable = id;
                             ctx.SetVariable(id, expression);
+                            _ = ctx.ResolveVariable(id, true).Value; // force evaluation of ret
                         }
 
                         ctx.CurrentResultType = ctx.ReturnLoadType;
