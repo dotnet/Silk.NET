@@ -66,7 +66,7 @@ namespace Silk.NET.SilkTouch
                     var name =
                         $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                     context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                    File.WriteAllText(@"C:\SILK.NET\src\OpenGL\Silk.NET.OpenGL\" + name, s);
+                    // File.WriteAllText(@"C:\SILK.NET\src\OpenGL\Silk.NET.OpenGL\" + name, s);
                 }
                 catch (Exception ex)
                 {
