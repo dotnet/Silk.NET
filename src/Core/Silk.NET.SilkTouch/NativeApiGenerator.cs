@@ -213,7 +213,7 @@ namespace Silk.NET.SilkTouch
                             var id = ctx.DeclareVariable(ctx.ReturnLoadType, false);
                             ctx.ResultVariable = id;
                             ctx.SetVariable(id, expression);
-                            _ = ctx.ResolveVariable(id, true).Value; // force evaluation of ret
+                            _ = ctx.ResolveVariable(id).Value; // force evaluation of ret
                         }
 
                         ctx.CurrentResultType = ctx.ReturnLoadType;

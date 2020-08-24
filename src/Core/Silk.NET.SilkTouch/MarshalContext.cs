@@ -331,9 +331,6 @@ namespace Silk.NET.SilkTouch
             if (_variables[id].IsResolving)
                 throw new Exception($"Variable {id} is already resolving. This indicates a recursive variable dependency");
 
-            if (_variables[id].ReadCount <= 0)
-                throw new ArgumentOutOfRangeException(nameof(id));
-            
             _variables[id].IsResolving = true;
 
             var value = _variables[id].LatestValue(this);
