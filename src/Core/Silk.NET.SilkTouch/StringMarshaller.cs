@@ -150,7 +150,7 @@ namespace Silk.NET.SilkTouch
                             "Computed" => throw new Exception(),
                             _ => throw new ArgumentOutOfRangeException(c.Key)
                         };
-
+                        
                         ctx.SetVariable
                         (
                             id,
@@ -171,6 +171,7 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         );
+                        ctx.DeclareExtraRef(id, 1); // extra pointer
                         
                         // second address of
                         var pp = ctx.Compilation.CreatePointerTypeSymbol(charType);
@@ -249,23 +250,32 @@ namespace Silk.NET.SilkTouch
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Out)
                 {
                     var p2 = ctx.ResolveVariable(ctx.ParameterVariables[index]);
-                    ctx.SetVariable
+                    var n = ctx.MethodSymbol.Parameters[index].Name;
+                    ctx.AddSideEffect
                     (
-                        oldVariables[index],
-                        ctx => InvocationExpression
+                        ctx => ExpressionStatement
                         (
-                            _stringFromPtr[marshalAs],
-                            ArgumentList
+                            AssignmentExpression
                             (
-                                SingletonSeparatedList
+                                SyntaxKind.SimpleAssignmentExpression,
+                                IdentifierName(n),
+                                InvocationExpression
                                 (
-                                    Argument
+                                    _stringFromPtr[marshalAs],
+                                    ArgumentList
                                     (
-                                        CastExpression
+                                        SingletonSeparatedList
                                         (
-                                            IdentifierName
-                                                (intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
-                                            p2.Value
+                                            Argument
+                                            (
+                                                CastExpression
+                                                (
+                                                    IdentifierName
+                                                    (
+                                                        intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
+                                                    ), p2.Value
+                                                )
+                                            )
                                         )
                                     )
                                 )

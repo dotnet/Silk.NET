@@ -371,7 +371,7 @@ namespace Silk.NET.SilkTouch
             
             _variables[id].IsResolving = false;
             AppendTrivia(SyntaxTrivia(SyntaxKind.SingleLineCommentTrivia, $"// END RESOLVE {id}"));
-            return _variables[id].AccessExpression;
+            return ParenthesizedExpression(_variables[id].AccessExpression);
         }
 
         public IEnumerable<Lazy<ExpressionSyntax>> ResolveAllLoadParameters()
@@ -391,6 +391,7 @@ namespace Silk.NET.SilkTouch
 
         public BlockSyntax BuildFinalBlock()
         {
+            // add return
             if (!ReturnsVoid)
             {
                 if (!ResultVariable.HasValue)
@@ -400,13 +401,14 @@ namespace Silk.NET.SilkTouch
                 
                 _statements.Add(ReturnStatement(expr));
             }
-         
+
+            // apply blocks
             while (_blocks.Count > 0)
             {
                 var (start, func) = _blocks.Pop();
                 EndBlock(start, func);
             }
-            
+
             return Block(_statements);
         }
 
