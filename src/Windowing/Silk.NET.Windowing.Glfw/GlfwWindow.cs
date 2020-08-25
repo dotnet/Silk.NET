@@ -317,6 +317,8 @@ namespace Silk.NET.Windowing.Glfw
             {
                 _glfw.HideWindow(_glfwWindow);
             }
+            
+            WindowState = opts.WindowState;
 
             if (opts.API.API == ContextAPI.OpenGL || opts.API.API == ContextAPI.OpenGLES)
             {

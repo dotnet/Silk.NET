@@ -67,5 +67,10 @@ namespace Silk.NET.Windowing
             ContextAPI.Vulkan, ContextProfile.Core,
             ContextFlags.ForwardCompatible, new APIVersion(1, 1)
         );
+
+        /// <summary>
+        /// No graphics API.
+        /// </summary>
+        public static GraphicsAPI None => default;
     }
 }
