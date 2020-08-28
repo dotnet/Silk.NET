@@ -14,52 +14,35 @@ namespace Silk.NET.SilkTouch
 {
     public partial class NativeApiGenerator
     {
-        private static void PinMiddleware(ref MarshalContext ctx, Action next)
+        private static void PinMiddleware(ref IMarshalContext ctx, Action next)
         {
-            var statementsToHere = ctx.CurrentStatements.ToList();
-            ctx.CurrentStatements = Enumerable.Empty<StatementSyntax>();
-            var oldParameterExpressions = (ExpressionSyntax[])ctx.ParameterExpressions.Clone();
-
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
+            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 // in this loop, update all types & expressions
-                
+
                 var shouldPin = ctx.ShouldPinParameter[index];
                 if (!shouldPin) continue;
                 
                 var loadType = ctx.LoadTypes[index];
                 loadType = ctx.Compilation.CreatePointerTypeSymbol(loadType);
                 ctx.LoadTypes[index] = loadType;
-                
-                var name = $"pp{ctx.Slot}{index}";
-                ctx.ParameterExpressions[index] = IdentifierName(name);
-            }
 
-            next();
-
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
-            {
-                // in this loop, actually emit the `fixed` statements, with the statements of `next()` as body
-                
-                var shouldPin = ctx.ShouldPinParameter[index];
-                if (!shouldPin) continue;
-
-                var name = $"pp{ctx.Slot}{index}";
-                var block = Block(ctx.CurrentStatements.ToArray());
-                ctx.CurrentStatements = Enumerable.Empty<StatementSyntax>();
-                ctx.CurrentStatements = ctx.CurrentStatements.Append(FixedStatement
+                var (id, name) = ctx.DeclareSpecialVariableNoInlining(loadType, false);
+                ctx.SetParameterToVariable(index, id);
+                var symbolName = ctx.MethodSymbol.Parameters[index].Name;
+                var l =ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat);
+                ctx.BeginBlock((x, ctx) => FixedStatement
                 (
                     VariableDeclaration
                     (
-                        IdentifierName(ctx.LoadTypes[index].ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
+                        IdentifierName(l),
                         SingletonSeparatedList
-                            (VariableDeclarator(Identifier(name), null, EqualsValueClause(PrefixUnaryExpression(SyntaxKind.AddressOfExpression, oldParameterExpressions[index]))))
-                    ), block
+                            (VariableDeclarator(Identifier(name), null, EqualsValueClause(PrefixUnaryExpression(SyntaxKind.AddressOfExpression, IdentifierName(FormatName(symbolName))))))
+                    ), x
                 ));
             }
 
-            statementsToHere.AddRange(ctx.CurrentStatements);
-            ctx.CurrentStatements = statementsToHere;
+            next();
         }
     }
 }

@@ -14,9 +14,9 @@ namespace Silk.NET.SilkTouch
 {
     public partial class NativeApiGenerator
     {
-        private static void DelegateMarshaller(ref MarshalContext ctx, Action next)
+        private static void DelegateMarshaller(ref IMarshalContext ctx, Action next)
         {
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
+            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 var options = ctx.ParameterMarshalOptions[index];
 
@@ -24,15 +24,15 @@ namespace Silk.NET.SilkTouch
                     continue;
                 
                 ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_IntPtr);
-                var name = $"dmp{ctx.Slot}{index}";
-                ctx.DeclareVariable(ctx.LoadTypes[index], name);
-                ctx.SetParameterToVariableAndAssign
+                var id = ctx.DeclareVariable(ctx.LoadTypes[index]);
+                var parameterVariable = ctx.ResolveVariable(ctx.ParameterVariables[index]);
+                ctx.SetVariable
                 (
-                    index, name, ConditionalExpression
+                    id, ctx => ConditionalExpression
                     (
                         BinaryExpression
                         (
-                            SyntaxKind.EqualsExpression, ctx.ParameterExpressions[index],
+                            SyntaxKind.EqualsExpression, parameterVariable.Value,
                             LiteralExpression(SyntaxKind.NullLiteralExpression)
                         ),
                         MemberAccessExpression
@@ -57,19 +57,19 @@ namespace Silk.NET.SilkTouch
                                         ), IdentifierName("InteropServices")
                                     ), IdentifierName("Marshal")
                                 ), IdentifierName("GetFunctionPointerForDelegate")
-                            ), ArgumentList(SingletonSeparatedList(Argument(ctx.ParameterExpressions[index])))
+                            ), ArgumentList(SingletonSeparatedList(Argument(parameterVariable.Value)))
                         )
                     )
                 );
+                ctx.SetParameterToVariable(index, id);
             }
 
-            var resultLocalName = $"dptr{ctx.Slot}res";
+            int resultLocalId = default;
             var processReturn = ctx.ReturnLoadType.TypeKind == TypeKind.Delegate;
             var oldReturnLoadType = ctx.ReturnLoadType;
             if (processReturn)
             {
-                ctx.DeclareVariable(ctx.ReturnLoadType, resultLocalName);
-                
+                resultLocalId = ctx.DeclareVariable(ctx.ReturnLoadType);
                 ctx.ReturnLoadType = ctx.Compilation.GetSpecialType(SpecialType.System_IntPtr);
             }
 
@@ -77,58 +77,59 @@ namespace Silk.NET.SilkTouch
 
             if (processReturn)
             {
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                var resultVariable = ctx.ResolveVariable(ctx.ResultVariable.Value);
+                ctx.SetVariable
                 (
-                    ExpressionStatement
+                    resultLocalId, ctx => ConditionalExpression
                     (
-                        AssignmentExpression
+                        BinaryExpression
                         (
-                            SyntaxKind.SimpleAssignmentExpression, IdentifierName(resultLocalName),
-                            ConditionalExpression
+                            SyntaxKind.EqualsExpression, resultVariable.Value,
+                            MemberAccessExpression
                             (
-                                BinaryExpression
+                                SyntaxKind.SimpleMemberAccessExpression, IdentifierName("IntPtr"),
+                                IdentifierName("Zero")
+                            )
+                        ), LiteralExpression(SyntaxKind.NullLiteralExpression), InvocationExpression
+                        ( // System.Runtime.InteropServices.Marshal.GetDelegateForFunctionPointer<T>(ResultName)
+                            MemberAccessExpression
+                            (
+                                SyntaxKind.SimpleMemberAccessExpression,
+                                MemberAccessExpression
                                 (
-                                    SyntaxKind.EqualsExpression, ctx.ResultExpression,
-                                    MemberAccessExpression
-                                    (
-                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("IntPtr"),
-                                        IdentifierName("Zero")
-                                    )
-                                ), LiteralExpression(SyntaxKind.NullLiteralExpression), InvocationExpression
-                                ( // System.Runtime.InteropServices.Marshal.GetDelegateForFunctionPointer<T>(ResultName)
+                                    SyntaxKind.SimpleMemberAccessExpression,
                                     MemberAccessExpression
                                     (
                                         SyntaxKind.SimpleMemberAccessExpression,
                                         MemberAccessExpression
                                         (
-                                            SyntaxKind.SimpleMemberAccessExpression,
-                                            MemberAccessExpression
-                                            (
-                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                MemberAccessExpression
-                                                (
-                                                    SyntaxKind.SimpleMemberAccessExpression, IdentifierName("System"),
-                                                    IdentifierName("Runtime")
-                                                ), IdentifierName("InteropServices")
-                                            ), IdentifierName("Marshal")
-                                        ),
-                                        GenericName
+                                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName("System"),
+                                            IdentifierName("Runtime")
+                                        ), IdentifierName("InteropServices")
+                                    ), IdentifierName("Marshal")
+                                ),
+                                GenericName
+                                (
+                                    Identifier("GetDelegateForFunctionPointer"),
+                                    TypeArgumentList
+                                    (
+                                        SingletonSeparatedList
                                         (
-                                            Identifier("GetDelegateForFunctionPointer"),
-                                            TypeArgumentList
+                                            (TypeSyntax) IdentifierName
                                             (
-                                                SingletonSeparatedList
-                                                    ((TypeSyntax) IdentifierName(oldReturnLoadType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))
+                                                oldReturnLoadType.ToDisplayString
+                                                    (SymbolDisplayFormat.FullyQualifiedFormat)
                                             )
                                         )
-                                    ), ArgumentList(SingletonSeparatedList(Argument(ctx.ResultExpression)))
+                                    )
                                 )
-                            )
+                            ),
+                            ArgumentList
+                                (SingletonSeparatedList(Argument(resultVariable.Value)))
                         )
                     )
                 );
-
-                ctx.ResultExpression = IdentifierName(resultLocalName);
+                ctx.ResultVariable = resultLocalId;
             }
         }
     }

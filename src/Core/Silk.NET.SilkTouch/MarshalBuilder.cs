@@ -31,10 +31,9 @@ namespace Silk.NET.SilkTouch
         {
             private readonly List<Middleware> _middleware;
 
-            private MarshalContext _context;
+            private IMarshalContext _context;
 
-
-            public MarshalRunner(MarshalContext context, List<Middleware> middleware)
+            public MarshalRunner(IMarshalContext context, List<Middleware> middleware)
             {
                 _context = context;
                 _middleware = middleware;

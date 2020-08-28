@@ -53,25 +53,41 @@ namespace Silk.NET.SilkTouch
 
             foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
             {
-                var s = ProcessClassDeclaration(receiverClassDeclaration, context.Compilation, nativeApiAttribute, marshalBuilder, ref processedSymbols);
-                
-                if (s is null) continue;
+                try
+                {
+                    var s = ProcessClassDeclaration
+                    (
+                        receiverClassDeclaration, context, nativeApiAttribute, marshalBuilder,
+                        ref processedSymbols
+                    );
 
-                var name = $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
-                context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                // File.WriteAllText(name, s);
+                    if (s is null) continue;
+
+                    var name =
+                        $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
+                    context.AddSource(name, SourceText.From(s, Encoding.UTF8));
+                    // File.WriteAllText(@"C:\SILK.NET\src\OpenGL\Silk.NET.OpenGL\" + name, s);
+                }
+                catch (Exception ex)
+                {
+                    context.ReportDiagnostic
+                    (
+                        Diagnostic.Create(Diagnostics.ProcessClassFailure, receiverClassDeclaration.GetLocation(), ex.ToString())
+                    );
+                }
             }
         }
 
         private string ProcessClassDeclaration
         (
             ClassDeclarationSyntax classDeclaration,
-            Compilation compilation,
+            SourceGeneratorContext sourceContext,
             INamedTypeSymbol nativeApiAttributeSymbol,
             MarshalBuilder rootMarshalBuilder,
             ref List<ITypeSymbol> processedSymbols
         )
         {
+            var compilation = sourceContext.Compilation;
             if (!classDeclaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
                 return null;
 
@@ -130,116 +146,136 @@ namespace Silk.NET.SilkTouch
                 .ToArray();
             foreach (var (declaration, symbol, entryPoint, callingConvention) in methods)
             {
-                var marshalBuilder = rootMarshalBuilder.Clone();
-
-                void BuildLoadInvoke(ref MarshalContext ctx, Action next)
+                try
                 {
-                    // this is terminal, we never call next
-                    
-                    // build load + invocation
-                    var expression = InvocationExpression
-                    (
-                        ParenthesizedExpression
+                    var marshalBuilder = rootMarshalBuilder.Clone();
+
+                    void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
+                    {
+                        // this is terminal, we never call next
+
+                        var parameters = ctx.ResolveAllLoadParameters();
+                        // build load + invocation
+                        Func<IMarshalContext, ExpressionSyntax> expression = ctx => InvocationExpression
                         (
-                            CastExpression
+                            ParenthesizedExpression
                             (
-                                FunctionPointerType
+                                CastExpression
                                 (
-                                    Identifier(GetCallingConvention(callingConvention)),
-                                    SeparatedList(ctx.LoadTypes.Select(x => Parameter(Identifier(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))))
-                                ), InvocationExpression
-                                (
-                                    IdentifierName("Load"), ArgumentList
+                                    FunctionPointerType
                                     (
+                                        Identifier(GetCallingConvention(callingConvention)),
                                         SeparatedList
                                         (
-                                            new[]
-                                            {
-                                                Argument
-                                                    (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot))),
-                                                Argument
+                                            ctx.LoadTypes.Select
+                                            (
+                                                x => Parameter
                                                 (
-                                                    LiteralExpression
-                                                        (SyntaxKind.StringLiteralExpression, Literal(entryPoint))
+                                                    Identifier
+                                                        (x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
                                                 )
-                                            }
+                                            )
+                                        )
+                                    ), InvocationExpression
+                                    (
+                                        IdentifierName("Load"), ArgumentList
+                                        (
+                                            SeparatedList
+                                            (
+                                                new[]
+                                                {
+                                                    Argument
+                                                    (
+                                                        LiteralExpression
+                                                            (SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot))
+                                                    ),
+                                                    Argument
+                                                    (
+                                                        LiteralExpression
+                                                            (SyntaxKind.StringLiteralExpression, Literal(entryPoint))
+                                                    )
+                                                }
+                                            )
                                         )
                                     )
                                 )
-                            )
-                        ),
-                        ArgumentList
+                            ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
+                        );
+
+                        if (ctx.ReturnsVoid)
+                        {
+                            var exp = expression(ctx); // this forces evaluation of everything until this point.
+                            ctx.AddSideEffect(ctx => ExpressionStatement(exp));
+                            ctx.ResultVariable = null;
+                        }
+                        else
+                        {
+                            var id = ctx.DeclareVariable(ctx.ReturnLoadType, false);
+                            ctx.ResultVariable = id;
+                            ctx.SetVariable(id, expression);
+                            _ = ctx.ResolveVariable(id).Value; // force evaluation of ret
+                        }
+
+                        ctx.CurrentResultType = ctx.ReturnLoadType;
+                    }
+
+                    marshalBuilder.Use(BuildLoadInvoke);
+
+                    slotCount++;
+
+                    var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slotCount);
+
+                    marshalBuilder.Run(context);
+
+                    var block = context.BuildFinalBlock();
+
+                    if (declaration.Modifiers.All(x => x.Text != "unsafe"))
+                    {
+                        // this is not done as a middleware to allow middleware to prepend any variable declaration, even if it's unsafe
+                        block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
+                    }
+
+                    var method = declaration.WithBody
+                            (block)
+                        .WithAttributeLists(default)
+                        .WithSemicolonToken(default)
+                        .WithParameterList
                         (
-                            SeparatedList
+                            ParameterList
                             (
-                                ctx.ParameterExpressions.Select(Argument)
+                                SeparatedList
+                                (
+                                    declaration.ParameterList.Parameters.Select
+                                    (
+                                        (x, i) => x.WithAttributeLists
+                                                (default)
+                                            .WithType
+                                            (
+                                                IdentifierName
+                                                (
+                                                    symbol.Parameters[i]
+                                                        .Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
+                                                )
+                                            )
+                                    )
+                                )
                             )
                         )
-                    );
+                        .WithReturnType
+                        (
+                            IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
+                        );
 
-                    StatementSyntax statement;
-                    
-                    if (ctx.ReturnsVoid)
-                    {
-                        statement = ExpressionStatement(expression);
-                        ctx.ResultExpression = null;
-                    }
-                    else
-                    {
-                        // declare variable in outer scope
-                        var name = $"res{ctx.Slot}";
-                        
-                        ctx.DeclareVariable(ctx.ReturnLoadType, name);
-
-                        ctx.ResultExpression = IdentifierName(name);
-
-                        statement = ExpressionStatement(AssignmentExpression
-                            (SyntaxKind.SimpleAssignmentExpression, ctx.ResultExpression, expression));
-                    }
-
-                    ctx.CurrentStatements = ctx.CurrentStatements.Append(statement);
-                    ctx.CurrentResultType = ctx.ReturnLoadType;
+                    // append to members
+                    newMembers.Add(method);
                 }
-                
-                marshalBuilder.Use(BuildLoadInvoke);
-
-                slotCount++;
-
-               var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slotCount);
-
-               marshalBuilder.Run(context);
-               context.ApplyPostProcessing();
-
-               if (!context.ReturnsVoid)
-                   context.CurrentStatements = context.CurrentStatements.Append(ReturnStatement(context.ResultExpression));
-
-               var block = Block(context.CurrentStatements);
-               
-               if (declaration.Modifiers.All(x => x.Text != "unsafe"))
-               {
-                   // this is not done as a middleware to allow middleware to prepend any variable declaration, even if it's unsafe
-                   block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
-               }
-
-               var method = declaration.WithBody
-                       (block)
-                   .WithAttributeLists(default)
-                   .WithSemicolonToken(default)
-                   .WithParameterList
-                   (
-                       ParameterList
-                       (
-                           SeparatedList
-                               (declaration.ParameterList.Parameters.Select((x, i) => x.WithAttributeLists(default).WithType(IdentifierName(symbol.Parameters[i].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))))
-                       )
-                   )
-                   .WithReturnType(IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)));
-
-               // append to members
-                newMembers.Add
-                (
-                    method
-                );
+                catch (Exception ex)
+                {
+                    sourceContext.ReportDiagnostic
+                    (
+                        Diagnostic.Create(Diagnostics.MethodClassFailure, declaration.GetLocation(), ex.ToString())
+                    );
+                }
             }
 
             if (slotCount > 0)
