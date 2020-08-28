@@ -467,7 +467,7 @@ namespace Silk.NET.SilkTouch
                         )
                     );
 
-                if (unmanagedType is not null)
+                if (unmanagedType is not null && unmanagedType.ConstructorArguments.Length > 0 && unmanagedType.ConstructorArguments[0].Value is not null)
                 {
                     return new MarshalOptions((UnmanagedType) unmanagedType.ConstructorArguments[0].Value);
                 }
@@ -482,7 +482,7 @@ namespace Silk.NET.SilkTouch
                                 ("System.Runtime.InteropServices.MarshalAsAttribute")
                         )
                     );
-                return marshalAs is null ? null : new MarshalOptions((UnmanagedType)(int)(System.Runtime.InteropServices.UnmanagedType) marshalAs.ConstructorArguments[0].Value);
+                return marshalAs is null || marshalAs.ConstructorArguments.Length < 1 || marshalAs.ConstructorArguments[0].Value is null ? null : new MarshalOptions((UnmanagedType)(int)(System.Runtime.InteropServices.UnmanagedType) marshalAs.ConstructorArguments[0].Value);
             }
             
             ParameterMarshalOptions = methodSymbol.Parameters.Select
