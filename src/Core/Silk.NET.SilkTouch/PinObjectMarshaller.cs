@@ -19,6 +19,7 @@ namespace Silk.NET.SilkTouch
                 if (!ctx.TryGetAttribute(index, "Silk.NET.Core.Native.PinObjectAttribute", out var data))
                     continue;
 
+                var gcSlot = ctx.AllocateGcSlot();
                 PinMode pinMode;
                 if (data.ConstructorArguments.Length < 1)
                     pinMode = PinMode.Persist;
@@ -49,7 +50,7 @@ namespace Silk.NET.SilkTouch
                                     {
                                         Argument(parameterVariable.Value),
                                         Argument
-                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot)))
+                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcSlot)))
                                     }
                                 )
                             )
@@ -63,6 +64,7 @@ namespace Silk.NET.SilkTouch
             if (!ctx.ReturnsVoid && ctx.TryGetAttribute
                 (ctx.LoadTypes.Length - 1, "Silk.NET.Core.Native.PinObjectAttribute", out var resultData))
             {
+                var gcSlot = ctx.AllocateGcSlot();
 
                 PinMode pinMode;
                 if (resultData.ConstructorArguments.Length < 1)
@@ -94,7 +96,7 @@ namespace Silk.NET.SilkTouch
                                     {
                                         Argument(resultVariable.Value),
                                         Argument
-                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot)))
+                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcSlot)))
                                     }
                                 )
                             )

@@ -117,6 +117,7 @@ namespace Silk.NET.SilkTouch
             var newMembers = new List<MemberDeclarationSyntax>();
 
             int slotCount = 0;
+            int gcCount = 0;
             var methods = classDeclaration.Members.Where
                     (x => x.IsKind(SyntaxKind.MethodDeclaration))
                 .Select(x => (MethodDeclarationSyntax) x)
@@ -222,12 +223,15 @@ namespace Silk.NET.SilkTouch
                     marshalBuilder.Use(BuildLoadInvoke);
 
                     slotCount++;
-
+                    
+                    
                     var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slotCount);
 
                     marshalBuilder.Run(context);
 
                     var block = context.BuildFinalBlock();
+
+                    gcCount += context.GCCount;
 
                     if (declaration.Modifiers.All(x => x.Text != "unsafe"))
                     {
@@ -302,6 +306,32 @@ namespace Silk.NET.SilkTouch
                                         (
                                             SyntaxKind.SimpleMemberAccessExpression, BaseExpression(),
                                             IdentifierName("CoreGetSlotCount")
+                                        )
+                                    )
+                                )
+                            ), Token(SyntaxKind.SemicolonToken)
+                        )
+                    );
+                    newMembers.Add
+                    (
+                        MethodDeclaration
+                        (
+                            List<AttributeListSyntax>(),
+                            TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
+                            PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGcSlotCount"), null,
+                            ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
+                            ArrowExpressionClause
+                            (
+                                BinaryExpression
+                                (
+                                    SyntaxKind.AddExpression,
+                                    LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcCount)),
+                                    InvocationExpression
+                                    (
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression, BaseExpression(),
+                                            IdentifierName("CoreGcSlotCount")
                                         )
                                     )
                                 )
