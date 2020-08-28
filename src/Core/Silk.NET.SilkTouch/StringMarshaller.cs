@@ -93,6 +93,7 @@ namespace Silk.NET.SilkTouch
 
             var oldVariables = ctx.ParameterVariables.ToArray();
             bool[] b = new bool[ctx.ParameterVariables.Length];
+            int[] bufferVars = new int[ctx.ParameterVariables.Length];
             Dictionary<int, ExpressionSyntax> readback = new Dictionary<int, ExpressionSyntax>();
             
             for (var index = 0; index < ctx.ParameterVariables.Length; index++)
@@ -111,6 +112,7 @@ namespace Silk.NET.SilkTouch
                 });
                 
                 var id = ctx.DeclareVariable(charType);
+                bufferVars[index] = id;
                 var parameter = ctx.ResolveVariable(ctx.ParameterVariables[index]);
                 switch (ctx.MethodSymbol.Parameters[index].RefKind)
                 {
@@ -171,7 +173,6 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         );
-                        ctx.DeclareExtraRef(id, 1); // extra pointer
                         
                         // second address of
                         var pp = ctx.Compilation.CreatePointerTypeSymbol(charType);
@@ -183,7 +184,8 @@ namespace Silk.NET.SilkTouch
                         break;
                     }
                 }
-                ctx.DeclareExtraRef(ctx.ParameterVariables[index], 1); // free
+                ctx.DeclareExtraRef(ctx.ParameterVariables[index]); // ptrToString
+                ctx.DeclareExtraRef(id); // free
             }
 
             var marshalReturn = !ctx.ReturnsVoid && SymbolEqualityComparer.Default.Equals(ctx.ReturnLoadType, @string);
@@ -203,6 +205,7 @@ namespace Silk.NET.SilkTouch
                     }
                 );
             }
+            
             next();
 
             if (marshalReturn)
@@ -243,13 +246,17 @@ namespace Silk.NET.SilkTouch
                 
                 var marshalAs = ctx.ParameterMarshalOptions[index]?.MarshalAs ?? UnmanagedType.LPStr;
 
-                var p1 = ctx.ResolveVariable(ctx.ParameterVariables[index]);
-                
                 if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.None ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Ref ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Out)
                 {
                     var p2 = ctx.ResolveVariable(ctx.ParameterVariables[index]);
+                    if (ctx.MethodSymbol.Parameters[index].RefKind != RefKind.None)
+                    {
+                        var p3 = p2;
+                        p2 = new Lazy<ExpressionSyntax>(() => ParenthesizedExpression(PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, p3.Value)));
+                    }
+
                     var n = ctx.MethodSymbol.Parameters[index].Name;
                     ctx.AddSideEffect
                     (
@@ -284,6 +291,8 @@ namespace Silk.NET.SilkTouch
                     );
                     ctx.SetParameterToVariable(index, oldVariables[index]);
                 }
+                
+                var p1 = ctx.ResolveVariable(bufferVars[index]);
 
                 ctx.AddSideEffect
                 (
