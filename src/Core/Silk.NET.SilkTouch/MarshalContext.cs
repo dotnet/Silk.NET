@@ -189,7 +189,6 @@ namespace Silk.NET.SilkTouch
         private readonly List<Variable> _variables = new List<Variable>();
         private readonly List<StatementSyntax> _statements = new List<StatementSyntax>();
         private readonly Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)> _blocks = new Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)>(); // _blocks contains the start of current blocks + how to apply the block
-        private IMarshalContext _marshalContextImplementation;
 
         private class Variable
         {
@@ -248,10 +247,7 @@ namespace Silk.NET.SilkTouch
             ParameterVariables[parameter] = variable;
         }
 
-        public int AllocateGcSlot()
-        {
-            return GCCount++;
-        }
+        public int AllocateGcSlot() => GCCount++;
 
         public void BeginBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)
         {
