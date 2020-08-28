@@ -24,7 +24,7 @@ namespace Silk.NET.Core.Native
             _entryPoints = null;
         }
 
-        public void Init(INativeContext ctx, int maxSlots)
+        public void Initialize(INativeContext ctx, int maxSlots)
         {
 #if DEBUG
             Debug.Assert(!_initialized, "Do not re-initialize VTable");

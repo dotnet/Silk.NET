@@ -10,7 +10,7 @@ namespace Silk.NET.Core.Native
 {
     public interface IVTable : IDisposable
     {
-        void Init(INativeContext ctx, int maxSlots);
+        void Initialize(INativeContext ctx, int maxSlots);
         IntPtr Load(int slot, string entryPoint);
         void Purge();
     }

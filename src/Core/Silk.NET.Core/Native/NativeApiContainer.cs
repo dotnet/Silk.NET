@@ -31,7 +31,7 @@ namespace Silk.NET.Core.Native
                 );
             }
             if (!tableInitialized)
-                _vTable.Init(_ctx, slotCount);
+                _vTable.Initialize(_ctx, slotCount);
             GcUtility = new GcUtility(1, CoreGcSlotCount());
             // ReSharper restore VirtualMemberCallInConstructor
         }
@@ -55,7 +55,7 @@ namespace Silk.NET.Core.Native
         protected IVTable SwapVTable(IVTable newTable, bool initialized = false)
         {
             if (!initialized)
-                newTable.Init(_ctx, CoreGetSlotCount());
+                newTable.Initialize(_ctx, CoreGetSlotCount());
 
             return Interlocked.Exchange(ref _vTable, newTable);
         }
