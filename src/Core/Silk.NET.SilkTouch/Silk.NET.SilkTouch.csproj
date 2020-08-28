@@ -4,19 +4,19 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
 
-    <PropertyGroup>
-        <RestoreAdditionalProjectSources>
-            https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json;
-            https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json;
-            $(RestoreAdditionalProjectSources)
-        </RestoreAdditionalProjectSources>
-    </PropertyGroup>
+  <ItemGroup>
+      <Compile Include="..\Silk.NET.Core\Native\NativeApiAttribute.cs" />
+      <Compile Include="..\Silk.NET.Core\Native\UnmanagedType.cs" />
+      <Compile Include="..\Silk.NET.Core\Attributes\UnmanagedTypeAttribute.cs" />
+      
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.7.0-6.20412.3" PrivateAssets="all" />
+      <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" PrivateAssets="all" />
+      
+      <!-- Package the generator in the analyzer directory of the nuget package -->
+      <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.7.0-6.20412.3" PrivateAssets="all" />
-        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" PrivateAssets="all" />
-        <Compile Include="..\Silk.NET.Core\Native\NativeApiAttribute.cs" />
-    </ItemGroup>
 </Project>

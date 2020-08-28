@@ -31,6 +31,12 @@ namespace Silk.NET.SilkTouch
         {
             MarshalBuilder marshalBuilder;
             
+            if (!context.Compilation.ReferencedAssemblyNames.Any(ai => ai.Name.Equals("Silk.NET.Core", StringComparison.OrdinalIgnoreCase)))
+            {
+                context.ReportDiagnostic(Diagnostic.Create(Diagnostics.SilkNetCoreMissing, Location.None));
+                return;
+            }
+            
             if (!(context.SyntaxReceiver is SyntaxReceiver receiver))
                 return;
 

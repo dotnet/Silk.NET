@@ -8,10 +8,10 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.Core.Native;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
@@ -134,12 +134,12 @@ namespace Silk.NET.SilkTouch
 
     public class MarshalOptions
     {
-        public MarshalOptions(UnmanagedType marshalAs)
+        public MarshalOptions(UnmanagedType unmanagedType)
         {
-            MarshalAs = marshalAs;
+            UnmanagedType = unmanagedType;
         }
 
-        public UnmanagedType MarshalAs { get; }
+        public UnmanagedType UnmanagedType { get; }
     }
 
     public class MarshalContext : IMarshalContext
@@ -454,32 +454,47 @@ namespace Silk.NET.SilkTouch
                 .ToArray();
             ShouldPinParameter = MethodSymbol.Parameters.Select(x => x.RefKind != RefKind.None).ToArray();
 
+            MarshalOptions? GetOptions(ImmutableArray<AttributeData> attributes)
+            {
+                var unmanagedType = attributes
+                    .FirstOrDefault
+                    (
+                        x => SymbolEqualityComparer.Default.Equals
+                        (
+                            x.AttributeClass,
+                            Compilation.GetTypeByMetadataName
+                                ("Silk.NET.Core.Attributes.UnmanagedTypeAttribute")
+                        )
+                    );
+
+                if (unmanagedType is not null && unmanagedType.ConstructorArguments.Length > 0 && unmanagedType.ConstructorArguments[0].Value is not null)
+                {
+                    return new MarshalOptions((UnmanagedType) unmanagedType.ConstructorArguments[0].Value);
+                }
+                        
+                var marshalAs = attributes
+                    .FirstOrDefault
+                    (
+                        x => SymbolEqualityComparer.Default.Equals
+                        (
+                            x.AttributeClass,
+                            Compilation.GetTypeByMetadataName
+                                ("System.Runtime.InteropServices.MarshalAsAttribute")
+                        )
+                    );
+                return marshalAs is null || marshalAs.ConstructorArguments.Length < 1 || marshalAs.ConstructorArguments[0].Value is null ? null : new MarshalOptions((UnmanagedType)(int)(System.Runtime.InteropServices.UnmanagedType) marshalAs.ConstructorArguments[0].Value);
+            }
+            
             ParameterMarshalOptions = methodSymbol.Parameters.Select
                 (
-                    x => x.GetAttributes()
-                        .FirstOrDefault
-                        (
-                            x => SymbolEqualityComparer.Default.Equals
-                            (
-                                x.AttributeClass,
-                                Compilation.GetTypeByMetadataName("System.Runtime.InteropServices.MarshalAsAttribute")
-                            )
-                        )
+                    x =>
+                    {
+                        return GetOptions(x.GetAttributes());
+                    }
                 )
-                .Select(x => x is null ? null : new MarshalOptions((UnmanagedType) x.ConstructorArguments[0].Value))
                 .ToArray();
 
-            var v = methodSymbol.ReturnType.GetAttributes()
-                .FirstOrDefault
-                (
-                    x => SymbolEqualityComparer.Default.Equals
-                    (
-                        x.AttributeClass,
-                        Compilation.GetTypeByMetadataName("System.Runtime.InteropServices.MarshalAsAttribute")
-                    )
-                );
-            ReturnMarshalOptions =
-                v is null ? null : new MarshalOptions((UnmanagedType) v.ConstructorArguments[0].Value);
+            ReturnMarshalOptions = GetOptions(methodSymbol.ReturnType.GetAttributes());
         }
     }
 }
