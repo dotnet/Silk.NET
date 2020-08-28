@@ -21,6 +21,8 @@ namespace Silk.NET.Windowing.Glfw
         /// <inheritdoc />
         public bool IsViewOnly { get; } = false;
 
+        public bool SupportsWindowCreationFromHandle { get; } = false;
+
         /// <inheritdoc />
         public bool IsApplicable
         {

@@ -15,6 +15,12 @@ namespace Silk.NET.Windowing
         bool IsViewOnly { get; }
 
         /// <summary>
+        /// Gets a value indicating wether this <see cref="IWindowPlatform"/> supports window creation
+        /// from an existing window handle or not.
+        /// </summary>
+        bool SupportsWindowCreationFromHandle { get; }
+
+        /// <summary>
         /// Gets a value indicating whether this <see cref="IWindowPlatform"/> should be used, based on the
         /// current runtime/environment.
         /// </summary>
