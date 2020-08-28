@@ -37,5 +37,17 @@ namespace Silk.NET.SilkTouch
             helpLinkUri: IssueLink,
             customTags: WellKnownDiagnosticTags.AnalyzerException
         );
+        
+        public static DiagnosticDescriptor SilkNetCoreMissing { get; } = new DiagnosticDescriptor
+        (
+            id: "ST0003",
+            title: "Silk.NET.Core is missing",
+            messageFormat: "Silk.NET.Core is missing from references. You should use SilkTouch with Silk.NET.Core",
+            category: "SilkTouch.Internal",
+            defaultSeverity: DiagnosticSeverity.Info,
+            isEnabledByDefault: true,
+            description: null,
+            customTags: WellKnownDiagnosticTags.AnalyzerException
+        );
     }
 }

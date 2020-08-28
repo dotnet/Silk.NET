@@ -5,10 +5,10 @@
 
 using System;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.Core.Native;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
@@ -62,12 +62,12 @@ namespace Silk.NET.SilkTouch
                 if (SymbolEqualityComparer.Default.Equals
                     (ctx.LoadTypes[index], ctx.Compilation.GetSpecialType(SpecialType.System_Boolean)))
                 {
-                    ctx.LoadTypes[index] = Type(ctx.Compilation, ctx.ParameterMarshalOptions[index]?.MarshalAs);
+                    ctx.LoadTypes[index] = Type(ctx.Compilation, ctx.ParameterMarshalOptions[index]?.UnmanagedType);
 
                     ExpressionSyntax @true;
                     ExpressionSyntax @false;
 
-                    if (ctx.ParameterMarshalOptions[index]?.MarshalAs == UnmanagedType.VariantBool)
+                    if (ctx.ParameterMarshalOptions[index]?.UnmanagedType == UnmanagedType.VariantBool)
                     {
                         @true = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(-1));
                         @false = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0));
@@ -107,7 +107,7 @@ namespace Silk.NET.SilkTouch
                 (ctx.ReturnLoadType, ctx.Compilation.GetSpecialType(SpecialType.System_Boolean));
             if (processReturnType)
             {
-                ctx.ReturnLoadType = Type(ctx.Compilation, ctx.ReturnMarshalOptions?.MarshalAs);
+                ctx.ReturnLoadType = Type(ctx.Compilation, ctx.ReturnMarshalOptions?.UnmanagedType);
 
                 resultLocalId = ctx.DeclareVariable(ctx.Compilation.GetSpecialType(SpecialType.System_Boolean));
             }
@@ -117,7 +117,7 @@ namespace Silk.NET.SilkTouch
             if (processReturnType)
             {
                 var resultVariable = ctx.ResolveVariable(ctx.ResultVariable.Value);
-                if (ctx.ReturnMarshalOptions?.MarshalAs == UnmanagedType.VariantBool)
+                if (ctx.ReturnMarshalOptions?.UnmanagedType == UnmanagedType.VariantBool)
                 {
                     ctx.SetVariable
                     (
@@ -136,7 +136,7 @@ namespace Silk.NET.SilkTouch
                         resultLocalId,
                         ctx => BinaryExpression
                         (
-                            SyntaxKind.EqualsGreaterThanToken, resultVariable.Value,
+                            SyntaxKind.GreaterThanOrEqualExpression, resultVariable.Value,
                             LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1))
                         )
                     );
