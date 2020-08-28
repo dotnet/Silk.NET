@@ -40,7 +40,7 @@ namespace Silk.NET.SilkTouch
         
         public static DiagnosticDescriptor BuildInfo { get; } = new DiagnosticDescriptor
         (
-            id: "ST0003",
+            id: "ST0004",
             title: "Build Info",
             messageFormat: "SlotCount: '{0}', GCSlotCount: '{1}', Time: '{2}'",
             category: "SilkTouch.Internal",
