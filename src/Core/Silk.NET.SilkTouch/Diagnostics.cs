@@ -37,5 +37,18 @@ namespace Silk.NET.SilkTouch
             helpLinkUri: IssueLink,
             customTags: WellKnownDiagnosticTags.AnalyzerException
         );
+        
+        public static DiagnosticDescriptor BuildInfo { get; } = new DiagnosticDescriptor
+        (
+            id: "ST0003",
+            title: "Build Info",
+            messageFormat: "SlotCount: '{0}', GCSlotCount: '{1}', Time: '{2}'",
+            category: "SilkTouch.Internal",
+            defaultSeverity: DiagnosticSeverity.Info, 
+            isEnabledByDefault: true,
+            description: null,
+            helpLinkUri: null,
+            customTags: WellKnownDiagnosticTags.Telemetry
+        );
     }
 }

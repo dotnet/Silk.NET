@@ -87,6 +87,7 @@ namespace Silk.NET.SilkTouch
             ref List<ITypeSymbol> processedSymbols
         )
         {
+            var stopwatch = Stopwatch.StartNew();
             var compilation = sourceContext.Compilation;
             if (!classDeclaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
                 return null;
@@ -348,7 +349,16 @@ namespace Silk.NET.SilkTouch
             var newNamespace = namespaceDeclaration.WithMembers
                 (List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers)).WithAttributeLists(List<AttributeListSyntax>())})).WithUsings(compilationUnit.Usings);
             
-            return newNamespace.NormalizeWhitespace().ToFullString();
+            var result = newNamespace.NormalizeWhitespace().ToFullString();
+            stopwatch.Stop();
+            bool reportTelemetry = true;
+#if !DEBUG
+            reportTelemetry = sourceContext.AnalyzerConfigOptions.GlobalOptions.TryGetValue
+                ("silk_touch.telemetry", out var telstr) && bool.Parse(telstr);
+#endif
+            if (reportTelemetry)
+                sourceContext.ReportDiagnostic(Diagnostic.Create(Diagnostics.BuildInfo, classDeclaration.GetLocation(), slotCount, gcCount, stopwatch.ElapsedMilliseconds + "ms"));
+            return result;
         }
 
         private static string GetCallingConvention(CallingConvention convention) =>
