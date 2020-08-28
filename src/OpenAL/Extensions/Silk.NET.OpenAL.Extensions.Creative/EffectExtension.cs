@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Numerics;
-using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
@@ -31,7 +30,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public unsafe partial void DeleteAuxiliaryEffectSlots(int count, uint* slots);
 
         /// <inheritdoc />
-        [return: MarshalAs(UnmanagedType.I4)]
+        [return: UnmanagedType(UnmanagedType.I4)]
         public partial bool IsAuxiliaryEffectSlot(uint slot);
 
         /// <inheritdoc />
@@ -57,7 +56,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public unsafe partial void DeleteEffects(int count, uint* effects);
 
         /// <inheritdoc />
-        [return: MarshalAs(UnmanagedType.I4)]
+        [return: UnmanagedType(UnmanagedType.I4)]
         public partial bool IsEffect(uint effect);
 
         /// <inheritdoc />
@@ -91,7 +90,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public unsafe partial void DeleteFilters(int count, uint* filters);
 
         /// <inheritdoc />
-        [return: MarshalAs(UnmanagedType.I4)]
+        [return: UnmanagedType(UnmanagedType.I4)]
         public partial bool IsFilter(uint filter);
 
         /// <inheritdoc />
@@ -121,7 +120,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
         public partial void SetSourceProperty
-            (uint source, EFXSourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
+            (uint source, EFXSourceBoolean param, [UnmanagedType(UnmanagedType.I4)] bool value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Source3i")]
@@ -138,7 +137,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcei")]
-        public partial void GetSourceProperty(uint source, EFXSourceBoolean param, [MarshalAs(UnmanagedType.I4)] out bool value);
+        public partial void GetSourceProperty(uint source, EFXSourceBoolean param, [UnmanagedType(UnmanagedType.I4)] out bool value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSource3i")]
