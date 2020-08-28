@@ -6,10 +6,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.Core.Native;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
@@ -101,7 +101,7 @@ namespace Silk.NET.SilkTouch
                 b[index] = !SymbolEqualityComparer.Default.Equals(ctx.LoadTypes[index], @string);
                 if (b[index]) continue;
                 
-                var marshalAs = ctx.ParameterMarshalOptions[index]?.MarshalAs ?? UnmanagedType.LPStr;
+                var marshalAs = ctx.ParameterMarshalOptions[index]?.UnmanagedType ?? UnmanagedType.LPStr;
 
                 var charType = ctx.Compilation.CreatePointerTypeSymbol(marshalAs switch
                 {
@@ -190,7 +190,7 @@ namespace Silk.NET.SilkTouch
 
             var marshalReturn = !ctx.ReturnsVoid && SymbolEqualityComparer.Default.Equals(ctx.ReturnLoadType, @string);
             int returnLocal = default;
-            var returnMarshalAs = ctx.ReturnMarshalOptions?.MarshalAs ?? UnmanagedType.LPStr;
+            var returnMarshalAs = ctx.ReturnMarshalOptions?.UnmanagedType ?? UnmanagedType.LPStr;
             if (marshalReturn)
             {
                 returnLocal = ctx.DeclareVariable(@string);
@@ -244,7 +244,7 @@ namespace Silk.NET.SilkTouch
             {
                 if (b[index]) continue;
                 
-                var marshalAs = ctx.ParameterMarshalOptions[index]?.MarshalAs ?? UnmanagedType.LPStr;
+                var marshalAs = ctx.ParameterMarshalOptions[index]?.UnmanagedType ?? UnmanagedType.LPStr;
 
                 if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.None ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Ref ||
