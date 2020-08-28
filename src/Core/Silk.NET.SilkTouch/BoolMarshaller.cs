@@ -26,15 +26,12 @@ namespace Silk.NET.SilkTouch
 
                     case UnmanagedType.I2:
                         return compilation.GetSpecialType(SpecialType.System_Int16);
-                        ;
 
                     case UnmanagedType.I4:
                         return compilation.GetSpecialType(SpecialType.System_Int32);
-                        ;
 
                     case UnmanagedType.I8:
                         return compilation.GetSpecialType(SpecialType.System_Int64);
-                        ;
 
                     case UnmanagedType.SysInt:
                         return compilation.CreateNativeIntegerTypeSymbol(true);
@@ -57,8 +54,6 @@ namespace Silk.NET.SilkTouch
                     case UnmanagedType.U1:
                     default:
                         return compilation.GetSpecialType(SpecialType.System_Byte);
-                        ;
-
                 }
             }
 
@@ -121,19 +116,31 @@ namespace Silk.NET.SilkTouch
 
             if (processReturnType)
             {
-                var @true = LiteralExpression
-                (
-                    SyntaxKind.NumericLiteralExpression,
-                    ctx.ReturnMarshalOptions?.MarshalAs == UnmanagedType.VariantBool ? Literal(-1) : Literal(1)
-                );
-
                 var resultVariable = ctx.ResolveVariable(ctx.ResultVariable.Value);
-                ctx.SetVariable
-                (
-                    resultLocalId,
-                    ctx => BinaryExpression
-                        (SyntaxKind.EqualsExpression, resultVariable.Value, @true)
-                );
+                if (ctx.ReturnMarshalOptions?.MarshalAs == UnmanagedType.VariantBool)
+                {
+                    ctx.SetVariable
+                    (
+                        resultLocalId,
+                        ctx => BinaryExpression
+                        (
+                            SyntaxKind.EqualsExpression, resultVariable.Value,
+                            LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(-1))
+                        )
+                    );
+                }
+                else
+                {
+                    ctx.SetVariable
+                    (
+                        resultLocalId,
+                        ctx => BinaryExpression
+                        (
+                            SyntaxKind.EqualsGreaterThanToken, resultVariable.Value,
+                            LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1))
+                        )
+                    );
+                }
 
                 ctx.ResultVariable = resultLocalId;
             }
