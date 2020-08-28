@@ -108,6 +108,11 @@ namespace Silk.NET.SilkTouch
         /// <returns>Expression used to access the value</returns>
         Lazy<ExpressionSyntax> ResolveVariable(int id, bool ignoreRef = false);
 
+        /// <summary>
+        /// Allocate a GC Slot
+        /// </summary>
+        int AllocateGcSlot();
+
         void BeginBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock);
 
         /// <summary>
@@ -179,10 +184,11 @@ namespace Silk.NET.SilkTouch
 
         public int[] ParameterVariables { get; }
 
+        public int GCCount { get; private set; } = 0;
+
         private readonly List<Variable> _variables = new List<Variable>();
         private readonly List<StatementSyntax> _statements = new List<StatementSyntax>();
         private readonly Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)> _blocks = new Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)>(); // _blocks contains the start of current blocks + how to apply the block
-        private IMarshalContext _marshalContextImplementation;
 
         private class Variable
         {
@@ -240,6 +246,8 @@ namespace Silk.NET.SilkTouch
             LoadTypes[parameter] = _variables[variable].Type;
             ParameterVariables[parameter] = variable;
         }
+
+        public int AllocateGcSlot() => GCCount++;
 
         public void BeginBlock(Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)
         {

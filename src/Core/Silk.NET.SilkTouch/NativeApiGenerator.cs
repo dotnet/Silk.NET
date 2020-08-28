@@ -93,6 +93,7 @@ namespace Silk.NET.SilkTouch
             ref List<ITypeSymbol> processedSymbols
         )
         {
+            var stopwatch = Stopwatch.StartNew();
             var compilation = sourceContext.Compilation;
             if (!classDeclaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
                 return null;
@@ -123,6 +124,7 @@ namespace Silk.NET.SilkTouch
             var newMembers = new List<MemberDeclarationSyntax>();
 
             int slotCount = 0;
+            int gcCount = 0;
             var methods = classDeclaration.Members.Where
                     (x => x.IsKind(SyntaxKind.MethodDeclaration))
                 .Select(x => (MethodDeclarationSyntax) x)
@@ -228,12 +230,15 @@ namespace Silk.NET.SilkTouch
                     marshalBuilder.Use(BuildLoadInvoke);
 
                     slotCount++;
-
+                    
+                    
                     var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slotCount);
 
                     marshalBuilder.Run(context);
 
                     var block = context.BuildFinalBlock();
+
+                    gcCount += context.GCCount;
 
                     if (declaration.Modifiers.All(x => x.Text != "unsafe"))
                     {
@@ -314,6 +319,32 @@ namespace Silk.NET.SilkTouch
                             ), Token(SyntaxKind.SemicolonToken)
                         )
                     );
+                    newMembers.Add
+                    (
+                        MethodDeclaration
+                        (
+                            List<AttributeListSyntax>(),
+                            TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
+                            PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGcSlotCount"), null,
+                            ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
+                            ArrowExpressionClause
+                            (
+                                BinaryExpression
+                                (
+                                    SyntaxKind.AddExpression,
+                                    LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcCount)),
+                                    InvocationExpression
+                                    (
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression, BaseExpression(),
+                                            IdentifierName("CoreGcSlotCount")
+                                        )
+                                    )
+                                )
+                            ), Token(SyntaxKind.SemicolonToken)
+                        )
+                    );
                 }
                 processedSymbols.Add(classSymbol);
             }
@@ -324,7 +355,16 @@ namespace Silk.NET.SilkTouch
             var newNamespace = namespaceDeclaration.WithMembers
                 (List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers)).WithAttributeLists(List<AttributeListSyntax>())})).WithUsings(compilationUnit.Usings);
             
-            return newNamespace.NormalizeWhitespace().ToFullString();
+            var result = newNamespace.NormalizeWhitespace().ToFullString();
+            stopwatch.Stop();
+            bool reportTelemetry = true;
+#if !DEBUG
+            reportTelemetry = sourceContext.AnalyzerConfigOptions.GlobalOptions.TryGetValue
+                ("silk_touch.telemetry", out var telstr) && bool.Parse(telstr);
+#endif
+            if (reportTelemetry)
+                sourceContext.ReportDiagnostic(Diagnostic.Create(Diagnostics.BuildInfo, classDeclaration.GetLocation(), slotCount, gcCount, stopwatch.ElapsedMilliseconds + "ms"));
+            return result;
         }
 
         private static string GetCallingConvention(CallingConvention convention) =>

@@ -4,24 +4,23 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
+using System.Threading;
 using Silk.NET.Core.Contexts;
 
 namespace Silk.NET.Core.Native
 {
     public abstract class NativeApiContainer : IDisposable
     {
-        private const int ConcurrencyLevel = 1;
         private readonly INativeContext _ctx;
-        private readonly ConcurrentDictionary<int, IntPtr> _entryPoints;
+        private IVTable _vTable;
 
-        protected NativeApiContainer(INativeContext ctx)
+        protected NativeApiContainer(INativeContext ctx, IVTable table, bool tableInitialized = false)
         {
             _ctx = ctx;
+            _vTable = table;
             // Virtual member call should be fine unless we have a rogue implementer
             // The only implementer of this function should be SilkTouch
-            // ReSharper disable once VirtualMemberCallInConstructor
+            // ReSharper disable VirtualMemberCallInConstructor
             var slotCount = CoreGetSlotCount();
             if (slotCount == 0)
             {
@@ -31,18 +30,35 @@ namespace Silk.NET.Core.Native
                     "This could be because of a SilkTouch bug, or because you're not using SilkTouch at all."
                 );
             }
-            _entryPoints = new ConcurrentDictionary<int, IntPtr>(ConcurrencyLevel, slotCount);
-            GcUtility = new GcUtility(ConcurrencyLevel, slotCount);
+            if (!tableInitialized)
+                _vTable.Initialize(_ctx, slotCount);
+            GcUtility = new GcUtility(1, CoreGcSlotCount());
+            // ReSharper restore VirtualMemberCallInConstructor
         }
 
+        protected NativeApiContainer(INativeContext ctx) : this(ctx, new ConcurrentDictionaryVTable(), false)
+        { }
+
         public GcUtility GcUtility { get; }
+
+        public IVTable CurrentVTable => _vTable;
 
         public void Dispose()
         {
             _ctx.Dispose();
+            CurrentVTable.Dispose();
         }
 
         protected virtual int CoreGetSlotCount() => 0;
+        protected virtual int CoreGcSlotCount() => 0;
+
+        protected IVTable SwapVTable(IVTable newTable, bool initialized = false)
+        {
+            if (!initialized)
+                newTable.Initialize(_ctx, CoreGetSlotCount());
+
+            return Interlocked.Exchange(ref _vTable, newTable);
+        }
 
         protected void Pin(object o, int slot = -1)
         {
@@ -61,25 +77,12 @@ namespace Silk.NET.Core.Native
 
         public void PurgeEntryPoints()
         {
-            _entryPoints.Clear();
+            CurrentVTable.Purge();
         }
-
+        
         protected IntPtr Load(int slot, string entryPoint)
         {
-            return _entryPoints.GetOrAdd(slot, i =>
-            {
-                var v = _ctx.GetProcAddress(entryPoint);
-
-                if (v == IntPtr.Zero)
-                    ThrowEntryPointNotFound(entryPoint, i);
-
-                return v;
-            });
-        }
-
-        private void ThrowEntryPointNotFound(string entryPoint, int slot)
-        {
-            throw new EntryPointNotFoundException($"Native symbol \"{entryPoint}\" not found (slot {slot})");
+            return CurrentVTable.Load(slot, entryPoint);
         }
     }
 }
