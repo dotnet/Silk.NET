@@ -289,7 +289,7 @@ namespace Silk.NET.SilkTouch
             var v = new Variable(symbol);
             var id = _variables.Count;
             var name = $"SPECIAL_VAR{id}";
-            v.AccessExpression = IdentifierName(name);
+            v.AccessExpression = ParenthesizedExpression(IdentifierName(name));
             v.Declare = declare;
             _variables.Add(v);
             return (id, name);

@@ -265,7 +265,7 @@ namespace Silk.NET.SilkTouch
                             AssignmentExpression
                             (
                                 SyntaxKind.SimpleAssignmentExpression,
-                                IdentifierName(n),
+                                IdentifierName(FormatName(n)),
                                 InvocationExpression
                                 (
                                     _stringFromPtr[marshalAs],
