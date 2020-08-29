@@ -166,7 +166,7 @@ namespace Silk.NET.SilkTouch
                         callingConvention: NativeApiAttribute.GetCallingConvention(x.Item3, classNativeApiAttribute))
                 )
                 .ToArray();
-            List<string> slotTypes = new List<string>();
+            List<string> entryPoints = new List<string>();
             foreach (var (declaration, symbol, entryPoint, callingConvention) in methods)
             {
                 try
@@ -191,7 +191,8 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         );
-                        slotTypes.Add(entryPoint);
+                        if (!entryPoints.Contains(entryPoint))
+                            entryPoints.Add(entryPoint);
 
                         // build load + invocation
                         Func<IMarshalContext, ExpressionSyntax> expression = ctx => InvocationExpression
@@ -367,7 +368,7 @@ namespace Silk.NET.SilkTouch
             if (newMembers.Count == 0)
                 return null;
 
-            if (generateVTable && slotTypes.Count > 0)
+            if (generateVTable && entryPoints.Count > 0)
             {
                 var vTableMembers = new List<MemberDeclarationSyntax>();
 
@@ -424,9 +425,9 @@ namespace Silk.NET.SilkTouch
 
                 List<VariableDeclaratorSyntax> slotVars = new List<VariableDeclaratorSyntax>();
                 List<StatementSyntax> loadStatements = new List<StatementSyntax>();
-                foreach (var slotType in slotTypes)
+                foreach (var entrypoint in entryPoints)
                 {
-                    var name = $"_{slotType}";
+                    var name = $"_{entrypoint}";
                     slotVars.Add(VariableDeclarator(name));
                     loadStatements.Add
                     (
@@ -435,7 +436,7 @@ namespace Silk.NET.SilkTouch
                             BinaryExpression
                             (
                                 SyntaxKind.EqualsExpression, IdentifierName("entryPoint"),
-                                LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slotType))
+                                LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(entrypoint))
                             ),
                             Block
                             (
@@ -552,7 +553,7 @@ namespace Silk.NET.SilkTouch
                         (
                             Block
                             (
-                                slotTypes.Select
+                                entryPoints.Select
                                 (
                                     x => ExpressionStatement
                                     (
