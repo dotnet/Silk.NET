@@ -17,10 +17,10 @@ namespace Silk.NET.Core.Native
         protected NativeApiContainer(INativeContext ctx)
         {
             _ctx = ctx;
-            _vTable = CreateVTable();
             // Virtual member call should be fine unless we have a rogue implementer
             // The only implementer of this function should be SilkTouch
             // ReSharper disable VirtualMemberCallInConstructor
+            _vTable = CreateVTable();
             var slotCount = CoreGetSlotCount();
             if (slotCount == 0)
             {
