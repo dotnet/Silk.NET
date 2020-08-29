@@ -51,6 +51,7 @@ namespace Silk.NET.Core.Native
         
 
         protected IVTable SwapVTable() => Interlocked.Exchange(ref _vTable, CreateVTable());
+        protected IVTable SwapVTable(IVTable newVTable) => Interlocked.Exchange(ref _vTable, newVTable);
 
         protected void Pin(object o, int slot = -1)
         {
