@@ -71,7 +71,7 @@ namespace Silk.NET.SilkTouch
                     var name =
                         $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                     context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+                    File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
                 }
                 catch (Exception ex)
                 {
@@ -134,6 +134,16 @@ namespace Silk.NET.SilkTouch
             {
                 if (bool.TryParse(genvtablestr, out var v))
                     generateVTable = v;
+            }
+            
+            var preloadVTable = false;
+
+            if (sourceContext.AnalyzerConfigOptions.GetOptions
+                    (classDeclaration.SyntaxTree)
+                .TryGetValue("silk_touch_vtable_preload", out var vtablepreloadstr))
+            {
+                if (bool.TryParse(vtablepreloadstr, out var v))
+                    preloadVTable = v;
             }
             
             var emitAssert = false;
@@ -415,18 +425,56 @@ namespace Silk.NET.SilkTouch
             {
                 var vTableMembers = new List<MemberDeclarationSyntax>();
 
-                vTableMembers.Add
-                (
-                    FieldDeclaration
+                var initializeStatements = new List<StatementSyntax>();
+
+                if (!preloadVTable)
+                {
+                    vTableMembers.Add
                     (
-                        List<AttributeListSyntax>(), TokenList(Token(SyntaxKind.PrivateKeyword)),
-                        VariableDeclaration
+                        FieldDeclaration
                         (
-                            IdentifierName("Silk.NET.Core.Contexts.INativeContext"),
-                            SingletonSeparatedList(VariableDeclarator("_ctx"))
+                            List<AttributeListSyntax>(), TokenList(Token(SyntaxKind.PrivateKeyword)),
+                            VariableDeclaration
+                            (
+                                IdentifierName("Silk.NET.Core.Contexts.INativeContext"),
+                                SingletonSeparatedList(VariableDeclarator("_ctx"))
+                            )
                         )
-                    )
-                );
+                    );
+                    
+                    initializeStatements.Add
+                    (
+                        ExpressionStatement
+                        (
+                            AssignmentExpression
+                                (SyntaxKind.SimpleAssignmentExpression, IdentifierName("_ctx"), IdentifierName("ctx"))
+                        )
+                    );
+                }
+                else
+                {
+                    foreach (var v in entryPoints.Values.Distinct())
+                    {
+                        initializeStatements.Add
+                        (
+                            ExpressionStatement
+                            (
+                                AssignmentExpression
+                                (
+                                    SyntaxKind.SimpleAssignmentExpression, IdentifierName($"_{v}"),
+                                    InvocationExpression
+                                    (
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName("ctx"),
+                                            IdentifierName("GetProcAddress")
+                                        ), ArgumentList(SingletonSeparatedList(Argument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(v)))))
+                                    )
+                                )
+                            )
+                        );
+                    }
+                }
 
                 vTableMembers.Add
                 (
@@ -454,14 +502,7 @@ namespace Silk.NET.SilkTouch
                         (
                             Block
                             (
-                                ExpressionStatement
-                                (
-                                    AssignmentExpression
-                                    (
-                                        SyntaxKind.SimpleAssignmentExpression, IdentifierName("_ctx"),
-                                        IdentifierName("ctx")
-                                    )
-                                )
+                                initializeStatements
                             )
                         )
                 );
@@ -541,7 +582,7 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         )
-                        .WithBody(Block(BuildLoad(ref vTableMembers, entryPoints, emitAssert)))
+                        .WithBody(Block(BuildLoad(ref vTableMembers, entryPoints, emitAssert, preloadVTable)))
                         .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
                 );
 
@@ -650,13 +691,13 @@ namespace Silk.NET.SilkTouch
         }
 
         private IEnumerable<StatementSyntax> BuildLoad
-            (ref List<MemberDeclarationSyntax> vTableMembers, Dictionary<int, string> entryPoints, bool emitAssert)
+            (ref List<MemberDeclarationSyntax> vTableMembers, Dictionary<int, string> entryPoints, bool emitAssert, bool preloadVTable)
         {
             const string keyName = "slot";
             
             Span<int> orderedKeys = entryPoints.Keys.OrderBy(x => x).ToArray();
 
-            var exp = BuildSubLoad(ref vTableMembers, orderedKeys, entryPoints, emitAssert);
+            var exp = BuildSubLoad(ref vTableMembers, orderedKeys, entryPoints, emitAssert, preloadVTable);
 
             return new[] {ReturnStatement(InvocationExpression(exp, ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))};
 
@@ -665,7 +706,8 @@ namespace Silk.NET.SilkTouch
                 ref List<MemberDeclarationSyntax> methods,
                 ReadOnlySpan<int> keys,
                 IReadOnlyDictionary<int, string> entryPoints,
-                bool emitAssert
+                bool emitAssert, 
+                bool preloadVTable
             )
             {
                 var body = new List<StatementSyntax>();
@@ -679,13 +721,13 @@ namespace Silk.NET.SilkTouch
                         (
                             BinaryExpression(SyntaxKind.EqualsExpression, IdentifierName(keyName), Num(keys[0])),
                             ReturnStatement
-                                (InvocationExpression(BuildFinalSubLoad(ref methods, keys[0], entryPoints[keys[0]], emitAssert), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))
+                                (InvocationExpression(BuildFinalSubLoad(ref methods, keys[0], entryPoints[keys[0]], emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))
                         )
                     );
                     if (keys.Length > 1)
                     {
                         body.Add
-                            (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, keys.Slice(1), entryPoints, emitAssert), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))));
+                            (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, keys.Slice(1), entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))));
                     }
                     else
                     {
@@ -708,9 +750,9 @@ namespace Silk.NET.SilkTouch
                         IfStatement
                         (
                             BinaryExpression(SyntaxKind.LessThanExpression, IdentifierName(keyName), Num(midKey)),
-                            ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, lower, entryPoints, emitAssert), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))),
+                            ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, lower, entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))),
                             ElseClause
-                                (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, upper, entryPoints, emitAssert), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))))
+                                (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, upper, entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))))
                         )
                     );
                 }
@@ -794,7 +836,7 @@ namespace Silk.NET.SilkTouch
                 return IdentifierName(name);
             }
 
-            static IdentifierNameSyntax BuildFinalSubLoad(ref List<MemberDeclarationSyntax> methods, int key, string entryPoint, bool emitAssert)
+            static IdentifierNameSyntax BuildFinalSubLoad(ref List<MemberDeclarationSyntax> methods, int key, string entryPoint, bool emitAssert, bool preloadVTable)
             {
                 var name = $"Load_Final_{key}_{entryPoint}";
                 var body = new List<StatementSyntax>();
@@ -821,32 +863,39 @@ namespace Silk.NET.SilkTouch
                                                 Num(key))))))));
 
                 var localName = $"_{entryPoint}";
-                body.Add(IfStatement
+                if (!preloadVTable)
+                {
+                    body.Add
                     (
-                        BinaryExpression
+                        IfStatement
                         (
-                            SyntaxKind.NotEqualsExpression, IdentifierName(localName),
-                            DefaultExpression(IdentifierName("System.IntPtr"))
-                        ), ReturnStatement(IdentifierName(localName))
-                    ));
-                body.Add
-                (
-                    ExpressionStatement
-                    (
-                        AssignmentExpression
-                        (
-                            SyntaxKind.SimpleAssignmentExpression, IdentifierName(localName),
-                            InvocationExpression
+                            BinaryExpression
                             (
-                                MemberAccessExpression
+                                SyntaxKind.NotEqualsExpression, IdentifierName(localName),
+                                DefaultExpression(IdentifierName("System.IntPtr"))
+                            ), ReturnStatement(IdentifierName(localName))
+                        )
+                    );
+                    body.Add
+                    (
+                        ExpressionStatement
+                        (
+                            AssignmentExpression
+                            (
+                                SyntaxKind.SimpleAssignmentExpression, IdentifierName(localName),
+                                InvocationExpression
                                 (
-                                    SyntaxKind.SimpleMemberAccessExpression, IdentifierName("_ctx"),
-                                    IdentifierName("GetProcAddress")
-                                ), ArgumentList(SingletonSeparatedList(Argument(IdentifierName("entryPoint"))))
+                                    MemberAccessExpression
+                                    (
+                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("_ctx"),
+                                        IdentifierName("GetProcAddress")
+                                    ), ArgumentList(SingletonSeparatedList(Argument(IdentifierName("entryPoint"))))
+                                )
                             )
                         )
-                    )
-                );
+                    );
+                }
+
                 body.Add(ReturnStatement(IdentifierName(localName)));
                 
                 methods.Add
