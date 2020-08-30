@@ -114,6 +114,18 @@ namespace Silk.NET.SilkTouch
                 (classSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeApiContainer")))
                 return null;
 
+            var classIsSealed = classDeclaration.Modifiers.Any(x => x.Text == "sealed");
+            var generatedSeal = false;
+
+            if (sourceContext.AnalyzerConfigOptions.GetOptions
+                    (classDeclaration.SyntaxTree)
+                .TryGetValue("silk_touch_sealed_vtable_creation", out var generateSealstr))
+            {
+                if (bool.TryParse(generateSealstr, out var v))
+                    generatedSeal = v;
+            }
+            
+            
             var generateVTable = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
@@ -203,6 +215,28 @@ namespace Silk.NET.SilkTouch
                         );
                         entryPoints[ctx.Slot] = entryPoint;
 
+                        ExpressionSyntax loadCallTarget;
+
+                        if ((classIsSealed || generatedSeal) && generateVTable)
+                        {
+                            loadCallTarget = MemberAccessExpression
+                            (
+                                SyntaxKind.SimpleMemberAccessExpression,
+                                ParenthesizedExpression
+                                (
+                                    BinaryExpression
+                                    (
+                                        SyntaxKind.AsExpression, IdentifierName("CurrentVTable"),
+                                        IdentifierName("GeneratedVTable")
+                                    )
+                                ), IdentifierName("Load")
+                            );
+                        }
+                        else
+                        {
+                            loadCallTarget = IdentifierName("Load");
+                        }
+
                         // build load + invocation
                         Func<IMarshalContext, ExpressionSyntax> expression = ctx => InvocationExpression
                         (
@@ -212,7 +246,7 @@ namespace Silk.NET.SilkTouch
                                 (
                                     fPtrType, InvocationExpression
                                     (
-                                        IdentifierName("Load"), ArgumentList
+                                        loadCallTarget, ArgumentList
                                         (
                                             SeparatedList
                                             (
@@ -558,10 +592,17 @@ namespace Silk.NET.SilkTouch
                     )
                 );
 
+                SyntaxToken[] createVTableModifiers;
+
+                if (generatedSeal)
+                    createVTableModifiers = new[] {Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.SealedKeyword), Token(SyntaxKind.OverrideKeyword)};
+                else    
+                    createVTableModifiers = new[] {Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)};
+                
                 newMembers.Add
                 (
                     MethodDeclaration(IdentifierName("IVTable"), Identifier("CreateVTable"))
-                        .WithModifiers(TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)))
+                        .WithModifiers(TokenList(createVTableModifiers))
                         .WithExpressionBody
                         (
                             ArrowExpressionClause
