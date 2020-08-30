@@ -30,10 +30,16 @@ namespace Silk.NET.Core.Loader
 
             if (!success)
             {
-                throw new FileNotFoundException("Could not find or load the native library: " + name);
+                ThrowLibNotFound(name);
+                return default;
             }
 
             return result;
+        }
+
+        private static void ThrowLibNotFound(string name)
+        {
+            throw new FileNotFoundException("Could not find or load the native library: " + name);
         }
 
         /// <summary>
@@ -62,11 +68,17 @@ namespace Silk.NET.Core.Loader
 
             if (!success)
             {
-                throw new FileNotFoundException
-                    ($"Could not find or load the native library from any name: [ {string.Join(", ", names)} ]");
+                ThrowLibNotFoundAny(names);
+                return default;
             }
 
             return result;
+        }
+
+        private static void ThrowLibNotFoundAny(string[] names)
+        {
+            throw new FileNotFoundException
+                ($"Could not find or load the native library from any name: [ {string.Join(", ", names)} ]");
         }
 
         /// <summary>
@@ -95,17 +107,24 @@ namespace Silk.NET.Core.Loader
         {
             if (string.IsNullOrEmpty(name))
             {
-                throw new ArgumentException("Parameter must not be null or empty.", nameof(name));
+                ThrowParameterNotNullOrEmpty(nameof(name));
+                return default;
             }
 
             var success = TryLoadNativeLibrary(name, pathResolver, out var result);
 
             if (!success)
             {
-                throw new FileNotFoundException("Could not find or load the native library: " + name);
+                ThrowLibNotFound(name);
+                return default;
             }
 
             return result;
+        }
+
+        private static void ThrowParameterNotNullOrEmpty(string param)
+        {
+            throw new ArgumentException("Parameter must not be null or empty.", param);
         }
 
         /// <summary>
@@ -135,15 +154,16 @@ namespace Silk.NET.Core.Loader
         {
             if (names == null || names.Length == 0)
             {
-                throw new ArgumentException("Parameter must not be null or empty.", nameof(names));
+                ThrowParameterNotNullOrEmpty(nameof(names));
+                return default;
             }
 
             var success = TryLoadNativeLibrary(names, pathResolver, out var result);
 
             if (!success)
             {
-                throw new FileNotFoundException
-                    ($"Could not find or load the native library from any name: [ {string.Join(", ", names)} ]");
+                ThrowLibNotFoundAny(names);
+                return default;
             }
 
             return result;
@@ -220,16 +240,23 @@ namespace Silk.NET.Core.Loader
         {
             if (string.IsNullOrEmpty(functionName))
             {
-                throw new ArgumentException("Parameter must not be null or empty.", nameof(functionName));
+                ThrowParameterNotNullOrEmpty(nameof(functionName));
+                return default;
             }
 
             var ret = CoreLoadFunctionPointer(handle, functionName);
             if (ret == IntPtr.Zero)
             {
-                throw new SymbolLoadingException(functionName);
+                ThrowSymbolLoading(functionName);
+                return default;
             }
 
             return ret;
+        }
+
+        private static void ThrowSymbolLoading(string functionName)
+        {
+            throw new SymbolLoadingException(functionName);
         }
 
         /// <summary>
@@ -296,8 +323,14 @@ namespace Silk.NET.Core.Loader
                 return new BsdLibraryLoader();
             }
 
-            throw new PlatformNotSupportedException("This platform cannot load native libraries.");
+            PlatformNotSupported();
+            return default;
 #endif
+        }
+
+        private static void PlatformNotSupported()
+        {
+            throw new PlatformNotSupportedException("This platform cannot load native libraries.");
         }
 
 #if NETCOREAPP3_0
