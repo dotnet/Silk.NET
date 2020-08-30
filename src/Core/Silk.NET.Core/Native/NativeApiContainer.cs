@@ -48,8 +48,6 @@ namespace Silk.NET.Core.Native
         protected virtual int CoreGetSlotCount() => 0;
         protected virtual int CoreGcSlotCount() => 0;
         protected virtual IVTable CreateVTable() => new ConcurrentDictionaryVTable();
-        
-
         protected IVTable SwapVTable() => Interlocked.Exchange(ref _vTable, CreateVTable());
         protected IVTable SwapVTable(IVTable newVTable) => Interlocked.Exchange(ref _vTable, newVTable);
 
