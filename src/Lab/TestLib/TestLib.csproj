@@ -6,9 +6,5 @@
         <LangVersion>preview</LangVersion>
     </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Ultz.Bcl.Half" Version="1.0.0" />
-    </ItemGroup>
-
     <Import Project="..\..\..\build\props\bindings.props" />
 </Project>
