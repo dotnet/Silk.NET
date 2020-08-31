@@ -22,7 +22,7 @@ namespace Silk.NET.Windowing.Common
             IsVisible = true;
             UseSingleThreadedWindow = opts.UseSingleThreadedWindow;
             Position = new Point(50, 50);
-            Size = new Size(1280, 720);
+            Size = opts.VideoMode.Resolution ?? new Size(1280, 720);
             FramesPerSecond = opts.FramesPerSecond;
             UpdatesPerSecond = opts.UpdatesPerSecond;
             API = opts.API;
