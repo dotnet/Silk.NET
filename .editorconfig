@@ -49,6 +49,9 @@ resharper_web_config_wrong_module_highlighting=warning
 
 # Silk Touch options
 silk_touch_vtable_generate=true
+silk_touch_vtable_tree_emit_assert=true
+silk_touch_sealed_vtable_creation=true
+silk_touch_vtable_preload=false
 
 [*.{appxmanifest,asax,ascx,aspx,build,config,cs,cshtml,csproj,dbml,discomap,dtd,fs,fsi,fsscript,fsx,htm,html,jsproj,lsproj,master,ml,mli,njsproj,nuspec,proj,props,razor,resw,resx,skin,StyleCop,targets,tasks,vb,vbproj,xaml,xamlx,xml,xoml,xsd}]
 indent_style=space
