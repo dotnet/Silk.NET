@@ -15,12 +15,36 @@ namespace Silk.NET.Input
     /// </summary>
     public static class InputWindowExtensions
     {
+        private static List<IInputPlatform> _platforms = new List<IInputPlatform>();
+
         /// <summary>
         /// Gets the input platforms currently registered with the input system.
         /// </summary>
-        public static IReadOnlyList<IInputPlatform> Platforms { get; } = new List<IInputPlatform>();
+        public static IReadOnlyList<IInputPlatform> Platforms
+        {
+            get
+            {
+                if (!_initializedFirstPartyPlatforms)
+                {
+                    DoLoadFirstPartyPlatformsViaReflection();
+                    _initializedFirstPartyPlatforms = true;
+                }
 
-        static InputWindowExtensions()
+                return _platforms;
+            }
+        }
+
+        private static bool _initializedFirstPartyPlatforms = false;
+
+        public static void ShouldLoadFirstPartyPlatforms(bool shouldLoad)
+        {
+            if (_initializedFirstPartyPlatforms)
+                throw new InvalidOperationException("Input Platforms already loaded, cannot change first party loading");
+
+            _initializedFirstPartyPlatforms = !shouldLoad;
+        }
+        
+        private static void DoLoadFirstPartyPlatformsViaReflection()
         {
             TryAdd("Silk.NET.Input.Glfw");
             TryAdd("Silk.NET.Input.Sdl");

@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-#if NETCOREAPP3_0
+#if NET5_0
 using System.Reflection;
 using NativeLibrary3 = System.Runtime.InteropServices.NativeLibrary;
 #else
@@ -303,8 +303,8 @@ namespace Silk.NET.Core.Loader
         /// <returns>A LibraryLoader suitable for loading libraries.</returns>
         public static LibraryLoader GetPlatformDefaultLoader()
         {
-#if NETCOREAPP3_0
-            return new NetCoreNativeLibraryLoader();
+#if NET5_0
+            return new NetNextNativeLibraryLoader();
 #else
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -333,12 +333,12 @@ namespace Silk.NET.Core.Loader
             throw new PlatformNotSupportedException("This platform cannot load native libraries.");
         }
 
-#if NETCOREAPP3_0
-        private class NetCoreNativeLibraryLoader : LibraryLoader
+#if NET5_0
+        private class NetNextNativeLibraryLoader : LibraryLoader
         {
             protected override IntPtr CoreLoadNativeLibrary(string name)
             {
-                if (NativeLibrary3.TryLoad(name, Assembly.GetCallingAssembly(), null, out var lib))
+                if (NativeLibrary3.TryLoad(name, out var lib))
                 {
                     return lib;
                 }

@@ -710,7 +710,7 @@ namespace Silk.NET.BuildTools.Bind
             csproj.WriteLine("<Project Sdk=\"Microsoft.NET.Sdk\">");
             csproj.WriteLine();
             csproj.WriteLine("  <PropertyGroup>");
-            csproj.WriteLine("    <TargetFramework>netstandard2.0</TargetFramework>");
+            csproj.WriteLine("    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>");
             csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
             csproj.WriteLine("    <LangVersion>preview</LangVersion>");
             csproj.WriteLine("  </PropertyGroup>");

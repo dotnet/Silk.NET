@@ -20,20 +20,44 @@ namespace Silk.NET.Windowing
         private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
         private const string GlfwBackendName = "GlfwPlatform";
         private const string SdlBackendName = "SdlPlatform";
-        public static IReadOnlyList<IWindowPlatform> Platforms { get; } = new List<IWindowPlatform>();
+
+        private static List<IWindowPlatform> _platforms = new List<IWindowPlatform>();
+        private static bool _initializedFirstPartyPlatforms = false;
+        
+        public static IReadOnlyList<IWindowPlatform> Platforms
+        {
+            get
+            {
+                if (!_initializedFirstPartyPlatforms)
+                {
+                    DoLoadFirstPartyPlatformsViaReflection();
+                    _initializedFirstPartyPlatforms = true;
+                }
+
+                return _platforms;
+            }
+        }
+
+        public static void ShouldLoadFirstPartyPlatforms(bool shouldLoad)
+        {
+            if (_initializedFirstPartyPlatforms)
+                throw new InvalidOperationException("Window Platforms already loaded, cannot change first party loading");
+
+            _initializedFirstPartyPlatforms = !shouldLoad;
+        }
+        
+        private static void DoLoadFirstPartyPlatformsViaReflection()
+        {
+            // Try add the first-party backends
+            TryAdd(GlfwBackendNamespace);
+            TryAdd(SdlBackendNamespace);
+        }
 
         internal static Exception NoPlatformException => new PlatformNotSupportedException
         (
             "Couldn't find a suitable window platform. " +
             "https://docs.ultz.co.uk/Silk.NET/windowing/troubleshooting.html"
         );
-
-        static Window()
-        {
-            // Try add the first-party backends
-            TryAdd(GlfwBackendNamespace);
-            TryAdd(SdlBackendNamespace);
-        }
 
         /// <summary>
         /// Gets the first platform registered that is applicable and isn't view-only.
@@ -189,10 +213,8 @@ namespace Silk.NET.Windowing
         /// <param name="platform">The platform to add.</param>
         public static void Add(IWindowPlatform platform)
         {
-            if (!((List<IWindowPlatform>) Platforms).Contains(platform))
-            {
-                ((List<IWindowPlatform>) Platforms).Add(platform);
-            }
+            if (!_platforms.Contains(platform))
+                _platforms.Add(platform);
         }
 
         /// <summary>

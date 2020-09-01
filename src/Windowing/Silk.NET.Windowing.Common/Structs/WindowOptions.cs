@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Drawing;
 using System.Reflection;
 
@@ -120,26 +121,63 @@ namespace Silk.NET.Windowing
             VSync = isVSync;
         }
 
+        private static Lazy<WindowOptions> _default = new Lazy<WindowOptions>
+        (
+            () => new WindowOptions
+            (
+                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
+                Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
+                WindowBorder.Resizable, true, true, VideoMode.Default
+            )
+        );
+        
+        private static Lazy<WindowOptions> _vulkanDefault = new Lazy<WindowOptions>(
+            () => new WindowOptions
+            (
+                true, new Point(50, 50),
+                new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
+                Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
+                WindowBorder.Resizable, false, false, VideoMode.Default
+            ));
+
+        private static Lazy<WindowOptions> _aotDefault = new Lazy<WindowOptions>
+        (
+            () => new WindowOptions
+            (
+                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
+                "Silk.NET Window AOT", WindowState.Normal,
+                WindowBorder.Resizable, true, true, VideoMode.Default
+            )
+        );
+        
+        private static Lazy<WindowOptions> _vulkanAotDefault = new Lazy<WindowOptions>(
+            () => new WindowOptions
+            (
+                true, new Point(50, 50),
+                new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
+                "Silk.NET Window AOT", WindowState.Normal,
+                WindowBorder.Resizable, false, false, VideoMode.Default
+            ));
+
+        
         /// <summary>
         /// Convenience wrapper around creating a new WindowProperties with sensible defaults.
         /// </summary>
-        public static WindowOptions Default { get; } = new WindowOptions
-        (
-            true, new Point(50, 50),
-            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
-            Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
-            WindowBorder.Resizable, true, true, VideoMode.Default
-        );
+        public static WindowOptions Default => _default.Value;
 
         /// <summary>
         /// Convenience wrapper around creating a new WindowProperties with sensible values, intended for use with Vulkan.
         /// </summary>
-        public static WindowOptions DefaultVulkan { get; } = new WindowOptions
-        (
-            true, new Point(50, 50),
-            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
-            Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
-            WindowBorder.Resizable, false, false, VideoMode.Default
-        );
+        public static WindowOptions DefaultVulkan => _vulkanDefault.Value;
+
+        /// <summary>
+        /// Convenience wrapper around creating a new WindowProperties with sensible defaults, intended for use with AOT.
+        /// </summary>
+        public static WindowOptions AotDefault => _aotDefault.Value;
+
+        /// <summary>
+        /// Convenience wrapper around creating a new WindowProperties with sensible values, intended for use with Vulkan and AOT.
+        /// </summary>
+        public static WindowOptions AotDefaultVulkan => _vulkanAotDefault.Value;
     }
 }

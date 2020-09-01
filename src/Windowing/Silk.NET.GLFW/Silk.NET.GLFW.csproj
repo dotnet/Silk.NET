@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-      <TargetFramework>netstandard2.0</TargetFramework>
+      <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
       <RootNamespace>Silk.NET.GLFW</RootNamespace>
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>

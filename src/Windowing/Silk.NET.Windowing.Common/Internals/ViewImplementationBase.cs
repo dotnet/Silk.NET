@@ -210,7 +210,7 @@ namespace Silk.NET.Windowing.Internals
             // TODO this monstrosity will be gone once Silk.NET.Maths is in
             if (Vector.IsHardwareAccelerated && Vector<int>.Count >= 2)
             {
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NET5_0
                 // ReSharper disable SuggestVarOrType_Elsewhere
                 Span<int> framebufferSizeElements = stackalloc int[Vector<int>.Count];
                 Unsafe.As<int, Size>(ref framebufferSizeElements[0]) = FramebufferSize;

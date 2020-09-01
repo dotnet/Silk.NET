@@ -77,7 +77,7 @@ namespace Silk.NET.Windowing
         /// <param name="window">The window.</param>
         /// <param name="icon">The icon to set.</param>
         public static void SetWindowIcon(this IWindow window, ref RawImage icon) => window.SetWindowIcon
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NET5_0
             (System.Runtime.InteropServices.MemoryMarshal.CreateReadOnlySpan(ref icon, 1));
 #else
             (new[] {icon});

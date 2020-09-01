@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Silk.NET.GLFW;
@@ -30,8 +31,11 @@ namespace Silk.NET.Windowing.Glfw
                 {
                     GLFW.Glfw.GetApi(); // activate the class so we can determine if we can activate the class
                 }
-                catch
+                catch (Exception ex)
                 {
+#if DEBUG
+                    Console.WriteLine($"Can't load SDL: {ex}");
+#endif
                     return false;
                 }
 
