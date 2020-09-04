@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 3.1.302
     - name: Run a full run of BuildTools
-      run: dotnet run --project "src/Core/BuildTools.csproj" -- build/binder_scripts/fullrun.json
+      run: dotnet run --project "src/Core/BuildTools/BuildTools.csproj" -- build/binder_scripts/fullrun.json
     - name: Get current date
       id: date
       run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
