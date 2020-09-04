@@ -30,7 +30,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformi64vNV")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] long* @params);
@@ -46,7 +46,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformi64vNV")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out long @params);
@@ -62,7 +62,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformui64vNV")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] ulong* @params);
@@ -78,7 +78,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformui64vNV")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out ulong @params);

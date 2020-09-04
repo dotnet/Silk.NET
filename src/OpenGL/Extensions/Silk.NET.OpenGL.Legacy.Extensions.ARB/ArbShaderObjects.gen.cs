@@ -345,7 +345,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from programObj and location.
+        /// This parameter's element count is computed from programObj & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformfvARB")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location, [Count(Computed = "programObj, location"), Flow(FlowDirection.Out)] float* @params);
@@ -361,7 +361,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from programObj and location.
+        /// This parameter's element count is computed from programObj & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformfvARB")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location, [Count(Computed = "programObj, location"), Flow(FlowDirection.Out)] out float @params);
@@ -377,7 +377,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from programObj and location.
+        /// This parameter's element count is computed from programObj & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformivARB")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location, [Count(Computed = "programObj, location"), Flow(FlowDirection.Out)] int* @params);
@@ -393,7 +393,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from programObj and location.
+        /// This parameter's element count is computed from programObj & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformivARB")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] int location, [Count(Computed = "programObj, location"), Flow(FlowDirection.Out)] out int @params);

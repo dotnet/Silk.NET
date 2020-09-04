@@ -90,7 +90,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformuivEXT")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] uint* @params);
@@ -106,7 +106,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformuivEXT")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out uint @params);

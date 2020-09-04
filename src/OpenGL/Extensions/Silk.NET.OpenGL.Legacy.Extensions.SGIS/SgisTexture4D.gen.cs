@@ -54,7 +54,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, depth, and size4d.
+        /// This parameter's element count is computed from format, type, width, height, depth & size4d.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage4DSGIS")]
         public abstract unsafe void TexImage4D([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] SGIS internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint size4d, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] SGIS format, [Flow(FlowDirection.In)] SGIS type, [Count(Computed = "format, type, width, height, depth, size4d"), Flow(FlowDirection.In)] void* pixels);
@@ -94,7 +94,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, depth, and size4d.
+        /// This parameter's element count is computed from format, type, width, height, depth & size4d.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage4DSGIS")]
         public abstract void TexImage4D<T0>([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] SGIS internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint size4d, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] SGIS format, [Flow(FlowDirection.In)] SGIS type, [Count(Computed = "format, type, width, height, depth, size4d"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -140,7 +140,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, depth, and size4d.
+        /// This parameter's element count is computed from format, type, width, height, depth & size4d.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage4DSGIS")]
         public abstract unsafe void TexSubImage4D([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int woffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint size4d, [Flow(FlowDirection.In)] SGIS format, [Flow(FlowDirection.In)] SGIS type, [Count(Computed = "format, type, width, height, depth, size4d"), Flow(FlowDirection.In)] void* pixels);
@@ -186,7 +186,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, depth, and size4d.
+        /// This parameter's element count is computed from format, type, width, height, depth & size4d.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage4DSGIS")]
         public abstract void TexSubImage4D<T0>([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int woffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint size4d, [Flow(FlowDirection.In)] SGIS format, [Flow(FlowDirection.In)] SGIS type, [Count(Computed = "format, type, width, height, depth, size4d"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -226,7 +226,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, depth, and size4d.
+        /// This parameter's element count is computed from format, type, width, height, depth & size4d.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage4DSGIS")]
         public abstract unsafe void TexImage4D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint size4d, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth, size4d"), Flow(FlowDirection.In)] void* pixels);
@@ -266,7 +266,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, depth, and size4d.
+        /// This parameter's element count is computed from format, type, width, height, depth & size4d.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage4DSGIS")]
         public abstract void TexImage4D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint size4d, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth, size4d"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -312,7 +312,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, depth, and size4d.
+        /// This parameter's element count is computed from format, type, width, height, depth & size4d.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage4DSGIS")]
         public abstract unsafe void TexSubImage4D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int woffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint size4d, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth, size4d"), Flow(FlowDirection.In)] void* pixels);
@@ -358,7 +358,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, depth, and size4d.
+        /// This parameter's element count is computed from format, type, width, height, depth & size4d.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage4DSGIS")]
         public abstract void TexSubImage4D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int woffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint size4d, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth, size4d"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;

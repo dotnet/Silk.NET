@@ -256,7 +256,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3DOES")]
         public abstract unsafe void TexImage3D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] OES format, [Flow(FlowDirection.In)] OES type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
@@ -293,7 +293,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3DOES")]
         public abstract void TexImage3D<T0>([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] OES format, [Flow(FlowDirection.In)] OES type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -333,7 +333,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3DOES")]
         public abstract unsafe void TexSubImage3D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] OES format, [Flow(FlowDirection.In)] OES type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
@@ -373,7 +373,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3DOES")]
         public abstract void TexSubImage3D<T0>([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] OES format, [Flow(FlowDirection.In)] OES type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -582,7 +582,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3DOES")]
         public abstract unsafe void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
@@ -619,7 +619,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3DOES")]
         public abstract void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -659,7 +659,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3DOES")]
         public abstract unsafe void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
@@ -699,7 +699,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3DOES")]
         public abstract void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;

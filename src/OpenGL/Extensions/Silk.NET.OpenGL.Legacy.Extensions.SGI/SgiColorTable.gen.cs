@@ -39,7 +39,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableSGI")]
         public abstract unsafe void ColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
@@ -64,7 +64,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableSGI")]
         public abstract void ColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged;
@@ -168,7 +168,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableSGI")]
         public abstract unsafe void GetColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* table);
@@ -187,7 +187,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableSGI")]
         public abstract void GetColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
@@ -276,7 +276,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableSGI")]
         public abstract unsafe void ColorTable([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
@@ -301,7 +301,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableSGI")]
         public abstract void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged;
@@ -405,7 +405,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableSGI")]
         public abstract unsafe void GetColorTable([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* table);
@@ -424,7 +424,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableSGI")]
         public abstract void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;

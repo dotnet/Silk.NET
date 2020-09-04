@@ -165,7 +165,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// </param>
         /// <param name="locations">
         /// To be added.
-        /// This parameter's element count is computed from rate and samples.
+        /// This parameter's element count is computed from rate & samples.
         /// </param>
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV")]
         public abstract unsafe void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] int* locations);
@@ -181,7 +181,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// </param>
         /// <param name="locations">
         /// To be added.
-        /// This parameter's element count is computed from rate and samples.
+        /// This parameter's element count is computed from rate & samples.
         /// </param>
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV")]
         public abstract void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] ref int locations);

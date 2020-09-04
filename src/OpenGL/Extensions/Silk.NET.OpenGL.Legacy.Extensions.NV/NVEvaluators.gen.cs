@@ -174,7 +174,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMapParameterivNV")]
         public abstract unsafe void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -190,7 +190,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMapParameterivNV")]
         public abstract void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -206,7 +206,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
         public abstract unsafe void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] float* @params);
@@ -222,7 +222,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
         public abstract void GetMapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out float @params);
@@ -256,7 +256,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, uorder, and vorder.
+        /// This parameter's element count is computed from target, uorder & vorder.
         /// </param>
         [NativeApi(EntryPoint = "glMapControlPointsNV")]
         public abstract unsafe void MapControlPoints([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
@@ -290,7 +290,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, uorder, and vorder.
+        /// This parameter's element count is computed from target, uorder & vorder.
         /// </param>
         [NativeApi(EntryPoint = "glMapControlPointsNV")]
         public abstract void MapControlPoints<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] ref T0 points) where T0 : unmanaged;
@@ -306,7 +306,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glMapParameterivNV")]
         public abstract unsafe void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] int* @params);
@@ -322,7 +322,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glMapParameterivNV")]
         public abstract void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] ref int @params);
@@ -338,7 +338,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glMapParameterfvNV")]
         public abstract unsafe void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] float* @params);
@@ -354,7 +354,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glMapParameterfvNV")]
         public abstract void MapParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] ref float @params);
@@ -514,7 +514,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMapParameterivNV")]
         public abstract unsafe void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -530,7 +530,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMapParameterivNV")]
         public abstract void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -546,7 +546,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
         public abstract unsafe void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] float* @params);
@@ -562,7 +562,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMapParameterfvNV")]
         public abstract void GetMapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out float @params);
@@ -596,7 +596,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, uorder, and vorder.
+        /// This parameter's element count is computed from target, uorder & vorder.
         /// </param>
         [NativeApi(EntryPoint = "glMapControlPointsNV")]
         public abstract unsafe void MapControlPoints([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] void* points);
@@ -630,7 +630,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, uorder, and vorder.
+        /// This parameter's element count is computed from target, uorder & vorder.
         /// </param>
         [NativeApi(EntryPoint = "glMapControlPointsNV")]
         public abstract void MapControlPoints<T0>([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] MapTypeNV type, [Flow(FlowDirection.In)] uint ustride, [Flow(FlowDirection.In)] uint vstride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] bool packed, [Count(Computed = "target, uorder, vorder"), Flow(FlowDirection.In)] ref T0 points) where T0 : unmanaged;
@@ -646,7 +646,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glMapParameterivNV")]
         public abstract unsafe void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] int* @params);
@@ -662,7 +662,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glMapParameterivNV")]
         public abstract void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] ref int @params);
@@ -678,7 +678,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glMapParameterfvNV")]
         public abstract unsafe void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] float* @params);
@@ -694,7 +694,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glMapParameterfvNV")]
         public abstract void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] ref float @params);

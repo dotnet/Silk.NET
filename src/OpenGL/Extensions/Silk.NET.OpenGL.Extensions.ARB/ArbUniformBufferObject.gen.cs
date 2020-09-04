@@ -69,7 +69,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
+        /// This parameter's element count is computed from program, uniformBlockIndex & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public abstract unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -88,7 +88,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
+        /// This parameter's element count is computed from program, uniformBlockIndex & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public abstract void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -203,7 +203,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from uniformCount and pname.
+        /// This parameter's element count is computed from uniformCount & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public abstract unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -226,7 +226,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from uniformCount and pname.
+        /// This parameter's element count is computed from uniformCount & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public abstract void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -396,7 +396,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
+        /// This parameter's element count is computed from program, uniformBlockIndex & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public abstract unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -415,7 +415,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
+        /// This parameter's element count is computed from program, uniformBlockIndex & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public abstract void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -526,7 +526,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from uniformCount and pname.
+        /// This parameter's element count is computed from uniformCount & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public abstract unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -549,7 +549,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from uniformCount and pname.
+        /// This parameter's element count is computed from uniformCount & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public abstract void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params);

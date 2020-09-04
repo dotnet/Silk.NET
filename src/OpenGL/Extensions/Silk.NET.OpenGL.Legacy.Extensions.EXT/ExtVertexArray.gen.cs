@@ -45,7 +45,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glColorPointerEXT")]
         public abstract unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -67,7 +67,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glColorPointerEXT")]
         public abstract void ColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -98,7 +98,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from stride and count.
+        /// This parameter's element count is computed from stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glEdgeFlagPointerEXT")]
         public abstract unsafe void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] bool* pointer);
@@ -114,7 +114,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from stride and count.
+        /// This parameter's element count is computed from stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glEdgeFlagPointerEXT")]
         public abstract void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] ref bool pointer);
@@ -159,7 +159,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type, stride, and count.
+        /// This parameter's element count is computed from type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glIndexPointerEXT")]
         public abstract unsafe void IndexPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -178,7 +178,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type, stride, and count.
+        /// This parameter's element count is computed from type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glIndexPointerEXT")]
         public abstract void IndexPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -197,7 +197,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type, stride, and count.
+        /// This parameter's element count is computed from type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glNormalPointerEXT")]
         public abstract unsafe void NormalPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -216,7 +216,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type, stride, and count.
+        /// This parameter's element count is computed from type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glNormalPointerEXT")]
         public abstract void NormalPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -238,7 +238,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
         public abstract unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -260,7 +260,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
         public abstract void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -282,7 +282,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glVertexPointerEXT")]
         public abstract unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -304,7 +304,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glVertexPointerEXT")]
         public abstract void VertexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -326,7 +326,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glColorPointerEXT")]
         public abstract unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -348,7 +348,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glColorPointerEXT")]
         public abstract void ColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -408,7 +408,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type, stride, and count.
+        /// This parameter's element count is computed from type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glIndexPointerEXT")]
         public abstract unsafe void IndexPointer([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -427,7 +427,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type, stride, and count.
+        /// This parameter's element count is computed from type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glIndexPointerEXT")]
         public abstract void IndexPointer<T0>([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -446,7 +446,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type, stride, and count.
+        /// This parameter's element count is computed from type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glNormalPointerEXT")]
         public abstract unsafe void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -465,7 +465,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type, stride, and count.
+        /// This parameter's element count is computed from type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glNormalPointerEXT")]
         public abstract void NormalPointer<T0>([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -487,7 +487,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
         public abstract unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -509,7 +509,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
         public abstract void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -531,7 +531,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glVertexPointerEXT")]
         public abstract unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
@@ -553,7 +553,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, stride, and count.
+        /// This parameter's element count is computed from size, type, stride & count.
         /// </param>
         [NativeApi(EntryPoint = "glVertexPointerEXT")]
         public abstract void VertexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

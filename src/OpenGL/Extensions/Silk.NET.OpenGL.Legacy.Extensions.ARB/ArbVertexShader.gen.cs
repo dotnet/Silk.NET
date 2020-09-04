@@ -1120,7 +1120,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerARB")]
         public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -1145,7 +1145,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerARB")]
         public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -1410,7 +1410,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerARB")]
         public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -1435,7 +1435,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerARB")]
         public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

@@ -140,7 +140,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="name">
         /// To be added.
-        /// This parameter's element count is computed from program, index, and bufSize.
+        /// This parameter's element count is computed from program, index & bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
         public abstract unsafe void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Computed = "program, index, bufSize"), Flow(FlowDirection.Out)] char* name);
@@ -171,7 +171,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="name">
         /// To be added.
-        /// This parameter's element count is computed from program, index, and bufSize.
+        /// This parameter's element count is computed from program, index & bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
         public abstract void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Computed = "program, index, bufSize"), Flow(FlowDirection.Out)] out char name);

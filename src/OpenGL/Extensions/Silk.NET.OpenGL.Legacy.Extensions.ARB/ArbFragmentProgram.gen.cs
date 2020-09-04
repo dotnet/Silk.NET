@@ -254,7 +254,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="@string">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramStringARB")]
         public abstract unsafe void GetProgramString([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] void* @string);
@@ -270,7 +270,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="@string">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramStringARB")]
         public abstract void GetProgramString<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out T0 @string) where T0 : unmanaged;
@@ -730,7 +730,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="@string">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramStringARB")]
         public abstract unsafe void GetProgramString([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] void* @string);
@@ -746,7 +746,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="@string">
         /// To be added.
-        /// This parameter's element count is computed from target and pname.
+        /// This parameter's element count is computed from target & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramStringARB")]
         public abstract void GetProgramString<T0>([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramStringProperty pname, [Count(Computed = "target, pname"), Flow(FlowDirection.Out)] out T0 @string) where T0 : unmanaged;

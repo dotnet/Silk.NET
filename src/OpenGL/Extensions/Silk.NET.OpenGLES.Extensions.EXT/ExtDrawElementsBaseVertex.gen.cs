@@ -33,7 +33,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -55,7 +55,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -77,7 +77,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -102,7 +102,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -133,7 +133,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -161,7 +161,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -237,7 +237,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -259,7 +259,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -281,7 +281,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -306,7 +306,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -337,7 +337,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -365,7 +365,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.

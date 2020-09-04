@@ -39,7 +39,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsEXT")]
         public abstract unsafe void DrawRangeElements([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
@@ -64,7 +64,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsEXT")]
         public abstract void DrawRangeElements<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
@@ -89,7 +89,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsEXT")]
         public abstract unsafe void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
@@ -114,7 +114,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsEXT")]
         public abstract void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;

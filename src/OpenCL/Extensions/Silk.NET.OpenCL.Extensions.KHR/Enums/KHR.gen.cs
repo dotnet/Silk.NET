@@ -43,6 +43,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         ImageD3D11SubresourceKhr = 0x401F,
         CommandAcquireD3D11ObjectsKhr = 0x4020,
         CommandReleaseD3D11ObjectsKhr = 0x4021,
+        UuidSizeKhr = 0x16,
+        LuidSizeKhr = 0x8,
         DeviceUuidKhr = 0x106A,
         DriverUuidKhr = 0x106B,
         DeviceLuidValidKhr = 0x106C,

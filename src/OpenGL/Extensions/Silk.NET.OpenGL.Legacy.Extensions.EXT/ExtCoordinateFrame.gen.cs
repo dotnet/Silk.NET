@@ -205,7 +205,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glBinormalPointerEXT")]
         public abstract unsafe void BinormalPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -221,7 +221,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glBinormalPointerEXT")]
         public abstract void BinormalPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -412,7 +412,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glTangentPointerEXT")]
         public abstract unsafe void TangentPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -428,7 +428,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glTangentPointerEXT")]
         public abstract void TangentPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -444,7 +444,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glBinormalPointerEXT")]
         public abstract unsafe void BinormalPointer([Flow(FlowDirection.In)] BinormalPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -460,7 +460,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glBinormalPointerEXT")]
         public abstract void BinormalPointer<T0>([Flow(FlowDirection.In)] BinormalPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -476,7 +476,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glTangentPointerEXT")]
         public abstract unsafe void TangentPointer([Flow(FlowDirection.In)] TangentPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -492,7 +492,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glTangentPointerEXT")]
         public abstract void TangentPointer<T0>([Flow(FlowDirection.In)] TangentPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

@@ -8052,6 +8052,13 @@
               "Attributes": []
             },
             {
+              "Name": "RendererExt",
+              "NativeName": "EGL_RENDERER_EXT",
+              "Value": "0x335F",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "GLColorspaceBT2020LinearExt",
               "NativeName": "EGL_GL_COLORSPACE_BT2020_LINEAR_EXT",
               "Value": "0x333F",

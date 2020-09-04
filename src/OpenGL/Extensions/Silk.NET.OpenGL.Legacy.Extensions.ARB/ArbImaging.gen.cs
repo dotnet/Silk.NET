@@ -66,7 +66,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and count.
+        /// This parameter's element count is computed from format, type & count.
         /// </param>
         [NativeApi(EntryPoint = "glColorSubTable")]
         public abstract unsafe void ColorSubTable([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type, count"), Flow(FlowDirection.In)] void* data);
@@ -91,7 +91,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and count.
+        /// This parameter's element count is computed from format, type & count.
         /// </param>
         [NativeApi(EntryPoint = "glColorSubTable")]
         public abstract void ColorSubTable<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type, count"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -116,7 +116,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTable")]
         public abstract unsafe void ColorTable([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
@@ -141,7 +141,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTable")]
         public abstract void ColorTable<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged;
@@ -230,7 +230,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glConvolutionFilter1D")]
         public abstract unsafe void ConvolutionFilter1D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* image);
@@ -255,7 +255,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glConvolutionFilter1D")]
         public abstract void ConvolutionFilter1D<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 image) where T0 : unmanaged;
@@ -283,7 +283,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glConvolutionFilter2D")]
         public abstract unsafe void ConvolutionFilter2D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* image);
@@ -311,7 +311,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glConvolutionFilter2D")]
         public abstract void ConvolutionFilter2D<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 image) where T0 : unmanaged;
@@ -511,7 +511,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTable")]
         public abstract unsafe void GetColorTable([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* table);
@@ -530,7 +530,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTable")]
         public abstract void GetColorTable<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
@@ -613,7 +613,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetConvolutionFilter")]
         public abstract unsafe void GetConvolutionFilter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* image);
@@ -632,7 +632,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetConvolutionFilter")]
         public abstract void GetConvolutionFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
@@ -718,7 +718,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetHistogram")]
         public abstract unsafe void GetHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
@@ -740,7 +740,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetHistogram")]
         public abstract void GetHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
@@ -826,7 +826,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetMinmax")]
         public abstract unsafe void GetMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
@@ -848,7 +848,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetMinmax")]
         public abstract void GetMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
@@ -931,15 +931,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="row">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         /// <param name="column">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         /// <param name="span">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetSeparableFilter")]
         public abstract unsafe void GetSeparableFilter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* span);
@@ -958,15 +958,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="row">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         /// <param name="column">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         /// <param name="span">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetSeparableFilter")]
         public abstract void GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
@@ -1045,11 +1045,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="row">
         /// To be added.
-        /// This parameter's element count is computed from target, format, type, and width.
+        /// This parameter's element count is computed from target, format, type & width.
         /// </param>
         /// <param name="column">
         /// To be added.
-        /// This parameter's element count is computed from target, format, type, and height.
+        /// This parameter's element count is computed from target, format, type & height.
         /// </param>
         [NativeApi(EntryPoint = "glSeparableFilter2D")]
         public abstract unsafe void SeparableFilter2D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type, width"), Flow(FlowDirection.In)] void* row, [Count(Computed = "target, format, type, height"), Flow(FlowDirection.In)] void* column);
@@ -1077,11 +1077,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="row">
         /// To be added.
-        /// This parameter's element count is computed from target, format, type, and width.
+        /// This parameter's element count is computed from target, format, type & width.
         /// </param>
         /// <param name="column">
         /// To be added.
-        /// This parameter's element count is computed from target, format, type, and height.
+        /// This parameter's element count is computed from target, format, type & height.
         /// </param>
         [NativeApi(EntryPoint = "glSeparableFilter2D")]
         public abstract void SeparableFilter2D<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "target, format, type, width"), Flow(FlowDirection.In)] ref T0 row, [Count(Computed = "target, format, type, height"), Flow(FlowDirection.In)] ref T1 column) where T0 : unmanaged where T1 : unmanaged;
@@ -1115,7 +1115,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and count.
+        /// This parameter's element count is computed from format, type & count.
         /// </param>
         [NativeApi(EntryPoint = "glColorSubTable")]
         public abstract unsafe void ColorSubTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, count"), Flow(FlowDirection.In)] void* data);
@@ -1140,7 +1140,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and count.
+        /// This parameter's element count is computed from format, type & count.
         /// </param>
         [NativeApi(EntryPoint = "glColorSubTable")]
         public abstract void ColorSubTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, count"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -1165,7 +1165,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTable")]
         public abstract unsafe void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
@@ -1190,7 +1190,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTable")]
         public abstract void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged;
@@ -1279,7 +1279,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glConvolutionFilter1D")]
         public abstract unsafe void ConvolutionFilter1D([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* image);
@@ -1304,7 +1304,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glConvolutionFilter1D")]
         public abstract void ConvolutionFilter1D<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 image) where T0 : unmanaged;
@@ -1332,7 +1332,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glConvolutionFilter2D")]
         public abstract unsafe void ConvolutionFilter2D([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* image);
@@ -1360,7 +1360,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glConvolutionFilter2D")]
         public abstract void ConvolutionFilter2D<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 image) where T0 : unmanaged;
@@ -1560,7 +1560,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTable")]
         public abstract unsafe void GetColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* table);
@@ -1579,7 +1579,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTable")]
         public abstract void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
@@ -1662,7 +1662,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetConvolutionFilter")]
         public abstract unsafe void GetConvolutionFilter([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* image);
@@ -1681,7 +1681,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="image">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetConvolutionFilter")]
         public abstract void GetConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 image) where T0 : unmanaged;
@@ -1767,7 +1767,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetHistogram")]
         public abstract unsafe void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
@@ -1789,7 +1789,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetHistogram")]
         public abstract void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
@@ -1875,7 +1875,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetMinmax")]
         public abstract unsafe void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
@@ -1897,7 +1897,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetMinmax")]
         public abstract void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
@@ -1980,15 +1980,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="row">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         /// <param name="column">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         /// <param name="span">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetSeparableFilter")]
         public abstract unsafe void GetSeparableFilter([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* column, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* span);
@@ -2007,15 +2007,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="row">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         /// <param name="column">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         /// <param name="span">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetSeparableFilter")]
         public abstract void GetSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 row, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T1 column, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
@@ -2094,11 +2094,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="row">
         /// To be added.
-        /// This parameter's element count is computed from target, format, type, and width.
+        /// This parameter's element count is computed from target, format, type & width.
         /// </param>
         /// <param name="column">
         /// To be added.
-        /// This parameter's element count is computed from target, format, type, and height.
+        /// This parameter's element count is computed from target, format, type & height.
         /// </param>
         [NativeApi(EntryPoint = "glSeparableFilter2D")]
         public abstract unsafe void SeparableFilter2D([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type, width"), Flow(FlowDirection.In)] void* row, [Count(Computed = "target, format, type, height"), Flow(FlowDirection.In)] void* column);
@@ -2126,11 +2126,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="row">
         /// To be added.
-        /// This parameter's element count is computed from target, format, type, and width.
+        /// This parameter's element count is computed from target, format, type & width.
         /// </param>
         /// <param name="column">
         /// To be added.
-        /// This parameter's element count is computed from target, format, type, and height.
+        /// This parameter's element count is computed from target, format, type & height.
         /// </param>
         [NativeApi(EntryPoint = "glSeparableFilter2D")]
         public abstract void SeparableFilter2D<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type, width"), Flow(FlowDirection.In)] ref T0 row, [Count(Computed = "target, format, type, height"), Flow(FlowDirection.In)] ref T1 column) where T0 : unmanaged where T1 : unmanaged;

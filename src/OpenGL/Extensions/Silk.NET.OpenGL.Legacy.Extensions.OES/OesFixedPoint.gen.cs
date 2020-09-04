@@ -66,7 +66,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         /// </param>
         /// <param name="bitmap">
         /// To be added.
-        /// This parameter's element count is computed from width and height.
+        /// This parameter's element count is computed from width & height.
         /// </param>
         [NativeApi(EntryPoint = "glBitmapxOES")]
         public abstract unsafe void Bitmapx([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int xorig, [Flow(FlowDirection.In)] int yorig, [Flow(FlowDirection.In)] int xmove, [Flow(FlowDirection.In)] int ymove, [Count(Computed = "width, height"), Flow(FlowDirection.In)] byte* bitmap);
@@ -94,7 +94,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         /// </param>
         /// <param name="bitmap">
         /// To be added.
-        /// This parameter's element count is computed from width and height.
+        /// This parameter's element count is computed from width & height.
         /// </param>
         [NativeApi(EntryPoint = "glBitmapxOES")]
         public abstract void Bitmapx([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int xorig, [Flow(FlowDirection.In)] int yorig, [Flow(FlowDirection.In)] int xmove, [Flow(FlowDirection.In)] int ymove, [Count(Computed = "width, height"), Flow(FlowDirection.In)] ref byte bitmap);

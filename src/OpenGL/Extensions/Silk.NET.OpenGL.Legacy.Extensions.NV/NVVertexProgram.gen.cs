@@ -270,7 +270,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="program">
         /// To be added.
-        /// This parameter's element count is computed from id and pname.
+        /// This parameter's element count is computed from id & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramStringNV")]
         public abstract unsafe void GetProgramString([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "id, pname"), Flow(FlowDirection.Out)] byte* program);
@@ -286,7 +286,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="program">
         /// To be added.
-        /// This parameter's element count is computed from id and pname.
+        /// This parameter's element count is computed from id & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramStringNV")]
         public abstract void GetProgramString([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "id, pname"), Flow(FlowDirection.Out)] out byte program);
@@ -1311,7 +1311,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from fsize, type, and stride.
+        /// This parameter's element count is computed from fsize, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerNV")]
         public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int fsize, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -1333,7 +1333,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from fsize, type, and stride.
+        /// This parameter's element count is computed from fsize, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerNV")]
         public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int fsize, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -2340,7 +2340,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from fsize, type, and stride.
+        /// This parameter's element count is computed from fsize, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerNV")]
         public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int fsize, [Flow(FlowDirection.In)] VertexAttribEnumNV type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -2362,7 +2362,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from fsize, type, and stride.
+        /// This parameter's element count is computed from fsize, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerNV")]
         public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int fsize, [Flow(FlowDirection.In)] VertexAttribEnumNV type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "fsize, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

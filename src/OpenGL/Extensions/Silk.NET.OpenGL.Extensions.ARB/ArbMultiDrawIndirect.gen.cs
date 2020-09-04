@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="indirect">
         /// To be added.
-        /// This parameter's element count is computed from drawcount and stride.
+        /// This parameter's element count is computed from drawcount & stride.
         /// </param>
         /// <param name="drawcount">
         /// To be added.
@@ -46,7 +46,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="indirect">
         /// To be added.
-        /// This parameter's element count is computed from drawcount and stride.
+        /// This parameter's element count is computed from drawcount & stride.
         /// </param>
         /// <param name="drawcount">
         /// To be added.
@@ -68,7 +68,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="indirect">
         /// To be added.
-        /// This parameter's element count is computed from drawcount and stride.
+        /// This parameter's element count is computed from drawcount & stride.
         /// </param>
         /// <param name="drawcount">
         /// To be added.
@@ -90,7 +90,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="indirect">
         /// To be added.
-        /// This parameter's element count is computed from drawcount and stride.
+        /// This parameter's element count is computed from drawcount & stride.
         /// </param>
         /// <param name="drawcount">
         /// To be added.
@@ -109,7 +109,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="indirect">
         /// To be added.
-        /// This parameter's element count is computed from drawcount and stride.
+        /// This parameter's element count is computed from drawcount & stride.
         /// </param>
         /// <param name="drawcount">
         /// To be added.
@@ -128,7 +128,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="indirect">
         /// To be added.
-        /// This parameter's element count is computed from drawcount and stride.
+        /// This parameter's element count is computed from drawcount & stride.
         /// </param>
         /// <param name="drawcount">
         /// To be added.
@@ -150,7 +150,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="indirect">
         /// To be added.
-        /// This parameter's element count is computed from drawcount and stride.
+        /// This parameter's element count is computed from drawcount & stride.
         /// </param>
         /// <param name="drawcount">
         /// To be added.
@@ -172,7 +172,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="indirect">
         /// To be added.
-        /// This parameter's element count is computed from drawcount and stride.
+        /// This parameter's element count is computed from drawcount & stride.
         /// </param>
         /// <param name="drawcount">
         /// To be added.

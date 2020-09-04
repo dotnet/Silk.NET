@@ -113,7 +113,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         /// </param>
         /// <param name="buf">
         /// To be added.
-        /// This parameter's element count is computed from buf and length.
+        /// This parameter's element count is computed from buf & length.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
         public abstract unsafe void DebugMessageInsert([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] char* buf);
@@ -138,7 +138,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         /// </param>
         /// <param name="buf">
         /// To be added.
-        /// This parameter's element count is computed from buf and length.
+        /// This parameter's element count is computed from buf & length.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
         public abstract void DebugMessageInsert([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] ref char buf);
@@ -345,7 +345,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         /// </param>
         /// <param name="label">
         /// To be added.
-        /// This parameter's element count is computed from label and length.
+        /// This parameter's element count is computed from label & length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabel")]
         public abstract unsafe void ObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] char* label);
@@ -364,7 +364,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         /// </param>
         /// <param name="label">
         /// To be added.
-        /// This parameter's element count is computed from label and length.
+        /// This parameter's element count is computed from label & length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabel")]
         public abstract void ObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref char label);
@@ -380,7 +380,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         /// </param>
         /// <param name="label">
         /// To be added.
-        /// This parameter's element count is computed from label and length.
+        /// This parameter's element count is computed from label & length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
         public abstract unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] char* label);
@@ -396,7 +396,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         /// </param>
         /// <param name="label">
         /// To be added.
-        /// This parameter's element count is computed from label and length.
+        /// This parameter's element count is computed from label & length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
         public abstract void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref char label) where T0 : unmanaged;
@@ -421,7 +421,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         /// </param>
         /// <param name="message">
         /// To be added.
-        /// This parameter's element count is computed from message and length.
+        /// This parameter's element count is computed from message & length.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroup")]
         public abstract unsafe void PushDebugGroup([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] char* message);
@@ -440,7 +440,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         /// </param>
         /// <param name="message">
         /// To be added.
-        /// This parameter's element count is computed from message and length.
+        /// This parameter's element count is computed from message & length.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroup")]
         public abstract void PushDebugGroup([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] ref char message);

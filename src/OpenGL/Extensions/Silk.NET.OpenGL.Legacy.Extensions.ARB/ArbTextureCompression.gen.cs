@@ -420,7 +420,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="img">
         /// To be added.
-        /// This parameter's element count is computed from target and level.
+        /// This parameter's element count is computed from target & level.
         /// </param>
         [NativeApi(EntryPoint = "glGetCompressedTexImageARB")]
         public abstract unsafe void GetCompressedTexImage([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] void* img);
@@ -436,7 +436,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="img">
         /// To be added.
-        /// This parameter's element count is computed from target and level.
+        /// This parameter's element count is computed from target & level.
         /// </param>
         [NativeApi(EntryPoint = "glGetCompressedTexImageARB")]
         public abstract void GetCompressedTexImage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] out T0 img) where T0 : unmanaged;
@@ -842,7 +842,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="img">
         /// To be added.
-        /// This parameter's element count is computed from target and level.
+        /// This parameter's element count is computed from target & level.
         /// </param>
         [NativeApi(EntryPoint = "glGetCompressedTexImageARB")]
         public abstract unsafe void GetCompressedTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] void* img);
@@ -858,7 +858,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="img">
         /// To be added.
-        /// This parameter's element count is computed from target and level.
+        /// This parameter's element count is computed from target & level.
         /// </param>
         [NativeApi(EntryPoint = "glGetCompressedTexImageARB")]
         public abstract void GetCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] out T0 img) where T0 : unmanaged;

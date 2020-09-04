@@ -30,6 +30,7 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         AffinityDomainL4CacheExt = 0x4,
         AffinityDomainNumaExt = 0x10,
         AffinityDomainNextFissionableExt = 0x100,
+        DeviceCxxForOpenclNumericVersionExt = 0x4230,
         MigrateMemObjectHostExt = 0x1,
         CommandMigrateMemObjectExt = 0x4040,
     }

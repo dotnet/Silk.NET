@@ -33,7 +33,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -55,7 +55,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -106,7 +106,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -125,7 +125,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -144,7 +144,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -163,7 +163,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -182,7 +182,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -201,7 +201,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -223,7 +223,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -245,7 +245,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -267,7 +267,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -289,7 +289,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -311,7 +311,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -333,7 +333,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -355,7 +355,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -377,7 +377,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -396,7 +396,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -415,7 +415,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -434,7 +434,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -453,7 +453,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -472,7 +472,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -491,7 +491,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -513,7 +513,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -535,7 +535,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -557,7 +557,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -579,7 +579,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -601,7 +601,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.
@@ -623,7 +623,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         /// <param name="ptrstride">
         /// To be added.

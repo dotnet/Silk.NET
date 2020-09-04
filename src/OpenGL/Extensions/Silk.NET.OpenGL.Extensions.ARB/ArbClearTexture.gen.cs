@@ -36,7 +36,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format and type.
+        /// This parameter's element count is computed from format & type.
         /// </param>
         [NativeApi(EntryPoint = "glClearTexImage")]
         public abstract unsafe void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
@@ -58,7 +58,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format and type.
+        /// This parameter's element count is computed from format & type.
         /// </param>
         [NativeApi(EntryPoint = "glClearTexImage")]
         public abstract void ClearTexImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -98,7 +98,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format and type.
+        /// This parameter's element count is computed from format & type.
         /// </param>
         [NativeApi(EntryPoint = "glClearTexSubImage")]
         public abstract unsafe void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
@@ -138,7 +138,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format and type.
+        /// This parameter's element count is computed from format & type.
         /// </param>
         [NativeApi(EntryPoint = "glClearTexSubImage")]
         public abstract void ClearTexSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -160,7 +160,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format and type.
+        /// This parameter's element count is computed from format & type.
         /// </param>
         [NativeApi(EntryPoint = "glClearTexImage")]
         public abstract unsafe void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
@@ -182,7 +182,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format and type.
+        /// This parameter's element count is computed from format & type.
         /// </param>
         [NativeApi(EntryPoint = "glClearTexImage")]
         public abstract void ClearTexImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -222,7 +222,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format and type.
+        /// This parameter's element count is computed from format & type.
         /// </param>
         [NativeApi(EntryPoint = "glClearTexSubImage")]
         public abstract unsafe void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
@@ -262,7 +262,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from format and type.
+        /// This parameter's element count is computed from format & type.
         /// </param>
         [NativeApi(EntryPoint = "glClearTexSubImage")]
         public abstract void ClearTexSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;

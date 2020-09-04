@@ -535,7 +535,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id and type.
+        /// This parameter's element count is computed from id & type.
         /// </param>
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
         public abstract unsafe void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
@@ -551,7 +551,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id and type.
+        /// This parameter's element count is computed from id & type.
         /// </param>
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
         public abstract void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
@@ -567,7 +567,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id and type.
+        /// This parameter's element count is computed from id & type.
         /// </param>
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
         public abstract unsafe void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
@@ -583,7 +583,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id and type.
+        /// This parameter's element count is computed from id & type.
         /// </param>
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
         public abstract void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
@@ -888,7 +888,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id, type, and stride.
+        /// This parameter's element count is computed from id, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
         public abstract unsafe void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
@@ -907,7 +907,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id, type, and stride.
+        /// This parameter's element count is computed from id, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
         public abstract void VariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
@@ -1364,7 +1364,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id and type.
+        /// This parameter's element count is computed from id & type.
         /// </param>
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
         public abstract unsafe void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
@@ -1380,7 +1380,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id and type.
+        /// This parameter's element count is computed from id & type.
         /// </param>
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
         public abstract void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
@@ -1396,7 +1396,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id and type.
+        /// This parameter's element count is computed from id & type.
         /// </param>
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
         public abstract unsafe void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
@@ -1412,7 +1412,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id and type.
+        /// This parameter's element count is computed from id & type.
         /// </param>
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
         public abstract void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
@@ -1521,7 +1521,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id, type, and stride.
+        /// This parameter's element count is computed from id, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
         public abstract unsafe void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
@@ -1540,7 +1540,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="addr">
         /// To be added.
-        /// This parameter's element count is computed from id, type, and stride.
+        /// This parameter's element count is computed from id, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
         public abstract void VariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;

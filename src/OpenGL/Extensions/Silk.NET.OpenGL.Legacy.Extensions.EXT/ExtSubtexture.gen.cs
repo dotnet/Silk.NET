@@ -42,7 +42,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage1DEXT")]
         public abstract unsafe void TexSubImage1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
@@ -70,7 +70,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage1DEXT")]
         public abstract void TexSubImage1D<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -104,7 +104,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2DEXT")]
         public abstract unsafe void TexSubImage2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
@@ -138,7 +138,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2DEXT")]
         public abstract void TexSubImage2D<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -166,7 +166,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage1DEXT")]
         public abstract unsafe void TexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
@@ -194,7 +194,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage1DEXT")]
         public abstract void TexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -228,7 +228,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2DEXT")]
         public abstract unsafe void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
@@ -262,7 +262,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2DEXT")]
         public abstract void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;

@@ -250,7 +250,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
         public abstract unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -269,7 +269,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
         public abstract void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -300,7 +300,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
         public abstract unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -319,7 +319,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
         public abstract void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

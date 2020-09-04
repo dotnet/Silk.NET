@@ -544,7 +544,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointerEXT")]
         public abstract unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -566,7 +566,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointerEXT")]
         public abstract void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -664,7 +664,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointerEXT")]
         public abstract unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -686,7 +686,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointerEXT")]
         public abstract void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

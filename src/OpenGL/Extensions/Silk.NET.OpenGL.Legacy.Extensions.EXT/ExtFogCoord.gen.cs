@@ -88,7 +88,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
         public abstract unsafe void FogCoordPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -104,7 +104,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
         public abstract void FogCoordPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -120,7 +120,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
         public abstract unsafe void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -136,7 +136,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from type and stride.
+        /// This parameter's element count is computed from type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
         public abstract void FogCoordPointer<T0>([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

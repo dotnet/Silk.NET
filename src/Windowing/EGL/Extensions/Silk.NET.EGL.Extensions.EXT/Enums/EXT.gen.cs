@@ -30,6 +30,7 @@ namespace Silk.NET.EGL.Extensions.EXT
         DrmDeviceFileExt = 0x3233,
         DrmMasterFDExt = 0x333C,
         OpenwfDeviceIDExt = 0x3237,
+        RendererExt = 0x335F,
         GLColorspaceBT2020LinearExt = 0x333F,
         GLColorspaceBT2020PQExt = 0x3340,
         GLColorspaceDisplayP3Ext = 0x3363,

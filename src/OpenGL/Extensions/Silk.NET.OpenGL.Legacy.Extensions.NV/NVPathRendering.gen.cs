@@ -54,7 +54,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -67,7 +67,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glCoverFillPathInstancedNV")]
         public abstract unsafe void CoverFillPathInstanced([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues);
@@ -83,7 +83,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -96,7 +96,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glCoverFillPathInstancedNV")]
         public abstract void CoverFillPathInstanced<T0>([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ref float transformValues) where T0 : unmanaged;
@@ -124,7 +124,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -137,7 +137,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glCoverStrokePathInstancedNV")]
         public abstract unsafe void CoverStrokePathInstanced([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues);
@@ -153,7 +153,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -166,7 +166,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glCoverStrokePathInstancedNV")]
         public abstract void CoverStrokePathInstanced<T0>([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV coverMode, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ref float transformValues) where T0 : unmanaged;
@@ -365,7 +365,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -375,7 +375,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="metrics">
         /// To be added.
-        /// This parameter's element count is computed from metricQueryMask, numPaths, and stride.
+        /// This parameter's element count is computed from metricQueryMask, numPaths & stride.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathMetricsNV")]
         public abstract unsafe void GetPathMetric([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] float* metrics);
@@ -394,7 +394,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -404,7 +404,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="metrics">
         /// To be added.
-        /// This parameter's element count is computed from metricQueryMask, numPaths, and stride.
+        /// This parameter's element count is computed from metricQueryMask, numPaths & stride.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathMetricsNV")]
         public abstract void GetPathMetric<T0>([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] out float metrics) where T0 : unmanaged;
@@ -426,7 +426,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="metrics">
         /// To be added.
-        /// This parameter's element count is computed from metricQueryMask, numPaths, and stride.
+        /// This parameter's element count is computed from metricQueryMask, numPaths & stride.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathMetricRangeNV")]
         public abstract unsafe void GetPathMetricRange([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] float* metrics);
@@ -448,7 +448,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="metrics">
         /// To be added.
-        /// This parameter's element count is computed from metricQueryMask, numPaths, and stride.
+        /// This parameter's element count is computed from metricQueryMask, numPaths & stride.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathMetricRangeNV")]
         public abstract void GetPathMetricRange([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] out float metrics);
@@ -531,7 +531,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -547,7 +547,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="returnedSpacing">
         /// To be added.
-        /// This parameter's element count is computed from pathListMode and numPaths.
+        /// This parameter's element count is computed from pathListMode & numPaths.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathSpacingNV")]
         public abstract unsafe void GetPathSpacing([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(FlowDirection.Out)] float* returnedSpacing);
@@ -566,7 +566,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -582,7 +582,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="returnedSpacing">
         /// To be added.
-        /// This parameter's element count is computed from pathListMode and numPaths.
+        /// This parameter's element count is computed from pathListMode & numPaths.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathSpacingNV")]
         public abstract void GetPathSpacing<T0>([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "pathListMode, numPaths"), Flow(FlowDirection.Out)] out float returnedSpacing) where T0 : unmanaged;
@@ -1339,7 +1339,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coeffs">
         /// To be added.
-        /// This parameter's element count is computed from genMode and colorFormat.
+        /// This parameter's element count is computed from genMode & colorFormat.
         /// </param>
         [NativeApi(EntryPoint = "glPathColorGenNV")]
         public abstract unsafe void PathColorGen([Flow(FlowDirection.In)] NV color, [Flow(FlowDirection.In)] NV genMode, [Flow(FlowDirection.In)] NV colorFormat, [Count(Computed = "genMode, colorFormat"), Flow(FlowDirection.In)] float* coeffs);
@@ -1358,7 +1358,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coeffs">
         /// To be added.
-        /// This parameter's element count is computed from genMode and colorFormat.
+        /// This parameter's element count is computed from genMode & colorFormat.
         /// </param>
         [NativeApi(EntryPoint = "glPathColorGenNV")]
         public abstract void PathColorGen([Flow(FlowDirection.In)] NV color, [Flow(FlowDirection.In)] NV genMode, [Flow(FlowDirection.In)] NV colorFormat, [Count(Computed = "genMode, colorFormat"), Flow(FlowDirection.In)] ref float coeffs);
@@ -1384,7 +1384,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathCommandsNV")]
         public abstract unsafe void PathCommands([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] byte* commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords);
@@ -1410,7 +1410,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathCommandsNV")]
         public abstract void PathCommands<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] Span<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ref T0 coords) where T0 : unmanaged;
@@ -1429,7 +1429,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathCoordsNV")]
         public abstract unsafe void PathCoords([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords);
@@ -1448,7 +1448,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathCoordsNV")]
         public abstract void PathCoords<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ref T0 coords) where T0 : unmanaged;
@@ -1514,7 +1514,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="fontName">
         /// To be added.
-        /// This parameter's element count is computed from fontTarget and fontName.
+        /// This parameter's element count is computed from fontTarget & fontName.
         /// </param>
         /// <param name="fontStyle">
         /// To be added.
@@ -1527,7 +1527,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="charcodes">
         /// To be added.
-        /// This parameter's element count is computed from numGlyphs, type, and charcodes.
+        /// This parameter's element count is computed from numGlyphs, type & charcodes.
         /// </param>
         /// <param name="handleMissingGlyphs">
         /// To be added.
@@ -1552,7 +1552,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="fontName">
         /// To be added.
-        /// This parameter's element count is computed from fontTarget and fontName.
+        /// This parameter's element count is computed from fontTarget & fontName.
         /// </param>
         /// <param name="fontStyle">
         /// To be added.
@@ -1565,7 +1565,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="charcodes">
         /// To be added.
-        /// This parameter's element count is computed from numGlyphs, type, and charcodes.
+        /// This parameter's element count is computed from numGlyphs, type & charcodes.
         /// </param>
         /// <param name="handleMissingGlyphs">
         /// To be added.
@@ -1702,7 +1702,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="fontName">
         /// To be added.
-        /// This parameter's element count is computed from fontTarget and fontName.
+        /// This parameter's element count is computed from fontTarget & fontName.
         /// </param>
         /// <param name="fontStyle">
         /// To be added.
@@ -1736,7 +1736,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="fontName">
         /// To be added.
-        /// This parameter's element count is computed from fontTarget and fontName.
+        /// This parameter's element count is computed from fontTarget & fontName.
         /// </param>
         /// <param name="fontStyle">
         /// To be added.
@@ -2013,7 +2013,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathSubCommandsNV")]
         public abstract unsafe void PathSubCommands([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] byte* commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords);
@@ -2045,7 +2045,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathSubCommandsNV")]
         public abstract void PathSubCommands<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] Span<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ref T0 coords) where T0 : unmanaged;
@@ -2067,7 +2067,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathSubCoordsNV")]
         public abstract unsafe void PathSubCoords([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint coordStart, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords);
@@ -2089,7 +2089,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathSubCoordsNV")]
         public abstract void PathSubCoords<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint coordStart, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ref T0 coords) where T0 : unmanaged;
@@ -2108,7 +2108,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coeffs">
         /// To be added.
-        /// This parameter's element count is computed from genMode and components.
+        /// This parameter's element count is computed from genMode & components.
         /// </param>
         [NativeApi(EntryPoint = "glPathTexGenNV")]
         public abstract unsafe void PathTexGen([Flow(FlowDirection.In)] NV texCoordSet, [Flow(FlowDirection.In)] NV genMode, [Flow(FlowDirection.In)] int components, [Count(Computed = "genMode, components"), Flow(FlowDirection.In)] float* coeffs);
@@ -2127,7 +2127,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coeffs">
         /// To be added.
-        /// This parameter's element count is computed from genMode and components.
+        /// This parameter's element count is computed from genMode & components.
         /// </param>
         [NativeApi(EntryPoint = "glPathTexGenNV")]
         public abstract void PathTexGen([Flow(FlowDirection.In)] NV texCoordSet, [Flow(FlowDirection.In)] NV genMode, [Flow(FlowDirection.In)] int components, [Count(Computed = "genMode, components"), Flow(FlowDirection.In)] ref float coeffs);
@@ -2270,7 +2270,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2286,7 +2286,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glStencilFillPathInstancedNV")]
         public abstract unsafe void StencilFillPathInstanced([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues);
@@ -2302,7 +2302,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2318,7 +2318,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glStencilFillPathInstancedNV")]
         public abstract void StencilFillPathInstanced<T0>([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] NV fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ref float transformValues) where T0 : unmanaged;
@@ -2349,7 +2349,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2365,7 +2365,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glStencilStrokePathInstancedNV")]
         public abstract unsafe void StencilStrokePathInstanced([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues);
@@ -2381,7 +2381,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2397,7 +2397,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glStencilStrokePathInstancedNV")]
         public abstract void StencilStrokePathInstanced<T0>([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] NV transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ref float transformValues) where T0 : unmanaged;
@@ -2671,7 +2671,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2684,7 +2684,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glCoverFillPathInstancedNV")]
         public abstract unsafe void CoverFillPathInstanced([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues);
@@ -2700,7 +2700,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2713,7 +2713,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glCoverFillPathInstancedNV")]
         public abstract void CoverFillPathInstanced<T0>([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ref float transformValues) where T0 : unmanaged;
@@ -2741,7 +2741,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2754,7 +2754,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glCoverStrokePathInstancedNV")]
         public abstract unsafe void CoverStrokePathInstanced([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues);
@@ -2770,7 +2770,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2783,7 +2783,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glCoverStrokePathInstancedNV")]
         public abstract void CoverStrokePathInstanced<T0>([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathCoverMode coverMode, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ref float transformValues) where T0 : unmanaged;
@@ -2878,7 +2878,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2888,7 +2888,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="metrics">
         /// To be added.
-        /// This parameter's element count is computed from metricQueryMask, numPaths, and stride.
+        /// This parameter's element count is computed from metricQueryMask, numPaths & stride.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathMetricsNV")]
         public abstract unsafe void GetPathMetric([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] float* metrics);
@@ -2907,7 +2907,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -2917,7 +2917,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="metrics">
         /// To be added.
-        /// This parameter's element count is computed from metricQueryMask, numPaths, and stride.
+        /// This parameter's element count is computed from metricQueryMask, numPaths & stride.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathMetricsNV")]
         public abstract void GetPathMetric<T0>([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] out float metrics) where T0 : unmanaged;
@@ -3000,7 +3000,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -3016,7 +3016,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="returnedSpacing">
         /// To be added.
-        /// This parameter's element count is computed from pathListMode and numPaths.
+        /// This parameter's element count is computed from pathListMode & numPaths.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathSpacingNV")]
         public abstract unsafe void GetPathSpacing([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "pathListMode, numPaths"), Flow(FlowDirection.Out)] float* returnedSpacing);
@@ -3035,7 +3035,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -3051,7 +3051,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="returnedSpacing">
         /// To be added.
-        /// This parameter's element count is computed from pathListMode and numPaths.
+        /// This parameter's element count is computed from pathListMode & numPaths.
         /// </param>
         [NativeApi(EntryPoint = "glGetPathSpacingNV")]
         public abstract void GetPathSpacing<T0>([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "pathListMode, numPaths"), Flow(FlowDirection.Out)] out float returnedSpacing) where T0 : unmanaged;
@@ -3601,7 +3601,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coeffs">
         /// To be added.
-        /// This parameter's element count is computed from genMode and colorFormat.
+        /// This parameter's element count is computed from genMode & colorFormat.
         /// </param>
         [NativeApi(EntryPoint = "glPathColorGenNV")]
         public abstract unsafe void PathColorGen([Flow(FlowDirection.In)] PathColor color, [Flow(FlowDirection.In)] PathGenMode genMode, [Flow(FlowDirection.In)] PathColorFormat colorFormat, [Count(Computed = "genMode, colorFormat"), Flow(FlowDirection.In)] float* coeffs);
@@ -3620,7 +3620,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coeffs">
         /// To be added.
-        /// This parameter's element count is computed from genMode and colorFormat.
+        /// This parameter's element count is computed from genMode & colorFormat.
         /// </param>
         [NativeApi(EntryPoint = "glPathColorGenNV")]
         public abstract void PathColorGen([Flow(FlowDirection.In)] PathColor color, [Flow(FlowDirection.In)] PathGenMode genMode, [Flow(FlowDirection.In)] PathColorFormat colorFormat, [Count(Computed = "genMode, colorFormat"), Flow(FlowDirection.In)] ref float coeffs);
@@ -3645,7 +3645,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathCommandsNV")]
         public abstract unsafe void PathCommands([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords);
@@ -3670,7 +3670,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathCommandsNV")]
         public abstract void PathCommands<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ref T0 coords) where T0 : unmanaged;
@@ -3689,7 +3689,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathCoordsNV")]
         public abstract unsafe void PathCoords([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords);
@@ -3708,7 +3708,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathCoordsNV")]
         public abstract void PathCoords<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ref T0 coords) where T0 : unmanaged;
@@ -3742,7 +3742,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="fontName">
         /// To be added.
-        /// This parameter's element count is computed from fontTarget and fontName.
+        /// This parameter's element count is computed from fontTarget & fontName.
         /// </param>
         /// <param name="fontStyle">
         /// To be added.
@@ -3755,7 +3755,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="charcodes">
         /// To be added.
-        /// This parameter's element count is computed from numGlyphs, type, and charcodes.
+        /// This parameter's element count is computed from numGlyphs, type & charcodes.
         /// </param>
         /// <param name="handleMissingGlyphs">
         /// To be added.
@@ -3780,7 +3780,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="fontName">
         /// To be added.
-        /// This parameter's element count is computed from fontTarget and fontName.
+        /// This parameter's element count is computed from fontTarget & fontName.
         /// </param>
         /// <param name="fontStyle">
         /// To be added.
@@ -3793,7 +3793,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="charcodes">
         /// To be added.
-        /// This parameter's element count is computed from numGlyphs, type, and charcodes.
+        /// This parameter's element count is computed from numGlyphs, type & charcodes.
         /// </param>
         /// <param name="handleMissingGlyphs">
         /// To be added.
@@ -3818,7 +3818,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="fontName">
         /// To be added.
-        /// This parameter's element count is computed from fontTarget and fontName.
+        /// This parameter's element count is computed from fontTarget & fontName.
         /// </param>
         /// <param name="fontStyle">
         /// To be added.
@@ -3852,7 +3852,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="fontName">
         /// To be added.
-        /// This parameter's element count is computed from fontTarget and fontName.
+        /// This parameter's element count is computed from fontTarget & fontName.
         /// </param>
         /// <param name="fontStyle">
         /// To be added.
@@ -4048,7 +4048,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathSubCommandsNV")]
         public abstract unsafe void PathSubCommands([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords);
@@ -4079,7 +4079,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathSubCommandsNV")]
         public abstract void PathSubCommands<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ref T0 coords) where T0 : unmanaged;
@@ -4101,7 +4101,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathSubCoordsNV")]
         public abstract unsafe void PathSubCoords([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint coordStart, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords);
@@ -4123,7 +4123,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coords">
         /// To be added.
-        /// This parameter's element count is computed from numCoords and coordType.
+        /// This parameter's element count is computed from numCoords & coordType.
         /// </param>
         [NativeApi(EntryPoint = "glPathSubCoordsNV")]
         public abstract void PathSubCoords<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint coordStart, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ref T0 coords) where T0 : unmanaged;
@@ -4142,7 +4142,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coeffs">
         /// To be added.
-        /// This parameter's element count is computed from genMode and components.
+        /// This parameter's element count is computed from genMode & components.
         /// </param>
         [NativeApi(EntryPoint = "glPathTexGenNV")]
         public abstract unsafe void PathTexGen([Flow(FlowDirection.In)] PathColor texCoordSet, [Flow(FlowDirection.In)] PathGenMode genMode, [Flow(FlowDirection.In)] int components, [Count(Computed = "genMode, components"), Flow(FlowDirection.In)] float* coeffs);
@@ -4161,7 +4161,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="coeffs">
         /// To be added.
-        /// This parameter's element count is computed from genMode and components.
+        /// This parameter's element count is computed from genMode & components.
         /// </param>
         [NativeApi(EntryPoint = "glPathTexGenNV")]
         public abstract void PathTexGen([Flow(FlowDirection.In)] PathColor texCoordSet, [Flow(FlowDirection.In)] PathGenMode genMode, [Flow(FlowDirection.In)] int components, [Count(Computed = "genMode, components"), Flow(FlowDirection.In)] ref float coeffs);
@@ -4192,7 +4192,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -4208,7 +4208,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glStencilFillPathInstancedNV")]
         public abstract unsafe void StencilFillPathInstanced([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues);
@@ -4224,7 +4224,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -4240,7 +4240,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glStencilFillPathInstancedNV")]
         public abstract void StencilFillPathInstanced<T0>([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] PathFillMode fillMode, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ref float transformValues) where T0 : unmanaged;
@@ -4256,7 +4256,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -4272,7 +4272,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glStencilStrokePathInstancedNV")]
         public abstract unsafe void StencilStrokePathInstanced([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] float* transformValues);
@@ -4288,7 +4288,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="paths">
         /// To be added.
-        /// This parameter's element count is computed from numPaths, pathNameType, and paths.
+        /// This parameter's element count is computed from numPaths, pathNameType & paths.
         /// </param>
         /// <param name="pathBase">
         /// To be added.
@@ -4304,7 +4304,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <param name="transformValues">
         /// To be added.
-        /// This parameter's element count is computed from numPaths and transformType.
+        /// This parameter's element count is computed from numPaths & transformType.
         /// </param>
         [NativeApi(EntryPoint = "glStencilStrokePathInstancedNV")]
         public abstract void StencilStrokePathInstanced<T0>([Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ref T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] int reference, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] PathTransformType transformType, [Count(Computed = "numPaths, transformType"), Flow(FlowDirection.In)] ref float transformValues) where T0 : unmanaged;

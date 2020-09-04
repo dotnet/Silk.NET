@@ -39,7 +39,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableEXT")]
         public abstract unsafe void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
@@ -64,7 +64,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableEXT")]
         public abstract void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged;
@@ -83,7 +83,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableEXT")]
         public abstract unsafe void GetColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
@@ -102,7 +102,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableEXT")]
         public abstract void GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
@@ -191,7 +191,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableEXT")]
         public abstract unsafe void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
@@ -216,7 +216,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="table">
         /// To be added.
-        /// This parameter's element count is computed from format, type, and width.
+        /// This parameter's element count is computed from format, type & width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableEXT")]
         public abstract void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged;
@@ -235,7 +235,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableEXT")]
         public abstract unsafe void GetColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
@@ -254,7 +254,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="data">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableEXT")]
         public abstract void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;

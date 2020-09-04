@@ -36,7 +36,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetHistogramEXT")]
         public abstract unsafe void GetHistogram([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
@@ -58,7 +58,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetHistogramEXT")]
         public abstract void GetHistogram<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
@@ -144,7 +144,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetMinmaxEXT")]
         public abstract unsafe void GetMinmax([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
@@ -166,7 +166,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetMinmaxEXT")]
         public abstract void GetMinmax<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
@@ -303,7 +303,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetHistogramEXT")]
         public abstract unsafe void GetHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
@@ -325,7 +325,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetHistogramEXT")]
         public abstract void GetHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
@@ -411,7 +411,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetMinmaxEXT")]
         public abstract unsafe void GetMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* values);
@@ -433,7 +433,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <param name="values">
         /// To be added.
-        /// This parameter's element count is computed from target, format, and type.
+        /// This parameter's element count is computed from target, format & type.
         /// </param>
         [NativeApi(EntryPoint = "glGetMinmaxEXT")]
         public abstract void GetMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;

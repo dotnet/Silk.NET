@@ -30,7 +30,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="weights">
         /// To be added.
-        /// This parameter's element count is computed from target and filter.
+        /// This parameter's element count is computed from target & filter.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
         public abstract unsafe void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
@@ -46,7 +46,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="weights">
         /// To be added.
-        /// This parameter's element count is computed from target and filter.
+        /// This parameter's element count is computed from target & filter.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
         public abstract void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
@@ -100,7 +100,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="weights">
         /// To be added.
-        /// This parameter's element count is computed from target and filter.
+        /// This parameter's element count is computed from target & filter.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
         public abstract unsafe void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
@@ -116,7 +116,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// </param>
         /// <param name="weights">
         /// To be added.
-        /// This parameter's element count is computed from target and filter.
+        /// This parameter's element count is computed from target & filter.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
         public abstract void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);

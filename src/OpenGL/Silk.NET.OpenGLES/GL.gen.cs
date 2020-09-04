@@ -769,7 +769,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElements")]
         public abstract unsafe void DrawElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
@@ -788,7 +788,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElements")]
         public abstract void DrawElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
@@ -1670,7 +1670,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformfv")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] float* @params);
@@ -1686,7 +1686,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformfv")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out float @params);
@@ -1702,7 +1702,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformiv")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] int* @params);
@@ -1718,7 +1718,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformiv")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out int @params);
@@ -1992,7 +1992,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glReadPixels")]
         public abstract unsafe void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
@@ -2020,7 +2020,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glReadPixels")]
         public abstract void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
@@ -2281,7 +2281,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage2D")]
         public abstract unsafe void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
@@ -2315,7 +2315,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage2D")]
         public abstract void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -2443,7 +2443,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2D")]
         public abstract unsafe void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
@@ -2477,7 +2477,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2D")]
         public abstract void TexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -3192,7 +3192,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
         public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -3217,7 +3217,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
         public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -3705,7 +3705,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElements")]
         public abstract unsafe void DrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
@@ -3724,7 +3724,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElements")]
         public abstract void DrawElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
@@ -4566,7 +4566,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glReadPixels")]
         public abstract unsafe void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
@@ -4594,7 +4594,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glReadPixels")]
         public abstract void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
@@ -4724,7 +4724,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage2D")]
         public abstract unsafe void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
@@ -4758,7 +4758,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage2D")]
         public abstract void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -4886,7 +4886,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2D")]
         public abstract unsafe void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
@@ -4920,7 +4920,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, and height.
+        /// This parameter's element count is computed from format, type, width & height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2D")]
         public abstract void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -4945,7 +4945,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
         public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -4970,7 +4970,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
         public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -5604,7 +5604,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -5626,7 +5626,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -5654,7 +5654,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElements")]
         public abstract unsafe void DrawRangeElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
@@ -5679,7 +5679,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElements")]
         public abstract void DrawRangeElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
@@ -5866,7 +5866,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
+        /// This parameter's element count is computed from program, uniformBlockIndex & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public abstract unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -5885,7 +5885,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
+        /// This parameter's element count is computed from program, uniformBlockIndex & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public abstract void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -5954,7 +5954,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from uniformCount and pname.
+        /// This parameter's element count is computed from uniformCount & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public abstract unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -5977,7 +5977,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from uniformCount and pname.
+        /// This parameter's element count is computed from uniformCount & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public abstract void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -6516,7 +6516,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformuiv")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] uint* @params);
@@ -6532,7 +6532,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program and location.
+        /// This parameter's element count is computed from program & location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformuiv")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out uint @params);
@@ -7047,7 +7047,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3D")]
         public abstract unsafe void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
@@ -7084,7 +7084,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3D")]
         public abstract void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -7169,7 +7169,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3D")]
         public abstract unsafe void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
@@ -7209,7 +7209,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3D")]
         public abstract void TexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -7803,7 +7803,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
         public abstract unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -7825,7 +7825,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
         public abstract void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -8324,7 +8324,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -8346,7 +8346,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -8374,7 +8374,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElements")]
         public abstract unsafe void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
@@ -8399,7 +8399,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElements")]
         public abstract void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
@@ -8476,7 +8476,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
+        /// This parameter's element count is computed from program, uniformBlockIndex & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public abstract unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -8495,7 +8495,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
+        /// This parameter's element count is computed from program, uniformBlockIndex & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public abstract void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -8562,7 +8562,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from uniformCount and pname.
+        /// This parameter's element count is computed from uniformCount & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public abstract unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -8585,7 +8585,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="@params">
         /// To be added.
-        /// This parameter's element count is computed from uniformCount and pname.
+        /// This parameter's element count is computed from uniformCount & pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public abstract void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -9339,7 +9339,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3D")]
         public abstract unsafe void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
@@ -9376,7 +9376,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3D")]
         public abstract void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -9461,7 +9461,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3D")]
         public abstract unsafe void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
@@ -9501,7 +9501,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pixels">
         /// To be added.
-        /// This parameter's element count is computed from format, type, width, height, and depth.
+        /// This parameter's element count is computed from format, type, width, height & depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3D")]
         public abstract void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -9552,7 +9552,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
         public abstract unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
@@ -9574,7 +9574,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="pointer">
         /// To be added.
-        /// This parameter's element count is computed from size, type, and stride.
+        /// This parameter's element count is computed from size, type & stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
         public abstract void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -12351,7 +12351,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="buf">
         /// To be added.
-        /// This parameter's element count is computed from buf and length.
+        /// This parameter's element count is computed from buf & length.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
         public abstract unsafe void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] char* buf);
@@ -12376,7 +12376,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="buf">
         /// To be added.
-        /// This parameter's element count is computed from buf and length.
+        /// This parameter's element count is computed from buf & length.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
         public abstract void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] ref char buf);
@@ -12407,7 +12407,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -12429,7 +12429,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -12451,7 +12451,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -12476,7 +12476,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -12507,7 +12507,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -12535,7 +12535,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -13046,7 +13046,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="label">
         /// To be added.
-        /// This parameter's element count is computed from label and length.
+        /// This parameter's element count is computed from label & length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabel")]
         public abstract unsafe void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] char* label);
@@ -13065,7 +13065,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="label">
         /// To be added.
-        /// This parameter's element count is computed from label and length.
+        /// This parameter's element count is computed from label & length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabel")]
         public abstract void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref char label);
@@ -13081,7 +13081,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="label">
         /// To be added.
-        /// This parameter's element count is computed from label and length.
+        /// This parameter's element count is computed from label & length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
         public abstract unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] char* label);
@@ -13097,7 +13097,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="label">
         /// To be added.
-        /// This parameter's element count is computed from label and length.
+        /// This parameter's element count is computed from label & length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
         public abstract void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref char label) where T0 : unmanaged;
@@ -13164,7 +13164,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="message">
         /// To be added.
-        /// This parameter's element count is computed from message and length.
+        /// This parameter's element count is computed from message & length.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroup")]
         public abstract unsafe void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] char* message);
@@ -13183,7 +13183,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="message">
         /// To be added.
-        /// This parameter's element count is computed from message and length.
+        /// This parameter's element count is computed from message & length.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroup")]
         public abstract void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] ref char message);
@@ -13655,7 +13655,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -13677,7 +13677,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -13699,7 +13699,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -13724,7 +13724,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="instancecount">
         /// To be added.
@@ -13755,7 +13755,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.
@@ -13783,7 +13783,7 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <param name="indices">
         /// To be added.
-        /// This parameter's element count is computed from count and type.
+        /// This parameter's element count is computed from count & type.
         /// </param>
         /// <param name="basevertex">
         /// To be added.

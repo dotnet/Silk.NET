@@ -72,7 +72,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride, and worder.
+        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride & worder.
         /// </param>
         [NativeApi(EntryPoint = "glDeformationMap3dSGIX")]
         public abstract unsafe void DeformationMap3([Flow(FlowDirection.In)] SGIX target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] double w1, [Flow(FlowDirection.In)] double w2, [Flow(FlowDirection.In)] int wstride, [Flow(FlowDirection.In)] int worder, [Count(Computed = "target, ustride, uorder, vstride, vorder, wstride, worder"), Flow(FlowDirection.In)] double* points);
@@ -121,7 +121,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride, and worder.
+        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride & worder.
         /// </param>
         [NativeApi(EntryPoint = "glDeformationMap3dSGIX")]
         public abstract void DeformationMap3([Flow(FlowDirection.In)] SGIX target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] double w1, [Flow(FlowDirection.In)] double w2, [Flow(FlowDirection.In)] int wstride, [Flow(FlowDirection.In)] int worder, [Count(Computed = "target, ustride, uorder, vstride, vorder, wstride, worder"), Flow(FlowDirection.In)] ref double points);
@@ -170,7 +170,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride, and worder.
+        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride & worder.
         /// </param>
         [NativeApi(EntryPoint = "glDeformationMap3fSGIX")]
         public abstract unsafe void DeformationMap3([Flow(FlowDirection.In)] SGIX target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] float w1, [Flow(FlowDirection.In)] float w2, [Flow(FlowDirection.In)] int wstride, [Flow(FlowDirection.In)] int worder, [Count(Computed = "target, ustride, uorder, vstride, vorder, wstride, worder"), Flow(FlowDirection.In)] float* points);
@@ -219,7 +219,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride, and worder.
+        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride & worder.
         /// </param>
         [NativeApi(EntryPoint = "glDeformationMap3fSGIX")]
         public abstract void DeformationMap3([Flow(FlowDirection.In)] SGIX target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] float w1, [Flow(FlowDirection.In)] float w2, [Flow(FlowDirection.In)] int wstride, [Flow(FlowDirection.In)] int worder, [Count(Computed = "target, ustride, uorder, vstride, vorder, wstride, worder"), Flow(FlowDirection.In)] ref float points);
@@ -277,7 +277,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride, and worder.
+        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride & worder.
         /// </param>
         [NativeApi(EntryPoint = "glDeformationMap3dSGIX")]
         public abstract unsafe void DeformationMap3([Flow(FlowDirection.In)] FfdTargetSGIX target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] double w1, [Flow(FlowDirection.In)] double w2, [Flow(FlowDirection.In)] int wstride, [Flow(FlowDirection.In)] int worder, [Count(Computed = "target, ustride, uorder, vstride, vorder, wstride, worder"), Flow(FlowDirection.In)] double* points);
@@ -326,7 +326,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride, and worder.
+        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride & worder.
         /// </param>
         [NativeApi(EntryPoint = "glDeformationMap3dSGIX")]
         public abstract void DeformationMap3([Flow(FlowDirection.In)] FfdTargetSGIX target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] double w1, [Flow(FlowDirection.In)] double w2, [Flow(FlowDirection.In)] int wstride, [Flow(FlowDirection.In)] int worder, [Count(Computed = "target, ustride, uorder, vstride, vorder, wstride, worder"), Flow(FlowDirection.In)] ref double points);
@@ -375,7 +375,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride, and worder.
+        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride & worder.
         /// </param>
         [NativeApi(EntryPoint = "glDeformationMap3fSGIX")]
         public abstract unsafe void DeformationMap3([Flow(FlowDirection.In)] FfdTargetSGIX target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] float w1, [Flow(FlowDirection.In)] float w2, [Flow(FlowDirection.In)] int wstride, [Flow(FlowDirection.In)] int worder, [Count(Computed = "target, ustride, uorder, vstride, vorder, wstride, worder"), Flow(FlowDirection.In)] float* points);
@@ -424,7 +424,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <param name="points">
         /// To be added.
-        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride, and worder.
+        /// This parameter's element count is computed from target, ustride, uorder, vstride, vorder, wstride & worder.
         /// </param>
         [NativeApi(EntryPoint = "glDeformationMap3fSGIX")]
         public abstract void DeformationMap3([Flow(FlowDirection.In)] FfdTargetSGIX target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Flow(FlowDirection.In)] float w1, [Flow(FlowDirection.In)] float w2, [Flow(FlowDirection.In)] int wstride, [Flow(FlowDirection.In)] int worder, [Count(Computed = "target, ustride, uorder, vstride, vorder, wstride, worder"), Flow(FlowDirection.In)] ref float points);
