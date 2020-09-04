@@ -13,6 +13,7 @@ namespace Silk.NET.Vulkan
     [Flags()]
     public enum PipelineCacheCreateFlags
     {
+        PipelineCacheCreateReserved1BitExt = 2,
         PipelineCacheCreateExternallySynchronizedBitExt = 1,
     }
 }
