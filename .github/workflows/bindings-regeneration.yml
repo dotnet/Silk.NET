@@ -24,10 +24,7 @@ jobs:
       uses: gr2m/create-or-update-pull-request-action@v1.2.2
       with:
         title: Binding and specification updates
-        body: 
-
-Regenerates the bindings and the cached specifications with the latest upstream specifications.
-
+        body: Regenerates the bindings and the cached specifications with the latest upstream specifications.
         branch: patch/spec-updates
         author: "Ultz Limited <31213871+UltzLtd@users.noreply.github.com>"
         commit-message: Latest as of ${{ steps.date.outputs.date }}
