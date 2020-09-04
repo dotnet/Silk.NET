@@ -2,7 +2,7 @@ name: Bindings Regeneration
 
 on:
   schedule:
-    - cron: '33 14 * * Fri'
+    - cron: '36 14 * * Fri'
 
 jobs:
   build:
