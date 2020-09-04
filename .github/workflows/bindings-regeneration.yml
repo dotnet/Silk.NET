@@ -1,8 +1,6 @@
 name: Bindings Regeneration
 
 on:
-  push:
-    branches: [master]
   schedule:
     - cron: '0 0 * * Fri'
 
@@ -33,4 +31,4 @@ jobs:
         body: Regenerates the bindings and the cached specifications with the latest upstream specifications.
         branch: patch/spec-updates
         author: "Ultz Limited <31213871+UltzLtd@users.noreply.github.com>"
-        commit-message: Latest as of ${{ steps.date.outputs.date }}
+        commit-message: Latest bindings as of ${{ steps.date.outputs.date }}
