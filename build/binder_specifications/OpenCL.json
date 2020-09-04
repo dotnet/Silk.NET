@@ -34344,6 +34344,34 @@
               "Attributes": []
             },
             {
+              "Name": "DeviceSchedulingControlsCapabilitiesArm",
+              "NativeName": "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_ARM",
+              "Value": "0x41E4",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "KernelExecInfoWorkgroupBatchSizeArm",
+              "NativeName": "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_ARM",
+              "Value": "0x41E5",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "KernelExecInfoWorkgroupBatchSizeModifierArm",
+              "NativeName": "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_MODIFIER_ARM",
+              "Value": "0x41E6",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "QueueKernelBatchingArm",
+              "NativeName": "CL_QUEUE_KERNEL_BATCHING_ARM",
+              "Value": "0x41E7",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "DeviceSvmCapabilitiesArm",
               "NativeName": "CL_DEVICE_SVM_CAPABILITIES_ARM",
               "Value": "0x40B6",
@@ -37463,6 +37491,20 @@
               "Name": "CommandReleaseD3D11ObjectsKhr",
               "NativeName": "CL_COMMAND_RELEASE_D3D11_OBJECTS_KHR",
               "Value": "0x4021",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "UuidSizeKhr",
+              "NativeName": "CL_UUID_SIZE_KHR",
+              "Value": "0x16",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "LuidSizeKhr",
+              "NativeName": "CL_LUID_SIZE_KHR",
+              "Value": "0x8",
               "Doc": "",
               "Attributes": []
             },
@@ -47533,6 +47575,13 @@
               "Attributes": []
             },
             {
+              "Name": "DeviceCxxForOpenclNumericVersionExt",
+              "NativeName": "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT",
+              "Value": "0x4230",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "MigrateMemObjectHostExt",
               "NativeName": "CL_MIGRATE_MEM_OBJECT_HOST_EXT",
               "Value": "0x1",
@@ -50176,6 +50225,13 @@
               "Attributes": []
             },
             {
+              "Name": "MemChannelIntel",
+              "NativeName": "CL_MEM_CHANNEL_INTEL",
+              "Value": "0x4213",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "AcceleratorTypeMotionEstimationIntel",
               "NativeName": "CL_ACCELERATOR_TYPE_MOTION_ESTIMATION_INTEL",
               "Value": "0x0",
@@ -51220,6 +51276,318 @@
               "Attributes": [],
               "Doc": "",
               "ExtensionName": "INTEL_accelerator"
+            }
+          ],
+          "Attributes": []
+        },
+        "INTEL_create_buffer_with_properties": {
+          "Name": "IIntelCreateBufferWithProperties",
+          "Functions": [
+            {
+              "Name": "CreateBufferWithProperties",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "IntPtr",
+                "Group": null,
+                "OriginalName": "cl_mem",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "clCreateBufferWithPropertiesINTEL",
+              "Parameters": [
+                {
+                  "Name": "context",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "cl_context",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "properties",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "INTEL",
+                    "Group": null,
+                    "OriginalName": "cl_mem_properties_intel",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "flags",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "INTEL",
+                    "Group": null,
+                    "OriginalName": "cl_mem_flags",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "size",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "UIntPtr",
+                    "Group": null,
+                    "OriginalName": "size_t",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "host_ptr",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "void",
+                    "Group": null,
+                    "OriginalName": "void",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "errcode_ret",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "int",
+                    "Group": null,
+                    "OriginalName": "cl_int",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "INTEL_create_buffer_with_properties"
+            },
+            {
+              "Name": "CreateBufferWithProperties",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "IntPtr",
+                "Group": null,
+                "OriginalName": "cl_mem",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "clCreateBufferWithPropertiesINTEL",
+              "Parameters": [
+                {
+                  "Name": "context",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "cl_context",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "properties",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "INTEL",
+                        "Group": null,
+                        "OriginalName": "cl_mem_properties_intel",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "flags",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "INTEL",
+                    "Group": null,
+                    "OriginalName": "cl_mem_flags",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "size",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "UIntPtr",
+                    "Group": null,
+                    "OriginalName": "size_t",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "host_ptr",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "T0",
+                        "Group": null,
+                        "OriginalName": "void",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "errcode_ret",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "int",
+                        "Group": null,
+                        "OriginalName": "cl_int",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [
+                {
+                  "Name": "T0",
+                  "Constraints": [
+                    "unmanaged"
+                  ]
+                }
+              ],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "INTEL_create_buffer_with_properties"
             }
           ],
           "Attributes": []

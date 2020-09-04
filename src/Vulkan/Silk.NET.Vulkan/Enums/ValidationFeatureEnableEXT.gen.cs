@@ -16,5 +16,6 @@ namespace Silk.NET.Vulkan
         ValidationFeatureEnableGpuAssistedReserveBindingSlotExt = 1,
         ValidationFeatureEnableBestPracticesExt = 2,
         ValidationFeatureEnableDebugPrintfExt = 3,
+        ValidationFeatureEnableSynchronizationValidationExt = 4,
     }
 }
