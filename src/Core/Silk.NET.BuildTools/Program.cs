@@ -37,14 +37,20 @@ namespace Silk.NET.BuildTools
             }
 
             var sw = Stopwatch.StartNew();
+            var jobArgs = new List<string>();
             foreach (var arg in args)
             {
+                if (arg.StartsWith("--"))
+                {
+                    jobArgs.Add(arg.Substring(2));
+                }
+
                 Console.SetOut(new ConsoleWriter(Console.Out));
                 var jobSw = Stopwatch.StartNew();
                 var abs = Path.GetFullPath(arg);
                 Environment.CurrentDirectory = Path.GetDirectoryName
                     (abs) ?? throw new NullReferenceException("Dir path null.");
-                Generator.Run(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)));
+                Generator.Run(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)), jobArgs);
             
                 jobSw.Stop();
                 Console.SetOut(ConsoleWriter.Instance.Base);
