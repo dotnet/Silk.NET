@@ -26,6 +26,8 @@ jobs:
       run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
     - name: Create or Update Pull Request
       uses: gr2m/create-or-update-pull-request-action@v1.2.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         title: Binding and specification updates
         body: Regenerates the bindings and the cached specifications with the latest upstream specifications.
