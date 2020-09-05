@@ -12,6 +12,7 @@ using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
+using Silk.NET.BuildTools.Cpp;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
@@ -267,6 +268,42 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
                     sw.WriteLine($"        public {structField.Type} {structField.Name};");
                 }
+            }
+
+            foreach (var function in @struct.Functions.Concat
+                (ComVtblProcessor.GetHelperFunctions(@struct, profile.Projects["Core"])))
+            {
+                using (var sr = new StringReader(function.Signature.Doc))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        sw.WriteLine($"        {line}");
+                    }
+                }
+
+                foreach (var attr in function.Signature.Attributes)
+                {
+                    sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                }
+
+                using (var sr = new StringReader(function.Signature.ToString(null, true, true)))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        sw.WriteLine($"        {line}");
+                    }
+                }
+
+                sw.WriteLine("        {");
+                foreach (var line in function.Body)
+                {
+                    sw.WriteLine($"            {line}");
+                }
+
+                sw.WriteLine("        }");
+                sw.WriteLine();
             }
 
             sw.WriteLine("    }");
@@ -701,7 +738,8 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="prof">The parent profile.</param>
         private static void WriteProjectFile(this Project project, string folder, Profile prof, BindTask task)
         {
-            if (File.Exists(Path.Combine(folder, $"{project.GetProjectName(task)}.csproj")))
+            if (File.Exists(Path.Combine(folder, $"{project.GetProjectName(task)}.csproj")) ||
+                task.Controls.Contains("no-csproj"))
             {
                 return;
             }

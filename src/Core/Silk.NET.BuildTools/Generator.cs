@@ -231,7 +231,7 @@ namespace Silk.NET.BuildTools
                 {
                     throw new InvalidOperationException
                     (
-                        "Couldn't find a cached profile to fallback on" +
+                        "Couldn't find a cached profile to fallback on " +
                         "(conversion was skipped per the control variables)"
                     );
                 }

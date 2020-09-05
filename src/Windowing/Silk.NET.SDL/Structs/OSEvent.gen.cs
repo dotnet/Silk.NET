@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.SDL
 {
     [NativeName("Name", "SDL_OSEvent")]
-    public unsafe partial struct OSEvent
+    public unsafe partial struct Osevent
     {
-        public OSEvent
+        public Osevent
         (
             uint type = default,
             uint timestamp = default

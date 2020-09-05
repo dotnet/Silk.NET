@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.SDL
 {
     [NativeName("Name", "SDL_AudioCVT")]
-    public unsafe partial struct AudioCVT
+    public unsafe partial struct AudioCvt
     {
-        public AudioCVT
+        public AudioCvt
         (
             int needed = default,
             ushort srcFormat = default,

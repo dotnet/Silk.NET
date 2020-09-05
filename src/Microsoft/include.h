@@ -1,0 +1,17 @@
+#include <windows.h>
+#include <unknwnbase.h>
+#include <dxgiformat.h>
+#include <dxgidebug.h>
+#include <d2dbasetypes.h>
+#include <wincodec.h>
+#include <dcommon.h>
+#include <xaudio2.h>
+#include <x3daudio.h>
+#include <d3dcompiler.h>
+#include <d3d9types.h>
+#include <d3d9caps.h>
+#include <d3d9.h>
+#include <d3d11.h>
+#include <d3d11_1.h>
+#include <d3d12.h>
+#include <d3dcommon.h>

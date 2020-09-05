@@ -36,6 +36,17 @@ namespace Silk.NET.BuildTools
                 return;
             }
 
+            if (args.Length == 0)
+            {
+                Console.WriteLine
+                (
+                    "This is an internal tool not meant for general consumption. If you are working on " +
+                    "Silk.NET (or a Silk-based project), please let us know in our Discord server and we'll do our " +
+                    "best to help you navigate BuildTools."
+                );
+                return;
+            }
+
             var sw = Stopwatch.StartNew();
             var jobArgs = new List<string>();
             foreach (var arg in args)
@@ -43,6 +54,7 @@ namespace Silk.NET.BuildTools
                 if (arg.StartsWith("--"))
                 {
                     jobArgs.Add(arg.Substring(2));
+                    continue;
                 }
 
                 Console.SetOut(new ConsoleWriter(Console.Out));

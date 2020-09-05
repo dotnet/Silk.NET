@@ -76,6 +76,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandAcquireD3D11ObjectsKhr = 0x4020,
         [NativeName("Name", "CL_COMMAND_RELEASE_D3D11_OBJECTS_KHR")]
         CommandReleaseD3D11ObjectsKhr = 0x4021,
+        [NativeName("Name", "CL_UUID_SIZE_KHR")]
+        UuidSizeKhr = 0x16,
+        [NativeName("Name", "CL_LUID_SIZE_KHR")]
+        LuidSizeKhr = 0x8,
         [NativeName("Name", "CL_DEVICE_UUID_KHR")]
         DeviceUuidKhr = 0x106A,
         [NativeName("Name", "CL_DRIVER_UUID_KHR")]

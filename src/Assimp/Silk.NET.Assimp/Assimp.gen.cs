@@ -1540,62 +1540,62 @@ namespace Silk.NET.Assimp
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, Uvtransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref Uvtransform pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, Uvtransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref Uvtransform pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Uvtransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, ref Uvtransform pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, Uvtransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref Uvtransform pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, Uvtransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref UVTransform pOut);
+        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref Uvtransform pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, Uvtransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref UVTransform pOut);
+        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, string pKey, uint type, uint index, ref Uvtransform pOut);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1515, Column 28 in src/Assimp/Include\\assimp/material.h")]

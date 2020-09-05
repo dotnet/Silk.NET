@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiAABB")]
-    public unsafe partial struct AABB
+    public unsafe partial struct Aabb
     {
-        public AABB
+        public Aabb
         (
             System.Numerics.Vector3 mMin = default,
             System.Numerics.Vector3 mMax = default

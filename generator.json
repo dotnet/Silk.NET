@@ -607,6 +607,78 @@
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]
+        },
+        {
+            "profileName": "D3D11",
+            "sources": [
+                "src/Microsoft/include.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d3d11",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "D3D11",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D3DCommon.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h"
+                ],
+                "classes": {
+                    "include.h": "[Core]D3D11"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "include"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct3D11",
+            "extensionsNamespace": "Silk.NET.Direct3D11.Extensions",
+            "nameContainer": {
+                "linux-x64": "libd3d11.so",
+                "win-x64": "d3d11.dll",
+                "win-x86": "d3d11.dll",
+                "osx-x64": "libd3d11.dylib",
+                "android": "libd3d11.so",
+                "iOS": "__Internal",
+                "className": "D3D11LibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
         }
     ]
 }

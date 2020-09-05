@@ -8655,22 +8655,22 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_BuildAudioCVT")]
-        public unsafe partial int BuildAudioCVT(AudioCVT* cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
+        public unsafe partial int BuildAudioCVT(AudioCvt* cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_BuildAudioCVT")]
-        public partial int BuildAudioCVT(ref AudioCVT cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
+        public partial int BuildAudioCVT(ref AudioCvt cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 521, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_ConvertAudio")]
-        public unsafe partial int ConvertAudio(AudioCVT* cvt);
+        public unsafe partial int ConvertAudio(AudioCvt* cvt);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 521, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_ConvertAudio")]
-        public partial int ConvertAudio(ref AudioCVT cvt);
+        public partial int ConvertAudio(ref AudioCvt cvt);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 552, Column 43 in build/submodules/SDL-mirror/include\\SDL_audio.h")]

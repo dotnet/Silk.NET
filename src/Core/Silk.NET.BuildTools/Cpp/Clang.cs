@@ -10,6 +10,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using ClangSharp;
 using ClangSharp.Interop;
 using Microsoft.Extensions.FileSystemGlobbing;
@@ -41,7 +42,9 @@ namespace Silk.NET.BuildTools.Cpp
                 .Select(x => x.Substring(1)));
             
             var traversals = matcher.GetResultsInFullPath(Environment.CurrentDirectory)
+                .Concat(task.ClangOpts.Traverse.Where(x => File.Exists(x)))
                 .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
+                .Distinct()
                 .ToArray();
 
             Console.WriteLine("Loading input header...");
@@ -622,6 +625,28 @@ namespace Silk.NET.BuildTools.Cpp
                 return ret;
             }
 
+            IEnumerable<Field> ConvertAll(RecordDecl recordDecl) => recordDecl.Fields.Select
+            (
+                x => new Field
+                {
+                    Name = Naming.TranslateLite
+                        (Naming.TrimName(x.Name, task), task.FunctionPrefix),
+                    NativeName = x.Name,
+                    Type = GetType(x.Type, out var count, ref _f, out _),
+                    NativeType = x.Type.AsString.Replace("\\", "\\\\"), Count = count,
+                    Attributes = recordDecl.IsUnion
+                        ? new List<Attribute>
+                        {
+                            new Attribute
+                            {
+                                Name = "FieldOffset",
+                                Arguments = new List<string> {x.Handle.OffsetOfField.ToString()}
+                            }
+                        }
+                        : new List<Attribute>()
+                }
+            );
+
             void VisitDecl(Decl decl, string typedef = null)
             {
                 switch (decl.Kind)
@@ -707,7 +732,7 @@ namespace Silk.NET.BuildTools.Cpp
                         (
                             new Enum
                             {
-                                Name = name ?? Naming.TranslateLite
+                                Name = name ?? Naming.Translate
                                     (Naming.TrimName(nativeName, task), task.FunctionPrefix),
                                 NativeName = nativeName,
                                 ClangMetadata = new[] {enumDecl.Location.ToString()},
@@ -732,7 +757,8 @@ namespace Silk.NET.BuildTools.Cpp
                     case CX_DeclKind.CX_DeclKind_Record:
                     case CX_DeclKind.CX_DeclKind_CXXRecord:
                     {
-                        var recordDecl = (CXXRecordDecl) decl;
+                        var recordDecl = (RecordDecl) decl;
+                        var cxxRecordDecl = recordDecl as CXXRecordDecl;
                         var nativeName = recordDecl.Name;
                         if (string.IsNullOrWhiteSpace(nativeName))
                         {
@@ -765,36 +791,16 @@ namespace Silk.NET.BuildTools.Cpp
                         string name = null;
                         task.RenamedNativeNames.TryGetValue(nativeName, out name);
 
+                        Struct @struct;
                         structs.Add
                         (
-                            new Struct
+                            @struct = new Struct
                             {
-                                Name = name ?? Naming.TranslateLite
+                                Name = name ?? Naming.Translate
                                     (Naming.TrimName(nativeName, task), task.FunctionPrefix),
                                 NativeName = nativeName,
                                 ClangMetadata = new[] {recordDecl.Location.ToString()},
-                                Fields = recordDecl.Fields.Select
-                                    (
-                                        x => new Field
-                                        {
-                                            Name = Naming.TranslateLite
-                                                (Naming.TrimName(x.Name, task), task.FunctionPrefix),
-                                            NativeName = x.Name,
-                                            Type = GetType(x.Type, out var count, ref _f, out _),
-                                            NativeType = x.Type.AsString.Replace("\\", "\\\\"), Count = count,
-                                            Attributes = recordDecl.IsUnion
-                                                ? new List<Attribute>
-                                                {
-                                                    new Attribute
-                                                    {
-                                                        Name = "FieldOffset",
-                                                        Arguments = new List<string> {x.Handle.OffsetOfField.ToString()}
-                                                    }
-                                                }
-                                                : new List<Attribute>()
-                                        }
-                                    )
-                                    .ToList(),
+                                Fields = ConvertAll(recordDecl).ToList(),
                                 Attributes = recordDecl.IsUnion
                                     ? new List<Attribute>
                                     {
@@ -806,6 +812,22 @@ namespace Silk.NET.BuildTools.Cpp
                                     : new List<Attribute>()
                             }
                         );
+
+                        AddVtblIfNecessary(recordDecl, @struct);
+                        
+                        if (!(cxxRecordDecl is null))
+                        {
+                            foreach (var cxxBaseSpecifier in cxxRecordDecl.Bases)
+                            {
+                                var baseCxxRecordDecl = GetRecordDeclForBaseSpecifier(cxxBaseSpecifier);
+                                @struct.Fields.InsertRange
+                                (
+                                    0,
+                                    ConvertAll(baseCxxRecordDecl)
+                                );
+                            }
+                        }
+                        
                         break;
                     }
 
@@ -991,6 +1013,158 @@ namespace Silk.NET.BuildTools.Cpp
                 {
                     VisitDecls(declContext.Decls);
                 }
+            }
+            
+            CXXRecordDecl GetRecordDeclForBaseSpecifier(CXXBaseSpecifier cxxBaseSpecifier)
+            {
+                ClangSharp.Type baseType = cxxBaseSpecifier.Type;
+
+                while (!(baseType is RecordType))
+                {
+                    if (baseType is AttributedType attributedType)
+                    {
+                        baseType = attributedType.ModifiedType;
+                    }
+                    else if (baseType is ElaboratedType elaboratedType)
+                    {
+                        baseType = elaboratedType.CanonicalType;
+                    }
+                    else if (baseType is TypedefType typedefType)
+                    {
+                        baseType = typedefType.Decl.UnderlyingType;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                var baseRecordType = (RecordType)baseType;
+                return (CXXRecordDecl)baseRecordType.Decl;
+            }
+
+            bool HasVtbl(CXXRecordDecl cxxRecordDecl)
+            {
+                var hasDirectVtbl = cxxRecordDecl.Methods.Any((method) => method.IsVirtual);
+                var indirectVtblCount = 0;
+
+                foreach (var cxxBaseSpecifier in cxxRecordDecl.Bases)
+                {
+                    var baseCxxRecordDecl = GetRecordDeclForBaseSpecifier(cxxBaseSpecifier);
+
+                    if (HasVtbl(baseCxxRecordDecl))
+                    {
+                        indirectVtblCount++;
+                    }
+                }
+
+                if (indirectVtblCount > 1)
+                {
+                    Console.WriteLine
+                    (
+                        "Warning: Unsupported cxx record declaration: 'multiple virtual bases'. Generated bindings " +
+                        "may be incomplete. " + cxxRecordDecl
+                    );
+                }
+
+                return hasDirectVtbl || (indirectVtblCount != 0);
+            }
+            
+            void OutputVtblHelperMethod(CXXMethodDecl cxxMethodDecl,
+                ref int vtblIndex,
+                Struct @struct)
+            {
+                if (!cxxMethodDecl.IsVirtual)
+                {
+                    return;
+                }
+
+                if (task.ExcludedNativeNames.Contains(cxxMethodDecl.Name))
+                {
+                    vtblIndex += 1;
+                    return;
+                }
+
+                string name = null;
+                task.RenamedNativeNames.TryGetValue(cxxMethodDecl.Name, out name);
+
+                @struct.Vtbl.Add
+                (
+                    new Function
+                    {
+                        Accessibility = cxxMethodDecl.Access switch
+                        {
+                            CX_CXXAccessSpecifier.CX_CXXInvalidAccessSpecifier => Accessibility.Public,
+                            CX_CXXAccessSpecifier.CX_CXXPublic => Accessibility.Public,
+                            CX_CXXAccessSpecifier.CX_CXXProtected => Accessibility.Protected,
+                            CX_CXXAccessSpecifier.CX_CXXPrivate => Accessibility.Private,
+                            _ => Accessibility.Internal
+                        },
+                        Attributes = new List<Attribute>(),
+                        Convention = GetCallingConvention
+                            ((cxxMethodDecl.Type as FunctionType)?.CallConv ?? CXCallingConv.CXCallingConv_C),
+                        Name = name ?? Naming.TranslateLite
+                            (Naming.TrimName(cxxMethodDecl.Name, task), task.FunctionPrefix),
+                        NativeName = cxxMethodDecl.Name,
+                        VtblIndex = vtblIndex,
+                        ReturnType = GetType(cxxMethodDecl.ReturnType, out _, ref _f, out _),
+                        Parameters = cxxMethodDecl.Parameters.Select
+                            (
+                                (x, i) =>
+                                {
+                                    var parameterFlow = FlowDirection.Undefined;
+                                    return new Parameter
+                                    {
+                                        Name = string.IsNullOrWhiteSpace(x.Name) ? $"arg{i}" : x.Name,
+                                        Type = GetType(x.Type, out var count, ref parameterFlow, out _),
+                                        Flow = parameterFlow,
+                                        Count = count
+                                    };
+                                }
+                            )
+                            .ToList()
+                    }
+                );
+                vtblIndex += 1;
+            }
+            
+            void OutputVtblHelperMethods(CXXRecordDecl cxxRecordDecl,
+                ref int vtblIndex,
+                Struct @struct)
+            {
+                foreach (var cxxBaseSpecifier in cxxRecordDecl.Bases)
+                {
+                    var baseCxxRecordDecl = GetRecordDeclForBaseSpecifier(cxxBaseSpecifier);
+                    OutputVtblHelperMethods(baseCxxRecordDecl, ref vtblIndex, @struct);
+                }
+
+                var cxxMethodDecls = cxxRecordDecl.Methods;
+
+                foreach (var cxxMethodDecl in cxxMethodDecls)
+                {
+                    OutputVtblHelperMethod(cxxMethodDecl, ref vtblIndex, @struct);
+                }
+            }
+
+            void AddVtblIfNecessary(RecordDecl recordDecl, Struct @struct)
+            {
+                var i = 0;
+                var cxxRecordDecl = recordDecl as CXXRecordDecl;
+                var hasVtbl = false;
+
+                if (cxxRecordDecl != null)
+                {
+                    hasVtbl = HasVtbl(cxxRecordDecl);
+                }
+
+                if (!hasVtbl)
+                {
+                    return;
+                }
+
+                @struct.Fields.Add
+                    (new Field {Name = "LpVtbl", Type = new Type {IndirectionLevels = 2}, NativeName = "lpVtbl"});
+                OutputVtblHelperMethods(cxxRecordDecl, ref i, @struct);
             }
         }
 

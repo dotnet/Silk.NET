@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 
 namespace Silk.NET.BuildTools.Common
@@ -47,5 +48,10 @@ namespace Silk.NET.BuildTools.Common
         /// A list of functions this struct has.
         /// </summary>
         public List<ImplementedFunction> Functions { get; set; } = new List<ImplementedFunction>();
+
+        /// <summary>
+        /// A list of functions contained in the LpVtbl field.
+        /// </summary>
+        public List<Function> Vtbl { get; set; } = new List<Function>();
     }
 }

@@ -44,7 +44,7 @@ namespace Silk.NET.SDL
             SensorEvent sensor = default,
             QuitEvent quit = default,
             UserEvent user = default,
-            SysWMEvent syswm = default,
+            SysWmevent syswm = default,
             TouchFingerEvent tfinger = default,
             MultiGestureEvent mgesture = default,
             DollarGestureEvent dgesture = default,
@@ -217,7 +217,7 @@ namespace Silk.NET.SDL
         [NativeName("Type", "SDL_SysWMEvent")]
         [NativeName("Type.Name", "SDL_SysWMEvent")]
         [NativeName("Name", "syswm")]
-        public SysWMEvent Syswm;
+        public SysWmevent Syswm;
 
         [FieldOffset(0)]
         [NativeName("Type", "SDL_TouchFingerEvent")]

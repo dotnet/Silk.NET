@@ -92,6 +92,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public SignatureKind Kind { get; set; }
 
+        /// <summary>
+        /// The index of this function in the LpVtbl field.
+        /// </summary>
+        public int VtblIndex { get; set; }
+
         /// <inheritdoc />
         public override string ToString()
         {
