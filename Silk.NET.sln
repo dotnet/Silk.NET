@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
@@ -308,6 +308,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JITTesting", "src\Lab\JITTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLib", "src\Lab\TestLib\TestLib.csproj", "{C7FFA58B-BFB0-4A42-AB19-84384B19D4E4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\nuke\_build.csproj", "{E19740CD-8E64-4CA0-B2FC-BD2D403DA486}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -321,6 +323,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E19740CD-8E64-4CA0-B2FC-BD2D403DA486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E19740CD-8E64-4CA0-B2FC-BD2D403DA486}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|x64.ActiveCfg = Debug|Any CPU
