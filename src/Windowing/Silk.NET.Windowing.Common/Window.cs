@@ -171,8 +171,8 @@ namespace Silk.NET.Windowing
         /// </summary>
         public static void Prioritize(IWindowPlatform platform)
         {
-            ((List<IWindowPlatform>) Platforms).Remove(platform);
-            ((List<IWindowPlatform>) Platforms).Insert(0, platform);
+            _platforms.Remove(platform);
+            _platforms.Insert(0, platform);
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Silk.NET.Windowing
         /// Removes this window platform from the platform list. Shouldn't be used unless writing your own windowing backend.
         /// </summary>
         /// <param name="platform">The platform to remove.</param>
-        public static void Remove(IWindowPlatform platform) => ((List<IWindowPlatform>) Platforms).Remove(platform);
+        public static void Remove(IWindowPlatform platform) => _platforms.Remove(platform);
 
         /// <summary>
         /// Attempts to load the given assembly by name, checks for a <see cref="IWindowPlatform"/>, if one is found it
