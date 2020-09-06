@@ -214,7 +214,9 @@ namespace Silk.NET.Windowing
         public static void Add(IWindowPlatform platform)
         {
             if (!_platforms.Contains(platform))
+            {
                 _platforms.Add(platform);
+            }
         }
 
         /// <summary>
