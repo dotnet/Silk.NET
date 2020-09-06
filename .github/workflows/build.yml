@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 5.0.100-preview.8.20417.9
     - name: Test
-      run: ./build test
+      run: ./build.cmd test
     - name: Pack
       run: ./build.cmd pack
     - name: Setup NuGet
