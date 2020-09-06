@@ -71,7 +71,7 @@ namespace Silk.NET.SilkTouch
                     var name =
                         $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                     context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                    File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
                 }
                 catch (Exception ex)
                 {
@@ -712,23 +712,6 @@ namespace Silk.NET.SilkTouch
             {
                 var body = new List<StatementSyntax>();
                 var name = $"Load_{keys[0]}_{keys[keys.Length - 1]}";
-
-                foreach (var key in keys)
-                {
-                    body.Add
-                    (
-                        IfStatement
-                        (
-                            BinaryExpression(SyntaxKind.EqualsExpression, IdentifierName(keyName), Num(key)),
-                            ReturnStatement
-                                (InvocationExpression(BuildFinalSubLoad(ref methods, key, entryPoints[key], emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))
-                        )
-                    );
-                };
-                
-                body.Add(ReturnStatement(DefaultExpression(IdentifierName("System.IntPtr"))));
-                
-                /*
                 if (keys.Length % 2 != 0)
                 {
                     // uneven, load lowest
@@ -772,7 +755,7 @@ namespace Silk.NET.SilkTouch
                                 (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, upper, entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))))
                         )
                     );
-                }*/
+                }
 
                 methods.Add
                 (
