@@ -95,8 +95,12 @@ namespace Tutorial
             foreach (var s in Window.Platforms.Select
                 (x => $"IsApplicable: {x.IsApplicable} | IsViewOnly: {x.IsViewOnly}"))
                 Console.WriteLine(s);
-            
-            var options = WindowOptions.AotDefault;
+
+            var options = new WindowOptions
+            (
+                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default, "Silk.NET Window AOT",
+                WindowState.Normal, WindowBorder.Resizable, true, true, VideoMode.Default
+            );
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
