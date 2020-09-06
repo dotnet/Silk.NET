@@ -3,13 +3,13 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.Input.Glfw
+namespace Silk.NET.Input.Sdl
 {
-    public static class InputExtensions
+    public static class SdlInput
     {
-        public static void AddGlfw()
+        public static void RegisterWindow()
         {
-            InputWindowExtensions.Add(new GlfwInputPlatform());
+            InputWindowExtensions.Add(new SdlInputPlatform());
         }
     }
 }

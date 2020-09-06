@@ -94,14 +94,14 @@ namespace Tutorial
                 (false); // Window will try to discover platforms via reflection, AOT cannot support this
 
             // add first party platforms manually
-            Silk.NET.Windowing.Glfw.WindowExtensions.AddGLFW();
-            Silk.NET.Windowing.Sdl.WindowExtensions.AddSDL();
+            Silk.NET.Windowing.Glfw.GlfwWindowing.RegisterPlatform();
+            Silk.NET.Windowing.Sdl.SdlWindowing.RegisterPlatform();
             
             // the same for input:
             InputWindowExtensions.ShouldLoadFirstPartyPlatforms(false);
             
-            Silk.NET.Input.Glfw.InputExtensions.AddGlfw();
-            Silk.NET.Input.Sdl.InputExtensions.AddSdl();
+            Silk.NET.Input.Glfw.GlfwInput.RegisterPlatform();
+            Silk.NET.Input.Sdl.SdlInput.RegisterWindow();
 
             foreach (var s in Window.Platforms.Select
                 (x => $"IsApplicable: {x.IsApplicable} | IsViewOnly: {x.IsViewOnly}"))
