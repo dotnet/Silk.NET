@@ -89,17 +89,6 @@ namespace Tutorial
 
         private static void Main()
         {
-            // setup window
-            Window.ShouldLoadFirstPartyPlatforms
-                (false); // Window will try to discover platforms via reflection, AOT cannot support this
-
-            // add first party platforms manually
-            Silk.NET.Windowing.Glfw.GlfwWindowing.RegisterPlatform();
-            Silk.NET.Windowing.Sdl.SdlWindowing.RegisterPlatform();
-            
-            // the same for input:
-            InputWindowExtensions.ShouldLoadFirstPartyPlatforms(false);
-            
             Silk.NET.Input.Glfw.GlfwInput.RegisterPlatform();
             Silk.NET.Input.Sdl.SdlInput.RegisterWindow();
 

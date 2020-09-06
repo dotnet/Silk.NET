@@ -76,13 +76,13 @@ namespace Silk.NET.Input
         /// Adds this input platform to the platform list. Shouldn't be used unless writing your own input backend.
         /// </summary>
         /// <param name="platform">The platform to add.</param>
-        public static void Add(IInputPlatform platform) => ((List<IInputPlatform>) Platforms).Add(platform);
+        public static void Add(IInputPlatform platform) => _platforms.Add(platform);
 
         /// <summary>
         /// Removes this input platform from the platform list. Shouldn't be used unless writing your own input backend.
         /// </summary>
         /// <param name="platform">The platform to remove.</param>
-        public static void Remove(IInputPlatform platform) => ((List<IInputPlatform>) Platforms).Remove(platform);
+        public static void Remove(IInputPlatform platform) => _platforms.Remove(platform);
 
         /// <summary>
         /// Attempts to load the given assembly by name, checks for a <see cref="IInputPlatform"/>, if one is found it
