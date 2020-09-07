@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryInput
         (
-            _GUID queryType = default,
+            Guid queryType = default,
             void* hChannel = default,
             uint sequenceNumber = default
         )
@@ -35,7 +35,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "QueryType")]
-        public _GUID QueryType;
+        public Guid QueryType;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]

@@ -160,7 +160,8 @@
                     "ID3D11Device*": "IntPtr",
                     "ID3D12Device*": "IntPtr",
                     "ID3D12Resource*": "IntPtr",
-                    "ID3D12CommandQueue*": "IntPtr"
+                    "ID3D12CommandQueue*": "IntPtr",
+                    "IDirect3DSurface9*": "IntPtr" 
                 },
                 {
                     "cl_GLsync": "intptr_t",
@@ -609,9 +610,110 @@
             ]
         },
         {
+            "profileName": "DXGI",
+            "sources": [
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_2.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_3.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_4.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_5.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi1_6.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxgidebug.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgiformat.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "dxgi",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "DXGI",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgicommon.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgitype.h"
+                ],
+                "classes": {
+                    "dxgi.h": "[Core]DXGI",
+                    "dxgi1_2.h": "[Core]DXGI",
+                    "dxgi1_3.h": "[Core]DXGI",
+                    "dxgi1_4.h": "[Core]DXGI",
+                    "dxgi1_5.h": "[Core]DXGI",
+                    "dxgi1_6.h": "[Core]DXGI",
+                    "dxgidebug.h": "[Core]DXGI",
+                    "dxgiformat.h": "[Core]DXGI"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "dxgi",
+                    "dxgi1_2",
+                    "dxgi1_3",
+                    "dxgi1_4",
+                    "dxgi1_5",
+                    "dxgi1_6",
+                    "dxgidebug",
+                    "dxgiformat"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.DXGI",
+            "extensionsNamespace": "Silk.NET.DXGI.Extensions",
+            "nameContainer": {
+                "linux-x64": "libDXGI.so",
+                "win-x64": "DXGI.dll",
+                "win-x86": "DXGI.dll",
+                "osx-x64": "libDXGI.dylib",
+                "android": "libDXGI.so",
+                "iOS": "__Internal",
+                "className": "DXGILibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "DXGI_FORMAT": "Silk.NET.DXGI.Format"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "D3D11",
             "sources": [
-                "src/Microsoft/include.h"
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_1.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_2.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_3.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11_4.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shader.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11shadertracing.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11sdklayers.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -639,20 +741,34 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D3DCommon.h",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d11.h"
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D3DCommon.h"
                 ],
                 "classes": {
-                    "include.h": "[Core]D3D11"
+                    "d3d11.h": "[Core]D3D11",
+                    "d3d11_1.h": "[Core]D3D11",
+                    "d3d11_2.h": "[Core]D3D11",
+                    "d3d11_3.h": "[Core]D3D11",
+                    "d3d11_4.h": "[Core]D3D11",
+                    "d3d11shader.h": "[Core]D3D11",
+                    "d3d11shadertracing.h": "[Core]D3D11",
+                    "d3d11sdklayers.h": "[Core]D3D11"
                 }
             },
             "exclude": [
             ],
             "rename": {
+                "D3D11_OMAC": "OMAC"
             },
             "bakery": {
                 "profileNames": [
-                    "include"
+                    "d3d11",
+                    "d3d11_1",
+                    "d3d11_2",
+                    "d3d11_3",
+                    "d3d11_4",
+                    "d3d11shader",
+                    "d3d11shadertracing",
+                    "d3d11sdklayers"
                 ]
             },
             "output": {
@@ -674,6 +790,15 @@
             },
             "typeMaps": [
                 {
+                    "DXGI_FORMAT": "Silk.NET.DXGI.Format",
+                    "DXGI_COLOR_SPACE_TYPE": "Silk.NET.DXGI.ColorSpaceType",
+                    "DXGI_SAMPLE_DESC": "Silk.NET.DXGI.SampleDesc",
+                    "DXGI_SWAP_CHAIN_DESC": "Silk.NET.DXGI.SwapChainDesc",
+                    "DXGI_RATIONAL": "Silk.NET.DXGI.Rational",
+                    "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType",
+                    "IDXGIAdapter": "Silk.NET.DXGI.IDXGIAdapter",
+                    "IDXGISwapChain": "Silk.NET.DXGI.IDXGISwapChain",
+                    "D3D11_AUTHENTICATED_PROTECTION_FLAGS::__MIDL___MIDL_itf_d3d11_0000_0034_0001": "MIDLMIDLItfD3d11000000340001"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

@@ -16,28 +16,21 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
-    [NativeName("Name", "_D3D11_AES_CTR_IV")]
-    public unsafe partial struct D3D11AesCtrIV
+    [NativeName("Name", "D3D11_HULL_SHADER_TRACE_DESC")]
+    public unsafe partial struct HullShaderTraceDesc
     {
-        public D3D11AesCtrIV
+        public HullShaderTraceDesc
         (
-            ulong iV = default,
-            ulong count = default
+            ulong invocation = default
         )
         {
-            IV = iV;
-            Count = count;
+            Invocation = invocation;
         }
 
 
         [NativeName("Type", "UINT64")]
         [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "IV")]
-        public ulong IV;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "Count")]
-        public ulong Count;
+        [NativeName("Name", "Invocation")]
+        public ulong Invocation;
     }
 }

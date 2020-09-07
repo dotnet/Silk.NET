@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public AuthenticatedQueryCurrentAccessibilityEncryptionOutput
         (
             AuthenticatedQueryOutput output = default,
-            _GUID encryptionGuid = default
+            Guid encryptionGuid = default
         )
         {
             Output = output;
@@ -38,6 +38,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "EncryptionGuid")]
-        public _GUID EncryptionGuid;
+        public Guid EncryptionGuid;
     }
 }

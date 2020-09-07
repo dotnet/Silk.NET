@@ -23,7 +23,7 @@ namespace Silk.NET.Direct3D11
         (
             byte* semanticName = default,
             uint semanticIndex = default,
-            DXGI_FORMAT format = default,
+            Silk.NET.DXGI.Format format = default,
             uint inputSlot = default,
             uint alignedByteOffset = default,
             InputClassification inputSlotClass = default,
@@ -53,7 +53,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]
         [NativeName("Name", "Format")]
-        public DXGI_FORMAT Format;
+        public Silk.NET.DXGI.Format Format;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

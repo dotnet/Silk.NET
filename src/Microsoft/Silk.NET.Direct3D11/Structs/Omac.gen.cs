@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_OMAC")]
-    public unsafe partial struct Omac
+    public unsafe partial struct OMAC
     {
         [NativeName("Type", "BYTE [16]")]
         [NativeName("Type.Name", "BYTE [16]")]

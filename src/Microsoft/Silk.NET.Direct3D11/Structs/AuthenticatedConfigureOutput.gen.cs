@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedConfigureOutput
         (
-            Omac omac = default,
-            _GUID configureType = default,
+            OMAC omac = default,
+            Guid configureType = default,
             void* hChannel = default,
             uint sequenceNumber = default,
             int returnCode = default
@@ -39,12 +39,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D11_OMAC")]
         [NativeName("Type.Name", "D3D11_OMAC")]
         [NativeName("Name", "omac")]
-        public Omac Omac;
+        public OMAC Omac;
 
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "ConfigureType")]
-        public _GUID ConfigureType;
+        public Guid ConfigureType;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]

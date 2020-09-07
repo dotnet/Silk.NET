@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryOutput
         (
-            Omac omac = default,
-            _GUID queryType = default,
+            OMAC omac = default,
+            Guid queryType = default,
             void* hChannel = default,
             uint sequenceNumber = default,
             int returnCode = default
@@ -39,12 +39,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D11_OMAC")]
         [NativeName("Type.Name", "D3D11_OMAC")]
         [NativeName("Name", "omac")]
-        public Omac Omac;
+        public OMAC Omac;
 
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "QueryType")]
-        public _GUID QueryType;
+        public Guid QueryType;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]

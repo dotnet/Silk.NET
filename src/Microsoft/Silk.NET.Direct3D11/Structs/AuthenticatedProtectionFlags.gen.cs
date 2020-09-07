@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedProtectionFlags
         (
-            D3D11_AUTHENTICATED_PROTECTION_FLAGS::__MIDL___MIDL_itf_d3d11_0000_0034_0001 flags = default,
+            MIDLMIDLItfD3d11000000340001 flags = default,
             uint value = default
         )
         {
@@ -35,7 +35,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "struct __MIDL___MIDL_itf_d3d11_0000_0034_0001")]
         [NativeName("Type.Name", "struct __MIDL___MIDL_itf_d3d11_0000_0034_0001")]
         [NativeName("Name", "Flags")]
-        public D3D11_AUTHENTICATED_PROTECTION_FLAGS::__MIDL___MIDL_itf_d3d11_0000_0034_0001 Flags;
+        public MIDLMIDLItfD3d11000000340001 Flags;
 
         [FieldOffset(0)]
         [NativeName("Type", "UINT")]

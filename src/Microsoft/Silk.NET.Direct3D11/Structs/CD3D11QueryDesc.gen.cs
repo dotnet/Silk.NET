@@ -19,5 +19,25 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "CD3D11_QUERY_DESC")]
     public unsafe partial struct CD3D11QueryDesc
     {
+        public CD3D11QueryDesc
+        (
+            Query query = default,
+            uint miscFlags = default
+        )
+        {
+            Query = query;
+            MiscFlags = miscFlags;
+        }
+
+
+        [NativeName("Type", "D3D11_QUERY")]
+        [NativeName("Type.Name", "D3D11_QUERY")]
+        [NativeName("Name", "Query")]
+        public Query Query;
+
+        [NativeName("Type", "UINT")]
+        [NativeName("Type.Name", "UINT")]
+        [NativeName("Name", "MiscFlags")]
+        public uint MiscFlags;
     }
 }

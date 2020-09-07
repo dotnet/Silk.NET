@@ -49,19 +49,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         [NativeName("Name", "GL_SAMPLE_MASK_SGIS")]
         SampleMaskSgis = 0x80A0,
         [NativeName("Name", "GL_1PASS_SGIS")]
-        C1PassSgis = 0x80A1,
+        Gl1PassSgis = 0x80A1,
         [NativeName("Name", "GL_2PASS_0_SGIS")]
-        C2Pass0Sgis = 0x80A2,
+        Gl2Pass0Sgis = 0x80A2,
         [NativeName("Name", "GL_2PASS_1_SGIS")]
-        C2Pass1Sgis = 0x80A3,
+        Gl2Pass1Sgis = 0x80A3,
         [NativeName("Name", "GL_4PASS_0_SGIS")]
-        C4Pass0Sgis = 0x80A4,
+        Gl4Pass0Sgis = 0x80A4,
         [NativeName("Name", "GL_4PASS_1_SGIS")]
-        C4Pass1Sgis = 0x80A5,
+        Gl4Pass1Sgis = 0x80A5,
         [NativeName("Name", "GL_4PASS_2_SGIS")]
-        C4Pass2Sgis = 0x80A6,
+        Gl4Pass2Sgis = 0x80A6,
         [NativeName("Name", "GL_4PASS_3_SGIS")]
-        C4Pass3Sgis = 0x80A7,
+        Gl4Pass3Sgis = 0x80A7,
         [NativeName("Name", "GL_SAMPLE_BUFFERS_SGIS")]
         SampleBuffersSgis = 0x80A8,
         [NativeName("Name", "GL_SAMPLES_SGIS")]

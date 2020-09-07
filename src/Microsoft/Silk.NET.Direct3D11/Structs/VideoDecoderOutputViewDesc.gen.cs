@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderOutputViewDesc
         (
-            _GUID decodeProfile = default,
+            Guid decodeProfile = default,
             VdovDimension viewDimension = default
         )
         {
@@ -33,7 +33,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "DecodeProfile")]
-        public _GUID DecodeProfile;
+        public Guid DecodeProfile;
 
         [NativeName("Type", "D3D11_VDOV_DIMENSION")]
         [NativeName("Type.Name", "D3D11_VDOV_DIMENSION")]

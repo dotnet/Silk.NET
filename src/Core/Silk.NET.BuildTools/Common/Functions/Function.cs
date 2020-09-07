@@ -104,7 +104,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         /// <inheritdoc cref="ToString()" />
-        public string ToString(bool? @unsafe, bool partial = false, bool accessibility = false, bool @static = false)
+        public string ToString(bool? @unsafe, bool partial = false, bool accessibility = false, bool @static = false, bool semicolon = true)
         {
             var sb = new StringBuilder();
 
@@ -146,7 +146,11 @@ namespace Silk.NET.BuildTools.Common.Functions
                 }
             }
 
-            sb.Append(";");
+            if (semicolon)
+            {
+                sb.Append(";");
+            }
+
             return sb.ToString();
         }
 

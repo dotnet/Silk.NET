@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataFormatSupport
         (
-            DXGI_FORMAT inFormat = default,
+            Silk.NET.DXGI.Format inFormat = default,
             uint outFormatSupport = default
         )
         {
@@ -33,7 +33,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]
         [NativeName("Name", "InFormat")]
-        public DXGI_FORMAT InFormat;
+        public Silk.NET.DXGI.Format InFormat;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

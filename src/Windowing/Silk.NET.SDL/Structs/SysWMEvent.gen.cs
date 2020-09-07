@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.SDL
 {
     [NativeName("Name", "SDL_SysWMEvent")]
-    public unsafe partial struct SysWmevent
+    public unsafe partial struct SysWMEvent
     {
-        public SysWmevent
+        public SysWMEvent
         (
             uint type = default,
             uint timestamp = default,

@@ -21,10 +21,10 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderDesc
         (
-            _GUID guid = default,
+            Guid guid = default,
             uint sampleWidth = default,
             uint sampleHeight = default,
-            DXGI_FORMAT outputFormat = default
+            Silk.NET.DXGI.Format outputFormat = default
         )
         {
             Guid = guid;
@@ -37,7 +37,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "Guid")]
-        public _GUID Guid;
+        public Guid Guid;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -52,6 +52,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]
         [NativeName("Name", "OutputFormat")]
-        public DXGI_FORMAT OutputFormat;
+        public Silk.NET.DXGI.Format OutputFormat;
     }
 }

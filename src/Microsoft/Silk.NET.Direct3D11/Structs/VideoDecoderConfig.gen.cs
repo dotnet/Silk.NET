@@ -21,9 +21,9 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderConfig
         (
-            _GUID guidConfigBitstreamEncryption = default,
-            _GUID guidConfigMBcontrolEncryption = default,
-            _GUID guidConfigResidDiffEncryption = default,
+            Guid guidConfigBitstreamEncryption = default,
+            Guid guidConfigMBcontrolEncryption = default,
+            Guid guidConfigResidDiffEncryption = default,
             uint configBitstreamRaw = default,
             uint configMBcontrolRasterOrder = default,
             uint configResidDiffHost = default,
@@ -63,17 +63,17 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "guidConfigBitstreamEncryption")]
-        public _GUID GuidConfigBitstreamEncryption;
+        public Guid GuidConfigBitstreamEncryption;
 
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "guidConfigMBcontrolEncryption")]
-        public _GUID GuidConfigMBcontrolEncryption;
+        public Guid GuidConfigMBcontrolEncryption;
 
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "guidConfigResidDiffEncryption")]
-        public _GUID GuidConfigResidDiffEncryption;
+        public Guid GuidConfigResidDiffEncryption;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

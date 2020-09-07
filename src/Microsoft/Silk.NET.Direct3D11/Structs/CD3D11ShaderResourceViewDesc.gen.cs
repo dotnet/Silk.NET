@@ -19,5 +19,25 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "CD3D11_SHADER_RESOURCE_VIEW_DESC")]
     public unsafe partial struct CD3D11ShaderResourceViewDesc
     {
+        public CD3D11ShaderResourceViewDesc
+        (
+            Silk.NET.DXGI.Format format = default,
+            D3DSrvDimension viewDimension = default
+        )
+        {
+            Format = format;
+            ViewDimension = viewDimension;
+        }
+
+
+        [NativeName("Type", "DXGI_FORMAT")]
+        [NativeName("Type.Name", "DXGI_FORMAT")]
+        [NativeName("Name", "Format")]
+        public Silk.NET.DXGI.Format Format;
+
+        [NativeName("Type", "D3D11_SRV_DIMENSION")]
+        [NativeName("Type.Name", "D3D11_SRV_DIMENSION")]
+        [NativeName("Name", "ViewDimension")]
+        public D3DSrvDimension ViewDimension;
     }
 }

@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public UnorderedAccessViewDesc
         (
-            DXGI_FORMAT format = default,
+            Silk.NET.DXGI.Format format = default,
             UavDimension viewDimension = default
         )
         {
@@ -33,7 +33,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]
         [NativeName("Name", "Format")]
-        public DXGI_FORMAT Format;
+        public Silk.NET.DXGI.Format Format;
 
         [NativeName("Type", "D3D11_UAV_DIMENSION")]
         [NativeName("Type.Name", "D3D11_UAV_DIMENSION")]

@@ -53,5 +53,10 @@ namespace Silk.NET.BuildTools.Common
         /// A list of functions contained in the LpVtbl field.
         /// </summary>
         public List<Function> Vtbl { get; set; } = new List<Function>();
+
+        /// <summary>
+        /// This struct's UUID attribute. 
+        /// </summary>
+        public Guid? Uuid { get; set; }
     }
 }

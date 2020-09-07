@@ -19,5 +19,25 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "CD3D11_UNORDERED_ACCESS_VIEW_DESC")]
     public unsafe partial struct CD3D11UnorderedAccessViewDesc
     {
+        public CD3D11UnorderedAccessViewDesc
+        (
+            Silk.NET.DXGI.Format format = default,
+            UavDimension viewDimension = default
+        )
+        {
+            Format = format;
+            ViewDimension = viewDimension;
+        }
+
+
+        [NativeName("Type", "DXGI_FORMAT")]
+        [NativeName("Type.Name", "DXGI_FORMAT")]
+        [NativeName("Name", "Format")]
+        public Silk.NET.DXGI.Format Format;
+
+        [NativeName("Type", "D3D11_UAV_DIMENSION")]
+        [NativeName("Type.Name", "D3D11_UAV_DIMENSION")]
+        [NativeName("Name", "ViewDimension")]
+        public UavDimension ViewDimension;
     }
 }

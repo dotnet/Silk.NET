@@ -732,7 +732,7 @@ namespace Silk.NET.BuildTools.Cpp
                         (
                             new Enum
                             {
-                                Name = name ?? Naming.Translate
+                                Name = name ?? Naming.TranslateVariable
                                     (Naming.TrimName(nativeName, task), task.FunctionPrefix),
                                 NativeName = nativeName,
                                 ClangMetadata = new[] {enumDecl.Location.ToString()},
@@ -771,7 +771,7 @@ namespace Silk.NET.BuildTools.Cpp
                             Console.WriteLine("Warning: Existing struct with same native name.");
                             Console.WriteLine($"    Existing: {existing.NativeName}, {existing.ClangMetadata[0]}");
                             Console.WriteLine($"    New: {existing.NativeName}, {recordDecl.Location}");
-                            if (existing.Fields.Count == 0)
+                            if (existing.Fields.Count == 0 && (recordDecl.Fields.Count > 0 || !(cxxRecordDecl is null)))
                             {
                                 Console.WriteLine("Preferring new definition as the existing one is opaque.");
                                 structs.Remove(existing);
@@ -796,7 +796,7 @@ namespace Silk.NET.BuildTools.Cpp
                         (
                             @struct = new Struct
                             {
-                                Name = name ?? Naming.Translate
+                                Name = name ?? Naming.TranslateVariable
                                     (Naming.TrimName(nativeName, task), task.FunctionPrefix),
                                 NativeName = nativeName,
                                 ClangMetadata = new[] {recordDecl.Location.ToString()},
@@ -1163,7 +1163,7 @@ namespace Silk.NET.BuildTools.Cpp
                 }
 
                 @struct.Fields.Add
-                    (new Field {Name = "LpVtbl", Type = new Type {IndirectionLevels = 2}, NativeName = "lpVtbl"});
+                    (new Field {Name = "LpVtbl", Type = new Type {Name = "void", IndirectionLevels = 2}, NativeName = "lpVtbl"});
                 OutputVtblHelperMethods(cxxRecordDecl, ref i, @struct);
             }
         }

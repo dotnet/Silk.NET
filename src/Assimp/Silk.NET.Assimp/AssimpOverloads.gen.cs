@@ -1818,7 +1818,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, Span<Uvtransform> pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(pMat, pKey, type, index, ref pOut.GetPinnableReference());
@@ -1826,7 +1826,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, Span<byte> pKey, uint type, uint index, Uvtransform* pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, Span<byte> pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(pMat, ref pKey.GetPinnableReference(), type, index, pOut);
@@ -1834,7 +1834,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, Span<byte> pKey, uint type, uint index, Span<Uvtransform> pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, Span<byte> pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(pMat, ref pKey.GetPinnableReference(), type, index, ref pOut.GetPinnableReference());
@@ -1842,7 +1842,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<Uvtransform> pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] Material* pMat, string pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(pMat, pKey, type, index, ref pOut.GetPinnableReference());
@@ -1850,7 +1850,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, byte* pKey, uint type, uint index, Uvtransform* pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, byte* pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(in pMat.GetPinnableReference(), pKey, type, index, pOut);
@@ -1858,7 +1858,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, byte* pKey, uint type, uint index, Span<Uvtransform> pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, byte* pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference());
@@ -1866,7 +1866,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, Span<byte> pKey, uint type, uint index, Uvtransform* pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, Span<byte> pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(in pMat.GetPinnableReference(), ref pKey.GetPinnableReference(), type, index, pOut);
@@ -1874,7 +1874,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, Span<byte> pKey, uint type, uint index, Span<Uvtransform> pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, Span<byte> pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(in pMat.GetPinnableReference(), ref pKey.GetPinnableReference(), type, index, ref pOut.GetPinnableReference());
@@ -1882,7 +1882,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Uvtransform* pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, UVTransform* pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(in pMat.GetPinnableReference(), pKey, type, index, pOut);
@@ -1890,7 +1890,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1503, Column 28 in src/Assimp/Include\\assimp/material.h")]
-        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<Uvtransform> pOut)
+        public static unsafe Return GetMaterialUVTransform(this Assimp thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Material> pMat, string pKey, uint type, uint index, Span<UVTransform> pOut)
         {
             // SpanOverloader
             return thisApi.GetMaterialUVTransform(in pMat.GetPinnableReference(), pKey, type, index, ref pOut.GetPinnableReference());

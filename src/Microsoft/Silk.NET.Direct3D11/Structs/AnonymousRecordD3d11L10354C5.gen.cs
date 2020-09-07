@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
     {
         public AnonymousRecordD3d11L10354C5
         (
-            VideoColorYCbCrA yCbCr = default,
+            VIDEOCOLORYCbCrA yCbCr = default,
             VideoColorRgba rGBA = default
         )
         {
@@ -35,7 +35,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D11_VIDEO_COLOR_YCbCrA")]
         [NativeName("Type.Name", "D3D11_VIDEO_COLOR_YCbCrA")]
         [NativeName("Name", "YCbCr")]
-        public VideoColorYCbCrA YCbCr;
+        public VIDEOCOLORYCbCrA YCbCr;
 
         [FieldOffset(0)]
         [NativeName("Type", "D3D11_VIDEO_COLOR_RGBA")]

@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "__MIDL___MIDL_itf_d3d11_0000_0034_0001")]
-    public unsafe partial struct MidlMidlItfD3d11000000340001
+    public unsafe partial struct MIDLMIDLItfD3d11000000340001
     {
-        public MidlMidlItfD3d11000000340001
+        public MIDLMIDLItfD3d11000000340001
         (
             uint protectionEnabled = default,
             uint overlayOrFullscreenRequired = default,

@@ -24,7 +24,7 @@ namespace Silk.NET.Direct3D11
             uint width = default,
             uint mipLevels = default,
             uint arraySize = default,
-            DXGI_FORMAT format = default,
+            Silk.NET.DXGI.Format format = default,
             Usage usage = default,
             uint bindFlags = default,
             uint cPUAccessFlags = default,
@@ -60,7 +60,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]
         [NativeName("Name", "Format")]
-        public DXGI_FORMAT Format;
+        public Silk.NET.DXGI.Format Format;
 
         [NativeName("Type", "D3D11_USAGE")]
         [NativeName("Type.Name", "D3D11_USAGE")]

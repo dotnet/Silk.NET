@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_COLOR_YCbCrA")]
-    public unsafe partial struct VideoColorYCbCrA
+    public unsafe partial struct VIDEOCOLORYCbCrA
     {
-        public VideoColorYCbCrA
+        public VIDEOCOLORYCbCrA
         (
             float y = default,
             float cb = default,

@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiUVTransform")]
-    public unsafe partial struct Uvtransform
+    public unsafe partial struct UVTransform
     {
-        public Uvtransform
+        public UVTransform
         (
             System.Numerics.Vector2 mTranslation = default,
             System.Numerics.Vector2 mScaling = default,

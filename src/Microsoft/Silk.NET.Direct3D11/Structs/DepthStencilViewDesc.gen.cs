@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public DepthStencilViewDesc
         (
-            DXGI_FORMAT format = default,
+            Silk.NET.DXGI.Format format = default,
             DsvDimension viewDimension = default,
             uint flags = default
         )
@@ -35,7 +35,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]
         [NativeName("Name", "Format")]
-        public DXGI_FORMAT Format;
+        public Silk.NET.DXGI.Format Format;
 
         [NativeName("Type", "D3D11_DSV_DIMENSION")]
         [NativeName("Type.Name", "D3D11_DSV_DIMENSION")]

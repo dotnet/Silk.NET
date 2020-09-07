@@ -239,7 +239,8 @@ namespace Silk.NET.BuildTools.Bind
                                 ? structField.Count.StaticCount
                                 : 1;
                         var typeFixup09072020 = new TypeSignatureBuilder(structField.Type).WithIndirectionLevel
-                            (structField.Type.IndirectionLevels - 1).Build();
+                            //(structField.Type.IndirectionLevels - 1).Build();
+                            (0).Build();
 
                         foreach (var attr in structField.Attributes)
                         {
@@ -287,7 +288,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                 }
 
-                using (var sr = new StringReader(function.Signature.ToString(null, true, true)))
+                using (var sr = new StringReader(function.Signature.ToString(null, accessibility: true, semicolon: false)))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)
@@ -493,6 +494,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("using System;");
                         sw.WriteLine("using Silk.NET.Core.Loader;");
                         sw.WriteLine("using Silk.NET.Core.Native;");
+                        sw.WriteLine("using Silk.NET.Core.Contexts;");
                         sw.WriteLine("using Silk.NET.Core.Attributes;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
@@ -508,7 +510,7 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine
                             (
                                 $"             return new {@class.ClassName}(new DefaultNativeContext" +
-                                $"(new {task.NameContainer.ClassName}().GetName()));"
+                                $"(new {task.NameContainer.ClassName}().GetLibraryName()));"
                             );
                         }
                         else
@@ -522,7 +524,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("        {");
                         sw.WriteLine("             ext = IsExtensionPresent(" +
                                      "ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)");
-                        sw.WriteLine("                 ? Activator.CreateInstance<T>(Context)");
+                        sw.WriteLine("                 ? (T) Activator.CreateInstance(typeof(T), Context)");
                         sw.WriteLine("                 : null;");
                         sw.WriteLine("             return !(ext is null);");
                         sw.WriteLine("        }");
@@ -800,9 +802,13 @@ namespace Silk.NET.BuildTools.Bind
                 x =>
                     x.Value.Write
                     (
+                        !task.Controls.Contains("no-extra-dir") ?
                         x.Key == "Core"
                             ? Path.Combine(rootFolder, x.Value.GetProjectName(task))
-                            : Path.Combine(rootFolder, "Extensions", x.Value.GetProjectName(task)),
+                            : Path.Combine(rootFolder, "Extensions", x.Value.GetProjectName(task)) :
+                        x.Key == "Core"
+                            ? Path.Combine(rootFolder)
+                            : Path.Combine(rootFolder, "Extensions"),
                         profile,
                         task
                     )

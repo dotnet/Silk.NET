@@ -22,10 +22,10 @@ namespace Silk.NET.Direct3D11
         public VideoProcessorContentDesc
         (
             VideoFrameFormat inputFrameFormat = default,
-            DXGI_RATIONAL inputFrameRate = default,
+            Silk.NET.DXGI.Rational inputFrameRate = default,
             uint inputWidth = default,
             uint inputHeight = default,
-            DXGI_RATIONAL outputFrameRate = default,
+            Silk.NET.DXGI.Rational outputFrameRate = default,
             uint outputWidth = default,
             uint outputHeight = default,
             VideoUsage usage = default
@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_RATIONAL")]
         [NativeName("Type.Name", "DXGI_RATIONAL")]
         [NativeName("Name", "InputFrameRate")]
-        public DXGI_RATIONAL InputFrameRate;
+        public Silk.NET.DXGI.Rational InputFrameRate;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -65,7 +65,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_RATIONAL")]
         [NativeName("Type.Name", "DXGI_RATIONAL")]
         [NativeName("Name", "OutputFrameRate")]
-        public DXGI_RATIONAL OutputFrameRate;
+        public Silk.NET.DXGI.Rational OutputFrameRate;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

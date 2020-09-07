@@ -84,6 +84,11 @@ namespace Silk.NET.BuildTools.Cpp
                 (new Type {Name = parent.Name, IndirectionLevels = 1}, "@this")
             };
 
+            if (function.ReturnType.ToString() != "void")
+            {
+                sb.AppendLine($"    {function.ReturnType} ret = default;");
+            }
+
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var parameter = function.Parameters[i];
@@ -136,16 +141,18 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (parameter.Type.IsIn || parameter.Type.IsOut || parameter.Type.IsByRef)
                 {
+                    var noRef = new TypeSignatureBuilder(parameter.Type)
+                        .WithByRef(false)
+                        .WithIsIn(false)
+                        .WithIsOut(false)
+                        .WithIndirectionLevel(parameter.Type.IndirectionLevels + 1)
+                        .Build();
                     sb.AppendLine
                     (
-                        ind + $"fixed ({parameter.Type.GenericTypes[0].Name}* {parameter.Name}Ptr = &{parameter.Name})"
+                        ind + $"fixed ({noRef} {parameter.Name}Ptr = &{parameter.Name})"
                     );
                     sb.AppendLine(ind + "{");
-                    parameterInvocations.Add
-                    (
-                        (new TypeSignatureBuilder(parameter.Type.GenericTypes[0]).WithIndirectionLevel(1).Build(),
-                            $"{parameter.Name}Ptr")
-                    );
+                    parameterInvocations.Add((noRef, $"{parameter.Name}Ptr"));
                     ind += "    ";
                     epilogue.Add
                     (
@@ -162,9 +169,13 @@ namespace Silk.NET.BuildTools.Cpp
                 }
             }
 
-            if (function.ReturnType.ToString() == "void")
+            if (function.ReturnType.ToString() != "void")
             {
-                sb.Append(ind + "return ");
+                sb.Append(ind + "ret = ");
+            }
+            else
+            {
+                sb.Append(ind);
             }
 
             var conv = function.Convention switch
@@ -177,13 +188,25 @@ namespace Silk.NET.BuildTools.Cpp
                 _ => "cdecl"
             };
 
-            sb.Append($"((delegate* {conv}<{string.Join(", ", parameterInvocations.Select(x => x.Type))}>)");
+            var fnPtrSig = string.Join(", ", parameterInvocations.Select(x => x.Type.ToString()));
+            if (!string.IsNullOrWhiteSpace(fnPtrSig))
+            {
+                fnPtrSig += ", ";
+            }
+
+            fnPtrSig += function.ReturnType;
+            sb.Append($"((delegate* {conv}<{fnPtrSig}>)");
             sb.Append($"LpVtbl[{index}])");
             sb.AppendLine("(" + string.Join(", ", parameterInvocations.Select(x => x.Parameter)) + ");");
 
             for (var i = epilogue.Count - 1; i >= 0; i--)
             {
                 epilogue[i]();
+            }
+
+            if (function.ReturnType.ToString() != "void")
+            {
+                sb.AppendLine("    return ret;");
             }
 
             sb.AppendLine("}");

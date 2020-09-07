@@ -19,5 +19,53 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "CD3D11_VIEWPORT")]
     public unsafe partial struct CD3D11Viewport
     {
+        public CD3D11Viewport
+        (
+            float topLeftX = default,
+            float topLeftY = default,
+            float width = default,
+            float height = default,
+            float minDepth = default,
+            float maxDepth = default
+        )
+        {
+            TopLeftX = topLeftX;
+            TopLeftY = topLeftY;
+            Width = width;
+            Height = height;
+            MinDepth = minDepth;
+            MaxDepth = maxDepth;
+        }
+
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "TopLeftX")]
+        public float TopLeftX;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "TopLeftY")]
+        public float TopLeftY;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "Width")]
+        public float Width;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "Height")]
+        public float Height;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "MinDepth")]
+        public float MinDepth;
+
+        [NativeName("Type", "FLOAT")]
+        [NativeName("Type.Name", "FLOAT")]
+        [NativeName("Name", "MaxDepth")]
+        public float MaxDepth;
     }
 }

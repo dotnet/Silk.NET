@@ -419,15 +419,15 @@ namespace Silk.NET.OpenGL.Legacy
         [NativeName("Name", "GL_AUX3")]
         Aux3 = 0x40C,
         [NativeName("Name", "GL_2D")]
-        C2D = 0x600,
+        Gl2D = 0x600,
         [NativeName("Name", "GL_3D")]
-        C3D = 0x601,
+        Gl3D = 0x601,
         [NativeName("Name", "GL_3D_COLOR")]
-        C3DColor = 0x602,
+        Gl3DColor = 0x602,
         [NativeName("Name", "GL_3D_COLOR_TEXTURE")]
-        C3DColorTexture = 0x603,
+        Gl3DColorTexture = 0x603,
         [NativeName("Name", "GL_4D_COLOR_TEXTURE")]
-        C4DColorTexture = 0x604,
+        Gl4DColorTexture = 0x604,
         [NativeName("Name", "GL_PASS_THROUGH_TOKEN")]
         PassThroughToken = 0x700,
         [NativeName("Name", "GL_POINT_TOKEN")]
@@ -767,11 +767,11 @@ namespace Silk.NET.OpenGL.Legacy
         [NativeName("Name", "GL_COMPILE_AND_EXECUTE")]
         CompileAndExecute = 0x1301,
         [NativeName("Name", "GL_2_BYTES")]
-        C2Bytes = 0x1407,
+        Gl2Bytes = 0x1407,
         [NativeName("Name", "GL_3_BYTES")]
-        C3Bytes = 0x1408,
+        Gl3Bytes = 0x1408,
         [NativeName("Name", "GL_4_BYTES")]
-        C4Bytes = 0x1409,
+        Gl4Bytes = 0x1409,
         [NativeName("Name", "GL_EMISSION")]
         Emission = 0x1600,
         [NativeName("Name", "GL_SHININESS")]

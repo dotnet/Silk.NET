@@ -8818,7 +8818,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 501, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        public static unsafe int BuildAudioCVT(this Sdl thisApi, Span<AudioCvt> cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate)
+        public static unsafe int BuildAudioCVT(this Sdl thisApi, Span<AudioCVT> cvt, ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate)
         {
             // SpanOverloader
             return thisApi.BuildAudioCVT(ref cvt.GetPinnableReference(), src_format, src_channels, src_rate, dst_format, dst_channels, dst_rate);
@@ -8826,7 +8826,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 521, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
-        public static unsafe int ConvertAudio(this Sdl thisApi, Span<AudioCvt> cvt)
+        public static unsafe int ConvertAudio(this Sdl thisApi, Span<AudioCVT> cvt)
         {
             // SpanOverloader
             return thisApi.ConvertAudio(ref cvt.GetPinnableReference());

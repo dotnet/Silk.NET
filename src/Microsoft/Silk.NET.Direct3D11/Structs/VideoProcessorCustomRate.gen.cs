@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorCustomRate
         (
-            DXGI_RATIONAL customRate = default,
+            Silk.NET.DXGI.Rational customRate = default,
             uint outputFrames = default,
             int inputInterlaced = default,
             uint inputFramesOrFields = default
@@ -37,7 +37,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "DXGI_RATIONAL")]
         [NativeName("Type.Name", "DXGI_RATIONAL")]
         [NativeName("Name", "CustomRate")]
-        public DXGI_RATIONAL CustomRate;
+        public Silk.NET.DXGI.Rational CustomRate;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
