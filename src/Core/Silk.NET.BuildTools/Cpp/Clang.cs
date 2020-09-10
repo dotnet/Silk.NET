@@ -1079,6 +1079,11 @@ namespace Silk.NET.BuildTools.Cpp
                     return;
                 }
 
+                if (@struct.Vtbl.Any(x => x.NativeName == cxxMethodDecl.Name))
+                {
+                    return;
+                }
+
                 if (task.ExcludedNativeNames.Contains(cxxMethodDecl.Name))
                 {
                     vtblIndex += 1;

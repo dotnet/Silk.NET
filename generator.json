@@ -827,6 +827,7 @@
                     "d3d11_2",
                     "d3d11_3",
                     "d3d11_4",
+                    "d3d11shader",
                     "d3d11shadertracing",
                     "d3d11sdklayers"
                 ]

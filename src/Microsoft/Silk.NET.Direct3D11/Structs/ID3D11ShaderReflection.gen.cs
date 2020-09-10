@@ -14,12 +14,12 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D11
 {
-    [NativeName("Name", "ID3D12ShaderReflection")]
-    public unsafe partial struct ID3D12ShaderReflection
+    [NativeName("Name", "ID3D11ShaderReflection")]
+    public unsafe partial struct ID3D11ShaderReflection
     {
-        public ID3D12ShaderReflection
+        public ID3D11ShaderReflection
         (
             void** lpVtbl = default
         )
@@ -35,10 +35,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
                 return ret;
             }
         }
@@ -46,12 +46,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
                 }
                 return ret;
             }
@@ -60,12 +60,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
                 }
                 return ret;
             }
@@ -74,14 +74,14 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppvObjectPtr = &ppvObject)
                     {
-                        ret = ((delegate* cdecl<ID3D12ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                     }
                 }
                 return ret;
@@ -91,10 +91,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint AddRef()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint>)LpVtbl[1])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[1])(@this);
                 return ret;
             }
         }
@@ -102,10 +102,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint Release()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint>)LpVtbl[2])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[2])(@this);
                 return ret;
             }
         }
@@ -113,10 +113,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetDesc(ShaderDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, ShaderDesc*, int>)LpVtbl[3])(@this, pDesc);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, ShaderDesc*, int>)LpVtbl[3])(@this, pDesc);
                 return ret;
             }
         }
@@ -124,61 +124,61 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetDesc(ref ShaderDesc pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (ShaderDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, ShaderDesc*, int>)LpVtbl[3])(@this, pDescPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, ShaderDesc*, int>)LpVtbl[3])(@this, pDescPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index)
+        public unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
-                ID3D12ShaderReflectionConstantBuffer* ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, ID3D12ShaderReflectionConstantBuffer*>)LpVtbl[4])(@this, Index);
+                ID3D11ShaderReflectionConstantBuffer* ret = default;
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[4])(@this, Index);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName(byte* Name)
+        public unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(byte* Name)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
-                ID3D12ShaderReflectionConstantBuffer* ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ID3D12ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, Name);
+                ID3D11ShaderReflectionConstantBuffer* ret = default;
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, Name);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName(ref byte Name)
+        public unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(ref byte Name)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
-                ID3D12ShaderReflectionConstantBuffer* ret = default;
+                ID3D11ShaderReflectionConstantBuffer* ret = default;
                 fixed (byte* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ID3D12ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionConstantBuffer* GetConstantBufferByName(string Name)
+        public unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(string Name)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
-                ID3D12ShaderReflectionConstantBuffer* ret = default;
+                ID3D11ShaderReflectionConstantBuffer* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ID3D12ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 return ret;
             }
@@ -187,10 +187,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetResourceBindingDesc(uint ResourceIndex, ShaderInputBindDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, ShaderInputBindDesc*, int>)LpVtbl[6])(@this, ResourceIndex, pDesc);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, ShaderInputBindDesc*, int>)LpVtbl[6])(@this, ResourceIndex, pDesc);
                 return ret;
             }
         }
@@ -198,12 +198,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetResourceBindingDesc(uint ResourceIndex, ref ShaderInputBindDesc pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, ShaderInputBindDesc*, int>)LpVtbl[6])(@this, ResourceIndex, pDescPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, ShaderInputBindDesc*, int>)LpVtbl[6])(@this, ResourceIndex, pDescPtr);
                 }
                 return ret;
             }
@@ -212,10 +212,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetInputParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[7])(@this, ParameterIndex, pDesc);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[7])(@this, ParameterIndex, pDesc);
                 return ret;
             }
         }
@@ -223,12 +223,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetInputParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (SignatureParameterDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[7])(@this, ParameterIndex, pDescPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[7])(@this, ParameterIndex, pDescPtr);
                 }
                 return ret;
             }
@@ -237,10 +237,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetOutputParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[8])(@this, ParameterIndex, pDesc);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[8])(@this, ParameterIndex, pDesc);
                 return ret;
             }
         }
@@ -248,12 +248,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetOutputParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (SignatureParameterDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[8])(@this, ParameterIndex, pDescPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[8])(@this, ParameterIndex, pDescPtr);
                 }
                 return ret;
             }
@@ -262,10 +262,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetPatchConstantParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[9])(@this, ParameterIndex, pDesc);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[9])(@this, ParameterIndex, pDesc);
                 return ret;
             }
         }
@@ -273,50 +273,50 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetPatchConstantParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (SignatureParameterDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[9])(@this, ParameterIndex, pDescPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[9])(@this, ParameterIndex, pDescPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionVariable* GetVariableByName(byte* Name)
+        public unsafe ID3D11ShaderReflectionVariable* GetVariableByName(byte* Name)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
-                ID3D12ShaderReflectionVariable* ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[10])(@this, Name);
+                ID3D11ShaderReflectionVariable* ret = default;
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, Name);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionVariable* GetVariableByName(ref byte Name)
+        public unsafe ID3D11ShaderReflectionVariable* GetVariableByName(ref byte Name)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
-                ID3D12ShaderReflectionVariable* ret = default;
+                ID3D11ShaderReflectionVariable* ret = default;
                 fixed (byte* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionVariable* GetVariableByName(string Name)
+        public unsafe ID3D11ShaderReflectionVariable* GetVariableByName(string Name)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
-                ID3D12ShaderReflectionVariable* ret = default;
+                ID3D11ShaderReflectionVariable* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 return ret;
             }
@@ -325,10 +325,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetResourceBindingDescByName(byte* Name, ShaderInputBindDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, Name, pDesc);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, Name, pDesc);
                 return ret;
             }
         }
@@ -336,12 +336,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetResourceBindingDescByName(byte* Name, ref ShaderInputBindDesc pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, Name, pDescPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, Name, pDescPtr);
                 }
                 return ret;
             }
@@ -350,12 +350,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetResourceBindingDescByName(ref byte Name, ShaderInputBindDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (byte* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
                 }
                 return ret;
             }
@@ -364,14 +364,14 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetResourceBindingDescByName(ref byte Name, ref ShaderInputBindDesc pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (byte* NamePtr = &Name)
                 {
                     fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
+                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
                     }
                 }
                 return ret;
@@ -381,11 +381,11 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetResourceBindingDescByName(string Name, ShaderInputBindDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 return ret;
             }
@@ -394,13 +394,13 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetResourceBindingDescByName(string Name, ref ShaderInputBindDesc pDesc)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
                 fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
                 }
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 return ret;
@@ -410,10 +410,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint GetMovInstructionCount()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint>)LpVtbl[12])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[12])(@this);
                 return ret;
             }
         }
@@ -421,10 +421,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint GetMovcInstructionCount()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint>)LpVtbl[13])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[13])(@this);
                 return ret;
             }
         }
@@ -432,10 +432,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint GetConversionInstructionCount()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint>)LpVtbl[14])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[14])(@this);
                 return ret;
             }
         }
@@ -443,10 +443,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint GetBitwiseInstructionCount()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint>)LpVtbl[15])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[15])(@this);
                 return ret;
             }
         }
@@ -454,10 +454,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public Silk.NET.Core.Native.Primitive GetGSInputPrimitive()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 Silk.NET.Core.Native.Primitive ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, Silk.NET.Core.Native.Primitive>)LpVtbl[16])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.Primitive>)LpVtbl[16])(@this);
                 return ret;
             }
         }
@@ -465,10 +465,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int IsSampleFrequencyShader()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, int>)LpVtbl[17])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, int>)LpVtbl[17])(@this);
                 return ret;
             }
         }
@@ -476,10 +476,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint GetNumInterfaceSlots()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint>)LpVtbl[18])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[18])(@this);
                 return ret;
             }
         }
@@ -487,10 +487,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetMinFeatureLevel(Silk.NET.Core.Native.FeatureLevel* pLevel)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, Silk.NET.Core.Native.FeatureLevel*, int>)LpVtbl[19])(@this, pLevel);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.FeatureLevel*, int>)LpVtbl[19])(@this, pLevel);
                 return ret;
             }
         }
@@ -498,12 +498,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetMinFeatureLevel(ref Silk.NET.Core.Native.FeatureLevel pLevel)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
                 fixed (Silk.NET.Core.Native.FeatureLevel* pLevelPtr = &pLevel)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, Silk.NET.Core.Native.FeatureLevel*, int>)LpVtbl[19])(@this, pLevelPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.FeatureLevel*, int>)LpVtbl[19])(@this, pLevelPtr);
                 }
                 return ret;
             }
@@ -512,10 +512,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe uint GetThreadGroupSize(uint* pSizeX, uint* pSizeY, uint* pSizeZ)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeY, pSizeZ);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeY, pSizeZ);
                 return ret;
             }
         }
@@ -523,12 +523,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe uint GetThreadGroupSize(uint* pSizeX, uint* pSizeY, ref uint pSizeZ)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
                 fixed (uint* pSizeZPtr = &pSizeZ)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeY, pSizeZPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeY, pSizeZPtr);
                 }
                 return ret;
             }
@@ -537,12 +537,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe uint GetThreadGroupSize(uint* pSizeX, ref uint pSizeY, uint* pSizeZ)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
                 fixed (uint* pSizeYPtr = &pSizeY)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeYPtr, pSizeZ);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeYPtr, pSizeZ);
                 }
                 return ret;
             }
@@ -551,14 +551,14 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe uint GetThreadGroupSize(uint* pSizeX, ref uint pSizeY, ref uint pSizeZ)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
                 fixed (uint* pSizeYPtr = &pSizeY)
                 {
                     fixed (uint* pSizeZPtr = &pSizeZ)
                     {
-                        ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeYPtr, pSizeZPtr);
+                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeYPtr, pSizeZPtr);
                     }
                 }
                 return ret;
@@ -568,12 +568,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe uint GetThreadGroupSize(ref uint pSizeX, uint* pSizeY, uint* pSizeZ)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
                 fixed (uint* pSizeXPtr = &pSizeX)
                 {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeY, pSizeZ);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeY, pSizeZ);
                 }
                 return ret;
             }
@@ -582,14 +582,14 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe uint GetThreadGroupSize(ref uint pSizeX, uint* pSizeY, ref uint pSizeZ)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
                 fixed (uint* pSizeXPtr = &pSizeX)
                 {
                     fixed (uint* pSizeZPtr = &pSizeZ)
                     {
-                        ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeY, pSizeZPtr);
+                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeY, pSizeZPtr);
                     }
                 }
                 return ret;
@@ -599,14 +599,14 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe uint GetThreadGroupSize(ref uint pSizeX, ref uint pSizeY, uint* pSizeZ)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
                 fixed (uint* pSizeXPtr = &pSizeX)
                 {
                     fixed (uint* pSizeYPtr = &pSizeY)
                     {
-                        ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeYPtr, pSizeZ);
+                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeYPtr, pSizeZ);
                     }
                 }
                 return ret;
@@ -616,7 +616,7 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint GetThreadGroupSize(ref uint pSizeX, ref uint pSizeY, ref uint pSizeZ)
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 uint ret = default;
                 fixed (uint* pSizeXPtr = &pSizeX)
@@ -625,7 +625,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (uint* pSizeZPtr = &pSizeZ)
                         {
-                            ret = ((delegate* cdecl<ID3D12ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeYPtr, pSizeZPtr);
+                            ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeYPtr, pSizeZPtr);
                         }
                     }
                 }
@@ -636,10 +636,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public ulong GetRequiresFlags()
         {
-            fixed (ID3D12ShaderReflection* @this = &this)
+            fixed (ID3D11ShaderReflection* @this = &this)
             {
                 ulong ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflection*, ulong>)LpVtbl[21])(@this);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, ulong>)LpVtbl[21])(@this);
                 return ret;
             }
         }

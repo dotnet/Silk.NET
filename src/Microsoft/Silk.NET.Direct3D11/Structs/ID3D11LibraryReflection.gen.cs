@@ -14,12 +14,12 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D11
 {
-    [NativeName("Name", "ID3D12LibraryReflection")]
-    public unsafe partial struct ID3D12LibraryReflection
+    [NativeName("Name", "ID3D11LibraryReflection")]
+    public unsafe partial struct ID3D11LibraryReflection
     {
-        public ID3D12LibraryReflection
+        public ID3D11LibraryReflection
         (
             void** lpVtbl = default
         )
@@ -35,10 +35,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+                ret = ((delegate* cdecl<ID3D11LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
                 return ret;
             }
         }
@@ -46,12 +46,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
                 int ret = default;
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<ID3D12LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* cdecl<ID3D11LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
                 }
                 return ret;
             }
@@ -60,12 +60,12 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* cdecl<ID3D12LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                    ret = ((delegate* cdecl<ID3D11LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
                 }
                 return ret;
             }
@@ -74,14 +74,14 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppvObjectPtr = &ppvObject)
                     {
-                        ret = ((delegate* cdecl<ID3D12LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                        ret = ((delegate* cdecl<ID3D11LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                     }
                 }
                 return ret;
@@ -91,10 +91,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint AddRef()
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12LibraryReflection*, uint>)LpVtbl[1])(@this);
+                ret = ((delegate* cdecl<ID3D11LibraryReflection*, uint>)LpVtbl[1])(@this);
                 return ret;
             }
         }
@@ -102,10 +102,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public uint Release()
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12LibraryReflection*, uint>)LpVtbl[2])(@this);
+                ret = ((delegate* cdecl<ID3D11LibraryReflection*, uint>)LpVtbl[2])(@this);
                 return ret;
             }
         }
@@ -113,10 +113,10 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public unsafe int GetDesc(LibraryDesc* pDesc)
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12LibraryReflection*, LibraryDesc*, int>)LpVtbl[3])(@this, pDesc);
+                ret = ((delegate* cdecl<ID3D11LibraryReflection*, LibraryDesc*, int>)LpVtbl[3])(@this, pDesc);
                 return ret;
             }
         }
@@ -124,24 +124,24 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         public int GetDesc(ref LibraryDesc pDesc)
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
                 int ret = default;
                 fixed (LibraryDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D12LibraryReflection*, LibraryDesc*, int>)LpVtbl[3])(@this, pDescPtr);
+                    ret = ((delegate* cdecl<ID3D11LibraryReflection*, LibraryDesc*, int>)LpVtbl[3])(@this, pDescPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12FunctionReflection* GetFunctionByIndex(int FunctionIndex)
+        public unsafe ID3D11FunctionReflection* GetFunctionByIndex(int FunctionIndex)
         {
-            fixed (ID3D12LibraryReflection* @this = &this)
+            fixed (ID3D11LibraryReflection* @this = &this)
             {
-                ID3D12FunctionReflection* ret = default;
-                ret = ((delegate* cdecl<ID3D12LibraryReflection*, int, ID3D12FunctionReflection*>)LpVtbl[4])(@this, FunctionIndex);
+                ID3D11FunctionReflection* ret = default;
+                ret = ((delegate* cdecl<ID3D11LibraryReflection*, int, ID3D11FunctionReflection*>)LpVtbl[4])(@this, FunctionIndex);
                 return ret;
             }
         }
