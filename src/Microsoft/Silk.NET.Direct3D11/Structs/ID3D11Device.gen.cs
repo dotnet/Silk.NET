@@ -46661,12 +46661,12 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public D3DFeatureLevel GetFeatureLevel()
+        public Silk.NET.Core.Native.FeatureLevel GetFeatureLevel()
         {
             fixed (ID3D11Device* @this = &this)
             {
-                D3DFeatureLevel ret = default;
-                ret = ((delegate* cdecl<ID3D11Device*, D3DFeatureLevel>)LpVtbl[37])(@this);
+                Silk.NET.Core.Native.FeatureLevel ret = default;
+                ret = ((delegate* cdecl<ID3D11Device*, Silk.NET.Core.Native.FeatureLevel>)LpVtbl[37])(@this);
                 return ret;
             }
         }

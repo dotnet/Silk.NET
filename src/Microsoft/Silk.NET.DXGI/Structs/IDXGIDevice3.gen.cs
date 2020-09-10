@@ -403,25 +403,25 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetAdapter(IDXGIAdapter** pAdapter)
+        public unsafe int GetAdapter(Silk.NET.DXGI.IDXGIAdapter** pAdapter)
         {
             fixed (IDXGIDevice3* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDevice3*, IDXGIAdapter**, int>)LpVtbl[7])(@this, pAdapter);
+                ret = ((delegate* cdecl<IDXGIDevice3*, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, pAdapter);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetAdapter(ref IDXGIAdapter* pAdapter)
+        public unsafe int GetAdapter(ref Silk.NET.DXGI.IDXGIAdapter* pAdapter)
         {
             fixed (IDXGIDevice3* @this = &this)
             {
                 int ret = default;
-                fixed (IDXGIAdapter** pAdapterPtr = &pAdapter)
+                fixed (Silk.NET.DXGI.IDXGIAdapter** pAdapterPtr = &pAdapter)
                 {
-                    ret = ((delegate* cdecl<IDXGIDevice3*, IDXGIAdapter**, int>)LpVtbl[7])(@this, pAdapterPtr);
+                    ret = ((delegate* cdecl<IDXGIDevice3*, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, pAdapterPtr);
                 }
                 return ret;
             }

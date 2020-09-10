@@ -403,25 +403,25 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapters(uint Adapter, IDXGIAdapter** ppAdapter)
+        public unsafe int EnumAdapters(uint Adapter, Silk.NET.DXGI.IDXGIAdapter** ppAdapter)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory1*, uint, IDXGIAdapter**, int>)LpVtbl[7])(@this, Adapter, ppAdapter);
+                ret = ((delegate* cdecl<IDXGIFactory1*, uint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, Adapter, ppAdapter);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapters(uint Adapter, ref IDXGIAdapter* ppAdapter)
+        public unsafe int EnumAdapters(uint Adapter, ref Silk.NET.DXGI.IDXGIAdapter* ppAdapter)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
-                fixed (IDXGIAdapter** ppAdapterPtr = &ppAdapter)
+                fixed (Silk.NET.DXGI.IDXGIAdapter** ppAdapterPtr = &ppAdapter)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory1*, uint, IDXGIAdapter**, int>)LpVtbl[7])(@this, Adapter, ppAdapterPtr);
+                    ret = ((delegate* cdecl<IDXGIFactory1*, uint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, Adapter, ppAdapterPtr);
                 }
                 return ret;
             }
@@ -464,55 +464,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, SwapChainDesc* pDesc, IDXGISwapChain** ppSwapChain)
+        public unsafe int CreateSwapChain(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, SwapChainDesc* pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDesc, ppSwapChain);
+                ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDesc, ppSwapChain);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, SwapChainDesc* pDesc, ref IDXGISwapChain* ppSwapChain)
+        public unsafe int CreateSwapChain(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, SwapChainDesc* pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
-                fixed (IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
+                fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDesc, ppSwapChainPtr);
+                    ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDesc, ppSwapChainPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref SwapChainDesc pDesc, IDXGISwapChain** ppSwapChain)
+        public unsafe int CreateSwapChain(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref SwapChainDesc pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
                 fixed (SwapChainDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDescPtr, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDescPtr, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref SwapChainDesc pDesc, ref IDXGISwapChain* ppSwapChain)
+        public unsafe int CreateSwapChain(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref SwapChainDesc pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
                 fixed (SwapChainDesc* pDescPtr = &pDesc)
                 {
-                    fixed (IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
+                    fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDescPtr, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDescPtr, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -520,30 +520,30 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, SwapChainDesc* pDesc, IDXGISwapChain** ppSwapChain)
+        public unsafe int CreateSwapChain(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, SwapChainDesc* pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
                 fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDesc, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDesc, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, SwapChainDesc* pDesc, ref IDXGISwapChain* ppSwapChain)
+        public unsafe int CreateSwapChain(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, SwapChainDesc* pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
                 fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
                 {
-                    fixed (IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
+                    fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDesc, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDesc, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -551,7 +551,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref SwapChainDesc pDesc, IDXGISwapChain** ppSwapChain)
+        public unsafe int CreateSwapChain(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref SwapChainDesc pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
@@ -560,7 +560,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (SwapChainDesc* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDescPtr, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDescPtr, ppSwapChain);
                     }
                 }
                 return ret;
@@ -568,7 +568,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref SwapChainDesc pDesc, ref IDXGISwapChain* ppSwapChain)
+        public unsafe int CreateSwapChain(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref SwapChainDesc pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
@@ -577,9 +577,9 @@ namespace Silk.NET.DXGI
                 {
                     fixed (SwapChainDesc* pDescPtr = &pDesc)
                     {
-                        fixed (IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
+                        fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDescPtr, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactory1*, Silk.NET.Core.Runtime.Windows.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDescPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -588,25 +588,25 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSoftwareAdapter(IntPtr Module, IDXGIAdapter** ppAdapter)
+        public unsafe int CreateSoftwareAdapter(IntPtr Module, Silk.NET.DXGI.IDXGIAdapter** ppAdapter)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory1*, IntPtr, IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapter);
+                ret = ((delegate* cdecl<IDXGIFactory1*, IntPtr, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapter);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSoftwareAdapter(IntPtr Module, ref IDXGIAdapter* ppAdapter)
+        public unsafe int CreateSoftwareAdapter(IntPtr Module, ref Silk.NET.DXGI.IDXGIAdapter* ppAdapter)
         {
             fixed (IDXGIFactory1* @this = &this)
             {
                 int ret = default;
-                fixed (IDXGIAdapter** ppAdapterPtr = &ppAdapter)
+                fixed (Silk.NET.DXGI.IDXGIAdapter** ppAdapterPtr = &ppAdapter)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory1*, IntPtr, IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapterPtr);
+                    ret = ((delegate* cdecl<IDXGIFactory1*, IntPtr, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapterPtr);
                 }
                 return ret;
             }

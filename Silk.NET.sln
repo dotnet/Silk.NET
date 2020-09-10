@@ -40,6 +40,7 @@ ProjectSection(SolutionItems) = preProject
 	generator.json = generator.json
 	build\csharp_typemap.json = build\csharp_typemap.json
 	build\gl_typemap.json = build\gl_typemap.json
+	build\dx_typemap.json = build\dx_typemap.json
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFAC}") = "Silk.NET.Input.Common", "src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj", "{8FFF49D6-B029-400B-8510-1A088868DFA6}"

@@ -321,7 +321,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write the class to.</param>
         public static void WriteNameContainer(this Project project, Profile profile, string file, BindTask task)
         {
-            if (File.Exists(file))
+            if (File.Exists(file) || task.Controls.Contains("no-name-container"))
             {
                 return;
             }
@@ -372,6 +372,12 @@ namespace Silk.NET.BuildTools.Bind
             // }
             foreach (var @class in project.Classes)
             {
+                if ((@class.NativeApis.Values.Sum(x => x.Functions.Count) + @class.Functions.Count) == 0)
+                {
+                    Console.WriteLine($"Warning: No functions, writing of class \"{@class.ClassName}\" skipped...");
+                    continue;
+                }
+            
                 if (project.IsRoot)
                 {
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs"));

@@ -880,11 +880,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public void IASetPrimitiveTopology(D3DPrimitiveTopology Topology)
+        public void IASetPrimitiveTopology(Silk.NET.Core.Native.PrimitiveTopology Topology)
         {
             fixed (ID3D11DeviceContext3* @this = &this)
             {
-                ((delegate* cdecl<ID3D11DeviceContext3*, D3DPrimitiveTopology, void>)LpVtbl[24])(@this, Topology);
+                ((delegate* cdecl<ID3D11DeviceContext3*, Silk.NET.Core.Native.PrimitiveTopology, void>)LpVtbl[24])(@this, Topology);
             }
         }
 
@@ -3301,22 +3301,22 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void IAGetPrimitiveTopology(D3DPrimitiveTopology* pTopology)
+        public unsafe void IAGetPrimitiveTopology(Silk.NET.Core.Native.PrimitiveTopology* pTopology)
         {
             fixed (ID3D11DeviceContext3* @this = &this)
             {
-                ((delegate* cdecl<ID3D11DeviceContext3*, D3DPrimitiveTopology*, void>)LpVtbl[83])(@this, pTopology);
+                ((delegate* cdecl<ID3D11DeviceContext3*, Silk.NET.Core.Native.PrimitiveTopology*, void>)LpVtbl[83])(@this, pTopology);
             }
         }
 
         /// <summary>To be added.</summary>
-        public void IAGetPrimitiveTopology(ref D3DPrimitiveTopology pTopology)
+        public void IAGetPrimitiveTopology(ref Silk.NET.Core.Native.PrimitiveTopology pTopology)
         {
             fixed (ID3D11DeviceContext3* @this = &this)
             {
-                fixed (D3DPrimitiveTopology* pTopologyPtr = &pTopology)
+                fixed (Silk.NET.Core.Native.PrimitiveTopology* pTopologyPtr = &pTopology)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext3*, D3DPrimitiveTopology*, void>)LpVtbl[83])(@this, pTopologyPtr);
+                    ((delegate* cdecl<ID3D11DeviceContext3*, Silk.NET.Core.Native.PrimitiveTopology*, void>)LpVtbl[83])(@this, pTopologyPtr);
                 }
             }
         }

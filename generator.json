@@ -610,6 +610,70 @@
             ]
         },
         {
+            "profileName": "D3DCommon",
+            "sources": [
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D3DCommon.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "core",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-csproj",
+                "no-extra-dir",
+                "no-name-containers"
+            ],
+            "prefix": "D3D",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                ],
+                "classes": {
+                    "D3DCommon.h": "[Core]D3DCommon"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+                "_D3D_CBUFFER_TYPE": "CBufferType",
+                "_D3D_SHADER_CBUFFER_FLAGS": "ShaderCBufferFlags"
+            },
+            "bakery": {
+                "profileNames": [
+                    "D3DCommon"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Core/Silk.NET.Core/Native",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Core.Native",
+            "extensionsNamespace": "Silk.NET.Core.Native.Extensions",
+            "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "DXGI",
             "sources": [
                 "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/dxgi.h",
@@ -696,9 +760,7 @@
             },
             "typeMaps": [
                 {
-                    "DXGI_FORMAT": "Silk.NET.DXGI.Format"
-                },
-                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]
@@ -741,7 +803,6 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D3DCommon.h"
                 ],
                 "classes": {
                     "d3d11.h": "[Core]D3D11",
@@ -766,7 +827,6 @@
                     "d3d11_2",
                     "d3d11_3",
                     "d3d11_4",
-                    "d3d11shader",
                     "d3d11shadertracing",
                     "d3d11sdklayers"
                 ]
@@ -790,17 +850,88 @@
             },
             "typeMaps": [
                 {
-                    "DXGI_FORMAT": "Silk.NET.DXGI.Format",
-                    "DXGI_COLOR_SPACE_TYPE": "Silk.NET.DXGI.ColorSpaceType",
-                    "DXGI_SAMPLE_DESC": "Silk.NET.DXGI.SampleDesc",
-                    "DXGI_SWAP_CHAIN_DESC": "Silk.NET.DXGI.SwapChainDesc",
-                    "DXGI_RATIONAL": "Silk.NET.DXGI.Rational",
-                    "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType",
-                    "IDXGIAdapter": "Silk.NET.DXGI.IDXGIAdapter",
-                    "IDXGISwapChain": "Silk.NET.DXGI.IDXGISwapChain",
                     "D3D11_AUTHENTICATED_PROTECTION_FLAGS::__MIDL___MIDL_itf_d3d11_0000_0034_0001": "MIDLMIDLItfD3d11000000340001"
                 },
                 {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "D3D12",
+            "sources": [
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12shader.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12video.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d12sdklayers.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d3d12",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "D3D12",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                ],
+                "classes": {
+                    "d3d12.h": "[Core]D3D12",
+                    "d3d12shader.h": "[Core]D3D12",
+                    "d3d12video.h": "[Core]D3D12",
+                    "d3d12sdklayers.h": "[Core]D3D12"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "d3d12",
+                    "d3d12shader",
+                    "d3d12video",
+                    "d3d12sdklayers"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct3D12",
+            "extensionsNamespace": "Silk.NET.Direct3D12.Extensions",
+            "nameContainer": {
+                "linux-x64": "libd3d12.so",
+                "win-x64": "d3d12.dll",
+                "win-x86": "d3d12.dll",
+                "osx-x64": "libd3d12.dylib",
+                "android": "libd3d12.so",
+                "iOS": "__Internal",
+                "className": "D3D12LibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]
