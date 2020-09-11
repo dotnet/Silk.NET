@@ -23,12 +23,12 @@ namespace Silk.NET.Direct3D11
         (
             byte* name = default,
             byte* semanticName = default,
-            Silk.NET.Core.Native.ShaderVariableType type = default,
-            Silk.NET.Core.Native.ShaderVariableClass @class = default,
+            Silk.NET.Core.Native.D3DShaderVariableType type = default,
+            Silk.NET.Core.Native.D3DShaderVariableClass @class = default,
             uint rows = default,
             uint columns = default,
-            Silk.NET.Core.Native.InterpolationMode interpolationMode = default,
-            Silk.NET.Core.Native.ParameterFlags flags = default,
+            Silk.NET.Core.Native.D3DInterpolationMode interpolationMode = default,
+            Silk.NET.Core.Native.D3DParameterFlags flags = default,
             uint firstInRegister = default,
             uint firstInComponent = default,
             uint firstOutRegister = default,
@@ -63,12 +63,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D_SHADER_VARIABLE_TYPE")]
         [NativeName("Type.Name", "D3D_SHADER_VARIABLE_TYPE")]
         [NativeName("Name", "Type")]
-        public Silk.NET.Core.Native.ShaderVariableType Type;
+        public Silk.NET.Core.Native.D3DShaderVariableType Type;
 
         [NativeName("Type", "D3D_SHADER_VARIABLE_CLASS")]
         [NativeName("Type.Name", "D3D_SHADER_VARIABLE_CLASS")]
         [NativeName("Name", "Class")]
-        public Silk.NET.Core.Native.ShaderVariableClass Class;
+        public Silk.NET.Core.Native.D3DShaderVariableClass Class;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -83,12 +83,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D_INTERPOLATION_MODE")]
         [NativeName("Type.Name", "D3D_INTERPOLATION_MODE")]
         [NativeName("Name", "InterpolationMode")]
-        public Silk.NET.Core.Native.InterpolationMode InterpolationMode;
+        public Silk.NET.Core.Native.D3DInterpolationMode InterpolationMode;
 
         [NativeName("Type", "D3D_PARAMETER_FLAGS")]
         [NativeName("Type.Name", "D3D_PARAMETER_FLAGS")]
         [NativeName("Name", "Flags")]
-        public Silk.NET.Core.Native.ParameterFlags Flags;
+        public Silk.NET.Core.Native.D3DParameterFlags Flags;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

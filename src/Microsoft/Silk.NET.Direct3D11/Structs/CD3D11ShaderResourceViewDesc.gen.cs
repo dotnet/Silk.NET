@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public CD3D11ShaderResourceViewDesc
         (
             Silk.NET.DXGI.Format format = default,
-            Silk.NET.Core.Native.SrvDimension viewDimension = default
+            Silk.NET.Core.Native.D3DSrvDimension viewDimension = default
         )
         {
             Format = format;
@@ -38,6 +38,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D11_SRV_DIMENSION")]
         [NativeName("Type.Name", "D3D11_SRV_DIMENSION")]
         [NativeName("Name", "ViewDimension")]
-        public Silk.NET.Core.Native.SrvDimension ViewDimension;
+        public Silk.NET.Core.Native.D3DSrvDimension ViewDimension;
     }
 }

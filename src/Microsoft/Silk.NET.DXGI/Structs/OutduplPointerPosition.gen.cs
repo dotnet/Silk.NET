@@ -21,7 +21,7 @@ namespace Silk.NET.DXGI
     {
         public OutduplPointerPosition
         (
-            Silk.NET.Core.Runtime.Windows.TagPoint position = default,
+            Silk.NET.Core.Native.TagPoint position = default,
             int visible = default
         )
         {
@@ -33,7 +33,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "POINT")]
         [NativeName("Type.Name", "POINT")]
         [NativeName("Name", "Position")]
-        public Silk.NET.Core.Runtime.Windows.TagPoint Position;
+        public Silk.NET.Core.Native.TagPoint Position;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]

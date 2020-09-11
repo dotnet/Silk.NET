@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11Device")]
     public unsafe partial struct ID3D11Device
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11Device val)
+            => Unsafe.As<ID3D11Device, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D11Device* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D11Device
         (
             void** lpVtbl = default
@@ -46605,55 +46617,55 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D11Device* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11Device*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[36])(@this, guid, pData);
+                ret = ((delegate* cdecl<ID3D11Device*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[36])(@this, guid, pData);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D11Device* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D11Device*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[36])(@this, guid, pDataPtr);
+                    ret = ((delegate* cdecl<ID3D11Device*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[36])(@this, guid, pDataPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D11Device* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    ret = ((delegate* cdecl<ID3D11Device*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[36])(@this, guidPtr, pData);
+                    ret = ((delegate* cdecl<ID3D11Device*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[36])(@this, guidPtr, pData);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D11Device* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                    fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<ID3D11Device*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[36])(@this, guidPtr, pDataPtr);
+                        ret = ((delegate* cdecl<ID3D11Device*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[36])(@this, guidPtr, pDataPtr);
                     }
                 }
                 return ret;
@@ -46661,12 +46673,12 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public Silk.NET.Core.Native.FeatureLevel GetFeatureLevel()
+        public Silk.NET.Core.Native.D3DFeatureLevel GetFeatureLevel()
         {
             fixed (ID3D11Device* @this = &this)
             {
-                Silk.NET.Core.Native.FeatureLevel ret = default;
-                ret = ((delegate* cdecl<ID3D11Device*, Silk.NET.Core.Native.FeatureLevel>)LpVtbl[37])(@this);
+                Silk.NET.Core.Native.D3DFeatureLevel ret = default;
+                ret = ((delegate* cdecl<ID3D11Device*, Silk.NET.Core.Native.D3DFeatureLevel>)LpVtbl[37])(@this);
                 return ret;
             }
         }

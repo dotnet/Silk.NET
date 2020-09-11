@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,50 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11DeviceContext2")]
     public unsafe partial struct ID3D11DeviceContext2
     {
+        public static implicit operator ID3D11DeviceContext1(ID3D11DeviceContext2 val)
+            => Unsafe.As<ID3D11DeviceContext2, ID3D11DeviceContext1>(ref val);
+
+        public readonly ref ID3D11DeviceContext1 AsDeviceContext1()
+        {
+            fixed (ID3D11DeviceContext2* @this = &this)
+            {
+                return ref *(ID3D11DeviceContext1*)@this;
+            }
+        }
+
+        public static implicit operator ID3D11DeviceContext(ID3D11DeviceContext2 val)
+            => Unsafe.As<ID3D11DeviceContext2, ID3D11DeviceContext>(ref val);
+
+        public readonly ref ID3D11DeviceContext AsDeviceContext()
+        {
+            fixed (ID3D11DeviceContext2* @this = &this)
+            {
+                return ref *(ID3D11DeviceContext*)@this;
+            }
+        }
+
+        public static implicit operator ID3D11DeviceChild(ID3D11DeviceContext2 val)
+            => Unsafe.As<ID3D11DeviceContext2, ID3D11DeviceChild>(ref val);
+
+        public readonly ref ID3D11DeviceChild AsDeviceChild()
+        {
+            fixed (ID3D11DeviceContext2* @this = &this)
+            {
+                return ref *(ID3D11DeviceChild*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11DeviceContext2 val)
+            => Unsafe.As<ID3D11DeviceContext2, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D11DeviceContext2* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D11DeviceContext2
         (
             void** lpVtbl = default
@@ -312,55 +357,55 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11DeviceContext2*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+                ret = ((delegate* cdecl<ID3D11DeviceContext2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D11DeviceContext2*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                    ret = ((delegate* cdecl<ID3D11DeviceContext2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    ret = ((delegate* cdecl<ID3D11DeviceContext2*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                    ret = ((delegate* cdecl<ID3D11DeviceContext2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                    fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<ID3D11DeviceContext2*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                        ret = ((delegate* cdecl<ID3D11DeviceContext2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                     }
                 }
                 return ret;
@@ -880,11 +925,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public void IASetPrimitiveTopology(Silk.NET.Core.Native.PrimitiveTopology Topology)
+        public void IASetPrimitiveTopology(Silk.NET.Core.Native.D3DPrimitiveTopology Topology)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                ((delegate* cdecl<ID3D11DeviceContext2*, Silk.NET.Core.Native.PrimitiveTopology, void>)LpVtbl[24])(@this, Topology);
+                ((delegate* cdecl<ID3D11DeviceContext2*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)LpVtbl[24])(@this, Topology);
             }
         }
 
@@ -1620,22 +1665,22 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                ((delegate* cdecl<ID3D11DeviceContext2*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[45])(@this, NumRects, pRects);
+                ((delegate* cdecl<ID3D11DeviceContext2*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[45])(@this, NumRects, pRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public void RSSetScissorRects(uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public void RSSetScissorRects(uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
                 }
             }
         }
@@ -3301,22 +3346,22 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void IAGetPrimitiveTopology(Silk.NET.Core.Native.PrimitiveTopology* pTopology)
+        public unsafe void IAGetPrimitiveTopology(Silk.NET.Core.Native.D3DPrimitiveTopology* pTopology)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                ((delegate* cdecl<ID3D11DeviceContext2*, Silk.NET.Core.Native.PrimitiveTopology*, void>)LpVtbl[83])(@this, pTopology);
+                ((delegate* cdecl<ID3D11DeviceContext2*, Silk.NET.Core.Native.D3DPrimitiveTopology*, void>)LpVtbl[83])(@this, pTopology);
             }
         }
 
         /// <summary>To be added.</summary>
-        public void IAGetPrimitiveTopology(ref Silk.NET.Core.Native.PrimitiveTopology pTopology)
+        public void IAGetPrimitiveTopology(ref Silk.NET.Core.Native.D3DPrimitiveTopology pTopology)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                fixed (Silk.NET.Core.Native.PrimitiveTopology* pTopologyPtr = &pTopology)
+                fixed (Silk.NET.Core.Native.D3DPrimitiveTopology* pTopologyPtr = &pTopology)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, Silk.NET.Core.Native.PrimitiveTopology*, void>)LpVtbl[83])(@this, pTopologyPtr);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, Silk.NET.Core.Native.D3DPrimitiveTopology*, void>)LpVtbl[83])(@this, pTopologyPtr);
                 }
             }
         }
@@ -3856,48 +3901,48 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                ((delegate* cdecl<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[96])(@this, pNumRects, pRects);
+                ((delegate* cdecl<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[96])(@this, pNumRects, pRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 fixed (uint* pNumRectsPtr = &pNumRects)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 fixed (uint* pNumRectsPtr = &pNumRects)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                     {
-                        ((delegate* cdecl<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
+                        ((delegate* cdecl<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
                     }
                 }
             }
@@ -6105,82 +6150,82 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Core.Runtime.Windows.TagRect* pRect, uint NumRects)
+        public unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Core.Native.TagRect* pRect, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[132])(@this, pView, Color, pRect, NumRects);
+                ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pView, Color, pRect, NumRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Core.Runtime.Windows.TagRect pRect, uint NumRects)
+        public unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Core.Native.TagRect pRect, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Core.Runtime.Windows.TagRect* pRect, uint NumRects)
+        public unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Core.Native.TagRect* pRect, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 fixed (float* ColorPtr = &Color)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Core.Runtime.Windows.TagRect pRect, uint NumRects)
+        public unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Core.Native.TagRect pRect, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 fixed (float* ColorPtr = &Color)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
+                        ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Core.Runtime.Windows.TagRect* pRect, uint NumRects)
+        public unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Core.Native.TagRect* pRect, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 fixed (ID3D11View* pViewPtr = &pView)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Core.Runtime.Windows.TagRect pRect, uint NumRects)
+        public unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Core.Native.TagRect pRect, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 fixed (ID3D11View* pViewPtr = &pView)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
+                        ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Core.Runtime.Windows.TagRect* pRect, uint NumRects)
+        public unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Core.Native.TagRect* pRect, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
@@ -6188,14 +6233,14 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (float* ColorPtr = &Color)
                     {
-                        ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
+                        ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Core.Runtime.Windows.TagRect pRect, uint NumRects)
+        public void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Core.Native.TagRect pRect, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
@@ -6203,9 +6248,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (float* ColorPtr = &Color)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                        fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                         {
-                            ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
+                            ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
                         }
                     }
                 }
@@ -6213,48 +6258,48 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void DiscardView1(ID3D11View* pResourceView, Silk.NET.Core.Runtime.Windows.TagRect* pRects, uint NumRects)
+        public unsafe void DiscardView1(ID3D11View* pResourceView, Silk.NET.Core.Native.TagRect* pRects, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceView, pRects, NumRects);
+                ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceView, pRects, NumRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void DiscardView1(ID3D11View* pResourceView, ref Silk.NET.Core.Runtime.Windows.TagRect pRects, uint NumRects)
+        public unsafe void DiscardView1(ID3D11View* pResourceView, ref Silk.NET.Core.Native.TagRect pRects, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void DiscardView1(ref ID3D11View pResourceView, Silk.NET.Core.Runtime.Windows.TagRect* pRects, uint NumRects)
+        public unsafe void DiscardView1(ref ID3D11View pResourceView, Silk.NET.Core.Native.TagRect* pRects, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 fixed (ID3D11View* pResourceViewPtr = &pResourceView)
                 {
-                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
+                    ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void DiscardView1(ref ID3D11View pResourceView, ref Silk.NET.Core.Runtime.Windows.TagRect pRects, uint NumRects)
+        public void DiscardView1(ref ID3D11View pResourceView, ref Silk.NET.Core.Native.TagRect pRects, uint NumRects)
         {
             fixed (ID3D11DeviceContext2* @this = &this)
             {
                 fixed (ID3D11View* pResourceViewPtr = &pResourceView)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                     {
-                        ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Runtime.Windows.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
+                        ((delegate* cdecl<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
                     }
                 }
             }

@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIFactoryMedia")]
     public unsafe partial struct IDXGIFactoryMedia
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIFactoryMedia val)
+            => Unsafe.As<IDXGIFactoryMedia, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGIFactoryMedia* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGIFactoryMedia
         (
             void** lpVtbl = default
@@ -111,46 +123,46 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutput, ppSwapChain);
+                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutput, ppSwapChain);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutput, ppSwapChainPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -159,7 +171,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -167,21 +179,21 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutput, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -190,7 +202,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -198,7 +210,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -207,7 +219,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
                 return ret;
@@ -215,7 +227,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -226,7 +238,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -235,21 +247,21 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (T0* hSurfacePtr = &hSurface)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -258,7 +270,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -266,7 +278,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -275,7 +287,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
                 return ret;
@@ -283,7 +295,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -294,7 +306,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -303,7 +315,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -312,7 +324,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -320,7 +332,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -331,7 +343,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -340,7 +352,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -351,7 +363,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -360,7 +372,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -373,7 +385,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -383,30 +395,30 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutput, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -414,16 +426,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
                 return ret;
@@ -431,18 +443,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -451,16 +463,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDescPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDescPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -468,18 +480,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -488,18 +500,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -508,12 +520,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
@@ -521,7 +533,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -531,16 +543,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -548,18 +560,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -568,18 +580,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -588,12 +600,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -601,7 +613,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -611,18 +623,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
                         fixed (SwapChainDesc1* pDescPtr = &pDesc)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
                         }
                     }
                 }
@@ -631,12 +643,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -644,7 +656,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
                             }
                         }
                     }
@@ -654,12 +666,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -667,7 +679,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                             }
                         }
                     }
@@ -677,12 +689,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -692,7 +704,7 @@ namespace Silk.NET.DXGI
                             {
                                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                                 {
-                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                                 }
                             }
                         }
@@ -703,46 +715,46 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -751,7 +763,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -759,21 +771,21 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -782,7 +794,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -790,7 +802,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -799,7 +811,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
                 return ret;
@@ -807,7 +819,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -818,7 +830,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -827,21 +839,21 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -850,7 +862,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -858,7 +870,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -867,7 +879,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
                 return ret;
@@ -875,7 +887,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -886,7 +898,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -895,7 +907,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -904,7 +916,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -912,7 +924,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -923,7 +935,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -932,7 +944,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -943,7 +955,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -952,7 +964,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -965,7 +977,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -975,21 +987,21 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
                 fixed (T0* hSurfacePtr = &hSurface)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -998,7 +1010,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -1006,7 +1018,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1015,7 +1027,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
                 return ret;
@@ -1023,7 +1035,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1034,7 +1046,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1043,7 +1055,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1052,7 +1064,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -1060,7 +1072,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1071,7 +1083,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1080,7 +1092,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1091,7 +1103,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -1100,7 +1112,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1113,7 +1125,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1123,7 +1135,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1132,7 +1144,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -1140,7 +1152,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1151,7 +1163,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1160,7 +1172,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1171,7 +1183,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -1180,7 +1192,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1193,7 +1205,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1203,7 +1215,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1214,7 +1226,7 @@ namespace Silk.NET.DXGI
                     {
                         fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                         }
                     }
                 }
@@ -1223,7 +1235,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1236,7 +1248,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1246,7 +1258,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1259,7 +1271,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                             }
                         }
                     }
@@ -1269,7 +1281,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
@@ -1284,7 +1296,7 @@ namespace Silk.NET.DXGI
                             {
                                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                                 {
-                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                                 }
                             }
                         }
@@ -1295,30 +1307,30 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
                 return ret;
@@ -1326,16 +1338,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
                 return ret;
@@ -1343,18 +1355,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1363,16 +1375,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -1380,18 +1392,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1400,18 +1412,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -1420,12 +1432,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                     {
@@ -1433,7 +1445,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1443,16 +1455,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -1460,18 +1472,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1480,18 +1492,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -1500,12 +1512,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
@@ -1513,7 +1525,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1523,18 +1535,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                         }
                     }
                 }
@@ -1543,12 +1555,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
@@ -1556,7 +1568,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1566,12 +1578,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
@@ -1579,7 +1591,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                             }
                         }
                     }
@@ -1589,12 +1601,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                     {
@@ -1604,7 +1616,7 @@ namespace Silk.NET.DXGI
                             {
                                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                                 {
-                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                                 }
                             }
                         }
@@ -1615,16 +1627,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                     }
                 }
                 return ret;
@@ -1632,18 +1644,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
                         fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
@@ -1652,18 +1664,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
@@ -1672,12 +1684,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1685,7 +1697,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1695,18 +1707,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
                         fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                         }
                     }
                 }
@@ -1715,12 +1727,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1728,7 +1740,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1738,12 +1750,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1751,7 +1763,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                             }
                         }
                     }
@@ -1761,12 +1773,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1776,7 +1788,7 @@ namespace Silk.NET.DXGI
                             {
                                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                                 {
-                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                                 }
                             }
                         }
@@ -1787,18 +1799,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
                         fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
+                            ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
                         }
                     }
                 }
@@ -1807,12 +1819,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1820,7 +1832,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
                             }
                         }
                     }
@@ -1830,12 +1842,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1843,7 +1855,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
                             }
                         }
                     }
@@ -1853,12 +1865,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1868,7 +1880,7 @@ namespace Silk.NET.DXGI
                             {
                                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                                 {
-                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
+                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChainPtr);
                                 }
                             }
                         }
@@ -1879,12 +1891,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1892,7 +1904,7 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
+                                ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
                             }
                         }
                     }
@@ -1902,12 +1914,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1917,7 +1929,7 @@ namespace Silk.NET.DXGI
                             {
                                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                                 {
-                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
+                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChainPtr);
                                 }
                             }
                         }
@@ -1928,12 +1940,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1943,7 +1955,7 @@ namespace Silk.NET.DXGI
                             {
                                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                                 {
-                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
+                                    ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChain);
                                 }
                             }
                         }
@@ -1954,12 +1966,12 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
+        public unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             fixed (IDXGIFactoryMedia* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (T0* hSurfacePtr = &hSurface)
                     {
@@ -1971,7 +1983,7 @@ namespace Silk.NET.DXGI
                                 {
                                     fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
                                     {
-                                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Runtime.Windows.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                        ret = ((delegate* cdecl<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurfacePtr, pDescPtr, pYuvDecodeBuffersPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                                     }
                                 }
                             }

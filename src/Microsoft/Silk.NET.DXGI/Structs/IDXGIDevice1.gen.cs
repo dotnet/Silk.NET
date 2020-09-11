@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,39 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIDevice1")]
     public unsafe partial struct IDXGIDevice1
     {
+        public static implicit operator IDXGIDevice(IDXGIDevice1 val)
+            => Unsafe.As<IDXGIDevice1, IDXGIDevice>(ref val);
+
+        public readonly ref IDXGIDevice AsDevice()
+        {
+            fixed (IDXGIDevice1* @this = &this)
+            {
+                return ref *(IDXGIDevice*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIObject(IDXGIDevice1 val)
+            => Unsafe.As<IDXGIDevice1, IDXGIObject>(ref val);
+
+        public readonly ref IDXGIObject AsObject()
+        {
+            fixed (IDXGIDevice1* @this = &this)
+            {
+                return ref *(IDXGIObject*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDevice1 val)
+            => Unsafe.As<IDXGIDevice1, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGIDevice1* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGIDevice1
         (
             void** lpVtbl = default
@@ -167,55 +201,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIDevice1* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDevice1*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+                ret = ((delegate* cdecl<IDXGIDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIDevice1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGIDevice1*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* cdecl<IDXGIDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIDevice1* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<IDXGIDevice1*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                    ret = ((delegate* cdecl<IDXGIDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIDevice1* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                     {
-                        ret = ((delegate* cdecl<IDXGIDevice1*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                        ret = ((delegate* cdecl<IDXGIDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                     }
                 }
                 return ret;
@@ -552,55 +586,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryResourceResidency(Silk.NET.Core.Runtime.Windows.IUnknown** ppResources, Residency* pResidencyStatus, uint NumResources)
+        public unsafe int QueryResourceResidency(Silk.NET.Core.Native.IUnknown** ppResources, Residency* pResidencyStatus, uint NumResources)
         {
             fixed (IDXGIDevice1* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDevice1*, Silk.NET.Core.Runtime.Windows.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResources, pResidencyStatus, NumResources);
+                ret = ((delegate* cdecl<IDXGIDevice1*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResources, pResidencyStatus, NumResources);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryResourceResidency(Silk.NET.Core.Runtime.Windows.IUnknown** ppResources, ref Residency pResidencyStatus, uint NumResources)
+        public unsafe int QueryResourceResidency(Silk.NET.Core.Native.IUnknown** ppResources, ref Residency pResidencyStatus, uint NumResources)
         {
             fixed (IDXGIDevice1* @this = &this)
             {
                 int ret = default;
                 fixed (Residency* pResidencyStatusPtr = &pResidencyStatus)
                 {
-                    ret = ((delegate* cdecl<IDXGIDevice1*, Silk.NET.Core.Runtime.Windows.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResources, pResidencyStatusPtr, NumResources);
+                    ret = ((delegate* cdecl<IDXGIDevice1*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResources, pResidencyStatusPtr, NumResources);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryResourceResidency(ref Silk.NET.Core.Runtime.Windows.IUnknown* ppResources, Residency* pResidencyStatus, uint NumResources)
+        public unsafe int QueryResourceResidency(ref Silk.NET.Core.Native.IUnknown* ppResources, Residency* pResidencyStatus, uint NumResources)
         {
             fixed (IDXGIDevice1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown** ppResourcesPtr = &ppResources)
+                fixed (Silk.NET.Core.Native.IUnknown** ppResourcesPtr = &ppResources)
                 {
-                    ret = ((delegate* cdecl<IDXGIDevice1*, Silk.NET.Core.Runtime.Windows.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResourcesPtr, pResidencyStatus, NumResources);
+                    ret = ((delegate* cdecl<IDXGIDevice1*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResourcesPtr, pResidencyStatus, NumResources);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryResourceResidency(ref Silk.NET.Core.Runtime.Windows.IUnknown* ppResources, ref Residency pResidencyStatus, uint NumResources)
+        public unsafe int QueryResourceResidency(ref Silk.NET.Core.Native.IUnknown* ppResources, ref Residency pResidencyStatus, uint NumResources)
         {
             fixed (IDXGIDevice1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown** ppResourcesPtr = &ppResources)
+                fixed (Silk.NET.Core.Native.IUnknown** ppResourcesPtr = &ppResources)
                 {
                     fixed (Residency* pResidencyStatusPtr = &pResidencyStatus)
                     {
-                        ret = ((delegate* cdecl<IDXGIDevice1*, Silk.NET.Core.Runtime.Windows.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResourcesPtr, pResidencyStatusPtr, NumResources);
+                        ret = ((delegate* cdecl<IDXGIDevice1*, Silk.NET.Core.Native.IUnknown**, Residency*, uint, int>)LpVtbl[9])(@this, ppResourcesPtr, pResidencyStatusPtr, NumResources);
                     }
                 }
                 return ret;

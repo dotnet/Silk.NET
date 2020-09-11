@@ -82,7 +82,15 @@ namespace Silk.NET.BuildTools.Common
                         field.Type.Name = map[field.Type.Name];
                     }
                 }
-                
+
+                for (var i = 0; i < @struct.ComBases.Count; i++)
+                {
+                    if (map.TryGetValue(@struct.ComBases[i], out var val))
+                    {
+                        @struct.ComBases[i] = val;
+                    }
+                }
+
                 foreach (var function in @struct.Vtbl)
                 {
                     Map(map, function);

@@ -22,12 +22,12 @@ namespace Silk.NET.Direct3D11
         public ShaderInputBindDesc
         (
             byte* name = default,
-            Silk.NET.Core.Native.ShaderInputType type = default,
+            Silk.NET.Core.Native.D3DShaderInputType type = default,
             uint bindPoint = default,
             uint bindCount = default,
             uint uFlags = default,
-            Silk.NET.Core.Native.ResourceReturnType returnType = default,
-            Silk.NET.Core.Native.SrvDimension dimension = default,
+            Silk.NET.Core.Native.D3DResourceReturnType returnType = default,
+            Silk.NET.Core.Native.D3DSrvDimension dimension = default,
             uint numSamples = default
         )
         {
@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D_SHADER_INPUT_TYPE")]
         [NativeName("Type.Name", "D3D_SHADER_INPUT_TYPE")]
         [NativeName("Name", "Type")]
-        public Silk.NET.Core.Native.ShaderInputType Type;
+        public Silk.NET.Core.Native.D3DShaderInputType Type;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -70,12 +70,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D_RESOURCE_RETURN_TYPE")]
         [NativeName("Type.Name", "D3D_RESOURCE_RETURN_TYPE")]
         [NativeName("Name", "ReturnType")]
-        public Silk.NET.Core.Native.ResourceReturnType ReturnType;
+        public Silk.NET.Core.Native.D3DResourceReturnType ReturnType;
 
         [NativeName("Type", "D3D_SRV_DIMENSION")]
         [NativeName("Type.Name", "D3D_SRV_DIMENSION")]
         [NativeName("Name", "Dimension")]
-        public Silk.NET.Core.Native.SrvDimension Dimension;
+        public Silk.NET.Core.Native.D3DSrvDimension Dimension;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

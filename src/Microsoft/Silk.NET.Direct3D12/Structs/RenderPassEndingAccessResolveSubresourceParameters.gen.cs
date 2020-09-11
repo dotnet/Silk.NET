@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D12
             uint dstSubresource = default,
             uint dstX = default,
             uint dstY = default,
-            Silk.NET.Core.Runtime.Windows.TagRect srcRect = default
+            Silk.NET.Core.Native.TagRect srcRect = default
         )
         {
             SrcSubresource = srcSubresource;
@@ -59,6 +59,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_RECT")]
         [NativeName("Type.Name", "D3D12_RECT")]
         [NativeName("Name", "SrcRect")]
-        public Silk.NET.Core.Runtime.Windows.TagRect SrcRect;
+        public Silk.NET.Core.Native.TagRect SrcRect;
     }
 }

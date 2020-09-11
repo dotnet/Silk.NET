@@ -21,7 +21,7 @@ namespace Silk.NET.DXGI
     {
         public OutputDesc1
         (
-            Silk.NET.Core.Runtime.Windows.TagRect desktopCoordinates = default,
+            Silk.NET.Core.Native.TagRect desktopCoordinates = default,
             int attachedToDesktop = default,
             ModeRotation rotation = default,
             IntPtr monitor = default,
@@ -51,7 +51,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DesktopCoordinates")]
-        public Silk.NET.Core.Runtime.Windows.TagRect DesktopCoordinates;
+        public Silk.NET.Core.Native.TagRect DesktopCoordinates;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]

@@ -1140,6 +1140,7 @@ namespace Silk.NET.BuildTools.Cpp
                 foreach (var cxxBaseSpecifier in cxxRecordDecl.Bases)
                 {
                     var baseCxxRecordDecl = GetRecordDeclForBaseSpecifier(cxxBaseSpecifier);
+                    @struct.ComBases.Add(baseCxxRecordDecl.Name);
                     OutputVtblHelperMethods(baseCxxRecordDecl, ref vtblIndex, @struct);
                 }
 

@@ -180,42 +180,42 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateDevice")]
-        public unsafe partial int CreateDevice(Silk.NET.Core.Runtime.Windows.IUnknown* pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice);
+        public unsafe partial int CreateDevice(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateDevice")]
-        public unsafe partial int CreateDevice(Silk.NET.Core.Runtime.Windows.IUnknown* pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice);
+        public unsafe partial int CreateDevice(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateDevice")]
-        public unsafe partial int CreateDevice(Silk.NET.Core.Runtime.Windows.IUnknown* pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, ref Guid riid, void** ppDevice);
+        public unsafe partial int CreateDevice(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, void** ppDevice);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateDevice")]
-        public unsafe partial int CreateDevice(Silk.NET.Core.Runtime.Windows.IUnknown* pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, ref Guid riid, ref void* ppDevice);
+        public unsafe partial int CreateDevice(Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, ref void* ppDevice);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateDevice")]
-        public unsafe partial int CreateDevice(ref Silk.NET.Core.Runtime.Windows.IUnknown pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice);
+        public unsafe partial int CreateDevice(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateDevice")]
-        public unsafe partial int CreateDevice(ref Silk.NET.Core.Runtime.Windows.IUnknown pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice);
+        public unsafe partial int CreateDevice(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateDevice")]
-        public unsafe partial int CreateDevice(ref Silk.NET.Core.Runtime.Windows.IUnknown pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, ref Guid riid, void** ppDevice);
+        public unsafe partial int CreateDevice(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, void** ppDevice);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateDevice")]
-        public unsafe partial int CreateDevice(ref Silk.NET.Core.Runtime.Windows.IUnknown pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, ref Guid riid, ref void* ppDevice);
+        public unsafe partial int CreateDevice(ref Silk.NET.Core.Native.IUnknown pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, ref Guid riid, ref void* ppDevice);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18570, Column 16 in d3d12.h")]

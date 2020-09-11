@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,28 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11VideoContext")]
     public unsafe partial struct ID3D11VideoContext
     {
+        public static implicit operator ID3D11DeviceChild(ID3D11VideoContext val)
+            => Unsafe.As<ID3D11VideoContext, ID3D11DeviceChild>(ref val);
+
+        public readonly ref ID3D11DeviceChild AsDeviceChild()
+        {
+            fixed (ID3D11VideoContext* @this = &this)
+            {
+                return ref *(ID3D11DeviceChild*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11VideoContext val)
+            => Unsafe.As<ID3D11VideoContext, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D11VideoContext* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D11VideoContext
         (
             void** lpVtbl = default
@@ -312,55 +335,55 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11VideoContext*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+                ret = ((delegate* cdecl<ID3D11VideoContext*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D11VideoContext*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+                    ret = ((delegate* cdecl<ID3D11VideoContext*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    ret = ((delegate* cdecl<ID3D11VideoContext*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+                    ret = ((delegate* cdecl<ID3D11VideoContext*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                    fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<ID3D11VideoContext*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
+                        ret = ((delegate* cdecl<ID3D11VideoContext*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                     }
                 }
                 return ret;
@@ -778,48 +801,48 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
+                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
                     }
                 }
             }
@@ -943,22 +966,22 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Core.Runtime.Windows.TagSize Size)
+        public unsafe void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Core.Native.TagSize Size)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Runtime.Windows.TagSize, void>)LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
+                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Native.TagSize, void>)LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
             }
         }
 
         /// <summary>To be added.</summary>
-        public void VideoProcessorSetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Core.Runtime.Windows.TagSize Size)
+        public void VideoProcessorSetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Core.Native.TagSize Size)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Runtime.Windows.TagSize, void>)LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int, Silk.NET.Core.Native.TagSize, void>)LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
                 }
             }
         }
@@ -1109,82 +1132,82 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
+                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int* Enabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (int* EnabledPtr = &Enabled)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (int* EnabledPtr = &Enabled)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
@@ -1192,14 +1215,14 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* EnabledPtr = &Enabled)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public void VideoProcessorGetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
@@ -1207,9 +1230,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* EnabledPtr = &Enabled)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                        fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                         {
-                            ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
+                            ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
                         }
                     }
                 }
@@ -1481,82 +1504,82 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, Silk.NET.Core.Runtime.Windows.TagSize* pSize)
+        public unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, Silk.NET.Core.Native.TagSize* pSize)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSize);
+                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSize);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, ref Silk.NET.Core.Runtime.Windows.TagSize pSize)
+        public unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, ref Silk.NET.Core.Native.TagSize pSize)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagSize* pSizePtr = &pSize)
+                fixed (Silk.NET.Core.Native.TagSize* pSizePtr = &pSize)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSizePtr);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSizePtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, ref int pEnabled, Silk.NET.Core.Runtime.Windows.TagSize* pSize)
+        public unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, ref int pEnabled, Silk.NET.Core.Native.TagSize* pSize)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSize);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSize);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, ref int pEnabled, ref Silk.NET.Core.Runtime.Windows.TagSize pSize)
+        public unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, ref int pEnabled, ref Silk.NET.Core.Native.TagSize pSize)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagSize* pSizePtr = &pSize)
+                    fixed (Silk.NET.Core.Native.TagSize* pSizePtr = &pSize)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSizePtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSizePtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int* pEnabled, Silk.NET.Core.Runtime.Windows.TagSize* pSize)
+        public unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int* pEnabled, Silk.NET.Core.Native.TagSize* pSize)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSize);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSize);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int* pEnabled, ref Silk.NET.Core.Runtime.Windows.TagSize pSize)
+        public unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int* pEnabled, ref Silk.NET.Core.Native.TagSize pSize)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagSize* pSizePtr = &pSize)
+                    fixed (Silk.NET.Core.Native.TagSize* pSizePtr = &pSize)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSizePtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSizePtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, ref int pEnabled, Silk.NET.Core.Runtime.Windows.TagSize* pSize)
+        public unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, ref int pEnabled, Silk.NET.Core.Native.TagSize* pSize)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
@@ -1564,14 +1587,14 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pEnabledPtr = &pEnabled)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSize);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSize);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, ref int pEnabled, ref Silk.NET.Core.Runtime.Windows.TagSize pSize)
+        public void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, ref int pEnabled, ref Silk.NET.Core.Native.TagSize pSize)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
@@ -1579,9 +1602,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pEnabledPtr = &pEnabled)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.TagSize* pSizePtr = &pSize)
+                        fixed (Silk.NET.Core.Native.TagSize* pSizePtr = &pSize)
                         {
-                            ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Runtime.Windows.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSizePtr);
+                            ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, int*, Silk.NET.Core.Native.TagSize*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSizePtr);
                         }
                     }
                 }
@@ -1878,96 +1901,96 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
                     }
                 }
             }
@@ -2695,82 +2718,82 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
@@ -2778,14 +2801,14 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pEnabledPtr = &pEnabled)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public void VideoProcessorGetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
@@ -2793,9 +2816,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pEnabledPtr = &pEnabled)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                        fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                         {
-                            ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                            ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
                         }
                     }
                 }
@@ -2803,82 +2826,82 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+                ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+                    ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
                 fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
@@ -2886,14 +2909,14 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pEnabledPtr = &pEnabled)
                     {
-                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                        ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public void VideoProcessorGetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (ID3D11VideoContext* @this = &this)
             {
@@ -2901,9 +2924,9 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pEnabledPtr = &pEnabled)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                        fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                         {
-                            ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                            ((delegate* cdecl<ID3D11VideoContext*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
                         }
                     }
                 }

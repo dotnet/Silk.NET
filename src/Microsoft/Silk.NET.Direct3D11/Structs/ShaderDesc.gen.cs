@@ -47,15 +47,15 @@ namespace Silk.NET.Direct3D11
             uint arrayInstructionCount = default,
             uint cutInstructionCount = default,
             uint emitInstructionCount = default,
-            Silk.NET.Core.Native.PrimitiveTopology gSOutputTopology = default,
+            Silk.NET.Core.Native.D3DPrimitiveTopology gSOutputTopology = default,
             uint gSMaxOutputVertexCount = default,
-            Silk.NET.Core.Native.Primitive inputPrimitive = default,
+            Silk.NET.Core.Native.D3DPrimitive inputPrimitive = default,
             uint patchConstantParameters = default,
             uint cGSInstanceCount = default,
             uint cControlPoints = default,
-            Silk.NET.Core.Native.TessellatorOutputPrimitive hSOutputPrimitive = default,
-            Silk.NET.Core.Native.TessellatorPartitioning hSPartitioning = default,
-            Silk.NET.Core.Native.TessellatorDomain tessellatorDomain = default,
+            Silk.NET.Core.Native.D3DTessellatorOutputPrimitive hSOutputPrimitive = default,
+            Silk.NET.Core.Native.D3DTessellatorPartitioning hSPartitioning = default,
+            Silk.NET.Core.Native.D3DTessellatorDomain tessellatorDomain = default,
             uint cBarrierInstructions = default,
             uint cInterlockedInstructions = default,
             uint cTextureStoreInstructions = default
@@ -235,7 +235,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D_PRIMITIVE_TOPOLOGY")]
         [NativeName("Type.Name", "D3D_PRIMITIVE_TOPOLOGY")]
         [NativeName("Name", "GSOutputTopology")]
-        public Silk.NET.Core.Native.PrimitiveTopology GSOutputTopology;
+        public Silk.NET.Core.Native.D3DPrimitiveTopology GSOutputTopology;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -245,7 +245,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D_PRIMITIVE")]
         [NativeName("Type.Name", "D3D_PRIMITIVE")]
         [NativeName("Name", "InputPrimitive")]
-        public Silk.NET.Core.Native.Primitive InputPrimitive;
+        public Silk.NET.Core.Native.D3DPrimitive InputPrimitive;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -265,17 +265,17 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "D3D_TESSELLATOR_OUTPUT_PRIMITIVE")]
         [NativeName("Type.Name", "D3D_TESSELLATOR_OUTPUT_PRIMITIVE")]
         [NativeName("Name", "HSOutputPrimitive")]
-        public Silk.NET.Core.Native.TessellatorOutputPrimitive HSOutputPrimitive;
+        public Silk.NET.Core.Native.D3DTessellatorOutputPrimitive HSOutputPrimitive;
 
         [NativeName("Type", "D3D_TESSELLATOR_PARTITIONING")]
         [NativeName("Type.Name", "D3D_TESSELLATOR_PARTITIONING")]
         [NativeName("Name", "HSPartitioning")]
-        public Silk.NET.Core.Native.TessellatorPartitioning HSPartitioning;
+        public Silk.NET.Core.Native.D3DTessellatorPartitioning HSPartitioning;
 
         [NativeName("Type", "D3D_TESSELLATOR_DOMAIN")]
         [NativeName("Type.Name", "D3D_TESSELLATOR_DOMAIN")]
         [NativeName("Name", "TessellatorDomain")]
-        public Silk.NET.Core.Native.TessellatorDomain TessellatorDomain;
+        public Silk.NET.Core.Native.D3DTessellatorDomain TessellatorDomain;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -22,9 +22,9 @@ namespace Silk.NET.DXGI
         public PresentParameters
         (
             uint dirtyRectsCount = default,
-            Silk.NET.Core.Runtime.Windows.TagRect* pDirtyRects = default,
-            Silk.NET.Core.Runtime.Windows.TagRect* pScrollRect = default,
-            Silk.NET.Core.Runtime.Windows.TagPoint* pScrollOffset = default
+            Silk.NET.Core.Native.TagRect* pDirtyRects = default,
+            Silk.NET.Core.Native.TagRect* pScrollRect = default,
+            Silk.NET.Core.Native.TagPoint* pScrollOffset = default
         )
         {
             DirtyRectsCount = dirtyRectsCount;
@@ -42,16 +42,16 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "RECT *")]
         [NativeName("Type.Name", "RECT *")]
         [NativeName("Name", "pDirtyRects")]
-        public Silk.NET.Core.Runtime.Windows.TagRect* PDirtyRects;
+        public Silk.NET.Core.Native.TagRect* PDirtyRects;
 
         [NativeName("Type", "RECT *")]
         [NativeName("Type.Name", "RECT *")]
         [NativeName("Name", "pScrollRect")]
-        public Silk.NET.Core.Runtime.Windows.TagRect* PScrollRect;
+        public Silk.NET.Core.Native.TagRect* PScrollRect;
 
         [NativeName("Type", "POINT *")]
         [NativeName("Type.Name", "POINT *")]
         [NativeName("Name", "pScrollOffset")]
-        public Silk.NET.Core.Runtime.Windows.TagPoint* PScrollOffset;
+        public Silk.NET.Core.Native.TagPoint* PScrollOffset;
     }
 }

@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D12
             char* objectNameW = default,
             DredAllocationType allocationType = default,
             DredAllocationNode1* pNext = default,
-            Silk.NET.Core.Runtime.Windows.IUnknown* pObject = default
+            Silk.NET.Core.Native.IUnknown* pObject = default
         )
         {
             ObjectNameA = objectNameA;
@@ -59,6 +59,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "const IUnknown *")]
         [NativeName("Type.Name", "const IUnknown *")]
         [NativeName("Name", "pObject")]
-        public Silk.NET.Core.Runtime.Windows.IUnknown* PObject;
+        public Silk.NET.Core.Native.IUnknown* PObject;
     }
 }

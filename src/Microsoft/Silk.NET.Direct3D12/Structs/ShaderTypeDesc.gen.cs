@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D12
     {
         public ShaderTypeDesc
         (
-            Silk.NET.Core.Native.ShaderVariableClass @class = default,
-            Silk.NET.Core.Native.ShaderVariableType type = default,
+            Silk.NET.Core.Native.D3DShaderVariableClass @class = default,
+            Silk.NET.Core.Native.D3DShaderVariableType type = default,
             uint rows = default,
             uint columns = default,
             uint elements = default,
@@ -45,12 +45,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D_SHADER_VARIABLE_CLASS")]
         [NativeName("Type.Name", "D3D_SHADER_VARIABLE_CLASS")]
         [NativeName("Name", "Class")]
-        public Silk.NET.Core.Native.ShaderVariableClass Class;
+        public Silk.NET.Core.Native.D3DShaderVariableClass Class;
 
         [NativeName("Type", "D3D_SHADER_VARIABLE_TYPE")]
         [NativeName("Type.Name", "D3D_SHADER_VARIABLE_TYPE")]
         [NativeName("Name", "Type")]
-        public Silk.NET.Core.Native.ShaderVariableType Type;
+        public Silk.NET.Core.Native.D3DShaderVariableType Type;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

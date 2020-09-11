@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,28 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIOutputDuplication")]
     public unsafe partial struct IDXGIOutputDuplication
     {
+        public static implicit operator IDXGIObject(IDXGIOutputDuplication val)
+            => Unsafe.As<IDXGIOutputDuplication, IDXGIObject>(ref val);
+
+        public readonly ref IDXGIObject AsObject()
+        {
+            fixed (IDXGIOutputDuplication* @this = &this)
+            {
+                return ref *(IDXGIObject*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIOutputDuplication val)
+            => Unsafe.As<IDXGIOutputDuplication, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGIOutputDuplication* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGIOutputDuplication
         (
             void** lpVtbl = default
@@ -167,55 +190,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIOutputDuplication* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutputDuplication*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+                ret = ((delegate* cdecl<IDXGIOutputDuplication*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIOutputDuplication* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutputDuplication*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* cdecl<IDXGIOutputDuplication*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIOutputDuplication* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutputDuplication*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                    ret = ((delegate* cdecl<IDXGIOutputDuplication*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIOutputDuplication* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutputDuplication*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                        ret = ((delegate* cdecl<IDXGIOutputDuplication*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                     }
                 }
                 return ret;
@@ -480,55 +503,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Core.Runtime.Windows.TagRect* pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
+        public unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Core.Native.TagRect* pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
         {
             fixed (IDXGIOutputDuplication* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutputDuplication*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
+                ret = ((delegate* cdecl<IDXGIOutputDuplication*, uint, Silk.NET.Core.Native.TagRect*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Core.Runtime.Windows.TagRect* pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
+        public unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Core.Native.TagRect* pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
         {
             fixed (IDXGIOutputDuplication* @this = &this)
             {
                 int ret = default;
                 fixed (uint* pDirtyRectsBufferSizeRequiredPtr = &pDirtyRectsBufferSizeRequired)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutputDuplication*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequiredPtr);
+                    ret = ((delegate* cdecl<IDXGIOutputDuplication*, uint, Silk.NET.Core.Native.TagRect*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequiredPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Core.Runtime.Windows.TagRect pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
+        public unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Core.Native.TagRect pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
         {
             fixed (IDXGIOutputDuplication* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
+                fixed (Silk.NET.Core.Native.TagRect* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutputDuplication*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequired);
+                    ret = ((delegate* cdecl<IDXGIOutputDuplication*, uint, Silk.NET.Core.Native.TagRect*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequired);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Core.Runtime.Windows.TagRect pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
+        public int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Core.Native.TagRect pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
         {
             fixed (IDXGIOutputDuplication* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
+                fixed (Silk.NET.Core.Native.TagRect* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
                 {
                     fixed (uint* pDirtyRectsBufferSizeRequiredPtr = &pDirtyRectsBufferSizeRequired)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutputDuplication*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequiredPtr);
+                        ret = ((delegate* cdecl<IDXGIOutputDuplication*, uint, Silk.NET.Core.Native.TagRect*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequiredPtr);
                     }
                 }
                 return ret;

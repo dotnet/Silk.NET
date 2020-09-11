@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11TracingDevice")]
     public unsafe partial struct ID3D11TracingDevice
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11TracingDevice val)
+            => Unsafe.As<ID3D11TracingDevice, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D11TracingDevice* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D11TracingDevice
         (
             void** lpVtbl = default
@@ -122,25 +134,25 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetShaderTrackingOptions(Silk.NET.Core.Runtime.Windows.IUnknown* pShader, uint Options)
+        public unsafe int SetShaderTrackingOptions(Silk.NET.Core.Native.IUnknown* pShader, uint Options)
         {
             fixed (ID3D11TracingDevice* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11TracingDevice*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, int>)LpVtbl[4])(@this, pShader, Options);
+                ret = ((delegate* cdecl<ID3D11TracingDevice*, Silk.NET.Core.Native.IUnknown*, uint, int>)LpVtbl[4])(@this, pShader, Options);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetShaderTrackingOptions(ref Silk.NET.Core.Runtime.Windows.IUnknown pShader, uint Options)
+        public int SetShaderTrackingOptions(ref Silk.NET.Core.Native.IUnknown pShader, uint Options)
         {
             fixed (ID3D11TracingDevice* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pShaderPtr = &pShader)
+                fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
                 {
-                    ret = ((delegate* cdecl<ID3D11TracingDevice*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, int>)LpVtbl[4])(@this, pShaderPtr, Options);
+                    ret = ((delegate* cdecl<ID3D11TracingDevice*, Silk.NET.Core.Native.IUnknown*, uint, int>)LpVtbl[4])(@this, pShaderPtr, Options);
                 }
                 return ret;
             }

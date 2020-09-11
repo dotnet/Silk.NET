@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,72 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIAdapter4")]
     public unsafe partial struct IDXGIAdapter4
     {
+        public static implicit operator IDXGIAdapter3(IDXGIAdapter4 val)
+            => Unsafe.As<IDXGIAdapter4, IDXGIAdapter3>(ref val);
+
+        public readonly ref IDXGIAdapter3 AsAdapter3()
+        {
+            fixed (IDXGIAdapter4* @this = &this)
+            {
+                return ref *(IDXGIAdapter3*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIAdapter2(IDXGIAdapter4 val)
+            => Unsafe.As<IDXGIAdapter4, IDXGIAdapter2>(ref val);
+
+        public readonly ref IDXGIAdapter2 AsAdapter2()
+        {
+            fixed (IDXGIAdapter4* @this = &this)
+            {
+                return ref *(IDXGIAdapter2*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIAdapter1(IDXGIAdapter4 val)
+            => Unsafe.As<IDXGIAdapter4, IDXGIAdapter1>(ref val);
+
+        public readonly ref IDXGIAdapter1 AsAdapter1()
+        {
+            fixed (IDXGIAdapter4* @this = &this)
+            {
+                return ref *(IDXGIAdapter1*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.DXGI.IDXGIAdapter(IDXGIAdapter4 val)
+            => Unsafe.As<IDXGIAdapter4, Silk.NET.DXGI.IDXGIAdapter>(ref val);
+
+        public readonly ref Silk.NET.DXGI.IDXGIAdapter AsAdapter()
+        {
+            fixed (IDXGIAdapter4* @this = &this)
+            {
+                return ref *(Silk.NET.DXGI.IDXGIAdapter*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIObject(IDXGIAdapter4 val)
+            => Unsafe.As<IDXGIAdapter4, IDXGIObject>(ref val);
+
+        public readonly ref IDXGIObject AsObject()
+        {
+            fixed (IDXGIAdapter4* @this = &this)
+            {
+                return ref *(IDXGIObject*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIAdapter4 val)
+            => Unsafe.As<IDXGIAdapter4, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGIAdapter4* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGIAdapter4
         (
             void** lpVtbl = default
@@ -167,55 +234,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIAdapter4* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+                ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIAdapter4* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIAdapter4* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIAdapter4* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                     {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                     }
                 }
                 return ret;

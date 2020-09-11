@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11ShaderReflection")]
     public unsafe partial struct ID3D11ShaderReflection
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11ShaderReflection val)
+            => Unsafe.As<ID3D11ShaderReflection, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D11ShaderReflection* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D11ShaderReflection
         (
             void** lpVtbl = default
@@ -452,12 +464,12 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public Silk.NET.Core.Native.Primitive GetGSInputPrimitive()
+        public Silk.NET.Core.Native.D3DPrimitive GetGSInputPrimitive()
         {
             fixed (ID3D11ShaderReflection* @this = &this)
             {
-                Silk.NET.Core.Native.Primitive ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.Primitive>)LpVtbl[16])(@this);
+                Silk.NET.Core.Native.D3DPrimitive ret = default;
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DPrimitive>)LpVtbl[16])(@this);
                 return ret;
             }
         }
@@ -485,25 +497,25 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetMinFeatureLevel(Silk.NET.Core.Native.FeatureLevel* pLevel)
+        public unsafe int GetMinFeatureLevel(Silk.NET.Core.Native.D3DFeatureLevel* pLevel)
         {
             fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.FeatureLevel*, int>)LpVtbl[19])(@this, pLevel);
+                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DFeatureLevel*, int>)LpVtbl[19])(@this, pLevel);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int GetMinFeatureLevel(ref Silk.NET.Core.Native.FeatureLevel pLevel)
+        public int GetMinFeatureLevel(ref Silk.NET.Core.Native.D3DFeatureLevel pLevel)
         {
             fixed (ID3D11ShaderReflection* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pLevelPtr = &pLevel)
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pLevelPtr = &pLevel)
                 {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.FeatureLevel*, int>)LpVtbl[19])(@this, pLevelPtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DFeatureLevel*, int>)LpVtbl[19])(@this, pLevelPtr);
                 }
                 return ret;
             }

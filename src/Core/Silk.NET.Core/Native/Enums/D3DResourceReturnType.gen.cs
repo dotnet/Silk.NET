@@ -12,24 +12,24 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_RESOURCE_RETURN_TYPE")]
-    public enum ResourceReturnType
+    public enum D3DResourceReturnType
     {
         [NativeName("Name", "D3D_RETURN_TYPE_UNORM")]
-        ReturnTypeUnorm = 0x1,
+        D3DReturnTypeUnorm = 0x1,
         [NativeName("Name", "D3D_RETURN_TYPE_SNORM")]
-        ReturnTypeSNorm = 0x2,
+        D3DReturnTypeSNorm = 0x2,
         [NativeName("Name", "D3D_RETURN_TYPE_SINT")]
-        ReturnTypeSint = 0x3,
+        D3DReturnTypeSint = 0x3,
         [NativeName("Name", "D3D_RETURN_TYPE_UINT")]
-        ReturnTypeUint = 0x4,
+        D3DReturnTypeUint = 0x4,
         [NativeName("Name", "D3D_RETURN_TYPE_FLOAT")]
-        ReturnTypeFloat = 0x5,
+        D3DReturnTypeFloat = 0x5,
         [NativeName("Name", "D3D_RETURN_TYPE_MIXED")]
-        ReturnTypeMixed = 0x6,
+        D3DReturnTypeMixed = 0x6,
         [NativeName("Name", "D3D_RETURN_TYPE_DOUBLE")]
-        ReturnTypeDouble = 0x7,
+        D3DReturnTypeDouble = 0x7,
         [NativeName("Name", "D3D_RETURN_TYPE_CONTINUED")]
-        ReturnTypeContinued = 0x8,
+        D3DReturnTypeContinued = 0x8,
         [NativeName("Name", "D3D10_RETURN_TYPE_UNORM")]
         D3D10ReturnTypeUnorm = 0x1,
         [NativeName("Name", "D3D10_RETURN_TYPE_SNORM")]

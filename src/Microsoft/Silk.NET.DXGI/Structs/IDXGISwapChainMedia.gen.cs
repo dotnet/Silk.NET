@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGISwapChainMedia")]
     public unsafe partial struct IDXGISwapChainMedia
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChainMedia val)
+            => Unsafe.As<IDXGISwapChainMedia, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGISwapChainMedia* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGISwapChainMedia
         (
             void** lpVtbl = default

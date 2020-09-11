@@ -22,8 +22,8 @@ namespace Silk.NET.Direct3D12
         public FeatureDataFeatureLevels
         (
             uint numFeatureLevels = default,
-            Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsRequested = default,
-            Silk.NET.Core.Native.FeatureLevel maxSupportedFeatureLevel = default
+            Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsRequested = default,
+            Silk.NET.Core.Native.D3DFeatureLevel maxSupportedFeatureLevel = default
         )
         {
             NumFeatureLevels = numFeatureLevels;
@@ -40,11 +40,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "const D3D_FEATURE_LEVEL *")]
         [NativeName("Type.Name", "const D3D_FEATURE_LEVEL *")]
         [NativeName("Name", "pFeatureLevelsRequested")]
-        public Silk.NET.Core.Native.FeatureLevel* PFeatureLevelsRequested;
+        public Silk.NET.Core.Native.D3DFeatureLevel* PFeatureLevelsRequested;
 
         [NativeName("Type", "D3D_FEATURE_LEVEL")]
         [NativeName("Type.Name", "D3D_FEATURE_LEVEL")]
         [NativeName("Name", "MaxSupportedFeatureLevel")]
-        public Silk.NET.Core.Native.FeatureLevel MaxSupportedFeatureLevel;
+        public Silk.NET.Core.Native.D3DFeatureLevel MaxSupportedFeatureLevel;
     }
 }

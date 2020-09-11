@@ -24,12 +24,12 @@ namespace Silk.NET.Direct3D12
             byte* semanticName = default,
             uint semanticIndex = default,
             uint register = default,
-            Silk.NET.Core.Native.Name systemValueType = default,
-            Silk.NET.Core.Native.RegisterComponentType componentType = default,
+            Silk.NET.Core.Native.D3DName systemValueType = default,
+            Silk.NET.Core.Native.D3DRegisterComponentType componentType = default,
             byte mask = default,
             byte readWriteMask = default,
             uint stream = default,
-            Silk.NET.Core.Native.MinPrecision minPrecision = default
+            Silk.NET.Core.Native.D3DMinPrecision minPrecision = default
         )
         {
             SemanticName = semanticName;
@@ -62,12 +62,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D_NAME")]
         [NativeName("Type.Name", "D3D_NAME")]
         [NativeName("Name", "SystemValueType")]
-        public Silk.NET.Core.Native.Name SystemValueType;
+        public Silk.NET.Core.Native.D3DName SystemValueType;
 
         [NativeName("Type", "D3D_REGISTER_COMPONENT_TYPE")]
         [NativeName("Type.Name", "D3D_REGISTER_COMPONENT_TYPE")]
         [NativeName("Name", "ComponentType")]
-        public Silk.NET.Core.Native.RegisterComponentType ComponentType;
+        public Silk.NET.Core.Native.D3DRegisterComponentType ComponentType;
 
         [NativeName("Type", "BYTE")]
         [NativeName("Type.Name", "BYTE")]
@@ -87,6 +87,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D_MIN_PRECISION")]
         [NativeName("Type.Name", "D3D_MIN_PRECISION")]
         [NativeName("Name", "MinPrecision")]
-        public Silk.NET.Core.Native.MinPrecision MinPrecision;
+        public Silk.NET.Core.Native.D3DMinPrecision MinPrecision;
     }
 }

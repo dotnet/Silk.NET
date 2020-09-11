@@ -19,7 +19,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Core.Runtime.Windows
+namespace Silk.NET.Core.Native
 {
     public unsafe partial struct IUnknown
     {

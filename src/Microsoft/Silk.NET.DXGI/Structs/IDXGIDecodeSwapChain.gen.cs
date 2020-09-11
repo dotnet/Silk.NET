@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIDecodeSwapChain")]
     public unsafe partial struct IDXGIDecodeSwapChain
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDecodeSwapChain val)
+            => Unsafe.As<IDXGIDecodeSwapChain, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGIDecodeSwapChain* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGIDecodeSwapChain
         (
             void** lpVtbl = default
@@ -122,50 +134,50 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetSourceRect(Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe int SetSourceRect(Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (IDXGIDecodeSwapChain* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[4])(@this, pRect);
+                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[4])(@this, pRect);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetSourceRect(ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public int SetSourceRect(ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (IDXGIDecodeSwapChain* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[4])(@this, pRectPtr);
+                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[4])(@this, pRectPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetTargetRect(Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe int SetTargetRect(Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (IDXGIDecodeSwapChain* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[5])(@this, pRect);
+                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[5])(@this, pRect);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetTargetRect(ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public int SetTargetRect(ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (IDXGIDecodeSwapChain* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[5])(@this, pRectPtr);
+                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[5])(@this, pRectPtr);
                 }
                 return ret;
             }
@@ -183,50 +195,50 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetSourceRect(Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe int GetSourceRect(Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (IDXGIDecodeSwapChain* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[7])(@this, pRect);
+                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[7])(@this, pRect);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int GetSourceRect(ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public int GetSourceRect(ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (IDXGIDecodeSwapChain* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[7])(@this, pRectPtr);
+                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[7])(@this, pRectPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetTargetRect(Silk.NET.Core.Runtime.Windows.TagRect* pRect)
+        public unsafe int GetTargetRect(Silk.NET.Core.Native.TagRect* pRect)
         {
             fixed (IDXGIDecodeSwapChain* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[8])(@this, pRect);
+                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[8])(@this, pRect);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int GetTargetRect(ref Silk.NET.Core.Runtime.Windows.TagRect pRect)
+        public int GetTargetRect(ref Silk.NET.Core.Native.TagRect pRect)
         {
             fixed (IDXGIDecodeSwapChain* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
                 {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[8])(@this, pRectPtr);
+                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[8])(@this, pRectPtr);
                 }
                 return ret;
             }

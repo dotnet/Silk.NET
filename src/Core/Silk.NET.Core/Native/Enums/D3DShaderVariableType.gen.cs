@@ -12,124 +12,124 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_VARIABLE_TYPE")]
-    public enum ShaderVariableType
+    public enum D3DShaderVariableType
     {
         [NativeName("Name", "D3D_SVT_VOID")]
-        SvtVoid = 0x0,
+        D3DSvtVoid = 0x0,
         [NativeName("Name", "D3D_SVT_BOOL")]
-        SvtBool = 0x1,
+        D3DSvtBool = 0x1,
         [NativeName("Name", "D3D_SVT_INT")]
-        SvtInt = 0x2,
+        D3DSvtInt = 0x2,
         [NativeName("Name", "D3D_SVT_FLOAT")]
-        SvtFloat = 0x3,
+        D3DSvtFloat = 0x3,
         [NativeName("Name", "D3D_SVT_STRING")]
-        SvtString = 0x4,
+        D3DSvtString = 0x4,
         [NativeName("Name", "D3D_SVT_TEXTURE")]
-        SvtTexture = 0x5,
+        D3DSvtTexture = 0x5,
         [NativeName("Name", "D3D_SVT_TEXTURE1D")]
-        SvtTexture1D = 0x6,
+        D3DSvtTexture1D = 0x6,
         [NativeName("Name", "D3D_SVT_TEXTURE2D")]
-        SvtTexture2D = 0x7,
+        D3DSvtTexture2D = 0x7,
         [NativeName("Name", "D3D_SVT_TEXTURE3D")]
-        SvtTexture3D = 0x8,
+        D3DSvtTexture3D = 0x8,
         [NativeName("Name", "D3D_SVT_TEXTURECUBE")]
-        SvtTexturecube = 0x9,
+        D3DSvtTexturecube = 0x9,
         [NativeName("Name", "D3D_SVT_SAMPLER")]
-        SvtSampler = 0xA,
+        D3DSvtSampler = 0xA,
         [NativeName("Name", "D3D_SVT_SAMPLER1D")]
-        SvtSampler1D = 0xB,
+        D3DSvtSampler1D = 0xB,
         [NativeName("Name", "D3D_SVT_SAMPLER2D")]
-        SvtSampler2D = 0xC,
+        D3DSvtSampler2D = 0xC,
         [NativeName("Name", "D3D_SVT_SAMPLER3D")]
-        SvtSampler3D = 0xD,
+        D3DSvtSampler3D = 0xD,
         [NativeName("Name", "D3D_SVT_SAMPLERCUBE")]
-        SvtSamplercube = 0xE,
+        D3DSvtSamplercube = 0xE,
         [NativeName("Name", "D3D_SVT_PIXELSHADER")]
-        SvtPixelshader = 0xF,
+        D3DSvtPixelshader = 0xF,
         [NativeName("Name", "D3D_SVT_VERTEXSHADER")]
-        SvtVertexshader = 0x10,
+        D3DSvtVertexshader = 0x10,
         [NativeName("Name", "D3D_SVT_PIXELFRAGMENT")]
-        SvtPixelfragment = 0x11,
+        D3DSvtPixelfragment = 0x11,
         [NativeName("Name", "D3D_SVT_VERTEXFRAGMENT")]
-        SvtVertexfragment = 0x12,
+        D3DSvtVertexfragment = 0x12,
         [NativeName("Name", "D3D_SVT_UINT")]
-        SvtUint = 0x13,
+        D3DSvtUint = 0x13,
         [NativeName("Name", "D3D_SVT_UINT8")]
-        SvtUint8 = 0x14,
+        D3DSvtUint8 = 0x14,
         [NativeName("Name", "D3D_SVT_GEOMETRYSHADER")]
-        SvtGeometryshader = 0x15,
+        D3DSvtGeometryshader = 0x15,
         [NativeName("Name", "D3D_SVT_RASTERIZER")]
-        SvtRasterizer = 0x16,
+        D3DSvtRasterizer = 0x16,
         [NativeName("Name", "D3D_SVT_DEPTHSTENCIL")]
-        SvtDepthstencil = 0x17,
+        D3DSvtDepthstencil = 0x17,
         [NativeName("Name", "D3D_SVT_BLEND")]
-        SvtBlend = 0x18,
+        D3DSvtBlend = 0x18,
         [NativeName("Name", "D3D_SVT_BUFFER")]
-        SvtBuffer = 0x19,
+        D3DSvtBuffer = 0x19,
         [NativeName("Name", "D3D_SVT_CBUFFER")]
-        SvtCbuffer = 0x1A,
+        D3DSvtCbuffer = 0x1A,
         [NativeName("Name", "D3D_SVT_TBUFFER")]
-        SvtTbuffer = 0x1B,
+        D3DSvtTbuffer = 0x1B,
         [NativeName("Name", "D3D_SVT_TEXTURE1DARRAY")]
-        SvtTexture1Darray = 0x1C,
+        D3DSvtTexture1Darray = 0x1C,
         [NativeName("Name", "D3D_SVT_TEXTURE2DARRAY")]
-        SvtTexture2Darray = 0x1D,
+        D3DSvtTexture2Darray = 0x1D,
         [NativeName("Name", "D3D_SVT_RENDERTARGETVIEW")]
-        SvtRendertargetview = 0x1E,
+        D3DSvtRendertargetview = 0x1E,
         [NativeName("Name", "D3D_SVT_DEPTHSTENCILVIEW")]
-        SvtDepthstencilview = 0x1F,
+        D3DSvtDepthstencilview = 0x1F,
         [NativeName("Name", "D3D_SVT_TEXTURE2DMS")]
-        SvtTexture2Dms = 0x20,
+        D3DSvtTexture2Dms = 0x20,
         [NativeName("Name", "D3D_SVT_TEXTURE2DMSARRAY")]
-        SvtTexture2Dmsarray = 0x21,
+        D3DSvtTexture2Dmsarray = 0x21,
         [NativeName("Name", "D3D_SVT_TEXTURECUBEARRAY")]
-        SvtTexturecubearray = 0x22,
+        D3DSvtTexturecubearray = 0x22,
         [NativeName("Name", "D3D_SVT_HULLSHADER")]
-        SvtHullshader = 0x23,
+        D3DSvtHullshader = 0x23,
         [NativeName("Name", "D3D_SVT_DOMAINSHADER")]
-        SvtDomainshader = 0x24,
+        D3DSvtDomainshader = 0x24,
         [NativeName("Name", "D3D_SVT_INTERFACE_POINTER")]
-        SvtInterfacePointer = 0x25,
+        D3DSvtInterfacePointer = 0x25,
         [NativeName("Name", "D3D_SVT_COMPUTESHADER")]
-        SvtComputeshader = 0x26,
+        D3DSvtComputeshader = 0x26,
         [NativeName("Name", "D3D_SVT_DOUBLE")]
-        SvtDouble = 0x27,
+        D3DSvtDouble = 0x27,
         [NativeName("Name", "D3D_SVT_RWTEXTURE1D")]
-        SvtRwtexture1D = 0x28,
+        D3DSvtRwtexture1D = 0x28,
         [NativeName("Name", "D3D_SVT_RWTEXTURE1DARRAY")]
-        SvtRwtexture1Darray = 0x29,
+        D3DSvtRwtexture1Darray = 0x29,
         [NativeName("Name", "D3D_SVT_RWTEXTURE2D")]
-        SvtRwtexture2D = 0x2A,
+        D3DSvtRwtexture2D = 0x2A,
         [NativeName("Name", "D3D_SVT_RWTEXTURE2DARRAY")]
-        SvtRwtexture2Darray = 0x2B,
+        D3DSvtRwtexture2Darray = 0x2B,
         [NativeName("Name", "D3D_SVT_RWTEXTURE3D")]
-        SvtRwtexture3D = 0x2C,
+        D3DSvtRwtexture3D = 0x2C,
         [NativeName("Name", "D3D_SVT_RWBUFFER")]
-        SvtRwbuffer = 0x2D,
+        D3DSvtRwbuffer = 0x2D,
         [NativeName("Name", "D3D_SVT_BYTEADDRESS_BUFFER")]
-        SvtByteaddressBuffer = 0x2E,
+        D3DSvtByteaddressBuffer = 0x2E,
         [NativeName("Name", "D3D_SVT_RWBYTEADDRESS_BUFFER")]
-        SvtRwbyteaddressBuffer = 0x2F,
+        D3DSvtRwbyteaddressBuffer = 0x2F,
         [NativeName("Name", "D3D_SVT_STRUCTURED_BUFFER")]
-        SvtStructuredBuffer = 0x30,
+        D3DSvtStructuredBuffer = 0x30,
         [NativeName("Name", "D3D_SVT_RWSTRUCTURED_BUFFER")]
-        SvtRwstructuredBuffer = 0x31,
+        D3DSvtRwstructuredBuffer = 0x31,
         [NativeName("Name", "D3D_SVT_APPEND_STRUCTURED_BUFFER")]
-        SvtAppendStructuredBuffer = 0x32,
+        D3DSvtAppendStructuredBuffer = 0x32,
         [NativeName("Name", "D3D_SVT_CONSUME_STRUCTURED_BUFFER")]
-        SvtConsumeStructuredBuffer = 0x33,
+        D3DSvtConsumeStructuredBuffer = 0x33,
         [NativeName("Name", "D3D_SVT_MIN8FLOAT")]
-        SvtMin8float = 0x34,
+        D3DSvtMin8float = 0x34,
         [NativeName("Name", "D3D_SVT_MIN10FLOAT")]
-        SvtMin10float = 0x35,
+        D3DSvtMin10float = 0x35,
         [NativeName("Name", "D3D_SVT_MIN16FLOAT")]
-        SvtMin16float = 0x36,
+        D3DSvtMin16float = 0x36,
         [NativeName("Name", "D3D_SVT_MIN12INT")]
-        SvtMin12int = 0x37,
+        D3DSvtMin12int = 0x37,
         [NativeName("Name", "D3D_SVT_MIN16INT")]
-        SvtMin16int = 0x38,
+        D3DSvtMin16int = 0x38,
         [NativeName("Name", "D3D_SVT_MIN16UINT")]
-        SvtMin16Uint = 0x39,
+        D3DSvtMin16Uint = 0x39,
         [NativeName("Name", "D3D10_SVT_VOID")]
         D3D10SvtVoid = 0x0,
         [NativeName("Name", "D3D10_SVT_BOOL")]
@@ -235,6 +235,6 @@ namespace Silk.NET.Core.Native
         [NativeName("Name", "D3D11_SVT_CONSUME_STRUCTURED_BUFFER")]
         D3D11SvtConsumeStructuredBuffer = 0x33,
         [NativeName("Name", "D3D_SVT_FORCE_DWORD")]
-        SvtForceDword = 0x7FFFFFFF,
+        D3DSvtForceDword = 0x7FFFFFFF,
     }
 }

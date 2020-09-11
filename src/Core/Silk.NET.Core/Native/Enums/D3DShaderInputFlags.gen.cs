@@ -12,20 +12,20 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_INPUT_FLAGS")]
-    public enum ShaderInputFlags
+    public enum D3DShaderInputFlags
     {
         [NativeName("Name", "D3D_SIF_USERPACKED")]
-        SifUserpacked = 0x1,
+        D3DSifUserpacked = 0x1,
         [NativeName("Name", "D3D_SIF_COMPARISON_SAMPLER")]
-        SifComparisonSampler = 0x2,
+        D3DSifComparisonSampler = 0x2,
         [NativeName("Name", "D3D_SIF_TEXTURE_COMPONENT_0")]
-        SifTextureComponent0 = 0x4,
+        D3DSifTextureComponent0 = 0x4,
         [NativeName("Name", "D3D_SIF_TEXTURE_COMPONENT_1")]
-        SifTextureComponent1 = 0x8,
+        D3DSifTextureComponent1 = 0x8,
         [NativeName("Name", "D3D_SIF_TEXTURE_COMPONENTS")]
-        SifTextureComponents = 0xC,
+        D3DSifTextureComponents = 0xC,
         [NativeName("Name", "D3D_SIF_UNUSED")]
-        SifUnused = 0x10,
+        D3DSifUnused = 0x10,
         [NativeName("Name", "D3D10_SIF_USERPACKED")]
         D3D10SifUserpacked = 0x1,
         [NativeName("Name", "D3D10_SIF_COMPARISON_SAMPLER")]
@@ -37,6 +37,6 @@ namespace Silk.NET.Core.Native
         [NativeName("Name", "D3D10_SIF_TEXTURE_COMPONENTS")]
         D3D10SifTextureComponents = 0xC,
         [NativeName("Name", "D3D_SIF_FORCE_DWORD")]
-        SifForceDword = 0x7FFFFFFF,
+        D3DSifForceDword = 0x7FFFFFFF,
     }
 }

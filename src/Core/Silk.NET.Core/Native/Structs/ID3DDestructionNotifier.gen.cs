@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "ID3DDestructionNotifier")]
     public unsafe partial struct ID3DDestructionNotifier
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3DDestructionNotifier val)
+            => Unsafe.As<ID3DDestructionNotifier, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3DDestructionNotifier* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3DDestructionNotifier
         (
             void** lpVtbl = default

@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11ShaderTraceFactory")]
     public unsafe partial struct ID3D11ShaderTraceFactory
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11ShaderTraceFactory val)
+            => Unsafe.As<ID3D11ShaderTraceFactory, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D11ShaderTraceFactory* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D11ShaderTraceFactory
         (
             void** lpVtbl = default
@@ -111,46 +123,46 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateShaderTrace(Silk.NET.Core.Runtime.Windows.IUnknown* pShader, ShaderTraceDesc* pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
+        public unsafe int CreateShaderTrace(Silk.NET.Core.Native.IUnknown* pShader, ShaderTraceDesc* pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
         {
             fixed (ID3D11ShaderTraceFactory* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Runtime.Windows.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDesc, ppShaderTrace);
+                ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDesc, ppShaderTrace);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateShaderTrace(Silk.NET.Core.Runtime.Windows.IUnknown* pShader, ShaderTraceDesc* pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
+        public unsafe int CreateShaderTrace(Silk.NET.Core.Native.IUnknown* pShader, ShaderTraceDesc* pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
         {
             fixed (ID3D11ShaderTraceFactory* @this = &this)
             {
                 int ret = default;
                 fixed (ID3D11ShaderTrace** ppShaderTracePtr = &ppShaderTrace)
                 {
-                    ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Runtime.Windows.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDesc, ppShaderTracePtr);
+                    ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDesc, ppShaderTracePtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateShaderTrace(Silk.NET.Core.Runtime.Windows.IUnknown* pShader, ref ShaderTraceDesc pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
+        public unsafe int CreateShaderTrace(Silk.NET.Core.Native.IUnknown* pShader, ref ShaderTraceDesc pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
         {
             fixed (ID3D11ShaderTraceFactory* @this = &this)
             {
                 int ret = default;
                 fixed (ShaderTraceDesc* pTraceDescPtr = &pTraceDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Runtime.Windows.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDescPtr, ppShaderTrace);
+                    ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDescPtr, ppShaderTrace);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateShaderTrace(Silk.NET.Core.Runtime.Windows.IUnknown* pShader, ref ShaderTraceDesc pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
+        public unsafe int CreateShaderTrace(Silk.NET.Core.Native.IUnknown* pShader, ref ShaderTraceDesc pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
         {
             fixed (ID3D11ShaderTraceFactory* @this = &this)
             {
@@ -159,7 +171,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11ShaderTrace** ppShaderTracePtr = &ppShaderTrace)
                     {
-                        ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Runtime.Windows.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDescPtr, ppShaderTracePtr);
+                        ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShader, pTraceDescPtr, ppShaderTracePtr);
                     }
                 }
                 return ret;
@@ -167,30 +179,30 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateShaderTrace(ref Silk.NET.Core.Runtime.Windows.IUnknown pShader, ShaderTraceDesc* pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
+        public unsafe int CreateShaderTrace(ref Silk.NET.Core.Native.IUnknown pShader, ShaderTraceDesc* pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
         {
             fixed (ID3D11ShaderTraceFactory* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pShaderPtr = &pShader)
+                fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
                 {
-                    ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Runtime.Windows.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDesc, ppShaderTrace);
+                    ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDesc, ppShaderTrace);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateShaderTrace(ref Silk.NET.Core.Runtime.Windows.IUnknown pShader, ShaderTraceDesc* pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
+        public unsafe int CreateShaderTrace(ref Silk.NET.Core.Native.IUnknown pShader, ShaderTraceDesc* pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
         {
             fixed (ID3D11ShaderTraceFactory* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pShaderPtr = &pShader)
+                fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
                 {
                     fixed (ID3D11ShaderTrace** ppShaderTracePtr = &ppShaderTrace)
                     {
-                        ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Runtime.Windows.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDesc, ppShaderTracePtr);
+                        ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDesc, ppShaderTracePtr);
                     }
                 }
                 return ret;
@@ -198,16 +210,16 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateShaderTrace(ref Silk.NET.Core.Runtime.Windows.IUnknown pShader, ref ShaderTraceDesc pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
+        public unsafe int CreateShaderTrace(ref Silk.NET.Core.Native.IUnknown pShader, ref ShaderTraceDesc pTraceDesc, ID3D11ShaderTrace** ppShaderTrace)
         {
             fixed (ID3D11ShaderTraceFactory* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pShaderPtr = &pShader)
+                fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
                 {
                     fixed (ShaderTraceDesc* pTraceDescPtr = &pTraceDesc)
                     {
-                        ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Runtime.Windows.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDescPtr, ppShaderTrace);
+                        ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDescPtr, ppShaderTrace);
                     }
                 }
                 return ret;
@@ -215,18 +227,18 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateShaderTrace(ref Silk.NET.Core.Runtime.Windows.IUnknown pShader, ref ShaderTraceDesc pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
+        public unsafe int CreateShaderTrace(ref Silk.NET.Core.Native.IUnknown pShader, ref ShaderTraceDesc pTraceDesc, ref ID3D11ShaderTrace* ppShaderTrace)
         {
             fixed (ID3D11ShaderTraceFactory* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pShaderPtr = &pShader)
+                fixed (Silk.NET.Core.Native.IUnknown* pShaderPtr = &pShader)
                 {
                     fixed (ShaderTraceDesc* pTraceDescPtr = &pTraceDesc)
                     {
                         fixed (ID3D11ShaderTrace** ppShaderTracePtr = &ppShaderTrace)
                         {
-                            ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Runtime.Windows.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDescPtr, ppShaderTracePtr);
+                            ret = ((delegate* cdecl<ID3D11ShaderTraceFactory*, Silk.NET.Core.Native.IUnknown*, ShaderTraceDesc*, ID3D11ShaderTrace**, int>)LpVtbl[3])(@this, pShaderPtr, pTraceDescPtr, ppShaderTracePtr);
                         }
                     }
                 }

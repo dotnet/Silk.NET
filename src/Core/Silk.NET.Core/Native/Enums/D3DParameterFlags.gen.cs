@@ -12,15 +12,15 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_PARAMETER_FLAGS")]
-    public enum ParameterFlags
+    public enum D3DParameterFlags
     {
         [NativeName("Name", "D3D_PF_NONE")]
-        PFNone = 0x0,
+        D3DPFNone = 0x0,
         [NativeName("Name", "D3D_PF_IN")]
-        PFIn = 0x1,
+        D3DPFIn = 0x1,
         [NativeName("Name", "D3D_PF_OUT")]
-        PFOut = 0x2,
+        D3DPFOut = 0x2,
         [NativeName("Name", "D3D_PF_FORCE_DWORD")]
-        PFForceDword = 0x7FFFFFFF,
+        D3DPFForceDword = 0x7FFFFFFF,
     }
 }

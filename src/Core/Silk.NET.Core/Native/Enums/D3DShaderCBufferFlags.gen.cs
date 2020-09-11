@@ -12,13 +12,13 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_CBUFFER_FLAGS")]
-    public enum ShaderCBufferFlags
+    public enum D3DShaderCBufferFlags
     {
         [NativeName("Name", "D3D_CBF_USERPACKED")]
-        CbfUserpacked = 0x1,
+        D3DCbfUserpacked = 0x1,
         [NativeName("Name", "D3D10_CBF_USERPACKED")]
         D3D10CbfUserpacked = 0x1,
         [NativeName("Name", "D3D_CBF_FORCE_DWORD")]
-        CbfForceDword = 0x7FFFFFFF,
+        D3DCbfForceDword = 0x7FFFFFFF,
     }
 }

@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,28 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12DeviceRemovedExtendedDataSettings1")]
     public unsafe partial struct ID3D12DeviceRemovedExtendedDataSettings1
     {
+        public static implicit operator ID3D12DeviceRemovedExtendedDataSettings(ID3D12DeviceRemovedExtendedDataSettings1 val)
+            => Unsafe.As<ID3D12DeviceRemovedExtendedDataSettings1, ID3D12DeviceRemovedExtendedDataSettings>(ref val);
+
+        public readonly ref ID3D12DeviceRemovedExtendedDataSettings AsDeviceRemovedExtendedDataSettings()
+        {
+            fixed (ID3D12DeviceRemovedExtendedDataSettings1* @this = &this)
+            {
+                return ref *(ID3D12DeviceRemovedExtendedDataSettings*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12DeviceRemovedExtendedDataSettings1 val)
+            => Unsafe.As<ID3D12DeviceRemovedExtendedDataSettings1, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D12DeviceRemovedExtendedDataSettings1* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D12DeviceRemovedExtendedDataSettings1
         (
             void** lpVtbl = default

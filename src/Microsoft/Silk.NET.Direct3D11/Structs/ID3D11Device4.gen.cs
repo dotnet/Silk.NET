@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,61 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11Device4")]
     public unsafe partial struct ID3D11Device4
     {
+        public static implicit operator ID3D11Device3(ID3D11Device4 val)
+            => Unsafe.As<ID3D11Device4, ID3D11Device3>(ref val);
+
+        public readonly ref ID3D11Device3 AsDevice3()
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                return ref *(ID3D11Device3*)@this;
+            }
+        }
+
+        public static implicit operator ID3D11Device2(ID3D11Device4 val)
+            => Unsafe.As<ID3D11Device4, ID3D11Device2>(ref val);
+
+        public readonly ref ID3D11Device2 AsDevice2()
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                return ref *(ID3D11Device2*)@this;
+            }
+        }
+
+        public static implicit operator ID3D11Device1(ID3D11Device4 val)
+            => Unsafe.As<ID3D11Device4, ID3D11Device1>(ref val);
+
+        public readonly ref ID3D11Device1 AsDevice1()
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                return ref *(ID3D11Device1*)@this;
+            }
+        }
+
+        public static implicit operator ID3D11Device(ID3D11Device4 val)
+            => Unsafe.As<ID3D11Device4, ID3D11Device>(ref val);
+
+        public readonly ref ID3D11Device AsDevice()
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                return ref *(ID3D11Device*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11Device4 val)
+            => Unsafe.As<ID3D11Device4, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D11Device4
         (
             void** lpVtbl = default
@@ -46605,55 +46661,55 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11Device4*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[36])(@this, guid, pData);
+                ret = ((delegate* cdecl<ID3D11Device4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[36])(@this, guid, pData);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D11Device4*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[36])(@this, guid, pDataPtr);
+                    ret = ((delegate* cdecl<ID3D11Device4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[36])(@this, guid, pDataPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    ret = ((delegate* cdecl<ID3D11Device4*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[36])(@this, guidPtr, pData);
+                    ret = ((delegate* cdecl<ID3D11Device4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[36])(@this, guidPtr, pData);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                    fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<ID3D11Device4*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[36])(@this, guidPtr, pDataPtr);
+                        ret = ((delegate* cdecl<ID3D11Device4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[36])(@this, guidPtr, pDataPtr);
                     }
                 }
                 return ret;
@@ -46661,12 +46717,12 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public Silk.NET.Core.Native.FeatureLevel GetFeatureLevel()
+        public Silk.NET.Core.Native.D3DFeatureLevel GetFeatureLevel()
         {
             fixed (ID3D11Device4* @this = &this)
             {
-                Silk.NET.Core.Native.FeatureLevel ret = default;
-                ret = ((delegate* cdecl<ID3D11Device4*, Silk.NET.Core.Native.FeatureLevel>)LpVtbl[37])(@this);
+                Silk.NET.Core.Native.D3DFeatureLevel ret = default;
+                ret = ((delegate* cdecl<ID3D11Device4*, Silk.NET.Core.Native.D3DFeatureLevel>)LpVtbl[37])(@this);
                 return ret;
             }
         }
@@ -46895,86 +46951,55 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.FeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextState);
+                ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextState);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.FeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
                 fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
                 {
-                    ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextStatePtr);
+                    ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextStatePtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.FeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.FeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
                 {
-                    ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextState);
+                    ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextState);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.FeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.FeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
-                {
-                    fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
-                    {
-                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextStatePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.FeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
-        {
-            fixed (ID3D11Device4* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
-                {
-                    ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextState);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.FeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
-        {
-            fixed (ID3D11Device4* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
                 {
                     fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
                     {
-                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextStatePtr);
+                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextStatePtr);
                     }
                 }
                 return ret;
@@ -46982,67 +47007,30 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.FeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.FeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
                 {
-                    fixed (Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
-                    {
-                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextState);
-                    }
+                    ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextState);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.FeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.FeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
-                {
-                    fixed (Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
-                    {
-                        fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
-                        {
-                            ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextStatePtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.FeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
-        {
-            fixed (ID3D11Device4* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
-                {
-                    ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextState);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.FeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
-        {
-            fixed (ID3D11Device4* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
                 {
                     fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
                     {
-                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextStatePtr);
+                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextStatePtr);
                     }
                 }
                 return ret;
@@ -47050,16 +47038,16 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.FeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.FeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
                 {
-                    fixed (Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                    fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
                     {
-                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextState);
+                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextState);
                     }
                 }
                 return ret;
@@ -47067,55 +47055,18 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.FeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.FeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
                 {
-                    fixed (Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
-                    {
-                        fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
-                        {
-                            ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextStatePtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.FeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
-        {
-            fixed (ID3D11Device4* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
-                {
-                    fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
-                    {
-                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextState);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.FeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
-        {
-            fixed (ID3D11Device4* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
-                {
-                    fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                    fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
                     {
                         fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
                         {
-                            ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextStatePtr);
+                            ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevels, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextStatePtr);
                         }
                     }
                 }
@@ -47124,18 +47075,66 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.FeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.FeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
                 {
-                    fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                    ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextState);
+                }
+                return ret;
+            }
+        }
+
+        /// <summary>To be added.</summary>
+        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                int ret = default;
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                {
+                    fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
                     {
-                        fixed (Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevel, ppContextStatePtr);
+                    }
+                }
+                return ret;
+            }
+        }
+
+        /// <summary>To be added.</summary>
+        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                int ret = default;
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                {
+                    fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                    {
+                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextState);
+                    }
+                }
+                return ret;
+            }
+        }
+
+        /// <summary>To be added.</summary>
+        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, Guid* EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                int ret = default;
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                {
+                    fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                    {
+                        fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
                         {
-                            ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextState);
+                            ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterface, pChosenFeatureLevelPtr, ppContextStatePtr);
                         }
                     }
                 }
@@ -47144,20 +47143,77 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.FeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.FeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
         {
             fixed (ID3D11Device4* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Native.FeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
                 {
                     fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
                     {
-                        fixed (Silk.NET.Core.Native.FeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                        ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextState);
+                    }
+                }
+                return ret;
+            }
+        }
+
+        /// <summary>To be added.</summary>
+        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                int ret = default;
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                {
+                    fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                    {
+                        fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
+                        {
+                            ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevel, ppContextStatePtr);
+                        }
+                    }
+                }
+                return ret;
+            }
+        }
+
+        /// <summary>To be added.</summary>
+        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ID3DDeviceContextState** ppContextState)
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                int ret = default;
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                {
+                    fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                    {
+                        fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
+                        {
+                            ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextState);
+                        }
+                    }
+                }
+                return ret;
+            }
+        }
+
+        /// <summary>To be added.</summary>
+        public unsafe int CreateDeviceContextState(uint Flags, ref Silk.NET.Core.Native.D3DFeatureLevel pFeatureLevels, uint FeatureLevels, uint SDKVersion, ref Guid EmulatedInterface, ref Silk.NET.Core.Native.D3DFeatureLevel pChosenFeatureLevel, ref ID3DDeviceContextState* ppContextState)
+        {
+            fixed (ID3D11Device4* @this = &this)
+            {
+                int ret = default;
+                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsPtr = &pFeatureLevels)
+                {
+                    fixed (Guid* EmulatedInterfacePtr = &EmulatedInterface)
+                    {
+                        fixed (Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevelPtr = &pChosenFeatureLevel)
                         {
                             fixed (ID3DDeviceContextState** ppContextStatePtr = &ppContextState)
                             {
-                                ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.FeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.FeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextStatePtr);
+                                ret = ((delegate* cdecl<ID3D11Device4*, uint, Silk.NET.Core.Native.D3DFeatureLevel*, uint, uint, Guid*, Silk.NET.Core.Native.D3DFeatureLevel*, ID3DDeviceContextState**, int>)LpVtbl[47])(@this, Flags, pFeatureLevelsPtr, FeatureLevels, SDKVersion, EmulatedInterfacePtr, pChosenFeatureLevelPtr, ppContextStatePtr);
                             }
                         }
                     }

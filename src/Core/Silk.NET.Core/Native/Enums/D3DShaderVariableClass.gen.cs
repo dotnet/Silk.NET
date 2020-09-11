@@ -12,24 +12,24 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_VARIABLE_CLASS")]
-    public enum ShaderVariableClass
+    public enum D3DShaderVariableClass
     {
         [NativeName("Name", "D3D_SVC_SCALAR")]
-        SvcScalar = 0x0,
+        D3DSvcScalar = 0x0,
         [NativeName("Name", "D3D_SVC_VECTOR")]
-        SvcVector = 0x1,
+        D3DSvcVector = 0x1,
         [NativeName("Name", "D3D_SVC_MATRIX_ROWS")]
-        SvcMatrixRows = 0x2,
+        D3DSvcMatrixRows = 0x2,
         [NativeName("Name", "D3D_SVC_MATRIX_COLUMNS")]
-        SvcMatrixColumns = 0x3,
+        D3DSvcMatrixColumns = 0x3,
         [NativeName("Name", "D3D_SVC_OBJECT")]
-        SvcObject = 0x4,
+        D3DSvcObject = 0x4,
         [NativeName("Name", "D3D_SVC_STRUCT")]
-        SvcStruct = 0x5,
+        D3DSvcStruct = 0x5,
         [NativeName("Name", "D3D_SVC_INTERFACE_CLASS")]
-        SvcInterfaceClass = 0x6,
+        D3DSvcInterfaceClass = 0x6,
         [NativeName("Name", "D3D_SVC_INTERFACE_POINTER")]
-        SvcInterfacePointer = 0x7,
+        D3DSvcInterfacePointer = 0x7,
         [NativeName("Name", "D3D10_SVC_SCALAR")]
         D3D10SvcScalar = 0x0,
         [NativeName("Name", "D3D10_SVC_VECTOR")]
@@ -47,6 +47,6 @@ namespace Silk.NET.Core.Native
         [NativeName("Name", "D3D11_SVC_INTERFACE_POINTER")]
         D3D11SvcInterfacePointer = 0x7,
         [NativeName("Name", "D3D_SVC_FORCE_DWORD")]
-        SvcForceDword = 0x7FFFFFFF,
+        D3DSvcForceDword = 0x7FFFFFFF,
     }
 }

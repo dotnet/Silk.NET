@@ -12,19 +12,19 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_DRIVER_TYPE")]
-    public enum DriverType
+    public enum D3DDriverType
     {
         [NativeName("Name", "D3D_DRIVER_TYPE_UNKNOWN")]
-        DriverTypeUnknown = 0x0,
+        D3DDriverTypeUnknown = 0x0,
         [NativeName("Name", "D3D_DRIVER_TYPE_HARDWARE")]
-        DriverTypeHardware = 0x1,
+        D3DDriverTypeHardware = 0x1,
         [NativeName("Name", "D3D_DRIVER_TYPE_REFERENCE")]
-        DriverTypeReference = 0x2,
+        D3DDriverTypeReference = 0x2,
         [NativeName("Name", "D3D_DRIVER_TYPE_NULL")]
-        DriverTypeNull = 0x3,
+        D3DDriverTypeNull = 0x3,
         [NativeName("Name", "D3D_DRIVER_TYPE_SOFTWARE")]
-        DriverTypeSoftware = 0x4,
+        D3DDriverTypeSoftware = 0x4,
         [NativeName("Name", "D3D_DRIVER_TYPE_WARP")]
-        DriverTypeWarp = 0x5,
+        D3DDriverTypeWarp = 0x5,
     }
 }

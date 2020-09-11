@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_NODE_MASK")]
-    public unsafe partial struct NodeMask
+    public unsafe partial struct D3D12NodeMask
     {
-        public NodeMask
+        public D3D12NodeMask
         (
             uint nodeMask = default
         )

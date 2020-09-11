@@ -101,6 +101,11 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine(task.LicenseText());
             sw.WriteLine();
             sw.WriteLine("using System;");
+            if (@struct.ComBases.Count > 0)
+            {
+                sw.WriteLine("using System.Runtime.CompilerServices;");
+            }
+
             sw.WriteLine("using System.Runtime.InteropServices;");
             sw.WriteLine("using System.Text;");
             sw.WriteLine("using Silk.NET.Core.Native;");
@@ -121,6 +126,29 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
             sw.WriteLine($"    public unsafe partial struct {@struct.Name}");
             sw.WriteLine("    {");
+            foreach (var comBase in @struct.ComBases)
+            {
+                sw.WriteLine($"        public static implicit operator {comBase}({@struct.Name} val)");
+                sw.WriteLine($"            => Unsafe.As<{@struct.Name}, {comBase}>(ref val);");
+                sw.WriteLine();
+                var asMethodSuffix = comBase.Split('.').Last();
+                asMethodSuffix = (asMethodSuffix.StartsWith('I') ? asMethodSuffix.Substring(1) : comBase);
+                asMethodSuffix = asMethodSuffix.StartsWith(task.FunctionPrefix)
+                    ? asMethodSuffix.Substring(task.FunctionPrefix.Length)
+                    : asMethodSuffix;
+                sw.WriteLine($"        public readonly ref {comBase} As{asMethodSuffix}()");
+                sw.WriteLine("        {");
+                sw.WriteLine($"            fixed ({@struct.Name}* @this = &this)");
+                sw.WriteLine("            {");
+                // yes i know this is unsafe and that there's a good reason why struct members can't return themselves
+                // by reference, but this should work well enough.
+                sw.WriteLine($"                return ref *({comBase}*)@this;");
+                sw.WriteLine("            }");
+                sw.WriteLine("        }");
+                sw.WriteLine();
+                // TODO add an explicit cast which calls QueryInterface
+            }
+            
             if (@struct.Fields.Any(x => x.Count is null))
             {
                 sw.WriteLine($"        public {@struct.Name}");

@@ -25,7 +25,7 @@ namespace Silk.NET.DXGI
             uint width = default,
             uint height = default,
             uint pitch = default,
-            Silk.NET.Core.Runtime.Windows.TagPoint hotSpot = default
+            Silk.NET.Core.Native.TagPoint hotSpot = default
         )
         {
             Type = type;
@@ -59,6 +59,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "POINT")]
         [NativeName("Type.Name", "POINT")]
         [NativeName("Name", "HotSpot")]
-        public Silk.NET.Core.Runtime.Windows.TagPoint HotSpot;
+        public Silk.NET.Core.Native.TagPoint HotSpot;
     }
 }

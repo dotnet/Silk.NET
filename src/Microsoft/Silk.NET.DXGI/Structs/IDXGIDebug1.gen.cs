@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,28 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIDebug1")]
     public unsafe partial struct IDXGIDebug1
     {
+        public static implicit operator IDXGIDebug(IDXGIDebug1 val)
+            => Unsafe.As<IDXGIDebug1, IDXGIDebug>(ref val);
+
+        public readonly ref IDXGIDebug AsDebug()
+        {
+            fixed (IDXGIDebug1* @this = &this)
+            {
+                return ref *(IDXGIDebug*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDebug1 val)
+            => Unsafe.As<IDXGIDebug1, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGIDebug1* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGIDebug1
         (
             void** lpVtbl = default

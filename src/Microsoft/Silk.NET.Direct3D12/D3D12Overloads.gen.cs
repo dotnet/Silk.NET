@@ -178,7 +178,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
-        public static unsafe int CreateDevice(this D3D12 thisApi, Silk.NET.Core.Runtime.Windows.IUnknown* pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Span<Guid> riid, void** ppDevice)
+        public static unsafe int CreateDevice(this D3D12 thisApi, Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Span<Guid> riid, void** ppDevice)
         {
             // SpanOverloader
             return thisApi.CreateDevice(pAdapter, MinimumFeatureLevel, ref riid.GetPinnableReference(), ppDevice);
@@ -186,7 +186,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
-        public static unsafe int CreateDevice(this D3D12 thisApi, Silk.NET.Core.Runtime.Windows.IUnknown* pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Span<Guid> riid, ref void* ppDevice)
+        public static unsafe int CreateDevice(this D3D12 thisApi, Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Span<Guid> riid, ref void* ppDevice)
         {
             // SpanOverloader
             return thisApi.CreateDevice(pAdapter, MinimumFeatureLevel, ref riid.GetPinnableReference(), ref ppDevice);
@@ -194,7 +194,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
-        public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Runtime.Windows.IUnknown> pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice)
+        public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice)
         {
             // SpanOverloader
             return thisApi.CreateDevice(ref pAdapter.GetPinnableReference(), MinimumFeatureLevel, riid, ppDevice);
@@ -202,7 +202,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
-        public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Runtime.Windows.IUnknown> pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice)
+        public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice)
         {
             // SpanOverloader
             return thisApi.CreateDevice(ref pAdapter.GetPinnableReference(), MinimumFeatureLevel, riid, ref ppDevice);
@@ -210,7 +210,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
-        public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Runtime.Windows.IUnknown> pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Span<Guid> riid, void** ppDevice)
+        public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Span<Guid> riid, void** ppDevice)
         {
             // SpanOverloader
             return thisApi.CreateDevice(ref pAdapter.GetPinnableReference(), MinimumFeatureLevel, ref riid.GetPinnableReference(), ppDevice);
@@ -218,7 +218,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]
-        public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Runtime.Windows.IUnknown> pAdapter, Silk.NET.Core.Native.FeatureLevel MinimumFeatureLevel, Span<Guid> riid, ref void* ppDevice)
+        public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Span<Guid> riid, ref void* ppDevice)
         {
             // SpanOverloader
             return thisApi.CreateDevice(ref pAdapter.GetPinnableReference(), MinimumFeatureLevel, ref riid.GetPinnableReference(), ref ppDevice);

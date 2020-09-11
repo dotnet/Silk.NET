@@ -12,16 +12,16 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_TESSELLATOR_DOMAIN")]
-    public enum TessellatorDomain
+    public enum D3DTessellatorDomain
     {
         [NativeName("Name", "D3D_TESSELLATOR_DOMAIN_UNDEFINED")]
-        TessellatorDomainUndefined = 0x0,
+        D3DTessellatorDomainUndefined = 0x0,
         [NativeName("Name", "D3D_TESSELLATOR_DOMAIN_ISOLINE")]
-        TessellatorDomainIsoline = 0x1,
+        D3DTessellatorDomainIsoline = 0x1,
         [NativeName("Name", "D3D_TESSELLATOR_DOMAIN_TRI")]
-        TessellatorDomainTri = 0x2,
+        D3DTessellatorDomainTri = 0x2,
         [NativeName("Name", "D3D_TESSELLATOR_DOMAIN_QUAD")]
-        TessellatorDomainQuad = 0x3,
+        D3DTessellatorDomainQuad = 0x3,
         [NativeName("Name", "D3D11_TESSELLATOR_DOMAIN_UNDEFINED")]
         D3D11TessellatorDomainUndefined = 0x0,
         [NativeName("Name", "D3D11_TESSELLATOR_DOMAIN_ISOLINE")]

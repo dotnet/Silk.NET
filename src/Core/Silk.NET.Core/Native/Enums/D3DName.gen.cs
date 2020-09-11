@@ -12,62 +12,62 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_NAME")]
-    public enum Name
+    public enum D3DName
     {
         [NativeName("Name", "D3D_NAME_UNDEFINED")]
-        NameUndefined = 0x0,
+        D3DNameUndefined = 0x0,
         [NativeName("Name", "D3D_NAME_POSITION")]
-        NamePosition = 0x1,
+        D3DNamePosition = 0x1,
         [NativeName("Name", "D3D_NAME_CLIP_DISTANCE")]
-        NameClipDistance = 0x2,
+        D3DNameClipDistance = 0x2,
         [NativeName("Name", "D3D_NAME_CULL_DISTANCE")]
-        NameCullDistance = 0x3,
+        D3DNameCullDistance = 0x3,
         [NativeName("Name", "D3D_NAME_RENDER_TARGET_ARRAY_INDEX")]
-        NameRenderTargetArrayIndex = 0x4,
+        D3DNameRenderTargetArrayIndex = 0x4,
         [NativeName("Name", "D3D_NAME_VIEWPORT_ARRAY_INDEX")]
-        NameViewportArrayIndex = 0x5,
+        D3DNameViewportArrayIndex = 0x5,
         [NativeName("Name", "D3D_NAME_VERTEX_ID")]
-        NameVertexID = 0x6,
+        D3DNameVertexID = 0x6,
         [NativeName("Name", "D3D_NAME_PRIMITIVE_ID")]
-        NamePrimitiveID = 0x7,
+        D3DNamePrimitiveID = 0x7,
         [NativeName("Name", "D3D_NAME_INSTANCE_ID")]
-        NameInstanceID = 0x8,
+        D3DNameInstanceID = 0x8,
         [NativeName("Name", "D3D_NAME_IS_FRONT_FACE")]
-        NameIsFrontFace = 0x9,
+        D3DNameIsFrontFace = 0x9,
         [NativeName("Name", "D3D_NAME_SAMPLE_INDEX")]
-        NameSampleIndex = 0xA,
+        D3DNameSampleIndex = 0xA,
         [NativeName("Name", "D3D_NAME_FINAL_QUAD_EDGE_TESSFACTOR")]
-        NameFinalQuadEdgeTessfactor = 0xB,
+        D3DNameFinalQuadEdgeTessfactor = 0xB,
         [NativeName("Name", "D3D_NAME_FINAL_QUAD_INSIDE_TESSFACTOR")]
-        NameFinalQuadInsideTessfactor = 0xC,
+        D3DNameFinalQuadInsideTessfactor = 0xC,
         [NativeName("Name", "D3D_NAME_FINAL_TRI_EDGE_TESSFACTOR")]
-        NameFinalTriEdgeTessfactor = 0xD,
+        D3DNameFinalTriEdgeTessfactor = 0xD,
         [NativeName("Name", "D3D_NAME_FINAL_TRI_INSIDE_TESSFACTOR")]
-        NameFinalTriInsideTessfactor = 0xE,
+        D3DNameFinalTriInsideTessfactor = 0xE,
         [NativeName("Name", "D3D_NAME_FINAL_LINE_DETAIL_TESSFACTOR")]
-        NameFinalLineDetailTessfactor = 0xF,
+        D3DNameFinalLineDetailTessfactor = 0xF,
         [NativeName("Name", "D3D_NAME_FINAL_LINE_DENSITY_TESSFACTOR")]
-        NameFinalLineDensityTessfactor = 0x10,
+        D3DNameFinalLineDensityTessfactor = 0x10,
         [NativeName("Name", "D3D_NAME_BARYCENTRICS")]
-        NameBarycentrics = 0x17,
+        D3DNameBarycentrics = 0x17,
         [NativeName("Name", "D3D_NAME_SHADINGRATE")]
-        NameShadingrate = 0x18,
+        D3DNameShadingrate = 0x18,
         [NativeName("Name", "D3D_NAME_CULLPRIMITIVE")]
-        NameCullprimitive = 0x19,
+        D3DNameCullprimitive = 0x19,
         [NativeName("Name", "D3D_NAME_TARGET")]
-        NameTarget = 0x40,
+        D3DNameTarget = 0x40,
         [NativeName("Name", "D3D_NAME_DEPTH")]
-        NameDepth = 0x41,
+        D3DNameDepth = 0x41,
         [NativeName("Name", "D3D_NAME_COVERAGE")]
-        NameCoverage = 0x42,
+        D3DNameCoverage = 0x42,
         [NativeName("Name", "D3D_NAME_DEPTH_GREATER_EQUAL")]
-        NameDepthGreaterEqual = 0x43,
+        D3DNameDepthGreaterEqual = 0x43,
         [NativeName("Name", "D3D_NAME_DEPTH_LESS_EQUAL")]
-        NameDepthLessEqual = 0x44,
+        D3DNameDepthLessEqual = 0x44,
         [NativeName("Name", "D3D_NAME_STENCIL_REF")]
-        NameStencilRef = 0x45,
+        D3DNameStencilRef = 0x45,
         [NativeName("Name", "D3D_NAME_INNER_COVERAGE")]
-        NameInnerCoverage = 0x46,
+        D3DNameInnerCoverage = 0x46,
         [NativeName("Name", "D3D10_NAME_UNDEFINED")]
         D3D10NameUndefined = 0x0,
         [NativeName("Name", "D3D10_NAME_POSITION")]

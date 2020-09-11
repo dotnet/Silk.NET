@@ -12,23 +12,23 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_INTERPOLATION_MODE")]
-    public enum InterpolationMode
+    public enum D3DInterpolationMode
     {
         [NativeName("Name", "D3D_INTERPOLATION_UNDEFINED")]
-        InterpolationUndefined = 0x0,
+        D3DInterpolationUndefined = 0x0,
         [NativeName("Name", "D3D_INTERPOLATION_CONSTANT")]
-        InterpolationConstant = 0x1,
+        D3DInterpolationConstant = 0x1,
         [NativeName("Name", "D3D_INTERPOLATION_LINEAR")]
-        InterpolationLinear = 0x2,
+        D3DInterpolationLinear = 0x2,
         [NativeName("Name", "D3D_INTERPOLATION_LINEAR_CENTROID")]
-        InterpolationLinearCentroid = 0x3,
+        D3DInterpolationLinearCentroid = 0x3,
         [NativeName("Name", "D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE")]
-        InterpolationLinearNoperspective = 0x4,
+        D3DInterpolationLinearNoperspective = 0x4,
         [NativeName("Name", "D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_CENTROID")]
-        InterpolationLinearNoperspectiveCentroid = 0x5,
+        D3DInterpolationLinearNoperspectiveCentroid = 0x5,
         [NativeName("Name", "D3D_INTERPOLATION_LINEAR_SAMPLE")]
-        InterpolationLinearSample = 0x6,
+        D3DInterpolationLinearSample = 0x6,
         [NativeName("Name", "D3D_INTERPOLATION_LINEAR_NOPERSPECTIVE_SAMPLE")]
-        InterpolationLinearNoperspectiveSample = 0x7,
+        D3DInterpolationLinearNoperspectiveSample = 0x7,
     }
 }

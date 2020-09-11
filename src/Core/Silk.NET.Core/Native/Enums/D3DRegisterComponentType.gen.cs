@@ -12,16 +12,16 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_REGISTER_COMPONENT_TYPE")]
-    public enum RegisterComponentType
+    public enum D3DRegisterComponentType
     {
         [NativeName("Name", "D3D_REGISTER_COMPONENT_UNKNOWN")]
-        RegisterComponentUnknown = 0x0,
+        D3DRegisterComponentUnknown = 0x0,
         [NativeName("Name", "D3D_REGISTER_COMPONENT_UINT32")]
-        RegisterComponentUint32 = 0x1,
+        D3DRegisterComponentUint32 = 0x1,
         [NativeName("Name", "D3D_REGISTER_COMPONENT_SINT32")]
-        RegisterComponentSint32 = 0x2,
+        D3DRegisterComponentSint32 = 0x2,
         [NativeName("Name", "D3D_REGISTER_COMPONENT_FLOAT32")]
-        RegisterComponentFloat32 = 0x3,
+        D3DRegisterComponentFloat32 = 0x3,
         [NativeName("Name", "D3D10_REGISTER_COMPONENT_UNKNOWN")]
         D3D10RegisterComponentUnknown = 0x0,
         [NativeName("Name", "D3D10_REGISTER_COMPONENT_UINT32")]

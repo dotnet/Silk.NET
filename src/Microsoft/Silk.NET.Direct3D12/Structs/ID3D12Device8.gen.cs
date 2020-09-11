@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,116 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12Device8")]
     public unsafe partial struct ID3D12Device8
     {
+        public static implicit operator ID3D12Device7(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Device7>(ref val);
+
+        public readonly ref ID3D12Device7 AsDevice7()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Device7*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Device6(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Device6>(ref val);
+
+        public readonly ref ID3D12Device6 AsDevice6()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Device6*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Device5(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Device5>(ref val);
+
+        public readonly ref ID3D12Device5 AsDevice5()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Device5*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Device4(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Device4>(ref val);
+
+        public readonly ref ID3D12Device4 AsDevice4()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Device4*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Device3(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Device3>(ref val);
+
+        public readonly ref ID3D12Device3 AsDevice3()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Device3*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Device2(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Device2>(ref val);
+
+        public readonly ref ID3D12Device2 AsDevice2()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Device2*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Device1(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Device1>(ref val);
+
+        public readonly ref ID3D12Device1 AsDevice1()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Device1*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Device(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Device>(ref val);
+
+        public readonly ref ID3D12Device AsDevice()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Device*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Object(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, ID3D12Object>(ref val);
+
+        public readonly ref ID3D12Object AsObject()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(ID3D12Object*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Device8 val)
+            => Unsafe.As<ID3D12Device8, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D12Device8* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D12Device8
         (
             void** lpVtbl = default
@@ -291,55 +402,55 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12Device8*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
+                ret = ((delegate* cdecl<ID3D12Device8*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D12Device8*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
+                    ret = ((delegate* cdecl<ID3D12Device8*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    ret = ((delegate* cdecl<ID3D12Device8*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
+                    ret = ((delegate* cdecl<ID3D12Device8*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                    fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
+                        ret = ((delegate* cdecl<ID3D12Device8*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
                     }
                 }
                 return ret;
@@ -3539,46 +3650,46 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, char* Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandle);
+                ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandle);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, char* Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandlePtr);
+                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandlePtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, ref char Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, ref char Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (char* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
+                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, ref char Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, ref char Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
@@ -3587,7 +3698,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandlePtr);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandlePtr);
                     }
                 }
                 return ret;
@@ -3595,20 +3706,20 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, string Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, string Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
+                ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, string Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, string Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
@@ -3616,7 +3727,7 @@ namespace Silk.NET.Direct3D12
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandlePtr);
+                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandlePtr);
                 }
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 return ret;
@@ -3624,30 +3735,30 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, char* Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, char* Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
-                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandle);
+                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandle);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, char* Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, char* Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandlePtr);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandlePtr);
                     }
                 }
                 return ret;
@@ -3655,16 +3766,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, ref char Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, ref char Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
                     fixed (char* NamePtr = &Name)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandle);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandle);
                     }
                 }
                 return ret;
@@ -3672,18 +3783,18 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, ref char Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, ref char Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
                     fixed (char* NamePtr = &Name)
                     {
                         fixed (void** pHandlePtr = &pHandle)
                         {
-                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandlePtr);
+                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandlePtr);
                         }
                     }
                 }
@@ -3692,15 +3803,15 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, string Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, string Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandle);
+                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandle);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 }
                 return ret;
@@ -3708,17 +3819,17 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, string Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, string Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandlePtr);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, NamePtr, pHandlePtr);
                     }
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 }
@@ -3727,21 +3838,21 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, char* Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
                 {
-                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandle);
+                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandle);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, char* Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
@@ -3750,7 +3861,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandlePtr);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandlePtr);
                     }
                 }
                 return ret;
@@ -3758,7 +3869,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, ref char Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, ref char Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
@@ -3767,7 +3878,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (char* NamePtr = &Name)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandle);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandle);
                     }
                 }
                 return ret;
@@ -3775,7 +3886,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, ref char Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, ref char Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
@@ -3786,7 +3897,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (void** pHandlePtr = &pHandle)
                         {
-                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandlePtr);
+                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandlePtr);
                         }
                     }
                 }
@@ -3795,7 +3906,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, string Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, string Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
@@ -3803,7 +3914,7 @@ namespace Silk.NET.Direct3D12
                 fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
                 {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandle);
+                    ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandle);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 }
                 return ret;
@@ -3811,7 +3922,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint Access, string Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, string Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
@@ -3821,7 +3932,7 @@ namespace Silk.NET.Direct3D12
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandlePtr);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, NamePtr, pHandlePtr);
                     }
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                 }
@@ -3830,16 +3941,16 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, char* Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, char* Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                    fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                     {
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, Name, pHandle);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, Name, pHandle);
                     }
                 }
                 return ret;
@@ -3847,18 +3958,18 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, char* Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, char* Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                    fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                     {
                         fixed (void** pHandlePtr = &pHandle)
                         {
-                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, Name, pHandlePtr);
+                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, Name, pHandlePtr);
                         }
                     }
                 }
@@ -3867,18 +3978,18 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, ref char Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, ref char Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                    fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                     {
                         fixed (char* NamePtr = &Name)
                         {
-                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandle);
+                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandle);
                         }
                     }
                 }
@@ -3887,20 +3998,20 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, ref char Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, ref char Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                    fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                     {
                         fixed (char* NamePtr = &Name)
                         {
                             fixed (void** pHandlePtr = &pHandle)
                             {
-                                ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandlePtr);
+                                ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandlePtr);
                             }
                         }
                     }
@@ -3910,17 +4021,17 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, string Name, void** pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, string Name, void** pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                    fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                     {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandle);
+                        ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandle);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                     }
                 }
@@ -3929,19 +4040,19 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint Access, string Name, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, string Name, ref void* pHandle)
         {
             fixed (ID3D12Device8* @this = &this)
             {
                 int ret = default;
                 fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                    fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                     {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
                         fixed (void** pHandlePtr = &pHandle)
                         {
-                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandlePtr);
+                            ret = ((delegate* cdecl<ID3D12Device8*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributesPtr, Access, NamePtr, pHandlePtr);
                         }
             Marshal.FreeHGlobal((IntPtr)NamePtr);
                     }

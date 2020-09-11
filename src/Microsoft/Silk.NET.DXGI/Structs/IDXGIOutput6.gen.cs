@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,94 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIOutput6")]
     public unsafe partial struct IDXGIOutput6
     {
+        public static implicit operator IDXGIOutput5(IDXGIOutput6 val)
+            => Unsafe.As<IDXGIOutput6, IDXGIOutput5>(ref val);
+
+        public readonly ref IDXGIOutput5 AsOutput5()
+        {
+            fixed (IDXGIOutput6* @this = &this)
+            {
+                return ref *(IDXGIOutput5*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIOutput4(IDXGIOutput6 val)
+            => Unsafe.As<IDXGIOutput6, IDXGIOutput4>(ref val);
+
+        public readonly ref IDXGIOutput4 AsOutput4()
+        {
+            fixed (IDXGIOutput6* @this = &this)
+            {
+                return ref *(IDXGIOutput4*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIOutput3(IDXGIOutput6 val)
+            => Unsafe.As<IDXGIOutput6, IDXGIOutput3>(ref val);
+
+        public readonly ref IDXGIOutput3 AsOutput3()
+        {
+            fixed (IDXGIOutput6* @this = &this)
+            {
+                return ref *(IDXGIOutput3*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIOutput2(IDXGIOutput6 val)
+            => Unsafe.As<IDXGIOutput6, IDXGIOutput2>(ref val);
+
+        public readonly ref IDXGIOutput2 AsOutput2()
+        {
+            fixed (IDXGIOutput6* @this = &this)
+            {
+                return ref *(IDXGIOutput2*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIOutput1(IDXGIOutput6 val)
+            => Unsafe.As<IDXGIOutput6, IDXGIOutput1>(ref val);
+
+        public readonly ref IDXGIOutput1 AsOutput1()
+        {
+            fixed (IDXGIOutput6* @this = &this)
+            {
+                return ref *(IDXGIOutput1*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIOutput(IDXGIOutput6 val)
+            => Unsafe.As<IDXGIOutput6, IDXGIOutput>(ref val);
+
+        public readonly ref IDXGIOutput AsOutput()
+        {
+            fixed (IDXGIOutput6* @this = &this)
+            {
+                return ref *(IDXGIOutput*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIObject(IDXGIOutput6 val)
+            => Unsafe.As<IDXGIOutput6, IDXGIObject>(ref val);
+
+        public readonly ref IDXGIObject AsObject()
+        {
+            fixed (IDXGIOutput6* @this = &this)
+            {
+                return ref *(IDXGIObject*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIOutput6 val)
+            => Unsafe.As<IDXGIOutput6, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGIOutput6* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGIOutput6
         (
             void** lpVtbl = default
@@ -167,55 +256,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutput6*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+                ret = ((delegate* cdecl<IDXGIOutput6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                     }
                 }
                 return ret;
@@ -484,55 +573,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice)
+        public unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+                ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice)
+        public unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice)
+        public unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (ModeDesc* pClosestMatchPtr = &pClosestMatch)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice)
+        public unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (ModeDesc* pClosestMatchPtr = &pClosestMatch)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                    fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
                     }
                 }
                 return ret;
@@ -540,30 +629,30 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice)
+        public unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (ModeDesc* pModeToMatchPtr = &pModeToMatch)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice)
+        public unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (ModeDesc* pModeToMatchPtr = &pModeToMatch)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                    fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
                     }
                 }
                 return ret;
@@ -571,7 +660,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice)
+        public unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
@@ -580,7 +669,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (ModeDesc* pClosestMatchPtr = &pClosestMatch)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
                     }
                 }
                 return ret;
@@ -588,7 +677,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice)
+        public int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
@@ -597,9 +686,9 @@ namespace Silk.NET.DXGI
                 {
                     fixed (ModeDesc* pClosestMatchPtr = &pClosestMatch)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                        fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                         {
-                            ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+                            ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc*, ModeDesc*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[9])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
                         }
                     }
                 }
@@ -619,25 +708,25 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int TakeOwnership(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, int Exclusive)
+        public unsafe int TakeOwnership(Silk.NET.Core.Native.IUnknown* pDevice, int Exclusive)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, int, int>)LpVtbl[11])(@this, pDevice, Exclusive);
+                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevice, Exclusive);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int TakeOwnership(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, int Exclusive)
+        public int TakeOwnership(ref Silk.NET.Core.Native.IUnknown pDevice, int Exclusive)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, int, int>)LpVtbl[11])(@this, pDevicePtr, Exclusive);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, int, int>)LpVtbl[11])(@this, pDevicePtr, Exclusive);
                 }
                 return ret;
             }
@@ -859,55 +948,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice)
+        public unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
+                ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevice);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice)
+        public unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatch, pConcernedDevicePtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice)
+        public unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevice);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice)
+        public unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                    fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatch, pClosestMatchPtr, pConcernedDevicePtr);
                     }
                 }
                 return ret;
@@ -915,30 +1004,30 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice)
+        public unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevice);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice)
+        public unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (ModeDesc1* pModeToMatchPtr = &pModeToMatch)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                    fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatch, pConcernedDevicePtr);
                     }
                 }
                 return ret;
@@ -946,7 +1035,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice)
+        public unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
@@ -955,7 +1044,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevice);
                     }
                 }
                 return ret;
@@ -963,7 +1052,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice)
+        public int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
@@ -972,9 +1061,9 @@ namespace Silk.NET.DXGI
                 {
                     fixed (ModeDesc1* pClosestMatchPtr = &pClosestMatch)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                        fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                         {
-                            ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
+                            ret = ((delegate* cdecl<IDXGIOutput6*, ModeDesc1*, ModeDesc1*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[20])(@this, pModeToMatchPtr, pClosestMatchPtr, pConcernedDevicePtr);
                         }
                     }
                 }
@@ -1008,55 +1097,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication)
+        public unsafe int DuplicateOutput(Silk.NET.Core.Native.IUnknown* pDevice, IDXGIOutputDuplication** ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplication);
+                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplication);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
+        public unsafe int DuplicateOutput(Silk.NET.Core.Native.IUnknown* pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplicationPtr);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevice, ppOutputDuplicationPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, IDXGIOutputDuplication** ppOutputDuplication)
+        public unsafe int DuplicateOutput(ref Silk.NET.Core.Native.IUnknown pDevice, IDXGIOutputDuplication** ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplication);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplication);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
+        public unsafe int DuplicateOutput(ref Silk.NET.Core.Native.IUnknown pDevice, ref IDXGIOutputDuplication* ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplicationPtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, IDXGIOutputDuplication**, int>)LpVtbl[22])(@this, pDevicePtr, ppOutputDuplicationPtr);
                     }
                 }
                 return ret;
@@ -1075,55 +1164,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice, uint* pFlags)
+        public unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, Silk.NET.Core.Native.IUnknown* pConcernedDevice, uint* pFlags)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, Silk.NET.Core.Runtime.Windows.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevice, pFlags);
+                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevice, pFlags);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice, ref uint pFlags)
+        public unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, Silk.NET.Core.Native.IUnknown* pConcernedDevice, ref uint pFlags)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (uint* pFlagsPtr = &pFlags)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, Silk.NET.Core.Runtime.Windows.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevice, pFlagsPtr);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevice, pFlagsPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice, uint* pFlags)
+        public unsafe int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, ref Silk.NET.Core.Native.IUnknown pConcernedDevice, uint* pFlags)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, Silk.NET.Core.Runtime.Windows.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevicePtr, pFlags);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevicePtr, pFlags);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice, ref uint pFlags)
+        public int CheckOverlaySupport(Silk.NET.DXGI.Format EnumFormat, ref Silk.NET.Core.Native.IUnknown pConcernedDevice, ref uint pFlags)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
                     fixed (uint* pFlagsPtr = &pFlags)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, Silk.NET.Core.Runtime.Windows.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevicePtr, pFlagsPtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[24])(@this, EnumFormat, pConcernedDevicePtr, pFlagsPtr);
                     }
                 }
                 return ret;
@@ -1131,55 +1220,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice, uint* pFlags)
+        public unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, Silk.NET.Core.Native.IUnknown* pConcernedDevice, uint* pFlags)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Runtime.Windows.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevice, pFlags);
+                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevice, pFlags);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevice, ref uint pFlags)
+        public unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, Silk.NET.Core.Native.IUnknown* pConcernedDevice, ref uint pFlags)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (uint* pFlagsPtr = &pFlags)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Runtime.Windows.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevice, pFlagsPtr);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevice, pFlagsPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice, uint* pFlags)
+        public unsafe int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, ref Silk.NET.Core.Native.IUnknown pConcernedDevice, uint* pFlags)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Runtime.Windows.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevicePtr, pFlags);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevicePtr, pFlags);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, ref Silk.NET.Core.Runtime.Windows.IUnknown pConcernedDevice, ref uint pFlags)
+        public int CheckOverlayColorSpaceSupport(Silk.NET.DXGI.Format Format, ColorSpaceType ColorSpace, ref Silk.NET.Core.Native.IUnknown pConcernedDevice, ref uint pFlags)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pConcernedDevicePtr = &pConcernedDevice)
                 {
                     fixed (uint* pFlagsPtr = &pFlags)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Runtime.Windows.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevicePtr, pFlagsPtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.DXGI.Format, ColorSpaceType, Silk.NET.Core.Native.IUnknown*, uint*, int>)LpVtbl[25])(@this, Format, ColorSpace, pConcernedDevicePtr, pFlagsPtr);
                     }
                 }
                 return ret;
@@ -1187,46 +1276,46 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput1(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+        public unsafe int DuplicateOutput1(Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
+                ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput1(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+        public unsafe int DuplicateOutput1(Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplicationPtr);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplicationPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput1(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+        public unsafe int DuplicateOutput1(Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
                 fixed (Silk.NET.DXGI.Format* pSupportedFormatsPtr = &pSupportedFormats)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplication);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplication);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput1(Silk.NET.Core.Runtime.Windows.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+        public unsafe int DuplicateOutput1(Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
@@ -1235,7 +1324,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplicationPtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevice, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplicationPtr);
                     }
                 }
                 return ret;
@@ -1243,30 +1332,30 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput1(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+        public unsafe int DuplicateOutput1(ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
+                    ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplication);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput1(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+        public unsafe int DuplicateOutput1(ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, Silk.NET.DXGI.Format* pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplicationPtr);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormats, ppOutputDuplicationPtr);
                     }
                 }
                 return ret;
@@ -1274,16 +1363,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput1(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+        public unsafe int DuplicateOutput1(ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (Silk.NET.DXGI.Format* pSupportedFormatsPtr = &pSupportedFormats)
                     {
-                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplication);
+                        ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplication);
                     }
                 }
                 return ret;
@@ -1291,18 +1380,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int DuplicateOutput1(ref Silk.NET.Core.Runtime.Windows.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+        public unsafe int DuplicateOutput1(ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, ref Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
         {
             fixed (IDXGIOutput6* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDevicePtr = &pDevice)
+                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
                 {
                     fixed (Silk.NET.DXGI.Format* pSupportedFormatsPtr = &pSupportedFormats)
                     {
                         fixed (IDXGIOutputDuplication** ppOutputDuplicationPtr = &ppOutputDuplication)
                         {
-                            ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Runtime.Windows.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplicationPtr);
+                            ret = ((delegate* cdecl<IDXGIOutput6*, Silk.NET.Core.Native.IUnknown*, uint, uint, Silk.NET.DXGI.Format*, IDXGIOutputDuplication**, int>)LpVtbl[26])(@this, pDevicePtr, Flags, SupportedFormatsCount, pSupportedFormatsPtr, ppOutputDuplicationPtr);
                         }
                     }
                 }

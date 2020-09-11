@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D12
         public ShaderBufferDesc
         (
             byte* name = default,
-            Silk.NET.Core.Native.CBufferType type = default,
+            Silk.NET.Core.Native.D3DCBufferType type = default,
             uint variables = default,
             uint size = default,
             uint uFlags = default
@@ -44,7 +44,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D_CBUFFER_TYPE")]
         [NativeName("Type.Name", "D3D_CBUFFER_TYPE")]
         [NativeName("Name", "Type")]
-        public Silk.NET.Core.Native.CBufferType Type;
+        public Silk.NET.Core.Native.D3DCBufferType Type;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

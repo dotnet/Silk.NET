@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,17 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12SwapChainAssistant")]
     public unsafe partial struct ID3D12SwapChainAssistant
     {
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12SwapChainAssistant val)
+            => Unsafe.As<ID3D12SwapChainAssistant, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D12SwapChainAssistant* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D12SwapChainAssistant
         (
             void** lpVtbl = default

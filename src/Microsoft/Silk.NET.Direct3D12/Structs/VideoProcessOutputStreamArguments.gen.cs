@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessOutputStreamArguments
         (
-            Silk.NET.Core.Runtime.Windows.TagRect targetRectangle = default
+            Silk.NET.Core.Native.TagRect targetRectangle = default
         )
         {
            OutputStream_0 = default;
@@ -43,6 +43,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_RECT")]
         [NativeName("Type.Name", "D3D12_RECT")]
         [NativeName("Name", "TargetRectangle")]
-        public Silk.NET.Core.Runtime.Windows.TagRect TargetRectangle;
+        public Silk.NET.Core.Native.TagRect TargetRectangle;
     }
 }

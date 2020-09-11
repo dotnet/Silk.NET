@@ -12,32 +12,32 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_SRV_DIMENSION")]
-    public enum SrvDimension
+    public enum D3DSrvDimension
     {
         [NativeName("Name", "D3D_SRV_DIMENSION_UNKNOWN")]
-        SrvDimensionUnknown = 0x0,
+        D3DSrvDimensionUnknown = 0x0,
         [NativeName("Name", "D3D_SRV_DIMENSION_BUFFER")]
-        SrvDimensionBuffer = 0x1,
+        D3DSrvDimensionBuffer = 0x1,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURE1D")]
-        SrvDimensionTexture1D = 0x2,
+        D3DSrvDimensionTexture1D = 0x2,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURE1DARRAY")]
-        SrvDimensionTexture1Darray = 0x3,
+        D3DSrvDimensionTexture1Darray = 0x3,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURE2D")]
-        SrvDimensionTexture2D = 0x4,
+        D3DSrvDimensionTexture2D = 0x4,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURE2DARRAY")]
-        SrvDimensionTexture2Darray = 0x5,
+        D3DSrvDimensionTexture2Darray = 0x5,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURE2DMS")]
-        SrvDimensionTexture2Dms = 0x6,
+        D3DSrvDimensionTexture2Dms = 0x6,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURE2DMSARRAY")]
-        SrvDimensionTexture2Dmsarray = 0x7,
+        D3DSrvDimensionTexture2Dmsarray = 0x7,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURE3D")]
-        SrvDimensionTexture3D = 0x8,
+        D3DSrvDimensionTexture3D = 0x8,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURECUBE")]
-        SrvDimensionTexturecube = 0x9,
+        D3DSrvDimensionTexturecube = 0x9,
         [NativeName("Name", "D3D_SRV_DIMENSION_TEXTURECUBEARRAY")]
-        SrvDimensionTexturecubearray = 0xA,
+        D3DSrvDimensionTexturecubearray = 0xA,
         [NativeName("Name", "D3D_SRV_DIMENSION_BUFFEREX")]
-        SrvDimensionBufferex = 0xB,
+        D3DSrvDimensionBufferex = 0xB,
         [NativeName("Name", "D3D10_SRV_DIMENSION_UNKNOWN")]
         D3D10SrvDimensionUnknown = 0x0,
         [NativeName("Name", "D3D10_SRV_DIMENSION_BUFFER")]

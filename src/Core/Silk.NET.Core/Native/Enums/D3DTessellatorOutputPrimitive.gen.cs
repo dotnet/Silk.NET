@@ -12,18 +12,18 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_TESSELLATOR_OUTPUT_PRIMITIVE")]
-    public enum TessellatorOutputPrimitive
+    public enum D3DTessellatorOutputPrimitive
     {
         [NativeName("Name", "D3D_TESSELLATOR_OUTPUT_UNDEFINED")]
-        TessellatorOutputUndefined = 0x0,
+        D3DTessellatorOutputUndefined = 0x0,
         [NativeName("Name", "D3D_TESSELLATOR_OUTPUT_POINT")]
-        TessellatorOutputPoint = 0x1,
+        D3DTessellatorOutputPoint = 0x1,
         [NativeName("Name", "D3D_TESSELLATOR_OUTPUT_LINE")]
-        TessellatorOutputLine = 0x2,
+        D3DTessellatorOutputLine = 0x2,
         [NativeName("Name", "D3D_TESSELLATOR_OUTPUT_TRIANGLE_CW")]
-        TessellatorOutputTriangleCW = 0x3,
+        D3DTessellatorOutputTriangleCW = 0x3,
         [NativeName("Name", "D3D_TESSELLATOR_OUTPUT_TRIANGLE_CCW")]
-        TessellatorOutputTriangleCcw = 0x4,
+        D3DTessellatorOutputTriangleCcw = 0x4,
         [NativeName("Name", "D3D11_TESSELLATOR_OUTPUT_UNDEFINED")]
         D3D11TessellatorOutputUndefined = 0x0,
         [NativeName("Name", "D3D11_TESSELLATOR_OUTPUT_POINT")]

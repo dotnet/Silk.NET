@@ -12,18 +12,18 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING")]
-    public enum TessellatorPartitioning
+    public enum D3DTessellatorPartitioning
     {
         [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING_UNDEFINED")]
-        TessellatorPartitioningUndefined = 0x0,
+        D3DTessellatorPartitioningUndefined = 0x0,
         [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING_INTEGER")]
-        TessellatorPartitioningInteger = 0x1,
+        D3DTessellatorPartitioningInteger = 0x1,
         [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING_POW2")]
-        TessellatorPartitioningPow2 = 0x2,
+        D3DTessellatorPartitioningPow2 = 0x2,
         [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD")]
-        TessellatorPartitioningFractionalOdd = 0x3,
+        D3DTessellatorPartitioningFractionalOdd = 0x3,
         [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN")]
-        TessellatorPartitioningFractionalEven = 0x4,
+        D3DTessellatorPartitioningFractionalEven = 0x4,
         [NativeName("Name", "D3D11_TESSELLATOR_PARTITIONING_UNDEFINED")]
         D3D11TessellatorPartitioningUndefined = 0x0,
         [NativeName("Name", "D3D11_TESSELLATOR_PARTITIONING_INTEGER")]

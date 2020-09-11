@@ -53,6 +53,11 @@ namespace Silk.NET.BuildTools.Common
         /// A list of functions contained in the LpVtbl field.
         /// </summary>
         public List<Function> Vtbl { get; set; } = new List<Function>();
+        
+        /// <summary>
+        /// A list of interface names which this interface inherits.
+        /// </summary>
+        public List<string> ComBases { get; set; } = new List<string>();
 
         /// <summary>
         /// This struct's UUID attribute. 

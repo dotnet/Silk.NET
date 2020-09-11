@@ -117,10 +117,6 @@
     "cl_uint": "uint",
     "cl_ulong": "ulong",
     "unsignedchar": "byte",
-    "[ TODO Remove ]ID3D10Buffer*":  "IntPtr",
-    "[ TODO Remove ]ID3D10Texture2D*": "IntPtr",
-    "[ TODO Remove ]ID3D10Texture3D*":  "IntPtr",
-    "[ TODO Remove ]IDirect3DSurface9*":  "IntPtr",
     "IDirectFB*":  "IntPtr",
     "IDirectFBSurface*":  "IntPtr",
     "VASurfaceID*": "IntPtr",
@@ -147,9 +143,9 @@
     "HMONITOR__**": "IntPtr*",
     "_LUID": "ValueTuple<ulong, long>",
     "_LARGE_INTEGER": "long",
-    "IUnknown": "Silk.NET.Core.Runtime.Windows.IUnknown",
-    "tagRECT": "Silk.NET.Core.Runtime.Windows.TagRect",
-    "tagPOINT": "Silk.NET.Core.Runtime.Windows.TagPoint",
-    "tagSIZE": "Silk.NET.Core.Runtime.Windows.TagSize",
-    "_SECURITY_ATTRIBUTES": "Silk.NET.Core.Runtime.Windows.SecurityAttributes"
+    "IUnknown": "Silk.NET.Core.Native.IUnknown",
+    "tagRECT": "Silk.NET.Core.Native.TagRect",
+    "tagPOINT": "Silk.NET.Core.Native.TagPoint",
+    "tagSIZE": "Silk.NET.Core.Native.TagSize",
+    "_SECURITY_ATTRIBUTES": "Silk.NET.Core.Native.SecurityAttributes"
 }

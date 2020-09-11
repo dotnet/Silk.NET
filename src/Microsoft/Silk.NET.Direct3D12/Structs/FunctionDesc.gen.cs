@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D12
             uint movcInstructionCount = default,
             uint conversionInstructionCount = default,
             uint bitwiseInstructionCount = default,
-            Silk.NET.Core.Native.FeatureLevel minFeatureLevel = default,
+            Silk.NET.Core.Native.D3DFeatureLevel minFeatureLevel = default,
             ulong requiredFeatureFlags = default,
             byte* name = default,
             int functionParameterCount = default,
@@ -225,7 +225,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D_FEATURE_LEVEL")]
         [NativeName("Type.Name", "D3D_FEATURE_LEVEL")]
         [NativeName("Name", "MinFeatureLevel")]
-        public Silk.NET.Core.Native.FeatureLevel MinFeatureLevel;
+        public Silk.NET.Core.Native.D3DFeatureLevel MinFeatureLevel;
 
         [NativeName("Type", "UINT64")]
         [NativeName("Type.Name", "UINT64")]

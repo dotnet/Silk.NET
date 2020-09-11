@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,50 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12GraphicsCommandList")]
     public unsafe partial struct ID3D12GraphicsCommandList
     {
+        public static implicit operator ID3D12CommandList(ID3D12GraphicsCommandList val)
+            => Unsafe.As<ID3D12GraphicsCommandList, ID3D12CommandList>(ref val);
+
+        public readonly ref ID3D12CommandList AsCommandList()
+        {
+            fixed (ID3D12GraphicsCommandList* @this = &this)
+            {
+                return ref *(ID3D12CommandList*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12DeviceChild(ID3D12GraphicsCommandList val)
+            => Unsafe.As<ID3D12GraphicsCommandList, ID3D12DeviceChild>(ref val);
+
+        public readonly ref ID3D12DeviceChild AsDeviceChild()
+        {
+            fixed (ID3D12GraphicsCommandList* @this = &this)
+            {
+                return ref *(ID3D12DeviceChild*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12Object(ID3D12GraphicsCommandList val)
+            => Unsafe.As<ID3D12GraphicsCommandList, ID3D12Object>(ref val);
+
+        public readonly ref ID3D12Object AsObject()
+        {
+            fixed (ID3D12GraphicsCommandList* @this = &this)
+            {
+                return ref *(ID3D12Object*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12GraphicsCommandList val)
+            => Unsafe.As<ID3D12GraphicsCommandList, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D12GraphicsCommandList* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D12GraphicsCommandList
         (
             void** lpVtbl = default
@@ -291,55 +336,55 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
+                ret = ((delegate* cdecl<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
+                    ret = ((delegate* cdecl<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pData)
+        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    ret = ((delegate* cdecl<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
+                    ret = ((delegate* cdecl<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pData)
+        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* guidPtr = &guid)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pDataPtr = &pData)
+                    fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
+                        ret = ((delegate* cdecl<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
                     }
                 }
                 return ret;
@@ -1059,11 +1104,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public void IASetPrimitiveTopology(Silk.NET.Core.Native.PrimitiveTopology PrimitiveTopology)
+        public void IASetPrimitiveTopology(Silk.NET.Core.Native.D3DPrimitiveTopology PrimitiveTopology)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                ((delegate* cdecl<ID3D12GraphicsCommandList*, Silk.NET.Core.Native.PrimitiveTopology, void>)LpVtbl[20])(@this, PrimitiveTopology);
+                ((delegate* cdecl<ID3D12GraphicsCommandList*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)LpVtbl[20])(@this, PrimitiveTopology);
             }
         }
 
@@ -1089,22 +1134,22 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                ((delegate* cdecl<ID3D12GraphicsCommandList*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[22])(@this, NumRects, pRects);
+                ((delegate* cdecl<ID3D12GraphicsCommandList*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[22])(@this, NumRects, pRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public void RSSetScissorRects(uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public void RSSetScissorRects(uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[22])(@this, NumRects, pRectsPtr);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[22])(@this, NumRects, pRectsPtr);
                 }
             }
         }
@@ -1509,151 +1554,151 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
+                ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRectsPtr);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
+                ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRectsPtr);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (float* ColorRGBAPtr = &ColorRGBA)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRects);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (float* ColorRGBAPtr = &ColorRGBA)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                     {
-                        ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRectsPtr);
+                        ((delegate* cdecl<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRectsPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
+                ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (uint* ValuesPtr = &Values)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (uint* ValuesPtr = &Values)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                     {
-                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
+                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (ID3D12Resource* pResourcePtr = &pResource)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (ID3D12Resource* pResourcePtr = &pResource)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                     {
-                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
+                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
@@ -1661,14 +1706,14 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (uint* ValuesPtr = &Values)
                     {
-                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
+                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
@@ -1676,9 +1721,9 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (uint* ValuesPtr = &Values)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                        fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                         {
-                            ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
+                            ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
                         }
                     }
                 }
@@ -1686,82 +1731,82 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
+                ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (float* ValuesPtr = &Values)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (float* ValuesPtr = &Values)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                     {
-                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
+                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (ID3D12Resource* pResourcePtr = &pResource)
                 {
-                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
+                    ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
                 fixed (ID3D12Resource* pResourcePtr = &pResource)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                     {
-                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
+                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Core.Runtime.Windows.TagRect* pRects)
+        public unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
@@ -1769,14 +1814,14 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (float* ValuesPtr = &Values)
                     {
-                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
+                        ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Core.Runtime.Windows.TagRect pRects)
+        public void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
         {
             fixed (ID3D12GraphicsCommandList* @this = &this)
             {
@@ -1784,9 +1829,9 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (float* ValuesPtr = &Values)
                     {
-                        fixed (Silk.NET.Core.Runtime.Windows.TagRect* pRectsPtr = &pRects)
+                        fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
                         {
-                            ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Runtime.Windows.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
+                            ((delegate* cdecl<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
                         }
                     }
                 }

@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,39 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12VideoDevice2")]
     public unsafe partial struct ID3D12VideoDevice2
     {
+        public static implicit operator ID3D12VideoDevice1(ID3D12VideoDevice2 val)
+            => Unsafe.As<ID3D12VideoDevice2, ID3D12VideoDevice1>(ref val);
+
+        public readonly ref ID3D12VideoDevice1 AsVideoDevice1()
+        {
+            fixed (ID3D12VideoDevice2* @this = &this)
+            {
+                return ref *(ID3D12VideoDevice1*)@this;
+            }
+        }
+
+        public static implicit operator ID3D12VideoDevice(ID3D12VideoDevice2 val)
+            => Unsafe.As<ID3D12VideoDevice2, ID3D12VideoDevice>(ref val);
+
+        public readonly ref ID3D12VideoDevice AsVideoDevice()
+        {
+            fixed (ID3D12VideoDevice2* @this = &this)
+            {
+                return ref *(ID3D12VideoDevice*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12VideoDevice2 val)
+            => Unsafe.As<ID3D12VideoDevice2, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (ID3D12VideoDevice2* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public ID3D12VideoDevice2
         (
             void** lpVtbl = default

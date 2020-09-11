@@ -21,8 +21,8 @@ namespace Silk.NET.DXGI
     {
         public OutduplMoveRect
         (
-            Silk.NET.Core.Runtime.Windows.TagPoint sourcePoint = default,
-            Silk.NET.Core.Runtime.Windows.TagRect destinationRect = default
+            Silk.NET.Core.Native.TagPoint sourcePoint = default,
+            Silk.NET.Core.Native.TagRect destinationRect = default
         )
         {
             SourcePoint = sourcePoint;
@@ -33,11 +33,11 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "POINT")]
         [NativeName("Type.Name", "POINT")]
         [NativeName("Name", "SourcePoint")]
-        public Silk.NET.Core.Runtime.Windows.TagPoint SourcePoint;
+        public Silk.NET.Core.Native.TagPoint SourcePoint;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DestinationRect")]
-        public Silk.NET.Core.Runtime.Windows.TagRect DestinationRect;
+        public Silk.NET.Core.Native.TagRect DestinationRect;
     }
 }

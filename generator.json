@@ -154,6 +154,9 @@
             },
             "typeMaps": [
                 {
+                    "ID3D10Buffer*": "IntPtr",
+                    "ID3D10Texture2D*":  "IntPtr",
+                    "ID3D10Texture3D*": "IntPtr",
                     "ID3D11Buffer*": "IntPtr",
                     "ID3D11Texture2D*":  "IntPtr",
                     "ID3D11Texture3D*": "IntPtr",
@@ -623,7 +626,7 @@
                 "no-extra-dir",
                 "no-name-containers"
             ],
-            "prefix": "D3D",
+            "prefix": "",
             "clang": {
                 "args": [
                     "--language=c++",
@@ -650,8 +653,8 @@
             "exclude": [
             ],
             "rename": {
-                "_D3D_CBUFFER_TYPE": "CBufferType",
-                "_D3D_SHADER_CBUFFER_FLAGS": "ShaderCBufferFlags"
+                "_D3D_CBUFFER_TYPE": "D3DCBufferType",
+                "_D3D_SHADER_CBUFFER_FLAGS": "D3DShaderCBufferFlags"
             },
             "bakery": {
                 "profileNames": [
@@ -904,6 +907,7 @@
             "exclude": [
             ],
             "rename": {
+                "D3D12_NODE_MASK": "D3D12NodeMask"
             },
             "bakery": {
                 "profileNames": [

@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,61 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGISurface2")]
     public unsafe partial struct IDXGISurface2
     {
+        public static implicit operator IDXGISurface1(IDXGISurface2 val)
+            => Unsafe.As<IDXGISurface2, IDXGISurface1>(ref val);
+
+        public readonly ref IDXGISurface1 AsSurface1()
+        {
+            fixed (IDXGISurface2* @this = &this)
+            {
+                return ref *(IDXGISurface1*)@this;
+            }
+        }
+
+        public static implicit operator IDXGISurface(IDXGISurface2 val)
+            => Unsafe.As<IDXGISurface2, IDXGISurface>(ref val);
+
+        public readonly ref IDXGISurface AsSurface()
+        {
+            fixed (IDXGISurface2* @this = &this)
+            {
+                return ref *(IDXGISurface*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIDeviceSubObject(IDXGISurface2 val)
+            => Unsafe.As<IDXGISurface2, IDXGIDeviceSubObject>(ref val);
+
+        public readonly ref IDXGIDeviceSubObject AsDeviceSubObject()
+        {
+            fixed (IDXGISurface2* @this = &this)
+            {
+                return ref *(IDXGIDeviceSubObject*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIObject(IDXGISurface2 val)
+            => Unsafe.As<IDXGISurface2, IDXGIObject>(ref val);
+
+        public readonly ref IDXGIObject AsObject()
+        {
+            fixed (IDXGISurface2* @this = &this)
+            {
+                return ref *(IDXGIObject*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISurface2 val)
+            => Unsafe.As<IDXGISurface2, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGISurface2* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGISurface2
         (
             void** lpVtbl = default
@@ -167,55 +223,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGISurface2* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface2*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+                ret = ((delegate* cdecl<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGISurface2* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface2*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* cdecl<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGISurface2* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface2*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                    ret = ((delegate* cdecl<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGISurface2* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                     {
-                        ret = ((delegate* cdecl<IDXGISurface2*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                        ret = ((delegate* cdecl<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                     }
                 }
                 return ret;
@@ -545,25 +601,25 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int ReleaseDC(Silk.NET.Core.Runtime.Windows.TagRect* pDirtyRect)
+        public unsafe int ReleaseDC(Silk.NET.Core.Native.TagRect* pDirtyRect)
         {
             fixed (IDXGISurface2* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface2*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[12])(@this, pDirtyRect);
+                ret = ((delegate* cdecl<IDXGISurface2*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[12])(@this, pDirtyRect);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int ReleaseDC(ref Silk.NET.Core.Runtime.Windows.TagRect pDirtyRect)
+        public int ReleaseDC(ref Silk.NET.Core.Native.TagRect pDirtyRect)
         {
             fixed (IDXGISurface2* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.TagRect* pDirtyRectPtr = &pDirtyRect)
+                fixed (Silk.NET.Core.Native.TagRect* pDirtyRectPtr = &pDirtyRect)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface2*, Silk.NET.Core.Runtime.Windows.TagRect*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
+                    ret = ((delegate* cdecl<IDXGISurface2*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
                 }
                 return ret;
             }

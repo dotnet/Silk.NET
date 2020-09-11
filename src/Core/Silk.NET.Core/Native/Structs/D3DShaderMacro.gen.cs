@@ -17,9 +17,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_MACRO")]
-    public unsafe partial struct ShaderMacro
+    public unsafe partial struct D3DShaderMacro
     {
-        public ShaderMacro
+        public D3DShaderMacro
         (
             byte* name = default,
             byte* definition = default

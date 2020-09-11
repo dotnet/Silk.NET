@@ -5,6 +5,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -19,6 +20,50 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIResource1")]
     public unsafe partial struct IDXGIResource1
     {
+        public static implicit operator IDXGIResource(IDXGIResource1 val)
+            => Unsafe.As<IDXGIResource1, IDXGIResource>(ref val);
+
+        public readonly ref IDXGIResource AsResource()
+        {
+            fixed (IDXGIResource1* @this = &this)
+            {
+                return ref *(IDXGIResource*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIDeviceSubObject(IDXGIResource1 val)
+            => Unsafe.As<IDXGIResource1, IDXGIDeviceSubObject>(ref val);
+
+        public readonly ref IDXGIDeviceSubObject AsDeviceSubObject()
+        {
+            fixed (IDXGIResource1* @this = &this)
+            {
+                return ref *(IDXGIDeviceSubObject*)@this;
+            }
+        }
+
+        public static implicit operator IDXGIObject(IDXGIResource1 val)
+            => Unsafe.As<IDXGIResource1, IDXGIObject>(ref val);
+
+        public readonly ref IDXGIObject AsObject()
+        {
+            fixed (IDXGIResource1* @this = &this)
+            {
+                return ref *(IDXGIObject*)@this;
+            }
+        }
+
+        public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIResource1 val)
+            => Unsafe.As<IDXGIResource1, Silk.NET.Core.Native.IUnknown>(ref val);
+
+        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
+        {
+            fixed (IDXGIResource1* @this = &this)
+            {
+                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
+            }
+        }
+
         public IDXGIResource1
         (
             void** lpVtbl = default
@@ -167,55 +212,55 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIResource1*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+                ret = ((delegate* cdecl<IDXGIResource1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGIResource1*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* cdecl<IDXGIResource1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Runtime.Windows.IUnknown* pUnknown)
+        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    ret = ((delegate* cdecl<IDXGIResource1*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
+                    ret = ((delegate* cdecl<IDXGIResource1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Runtime.Windows.IUnknown pUnknown)
+        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
                 fixed (Guid* NamePtr = &Name)
                 {
-                    fixed (Silk.NET.Core.Runtime.Windows.IUnknown* pUnknownPtr = &pUnknown)
+                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                     {
-                        ret = ((delegate* cdecl<IDXGIResource1*, Guid*, Silk.NET.Core.Runtime.Windows.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
+                        ret = ((delegate* cdecl<IDXGIResource1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                     }
                 }
                 return ret;
@@ -570,46 +615,46 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, void** pHandle)
+        public unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, void** pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandle);
+                ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandle);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+        public unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
+                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, void** pHandle)
+        public unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, void** pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
                 fixed (char* lpNamePtr = &lpName)
                 {
-                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
+                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
+        public unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
@@ -618,7 +663,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
+                        ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
                     }
                 }
                 return ret;
@@ -626,20 +671,20 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint dwAccess, string lpName, void** pHandle)
+        public unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, string lpName, void** pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
-                ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
+                ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
             Marshal.FreeHGlobal((IntPtr)lpNamePtr);
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributes, uint dwAccess, string lpName, ref void* pHandle)
+        public unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, string lpName, ref void* pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
@@ -647,7 +692,7 @@ namespace Silk.NET.DXGI
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
+                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
                 }
             Marshal.FreeHGlobal((IntPtr)lpNamePtr);
                 return ret;
@@ -655,30 +700,30 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint dwAccess, char* lpName, void** pHandle)
+        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, void** pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
-                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
+                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
                 }
                 return ret;
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandlePtr);
+                        ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandlePtr);
                     }
                 }
                 return ret;
@@ -686,16 +731,16 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, void** pHandle)
+        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, void** pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
                     fixed (char* lpNamePtr = &lpName)
                     {
-                        ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
+                        ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
                     }
                 }
                 return ret;
@@ -703,18 +748,18 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
                     fixed (char* lpNamePtr = &lpName)
                     {
                         fixed (void** pHandlePtr = &pHandle)
                         {
-                            ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
+                            ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
                         }
                     }
                 }
@@ -723,15 +768,15 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint dwAccess, string lpName, void** pHandle)
+        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, string lpName, void** pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
-                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
+                    ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
             Marshal.FreeHGlobal((IntPtr)lpNamePtr);
                 }
                 return ret;
@@ -739,17 +784,17 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Runtime.Windows.SecurityAttributes pAttributes, uint dwAccess, string lpName, ref void* pHandle)
+        public unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, string lpName, ref void* pHandle)
         {
             fixed (IDXGIResource1* @this = &this)
             {
                 int ret = default;
-                fixed (Silk.NET.Core.Runtime.Windows.SecurityAttributes* pAttributesPtr = &pAttributes)
+                fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
                 {
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Runtime.Windows.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
+                        ret = ((delegate* cdecl<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
                     }
             Marshal.FreeHGlobal((IntPtr)lpNamePtr);
                 }
