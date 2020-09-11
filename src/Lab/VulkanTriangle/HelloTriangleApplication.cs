@@ -78,6 +78,8 @@ namespace VulkanTriangle
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
+
+            (SurfaceKHR) _window.VkSurface.Create(default, null).ToSurface();
             
             _window.Initialize();
         }
