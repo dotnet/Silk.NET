@@ -23,7 +23,7 @@ namespace Silk.NET.OpenXR
         (
             StructureType type = StructureType.TypeGraphicsBindingD3D11Khr,
             void* next = default,
-            IntPtr device = default
+            void* device = default
         )
         {
             Type = type;
@@ -45,6 +45,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "ID3D11Device*")]
         [NativeName("Type.Name", "ID3D11Device")]
         [NativeName("Name", "device")]
-        public IntPtr Device;
+        public void* Device;
     }
 }

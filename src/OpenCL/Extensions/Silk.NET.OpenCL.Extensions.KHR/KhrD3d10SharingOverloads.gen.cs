@@ -16,22 +16,58 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public static class KhrD3d10SharingOverloads
     {
-        public static unsafe IntPtr CreateFromD3D10Buffer(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateFromD3D10Buffer(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromD3D10Buffer(context, flags, resource, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateFromD3D10Texture2D(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateFromD3D10Buffer<T0>(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D10Buffer(context, flags, out resource.GetPinnableReference(), errcode_ret);
+        }
+
+        public static unsafe IntPtr CreateFromD3D10Buffer<T0>(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D10Buffer(context, flags, out resource.GetPinnableReference(), out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe IntPtr CreateFromD3D10Texture2D(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromD3D10Texture2D(context, flags, resource, subresource, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateFromD3D10Texture3D(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateFromD3D10Texture2D<T0>(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D10Texture2D(context, flags, out resource.GetPinnableReference(), subresource, errcode_ret);
+        }
+
+        public static unsafe IntPtr CreateFromD3D10Texture2D<T0>(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D10Texture2D(context, flags, out resource.GetPinnableReference(), subresource, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe IntPtr CreateFromD3D10Texture3D(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromD3D10Texture3D(context, flags, resource, subresource, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe IntPtr CreateFromD3D10Texture3D<T0>(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D10Texture3D(context, flags, out resource.GetPinnableReference(), subresource, errcode_ret);
+        }
+
+        public static unsafe IntPtr CreateFromD3D10Texture3D<T0>(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromD3D10Texture3D(context, flags, out resource.GetPinnableReference(), subresource, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe int EnqueueAcquireD3D10Objects(this KhrD3d10Sharing thisApi, [Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_objects, [Flow(FlowDirection.In)] IntPtr* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event)

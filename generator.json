@@ -154,17 +154,17 @@
             },
             "typeMaps": [
                 {
-                    "ID3D10Buffer*": "IntPtr",
-                    "ID3D10Texture2D*":  "IntPtr",
-                    "ID3D10Texture3D*": "IntPtr",
-                    "ID3D11Buffer*": "IntPtr",
-                    "ID3D11Texture2D*":  "IntPtr",
-                    "ID3D11Texture3D*": "IntPtr",
-                    "ID3D11Device*": "IntPtr",
-                    "ID3D12Device*": "IntPtr",
-                    "ID3D12Resource*": "IntPtr",
-                    "ID3D12CommandQueue*": "IntPtr",
-                    "IDirect3DSurface9*": "IntPtr" 
+                    "ID3D10Buffer*": "void*",
+                    "ID3D10Texture2D*": "void*",
+                    "ID3D10Texture3D*": "void*",
+                    "ID3D11Buffer*": "void*",
+                    "ID3D11Texture2D*": "void*",
+                    "ID3D11Texture3D*": "void*",
+                    "ID3D11Device*": "void*",
+                    "ID3D12Device*": "void*",
+                    "ID3D12Resource*": "void*",
+                    "ID3D12CommandQueue*": "void*",
+                    "IDirect3DSurface9*": "void*"
                 },
                 {
                     "cl_GLsync": "intptr_t",
@@ -495,14 +495,14 @@
                     "PFN_xrVoidFunction": "FuncPtr",
                     "PFN_xrDebugUtilsMessengerCallbackEXT": "FuncPtr",
                     "PFNEGLGETPROCADDRESSPROC": "FuncPtr",
-                    "ID3D11Buffer*": "IntPtr",
-                    "ID3D11Texture2D*":  "IntPtr",
-                    "ID3D11Texture3D*": "IntPtr",
-                    "ID3D11Device*": "IntPtr",
-                    "ID3D12Device*": "IntPtr",
-                    "ID3D12Resource*": "IntPtr",
-                    "ID3D12CommandQueue*": "IntPtr",
-                    "IUnknown*": "IntPtr",
+                    "ID3D11Buffer*": "void*",
+                    "ID3D11Texture2D*": "void*",
+                    "ID3D11Texture3D*": "void*",
+                    "ID3D11Device*": "void*",
+                    "ID3D12Device*": "void*",
+                    "ID3D12Resource*": "void*",
+                    "ID3D12CommandQueue*": "void*",
+                    "IUnknown*": "Silk.NET.Core.Native.IUnknown*",
                     "EGLDisplay": "IntPtr",
                     "EGLConfig": "IntPtr",
                     "EGLContext": "IntPtr",
@@ -613,7 +613,7 @@
             ]
         },
         {
-            "profileName": "D3DCommon",
+            "profileName": "Core",
             "sources": [
                 "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D3DCommon.h"
             ],
@@ -1012,6 +1012,153 @@
             "typeMaps": [
                 {
                     "_RGNDATA": "RGNData"
+                },
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "DXC",
+            "sources": [
+                "src/Microsoft/Silk.NET.Direct3D.Compilers/DXC.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "dxc",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-csproj"
+            ],
+            "prefix": "Dxc",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/dxcapi.h"
+                ],
+                "classes": {
+                    "DXC.h": "[Core]DXC"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "DXC"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct3D.Compilers",
+            "extensionsNamespace": "Silk.NET.Direct3D.Compilers.Extensions",
+            "nameContainer": {
+                "linux-x64": "libdxcompiler.so",
+                "win-x64": "dxcompiler.dll",
+                "win-x86": "dxcompiler.dll",
+                "osx-x64": "libdxcompiler.dylib",
+                "android": "libdxcompiler.so",
+                "iOS": "__Internal",
+                "className": "DXCLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "IStream": "void"
+                },
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "D3DCompiler",
+            "sources": [
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcompiler.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d3dcompiler",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "prefix": "D3D",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                ],
+                "classes": {
+                    "d3dcompiler.h": "[Core]D3DCompiler"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "d3dcompiler"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct3D.Compilers",
+            "extensionsNamespace": "Silk.NET.Direct3D.Compilers.Extensions",
+            "nameContainer": {
+                "linux-x64": "libD3DCompiler_47.so",
+                "win-x64": "D3DCompiler_47.dll",
+                "win-x86": "D3DCompiler_47.dll",
+                "osx-x64": "libD3DCompiler_47.dylib",
+                "android": "libD3DCompiler_47.so",
+                "iOS": "__Internal",
+                "className": "D3DCompilerLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "ID3D11Module": "void",
+                    "ID3D11Linker": "void",
+                    "ID3D11FunctionLinkingGraph": "void",
+                    "IStream": "Silk.NET.Core.Native.IStream"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",

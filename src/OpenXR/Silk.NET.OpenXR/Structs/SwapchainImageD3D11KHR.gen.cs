@@ -23,7 +23,7 @@ namespace Silk.NET.OpenXR
         (
             StructureType type = StructureType.TypeSwapchainImageD3D11Khr,
             void* next = default,
-            IntPtr texture = default
+            void* texture = default
         )
         {
             Type = type;
@@ -45,6 +45,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "ID3D11Texture2D*")]
         [NativeName("Type.Name", "ID3D11Texture2D")]
         [NativeName("Name", "texture")]
-        public IntPtr Texture;
+        public void* Texture;
     }
 }

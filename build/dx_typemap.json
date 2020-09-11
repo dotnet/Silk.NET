@@ -2,7 +2,7 @@
     "ID3D10Blob": "Silk.NET.Core.Native.ID3D10Blob",
     "ID3D10DestructionNotifier": "Silk.NET.Core.Native.ID3DDestructionNotifier",
     "ID3DInclude": "Silk.NET.Core.Native.ID3DInclude",
-    "D3D_SHADER_MACRO": "Silk.NET.Core.Native.D3DShaderMacro",
+    "_D3D_SHADER_MACRO": "Silk.NET.Core.Native.D3DShaderMacro",
     "_D3D_CBUFFER_TYPE": "Silk.NET.Core.Native.D3DCBufferType",
     "D3D_DRIVER_TYPE":"Silk.NET.Core.Native.D3DDriverType",
     "D3D_FEATURE_LEVEL": "Silk.NET.Core.Native.D3DFeatureLevel",

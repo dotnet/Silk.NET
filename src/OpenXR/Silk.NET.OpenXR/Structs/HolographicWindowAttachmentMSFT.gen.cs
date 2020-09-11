@@ -23,8 +23,8 @@ namespace Silk.NET.OpenXR
         (
             StructureType type = StructureType.TypeHolographicWindowAttachmentMsft,
             void* next = default,
-            IntPtr holographicSpace = default,
-            IntPtr coreWindow = default
+            Silk.NET.Core.Native.IUnknown* holographicSpace = default,
+            Silk.NET.Core.Native.IUnknown* coreWindow = default
         )
         {
             Type = type;
@@ -47,11 +47,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "IUnknown*")]
         [NativeName("Type.Name", "IUnknown")]
         [NativeName("Name", "holographicSpace")]
-        public IntPtr HolographicSpace;
+        public Silk.NET.Core.Native.IUnknown* HolographicSpace;
 /// <summary></summary>
         [NativeName("Type", "IUnknown*")]
         [NativeName("Type.Name", "IUnknown")]
         [NativeName("Name", "coreWindow")]
-        public IntPtr CoreWindow;
+        public Silk.NET.Core.Native.IUnknown* CoreWindow;
     }
 }
