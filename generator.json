@@ -1165,6 +1165,96 @@
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]
+        },
+        {
+            "profileName": "D2D1",
+            "sources": [
+                "src/Microsoft/Silk.NET.Direct2D1/D2D1.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d2d1",
+            "controlDescriptors": [
+                "Use all the control descriptors such that this never converts.",
+                "Currently disabled due to bakery bugs.",
+                "convert-windows-only",
+                "convert-linux-only",
+                "convert-macos-only"
+            ],
+            "converter": {},
+            "prefix": "D2D1",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effectauthor.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effectauthor_1.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effecthelpers.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects_1.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1effects_2.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1helper.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1svg.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_1.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_1helper.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_2.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_2helper.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_3.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2d1_3helper.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d2dbasetypes.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D2DErr.h"
+                ],
+                "classes": {
+                    "D2D1.h": "[Core]D2D1"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "D2D1"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct2D1",
+            "extensionsNamespace": "Silk.NET.Direct2D1.Extensions",
+            "nameContainer": {
+                "linux-x64": "libd2d1.so",
+                "win-x64": "d2d1.dll",
+                "win-x86": "d2d1.dll",
+                "osx-x64": "libd2d1.dylib",
+                "android": "libd2d1.so",
+                "iOS": "__Internal",
+                "className": "D2D1LibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
         }
     ]
 }
