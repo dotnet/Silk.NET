@@ -19,4 +19,12 @@ namespace Silk.NET.Core.Native
     {
         public long Width, Height;
     }
+
+    public struct TagPaletteEntry
+    {
+        public byte PeRed;
+        public byte PeGreen;
+        public byte PeBlue;
+        public byte PeFlags;
+    }
 }

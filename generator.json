@@ -926,15 +926,93 @@
             "namespace": "Silk.NET.Direct3D12",
             "extensionsNamespace": "Silk.NET.Direct3D12.Extensions",
             "nameContainer": {
-                "linux-x64": "libd3d12.so",
-                "win-x64": "d3d12.dll",
-                "win-x86": "d3d12.dll",
-                "osx-x64": "libd3d12.dylib",
-                "android": "libd3d12.so",
+                "linux-x64": "libD3D12.so",
+                "win-x64": "D3D12.dll",
+                "win-x86": "D3D12.dll",
+                "osx-x64": "libD3D12.dylib",
+                "android": "libD3D12.so",
                 "iOS": "__Internal",
                 "className": "D3D12LibraryNameContainer"
             },
             "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "D3D9",
+            "sources": [
+                "src/Microsoft/Silk.NET.Direct3D9/D3D9.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d3d9",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "D3D",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3d9helper.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/d3d9.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/d3d9caps.h",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/d3d9types.h"
+                ],
+                "classes": {
+                    "D3D9.h": "[Core]D3D9"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+                "_D3D_OMAC": "D3DOMac"
+            },
+            "bakery": {
+                "profileNames": [
+                    "D3D9"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct3D9",
+            "extensionsNamespace": "Silk.NET.Direct3D9.Extensions",
+            "nameContainer": {
+                "linux-x64": "libd3d9.so",
+                "win-x64": "d3d9.dll",
+                "win-x86": "d3d9.dll",
+                "osx-x64": "libd3d9.dylib",
+                "android": "libd3d9.so",
+                "iOS": "__Internal",
+                "className": "D3D9LibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "_RGNDATA": "RGNData"
+                },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"

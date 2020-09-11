@@ -147,5 +147,6 @@
     "tagRECT": "Silk.NET.Core.Native.TagRect",
     "tagPOINT": "Silk.NET.Core.Native.TagPoint",
     "tagSIZE": "Silk.NET.Core.Native.TagSize",
+    "tagPALETTEENTRY": "Silk.NET.Core.Native.TagPaletteEntry",
     "_SECURITY_ATTRIBUTES": "Silk.NET.Core.Native.SecurityAttributes"
 }

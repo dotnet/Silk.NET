@@ -5,29 +5,29 @@
 
 using Silk.NET.Core.Loader;
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D9
 {
     /// <summary>
-    /// Contains the library name of D3D12.
+    /// Contains the library name of D3D9.
     /// </summary>
-    internal class D3D12LibraryNameContainer : SearchPathContainer
+    internal class D3D9LibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libD3D12.so";
+        public override string Linux => "libd3d9.so";
 
         /// <inheritdoc />
-        public override string MacOS => "libD3D12.dylib";
+        public override string MacOS => "libd3d9.dylib";
 
         /// <inheritdoc />
-        public override string Android => "libD3D12.so";
+        public override string Android => "libd3d9.so";
 
         /// <inheritdoc />
         public override string IOS => "__Internal";
 
         /// <inheritdoc />
-        public override string Windows64 => "D3D12.dll";
+        public override string Windows64 => "d3d9.dll";
 
         /// <inheritdoc />
-        public override string Windows86 => "D3D12.dll";
+        public override string Windows86 => "d3d9.dll";
     }
 }
