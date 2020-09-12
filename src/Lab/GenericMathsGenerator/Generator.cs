@@ -28,6 +28,7 @@ namespace GenericMathsGenerator
 
         public void Execute(SourceGeneratorContext context)
         {
+            Debugger.Launch();
             try
             {
                 context.AddSource
@@ -145,34 +146,29 @@ namespace GenericMaths
                         context, possibleTypes.ToArray(), remaps, semanticModel,
                         IdentifierName(semanticModel.GetDeclaredSymbol(declaration).ToDisplayString())
                     );
-                    var newDeclaration = declaration.Update
-                    (
-                        rewriter.VisitList(declaration.AttributeLists), rewriter.VisitList(declaration.Modifiers),
-                        rewriter.VisitToken(declaration.Keyword), rewriter.VisitToken(declaration.Identifier),
-                        (TypeParameterListSyntax?) rewriter.Visit
+                    var newDeclaration =
+                        ((ClassDeclarationSyntax) rewriter.VisitClassDeclaration(declaration)).WithTypeParameterList
                         (
                             (declaration.TypeParameterList ?? TypeParameterList()).AddParameters
                                 (TypeParameter(typeParam))
-                        ), (BaseListSyntax?) rewriter.Visit(declaration.BaseList), rewriter.VisitList
+                        );
+                    newDeclaration = newDeclaration.WithConstraintClauses
+                    (
+                        newDeclaration.ConstraintClauses.Add
                         (
-                            declaration.ConstraintClauses.Add
-                            (
-                                TypeParameterConstraintClause(typeParam)
-                                    .WithConstraints
+                            TypeParameterConstraintClause(typeParam)
+                                .WithConstraints
+                                (
+                                    SeparatedList
                                     (
-                                        SeparatedList
-                                        (
-                                            new TypeParameterConstraintSyntax[]
-                                            {
-                                                TypeConstraint(IdentifierName("unmanaged")),
-                                                TypeConstraint(IdentifierName("System.IFormattable"))
-                                            }
-                                        )
+                                        new TypeParameterConstraintSyntax[]
+                                        {
+                                            TypeConstraint(IdentifierName("unmanaged")),
+                                            TypeConstraint(IdentifierName("System.IFormattable"))
+                                        }
                                     )
-                            )
-                        ), rewriter.VisitToken(declaration.OpenBraceToken), rewriter.VisitList(declaration.Members),
-                        rewriter.VisitToken(declaration.CloseBraceToken),
-                        rewriter.VisitToken(declaration.SemicolonToken)
+                                )
+                        )
                     );
                     newDeclaration = newDeclaration.InsertNodesAfter
                         (newDeclaration.ChildNodes().Last(), rewriter.ExtraMembers);
@@ -241,34 +237,29 @@ namespace GenericMaths
                         context, possibleTypes.ToArray(), remaps, semanticModel,
                         IdentifierName(semanticModel.GetDeclaredSymbol(declaration).ToDisplayString())
                     );
-                    var newDeclaration = declaration.Update
-                    (
-                        rewriter.VisitList(declaration.AttributeLists), rewriter.VisitList(declaration.Modifiers),
-                        rewriter.VisitToken(declaration.Keyword), rewriter.VisitToken(declaration.Identifier),
-                        (TypeParameterListSyntax?) rewriter.Visit
+                    var newDeclaration =
+                        ((StructDeclarationSyntax) rewriter.VisitStructDeclaration(declaration)).WithTypeParameterList
                         (
                             (declaration.TypeParameterList ?? TypeParameterList()).AddParameters
                                 (TypeParameter(typeParam))
-                        ), (BaseListSyntax?) rewriter.Visit(declaration.BaseList), rewriter.VisitList
+                        );
+                    newDeclaration = newDeclaration.WithConstraintClauses
+                    (
+                        newDeclaration.ConstraintClauses.Add
                         (
-                            declaration.ConstraintClauses.Add
-                            (
-                                TypeParameterConstraintClause(typeParam)
-                                    .WithConstraints
+                            TypeParameterConstraintClause(typeParam)
+                                .WithConstraints
+                                (
+                                    SeparatedList
                                     (
-                                        SeparatedList
-                                        (
-                                            new TypeParameterConstraintSyntax[]
-                                            {
-                                                TypeConstraint(IdentifierName("unmanaged")),
-                                                TypeConstraint(IdentifierName("System.IFormattable"))
-                                            }
-                                        )
+                                        new TypeParameterConstraintSyntax[]
+                                        {
+                                            TypeConstraint(IdentifierName("unmanaged")),
+                                            TypeConstraint(IdentifierName("System.IFormattable"))
+                                        }
                                     )
-                            )
-                        ), rewriter.VisitToken(declaration.OpenBraceToken), rewriter.VisitList(declaration.Members),
-                        rewriter.VisitToken(declaration.CloseBraceToken),
-                        rewriter.VisitToken(declaration.SemicolonToken)
+                                )
+                        )
                     );
                     newDeclaration = newDeclaration.InsertNodesAfter
                         (newDeclaration.ChildNodes().Last(), rewriter.ExtraMembers);
@@ -332,14 +323,30 @@ namespace GenericMaths
                         context, possibleTypes.ToArray(), remaps,
                         context.Compilation.GetSemanticModel(declaration.SyntaxTree), null
                     );
-                    var newDeclaration = declaration.Update
+                    var newDeclaration =
+                        ((MethodDeclarationSyntax) rewriter.VisitMethodDeclaration(declaration)).WithTypeParameterList
+                        (
+                            (declaration.TypeParameterList ?? TypeParameterList()).AddParameters
+                                (TypeParameter(typeParam))
+                        );
+                    newDeclaration = newDeclaration.WithConstraintClauses
                     (
-                        declaration.AttributeLists, declaration.Modifiers, declaration.ReturnType,
-                        declaration.ExplicitInterfaceSpecifier, declaration.Identifier, declaration.TypeParameterList,
-                        declaration.ParameterList, declaration.ConstraintClauses, declaration.Body,
-                        declaration.ExpressionBody, declaration.SemicolonToken
+                        newDeclaration.ConstraintClauses.Add
+                        (
+                            TypeParameterConstraintClause(typeParam)
+                                .WithConstraints
+                                (
+                                    SeparatedList
+                                    (
+                                        new TypeParameterConstraintSyntax[]
+                                        {
+                                            TypeConstraint(IdentifierName("unmanaged")),
+                                            TypeConstraint(IdentifierName("System.IFormattable"))
+                                        }
+                                    )
+                                )
+                        )
                     );
-                    newDeclaration = (MethodDeclarationSyntax) rewriter.VisitMethodDeclaration(newDeclaration)!;
                     newDeclaration = newDeclaration.InsertNodesAfter
                         (newDeclaration.ChildNodes().Last(), rewriter.ExtraMembers);
 
@@ -367,6 +374,7 @@ namespace GenericMaths
             catch (Exception ex)
             {
                 Debugger.Launch();
+                Debugger.Break();
             }
         }
 
@@ -399,11 +407,15 @@ namespace GenericMaths
             
             public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
             {
+                node = (FieldDeclarationSyntax?)base.VisitFieldDeclaration(node);
+                if (node is null)
+                    return node;
+                
                 var modifiers = node.Modifiers;
                 var token = modifiers.FirstOrDefault(x => x.Kind() == SyntaxKind.ConstKeyword);
 
                 if (token == default)
-                    return base.VisitFieldDeclaration(node);
+                    return node;
 
                 var cIndex = modifiers.IndexOf(token);
                 
@@ -414,47 +426,49 @@ namespace GenericMaths
                         .Insert(cIndex, Token(SyntaxKind.ReadOnlyKeyword));
                 }
                 
-                return base.VisitFieldDeclaration(node.WithModifiers(modifiers));
+                return node.WithModifiers(modifiers);
             }
 
-            public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
+            public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax original)
             {
-                var returnType = (TypeSyntax)Visit(node.ReturnType)!;
-                var body = node.Body is not null
+                var node = original.Update
+                (
+                    VisitList(original.AttributeLists), VisitList(original.Modifiers),
+                    (TypeSyntax?) Visit(original.ReturnType) ?? throw new ArgumentNullException("returnType"),
+                    (ExplicitInterfaceSpecifierSyntax?) Visit(original.ExplicitInterfaceSpecifier),
+                    VisitToken(original.Identifier), (TypeParameterListSyntax?) Visit(original.TypeParameterList),
+                    (ParameterListSyntax?) Visit(original.ParameterList) ??
+                    throw new ArgumentNullException("parameterList"), VisitList(original.ConstraintClauses),
+                    original.Body, original.ExpressionBody,
+                    VisitToken(original.SemicolonToken)
+                ); // base but do not visit Body/ExpressionBody
+
+                var body = original.Body is not null
                     ? VisitMethodBody
                     (
-                        node.Identifier.Text, returnType, (ParameterListSyntax)Visit(node.ParameterList)!, node.TypeParameterList,
-                        node.Modifiers, node.Body!
+                        node.Identifier.Text, node.ReturnType, node.ParameterList, node.TypeParameterList,
+                        node.Modifiers, original.Body!
                     )
                     : VisitExpressionBody
                     (
-                        node.Identifier.Text, returnType, (ParameterListSyntax)Visit(node.ParameterList)!, node.TypeParameterList,
-                        node.Modifiers, node.ExpressionBody!
+                        node.Identifier.Text, node.ReturnType, node.ParameterList, node.TypeParameterList,
+                        node.Modifiers, original.ExpressionBody!
                     );
-
-                node = node.Update
-                (
-                    node.AttributeLists, node.Modifiers,
-                    returnType,
-                    node.ExplicitInterfaceSpecifier, node.Identifier, node.TypeParameterList,
-                    (ParameterListSyntax?) Visit(node.ParameterList) ??
-                    throw new ArgumentNullException("parameterList"), node.ConstraintClauses, body, null,
-                    default
-                );
-                return node.Update
-                (
-                    VisitList(node.AttributeLists), VisitList(node.Modifiers),
-                    (TypeSyntax?) Visit(node.ReturnType) ?? throw new ArgumentNullException("returnType"),
-                    (ExplicitInterfaceSpecifierSyntax?) Visit(node.ExplicitInterfaceSpecifier),
-                    VisitToken(node.Identifier), (TypeParameterListSyntax?) Visit(node.TypeParameterList),
-                    node.ParameterList, VisitList(node.ConstraintClauses),
-                    body,
-                    (ArrowExpressionClauseSyntax?) Visit(node.ExpressionBody), VisitToken(node.SemicolonToken)
-                );
+                
+                return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
             }
 
-            public override SyntaxNode? VisitOperatorDeclaration(OperatorDeclarationSyntax node)
+            public override SyntaxNode? VisitOperatorDeclaration(OperatorDeclarationSyntax original)
             {
+                var node = original.Update
+                (
+                    VisitList(original.AttributeLists), VisitList(original.Modifiers),
+                    (TypeSyntax?) Visit(original.ReturnType) ?? throw new ArgumentNullException("returnType"),
+                    VisitToken(original.OperatorKeyword), VisitToken(original.OperatorToken),
+                    (ParameterListSyntax?) Visit(original.ParameterList) ??
+                    throw new ArgumentNullException("parameterList"), original.Body, original.ExpressionBody, VisitToken(original.SemicolonToken)
+                ); // base but do not visit Body/ExpressionBody
+
                 var identifier = node.OperatorToken.Text switch
                 {
                     "+" => "Add",
@@ -468,37 +482,33 @@ namespace GenericMaths
                 };
 
                 identifier = identifier + "_OP";
-                
-                var returnType = (TypeSyntax)Visit(node.ReturnType)!;
-                var body = node.Body is not null
+
+                var body = original.Body is not null
                     ? VisitMethodBody
                     (
-                        identifier, returnType, (ParameterListSyntax)Visit(node.ParameterList)!, TypeParameterList(),
-                        node.Modifiers, node.Body!
+                        identifier, node.ReturnType, node.ParameterList, null,
+                        node.Modifiers, original.Body!
                     )
                     : VisitExpressionBody
                     (
-                        identifier, returnType, (ParameterListSyntax)Visit(node.ParameterList)!, TypeParameterList(),
-                        node.Modifiers, node.ExpressionBody!
+                        identifier, node.ReturnType, node.ParameterList, null,
+                        node.Modifiers, original.ExpressionBody!
                     );
 
-                node = node.Update
-                (
-                    node.AttributeLists, node.Modifiers, returnType, node.OperatorKeyword, node.OperatorToken,
-                    (ParameterListSyntax?) Visit(node.ParameterList) ??
-                    throw new ArgumentNullException("parameterList"), body, null, default
-                );
-                return node.Update
-                (
-                    VisitList(node.AttributeLists), VisitList(node.Modifiers),
-                    (TypeSyntax?) Visit(node.ReturnType) ?? throw new ArgumentNullException("returnType"),
-                    node.OperatorKeyword, node.OperatorToken, node.ParameterList, body,
-                    (ArrowExpressionClauseSyntax?) Visit(node.ExpressionBody), VisitToken(node.SemicolonToken)
-                );
+                return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
             }
 
-            public override SyntaxNode? VisitParameter(ParameterSyntax node) 
-                => base.VisitParameter(_semanticModel.GetDeclaredSymbol(node.Type) is ITypeSymbol symbol && _remaps.TryGetValue(symbol, out var n) ? node.WithType(n) : node);
+            public override SyntaxNode? VisitParameter(ParameterSyntax node)
+            {
+                node = (ParameterSyntax)base.VisitParameter(node);
+                if (node is null)
+                    return node;
+
+                return _semanticModel.GetDeclaredSymbol(node.Type) is ITypeSymbol symbol && _remaps.TryGetValue
+                    (symbol, out var n)
+                    ? node.WithType(n)
+                    : node;
+            }
 
             public BlockSyntax VisitExpressionBody
             (
@@ -682,84 +692,92 @@ namespace GenericMaths
                 return Block(statements).WithLeadingTrivia(SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, "/* Processed by specialization rewriter */"));
             }
 
-            public override SyntaxNode? VisitConstructorDeclaration(ConstructorDeclarationSyntax node)
+            public override SyntaxNode? VisitConstructorDeclaration(ConstructorDeclarationSyntax original)
             {
+                var node = original.Update
+                (
+                    VisitList(original.AttributeLists), VisitList(original.Modifiers), VisitToken(original.Identifier),
+                    (ParameterListSyntax?) Visit(original.ParameterList) ??
+                    throw new ArgumentNullException("parameterList"),
+                    (ConstructorInitializerSyntax?) Visit(original.Initializer), original.Body, original.ExpressionBody, VisitToken(original.SemicolonToken)
+                ); // base but do not visit Body/ExpressionBody
 
                 Debug.Assert(_parentType is not null, nameof(_parentType) + " is null");
                 
-                var body = node.Body is not null
+                var body = original.Body is not null
                     ? VisitMethodBody
-                        (node.Identifier.Text, _parentType, node.ParameterList, null, node.Modifiers, node.Body!)
+                        (node.Identifier.Text, _parentType, node.ParameterList, null, node.Modifiers, original.Body!)
                     : VisitExpressionBody
-                        (node.Identifier.Text, _parentType, node.ParameterList, null, node.Modifiers, node.ExpressionBody!);
+                        (node.Identifier.Text, _parentType, node.ParameterList, null, node.Modifiers, original.ExpressionBody!);
 
-                return node.Update
-                (
-                    VisitList(node.AttributeLists), VisitList(node.Modifiers), VisitToken(node.Identifier),
-                    (ParameterListSyntax?) Visit(node.ParameterList) ??
-                    throw new ArgumentNullException("parameterList"),
-                    (ConstructorInitializerSyntax?) Visit(node.Initializer),
-                    body,
-                    null, VisitToken(default)
-                );
+                return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
             }
 
-            public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax prop)
+            public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax original)
             {
+                var node = original.Update
+                (
+                    VisitList(original.AttributeLists), VisitList(original.Modifiers),
+                    (TypeSyntax?) Visit(original.Type) ?? throw new ArgumentNullException("type"),
+                    (ExplicitInterfaceSpecifierSyntax?) Visit(original.ExplicitInterfaceSpecifier),
+                    VisitToken(original.Identifier), original.AccessorList,
+                    (ArrowExpressionClauseSyntax?) Visit(original.ExpressionBody),
+                    (EqualsValueClauseSyntax?) Visit(original.Initializer), VisitToken(original.SemicolonToken)
+                ); // base but do not visit AccessorList
                 Debug.Assert(_parentType is not null, nameof(_parentType) + " is null");
 
-                return base.VisitPropertyDeclaration
-                (
-                    (prop.AccessorList is not null ? prop.WithAccessorList
+                return
+                    (node.AccessorList is not null ? node.WithAccessorList
                     (
                         AccessorList
                         (
                             List
                             (
-                                prop.AccessorList!.Accessors.Select
+                                original.AccessorList!.Accessors.Select
                                 (
-                                    node =>
+                                    o =>
                                     {
-                                        var body = node.Body is not null
+                                        var x = o.Update
+                                        (
+                                            VisitList(o.AttributeLists), VisitList(o.Modifiers),
+                                            VisitToken(o.Keyword), o.Body,
+                                            o.ExpressionBody,
+                                            VisitToken(o.SemicolonToken)
+                                        ); // base but do not visit Body/ExpressionBody
+                                        if (x is null)
+                                            return x;
+                                        
+                                        var body = x.Body is not null
                                             ? VisitMethodBody
                                             (
-                                                $"{prop.Identifier.Text}_accessor_{node.Keyword.Text}", prop.Type,
-                                                ParameterList(), null, node.Modifiers, node.Body!
+                                                $"{node.Identifier.Text}_accessor_{x.Keyword.Text}", node.Type,
+                                                ParameterList(), null, x.Modifiers, o.Body!
                                             )
                                             : VisitExpressionBody
                                             (
-                                                $"{prop.Identifier.Text}_accessor_{node.Keyword.Text}", prop.Type,
-                                                ParameterList(), null, node.Modifiers, node.ExpressionBody!
+                                                $"{node.Identifier.Text}_accessor_{x.Keyword.Text}", node.Type,
+                                                ParameterList(), null, x.Modifiers, o.ExpressionBody!
                                             );
 
-                                        return node.Update
-                                        (
-                                            VisitList(node.AttributeLists), VisitList(node.Modifiers),
-                                            VisitToken(node.Keyword),
-                                            body, null, default
-                                        );
+                                        return x.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
                                     }
                                 )
                             )
                         )
-                    ): prop).WithType((TypeSyntax)Visit(prop.Type)!)
-                );
+                    ): node);
             }
 
-            public override SyntaxNode? Visit(SyntaxNode? node)
+            public override SyntaxNode? Visit(SyntaxNode? original)
             {
-                if (node is TypeSyntax s)
+                var node = base.Visit(original);
+                if (original is TypeSyntax s)
                 {
-                    try
-                    {
-                        var symbol = _semanticModel.GetSymbolInfo(s).Symbol;
-                        if (symbol is ITypeSymbol ts && _remaps.TryGetValue(ts, out var n))
-                            return base.Visit(n);
-                    }
-                    catch { /* unfortunately, there is not `TryGetTypeInfo` */ }
+                    var symbol = _semanticModel.GetSymbolInfo(s).Symbol;
+                    if (symbol is ITypeSymbol ts && _remaps.TryGetValue(ts, out var n))
+                        node = n;
                 }
-                
-                return base.Visit(node);
+
+                return node;
             }
         }
         
@@ -770,7 +788,6 @@ namespace GenericMaths
             private readonly SemanticModel _semanticModel;
             private readonly TypeSyntax? _returnType;
             private readonly GeneralizingRewriter _parent;
-            private int _sourcePosition;
 
             public SpecializingRewriter(TypeSyntax specializedType, Dictionary<ITypeSymbol, TypeSyntax> remaps, SemanticModel semanticModel, TypeSyntax? returnType, GeneralizingRewriter parent)
             {
@@ -783,45 +800,37 @@ namespace GenericMaths
 
             public override SyntaxNode? VisitReturnStatement(ReturnStatementSyntax node)
             {
-                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
-                {
-                    _sourcePosition = node.SpanStart;
-                }
-                
-                node = node?.WithTrailingTrivia
-                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
-                
+                node = (ReturnStatementSyntax)base.VisitReturnStatement(node);
+                if (node is null)
+                    return node;
                 // this should handle implicit conversions, by explicitly converting.
-                return base.VisitReturnStatement
-                (
-                    _returnType is null
-                        ? node
-                        : ReturnStatement
+                return _returnType is null
+                    ? node
+                    : ReturnStatement
+                    (
+                        CastExpression
                         (
+                            _returnType,
                             CastExpression
                             (
-                                _returnType,
-                                CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)), ParenthesizedExpression(node.Expression))
+                                PredefinedType(Token(SyntaxKind.ObjectKeyword)),
+                                ParenthesizedExpression(node.Expression)
                             )
                         )
-                );
+                    );
             }
 
             public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
             {
-                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
-                {
-                    _sourcePosition = node.SpanStart;
-                }
-
-                node = node?.WithTrailingTrivia
-                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                node = (FieldDeclarationSyntax) base.VisitFieldDeclaration(node);
+                if (node is null)
+                    return node;
                 
                 var modifiers = node.Modifiers;
                 var token = modifiers.FirstOrDefault(x => x.Kind() == SyntaxKind.ConstKeyword);
 
                 if (token == default)
-                    return base.VisitFieldDeclaration(node);
+                    return node;
 
                 var cIndex = modifiers.IndexOf(token);
                 
@@ -832,31 +841,20 @@ namespace GenericMaths
                         .Insert(cIndex, Token(SyntaxKind.ReadOnlyKeyword));
                 }
                 
-                return base.VisitFieldDeclaration(node.WithModifiers(modifiers));
+                return node.WithModifiers(modifiers);
             }
-            
-            public override SyntaxNode? Visit(SyntaxNode? node)
+
+            public override SyntaxNode? Visit(SyntaxNode? original)
             {
-                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                var node = base.Visit(original);
+                if (original is TypeSyntax s)
                 {
-                    _sourcePosition = node.SpanStart;
+                    var symbol = _semanticModel.GetSymbolInfo(s).Symbol;
+                    if (symbol is ITypeSymbol ts && _remaps.TryGetValue(ts, out var n))
+                        node = n;
                 }
-                
-                node = node?.WithTrailingTrivia
-                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
-                
-                if (node is TypeSyntax s)
-                {
-                    try
-                    {
-                        var symbol = _semanticModel.GetSpeculativeSymbolInfo(_sourcePosition, s, SpeculativeBindingOption.BindAsTypeOrNamespace).Symbol;
-                        if (symbol is ITypeSymbol ts && _remaps.TryGetValue(ts, out var n))
-                            return base.Visit(n);
-                    }
-                    catch { /* unfortunately, there is not `TryGetSymbolInfo` */ }
-                }
-                
-                return base.Visit(node);
+
+                return node;
             }
 
             private static MemberAccessExpressionSyntax SilkNetMathsScalar = MemberAccessExpression
@@ -904,46 +902,38 @@ namespace GenericMaths
             private static ExpressionSyntax NotEqualMethod = MemberAccessExpression
                 (SyntaxKind.SimpleMemberAccessExpression, SilkNetMathsScalar, IdentifierName("NotEqual"));
 
-            private static int _aaa = 0;
-            public override SyntaxNode? VisitBinaryExpression(BinaryExpressionSyntax node)
+            public override SyntaxNode? VisitBinaryExpression(BinaryExpressionSyntax original)
             {
-                if (_semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
-                {
-                    _sourcePosition = node.SpanStart;
-                }
-                
-                node = node.WithTrailingTrivia
-                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                var node = (BinaryExpressionSyntax)base.VisitBinaryExpression(original);
+                if (node is null)
+                    return node;
                 
                 // check whether the left/right are actually operating on `TNumeric`/`float`. We don't want to replace custom operators.
-                var leftInfo = _semanticModel.GetSpeculativeTypeInfo
-                    (_sourcePosition, node.Left, SpeculativeBindingOption.BindAsExpression);
-                var rightInfo = _semanticModel.GetSpeculativeTypeInfo
-                    (_sourcePosition, node.Right, SpeculativeBindingOption.BindAsExpression);
+                var leftInfo = _semanticModel.GetTypeInfo
+                    (original.Left);
+                var rightInfo = _semanticModel.GetTypeInfo
+                    (original.Right);
 
-                var floatSymbol = _semanticModel.Compilation.GetSpecialType(SpecialType.System_Single);
-                var leftType = (leftInfo.ConvertedType ?? leftInfo.Type);
-                var rightType = (rightInfo.ConvertedType ?? rightInfo.Type);
+                var leftType = leftInfo.ConvertedType ?? leftInfo.Type;
+                var rightType = rightInfo.ConvertedType ?? rightInfo.Type;
+                var floatType = _semanticModel.Compilation.GetSpecialType(SpecialType.System_Single);
 
-                if (_aaa == 0)
-                {
-                    _aaa = 1;
-                    Debugger.Launch();
-                }
-
-                node = node.WithLeft
-                (
-                    node.Left.WithTrailingTrivia
-                        (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Type: {leftType?.Name ?? "null"} */"))
-                ).WithRight
-                (
-                    node.Right.WithTrailingTrivia
-                        (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Type: {leftType?.Name ?? "null"} */"))
-                );
-                
-                if ((leftType != floatSymbol || rightType != floatSymbol) 
-                    && ((leftType?.TypeKind != TypeKind.TypeParameter && (leftType as ITypeParameterSymbol)?.Name != typeParam) || (rightType?.TypeKind != TypeKind.TypeParameter && (rightType as ITypeParameterSymbol)?.Name != typeParam)))
-                    return base.VisitBinaryExpression(node);
+                var b = (SymbolEqualityComparer.Default.Equals
+                        (leftType, floatType) && SymbolEqualityComparer.Default.Equals
+                        (rightType, floatType)) // both are float
+                    /*|| // OR
+                    (((leftType?.TypeKind == TypeKind.TypeParameter && // left if a type param
+                             (leftType as ITypeParameterSymbol)?.Name == typeParam) // with name "<typeParam>"
+                         &&    // AND
+                            (rightType?.TypeKind == TypeKind.TypeParameter && // right is a type param
+                             (rightType as ITypeParameterSymbol)?.Name == typeParam))) // with name "<typeParam>"
+                             
+                             I DONT THINK THIS IS NEEDED??
+                             
+                             */
+                    ;
+                if (!b)
+                    return node;
                 
                 var (method, boolMethod) = node.OperatorToken.Text switch
                 {
@@ -962,24 +952,21 @@ namespace GenericMaths
                 };
 
                 if (method is null)
-                    return base.VisitBinaryExpression(node);
+                    return node;
 
-                var expr = ((ExpressionSyntax) VisitInvocationExpression
+                var expr = InvocationExpression
                 (
-                    InvocationExpression
+                    method, ArgumentList
                     (
-                        method, ArgumentList
+                        SeparatedList
                         (
-                            SeparatedList
-                            (
-                                new[]
-                                {
-                                    Argument(FromGeneric(node.Left)), Argument(FromGeneric(node.Right))
-                                }
-                            )
+                            new[]
+                            {
+                                Argument(FromGeneric(node.Left)), Argument(FromGeneric(node.Right))
+                            }
                         )
                     )
-                ))!;
+                );
                 
                 return boolMethod ? expr : ToGeneric(expr);
             }
@@ -989,15 +976,39 @@ namespace GenericMaths
             private static ExpressionSyntax NegateMethod = MemberAccessExpression
                 (SyntaxKind.SimpleMemberAccessExpression, SilkNetMathsScalar, IdentifierName("Negate"));
             
-            public override SyntaxNode? VisitPrefixUnaryExpression(PrefixUnaryExpressionSyntax node)
+            public override SyntaxNode? VisitPrefixUnaryExpression(PrefixUnaryExpressionSyntax original)
             {
-                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                var node = (PrefixUnaryExpressionSyntax) base.VisitPrefixUnaryExpression(original);
+                if (node is null)
+                    return node;
+
+                TypeInfo info;
+                try
                 {
-                    _sourcePosition = node.SpanStart;
+                    // check whether we are actually operating on `TNumeric`/`float`. We don't want to replace custom operators.
+                    info = _semanticModel.GetTypeInfo(original.Operand);
                 }
-                
-                node = node?.WithTrailingTrivia
-                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                catch (Exception ex)
+                {
+                    Debugger.Break();
+                    throw;
+                }
+
+                var type = info.ConvertedType ?? info.Type;
+                var floatType = _semanticModel.Compilation.GetSpecialType(SpecialType.System_Single);
+
+                var b = SymbolEqualityComparer.Default.Equals
+                        (type, floatType)
+                    /*||
+                    (((leftType?.TypeKind == TypeKind.TypeParameter &&
+                             (leftType as ITypeParameterSymbol)?.Name == typeParam)
+                                                          
+                             I DONT THINK THIS IS NEEDED??
+                             
+                             */
+                    ;
+                if (!b)
+                    return node;
                 
                 var method = node.OperatorToken.Text switch
                 {
@@ -1006,10 +1017,9 @@ namespace GenericMaths
                 };
 
                 if (method is null)
-                    return base.VisitPrefixUnaryExpression(node);
+                    return node;
                 
-                return ToGeneric(((ExpressionSyntax)VisitInvocationExpression
-                (
+                return ToGeneric(
                     InvocationExpression
                     (
                         method, ArgumentList
@@ -1023,22 +1033,18 @@ namespace GenericMaths
                             )
                         )
                     )
-                ))!);
+                );
             }
 
             public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
             {
-                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
-                {
-                    _sourcePosition = node.SpanStart;
-                }
-                
-                node = node?.WithTrailingTrivia
-                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                node = (IdentifierNameSyntax) base.VisitIdentifierName(node);
+                if (node is null)
+                    return null;
                 
                 if (node == MathF)
-                    return Visit(SilkNetMathsScalar);
-                return base.VisitIdentifierName(node);
+                    return SilkNetMathsScalar;
+                return node;
             }
 
             private ExpressionSyntax ToGeneric(ExpressionSyntax syntax)
@@ -1053,48 +1059,34 @@ namespace GenericMaths
                     _specializedType, CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)), syntax)
                 );
 
-            public override SyntaxNode? VisitLocalFunctionStatement(LocalFunctionStatementSyntax node)
+            public override SyntaxNode? VisitLocalFunctionStatement(LocalFunctionStatementSyntax original)
             {
-                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
-                {
-                    _sourcePosition = node.SpanStart;
-                }
-                
-                node = node?.WithTrailingTrivia
-                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
-                
+                var node = original.Update
+                (
+                    VisitList(original.AttributeLists), VisitList(original.Modifiers),
+                    (TypeSyntax?) Visit(original.ReturnType) ?? throw new ArgumentNullException("returnType"),
+                    VisitToken(original.Identifier), (TypeParameterListSyntax?) Visit(original.TypeParameterList),
+                    (ParameterListSyntax?) Visit(original.ParameterList) ??
+                    throw new ArgumentNullException("parameterList"), VisitList(original.ConstraintClauses),
+                    original.Body, original.ExpressionBody,
+                    VisitToken(original.SemicolonToken)
+                ); // base but do not visit Body/ExpressionBody
+
                 // this function essentially delegates to the `_parent` Generializer, which then delegates to another Specializer, before returning to this one
                 
-                var body = node.Body is not null
+                var body = original.Body is not null
                     ? _parent.VisitMethodBody
                     (
-                        node.Identifier.Text, (TypeSyntax)Visit(node.ReturnType)!, (ParameterListSyntax)Visit(node.ParameterList)!, node.TypeParameterList,
-                        node.Modifiers, node.Body!
+                        node.Identifier.Text, node.ReturnType, node.ParameterList, node.TypeParameterList,
+                        node.Modifiers, original.Body!
                     )
                     : _parent.VisitExpressionBody
                     (
-                        node.Identifier.Text, (TypeSyntax)Visit(node.ReturnType)!, (ParameterListSyntax)Visit(node.ParameterList)!, node.TypeParameterList,
-                        node.Modifiers, node.ExpressionBody!
+                        node.Identifier.Text, node.ReturnType, node.ParameterList, node.TypeParameterList,
+                        node.Modifiers, original.ExpressionBody!
                     );
 
-                node = node.Update
-                (
-                    node.AttributeLists, node.Modifiers,
-                    _semanticModel.GetDeclaredSymbol(node.ReturnType) is ITypeSymbol symbol && _remaps.TryGetValue(symbol, out var n) ? n : node.ReturnType,
-                    node.Identifier, node.TypeParameterList,
-                    (ParameterListSyntax?) _parent.Visit(node.ParameterList) ??
-                    throw new ArgumentNullException("parameterList"), node.ConstraintClauses, body, null,
-                    default
-                );
-                return node.Update
-                (
-                    _parent.VisitList(node.AttributeLists), _parent.VisitList(node.Modifiers),
-                    (TypeSyntax?) _parent.Visit(node.ReturnType) ?? throw new ArgumentNullException("returnType"),
-                    _parent.VisitToken(node.Identifier), (TypeParameterListSyntax?) _parent.Visit(node.TypeParameterList),
-                    node.ParameterList, _parent.VisitList(node.ConstraintClauses),
-                    body,
-                    (ArrowExpressionClauseSyntax?) _parent.Visit(node.ExpressionBody), _parent.VisitToken(node.SemicolonToken)
-                );
+                return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
             }
         }
         
