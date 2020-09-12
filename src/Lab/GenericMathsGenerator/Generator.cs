@@ -577,7 +577,13 @@ namespace GenericMaths
                                     (
                                         SeparatedList
                                         (
-                                            parameterList.Parameters.Select(x => Argument(IdentifierName(x.Identifier)))
+                                            parameterList.Parameters.Select(x => Argument(NameColon(x.Identifier.Text), x.Modifiers.FirstOrDefault(x => x.Kind() switch
+                                            {
+                                                SyntaxKind.ReferenceKeyword => true,
+                                                SyntaxKind.OutKeyword => true,
+                                                SyntaxKind.InKeyword => true,
+                                                _ => false
+                                            }), IdentifierName(x.Identifier)))
                                         )
                                     )
                                 )
@@ -651,8 +657,13 @@ namespace GenericMaths
                                     (
                                         SeparatedList
                                         (
-                                            parameterList.Parameters.Select
-                                                (x => Argument(IdentifierName(x.Identifier)))
+                                            parameterList.Parameters.Select(x => Argument(NameColon(x.Identifier.Text), x.Modifiers.FirstOrDefault(x => x.Kind() switch
+                                            {
+                                                SyntaxKind.ReferenceKeyword => true,
+                                                SyntaxKind.OutKeyword => true,
+                                                SyntaxKind.InKeyword => true,
+                                                _ => false
+                                            }), IdentifierName(x.Identifier)))
                                         )
                                     )
                                 )
@@ -687,6 +698,23 @@ namespace GenericMaths
                         )
                     )
                 );
+
+                foreach (var parameter in parameterList.Parameters)
+                {
+                    if (parameter.Modifiers.Any(x => x.IsKind(SyntaxKind.OutKeyword)))
+                        statements.Add
+                        (
+                            ExpressionStatement
+                            (
+                                AssignmentExpression
+                                (
+                                    SyntaxKind.SimpleAssignmentExpression, IdentifierName(parameter.Identifier.Text),
+                                    DefaultExpression(parameter.Type)
+                                )
+                            )
+                        );
+                }
+                
                 statements.Add(ReturnStatement(DefaultExpression(IdentifierName(typeParam))));
 
                 return Block(statements).WithLeadingTrivia(SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, "/* Processed by specialization rewriter */"));
