@@ -976,6 +976,9 @@ namespace GenericMaths
             private static ExpressionSyntax NegateMethod = MemberAccessExpression
                 (SyntaxKind.SimpleMemberAccessExpression, SilkNetMathsScalar, IdentifierName("Negate"));
             
+            private static ExpressionSyntax UnaryPlusMethod = MemberAccessExpression
+                (SyntaxKind.SimpleMemberAccessExpression, SilkNetMathsScalar, IdentifierName("UnaryPlus"));
+            
             public override SyntaxNode? VisitPrefixUnaryExpression(PrefixUnaryExpressionSyntax original)
             {
                 var node = (PrefixUnaryExpressionSyntax) base.VisitPrefixUnaryExpression(original);
@@ -1013,6 +1016,7 @@ namespace GenericMaths
                 var method = node.OperatorToken.Text switch
                 {
                     "-" => NegateMethod,
+                    "+" => UnaryPlusMethod,
                     _ => null
                 };
 

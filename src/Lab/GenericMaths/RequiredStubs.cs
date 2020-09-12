@@ -187,6 +187,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
+        public static T UnaryPlus<T>(T val) => val;
+
+        [M(MIP)]
         public static T Subtract<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
