@@ -695,7 +695,7 @@ namespace GenericMaths
                         );
                 }
                 
-                statements.Add(ReturnStatement(DefaultExpression(IdentifierName(typeParam))));
+                statements.Add(ReturnStatement(DefaultExpression(returnType)));
 
                 return Block(statements).WithLeadingTrivia(SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, "/* Processed by specialization rewriter */"));
             }
