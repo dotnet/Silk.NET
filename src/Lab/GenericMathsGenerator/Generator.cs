@@ -498,18 +498,6 @@ namespace GenericMaths
                 return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
             }
 
-            public override SyntaxNode? VisitParameter(ParameterSyntax node)
-            {
-                node = (ParameterSyntax)base.VisitParameter(node);
-                if (node is null)
-                    return node;
-
-                return _semanticModel.GetDeclaredSymbol(node.Type) is ITypeSymbol symbol && _remaps.TryGetValue
-                    (symbol, out var n)
-                    ? node.WithType(n)
-                    : node;
-            }
-
             public BlockSyntax VisitExpressionBody
             (
                 string methodName,
@@ -520,10 +508,6 @@ namespace GenericMaths
                 ArrowExpressionClauseSyntax body
             )
             {
-                returnType = _semanticModel.GetDeclaredSymbol(returnType) is ITypeSymbol symbol && _remaps.TryGetValue
-                    (symbol, out var n)
-                    ? n
-                    : returnType;
                 var statements = new List<StatementSyntax>();
                 foreach (var possibleType in _possibleTypes)
                 {
@@ -597,10 +581,6 @@ namespace GenericMaths
 
             public BlockSyntax VisitMethodBody(string methodName, TypeSyntax returnType, ParameterListSyntax parameterList, TypeParameterListSyntax? typeParameterList, SyntaxTokenList modifiers, BlockSyntax body)
             {
-                returnType = _semanticModel.GetDeclaredSymbol(returnType) is ITypeSymbol symbol && _remaps.TryGetValue
-                    (symbol, out var n)
-                    ? n
-                    : returnType;
                 var statements = new List<StatementSyntax>();
                 foreach (var possibleType in _possibleTypes)
                 {
