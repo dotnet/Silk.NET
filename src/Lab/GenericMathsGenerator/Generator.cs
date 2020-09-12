@@ -770,6 +770,7 @@ namespace GenericMaths
             private readonly SemanticModel _semanticModel;
             private readonly TypeSyntax? _returnType;
             private readonly GeneralizingRewriter _parent;
+            private int _sourcePosition;
 
             public SpecializingRewriter(TypeSyntax specializedType, Dictionary<ITypeSymbol, TypeSyntax> remaps, SemanticModel semanticModel, TypeSyntax? returnType, GeneralizingRewriter parent)
             {
@@ -782,6 +783,14 @@ namespace GenericMaths
 
             public override SyntaxNode? VisitReturnStatement(ReturnStatementSyntax node)
             {
+                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                {
+                    _sourcePosition = node.SpanStart;
+                }
+                
+                node = node?.WithTrailingTrivia
+                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                
                 // this should handle implicit conversions, by explicitly converting.
                 return base.VisitReturnStatement
                 (
@@ -800,6 +809,14 @@ namespace GenericMaths
 
             public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
             {
+                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                {
+                    _sourcePosition = node.SpanStart;
+                }
+
+                node = node?.WithTrailingTrivia
+                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                
                 var modifiers = node.Modifiers;
                 var token = modifiers.FirstOrDefault(x => x.Kind() == SyntaxKind.ConstKeyword);
 
@@ -820,11 +837,19 @@ namespace GenericMaths
             
             public override SyntaxNode? Visit(SyntaxNode? node)
             {
+                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                {
+                    _sourcePosition = node.SpanStart;
+                }
+                
+                node = node?.WithTrailingTrivia
+                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                
                 if (node is TypeSyntax s)
                 {
                     try
                     {
-                        var symbol = _semanticModel.GetSymbolInfo(s).Symbol;
+                        var symbol = _semanticModel.GetSpeculativeSymbolInfo(_sourcePosition, s, SpeculativeBindingOption.BindAsTypeOrNamespace).Symbol;
                         if (symbol is ITypeSymbol ts && _remaps.TryGetValue(ts, out var n))
                             return base.Visit(n);
                     }
@@ -879,8 +904,47 @@ namespace GenericMaths
             private static ExpressionSyntax NotEqualMethod = MemberAccessExpression
                 (SyntaxKind.SimpleMemberAccessExpression, SilkNetMathsScalar, IdentifierName("NotEqual"));
 
+            private static int _aaa = 0;
             public override SyntaxNode? VisitBinaryExpression(BinaryExpressionSyntax node)
             {
+                if (_semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                {
+                    _sourcePosition = node.SpanStart;
+                }
+                
+                node = node.WithTrailingTrivia
+                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                
+                // check whether the left/right are actually operating on `TNumeric`/`float`. We don't want to replace custom operators.
+                var leftInfo = _semanticModel.GetSpeculativeTypeInfo
+                    (_sourcePosition, node.Left, SpeculativeBindingOption.BindAsExpression);
+                var rightInfo = _semanticModel.GetSpeculativeTypeInfo
+                    (_sourcePosition, node.Right, SpeculativeBindingOption.BindAsExpression);
+
+                var floatSymbol = _semanticModel.Compilation.GetSpecialType(SpecialType.System_Single);
+                var leftType = (leftInfo.ConvertedType ?? leftInfo.Type);
+                var rightType = (rightInfo.ConvertedType ?? rightInfo.Type);
+
+                if (_aaa == 0)
+                {
+                    _aaa = 1;
+                    Debugger.Launch();
+                }
+
+                node = node.WithLeft
+                (
+                    node.Left.WithTrailingTrivia
+                        (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Type: {leftType?.Name ?? "null"} */"))
+                ).WithRight
+                (
+                    node.Right.WithTrailingTrivia
+                        (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Type: {leftType?.Name ?? "null"} */"))
+                );
+                
+                if ((leftType != floatSymbol || rightType != floatSymbol) 
+                    && ((leftType?.TypeKind != TypeKind.TypeParameter && (leftType as ITypeParameterSymbol)?.Name != typeParam) || (rightType?.TypeKind != TypeKind.TypeParameter && (rightType as ITypeParameterSymbol)?.Name != typeParam)))
+                    return base.VisitBinaryExpression(node);
+                
                 var (method, boolMethod) = node.OperatorToken.Text switch
                 {
                     "+" => (AddMethod, false),
@@ -893,9 +957,9 @@ namespace GenericMaths
                     "<=" => (SmallerEqualsMethod, true),
                     ">=" => (LargerEqualsMethod, true),
                     "==" => (EqualMethod, true),
-                    "!=" => (NotEqualsMethod: NotEqualMethod, true),
-                    _ => (null, false)
-                } ;
+                    "!=" => (NotEqualMethod, true),
+                    _ => (null, default)
+                };
 
                 if (method is null)
                     return base.VisitBinaryExpression(node);
@@ -927,6 +991,14 @@ namespace GenericMaths
             
             public override SyntaxNode? VisitPrefixUnaryExpression(PrefixUnaryExpressionSyntax node)
             {
+                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                {
+                    _sourcePosition = node.SpanStart;
+                }
+                
+                node = node?.WithTrailingTrivia
+                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                
                 var method = node.OperatorToken.Text switch
                 {
                     "-" => NegateMethod,
@@ -956,8 +1028,16 @@ namespace GenericMaths
 
             public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
             {
+                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                {
+                    _sourcePosition = node.SpanStart;
+                }
+                
+                node = node?.WithTrailingTrivia
+                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                
                 if (node == MathF)
-                    return VisitMemberAccessExpression(SilkNetMathsScalar);
+                    return Visit(SilkNetMathsScalar);
                 return base.VisitIdentifierName(node);
             }
 
@@ -975,6 +1055,14 @@ namespace GenericMaths
 
             public override SyntaxNode? VisitLocalFunctionStatement(LocalFunctionStatementSyntax node)
             {
+                if (node is not null && _semanticModel.Compilation.ContainsSyntaxTree(node.SyntaxTree))
+                {
+                    _sourcePosition = node.SpanStart;
+                }
+                
+                node = node?.WithTrailingTrivia
+                    (SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* Position: {_sourcePosition} */"));
+                
                 // this function essentially delegates to the `_parent` Generializer, which then delegates to another Specializer, before returning to this one
                 
                 var body = node.Body is not null

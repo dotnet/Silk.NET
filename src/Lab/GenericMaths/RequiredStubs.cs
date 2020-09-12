@@ -698,9 +698,6 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Clamp<T>(T value, T min, T max) where T : unmanaged, IFormattable => Min(Max(value, min), max);
-
-        [M(MIP)]
         public static T Negate<T>(T value) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(sbyte))
