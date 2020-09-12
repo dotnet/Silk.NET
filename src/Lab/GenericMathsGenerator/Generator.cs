@@ -28,7 +28,6 @@ namespace GenericMathsGenerator
 
         public void Execute(SourceGeneratorContext context)
         {
-            Debugger.Launch();
             try
             {
                 context.AddSource
@@ -139,7 +138,10 @@ namespace GenericMaths
                             (symbol.Name)
                         .WithTypeArgumentList
                             (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))));
-
+                    var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
+                    if (mathF is not null)
+                        remaps.Add(mathF, IdentifierName("Silk.NET.Maths.Scalar"));
+                    
                     var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
                     var rewriter = new GeneralizingRewriter
                     (
@@ -230,6 +232,9 @@ namespace GenericMaths
                             (symbol.Name)
                         .WithTypeArgumentList
                             (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))));
+                    var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
+                    if (mathF is not null)
+                        remaps.Add(mathF, IdentifierName("Silk.NET.Maths.Scalar"));
 
                     var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
                     var rewriter = new GeneralizingRewriter
@@ -317,7 +322,9 @@ namespace GenericMaths
                     }
 
                     var remaps = new Dictionary<ITypeSymbol, TypeSyntax>();
-
+                    var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
+                    if (mathF is not null)
+                        remaps.Add(mathF, IdentifierName("Silk.NET.Maths.Scalar"));
                     var rewriter = new GeneralizingRewriter
                     (
                         context, possibleTypes.ToArray(), remaps,
@@ -978,9 +985,7 @@ namespace GenericMaths
                 
                 return boolMethod ? expr : ToGeneric(expr);
             }
-
-            private static IdentifierNameSyntax MathF = IdentifierName("MathF");
-
+            
             private static ExpressionSyntax NegateMethod = MemberAccessExpression
                 (SyntaxKind.SimpleMemberAccessExpression, SilkNetMathsScalar, IdentifierName("Negate"));
             
@@ -1046,17 +1051,6 @@ namespace GenericMaths
                         )
                     )
                 );
-            }
-
-            public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node)
-            {
-                node = (IdentifierNameSyntax) base.VisitIdentifierName(node);
-                if (node is null)
-                    return null;
-                
-                if (node == MathF)
-                    return SilkNetMathsScalar;
-                return node;
             }
 
             private ExpressionSyntax ToGeneric(ExpressionSyntax syntax)
