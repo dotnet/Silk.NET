@@ -17,12 +17,6 @@ namespace Silk.NET.Maths
     internal static class Scalar<T> where T : unmanaged, IFormattable
     {
         private const MethodImplOptions MIP = MethodImplOptions.AggressiveInlining | (MethodImplOptions) 0x0200;
-        
-        /*
-         * PLEASE DO ONLY MODIFY IF ADDING A PROPERTY
-         * DO NOT EVER ADD METHODS / NON-FORWARD POPERTIES TO THIS TYPE
-         * See non-generic Scalar for all code
-         */
 
         public static T One
         {
@@ -65,6 +59,47 @@ namespace Silk.NET.Maths
             [M(MIP)]
             get => Scalar.NegativeInfinity<T>();
         }
+
+        public static T Epsilon
+        {
+            [M(MIP)] get => default; // Scalar.Epsilon<T>();
+        }
+        
+        public static T MaxValue
+        {
+            [M(MIP)] get => default; // Scalar.MaxValue<T>();
+        }
+        
+        public static T MinValue
+        {
+            [M(MIP)] get => default; // Scalar.MinValue<T>();
+        }
+
+        public static T NaN
+        {
+            [M(MIP)] get => default; // Scalar.NaN<T>();
+        }
+
+        [M(MIP)]
+        public static bool IsFinite(T value) => default; // Scalar.IsFinite<T>(value);
+        
+        [M(MIP)]
+        public static bool IsInfinity(T value) => default; // Scalar.IsInfinity<T>(value);
+        
+        [M(MIP)]
+        public static bool IsNaN(T value) => default; // Scalar.IsNaN<T>(value);
+        
+        [M(MIP)]
+        public static bool IsNormal(T value) => default; // Scalar.IsNormal<T>(value);
+
+        [M(MIP)]
+        public static bool IsNegativeInfinity(T value) => default; // Scalar.IsNegativeInfinity<T>(value);
+        
+        [M(MIP)]
+        public static bool IsPositiveInfinity(T value) => default; // Scalar.IsPositiveInfinity<T>(value);
+
+        [M(MIP)]
+        public static bool IsSubnormal(T value) => default; // Scalar.IsSubnormal<T>(value);
     }
 
     internal static partial class Scalar
