@@ -30,10 +30,10 @@ namespace Silk.NET.Maths
             get => Scalar.Two<T>();
         }
 
-        public static T Pi
+        public static T PI
         {
             [M(MIP)]
-            get => Scalar.Pi<T>();
+            get => Scalar.PI<T>();
         }
 
         public static T Tau
@@ -302,7 +302,7 @@ namespace Silk.NET.Maths
 #endif
 
         [M(MIP)]
-        public static T Pi<T>() where T : unmanaged, IFormattable
+        public static T PI<T>() where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
 #if HALF
