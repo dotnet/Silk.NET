@@ -233,6 +233,7 @@ namespace GenericMaths
                             (symbol.Name)
                         .WithTypeArgumentList
                             (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))));
+                    
                     var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
                     if (mathF is not null)
                         remaps.Add((mathF, true), IdentifierName("Silk.NET.Maths.Scalar"));
@@ -321,7 +322,7 @@ namespace GenericMaths
                             }
                         );
                     }
-
+                    
                     var remaps = new Dictionary<(ITypeSymbol, bool), TypeSyntax>();
                     var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
                     if (mathF is not null)
@@ -894,15 +895,22 @@ namespace GenericMaths
 
                     if (symbol is ITypeSymbol ts)
                     {
+                        bool foundData = false;
                         bool isStatic = false;
-                        if (s.Parent is MemberAccessExpressionSyntax mae)
+                        if (!foundData && s.Parent is MemberAccessExpressionSyntax mae && mae.Expression == original)
                         {
-                            if (mae.Expression == original)
+                            if (_semanticModel.GetOperation(mae) is IMemberReferenceOperation mro)
                             {
-                                var nameSymbol = _semanticModel.GetOperation(mae);
-                                if (nameSymbol is IMemberReferenceOperation mro)
+                                foundData = true;
+                                isStatic = mro.Member.IsStatic;
+                            }
+
+                            if (!foundData && mae.Parent is InvocationExpressionSyntax ies && ies.Expression == mae)
+                            {
+                                if (_semanticModel.GetOperation(ies) is IInvocationOperation io)
                                 {
-                                    isStatic = mro.Member.IsStatic;
+                                    foundData = true;
+                                    isStatic = io.TargetMethod.IsStatic;
                                 }
                             }
                         }
