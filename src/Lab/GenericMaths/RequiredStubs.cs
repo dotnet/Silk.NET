@@ -1622,6 +1622,49 @@ namespace Silk.NET.Maths
             Debug.Fail("Unreachable Code");
             return default;
         }
+        
+        [M(MIP)]
+        public static T Sin<T>(T value) where T : unmanaged, IFormattable
+        {
+            ThrowForNonFloatingPointType<T>();
+            if (typeof(T) == typeof(float))
+            {
+                return (T)(object)MathF.Sin((float)(object)value);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T)(object)Math.Sin((double)(object)value);
+            }
+
+            Debug.Fail("Unreachable Code");
+            return default;
+        }
+
+        [M(MIP)]
+        public static T Tan<T>(T value) where T : unmanaged, IFormattable
+        {
+            ThrowForNonFloatingPointType<T>();
+#if HALF
+            if (typeof(T) == typeof(Half))
+            {
+                return (T)(object)(Half)MathF.Tan((float)(Half)(object)value);
+            }
+#endif
+            if (typeof(T) == typeof(float))
+            {
+                return (T)(object)MathF.Tan((float)(object)value);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T)(object)Math.Tan((double)(object)value);
+            }
+
+
+            Debug.Fail("Unreachable Code");
+            return default;
+        }
 
         [M(MIP)]
         public static T Asin<T>(T value) where T : unmanaged, IFormattable
