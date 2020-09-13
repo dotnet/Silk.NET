@@ -192,7 +192,7 @@ namespace GenericMaths
                     File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
                     context.AddSource($"{declaration.GetHashCode()}", SourceText.From(str, Encoding.UTF8));
                 }
-
+                
                 foreach (var (declaration, symbol, attribute) in structs)
                 {
                     var options = context.AnalyzerConfigOptions.GetOptions(declaration.SyntaxTree);
@@ -840,6 +840,31 @@ namespace GenericMaths
                 _parent = parent;
             }
 
+            public override SyntaxNode? VisitLiteralExpression(LiteralExpressionSyntax original)
+            {
+                var node = (LiteralExpressionSyntax)base.VisitLiteralExpression(original);
+                if (node is null)
+                    return node;
+
+                var operation = _semanticModel.GetOperation(original);
+                if (operation is ILiteralOperation lo)
+                {
+                    if (lo.Type.SpecialType == SpecialType.System_Single)
+                    {
+                        return ToGeneric
+                        (
+                            CastExpression
+                            (
+                                _specializedType,
+                                original
+                            )
+                        );
+                    }
+                }
+
+                return node;
+            }
+
             public override SyntaxNode? VisitReturnStatement(ReturnStatementSyntax node)
             {
                 node = (ReturnStatementSyntax)base.VisitReturnStatement(node);
@@ -1050,16 +1075,8 @@ namespace GenericMaths
                     return node;
 
                 TypeInfo info;
-                try
-                {
-                    // check whether we are actually operating on `TNumeric`/`float`. We don't want to replace custom operators.
-                    info = _semanticModel.GetTypeInfo(original.Operand);
-                }
-                catch (Exception ex)
-                {
-                    Debugger.Break();
-                    throw;
-                }
+                // check whether we are actually operating on `TNumeric`/`float`. We don't want to replace custom operators.
+                info = _semanticModel.GetTypeInfo(original.Operand);
 
                 var type = info.ConvertedType ?? info.Type;
                 var floatType = _semanticModel.Compilation.GetSpecialType(SpecialType.System_Single);
