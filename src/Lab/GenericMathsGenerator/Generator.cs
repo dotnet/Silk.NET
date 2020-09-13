@@ -13,6 +13,7 @@ using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Operations;
 using Microsoft.CodeAnalysis.Text;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -133,14 +134,14 @@ namespace GenericMaths
                         );
                     }
 
-                    var remaps = new Dictionary<ITypeSymbol, TypeSyntax>();
-                    remaps[symbol] = GenericName
+                    var remaps = new Dictionary<(ITypeSymbol, bool), TypeSyntax>();
+                    remaps[(symbol, false)] = remaps[(symbol, true)] = GenericName
                             (symbol.Name)
                         .WithTypeArgumentList
                             (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))));
                     var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
                     if (mathF is not null)
-                        remaps.Add(mathF, IdentifierName("Silk.NET.Maths.Scalar"));
+                        remaps.Add((mathF, true), IdentifierName("Silk.NET.Maths.Scalar"));
                     
                     var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
                     var rewriter = new GeneralizingRewriter
@@ -227,14 +228,14 @@ namespace GenericMaths
                         );
                     }
 
-                    var remaps = new Dictionary<ITypeSymbol, TypeSyntax>();
-                    remaps[symbol] = GenericName
+                    var remaps = new Dictionary<(ITypeSymbol, bool), TypeSyntax>();
+                    remaps[(symbol, false)] = remaps[(symbol, true)] = GenericName
                             (symbol.Name)
                         .WithTypeArgumentList
                             (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))));
                     var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
                     if (mathF is not null)
-                        remaps.Add(mathF, IdentifierName("Silk.NET.Maths.Scalar"));
+                        remaps.Add((mathF, true), IdentifierName("Silk.NET.Maths.Scalar"));
 
                     var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
                     var rewriter = new GeneralizingRewriter
@@ -321,10 +322,10 @@ namespace GenericMaths
                         );
                     }
 
-                    var remaps = new Dictionary<ITypeSymbol, TypeSyntax>();
+                    var remaps = new Dictionary<(ITypeSymbol, bool), TypeSyntax>();
                     var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
                     if (mathF is not null)
-                        remaps.Add(mathF, IdentifierName("Silk.NET.Maths.Scalar"));
+                        remaps.Add((mathF, true), IdentifierName("Silk.NET.Maths.Scalar"));
                     var rewriter = new GeneralizingRewriter
                     (
                         context, possibleTypes.ToArray(), remaps,
@@ -389,7 +390,7 @@ namespace GenericMaths
         {
             private readonly SourceGeneratorContext _context;
             private readonly TypeSyntax[] _possibleTypes;
-            private readonly Dictionary<ITypeSymbol, TypeSyntax> _remaps;
+            private readonly Dictionary<(ITypeSymbol, bool), TypeSyntax> _remaps;
             private readonly SemanticModel _semanticModel;
             private readonly TypeSyntax? _parentType;
             public List<MemberDeclarationSyntax> ExtraMembers { get; }
@@ -398,7 +399,7 @@ namespace GenericMaths
             (
                 SourceGeneratorContext context,
                 TypeSyntax[] possibleTypes,
-                Dictionary<ITypeSymbol, TypeSyntax> remaps,
+                Dictionary<(ITypeSymbol, bool), TypeSyntax> remaps,
                 SemanticModel semanticModel,
                 TypeSyntax? parentType
             )
@@ -408,7 +409,15 @@ namespace GenericMaths
                 _remaps = remaps;
                 _semanticModel = semanticModel;
                 _parentType = parentType;
-                _remaps.Add(_semanticModel.Compilation.GetSpecialType(SpecialType.System_Single), IdentifierName(typeParam));
+                _remaps.Add((_semanticModel.Compilation.GetSpecialType(SpecialType.System_Single), false), IdentifierName(typeParam));
+                _remaps.Add
+                (
+                    (_semanticModel.Compilation.GetSpecialType(SpecialType.System_Single), true),
+                    GenericName
+                            ("Silk.NET.Maths.Scalar")
+                        .WithTypeArgumentList
+                            (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))))
+                );
                 ExtraMembers = new List<MemberDeclarationSyntax>();
             }
             
@@ -788,8 +797,25 @@ namespace GenericMaths
                 if (original is TypeSyntax s)
                 {
                     var symbol = _semanticModel.GetSymbolInfo(s).Symbol;
-                    if (symbol is ITypeSymbol ts && _remaps.TryGetValue(ts, out var n))
-                        node = n;
+
+                    if (symbol is ITypeSymbol ts)
+                    {
+                        bool isStatic = false;
+                        if (s.Parent is MemberAccessExpressionSyntax mae)
+                        {
+                            if (mae.Expression == original)
+                            {
+                                var nameSymbol = _semanticModel.GetOperation(mae);
+                                if (nameSymbol is IMemberReferenceOperation mro)
+                                {
+                                    isStatic = mro.Member.IsStatic;
+                                }
+                            }
+                        }
+
+                        if (_remaps.TryGetValue((ts, isStatic), out var n))
+                            node = n;
+                    }
                 }
 
                 return node;
@@ -799,12 +825,12 @@ namespace GenericMaths
         private class SpecializingRewriter : CSharpSyntaxRewriter
         {
             private readonly TypeSyntax _specializedType;
-            private readonly Dictionary<ITypeSymbol, TypeSyntax> _remaps;
+            private readonly Dictionary<(ITypeSymbol, bool), TypeSyntax> _remaps;
             private readonly SemanticModel _semanticModel;
             private readonly TypeSyntax? _returnType;
             private readonly GeneralizingRewriter _parent;
 
-            public SpecializingRewriter(TypeSyntax specializedType, Dictionary<ITypeSymbol, TypeSyntax> remaps, SemanticModel semanticModel, TypeSyntax? returnType, GeneralizingRewriter parent)
+            public SpecializingRewriter(TypeSyntax specializedType, Dictionary<(ITypeSymbol, bool), TypeSyntax> remaps, SemanticModel semanticModel, TypeSyntax? returnType, GeneralizingRewriter parent)
             {
                 _specializedType = specializedType;
                 _remaps = remaps;
@@ -858,15 +884,32 @@ namespace GenericMaths
                 
                 return node.WithModifiers(modifiers);
             }
-
+            
             public override SyntaxNode? Visit(SyntaxNode? original)
             {
                 var node = base.Visit(original);
                 if (original is TypeSyntax s)
                 {
                     var symbol = _semanticModel.GetSymbolInfo(s).Symbol;
-                    if (symbol is ITypeSymbol ts && _remaps.TryGetValue(ts, out var n))
-                        node = n;
+
+                    if (symbol is ITypeSymbol ts)
+                    {
+                        bool isStatic = false;
+                        if (s.Parent is MemberAccessExpressionSyntax mae)
+                        {
+                            if (mae.Expression == original)
+                            {
+                                var nameSymbol = _semanticModel.GetOperation(mae);
+                                if (nameSymbol is IMemberReferenceOperation mro)
+                                {
+                                    isStatic = mro.Member.IsStatic;
+                                }
+                            }
+                        }
+
+                        if (_remaps.TryGetValue((ts, isStatic), out var n))
+                            node = n;
+                    }
                 }
 
                 return node;
