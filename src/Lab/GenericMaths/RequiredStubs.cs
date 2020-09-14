@@ -21,90 +21,269 @@ namespace Silk.NET.Maths
         public static T One
         {
             [M(MIP)]
-            get => Scalar.One<T>();
+            get
+            {
+                ThrowForUnsupportedBaseType();
+                if (typeof(T) == typeof(byte))
+                {
+                    return (T)(object)(byte)1;
+                }
+
+                if (typeof(T) == typeof(sbyte))
+                {
+                    return (T)(object)(sbyte)1;
+                }
+
+                if (typeof(T) == typeof(ushort))
+                {
+                    return (T)(object)(ushort)1;
+                }
+
+                if (typeof(T) == typeof(short))
+                {
+                    return (T)(object)(short)1;
+                }
+
+                if (typeof(T) == typeof(uint))
+                {
+                    return (T)(object)(uint)1;
+                }
+
+                if (typeof(T) == typeof(int))
+                {
+                    return (T)(object)1;
+                }
+
+                return _One2();
+            }
         }
 
         public static T Two
         {
             [M(MIP)]
-            get => Scalar.Two<T>();
+            get
+            {
+                ThrowForUnsupportedBaseType();
+                if (typeof(T) == typeof(byte))
+                {
+                    return (T)(object)(byte)2;
+                }
+
+                if (typeof(T) == typeof(sbyte))
+                {
+                    return (T)(object)(sbyte)2;
+                }
+
+                if (typeof(T) == typeof(ushort))
+                {
+                    return (T)(object)(ushort)2;
+                }
+
+                if (typeof(T) == typeof(short))
+                {
+                    return (T)(object)(short)2;
+                }
+
+                if (typeof(T) == typeof(uint))
+                {
+                    return (T)(object)(uint)2;
+                }
+
+                if (typeof(T) == typeof(int))
+                {
+                    return (T)(object)2;
+                }
+
+                return _Two2();
+            }
         }
 
         public static T PI
         {
             [M(MIP)]
-            get => Scalar.PI<T>();
+            get
+            {
+                ThrowForNonFloatingPointType();
+#if HALF
+            if (typeof(T) == typeof(Half))
+            {
+                return (T)(object)(Half)Math.PI;
+            }
+#endif
+
+                if (typeof(T) == typeof(float))
+                {
+                    return (T)(object)(float)Math.PI;
+                }
+
+                if (typeof(T) == typeof(double))
+                {
+                    return (T)(object)Math.PI;
+                }
+
+
+                Debug.Fail("Unreachable Code");
+                return default;
+            }
         }
 
         public static T Tau
         {
             [M(MIP)]
-            get => Scalar.Tau<T>();
+            get
+            {
+                ThrowForNonFloatingPointType();
+
+#if HALF
+            if (typeof(T) == typeof(Half))
+            {
+                return (T)(object)(Half)TAU;
+            }
+#endif
+
+                if (typeof(T) == typeof(float))
+                {
+                    return (T)(object)(float)TAU;
+                }
+
+                if (typeof(T) == typeof(double))
+                {
+                    return (T)(object)TAU;
+                }
+
+                Debug.Fail("Unreachable Code");
+                return default;
+            }
         }
-        
+
         public static T HalfPi
         {
             [M(MIP)]
-            get => Scalar.HalfPi<T>();
+            get
+            {
+                ThrowForNonFloatingPointType();
+
+#if HALF
+            if (typeof(T) == typeof(Half))
+            {
+                return (T)(object)(Half)HALF_PI;
+            }
+#endif
+
+                if (typeof(T) == typeof(float))
+                {
+                    return (T)(object)(float)HALF_PI;
+                }
+
+                if (typeof(T) == typeof(double))
+                {
+                    return (T)(object)HALF_PI;
+                }
+
+                Debug.Fail("Unreachable Code");
+                return default;
+            }
         }
 
         public static T PositiveInfinity
         {
             [M(MIP)]
-            get => Scalar.PositiveInfinity<T>();
+            get
+            {
+                ThrowForNonFloatingPointType();
+
+#if HALF
+            if (typeof(T) == typeof(Half))
+            {
+                return (T)(object)Half.PositiveInfinity;
+            }
+#endif
+
+                if (typeof(T) == typeof(float))
+                {
+                    return (T)(object)float.PositiveInfinity;
+                }
+
+                if (typeof(T) == typeof(double))
+                {
+                    return (T)(object)double.PositiveInfinity;
+                }
+
+
+                Debug.Fail("Unreachable Code");
+                return default; // can't be reached
+            }
         }
 
         public static T NegativeInfinity
         {
             [M(MIP)]
-            get => Scalar.NegativeInfinity<T>();
+            get
+            {
+                ThrowForNonFloatingPointType();
+
+#if HALF
+            if (typeof(T) == typeof(Half))
+            {
+                return (T)(object)Half.NegativeInfinity;
+            }
+#endif
+                if (typeof(T) == typeof(float))
+                {
+                    return (T)(object)float.NegativeInfinity;
+                }
+
+                if (typeof(T) == typeof(double))
+                {
+                    return (T)(object)double.NegativeInfinity;
+                }
+
+
+                Debug.Fail("Unreachable Code");
+                return default; // can't be reached
+            }
         }
 
         public static T Epsilon
         {
-            [M(MIP)] get => default; // Scalar.Epsilon<T>();
+            [M(MIP)] get => default; // Scalar.Epsilon();
         }
         
         public static T MaxValue
         {
-            [M(MIP)] get => default; // Scalar.MaxValue<T>();
+            [M(MIP)] get => default; // Scalar.MaxValue();
         }
         
         public static T MinValue
         {
-            [M(MIP)] get => default; // Scalar.MinValue<T>();
+            [M(MIP)] get => default; // Scalar.MinValue();
         }
 
         public static T NaN
         {
-            [M(MIP)] get => default; // Scalar.NaN<T>();
+            [M(MIP)] get => default; // Scalar.NaN();
         }
 
         [M(MIP)]
-        public static bool IsFinite(T value) => default; // Scalar.IsFinite<T>(value);
+        public static bool IsFinite(T value) => default; // Scalar.IsFinite(value);
         
         [M(MIP)]
-        public static bool IsInfinity(T value) => default; // Scalar.IsInfinity<T>(value);
+        public static bool IsInfinity(T value) => default; // Scalar.IsInfinity(value);
         
         [M(MIP)]
-        public static bool IsNaN(T value) => default; // Scalar.IsNaN<T>(value);
+        public static bool IsNaN(T value) => default; // Scalar.IsNaN(value);
         
         [M(MIP)]
-        public static bool IsNormal(T value) => default; // Scalar.IsNormal<T>(value);
+        public static bool IsNormal(T value) => default; // Scalar.IsNormal(value);
 
         [M(MIP)]
-        public static bool IsNegativeInfinity(T value) => default; // Scalar.IsNegativeInfinity<T>(value);
+        public static bool IsNegativeInfinity(T value) => default; // Scalar.IsNegativeInfinity(value);
         
         [M(MIP)]
-        public static bool IsPositiveInfinity(T value) => default; // Scalar.IsPositiveInfinity<T>(value);
+        public static bool IsPositiveInfinity(T value) => default; // Scalar.IsPositiveInfinity(value);
 
         [M(MIP)]
-        public static bool IsSubnormal(T value) => default; // Scalar.IsSubnormal<T>(value);
-    }
-
-    internal static partial class Scalar
-    {
-        private const MethodImplOptions MIP = MethodImplOptions.AggressiveInlining | (MethodImplOptions) 0x0200;
+        public static bool IsSubnormal(T value) => default; // Scalar.IsSubnormal(value);
 
         private const double HALF_PI = Math.PI / 2;
         private const double TAU = Math.PI * 2;
@@ -115,7 +294,7 @@ namespace Silk.NET.Maths
         *    else if (typeof(T) == typeof(float)) { ... }
         *    ...
         * EXPLANATION:
-        *    At runtime, each instantiation of Scalar.Method<T> will be type-specific, and each of these typeof blocks will be eliminated,
+        *    At runtime, each instantiation of Scalar.Method will be type-specific, and each of these typeof blocks will be eliminated,
         *    as typeof(T) is a JIT constant for each instantiation. This design was chosen to eliminate any overhead from
         *    delegates and other patterns.
         * 
@@ -132,44 +311,7 @@ namespace Silk.NET.Maths
         */
 
         [M(MIP)]
-        public static T One<T>() where T : unmanaged, IFormattable
-        {
-            ThrowForUnsupportedBaseType<T>();
-            if (typeof(T) == typeof(byte))
-            {
-                return (T)(object)(byte)1;
-            }
-
-            if (typeof(T) == typeof(sbyte))
-            {
-                return (T)(object)(sbyte)1;
-            }
-
-            if (typeof(T) == typeof(ushort))
-            {
-                return (T)(object)(ushort)1;
-            }
-
-            if (typeof(T) == typeof(short))
-            {
-                return (T)(object)(short)1;
-            }
-
-            if (typeof(T) == typeof(uint))
-            {
-                return (T)(object)(uint)1;
-            }
-
-            if (typeof(T) == typeof(int))
-            {
-                return (T)(object)1;
-            }
-
-            return _One2<T>();
-        }
-
-        [M(MIP)]
-        private static T _One2<T>() where T : unmanaged, IFormattable
+        private static T _One2()
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -204,44 +346,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Two<T>() where T : unmanaged, IFormattable
-        {
-            ThrowForUnsupportedBaseType<T>();
-            if (typeof(T) == typeof(byte))
-            {
-                return (T)(object)(byte)2;
-            }
-
-            if (typeof(T) == typeof(sbyte))
-            {
-                return (T)(object)(sbyte)2;
-            }
-
-            if (typeof(T) == typeof(ushort))
-            {
-                return (T)(object)(ushort)2;
-            }
-
-            if (typeof(T) == typeof(short))
-            {
-                return (T)(object)(short)2;
-            }
-
-            if (typeof(T) == typeof(uint))
-            {
-                return (T)(object)(uint)2;
-            }
-
-            if (typeof(T) == typeof(int))
-            {
-                return (T)(object)2;
-            }
-
-            return _Two2<T>();
-        }
-
-        [M(MIP)]
-        private static T _Two2<T>() where T : unmanaged, IFormattable
+        private static T _Two2()
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -274,169 +379,12 @@ namespace Silk.NET.Maths
             Debug.Fail("Unreachable Code");
             return default;
         }
-        
-#if !NETSTANDARD2_0
-        [M(MIP)]
-        public static bool IsNormal<T>(T value) where T : unmanaged, IFormattable
-        {
-            ThrowForUnsupportedBaseType<T>();
-#if HALF
-            if (typeof(T) == typeof(Half))
-            {
-                return Half.IsNormal((Half) (object) value);
-            }
-#endif
-
-            if (typeof(T) == typeof(float))
-            {
-                return Single.IsNormal((Single) (object) value);
-            }
-
-            if (typeof(T) == typeof(double))
-            {
-                return Double.IsNormal((Double) (object) value);
-            }
-            
-            return true;
-        }
-#endif
-
-        [M(MIP)]
-        public static T PI<T>() where T : unmanaged, IFormattable
-        {
-            ThrowForNonFloatingPointType<T>();
-#if HALF
-            if (typeof(T) == typeof(Half))
-            {
-                return (T)(object)(Half)Math.PI;
-            }
-#endif
-
-            if (typeof(T) == typeof(float))
-            {
-                return (T)(object)(float)Math.PI;
-            }
-
-            if (typeof(T) == typeof(double))
-            {
-                return (T)(object)Math.PI;
-            }
-
-
-            Debug.Fail("Unreachable Code");
-            return default;
-        }
-
-        [M(MIP)]
-        public static T Tau<T>() where T : unmanaged, IFormattable
-        {
-            ThrowForNonFloatingPointType<T>();
-
-#if HALF
-            if (typeof(T) == typeof(Half))
-            {
-                return (T)(object)(Half)TAU;
-            }
-#endif
-
-            if (typeof(T) == typeof(float))
-            {
-                return (T)(object)(float)TAU;
-            }
-
-            if (typeof(T) == typeof(double))
-            {
-                return (T)(object)TAU;
-            }
-
-            Debug.Fail("Unreachable Code");
-            return default;
-        }
-        
-        [M(MIP)]
-        public static T HalfPi<T>() where T : unmanaged, IFormattable
-        {
-            ThrowForNonFloatingPointType<T>();
-
-#if HALF
-            if (typeof(T) == typeof(Half))
-            {
-                return (T)(object)(Half)HALF_PI;
-            }
-#endif
-
-            if (typeof(T) == typeof(float))
-            {
-                return (T)(object)(float)HALF_PI;
-            }
-
-            if (typeof(T) == typeof(double))
-            {
-                return (T)(object)HALF_PI;
-            }
-
-            Debug.Fail("Unreachable Code");
-            return default;
-        }
-        
-        [M(MIP)]
-        public static T PositiveInfinity<T>() where T : unmanaged, IFormattable
-        {
-            ThrowForNonFloatingPointType<T>();
-
-#if HALF
-            if (typeof(T) == typeof(Half))
-            {
-                return (T)(object)Half.PositiveInfinity;
-            }
-#endif
-
-            if (typeof(T) == typeof(float))
-            {
-                return (T)(object)float.PositiveInfinity;
-            }
-
-            if (typeof(T) == typeof(double))
-            {
-                return (T)(object)double.PositiveInfinity;
-            }
-
-
-            Debug.Fail("Unreachable Code");
-            return default; // can't be reached
-        }
-
-        [M(MIP)]
-        public static T NegativeInfinity<T>() where T : unmanaged, IFormattable
-        {
-            ThrowForNonFloatingPointType<T>();
-
-#if HALF
-            if (typeof(T) == typeof(Half))
-            {
-                return (T)(object)Half.NegativeInfinity;
-            }
-#endif
-            if (typeof(T) == typeof(float))
-            {
-                return (T)(object)float.NegativeInfinity;
-            }
-
-            if (typeof(T) == typeof(double))
-            {
-                return (T)(object)double.NegativeInfinity;
-            }
-
-
-            Debug.Fail("Unreachable Code");
-            return default; // can't be reached
-        }
 
         internal static void ThrowInvalidType()
             => throw new NotSupportedException("This operation isn't supported for the current type.");
 
         [M(MIP)]
-        internal static void ThrowForUnsupportedBaseType<T>() where T : unmanaged, IFormattable
+        internal static void ThrowForUnsupportedBaseType()
         {
             if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(ushort) &&
                 typeof(T) != typeof(short) && typeof(T) != typeof(uint) && typeof(T) != typeof(int) &&
@@ -451,7 +399,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        internal static void ThrowForNonFloatingPointType<T>() where T : unmanaged, IFormattable
+        internal static void ThrowForNonFloatingPointType()
         {
             if (
 #if HALF
@@ -466,7 +414,7 @@ namespace Silk.NET.Maths
 #if !NETSTANDARD2_0
         [DoesNotReturn]
 #endif
-        internal static void ThrowNotSupportedByUnderlying<T>() where T : unmanaged, IFormattable
+        internal static void ThrowNotSupportedByUnderlying()
             => throw new NotSupportedException($"{typeof(T).FullName} not supported by the underlying type");
 
 #if !NETSTANDARD2_0
@@ -477,12 +425,12 @@ namespace Silk.NET.Maths
 #if !NETSTANDARD2_0
         [DoesNotReturn]
 #endif
-        internal static void ThrowVectorTTooSmall() => throw new NotSupportedException("Vector<T> too small to fit");
+        internal static void ThrowVectorTTooSmall() => throw new NotSupportedException("Vector too small to fit");
 
         [M(MIP)]
-        public static T SquareRoot<T>(T value) where T : unmanaged, IFormattable
+        public static T SquareRoot(T value)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (T)(object)(byte)MathF.Sqrt((byte)(object)value);
@@ -517,7 +465,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _SquareRoot2<T>(T value) where T : unmanaged, IFormattable
+        private static T _SquareRoot2(T value)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -550,9 +498,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Add<T>(T left, T right) where T : unmanaged, IFormattable
+        public static T Add(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (T)(object)(byte)((byte)(object)left + (byte)(object)right);
@@ -587,7 +535,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _Add2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static T _Add2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -619,9 +567,9 @@ namespace Silk.NET.Maths
         }
         
         [M(MIP)]
-        public static T Mod<T>(T left, T right) where T : unmanaged, IFormattable
+        public static T Mod(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (T)(object)(byte)((byte)(object)left % (byte)(object)right);
@@ -656,7 +604,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _Mod2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static T _Mod2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -688,9 +636,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Subtract<T>(T left, T right) where T : unmanaged, IFormattable
+        public static T Subtract(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (T)(object)(byte)((byte)(object)left - (byte)(object)right);
@@ -725,7 +673,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _Subtract2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static T _Subtract2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -757,9 +705,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Multiply<T>(T left, T right) where T : unmanaged, IFormattable
+        public static T Multiply(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (T)(object)(byte)((byte)(object)left * (byte)(object)right);
@@ -794,7 +742,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _Multiply2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static T _Multiply2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -826,9 +774,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Divide<T>(T left, T right) where T : unmanaged, IFormattable
+        public static T Divide(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (T)(object)(byte)((byte)(object)left / (byte)(object)right);
@@ -863,7 +811,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _Divide2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static T _Divide2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -895,9 +843,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Min<T>(T left, T right) where T : unmanaged, IFormattable
+        public static T Min(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (T)(object)Math.Min((byte)(object)left, (byte)(object)right);
@@ -932,7 +880,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _Min2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static T _Min2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -964,9 +912,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Max<T>(T left, T right) where T : unmanaged, IFormattable
+        public static T Max(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (T)(object)Math.Max((byte)(object)left, (byte)(object)right);
@@ -1001,7 +949,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _Max2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static T _Max2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -1033,9 +981,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static bool Larger<T>(T left, T right) where T : unmanaged, IFormattable
+        public static bool Larger(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (byte)(object)left > (byte)(object)right;
@@ -1070,7 +1018,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static bool _Larger2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static bool _Larger2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -1103,9 +1051,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static bool Smaller<T>(T left, T right) where T : unmanaged, IFormattable
+        public static bool Smaller(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (byte)(object)left < (byte)(object)right;
@@ -1140,7 +1088,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static bool _Smaller2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static bool _Smaller2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -1173,9 +1121,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static bool LargerEquals<T>(T left, T right) where T : unmanaged, IFormattable
+        public static bool LargerEquals(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (byte)(object)left >= (byte)(object)right;
@@ -1210,7 +1158,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static bool _LargerEquals2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static bool _LargerEquals2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -1243,9 +1191,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static bool SmallerEquals<T>(T left, T right) where T : unmanaged, IFormattable
+        public static bool SmallerEquals(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (byte)(object)left <= (byte)(object)right;
@@ -1280,7 +1228,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static bool _SmallerEquals2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static bool _SmallerEquals2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -1313,10 +1261,10 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Clamp<T>(T value, T min, T max) where T : unmanaged, IFormattable => Min(Max(value, min), max);
+        public static T Clamp(T value, T min, T max) => Min(Max(value, min), max);
 
         [M(MIP)]
-        public static T Negate<T>(T value) where T : unmanaged, IFormattable
+        public static T Negate(T value)
         {
             if (typeof(T) == typeof(sbyte))
             {
@@ -1359,9 +1307,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static bool Equal<T>(T left, T right) where T : unmanaged, IFormattable
+        public static bool Equal(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (byte)(object)left == (byte)(object)right;
@@ -1396,7 +1344,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static bool _Equal2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static bool _Equal2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -1429,9 +1377,9 @@ namespace Silk.NET.Maths
         }
         
         [M(MIP)]
-        public static bool NotEqual<T>(T left, T right) where T : unmanaged, IFormattable
+        public static bool NotEqual(T left, T right)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte))
             {
                 return (byte)(object)left != (byte)(object)right;
@@ -1466,7 +1414,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static bool _NotEqual2<T>(T left, T right) where T : unmanaged, IFormattable
+        private static bool _NotEqual2(T left, T right)
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -1499,12 +1447,12 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T UnaryPlus<T>(T value) where T : unmanaged, IFormattable => value;
+        public static T UnaryPlus(T value) => value;
 
         [M(MIP)]
-        public static T Acos<T>(T value) where T : unmanaged, IFormattable
+        public static T Acos(T value)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
 #if HALF
             if (typeof(T) == typeof(Half))
             {
@@ -1526,9 +1474,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Abs<T>(T value) where T : unmanaged, IFormattable
+        public static T Abs(T value)
         {
-            ThrowForUnsupportedBaseType<T>();
+            ThrowForUnsupportedBaseType();
             if (typeof(T) == typeof(byte) || typeof(T) == typeof(ulong) || typeof(T) == typeof(ushort) || typeof(T) == typeof(uint))
             {
                 return value;
@@ -1553,7 +1501,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        private static T _Abs2<T>(T value) where T : unmanaged, IFormattable
+        private static T _Abs2(T value)
         {
             if (typeof(T) == typeof(long))
             {
@@ -1581,9 +1529,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Sin<T>(T value) where T : unmanaged, IFormattable
+        public static T Sin(T value)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Sin((float)(object)value);
@@ -1599,9 +1547,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Sinh<T>(T value) where T : unmanaged, IFormattable
+        public static T Sinh(T value)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
 #if HALF
             if (typeof(T) == typeof(Half))
             {
@@ -1624,9 +1572,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Tan<T>(T value) where T : unmanaged, IFormattable
+        public static T Tan(T value)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
 #if HALF
             if (typeof(T) == typeof(Half))
             {
@@ -1649,9 +1597,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Asin<T>(T value) where T : unmanaged, IFormattable
+        public static T Asin(T value)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
 #if HALF
             if (typeof(T) == typeof(Half))
             {
@@ -1675,9 +1623,9 @@ namespace Silk.NET.Maths
 
 
         [M(MIP)]
-        public static T Atan<T>(T value) where T : unmanaged, IFormattable
+        public static T Atan(T value)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
 #if HALF
             if (typeof(T) == typeof(Half))
             {
@@ -1700,9 +1648,9 @@ namespace Silk.NET.Maths
         }
 
         [M(MIP)]
-        public static T Atan2<T>(T left, T right) where T : unmanaged, IFormattable
+        public static T Atan2(T left, T right)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
 #if HALF
             if (typeof(T) == typeof(Half))
             {
@@ -1725,11 +1673,11 @@ namespace Silk.NET.Maths
 
 
         [M(MIP)]
-        public static T Cos<T>(T value) where T : unmanaged, IFormattable
+        public static T Cos(T value)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
 
-            // return Sin(Add(HalfPi<T>(), value)); isn't quite as accurate
+            // return Sin(Add(HalfPi(), value)); isn't quite as accurate
 #if HALF
             if (typeof(T) == typeof(Half))
             {
@@ -1752,9 +1700,9 @@ namespace Silk.NET.Maths
 
 
         [M(MIP)]
-        public static T Cosh<T>(T value) where T : unmanaged, IFormattable
+        public static T Cosh(T value)
         {
-            ThrowForNonFloatingPointType<T>();
+            ThrowForNonFloatingPointType();
 #if HALF
             if (typeof(T) == typeof(Half))
             {

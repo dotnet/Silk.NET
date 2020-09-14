@@ -141,7 +141,15 @@ namespace GenericMaths
                             (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))));
                     var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
                     if (mathF is not null)
-                        remaps.Add((mathF, true), IdentifierName("Silk.NET.Maths.Scalar"));
+                        remaps.Add
+                        (
+                            (mathF, true),
+                            GenericName
+                            (
+                                Identifier("Silk.NET.Maths.Scalar"),
+                                TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
+                            )
+                        );
                     
                     var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
                     var rewriter = new GeneralizingRewriter
@@ -189,7 +197,7 @@ namespace GenericMaths
                     }
 
                     var str = last.modified.NormalizeWhitespace().ToFullString();
-                    File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
+                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
                     context.AddSource($"{declaration.GetHashCode()}", SourceText.From(str, Encoding.UTF8));
                 }
                 
@@ -236,7 +244,11 @@ namespace GenericMaths
                     
                     var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
                     if (mathF is not null)
-                        remaps.Add((mathF, true), IdentifierName("Silk.NET.Maths.Scalar"));
+                        remaps.Add((mathF, true),                             GenericName
+                        (
+                            Identifier("Silk.NET.Maths.Scalar"),
+                            TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
+                        ));
 
                     var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
                     var rewriter = new GeneralizingRewriter
@@ -284,7 +296,7 @@ namespace GenericMaths
                     }
 
                     var str = last.modified.NormalizeWhitespace().ToFullString();
-                    File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
+                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
                     context.AddSource($"{declaration.GetHashCode()}", SourceText.From(str, Encoding.UTF8));
                 }
 
@@ -326,7 +338,11 @@ namespace GenericMaths
                     var remaps = new Dictionary<(ITypeSymbol, bool), TypeSyntax>();
                     var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
                     if (mathF is not null)
-                        remaps.Add((mathF, true), IdentifierName("Silk.NET.Maths.Scalar"));
+                        remaps.Add((mathF, true),                            GenericName
+                        (
+                            Identifier("Silk.NET.Maths.Scalar"),
+                            TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
+                        ));
                     var rewriter = new GeneralizingRewriter
                     (
                         context, possibleTypes.ToArray(), remaps,
@@ -372,7 +388,7 @@ namespace GenericMaths
                     }
 
                     var str = last.modified.NormalizeWhitespace().ToFullString();
-                    File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
+                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
                     context.AddSource($"{declaration.GetHashCode()}", SourceText.From(str, Encoding.UTF8));
                 }
             }
@@ -415,37 +431,14 @@ namespace GenericMaths
                 (
                     (_semanticModel.Compilation.GetSpecialType(SpecialType.System_Single), true),
                     GenericName
-                            ("Silk.NET.Maths.Scalar")
-                        .WithTypeArgumentList
-                            (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))))
+                    (
+                        Identifier("Silk.NET.Maths.Scalar"),
+                        TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
+                    )
                 );
                 ExtraMembers = new List<MemberDeclarationSyntax>();
             }
             
-            public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
-            {
-                node = (FieldDeclarationSyntax?)base.VisitFieldDeclaration(node);
-                if (node is null)
-                    return node;
-                
-                var modifiers = node.Modifiers;
-                var token = modifiers.FirstOrDefault(x => x.Kind() == SyntaxKind.ConstKeyword);
-
-                if (token == default)
-                    return node;
-
-                var cIndex = modifiers.IndexOf(token);
-                
-                if (cIndex > 0 && cIndex < modifiers.Count)
-                {
-                    modifiers = node.Modifiers.RemoveAt(cIndex)
-                        .Insert(cIndex, Token(SyntaxKind.StaticKeyword))
-                        .Insert(cIndex, Token(SyntaxKind.ReadOnlyKeyword));
-                }
-                
-                return node.WithModifiers(modifiers);
-            }
-
             public override SyntaxNode? VisitMethodDeclaration(MethodDeclarationSyntax original)
             {
                 var node = original.Update
@@ -464,15 +457,15 @@ namespace GenericMaths
                     ? VisitMethodBody
                     (
                         node.Identifier.Text, node.ReturnType, node.ParameterList, node.TypeParameterList,
-                        node.Modifiers, original.Body!
+                        node.Modifiers, original.Body!, (_semanticModel.GetSymbolInfo(original.ReturnType).Symbol as ITypeSymbol).SpecialType != SpecialType.System_Void, true, false
                     )
                     : VisitExpressionBody
                     (
                         node.Identifier.Text, node.ReturnType, node.ParameterList, node.TypeParameterList,
-                        node.Modifiers, original.ExpressionBody!
+                        node.Modifiers, original.ExpressionBody!.Expression, (_semanticModel.GetSymbolInfo(original.ReturnType).Symbol as ITypeSymbol).SpecialType != SpecialType.System_Void, true, false
                     );
                 
-                return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
+                return node.WithBody(Block(body)).WithExpressionBody(null).WithSemicolonToken(default);
             }
 
             public override SyntaxNode? VisitOperatorDeclaration(OperatorDeclarationSyntax original)
@@ -504,28 +497,94 @@ namespace GenericMaths
                     ? VisitMethodBody
                     (
                         identifier, node.ReturnType, node.ParameterList, null,
-                        node.Modifiers, original.Body!
+                        node.Modifiers, original.Body!, (_semanticModel.GetSymbolInfo(original.ReturnType).Symbol as ITypeSymbol).SpecialType != SpecialType.System_Void, true, false
                     )
                     : VisitExpressionBody
                     (
                         identifier, node.ReturnType, node.ParameterList, null,
-                        node.Modifiers, original.ExpressionBody!
+                        node.Modifiers, original.ExpressionBody!.Expression, (_semanticModel.GetSymbolInfo(original.ReturnType).Symbol as ITypeSymbol).SpecialType != SpecialType.System_Void, true, false
                     );
 
-                return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
+                return node.WithBody(Block(body)).WithExpressionBody(null).WithSemicolonToken(default);
             }
 
-            public BlockSyntax VisitExpressionBody
+            public StatementSyntax VisitExpressionBody
             (
                 string methodName,
                 TypeSyntax returnType,
                 ParameterListSyntax parameterList,
                 TypeParameterListSyntax? typeParameterList,
                 SyntaxTokenList modifiers,
-                ArrowExpressionClauseSyntax body
+                ExpressionSyntax body,
+                bool generateReturn, bool generateExtraMethods, bool useDirectThrows
             )
             {
+                Func<ExpressionSyntax, StatementSyntax> toFinalStatement = generateReturn
+                    ? (Func<ExpressionSyntax, StatementSyntax>) ReturnStatement
+                    : ExpressionStatement;
+
                 var statements = new List<StatementSyntax>();
+                statements.Add
+                (
+                    !useDirectThrows
+                        ? (StatementSyntax) ExpressionStatement
+                        (
+                            InvocationExpression
+                            (
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    GenericName
+                                    (
+                                        Identifier("Silk.NET.Maths.Scalar"),
+                                        TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
+                                    ), IdentifierName("ThrowInvalidType")
+                                ), ArgumentList()
+                            )
+                        )
+                        : ThrowStatement
+                        (
+                            ObjectCreationExpression
+                            (
+                                IdentifierName("System.NotSupportedException"),
+                                ArgumentList
+                                (
+                                    SingletonSeparatedList
+                                    (
+                                        Argument
+                                        (
+                                            LiteralExpression
+                                            (
+                                                SyntaxKind.StringLiteralExpression,
+                                                Literal("This operation isn't supported for the current type.")
+                                            )
+                                        )
+                                    )
+                                ), null
+                            )
+                        )
+                );
+
+                foreach (var parameter in parameterList.Parameters)
+                {
+                    if (parameter.Modifiers.Any(x => x.IsKind(SyntaxKind.OutKeyword)))
+                        statements.Add
+                        (
+                            ExpressionStatement
+                            (
+                                AssignmentExpression
+                                (
+                                    SyntaxKind.SimpleAssignmentExpression, IdentifierName(parameter.Identifier.Text),
+                                    DefaultExpression(parameter.Type)
+                                )
+                            )
+                        );
+                }
+                
+                if (generateReturn)
+                    statements.Add(ReturnStatement(DefaultExpression(returnType)));
+                
+                StatementSyntax lastStatement = Block(statements);
                 foreach (var possibleType in _possibleTypes)
                 {
                     var name = $"{methodName}_SUB_{(uint) _context.GetHashCode()}_{ExtraMembers.Count}";
@@ -545,60 +604,138 @@ namespace GenericMaths
                             )
                             .Where(x => x.Kind() != SyntaxKind.OverrideKeyword)
                     );
-                    ExtraMembers.Add
-                    (
-                        MethodDeclaration
-                                (IdentifierName(typeParam), name)
-                            .WithExpressionBody
-                            (
-                                    (((ArrowExpressionClauseSyntax) new SpecializingRewriter
-                                        (possibleType, _remaps, _semanticModel, returnType, this).Visit(body))!)
-                            )
-                            .WithParameterList(parameterList)
-                            .WithTypeParameterList(typeParameterList)
-                            .WithReturnType(returnType)
-                            .WithModifiers(m)
-                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                    );
-                    statements.Add
-                    (
-                        IfStatement
+                    var specialBody = (((ExpressionSyntax) new SpecializingRewriter
+                        (possibleType, _remaps, _semanticModel, returnType, this).Visit(body))!);
+                    if (generateExtraMethods)
+                        ExtraMembers.Add
                         (
-                            BinaryExpression
+                            MethodDeclaration
+                                    (IdentifierName(typeParam), name)
+                                .WithExpressionBody(ArrowExpressionClause(specialBody))
+                                .WithParameterList(parameterList)
+                                .WithTypeParameterList(typeParameterList)
+                                .WithReturnType(returnType)
+                                .WithModifiers(m)
+                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                        );
+                    lastStatement = IfStatement
+                    (
+                        BinaryExpression
+                        (
+                            SyntaxKind.EqualsExpression, TypeOfExpression(IdentifierName(typeParam)),
+                            TypeOfExpression(possibleType)
+                        ), toFinalStatement
+                        (
+                            generateExtraMethods ? InvocationExpression
                             (
-                                SyntaxKind.EqualsExpression, TypeOfExpression(IdentifierName(typeParam)),
-                                TypeOfExpression(possibleType)
-                            ),
-                            ReturnStatement
-                            (
-                                InvocationExpression
+                                IdentifierName(name), ArgumentList
                                 (
-                                    IdentifierName(name),
-                                    ArgumentList
+                                    SeparatedList
                                     (
-                                        SeparatedList
+                                        parameterList.Parameters.Select
                                         (
-                                            parameterList.Parameters.Select(x => Argument(NameColon(x.Identifier.Text), x.Modifiers.FirstOrDefault(x => x.Kind() switch
-                                            {
-                                                SyntaxKind.ReferenceKeyword => true,
-                                                SyntaxKind.OutKeyword => true,
-                                                SyntaxKind.InKeyword => true,
-                                                _ => false
-                                            }), IdentifierName(x.Identifier)))
+                                            x => Argument
+                                            (
+                                                NameColon(x.Identifier.Text), x.Modifiers.FirstOrDefault
+                                                (
+                                                    x => x.Kind() switch
+                                                    {
+                                                        SyntaxKind.ReferenceKeyword => true,
+                                                        SyntaxKind.OutKeyword => true,
+                                                        SyntaxKind.InKeyword => true,
+                                                        _ => false
+                                                    }
+                                                ), IdentifierName(x.Identifier)
+                                            )
                                         )
                                     )
                                 )
-                            )
-                        )
+                            ) : specialBody
+                        ), ElseClause(lastStatement)
                     );
                 }
 
-                return Block(statements);
+                return lastStatement;
             }
 
-            public BlockSyntax VisitMethodBody(string methodName, TypeSyntax returnType, ParameterListSyntax parameterList, TypeParameterListSyntax? typeParameterList, SyntaxTokenList modifiers, BlockSyntax body)
+            public StatementSyntax VisitMethodBody
+            (
+                string methodName,
+                TypeSyntax returnType,
+                ParameterListSyntax parameterList,
+                TypeParameterListSyntax? typeParameterList,
+                SyntaxTokenList modifiers,
+                BlockSyntax body,
+                bool generateReturn,
+                bool generateExtraMembers,
+                bool useDirectThrows
+            )
             {
+                Func<ExpressionSyntax, StatementSyntax> toFinalStatement = generateReturn
+                    ? (Func<ExpressionSyntax, StatementSyntax>) ReturnStatement
+                    : ExpressionStatement;
                 var statements = new List<StatementSyntax>();
+                statements.Add
+                (
+                    !useDirectThrows
+                        ? (StatementSyntax) ExpressionStatement
+                        (
+                            InvocationExpression
+                            (
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    GenericName
+                                    (
+                                        Identifier("Silk.NET.Maths.Scalar"),
+                                        TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
+                                    ), IdentifierName("ThrowInvalidType")
+                                ), ArgumentList()
+                            )
+                        )
+                        : ThrowStatement
+                        (
+                            ObjectCreationExpression
+                            (
+                                IdentifierName("System.NotSupportedException"),
+                                ArgumentList
+                                (
+                                    SingletonSeparatedList
+                                    (
+                                        Argument
+                                        (
+                                            LiteralExpression
+                                            (
+                                                SyntaxKind.StringLiteralExpression,
+                                                Literal("This operation isn't supported for the current type.")
+                                            )
+                                        )
+                                    )
+                                ), null
+                            )
+                        )
+                );
+
+                foreach (var parameter in parameterList.Parameters)
+                {
+                    if (parameter.Modifiers.Any(x => x.IsKind(SyntaxKind.OutKeyword)))
+                        statements.Add
+                        (
+                            ExpressionStatement
+                            (
+                                AssignmentExpression
+                                (
+                                    SyntaxKind.SimpleAssignmentExpression, IdentifierName(parameter.Identifier.Text),
+                                    DefaultExpression(parameter.Type)
+                                )
+                            )
+                        );
+                }
+                
+                if (generateReturn)
+                    statements.Add(ReturnStatement(DefaultExpression(returnType)));
+                
+                StatementSyntax lastStatement = Block(statements);
                 foreach (var possibleType in _possibleTypes)
                 {
                     var name = $"{methodName}_SUB_{(uint)_context.GetHashCode()}_{ExtraMembers.Count}";
@@ -619,102 +756,62 @@ namespace GenericMaths
                     if (!m.Any(x => x.IsKind(SyntaxKind.PrivateKeyword)))
                         m = m.Append(Token(SyntaxKind.PrivateKeyword)).ToArray();
 
-                    ExtraMembers.Add
+                    var specialBody = Block
                     (
-                        MethodDeclaration
-                                (IdentifierName(typeParam), name)
-                            .WithBody
-                            (
-                                Block
-                                (
-                                    ((StatementSyntax) new SpecializingRewriter
-                                        (possibleType, _remaps, _semanticModel, returnType, this).Visit(body))!
-                                )
-                            )
-                            .WithParameterList(parameterList)
-                            .WithTypeParameterList(typeParameterList)
-                            .WithReturnType(returnType)
-                            .WithModifiers(TokenList(m))
+                        ((StatementSyntax) new SpecializingRewriter
+                            (possibleType, _remaps, _semanticModel, returnType, this).Visit(body))!
                     );
-                    statements.Add
-                    (
-                        IfStatement
+                    if (generateExtraMembers)
+                        ExtraMembers.Add
                         (
-                            BinaryExpression
-                            (
-                                SyntaxKind.EqualsExpression, TypeOfExpression(IdentifierName(typeParam)),
-                                TypeOfExpression(possibleType)
-                            ),
-                            ReturnStatement
+                            MethodDeclaration
+                                    (IdentifierName(typeParam), name)
+                                .WithBody(specialBody)
+                                .WithParameterList(parameterList)
+                                .WithTypeParameterList(typeParameterList)
+                                .WithReturnType(returnType)
+                                .WithModifiers(TokenList(m))
+                        );
+                    lastStatement = IfStatement
+                    (
+                        BinaryExpression
+                        (
+                            SyntaxKind.EqualsExpression, TypeOfExpression(IdentifierName(typeParam)),
+                            TypeOfExpression(possibleType)
+                        ), generateExtraMembers
+                            ? toFinalStatement
                             (
                                 InvocationExpression
                                 (
-                                    IdentifierName(name),
-                                    ArgumentList
+                                    IdentifierName(name), ArgumentList
                                     (
                                         SeparatedList
                                         (
-                                            parameterList.Parameters.Select(x => Argument(NameColon(x.Identifier.Text), x.Modifiers.FirstOrDefault(x => x.Kind() switch
-                                            {
-                                                SyntaxKind.ReferenceKeyword => true,
-                                                SyntaxKind.OutKeyword => true,
-                                                SyntaxKind.InKeyword => true,
-                                                _ => false
-                                            }), IdentifierName(x.Identifier)))
+                                            parameterList.Parameters.Select
+                                            (
+                                                x => Argument
+                                                (
+                                                    NameColon(x.Identifier.Text), x.Modifiers.FirstOrDefault
+                                                    (
+                                                        x => x.Kind() switch
+                                                        {
+                                                            SyntaxKind.ReferenceKeyword => true,
+                                                            SyntaxKind.OutKeyword => true,
+                                                            SyntaxKind.InKeyword => true,
+                                                            _ => false
+                                                        }
+                                                    ), IdentifierName(x.Identifier)
+                                                )
+                                            )
                                         )
                                     )
                                 )
                             )
-                        )
+                            : specialBody, ElseClause(lastStatement)
                     );
                 }
 
-                statements.Add
-                (
-                    ExpressionStatement
-                    (
-                        InvocationExpression
-                        (
-                            MemberAccessExpression
-                            (
-                                SyntaxKind.SimpleMemberAccessExpression,
-                                MemberAccessExpression
-                                (
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    MemberAccessExpression
-                                    (
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        MemberAccessExpression
-                                        (
-                                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
-                                            IdentifierName("NET")
-                                        ), IdentifierName("Maths")
-                                    ), IdentifierName("Scalar")
-                                ), IdentifierName("ThrowInvalidType")
-                            ), ArgumentList()
-                        )
-                    )
-                );
-
-                foreach (var parameter in parameterList.Parameters)
-                {
-                    if (parameter.Modifiers.Any(x => x.IsKind(SyntaxKind.OutKeyword)))
-                        statements.Add
-                        (
-                            ExpressionStatement
-                            (
-                                AssignmentExpression
-                                (
-                                    SyntaxKind.SimpleAssignmentExpression, IdentifierName(parameter.Identifier.Text),
-                                    DefaultExpression(parameter.Type)
-                                )
-                            )
-                        );
-                }
-                
-                statements.Add(ReturnStatement(DefaultExpression(returnType)));
-
-                return Block(statements).WithLeadingTrivia(SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, "/* Processed by specialization rewriter */"));
+                return Block(lastStatement).WithLeadingTrivia(SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, "/* Processed by specialization rewriter */"));
             }
 
             public override SyntaxNode? VisitConstructorDeclaration(ConstructorDeclarationSyntax original)
@@ -731,11 +828,11 @@ namespace GenericMaths
                 
                 var body = original.Body is not null
                     ? VisitMethodBody
-                        (node.Identifier.Text, _parentType, node.ParameterList, null, node.Modifiers, original.Body!)
+                        (node.Identifier.Text, _parentType, node.ParameterList, null, node.Modifiers, original.Body!, false, false, true)
                     : VisitExpressionBody
-                        (node.Identifier.Text, _parentType, node.ParameterList, null, node.Modifiers, original.ExpressionBody!);
+                        (node.Identifier.Text, _parentType, node.ParameterList, null, node.Modifiers, original.ExpressionBody!.Expression, false, false, true);
 
-                return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
+                return node.WithBody(Block(body)).WithExpressionBody(null).WithSemicolonToken(default);
             }
 
             public override SyntaxNode? VisitPropertyDeclaration(PropertyDeclarationSyntax original)
@@ -776,15 +873,15 @@ namespace GenericMaths
                                             ? VisitMethodBody
                                             (
                                                 $"{node.Identifier.Text}_accessor_{x.Keyword.Text}", node.Type,
-                                                ParameterList(), null, x.Modifiers, o.Body!
+                                                ParameterList(), null, x.Modifiers, o.Body!, (_semanticModel.GetSymbolInfo(original.Type).Symbol as ITypeSymbol).SpecialType != SpecialType.System_Void, false, false
                                             )
                                             : VisitExpressionBody
                                             (
                                                 $"{node.Identifier.Text}_accessor_{x.Keyword.Text}", node.Type,
-                                                ParameterList(), null, x.Modifiers, o.ExpressionBody!
+                                                ParameterList(), null, x.Modifiers, o.ExpressionBody!.Expression, (_semanticModel.GetSymbolInfo(original.Type).Symbol as ITypeSymbol).SpecialType != SpecialType.System_Void, false, false
                                             );
 
-                                        return x.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
+                                        return x.WithBody(Block(body)).WithExpressionBody(null).WithSemicolonToken(default);
                                     }
                                 )
                             )
@@ -801,15 +898,22 @@ namespace GenericMaths
 
                     if (symbol is ITypeSymbol ts)
                     {
+                        bool foundData = false;
                         bool isStatic = false;
-                        if (s.Parent is MemberAccessExpressionSyntax mae)
+                        if (!foundData && s.Parent is MemberAccessExpressionSyntax mae && mae.Expression == original)
                         {
-                            if (mae.Expression == original)
+                            if (_semanticModel.GetOperation(mae) is IMemberReferenceOperation mro)
                             {
-                                var nameSymbol = _semanticModel.GetOperation(mae);
-                                if (nameSymbol is IMemberReferenceOperation mro)
+                                foundData = true;
+                                isStatic = mro.Member.IsStatic;
+                            }
+
+                            if (!foundData && mae.Parent is InvocationExpressionSyntax ies && ies.Expression == mae)
+                            {
+                                if (_semanticModel.GetOperation(ies) is IInvocationOperation io)
                                 {
-                                    isStatic = mro.Member.IsStatic;
+                                    foundData = true;
+                                    isStatic = io.TargetMethod.IsStatic;
                                 }
                             }
                         }
@@ -820,6 +924,53 @@ namespace GenericMaths
                 }
 
                 return node;
+            }
+            
+            public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax original)
+            {
+                var node = (FieldDeclarationSyntax) base.VisitFieldDeclaration(original);
+                if (node is null)
+                    return node;
+                
+                var modifiers = node.Modifiers;
+                modifiers = modifiers.TryRemove(x => x.IsKind(SyntaxKind.ConstKeyword));
+
+                if (!modifiers.Any(x => x.IsKind(SyntaxKind.StaticKeyword)))
+                    modifiers = modifiers.Add(Token(SyntaxKind.StaticKeyword));
+
+                modifiers = modifiers.TryRemove(x => x.IsKind(SyntaxKind.ReadOnlyKeyword));
+
+                if (node.Declaration.Variables.Count == 1 && node.Declaration.Variables[0].Initializer != null)
+                {
+                    var variable = node.Declaration.Variables[0];
+                    return PropertyDeclaration
+                    (
+                        List<AttributeListSyntax>(), modifiers, node.Declaration.Type, null,
+                        node.Declaration.Variables[0].Identifier,
+                        AccessorList
+                        (
+                            SingletonList
+                            (
+                                AccessorDeclaration
+                                (
+                                    SyntaxKind.GetAccessorDeclaration, List<AttributeListSyntax>(), TokenList(),
+                                    Block
+                                    (
+                                        VisitExpressionBody
+                                        (
+                                            "VAR_" + variable.Identifier.Text, node.Declaration.Type, ParameterList(),
+                                            null, modifiers,
+                                            original.Declaration.Variables[0].Initializer.Value,
+                                            true, false, false
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    );
+                }
+
+                return node.WithModifiers(modifiers);
             }
         }
         
@@ -851,14 +1002,14 @@ namespace GenericMaths
                 {
                     if (lo.Type.SpecialType == SpecialType.System_Single)
                     {
-                        return ToGeneric
+                        return CheckedExpression(SyntaxKind.UncheckedExpression, ToGeneric
                         (
                             CastExpression
                             (
                                 _specializedType,
                                 original
                             )
-                        );
+                        ));
                     }
                 }
 
@@ -867,7 +1018,7 @@ namespace GenericMaths
 
             public override SyntaxNode? VisitReturnStatement(ReturnStatementSyntax node)
             {
-                node = (ReturnStatementSyntax)base.VisitReturnStatement(node);
+                node = (ReturnStatementSyntax) base.VisitReturnStatement(node);
                 if (node is null)
                     return node;
                 // this should handle implicit conversions, by explicitly converting.
@@ -887,30 +1038,6 @@ namespace GenericMaths
                     );
             }
 
-            public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
-            {
-                node = (FieldDeclarationSyntax) base.VisitFieldDeclaration(node);
-                if (node is null)
-                    return node;
-                
-                var modifiers = node.Modifiers;
-                var token = modifiers.FirstOrDefault(x => x.Kind() == SyntaxKind.ConstKeyword);
-
-                if (token == default)
-                    return node;
-
-                var cIndex = modifiers.IndexOf(token);
-                
-                if (cIndex > 0 && cIndex < modifiers.Count)
-                {
-                    modifiers = node.Modifiers.RemoveAt(cIndex)
-                        .Insert(cIndex, Token(SyntaxKind.StaticKeyword))
-                        .Insert(cIndex, Token(SyntaxKind.ReadOnlyKeyword));
-                }
-                
-                return node.WithModifiers(modifiers);
-            }
-            
             public override SyntaxNode? Visit(SyntaxNode? original)
             {
                 var node = base.Visit(original);
@@ -948,16 +1075,10 @@ namespace GenericMaths
                 return node;
             }
 
-            private static MemberAccessExpressionSyntax SilkNetMathsScalar = MemberAccessExpression
+            private static TypeSyntax SilkNetMathsScalar = GenericName
             (
-                SyntaxKind.SimpleMemberAccessExpression,
-                MemberAccessExpression
-                (
-                    SyntaxKind.SimpleMemberAccessExpression,
-                    MemberAccessExpression
-                        (SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"), IdentifierName("NET")),
-                    IdentifierName("Maths")
-                ), IdentifierName("Scalar")
+                Identifier("Silk.NET.Maths.Scalar"),
+                TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
             );
 
             private static ExpressionSyntax AddMethod = MemberAccessExpression
@@ -1121,17 +1242,11 @@ namespace GenericMaths
                 );
             }
 
-            private ExpressionSyntax ToGeneric(ExpressionSyntax syntax)
-                => CastExpression
-                (
-                    IdentifierName(typeParam), CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)), syntax)
-                );
-            
             private ExpressionSyntax FromGeneric(ExpressionSyntax syntax)
-                => CastExpression
+                => ToGeneric(CastExpression
                 (
                     _specializedType, CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)), syntax)
-                );
+                ));
 
             public override SyntaxNode? VisitLocalFunctionStatement(LocalFunctionStatementSyntax original)
             {
@@ -1152,17 +1267,23 @@ namespace GenericMaths
                     ? _parent.VisitMethodBody
                     (
                         node.Identifier.Text, node.ReturnType, node.ParameterList, node.TypeParameterList,
-                        node.Modifiers, original.Body!
+                        node.Modifiers, original.Body!, (_semanticModel.GetSymbolInfo(original.ReturnType).Symbol as ITypeSymbol).SpecialType != SpecialType.System_Void, true, false
                     )
                     : _parent.VisitExpressionBody
                     (
                         node.Identifier.Text, node.ReturnType, node.ParameterList, node.TypeParameterList,
-                        node.Modifiers, original.ExpressionBody!
+                        node.Modifiers, original.ExpressionBody!.Expression, (_semanticModel.GetSymbolInfo(original.ReturnType).Symbol as ITypeSymbol).SpecialType != SpecialType.System_Void, true, false
                     );
 
-                return node.WithBody(body).WithExpressionBody(null).WithSemicolonToken(default);
+                return node.WithBody(Block(body)).WithExpressionBody(null).WithSemicolonToken(default);
             }
         }
+        
+        private static ExpressionSyntax ToGeneric(ExpressionSyntax syntax)
+            => CastExpression
+            (
+                IdentifierName(typeParam), CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)), syntax)
+            );
         
         const string typeParam = "TNumeric";
 
