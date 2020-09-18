@@ -6,3 +6,6 @@
 
 # SilkTouch
 /src/Core/Silk.NET.SilkTouch		@HurricanKai
+
+# Build System
+/build/nuke/                        @HurricanKai @Perksey
