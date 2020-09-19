@@ -22,12 +22,12 @@ namespace GenericMathsGenerator
     [Generator]
     public class Generator : ISourceGenerator
     {
-        public void Initialize(InitializationContext context)
+        public void Initialize(GeneratorInitializationContext context)
         {
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
         }
-
-        public void Execute(SourceGeneratorContext context)
+        
+        public void Execute(GeneratorExecutionContext context)
         {
             try
             {
@@ -52,38 +52,7 @@ namespace GenericMaths
 
                 if (!(context.SyntaxReceiver is SyntaxReceiver sr))
                     return;
-
-                var attributeType = context.Compilation.GetTypeByMetadataName("GenericMaths.GenericMaths");
-
-
-                var classes = sr.Classes.Select
-                    (
-                        x => (x,
-                            ModelExtensions.GetDeclaredSymbol
-                                (context.Compilation.GetSemanticModel(x.SyntaxTree), x) as INamedTypeSymbol)
-                    )
-                    .Select
-                    (
-                        x => (x.x, x.Item2,
-                            x.Item2.GetAttributes().FirstOrDefault(x => x.AttributeClass.Name == "GenericMaths"))
-                    )
-                    .Where(att => att.Item3 is not null)
-                    .ToArray();
-
-                var structs = sr.Structs.Select
-                    (
-                        x => (x,
-                            ModelExtensions.GetDeclaredSymbol
-                                (context.Compilation.GetSemanticModel(x.SyntaxTree), x) as INamedTypeSymbol)
-                    )
-                    .Select
-                    (
-                        x => (x.x, x.Item2,
-                            x.Item2.GetAttributes().FirstOrDefault(x => x.AttributeClass.Name == "GenericMaths"))
-                    )
-                    .Where(att => att.Item3 is not null)
-                    .ToArray();
-
+                
                 var methods = sr.Methods.Select
                     (
                         x => (x,
@@ -94,302 +63,14 @@ namespace GenericMaths
                     (
                         x => (x.x, x.Item2,
                             x.Item2.GetAttributes()
-                                .FirstOrDefault(x => x.AttributeClass.Name == "GenericMathsAttribute"))
+                                .FirstOrDefault(x2 => x2.AttributeClass.Name == "GenericMaths"))
                     )
                     .Where(att => att.Item3 is not null)
                     .ToArray();
-
-                foreach (var (declaration, symbol, attribute) in classes)
-                {
-                    var options = context.AnalyzerConfigOptions.GetOptions(declaration.SyntaxTree);
-
-                    var possibleTypes = new List<TypeSyntax>();
-                    if (options.TryGetValue
-                            ("generic_maths_possible_types", out var possibleTypesStr) &&
-                        !string.IsNullOrWhiteSpace(possibleTypesStr))
-                    {
-                        foreach (var t in possibleTypesStr.Split(','))
-                        {
-                            var parsed = ParseTypeName(t);
-                            if (!(parsed is null))
-                                possibleTypes.Add(parsed);
-                        }
-                    }
-
-                    if (possibleTypes.Count == 0)
-                    {
-                        possibleTypes.AddRange
-                        (
-                            new TypeSyntax[]
-                            {
-                                IdentifierName(nameof(System) + "." + nameof(Byte)),
-                                IdentifierName(nameof(System) + "." + nameof(SByte)),
-                                IdentifierName(nameof(System) + "." + nameof(Int16)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt16)),
-                                IdentifierName(nameof(System) + "." + nameof(Int32)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt32)),
-                                IdentifierName(nameof(System) + "." + nameof(Int64)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt64)),
-                            }
-                        );
-                    }
-
-                    var remaps = new Dictionary<(ITypeSymbol, bool), TypeSyntax>();
-                    remaps[(symbol, false)] = remaps[(symbol, true)] = GenericName
-                            (symbol.Name)
-                        .WithTypeArgumentList
-                            (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))));
-                    var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
-                    if (mathF is not null)
-                        remaps.Add
-                        (
-                            (mathF, true),
-                            GenericName
-                            (
-                                Identifier("Silk.NET.Maths.Scalar"),
-                                TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
-                            )
-                        );
-                    
-                    var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
-                    var rewriter = new GeneralizingRewriter
-                    (
-                        context, possibleTypes.ToArray(), remaps, semanticModel,
-                        IdentifierName(semanticModel.GetDeclaredSymbol(declaration).ToDisplayString())
-                    );
-                    var newDeclaration =
-                        ((ClassDeclarationSyntax) rewriter.VisitClassDeclaration(declaration)).WithTypeParameterList
-                        (
-                            (declaration.TypeParameterList ?? TypeParameterList()).AddParameters
-                                (TypeParameter(typeParam))
-                        );
-                    newDeclaration = newDeclaration.WithConstraintClauses
-                    (
-                        newDeclaration.ConstraintClauses.Add
-                        (
-                            TypeParameterConstraintClause(typeParam)
-                                .WithConstraints
-                                (
-                                    SeparatedList
-                                    (
-                                        new TypeParameterConstraintSyntax[]
-                                        {
-                                            TypeConstraint(IdentifierName("unmanaged")),
-                                            TypeConstraint(IdentifierName("System.IFormattable"))
-                                        }
-                                    )
-                                )
-                        )
-                    );
-                    newDeclaration = newDeclaration.InsertNodesAfter
-                        (newDeclaration.ChildNodes().Last(), rewriter.ExtraMembers);
-
-                    var last = (original: (SyntaxNode) declaration, modified: (SyntaxNode) newDeclaration);
-
-                    while (last.original.Parent != null)
-                    {
-                        var p = last.original.Parent;
-                        var children = p.ChildNodes().Where(x => x != last.original);
-                        var modified = p.ReplaceNode
-                                (last.original, last.modified)
-                            .RemoveNodes(children, SyntaxRemoveOptions.KeepDirectives);
-                        last = (original: p, modified: modified);
-                    }
-
-                    var str = last.modified.NormalizeWhitespace().ToFullString();
-                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
-                    context.AddSource($"{declaration.GetHashCode()}", SourceText.From(str, Encoding.UTF8));
-                }
                 
-                foreach (var (declaration, symbol, attribute) in structs)
-                {
-                    var options = context.AnalyzerConfigOptions.GetOptions(declaration.SyntaxTree);
-
-                    var possibleTypes = new List<TypeSyntax>();
-                    if (options.TryGetValue
-                            ("generic_maths_possible_types", out var possibleTypesStr) &&
-                        !string.IsNullOrWhiteSpace(possibleTypesStr))
-                    {
-                        foreach (var t in possibleTypesStr.Split(','))
-                        {
-                            var parsed = ParseTypeName(t);
-                            if (!(parsed is null))
-                                possibleTypes.Add(parsed);
-                        }
-                    }
-
-                    if (possibleTypes.Count == 0)
-                    {
-                        possibleTypes.AddRange
-                        (
-                            new TypeSyntax[]
-                            {
-                                IdentifierName(nameof(System) + "." + nameof(Byte)),
-                                IdentifierName(nameof(System) + "." + nameof(SByte)),
-                                IdentifierName(nameof(System) + "." + nameof(Int16)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt16)),
-                                IdentifierName(nameof(System) + "." + nameof(Int32)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt32)),
-                                IdentifierName(nameof(System) + "." + nameof(Int64)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt64)),
-                            }
-                        );
-                    }
-
-                    var remaps = new Dictionary<(ITypeSymbol, bool), TypeSyntax>();
-                    remaps[(symbol, false)] = remaps[(symbol, true)] = GenericName
-                            (symbol.Name)
-                        .WithTypeArgumentList
-                            (TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam))));
-                    
-                    var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
-                    if (mathF is not null)
-                        remaps.Add((mathF, true),                             GenericName
-                        (
-                            Identifier("Silk.NET.Maths.Scalar"),
-                            TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
-                        ));
-
-                    var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
-                    var rewriter = new GeneralizingRewriter
-                    (
-                        context, possibleTypes.ToArray(), remaps, semanticModel,
-                        IdentifierName(semanticModel.GetDeclaredSymbol(declaration).ToDisplayString())
-                    );
-                    var newDeclaration =
-                        ((StructDeclarationSyntax) rewriter.VisitStructDeclaration(declaration)).WithTypeParameterList
-                        (
-                            (declaration.TypeParameterList ?? TypeParameterList()).AddParameters
-                                (TypeParameter(typeParam))
-                        );
-                    newDeclaration = newDeclaration.WithConstraintClauses
-                    (
-                        newDeclaration.ConstraintClauses.Add
-                        (
-                            TypeParameterConstraintClause(typeParam)
-                                .WithConstraints
-                                (
-                                    SeparatedList
-                                    (
-                                        new TypeParameterConstraintSyntax[]
-                                        {
-                                            TypeConstraint(IdentifierName("unmanaged")),
-                                            TypeConstraint(IdentifierName("System.IFormattable"))
-                                        }
-                                    )
-                                )
-                        )
-                    );
-                    newDeclaration = newDeclaration.InsertNodesAfter
-                        (newDeclaration.ChildNodes().Last(), rewriter.ExtraMembers);
-
-                    var last = (original: (SyntaxNode) declaration, modified: (SyntaxNode) newDeclaration);
-
-                    while (last.original.Parent != null)
-                    {
-                        var p = last.original.Parent;
-                        var children = p.ChildNodes().Where(x => x != last.original);
-                        var modified = p.ReplaceNode
-                                (last.original, last.modified)
-                            .RemoveNodes(children, SyntaxRemoveOptions.KeepDirectives);
-                        last = (original: p, modified: modified);
-                    }
-
-                    var str = last.modified.NormalizeWhitespace().ToFullString();
-                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
-                    context.AddSource($"{declaration.GetHashCode()}", SourceText.From(str, Encoding.UTF8));
-                }
-
                 foreach (var (declaration, symbol, attribute) in methods)
                 {
-                    var options = context.AnalyzerConfigOptions.GetOptions(declaration.SyntaxTree);
-
-                    var possibleTypes = new List<TypeSyntax>();
-                    if (options.TryGetValue
-                            ("generic_maths_possible_types", out var possibleTypesStr) &&
-                        !string.IsNullOrWhiteSpace(possibleTypesStr))
-                    {
-                        foreach (var t in possibleTypesStr.Split(','))
-                        {
-                            var parsed = ParseTypeName(t);
-                            if (!(parsed is null))
-                                possibleTypes.Add(parsed);
-                        }
-                    }
-
-                    if (possibleTypes.Count == 0)
-                    {
-                        possibleTypes.AddRange
-                        (
-                            new TypeSyntax[]
-                            {
-                                IdentifierName(nameof(System) + "." + nameof(Byte)),
-                                IdentifierName(nameof(System) + "." + nameof(SByte)),
-                                IdentifierName(nameof(System) + "." + nameof(Int16)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt16)),
-                                IdentifierName(nameof(System) + "." + nameof(Int32)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt32)),
-                                IdentifierName(nameof(System) + "." + nameof(Int64)),
-                                IdentifierName(nameof(System) + "." + nameof(UInt64)),
-                            }
-                        );
-                    }
-                    
-                    var remaps = new Dictionary<(ITypeSymbol, bool), TypeSyntax>();
-                    var mathF = context.Compilation.GetTypeByMetadataName("System.MathF");
-                    if (mathF is not null)
-                        remaps.Add((mathF, true),                            GenericName
-                        (
-                            Identifier("Silk.NET.Maths.Scalar"),
-                            TypeArgumentList(SingletonSeparatedList((TypeSyntax) IdentifierName(typeParam)))
-                        ));
-                    var rewriter = new GeneralizingRewriter
-                    (
-                        context, possibleTypes.ToArray(), remaps,
-                        context.Compilation.GetSemanticModel(declaration.SyntaxTree), null
-                    );
-                    var newDeclaration =
-                        ((MethodDeclarationSyntax) rewriter.VisitMethodDeclaration(declaration)).WithTypeParameterList
-                        (
-                            (declaration.TypeParameterList ?? TypeParameterList()).AddParameters
-                                (TypeParameter(typeParam))
-                        );
-                    newDeclaration = newDeclaration.WithConstraintClauses
-                    (
-                        newDeclaration.ConstraintClauses.Add
-                        (
-                            TypeParameterConstraintClause(typeParam)
-                                .WithConstraints
-                                (
-                                    SeparatedList
-                                    (
-                                        new TypeParameterConstraintSyntax[]
-                                        {
-                                            TypeConstraint(IdentifierName("unmanaged")),
-                                            TypeConstraint(IdentifierName("System.IFormattable"))
-                                        }
-                                    )
-                                )
-                        )
-                    );
-                    newDeclaration = newDeclaration.InsertNodesAfter
-                        (newDeclaration.ChildNodes().Last(), rewriter.ExtraMembers);
-
-                    var last = (original: (SyntaxNode) declaration, modified: (SyntaxNode) newDeclaration);
-
-                    while (last.original.Parent != null)
-                    {
-                        var p = last.original.Parent;
-                        var children = p.ChildNodes().Where(x => x != last.original);
-                        var modified = p.ReplaceNode
-                                (last.original, last.modified)
-                            .RemoveNodes(children, SyntaxRemoveOptions.KeepDirectives);
-                        last = (original: p, modified: modified);
-                    }
-
-                    var str = last.modified.NormalizeWhitespace().ToFullString();
-                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + $"{declaration.GetHashCode()}.gen", str);
-                    context.AddSource($"{declaration.GetHashCode()}", SourceText.From(str, Encoding.UTF8));
+                    ProcessMethod(context, context.Compilation.GetSemanticModel(declaration.SyntaxTree), declaration.Body);
                 }
             }
             catch (DiagnosticException ex)
@@ -400,12 +81,99 @@ namespace GenericMaths
             {
                 Debugger.Launch();
                 Debugger.Break();
+                throw;
             }
         }
 
+        public static void ProcessMethod(GeneratorExecutionContext context, SemanticModel model, BlockSyntax body)
+        {
+            var op = model.GetOperation(body);
+            if (op is null)
+                return;
+            ProcessMethodOperation(context, model, op);
+        }
+
+        public static void ProcessMethod(GeneratorExecutionContext context, SemanticModel model, ArrowExpressionClauseSyntax body)
+        {
+            var op = model.GetOperation(body);
+            if (op is null)
+                return;
+            ProcessMethodOperation(context, model, op);
+        }
+
+        private static IValueProcessor[] _valueProcessors = new IValueProcessor[]
+        {
+            new ConstantFolder(),
+            new VariableInliner(),
+        };
+
+        private static void ProcessMethodOperation(GeneratorExecutionContext context, SemanticModel model, IOperation operation)
+        {
+            var variables = new OperationWalker().RootVisit(context, operation);
+
+            variables = _valueProcessors.Aggregate(variables, (current, valueProcessor) => valueProcessor.Process(current));
+            
+            var steps = ResolveSteps(variables);
+        }
+
+        private static IEnumerable<IStep> ResolveSteps(IEnumerable<IVariable> variables)
+        {
+            var groups = new Dictionary<int, List<IValue>>();
+            var stack = new Stack<IValue>(variables.Select(x => x.Value));
+
+            while (stack.Count != 0)
+            {
+                var current = stack.Pop();
+                foreach (var child in current.Children) stack.Push(child);
+
+                if (!groups.ContainsKey(current.Step))
+                    groups[current.Step] = new List<IValue>();
+                groups[current.Step].Add(current);
+            }
+
+            return groups.OrderBy(x => x.Key).Select(x => new Step(x.Value.SelectMany(x2 => x2.Children).ToArray(), x.Value));
+        }
+
+        private static List<TypeSyntax> GetPossibleTypes(GeneratorExecutionContext context, SyntaxTree syntaxTree)
+        {
+            var options = context.AnalyzerConfigOptions.GetOptions(syntaxTree);
+
+            var possibleTypes = new List<TypeSyntax>();
+            if (options.TryGetValue
+                ("generic_maths_possible_types", out var possibleTypesStr) && !string.IsNullOrWhiteSpace(possibleTypesStr))
+            {
+                foreach (var t in possibleTypesStr.Split(','))
+                {
+                    var parsed = ParseTypeName(t);
+                    if (!(parsed is null))
+                        possibleTypes.Add(parsed);
+                }
+            }
+
+            if (possibleTypes.Count == 0)
+            {
+                possibleTypes.AddRange
+                (
+                    new TypeSyntax[]
+                    {
+                        IdentifierName(nameof(System) + "." + nameof(Byte)),
+                        IdentifierName(nameof(System) + "." + nameof(SByte)),
+                        IdentifierName(nameof(System) + "." + nameof(Int16)),
+                        IdentifierName(nameof(System) + "." + nameof(UInt16)),
+                        IdentifierName(nameof(System) + "." + nameof(Int32)),
+                        IdentifierName(nameof(System) + "." + nameof(UInt32)),
+                        IdentifierName(nameof(System) + "." + nameof(Int64)),
+                        IdentifierName(nameof(System) + "." + nameof(UInt64)),
+                    }
+                );
+            }
+
+            return possibleTypes;
+        }
+#if FALSE
         public class GeneralizingRewriter : CSharpSyntaxRewriter
         {
-            private readonly SourceGeneratorContext _context;
+            private readonly GeneratorExecutionContext _context;
             private readonly TypeSyntax[] _possibleTypes;
             private readonly Dictionary<(ITypeSymbol, bool), TypeSyntax> _remaps;
             private readonly SemanticModel _semanticModel;
@@ -414,7 +182,7 @@ namespace GenericMaths
 
             public GeneralizingRewriter
             (
-                SourceGeneratorContext context,
+                GeneratorExecutionContext context,
                 TypeSyntax[] possibleTypes,
                 Dictionary<(ITypeSymbol, bool), TypeSyntax> remaps,
                 SemanticModel semanticModel,
@@ -1285,6 +1053,7 @@ namespace GenericMaths
                 IdentifierName(typeParam), CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)), syntax)
             );
         
+#endif
         const string typeParam = "TNumeric";
 
         public class SyntaxReceiver : ISyntaxReceiver
@@ -1292,7 +1061,7 @@ namespace GenericMaths
             public List<ClassDeclarationSyntax> Classes = new List<ClassDeclarationSyntax>();
             public List<StructDeclarationSyntax> Structs = new List<StructDeclarationSyntax>();
             public List<MethodDeclarationSyntax> Methods = new List<MethodDeclarationSyntax>();
-            
+
             public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
             {
                 switch (syntaxNode)

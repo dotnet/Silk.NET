@@ -16,7 +16,7 @@ namespace GenericMathsGenerator
         {
             var tokens = list.Where(predicate);
 
-            foreach (var token in list)
+            foreach (var token in tokens)
             {
                 var cIndex = list.IndexOf(token);
 
