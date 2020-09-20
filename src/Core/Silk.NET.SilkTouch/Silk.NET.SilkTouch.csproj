@@ -12,8 +12,8 @@
       <Compile Include="..\Silk.NET.Core\Native\UnmanagedType.cs" />
       <Compile Include="..\Silk.NET.Core\Attributes\UnmanagedTypeAttribute.cs" />
       
-      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.7.0-6.20412.3" PrivateAssets="all" />
-      <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" PrivateAssets="all" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0-3.final" PrivateAssets="all" />
+      <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.0" PrivateAssets="all" />
       
       <!-- Package the generator in the analyzer directory of the nuget package -->
       <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
