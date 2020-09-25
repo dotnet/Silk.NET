@@ -50232,6 +50232,13 @@
               "Attributes": []
             },
             {
+              "Name": "MemForceHostMemoryIntel",
+              "NativeName": "CL_MEM_FORCE_HOST_MEMORY_INTEL",
+              "Value": "0x1048576",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "AcceleratorTypeMotionEstimationIntel",
               "NativeName": "CL_ACCELERATOR_TYPE_MOTION_ESTIMATION_INTEL",
               "Value": "0x0",
