@@ -127,9 +127,9 @@ namespace Silk.NET.Windowing
             string name = "Silk.NET Window";
             try
             {
-                var assName = Assembly.GetEntryAssembly()?.GetName().Name;
-                if (assName is not null)
-                    name = assName;
+                var asmName = Assembly.GetEntryAssembly()?.GetName().Name;
+                if (asmName is not null)
+                    name = asmName;
             }
             catch { /* cannot use reflection */ }
             
