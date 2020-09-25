@@ -34,7 +34,7 @@ namespace Silk.NET.Windowing.Glfw
                 catch (Exception ex)
                 {
 #if DEBUG
-                    Console.WriteLine($"Can't load SDL: {ex}");
+                    Console.WriteLine($"Can't load GLFW: {ex}");
 #endif
                     return false;
                 }
