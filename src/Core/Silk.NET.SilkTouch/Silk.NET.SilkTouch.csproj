@@ -2,9 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
     <IncludeBuildOutput>false</IncludeBuildOutput>
+    <EnableSourceLink>false</EnableSourceLink>
   </PropertyGroup>
 
     <PropertyGroup>
@@ -22,5 +22,7 @@
       <!-- Package the generator in the analyzer directory of the nuget package -->
       <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
+
+  <Import Project="..\..\..\build\props\common.props" />
 
 </Project>
