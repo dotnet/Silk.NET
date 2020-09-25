@@ -2,10 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
     <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SilkEnableSourceLink>false</SilkEnableSourceLink>
   </PropertyGroup>
+
+    <PropertyGroup>
+        <RestoreAdditionalProjectSources>https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json ;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
+    </PropertyGroup>
 
   <ItemGroup>
       <Compile Include="..\Silk.NET.Core\Native\NativeApiAttribute.cs" />
@@ -18,5 +22,7 @@
       <!-- Package the generator in the analyzer directory of the nuget package -->
       <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
+
+  <Import Project="..\..\..\build\props\common.props" />
 
 </Project>

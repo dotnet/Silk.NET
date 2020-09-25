@@ -1,19 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    
-    <!-- Basic properties -->
-    <PropertyGroup>
-        <Tutorial>3.3 - Specular Lighting</Tutorial>
-    </PropertyGroup>
-    
-    <!-- Tutorial directory resolution --> 
-    <PropertyGroup>
-        <TutorialBaseDir>$(MSBuildThisFileDirectory)../../../examples/CSharp/Tutorial $(Tutorial)/</TutorialBaseDir>
-    </PropertyGroup>
 
     <!-- .NET properties -->
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.0</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <RootNamespace>Tutorial</RootNamespace>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
@@ -28,14 +18,35 @@
         <ProjectReference Include="..\..\Core\Silk.NET\Silk.NET.csproj" />
     </ItemGroup>
 
-    <!-- Include all tutorial files -->
     <ItemGroup>
-        <Compile Include="$(TutorialBaseDir)*.cs" />
-        <Content Include="$(TutorialBaseDir)*.frag" CopyToOutputDirectory="PreserveNewest" />
-        <Content Include="$(TutorialBaseDir)*.vert" CopyToOutputDirectory="PreserveNewest" />
-        <Content Include="$(TutorialBaseDir)*.png" CopyToOutputDirectory="PreserveNewest" />
+        <None Update="lighting.frag">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Shader.frag">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="Shader.vert">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="silkSpecular.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="silkBoxed.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
+    <!-- CoreRT settings -->
+    <PropertyGroup>
+        <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+        <RootAllApplicationAssemblies>false</RootAllApplicationAssemblies>
+        <IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+        <IlcDisableReflection>false</IlcDisableReflection>
+        <IlcGenerateStackTraceData Condition="'$(Configuration)' == 'Release' ">false</IlcGenerateStackTraceData>
+        <IlcFoldIdenticalMethodBodies Condition="'$(Configuration)' == 'Release' ">false</IlcFoldIdenticalMethodBodies>
+        <IlcDisableUnhandledExceptionExperience Condition="'$(Configuration)' == 'Release' ">true</IlcDisableUnhandledExceptionExperience>
+    </PropertyGroup>
+    
     <!-- Reference the CoreRT toolchain -->
     <PropertyGroup>
         <RestoreAdditionalProjectSources>https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>

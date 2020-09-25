@@ -26,8 +26,11 @@ namespace Silk.NET.Windowing.Sdl
                 {
                     SDL.Sdl.GetApi();
                 }
-                catch
+                catch (Exception ex)
                 {
+#if DEBUG
+                    Console.WriteLine($"Can't load SDL: {ex}");
+#endif
                     return false;
                 }
 
