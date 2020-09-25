@@ -7,6 +7,10 @@
     <IncludeBuildOutput>false</IncludeBuildOutput>
   </PropertyGroup>
 
+    <PropertyGroup>
+        <RestoreAdditionalProjectSources>https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet5/nuget/v3/index.json ;$(RestoreAdditionalProjectSources)</RestoreAdditionalProjectSources>
+    </PropertyGroup>
+
   <ItemGroup>
       <Compile Include="..\Silk.NET.Core\Native\NativeApiAttribute.cs" />
       <Compile Include="..\Silk.NET.Core\Native\UnmanagedType.cs" />
