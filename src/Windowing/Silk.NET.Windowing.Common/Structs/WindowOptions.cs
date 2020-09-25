@@ -5,6 +5,7 @@
 
 using System;
 using System.Drawing;
+using System.IO;
 using System.Reflection;
 
 namespace Silk.NET.Windowing
@@ -123,40 +124,28 @@ namespace Silk.NET.Windowing
 
         static WindowOptions()
         {
+            string name = "Silk.NET Window";
             try
             {
-                Default = new WindowOptions
-                (
-                    true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
-                    Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
-                    WindowBorder.Resizable, true, true, VideoMode.Default
-                );
+                var assName = Assembly.GetEntryAssembly()?.GetName().Name;
+                if (assName is not null)
+                    name = assName;
             }
-            catch
-            {
-                
-#if DEBUG
-                Console.WriteLine("Could not initialize WindowOptions.Default");
-#endif
-                Default = default;
-            }
+            catch { /* cannot use reflection */ }
+            
+            Default = new WindowOptions
+            (
+                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
+                name, WindowState.Normal,
+                WindowBorder.Resizable, true, true, VideoMode.Default
+            );
 
-            try
-            {
-                DefaultVulkan = new WindowOptions
-                (
-                    true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
-                    Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
-                    WindowBorder.Resizable, false, false, VideoMode.Default
-                );
-            }
-            catch
-            {
-#if DEBUG
-                Console.WriteLine("Could not initialize WindowOptions.DefaultVulkan");
-#endif
-                DefaultVulkan = default;
-            }
+            DefaultVulkan = new WindowOptions
+            (
+                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
+                name, WindowState.Normal,
+                WindowBorder.Resizable, false, false, VideoMode.Default
+            );
         }
 
         /// <summary>
