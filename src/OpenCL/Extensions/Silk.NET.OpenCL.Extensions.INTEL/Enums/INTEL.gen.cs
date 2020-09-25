@@ -190,6 +190,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         CommandReleaseDX9ObjectsIntel = 0x402B,
         EglYuvPlaneIntel = 0x4107,
         MemChannelIntel = 0x4213,
+        MemForceHostMemoryIntel = 0x1048576,
         AcceleratorTypeMotionEstimationIntel = 0x0,
         MESubpixelModeIntegerIntel = 0x0,
         MESubpixelModeHpelIntel = 0x1,
