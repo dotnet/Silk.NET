@@ -10,7 +10,7 @@ namespace Silk.NET.Input.Sdl
 {
     public static class SdlInput
     {
-        public static void RegisterWindow()
+        public static void RegisterPlatform()
         {
             Window.Add(new SdlPlatform());
             InputWindowExtensions.Add(new SdlInputPlatform());

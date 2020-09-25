@@ -90,7 +90,7 @@ namespace Tutorial
         private static void Main()
         {
             Silk.NET.Input.Glfw.GlfwInput.RegisterPlatform();
-            Silk.NET.Input.Sdl.SdlInput.RegisterWindow();
+            Silk.NET.Input.Sdl.SdlInput.RegisterPlatform();
 
             foreach (var s in Window.Platforms.Select
                 (x => $"IsApplicable: {x.IsApplicable} | IsViewOnly: {x.IsViewOnly}"))
