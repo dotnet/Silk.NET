@@ -70,11 +70,11 @@ namespace Silk.NET.Windowing.Common
         public static Size GetFullSize(this IWindow window) => Size.Add(window.Size, window.BorderSize.Size);
 
         /// <summary>
-        /// Centres this window to the given monitor or, if null, the current monitor the window's on.
+        /// Centers this window to the given monitor or, if null, the current monitor the window's on.
         /// </summary>
-        /// <param name="window">The window to centre.</param>
-        /// <param name="monitor">The specific monitor to centre the window to, if any.</param>
-        public static void Centre(this IWindow window, IMonitor? monitor = null)
+        /// <param name="window">The window to center.</param>
+        /// <param name="monitor">The specific monitor to center the window to, if any.</param>
+        public static void Center(this IWindow window, IMonitor? monitor = null)
         {
             monitor ??= window.Monitor;
             var monitorBounds = monitor.Bounds;

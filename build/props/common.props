@@ -8,7 +8,7 @@
             Silk.NET October 2020 Update
 
             - Add a BorderSize property and GetFullSize extension method to IWindow for working with window borders.
-            - Add a Centre extension method which will centre the window to a monitor.
+            - Add a Center extension method which will center the window to a monitor.
             - Update to latest specifications.
             - Miscellaneous bug fixes and improvements.
         </PackageReleaseNotes>
