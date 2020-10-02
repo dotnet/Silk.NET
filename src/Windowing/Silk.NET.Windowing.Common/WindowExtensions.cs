@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Drawing;
 using Silk.NET.Windowing.Common.Structs;
 
 namespace Silk.NET.Windowing.Common
@@ -60,6 +61,13 @@ namespace Silk.NET.Windowing.Common
             view.DoEvents();
             view.Reset();
         }
+
+        /// <summary>
+        /// Gets the full size of the given window including its borders.
+        /// </summary>
+        /// <param name="window">The window to get size information from.</param>
+        /// <returns>The full size of the window (including both content area and borders)</returns>
+        public static Size GetFullSize(this IWindow window) => Size.Add(window.Size, window.BorderSize.Size);
 
         /// <summary>
         /// Sets the window icon to default on the given window.
