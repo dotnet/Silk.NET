@@ -119,11 +119,21 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public int RunningSlowTolerance { get; set; }
 
-        /// <inheritdoc />
+        /// <inheritdoc cref="IWindow" />
         public unsafe bool IsClosing
         {
             get => _glfw.WindowShouldClose(_windowPtr);
             set => _glfw.SetWindowShouldClose(_windowPtr, value);
+        }
+
+        /// <inheritdoc />
+        public unsafe Rectangle BorderSize
+        {
+            get
+            {
+                _glfw.GetWindowFrameSize(_windowPtr, out var l, out var t, out var r, out var b);
+                return Rectangle.FromLTRB(l, t, r, b);
+            }
         }
 
         /// <inheritdoc />

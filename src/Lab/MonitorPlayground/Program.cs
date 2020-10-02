@@ -67,6 +67,11 @@ namespace MonitorPlayground
                     }
                 }
 
+                if (input.Keyboards[0].IsKeyPressed(Key.Space))
+                {
+                    window.Center();
+                }
+
                 if (input.Keyboards[0].IsKeyPressed(Key.Escape))
                 {
                     window.Close();

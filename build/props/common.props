@@ -5,18 +5,18 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>8.0</LangVersion>
         <PackageReleaseNotes>
-            Silk.NET September 2020 Update
+            Silk.NET October 2020 Update
 
-            - Add a byte* overload to Glfw.GetError
-            - Make GlfwProvider throw if Glfw.Init fails
-            - Update to latest specifications
-            - Miscellaneous bug fixes and improvements
+            - Add a BorderSize property and GetFullSize extension method to IWindow for working with window borders.
+            - Add a Center extension method which will center the window to a monitor.
+            - Update to latest specifications.
+            - Miscellaneous bug fixes and improvements.
         </PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/Ultz/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>1.6.0</VersionPrefix>
+        <VersionPrefix>1.7.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description>
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, GLFW, and Vulkan.
