@@ -2235,27 +2235,6 @@
               "Attributes": []
             },
             {
-              "Name": "Depth",
-              "NativeName": "CL_DEPTH",
-              "Value": "0x10BD",
-              "Doc": "",
-              "Attributes": []
-            },
-            {
-              "Name": "DepthStencil",
-              "NativeName": "CL_DEPTH_STENCIL",
-              "Value": "0x10BE",
-              "Doc": "",
-              "Attributes": []
-            },
-            {
-              "Name": "UnormInt24",
-              "NativeName": "CL_UNORM_INT24",
-              "Value": "0x10DF",
-              "Doc": "",
-              "Attributes": []
-            },
-            {
               "Name": "MemObjectImage2DArray",
               "NativeName": "CL_MEM_OBJECT_IMAGE2D_ARRAY",
               "Value": "0x10F3",
@@ -2707,6 +2686,13 @@
               "Name": "MemKernelReadAndWrite",
               "NativeName": "CL_MEM_KERNEL_READ_AND_WRITE",
               "Value": "0x4096",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "Depth",
+              "NativeName": "CL_DEPTH",
+              "Value": "0x10BD",
               "Doc": "",
               "Attributes": []
             },
@@ -37495,6 +37481,27 @@
               "Attributes": []
             },
             {
+              "Name": "Depth",
+              "NativeName": "CL_DEPTH",
+              "Value": "0x10BD",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "UnormInt16",
+              "NativeName": "CL_UNORM_INT16",
+              "Value": "0x10D3",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "Float",
+              "NativeName": "CL_FLOAT",
+              "Value": "0x10DE",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "UuidSizeKhr",
               "NativeName": "CL_UUID_SIZE_KHR",
               "Value": "0x16",
@@ -37722,13 +37729,6 @@
               "Name": "UnormInt24",
               "NativeName": "CL_UNORM_INT24",
               "Value": "0x10DF",
-              "Doc": "",
-              "Attributes": []
-            },
-            {
-              "Name": "Float",
-              "NativeName": "CL_FLOAT",
-              "Value": "0x10DE",
               "Doc": "",
               "Attributes": []
             },
