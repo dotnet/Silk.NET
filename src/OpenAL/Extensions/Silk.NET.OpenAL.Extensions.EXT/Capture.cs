@@ -58,7 +58,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         )
             where TBufferFormat : struct, Enum
         {
-            return CaptureOpenDevice(deviceName, frequency, (BufferFormat)(object)format, size);
+            return CaptureOpenDevice(deviceName, frequency, (BufferFormat) (object) format, size);
         }
 
         /// <summary>

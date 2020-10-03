@@ -88,7 +88,7 @@ namespace Silk.NET.Input.Desktop
         public unsafe CursorMode CursorMode
         {
             get => GetCursorMode(
-                (CursorModeValue)GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.Cursor),
+                (CursorModeValue) GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.Cursor),
                 GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.RawMouseMotion) != 0
             );
             set

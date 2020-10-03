@@ -23,8 +23,8 @@ namespace Silk.NET.Input.Extensions
             IsConnected = keyboard.IsConnected;
             var keys = keyboard.SupportedKeys;
             _keyCount = _pressedKeyCount = keys.Count;
-            _keys = (Key*)Marshal.AllocHGlobal(_keyCount * sizeof(Key));
-            _pressedKeys = (Key*)Marshal.AllocHGlobal(_keyCount * sizeof(Key));
+            _keys = (Key*) Marshal.AllocHGlobal(_keyCount * sizeof(Key));
+            _pressedKeys = (Key*) Marshal.AllocHGlobal(_keyCount * sizeof(Key));
             _pressedKeyCount = 0;
             for (var i = 0; i < _keyCount; i++)
             {
@@ -35,7 +35,7 @@ namespace Silk.NET.Input.Extensions
                 }
             }
 
-            _keys = (Key*)Marshal.ReAllocHGlobal((IntPtr)_pressedKeys, (IntPtr)(_pressedKeyCount * sizeof(Key)));
+            _keys = (Key*) Marshal.ReAllocHGlobal((IntPtr) _pressedKeys, (IntPtr) (_pressedKeyCount * sizeof(Key)));
         }
 
         public string Name { get; }
@@ -75,8 +75,8 @@ namespace Silk.NET.Input.Extensions
 
         private unsafe void Free()
         {
-            Marshal.FreeHGlobal((IntPtr)_keys);
-            Marshal.FreeHGlobal((IntPtr)_pressedKeys);
+            Marshal.FreeHGlobal((IntPtr) _keys);
+            Marshal.FreeHGlobal((IntPtr) _pressedKeys);
         }
 
         ~KeyboardState()

@@ -63,7 +63,7 @@ namespace Triangle
             fixed (float* vertices = _vertices)
             {
                 _gl.BufferData
-                    (GLEnum.ArrayBuffer, (uint)_vertices.Length * sizeof(float), vertices, GLEnum.StaticDraw);
+                    (GLEnum.ArrayBuffer, (uint) _vertices.Length * sizeof(float), vertices, GLEnum.StaticDraw);
             }
 
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
@@ -95,7 +95,7 @@ namespace Triangle
 
         private static void RenderFrame(double delta)
         {
-            _gl.Clear((uint)GLEnum.ColorBufferBit);
+            _gl.Clear((uint) GLEnum.ColorBufferBit);
             _shader.Use();
             _gl.BindVertexArray(_vertexArrayObject);
             _gl.DrawArrays(GLEnum.Triangles, 0, 3);

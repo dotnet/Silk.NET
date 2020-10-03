@@ -69,7 +69,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             if (typeAttr != null)
             {
                 var typeString = xe.Attribute("type")?.Value ?? throw new InvalidDataException();
-                type = (EnumType)Enum.Parse(typeof(EnumType), typeString, true);
+                type = (EnumType) Enum.Parse(typeof(EnumType), typeString, true);
             }
             else
             {

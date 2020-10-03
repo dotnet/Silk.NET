@@ -137,7 +137,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
-            var xd = (XDocument)obj;
+            var xd = (XDocument) obj;
 
             var rawStructs = xd.Element("registry")?.Element("types")?.Elements("type")
                 .Where(type => type.HasCategoryAttribute("struct"))
@@ -1025,7 +1025,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         throw new InvalidDataException("Token value was not in a valid format.");
                     }
 
-                    value = unchecked((long)uValue);
+                    value = unchecked((long) uValue);
                 }
             }
 

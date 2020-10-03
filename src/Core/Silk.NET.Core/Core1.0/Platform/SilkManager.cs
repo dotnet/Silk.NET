@@ -29,7 +29,7 @@ namespace Silk.NET.Core.Platform
 
         public static T Get<T>()
         {
-            return (T)platformObjects[typeof(T)];
+            return (T) platformObjects[typeof(T)];
         }
 
         public static T GetOrDefault<T>()

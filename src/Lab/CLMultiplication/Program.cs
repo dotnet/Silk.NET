@@ -24,7 +24,7 @@ namespace CLMultiplication
             IntPtr platform;
             IntPtr device;
             var props = stackalloc IntPtr[3];
-            props[0] = (IntPtr)CLEnum.ContextPlatform;
+            props[0] = (IntPtr) CLEnum.ContextPlatform;
             props[0] = IntPtr.Zero;
             props[0] = IntPtr.Zero;
             IntPtr ctx;
@@ -65,9 +65,9 @@ namespace CLMultiplication
 
             queue = cl.CreateCommandQueue(ctx, device, 0, &err);
             AssertZero(err);
-            program = cl.CreateProgramWithSource(ctx, (uint)kernelCode.Length, kernelCode, null, &err);
+            program = cl.CreateProgramWithSource(ctx, (uint) kernelCode.Length, kernelCode, null, &err);
             AssertZero(err);
-            err = cl.BuildProgram(program, 0, null, (char*)null, null, null);
+            err = cl.BuildProgram(program, 0, null, (char*) null, null, null);
             try
             {
                 AssertZero(err);
@@ -75,10 +75,10 @@ namespace CLMultiplication
             catch (Exception ex)
             {
                 var logsize = UIntPtr.Zero;
-                cl.GetProgramBuildInfo(program, device, (uint)CLEnum.ProgramBuildLog, UIntPtr.Zero, null, &logsize);
-                var log = Marshal.AllocHGlobal((IntPtr)logsize.ToPointer());
+                cl.GetProgramBuildInfo(program, device, (uint) CLEnum.ProgramBuildLog, UIntPtr.Zero, null, &logsize);
+                var log = Marshal.AllocHGlobal((IntPtr) logsize.ToPointer());
                 cl.GetProgramBuildInfo
-                    (program, device, (uint)CLEnum.ProgramBuildLog, logsize, log.ToPointer(), (UIntPtr*)null);
+                    (program, device, (uint) CLEnum.ProgramBuildLog, logsize, log.ToPointer(), (UIntPtr*) null);
                 throw new Exception(Marshal.PtrToStringAnsi(log), ex);
             }
 
@@ -86,26 +86,26 @@ namespace CLMultiplication
             AssertZero(err);
 
             // initialize buffer with data
-            dA = cl.CreateBuffer(ctx, CLEnum.MemReadWrite, (UIntPtr)(n * sizeof(int)), null, &err);
+            dA = cl.CreateBuffer(ctx, CLEnum.MemReadWrite, (UIntPtr) (n * sizeof(int)), null, &err);
             AssertZero(err);
 
             err = cl.EnqueueWriteBuffer
-                (queue, dA, true, (UIntPtr)0, (UIntPtr)(n * sizeof(int)), a, 0, null, (IntPtr*)null);
+                (queue, dA, true, (UIntPtr) 0, (UIntPtr) (n * sizeof(int)), a, 0, null, (IntPtr*) null);
             AssertZero(err);
 
-            cl.SetKernelArg(kMultiplyby, 0, (UIntPtr)sizeof(void*), &dA);
+            cl.SetKernelArg(kMultiplyby, 0, (UIntPtr) sizeof(void*), &dA);
             var c = 0;
             for (c = 2; c <= cMax; c++)
             {
-                cl.SetKernelArg(kMultiplyby, 1, (UIntPtr)sizeof(int), &c);
-                cl.EnqueueNdrangeKernel(queue, kMultiplyby, 1, null, (UIntPtr*)&n, (UIntPtr*)&n, 0u, null, null);
+                cl.SetKernelArg(kMultiplyby, 1, (UIntPtr) sizeof(int), &c);
+                cl.EnqueueNdrangeKernel(queue, kMultiplyby, 1, null, (UIntPtr*) &n, (UIntPtr*) &n, 0u, null, null);
             }
 
             err = cl.Finish(queue);
             AssertZero(err);
 
             err = cl.EnqueueReadBuffer
-                (queue, dA, true, (UIntPtr)0, (UIntPtr)(n * sizeof(int)), b, 0, null, (IntPtr*)null);
+                (queue, dA, true, (UIntPtr) 0, (UIntPtr) (n * sizeof(int)), b, 0, null, (IntPtr*) null);
             AssertZero(err);
             err = cl.Finish(queue);
             AssertZero(err);
@@ -132,13 +132,13 @@ namespace CLMultiplication
         {
             if (i != 0)
             {
-                throw new Exception($"Error code is not zero: {(CLEnum)i}");
+                throw new Exception($"Error code is not zero: {(CLEnum) i}");
             }
         }
 
         private static unsafe void NotifyFunc(char* errinfo, void* privateinfo, UIntPtr cb, void* userdata)
         {
-            Console.WriteLine($"Notification: {Marshal.PtrToStringAnsi((IntPtr)errinfo)}");
+            Console.WriteLine($"Notification: {Marshal.PtrToStringAnsi((IntPtr) errinfo)}");
         }
     }
 }

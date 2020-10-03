@@ -50,7 +50,7 @@ namespace Silk.NET.Input.Desktop
             Keyboards = _keyboards;
             Mice = _mice;
 
-            GlfwInputPlatform.RegisterWindow((WindowHandle*)Handle, _subscribers);
+            GlfwInputPlatform.RegisterWindow((WindowHandle*) Handle, _subscribers);
             window.Update += _update = _ =>
             {
                 foreach (var updatable in _mice)
@@ -75,7 +75,7 @@ namespace Silk.NET.Input.Desktop
         public unsafe void Dispose()
         {
             _window.Update -= _update;
-            GlfwInputPlatform.UnregisterWindow((WindowHandle*)Handle, _subscribers);
+            GlfwInputPlatform.UnregisterWindow((WindowHandle*) Handle, _subscribers);
             foreach (var gamepad in _gamepads)
             {
                 gamepad.Dispose();

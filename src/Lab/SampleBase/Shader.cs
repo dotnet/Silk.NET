@@ -71,7 +71,7 @@ namespace SampleBase
             _gl.CompileShader(shader);
 
             _gl.GetShader(shader, GLEnum.CompileStatus, out var code);
-            if (code != (int)GLEnum.True)
+            if (code != (int) GLEnum.True)
             {
                 throw new Exception
                     ($"Error occurred whilst compiling Shader({shader}): \n" + _gl.GetShaderInfoLog(shader));
@@ -83,7 +83,7 @@ namespace SampleBase
             _gl.LinkProgram(program);
 
             _gl.GetProgram(program, GLEnum.LinkStatus, out var code);
-            if (code != (int)GLEnum.True)
+            if (code != (int) GLEnum.True)
             {
                 throw new Exception($"Error occurred whilst linking Program({program}): " + _gl.GetProgramInfoLog(program));
             }
@@ -114,7 +114,7 @@ namespace SampleBase
         public unsafe void SetMatrix4(string name, Matrix4x4 data)
         {
             _gl.UseProgram(Handle);
-            _gl.UniformMatrix4(_uniformLocations[name], Handle, true, (float*)&data);
+            _gl.UniformMatrix4(_uniformLocations[name], Handle, true, (float*) &data);
         }
 
         public void SetVector3(string name, Vector3 data)

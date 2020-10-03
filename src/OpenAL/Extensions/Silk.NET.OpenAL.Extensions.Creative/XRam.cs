@@ -137,7 +137,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
                 default:
                 {
-                    throw new InvalidEnumArgumentException(nameof(param), (int)param, typeof(XRamGetInteger));
+                    throw new InvalidEnumArgumentException(nameof(param), (int) param, typeof(XRamGetInteger));
                 }
             }
         }
@@ -169,7 +169,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
                 default:
                 {
-                    throw new InvalidEnumArgumentException(nameof(mode), (int)mode, typeof(BufferStorageMode));
+                    throw new InvalidEnumArgumentException(nameof(mode), (int) mode, typeof(BufferStorageMode));
                 }
             }
         }

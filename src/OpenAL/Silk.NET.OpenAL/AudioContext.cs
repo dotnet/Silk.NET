@@ -276,7 +276,7 @@ namespace Silk.NET.OpenAL
 
                     unsafe
                     {
-                        ContextAPI.DestroyContext((Context*)_contextHandle);
+                        ContextAPI.DestroyContext((Context*) _contextHandle);
                     }
                 }
 
@@ -316,7 +316,7 @@ namespace Silk.NET.OpenAL
                         return;
                     }
 
-                    var contextPtr = (Context*)contextHandle;
+                    var contextPtr = (Context*) contextHandle;
                     var deviceHandle = ContextAPI.GetContextsDevice(contextPtr);
                     var error = ContextAPI.GetError(deviceHandle);
 
@@ -379,17 +379,17 @@ namespace Silk.NET.OpenAL
 
             if (frequency != 0)
             {
-                attributes.Add((int)ContextAttributes.Frequency);
+                attributes.Add((int) ContextAttributes.Frequency);
                 attributes.Add(frequency);
             }
 
             if (refreshRate != 0)
             {
-                attributes.Add((int)ContextAttributes.Refresh);
+                attributes.Add((int) ContextAttributes.Refresh);
                 attributes.Add(refreshRate);
             }
 
-            attributes.Add((int)ContextAttributes.Sync);
+            attributes.Add((int) ContextAttributes.Sync);
             attributes.Add(isSynchronous ? 1 : 0);
 
             attributes.Add(0);
@@ -526,7 +526,7 @@ namespace Silk.NET.OpenAL
 
             unsafe
             {
-                ContextAPI.ProcessContext((Context*)_contextHandle);
+                ContextAPI.ProcessContext((Context*) _contextHandle);
             }
 
             IsProcessing = true;
@@ -561,7 +561,7 @@ namespace Silk.NET.OpenAL
 
             unsafe
             {
-                ContextAPI.SuspendContext((Context*)_contextHandle);
+                ContextAPI.SuspendContext((Context*) _contextHandle);
             }
 
             IsProcessing = false;
@@ -601,7 +601,7 @@ namespace Silk.NET.OpenAL
         {
             unsafe
             {
-                return $"{_deviceName} (handle: {_contextHandle}, device: {(long)Device})";
+                return $"{_deviceName} (handle: {_contextHandle}, device: {(long) Device})";
             }
         }
     }

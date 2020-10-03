@@ -46,7 +46,7 @@ namespace Silk.NET.Core.Native
         /// </summary>
         /// <param name="length">The length of the string pointer, in bytes.</param>
         /// <returns>A pointer to the created string.</returns>
-        public static IntPtr NewStringPtr(uint length) => Marshal.AllocHGlobal((int)length);
+        public static IntPtr NewStringPtr(uint length) => Marshal.AllocHGlobal((int) length);
 
         /// <summary>
         /// Convert an array of strings into a pointer.

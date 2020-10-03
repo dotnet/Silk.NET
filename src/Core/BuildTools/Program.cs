@@ -95,7 +95,7 @@ namespace Silk.NET.BuildTools
                     Environment.Exit(-1);
                 }
             );
-            return (T)val;
+            return (T) val;
         }
     }
 }

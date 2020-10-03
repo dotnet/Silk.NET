@@ -95,7 +95,7 @@ namespace Silk.NET.Core.Native
         {
             if (FuncPtrInternal.Storage.TryGetValue(Value, out var value))
             {
-                return (T)value.Delegate;
+                return (T) value.Delegate;
             }
 
             return Marshal.GetDelegateForFunctionPointer<T>(Value);

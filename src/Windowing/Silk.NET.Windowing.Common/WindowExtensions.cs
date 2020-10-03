@@ -24,7 +24,7 @@ namespace Silk.NET.Windowing.Common
         /// <returns>The return value of the given delegate.</returns>
         public static T Invoke<T>(this IView view, Func<T> t)
         {
-            return (T)view.Invoke(t);
+            return (T) view.Invoke(t);
         }
 
         /// <summary>

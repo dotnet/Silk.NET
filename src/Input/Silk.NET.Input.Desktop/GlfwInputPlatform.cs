@@ -30,9 +30,9 @@ namespace Silk.NET.Input.Desktop
         internal static unsafe void RegisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
             var events = _subs.ContainsKey
-                ((IntPtr)handle)
-                ? _subs[(IntPtr)handle]
-                : _subs[(IntPtr)handle] = new GlfwEvents(handle);
+                ((IntPtr) handle)
+                ? _subs[(IntPtr) handle]
+                : _subs[(IntPtr) handle] = new GlfwEvents(handle);
             foreach (var subscriber in subscribers)
             {
                 subscriber.Subscribe(events);
@@ -42,9 +42,9 @@ namespace Silk.NET.Input.Desktop
         internal static unsafe void UnregisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
             var events = _subs.ContainsKey
-                ((IntPtr)handle)
-                ? _subs[(IntPtr)handle]
-                : _subs[(IntPtr)handle] = new GlfwEvents(handle);
+                ((IntPtr) handle)
+                ? _subs[(IntPtr) handle]
+                : _subs[(IntPtr) handle] = new GlfwEvents(handle);
             foreach (var subscriber in subscribers)
             {
                 subscriber.Unsubscribe(events);

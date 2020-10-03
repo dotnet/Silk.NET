@@ -74,15 +74,15 @@ namespace Tutorial
 
         private static unsafe void OnRender(double obj)
         {
-            Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
+            Gl.Clear((uint) ClearBufferMask.ColorBufferBit);
 
             //Binding and using our VAO and shader.
             Vao.Bind();
             Shader.Use();
             //Setting a uniform.
-            Shader.SetUniform("uBlue", (float)Math.Sin(DateTime.Now.Millisecond / 1000f * Math.PI));
+            Shader.SetUniform("uBlue", (float) Math.Sin(DateTime.Now.Millisecond / 1000f * Math.PI));
 
-            Gl.DrawElements(PrimitiveType.Triangles, (uint)Indices.Length, DrawElementsType.UnsignedInt, null);
+            Gl.DrawElements(PrimitiveType.Triangles, (uint) Indices.Length, DrawElementsType.UnsignedInt, null);
         }
 
         private static void OnClose()

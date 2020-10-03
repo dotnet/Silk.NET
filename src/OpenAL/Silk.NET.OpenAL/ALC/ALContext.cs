@@ -110,7 +110,7 @@ namespace Silk.NET.OpenAL
         {
             unsafe
             {
-                return MakeContextCurrent((Context*)context);
+                return MakeContextCurrent((Context*) context);
             }
         }
 

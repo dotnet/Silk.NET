@@ -32,7 +32,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
-            var spec = (VulkanSpecification)obj;
+            var spec = (VulkanSpecification) obj;
             var structs = ConvertStructs(spec, opts);
             foreach (var feature in spec.Features.Select(x => x.Api).RemoveDuplicates())
             {
@@ -212,7 +212,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts)
         {
-            var spec = (VulkanSpecification)obj;
+            var spec = (VulkanSpecification) obj;
             var functions = ConvertFunctions(spec, opts);
             foreach (var feature in spec.Features)
             {
@@ -295,7 +295,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
-            var spec = (VulkanSpecification)obj;
+            var spec = (VulkanSpecification) obj;
             opts.TypeMaps.Insert(0, spec.BaseTypes);
             var enums = ConvertEnums(spec, opts);
             var tm = new Dictionary<string, string>();
@@ -323,7 +323,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
         {
-            var spec = (VulkanSpecification)obj;
+            var spec = (VulkanSpecification) obj;
             return spec.Constants.Select
             (
                 x => new Constant
