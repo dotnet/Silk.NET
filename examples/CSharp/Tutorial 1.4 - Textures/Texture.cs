@@ -20,7 +20,7 @@ namespace Tutorial
             //where as openGL has origin in the bottom-left corner.
             img.Mutate(x => x.Flip(FlipMode.Vertical));
 
-            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
+            fixed (Rgba32* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
             {
                 //Loading the actual image.
                 Load(gl, data, (uint) img.Width, (uint) img.Height);
@@ -33,7 +33,7 @@ namespace Tutorial
         public unsafe Texture(GL gl, Span<byte> data, uint width, uint height)
         {
             //We want the ability to create a texture using data generated from code aswell.
-            fixed (void* d = &data[0])
+            fixed (byte* d = &data[0])
             {
                 Load(gl, d, width, height);
             }

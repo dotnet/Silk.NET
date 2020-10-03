@@ -19,7 +19,7 @@ namespace Tutorial
             _gl.AttachShader(_handle, vertex);
             _gl.AttachShader(_handle, fragment);
             _gl.LinkProgram(_handle);
-            _gl.GetProgram(_handle, GLEnum.LinkStatus, out var status);
+            _gl.GetProgram(_handle, GLEnum.LinkStatus, out int status);
             if (status == 0)
             {
                 throw new Exception($"Program failed to link with error: {_gl.GetProgramInfoLog(_handle)}");

@@ -37,7 +37,7 @@ namespace Tutorial
 
         private static void Main(string[] args)
         {
-            var options = WindowOptions.Default;
+            WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);

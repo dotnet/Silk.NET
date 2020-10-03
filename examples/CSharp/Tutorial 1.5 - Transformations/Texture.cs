@@ -18,7 +18,7 @@ namespace Tutorial
             Image<Rgba32> img = (Image<Rgba32>) Image.Load(path);
             img.Mutate(x => x.Flip(FlipMode.Vertical));
 
-            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
+            fixed (Rgba32* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
             {
                 Load(gl, data, (uint) img.Width, (uint) img.Height);
             }
@@ -28,7 +28,7 @@ namespace Tutorial
 
         public unsafe Texture(GL gl, Span<byte> data, uint width, uint height)
         {
-            fixed (void* d = &data[0])
+            fixed (byte* d = &data[0])
             {
                 Load(gl, d, width, height);
             }

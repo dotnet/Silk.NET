@@ -84,7 +84,7 @@ namespace Tutorial
 
         private static void Main(string[] args)
         {
-            var options = WindowOptions.Default;
+            WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
@@ -132,7 +132,7 @@ namespace Tutorial
 
         private static unsafe void OnUpdate(double deltaTime)
         {
-            var moveSpeed = 2.5f * (float) deltaTime;
+            float moveSpeed = 2.5f * (float) deltaTime;
 
             if (primaryKeyboard.IsKeyPressed(Key.W))
             {
@@ -179,7 +179,7 @@ namespace Tutorial
             LampShader.Use();
 
             //The Lamp cube is going to be a scaled down version of the normal cubes verticies moved to a different screen location
-            var lampMatrix = Matrix4x4.Identity;
+            Matrix4x4 lampMatrix = Matrix4x4.Identity;
             lampMatrix *= Matrix4x4.CreateScale(0.2f);
             lampMatrix *= Matrix4x4.CreateTranslation(LampPosition);
 
@@ -192,12 +192,12 @@ namespace Tutorial
 
         private static unsafe void OnMouseMove(IMouse mouse, PointF position)
         {
-            var lookSensitivity = 0.1f;
+            float lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }
             else
             {
-                var xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
-                var yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
+                float xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
+                float yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
                 LastMousePosition = position;
 
                 Camera.ModifyDirection(xOffset, yOffset);

@@ -91,7 +91,7 @@ namespace Tutorial
 
         private static void Main(string[] args)
         {
-            var options = WindowOptions.Default;
+            WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
@@ -135,7 +135,7 @@ namespace Tutorial
 
         private static unsafe void OnUpdate(double deltaTime)
         {
-            var moveSpeed = 2.5f * (float) deltaTime;
+            float moveSpeed = 2.5f * (float) deltaTime;
 
             if (primaryKeyboard.IsKeyPressed(Key.W))
             {
@@ -170,11 +170,11 @@ namespace Tutorial
             Shader.SetUniform("uTexture0", 0);
 
             //Use elapsed time to convert to radians to allow our cube to rotate over time
-            var difference = (float) (window.Time * 100);
+            float difference = (float) (window.Time * 100);
 
-            var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
-            var view = Matrix4x4.CreateLookAt(CameraPosition, CameraPosition + CameraFront, CameraUp);
-            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(CameraZoom), Width / Height, 0.1f, 100.0f);
+            Matrix4x4 model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
+            Matrix4x4 view = Matrix4x4.CreateLookAt(CameraPosition, CameraPosition + CameraFront, CameraUp);
+            Matrix4x4 projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(CameraZoom), Width / Height, 0.1f, 100.0f);
 
             Shader.SetUniform("uModel", model);
             Shader.SetUniform("uView", view);
@@ -186,12 +186,12 @@ namespace Tutorial
 
         private static unsafe void OnMouseMove(IMouse mouse, PointF position)
         {
-            var lookSensitivity = 0.1f;
+            float lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }
             else
             {
-                var xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
-                var yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
+                float xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
+                float yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
                 LastMousePosition = position;
 
                 CameraYaw += xOffset;

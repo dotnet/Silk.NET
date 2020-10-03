@@ -17,7 +17,7 @@ namespace Tutorial
 
             _handle = _gl.GenBuffer();
             Bind();
-            fixed (void* d = data)
+            fixed (TDataType* d = data)
             {
                 _gl.BufferData(bufferType, (UIntPtr) (data.Length * sizeof(TDataType)), d, BufferUsageARB.StaticDraw);
             }

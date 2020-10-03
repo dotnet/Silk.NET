@@ -22,7 +22,7 @@ namespace Tutorial
             //Getting the handle, and then uploading the data to said handle.
             _handle = _gl.GenBuffer();
             Bind();
-            fixed (void* d = data)
+            fixed (TDataType* d = data)
             {
                 _gl.BufferData(bufferType, (uint) (data.Length * sizeof(TDataType)), d, BufferUsageARB.StaticDraw);
             }
