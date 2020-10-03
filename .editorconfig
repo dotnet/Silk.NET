@@ -9,7 +9,7 @@ indent_size = 4
 
 # Microsoft .NET properties
 csharp_new_line_before_members_in_object_initializers = false
-csharp_new_line_before_open_brace = methods, types
+csharp_new_line_before_open_brace = all
 csharp_new_line_before_catch = true
 csharp_new_line_before_else = true
 csharp_new_line_before_finally = true
