@@ -30,7 +30,7 @@ namespace Silk.NET.BuildTools.Common.Functions
 
         [JsonProperty("IndirectionLevels")]
         private int _indirectionLevels;
-        
+
         /// <summary>
         /// Gets or sets the amount of indirection levels (asterisks as represented in C#).
         /// </summary>
@@ -47,7 +47,7 @@ namespace Silk.NET.BuildTools.Common.Functions
 
                 _indirectionLevels = value;
             }
-            
+
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the name of this type.
         /// </summary>
         public string Name { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the group of this type.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the original name of this type, before mapping.
         /// </summary>
         public string OriginalName { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the original group of this type.
         /// </summary>

@@ -64,7 +64,7 @@ namespace Silk.NET.BuildTools.Common
         /// Gets or sets the name container for this profile.
         /// </summary>
         public NameContainer Names { get; set; } = new NameContainer();
-        
+
         /// <summary>
         /// Gets or sets this profile's constants.
         /// </summary>

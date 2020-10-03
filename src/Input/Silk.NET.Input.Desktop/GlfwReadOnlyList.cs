@@ -10,7 +10,7 @@ using System.Collections.Generic;
 namespace Silk.NET.Input.Desktop
 {
     internal unsafe struct GlfwReadOnlyList<T> : IReadOnlyList<T>
-        where T:unmanaged
+        where T : unmanaged
     {
         private T* _items;
 

@@ -26,9 +26,9 @@ namespace Silk.NET.Input.Extensions
             var axes = joystick.Axes;
             var buttons = joystick.Buttons;
             var hats = joystick.Hats;
-            _axes = (Axis*) Marshal.AllocHGlobal((_axisCount = axes.Count) * sizeof(Axis));
-            _buttons = (Button*) Marshal.AllocHGlobal((_buttonCount = buttons.Count) * sizeof(Button));
-            _hats = (Hat*) Marshal.AllocHGlobal((_hatCount = hats.Count) * sizeof(Hat));
+            _axes = (Axis*)Marshal.AllocHGlobal((_axisCount = axes.Count) * sizeof(Axis));
+            _buttons = (Button*)Marshal.AllocHGlobal((_buttonCount = buttons.Count) * sizeof(Button));
+            _hats = (Hat*)Marshal.AllocHGlobal((_hatCount = hats.Count) * sizeof(Hat));
             for (var i = 0; i < _axisCount; i++)
             {
                 _axes[i] = axes[i];
@@ -75,9 +75,9 @@ namespace Silk.NET.Input.Extensions
 
         private unsafe void ReleaseUnmanagedResources()
         {
-            Marshal.FreeHGlobal((IntPtr) _axes);
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _hats);
+            Marshal.FreeHGlobal((IntPtr)_axes);
+            Marshal.FreeHGlobal((IntPtr)_buttons);
+            Marshal.FreeHGlobal((IntPtr)_hats);
         }
 
         ~JoystickState()

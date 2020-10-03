@@ -26,10 +26,10 @@ namespace Silk.NET.Input.Extensions
             var buttons = gamepad.Buttons;
             var thumbsticks = gamepad.Thumbsticks;
             var triggers = gamepad.Triggers;
-            _buttons = (Button*) Marshal.AllocHGlobal((_buttonCount = buttons.Count) * sizeof(Button));
-            _thumbsticks = (Thumbstick*) Marshal.AllocHGlobal
+            _buttons = (Button*)Marshal.AllocHGlobal((_buttonCount = buttons.Count) * sizeof(Button));
+            _thumbsticks = (Thumbstick*)Marshal.AllocHGlobal
                 ((_thumbstickCount = thumbsticks.Count) * sizeof(Thumbstick));
-            _triggers = (Trigger*) Marshal.AllocHGlobal((_triggerCount = triggers.Count) * sizeof(Trigger));
+            _triggers = (Trigger*)Marshal.AllocHGlobal((_triggerCount = triggers.Count) * sizeof(Trigger));
             Deadzone = gamepad.Deadzone;
         }
 
@@ -61,9 +61,9 @@ namespace Silk.NET.Input.Extensions
 
         private unsafe void ReleaseUnmanagedResources()
         {
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _thumbsticks);
-            Marshal.FreeHGlobal((IntPtr) _triggers);
+            Marshal.FreeHGlobal((IntPtr)_buttons);
+            Marshal.FreeHGlobal((IntPtr)_thumbsticks);
+            Marshal.FreeHGlobal((IntPtr)_triggers);
         }
 
         ~GamepadState()

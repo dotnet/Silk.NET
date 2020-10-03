@@ -60,7 +60,7 @@ namespace Silk.NET.Windowing.Common
         /// The VSync mode.
         /// </summary>
         VSyncMode VSync { get; set; }
-        
+
         /// <summary>
         /// The number of frames the window needs to be running slowly for before <see cref="IWindow.IsRunningSlowly"/>
         /// is set to true.

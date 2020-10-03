@@ -85,10 +85,12 @@ namespace Silk.NET.OpenAL.Extensions.Creative
             var buffers = pool.Rent(1);
             buffers[0] = buffer;
 
-            try {
+            try
+            {
                 return SetBufferMode(1, buffers, mode);
             }
-            finally {
+            finally
+            {
                 pool.Return(buffers, true);
             }
         }
@@ -121,7 +123,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <exception cref="InvalidEnumArgumentException">Thrown if the enum is not valid.</exception>
         private int GetValueForEnum(XRamGetInteger param)
         {
-            switch (param) {
+            switch (param)
+            {
                 case XRamGetInteger.RamSize:
                 {
                     return _ramSize;
@@ -134,7 +137,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
                 default:
                 {
-                    throw new InvalidEnumArgumentException(nameof(param), (int) param, typeof(XRamGetInteger));
+                    throw new InvalidEnumArgumentException(nameof(param), (int)param, typeof(XRamGetInteger));
                 }
             }
         }
@@ -147,7 +150,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <exception cref="InvalidEnumArgumentException">Thrown if the enum is not valid.</exception>
         private int GetValueForEnum(BufferStorageMode mode)
         {
-            switch (mode) {
+            switch (mode)
+            {
                 case BufferStorageMode.Automatic:
                 {
                     return _bufferStorageModeAutomatic;
@@ -165,7 +169,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
                 default:
                 {
-                    throw new InvalidEnumArgumentException(nameof(mode), (int) mode, typeof(BufferStorageMode));
+                    throw new InvalidEnumArgumentException(nameof(mode), (int)mode, typeof(BufferStorageMode));
                 }
             }
         }
@@ -178,15 +182,18 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <exception cref="InvalidEnumArgumentException">Thrown if the value is not valid.</exception>
         private BufferStorageMode GetEnumForValue(int value)
         {
-            if (value == _bufferStorageModeAutomatic) {
+            if (value == _bufferStorageModeAutomatic)
+            {
                 return BufferStorageMode.Automatic;
             }
 
-            if (value == _bufferStorageModeHardware) {
+            if (value == _bufferStorageModeHardware)
+            {
                 return BufferStorageMode.Hardware;
             }
 
-            if (value == _bufferStorageModeAccessible) {
+            if (value == _bufferStorageModeAccessible)
+            {
                 return BufferStorageMode.Accessible;
             }
 

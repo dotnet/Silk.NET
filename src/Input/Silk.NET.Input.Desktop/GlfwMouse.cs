@@ -17,8 +17,8 @@ namespace Silk.NET.Input.Desktop
 {
     internal class GlfwMouse : IMouse, IGlfwDevice, IGlfwSubscriber, IDisposable
     {
-        private static readonly MouseButton[] Buttons = ((MouseButton[]) Enum.GetValues(typeof(MouseButton)))
-            .Where(x => x != (MouseButton) (-1))
+        private static readonly MouseButton[] Buttons = ((MouseButton[])Enum.GetValues(typeof(MouseButton)))
+            .Where(x => x != (MouseButton)(-1))
             .ToArray();
 
         private unsafe WindowHandle* _handle;
@@ -34,7 +34,7 @@ namespace Silk.NET.Input.Desktop
 
         public unsafe GlfwMouse()
         {
-            _scrollWheel = (ScrollWheel*) Marshal.AllocHGlobal(sizeof(ScrollWheel));
+            _scrollWheel = (ScrollWheel*)Marshal.AllocHGlobal(sizeof(ScrollWheel));
             ScrollWheels = new GlfwReadOnlyList<ScrollWheel>(_scrollWheel, 1);
         }
         public string Name { get; } = "Silk.NET Mouse (via GLFW)";
@@ -48,7 +48,7 @@ namespace Silk.NET.Input.Desktop
             get
             {
                 GlfwProvider.GLFW.Value.GetCursorPos(_handle, out var x, out var y);
-                return new PointF((float) x, (float) y);
+                return new PointF((float)x, (float)y);
             }
             set => GlfwProvider.GLFW.Value.SetCursorPos(_handle, value.X, value.Y);
         }
@@ -66,7 +66,7 @@ namespace Silk.NET.Input.Desktop
                 return false;
             }
 
-            return GlfwProvider.GLFW.Value.GetMouseButton(_handle, index) == (int) InputAction.Press;
+            return GlfwProvider.GLFW.Value.GetMouseButton(_handle, index) == (int)InputAction.Press;
         }
 
         public event Action<IMouse, MouseButton> MouseDown;
@@ -78,7 +78,7 @@ namespace Silk.NET.Input.Desktop
 
         public unsafe void Dispose()
         {
-            Marshal.FreeHGlobal((IntPtr) _handle);
+            Marshal.FreeHGlobal((IntPtr)_handle);
         }
 
         public unsafe void Subscribe(GlfwEvents events)
@@ -86,7 +86,7 @@ namespace Silk.NET.Input.Desktop
             _handle = events.Handle;
             events.Scroll += _scroll = (_, x, y) =>
             {
-                var val = new ScrollWheel((float) x, (float) y);
+                var val = new ScrollWheel((float)x, (float)y);
                 if (_scrollWheel[0].X != val.X || _scrollWheel[0].Y != val.Y)
                 {
                     _scrollModified = true;
@@ -95,7 +95,7 @@ namespace Silk.NET.Input.Desktop
                 _scrollWheel[0] = val;
                 Scroll?.Invoke(this, val);
             };
-            events.CursorPos += _cursorPos = (_, x, y) => MouseMove?.Invoke(this, new PointF((float) x, (float) y));
+            events.CursorPos += _cursorPos = (_, x, y) => MouseMove?.Invoke(this, new PointF((float)x, (float)y));
             events.MouseButton += _mouseButton = (_, btn, action, mods) =>
                 (action switch
                 {
@@ -205,14 +205,14 @@ namespace Silk.NET.Input.Desktop
 
         private static int GetButton(MouseButton btn) => btn switch
         {
-            MouseButton.Left => (int) GLFW.MouseButton.Left,
-            MouseButton.Right => (int) GLFW.MouseButton.Right,
-            MouseButton.Middle => (int) GLFW.MouseButton.Middle,
-            MouseButton.Button4 => (int) GLFW.MouseButton.Button4,
-            MouseButton.Button5 => (int) GLFW.MouseButton.Button5,
-            MouseButton.Button6 => (int) GLFW.MouseButton.Button6,
-            MouseButton.Button7 => (int) GLFW.MouseButton.Button7,
-            MouseButton.Button8 => (int) GLFW.MouseButton.Button8,
+            MouseButton.Left => (int)GLFW.MouseButton.Left,
+            MouseButton.Right => (int)GLFW.MouseButton.Right,
+            MouseButton.Middle => (int)GLFW.MouseButton.Middle,
+            MouseButton.Button4 => (int)GLFW.MouseButton.Button4,
+            MouseButton.Button5 => (int)GLFW.MouseButton.Button5,
+            MouseButton.Button6 => (int)GLFW.MouseButton.Button6,
+            MouseButton.Button7 => (int)GLFW.MouseButton.Button7,
+            MouseButton.Button8 => (int)GLFW.MouseButton.Button8,
             MouseButton.Button9 => -1,
             MouseButton.Button10 => -1,
             MouseButton.Button11 => -1,

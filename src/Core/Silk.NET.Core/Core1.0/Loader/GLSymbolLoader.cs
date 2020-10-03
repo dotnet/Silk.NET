@@ -17,7 +17,7 @@ namespace Silk.NET.Core.Loader
         /// The platform-specific OpenGL loader.
         /// </summary>
         protected Ultz.SuperInvoke.Loader.LibraryLoader UnderlyingLoader { get; } = GetPlatformDefaultLoader();
-        
+
         /// <summary>
         /// Load a native library.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Silk.NET.Core.Loader
             UnderlyingLoader.TryLoadNativeLibrary(name, out var ret);
             return ret;
         }
-        
+
         /// <summary>
         /// Free a native library.
         /// </summary>

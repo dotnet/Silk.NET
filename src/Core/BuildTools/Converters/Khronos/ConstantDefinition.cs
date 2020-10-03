@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
@@ -12,17 +12,17 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The name of the constant.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// The value of the constant.
         /// </summary>
         public string Value { get; }
-        
+
         /// <summary>
         /// The type of the constant.
         /// </summary>
         public ConstantType Type { get; }
-        
+
         /// <summary>
         /// The comment of the constant.
         /// </summary>
@@ -97,12 +97,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// Constant is a UInt32.
         /// </summary>
         UInt32,
-        
+
         /// <summary>
         /// Constant is a UInt64.
         /// </summary>
         UInt64,
-        
+
         /// <summary>
         /// Constant is a 32-bit float.
         /// </summary>

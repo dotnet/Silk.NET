@@ -14,7 +14,7 @@ namespace Silk.NET.Input.Common
         /// The X position of the scroll wheel.
         /// </summary>
         public float X { get; }
-        
+
         /// <summary>
         /// The Y position of the scroll wheel.
         /// </summary>

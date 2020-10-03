@@ -95,7 +95,7 @@ namespace Silk.NET.Windowing.Desktop
 
             _initialOptions = options;
             _initialMonitor = monitor;
-            Parent = (IWindowHost) parent ?? _initialMonitor;
+            Parent = (IWindowHost)parent ?? _initialMonitor;
             IsEventDriven = options.IsEventDriven;
 
             GlfwProvider.GLFW.Value.GetVersion(out var major, out var minor, out _);
@@ -173,7 +173,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public unsafe IntPtr Handle => (IntPtr) _windowPtr;
+        public unsafe IntPtr Handle => (IntPtr)_windowPtr;
 
         public unsafe bool IsCurrentContext => _glfw.GetCurrentContext() == _windowPtr;
 
@@ -700,7 +700,7 @@ namespace Silk.NET.Windowing.Desktop
                 // but we want the window destroyed anyways, so just ignore it
             }
 
-            _windowPtr = (WindowHandle*) 0;
+            _windowPtr = (WindowHandle*)0;
         }
 
         // Disable parameter because
@@ -798,7 +798,7 @@ namespace Silk.NET.Windowing.Desktop
                     images[i] = new Image
                     {
                         Width = icon.Width, Height = icon.Height,
-                        Pixels = hglobals[i] = (byte*) Marshal.AllocHGlobal(icon.Pixels.Length)
+                        Pixels = hglobals[i] = (byte*)Marshal.AllocHGlobal(icon.Pixels.Length)
                     };
 
                     for (var j = 0; j < icon.Pixels.Length; j++)
@@ -812,7 +812,7 @@ namespace Silk.NET.Windowing.Desktop
 
                 for (var i = 0; i < icons.Length; i++)
                 {
-                    Marshal.FreeHGlobal((IntPtr) hglobals[i]);
+                    Marshal.FreeHGlobal((IntPtr)hglobals[i]);
                 }
             }
         }
@@ -1081,7 +1081,7 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public unsafe char** GetRequiredExtensions(out uint count)
         {
-            return (char**) _glfw.GetRequiredInstanceExtensions(out count);
+            return (char**)_glfw.GetRequiredInstanceExtensions(out count);
         }
 
         /// <summary>
@@ -1149,7 +1149,7 @@ namespace Silk.NET.Windowing.Desktop
 
                 if (_windowState == WindowState.Fullscreen)
                 {
-                    var h = ((GlfwMonitor) value).Handle;
+                    var h = ((GlfwMonitor)value).Handle;
                     var vidMode = value.VideoMode;
                     var resolution = vidMode.Resolution;
                     if (!resolution.HasValue)
@@ -1247,7 +1247,7 @@ namespace Silk.NET.Windowing.Desktop
             }
 
             public unsafe char** GetRequiredExtensions(out uint count)
-                => (char**) _window._glfw.GetRequiredInstanceExtensions(out count);
+                => (char**)_window._glfw.GetRequiredInstanceExtensions(out count);
         }
 
         private readonly struct Invocation : IDisposable

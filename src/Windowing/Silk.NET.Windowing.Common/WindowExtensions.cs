@@ -24,7 +24,7 @@ namespace Silk.NET.Windowing.Common
         /// <returns>The return value of the given delegate.</returns>
         public static T Invoke<T>(this IView view, Func<T> t)
         {
-            return (T) view.Invoke(t);
+            return (T)view.Invoke(t);
         }
 
         /// <summary>
@@ -102,6 +102,6 @@ namespace Silk.NET.Windowing.Common
         /// <param name="window">The window.</param>
         /// <param name="icon">The icon to set.</param>
         public static void SetWindowIcon(this IWindow window, ref WindowIcon icon) => window.SetWindowIcon
-            (new[] {icon});
+            (new[] { icon });
     }
 }

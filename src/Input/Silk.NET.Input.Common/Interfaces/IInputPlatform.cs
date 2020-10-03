@@ -25,7 +25,7 @@ namespace Silk.NET.Input.Common
         /// be applicable for a GlfwWindow.
         /// </remarks>
         bool IsApplicable(IView view);
-        
+
         /// <summary>
         /// Get an input context for this view.
         /// </summary>

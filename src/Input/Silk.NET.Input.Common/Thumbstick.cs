@@ -26,7 +26,7 @@ namespace Silk.NET.Input.Common
         /// The y-axis of the stick, from -1.0 to 1.0
         /// </summary>
         public float Y { get; }
-        
+
         /// <summary>
         /// The current position of the stick, from 0.0 to 1.0.
         /// </summary>

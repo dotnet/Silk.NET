@@ -1,4 +1,4 @@
-﻿using System.Xml.Linq;
+using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
@@ -11,37 +11,37 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The parameter name.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// The parameter type.
         /// </summary>
-        public TypeSpec Type { get;  }
-        
+        public TypeSpec Type { get; }
+
         /// <summary>
         /// The parameter's modifier.
         /// </summary>
         public ParameterModifier Modifier { get; }
-        
+
         /// <summary>
         /// Whether or not the parameter is optional.
         /// </summary>
         public bool IsOptional { get; }
-        
+
         /// <summary>
         /// The number of elements in this parameter.
         /// </summary>
         public int ElementCount { get; }
-        
+
         /// <summary>
         /// The symbolic number of elements in this parameter.
         /// </summary>
         public string ElementCountSymbolic { get; }
-        
+
         /// <summary>
         /// Is this null terminated?
         /// </summary>
         public bool IsNullTerminated { get; }
-        
+
         /// <summary>
         /// Is this parameter a constant?
         /// </summary>
@@ -87,7 +87,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             {
                 pointerLevel = 2;
             }
-            else if(xe.Value.Contains($"{typeName}*"))
+            else if (xe.Value.Contains($"{typeName}*"))
             {
                 pointerLevel = 1;
             }
@@ -121,17 +121,17 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// Parameter has no modifiers.
         /// </summary>
         None = 0,
-        
+
         /// <summary>
         /// This is a ref parameter.
         /// </summary>
         Ref = 1,
-        
+
         /// <summary>
         /// This is an out parameter.
         /// </summary>
         Out = 2,
-        
+
         /// <summary>
         /// This is an in parameter.
         /// </summary>

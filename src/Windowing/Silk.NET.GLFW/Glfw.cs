@@ -40,7 +40,7 @@ namespace Silk.NET.GLFW
         /// <seealso cref="SetErrorCallback" />
         public static GlfwCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) =>
         {
-            var ex = new GlfwException($"{errorCode}: {description}") {ErrorCode = errorCode};
+            var ex = new GlfwException($"{errorCode}: {description}") { ErrorCode = errorCode };
             if (_isWindows)
             {
                 // we can actually be helpful on windows which is cool

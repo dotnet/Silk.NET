@@ -21,9 +21,9 @@ namespace Silk.NET.Input.Desktop
         public unsafe GlfwJoystick(int i)
         {
             Index = i;
-            _axes = (Axis*) Marshal.AllocHGlobal(0);
-            _buttons = (Button*) Marshal.AllocHGlobal(0);
-            _hats = (Hat*) Marshal.AllocHGlobal(0);
+            _axes = (Axis*)Marshal.AllocHGlobal(0);
+            _buttons = (Button*)Marshal.AllocHGlobal(0);
+            _hats = (Hat*)Marshal.AllocHGlobal(0);
             Axes = new GlfwReadOnlyList<Axis>(_axes, 0);
             Buttons = new GlfwReadOnlyList<Button>(_buttons, 0);
             Hats = new GlfwReadOnlyList<Hat>(_hats, 0);
@@ -52,7 +52,7 @@ namespace Silk.NET.Input.Desktop
                 {
                     OnConnectionChanged?.Invoke(this, _connected = false);
                 }
-                
+
                 return;
             }
 
@@ -65,7 +65,7 @@ namespace Silk.NET.Input.Desktop
 
             for (var i = 0; i < btnCount; i++)
             {
-                _buttons[i] = new Button(ButtonName.Unknown, i, btn[i] == (int) InputAction.Press);
+                _buttons[i] = new Button(ButtonName.Unknown, i, btn[i] == (int)InputAction.Press);
             }
 
             for (var i = 0; i < axisCount; i++)
@@ -106,7 +106,7 @@ namespace Silk.NET.Input.Desktop
                 return;
             }
 
-            _axes = (Axis*) Marshal.ReAllocHGlobal((IntPtr) _axes, (IntPtr) count);
+            _axes = (Axis*)Marshal.ReAllocHGlobal((IntPtr)_axes, (IntPtr)count);
             Axes = new GlfwReadOnlyList<Axis>(_axes, count);
         }
 
@@ -117,7 +117,7 @@ namespace Silk.NET.Input.Desktop
                 return;
             }
 
-            _buttons = (Button*) Marshal.ReAllocHGlobal((IntPtr) _buttons, (IntPtr) count);
+            _buttons = (Button*)Marshal.ReAllocHGlobal((IntPtr)_buttons, (IntPtr)count);
             Buttons = new GlfwReadOnlyList<Button>(_buttons, count);
         }
 
@@ -128,15 +128,15 @@ namespace Silk.NET.Input.Desktop
                 return;
             }
 
-            _hats = (Hat*) Marshal.ReAllocHGlobal((IntPtr) _hats, (IntPtr) count);
+            _hats = (Hat*)Marshal.ReAllocHGlobal((IntPtr)_hats, (IntPtr)count);
             Hats = new GlfwReadOnlyList<Hat>(_hats, count);
         }
 
         public unsafe void Dispose()
         {
-            Marshal.FreeHGlobal((IntPtr) _axes);
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _hats);
+            Marshal.FreeHGlobal((IntPtr)_axes);
+            Marshal.FreeHGlobal((IntPtr)_buttons);
+            Marshal.FreeHGlobal((IntPtr)_hats);
         }
 
         public Action<IInputDevice, bool> OnConnectionChanged { get; set; }

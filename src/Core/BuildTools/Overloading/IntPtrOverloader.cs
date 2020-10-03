@@ -39,7 +39,7 @@ namespace Silk.NET.BuildTools.Overloading
                 overload = null;
                 return false;
             }
-            
+
             var @params = new List<Parameter>(function.Parameters);
             var sb = new StringBuilder();
             sb.AppendLine("// IntPtrOverloader");

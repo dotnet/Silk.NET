@@ -35,7 +35,7 @@ namespace Silk.NET.Windowing
                 return SilkManager.Get<IWindowPlatform>().IsViewOnly;
             }
         }
-        
+
         /// <summary>
         /// Create a window on the current platform.
         /// </summary>
@@ -43,7 +43,8 @@ namespace Silk.NET.Windowing
         /// <returns>A Silk.NET window using the current platform.</returns>
         public static IWindow Create(WindowOptions options)
         {
-            if (!SilkManager.IsRegistered<IWindowPlatform>()) {
+            if (!SilkManager.IsRegistered<IWindowPlatform>())
+            {
                 Init();
             }
 
@@ -60,7 +61,7 @@ namespace Silk.NET.Windowing
             // ReSharper disable once PossibleNullReferenceException
             return SilkManager.Get<IWindowPlatform>().CreateWindow(options);
         }
-        
+
         /// <summary>
         /// Create a view on the current platform.
         /// </summary>
@@ -68,7 +69,8 @@ namespace Silk.NET.Windowing
         /// <returns>A Silk.NET window using the current platform.</returns>
         public static IView GetView(ViewOptions? options = null)
         {
-            if (!SilkManager.IsRegistered<IWindowPlatform>()) {
+            if (!SilkManager.IsRegistered<IWindowPlatform>())
+            {
                 Init();
             }
 
@@ -86,7 +88,8 @@ namespace Silk.NET.Windowing
         internal static void Init()
         {
             var glfwPlatform = GlfwPlatform.Instance;
-            if (glfwPlatform.IsApplicable) {
+            if (glfwPlatform.IsApplicable)
+            {
                 SilkManager.Register<IWindowPlatform>(glfwPlatform);
                 SilkManager.Register<GLSymbolLoader>(new GlfwLoader());
                 return;
@@ -100,7 +103,7 @@ namespace Silk.NET.Windowing
                 entAsm = entAsm is null ? "the entry assembly" : Path.GetFileName(entAsm);
                 throw new NotSupportedException
                 (
-                    "Couldn't find a suitable windowing platform. \n"+
+                    "Couldn't find a suitable windowing platform. \n" +
                     $"GLFW: Copy a GLFW 3.3 binary into the same directory as {entAsm}\n"
                 );
             }
@@ -115,7 +118,7 @@ namespace Silk.NET.Windowing
             {
                 Init();
             }
-            
+
             SilkManager.Get<IWindowPlatform>().ClearContexts();
         }
     }

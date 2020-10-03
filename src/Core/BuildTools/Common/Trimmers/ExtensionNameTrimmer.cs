@@ -103,7 +103,7 @@ namespace Silk.NET.BuildTools.Common.Trimmers
             "VIV",
             // ReSharper restore StringLiteralTypo
         };
-        
+
         /// <inheritdoc />
         public bool IsRelevant(Function trimmable)
         {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
@@ -14,12 +14,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The name of this handle.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// Whether or not this handle can be dispatched.
         /// </summary>
         public bool CanBeDispatched { get; }
-        
+
         /// <summary>
         /// The parent of this handle.
         /// </summary>
@@ -58,10 +58,10 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         .Where(type => type.HasCategoryAttribute("handle"))
                         .FirstOrDefault(x => x.GetNameElementOrNull() == xe.Attribute("alias")?.Value) ?? throw new Exception("wat")
                 );
-                
+
                 return new HandleDefinition(xe.GetNameAttribute(), ret.CanBeDispatched, ret.Parent);
             }
-            
+
             var name = xe.GetNameElement();
             var canBeDispatched = xe.GetTypeElement() == "VK_DEFINE_HANDLE";
             var parent = xe.Attribute("parent")?.Value;

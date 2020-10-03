@@ -22,7 +22,7 @@ namespace Silk.NET.Input.Common
         /// </para>
         /// </remarks>
         Traditional,
-        
+
         /// <summary>
         /// A deadzone method where the reported value adapts to the range of the deadzone. If the value is within the deadzone, the reported value is 0.
         /// After exiting the deadzone, the reported value increases from 0 (when the actual value first exits the deadzone) to 1 (when the actual value is 1).

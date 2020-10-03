@@ -13,7 +13,7 @@ namespace Silk.NET.Input.Desktop
 {
     internal class GlfwKeyboard : IKeyboard, IGlfwDevice, IGlfwSubscriber
     {
-        private static readonly Key[] Keys = ((Keys[]) Enum.GetValues(typeof(Keys))).Select(ConvertKey).ToArray();
+        private static readonly Key[] Keys = ((Keys[])Enum.GetValues(typeof(Keys))).Select(ConvertKey).ToArray();
         private unsafe WindowHandle* _handle;
         private GlfwCallbacks.CharCallback _char;
         private GlfwCallbacks.KeyCallback _key;
@@ -23,7 +23,7 @@ namespace Silk.NET.Input.Desktop
         public IReadOnlyList<Key> SupportedKeys { get; } = Keys;
 
         public unsafe bool IsKeyPressed
-            (Key key) => GlfwProvider.GLFW.Value.GetKey(_handle, ConvertKey(key)) == (int) InputAction.Press;
+            (Key key) => GlfwProvider.GLFW.Value.GetKey(_handle, ConvertKey(key)) == (int)InputAction.Press;
 
         public event Action<IKeyboard, Key, int> KeyDown;
         public event Action<IKeyboard, Key, int> KeyUp;
@@ -33,7 +33,7 @@ namespace Silk.NET.Input.Desktop
         public unsafe void Subscribe(GlfwEvents events)
         {
             _handle = events.Handle;
-            events.Char += _char = (_, c) => KeyChar?.Invoke(this, (char) c);
+            events.Char += _char = (_, c) => KeyChar?.Invoke(this, (char)c);
             events.Key += _key = (_, key, code, action, mods) =>
                 (action switch
                 {
@@ -301,6 +301,6 @@ namespace Silk.NET.Input.Desktop
             Key.Menu => GLFW.Keys.Menu,
             _ => throw new ArgumentOutOfRangeException()
         };
-        
+
     }
 }

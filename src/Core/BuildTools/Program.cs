@@ -67,7 +67,7 @@ namespace Silk.NET.BuildTools
                 {
                     var task = tasks[index];
                     Console.WriteLine($"Starting task \"{task.Task}\" ({index})...");
-                    Switch(new[] {task.Task}.Concat(task.Args).ToArray());
+                    Switch(new[] { task.Task }.Concat(task.Args).ToArray());
                     Console.WriteLine("Task completed successfully.");
                     Console.WriteLine();
                 }
@@ -95,7 +95,7 @@ namespace Silk.NET.BuildTools
                     Environment.Exit(-1);
                 }
             );
-            return (T) val;
+            return (T)val;
         }
     }
 }

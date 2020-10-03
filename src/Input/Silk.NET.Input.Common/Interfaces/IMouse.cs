@@ -19,22 +19,22 @@ namespace Silk.NET.Input.Common
         /// </summary>
         // ReSharper disable once ReturnTypeCanBeEnumerable.Global
         IReadOnlyList<MouseButton> SupportedButtons { get; }
-        
+
         /// <summary>
         /// The scroll wheels this mouse has available.
         /// </summary>
         IReadOnlyList<ScrollWheel> ScrollWheels { get; }
-        
+
         /// <summary>
         /// The position of the cursor.
         /// </summary>
         PointF Position { get; set; }
-        
+
         /// <summary>
         /// The cursor to use.
         /// </summary>
         ICursor Cursor { get; }
-        
+
         /// The maximum time in milliseconds between two
         /// consecutive clicks to count as a double click.
         /// </summary>
@@ -45,24 +45,24 @@ namespace Silk.NET.Input.Common
         /// consecutive clicks to count as a double click.
         /// </summary>
         int DoubleClickRange { get; set; }
-        
+
         /// <summary>
         /// Checks if a specific button is currently pressed.
         /// </summary>
         /// <param name="btn">The button to check.</param>
         /// <returns>Whether or not the button is pressed down.</returns>
         bool IsButtonPressed(MouseButton btn);
-        
+
         /// <summary>
         /// Called when a mouse button is pressed down.
         /// </summary>
         event Action<IMouse, MouseButton> MouseDown;
-        
+
         /// <summary>
         /// Called when a mouse button is released.
         /// </summary>
         event Action<IMouse, MouseButton> MouseUp;
-        
+
         /// <summary>
         /// Called when a single click is performed.
         /// </summary>
@@ -72,7 +72,7 @@ namespace Silk.NET.Input.Common
         /// Called when a double click is performed.
         /// </summary>
         event Action<IMouse, MouseButton> DoubleClick;
-        
+
         /// <summary>
         /// Called when the mouse is moved.
         /// </summary>

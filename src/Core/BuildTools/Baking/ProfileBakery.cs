@@ -45,7 +45,7 @@ namespace Silk.NET.BuildTools.Baking
                 DeleteRawAPIs(cliOptions.Folder);
             }
         }
-        
+
         /// <summary>
         /// Bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
         /// profile to the given folder.

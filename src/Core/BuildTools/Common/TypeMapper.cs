@@ -153,7 +153,7 @@ namespace Silk.NET.BuildTools.Common
                 }
             }
         }
-        
+
         private static Type ParseTypeSignature([NotNull] string type, string original = null)
         {
             if (type.Contains('*') && (type.Contains('[') || type.Contains(']')))

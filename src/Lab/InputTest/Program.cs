@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -89,7 +89,7 @@ namespace InputTest
 
         private static void InputGamepadOnButtonDown(IGamepad arg1, Button arg2)
         {
-            Console.WriteLine($"G{arg1.Index}> {arg2.Name} down. {(int) arg2.Name}");
+            Console.WriteLine($"G{arg1.Index}> {arg2.Name} down. {(int)arg2.Name}");
         }
 
         private static void InputGamepadOnButtonUp(IGamepad arg1, Button arg2)
@@ -115,7 +115,7 @@ namespace InputTest
                     gamepad.TriggerMoved += GamepadOnTriggerMoved;
                     Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
                     GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
-                    Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
+                    Console.WriteLine("Button Count: " + count + " Expected Button Count: " + Enum.GetValues(typeof(GamepadButton)).Length);
                 }
                 else
                 {

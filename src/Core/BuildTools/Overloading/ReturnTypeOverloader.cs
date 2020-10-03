@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Overloading
 {
     public class ReturnTypeOverloader : IFunctionOverloader
     {
-         private static bool IsApplicable(Function function)
+        private static bool IsApplicable(Function function)
         {
             // function has 1 - 2 parameters
             var parameterCount = function.Parameters.Count;
@@ -77,27 +77,27 @@ namespace Silk.NET.BuildTools.Overloading
             return true;
         }
 
-         public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
-         {
-             variant = null;
-             return false;
-         }
+        public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
 
-         public bool TryCreateVariant(Type returnType, out Type variant, Project core)
-         {
-             variant = null;
-             return false;
-         }
+        public bool TryCreateVariant(Type returnType, out Type variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
 
-         public bool TryCreateVariant(Function function, out Function variant, Project core)
-         {
-             variant = null;
-             return false;
-         }
+        public bool TryCreateVariant(Function function, out Function variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
 
-         /// <inheritdoc/>
-         public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
-         {
+        /// <inheritdoc/>
+        public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
+        {
             if (!IsApplicable(function))
             {
                 overload = null;
@@ -165,6 +165,6 @@ namespace Silk.NET.BuildTools.Overloading
                 var pre = x.Type.IsOut ? "out " : string.Empty;
                 return pre + (Utilities.CSharpKeywords.Contains(x.Name) ? $"@{x.Name}" : x.Name);
             }
-}
+        }
     }
 }

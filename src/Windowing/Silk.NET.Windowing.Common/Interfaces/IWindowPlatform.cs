@@ -13,7 +13,7 @@ namespace Silk.NET.Windowing.Common
     public interface IWindowPlatform : IWindowHost
     {
         bool IsViewOnly { get; }
-        
+
         /// <summary>
         /// Gets a value indicating whether this <see cref="IWindowPlatform"/> should be used, based on the
         /// current runtime/environment.

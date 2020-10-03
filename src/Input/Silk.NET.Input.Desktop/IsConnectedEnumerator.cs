@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace Silk.NET.Input.Desktop
 {
     internal struct IsConnectedEnumerator<T> : IEnumerator<T>
-        where T:IGlfwDevice
+        where T : IGlfwDevice
     {
         private ReadOnlyListEnumerator<T> _base;
 
@@ -18,7 +18,7 @@ namespace Silk.NET.Input.Desktop
             _base = @base;
             Current = default;
         }
-        
+
         public bool MoveNext()
         {
             while (_base.MoveNext())

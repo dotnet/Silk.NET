@@ -17,12 +17,12 @@ namespace Silk.NET.Vulkan
         /// The Vulkan instance.
         /// </summary>
         public Vk Vulkan { get; internal set; }
-        
+
         /// <summary>
         /// The base library loader.
         /// </summary>
         public LibraryLoader BaseLoader { get; }
-        
+
         /// <summary>
         /// Create a new Vulkan loader.
         /// </summary>
@@ -35,10 +35,10 @@ namespace Silk.NET.Vulkan
 
         /// <inheritdoc />
         protected override IntPtr CoreLoadNativeLibrary(string name) => BaseLoader.LoadNativeLibrary(name);
-        
+
         /// <inheritdoc />
         protected override void CoreFreeNativeLibrary(IntPtr handle) => BaseLoader.FreeNativeLibrary(handle);
-        
+
         /// <inheritdoc />
         protected override IntPtr CoreLoadFunctionPointer(IntPtr library, string symbolName)
         {
@@ -79,10 +79,10 @@ namespace Silk.NET.Vulkan
                     return sym;
                 }
             }
-            
+
             throw new EntryPointNotFoundException
             (
-                $"Entry point \"{symbolName}\" not found. Note that instance extensions must be enabled in order to "+
+                $"Entry point \"{symbolName}\" not found. Note that instance extensions must be enabled in order to " +
                 "load symbols correctly."
             );
         }

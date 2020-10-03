@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -29,7 +29,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         .Where(typex => typex.HasCategoryAttribute("struct"))
                         .FirstOrDefault(x => x.GetNameAttribute() == xe.Attribute("alias").Value) ?? throw new Exception("wat")
                 );
-                
+
                 return new StructureDefinition(xe.GetNameAttribute(), ret.Members);
             }
 

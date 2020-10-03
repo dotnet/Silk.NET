@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -21,7 +21,7 @@ namespace Silk.NET.OpenAL
         {
             LibraryLoader.CreateBuilder<ALContext>(new ALLoader(null));
         }
-        
+
         /// <inheritdoc cref="NativeLibraryBase" />
         protected AL(ref NativeApiContext ctx)
             : base(ref ctx)
@@ -205,7 +205,7 @@ namespace Silk.NET.OpenAL
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
         public abstract void SetSourceProperty(uint source, SourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
-        
+
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
         public abstract void SetSourceProperty(uint source, SourceInteger param, int value);
@@ -217,7 +217,7 @@ namespace Silk.NET.OpenAL
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourceiv")]
         public abstract unsafe void SetSourceProperty(uint source, SourceInteger param, int* value);
-        
+
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
         public abstract void SetSourceProperty(uint source, SourceInteger param, uint value);
@@ -367,8 +367,10 @@ namespace Silk.NET.OpenAL
         public uint[] GenBuffers(int count)
         {
             var result = new uint[count];
-            unsafe {
-                fixed (uint* ptr = result) {
+            unsafe
+            {
+                fixed (uint* ptr = result)
+                {
                     GenBuffers(count, ptr);
                 }
             }
@@ -385,7 +387,8 @@ namespace Silk.NET.OpenAL
         public uint GenBuffer()
         {
             uint result = 0;
-            unsafe {
+            unsafe
+            {
                 GenBuffers(1, &result);
             }
 
@@ -400,8 +403,10 @@ namespace Silk.NET.OpenAL
         /// <seealso cref="IsBuffer" />
         public void DeleteBuffers(uint[] slots)
         {
-            unsafe {
-                fixed (uint* ptr = slots) {
+            unsafe
+            {
+                fixed (uint* ptr = slots)
+                {
                     DeleteBuffers(slots.Length, ptr);
                 }
             }
@@ -415,7 +420,8 @@ namespace Silk.NET.OpenAL
         /// <seealso cref="IsBuffer" />
         public void DeleteBuffer(uint slot)
         {
-            unsafe {
+            unsafe
+            {
                 DeleteBuffers(1, &slot);
             }
         }
@@ -431,9 +437,11 @@ namespace Silk.NET.OpenAL
         public void BufferData<TElement>(uint buffer, BufferFormat format, TElement[] data, int frequency)
             where TElement : unmanaged
         {
-            unsafe {
+            unsafe
+            {
                 var size = sizeof(TElement) * data.Length;
-                fixed (void* ptr = data) {
+                fixed (void* ptr = data)
+                {
                     BufferData(buffer, format, ptr, size, frequency);
                 }
             }
@@ -449,8 +457,10 @@ namespace Silk.NET.OpenAL
         public uint[] GenSources(int count)
         {
             var result = new uint[count];
-            unsafe {
-                fixed (uint* ptr = result) {
+            unsafe
+            {
+                fixed (uint* ptr = result)
+                {
                     GenSources(count, ptr);
                 }
             }
@@ -467,7 +477,8 @@ namespace Silk.NET.OpenAL
         public uint GenSource()
         {
             uint result = 0;
-            unsafe {
+            unsafe
+            {
                 GenSources(1, &result);
             }
 
@@ -482,8 +493,10 @@ namespace Silk.NET.OpenAL
         /// <seealso cref="IsSource" />
         public void DeleteSources(uint[] slots)
         {
-            unsafe {
-                fixed (uint* ptr = slots) {
+            unsafe
+            {
+                fixed (uint* ptr = slots)
+                {
                     DeleteSources(slots.Length, ptr);
                 }
             }
@@ -497,7 +510,8 @@ namespace Silk.NET.OpenAL
         /// <seealso cref="IsSource" />
         public void DeleteSource(uint slot)
         {
-            unsafe {
+            unsafe
+            {
                 DeleteSources(1, &slot);
             }
         }
@@ -508,8 +522,10 @@ namespace Silk.NET.OpenAL
         /// <param name="sources">The sources to play.</param>
         public void SourcePlay(uint[] sources)
         {
-            unsafe {
-                fixed (uint* ptr = sources) {
+            unsafe
+            {
+                fixed (uint* ptr = sources)
+                {
                     SourcePlay(sources.Length, ptr);
                 }
             }
@@ -521,8 +537,10 @@ namespace Silk.NET.OpenAL
         /// <param name="sources">The sources to pause.</param>
         public void SourcePause(uint[] sources)
         {
-            unsafe {
-                fixed (uint* ptr = sources) {
+            unsafe
+            {
+                fixed (uint* ptr = sources)
+                {
                     SourcePause(sources.Length, ptr);
                 }
             }
@@ -534,8 +552,10 @@ namespace Silk.NET.OpenAL
         /// <param name="sources">The sources to stop.</param>
         public void SourceStop(uint[] sources)
         {
-            unsafe {
-                fixed (uint* ptr = sources) {
+            unsafe
+            {
+                fixed (uint* ptr = sources)
+                {
                     SourceStop(sources.Length, ptr);
                 }
             }
@@ -547,8 +567,10 @@ namespace Silk.NET.OpenAL
         /// <param name="sources">The sources to rewind.</param>
         public void SourceRewind(uint[] sources)
         {
-            unsafe {
-                fixed (uint* ptr = sources) {
+            unsafe
+            {
+                fixed (uint* ptr = sources)
+                {
                     SourceRewind(sources.Length, ptr);
                 }
             }
@@ -563,8 +585,10 @@ namespace Silk.NET.OpenAL
         /// <param name="buffers">The buffers.</param>
         public void SourceQueueBuffers(uint source, uint[] buffers)
         {
-            unsafe {
-                fixed (uint* ptr = buffers) {
+            unsafe
+            {
+                fixed (uint* ptr = buffers)
+                {
                     SourceQueueBuffers(source, buffers.Length, ptr);
                 }
             }
@@ -579,8 +603,10 @@ namespace Silk.NET.OpenAL
         /// <param name="buffers">The buffers.</param>
         public void SourceUnqueueBuffers(uint source, uint[] buffers)
         {
-            unsafe {
-                fixed (uint* ptr = buffers) {
+            unsafe
+            {
+                fixed (uint* ptr = buffers)
+                {
                     SourceUnqueueBuffers(source, buffers.Length, ptr);
                 }
             }

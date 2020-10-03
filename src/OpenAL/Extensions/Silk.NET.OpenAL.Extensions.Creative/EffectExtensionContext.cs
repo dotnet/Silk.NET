@@ -37,7 +37,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <returns>The major version.</returns>
         public int GetEFXMajorVersion(IntPtr device)
         {
-            unsafe {
+            unsafe
+            {
                 var result = 0;
                 GetContextProperty(device, EFXContextInteger.EFXMajorVersion, sizeof(int), &result);
 
@@ -52,7 +53,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <returns>The minor version.</returns>
         public int GetEFXMinorVersion(IntPtr device)
         {
-            unsafe {
+            unsafe
+            {
                 var result = 0;
                 GetContextProperty(device, EFXContextInteger.EFXMinorVersion, sizeof(int), &result);
 

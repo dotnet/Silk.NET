@@ -176,7 +176,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         {
             if (view.GetType().FullName == "Silk.NET.Windowing.Desktop.GlfwWindow")
             {
-                var handle = (WindowHandle*) view.Handle;
+                var handle = (WindowHandle*)view.Handle;
                 var glfw = GlfwProvider.GLFW.Value;
                 try
                 {
@@ -256,7 +256,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         {
             if (view.GetType().FullName == "Silk.NET.Windowing.Desktop.GlfwWindow")
             {
-                var handle = (WindowHandle*) view.Handle;
+                var handle = (WindowHandle*)view.Handle;
                 var glfw = GlfwProvider.GLFW.Value;
                 try
                 {
@@ -264,7 +264,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                     var x11Display = glfw.Library.LoadFunction<GetX11Display>("glfwGetX11Display")();
                     if (x11Display != IntPtr.Zero && x11Window != IntPtr.Zero)
                     {
-                        return VkSurfaceSource.CreateXlib((Display*)x11Display, new XWindow{Value = x11Window});
+                        return VkSurfaceSource.CreateXlib((Display*)x11Display, new XWindow { Value = x11Window });
                     }
                 }
                 catch (GlfwException)
@@ -365,11 +365,11 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             OpenGLPlatformInfo platformInfo = new OpenGLPlatformInfo(
                 window.Handle,
                 x => GlfwProvider.GLFW.Value.GetProcAddress(x),
-                context => GlfwProvider.GLFW.Value.MakeContextCurrent((WindowHandle*) context),
-                () => (IntPtr) GlfwProvider.GLFW.Value.GetCurrentContext(),
+                context => GlfwProvider.GLFW.Value.MakeContextCurrent((WindowHandle*)context),
+                () => (IntPtr)GlfwProvider.GLFW.Value.GetCurrentContext(),
                 () => GlfwProvider.GLFW.Value.MakeContextCurrent(default),
-                _ => {},
-                () => GlfwProvider.GLFW.Value.SwapBuffers((WindowHandle*) window.Handle),
+                _ => { },
+                () => GlfwProvider.GLFW.Value.SwapBuffers((WindowHandle*)window.Handle),
                 sync => GlfwProvider.GLFW.Value.SwapInterval(sync ? 1 : 0));
 
             return GraphicsDevice.CreateOpenGL(

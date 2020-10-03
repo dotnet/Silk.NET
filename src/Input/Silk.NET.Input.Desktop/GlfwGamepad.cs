@@ -25,20 +25,20 @@ namespace Silk.NET.Input.Desktop
         public GlfwGamepad(int i)
         {
             var hasState = GlfwProvider.GLFW.Value.GetGamepadState(i, out var state);
-            
+
             Index = i;
-            _buttons = (Button*) Marshal.AllocHGlobal(GamepadButtonCount * sizeof(Button));
-            _thumbsticks = (Thumbstick*) Marshal.AllocHGlobal(GamepadThumbstickCount * sizeof(Thumbstick));
-            _triggers = (Trigger*) Marshal.AllocHGlobal(GamepadTriggerCount * sizeof(Trigger));
+            _buttons = (Button*)Marshal.AllocHGlobal(GamepadButtonCount * sizeof(Button));
+            _thumbsticks = (Thumbstick*)Marshal.AllocHGlobal(GamepadThumbstickCount * sizeof(Thumbstick));
+            _triggers = (Trigger*)Marshal.AllocHGlobal(GamepadTriggerCount * sizeof(Trigger));
             Buttons = new GlfwReadOnlyList<Button>(_buttons, GamepadButtonCount);
             Thumbsticks = new GlfwReadOnlyList<Thumbstick>(_thumbsticks, GamepadThumbstickCount);
             Triggers = new GlfwReadOnlyList<Trigger>(_triggers, GamepadTriggerCount);
 
             _connected = hasState;
-            
+
             for (int j = 0; j < GamepadButtonCount; j++)
             {
-                _buttons[j] = new Button((ButtonName) j, j, hasState && state.Buttons[j] == (int) InputAction.Press);
+                _buttons[j] = new Button((ButtonName)j, j, hasState && state.Buttons[j] == (int)InputAction.Press);
             }
 
             for (int j = 0; j < GamepadThumbstickCount; j++)
@@ -92,10 +92,10 @@ namespace Silk.NET.Input.Desktop
                 if ((_buttons[i].Pressed ? 1 : 0) != state.Buttons[i])
                 {
                     (_buttons[i].Pressed ? ButtonUp : ButtonDown)?.Invoke
-                        (this, _buttons[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1));
+                        (this, _buttons[i] = new Button((ButtonName)i, i, state.Buttons[i] == 1));
                 }
-                
-                _buttons[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1);
+
+                _buttons[i] = new Button((ButtonName)i, i, state.Buttons[i] == 1);
             }
 
             // Left Thumbstick
@@ -123,7 +123,7 @@ namespace Silk.NET.Input.Desktop
             }
 
             _thumbsticks[1] = thumbstick1;
-            
+
             // Left Trigger
             var trigger0 = new Trigger(0, Deadzone.Apply(state.Axes[4]));
             if (_triggers[0].Position != trigger0.Position)
@@ -145,9 +145,9 @@ namespace Silk.NET.Input.Desktop
 
         public void Dispose()
         {
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _thumbsticks);
-            Marshal.FreeHGlobal((IntPtr) _triggers);
+            Marshal.FreeHGlobal((IntPtr)_buttons);
+            Marshal.FreeHGlobal((IntPtr)_thumbsticks);
+            Marshal.FreeHGlobal((IntPtr)_triggers);
         }
 
         public Action<IInputDevice, bool> OnConnectionChanged { get; set; }

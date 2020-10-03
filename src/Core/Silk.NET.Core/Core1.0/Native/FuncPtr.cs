@@ -82,7 +82,7 @@ namespace Silk.NET.Core.Native
         {
             var handle = GCHandle.Alloc(@delegate);
             Value = Marshal.GetFunctionPointerForDelegate(@delegate);
-            FuncPtrInternal.Storage.Add(Value, new FuncPtrInternal {Delegate = @delegate, Handle = handle});
+            FuncPtrInternal.Storage.Add(Value, new FuncPtrInternal { Delegate = @delegate, Handle = handle });
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Silk.NET.Core.Native
         {
             if (FuncPtrInternal.Storage.TryGetValue(Value, out var value))
             {
-                return (T) value.Delegate;
+                return (T)value.Delegate;
             }
 
             return Marshal.GetDelegateForFunctionPointer<T>(Value);

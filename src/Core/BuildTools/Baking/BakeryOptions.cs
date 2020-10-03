@@ -58,7 +58,7 @@ namespace Silk.NET.BuildTools.Baking
             Required = true
         )]
         public string Folder { get; set; }
-        
+
         /// <summary>
         /// Gets or sets a value indicating whether the output files should be pretty printed.
         /// </summary>

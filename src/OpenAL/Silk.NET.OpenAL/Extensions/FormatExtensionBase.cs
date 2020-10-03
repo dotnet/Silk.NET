@@ -37,9 +37,11 @@ namespace Silk.NET.OpenAL.Extensions
         public void BufferData<TElement>(uint buffer, TExtendedBufferFormat format, TElement[] data, int frequency)
             where TElement : unmanaged
         {
-            unsafe {
+            unsafe
+            {
                 var size = sizeof(TElement) * data.Length;
-                fixed (void* ptr = data) {
+                fixed (void* ptr = data)
+                {
                     BufferData(buffer, format, ptr, size, frequency);
                 }
             }

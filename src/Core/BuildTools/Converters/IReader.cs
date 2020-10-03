@@ -22,7 +22,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="stream">A stream containing an XDocument describing the specification.</param>
         /// <returns></returns>
         object Load(Stream stream);
-        
+
         /// <summary>
         /// Read the structs from the specification.
         /// </summary>
@@ -30,7 +30,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="opts">The options to use while reading.</param>
         /// <returns>A list of all structs in the specification.</returns>
         IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts);
-        
+
         /// <summary>
         /// Read the functions from the specification.
         /// </summary>
@@ -38,7 +38,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="opts">The options to use while reading.</param>
         /// <returns>A list of all functions in the specification.</returns>
         IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts);
-        
+
         /// <summary>
         /// Read the enums from the specification.
         /// </summary>
@@ -46,7 +46,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="opts">The options to use while reading.</param>
         /// <returns>A list of all enums in the specification.</returns>
         IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts);
-        
+
         /// <summary>
         /// Read the constants from the specification.
         /// </summary>

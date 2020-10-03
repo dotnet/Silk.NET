@@ -79,7 +79,7 @@ namespace Silk.NET.Input.Desktop
                 if (_standardCursor != value)
                 {
                     _standardCursor = value;
-                    UpdateStandardCursor();                    
+                    UpdateStandardCursor();
                 }
             }
         }
@@ -111,7 +111,7 @@ namespace Silk.NET.Input.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public int HotspotY
         {
@@ -125,7 +125,7 @@ namespace Silk.NET.Input.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public int Width
         {
@@ -139,7 +139,7 @@ namespace Silk.NET.Input.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public int Height
         {
@@ -153,7 +153,7 @@ namespace Silk.NET.Input.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public byte[] Pixels
         {

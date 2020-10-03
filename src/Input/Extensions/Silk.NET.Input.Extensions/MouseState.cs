@@ -26,8 +26,8 @@ namespace Silk.NET.Input.Extensions
             IsConnected = mouse.IsConnected;
             var buttons = mouse.SupportedButtons;
             _buttonCount = buttons.Count;
-            _buttons = (MouseButton*) Marshal.AllocHGlobal(_buttonCount * sizeof(MouseButton));
-            _pressedButtons = (MouseButton*) Marshal.AllocHGlobal(_buttonCount * sizeof(MouseButton));
+            _buttons = (MouseButton*)Marshal.AllocHGlobal(_buttonCount * sizeof(MouseButton));
+            _pressedButtons = (MouseButton*)Marshal.AllocHGlobal(_buttonCount * sizeof(MouseButton));
             _pressedButtonCount = 0;
             for (var i = 0; i < _buttonCount; i++)
             {
@@ -38,11 +38,11 @@ namespace Silk.NET.Input.Extensions
                 }
             }
 
-            _pressedButtons = (MouseButton*) Marshal.ReAllocHGlobal
-                ((IntPtr) _pressedButtons, (IntPtr) (_pressedButtonCount * sizeof(MouseButton)));
+            _pressedButtons = (MouseButton*)Marshal.ReAllocHGlobal
+                ((IntPtr)_pressedButtons, (IntPtr)(_pressedButtonCount * sizeof(MouseButton)));
             var wheels = mouse.ScrollWheels;
             _scrollWheelCount = wheels.Count;
-            _scrollWheels = (ScrollWheel*) Marshal.AllocHGlobal(_scrollWheelCount * sizeof(ScrollWheel));
+            _scrollWheels = (ScrollWheel*)Marshal.AllocHGlobal(_scrollWheelCount * sizeof(ScrollWheel));
             for (var i = 0; i < _scrollWheelCount; i++)
             {
                 _scrollWheels[i] = wheels[i];
@@ -92,9 +92,9 @@ namespace Silk.NET.Input.Extensions
 
         private unsafe void ReleaseUnmanagedResources()
         {
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _pressedButtons);
-            Marshal.FreeHGlobal((IntPtr) _scrollWheels);
+            Marshal.FreeHGlobal((IntPtr)_buttons);
+            Marshal.FreeHGlobal((IntPtr)_pressedButtons);
+            Marshal.FreeHGlobal((IntPtr)_scrollWheels);
         }
 
         ~MouseState()

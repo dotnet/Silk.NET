@@ -71,9 +71,9 @@ namespace Silk.NET.BuildTools.Common
                 builder.Remove(match.Index, match.Length);
                 builder.Insert(match.Index, replacement);
             }
-            
+
             foreach (var match in ShortNonAcronymsRegex.Matches(builder.ToString()).Cast<Match>())
-                
+
             {
                 builder.Remove(match.Index, match.Length);
                 builder.Insert(match.Index, match.Value.Transform(To.LowerCase, To.TitleCase));

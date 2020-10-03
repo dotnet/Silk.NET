@@ -116,7 +116,7 @@ namespace Silk.NET.Vulkan
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
-        public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T:NativeExtension<Vk> =>
+        public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? LibraryActivator.CreateInstance<T>
                     (SearchPaths.GetLibraryName(), _extensionLoaders.Get(instance, null))
@@ -217,7 +217,7 @@ namespace Silk.NET.Vulkan
         {
             var physicalDeviceCount = 0u;
             EnumeratePhysicalDevices(instance, &physicalDeviceCount, null);
-            var physicalDevices = stackalloc PhysicalDevice[(int) physicalDeviceCount];
+            var physicalDevices = stackalloc PhysicalDevice[(int)physicalDeviceCount];
             EnumeratePhysicalDevices(instance, &physicalDeviceCount, physicalDevices);
 
             for (var i = 0; i < physicalDeviceCount; i++)
@@ -256,7 +256,7 @@ namespace Silk.NET.Vulkan
                 {
                     var physicalDeviceCount = 0u;
                     EnumeratePhysicalDevices(instance.Value, &physicalDeviceCount, null);
-                    var physicalDevices = stackalloc PhysicalDevice[(int) physicalDeviceCount];
+                    var physicalDevices = stackalloc PhysicalDevice[(int)physicalDeviceCount];
                     EnumeratePhysicalDevices(instance.Value, &physicalDeviceCount, physicalDevices);
 
                     for (var i = 0; i < physicalDeviceCount; i++)
@@ -280,12 +280,12 @@ namespace Silk.NET.Vulkan
             while (result == Result.Incomplete)
             {
                 var instanceExtPropertiesCount = 128u;
-                result = EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, props);
+                result = EnumerateInstanceExtensionProperties((byte*)0, &instanceExtPropertiesCount, props);
                 if (result == Result.Success || result == Result.Incomplete)
                 {
                     for (var i = 0; i < instanceExtPropertiesCount; i++)
                     {
-                        l.Add(Marshal.PtrToStringAnsi((IntPtr) props[i].ExtensionName));
+                        l.Add(Marshal.PtrToStringAnsi((IntPtr)props[i].ExtensionName));
                     }
                 }
             }
@@ -298,12 +298,12 @@ namespace Silk.NET.Vulkan
             {
                 var deviceExtPropertiesCount = 128u;
                 result = EnumerateDeviceExtensionProperties
-                    (physicalDevice, (byte*) 0, &deviceExtPropertiesCount, props);
+                    (physicalDevice, (byte*)0, &deviceExtPropertiesCount, props);
                 if (result == Result.Success || result == Result.Incomplete)
                 {
                     for (var j = 0; j < deviceExtPropertiesCount; j++)
                     {
-                        l.Add(Marshal.PtrToStringAnsi((IntPtr) props[j].ExtensionName));
+                        l.Add(Marshal.PtrToStringAnsi((IntPtr)props[j].ExtensionName));
                     }
                 }
             }

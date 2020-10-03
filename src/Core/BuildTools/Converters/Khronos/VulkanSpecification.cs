@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -12,7 +12,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public TypedefDefinition[] Typedefs { get; }
         public EnumDefinition[] Enums { get; }
         public StructureDefinition[] Structures { get; }
-        public StructureDefinition[] Unions{ get; }
+        public StructureDefinition[] Unions { get; }
         public HandleDefinition[] Handles { get; }
         public Dictionary<string, string> BaseTypes { get; }
         public ExtensionDefinition[] Extensions { get; }
@@ -80,7 +80,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var structures = types.Elements("type").Where(typex => typex.HasCategoryAttribute("struct"))
                 .Select(typex => StructureDefinition.CreateFromXml(typex)).ToArray();
 
-            var unions = 
+            var unions =
                 types.Elements("type")
                 .Where(typex => typex.HasCategoryAttribute("union"))
                 .Select(typex => StructureDefinition.CreateFromXml(typex)).ToArray();
@@ -102,14 +102,14 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 .ToArray();
 
             return new VulkanSpecification(
-                commandDefinitions, 
-                constantDefinitions, 
-                typedefDefinitions, 
-                enumDefinitions, 
+                commandDefinitions,
+                constantDefinitions,
+                typedefDefinitions,
+                enumDefinitions,
                 structures,
-                unions, 
+                unions,
                 handles,
-                baseTypes, 
+                baseTypes,
                 extensions,
                 features);
         }

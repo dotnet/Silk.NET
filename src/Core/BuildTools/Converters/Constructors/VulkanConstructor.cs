@@ -85,7 +85,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts)
         {
@@ -105,7 +105,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             profile.Projects["Core"].Enums.AddRange(enums);
             profile.TypeMaps.Add(enums.RemoveDuplicates((x, y) => x.NativeName == y.NativeName).ToDictionary(x => x.NativeName, x => x.Name));
         }
-        
+
         /// <inheritdoc />
         public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts)
         {
@@ -118,7 +118,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 }
 
                 var category = FormatCategory(@struct.ExtensionName);
-                
+
                 // check that the root project exists
                 if (!profile.Projects.ContainsKey("Core"))
                 {
@@ -150,11 +150,11 @@ namespace Silk.NET.BuildTools.Converters.Constructors
 
                 // add the struct
                 profile.Projects[@struct.ExtensionName == "Core" ? "Core" : category].Structs.Add(@struct);
-                
+
                 // add the struct to the type map
                 map[@struct.NativeName] = @struct.Name;
             }
-            
+
             // register the type map
             profile.TypeMaps.Add(map);
         }

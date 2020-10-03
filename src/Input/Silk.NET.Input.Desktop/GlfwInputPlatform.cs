@@ -15,7 +15,7 @@ namespace Silk.NET.Input.Desktop
     /// <inheritdoc />
     public class GlfwInputPlatform : IInputPlatform
     {
-        private GlfwInputPlatform(){}
+        private GlfwInputPlatform() { }
         private static Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
         /// <inheritdoc />
         public bool IsApplicable(IView window) => window is GlfwWindow;
@@ -26,25 +26,25 @@ namespace Silk.NET.Input.Desktop
         /// Gets the cached instance of the GLFW input platform.
         /// </summary>
         public static GlfwInputPlatform Instance { get; } = new GlfwInputPlatform();
-        
+
         internal static unsafe void RegisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
             var events = _subs.ContainsKey
-                ((IntPtr) handle)
-                ? _subs[(IntPtr) handle]
-                : _subs[(IntPtr) handle] = new GlfwEvents(handle);
+                ((IntPtr)handle)
+                ? _subs[(IntPtr)handle]
+                : _subs[(IntPtr)handle] = new GlfwEvents(handle);
             foreach (var subscriber in subscribers)
             {
                 subscriber.Subscribe(events);
             }
         }
-        
+
         internal static unsafe void UnregisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
             var events = _subs.ContainsKey
-                ((IntPtr) handle)
-                ? _subs[(IntPtr) handle]
-                : _subs[(IntPtr) handle] = new GlfwEvents(handle);
+                ((IntPtr)handle)
+                ? _subs[(IntPtr)handle]
+                : _subs[(IntPtr)handle] = new GlfwEvents(handle);
             foreach (var subscriber in subscribers)
             {
                 subscriber.Unsubscribe(events);

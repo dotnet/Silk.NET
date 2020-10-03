@@ -12,7 +12,7 @@ namespace Silk.NET.Core.Loader
     /// </summary>
     /// <typeparam name="T">The NativeAPI to load.</typeparam>
     public static class LibraryLoader<T>
-        where T: NativeAPI
+        where T : NativeAPI
     {
         /// <summary>
         /// Load the NativeAPI.
@@ -23,7 +23,7 @@ namespace Silk.NET.Core.Loader
         {
             return LibraryLoader.Load<T>(paths);
         }
-        
+
         public static T Load(SearchPathContainer paths, Ultz.SuperInvoke.Loader.LibraryLoader loader)
         {
             return LibraryLoader.Load<T>(paths, loader);

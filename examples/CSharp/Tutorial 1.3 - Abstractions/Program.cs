@@ -59,7 +59,7 @@ namespace Tutorial
             }
 
             Gl = GL.GetApi(window);
-            
+
             //Instantiating our new abstractions
             Ebo = new BufferObject<uint>(Gl, Indices, BufferTargetARB.ElementArrayBuffer);
             Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);

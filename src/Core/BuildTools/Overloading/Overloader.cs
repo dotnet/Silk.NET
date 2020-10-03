@@ -39,7 +39,7 @@ namespace Silk.NET.BuildTools.Overloading
             new ReturnTypeOverloader(),
             new StringArrayOverloader(),
         };
-        
+
         public static bool TryGetEarlyVariant(Function function, out Function finalVariant, Project core)
         {
             var parameters = new List<Parameter>();
@@ -62,7 +62,7 @@ namespace Silk.NET.BuildTools.Overloading
                     parameters[i].Origin = null;
                 }
             }
-            
+
             foreach (var earlyOverloader in Pipeline)
             {
                 if (earlyOverloader.TryCreateVariant(returnType, out var variant, core))
@@ -80,7 +80,7 @@ namespace Silk.NET.BuildTools.Overloading
                     .WithReturnType(returnType)
                     .WithName(returnTypeVaried && !parametersVaried ? function.Name + "S" : function.Name)
                     .Build();
-                
+
                 return true;
             }
 

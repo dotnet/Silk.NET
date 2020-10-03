@@ -42,7 +42,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             return Enumerable.Empty<Struct>();
         }
-        
+
         ////////////////////////////////////////////////////////////////////////////////////////
         // Function Parsing
         ////////////////////////////////////////////////////////////////////////////////////////
@@ -55,18 +55,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             var registry = doc.Element("registry");
             Debug.Assert(registry != null, $"{nameof(registry)} != null");
-            
+
             var allFunctions = registry.Elements("commands")
                 .Elements("command")
                 .Select(x => TranslateCommand(x, opts))
                 .ToDictionary(x => x.Attribute("name")?.Value, x => x);
             Debug.Assert(allFunctions != null, $"{nameof(allFunctions) != null}");
-            
+
             var apis = registry.Elements("feature")
                 .Concat(registry.Elements("extensions").Elements("extension")
                         ?? throw new InvalidDataException());
             Debug.Assert(apis != null, $"{nameof(apis)} != null");
-            
+
             var removals = registry
                 .Elements("feature")
                 .Elements("remove")
@@ -75,7 +75,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Select(x => x.Value)
                 .ToList();
             Debug.Assert(removals != null, $"{nameof(removals) != null}");
-            
+
             foreach (var api in apis)
             {
                 foreach (var requirement in api.Elements("require"))
@@ -110,7 +110,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                         }
                                     }
                                     : new List<Attribute>(),
-                                Categories = new List<string>{TrimName(api.Attribute("name")?.Value, opts)},
+                                Categories = new List<string> { TrimName(api.Attribute("name")?.Value, opts) },
                                 Doc = string.Empty,
                                 ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, opts),
                                 GenericTypeParameters = new List<GenericTypeParameter>(),
@@ -151,7 +151,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
         }
-        
+
         /// <summary>
         /// Parse the type signature of the provided element.
         /// </summary>
@@ -172,7 +172,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             return ret;
         }
-        
+
         /// <summary>
         /// Parse the type signature of the provided string.
         /// </summary>
@@ -246,7 +246,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 ArrayDimensions = arrayLevel
             };
         }
-        
+
         /// <summary>
         /// Deduce a parameter's Count from an XML signature.
         /// </summary>
@@ -371,10 +371,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     return new Count(valueReferenceName);
                 }
             }
-            
+
             throw new InvalidDataException("No valid count could be parsed from the input.");
         }
-        
+
         private static List<Parameter> ParseParameters([NotNull] XElement functionElement)
         {
             var parameterElements = functionElement.Elements().Where(e => e.Name == "param");
@@ -414,7 +414,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             return resultParameters;
         }
-        
+
         private static Parameter ParseParameter
         (
             [NotNull] XElement paramElement,
@@ -472,7 +472,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             return TrimName(e.Element("proto")?.Element("name")?.Value, opts);
         }
-        
+
         /// <summary>
         /// Trims the prefix off a name.
         /// </summary>
@@ -487,7 +487,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
 
             return name.ToLower().StartsWith(opts.Prefix.ToLower()) ? name.Remove(0, opts.Prefix.Length) : name;
-        } 
+        }
 
         private static string FunctionParameterType(XElement e)
         {
@@ -506,9 +506,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
             //   -> <param name="length" type="GLsizei" count="1" />
             // ReSharper restore CommentTypo
             var proto = e.Value;
-            
+
             var name = e.Element("name");
-            if (name == null) {
+            if (name == null)
+            {
                 throw new InvalidOperationException("Name is null");
             }
 
@@ -516,7 +517,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             return ret;
         }
-        
+
         private XElement TranslateCommand(XContainer command, ProfileConverterOptions opts)
         {
             var function = new XElement("function");
@@ -554,7 +555,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 var p = new XElement("param");
                 var paramName = new XAttribute("name", parameter.Element("name")?.Value
                                                        ?? throw new NullReferenceException());
-                
+
                 var type = new XAttribute
                 (
                     "type",
@@ -593,7 +594,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             function.Add(returns);
             return function;
         }
-        
+
         ////////////////////////////////////////////////////////////////////////////////////////
         // Enum Parsing
         ////////////////////////////////////////////////////////////////////////////////////////
@@ -606,7 +607,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             var registry = doc.Element("registry");
             Debug.Assert(registry != null, nameof(registry) + " != null");
-            
+
             var allEnums = registry.Elements("enums")
                 .Elements("enum")
                 .DistinctBy(x => x.Attribute("name")?.Value)
@@ -615,9 +616,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     x => x.Attribute("name")?.Value,
                     x => (FormatToken(x.Attribute("value")?.Value), x.Attribute("group")?.Value.Split(','))
                 );
-            
+
             var apis = registry.Elements("feature").Concat(registry.Elements("extensions").Elements("extension"));
-            
+
             var removals = registry.Elements("feature")
                 .Elements("remove")
                 .Elements("enum")
@@ -658,7 +659,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Value = allEnums[token.Value].Item1
                             }
                         )
-                        .ToList(); 
+                        .ToList();
                     foreach (var name in apiName.Split('|'))
                     {
                         var ret = new Enum

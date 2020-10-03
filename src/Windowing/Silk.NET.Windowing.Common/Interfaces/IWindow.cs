@@ -27,12 +27,12 @@ namespace Silk.NET.Windowing.Common
         /// Gets the monitor on which this window is active.
         /// </summary>
         IMonitor Monitor { get; set; }
-        
+
         /// <summary>
         /// Gets or sets whether the window has been requested to close.
         /// </summary>
         new bool IsClosing { get; set; }
-        
+
         /// <summary>
         /// Gets the distances in screen coordinates from the edges of the content area to the corresponding edges of
         /// the full window.

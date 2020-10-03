@@ -42,17 +42,17 @@ namespace Silk.NET.BuildTools.Common
         /// The function signature.
         /// </summary>
         public Function Signature { get; set; }
-        
+
         /// <summary>
         /// The base function.
         /// </summary>
         public Function Base { get; set; }
-        
+
         /// <summary>
         /// The body of the function.
         /// </summary>
         public string[] Body { get; set; }
-        
+
         /// <summary>
         /// Whether or not this function is unsafe.
         /// </summary>

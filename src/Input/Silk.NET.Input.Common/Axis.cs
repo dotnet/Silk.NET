@@ -14,7 +14,7 @@ namespace Silk.NET.Input.Common
         /// The index of this axis, used to determine which axis it is.
         /// </summary>
         public int Index { get; }
-        
+
         /// <summary>
         /// The position of this axis.
         /// </summary>

@@ -7,14 +7,14 @@ namespace Silk.NET.OpenCL
     {
         public static CL GetApi()
         {
-             return LibraryLoader<CL>.Load(new OpenCLLibraryNameContainer());
+            return LibraryLoader<CL>.Load(new OpenCLLibraryNameContainer());
         }
 
         public bool TryGetExtension<T>(out T ext)
-            where T:NativeExtension<CL>
+            where T : NativeExtension<CL>
         {
-             ext = LibraryLoader<CL>.Load<T>(this);
-             return ext != null;
+            ext = LibraryLoader<CL>.Load<T>(this);
+            return ext != null;
         }
 
         public override bool IsExtensionPresent(string extension)

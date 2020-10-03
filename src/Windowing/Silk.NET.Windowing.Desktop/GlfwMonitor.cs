@@ -14,7 +14,7 @@ namespace Silk.NET.Windowing.Desktop
     internal unsafe class GlfwMonitor : IMonitor
     {
         private float _gamma = 1.0f;
-        
+
         public Monitor* Handle { get; }
 
         public GlfwMonitor(Monitor* monitor, int index)
@@ -29,7 +29,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 return new GlfwWindow(opts, null, this);
             }
-            
+
             opts.Position = new Point(opts.Position.X + Bounds.X, opts.Position.Y + Bounds.Y);
             return new GlfwWindow(opts, null, null);
         }

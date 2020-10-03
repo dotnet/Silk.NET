@@ -71,8 +71,10 @@ namespace Silk.NET.BuildTools.Baking
             if (variableList != null)
             {
                 var dt = string.Empty; // parameter name
-                foreach (var child in variableList) {
-                    switch (child.Name) {
+                foreach (var child in variableList)
+                {
+                    switch (child.Name)
+                    {
                         case "dt":
                             dt = MegaTrim(child.InnerText);
                             break;
@@ -91,7 +93,7 @@ namespace Silk.NET.BuildTools.Baking
                                     Summary = StyleGuideCompliance(FixWhitespace(MegaTrim(child.InnerText))).Trim()
                                 };
                             }
-                        
+
                             dt = string.Empty;
                             break;
                         }
@@ -105,10 +107,11 @@ namespace Silk.NET.BuildTools.Baking
                     x => x.HasClass("refnamediv") && x.ChildNodes.Any(y => y.Name == "h2" && y.InnerText == "Name")
                 );
 
-            if (div == null) {
+            if (div == null)
+            {
                 throw new InvalidOperationException("No div in provided document");
             }
-            
+
             div.RemoveChild(div.ChildNodes.FirstOrDefault(x => x.Name == "h2"));
             var description =
                 $"{StyleGuideCompliance(FixWhitespace(MegaTrim(div.InnerText.Substring(div.InnerText.IndexOf("—", StringComparison.Ordinal) + 2).Transform(To.SentenceCase).Trim()))).TrimEnd('.')}.";
@@ -116,7 +119,7 @@ namespace Silk.NET.BuildTools.Baking
             return new KeyValuePair<string, FunctionDocumentation>
             (
                 Path.GetFileNameWithoutExtension(xhtmlFile),
-                new FunctionDocumentation {Summary = description, Parameters = parameters}
+                new FunctionDocumentation { Summary = description, Parameters = parameters }
             );
         }
 

@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -20,37 +20,37 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The name of the extension.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// The number of the extension.
         /// </summary>
         public int Number { get; }
-        
+
         /// <summary>
         /// The extension type.
         /// </summary>
         public string Type { get; }
-        
+
         /// <summary>
         /// The constants in the extension.
         /// </summary>
         public ExtensionConstant[] Constants { get; }
-        
+
         /// <summary>
         /// The enums in the extension.
         /// </summary>
         public EnumExtensionValue[] EnumExtensions { get; }
-        
+
         /// <summary>
         /// The command names in the extension.
         /// </summary>
         public string[] CommandNames { get; }
-        
+
         /// <summary>
         /// The type names in the extension.
         /// </summary>
         public string[] TypeNames { get; }
-        
+
         /// <summary>
         /// A list of supported strings in the extension.
         /// </summary>
@@ -121,7 +121,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                     typeXe => typeXe.GetNameAttribute())
                 );
             }
-            
+
             return new ExtensionDefinition
             (
                 name,
@@ -139,7 +139,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         {
             Debug.Assert(enumXe.Document != null, "enumXe.Document != null");
             var registry = enumXe.Document.Element("registry") ?? throw new InvalidDataException();
-            
+
             var enumName = enumXe.GetNameAttribute();
 
             var number = enumXe.Attribute("extnumber") is null
@@ -150,7 +150,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             {
                 var dummyValues = new List<EnumExtensionValue>();
                 var dummyConstants = new List<ExtensionConstant>();
-                
+
                 ParseEnumRequirement
                 (
                     registry
@@ -163,7 +163,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         .FirstOrDefault(x => x.GetNameAttribute() == enumXe.Attribute("alias")?.Value), number,
                     dummyValues, name, dummyConstants
                 );
-                
+
                 foreach (var dummyValue in dummyValues)
                 {
                     enumExtensions.Add(new EnumExtensionValue(dummyValue.ExtendedType, enumName, dummyValue.Value));
@@ -173,7 +173,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 {
                     extensionConstants.Add(new ExtensionConstant(enumName, dummyConstant.Value));
                 }
-                
+
                 return;
             }
 
@@ -229,12 +229,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The constant name.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// The constant value.
         /// </summary>
         public string Value { get; }
-        
+
         /// <summary>
         /// Create a new ExpressionConstant.
         /// </summary>
@@ -257,12 +257,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The type of the enum.
         /// </summary>
         public string ExtendedType { get; }
-        
+
         /// <summary>
         /// The name of the enum value.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// The enum value.
         /// </summary>

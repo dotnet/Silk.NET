@@ -145,17 +145,17 @@ namespace Silk.NET.BuildTools.Baking
             GLES
             /* GLSC */
         };
-/*
-*        /// <summary>
-*        /// Gets <see cref="ProfileBakeryInformation"/> implementing OpenGL Safety Critical, version 2.0.
-*        /// </summary>
-*        public static ProfileBakeryInformation GLSC { get; } = new ProfileBakeryInformationBuilder()
-*            .Implements("glsc2", "glsc2-2.0")
-*            .WithNamespaces("Silk.NET.OpenGLSC", "Silk.NET.OpenGLSC.Extensions")
-*            .WithName("GLSC")
-*            .WithOutputFolder("OpenGL")
-*            .Result;
-*/
+        /*
+        *        /// <summary>
+        *        /// Gets <see cref="ProfileBakeryInformation"/> implementing OpenGL Safety Critical, version 2.0.
+        *        /// </summary>
+        *        public static ProfileBakeryInformation GLSC { get; } = new ProfileBakeryInformationBuilder()
+        *            .Implements("glsc2", "glsc2-2.0")
+        *            .WithNamespaces("Silk.NET.OpenGLSC", "Silk.NET.OpenGLSC.Extensions")
+        *            .WithName("GLSC")
+        *            .WithOutputFolder("OpenGL")
+        *            .Result;
+        */
 
         // ReSharper restore InconsistentNaming
     }

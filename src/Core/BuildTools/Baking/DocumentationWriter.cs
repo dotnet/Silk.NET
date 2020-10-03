@@ -149,7 +149,7 @@ namespace Silk.NET.BuildTools.Baking
                     return DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es2"), "gl");
                 default:
                     // no documentation entry found, return dummy documentation
-                    return new ProfileDocumentation {Functions = new Dictionary<string, FunctionDocumentation>()};
+                    return new ProfileDocumentation { Functions = new Dictionary<string, FunctionDocumentation>() };
             }
         }
 
@@ -164,7 +164,7 @@ namespace Silk.NET.BuildTools.Baking
                 }
             }
 
-            return new ProfileDocumentation {Functions = functions};
+            return new ProfileDocumentation { Functions = functions };
         }
     }
 }

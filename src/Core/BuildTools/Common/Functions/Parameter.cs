@@ -40,7 +40,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets a list of attributes for this parameter.
         /// </summary>
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
-        
+
         /// <summary>
         /// The function this parameter originates from.
         /// </summary>
@@ -88,7 +88,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 var hashCode = (Name != null ? Name.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Type != null ? Type.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Count != null ? Count.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (int) Flow;
+                hashCode = (hashCode * 397) ^ (int)Flow;
                 // ReSharper restore NonReadonlyMemberInGetHashCode
                 return hashCode;
             }

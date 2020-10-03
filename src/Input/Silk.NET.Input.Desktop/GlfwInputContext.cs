@@ -34,12 +34,12 @@ namespace Silk.NET.Input.Desktop
             Handle = window.Handle;
             for (var i = 0; i < _gamepads.Length; i++)
             {
-                _gamepads[i] = new GlfwGamepad(i) {OnConnectionChanged = OnConnectionChanged};
+                _gamepads[i] = new GlfwGamepad(i) { OnConnectionChanged = OnConnectionChanged };
             }
 
             for (var i = 0; i < _joysticks.Length; i++)
             {
-                _joysticks[i] = new GlfwJoystick(i){OnConnectionChanged = OnConnectionChanged};
+                _joysticks[i] = new GlfwJoystick(i) { OnConnectionChanged = OnConnectionChanged };
             }
 
             _subscribers[0] = _keyboards[0] = new GlfwKeyboard();
@@ -50,7 +50,7 @@ namespace Silk.NET.Input.Desktop
             Keyboards = _keyboards;
             Mice = _mice;
 
-            GlfwInputPlatform.RegisterWindow((WindowHandle*) Handle, _subscribers);
+            GlfwInputPlatform.RegisterWindow((WindowHandle*)Handle, _subscribers);
             window.Update += _update = _ =>
             {
                 foreach (var updatable in _mice)
@@ -62,7 +62,7 @@ namespace Silk.NET.Input.Desktop
                 {
                     updatable.Update();
                 }
-                
+
                 foreach (var updatable in _joysticks)
                 {
                     updatable.Update();
@@ -75,7 +75,7 @@ namespace Silk.NET.Input.Desktop
         public unsafe void Dispose()
         {
             _window.Update -= _update;
-            GlfwInputPlatform.UnregisterWindow((WindowHandle*) Handle, _subscribers);
+            GlfwInputPlatform.UnregisterWindow((WindowHandle*)Handle, _subscribers);
             foreach (var gamepad in _gamepads)
             {
                 gamepad.Dispose();

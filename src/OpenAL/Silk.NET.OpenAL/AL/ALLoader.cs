@@ -14,7 +14,7 @@ namespace Silk.NET.OpenAL
         {
             _alc = alc;
         }
-        
+
         private abstract class InternalAL : NativeApiContainer
         {
             [NativeApi(EntryPoint = "alcGetProcAddress")]

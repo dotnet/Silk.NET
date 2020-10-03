@@ -17,17 +17,17 @@ namespace Silk.NET.Input.Common
         /// A handle to the underlying window.
         /// </summary>
         IntPtr Handle { get; }
-        
+
         /// <summary>
         /// A list of all available gamepads.
         /// </summary>
         IReadOnlyList<IGamepad> Gamepads { get; }
-        
+
         /// <summary>
         /// A list of all available joysticks.
         /// </summary>
         IReadOnlyList<IJoystick> Joysticks { get; }
-        
+
         /// <summary>
         /// A list of all available keyboards.
         /// <remarks>
@@ -36,7 +36,7 @@ namespace Silk.NET.Input.Common
         /// </remarks>
         /// </summary>
         IReadOnlyList<IKeyboard> Keyboards { get; }
-        
+
         /// <summary>
         /// A list of all available mice.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Silk.NET.Input.Common
         /// support multiple mice.
         /// </remarks>
         IReadOnlyList<IMouse> Mice { get; }
-        
+
         /// <summary>
         /// A list of all other available input devices.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Silk.NET.Input.Common
         /// support other devices.
         /// </remarks>
         IReadOnlyList<IInputDevice> OtherDevices { get; }
-        
+
         /// <summary>
         /// Called when the connection status of a device changes.
         /// </summary>
