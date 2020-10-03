@@ -35,7 +35,7 @@ namespace Tutorial
         };
 
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
@@ -50,7 +50,7 @@ namespace Tutorial
         }
 
 
-        private unsafe static void OnLoad()
+        private static void OnLoad()
         {
             IInputContext input = window.CreateInput();
             for (int i = 0; i < input.Keyboards.Count; i++)

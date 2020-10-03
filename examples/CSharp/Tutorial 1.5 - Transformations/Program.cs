@@ -37,7 +37,7 @@ namespace Tutorial
         };
 
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);

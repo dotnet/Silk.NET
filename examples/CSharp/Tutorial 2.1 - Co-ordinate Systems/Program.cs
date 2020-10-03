@@ -81,7 +81,7 @@ namespace Tutorial
             1, 2, 3
         };
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
@@ -117,7 +117,7 @@ namespace Tutorial
             Texture = new Texture(Gl, "silk.png");
         }
 
-        private static unsafe void OnRender(double obj)
+        private static void OnRender(double obj)
         {
             Gl.Enable(EnableCap.DepthTest);
             Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));

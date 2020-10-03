@@ -89,7 +89,7 @@ namespace Tutorial
             1, 2, 3
         };
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
@@ -133,7 +133,7 @@ namespace Tutorial
             Texture = new Texture(Gl, "silk.png");
         }
 
-        private static unsafe void OnUpdate(double deltaTime)
+        private static void OnUpdate(double deltaTime)
         {
             float moveSpeed = 2.5f * (float) deltaTime;
 
@@ -159,7 +159,7 @@ namespace Tutorial
             }
         }
 
-        private static unsafe void OnRender(double deltaTime)
+        private static void OnRender(double deltaTime)
         {
             Gl.Enable(EnableCap.DepthTest);
             Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
@@ -184,7 +184,7 @@ namespace Tutorial
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
         }
 
-        private static unsafe void OnMouseMove(IMouse mouse, PointF position)
+        private static void OnMouseMove(IMouse mouse, PointF position)
         {
             float lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }

@@ -10,7 +10,7 @@ namespace Tutorial
     {
         private static IWindow window;
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             //Create a window.
             WindowOptions options = WindowOptions.Default;
