@@ -29,7 +29,7 @@ namespace GenericMathsGenerator
             }
 
             return evaluated.OfType<LocalVariable>().Where(x => x.References.Count > 1).Select(x => x.WithValue(RecursiveReplace(x.Value)))
-                .Concat(evaluated.OfType<ReturnVariable>());
+                .Concat(evaluated.OfType<ReturnVariable>().Select(x => x.WithValue(RecursiveReplace(x.Value))));
         }
     }
 }

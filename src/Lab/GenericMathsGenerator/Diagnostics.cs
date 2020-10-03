@@ -51,5 +51,25 @@ namespace GenericMathsGenerator
             true,
             null,
             null);
+
+        public static DiagnosticDescriptor NoReturn { get; } = new DiagnosticDescriptor(
+            "GM0005",
+            "No Return Statement",
+            "Could not find Return",
+            "",
+            DiagnosticSeverity.Error,
+            true,
+            null,
+            null);
+
+        public static DiagnosticDescriptor TypeNotPartial { get; } = new DiagnosticDescriptor(
+            "GM0006",
+            "Containing Type not partial",
+            "The types containing methods marked for processing have to be partial",
+            "",
+            DiagnosticSeverity.Error,
+            true,
+            null,
+            null);
     }
 }

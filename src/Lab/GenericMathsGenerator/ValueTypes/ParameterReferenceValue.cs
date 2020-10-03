@@ -9,11 +9,13 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace GenericMathsGenerator
 {
     [DebuggerDisplay("{ParameterName}")]
-    public class ParameterReferenceValue : IValue
+    public class ParameterReferenceValue : IValue, IEquatable<ParameterReferenceValue>
     {
         public string ParameterName { get; }
 
@@ -35,5 +37,40 @@ namespace GenericMathsGenerator
         }
 
         public int Step => 0;
+
+        public ExpressionSyntax BuildExpression
+            (ImmutableArray<ExpressionSyntax> children, ref List<StatementSyntax> statements, TargetType targetType)
+        {
+            return SyntaxFactory.IdentifierName(ParameterName);
+        }
+
+        public bool Equals(ParameterReferenceValue? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return ParameterName == other.ParameterName;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return ReferenceEquals(this, obj) || obj is ParameterReferenceValue other && Equals(other);
+        }
+
+        public bool Equals
+            (IValue other)
+            => ReferenceEquals(this, other) || other is ParameterReferenceValue o && Equals(o);
+
+        public override int GetHashCode()
+        {
+            return ParameterName.GetHashCode();
+        }
     }
 }

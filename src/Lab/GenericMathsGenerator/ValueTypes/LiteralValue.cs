@@ -9,11 +9,14 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace GenericMathsGenerator.ValueTypes
 {
     [DebuggerDisplay("{_value}")]
-    public class LiteralValue : IValue
+    public class LiteralValue : IValue, IEquatable<LiteralValue>
     {
         public LiteralValue(float value)
         {
@@ -21,6 +24,7 @@ namespace GenericMathsGenerator.ValueTypes
         }
 
         private float _value;
+        
         public Optional<float> ConstantValue => new Optional<float>(_value);
         public IEnumerable<IValue> Children
         {
@@ -33,5 +37,54 @@ namespace GenericMathsGenerator.ValueTypes
         }
 
         public int Step => 0;
+
+        public ExpressionSyntax BuildExpression
+            (ImmutableArray<ExpressionSyntax> children, ref List<StatementSyntax> statements, TargetType targetType)
+            => LiteralExpression
+            (
+                SyntaxKind.NumericLiteralExpression, targetType switch
+                {
+                    TargetType.Byte => Literal((byte) _value),
+                    TargetType.SByte => Literal((sbyte) _value),
+                    TargetType.UShort => Literal((ushort) _value),
+                    TargetType.Short => Literal((short) _value),
+                    TargetType.UInt => Literal((uint) _value),
+                    TargetType.Int => Literal((int) _value),
+                    TargetType.ULong => Literal((ulong) _value),
+                    TargetType.Long => Literal((long) _value),
+                    TargetType.Single => Literal((float) _value),
+                    TargetType.Double => Literal((double) _value),
+                    _ => throw new ArgumentOutOfRangeException(nameof(targetType))
+                }
+            );
+
+        public bool Equals(LiteralValue? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return _value.Equals(other._value);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return ReferenceEquals(this, obj) || obj is LiteralValue other && Equals(other);
+        }
+        
+        public bool Equals
+            (IValue other)
+            => ReferenceEquals(this, other) || other is LiteralValue o && Equals(o);
+
+        public override int GetHashCode()
+        {
+            return _value.GetHashCode();
+        }
     }
 }

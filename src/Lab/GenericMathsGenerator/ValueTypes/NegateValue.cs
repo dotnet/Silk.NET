@@ -3,11 +3,14 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using Microsoft.CodeAnalysis.CSharp;
+
 namespace GenericMathsGenerator
 {
     public class NegateValue : UnaryOperatorValue
     {
         protected override float Process(float f) => -f;
         protected override string OpStr => "-";
+        protected override SyntaxKind OpSyntaxKind => SyntaxKind.UnaryMinusExpression;
     }
 }

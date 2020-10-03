@@ -50,6 +50,7 @@ namespace GenericMathsGenerator
 
         private Builder? _builder;
         private ITypeSymbol _floatType;
+        private ITypeSymbol _intType;
         private int _returnCount = 0;
         private List<IVariable> _currentVariables;
         private Dictionary<string, LocalVariable> _locals;
@@ -62,6 +63,7 @@ namespace GenericMathsGenerator
             _locals = new Dictionary<string, LocalVariable>();
             _localReferences = new List<LocalReferenceValue>();
             _floatType = context.Compilation.GetSpecialType(SpecialType.System_Single);
+            _intType = context.Compilation.GetSpecialType(SpecialType.System_Int32);
             Debugger.Break();
             try
             {
@@ -87,7 +89,7 @@ namespace GenericMathsGenerator
                 _localReferences[index] = localReference;
             }
         }
-        
+
         public override void VisitParameterReference(IParameterReferenceOperation operation)
         {
             _builder.BeginScope(new ParameterReferenceValue(operation.Parameter.Name));
@@ -208,19 +210,36 @@ namespace GenericMathsGenerator
 
         public override void VisitLiteral(ILiteralOperation operation)
         {
-            if (!SymbolEqualityComparer.IncludeNullability.Equals(operation.Type, _floatType))
-                throw new DiagnosticException(Diagnostic.Create(Diagnostics.TypeMissmatch, operation.Syntax.GetLocation(), operation.Type.Name));
-
-            if (!operation.ConstantValue.HasValue)
+            if (SymbolEqualityComparer.IncludeNullability.Equals(operation.Type, _floatType))
             {
-                Debugger.Launch();
-                Debugger.Break();
-                Debug.Fail("non-constant literal?!");
+                if (!operation.ConstantValue.HasValue)
+                {
+                    Debugger.Launch();
+                    Debugger.Break();
+                    Debug.Fail("non-constant literal?!");
+                }
+
+                _builder.BeginScope(new LiteralValue((float) operation.ConstantValue.Value));
+                base.VisitLiteral(operation);
+                _builder.EndScope();
             }
-            
-            _builder.BeginScope(new LiteralValue((float)operation.ConstantValue.Value));
-            base.VisitLiteral(operation);
-            _builder.EndScope();
+            else if (SymbolEqualityComparer.IncludeNullability.Equals(operation.Type, _intType))
+            {
+                if (!operation.ConstantValue.HasValue)
+                {
+                    Debugger.Launch();
+                    Debugger.Break();
+                    Debug.Fail("non-constant literal?!");
+                }
+
+                _builder.BeginScope(new LiteralValue((float)(int) operation.ConstantValue.Value));
+                base.VisitLiteral(operation);
+                _builder.EndScope();
+            }
+            else
+            {
+                throw new DiagnosticException(Diagnostic.Create(Diagnostics.TypeMissmatch, operation.Syntax.GetLocation(), operation.Type.Name));
+            }
         }
     }
 }
