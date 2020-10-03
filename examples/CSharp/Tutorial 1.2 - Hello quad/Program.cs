@@ -92,7 +92,7 @@ namespace Tutorial
             //Initializing a vertex buffer that holds the vertex data.
             Vbo = Gl.GenBuffer(); //Creating the buffer.
             Gl.BindBuffer(BufferTargetARB.ArrayBuffer, Vbo); //Binding the buffer.
-            fixed (float* v = &Vertices[0])
+            fixed (float* v = Vertices)
             {
                 Gl.BufferData(BufferTargetARB.ArrayBuffer, (uint) (Vertices.Length * sizeof(uint)), v, BufferUsageARB.StaticDraw); //Setting buffer data.
             }
@@ -100,7 +100,7 @@ namespace Tutorial
             //Initializing a element buffer that holds the index data.
             Ebo = Gl.GenBuffer(); //Creating the buffer.
             Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo); //Binding the buffer.
-            fixed (uint* i = &Indices[0])
+            fixed (uint* i = Indices)
             {
                 Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (uint) (Indices.Length * sizeof(uint)), i, BufferUsageARB.StaticDraw); //Setting buffer data.
             }

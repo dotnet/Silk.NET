@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices;
 using Silk.NET.OpenGL;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
@@ -17,7 +16,7 @@ namespace Tutorial
             Image<Rgba32> img = (Image<Rgba32>) Image.Load(path);
             img.Mutate(x => x.Flip(FlipMode.Vertical));
 
-            fixed (Rgba32* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
+            fixed (Rgba32* data = img.GetPixelRowSpan(0))
             {
                 Load(gl, data, (uint) img.Width, (uint) img.Height);
             }
@@ -27,7 +26,7 @@ namespace Tutorial
 
         public unsafe Texture(GL gl, Span<byte> data, uint width, uint height)
         {
-            fixed (byte* d = &data[0])
+            fixed (byte* d = data)
             {
                 Load(gl, d, width, height);
             }
