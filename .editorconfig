@@ -9,6 +9,19 @@ indent_size = 4
 
 # Microsoft .NET properties
 csharp_new_line_before_members_in_object_initializers = false
+csharp_new_line_before_open_brace = methods, types
+csharp_new_line_before_catch = true
+csharp_new_line_before_else = true
+csharp_new_line_before_finally = true
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_after_cast = false
+csharp_space_after_colon_in_inheritance_clause = true
+csharp_space_before_colon_in_inheritance_clause = true
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+csharp_space_between_method_call_parameter_list_parentheses = false
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+csharp_prefer_simple_default_expression = true:hint
 csharp_preferred_modifier_order = public, private, protected, internal, new, abstract, virtual, sealed, override, static, readonly, extern, unsafe, volatile, async:suggestion
 csharp_style_var_elsewhere = true:hint
 csharp_style_var_for_built_in_types = true:hint
@@ -20,6 +33,9 @@ dotnet_style_qualification_for_field = false:warning
 dotnet_style_qualification_for_method = false:warning
 dotnet_style_qualification_for_property = false:warning
 dotnet_style_require_accessibility_modifiers = for_non_interface_members:hint
+csharp_style_expression_bodied_methods = false:hint
+csharp_style_inlined_variable_declaration = true:hint
+dotnet_sort_system_directives_first = true
 
 # ReSharper properties
 resharper_autodetect_indent_settings = true
