@@ -75,19 +75,27 @@ namespace Tutorial
 
             //Unlike in the transformation, because of our abstraction order dosent matter here.
             //Translation.
-            Transforms[0] = new Transform();
-            Transforms[0].Position = new Vector3(0.5f, 0.5f, 0f);
+            Transforms[0] = new Transform
+            {
+                Position = new Vector3(0.5f, 0.5f, 0f)
+            };
             //Rotation.
-            Transforms[1] = new Transform();
-            Transforms[1].Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, 1f);
+            Transforms[1] = new Transform
+            {
+                Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, 1f)
+            };
             //Scaling.
-            Transforms[2] = new Transform();
-            Transforms[2].Scale = 0.5f;
+            Transforms[2] = new Transform
+            {
+                Scale = 0.5f
+            };
             //Mixed transformation.
-            Transforms[3] = new Transform();
-            Transforms[3].Position = new Vector3(-0.5f, 0.5f, 0f);
-            Transforms[3].Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, 1f);
-            Transforms[3].Scale = 0.5f;
+            Transforms[3] = new Transform
+            {
+                Position = new Vector3(-0.5f, 0.5f, 0f),
+                Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, 1f),
+                Scale = 0.5f
+            };
         }
 
         private static unsafe void OnRender(double obj)
