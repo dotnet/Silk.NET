@@ -60,7 +60,7 @@ namespace Tutorial
 
         private static void Main()
         {
-            WindowOptions options = WindowOptions.Default;
+            var options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
@@ -76,8 +76,8 @@ namespace Tutorial
 
         private static unsafe void OnLoad()
         {
-            IInputContext input = window.CreateInput();
-            for (int i = 0; i < input.Keyboards.Count; i++)
+            var input = window.CreateInput();
+            for (var i = 0; i < input.Keyboards.Count; i++)
             {
                 input.Keyboards[i].KeyDown += KeyDown;
             }
@@ -106,19 +106,19 @@ namespace Tutorial
             }
 
             //Creating a vertex shader.
-            uint vertexShader = Gl.CreateShader(ShaderType.VertexShader);
+            var vertexShader = Gl.CreateShader(ShaderType.VertexShader);
             Gl.ShaderSource(vertexShader, VertexShaderSource);
             Gl.CompileShader(vertexShader);
 
             //Checking the shader for compilation errors.
-            string infoLog = Gl.GetShaderInfoLog(vertexShader);
+            var infoLog = Gl.GetShaderInfoLog(vertexShader);
             if (!string.IsNullOrWhiteSpace(infoLog))
             {
                 Console.WriteLine($"Error compiling vertex shader {infoLog}");
             }
 
             //Creating a fragment shader.
-            uint fragmentShader = Gl.CreateShader(ShaderType.FragmentShader);
+            var fragmentShader = Gl.CreateShader(ShaderType.FragmentShader);
             Gl.ShaderSource(fragmentShader, FragmentShaderSource);
             Gl.CompileShader(fragmentShader);
 
@@ -136,7 +136,7 @@ namespace Tutorial
             Gl.LinkProgram(Shader);
 
             //Checking the linking for errors.
-            Gl.GetProgram(Shader, GLEnum.LinkStatus, out int status);
+            Gl.GetProgram(Shader, GLEnum.LinkStatus, out var status);
             if (status == 0)
             {
                 Console.WriteLine($"Error linking shader {Gl.GetProgramInfoLog(Shader)}");

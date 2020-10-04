@@ -38,7 +38,7 @@ namespace Tutorial
             //We don't want to be able to look behind us by going over our head or under our feet so make sure it stays within these bounds
             Pitch = Math.Clamp(Pitch, -89f, 89f);
 
-            Vector3 cameraDirection = Vector3.Zero;
+            var cameraDirection = Vector3.Zero;
             cameraDirection.X = MathF.Cos(MathHelper.DegreesToRadians(Yaw)) * MathF.Cos(MathHelper.DegreesToRadians(Pitch));
             cameraDirection.Y = MathF.Sin(MathHelper.DegreesToRadians(Pitch));
             cameraDirection.Z = MathF.Sin(MathHelper.DegreesToRadians(Yaw)) * MathF.Cos(MathHelper.DegreesToRadians(Pitch));

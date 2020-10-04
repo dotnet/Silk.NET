@@ -14,7 +14,7 @@ namespace Tutorial
         public unsafe Texture(GL gl, string path)
         {
             //Loading an image using imagesharp.
-            Image<Rgba32> img = (Image<Rgba32>) Image.Load(path);
+            var img = (Image<Rgba32>) Image.Load(path);
             //We need to flip our image as image sharps coordinates has origin (0, 0) in the top-left corner,
             //where as openGL has origin in the bottom-left corner.
             img.Mutate(x => x.Flip(FlipMode.Vertical));

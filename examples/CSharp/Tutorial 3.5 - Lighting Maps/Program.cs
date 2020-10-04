@@ -91,7 +91,7 @@ namespace Tutorial
 
         private static void Main()
         {
-            WindowOptions options = WindowOptions.Default;
+            var options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
@@ -107,13 +107,13 @@ namespace Tutorial
         private static void OnLoad()
         {
             StartTime = DateTime.UtcNow;
-            IInputContext input = window.CreateInput();
+            var input = window.CreateInput();
             primaryKeyboard = input.Keyboards.FirstOrDefault();
             if (primaryKeyboard != null)
             {
                 primaryKeyboard.KeyDown += KeyDown;
             }
-            for (int i = 0; i < input.Mice.Count; i++)
+            for (var i = 0; i < input.Mice.Count; i++)
             {
                 input.Mice[i].Cursor.CursorMode = CursorMode.Raw;
                 input.Mice[i].MouseMove += OnMouseMove;
@@ -144,7 +144,7 @@ namespace Tutorial
 
         private static void OnUpdate(double deltaTime)
         {
-            float moveSpeed = 2.5f * (float) deltaTime;
+            var moveSpeed = 2.5f * (float) deltaTime;
 
             if (primaryKeyboard.IsKeyPressed(Key.W))
             {
@@ -194,8 +194,8 @@ namespace Tutorial
             LightingShader.SetUniform("material.specular", 1);
             LightingShader.SetUniform("material.shininess", 32.0f);
 
-            Vector3 diffuseColor = new Vector3(0.5f);
-            Vector3 ambientColor = diffuseColor * new Vector3(0.2f);
+            var diffuseColor = new Vector3(0.5f);
+            var ambientColor = diffuseColor * new Vector3(0.2f);
 
             LightingShader.SetUniform("light.ambient", ambientColor);
             LightingShader.SetUniform("light.diffuse", diffuseColor); // darkened
@@ -208,7 +208,7 @@ namespace Tutorial
             LampShader.Use();
 
             //The Lamp cube is going to be a scaled down version of the normal cubes verticies moved to a different screen location
-            Matrix4x4 lampMatrix = Matrix4x4.Identity;
+            var lampMatrix = Matrix4x4.Identity;
             lampMatrix *= Matrix4x4.CreateScale(0.2f);
             lampMatrix *= Matrix4x4.CreateTranslation(LampPosition);
 
@@ -225,8 +225,8 @@ namespace Tutorial
             if (LastMousePosition == default) { LastMousePosition = position; }
             else
             {
-                float xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
-                float yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
+                var xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
+                var yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
                 LastMousePosition = position;
 
                 Camera.ModifyDirection(xOffset, yOffset);

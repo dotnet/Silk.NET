@@ -13,7 +13,7 @@ namespace Tutorial
 
         public unsafe Texture(GL gl, string path)
         {
-            Image<Rgba32> img = (Image<Rgba32>) Image.Load(path);
+            var img = (Image<Rgba32>) Image.Load(path);
             img.Mutate(x => x.Flip(FlipMode.Vertical));
 
             fixed (Rgba32* data = img.GetPixelRowSpan(0))

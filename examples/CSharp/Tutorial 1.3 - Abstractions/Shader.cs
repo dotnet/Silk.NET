@@ -16,8 +16,8 @@ namespace Tutorial
             _gl = gl;
 
             //Load the individual shaders.
-            uint vertex = LoadShader(ShaderType.VertexShader, vertexPath);
-            uint fragment = LoadShader(ShaderType.FragmentShader, fragmentPath);
+            var vertex = LoadShader(ShaderType.VertexShader, vertexPath);
+            var fragment = LoadShader(ShaderType.FragmentShader, fragmentPath);
             //Create the shader program.
             _handle = _gl.CreateProgram();
             //Attach the individual shaders.
@@ -25,7 +25,7 @@ namespace Tutorial
             _gl.AttachShader(_handle, fragment);
             _gl.LinkProgram(_handle);
             //Check for linking errors.
-            _gl.GetProgram(_handle, GLEnum.LinkStatus, out int status);
+            _gl.GetProgram(_handle, GLEnum.LinkStatus, out var status);
             if (status == 0)
             {
                 throw new Exception($"Program failed to link with error: {_gl.GetProgramInfoLog(_handle)}");
@@ -47,7 +47,7 @@ namespace Tutorial
         public void SetUniform(string name, int value)
         {
             //Setting a uniform on a shader using a name.
-            int location = _gl.GetUniformLocation(_handle, name);
+            var location = _gl.GetUniformLocation(_handle, name);
             if (location == -1) //If GetUniformLocation returns -1 the uniform is not found.
             {
                 throw new Exception($"{name} uniform not found on shader.");
@@ -58,7 +58,7 @@ namespace Tutorial
 
         public void SetUniform(string name, float value)
         {
-            int location = _gl.GetUniformLocation(_handle, name);
+            var location = _gl.GetUniformLocation(_handle, name);
             if (location == -1)
             {
                 throw new Exception($"{name} uniform not found on shader.");
@@ -81,11 +81,11 @@ namespace Tutorial
             //3) Upload the source to opengl.
             //4) Compile the shader.
             //5) Check for errors.
-            string src = File.ReadAllText(path);
-            uint handle = _gl.CreateShader(type);
+            var src = File.ReadAllText(path);
+            var handle = _gl.CreateShader(type);
             _gl.ShaderSource(handle, src);
             _gl.CompileShader(handle);
-            string infoLog = _gl.GetShaderInfoLog(handle);
+            var infoLog = _gl.GetShaderInfoLog(handle);
             if (!string.IsNullOrWhiteSpace(infoLog))
             {
                 throw new Exception($"Error compiling shader of type {type}, failed with error {infoLog}");

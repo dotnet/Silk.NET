@@ -39,7 +39,7 @@ namespace Tutorial
 
         private static void Main()
         {
-            WindowOptions options = WindowOptions.Default;
+            var options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
@@ -54,8 +54,8 @@ namespace Tutorial
 
         private static void OnLoad()
         {
-            IInputContext input = window.CreateInput();
-            for (int i = 0; i < input.Keyboards.Count; i++)
+            var input = window.CreateInput();
+            for (var i = 0; i < input.Keyboards.Count; i++)
             {
                 input.Keyboards[i].KeyDown += KeyDown;
             }
@@ -107,7 +107,7 @@ namespace Tutorial
             Shader.Use();
             Shader.SetUniform("uTexture0", 0);
 
-            for (int i = 0; i < Transforms.Length; i++)
+            for (var i = 0; i < Transforms.Length; i++)
             {
                 //Using the transformations.
                 Shader.SetUniform("uModel", Transforms[i].ViewMatrix);
