@@ -21,11 +21,13 @@ namespace GenericMaths
     }
 
     [GenericMaths]
-    public partial struct Test
+    public struct Test
     {
+        public float A;
+        
         public float M(float p)
         {
-            return 5 + p;
+            return A + p;
         }
     }
 }

@@ -90,6 +90,24 @@ namespace GenericMathsGenerator
             }
         }
 
+        public override void VisitFieldReference(IFieldReferenceOperation operation)
+        {
+            Debug.Assert(_builder is not null, "_builder is null");
+            
+            _builder.BeginScope(new FieldReferenceValue(operation.Field.Name));
+            base.VisitFieldReference(operation);
+            _builder.EndScope();
+        }
+
+        public override void VisitPropertyReference(IPropertyReferenceOperation operation)
+        {
+            Debug.Assert(_builder is not null, "_builder is null");
+            
+            _builder.BeginScope(new PropertyReferenceValue(operation.Property.Name));
+            base.VisitPropertyReference(operation);
+            _builder.EndScope();
+        }
+
         public override void VisitParameterReference(IParameterReferenceOperation operation)
         {
             Debug.Assert(_builder is not null, "_builder is null");
@@ -101,8 +119,6 @@ namespace GenericMathsGenerator
 
         public override void VisitReturn(IReturnOperation operation)
         {
-            Debug.Assert(_builder is not null, "_builder is null");
-
             _returnCount++;
             if (_returnCount > 1)
             {
@@ -119,8 +135,6 @@ namespace GenericMathsGenerator
 
         public override void VisitVariableDeclaration(IVariableDeclarationOperation operation)
         {
-            Debug.Assert(_builder is not null, "_builder is null");
-
             foreach (var declarator in operation.Declarators)
             {
                 var oldBuilder = _builder;

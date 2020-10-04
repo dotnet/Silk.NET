@@ -125,43 +125,51 @@ namespace GenericMaths
 
                 foreach (var (tds, symbol, attribute) in types)
                 {
-                    if (!tds.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
-                        throw new DiagnosticException(Diagnostic.Create(Diagnostics.TypeNotPartial, tds.GetLocation()));
-
                     if (tds.Parent is NamespaceDeclarationSyntax nds)
                     {
+                        var GenericParameter = "T";
+                        
                         var resultDeclarations = new List<MemberDeclarationSyntax>();
                         foreach (var member in tds.Members)
                         {
-                            if (member is MethodDeclarationSyntax declaration)
+                            switch (member)
                             {
+                                case MethodDeclarationSyntax method:
+                                {
+                                    var methodResultDeclarations = ProcessMethod
+                                    (
+                                        context, context.Compilation.GetSemanticModel(method.SyntaxTree),
+                                        method.Body, method.Identifier.Text, default, method.Modifiers,
+                                        method.TypeParameterList, method.ExplicitInterfaceSpecifier,
+                                        method.ParameterList, method.ConstraintClauses,
+                                        false
+                                    );
 
-                                var methodResultDeclarations = ProcessMethod
-                                (
-                                    context, context.Compilation.GetSemanticModel(declaration.SyntaxTree),
-                                    declaration.Body, declaration.Identifier.Text, default, declaration.Modifiers,
-                                    declaration.TypeParameterList, declaration.ExplicitInterfaceSpecifier,
-                                    declaration.ParameterList, declaration.ConstraintClauses,
-                                    false
-                                );
+                                    if (methodResultDeclarations is null)
+                                        continue;
 
-                                if (methodResultDeclarations is null)
-                                    continue;
-
-                                resultDeclarations.AddRange(methodResultDeclarations);
+                                    resultDeclarations.AddRange(methodResultDeclarations);
+                                    break;
+                                }
+                                case FieldDeclarationSyntax field:
+                                    resultDeclarations.Add(field.WithDeclaration(field.Declaration.WithType(IdentifierName(GenericParameter))));
+                                    break;
+                                case PropertyDeclarationSyntax property:
+                                    resultDeclarations.Add(property.WithType(IdentifierName(GenericParameter)));
+                                    break;
                             }
                         }
 
                         var newType = tds.WithMembers
                                 (List(resultDeclarations))
                             .WithTypeParameterList
-                                ((tds.TypeParameterList ?? TypeParameterList()).AddParameters(TypeParameter("T")))
+                                ((tds.TypeParameterList ?? TypeParameterList()).AddParameters(TypeParameter(GenericParameter)))
                             .WithConstraintClauses
                             (
                                 tds.ConstraintClauses.Add
                                 (
                                     TypeParameterConstraintClause
-                                            ("T")
+                                            (GenericParameter)
                                         .WithConstraints
                                         (
                                             SeparatedList
@@ -171,7 +179,8 @@ namespace GenericMaths
                                             )
                                         )
                                 )
-                            );
+                            )
+                            .WithAttributeLists(default);
                         var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
                         newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
                             .Usings.Aggregate
