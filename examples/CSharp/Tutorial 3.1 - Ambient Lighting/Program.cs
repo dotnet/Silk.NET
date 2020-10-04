@@ -1,11 +1,11 @@
+using System.Drawing;
+using System.Linq;
+using System.Numerics;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
-using System.Drawing;
-using System.Linq;
-using System.Numerics;
 
 namespace Tutorial
 {
@@ -81,9 +81,9 @@ namespace Tutorial
             1, 2, 3
         };
 
-        private static void Main(string[] args)
+        private static void Main()
         {
-            var options = WindowOptions.Default;
+            WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
@@ -128,9 +128,9 @@ namespace Tutorial
             Camera = new Camera(Vector3.UnitZ * 6, Vector3.UnitZ * -1, Vector3.UnitY, Width / Height);
         }
 
-        private static unsafe void OnUpdate(double deltaTime)
+        private static void OnUpdate(double deltaTime)
         {
-            var moveSpeed = 2.5f * (float) deltaTime;
+            float moveSpeed = 2.5f * (float) deltaTime;
 
             if (primaryKeyboard.IsKeyPressed(Key.W))
             {
@@ -154,7 +154,7 @@ namespace Tutorial
             }
         }
 
-        private static unsafe void OnRender(double deltaTime)
+        private static void OnRender(double deltaTime)
         {
             Gl.Enable(EnableCap.DepthTest);
             Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
@@ -175,7 +175,7 @@ namespace Tutorial
             LampShader.Use();
 
             //The Lamp cube is going to be a scaled down version of the normal cubes verticies moved to a different screen location
-            var lampMatrix = Matrix4x4.Identity;
+            Matrix4x4 lampMatrix = Matrix4x4.Identity;
             lampMatrix *= Matrix4x4.CreateScale(0.2f);
             lampMatrix *= Matrix4x4.CreateTranslation(new Vector3(1.2f, 1.0f, 2.0f));
 
@@ -186,21 +186,21 @@ namespace Tutorial
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
         }
 
-        private static unsafe void OnMouseMove(IMouse mouse, PointF position)
+        private static void OnMouseMove(IMouse mouse, PointF position)
         {
-            var lookSensitivity = 0.1f;
+            float lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }
             else
             {
-                var xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
-                var yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
+                float xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
+                float yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
                 LastMousePosition = position;
 
                 Camera.ModifyDirection(xOffset, yOffset);
             }
         }
 
-        private static unsafe void OnMouseWheel(IMouse mouse, ScrollWheel scrollWheel)
+        private static void OnMouseWheel(IMouse mouse, ScrollWheel scrollWheel)
         {
             Camera.ModifyZoom(scrollWheel.Y);
         }

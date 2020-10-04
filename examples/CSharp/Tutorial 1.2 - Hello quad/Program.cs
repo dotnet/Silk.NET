@@ -1,10 +1,10 @@
+using System;
+using System.Drawing;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
-using System;
-using System.Drawing;
 
 namespace Tutorial
 {
@@ -58,9 +58,9 @@ namespace Tutorial
         };
 
 
-        private static void Main(string[] args)
+        private static void Main()
         {
-            var options = WindowOptions.Default;
+            WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
@@ -92,7 +92,7 @@ namespace Tutorial
             //Initializing a vertex buffer that holds the vertex data.
             Vbo = Gl.GenBuffer(); //Creating the buffer.
             Gl.BindBuffer(BufferTargetARB.ArrayBuffer, Vbo); //Binding the buffer.
-            fixed (void* v = &Vertices[0])
+            fixed (float* v = Vertices)
             {
                 Gl.BufferData(BufferTargetARB.ArrayBuffer, (uint) (Vertices.Length * sizeof(uint)), v, BufferUsageARB.StaticDraw); //Setting buffer data.
             }
@@ -100,7 +100,7 @@ namespace Tutorial
             //Initializing a element buffer that holds the index data.
             Ebo = Gl.GenBuffer(); //Creating the buffer.
             Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo); //Binding the buffer.
-            fixed (void* i = &Indices[0])
+            fixed (uint* i = Indices)
             {
                 Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (uint) (Indices.Length * sizeof(uint)), i, BufferUsageARB.StaticDraw); //Setting buffer data.
             }
@@ -136,7 +136,7 @@ namespace Tutorial
             Gl.LinkProgram(Shader);
 
             //Checking the linking for errors.
-            Gl.GetProgram(Shader, GLEnum.LinkStatus, out var status);
+            Gl.GetProgram(Shader, GLEnum.LinkStatus, out int status);
             if (status == 0)
             {
                 Console.WriteLine($"Error linking shader {Gl.GetProgramInfoLog(Shader)}");

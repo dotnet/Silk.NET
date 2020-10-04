@@ -1,10 +1,10 @@
+using System;
+using System.Drawing;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
-using System;
-using System.Drawing;
 
 namespace Tutorial
 {
@@ -35,9 +35,9 @@ namespace Tutorial
         };
 
 
-        private static void Main(string[] args)
+        private static void Main()
         {
-            var options = WindowOptions.Default;
+            WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);

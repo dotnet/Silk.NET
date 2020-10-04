@@ -1,12 +1,12 @@
+using System;
+using System.Drawing;
+using System.Linq;
+using System.Numerics;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
-using System;
-using System.Drawing;
-using System.Linq;
-using System.Numerics;
 
 namespace Tutorial
 {
@@ -91,7 +91,7 @@ namespace Tutorial
 
         private static void Main()
         {
-            var options = WindowOptions.Default;
+            WindowOptions options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
@@ -142,9 +142,9 @@ namespace Tutorial
             SpecularMap = new Texture(Gl, "silkSpecular.png");
         }
 
-        private static unsafe void OnUpdate(double deltaTime)
+        private static void OnUpdate(double deltaTime)
         {
-            var moveSpeed = 2.5f * (float) deltaTime;
+            float moveSpeed = 2.5f * (float) deltaTime;
 
             if (primaryKeyboard.IsKeyPressed(Key.W))
             {
@@ -168,7 +168,7 @@ namespace Tutorial
             }
         }
 
-        private static unsafe void OnRender(double deltaTime)
+        private static void OnRender(double deltaTime)
         {
             Gl.Enable(EnableCap.DepthTest);
             Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
@@ -194,8 +194,8 @@ namespace Tutorial
             LightingShader.SetUniform("material.specular", 1);
             LightingShader.SetUniform("material.shininess", 32.0f);
 
-            var diffuseColor = new Vector3(0.5f);
-            var ambientColor = diffuseColor * new Vector3(0.2f);
+            Vector3 diffuseColor = new Vector3(0.5f);
+            Vector3 ambientColor = diffuseColor * new Vector3(0.2f);
 
             LightingShader.SetUniform("light.ambient", ambientColor);
             LightingShader.SetUniform("light.diffuse", diffuseColor); // darkened
@@ -208,7 +208,7 @@ namespace Tutorial
             LampShader.Use();
 
             //The Lamp cube is going to be a scaled down version of the normal cubes verticies moved to a different screen location
-            var lampMatrix = Matrix4x4.Identity;
+            Matrix4x4 lampMatrix = Matrix4x4.Identity;
             lampMatrix *= Matrix4x4.CreateScale(0.2f);
             lampMatrix *= Matrix4x4.CreateTranslation(LampPosition);
 
@@ -219,21 +219,21 @@ namespace Tutorial
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
         }
 
-        private static unsafe void OnMouseMove(IMouse mouse, PointF position)
+        private static void OnMouseMove(IMouse mouse, PointF position)
         {
             const float lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }
             else
             {
-                var xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
-                var yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
+                float xOffset = (position.X - LastMousePosition.X) * lookSensitivity;
+                float yOffset = (position.Y - LastMousePosition.Y) * lookSensitivity;
                 LastMousePosition = position;
 
                 Camera.ModifyDirection(xOffset, yOffset);
             }
         }
 
-        private static unsafe void OnMouseWheel(IMouse mouse, ScrollWheel scrollWheel)
+        private static void OnMouseWheel(IMouse mouse, ScrollWheel scrollWheel)
         {
             Camera.ModifyZoom(scrollWheel.Y);
         }
