@@ -71,5 +71,15 @@ namespace GenericMathsGenerator
             true,
             null,
             null);
+
+        public static DiagnosticDescriptor UnsupportedMember { get; } = new DiagnosticDescriptor(
+            "GM0007",
+            "Unsupported Member",
+            "Members of type {0} are not supported",
+            "",
+            DiagnosticSeverity.Warning,
+            true,
+            null,
+            null);
     }
 }

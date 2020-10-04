@@ -157,6 +157,8 @@ namespace GenericMaths
                                 case PropertyDeclarationSyntax property:
                                     resultDeclarations.Add(property.WithType(IdentifierName(GenericParameter)));
                                     break;
+                                default:
+                                    throw new DiagnosticException(Diagnostic.Create(Diagnostics.UnsupportedMember, member.GetLocation(), member.GetType().Name));
                             }
                         }
 
