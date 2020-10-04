@@ -1,0 +1,7 @@
+coverage:
+  range: "85...100"
+  status:
+    project:
+      Maths:
+        paths:
+          - src/Maths

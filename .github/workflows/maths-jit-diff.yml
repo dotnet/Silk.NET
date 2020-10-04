@@ -1,0 +1,126 @@
+name: JIT Disassembly
+
+on:
+  pull_request:
+    types: [opened]
+  issue_comment:
+    types: [created]
+  push:
+    paths:
+      - '.github/workflows/maths-jit-diff.yml'
+      - 'src/Maths/JITTest/**'
+      - 'src/Maths/Silk.NET.Maths/Scalar*.cs'
+
+env:
+  DOTNET_NOLOGO: 1
+  DOTNET_TAG: v5.0.0-preview.7.20364.11
+  DOTNET_VERSION: 5.0.100-preview.7.20366.6
+
+jobs:
+  check-comment:
+    outputs:
+      triggered: ${{ steps.check.outputs.triggered || github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: khan/pull-request-comment-trigger@master
+        if: github.event_name != 'push'
+        id: check
+        with:
+          trigger: '@jit-asm'
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+  build-sample-project:
+    runs-on: ubuntu-latest
+    
+    needs: check-comment
+    if: needs.check-comment.outputs.triggered == 'true'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with: 
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Build Project
+        run: dotnet build ./src/Maths/JITTest/JITTest.csproj -f net5.0 -c Release -o ./sample/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sample
+          path: sample/
+            
+  windows-generate-diff:
+    strategy:
+      matrix:
+        arch: [x64, x86]
+        
+    runs-on: windows-latest
+    
+    needs: [check-comment, build-sample-project]
+    if: needs.check-comment.outputs.triggered == 'true'
+    
+    steps:
+      - name: Cache Artifacts
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: artifacts/
+          key: windows-${{ matrix.arch }}-clr-cache-${{ env.DOTNET_TAG }} 
+      - uses: actions/checkout@v2
+        if: steps.cache.outputs.cache-hit != 'true'
+        with:
+          repository: dotnet/runtime
+          ref: ${{ env.DOTNET_TAG }} 
+      - name: Build CLR
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: ./build.cmd -subset clr -configuration checked -arch ${{ matrix.arch }}
+      - name: Build Libs
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: ./build.cmd -subset libs -configuration release -runtimeConfiguration checked -arch ${{ matrix.arch }}
+      - name: Build Test
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: ./src/coreclr/build-test.cmd ${{ matrix.arch }} checked
+      - uses: actions/download-artifact@v2
+        name: Download Sample
+        with:
+          name: sample
+          path: sample/
+      - name: Generate JIT Diff
+        run: ./artifacts/tests/coreclr/Windows_NT.${{ matrix.arch }}.Checked/Tests/Core_Root/CoreRun.exe ./sample/JITTest.dll > ./windows-jit-asm-${{ matrix.arch }}
+        env:
+          COMPlus_TieredCompilation: 0
+          COMPlus_JitDisasm: 'JITTest.*::* Silk.NET.Maths.Scalar::*'
+          COMPlus_JitDiffableDasm: 1
+      - uses: actions/upload-artifact@v2
+        with:
+          name: windows-jit-asm-${{ matrix.arch }}
+          path: ./windows-jit-asm-${{ matrix.arch }}
+  commit:
+    runs-on: ubuntu-latest
+    needs: [windows-generate-diff]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        name: Download windows-jit-asm-x64
+        with:
+          name: windows-jit-asm-x64
+          path: '.'
+      - uses: actions/download-artifact@v2
+        name: Download windows-jit-asm-x86
+        with:
+          name: windows-jit-asm-x86
+          path: '.'
+      - name: Move files
+        run: |
+          mv ./windows-jit-asm-x86 ./build/maths/windows-jit-asm-x86
+          mv ./windows-jit-asm-x64 ./build/maths/windows-jit-asm-x64
+      - name: Create Commit
+        uses: EndBug/add-and-commit@v4
+        with:
+          add: './build/maths/'
+          author_name: JIT CI
+          author_email: 31213871+UltzLtd@users.noreply.github.com
+          message: 'Update JIT ASM'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push Commit
+        run: git push
