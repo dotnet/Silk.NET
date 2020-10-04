@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -146,8 +146,10 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                lock (AudioContextLock) {
-                    if (AvailableContexts.Count == 0) {
+                lock (AudioContextLock)
+                {
+                    if (AvailableContexts.Count == 0)
+                    {
                         return null;
                     }
 
@@ -168,8 +170,10 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                lock (AudioContextLock) {
-                    if (AvailableContexts.Count == 0) {
+                lock (AudioContextLock)
+                {
+                    if (AvailableContexts.Count == 0)
+                    {
                         return false;
                     }
 
@@ -189,11 +193,13 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                if (_disposed) {
+                if (_disposed)
+                {
                     throw new ObjectDisposedException(GetType().FullName);
                 }
 
-                unsafe {
+                unsafe
+                {
                     return ContextAPI.GetError(Device);
                 }
             }
@@ -209,7 +215,8 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                if (_disposed) {
+                if (_disposed)
+                {
                     throw new ObjectDisposedException(GetType().FullName);
                 }
 
@@ -227,7 +234,8 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                if (_disposed) {
+                if (_disposed)
+                {
                     throw new ObjectDisposedException(GetType().FullName);
                 }
 
@@ -243,7 +251,8 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                if (_disposed) {
+                if (_disposed)
+                {
                     throw new ObjectDisposedException(GetType().FullName);
                 }
 
@@ -254,21 +263,27 @@ namespace Silk.NET.OpenAL
         /// <inheritdoc />
         public void Dispose()
         {
-            if (!_disposed) {
-                if (IsCurrent) {
+            if (!_disposed)
+            {
+                if (IsCurrent)
+                {
                     IsCurrent = false;
                 }
 
-                if (_contextHandle != IntPtr.Zero) {
+                if (_contextHandle != IntPtr.Zero)
+                {
                     AvailableContexts.Remove(_contextHandle);
 
-                    unsafe {
+                    unsafe
+                    {
                         ContextAPI.DestroyContext((Context*) _contextHandle);
                     }
                 }
 
-                unsafe {
-                    if (Device != null) {
+                unsafe
+                {
+                    if (Device != null)
+                    {
                         ContextAPI.CloseDevice(Device);
                     }
                 }
@@ -290,11 +305,14 @@ namespace Silk.NET.OpenAL
         /// </exception>
         private static void MakeCurrent(AudioContext context)
         {
-            lock (AudioContextLock) {
-                unsafe {
+            lock (AudioContextLock)
+            {
+                unsafe
+                {
                     var contextHandle = context?._contextHandle ?? IntPtr.Zero;
 
-                    if (ContextAPI.MakeContextCurrent(contextHandle)) {
+                    if (ContextAPI.MakeContextCurrent(contextHandle))
+                    {
                         return;
                     }
 
@@ -336,7 +354,8 @@ namespace Silk.NET.OpenAL
         /// </remarks>
         private void CreateContext(string device, int frequency, int refreshRate, bool isSynchronous)
         {
-            if (frequency < 0) {
+            if (frequency < 0)
+            {
                 throw new ArgumentOutOfRangeException
                 (
                     nameof(frequency),
@@ -345,7 +364,8 @@ namespace Silk.NET.OpenAL
                 );
             }
 
-            if (refreshRate < 0) {
+            if (refreshRate < 0)
+            {
                 throw new ArgumentOutOfRangeException
                 (
                     nameof(refreshRate),
@@ -357,12 +377,14 @@ namespace Silk.NET.OpenAL
             // Build the attribute list
             var attributes = new List<int>();
 
-            if (frequency != 0) {
+            if (frequency != 0)
+            {
                 attributes.Add((int) ContextAttributes.Frequency);
                 attributes.Add(frequency);
             }
 
-            if (refreshRate != 0) {
+            if (refreshRate != 0)
+            {
                 attributes.Add((int) ContextAttributes.Refresh);
                 attributes.Add(refreshRate);
             }
@@ -403,21 +425,25 @@ namespace Silk.NET.OpenAL
             IEnumerable<int> attributes
         )
         {
-            if (_contextExists) {
+            if (_contextExists)
+            {
                 throw new NotSupportedException("Multiple AudioContexts are not supported.");
             }
 
-            if (!string.IsNullOrEmpty(device)) {
+            if (!string.IsNullOrEmpty(device))
+            {
                 _deviceName = device;
                 Device = ContextAPI.OpenDevice(device); // try to open device by name
             }
 
-            if (Device == null) {
+            if (Device == null)
+            {
                 _deviceName = "IntPtr.Zero (null string)";
                 Device = ContextAPI.OpenDevice(null); // try to open unnamed default device
             }
 
-            if (Device == null) {
+            if (Device == null)
+            {
                 _deviceName = "None";
                 throw new AudioDeviceException
                 (
@@ -425,11 +451,13 @@ namespace Silk.NET.OpenAL
                 );
             }
 
-            fixed (int* ptr = attributes.ToArray()) {
+            fixed (int* ptr = attributes.ToArray())
+            {
                 _contextHandle = ContextAPI.CreateContextHandle(Device, ptr);
             }
 
-            if (_contextHandle == IntPtr.Zero) {
+            if (_contextHandle == IntPtr.Zero)
+            {
                 ContextAPI.CloseDevice(Device);
                 throw new AudioContextException
                 (
@@ -441,7 +469,8 @@ namespace Silk.NET.OpenAL
 
             _deviceName = ContextAPI.GetContextProperty(Device, GetContextString.DeviceSpecifier);
 
-            lock (AudioContextLock) {
+            lock (AudioContextLock)
+            {
                 AvailableContexts.Add(_contextHandle, this);
                 _contextExists = true;
             }
@@ -462,7 +491,8 @@ namespace Silk.NET.OpenAL
         /// </remarks>
         public void MakeCurrent()
         {
-            if (_disposed) {
+            if (_disposed)
+            {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
@@ -489,11 +519,13 @@ namespace Silk.NET.OpenAL
         /// <seealso cref="IsSynchronized" />
         public void Process()
         {
-            if (_disposed) {
+            if (_disposed)
+            {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
-            unsafe {
+            unsafe
+            {
                 ContextAPI.ProcessContext((Context*) _contextHandle);
             }
 
@@ -522,11 +554,13 @@ namespace Silk.NET.OpenAL
         /// <seealso cref="IsSynchronized" />
         public void Suspend()
         {
-            if (_disposed) {
+            if (_disposed)
+            {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
-            unsafe {
+            unsafe
+            {
                 ContextAPI.SuspendContext((Context*) _contextHandle);
             }
 
@@ -540,11 +574,13 @@ namespace Silk.NET.OpenAL
         /// <returns>true if the extension is supported; false otherwise.</returns>
         public bool SupportsExtension(string extension)
         {
-            if (_disposed) {
+            if (_disposed)
+            {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
-            unsafe {
+            unsafe
+            {
                 return ContextAPI.IsExtensionPresent(Device, extension);
             }
         }
@@ -563,7 +599,8 @@ namespace Silk.NET.OpenAL
         /// <returns>A <see cref="string" /> that desrcibes this instance.</returns>
         public override string ToString()
         {
-            unsafe {
+            unsafe
+            {
                 return $"{_deviceName} (handle: {_contextHandle}, device: {(long) Device})";
             }
         }

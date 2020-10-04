@@ -49,7 +49,7 @@ namespace Silk.NET.BuildTools.Common
         /// Gets or sets this project's list of structs.
         /// </summary>
         public List<Struct> Structs { get; set; } = new List<Struct>();
-        
+
         /// <summary>
         /// Gets or sets this project's list of delegate functions.
         /// </summary>

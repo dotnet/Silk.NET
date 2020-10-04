@@ -14,12 +14,12 @@ namespace Silk.NET.Core.Native
         /// The flow direction is undefined.
         /// </summary>
         Undefined = 0,
-        
+
         /// <summary>
         /// An input parameter.
         /// </summary>
         In = 1,
-        
+
         /// <summary>
         /// An output parameter.
         /// </summary>

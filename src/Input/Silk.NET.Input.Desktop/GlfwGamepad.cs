@@ -25,7 +25,7 @@ namespace Silk.NET.Input.Desktop
         public GlfwGamepad(int i)
         {
             var hasState = GlfwProvider.GLFW.Value.GetGamepadState(i, out var state);
-            
+
             Index = i;
             _buttons = (Button*) Marshal.AllocHGlobal(GamepadButtonCount * sizeof(Button));
             _thumbsticks = (Thumbstick*) Marshal.AllocHGlobal(GamepadThumbstickCount * sizeof(Thumbstick));
@@ -35,7 +35,7 @@ namespace Silk.NET.Input.Desktop
             Triggers = new GlfwReadOnlyList<Trigger>(_triggers, GamepadTriggerCount);
 
             _connected = hasState;
-            
+
             for (int j = 0; j < GamepadButtonCount; j++)
             {
                 _buttons[j] = new Button((ButtonName) j, j, hasState && state.Buttons[j] == (int) InputAction.Press);
@@ -94,7 +94,7 @@ namespace Silk.NET.Input.Desktop
                     (_buttons[i].Pressed ? ButtonUp : ButtonDown)?.Invoke
                         (this, _buttons[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1));
                 }
-                
+
                 _buttons[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1);
             }
 
@@ -123,7 +123,7 @@ namespace Silk.NET.Input.Desktop
             }
 
             _thumbsticks[1] = thumbstick1;
-            
+
             // Left Trigger
             var trigger0 = new Trigger(0, Deadzone.Apply(state.Axes[4]));
             if (_triggers[0].Position != trigger0.Position)

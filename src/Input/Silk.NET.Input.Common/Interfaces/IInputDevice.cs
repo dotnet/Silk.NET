@@ -14,12 +14,12 @@ namespace Silk.NET.Input.Common
         /// The name of this device, as reported by the hardware.
         /// </summary>
         string Name { get; }
-        
+
         /// <summary>
         /// The index of this device.
         /// </summary>
         int Index { get; }
-        
+
         /// <summary>
         /// Whether or not this device is currently connected.
         /// </summary>

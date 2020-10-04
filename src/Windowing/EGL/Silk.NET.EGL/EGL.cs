@@ -16,7 +16,7 @@ namespace Silk.NET.EGL
         /// <returns>The instance.</returns>
         public static EGL GetApi()
         {
-             return LibraryLoader<EGL>.Load(new EGLLibraryNameContainer());
+            return LibraryLoader<EGL>.Load(new EGLLibraryNameContainer());
         }
 
         /// <summary>
@@ -26,15 +26,15 @@ namespace Silk.NET.EGL
         /// <typeparam name="T">The extension type to check for.</typeparam>
         /// <returns>Whether or not the extension was found. If false, the extension was not found.</returns>
         public bool TryGetExtension<T>(out T ext)
-            where T:NativeExtension<EGL>
+            where T : NativeExtension<EGL>
         {
-             ext = LibraryLoader<EGL>.Load<T>(this);
-             return ext != null;
+            ext = LibraryLoader<EGL>.Load<T>(this);
+            return ext != null;
         }
 
         /// <inheritdoc />
         public override bool IsExtensionPresent(string extension)
-            => ((IList) QueryStringS(IntPtr.Zero, (int) EGLEnum.Extensions).Split(' ')).Contains("EGL_" + extension);
+            => ((IList)QueryStringS(IntPtr.Zero, (int)EGLEnum.Extensions).Split(' ')).Contains("EGL_" + extension);
     }
 }
 

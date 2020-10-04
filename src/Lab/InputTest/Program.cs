@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -115,7 +115,7 @@ namespace InputTest
                     gamepad.TriggerMoved += GamepadOnTriggerMoved;
                     Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
                     GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
-                    Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
+                    Console.WriteLine("Button Count: " + count + " Expected Button Count: " + Enum.GetValues(typeof(GamepadButton)).Length);
                 }
                 else
                 {

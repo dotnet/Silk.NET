@@ -116,7 +116,8 @@ namespace Silk.NET.OpenAL.Extensions.EXT
             var internalBufferSize = sampleCount * formatSize;
             var managedBufferElementCount = internalBufferSize / managedFormatSize;
 
-            if (buffer.Length < managedBufferElementCount) {
+            if (buffer.Length < managedBufferElementCount)
+            {
                 throw new ArgumentException
                 (
                     "The buffer wasn't large enough to contain all of the requested samples.",
@@ -124,7 +125,8 @@ namespace Silk.NET.OpenAL.Extensions.EXT
                 );
             }
 
-            fixed (void* ptr = buffer) {
+            fixed (void* ptr = buffer)
+            {
                 CaptureSamples(device, ptr, sampleCount);
             }
         }

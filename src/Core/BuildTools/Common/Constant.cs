@@ -16,17 +16,17 @@ namespace Silk.NET.BuildTools.Common
         /// The type of the constant.
         /// </summary>
         public Type Type { get; set; }
-        
+
         /// <summary>
         /// The name of the constant.
         /// </summary>
         public string Name { get; set; }
-        
+
         /// <summary>
         /// The name of the constant in the native library.
         /// </summary>
         public string NativeName { get; set; }
-        
+
         /// <summary>
         /// The value of the constant.
         /// </summary>

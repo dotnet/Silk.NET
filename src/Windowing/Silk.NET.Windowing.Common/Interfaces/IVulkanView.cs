@@ -25,8 +25,8 @@ namespace Silk.NET.Windowing.Common
         /// <param name="allocator">A custom Vulkan allocator. Can be omitted by passing null.</param>
         /// <typeparam name="T">Allocator type</typeparam>
         /// <returns>A handle to the Vulkan surface created</returns>
-        unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator) where T:unmanaged;
-        
+        unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator) where T : unmanaged;
+
         /// <summary>
         /// Get the extensions required for Vulkan to work on this platform.
         /// </summary>

@@ -34,12 +34,12 @@ namespace Silk.NET.Input.Desktop
             Handle = window.Handle;
             for (var i = 0; i < _gamepads.Length; i++)
             {
-                _gamepads[i] = new GlfwGamepad(i) {OnConnectionChanged = OnConnectionChanged};
+                _gamepads[i] = new GlfwGamepad(i) { OnConnectionChanged = OnConnectionChanged };
             }
 
             for (var i = 0; i < _joysticks.Length; i++)
             {
-                _joysticks[i] = new GlfwJoystick(i){OnConnectionChanged = OnConnectionChanged};
+                _joysticks[i] = new GlfwJoystick(i) { OnConnectionChanged = OnConnectionChanged };
             }
 
             _subscribers[0] = _keyboards[0] = new GlfwKeyboard();
@@ -62,7 +62,7 @@ namespace Silk.NET.Input.Desktop
                 {
                     updatable.Update();
                 }
-                
+
                 foreach (var updatable in _joysticks)
                 {
                     updatable.Update();

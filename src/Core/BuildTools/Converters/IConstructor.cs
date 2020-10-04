@@ -24,7 +24,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="functions">The functions to write.</param>
         /// <param name="opts">The options for profile conversion.</param>
         void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts);
-        
+
         /// <summary>
         /// Writes a collection of enums to their appropriate projects.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="enums">The enums to write.</param>
         /// <param name="opts">The options for profile conversion.</param>
         void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts);
-        
+
         /// <summary>
         /// Writes a collection of structs to their appropriate projects.
         /// </summary>
@@ -40,7 +40,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="structs">The structs to write.</param>
         /// <param name="opts">The options for profile conversion.</param>
         void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts);
-        
+
         /// <summary>
         /// Writes a collection of constants to their appropriate projects.
         /// </summary>

@@ -264,7 +264,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                     var x11Display = glfw.Library.LoadFunction<GetX11Display>("glfwGetX11Display")();
                     if (x11Display != IntPtr.Zero && x11Window != IntPtr.Zero)
                     {
-                        return VkSurfaceSource.CreateXlib((Display*)x11Display, new XWindow{Value = x11Window});
+                        return VkSurfaceSource.CreateXlib((Display*) x11Display, new XWindow { Value = x11Window });
                     }
                 }
                 catch (GlfwException)
@@ -306,8 +306,8 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         {
             SwapchainDescription scDesc = new SwapchainDescription(
                 GetSwapchainSource(window),
-                (uint)window.Size.Width,
-                (uint)window.Size.Height,
+                (uint) window.Size.Width,
+                (uint) window.Size.Height,
                 options.SwapchainDepthFormat,
                 options.SyncToVerticalBlank,
                 colorSrgb);
@@ -326,7 +326,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             SwapchainSource source = GetSwapchainSource(window);
             SwapchainDescription swapchainDesc = new SwapchainDescription(
                 source,
-                (uint)window.Size.Width, (uint)window.Size.Height,
+                (uint) window.Size.Width, (uint) window.Size.Height,
                 options.SwapchainDepthFormat,
                 options.SyncToVerticalBlank,
                 colorSrgb);
@@ -368,15 +368,15 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 context => GlfwProvider.GLFW.Value.MakeContextCurrent((WindowHandle*) context),
                 () => (IntPtr) GlfwProvider.GLFW.Value.GetCurrentContext(),
                 () => GlfwProvider.GLFW.Value.MakeContextCurrent(default),
-                _ => {},
+                _ => { },
                 () => GlfwProvider.GLFW.Value.SwapBuffers((WindowHandle*) window.Handle),
                 sync => GlfwProvider.GLFW.Value.SwapInterval(sync ? 1 : 0));
 
             return GraphicsDevice.CreateOpenGL(
                 options,
                 platformInfo,
-                (uint)window.Size.Width,
-                (uint)window.Size.Height);
+                (uint) window.Size.Width,
+                (uint) window.Size.Height);
         }
 
         private static void SetGlContextAttributes(GraphicsDeviceOptions options, GraphicsBackend backend, ref WindowOptions opts)
@@ -447,7 +447,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             SwapchainSource source = GetSwapchainSource(window);
             SwapchainDescription swapchainDesc = new SwapchainDescription(
                 source,
-                (uint)window.Size.Width, (uint)window.Size.Height,
+                (uint) window.Size.Width, (uint) window.Size.Height,
                 options.SwapchainDepthFormat,
                 options.SyncToVerticalBlank,
                 options.SwapchainSrgbFormat);

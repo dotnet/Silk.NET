@@ -66,7 +66,7 @@ namespace Silk.NET.BuildTools.Overloading
                 returnType.ToString() == "GLchar*" || returnType.ToString() == "GLbyte*" ||
                 returnType.ToString() == "GLubyte*")
             {
-                variant = new Type {Name = "string", IndirectionLevels = 0};
+                variant = new Type { Name = "string", IndirectionLevels = 0 };
                 return true;
             }
 

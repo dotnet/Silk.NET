@@ -25,7 +25,7 @@ namespace Silk.NET.BuildTools.Converters
             Default = "gl"
         )]
         public string Prefix { get; set; } = "gl";
-        
+
         /// <summary>
         /// The reader/parser to use.
         /// </summary>
@@ -37,7 +37,7 @@ namespace Silk.NET.BuildTools.Converters
             Required = true
         )]
         public string Reader { get; set; }
-        
+
         /// <summary>
         /// The constructor/sorter to use.
         /// </summary>

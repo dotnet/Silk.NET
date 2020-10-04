@@ -110,7 +110,7 @@ namespace Silk.NET.BuildTools.Bind
             if (@struct.Fields.Any(x => x.Count is null))
             {
                 sw.WriteLine($"        public {@struct.Name}");
-                sw.WriteLine( "        (");
+                sw.WriteLine("        (");
                 var first = true;
                 foreach (var field in @struct.Fields)
                 {
@@ -259,7 +259,7 @@ namespace Silk.NET.BuildTools.Bind
         public static void WriteNameContainer(this Project project, Profile profile, string file)
         {
             using var sw = new StreamWriter(file);
-            
+
             sw.WriteLine(LicenseText.Value);
             sw.WriteLine("using Silk.NET.Core.Loader;");
             sw.WriteLine();

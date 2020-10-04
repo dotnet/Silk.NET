@@ -14,7 +14,7 @@ namespace Silk.NET.Input.Common
         /// The index of this hat.
         /// </summary>
         public int Index { get; }
-        
+
         /// <summary>
         /// The position of this hat.
         /// </summary>

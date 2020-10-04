@@ -1,4 +1,4 @@
-﻿#define MINIMAL
+#define MINIMAL
 
 using System;
 using System.Drawing;

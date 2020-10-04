@@ -26,16 +26,16 @@ namespace Silk.NET.Input.Common
         /// The y-axis of the stick, from -1.0 to 1.0
         /// </summary>
         public float Y { get; }
-        
+
         /// <summary>
         /// The current position of the stick, from 0.0 to 1.0.
         /// </summary>
-        public float Position => (float)Math.Sqrt(X * X + Y * Y);
+        public float Position => (float) Math.Sqrt(X * X + Y * Y);
 
         /// <summary>
         /// The current direction of the stick, from 0.0 to 360.0.
         /// </summary>
-        public float Direction => (float)Math.Atan2(Y, X);
+        public float Direction => (float) Math.Atan2(Y, X);
 
         /// <summary>
         /// Creates a new instance of the Thumbstick struct.

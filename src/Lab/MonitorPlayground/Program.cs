@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Linq;
 using Silk.NET.Input;
@@ -76,10 +76,10 @@ namespace MonitorPlayground
                 {
                     window.Close();
                 }
-                
+
                 input.Mice[0].Position = new PointF(window.Size.Width / 2f, window.Size.Height / 2f);
             };
-            
+
             window.Run();
         }
     }

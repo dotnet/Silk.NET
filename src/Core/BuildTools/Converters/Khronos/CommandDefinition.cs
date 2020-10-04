@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Xml.Linq;
 using JetBrains.Annotations;
@@ -14,22 +14,22 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The command type.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// The return type of the command.
         /// </summary>
         public TypeSpec ReturnType { get; }
-        
+
         /// <summary>
         /// The parameters of the command.
         /// </summary>
         public ParameterDefinition[] Parameters { get; }
-        
+
         /// <summary>
         /// Success codes of the command.
         /// </summary>
         public string[] SuccessCodes { get; }
-        
+
         /// <summary>
         /// Error codes of the command.
         /// </summary>
@@ -96,12 +96,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var successCodes = successAttr != null
                 ? successAttr.Value.Split(',').ToArray()
                 : Array.Empty<string>();
-            
+
             var errorAttr = xe.Attribute("errorcodes");
             var errorCodes = errorAttr != null
                 ? errorAttr.Value.Split(',').ToArray()
                 : Array.Empty<string>();
-            
+
             // ReSharper restore StringLiteralTypo
 
             var parameters = xe.Elements("param")

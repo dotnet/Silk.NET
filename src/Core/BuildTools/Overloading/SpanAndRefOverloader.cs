@@ -39,7 +39,7 @@ namespace Silk.NET.BuildTools.Overloading.Prompt
                     genericParams.Add
                     (
                         new GenericTypeParameter
-                            {Name = $"T{genericParams.Count}", Constraints = new List<string> {"unmanaged"}}
+                        { Name = $"T{genericParams.Count}", Constraints = new List<string> { "unmanaged" } }
                     );
                 }
 

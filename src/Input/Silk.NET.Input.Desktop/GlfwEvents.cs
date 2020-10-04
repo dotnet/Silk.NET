@@ -17,7 +17,7 @@ namespace Silk.NET.Input.Desktop
             GlfwProvider.GLFW.Value.SetKeyCallback(handle, (a, b, c, d, e) => Key?.Invoke(a, b, c, d, e));
             GlfwProvider.GLFW.Value.SetMouseButtonCallback(handle, (a, b, c, d) => MouseButton?.Invoke(a, b, c, d));
             GlfwProvider.GLFW.Value.SetCursorEnterCallback(handle, (a, b) => CursorEnter?.Invoke(a, b));
-            GlfwProvider.GLFW.Value.SetCursorPosCallback(handle, (a, b,c) => CursorPos?.Invoke(a, b, c));
+            GlfwProvider.GLFW.Value.SetCursorPosCallback(handle, (a, b, c) => CursorPos?.Invoke(a, b, c));
             GlfwProvider.GLFW.Value.SetScrollCallback(handle, (a, b, c) => Scroll?.Invoke(a, b, c));
         }
 

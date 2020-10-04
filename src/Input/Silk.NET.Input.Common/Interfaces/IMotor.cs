@@ -14,7 +14,7 @@ namespace Silk.NET.Input.Common
         /// The index of this vibration motor.
         /// </summary>
         int Index { get; }
-        
+
         /// <summary>
         /// The motor's vibration intensity, between 0f and 1f.
         /// </summary>

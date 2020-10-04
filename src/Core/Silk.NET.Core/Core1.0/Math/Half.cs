@@ -120,7 +120,7 @@ namespace Silk.NET.Core.Math
         {
             unsafe
             {
-                _bits = SingleToHalf(*(int*)&f);
+                _bits = SingleToHalf(*(int*) &f);
             }
         }
 
@@ -170,7 +170,7 @@ namespace Silk.NET.Core.Math
         /// </summary>
         /// <param name="d">64-bit double-precision floating-point number.</param>
         public Half(double d)
-            : this((float)d)
+            : this((float) d)
         {
         }
 
@@ -181,7 +181,7 @@ namespace Silk.NET.Core.Math
         /// <param name="d">64-bit double-precision floating-point number.</param>
         /// <param name="throwOnError">Enable checks that will throw if the conversion result is not meaningful.</param>
         public Half(double d, bool throwOnError)
-            : this((float)d, throwOnError)
+            : this((float) d, throwOnError)
         {
         }
 
@@ -208,7 +208,7 @@ namespace Silk.NET.Core.Math
                     // (F may be a small normalized float, a denormalized float or a zero).
                     //
                     // We convert F to a half zero with the same sign as F.
-                    return (ushort)sign;
+                    return (ushort) sign;
                 }
 
                 // E is between -10 and 0. F is a normalized float whose magnitude is less than Half.MinNormalizedValue.
@@ -229,7 +229,7 @@ namespace Silk.NET.Core.Math
                 mantissa = (mantissa + a + b) >> t;
 
                 // Assemble the half from S, E (==zero) and M.
-                return (ushort)(sign | mantissa);
+                return (ushort) (sign | mantissa);
             }
 
             if (exponent == 0xff - (127 - 15))
@@ -237,14 +237,14 @@ namespace Silk.NET.Core.Math
                 if (mantissa == 0)
                 {
                     // F is an infinity; convert F to a half infinity with the same sign as F.
-                    return (ushort)(sign | 0x7c00);
+                    return (ushort) (sign | 0x7c00);
                 }
 
                 // F is a NAN; we produce a half NAN that preserves the sign bit and the 10 leftmost bits of the
                 // significand of F, with one exception: If the 10 leftmost bits are all zero, the NAN would turn
                 // into an infinity, so we have to set at least one bit in the significand.
                 mantissa >>= 13;
-                return (ushort)(sign | 0x7c00 | mantissa | (mantissa == 0 ? 1 : 0));
+                return (ushort) (sign | 0x7c00 | mantissa | (mantissa == 0 ? 1 : 0));
             }
 
             // E is greater than zero.  F is a normalized float. We try to convert F to a normalized half.
@@ -265,7 +265,7 @@ namespace Silk.NET.Core.Math
             }
 
             // Assemble the half from S, E and M.
-            return (ushort)(sign | (exponent << 10) | (mantissa >> 13));
+            return (ushort) (sign | (exponent << 10) | (mantissa >> 13));
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Silk.NET.Core.Math
 
             unsafe
             {
-                return *(float*)&i;
+                return *(float*) &i;
             }
         }
 
@@ -424,7 +424,7 @@ namespace Silk.NET.Core.Math
         /// <param name="context">The destination for this serialization. (This parameter is not used; specify null.).</param>
         public Half(SerializationInfo info, StreamingContext context)
         {
-            _bits = (ushort)info.GetValue("bits", typeof(ushort));
+            _bits = (ushort) info.GetValue("bits", typeof(ushort));
         }
 
         /// <inheritdoc/>
@@ -462,22 +462,22 @@ namespace Silk.NET.Core.Math
         {
             const int maxUlps = 1;
 
-            short k = unchecked((short)other._bits);
-            short l = unchecked((short)_bits);
+            short k = unchecked((short) other._bits);
+            short l = unchecked((short) _bits);
 
             // Make a lexicographically ordered as a twos-complement int
             if (k < 0)
             {
-                k = (short)(0x8000 - k);
+                k = (short) (0x8000 - k);
             }
 
             // Make b lexicographically ordered as a twos-complement int
             if (l < 0)
             {
-                l = (short)(0x8000 - l);
+                l = (short) (0x8000 - l);
             }
 
-            var intDiff = System.Math.Abs((short)(k - l));
+            var intDiff = System.Math.Abs((short) (k - l));
 
             if (intDiff <= maxUlps)
             {
@@ -513,7 +513,7 @@ namespace Silk.NET.Core.Math
         [Pure]
         public int CompareTo(Half other)
         {
-            return ((float)this).CompareTo(other);
+            return ((float) this).CompareTo(other);
         }
 
         /// <summary>
@@ -545,7 +545,7 @@ namespace Silk.NET.Core.Math
         [Pure]
         public static Half Parse(string s)
         {
-            return (Half)float.Parse(s);
+            return (Half) float.Parse(s);
         }
 
         /// <summary>
@@ -558,7 +558,7 @@ namespace Silk.NET.Core.Math
         [Pure]
         public static Half Parse(string s, NumberStyles style, IFormatProvider provider)
         {
-            return (Half)float.Parse(s, style, provider);
+            return (Half) float.Parse(s, style, provider);
         }
 
         /// <summary>
@@ -571,7 +571,7 @@ namespace Silk.NET.Core.Math
         public static bool TryParse(string s, out Half result)
         {
             var b = float.TryParse(s, out float f);
-            result = (Half)f;
+            result = (Half) f;
             return b;
         }
 
@@ -587,7 +587,7 @@ namespace Silk.NET.Core.Math
         public static bool TryParse(string s, NumberStyles style, IFormatProvider provider, out Half result)
         {
             var b = float.TryParse(s, style, provider, out float f);
-            result = (Half)f;
+            result = (Half) f;
             return b;
         }
 

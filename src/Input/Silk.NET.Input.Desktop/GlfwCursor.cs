@@ -79,7 +79,7 @@ namespace Silk.NET.Input.Desktop
                 if (_standardCursor != value)
                 {
                     _standardCursor = value;
-                    UpdateStandardCursor();                    
+                    UpdateStandardCursor();
                 }
             }
         }
@@ -88,7 +88,7 @@ namespace Silk.NET.Input.Desktop
         public unsafe CursorMode CursorMode
         {
             get => GetCursorMode(
-                (CursorModeValue)GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.Cursor),
+                (CursorModeValue) GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.Cursor),
                 GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.RawMouseMotion) != 0
             );
             set
@@ -111,7 +111,7 @@ namespace Silk.NET.Input.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public int HotspotY
         {
@@ -125,7 +125,7 @@ namespace Silk.NET.Input.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public int Width
         {
@@ -139,7 +139,7 @@ namespace Silk.NET.Input.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public int Height
         {
@@ -153,7 +153,7 @@ namespace Silk.NET.Input.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public byte[] Pixels
         {

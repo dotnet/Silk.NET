@@ -116,7 +116,7 @@ namespace Silk.NET.Vulkan
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
-        public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T:NativeExtension<Vk> =>
+        public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? LibraryActivator.CreateInstance<T>
                     (SearchPaths.GetLibraryName(), _extensionLoaders.Get(instance, null))

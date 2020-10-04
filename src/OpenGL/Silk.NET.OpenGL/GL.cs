@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL
                 ("The given IGLContextSource is not configured with a context.")
         );
 
-        public static GL GetApi(IGLContext ctx) => GetApi((INativeContext) ctx);
+        public static GL GetApi(IGLContext ctx) => GetApi((INativeContext)ctx);
         public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
 
         public static GL GetApi(INativeContext ctx) => LibraryActivator.CreateInstance<GL>
@@ -45,7 +45,7 @@ namespace Silk.NET.OpenGL
         public override bool IsExtensionPresent(string extension)
         {
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
-                .Select(x => GetString(StringName.Extensions, (uint) x))
+                .Select(x => GetString(StringName.Extensions, (uint)x))
                 .ToList();
 
             return _extensions.Contains("GL_" + (extension.StartsWith("GL_") ? extension.Substring(3) : extension));
@@ -135,22 +135,22 @@ namespace Silk.NET.OpenGL
         {
             uint length;
             GetProgram(program, GLEnum.ActiveAttributeMaxLength, out var lengthTmp);
-            length = (uint) lengthTmp;
+            length = (uint)lengthTmp;
 
             GetActiveAttrib
-                (program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out string str);
+                (program, index, (uint)(length == 0 ? 1 : length * 2), out length, out size, out type, out string str);
 
-            return str.Substring(0, (int) length);
+            return str.Substring(0, (int)length);
         }
 
         public string GetActiveUniform(uint program, uint uniformIndex, out int size, out UniformType type)
         {
             uint length;
             GetProgram(program, GLEnum.ActiveUniformMaxLength, out var lengthTmp);
-            length = (uint) lengthTmp;
+            length = (uint)lengthTmp;
             GetActiveUniform
                 (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out string str);
-            return str.Substring(0, (int) length);
+            return str.Substring(0, (int)length);
         }
 
         public void ShaderSource(uint shader, string @string)
@@ -158,7 +158,7 @@ namespace Silk.NET.OpenGL
             unsafe
             {
                 int length = @string.Length;
-                ShaderSource((uint) shader, 1, new string[] {@string}, &length);
+                ShaderSource((uint)shader, 1, new string[] { @string }, &length);
             }
         }
 
@@ -171,9 +171,9 @@ namespace Silk.NET.OpenGL
         public void GetShaderInfoLog(uint shader, out string info)
         {
             GetShader(shader, GLEnum.InfoLogLength, out var length2);
-            var length = (uint) length2;
+            var length = (uint)length2;
             GetShaderInfoLog(shader, length * 2, out length, out info);
-            info = info.Substring(0, (int) length);
+            info = info.Substring(0, (int)length);
         }
 
         public string GetProgramInfoLog(uint program)
@@ -185,9 +185,9 @@ namespace Silk.NET.OpenGL
         public void GetProgramInfoLog(uint program, out string info)
         {
             GetProgram(program, GLEnum.InfoLogLength, out var length2);
-            var length = (uint) length2;
+            var length = (uint)length2;
             GetProgramInfoLog(program, length * 2, out length, out info);
-            info = info.Substring(0, (int) length);
+            info = info.Substring(0, (int)length);
         }
 
         [CLSCompliant(false)]
@@ -239,7 +239,7 @@ namespace Silk.NET.OpenGL
             {
                 fixed (Vector2* ptr = &vector)
                 {
-                    GetFloat(pname, (float*) ptr);
+                    GetFloat(pname, (float*)ptr);
                 }
             }
         }
@@ -250,7 +250,7 @@ namespace Silk.NET.OpenGL
             {
                 fixed (Vector3* ptr = &vector)
                 {
-                    GetFloat(pname, (float*) ptr);
+                    GetFloat(pname, (float*)ptr);
                 }
             }
         }
@@ -261,7 +261,7 @@ namespace Silk.NET.OpenGL
             {
                 fixed (Vector4* ptr = &vector)
                 {
-                    GetFloat(pname, (float*) ptr);
+                    GetFloat(pname, (float*)ptr);
                 }
             }
         }
@@ -272,24 +272,24 @@ namespace Silk.NET.OpenGL
             {
                 fixed (Matrix4x4* ptr = &matrix)
                 {
-                    GetFloat(pname, (float*) ptr);
+                    GetFloat(pname, (float*)ptr);
                 }
             }
         }
 
         public void Viewport(Size size)
         {
-            Viewport(0, 0, (uint) size.Width, (uint) size.Height);
+            Viewport(0, 0, (uint)size.Width, (uint)size.Height);
         }
 
         public void Viewport(Point location, Size size)
         {
-            Viewport(location.X, location.Y, (uint) size.Width, (uint) size.Height);
+            Viewport(location.X, location.Y, (uint)size.Width, (uint)size.Height);
         }
 
         public void Viewport(Rectangle rectangle)
         {
-            Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height);
+            Viewport(rectangle.X, rectangle.Y, (uint)rectangle.Width, (uint)rectangle.Height);
         }
     }
 }

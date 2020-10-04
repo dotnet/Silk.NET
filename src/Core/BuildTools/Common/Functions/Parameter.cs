@@ -40,7 +40,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets a list of attributes for this parameter.
         /// </summary>
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
-        
+
         /// <summary>
         /// The function this parameter originates from.
         /// </summary>

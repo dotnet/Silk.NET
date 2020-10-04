@@ -25,7 +25,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 {
                     continue;
                 }
-                
+
                 foreach (var rawCategory in function.Categories)
                 {
                     var category = FormatCategory(rawCategory);
@@ -83,7 +83,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts)
         {
@@ -111,7 +111,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     }
                 );
             }
-            
+
             // first, we need to categorise the enums into "Core", or their vendor (i.e. "NV", "SGI", "KHR" etc)
             foreach (var @enum in enums)
             {
@@ -149,7 +149,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     }
                 }
             }
-            
+
             // now that we've categorised them, lets add them into their appropriate projects.
             foreach (var (_, @enum) in mergedEnums)
             {
@@ -171,7 +171,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 profile.Projects[@enum.ExtensionName].Enums.Add(@enum);
             }
         }
-        
+
         /// <inheritdoc />
         public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts)
         {
@@ -199,7 +199,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
 
             return name.StartsWith(opts.Prefix) ? name.Remove(0, opts.Prefix.Length) : name;
         }
-        
+
         private static string FormatCategory(string rawCategory)
         {
             return rawCategory.Split('_').FirstOrDefault();

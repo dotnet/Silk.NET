@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan
     {
         public static SurfaceKHR ToSurface(this VkHandle handle)
         {
-            return new SurfaceKHR {Handle = (ulong) handle.Handle.ToInt64()};
+            return new SurfaceKHR { Handle = (ulong) handle.Handle.ToInt64() };
         }
 
         public static VkHandle ToHandle(this Instance instance)

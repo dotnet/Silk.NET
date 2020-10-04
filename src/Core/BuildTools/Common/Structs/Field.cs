@@ -29,43 +29,43 @@ namespace Silk.NET.BuildTools.Common.Structs
         /// A list of all attributes that apply to this field.
         /// </summary>
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
-        
+
         /// <summary>
         /// The documentation for this field.
         /// </summary>
         public string Doc { get; set; }
-        
+
         /// <summary>
         /// The type of this field.
         /// </summary>
         public Type Type { get; set; }
-        
+
         // TODO: Be sure this is right
         /// <summary>
         /// The number of elements this field contains; if greater than 1, this field is an array.
         /// </summary>
         public Count Count { get; set; }
-        
+
         /// <summary>
         /// The name of this field.
         /// </summary>
         public string Name { get; set; }
-        
+
         /// <summary>
         /// The native name of this field.
         /// </summary>
         public string NativeName { get; set; }
-        
+
         /// <summary>
         /// The native type of this field.
         /// </summary>
         public string NativeType { get; set; }
-        
+
         /// <summary>
         /// The default value of this field.
         /// </summary>
         public string DefaultAssignment { get; set; }
-        
+
         /// <summary>
         /// Convert this field into a string.
         /// </summary>

@@ -61,7 +61,7 @@ namespace Tutorial
             }
 
             Gl = GL.GetApi(window);
-            
+
             Ebo = new BufferObject<uint>(Gl, Indices, BufferTargetARB.ElementArrayBuffer);
             Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);
             Vao = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
@@ -92,7 +92,7 @@ namespace Tutorial
 
         private static unsafe void OnRender(double obj)
         {
-            Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
+            Gl.Clear((uint) ClearBufferMask.ColorBufferBit);
 
             Vao.Bind();
             Texture.Bind();
@@ -104,7 +104,7 @@ namespace Tutorial
                 //Using the transformations.
                 Shader.SetUniform("uModel", Transforms[i].ViewMatrix);
 
-                Gl.DrawElements(PrimitiveType.Triangles, (uint)Indices.Length, DrawElementsType.UnsignedInt, null);
+                Gl.DrawElements(PrimitiveType.Triangles, (uint) Indices.Length, DrawElementsType.UnsignedInt, null);
             }
         }
 

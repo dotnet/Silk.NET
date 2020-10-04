@@ -18,17 +18,17 @@ namespace Silk.NET.Input.Common
         /// Cursor is visible and has no restrictions on mobility.
         /// </summary>
         Normal,
-        
+
         /// <summary>
         /// Cursor is invisible, and has no restrictions on mobility.
         /// </summary>
         Hidden,
-        
+
         /// <summary>
         /// Cursor is invisible, and is restricted to the center of the screen.
         /// </summary>
         Disabled,
-        
+
         /// <summary>
         /// Cursor is invisible, and is restricted to the center of the screen. Mouse motion is not scaled.
         /// </summary>

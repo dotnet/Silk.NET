@@ -27,7 +27,7 @@ namespace Silk.NET.Core.Loader
         public static void CreateBuilder<T>
 #pragma warning restore 1591
             (Ultz.SuperInvoke.Loader.LibraryLoader loader) where T : NativeApiContainer => _loaders[typeof(T)] = loader;
-        
+
         public static T1 Load<T1>
             (SearchPathContainer nameContainer) where T1 : NativeAPI => LibraryActivator.CreateInstance<T1>
             (nameContainer.GetLibraryName());

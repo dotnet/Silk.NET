@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -21,32 +21,32 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// Name of the feature.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// Version number of the feature.
         /// </summary>
         public Version Number { get; }
-        
+
         /// <summary>
         /// API of the feature.
         /// </summary>
         public string Api { get; }
-        
+
         /// <summary>
         /// Enum names of the feature.
         /// </summary>
         public string[] EnumNames { get; }
-        
+
         /// <summary>
         /// Command names of the feature.
         /// </summary>
         public string[] CommandNames { get; }
-        
+
         /// <summary>
         /// Type names of the feature.
         /// </summary>
         public string[] TypeNames { get; }
-        
+
         /// <summary>
         /// Enum extensions in the feature.
         /// </summary>
@@ -100,7 +100,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             {
                 enumNames.AddRange(require.Elements("enum")
                     .Select(x => ParseEnumRequirement(x, 0, enumExtensionValues)));
-                
+
                 commandNames.AddRange(require.Elements("command")
                     .Select(x => x.GetNameAttribute()));
 
@@ -118,7 +118,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         private static string ParseEnumRequirement(XElement enumXe, int originalNumber, ICollection<EnumExtensionValue> enumExtensions)
         {
             var enumName = enumXe.GetNameAttribute();
-            
+
             Debug.Assert(enumXe.Document != null);
 
             var number = enumXe.Attribute("extnumber") is null
@@ -146,7 +146,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 {
                     enumExtensions.Add(new EnumExtensionValue(dummyValue.ExtendedType, enumName, dummyValue.Value));
                 }
-                
+
                 return enumName;
             }
 

@@ -301,6 +301,6 @@ namespace Silk.NET.Input.Desktop
             Key.Menu => GLFW.Keys.Menu,
             _ => throw new ArgumentOutOfRangeException()
         };
-        
+
     }
 }

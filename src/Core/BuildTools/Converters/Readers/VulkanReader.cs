@@ -95,7 +95,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 );
             }
-            
+
             foreach (var h in spec.Handles)
             {
                 ret.Add
@@ -114,7 +114,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {
                 ret.Add(u.Name, new Struct
                 {
-                    Attributes = new List<Attribute>{new Attribute{Name = "StructLayout", Arguments = new List<string>{"LayoutKind.Explicit"}}},
+                    Attributes = new List<Attribute> { new Attribute { Name = "StructLayout", Arguments = new List<string> { "LayoutKind.Explicit" } } },
                     Fields = GetFields(u, opts).ToList(),
                     Name = Naming.TranslateLite(TrimName(u.Name, opts), prefix),
                     NativeName = u.Name
@@ -163,7 +163,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }
             }
-        } 
+        }
 
         private int GetTypeSize(string type, IEnumerable<Dictionary<string, string>> maps)
         {
@@ -224,7 +224,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         yield return new Function
                         {
                             ExtensionName = "Core",
-                            Categories = new List<string> {TrimName(feature.Name, opts)},
+                            Categories = new List<string> { TrimName(feature.Name, opts) },
                             Name = function.Name,
                             NativeName = function.NativeName,
                             Parameters = function.Parameters,
@@ -235,7 +235,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 }
             }
-            
+
             foreach (var extension in spec.Extensions)
             {
                 foreach (var name in extension.CommandNames)
@@ -248,7 +248,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             yield return new Function
                             {
                                 ExtensionName = TrimName(extension.Name, opts),
-                                Categories = new List<string> {TrimName(extension.Name, opts)},
+                                Categories = new List<string> { TrimName(extension.Name, opts) },
                                 Name = function.Name,
                                 NativeName = function.NativeName,
                                 Parameters = function.Parameters,
@@ -316,7 +316,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }
             }
-            
+
             opts.TypeMaps.Insert(0, tm);
         }
 
@@ -331,10 +331,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     Name = Naming.Translate(TrimName(x.Name, opts), opts.Prefix), NativeName = x.Name, Value = x.Value,
                     Type = x.Type switch
                     {
-                        ConstantType.Float32 => new Type {Name = "float"},
-                        ConstantType.UInt32 => new Type {Name = "uint"},
-                        ConstantType.UInt64 => new Type {Name = "ulong"},
-                        _ => new Type{Name = "ulong"}
+                        ConstantType.Float32 => new Type { Name = "float" },
+                        ConstantType.UInt32 => new Type { Name = "uint" },
+                        ConstantType.UInt64 => new Type { Name = "ulong" },
+                        _ => new Type { Name = "ulong" }
                     }
                 }
             );
@@ -366,7 +366,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 _ => FlowDirection.In
             };
         }
-        
+
         private Dictionary<string, Enum> ConvertEnums(VulkanSpecification spec, ProfileConverterOptions opts)
         {
             var ret = new Dictionary<string, Enum>();
@@ -394,7 +394,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             )
                             .ToList(),
                         Attributes = e.Type == EnumType.Bitmask
-                            ? new List<Attribute> {new Attribute {Name = "Flags"}}
+                            ? new List<Attribute> { new Attribute { Name = "Flags" } }
                             : new List<Attribute>()
                     }
                 );

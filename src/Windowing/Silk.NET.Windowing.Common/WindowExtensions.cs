@@ -102,6 +102,6 @@ namespace Silk.NET.Windowing.Common
         /// <param name="window">The window.</param>
         /// <param name="icon">The icon to set.</param>
         public static void SetWindowIcon(this IWindow window, ref WindowIcon icon) => window.SetWindowIcon
-            (new[] {icon});
+            (new[] { icon });
     }
 }

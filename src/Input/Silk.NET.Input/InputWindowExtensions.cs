@@ -20,7 +20,7 @@ namespace Silk.NET.Input
         {
             SilkManager.Register<IInputPlatform>(GlfwInputPlatform.Instance);
         }
-        
+
         /// <summary>
         /// Get an input context for the given window.
         /// </summary>

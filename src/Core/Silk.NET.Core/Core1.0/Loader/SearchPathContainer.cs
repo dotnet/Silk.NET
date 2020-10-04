@@ -49,15 +49,18 @@ namespace Silk.NET.Core.Loader
         /// <returns>The library name.</returns>
         public string GetLibraryName()
         {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
                 return RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID")) ? Android : Linux;
             }
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
                 return Environment.Is64BitProcess ? Windows64 : Windows86;
             }
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
                 return RuntimeInformation.IsOSPlatform(OSPlatform.Create("IOS")) ? IOS : MacOS;
             }
 

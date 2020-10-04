@@ -32,18 +32,22 @@ namespace Silk.NET.OpenAL.Extensions.Enumeration
         /// <inheritdoc cref="GetString(Device*, GetEnumerationContextString)" />
         public IEnumerable<string> GetStringList(GetEnumerationContextStringList param)
         {
-            unsafe {
+            unsafe
+            {
                 var result = GetStringList(null, param);
-                if (result == (char*) 0) {
+                if (result == (char*) 0)
+                {
                     return new List<string>();
                 }
 
                 var strings = new List<string>();
 
                 var currentPos = result;
-                while (true) {
+                while (true)
+                {
                     var currentString = Marshal.PtrToStringAnsi(new IntPtr(currentPos));
-                    if (string.IsNullOrEmpty(currentString)) {
+                    if (string.IsNullOrEmpty(currentString))
+                    {
                         break;
                     }
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -15,16 +15,16 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The name of the enum.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// The type of the enum.
         /// </summary>
         public EnumType Type { get; }
-        
+
         /// <summary>
         /// The values of the enum.
         /// </summary>
-        public EnumValue[] Values { get; set;  }
+        public EnumValue[] Values { get; set; }
 
         /// <summary>
         /// The enum definition.
@@ -41,13 +41,13 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Type = type;
             Values = values;
         }
-        
+
         /// <summary>
         /// Clone the enum.
         /// </summary>
         /// <returns>A clone of the enum.</returns>
         public EnumDefinition Clone() => new EnumDefinition(Name, Type, Values);
-        
+
         /// <summary>
         /// Clone the enum, with a new name.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             if (typeAttr != null)
             {
                 var typeString = xe.Attribute("type")?.Value ?? throw new InvalidDataException();
-                type = (EnumType)Enum.Parse(typeof(EnumType), typeString, true);
+                type = (EnumType) Enum.Parse(typeof(EnumType), typeString, true);
             }
             else
             {
@@ -97,12 +97,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// Enum is a bitmask.
         /// </summary>
         Bitmask,
-        
+
         /// <summary>
         /// Enum is a regular enum.
         /// </summary>
         Enum,
-        
+
         /// <summary>
         /// Enum defines a series of constants.
         /// </summary>
@@ -118,12 +118,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// The name of the EnumValue.
         /// </summary>
         public string Name { get; }
-        
+
         /// <summary>
         /// The value of the EnumValue.
         /// </summary>
         public int Value { get; }
-        
+
         /// <summary>
         /// The comment of the EnumValue.
         /// </summary>
@@ -163,7 +163,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                     )
                     .Elements("enum")
                     .FirstOrDefault(x => x.Attribute("name")?.Value == xe.Attribute("alias")?.Value));
-                
+
                 return new EnumValue(xe.Attribute("name")?.Value, ret.Value, ret.Comment);
             }
 

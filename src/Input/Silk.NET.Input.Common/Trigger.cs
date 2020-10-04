@@ -14,7 +14,7 @@ namespace Silk.NET.Input.Common
         /// The index of this trigger.
         /// </summary>
         public int Index { get; }
-        
+
         /// <summary>
         /// The position of this trigger; how far down it's currently pressed.
         /// </summary>

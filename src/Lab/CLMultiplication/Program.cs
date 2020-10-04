@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using Silk.NET.OpenCL;
 
@@ -65,7 +65,7 @@ namespace CLMultiplication
 
             queue = cl.CreateCommandQueue(ctx, device, 0, &err);
             AssertZero(err);
-            program = cl.CreateProgramWithSource(ctx, (uint)kernelCode.Length, kernelCode, null, &err);
+            program = cl.CreateProgramWithSource(ctx, (uint) kernelCode.Length, kernelCode, null, &err);
             AssertZero(err);
             err = cl.BuildProgram(program, 0, null, (char*) null, null, null);
             try
@@ -75,8 +75,8 @@ namespace CLMultiplication
             catch (Exception ex)
             {
                 var logsize = UIntPtr.Zero;
-                cl.GetProgramBuildInfo(program, device, (uint)CLEnum.ProgramBuildLog, UIntPtr.Zero, null, &logsize);
-                var log = Marshal.AllocHGlobal((IntPtr)logsize.ToPointer());
+                cl.GetProgramBuildInfo(program, device, (uint) CLEnum.ProgramBuildLog, UIntPtr.Zero, null, &logsize);
+                var log = Marshal.AllocHGlobal((IntPtr) logsize.ToPointer());
                 cl.GetProgramBuildInfo
                     (program, device, (uint) CLEnum.ProgramBuildLog, logsize, log.ToPointer(), (UIntPtr*) null);
                 throw new Exception(Marshal.PtrToStringAnsi(log), ex);
@@ -132,7 +132,7 @@ namespace CLMultiplication
         {
             if (i != 0)
             {
-                throw new Exception($"Error code is not zero: {(CLEnum)i}");
+                throw new Exception($"Error code is not zero: {(CLEnum) i}");
             }
         }
 

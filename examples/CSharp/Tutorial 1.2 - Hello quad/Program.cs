@@ -94,7 +94,7 @@ namespace Tutorial
             Gl.BindBuffer(BufferTargetARB.ArrayBuffer, Vbo); //Binding the buffer.
             fixed (void* v = &Vertices[0])
             {
-                Gl.BufferData(BufferTargetARB.ArrayBuffer, (uint)(Vertices.Length * sizeof(uint)), v, BufferUsageARB.StaticDraw); //Setting buffer data.
+                Gl.BufferData(BufferTargetARB.ArrayBuffer, (uint) (Vertices.Length * sizeof(uint)), v, BufferUsageARB.StaticDraw); //Setting buffer data.
             }
 
             //Initializing a element buffer that holds the index data.
@@ -102,7 +102,7 @@ namespace Tutorial
             Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo); //Binding the buffer.
             fixed (void* i = &Indices[0])
             {
-                Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (uint)(Indices.Length * sizeof(uint)), i, BufferUsageARB.StaticDraw); //Setting buffer data.
+                Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (uint) (Indices.Length * sizeof(uint)), i, BufferUsageARB.StaticDraw); //Setting buffer data.
             }
 
             //Creating a vertex shader.
@@ -156,14 +156,14 @@ namespace Tutorial
         private static unsafe void OnRender(double obj) //Method needs to be unsafe due to draw elements.
         {
             //Clear the color channel.
-            Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
+            Gl.Clear((uint) ClearBufferMask.ColorBufferBit);
 
             //Bind the geometry and shader.
             Gl.BindVertexArray(Vao);
             Gl.UseProgram(Shader);
 
             //Draw the geometry.
-            Gl.DrawElements(PrimitiveType.Triangles, (uint)Indices.Length, DrawElementsType.UnsignedInt, null);
+            Gl.DrawElements(PrimitiveType.Triangles, (uint) Indices.Length, DrawElementsType.UnsignedInt, null);
         }
 
         private static void OnUpdate(double obj)

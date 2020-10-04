@@ -52,7 +52,7 @@ namespace Silk.NET.Input.Desktop
                 {
                     OnConnectionChanged?.Invoke(this, _connected = false);
                 }
-                
+
                 return;
             }
 
