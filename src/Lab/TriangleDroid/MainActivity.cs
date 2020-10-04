@@ -1,8 +1,4 @@
-﻿using Android.App;
-using Android.OS;
-using Android.Support.V7.App;
-using Android.Runtime;
-using Android.Widget;
+using Android.App;
 using Silk.NET.Windowing.Sdl.Android;
 using Triangle;
 

@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -26,6 +26,11 @@ namespace Silk.NET.SDL
         //Sdl.InitNoparachute;
 
         /// <summary>
+        /// Gets or sets a value indicating whether the lazy loader should call <see cref="Sdl.SetMainReady" />.
+        /// </summary>
+        public static bool SetMainReady { get; set; }
+
+        /// <summary>
         /// Creates a new instance of the GlfwProvider class.
         /// </summary>
         static SdlProvider()
@@ -35,6 +40,11 @@ namespace Silk.NET.SDL
                 () =>
                 {
                     var sdl = Sdl.GetApi();
+                    if (SetMainReady)
+                    {
+                        sdl.SetMainReady();
+                    }
+
                     sdl.Init(InitFlags);
 
                     return sdl;
@@ -58,6 +68,11 @@ namespace Silk.NET.SDL
                 () =>
                 {
                     var sdl = Sdl.GetApi();
+                    if (SetMainReady)
+                    {
+                        sdl.SetMainReady();
+                    }
+
                     sdl.Init(InitFlags);
 
                     return sdl;

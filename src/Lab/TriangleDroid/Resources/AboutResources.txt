@@ -3,7 +3,7 @@ in your application as resource files.  Various Android APIs are designed to
 operate on the resource IDs instead of dealing with images, strings or binary blobs 
 directly.
 
-For example, a sample Android app that contains a user interface layout (main.axml),
+For example, a sample Android app that contains a user interface layout (main.xml),
 an internationalization string table (strings.xml) and some icons (drawable-XXX/icon.png) 
 would keep its resources in the "Resources" directory of the application:
 
@@ -12,7 +12,7 @@ Resources/
         icon.png
 
     layout/
-        main.axml
+        main.xml
 
     values/
         strings.xml
@@ -40,5 +40,5 @@ public class R {
 }
 
 You would then use R.drawable.icon to reference the drawable/icon.png file, or R.layout.main 
-to reference the layout/main.axml file, or R.strings.first_string to reference the first 
+to reference the layout/main.xml file, or R.strings.first_string to reference the first 
 string in the dictionary file values/strings.xml.
