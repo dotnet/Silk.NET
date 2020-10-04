@@ -55,10 +55,10 @@ namespace GenericMathsGenerator
         private List<IVariable> _currentVariables;
         private Dictionary<string, LocalVariable> _locals;
         private List<LocalReferenceValue> _localReferences;
+        private Location _currentLocation;
 
         public IEnumerable<IVariable> RootVisit(GeneratorExecutionContext context, IOperation root)
         {
-            Debugger.Launch();
             _currentVariables = new List<IVariable>();
             _locals = new Dictionary<string, LocalVariable>();
             _localReferences = new List<LocalReferenceValue>();
@@ -67,15 +67,22 @@ namespace GenericMathsGenerator
             Debugger.Break();
             try
             {
+                _currentLocation = root.Syntax.GetLocation();
+                _builder = new Builder();
                 base.Visit(root);
             }
             catch (DiagnosticException ex)
             {
                 context.ReportDiagnostic(ex.Diagnostic);
             }
+            catch (Exception ex)
+            {
+                context.ReportDiagnostic(Diagnostic.Create(Diagnostics.UnexpectedWalkerException, _currentLocation, ex.ToString()));
+            }
 
             Debugger.Break();
             ResolveReferences();
+            _builder = null;
             return _currentVariables;
         }
 
@@ -92,6 +99,7 @@ namespace GenericMathsGenerator
 
         public override void VisitFieldReference(IFieldReferenceOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
             
             _builder.BeginScope(new FieldReferenceValue(operation.Field.Name));
@@ -101,6 +109,7 @@ namespace GenericMathsGenerator
 
         public override void VisitPropertyReference(IPropertyReferenceOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
             
             _builder.BeginScope(new PropertyReferenceValue(operation.Property.Name));
@@ -110,6 +119,7 @@ namespace GenericMathsGenerator
 
         public override void VisitParameterReference(IParameterReferenceOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
         
             _builder.BeginScope(new ParameterReferenceValue(operation.Parameter.Name));
@@ -119,10 +129,12 @@ namespace GenericMathsGenerator
 
         public override void VisitReturn(IReturnOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
+            
             _returnCount++;
             if (_returnCount > 1)
             {
-                throw new DiagnosticException(Diagnostic.Create(Diagnostics.ComplexReturn, operation.Syntax.GetLocation()));
+                throw new DiagnosticException(Diagnostic.Create(Diagnostics.ComplexReturn, _currentLocation));
             }
 
             var oldBuilder = _builder;
@@ -135,6 +147,8 @@ namespace GenericMathsGenerator
 
         public override void VisitVariableDeclaration(IVariableDeclarationOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
+            
             foreach (var declarator in operation.Declarators)
             {
                 var oldBuilder = _builder;
@@ -150,8 +164,9 @@ namespace GenericMathsGenerator
 
         public override void VisitLocalReference(ILocalReferenceOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
-
+            
             var r = new LocalReferenceValue(operation.Local.Name);
             _builder.BeginScope(r);
             _localReferences.Add(r);
@@ -165,12 +180,13 @@ namespace GenericMathsGenerator
 
             if (_builder.CurrentDepth > 0)
             {
-                throw new DiagnosticException(Diagnostic.Create(Diagnostics.IncompleteExpression, o.Syntax.GetLocation(), _builder.CurrentDepth));
+                throw new DiagnosticException(Diagnostic.Create(Diagnostics.IncompleteExpression, _currentLocation, _builder.CurrentDepth));
             }
         }
 
         public override void VisitBinaryOperator(IBinaryOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
 
             BinaryOperatorValue value = operation.OperatorKind switch
@@ -198,7 +214,7 @@ namespace GenericMathsGenerator
                 (
                     Diagnostic.Create
                     (
-                        Diagnostics.UnsupportedOperator, operation.Syntax.GetLocation(),
+                        Diagnostics.UnsupportedOperator, _currentLocation,
                         Enum.GetName(typeof(BinaryOperatorKind), operation.OperatorKind)
                     )
                 )
@@ -211,6 +227,7 @@ namespace GenericMathsGenerator
 
         public override void VisitUnaryOperator(IUnaryOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
 
             UnaryOperatorValue? value = operation.OperatorKind switch
@@ -221,7 +238,7 @@ namespace GenericMathsGenerator
                 (
                     Diagnostic.Create
                     (
-                        Diagnostics.UnsupportedOperator, operation.Syntax.GetLocation(),
+                        Diagnostics.UnsupportedOperator, _currentLocation,
                         Enum.GetName(typeof(UnaryOperatorKind), operation.OperatorKind)
                     )
                 )
@@ -238,6 +255,7 @@ namespace GenericMathsGenerator
 
         public override void VisitLiteral(ILiteralOperation operation)
         {
+            _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
 
             if (SymbolEqualityComparer.IncludeNullability.Equals(operation.Type, _floatType))
@@ -268,7 +286,7 @@ namespace GenericMathsGenerator
             }
             else
             {
-                throw new DiagnosticException(Diagnostic.Create(Diagnostics.TypeMissmatch, operation.Syntax.GetLocation(), operation.Type.Name));
+                throw new DiagnosticException(Diagnostic.Create(Diagnostics.TypeMissmatch, _currentLocation, operation.Type.Name));
             }
         }
     }

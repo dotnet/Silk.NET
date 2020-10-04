@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using Microsoft.CodeAnalysis;
 
 namespace GenericMathsGenerator
@@ -78,6 +79,16 @@ namespace GenericMathsGenerator
             "Members of type {0} are not supported",
             "",
             DiagnosticSeverity.Warning,
+            true,
+            null,
+            null);
+
+        public static DiagnosticDescriptor UnexpectedWalkerException { get; } = new DiagnosticDescriptor(
+            "GM0008",
+            "Unexpected Exception in Operation Walker",
+            $"An unexpected exception occured while walking the operation Tree {{0}}",
+            "",
+            DiagnosticSeverity.Error,
             true,
             null,
             null);

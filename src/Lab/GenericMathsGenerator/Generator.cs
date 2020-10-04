@@ -4,22 +4,18 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using GenericMathsGenerator.ValueTypes;
 using GenericMathsGenerator.VariableTypes;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Operations;
 using Microsoft.CodeAnalysis.Text;
-using Priority_Queue;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace GenericMathsGenerator
@@ -71,7 +67,7 @@ namespace GenericMaths
                     )
                     .Where(att => att.Item3 is not null)
                     .ToArray();
-                
+
                 var types = sr.Types.Select
                     (
                         x => (x,
@@ -88,25 +84,167 @@ namespace GenericMaths
 
                 foreach (var (declaration, symbol, attribute) in methods)
                 {
-                    if (declaration.Parent is TypeDeclarationSyntax tds)
+                    try
                     {
-                        if (!tds.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
-                            throw new DiagnosticException(Diagnostic.Create(Diagnostics.TypeNotPartial, tds.GetLocation()));
-                        
-                        if (tds.Parent is NamespaceDeclarationSyntax nds)
+                        if (declaration.Parent is TypeDeclarationSyntax tds)
                         {
-                            var resultDeclarations = ProcessMethod
-                            (
-                                context, context.Compilation.GetSemanticModel(declaration.SyntaxTree), declaration.Body,
-                                declaration.Identifier.Text, default, declaration.Modifiers,
-                                declaration.TypeParameterList, declaration.ExplicitInterfaceSpecifier,
-                                declaration.ParameterList, declaration.ConstraintClauses, true
-                            );
+                            if (!tds.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
+                                throw new DiagnosticException
+                                    (Diagnostic.Create(Diagnostics.TypeNotPartial, tds.GetLocation()));
 
-                            if (resultDeclarations is null)
-                                continue;
+                            if (tds.Parent is NamespaceDeclarationSyntax nds)
+                            {
+                                var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
 
-                            var newType = tds.WithMembers(List<MemberDeclarationSyntax>(resultDeclarations));
+                                if (!(semanticModel.GetDeclaredSymbol(declaration.ReturnType) is ITypeSymbol ts &&
+                                      ts.SpecialType == SpecialType.System_Single))
+                                    continue;
+
+                                if (declaration.ParameterList.Parameters.Any
+                                (
+                                    x => !(semanticModel.GetDeclaredSymbol(declaration.ReturnType) is ITypeSymbol ts &&
+                                           ts.SpecialType == SpecialType.System_Single)
+                                ))
+                                    continue;
+
+                                List<MethodDeclarationSyntax>? methodResultDeclarations;
+                                if (declaration.Body is not null)
+                                    methodResultDeclarations = ProcessMethod
+                                    (
+                                        context, semanticModel, declaration.Body, declaration.Identifier.Text, default,
+                                        declaration.Modifiers, declaration.TypeParameterList,
+                                        declaration.ExplicitInterfaceSpecifier, declaration.ParameterList,
+                                        declaration.ConstraintClauses, false
+                                    );
+                                else
+                                    methodResultDeclarations = ProcessMethod
+                                    (
+                                        context, semanticModel, declaration.ExpressionBody!,
+                                        declaration.Identifier.Text, default, declaration.Modifiers,
+                                        declaration.TypeParameterList, declaration.ExplicitInterfaceSpecifier,
+                                        declaration.ParameterList, declaration.ConstraintClauses, false
+                                    );
+
+                                if (methodResultDeclarations is null)
+                                    continue;
+
+                                var newType = tds.WithMembers(List<MemberDeclarationSyntax>(methodResultDeclarations));
+                                var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
+                                newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
+                                    .Usings.Aggregate
+                                    (
+                                        newNamespace,
+                                        (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
+                                    );
+                                var str = newNamespace.NormalizeWhitespace().ToFullString();
+                                var name = $"{tds.Identifier.Text}_Maths.cs";
+                                Debugger.Break();
+                                File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
+                                context.AddSource(name, str);
+                            }
+                        }
+                    }
+                    catch (DiagnosticException ex)
+                    {
+                        context.ReportDiagnostic(ex.Diagnostic);
+                    }
+                }
+
+                foreach (var (tds, symbol, attribute) in types)
+                    if (tds.Parent is NamespaceDeclarationSyntax nds)
+                    {
+                        try
+                        {
+                            var GenericParameter = "T";
+
+                            var resultDeclarations = new List<MemberDeclarationSyntax>();
+                            foreach (var member in tds.Members)
+                            {
+                                switch (member)
+                                {
+                                    case MethodDeclarationSyntax method:
+                                    {
+                                        var semanticModel = context.Compilation.GetSemanticModel(method.SyntaxTree);
+
+                                        if (!(semanticModel.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
+                                              ts.SpecialType == SpecialType.System_Single))
+                                            continue;
+                                        
+                                        if (method.ParameterList.Parameters.Any(x => !(semanticModel.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
+                                              ts.SpecialType == SpecialType.System_Single)))
+                                            continue;
+
+                                        List<MethodDeclarationSyntax>? methodResultDeclarations;
+                                        if (method.Body is not null)
+                                            methodResultDeclarations = ProcessMethod
+                                            (
+                                                context, semanticModel, method.Body, method.Identifier.Text, default,
+                                                method.Modifiers, method.TypeParameterList,
+                                                method.ExplicitInterfaceSpecifier, method.ParameterList,
+                                                method.ConstraintClauses, false
+                                            );
+                                        else
+                                            methodResultDeclarations = ProcessMethod
+                                            (
+                                                context, semanticModel, method.ExpressionBody!, method.Identifier.Text,
+                                                default, method.Modifiers, method.TypeParameterList,
+                                                method.ExplicitInterfaceSpecifier, method.ParameterList,
+                                                method.ConstraintClauses, false
+                                            );
+
+                                        if (methodResultDeclarations is null)
+                                            continue;
+
+                                        resultDeclarations.AddRange(methodResultDeclarations);
+                                        break;
+                                    }
+                                    case FieldDeclarationSyntax field:
+                                        resultDeclarations.Add
+                                        (
+                                            field.WithDeclaration
+                                                (field.Declaration.WithType(IdentifierName(GenericParameter)))
+                                        );
+                                        break;
+                                    case PropertyDeclarationSyntax property:
+                                        resultDeclarations.Add(property.WithType(IdentifierName(GenericParameter)));
+                                        break;
+                                    default:
+                                        context.ReportDiagnostic
+                                        (
+                                            Diagnostic.Create
+                                            (
+                                                Diagnostics.UnsupportedMember, member.GetLocation(),
+                                                member.GetType().Name
+                                            )
+                                        );
+                                        break;
+                                }
+                            }
+
+                            var newType = tds.WithMembers
+                                    (List(resultDeclarations))
+                                .WithTypeParameterList
+                                (
+                                    (tds.TypeParameterList ?? TypeParameterList()).AddParameters
+                                        (TypeParameter(GenericParameter))
+                                )
+                                .WithConstraintClauses
+                                (
+                                    tds.ConstraintClauses.Add
+                                    (
+                                        TypeParameterConstraintClause
+                                                (GenericParameter)
+                                            .WithConstraints
+                                            (
+                                                SeparatedList
+                                                (
+                                                    new TypeParameterConstraintSyntax[]
+                                                        {TypeConstraint(IdentifierName("unmanaged"))}
+                                                )
+                                            )
+                                    )
+                                )
+                                .WithAttributeLists(default);
                             var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
                             newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
                                 .Usings.Aggregate
@@ -115,87 +253,16 @@ namespace GenericMaths
                                     (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
                                 );
                             var str = newNamespace.NormalizeWhitespace().ToFullString();
-                            var name = $"{tds.Identifier.Text}_Maths.cs";
+                            var name = $"{tds.Identifier.Text}_Maths_{Guid.NewGuid()}.cs";
                             Debugger.Break();
                             File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
                             context.AddSource(name, str);
                         }
-                    }
-                }
-
-                foreach (var (tds, symbol, attribute) in types)
-                {
-                    if (tds.Parent is NamespaceDeclarationSyntax nds)
-                    {
-                        var GenericParameter = "T";
-                        
-                        var resultDeclarations = new List<MemberDeclarationSyntax>();
-                        foreach (var member in tds.Members)
+                        catch (DiagnosticException ex)
                         {
-                            switch (member)
-                            {
-                                case MethodDeclarationSyntax method:
-                                {
-                                    var methodResultDeclarations = ProcessMethod
-                                    (
-                                        context, context.Compilation.GetSemanticModel(method.SyntaxTree),
-                                        method.Body, method.Identifier.Text, default, method.Modifiers,
-                                        method.TypeParameterList, method.ExplicitInterfaceSpecifier,
-                                        method.ParameterList, method.ConstraintClauses,
-                                        false
-                                    );
-
-                                    if (methodResultDeclarations is null)
-                                        continue;
-
-                                    resultDeclarations.AddRange(methodResultDeclarations);
-                                    break;
-                                }
-                                case FieldDeclarationSyntax field:
-                                    resultDeclarations.Add(field.WithDeclaration(field.Declaration.WithType(IdentifierName(GenericParameter))));
-                                    break;
-                                case PropertyDeclarationSyntax property:
-                                    resultDeclarations.Add(property.WithType(IdentifierName(GenericParameter)));
-                                    break;
-                                default:
-                                    throw new DiagnosticException(Diagnostic.Create(Diagnostics.UnsupportedMember, member.GetLocation(), member.GetType().Name));
-                            }
+                            context.ReportDiagnostic(ex.Diagnostic);
                         }
-
-                        var newType = tds.WithMembers
-                                (List(resultDeclarations))
-                            .WithTypeParameterList
-                                ((tds.TypeParameterList ?? TypeParameterList()).AddParameters(TypeParameter(GenericParameter)))
-                            .WithConstraintClauses
-                            (
-                                tds.ConstraintClauses.Add
-                                (
-                                    TypeParameterConstraintClause
-                                            (GenericParameter)
-                                        .WithConstraints
-                                        (
-                                            SeparatedList
-                                            (
-                                                new TypeParameterConstraintSyntax[]
-                                                    {TypeConstraint(IdentifierName("unmanaged"))}
-                                            )
-                                        )
-                                )
-                            )
-                            .WithAttributeLists(default);
-                        var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
-                        newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
-                            .Usings.Aggregate
-                            (
-                                newNamespace, (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
-                            );
-                        var str = newNamespace.NormalizeWhitespace().ToFullString();
-                        var name = $"{tds.Identifier.Text}_Maths_{Guid.NewGuid()}.cs";
-                        Debugger.Break();
-                        File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
-                        context.AddSource(name, str);
                     }
-                }
             }
             catch (DiagnosticException ex)
             {
@@ -279,7 +346,6 @@ namespace GenericMaths
             bool makeGenericDefinitionGenericRoot
         )
         {
-            Debugger.Launch();
             var variables = new OperationWalker().RootVisit(context, operation);
 
             variables = _valueProcessors.Aggregate
