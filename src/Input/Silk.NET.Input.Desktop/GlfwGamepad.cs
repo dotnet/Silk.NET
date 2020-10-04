@@ -36,17 +36,17 @@ namespace Silk.NET.Input.Desktop
 
             _connected = hasState;
 
-            for (int j = 0; j < GamepadButtonCount; j++)
+            for (var j = 0; j < GamepadButtonCount; j++)
             {
                 _buttons[j] = new Button((ButtonName) j, j, hasState && state.Buttons[j] == (int) InputAction.Press);
             }
 
-            for (int j = 0; j < GamepadThumbstickCount; j++)
+            for (var j = 0; j < GamepadThumbstickCount; j++)
             {
                 _thumbsticks[j] = new Thumbstick(j, 0, 0);
             }
 
-            for (int j = 0; j < GamepadTriggerCount; j++)
+            for (var j = 0; j < GamepadTriggerCount; j++)
             {
                 _triggers[j] = new Trigger(j, 0);
             }

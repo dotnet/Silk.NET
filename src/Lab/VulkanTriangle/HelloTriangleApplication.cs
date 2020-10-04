@@ -124,7 +124,7 @@ namespace VulkanTriangle
 
             _imagesInFlight[imageIndex] = _inFlightFences[_currentFrame];
 
-            SubmitInfo submitInfo = new SubmitInfo { SType = StructureType.SubmitInfo };
+            var submitInfo = new SubmitInfo { SType = StructureType.SubmitInfo };
 
             Semaphore[] waitSemaphores = { _imageAvailableSemaphores[_currentFrame] };
             PipelineStageFlags[] waitStages = { PipelineStageFlags.PipelineStageColorAttachmentOutputBit };
@@ -156,7 +156,7 @@ namespace VulkanTriangle
 
             fixed (SwapchainKHR* swapchain = &_swapchain)
             {
-                PresentInfoKHR presentInfo = new PresentInfoKHR
+                var presentInfo = new PresentInfoKHR
                 {
                     SType = StructureType.PresentInfoKhr,
                     WaitSemaphoreCount = 1,
@@ -1049,10 +1049,10 @@ namespace VulkanTriangle
             _inFlightFences = new Fence[MaxFramesInFlight];
             _imagesInFlight = new Fence[MaxFramesInFlight];
 
-            SemaphoreCreateInfo semaphoreInfo = new SemaphoreCreateInfo();
+            var semaphoreInfo = new SemaphoreCreateInfo();
             semaphoreInfo.SType = StructureType.SemaphoreCreateInfo;
 
-            FenceCreateInfo fenceInfo = new FenceCreateInfo();
+            var fenceInfo = new FenceCreateInfo();
             fenceInfo.SType = StructureType.FenceCreateInfo;
             fenceInfo.Flags = FenceCreateFlags.FenceCreateSignaledBit;
 

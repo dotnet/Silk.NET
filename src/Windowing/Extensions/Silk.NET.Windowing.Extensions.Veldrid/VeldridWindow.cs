@@ -304,14 +304,14 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             IView window,
             bool colorSrgb)
         {
-            SwapchainDescription scDesc = new SwapchainDescription(
+            var scDesc = new SwapchainDescription(
                 GetSwapchainSource(window),
                 (uint) window.Size.Width,
                 (uint) window.Size.Height,
                 options.SwapchainDepthFormat,
                 options.SyncToVerticalBlank,
                 colorSrgb);
-            GraphicsDevice gd = GraphicsDevice.CreateVulkan(options, scDesc);
+            var gd = GraphicsDevice.CreateVulkan(options, scDesc);
 
             return gd;
         }
@@ -323,8 +323,8 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             IWindow window,
             bool colorSrgb)
         {
-            SwapchainSource source = GetSwapchainSource(window);
-            SwapchainDescription swapchainDesc = new SwapchainDescription(
+            var source = GetSwapchainSource(window);
+            var swapchainDesc = new SwapchainDescription(
                 source,
                 (uint) window.Size.Width, (uint) window.Size.Height,
                 options.SwapchainDepthFormat,
@@ -362,7 +362,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             IWindow window,
             GraphicsBackend backend)
         {
-            OpenGLPlatformInfo platformInfo = new OpenGLPlatformInfo(
+            var platformInfo = new OpenGLPlatformInfo(
                 window.Handle,
                 x => GlfwProvider.GLFW.Value.GetProcAddress(x),
                 context => GlfwProvider.GLFW.Value.MakeContextCurrent((WindowHandle*) context),
@@ -394,7 +394,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
 
             api.Flags = contextFlags;
 
-            (int major, int minor) = GetMaxGLVersion(backend == GraphicsBackend.OpenGLES);
+            (var major, var minor) = GetMaxGLVersion(backend == GraphicsBackend.OpenGLES);
 
             if (backend == GraphicsBackend.OpenGL)
             {
@@ -409,8 +409,8 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 api.Version = new APIVersion(major, minor);
             }
 
-            int depthBits = 0;
-            int stencilBits = 0;
+            var depthBits = 0;
+            var stencilBits = 0;
             if (options.SwapchainDepthFormat.HasValue)
             {
                 switch (options.SwapchainDepthFormat)
@@ -444,8 +444,8 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             GraphicsDeviceOptions options,
             IWindow window)
         {
-            SwapchainSource source = GetSwapchainSource(window);
-            SwapchainDescription swapchainDesc = new SwapchainDescription(
+            var source = GetSwapchainSource(window);
+            var swapchainDesc = new SwapchainDescription(
                 source,
                 (uint) window.Size.Width, (uint) window.Size.Height,
                 options.SwapchainDepthFormat,
@@ -457,7 +457,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
 
         private static unsafe string GetString(byte* stringStart)
         {
-            int characters = 0;
+            var characters = 0;
             while (stringStart[characters] != 0)
             {
                 characters++;
@@ -474,7 +474,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         {
             lock (s_glVersionLock)
             {
-                (int Major, int Minor)? maxVer = gles ? s_maxSupportedGLESVersion : s_maxSupportedGLVersion;
+                var maxVer = gles ? s_maxSupportedGLESVersion : s_maxSupportedGLVersion;
                 if (maxVer == null)
                 {
                     maxVer = TestMaxVersion(gles);

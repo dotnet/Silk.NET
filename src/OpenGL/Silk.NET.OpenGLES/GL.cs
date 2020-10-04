@@ -144,7 +144,7 @@ namespace Silk.NET.OpenGLES
             uint length;
             GetProgram(program, GLEnum.ActiveUniformMaxLength, out var lengthTmp);
             length = (uint)lengthTmp;
-            GetActiveUniform(program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out string str);
+            GetActiveUniform(program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out var str);
             return str.Substring(0, (int)length);
         }
 
@@ -152,7 +152,7 @@ namespace Silk.NET.OpenGLES
         {
             unsafe
             {
-                int length = @string.Length;
+                var length = @string.Length;
                 ShaderSource((uint)shader, 1, new string[] { @string }, &length);
             }
         }

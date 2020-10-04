@@ -138,7 +138,7 @@ namespace Silk.NET.OpenGL
             length = (uint)lengthTmp;
 
             GetActiveAttrib
-                (program, index, (uint)(length == 0 ? 1 : length * 2), out length, out size, out type, out string str);
+                (program, index, (uint)(length == 0 ? 1 : length * 2), out length, out size, out type, out var str);
 
             return str.Substring(0, (int)length);
         }
@@ -149,7 +149,7 @@ namespace Silk.NET.OpenGL
             GetProgram(program, GLEnum.ActiveUniformMaxLength, out var lengthTmp);
             length = (uint)lengthTmp;
             GetActiveUniform
-                (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out string str);
+                (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out var str);
             return str.Substring(0, (int)length);
         }
 
@@ -157,7 +157,7 @@ namespace Silk.NET.OpenGL
         {
             unsafe
             {
-                int length = @string.Length;
+                var length = @string.Length;
                 ShaderSource((uint)shader, 1, new string[] { @string }, &length);
             }
         }

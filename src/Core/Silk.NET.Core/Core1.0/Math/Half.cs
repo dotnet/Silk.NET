@@ -462,8 +462,8 @@ namespace Silk.NET.Core.Math
         {
             const int maxUlps = 1;
 
-            short k = unchecked((short) other._bits);
-            short l = unchecked((short) _bits);
+            var k = unchecked((short) other._bits);
+            var l = unchecked((short) _bits);
 
             // Make a lexicographically ordered as a twos-complement int
             if (k < 0)
@@ -570,7 +570,7 @@ namespace Silk.NET.Core.Math
         [Pure]
         public static bool TryParse(string s, out Half result)
         {
-            var b = float.TryParse(s, out float f);
+            var b = float.TryParse(s, out var f);
             result = (Half) f;
             return b;
         }
@@ -586,7 +586,7 @@ namespace Silk.NET.Core.Math
         [Pure]
         public static bool TryParse(string s, NumberStyles style, IFormatProvider provider, out Half result)
         {
-            var b = float.TryParse(s, style, provider, out float f);
+            var b = float.TryParse(s, style, provider, out var f);
             result = (Half) f;
             return b;
         }

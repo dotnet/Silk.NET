@@ -93,7 +93,7 @@ namespace Silk.NET.Input.Desktop
             );
             set
             {
-                GlfwProvider.GLFW.Value.SetInputMode(_handle, CursorStateAttribute.Cursor, GetCursorMode(value, out bool raw));
+                GlfwProvider.GLFW.Value.SetInputMode(_handle, CursorStateAttribute.Cursor, GetCursorMode(value, out var raw));
                 GlfwProvider.GLFW.Value.SetInputMode(_handle, CursorStateAttribute.RawMouseMotion, raw);
             }
         }
