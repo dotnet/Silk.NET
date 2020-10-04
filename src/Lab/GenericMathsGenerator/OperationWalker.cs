@@ -92,6 +92,8 @@ namespace GenericMathsGenerator
 
         public override void VisitParameterReference(IParameterReferenceOperation operation)
         {
+            Debug.Assert(_builder is not null, "_builder is null");
+        
             _builder.BeginScope(new ParameterReferenceValue(operation.Parameter.Name));
             base.VisitParameterReference(operation);
             _builder.EndScope();
@@ -99,6 +101,8 @@ namespace GenericMathsGenerator
 
         public override void VisitReturn(IReturnOperation operation)
         {
+            Debug.Assert(_builder is not null, "_builder is null");
+
             _returnCount++;
             if (_returnCount > 1)
             {
@@ -115,6 +119,8 @@ namespace GenericMathsGenerator
 
         public override void VisitVariableDeclaration(IVariableDeclarationOperation operation)
         {
+            Debug.Assert(_builder is not null, "_builder is null");
+
             foreach (var declarator in operation.Declarators)
             {
                 var oldBuilder = _builder;
@@ -130,6 +136,8 @@ namespace GenericMathsGenerator
 
         public override void VisitLocalReference(ILocalReferenceOperation operation)
         {
+            Debug.Assert(_builder is not null, "_builder is null");
+
             var r = new LocalReferenceValue(operation.Local.Name);
             _builder.BeginScope(r);
             _localReferences.Add(r);
@@ -139,6 +147,8 @@ namespace GenericMathsGenerator
 
         private void VerifyBuilderComplete(IOperation o)
         {
+            Debug.Assert(_builder is not null, "_builder is null");
+
             if (_builder.CurrentDepth > 0)
             {
                 throw new DiagnosticException(Diagnostic.Create(Diagnostics.IncompleteExpression, o.Syntax.GetLocation(), _builder.CurrentDepth));
@@ -147,6 +157,8 @@ namespace GenericMathsGenerator
 
         public override void VisitBinaryOperator(IBinaryOperation operation)
         {
+            Debug.Assert(_builder is not null, "_builder is null");
+
             BinaryOperatorValue value = operation.OperatorKind switch
             {
                 BinaryOperatorKind.Add => new AddValue(),
@@ -185,6 +197,8 @@ namespace GenericMathsGenerator
 
         public override void VisitUnaryOperator(IUnaryOperation operation)
         {
+            Debug.Assert(_builder is not null, "_builder is null");
+
             UnaryOperatorValue? value = operation.OperatorKind switch
             {
                 UnaryOperatorKind.Plus => null, // ignore
@@ -210,6 +224,8 @@ namespace GenericMathsGenerator
 
         public override void VisitLiteral(ILiteralOperation operation)
         {
+            Debug.Assert(_builder is not null, "_builder is null");
+
             if (SymbolEqualityComparer.IncludeNullability.Equals(operation.Type, _floatType))
             {
                 if (!operation.ConstantValue.HasValue)
