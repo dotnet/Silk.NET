@@ -5,7 +5,6 @@
 
 using System;
 using System.Numerics;
-using System.Runtime.InteropServices;
 using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -202,7 +201,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
-        public partial void SetSourceProperty(uint source, SourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
+        public partial void SetSourceProperty(uint source, SourceBoolean param, [UnmanagedType(UnmanagedType.I4)] bool value);
         
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
@@ -235,7 +234,7 @@ namespace Silk.NET.OpenAL
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcei")]
         public partial void GetSourceProperty(uint source, SourceBoolean param,
-            [MarshalAs(UnmanagedType.I4)] out bool value);
+            [UnmanagedType(UnmanagedType.I4)] out bool value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSource3f")]

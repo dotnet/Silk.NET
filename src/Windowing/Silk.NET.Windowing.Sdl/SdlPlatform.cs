@@ -28,6 +28,9 @@ namespace Silk.NET.Windowing.Sdl
                 }
                 catch (Exception ex)
                 {
+#if DEBUG
+                    Console.WriteLine($"Can't load SDL: {ex}");
+#endif
                     return false;
                 }
 

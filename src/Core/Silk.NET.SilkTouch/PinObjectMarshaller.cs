@@ -12,28 +12,31 @@ namespace Silk.NET.SilkTouch
 {
     public partial class NativeApiGenerator
     {
-        private static void PinObjectMarshaller(ref MarshalContext ctx, Action next)
+        private static void PinObjectMarshaller(ref IMarshalContext ctx, Action next)
         {
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
+            for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {
                 if (!ctx.TryGetAttribute(index, "Silk.NET.Core.Native.PinObjectAttribute", out var data))
                     continue;
 
+                var gcSlot = ctx.AllocateGcSlot();
                 PinMode pinMode;
                 if (data.ConstructorArguments.Length < 1)
                     pinMode = PinMode.Persist;
                 else
                     pinMode = (PinMode) (data.ConstructorArguments[0].Value ?? PinMode.Persist);
 
-                var name = pinMode switch {
+                var name = pinMode switch
+                {
                     PinMode.Persist => "Pin",
                     PinMode.UntilNextCall => "PinUntilNextCall",
                     _ => throw new Exception()
                 };
 
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                var parameterVariable = ctx.ResolveVariable(ctx.ParameterVariables[index]);
+                ctx.AddSideEffect
                 (
-                    ExpressionStatement
+                    ctx => ExpressionStatement
                     (
                         InvocationExpression
                         (
@@ -45,9 +48,9 @@ namespace Silk.NET.SilkTouch
                                 (
                                     new[]
                                     {
-                                        Argument(ctx.ParameterExpressions[index]),
+                                        Argument(parameterVariable.Value),
                                         Argument
-                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot)))
+                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcSlot)))
                                     }
                                 )
                             )
@@ -55,12 +58,13 @@ namespace Silk.NET.SilkTouch
                     )
                 );
             }
-            
+
             next();
 
-            if (ctx.TryGetAttribute
+            if (!ctx.ReturnsVoid && ctx.TryGetAttribute
                 (ctx.LoadTypes.Length - 1, "Silk.NET.Core.Native.PinObjectAttribute", out var resultData))
             {
+                var gcSlot = ctx.AllocateGcSlot();
 
                 PinMode pinMode;
                 if (resultData.ConstructorArguments.Length < 1)
@@ -75,9 +79,10 @@ namespace Silk.NET.SilkTouch
                     _ => throw new Exception()
                 };
 
-                ctx.CurrentStatements = ctx.CurrentStatements.Append
+                var resultVariable = ctx.ResolveVariable(ctx.ResultVariable.Value);
+                ctx.AddSideEffect
                 (
-                    ExpressionStatement
+                    ctx => ExpressionStatement
                     (
                         InvocationExpression
                         (
@@ -89,9 +94,9 @@ namespace Silk.NET.SilkTouch
                                 (
                                     new[]
                                     {
-                                        Argument(ctx.ResultExpression),
+                                        Argument(resultVariable.Value),
                                         Argument
-                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot)))
+                                            (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(gcSlot)))
                                     }
                                 )
                             )
@@ -101,7 +106,7 @@ namespace Silk.NET.SilkTouch
             }
         }
     }
-    
+
     public enum PinMode
     {
         Persist,

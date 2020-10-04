@@ -3,7 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Drawing;
+using System.IO;
 using System.Reflection;
 
 namespace Silk.NET.Windowing
@@ -120,26 +122,40 @@ namespace Silk.NET.Windowing
             VSync = isVSync;
         }
 
+        static WindowOptions()
+        {
+            string name = "Silk.NET Window";
+            try
+            {
+                var asmName = Assembly.GetEntryAssembly()?.GetName().Name;
+                if (asmName is not null)
+                    name = asmName;
+            }
+            catch { /* cannot use reflection */ }
+            
+            Default = new WindowOptions
+            (
+                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
+                name, WindowState.Normal,
+                WindowBorder.Resizable, true, true, VideoMode.Default
+            );
+
+            DefaultVulkan = new WindowOptions
+            (
+                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
+                name, WindowState.Normal,
+                WindowBorder.Resizable, false, false, VideoMode.Default
+            );
+        }
+
         /// <summary>
         /// Convenience wrapper around creating a new WindowProperties with sensible defaults.
         /// </summary>
-        public static WindowOptions Default { get; } = new WindowOptions
-        (
-            true, new Point(50, 50),
-            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
-            Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
-            WindowBorder.Resizable, true, true, VideoMode.Default
-        );
+        public static WindowOptions Default { get; }
 
         /// <summary>
         /// Convenience wrapper around creating a new WindowProperties with sensible values, intended for use with Vulkan.
         /// </summary>
-        public static WindowOptions DefaultVulkan { get; } = new WindowOptions
-        (
-            true, new Point(50, 50),
-            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
-            Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
-            WindowBorder.Resizable, false, false, VideoMode.Default
-        );
+        public static WindowOptions DefaultVulkan { get; }
     }
 }
