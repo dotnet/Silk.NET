@@ -22,12 +22,12 @@ namespace Silk.NET.SilkTouch
     [Generator]
     public partial class NativeApiGenerator : ISourceGenerator
     {
-        public void Initialize(InitializationContext context)
+        public void Initialize(GeneratorInitializationContext context)
         {
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
         }
 
-        public void Execute(SourceGeneratorContext context)
+        public void Execute(GeneratorExecutionContext context)
         {
             MarshalBuilder marshalBuilder;
 
@@ -87,7 +87,7 @@ namespace Silk.NET.SilkTouch
         private string ProcessClassDeclaration
         (
             ClassDeclarationSyntax classDeclaration,
-            SourceGeneratorContext sourceContext,
+            GeneratorExecutionContext sourceContext,
             INamedTypeSymbol nativeApiAttributeSymbol,
             MarshalBuilder rootMarshalBuilder,
             ref List<ITypeSymbol> processedSymbols
@@ -213,13 +213,29 @@ namespace Silk.NET.SilkTouch
 
                         var fPtrType = FunctionPointerType
                         (
-                            Identifier(GetCallingConvention(callingConvention)),
-                            SeparatedList
+                            FunctionPointerCallingConvention
                             (
-                                ctx.LoadTypes.Select
+                                Token(SyntaxKind.UnmanagedKeyword),
+                                FunctionPointerUnmanagedCallingConventionList
                                 (
-                                    x => Parameter
-                                        (Identifier(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))
+                                    SingletonSeparatedList
+                                    (
+                                        FunctionPointerUnmanagedCallingConvention
+                                            (Identifier(GetCallingConvention(callingConvention)))
+                                    )
+                                )
+                            ),
+                            FunctionPointerParameterList
+                            (
+                                SeparatedList
+                                (
+                                    ctx.LoadTypes.Select
+                                    (
+                                        x => FunctionPointerParameter
+                                        (
+                                            IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
+                                        )
+                                    )
                                 )
                             )
                         );
@@ -986,9 +1002,10 @@ namespace Silk.NET.SilkTouch
             => convention switch
             {
                 // CallingConvention.Winapi => "", netstandard2.0 doesn't allow this
-                CallingConvention.Cdecl => "cdecl",
-                CallingConvention.ThisCall => "thiscall",
-                CallingConvention.StdCall => "stdcall",
+                CallingConvention.Cdecl => "Cdecl",
+                CallingConvention.ThisCall => "Thiscall",
+                CallingConvention.StdCall => "Stdcall",
+                CallingConvention.FastCall => "Fastcall",
                 _ => throw new ArgumentException("convention is invalid", nameof(convention))
             };
 
