@@ -1,13 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.0;net5.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
         <DefineConstants Condition="'$(TargetFramework)' == 'net5.0'">
-            HALF;$(DefineConstants)
+            HALF;INTRINSICS;BTEC_INTRINSICS;$(DefineConstants)
         </DefineConstants>
-        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0'">
-            INTRINSICS;$(DefineConstants)
-        </DefineConstants>
-        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0' Or '$(TargetFramework)' == 'netstandard2.1'">
+        <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.1'">
             BTEC_INTRINSICS;$(DefineConstants)
         </DefineConstants>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -41,5 +38,9 @@
         <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
         <OutputItemType>Analyzer</OutputItemType>
       </ProjectReference>
+        <ProjectReference Include="..\Silk.NET.Maths.GenericsGenerator\Silk.NET.Maths.GenericsGenerator.csproj">
+            <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+            <OutputItemType>Analyzer</OutputItemType>
+        </ProjectReference>
     </ItemGroup>
 </Project>

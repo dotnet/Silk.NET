@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -24,10 +24,10 @@ namespace Silk.NET.Maths.Generator {
 }";
 
         public void Initialize
-            (InitializationContext context)
+            (GeneratorInitializationContext context)
             => context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
 
-        public void Execute(SourceGeneratorContext context)
+        public void Execute(GeneratorExecutionContext context)
         {
             context.AddSource("silk.net.maths.generator.shared.gen.cs", SourceText.From(library, Encoding.UTF8));
 

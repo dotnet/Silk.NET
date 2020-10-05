@@ -42,7 +42,7 @@ using System;
 namespace GenericMaths
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class | AttributeTargets.Struct)]
-    public class GenericMathsAttribute : Attribute
+    internal class GenericMathsAttribute : Attribute
     {
         
     }
@@ -139,7 +139,6 @@ namespace GenericMaths
                                 var str = newNamespace.NormalizeWhitespace().ToFullString();
                                 var name = $"{tds.Identifier.Text}_Maths.cs";
                                 Debugger.Break();
-                                File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
                                 context.AddSource(name, str);
                             }
                         }
@@ -255,7 +254,6 @@ namespace GenericMaths
                             var str = newNamespace.NormalizeWhitespace().ToFullString();
                             var name = $"{tds.Identifier.Text}_Maths_{Guid.NewGuid()}.cs";
                             Debugger.Break();
-                            File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
                             context.AddSource(name, str);
                         }
                         catch (DiagnosticException ex)
