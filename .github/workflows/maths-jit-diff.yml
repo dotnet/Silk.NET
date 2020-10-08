@@ -13,8 +13,8 @@ on:
 
 env:
   DOTNET_NOLOGO: 1
-  DOTNET_TAG: v5.0.0-preview.7.20364.11
-  DOTNET_VERSION: 5.0.100-preview.7.20366.6
+  DOTNET_TAG: v5.0.0-rc.1.20451.14
+  DOTNET_VERSION: 5.0.100-rc.1.20452.10
 
 jobs:
   check-comment:

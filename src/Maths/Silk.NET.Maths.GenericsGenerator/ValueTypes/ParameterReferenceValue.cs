@@ -39,7 +39,7 @@ namespace GenericMathsGenerator
         public int Step => 0;
 
         public ExpressionSyntax BuildExpression
-            (ImmutableArray<ExpressionSyntax> children, ref List<StatementSyntax> statements, TargetType targetType)
+            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             return SyntaxFactory.IdentifierName(ParameterName);
         }

@@ -23,13 +23,12 @@ namespace GenericMathsGenerator
     [Generator]
     public class Generator : ISourceGenerator
     {
-        public void Initialize(GeneratorInitializationContext context)
-        {
-            context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
-        }
+        public void Initialize(GeneratorInitializationContext context) 
+            => context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
 
         public void Execute(GeneratorExecutionContext context)
         {
+            const string genericParameter = "T";
             try
             {
                 context.AddSource
@@ -111,18 +110,16 @@ namespace GenericMaths
                                 if (declaration.Body is not null)
                                     methodResultDeclarations = ProcessMethod
                                     (
-                                        context, semanticModel, declaration.Body, declaration.Identifier.Text, default,
-                                        declaration.Modifiers, declaration.TypeParameterList,
+                                        context, semanticModel, declaration.Body, declaration.Identifier.Text, false,
+                                        genericParameter, default, declaration.Modifiers, declaration.TypeParameterList,
                                         declaration.ExplicitInterfaceSpecifier, declaration.ParameterList,
-                                        declaration.ConstraintClauses, false
+                                        declaration.ConstraintClauses
                                     );
                                 else
                                     methodResultDeclarations = ProcessMethod
                                     (
                                         context, semanticModel, declaration.ExpressionBody!,
-                                        declaration.Identifier.Text, default, declaration.Modifiers,
-                                        declaration.TypeParameterList, declaration.ExplicitInterfaceSpecifier,
-                                        declaration.ParameterList, declaration.ConstraintClauses, false
+                                        declaration.Identifier.Text, false, genericParameter, default, declaration.Modifiers, declaration.TypeParameterList, declaration.ExplicitInterfaceSpecifier, declaration.ParameterList, declaration.ConstraintClauses
                                     );
 
                                 if (methodResultDeclarations is null)
@@ -149,101 +146,14 @@ namespace GenericMaths
                     }
                 }
 
+                Debugger.Launch();
                 foreach (var (tds, symbol, attribute) in types)
                     if (tds.Parent is NamespaceDeclarationSyntax nds)
                     {
                         try
                         {
-                            var GenericParameter = "T";
+                            var newType = SpecializeType(context, tds, TargetType.Int, genericParameter).WithIdentifier(Identifier(tds.Identifier.Text + "_Int"));
 
-                            var resultDeclarations = new List<MemberDeclarationSyntax>();
-                            foreach (var member in tds.Members)
-                            {
-                                switch (member)
-                                {
-                                    case MethodDeclarationSyntax method:
-                                    {
-                                        var semanticModel = context.Compilation.GetSemanticModel(method.SyntaxTree);
-
-                                        if (!(semanticModel.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
-                                              ts.SpecialType == SpecialType.System_Single))
-                                            continue;
-                                        
-                                        if (method.ParameterList.Parameters.Any(x => !(semanticModel.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
-                                              ts.SpecialType == SpecialType.System_Single)))
-                                            continue;
-
-                                        List<MethodDeclarationSyntax>? methodResultDeclarations;
-                                        if (method.Body is not null)
-                                            methodResultDeclarations = ProcessMethod
-                                            (
-                                                context, semanticModel, method.Body, method.Identifier.Text, default,
-                                                method.Modifiers, method.TypeParameterList,
-                                                method.ExplicitInterfaceSpecifier, method.ParameterList,
-                                                method.ConstraintClauses, false
-                                            );
-                                        else
-                                            methodResultDeclarations = ProcessMethod
-                                            (
-                                                context, semanticModel, method.ExpressionBody!, method.Identifier.Text,
-                                                default, method.Modifiers, method.TypeParameterList,
-                                                method.ExplicitInterfaceSpecifier, method.ParameterList,
-                                                method.ConstraintClauses, false
-                                            );
-
-                                        if (methodResultDeclarations is null)
-                                            continue;
-
-                                        resultDeclarations.AddRange(methodResultDeclarations);
-                                        break;
-                                    }
-                                    case FieldDeclarationSyntax field:
-                                        resultDeclarations.Add
-                                        (
-                                            field.WithDeclaration
-                                                (field.Declaration.WithType(IdentifierName(GenericParameter)))
-                                        );
-                                        break;
-                                    case PropertyDeclarationSyntax property:
-                                        resultDeclarations.Add(property.WithType(IdentifierName(GenericParameter)));
-                                        break;
-                                    default:
-                                        context.ReportDiagnostic
-                                        (
-                                            Diagnostic.Create
-                                            (
-                                                Diagnostics.UnsupportedMember, member.GetLocation(),
-                                                member.GetType().Name
-                                            )
-                                        );
-                                        break;
-                                }
-                            }
-
-                            var newType = tds.WithMembers
-                                    (List(resultDeclarations))
-                                .WithTypeParameterList
-                                (
-                                    (tds.TypeParameterList ?? TypeParameterList()).AddParameters
-                                        (TypeParameter(GenericParameter))
-                                )
-                                .WithConstraintClauses
-                                (
-                                    tds.ConstraintClauses.Add
-                                    (
-                                        TypeParameterConstraintClause
-                                                (GenericParameter)
-                                            .WithConstraints
-                                            (
-                                                SeparatedList
-                                                (
-                                                    new TypeParameterConstraintSyntax[]
-                                                        {TypeConstraint(IdentifierName("unmanaged"))}
-                                                )
-                                            )
-                                    )
-                                )
-                                .WithAttributeLists(default);
                             var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
                             newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
                                 .Usings.Aggregate
@@ -254,6 +164,7 @@ namespace GenericMaths
                             var str = newNamespace.NormalizeWhitespace().ToFullString();
                             var name = $"{tds.Identifier.Text}_Maths_{Guid.NewGuid()}.cs";
                             Debugger.Break();
+                            File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
                             context.AddSource(name, str);
                         }
                         catch (DiagnosticException ex)
@@ -274,19 +185,92 @@ namespace GenericMaths
             }
         }
 
+        private static TypeDeclarationSyntax SpecializeType(
+            GeneratorExecutionContext context,
+            TypeDeclarationSyntax tds,
+            TargetType targetType,
+            string genericParameter
+        )
+        {
+            var model = context.Compilation.GetSemanticModel(tds.SyntaxTree);
+            var resolvedT = targetType.GetTypeSyntax();
+            var targetTypeName = Enum.GetName(typeof(TargetType), targetType);
+            var resultDeclarations = new List<MemberDeclarationSyntax>();
+            foreach (var member in tds.Members)
+            {
+                switch (member)
+                {
+                    case MethodDeclarationSyntax method:
+                    {
+                        var semanticModel = context.Compilation.GetSemanticModel(method.SyntaxTree);
+
+                        if (!(semanticModel.GetDeclaredSymbol
+                                (method) is { ReturnType: { SpecialType: SpecialType.System_Single } }) ||
+                            method.ParameterList.Parameters.Any
+                            (
+                                x => !(semanticModel.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
+                                       ts.SpecialType == SpecialType.System_Single)
+                            ))
+                        {
+                            resultDeclarations.Add(method);
+                            continue;
+                        }
+
+                        var methodOperation = method.Body is not null
+                            ? model.GetOperation(method.Body)
+                            : model.GetOperation(method.ExpressionBody!);
+
+                        if (methodOperation is null)
+                        {
+                            resultDeclarations.Add(method);
+                            continue;
+                        }
+
+                        Debugger.Break();
+                        var m = ProcessMethodOperation
+                        (
+                            context, methodOperation, false, false, null, new[]
+                            {
+                                (targetType, method.Identifier.Text)
+                            }, $"THROW_HELPER_{method.Identifier}", genericParameter, method.AttributeLists, method.Modifiers, method.TypeParameterList, method.ExplicitInterfaceSpecifier, method.ParameterList, method.ConstraintClauses
+                        );
+
+                        resultDeclarations.AddRange(m);
+                        break;
+                    }
+                    case FieldDeclarationSyntax field:
+                        resultDeclarations.Add(field.WithDeclaration(field.Declaration.WithType(resolvedT)));
+                        break;
+                    case PropertyDeclarationSyntax property:
+                        resultDeclarations.Add(property.WithType(resolvedT));
+                        break;
+                    default:
+                        context.ReportDiagnostic
+                        (
+                            Diagnostic.Create
+                                (Diagnostics.UnsupportedMember, member.GetLocation(), member.GetType().Name)
+                        );
+                        break;
+                }
+            }
+
+            return tds.WithMembers(List(resultDeclarations)).WithAttributeLists(default);
+        }
+
         public static List<MethodDeclarationSyntax>? ProcessMethod
         (
             GeneratorExecutionContext context,
             SemanticModel model,
             BlockSyntax body,
             string identifier,
+            bool makeGenericDefinitionGenericRoot,
+            string genericParameter,
             SyntaxList<AttributeListSyntax> attributeLists,
             SyntaxTokenList modifiers,
             TypeParameterListSyntax? typeParameterList,
             ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier,
             ParameterListSyntax parameterList,
-            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses,
-            bool makeGenericDefinitionGenericRoot
+            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses
         )
         {
             var op = model.GetOperation(body);
@@ -294,8 +278,9 @@ namespace GenericMaths
                 return null;
             return ProcessMethodOperation
             (
-                context, model, op, identifier, attributeLists, modifiers, typeParameterList,
-                explicitInterfaceSpecifier, parameterList, constraintClauses, makeGenericDefinitionGenericRoot
+                context, op, makeGenericDefinitionGenericRoot, true, identifier,
+                TargetTypes.Select(x => (x, $"{identifier}_{Enum.GetName(typeof(TargetType), x)}")),
+                $"ThrowHelper_M_{identifier}", genericParameter, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses
             );
         }
 
@@ -305,13 +290,14 @@ namespace GenericMaths
             SemanticModel model,
             ArrowExpressionClauseSyntax body,
             string identifier,
+            bool makeGenericDefinitionGenericRoot,
+            string genericParameter,
             SyntaxList<AttributeListSyntax> attributeLists,
             SyntaxTokenList modifiers,
             TypeParameterListSyntax? typeParameterList,
             ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier,
             ParameterListSyntax parameterList,
-            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses,
-            bool makeGenericDefinitionGenericRoot
+            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses 
         )
         {
             var op = model.GetOperation(body);
@@ -319,12 +305,13 @@ namespace GenericMaths
                 return null;
             return ProcessMethodOperation
             (
-                context, model, op, identifier, attributeLists, modifiers, typeParameterList,
-                explicitInterfaceSpecifier, parameterList, constraintClauses, makeGenericDefinitionGenericRoot
+                context, op, makeGenericDefinitionGenericRoot, true, identifier,
+                TargetTypes.Select(x => (x, $"{identifier}_{Enum.GetName(typeof(TargetType), x)}")),
+                $"ThrowHelper_M_{identifier}", genericParameter, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses
             );
         }
 
-        private static IValueProcessor[] _valueProcessors = {
+        private static readonly IValueProcessor[] _valueProcessors = {
             new ConstantFolder(),
             new VariableInliner(),
         };
@@ -332,26 +319,32 @@ namespace GenericMaths
         private static List<MethodDeclarationSyntax> ProcessMethodOperation
         (
             GeneratorExecutionContext context,
-            SemanticModel model,
             IOperation operation,
-            string identifier,
+            bool makeGenericDefinitionGenericRoot,
+            bool generateGenericMethod,
+            string? genericMethodName,
+            IEnumerable<(TargetType, string)> targetTypes,
+            string throwHelperName,
+            string genericParameter,
             SyntaxList<AttributeListSyntax> attributeLists,
             SyntaxTokenList modifiers,
             TypeParameterListSyntax? typeParameterList,
             ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier,
             ParameterListSyntax parameterList,
-            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses,
-            bool makeGenericDefinitionGenericRoot
+            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses
         )
         {
+            Debug.Assert(!(generateGenericMethod && makeGenericDefinitionGenericRoot));
+            Debug.Assert(generateGenericMethod == genericMethodName is not null);
+            
             var variables = new OperationWalker().RootVisit(context, operation);
 
             variables = _valueProcessors.Aggregate
                     (variables, (current, valueProcessor) => valueProcessor.Process(current))
                 .ToArray();
 
-
-            var stack = new Stack<IValue>();
+            
+            
             // this implies we only care for the first return variable.
             // this also implies that we assume all calls to be pure.
             var firstReturn = variables.FirstOrDefault(x => x is ReturnVariable);
@@ -359,9 +352,106 @@ namespace GenericMaths
             if (firstReturn is null)
                 throw new DiagnosticException(Diagnostic.Create(Diagnostics.NoReturn, null));
 
-            stack.Push(firstReturn.Value);
+            GetBucketsAndParameters(firstReturn.Value, out List<ParameterReferenceValue> parameters, out ImmutableSortedDictionary<int, List<IValue>> sortedBuckets);
 
-            var parameters = new List<ParameterReferenceValue>();
+            var methods = GetMethods(firstReturn.Value, makeGenericDefinitionGenericRoot, generateGenericMethod, genericMethodName, targetTypes, throwHelperName, genericParameter, parameters, sortedBuckets, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses);
+
+            Debugger.Break();
+            return methods;
+        }
+
+        private static List<MethodDeclarationSyntax> GetMethods(
+            IValue value,
+            bool makeGenericDefinitionGenericRoot,
+            bool generateGenericMethod,
+            string? genericMethodName,
+            IEnumerable<(TargetType, string)> targetTypes,
+            string throwHelperName,
+            string genericParameter,
+            List<ParameterReferenceValue> parameters,
+            ImmutableSortedDictionary<int, List<IValue>> sortedBuckets,
+            SyntaxList<AttributeListSyntax> attributeLists,
+            SyntaxTokenList modifiers,
+            TypeParameterListSyntax? typeParameterList,
+            ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier,
+            ParameterListSyntax parameterList,
+            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses
+        )
+        {
+            var methods = new List<MethodDeclarationSyntax>();
+            StatementSyntax lastStatement = default;
+            if (generateGenericMethod)
+            {
+                methods.Add(MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), throwHelperName)
+                    .WithExpressionBody(ArrowExpressionClause(ThrowExpression(
+                        ObjectCreationExpression(QualifiedName(IdentifierName(nameof(System)),
+                            IdentifierName(nameof(System.ArgumentOutOfRangeException)))).WithArgumentList(
+                            ArgumentList(SingletonSeparatedList(Argument(LiteralExpression(SyntaxKind.StringLiteralExpression,
+                                Literal(genericParameter)))))))))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword)))
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)));
+
+                lastStatement = Block(ExpressionStatement(InvocationExpression(IdentifierName(throwHelperName))),
+                    ReturnStatement(DefaultExpression(IdentifierName(genericParameter))));
+            }
+
+            foreach (var (targetType, mId) in targetTypes)
+            {
+                var resolvedT = targetType.GetTypeSyntax();
+
+                var m = MethodDeclaration(attributeLists, modifiers, resolvedT, explicitInterfaceSpecifier, Identifier(mId),
+                    typeParameterList,
+                    ParameterList(
+                        SeparatedList(parameters.Select(x => Parameter(Identifier(x.ParameterName)).WithType(resolvedT)))),
+                    constraintClauses, BuildMethodBody(sortedBuckets, value, targetType), null);
+                methods.Add(m);
+
+                if (generateGenericMethod)
+                {
+                    lastStatement =
+                        IfStatement(
+                                BinaryExpression(SyntaxKind.EqualsExpression,
+                                    TypeOfExpression(IdentifierName(genericParameter)),
+                                    TypeOfExpression(resolvedT)),
+                                ReturnStatement(CastExpression(IdentifierName(genericParameter),
+                                    CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)),
+                                        InvocationExpression(IdentifierName(mId)).WithArgumentList(
+                                            ArgumentList(SeparatedList(parameters.Select(x
+                                                => Argument(CastExpression(resolvedT,
+                                                    CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)),
+                                                        IdentifierName(x.ParameterName))))))))))))
+                            .WithElse(ElseClause(lastStatement!));
+                }
+            }
+
+            if (generateGenericMethod)
+            {
+                if (makeGenericDefinitionGenericRoot)
+                {
+                    typeParameterList ??= TypeParameterList();
+                    typeParameterList = typeParameterList.AddParameters(TypeParameter(genericParameter));
+
+                    constraintClauses = constraintClauses.Add(TypeParameterConstraintClause(IdentifierName(genericParameter),
+                        SeparatedList(new TypeParameterConstraintSyntax[] {TypeConstraint(IdentifierName("unmanaged"))})));
+                }
+
+                methods.Add(MethodDeclaration(attributeLists, modifiers, IdentifierName(genericParameter),
+                    explicitInterfaceSpecifier, Identifier(genericMethodName), typeParameterList, parameterList,
+                    constraintClauses, Block(lastStatement!), null));
+            }
+
+            return methods;
+        }
+
+        private static void GetBucketsAndParameters(
+            IValue value,
+            out List<ParameterReferenceValue> parameters,
+            out ImmutableSortedDictionary<int, List<IValue>> sortedBuckets)
+        {
+            var stack = new Stack<IValue>();
+            stack.Push(value);
+
+            parameters = new List<ParameterReferenceValue>();
             var buckets = new Dictionary<int, List<IValue>>();
             while (stack.Count != 0)
             {
@@ -380,158 +470,8 @@ namespace GenericMaths
                     parameters.Add(prv);
             }
 
-            Debugger.Break();
             parameters = parameters.Distinct().ToList();
-
-            stack = null; // no longer need that
-            var sortedBuckets = buckets.ToImmutableSortedDictionary(x => x.Key, x => x.Value, Comparer<int>.Default);
-            buckets = null; // no need for the dictionary anymore
-
-            const string GenericParameter = "T";
-            string throwHelper = $"ThrowHelper_M_{identifier}";
-            var methods = new List<MethodDeclarationSyntax>();
-            methods.Add
-            (
-                MethodDeclaration
-                        (PredefinedType(Token(SyntaxKind.VoidKeyword)), throwHelper)
-                    .WithExpressionBody
-                    (
-                        ArrowExpressionClause
-                        (
-                            ThrowExpression
-                            (
-                                ObjectCreationExpression
-                                    (
-                                        QualifiedName
-                                        (
-                                            IdentifierName(nameof(System)),
-                                            IdentifierName(nameof(System.ArgumentOutOfRangeException))
-                                        )
-                                    )
-                                    .WithArgumentList
-                                    (
-                                        ArgumentList
-                                        (
-                                            SingletonSeparatedList
-                                            (
-                                                Argument
-                                                (
-                                                    LiteralExpression
-                                                        (SyntaxKind.StringLiteralExpression, Literal(GenericParameter))
-                                                )
-                                            )
-                                        )
-                                    )
-                            )
-                        )
-                    )
-                    .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword)))
-                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-            );
-
-            StatementSyntax lastStatement = Block
-            (
-                ExpressionStatement(InvocationExpression(IdentifierName(throwHelper))),
-                ReturnStatement(DefaultExpression(IdentifierName(GenericParameter)))
-            );
-            foreach (var targetType in TargetTypes)
-            {
-                var resolvedT = targetType.GetTypeSyntax();
-                var targetTypeName = Enum.GetName(typeof(TargetType), targetType);
-
-                methods.Add
-                (
-                    MethodDeclaration
-                    (
-                        attributeLists, modifiers, resolvedT, explicitInterfaceSpecifier,
-                        Identifier($"{identifier}_{targetTypeName}"), typeParameterList,
-                        ParameterList
-                        (
-                            SeparatedList
-                                (parameters.Select(x => Parameter(Identifier(x.ParameterName)).WithType(resolvedT)))
-                        ), constraintClauses, BuildMethodBody(sortedBuckets, firstReturn, targetType), null
-                    )
-                );
-
-                lastStatement = IfStatement
-                    (
-                        BinaryExpression
-                        (
-                            SyntaxKind.EqualsExpression, TypeOfExpression(IdentifierName(GenericParameter)),
-                            TypeOfExpression(resolvedT)
-                        ),
-                        ReturnStatement
-                        (
-                            CastExpression
-                            (
-                                IdentifierName(GenericParameter),
-                                CastExpression
-                                (
-                                    PredefinedType(Token(SyntaxKind.ObjectKeyword)),
-                                    InvocationExpression(IdentifierName($"{identifier}_{targetTypeName}"))
-                                        .WithArgumentList
-                                        (
-                                            ArgumentList
-                                            (
-                                                SeparatedList
-                                                (
-                                                    parameters.Select
-                                                    (
-                                                        x => Argument
-                                                        (
-                                                            CastExpression
-                                                            (
-                                                                resolvedT,
-                                                                CastExpression
-                                                                (
-                                                                    PredefinedType(Token(SyntaxKind.ObjectKeyword)),
-                                                                    IdentifierName(x.ParameterName)
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                )
-                            )
-                        )
-                    )
-                    .WithElse(ElseClause(lastStatement));
-            }
-
-            if (makeGenericDefinitionGenericRoot)
-            {
-                typeParameterList ??= TypeParameterList();
-                typeParameterList = typeParameterList.AddParameters(TypeParameter(GenericParameter));
-
-                constraintClauses = constraintClauses.Add
-                (
-                    TypeParameterConstraintClause
-                    (
-                        IdentifierName(GenericParameter), SeparatedList
-                        (
-                            new TypeParameterConstraintSyntax[]
-                            {
-                                TypeConstraint(IdentifierName("unmanaged"))
-                            }
-                        )
-                    )
-                );
-            }
-
-            methods.Add
-            (
-                MethodDeclaration
-                (
-                    attributeLists, modifiers, IdentifierName(GenericParameter), explicitInterfaceSpecifier,
-                    Identifier(identifier), typeParameterList, parameterList, constraintClauses, Block(lastStatement),
-                    null
-                )
-            );
-
-            Debugger.Break();
-            return methods;
+            sortedBuckets = buckets.ToImmutableSortedDictionary(x => x.Key, x => x.Value, Comparer<int>.Default);
         }
 
         private static IEnumerable<TargetType> TargetTypes = new[]
@@ -549,34 +489,40 @@ namespace GenericMaths
         };
 
         private static BlockSyntax BuildMethodBody
-            (ImmutableSortedDictionary<int, List<IValue>> sortedBuckets, IVariable firstReturn, TargetType targetType)
+            (ImmutableSortedDictionary<int, List<IValue>> sortedBuckets, IValue sourceValue, TargetType targetType)
         {
-            var resolvedValues = new Dictionary<IValue, ExpressionSyntax>();
+            static ExpressionSyntax ResolveCallback(IValue value, IBodyBuilder builder)
+            {
+                GetBucketsAndParameters(value, out var parameters, out var sortedBuckets);
+                ResolveBuckets(sortedBuckets, builder.Type, builder);
+                return builder.ResolvedValues[value];
+            }
+            
             var extraStatements = new List<StatementSyntax>();
+
+            var bodyBuilder = new ScalarBodyBuilder(extraStatements, targetType, ResolveCallback);
+            ResolveBuckets(sortedBuckets, targetType, bodyBuilder);
+
+            extraStatements = bodyBuilder.Statements;
+            extraStatements.Add(ReturnStatement(bodyBuilder.ResolvedValues[sourceValue]));
+            return Block(extraStatements);
+        }
+
+        private static void ResolveBuckets(
+            ImmutableSortedDictionary<int, List<IValue>> sortedBuckets,
+            TargetType targetType,
+            IBodyBuilder bodyBuilder
+        )
+        {
             foreach (var bucket in sortedBuckets)
             {
                 foreach (var value in bucket.Value)
                 {
-                    resolvedValues[value] = ParenthesizedExpression
-                    (
-                        CastExpression
-                        (
-                            targetType.GetTypeSyntax(),
-                            ParenthesizedExpression
-                            (
-                                value.BuildExpression
-                                (
-                                    value.Children.Select(x => resolvedValues[x]).ToImmutableArray(),
-                                    ref extraStatements, targetType
-                                )
-                            )
-                        )
-                    );
+                    var children = value.Children.Select(x => bodyBuilder.ResolvedValues[x]);
+                    bodyBuilder.ResolvedValues[value] = ParenthesizedExpression(CastExpression(targetType.GetTypeSyntax(),
+                        ParenthesizedExpression(value.BuildExpression(bodyBuilder, children.ToImmutableArray()))));
                 }
             }
-
-            extraStatements.Add(ReturnStatement(resolvedValues[firstReturn.Value]));
-            return Block(extraStatements);
         }
 
         private static IReadOnlyCollection<IVariable> GetDependencies(IVariable variable)
@@ -608,12 +554,7 @@ namespace GenericMaths
                     ("generic_maths_possible_types", out var possibleTypesStr) &&
                 !string.IsNullOrWhiteSpace(possibleTypesStr))
             {
-                foreach (var t in possibleTypesStr.Split(','))
-                {
-                    var parsed = ParseTypeName(t);
-                    if (!(parsed is null))
-                        possibleTypes.Add(parsed);
-                }
+                possibleTypes.AddRange(possibleTypesStr.Split(',').Select(t => ParseTypeName(t)));
             }
 
             if (possibleTypes.Count == 0)

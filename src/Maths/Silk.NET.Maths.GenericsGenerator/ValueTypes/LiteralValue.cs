@@ -39,10 +39,12 @@ namespace GenericMathsGenerator.ValueTypes
         public int Step => 0;
 
         public ExpressionSyntax BuildExpression
-            (ImmutableArray<ExpressionSyntax> children, ref List<StatementSyntax> statements, TargetType targetType)
-            => LiteralExpression
+            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
+        {
+            Debug.Assert(children.Length == 0);
+            return LiteralExpression
             (
-                SyntaxKind.NumericLiteralExpression, targetType switch
+                SyntaxKind.NumericLiteralExpression, bodyBuilder.Type switch
                 {
                     TargetType.Byte => Literal((byte) _value),
                     TargetType.SByte => Literal((sbyte) _value),
@@ -54,9 +56,10 @@ namespace GenericMathsGenerator.ValueTypes
                     TargetType.Long => Literal((long) _value),
                     TargetType.Single => Literal((float) _value),
                     TargetType.Double => Literal((double) _value),
-                    _ => throw new ArgumentOutOfRangeException(nameof(targetType))
+                    _ => throw new ArgumentOutOfRangeException(nameof(bodyBuilder.Type))
                 }
             );
+        }
 
         public bool Equals(LiteralValue? other)
         {

@@ -8,7 +8,7 @@
     </PropertyGroup>
     
     <ItemGroup>
-        <ProjectReference Include="..\GenericMathsGenerator\GenericMathsGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+        <ProjectReference Include="..\..\Maths\Silk.NET.Maths.GenericsGenerator\Silk.NET.Maths.GenericsGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 
 </Project>
