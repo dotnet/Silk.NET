@@ -1037,7 +1037,7 @@ G_M28871_IG02:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01,T00] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -1061,7 +1061,7 @@ G_M19083_IG03:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01,T00] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -1086,7 +1086,7 @@ G_M62371_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02,T00] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -1436,65 +1436,36 @@ G_M32304_IG03:
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )   ubyte  ->  rcx        
 ;  V01 arg1         [V01,T01] (  3,  3   )   ubyte  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M59209_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M59209_IG02:
-       movzx    rcx, cl
-       movzx    rdx, dl
-       call     Silk.NET.Maths.Scalar:Min(ubyte,ubyte):ubyte
-       nop      
-						;; bbWeight=1    PerfScore 1.75
-G_M59209_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 21, prolog size 4, PerfScore 5.35, (MethodHash=5c4118b6) for method JITTest.ScalarByte:Min(ubyte,ubyte):ubyte
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(ubyte,ubyte):ubyte
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )   ubyte  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )   ubyte  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  3,  2   )   ubyte  ->  rdx         "Inline return value spill temp"
-;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
-;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;* V03 tmp1         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T04] (  3,  2   )   ubyte  ->  rdx         "Inline return value spill temp"
+;  V05 cse0         [V05,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V06 cse1         [V06,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
 ; Lcl frame size = 0
 
-G_M13475_IG01:
+G_M59209_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M13475_IG02:
+G_M59209_IG02:
        movzx    rax, cl
        movzx    rdx, dl
        cmp      eax, edx
-       jle      SHORT G_M13475_IG04
+       jle      SHORT G_M59209_IG04
 						;; bbWeight=1    PerfScore 1.75
-G_M13475_IG03:
-       jmp      SHORT G_M13475_IG05
+G_M59209_IG03:
+       jmp      SHORT G_M59209_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M13475_IG04:
+G_M59209_IG04:
        mov      edx, eax
 						;; bbWeight=0.50 PerfScore 0.12
-G_M13475_IG05:
+G_M59209_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M13475_IG06:
+G_M59209_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=ac01cb5c) for method Silk.NET.Maths.Scalar:Min(ubyte,ubyte):ubyte
+; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=5c4118b6) for method JITTest.ScalarByte:Min(ubyte,ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Max(ubyte,ubyte):ubyte
@@ -1506,65 +1477,36 @@ G_M13475_IG06:
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )   ubyte  ->  rcx        
 ;  V01 arg1         [V01,T01] (  3,  3   )   ubyte  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M5143_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M5143_IG02:
-       movzx    rcx, cl
-       movzx    rdx, dl
-       call     Silk.NET.Maths.Scalar:Max(ubyte,ubyte):ubyte
-       nop      
-						;; bbWeight=1    PerfScore 1.75
-G_M5143_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 21, prolog size 4, PerfScore 5.35, (MethodHash=0e69ebe8) for method JITTest.ScalarByte:Max(ubyte,ubyte):ubyte
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(ubyte,ubyte):ubyte
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )   ubyte  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )   ubyte  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  3,  2   )   ubyte  ->  rdx         "Inline return value spill temp"
-;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
-;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;* V03 tmp1         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T04] (  3,  2   )   ubyte  ->  rdx         "Inline return value spill temp"
+;  V05 cse0         [V05,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V06 cse1         [V06,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
 ; Lcl frame size = 0
 
-G_M12541_IG01:
+G_M5143_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M12541_IG02:
+G_M5143_IG02:
        movzx    rax, cl
        movzx    rdx, dl
        cmp      eax, edx
-       jge      SHORT G_M12541_IG04
+       jge      SHORT G_M5143_IG04
 						;; bbWeight=1    PerfScore 1.75
-G_M12541_IG03:
-       jmp      SHORT G_M12541_IG05
+G_M5143_IG03:
+       jmp      SHORT G_M5143_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M12541_IG04:
+G_M5143_IG04:
        mov      edx, eax
 						;; bbWeight=0.50 PerfScore 0.12
-G_M12541_IG05:
+G_M5143_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M12541_IG06:
+G_M5143_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=2d41cf02) for method Silk.NET.Maths.Scalar:Max(ubyte,ubyte):ubyte
+; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=0e69ebe8) for method JITTest.ScalarByte:Max(ubyte,ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Larger(ubyte,ubyte):bool
@@ -1725,7 +1667,7 @@ G_M17859_IG03:
 ; Total bytes of code 39, prolog size 5, PerfScore 10.40, (MethodHash=4545ba3c) for method JITTest.ScalarByte:Clamp(ubyte,ubyte,ubyte):ubyte
 ; ============================================================
 
-; Assembly listing for method JITTest.ScalarByte:Negate(ubyte):ubyte
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(ubyte,ubyte):ubyte
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
 ; rsp based frame
@@ -1733,27 +1675,79 @@ G_M17859_IG03:
 ; Final local variable assignments
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )   ubyte  ->  rcx        
-;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;  V01 arg1         [V01,T01] (  3,  3   )   ubyte  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T04] (  3,  2   )   ubyte  ->  rdx         "Inline return value spill temp"
+;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
-; Lcl frame size = 40
+; Lcl frame size = 0
 
-G_M26380_IG01:
-       sub      rsp, 40
+G_M12541_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M12541_IG02:
+       movzx    rax, cl
+       movzx    rdx, dl
+       cmp      eax, edx
+       jge      SHORT G_M12541_IG04
+						;; bbWeight=1    PerfScore 1.75
+G_M12541_IG03:
+       jmp      SHORT G_M12541_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M12541_IG04:
+       mov      edx, eax
+						;; bbWeight=0.50 PerfScore 0.12
+G_M12541_IG05:
+       mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M26380_IG02:
-       movzx    rcx, cl
-       call     Silk.NET.Maths.Scalar:Negate(ubyte):ubyte
-       nop      
-						;; bbWeight=1    PerfScore 1.50
-G_M26380_IG03:
-       add      rsp, 40
+G_M12541_IG06:
        ret      
-						;; bbWeight=1    PerfScore 1.25
+						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 18, prolog size 4, PerfScore 4.80, (MethodHash=adaf98f3) for method JITTest.ScalarByte:Negate(ubyte):ubyte
+; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=2d41cf02) for method Silk.NET.Maths.Scalar:Max(ubyte,ubyte):ubyte
 ; ============================================================
 
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(ubyte):ubyte
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(ubyte,ubyte):ubyte
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  3,  3   )   ubyte  ->  rcx        
+;  V01 arg1         [V01,T01] (  3,  3   )   ubyte  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T04] (  3,  2   )   ubyte  ->  rdx         "Inline return value spill temp"
+;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;
+; Lcl frame size = 0
+
+G_M13475_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M13475_IG02:
+       movzx    rax, cl
+       movzx    rdx, dl
+       cmp      eax, edx
+       jle      SHORT G_M13475_IG04
+						;; bbWeight=1    PerfScore 1.75
+G_M13475_IG03:
+       jmp      SHORT G_M13475_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M13475_IG04:
+       mov      edx, eax
+						;; bbWeight=0.50 PerfScore 0.12
+G_M13475_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M13475_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=ac01cb5c) for method Silk.NET.Maths.Scalar:Min(ubyte,ubyte):ubyte
+; ============================================================
+
+; Assembly listing for method JITTest.ScalarByte:Negate(ubyte):ubyte
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
 ; rsp based frame
@@ -1761,20 +1755,21 @@ G_M26380_IG03:
 ; Final local variable assignments
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
-;* V01 loc0         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;* V02 tmp1         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
-G_M58726_IG01:
+G_M26380_IG01:
        sub      rsp, 40
 						;; bbWeight=1    PerfScore 0.25
-G_M58726_IG02:
+G_M26380_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
        int3     
 						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=530f1a99) for method Silk.NET.Maths.Scalar:Negate(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=adaf98f3) for method JITTest.ScalarByte:Negate(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Equal(ubyte,ubyte):bool
@@ -2899,7 +2894,7 @@ G_M6740_IG02:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01,T00] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -2923,7 +2918,7 @@ G_M16493_IG03:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01,T00] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -2948,7 +2943,7 @@ G_M25605_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )    byte  ->  zero-ref   
 ;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02,T00] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -3298,65 +3293,36 @@ G_M18614_IG03:
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )    byte  ->  rcx        
 ;  V01 arg1         [V01,T01] (  3,  3   )    byte  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M38415_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M38415_IG02:
-       movsx    rcx, cl
-       movsx    rdx, dl
-       call     Silk.NET.Maths.Scalar:Min(byte,byte):byte
-       nop      
-						;; bbWeight=1    PerfScore 1.75
-G_M38415_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 23, prolog size 4, PerfScore 5.55, (MethodHash=b61169f0) for method JITTest.ScalarSByte:Min(byte,byte):byte
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(byte,byte):byte
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )    byte  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )    byte  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  3,  2   )    byte  ->  rdx         "Inline return value spill temp"
-;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
-;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;* V03 tmp1         [V03    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T04] (  3,  2   )    byte  ->  rdx         "Inline return value spill temp"
+;  V05 cse0         [V05,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V06 cse1         [V06,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
 ; Lcl frame size = 0
 
-G_M1654_IG01:
+G_M38415_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M1654_IG02:
+G_M38415_IG02:
        movsx    rax, cl
        movsx    rdx, dl
        cmp      eax, edx
-       jle      SHORT G_M1654_IG04
+       jle      SHORT G_M38415_IG04
 						;; bbWeight=1    PerfScore 1.75
-G_M1654_IG03:
-       jmp      SHORT G_M1654_IG05
+G_M38415_IG03:
+       jmp      SHORT G_M38415_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M1654_IG04:
+G_M38415_IG04:
        mov      edx, eax
 						;; bbWeight=0.50 PerfScore 0.12
-G_M1654_IG05:
+G_M38415_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M1654_IG06:
+G_M38415_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=9c4bf989) for method Silk.NET.Maths.Scalar:Min(byte,byte):byte
+; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=b61169f0) for method JITTest.ScalarSByte:Min(byte,byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Max(byte,byte):byte
@@ -3368,65 +3334,36 @@ G_M1654_IG06:
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )    byte  ->  rcx        
 ;  V01 arg1         [V01,T01] (  3,  3   )    byte  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M51473_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M51473_IG02:
-       movsx    rcx, cl
-       movsx    rdx, dl
-       call     Silk.NET.Maths.Scalar:Max(byte,byte):byte
-       nop      
-						;; bbWeight=1    PerfScore 1.75
-G_M51473_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 23, prolog size 4, PerfScore 5.55, (MethodHash=578236ee) for method JITTest.ScalarSByte:Max(byte,byte):byte
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(byte,byte):byte
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )    byte  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )    byte  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  3,  2   )    byte  ->  rdx         "Inline return value spill temp"
-;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
-;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;* V03 tmp1         [V03    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T04] (  3,  2   )    byte  ->  rdx         "Inline return value spill temp"
+;  V05 cse0         [V05,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V06 cse1         [V06,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
 ; Lcl frame size = 0
 
-G_M4456_IG01:
+G_M51473_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M4456_IG02:
+G_M51473_IG02:
        movsx    rax, cl
        movsx    rdx, dl
        cmp      eax, edx
-       jge      SHORT G_M4456_IG04
+       jge      SHORT G_M51473_IG04
 						;; bbWeight=1    PerfScore 1.75
-G_M4456_IG03:
-       jmp      SHORT G_M4456_IG05
+G_M51473_IG03:
+       jmp      SHORT G_M51473_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M4456_IG04:
+G_M51473_IG04:
        mov      edx, eax
 						;; bbWeight=0.50 PerfScore 0.12
-G_M4456_IG05:
+G_M51473_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M4456_IG06:
+G_M51473_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=bb37ee97) for method Silk.NET.Maths.Scalar:Max(byte,byte):byte
+; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=578236ee) for method JITTest.ScalarSByte:Max(byte,byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Larger(byte,byte):bool
@@ -3587,6 +3524,86 @@ G_M54704_IG03:
 ; Total bytes of code 42, prolog size 5, PerfScore 10.70, (MethodHash=f0792a4f) for method JITTest.ScalarSByte:Clamp(byte,byte,byte):byte
 ; ============================================================
 
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(byte,byte):byte
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  3,  3   )    byte  ->  rcx        
+;  V01 arg1         [V01,T01] (  3,  3   )    byte  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T04] (  3,  2   )    byte  ->  rdx         "Inline return value spill temp"
+;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;
+; Lcl frame size = 0
+
+G_M4456_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M4456_IG02:
+       movsx    rax, cl
+       movsx    rdx, dl
+       cmp      eax, edx
+       jge      SHORT G_M4456_IG04
+						;; bbWeight=1    PerfScore 1.75
+G_M4456_IG03:
+       jmp      SHORT G_M4456_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M4456_IG04:
+       mov      edx, eax
+						;; bbWeight=0.50 PerfScore 0.12
+G_M4456_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M4456_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=bb37ee97) for method Silk.NET.Maths.Scalar:Max(byte,byte):byte
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(byte,byte):byte
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  3,  3   )    byte  ->  rcx        
+;  V01 arg1         [V01,T01] (  3,  3   )    byte  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T04] (  3,  2   )    byte  ->  rdx         "Inline return value spill temp"
+;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;
+; Lcl frame size = 0
+
+G_M1654_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M1654_IG02:
+       movsx    rax, cl
+       movsx    rdx, dl
+       cmp      eax, edx
+       jle      SHORT G_M1654_IG04
+						;; bbWeight=1    PerfScore 1.75
+G_M1654_IG03:
+       jmp      SHORT G_M1654_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M1654_IG04:
+       mov      edx, eax
+						;; bbWeight=0.50 PerfScore 0.12
+G_M1654_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M1654_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=9c4bf989) for method Silk.NET.Maths.Scalar:Min(byte,byte):byte
+; ============================================================
+
 ; Assembly listing for method JITTest.ScalarSByte:Negate(byte):byte
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
@@ -3595,51 +3612,23 @@ G_M54704_IG03:
 ; Final local variable assignments
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )    byte  ->  rcx        
-;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M19743_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M19743_IG02:
-       movsx    rcx, cl
-       call     Silk.NET.Maths.Scalar:Negate(byte):byte
-       nop      
-						;; bbWeight=1    PerfScore 1.50
-G_M19743_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 19, prolog size 4, PerfScore 4.90, (MethodHash=3bb5b2e0) for method JITTest.ScalarSByte:Negate(byte):byte
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(byte):byte
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )    byte  ->  rcx        
-;* V01 loc0         [V01    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op
-;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V02 tmp1         [V02,T01] (  2,  2   )    byte  ->  rax         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M23654_IG01:
+G_M19743_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M23654_IG02:
+G_M19743_IG02:
        movsx    rax, cl
        neg      eax
        movsx    rax, al
 						;; bbWeight=1    PerfScore 0.75
-G_M23654_IG03:
+G_M19743_IG03:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 11, prolog size 0, PerfScore 2.85, (MethodHash=749da399) for method Silk.NET.Maths.Scalar:Negate(byte):byte
+; Total bytes of code 11, prolog size 0, PerfScore 2.85, (MethodHash=3bb5b2e0) for method JITTest.ScalarSByte:Negate(byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Equal(byte,byte):bool
@@ -4774,7 +4763,7 @@ G_M59018_IG02:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01,T00] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -4798,7 +4787,7 @@ G_M13342_IG03:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01,T00] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -4823,7 +4812,7 @@ G_M52406_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
 ;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02,T00] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -5173,65 +5162,36 @@ G_M18149_IG03:
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )  ushort  ->  rcx        
 ;  V01 arg1         [V01,T01] (  3,  3   )  ushort  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M41244_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M41244_IG02:
-       movzx    rcx, cx
-       movzx    rdx, dx
-       call     Silk.NET.Maths.Scalar:Min(ushort,ushort):ushort
-       nop      
-						;; bbWeight=1    PerfScore 1.75
-G_M41244_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 21, prolog size 4, PerfScore 5.35, (MethodHash=779f5ee3) for method JITTest.ScalarUShort:Min(ushort,ushort):ushort
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(ushort,ushort):ushort
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )  ushort  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )  ushort  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  3,  2   )  ushort  ->  rdx         "Inline return value spill temp"
-;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
-;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;* V03 tmp1         [V03    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T04] (  3,  2   )  ushort  ->  rdx         "Inline return value spill temp"
+;  V05 cse0         [V05,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V06 cse1         [V06,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
 ; Lcl frame size = 0
 
-G_M4923_IG01:
+G_M41244_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M4923_IG02:
+G_M41244_IG02:
        movzx    rax, cx
        movzx    rdx, dx
        cmp      eax, edx
-       jle      SHORT G_M4923_IG04
+       jle      SHORT G_M41244_IG04
 						;; bbWeight=1    PerfScore 1.75
-G_M4923_IG03:
-       jmp      SHORT G_M4923_IG05
+G_M41244_IG03:
+       jmp      SHORT G_M41244_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M4923_IG04:
+G_M41244_IG04:
        mov      edx, eax
 						;; bbWeight=0.50 PerfScore 0.12
-G_M4923_IG05:
+G_M41244_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M4923_IG06:
+G_M41244_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=35e3ecc4) for method Silk.NET.Maths.Scalar:Min(ushort,ushort):ushort
+; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=779f5ee3) for method JITTest.ScalarUShort:Min(ushort,ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Max(ushort,ushort):ushort
@@ -5243,65 +5203,36 @@ G_M4923_IG06:
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )  ushort  ->  rcx        
 ;  V01 arg1         [V01,T01] (  3,  3   )  ushort  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M41986_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M41986_IG02:
-       movzx    rcx, cx
-       movzx    rdx, dx
-       call     Silk.NET.Maths.Scalar:Max(ushort,ushort):ushort
-       nop      
-						;; bbWeight=1    PerfScore 1.75
-G_M41986_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 21, prolog size 4, PerfScore 5.35, (MethodHash=76385bfd) for method JITTest.ScalarUShort:Max(ushort,ushort):ushort
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(ushort,ushort):ushort
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )  ushort  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )  ushort  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  3,  2   )  ushort  ->  rdx         "Inline return value spill temp"
-;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
-;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;* V03 tmp1         [V03    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T04] (  3,  2   )  ushort  ->  rdx         "Inline return value spill temp"
+;  V05 cse0         [V05,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V06 cse1         [V06,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
 ; Lcl frame size = 0
 
-G_M805_IG01:
+G_M41986_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M805_IG02:
+G_M41986_IG02:
        movzx    rax, cx
        movzx    rdx, dx
        cmp      eax, edx
-       jge      SHORT G_M805_IG04
+       jge      SHORT G_M41986_IG04
 						;; bbWeight=1    PerfScore 1.75
-G_M805_IG03:
-       jmp      SHORT G_M805_IG05
+G_M41986_IG03:
+       jmp      SHORT G_M41986_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M805_IG04:
+G_M41986_IG04:
        mov      edx, eax
 						;; bbWeight=0.50 PerfScore 0.12
-G_M805_IG05:
+G_M41986_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M805_IG06:
+G_M41986_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=c73bfcda) for method Silk.NET.Maths.Scalar:Max(ushort,ushort):ushort
+; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=76385bfd) for method JITTest.ScalarUShort:Max(ushort,ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Larger(ushort,ushort):bool
@@ -5462,7 +5393,7 @@ G_M59470_IG03:
 ; Total bytes of code 38, prolog size 5, PerfScore 10.30, (MethodHash=7db317b1) for method JITTest.ScalarUShort:Clamp(ushort,ushort,ushort):ushort
 ; ============================================================
 
-; Assembly listing for method JITTest.ScalarUShort:Negate(ushort):ushort
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(ushort,ushort):ushort
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
 ; rsp based frame
@@ -5470,27 +5401,79 @@ G_M59470_IG03:
 ; Final local variable assignments
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )  ushort  ->  rcx        
-;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;  V01 arg1         [V01,T01] (  3,  3   )  ushort  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T04] (  3,  2   )  ushort  ->  rdx         "Inline return value spill temp"
+;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
-; Lcl frame size = 40
+; Lcl frame size = 0
 
-G_M52289_IG01:
-       sub      rsp, 40
+G_M805_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M805_IG02:
+       movzx    rax, cx
+       movzx    rdx, dx
+       cmp      eax, edx
+       jge      SHORT G_M805_IG04
+						;; bbWeight=1    PerfScore 1.75
+G_M805_IG03:
+       jmp      SHORT G_M805_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M805_IG04:
+       mov      edx, eax
+						;; bbWeight=0.50 PerfScore 0.12
+G_M805_IG05:
+       mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M52289_IG02:
-       movzx    rcx, cx
-       call     Silk.NET.Maths.Scalar:Negate(ushort):ushort
-       nop      
-						;; bbWeight=1    PerfScore 1.50
-G_M52289_IG03:
-       add      rsp, 40
+G_M805_IG06:
        ret      
-						;; bbWeight=1    PerfScore 1.25
+						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 18, prolog size 4, PerfScore 4.80, (MethodHash=358e33be) for method JITTest.ScalarUShort:Negate(ushort):ushort
+; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=c73bfcda) for method Silk.NET.Maths.Scalar:Max(ushort,ushort):ushort
 ; ============================================================
 
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(ushort):ushort
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(ushort,ushort):ushort
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  3,  3   )  ushort  ->  rcx        
+;  V01 arg1         [V01,T01] (  3,  3   )  ushort  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T04] (  3,  2   )  ushort  ->  rdx         "Inline return value spill temp"
+;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;
+; Lcl frame size = 0
+
+G_M4923_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M4923_IG02:
+       movzx    rax, cx
+       movzx    rdx, dx
+       cmp      eax, edx
+       jle      SHORT G_M4923_IG04
+						;; bbWeight=1    PerfScore 1.75
+G_M4923_IG03:
+       jmp      SHORT G_M4923_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M4923_IG04:
+       mov      edx, eax
+						;; bbWeight=0.50 PerfScore 0.12
+G_M4923_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M4923_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 17, prolog size 0, PerfScore 5.83, (MethodHash=35e3ecc4) for method Silk.NET.Maths.Scalar:Min(ushort,ushort):ushort
+; ============================================================
+
+; Assembly listing for method JITTest.ScalarUShort:Negate(ushort):ushort
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
 ; rsp based frame
@@ -5498,20 +5481,21 @@ G_M52289_IG03:
 ; Final local variable assignments
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
-;* V01 loc0         [V01    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;* V02 tmp1         [V02    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
-G_M11110_IG01:
+G_M52289_IG01:
        sub      rsp, 40
 						;; bbWeight=1    PerfScore 0.25
-G_M11110_IG02:
+G_M52289_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
        int3     
 						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=ec21d499) for method Silk.NET.Maths.Scalar:Negate(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=358e33be) for method JITTest.ScalarUShort:Negate(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Equal(ushort,ushort):bool
@@ -6636,7 +6620,7 @@ G_M63071_IG02:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01,T00] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -6660,7 +6644,7 @@ G_M34686_IG03:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01,T00] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -6685,7 +6669,7 @@ G_M42262_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )   short  ->  zero-ref   
 ;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02,T00] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -7035,65 +7019,36 @@ G_M17157_IG03:
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )   short  ->  rcx        
 ;  V01 arg1         [V01,T01] (  3,  3   )   short  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M55292_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M55292_IG02:
-       movsx    rcx, cx
-       movsx    rdx, dx
-       call     Silk.NET.Maths.Scalar:Min(short,short):short
-       nop      
-						;; bbWeight=1    PerfScore 1.75
-G_M55292_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 23, prolog size 4, PerfScore 5.55, (MethodHash=7a272803) for method JITTest.ScalarShort:Min(short,short):short
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(short,short):short
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )   short  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )   short  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  3,  2   )   short  ->  rdx         "Inline return value spill temp"
-;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
-;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;* V03 tmp1         [V03    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T04] (  3,  2   )   short  ->  rdx         "Inline return value spill temp"
+;  V05 cse0         [V05,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V06 cse1         [V06,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
 ; Lcl frame size = 0
 
-G_M12462_IG01:
+G_M55292_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M12462_IG02:
+G_M55292_IG02:
        movsx    rax, cx
        movsx    rdx, dx
        cmp      eax, edx
-       jle      SHORT G_M12462_IG04
+       jle      SHORT G_M55292_IG04
 						;; bbWeight=1    PerfScore 1.75
-G_M12462_IG03:
-       jmp      SHORT G_M12462_IG05
+G_M55292_IG03:
+       jmp      SHORT G_M55292_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M12462_IG04:
+G_M55292_IG04:
        mov      edx, eax
 						;; bbWeight=0.50 PerfScore 0.12
-G_M12462_IG05:
+G_M55292_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M12462_IG06:
+G_M55292_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=d86dcf51) for method Silk.NET.Maths.Scalar:Min(short,short):short
+; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=7a272803) for method JITTest.ScalarShort:Min(short,short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Max(short,short):short
@@ -7105,65 +7060,36 @@ G_M12462_IG06:
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )   short  ->  rcx        
 ;  V01 arg1         [V01,T01] (  3,  3   )   short  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M6306_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M6306_IG02:
-       movsx    rcx, cx
-       movsx    rdx, dx
-       call     Silk.NET.Maths.Scalar:Max(short,short):short
-       nop      
-						;; bbWeight=1    PerfScore 1.75
-G_M6306_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 23, prolog size 4, PerfScore 5.55, (MethodHash=fcfbe75d) for method JITTest.ScalarShort:Max(short,short):short
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(short,short):short
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )   short  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )   short  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  3,  2   )   short  ->  rdx         "Inline return value spill temp"
-;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
-;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;* V03 tmp1         [V03    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T04] (  3,  2   )   short  ->  rdx         "Inline return value spill temp"
+;  V05 cse0         [V05,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V06 cse1         [V06,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
 ;
 ; Lcl frame size = 0
 
-G_M2800_IG01:
+G_M6306_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M2800_IG02:
+G_M6306_IG02:
        movsx    rax, cx
        movsx    rdx, dx
        cmp      eax, edx
-       jge      SHORT G_M2800_IG04
+       jge      SHORT G_M6306_IG04
 						;; bbWeight=1    PerfScore 1.75
-G_M2800_IG03:
-       jmp      SHORT G_M2800_IG05
+G_M6306_IG03:
+       jmp      SHORT G_M6306_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M2800_IG04:
+G_M6306_IG04:
        mov      edx, eax
 						;; bbWeight=0.50 PerfScore 0.12
-G_M2800_IG05:
+G_M6306_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M2800_IG06:
+G_M6306_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=175cf50f) for method Silk.NET.Maths.Scalar:Max(short,short):short
+; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=fcfbe75d) for method JITTest.ScalarShort:Max(short,short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Larger(short,short):bool
@@ -7324,6 +7250,86 @@ G_M23835_IG03:
 ; Total bytes of code 42, prolog size 5, PerfScore 10.70, (MethodHash=0856a2e4) for method JITTest.ScalarShort:Clamp(short,short,short):short
 ; ============================================================
 
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(short,short):short
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  3,  3   )   short  ->  rcx        
+;  V01 arg1         [V01,T01] (  3,  3   )   short  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T04] (  3,  2   )   short  ->  rdx         "Inline return value spill temp"
+;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;
+; Lcl frame size = 0
+
+G_M2800_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M2800_IG02:
+       movsx    rax, cx
+       movsx    rdx, dx
+       cmp      eax, edx
+       jge      SHORT G_M2800_IG04
+						;; bbWeight=1    PerfScore 1.75
+G_M2800_IG03:
+       jmp      SHORT G_M2800_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M2800_IG04:
+       mov      edx, eax
+						;; bbWeight=0.50 PerfScore 0.12
+G_M2800_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M2800_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=175cf50f) for method Silk.NET.Maths.Scalar:Max(short,short):short
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(short,short):short
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  3,  3   )   short  ->  rcx        
+;  V01 arg1         [V01,T01] (  3,  3   )   short  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T04] (  3,  2   )   short  ->  rdx         "Inline return value spill temp"
+;  V04 cse0         [V04,T02] (  3,  2.50)     int  ->  rdx         "CSE - aggressive"
+;  V05 cse1         [V05,T03] (  3,  2.50)     int  ->  rax         "CSE - aggressive"
+;
+; Lcl frame size = 0
+
+G_M12462_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M12462_IG02:
+       movsx    rax, cx
+       movsx    rdx, dx
+       cmp      eax, edx
+       jle      SHORT G_M12462_IG04
+						;; bbWeight=1    PerfScore 1.75
+G_M12462_IG03:
+       jmp      SHORT G_M12462_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M12462_IG04:
+       mov      edx, eax
+						;; bbWeight=0.50 PerfScore 0.12
+G_M12462_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M12462_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 19, prolog size 0, PerfScore 6.03, (MethodHash=d86dcf51) for method Silk.NET.Maths.Scalar:Min(short,short):short
+; ============================================================
+
 ; Assembly listing for method JITTest.ScalarShort:Negate(short):short
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
@@ -7332,51 +7338,23 @@ G_M23835_IG03:
 ; Final local variable assignments
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )   short  ->  rcx        
-;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M59732_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M59732_IG02:
-       movsx    rcx, cx
-       call     Silk.NET.Maths.Scalar:Negate(short):short
-       nop      
-						;; bbWeight=1    PerfScore 1.50
-G_M59732_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 19, prolog size 4, PerfScore 4.90, (MethodHash=8d9016ab) for method JITTest.ScalarShort:Negate(short):short
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(short):short
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )   short  ->  rcx        
-;* V01 loc0         [V01    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op
-;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V02 tmp1         [V02,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M38726_IG01:
+G_M59732_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M38726_IG02:
+G_M59732_IG02:
        movsx    rax, cx
        neg      eax
        movsx    rax, ax
 						;; bbWeight=1    PerfScore 0.75
-G_M38726_IG03:
+G_M59732_IG03:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 11, prolog size 0, PerfScore 2.85, (MethodHash=517c68b9) for method Silk.NET.Maths.Scalar:Negate(short):short
+; Total bytes of code 11, prolog size 0, PerfScore 2.85, (MethodHash=8d9016ab) for method JITTest.ScalarShort:Negate(short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Equal(short,short):bool
@@ -8560,7 +8538,7 @@ G_M7874_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )     int  ->  zero-ref   
 ;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02,T00] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -8899,61 +8877,34 @@ G_M53713_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )     int  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )     int  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M14664_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M14664_IG02:
-       call     Silk.NET.Maths.Scalar:Min(int,int):int
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M14664_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=236fc6b7) for method JITTest.ScalarUInt32:Min(int,int):int
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(int,int):int
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T00] (  4,  3.50)     int  ->  rcx        
 ;  V01 arg1         [V01,T01] (  4,  3.50)     int  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )     int  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M22191_IG01:
+G_M14664_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M22191_IG02:
+G_M14664_IG02:
        cmp      ecx, edx
-       jbe      SHORT G_M22191_IG04
+       jbe      SHORT G_M14664_IG04
 						;; bbWeight=1    PerfScore 1.25
-G_M22191_IG03:
-       jmp      SHORT G_M22191_IG05
+G_M14664_IG03:
+       jmp      SHORT G_M14664_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M22191_IG04:
+G_M14664_IG04:
        mov      edx, ecx
 						;; bbWeight=0.50 PerfScore 0.12
-G_M22191_IG05:
+G_M14664_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M22191_IG06:
+G_M14664_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=1a40a950) for method Silk.NET.Maths.Scalar:Min(int,int):int
+; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=236fc6b7) for method JITTest.ScalarUInt32:Min(int,int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Max(int,int):int
@@ -8963,61 +8914,34 @@ G_M22191_IG06:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )     int  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )     int  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M14102_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M14102_IG02:
-       call     Silk.NET.Maths.Scalar:Max(int,int):int
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M14102_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=7fd8c8e9) for method JITTest.ScalarUInt32:Max(int,int):int
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(int,int):int
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T00] (  4,  3.50)     int  ->  rcx        
 ;  V01 arg1         [V01,T01] (  4,  3.50)     int  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )     int  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M5361_IG01:
+G_M14102_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M5361_IG02:
+G_M14102_IG02:
        cmp      ecx, edx
-       jae      SHORT G_M5361_IG04
+       jae      SHORT G_M14102_IG04
 						;; bbWeight=1    PerfScore 1.25
-G_M5361_IG03:
-       jmp      SHORT G_M5361_IG05
+G_M14102_IG03:
+       jmp      SHORT G_M14102_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M5361_IG04:
+G_M14102_IG04:
        mov      edx, ecx
 						;; bbWeight=0.50 PerfScore 0.12
-G_M5361_IG05:
+G_M14102_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M5361_IG06:
+G_M14102_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=223aeb0e) for method Silk.NET.Maths.Scalar:Max(int,int):int
+; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=7fd8c8e9) for method JITTest.ScalarUInt32:Max(int,int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Larger(int,int):bool
@@ -9168,6 +9092,78 @@ G_M59214_IG03:
 ; Total bytes of code 29, prolog size 5, PerfScore 8.90, (MethodHash=af4b18b1) for method JITTest.ScalarUInt32:Clamp(int,int,int):int
 ; ============================================================
 
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(int,int):int
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  4,  3.50)     int  ->  rcx        
+;  V01 arg1         [V01,T01] (  4,  3.50)     int  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
+;
+; Lcl frame size = 0
+
+G_M5361_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M5361_IG02:
+       cmp      ecx, edx
+       jae      SHORT G_M5361_IG04
+						;; bbWeight=1    PerfScore 1.25
+G_M5361_IG03:
+       jmp      SHORT G_M5361_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M5361_IG04:
+       mov      edx, ecx
+						;; bbWeight=0.50 PerfScore 0.12
+G_M5361_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M5361_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=223aeb0e) for method Silk.NET.Maths.Scalar:Max(int,int):int
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(int,int):int
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  4,  3.50)     int  ->  rcx        
+;  V01 arg1         [V01,T01] (  4,  3.50)     int  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
+;
+; Lcl frame size = 0
+
+G_M22191_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M22191_IG02:
+       cmp      ecx, edx
+       jbe      SHORT G_M22191_IG04
+						;; bbWeight=1    PerfScore 1.25
+G_M22191_IG03:
+       jmp      SHORT G_M22191_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M22191_IG04:
+       mov      edx, ecx
+						;; bbWeight=0.50 PerfScore 0.12
+G_M22191_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M22191_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=1a40a950) for method Silk.NET.Maths.Scalar:Min(int,int):int
+; ============================================================
+
 ; Assembly listing for method JITTest.ScalarUInt32:Negate(int):int
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
@@ -9175,8 +9171,10 @@ G_M59214_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )     int  ->  rcx        
+;* V00 arg0         [V00    ] (  0,  0   )     int  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;* V02 tmp1         [V02    ] (  0,  0   )     int  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp2         [V03    ] (  0,  0   )     int  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -9184,39 +9182,11 @@ G_M16865_IG01:
        sub      rsp, 40
 						;; bbWeight=1    PerfScore 0.25
 G_M16865_IG02:
-       call     Silk.NET.Maths.Scalar:Negate(int):int
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M16865_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=9890be1e) for method JITTest.ScalarUInt32:Negate(int):int
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(int):int
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;* V00 arg0         [V00    ] (  0,  0   )     int  ->  zero-ref   
-;* V01 loc0         [V01    ] (  0,  0   )     int  ->  zero-ref    ld-addr-op
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M7398_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M7398_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
        int3     
 						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=4620e319) for method Silk.NET.Maths.Scalar:Negate(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=9890be1e) for method JITTest.ScalarUInt32:Negate(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Equal(int,int):bool
@@ -10388,7 +10358,7 @@ G_M44407_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )     int  ->  zero-ref   
 ;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02,T00] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -10725,61 +10695,34 @@ G_M45924_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )     int  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )     int  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M18973_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M18973_IG02:
-       call     Silk.NET.Maths.Scalar:Min(int,int):int
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M18973_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=0d39b5e2) for method JITTest.ScalarInt32:Min(int,int):int
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(int,int):int
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T00] (  4,  3.50)     int  ->  rcx        
 ;  V01 arg1         [V01,T01] (  4,  3.50)     int  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )     int  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M22191_IG01:
+G_M18973_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M22191_IG02:
+G_M18973_IG02:
        cmp      ecx, edx
-       jle      SHORT G_M22191_IG04
+       jle      SHORT G_M18973_IG04
 						;; bbWeight=1    PerfScore 1.25
-G_M22191_IG03:
-       jmp      SHORT G_M22191_IG05
+G_M18973_IG03:
+       jmp      SHORT G_M18973_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M22191_IG04:
+G_M18973_IG04:
        mov      edx, ecx
 						;; bbWeight=0.50 PerfScore 0.12
-G_M22191_IG05:
+G_M18973_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M22191_IG06:
+G_M18973_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=1a40a950) for method Silk.NET.Maths.Scalar:Min(int,int):int
+; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=0d39b5e2) for method JITTest.ScalarInt32:Min(int,int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Max(int,int):int
@@ -10789,61 +10732,34 @@ G_M22191_IG06:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )     int  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )     int  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M35779_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M35779_IG02:
-       call     Silk.NET.Maths.Scalar:Max(int,int):int
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M35779_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=428a743c) for method JITTest.ScalarInt32:Max(int,int):int
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(int,int):int
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T00] (  4,  3.50)     int  ->  rcx        
 ;  V01 arg1         [V01,T01] (  4,  3.50)     int  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )     int  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M5361_IG01:
+G_M35779_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M5361_IG02:
+G_M35779_IG02:
        cmp      ecx, edx
-       jge      SHORT G_M5361_IG04
+       jge      SHORT G_M35779_IG04
 						;; bbWeight=1    PerfScore 1.25
-G_M5361_IG03:
-       jmp      SHORT G_M5361_IG05
+G_M35779_IG03:
+       jmp      SHORT G_M35779_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M5361_IG04:
+G_M35779_IG04:
        mov      edx, ecx
 						;; bbWeight=0.50 PerfScore 0.12
-G_M5361_IG05:
+G_M35779_IG05:
        mov      eax, edx
 						;; bbWeight=1    PerfScore 0.25
-G_M5361_IG06:
+G_M35779_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=223aeb0e) for method Silk.NET.Maths.Scalar:Max(int,int):int
+; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=428a743c) for method JITTest.ScalarInt32:Max(int,int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Larger(int,int):bool
@@ -10994,6 +10910,78 @@ G_M27291_IG03:
 ; Total bytes of code 29, prolog size 5, PerfScore 8.90, (MethodHash=1ffd9564) for method JITTest.ScalarInt32:Clamp(int,int,int):int
 ; ============================================================
 
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(int,int):int
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  4,  3.50)     int  ->  rcx        
+;  V01 arg1         [V01,T01] (  4,  3.50)     int  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
+;
+; Lcl frame size = 0
+
+G_M5361_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M5361_IG02:
+       cmp      ecx, edx
+       jge      SHORT G_M5361_IG04
+						;; bbWeight=1    PerfScore 1.25
+G_M5361_IG03:
+       jmp      SHORT G_M5361_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M5361_IG04:
+       mov      edx, ecx
+						;; bbWeight=0.50 PerfScore 0.12
+G_M5361_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M5361_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=223aeb0e) for method Silk.NET.Maths.Scalar:Max(int,int):int
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(int,int):int
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  4,  3.50)     int  ->  rcx        
+;  V01 arg1         [V01,T01] (  4,  3.50)     int  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V03 tmp1         [V03,T02] (  3,  2   )     int  ->  rdx         "Inline return value spill temp"
+;
+; Lcl frame size = 0
+
+G_M22191_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M22191_IG02:
+       cmp      ecx, edx
+       jle      SHORT G_M22191_IG04
+						;; bbWeight=1    PerfScore 1.25
+G_M22191_IG03:
+       jmp      SHORT G_M22191_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M22191_IG04:
+       mov      edx, ecx
+						;; bbWeight=0.50 PerfScore 0.12
+G_M22191_IG05:
+       mov      eax, edx
+						;; bbWeight=1    PerfScore 0.25
+G_M22191_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 11, prolog size 0, PerfScore 4.73, (MethodHash=1a40a950) for method Silk.NET.Maths.Scalar:Min(int,int):int
+; ============================================================
+
 ; Assembly listing for method JITTest.ScalarInt32:Negate(int):int
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
@@ -11002,49 +10990,22 @@ G_M27291_IG03:
 ; Final local variable assignments
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )     int  ->  rcx        
-;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M44628_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M44628_IG02:
-       call     Silk.NET.Maths.Scalar:Negate(int):int
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M44628_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=605651ab) for method JITTest.ScalarInt32:Negate(int):int
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(int):int
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )     int  ->  rcx        
-;* V01 loc0         [V01    ] (  0,  0   )     int  ->  zero-ref    ld-addr-op
-;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V02 tmp1         [V02,T01] (  2,  2   )     int  ->  rax         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M7398_IG01:
+G_M44628_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M7398_IG02:
+G_M44628_IG02:
        mov      eax, ecx
        neg      eax
 						;; bbWeight=1    PerfScore 0.50
-G_M7398_IG03:
+G_M44628_IG03:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 5, prolog size 0, PerfScore 2.00, (MethodHash=4620e319) for method Silk.NET.Maths.Scalar:Negate(int):int
+; Total bytes of code 5, prolog size 0, PerfScore 2.00, (MethodHash=605651ab) for method JITTest.ScalarInt32:Negate(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Equal(int,int):bool
@@ -12226,7 +12187,7 @@ G_M54136_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )    long  ->  zero-ref   
 ;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02,T00] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -12584,62 +12545,35 @@ G_M39755_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )    long  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )    long  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M65298_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M65298_IG02:
-       call     Silk.NET.Maths.Scalar:Min(long,long):long
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M65298_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=accc00ed) for method JITTest.ScalarUInt64:Min(long,long):long
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(long,long):long
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T00] (  4,  3.50)    long  ->  rcx        
 ;  V01 arg1         [V01,T01] (  4,  3.50)    long  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
-;  V04 tmp2         [V04,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
+;* V04 tmp2         [V04    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;  V05 tmp3         [V05,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M34166_IG01:
+G_M65298_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M34166_IG02:
+G_M65298_IG02:
        cmp      rcx, rdx
-       jbe      SHORT G_M34166_IG04
+       jbe      SHORT G_M65298_IG04
 						;; bbWeight=1    PerfScore 1.25
-G_M34166_IG03:
-       jmp      SHORT G_M34166_IG05
+G_M65298_IG03:
+       jmp      SHORT G_M65298_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M34166_IG04:
+G_M65298_IG04:
        mov      rdx, rcx
 						;; bbWeight=0.50 PerfScore 0.12
-G_M34166_IG05:
+G_M65298_IG05:
        mov      rax, rdx
 						;; bbWeight=1    PerfScore 0.25
-G_M34166_IG06:
+G_M65298_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=02627a89) for method Silk.NET.Maths.Scalar:Min(long,long):long
+; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=accc00ed) for method JITTest.ScalarUInt64:Min(long,long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Max(long,long):long
@@ -12649,62 +12583,35 @@ G_M34166_IG06:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )    long  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )    long  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M36620_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M36620_IG02:
-       call     Silk.NET.Maths.Scalar:Max(long,long):long
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M36620_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=a97970f3) for method JITTest.ScalarUInt64:Max(long,long):long
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(long,long):long
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T00] (  4,  3.50)    long  ->  rcx        
 ;  V01 arg1         [V01,T01] (  4,  3.50)    long  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
-;  V04 tmp2         [V04,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
+;* V04 tmp2         [V04    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;  V05 tmp3         [V05,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M54120_IG01:
+G_M36620_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M54120_IG02:
+G_M36620_IG02:
        cmp      rcx, rdx
-       jae      SHORT G_M54120_IG04
+       jae      SHORT G_M36620_IG04
 						;; bbWeight=1    PerfScore 1.25
-G_M54120_IG03:
-       jmp      SHORT G_M54120_IG05
+G_M36620_IG03:
+       jmp      SHORT G_M36620_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M54120_IG04:
+G_M36620_IG04:
        mov      rdx, rcx
 						;; bbWeight=0.50 PerfScore 0.12
-G_M54120_IG05:
+G_M36620_IG05:
        mov      rax, rdx
 						;; bbWeight=1    PerfScore 0.25
-G_M54120_IG06:
+G_M36620_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=79ab2c97) for method Silk.NET.Maths.Scalar:Max(long,long):long
+; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=a97970f3) for method JITTest.ScalarUInt64:Max(long,long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Larger(long,long):bool
@@ -12859,6 +12766,80 @@ G_M21965_IG03:
 ; Total bytes of code 31, prolog size 5, PerfScore 9.10, (MethodHash=8145aa32) for method JITTest.ScalarUInt64:Clamp(long,long,long):long
 ; ============================================================
 
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(long,long):long
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  4,  3.50)    long  ->  rcx        
+;  V01 arg1         [V01,T01] (  4,  3.50)    long  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
+;
+; Lcl frame size = 0
+
+G_M54120_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M54120_IG02:
+       cmp      rcx, rdx
+       jae      SHORT G_M54120_IG04
+						;; bbWeight=1    PerfScore 1.25
+G_M54120_IG03:
+       jmp      SHORT G_M54120_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M54120_IG04:
+       mov      rdx, rcx
+						;; bbWeight=0.50 PerfScore 0.12
+G_M54120_IG05:
+       mov      rax, rdx
+						;; bbWeight=1    PerfScore 0.25
+G_M54120_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=79ab2c97) for method Silk.NET.Maths.Scalar:Max(long,long):long
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(long,long):long
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  4,  3.50)    long  ->  rcx        
+;  V01 arg1         [V01,T01] (  4,  3.50)    long  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
+;
+; Lcl frame size = 0
+
+G_M34166_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M34166_IG02:
+       cmp      rcx, rdx
+       jbe      SHORT G_M34166_IG04
+						;; bbWeight=1    PerfScore 1.25
+G_M34166_IG03:
+       jmp      SHORT G_M34166_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M34166_IG04:
+       mov      rdx, rcx
+						;; bbWeight=0.50 PerfScore 0.12
+G_M34166_IG05:
+       mov      rax, rdx
+						;; bbWeight=1    PerfScore 0.25
+G_M34166_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=02627a89) for method Silk.NET.Maths.Scalar:Min(long,long):long
+; ============================================================
+
 ; Assembly listing for method JITTest.ScalarUInt64:Negate(long):long
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
@@ -12866,8 +12847,10 @@ G_M21965_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )    long  ->  rcx        
+;* V00 arg0         [V00    ] (  0,  0   )    long  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;* V02 tmp1         [V02    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp2         [V03    ] (  0,  0   )    long  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -12875,39 +12858,11 @@ G_M34306_IG01:
        sub      rsp, 40
 						;; bbWeight=1    PerfScore 0.25
 G_M34306_IG02:
-       call     Silk.NET.Maths.Scalar:Negate(long):long
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M34306_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=120179fd) for method JITTest.ScalarUInt64:Negate(long):long
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(long):long
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;* V00 arg0         [V00    ] (  0,  0   )    long  ->  zero-ref   
-;* V01 loc0         [V01    ] (  0,  0   )    long  ->  zero-ref    ld-addr-op
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M39782_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M39782_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
        int3     
 						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=f3226499) for method Silk.NET.Maths.Scalar:Negate(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=120179fd) for method JITTest.ScalarUInt64:Negate(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Equal(long,long):bool
@@ -14082,7 +14037,7 @@ G_M53741_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )    long  ->  zero-ref   
 ;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02,T00] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )    bool  ->  zero-ref    "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
@@ -14426,62 +14381,35 @@ G_M49182_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )    long  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )    long  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M21159_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M21159_IG02:
-       call     Silk.NET.Maths.Scalar:Min(long,long):long
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M21159_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=7956ad58) for method JITTest.ScalarInt64:Min(long,long):long
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(long,long):long
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T00] (  4,  3.50)    long  ->  rcx        
 ;  V01 arg1         [V01,T01] (  4,  3.50)    long  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
-;  V04 tmp2         [V04,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
+;* V04 tmp2         [V04    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;  V05 tmp3         [V05,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M34166_IG01:
+G_M21159_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M34166_IG02:
+G_M21159_IG02:
        cmp      rcx, rdx
-       jle      SHORT G_M34166_IG04
+       jle      SHORT G_M21159_IG04
 						;; bbWeight=1    PerfScore 1.25
-G_M34166_IG03:
-       jmp      SHORT G_M34166_IG05
+G_M21159_IG03:
+       jmp      SHORT G_M21159_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M34166_IG04:
+G_M21159_IG04:
        mov      rdx, rcx
 						;; bbWeight=0.50 PerfScore 0.12
-G_M34166_IG05:
+G_M21159_IG05:
        mov      rax, rdx
 						;; bbWeight=1    PerfScore 0.25
-G_M34166_IG06:
+G_M21159_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=02627a89) for method Silk.NET.Maths.Scalar:Min(long,long):long
+; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=7956ad58) for method JITTest.ScalarInt64:Min(long,long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Max(long,long):long
@@ -14491,62 +14419,35 @@ G_M34166_IG06:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )    long  ->  rcx        
-;  V01 arg1         [V01,T01] (  3,  3   )    long  ->  rdx        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M33465_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M33465_IG02:
-       call     Silk.NET.Maths.Scalar:Max(long,long):long
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M33465_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=ae9f7d46) for method JITTest.ScalarInt64:Max(long,long):long
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(long,long):long
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T00] (  4,  3.50)    long  ->  rcx        
 ;  V01 arg1         [V01,T01] (  4,  3.50)    long  ->  rdx        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
-;  V04 tmp2         [V04,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
+;* V04 tmp2         [V04    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;  V05 tmp3         [V05,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M54120_IG01:
+G_M33465_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M54120_IG02:
+G_M33465_IG02:
        cmp      rcx, rdx
-       jge      SHORT G_M54120_IG04
+       jge      SHORT G_M33465_IG04
 						;; bbWeight=1    PerfScore 1.25
-G_M54120_IG03:
-       jmp      SHORT G_M54120_IG05
+G_M33465_IG03:
+       jmp      SHORT G_M33465_IG05
 						;; bbWeight=0.50 PerfScore 1.00
-G_M54120_IG04:
+G_M33465_IG04:
        mov      rdx, rcx
 						;; bbWeight=0.50 PerfScore 0.12
-G_M54120_IG05:
+G_M33465_IG05:
        mov      rax, rdx
 						;; bbWeight=1    PerfScore 0.25
-G_M54120_IG06:
+G_M33465_IG06:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=79ab2c97) for method Silk.NET.Maths.Scalar:Max(long,long):long
+; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=ae9f7d46) for method JITTest.ScalarInt64:Max(long,long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Larger(long,long):bool
@@ -14701,6 +14602,80 @@ G_M29080_IG03:
 ; Total bytes of code 31, prolog size 5, PerfScore 9.10, (MethodHash=1b498e67) for method JITTest.ScalarInt64:Clamp(long,long,long):long
 ; ============================================================
 
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(long,long):long
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  4,  3.50)    long  ->  rcx        
+;  V01 arg1         [V01,T01] (  4,  3.50)    long  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
+;
+; Lcl frame size = 0
+
+G_M54120_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M54120_IG02:
+       cmp      rcx, rdx
+       jge      SHORT G_M54120_IG04
+						;; bbWeight=1    PerfScore 1.25
+G_M54120_IG03:
+       jmp      SHORT G_M54120_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M54120_IG04:
+       mov      rdx, rcx
+						;; bbWeight=0.50 PerfScore 0.12
+G_M54120_IG05:
+       mov      rax, rdx
+						;; bbWeight=1    PerfScore 0.25
+G_M54120_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=79ab2c97) for method Silk.NET.Maths.Scalar:Max(long,long):long
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(long,long):long
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T00] (  4,  3.50)    long  ->  rcx        
+;  V01 arg1         [V01,T01] (  4,  3.50)    long  ->  rdx        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )    long  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T02] (  3,  2   )    long  ->  rdx         "Inline return value spill temp"
+;
+; Lcl frame size = 0
+
+G_M34166_IG01:
+						;; bbWeight=1    PerfScore 0.00
+G_M34166_IG02:
+       cmp      rcx, rdx
+       jle      SHORT G_M34166_IG04
+						;; bbWeight=1    PerfScore 1.25
+G_M34166_IG03:
+       jmp      SHORT G_M34166_IG05
+						;; bbWeight=0.50 PerfScore 1.00
+G_M34166_IG04:
+       mov      rdx, rcx
+						;; bbWeight=0.50 PerfScore 0.12
+G_M34166_IG05:
+       mov      rax, rdx
+						;; bbWeight=1    PerfScore 0.25
+G_M34166_IG06:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 14, prolog size 0, PerfScore 5.03, (MethodHash=02627a89) for method Silk.NET.Maths.Scalar:Min(long,long):long
+; ============================================================
+
 ; Assembly listing for method JITTest.ScalarInt64:Negate(long):long
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
@@ -14709,49 +14684,22 @@ G_M29080_IG03:
 ; Final local variable assignments
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )    long  ->  rcx        
-;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M60599_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M60599_IG02:
-       call     Silk.NET.Maths.Scalar:Negate(long):long
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M60599_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=3ce51348) for method JITTest.ScalarInt64:Negate(long):long
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(long):long
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )    long  ->  rcx        
-;* V01 loc0         [V01    ] (  0,  0   )    long  ->  zero-ref    ld-addr-op
-;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V02 tmp1         [V02,T01] (  2,  2   )    long  ->  rax         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M39782_IG01:
+G_M60599_IG01:
 						;; bbWeight=1    PerfScore 0.00
-G_M39782_IG02:
+G_M60599_IG02:
        mov      rax, rcx
        neg      rax
 						;; bbWeight=1    PerfScore 0.50
-G_M39782_IG03:
+G_M60599_IG03:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 7, prolog size 0, PerfScore 2.20, (MethodHash=f3226499) for method Silk.NET.Maths.Scalar:Negate(long):long
+; Total bytes of code 7, prolog size 0, PerfScore 2.20, (MethodHash=3ce51348) for method JITTest.ScalarInt64:Negate(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Equal(long,long):bool
@@ -15880,11 +15828,12 @@ G_M49115_IG166:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V02 tmp1         [V02,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V05 tmp4         [V05,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V06 rat0         [V06,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V06 tmp5         [V06,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V07 rat0         [V07,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 40
 
@@ -15916,7 +15865,7 @@ G_M27459_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T04] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V06 tmp4         [V06,T07] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
@@ -15924,9 +15873,10 @@ G_M27459_IG03:
 ;  V08 tmp6         [V08,T00] (  4,  6.50)     ref  ->  rdi         "inline UNBOX clone1"
 ;  V09 tmp7         [V09,T02] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
 ;  V10 tmp8         [V10,T03] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V11 tmp9         [V11,T05] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V12 tmp10        [V12,T06] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
-;  V13 rat0         [V13,T08] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V11 tmp9         [V11,T04] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V12 tmp10        [V12,T05] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T06] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V14 rat0         [V14,T08] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 56
 
@@ -15960,7 +15910,7 @@ G_M56341_IG03:
        call     CORINFO_HELP_UNBOX
 						;; bbWeight=0.25 PerfScore 0.38
 G_M56341_IG04:
-       movsx    rax, word  ptr [rdi+8]
+       movzx    rax, word  ptr [rdi+8]
 						;; bbWeight=1    PerfScore 2.00
 G_M56341_IG05:
        vmovaps  xmm6, qword ptr [rsp+20H]
@@ -15970,7 +15920,7 @@ G_M56341_IG05:
        ret      
 						;; bbWeight=1    PerfScore 6.25
 
-; Total bytes of code 121, prolog size 15, PerfScore 37.08, (MethodHash=2ef123ea) for method JITTest.ScalarHalf:Atan2(System.Half,System.Half):System.Half
+; Total bytes of code 120, prolog size 15, PerfScore 36.98, (MethodHash=2ef123ea) for method JITTest.ScalarHalf:Atan2(System.Half,System.Half):System.Half
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarHalf:Cos(System.Half):System.Half
@@ -15982,11 +15932,12 @@ G_M56341_IG05:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V02 tmp1         [V02,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V05 tmp4         [V05,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V06 rat0         [V06,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V06 tmp5         [V06,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V07 rat0         [V07,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 40
 
@@ -16017,11 +15968,12 @@ G_M22342_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V02 tmp1         [V02,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V05 tmp4         [V05,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V06 rat0         [V06,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V06 tmp5         [V06,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V07 rat0         [V07,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 40
 
@@ -16051,8 +16003,10 @@ G_M23790_IG03:
 ; Final local variable assignments
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;  V02 tmp2         [V02,T00] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;* V02 tmp2         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;  V03 tmp3         [V03,T00] (  2,  2   )  ushort  ->  rax         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V04 tmp4         [V04,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -16083,8 +16037,10 @@ RWD00  dd	3F800000h
 ; Final local variable assignments
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;  V02 tmp2         [V02,T00] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;* V02 tmp2         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;  V03 tmp3         [V03,T00] (  2,  2   )  ushort  ->  rax         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V04 tmp4         [V04,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -16166,7 +16122,8 @@ G_M63798_IG06:
 ; Final local variable assignments
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V01 tmp1         [V01,T00] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;  V02 tmp2         [V02,T00] (  2,  2   )  ushort  ->  rax         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -16198,7 +16155,8 @@ RWD08  dq	400921FB54442D18h
 ; Final local variable assignments
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V01 tmp1         [V01,T00] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;  V02 tmp2         [V02,T00] (  2,  2   )  ushort  ->  rax         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -16230,7 +16188,8 @@ RWD08  dq	401921FB54442D18h
 ; Final local variable assignments
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V01 tmp1         [V01,T00] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;  V02 tmp2         [V02,T00] (  2,  2   )  ushort  ->  rax         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -16262,9 +16221,10 @@ RWD08  dq	3FF921FB54442D18h
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V02 tmp2         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "NewObj constructor temp"
-;* V03 tmp3         [V03    ] (  0,  0   )  ushort  ->  zero-ref    V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V03 tmp3         [V03,T00] (  2,  2   )  ushort  ->  rax         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V04 tmp4         [V04,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 0
 
@@ -16288,16 +16248,17 @@ G_M41528_IG03:
 ; Final local variable assignments
 ;
 ;# V00 OutArgs      [V00    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
-;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V01 tmp1         [V01    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V02 tmp2         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "NewObj constructor temp"
-;* V03 tmp3         [V03    ] (  0,  0   )  ushort  ->  zero-ref    V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V03 tmp3         [V03,T00] (  2,  2   )  ushort  ->  rax         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V04 tmp4         [V04,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 0
 
 G_M35184_IG01:
 						;; bbWeight=1    PerfScore 0.00
 G_M35184_IG02:
-       mov      eax, -0x400
+       mov      eax, 0xFC00
 						;; bbWeight=1    PerfScore 0.25
 G_M35184_IG03:
        ret      
@@ -16313,10 +16274,12 @@ G_M35184_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T01] (  3,  3   )  double  ->  mm0        
+;  V00 arg0         [V00,T02] (  3,  3   )  double  ->  mm0        
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;  V03 tmp2         [V03,T00] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -16345,13 +16308,15 @@ G_M25398_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V04 tmp3         [V04,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V04 tmp3         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V05 tmp4         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V06 tmp5         [V06,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V07 tmp6         [V07,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V08 tmp7         [V08,T03] (  2,  2   )  ushort  ->  rcx         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V07 tmp6         [V07,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V08 tmp7         [V08,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V09 tmp8         [V09,T03] (  2,  2   )  ushort  ->  rax         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V10 tmp9         [V10,T04] (  2,  2   )  ushort  ->  rcx         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -16383,19 +16348,21 @@ G_M39678_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V03 tmp1         [V03    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V06 tmp4         [V06,T02] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V07 tmp5         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V08 tmp6         [V08    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V09 tmp7         [V09,T07] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
+;  V09 tmp7         [V09,T08] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
 ;  V10 tmp8         [V10,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
 ;  V11 tmp9         [V11,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V12 tmp10        [V12,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V13 tmp11        [V13,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
-;  V14 tmp12        [V14,T05] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
-;  V15 tmp13        [V15,T06] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
+;  V12 tmp10        [V12,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V14 tmp12        [V14,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V15 tmp13        [V15,T05] (  2,  2   )  ushort  ->  rax         V06._value(offs=0x00) P-INDEP "field V06._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T06] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
+;  V17 tmp15        [V17,T07] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 48
 
@@ -16435,21 +16402,23 @@ G_M42172_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V03 tmp1         [V03    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V06 tmp4         [V06,T02] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V07 tmp5         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V08 tmp6         [V08    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V09 tmp7         [V09,T07] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
+;  V09 tmp7         [V09,T08] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
 ;  V10 tmp8         [V10,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
 ;  V11 tmp9         [V11,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V12 tmp10        [V12,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V13 tmp11        [V13,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
-;  V14 tmp12        [V14,T05] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
-;  V15 tmp13        [V15,T06] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
-;  V16 tmp14        [V16,T08] (  2,  4   )   float  ->  mm0         "argument with side effect"
-;  V17 tmp15        [V17,T09] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V12 tmp10        [V12,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V14 tmp12        [V14,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V15 tmp13        [V15,T05] (  2,  2   )  ushort  ->  rax         V06._value(offs=0x00) P-INDEP "field V06._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T06] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
+;  V17 tmp15        [V17,T07] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
+;  V18 tmp16        [V18,T09] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V19 tmp17        [V19,T10] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 48
 
@@ -16491,19 +16460,21 @@ G_M18555_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V03 tmp1         [V03    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V06 tmp4         [V06,T02] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V07 tmp5         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V08 tmp6         [V08    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V09 tmp7         [V09,T07] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
+;  V09 tmp7         [V09,T08] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
 ;  V10 tmp8         [V10,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
 ;  V11 tmp9         [V11,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V12 tmp10        [V12,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V13 tmp11        [V13,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
-;  V14 tmp12        [V14,T05] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
-;  V15 tmp13        [V15,T06] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
+;  V12 tmp10        [V12,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V14 tmp12        [V14,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V15 tmp13        [V15,T05] (  2,  2   )  ushort  ->  rax         V06._value(offs=0x00) P-INDEP "field V06._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T06] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
+;  V17 tmp15        [V17,T07] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 48
 
@@ -16543,19 +16514,21 @@ G_M13193_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V03 tmp1         [V03    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V06 tmp4         [V06,T02] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V07 tmp5         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V08 tmp6         [V08    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V09 tmp7         [V09,T07] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
+;  V09 tmp7         [V09,T08] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
 ;  V10 tmp8         [V10,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
 ;  V11 tmp9         [V11,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V12 tmp10        [V12,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V13 tmp11        [V13,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
-;  V14 tmp12        [V14,T05] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
-;  V15 tmp13        [V15,T06] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
+;  V12 tmp10        [V12,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V14 tmp12        [V14,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V15 tmp13        [V15,T05] (  2,  2   )  ushort  ->  rax         V06._value(offs=0x00) P-INDEP "field V06._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T06] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
+;  V17 tmp15        [V17,T07] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 48
 
@@ -16595,19 +16568,21 @@ G_M16593_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V03 tmp1         [V03    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V06 tmp4         [V06,T02] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V07 tmp5         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V08 tmp6         [V08    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V09 tmp7         [V09,T07] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
+;  V09 tmp7         [V09,T08] (  2,  4   )   float  ->  mm6         "non-inline candidate call"
 ;  V10 tmp8         [V10,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
 ;  V11 tmp9         [V11,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V12 tmp10        [V12,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V13 tmp11        [V13,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
-;  V14 tmp12        [V14,T05] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
-;  V15 tmp13        [V15,T06] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
+;  V12 tmp10        [V12,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V14 tmp12        [V14,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V15 tmp13        [V15,T05] (  2,  2   )  ushort  ->  rax         V06._value(offs=0x00) P-INDEP "field V06._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T06] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
+;  V17 tmp15        [V17,T07] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 48
 
@@ -16647,105 +16622,82 @@ G_M26926_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V04 tmp2         [V04,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;
-; Lcl frame size = 40
-
-G_M33079_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M33079_IG02:
-       call     Silk.NET.Maths.Scalar:Min(System.Half,System.Half):System.Half
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M33079_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=319e7ec8) for method JITTest.ScalarHalf:Min(System.Half,System.Half):System.Half
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(System.Half,System.Half):System.Half
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
-;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T02] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V06 tmp4         [V06,T06] (  8,  8   )   float  ->  mm6         "non-inline candidate call"
-;  V07 tmp5         [V07,T08] (  5,  3   )   float  ->  mm0         "Inline return value spill temp"
-;  V08 tmp6         [V08,T07] (  5,  6.50)   float  ->  mm0         "Inlining Arg"
-;  V09 tmp7         [V09,T05] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
-;* V10 tmp8         [V10    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
-;  V11 tmp9         [V11,T09] (  2,  0.50)  simd16  ->  mm1         "Inline stloc first use temp"
-;  V12 tmp10        [V12,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V13 tmp11        [V13,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V14 tmp12        [V14,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V15 tmp13        [V15,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;* V06 tmp4         [V06    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;* V07 tmp5         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;* V08 tmp6         [V08    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;  V09 tmp7         [V09,T09] (  8,  8   )   float  ->  mm6         "non-inline candidate call"
+;  V10 tmp8         [V10,T11] (  5,  3   )   float  ->  mm0         "Inline return value spill temp"
+;  V11 tmp9         [V11,T10] (  5,  6.50)   float  ->  mm0         "Inlining Arg"
+;  V12 tmp10        [V12,T08] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
+;* V13 tmp11        [V13    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V14 tmp12        [V14,T12] (  2,  0.50)  simd16  ->  mm1         "Inline stloc first use temp"
+;  V15 tmp13        [V15,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V17 tmp15        [V17,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V18 tmp16        [V18,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V19 tmp17        [V19,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V20 tmp18        [V20,T05] (  2,  2   )  ushort  ->  rax         V06._value(offs=0x00) P-INDEP "field V06._value (fldOffset=0x0)"
+;  V21 tmp19        [V21,T06] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
+;  V22 tmp20        [V22,T07] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 48
 
-G_M54452_IG01:
+G_M33079_IG01:
        push     rsi
        sub      rsp, 48
        vzeroupper 
        vmovaps  qword ptr [rsp+20H], xmm6
 						;; bbWeight=1    PerfScore 5.25
-G_M54452_IG02:
+G_M33079_IG02:
        movzx    rsi, dx
        call     System.Half:op_Explicit(System.Half):float
        vmovaps  xmm6, xmm0
        mov      ecx, esi
        call     System.Half:op_Explicit(System.Half):float
        vucomiss xmm6, xmm0
-       jp       SHORT G_M54452_IG03
-       je       SHORT G_M54452_IG06
+       jp       SHORT G_M33079_IG03
+       je       SHORT G_M33079_IG06
 						;; bbWeight=1    PerfScore 5.75
-G_M54452_IG03:
+G_M33079_IG03:
        vucomiss xmm6, xmm6
-       jp       SHORT G_M54452_IG06
+       jp       SHORT G_M33079_IG06
        vucomiss xmm0, xmm6
-       ja       SHORT G_M54452_IG05
+       ja       SHORT G_M33079_IG05
 						;; bbWeight=0.25 PerfScore 1.00
-G_M54452_IG04:
-       jmp      SHORT G_M54452_IG09
+G_M33079_IG04:
+       jmp      SHORT G_M33079_IG09
 						;; bbWeight=0.50 PerfScore 1.00
-G_M54452_IG05:
+G_M33079_IG05:
        vmovaps  xmm0, xmm6
-       jmp      SHORT G_M54452_IG09
+       jmp      SHORT G_M33079_IG09
 						;; bbWeight=0.50 PerfScore 1.12
-G_M54452_IG06:
+G_M33079_IG06:
        vmovaps  xmm1, xmm6
        vmovd    eax, xmm1
        test     eax, eax
-       jl       SHORT G_M54452_IG08
+       jl       SHORT G_M33079_IG08
 						;; bbWeight=0.25 PerfScore 0.62
-G_M54452_IG07:
-       jmp      SHORT G_M54452_IG09
+G_M33079_IG07:
+       jmp      SHORT G_M33079_IG09
 						;; bbWeight=0.50 PerfScore 1.00
-G_M54452_IG08:
+G_M33079_IG08:
        vmovaps  xmm0, xmm6
 						;; bbWeight=0.50 PerfScore 0.12
-G_M54452_IG09:
+G_M33079_IG09:
        call     System.Half:op_Explicit(float):System.Half
        nop      
 						;; bbWeight=1    PerfScore 1.25
-G_M54452_IG10:
+G_M33079_IG10:
        vmovaps  xmm6, qword ptr [rsp+20H]
        add      rsp, 48
        pop      rsi
        ret      
 						;; bbWeight=1    PerfScore 5.75
 
-; Total bytes of code 97, prolog size 14, PerfScore 33.58, (MethodHash=80ea2b4b) for method Silk.NET.Maths.Scalar:Min(System.Half,System.Half):System.Half
+; Total bytes of code 97, prolog size 14, PerfScore 33.58, (MethodHash=319e7ec8) for method JITTest.ScalarHalf:Min(System.Half,System.Half):System.Half
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarHalf:Max(System.Half,System.Half):System.Half
@@ -16758,109 +16710,86 @@ G_M54452_IG10:
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V04 tmp2         [V04,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;
-; Lcl frame size = 40
-
-G_M59113_IG01:
-       sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M59113_IG02:
-       call     Silk.NET.Maths.Scalar:Max(System.Half,System.Half):System.Half
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M59113_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=3fd21916) for method JITTest.ScalarHalf:Max(System.Half,System.Half):System.Half
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(System.Half,System.Half):System.Half
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
-;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T02] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V06 tmp4         [V06,T06] (  8,  8.50)   float  ->  mm6         "non-inline candidate call"
-;  V07 tmp5         [V07,T08] (  6,  3.50)   float  ->  mm0         "Inline return value spill temp"
-;  V08 tmp6         [V08,T07] (  6,  7   )   float  ->  mm0         "Inlining Arg"
-;  V09 tmp7         [V09,T05] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
-;* V10 tmp8         [V10    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
-;  V11 tmp9         [V11,T09] (  2,  0.50)  simd16  ->  mm1         "Inline stloc first use temp"
-;  V12 tmp10        [V12,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V13 tmp11        [V13,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V14 tmp12        [V14,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V15 tmp13        [V15,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;* V06 tmp4         [V06    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;* V07 tmp5         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;* V08 tmp6         [V08    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;  V09 tmp7         [V09,T09] (  8,  8.50)   float  ->  mm6         "non-inline candidate call"
+;  V10 tmp8         [V10,T11] (  6,  3.50)   float  ->  mm0         "Inline return value spill temp"
+;  V11 tmp9         [V11,T10] (  6,  7   )   float  ->  mm0         "Inlining Arg"
+;  V12 tmp10        [V12,T08] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
+;* V13 tmp11        [V13    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V14 tmp12        [V14,T12] (  2,  0.50)  simd16  ->  mm1         "Inline stloc first use temp"
+;  V15 tmp13        [V15,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V17 tmp15        [V17,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V18 tmp16        [V18,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V19 tmp17        [V19,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V20 tmp18        [V20,T05] (  2,  2   )  ushort  ->  rax         V06._value(offs=0x00) P-INDEP "field V06._value (fldOffset=0x0)"
+;  V21 tmp19        [V21,T06] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
+;  V22 tmp20        [V22,T07] (  2,  2   )  ushort  ->  rsi         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 48
 
-G_M21738_IG01:
+G_M59113_IG01:
        push     rsi
        sub      rsp, 48
        vzeroupper 
        vmovaps  qword ptr [rsp+20H], xmm6
 						;; bbWeight=1    PerfScore 5.25
-G_M21738_IG02:
+G_M59113_IG02:
        movzx    rsi, dx
        call     System.Half:op_Explicit(System.Half):float
        vmovaps  xmm6, xmm0
        mov      ecx, esi
        call     System.Half:op_Explicit(System.Half):float
        vucomiss xmm6, xmm0
-       jp       SHORT G_M21738_IG03
-       je       SHORT G_M21738_IG07
+       jp       SHORT G_M59113_IG03
+       je       SHORT G_M59113_IG07
 						;; bbWeight=1    PerfScore 5.75
-G_M21738_IG03:
+G_M59113_IG03:
        vucomiss xmm6, xmm6
-       jp       SHORT G_M21738_IG06
+       jp       SHORT G_M59113_IG06
        vucomiss xmm6, xmm0
-       ja       SHORT G_M21738_IG05
+       ja       SHORT G_M59113_IG05
 						;; bbWeight=0.25 PerfScore 1.00
-G_M21738_IG04:
-       jmp      SHORT G_M21738_IG10
+G_M59113_IG04:
+       jmp      SHORT G_M59113_IG10
 						;; bbWeight=0.50 PerfScore 1.00
-G_M21738_IG05:
+G_M59113_IG05:
        vmovaps  xmm0, xmm6
-       jmp      SHORT G_M21738_IG10
+       jmp      SHORT G_M59113_IG10
 						;; bbWeight=0.50 PerfScore 1.12
-G_M21738_IG06:
+G_M59113_IG06:
        vmovaps  xmm0, xmm6
-       jmp      SHORT G_M21738_IG10
+       jmp      SHORT G_M59113_IG10
 						;; bbWeight=0.50 PerfScore 1.12
-G_M21738_IG07:
+G_M59113_IG07:
        vmovaps  xmm1, xmm0
        vmovd    eax, xmm1
        test     eax, eax
-       jl       SHORT G_M21738_IG09
+       jl       SHORT G_M59113_IG09
 						;; bbWeight=0.25 PerfScore 0.62
-G_M21738_IG08:
-       jmp      SHORT G_M21738_IG10
+G_M59113_IG08:
+       jmp      SHORT G_M59113_IG10
 						;; bbWeight=0.50 PerfScore 1.00
-G_M21738_IG09:
+G_M59113_IG09:
        vmovaps  xmm0, xmm6
 						;; bbWeight=0.50 PerfScore 0.12
-G_M21738_IG10:
+G_M59113_IG10:
        call     System.Half:op_Explicit(float):System.Half
        nop      
 						;; bbWeight=1    PerfScore 1.25
-G_M21738_IG11:
+G_M59113_IG11:
        vmovaps  xmm6, qword ptr [rsp+20H]
        add      rsp, 48
        pop      rsi
        ret      
 						;; bbWeight=1    PerfScore 5.75
 
-; Total bytes of code 103, prolog size 14, PerfScore 35.40, (MethodHash=36e9ab15) for method Silk.NET.Maths.Scalar:Max(System.Half,System.Half):System.Half
+; Total bytes of code 103, prolog size 14, PerfScore 35.40, (MethodHash=3fd21916) for method JITTest.ScalarHalf:Max(System.Half,System.Half):System.Half
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarHalf:Larger(System.Half,System.Half):bool
@@ -17051,37 +16980,204 @@ G_M748_IG03:
 ;* V04 tmp1         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V05 tmp2         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V06 tmp3         [V06    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V07 tmp4         [V07    ] (  2,  4   )  struct ( 8) [rsp+0x28]   do-not-enreg[SF] "struct address for call/obj"
+;* V07 tmp4         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "struct address for call/obj"
 ;  V08 tmp5         [V08,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
 ;  V09 tmp6         [V09,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
 ;  V10 tmp7         [V10,T02] (  2,  2   )  ushort  ->   r8         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
 ;  V11 tmp8         [V11,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
 ;  V12 tmp9         [V12,T04] (  2,  2   )  ushort  ->  rdx         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
 ;  V13 tmp10        [V13,T05] (  2,  2   )  ushort  ->  rsi         V06._value(offs=0x00) P-INDEP "field V06._value (fldOffset=0x0)"
-;  V14 tmp11        [V14    ] (  2,  3   )  ushort  ->  [rsp+0x28]   do-not-enreg[] V07._value(offs=0x00) P-DEP "field V07._value (fldOffset=0x0)"
+;  V14 tmp11        [V14,T06] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
 ;
-; Lcl frame size = 48
+; Lcl frame size = 32
 
 G_M2250_IG01:
        push     rsi
-       sub      rsp, 48
+       sub      rsp, 32
 						;; bbWeight=1    PerfScore 1.25
 G_M2250_IG02:
        movzx    rsi, r8w
        call     Silk.NET.Maths.Scalar:Max(System.Half,System.Half):System.Half
-       mov      word  ptr [rsp+28H], ax
-       movzx    rcx, word  ptr [rsp+28H]
+       movzx    rcx, ax
        mov      edx, esi
        call     Silk.NET.Maths.Scalar:Min(System.Half,System.Half):System.Half
        nop      
-						;; bbWeight=1    PerfScore 4.75
+						;; bbWeight=1    PerfScore 3.00
 G_M2250_IG03:
-       add      rsp, 48
+       add      rsp, 32
        pop      rsi
        ret      
 						;; bbWeight=1    PerfScore 1.75
 
-; Total bytes of code 38, prolog size 5, PerfScore 11.55, (MethodHash=a1d5f735) for method JITTest.ScalarHalf:Clamp(System.Half,System.Half,System.Half):System.Half
+; Total bytes of code 31, prolog size 5, PerfScore 9.10, (MethodHash=a1d5f735) for method JITTest.ScalarHalf:Clamp(System.Half,System.Half,System.Half):System.Half
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(System.Half,System.Half):System.Half
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
+;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
+;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;  V06 tmp4         [V06,T06] (  8,  8.50)   float  ->  mm6         "non-inline candidate call"
+;  V07 tmp5         [V07,T08] (  6,  3.50)   float  ->  mm0         "Inline return value spill temp"
+;  V08 tmp6         [V08,T07] (  6,  7   )   float  ->  mm0         "Inlining Arg"
+;  V09 tmp7         [V09,T05] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
+;* V10 tmp8         [V10    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V11 tmp9         [V11,T09] (  2,  0.50)  simd16  ->  mm1         "Inline stloc first use temp"
+;  V12 tmp10        [V12,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V14 tmp12        [V14,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V15 tmp13        [V15,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;
+; Lcl frame size = 48
+
+G_M21738_IG01:
+       push     rsi
+       sub      rsp, 48
+       vzeroupper 
+       vmovaps  qword ptr [rsp+20H], xmm6
+						;; bbWeight=1    PerfScore 5.25
+G_M21738_IG02:
+       movzx    rsi, dx
+       call     System.Half:op_Explicit(System.Half):float
+       vmovaps  xmm6, xmm0
+       mov      ecx, esi
+       call     System.Half:op_Explicit(System.Half):float
+       vucomiss xmm6, xmm0
+       jp       SHORT G_M21738_IG03
+       je       SHORT G_M21738_IG07
+						;; bbWeight=1    PerfScore 5.75
+G_M21738_IG03:
+       vucomiss xmm6, xmm6
+       jp       SHORT G_M21738_IG06
+       vucomiss xmm6, xmm0
+       ja       SHORT G_M21738_IG05
+						;; bbWeight=0.25 PerfScore 1.00
+G_M21738_IG04:
+       jmp      SHORT G_M21738_IG10
+						;; bbWeight=0.50 PerfScore 1.00
+G_M21738_IG05:
+       vmovaps  xmm0, xmm6
+       jmp      SHORT G_M21738_IG10
+						;; bbWeight=0.50 PerfScore 1.12
+G_M21738_IG06:
+       vmovaps  xmm0, xmm6
+       jmp      SHORT G_M21738_IG10
+						;; bbWeight=0.50 PerfScore 1.12
+G_M21738_IG07:
+       vmovaps  xmm1, xmm0
+       vmovd    eax, xmm1
+       test     eax, eax
+       jl       SHORT G_M21738_IG09
+						;; bbWeight=0.25 PerfScore 0.62
+G_M21738_IG08:
+       jmp      SHORT G_M21738_IG10
+						;; bbWeight=0.50 PerfScore 1.00
+G_M21738_IG09:
+       vmovaps  xmm0, xmm6
+						;; bbWeight=0.50 PerfScore 0.12
+G_M21738_IG10:
+       call     System.Half:op_Explicit(float):System.Half
+       nop      
+						;; bbWeight=1    PerfScore 1.25
+G_M21738_IG11:
+       vmovaps  xmm6, qword ptr [rsp+20H]
+       add      rsp, 48
+       pop      rsi
+       ret      
+						;; bbWeight=1    PerfScore 5.75
+
+; Total bytes of code 103, prolog size 14, PerfScore 35.40, (MethodHash=36e9ab15) for method Silk.NET.Maths.Scalar:Max(System.Half,System.Half):System.Half
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(System.Half,System.Half):System.Half
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
+;* V01 arg1         [V01    ] (  0,  0   )  struct ( 8) zero-ref   
+;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;* V04 tmp2         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;* V05 tmp3         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;  V06 tmp4         [V06,T06] (  8,  8   )   float  ->  mm6         "non-inline candidate call"
+;  V07 tmp5         [V07,T08] (  5,  3   )   float  ->  mm0         "Inline return value spill temp"
+;  V08 tmp6         [V08,T07] (  5,  6.50)   float  ->  mm0         "Inlining Arg"
+;  V09 tmp7         [V09,T05] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
+;* V10 tmp8         [V10    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V11 tmp9         [V11,T09] (  2,  0.50)  simd16  ->  mm1         "Inline stloc first use temp"
+;  V12 tmp10        [V12,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V14 tmp12        [V14,T02] (  2,  2   )  ushort  ->  rax         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V15 tmp13        [V15,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V16 tmp14        [V16,T04] (  2,  2   )  ushort  ->  rsi         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;
+; Lcl frame size = 48
+
+G_M54452_IG01:
+       push     rsi
+       sub      rsp, 48
+       vzeroupper 
+       vmovaps  qword ptr [rsp+20H], xmm6
+						;; bbWeight=1    PerfScore 5.25
+G_M54452_IG02:
+       movzx    rsi, dx
+       call     System.Half:op_Explicit(System.Half):float
+       vmovaps  xmm6, xmm0
+       mov      ecx, esi
+       call     System.Half:op_Explicit(System.Half):float
+       vucomiss xmm6, xmm0
+       jp       SHORT G_M54452_IG03
+       je       SHORT G_M54452_IG06
+						;; bbWeight=1    PerfScore 5.75
+G_M54452_IG03:
+       vucomiss xmm6, xmm6
+       jp       SHORT G_M54452_IG06
+       vucomiss xmm0, xmm6
+       ja       SHORT G_M54452_IG05
+						;; bbWeight=0.25 PerfScore 1.00
+G_M54452_IG04:
+       jmp      SHORT G_M54452_IG09
+						;; bbWeight=0.50 PerfScore 1.00
+G_M54452_IG05:
+       vmovaps  xmm0, xmm6
+       jmp      SHORT G_M54452_IG09
+						;; bbWeight=0.50 PerfScore 1.12
+G_M54452_IG06:
+       vmovaps  xmm1, xmm6
+       vmovd    eax, xmm1
+       test     eax, eax
+       jl       SHORT G_M54452_IG08
+						;; bbWeight=0.25 PerfScore 0.62
+G_M54452_IG07:
+       jmp      SHORT G_M54452_IG09
+						;; bbWeight=0.50 PerfScore 1.00
+G_M54452_IG08:
+       vmovaps  xmm0, xmm6
+						;; bbWeight=0.50 PerfScore 0.12
+G_M54452_IG09:
+       call     System.Half:op_Explicit(float):System.Half
+       nop      
+						;; bbWeight=1    PerfScore 1.25
+G_M54452_IG10:
+       vmovaps  xmm6, qword ptr [rsp+20H]
+       add      rsp, 48
+       pop      rsi
+       ret      
+						;; bbWeight=1    PerfScore 5.75
+
+; Total bytes of code 97, prolog size 14, PerfScore 33.58, (MethodHash=80ea2b4b) for method Silk.NET.Maths.Scalar:Min(System.Half,System.Half):System.Half
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarHalf:Negate(System.Half):System.Half
@@ -17093,59 +17189,33 @@ G_M2250_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V02 tmp1         [V02,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
+;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V06 tmp5         [V06,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
 G_M28005_IG01:
        sub      rsp, 40
-						;; bbWeight=1    PerfScore 0.25
-G_M28005_IG02:
-       call     Silk.NET.Maths.Scalar:Negate(System.Half):System.Half
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M28005_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 15, prolog size 4, PerfScore 4.25, (MethodHash=ccc8929a) for method JITTest.ScalarHalf:Negate(System.Half):System.Half
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(System.Half):System.Half
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
-;* V01 loc0         [V01    ] (  0,  0   )  struct ( 8) zero-ref    ld-addr-op
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V03 tmp1         [V03,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;* V04 tmp2         [V04    ] (  0,  0   )  ushort  ->  zero-ref    V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;
-; Lcl frame size = 40
-
-G_M11590_IG01:
-       sub      rsp, 40
        vzeroupper 
 						;; bbWeight=1    PerfScore 1.25
-G_M11590_IG02:
+G_M28005_IG02:
        call     System.Half:op_Explicit(System.Half):float
        vmovss   xmm1, dword ptr [reloc @RWD00]
        vxorps   xmm0, xmm1
        call     System.Half:op_Explicit(float):System.Half
        nop      
 						;; bbWeight=1    PerfScore 4.58
-G_M11590_IG03:
+G_M28005_IG03:
        add      rsp, 40
        ret      
 						;; bbWeight=1    PerfScore 1.25
 RWD00  dd	80000000h
 
 
-; Total bytes of code 35, prolog size 7, PerfScore 10.78, (MethodHash=8889d2b9) for method Silk.NET.Maths.Scalar:Negate(System.Half):System.Half
+; Total bytes of code 35, prolog size 7, PerfScore 10.78, (MethodHash=ccc8929a) for method JITTest.ScalarHalf:Negate(System.Half):System.Half
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarHalf:Equal(System.Half,System.Half):bool
@@ -17164,16 +17234,12 @@ RWD00  dd	80000000h
 ;  V06 tmp4         [V06,T02] (  2,  2   )    bool  ->  rax         "Inline return value spill temp"
 ;* V07 tmp5         [V07    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;* V08 tmp6         [V08    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V09 tmp7         [V09    ] (  2,  4   )  struct ( 8) [rsp+0x20]   do-not-enreg[XS] addr-exposed ld-addr-op "Inlining Arg"
-;* V10 tmp8         [V10    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V11 tmp9         [V11,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V12 tmp10        [V12,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
-;  V13 tmp11        [V13,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
-;  V14 tmp12        [V14,T04] (  2,  2   )  ushort  ->  rdx         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
-;  V15 tmp13        [V15,T05] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
-;  V16 tmp14        [V16,T06] (  2,  2   )  ushort  ->  rdx         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
-;  V17 tmp15        [V17    ] (  2,  3   )  ushort  ->  [rsp+0x20]   do-not-enreg[X] addr-exposed V09._value(offs=0x00) P-DEP "field V09._value (fldOffset=0x0)"
-;  V18 tmp16        [V18,T07] (  2,  2   )  ushort  ->  rdx         V10._value(offs=0x00) P-INDEP "field V10._value (fldOffset=0x0)"
+;  V09 tmp7         [V09,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
+;  V10 tmp8         [V10,T01] (  2,  2   )  ushort  ->  rdx         V01._value(offs=0x00) P-INDEP "field V01._value (fldOffset=0x0)"
+;  V11 tmp9         [V11,T03] (  2,  2   )  ushort  ->  rcx         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V12 tmp10        [V12,T04] (  2,  2   )  ushort  ->  rdx         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V13 tmp11        [V13,T05] (  2,  2   )  ushort  ->  rcx         V07._value(offs=0x00) P-INDEP "field V07._value (fldOffset=0x0)"
+;  V14 tmp12        [V14,T06] (  2,  2   )  ushort  ->  rdx         V08._value(offs=0x00) P-INDEP "field V08._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -17181,17 +17247,15 @@ G_M21591_IG01:
        sub      rsp, 40
 						;; bbWeight=1    PerfScore 0.25
 G_M21591_IG02:
-       mov      word  ptr [rsp+20H], cx
-       lea      rcx, bword ptr [rsp+20H]
-       call     System.Half:Equals(System.Half):bool:this
+       call     System.Half:op_Equality(System.Half,System.Half):bool
        movzx    rax, al
-						;; bbWeight=1    PerfScore 2.75
+						;; bbWeight=1    PerfScore 1.25
 G_M21591_IG03:
        add      rsp, 40
        ret      
 						;; bbWeight=1    PerfScore 1.25
 
-; Total bytes of code 27, prolog size 4, PerfScore 6.95, (MethodHash=5104aba8) for method JITTest.ScalarHalf:Equal(System.Half,System.Half):bool
+; Total bytes of code 17, prolog size 4, PerfScore 4.45, (MethodHash=5104aba8) for method JITTest.ScalarHalf:Equal(System.Half,System.Half):bool
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarHalf:Acos(System.Half):System.Half
@@ -17203,11 +17267,12 @@ G_M21591_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V02 tmp1         [V02,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V05 tmp4         [V05,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V06 rat0         [V06,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V06 tmp5         [V06,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V07 rat0         [V07,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 40
 
@@ -17238,14 +17303,16 @@ G_M27079_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V04 tmp3         [V04,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V04 tmp3         [V04    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V05 tmp4         [V05    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
-;  V06 tmp5         [V06,T04] (  2,  4   )   float  ->  mm0         "Inlining Arg"
+;  V06 tmp5         [V06,T05] (  2,  4   )   float  ->  mm0         "Inlining Arg"
 ;  V07 tmp6         [V07,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V08 tmp7         [V08,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V09 tmp8         [V09,T03] (  2,  2   )  ushort  ->  rcx         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
+;  V08 tmp7         [V08,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V09 tmp8         [V09,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V10 tmp9         [V10,T03] (  2,  2   )  ushort  ->  rax         V04._value(offs=0x00) P-INDEP "field V04._value (fldOffset=0x0)"
+;  V11 tmp10        [V11,T04] (  2,  2   )  ushort  ->  rcx         V05._value(offs=0x00) P-INDEP "field V05._value (fldOffset=0x0)"
 ;
 ; Lcl frame size = 40
 
@@ -17279,12 +17346,13 @@ RWD00  dd	7FFFFFFFh
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V02 tmp1         [V02,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V05 tmp4         [V05,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V06 tmp5         [V06,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
-;  V07 tmp6         [V07,T04] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V06 tmp5         [V06,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V07 tmp6         [V07,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V08 tmp7         [V08,T04] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 40
 
@@ -17683,11 +17751,12 @@ RWD640 dd	FFC00000h
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V02 tmp1         [V02,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V05 tmp4         [V05,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V06 rat0         [V06,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V06 tmp5         [V06,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V07 rat0         [V07,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 40
 
@@ -17718,11 +17787,12 @@ G_M48165_IG03:
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  struct ( 8) zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;  V02 tmp1         [V02,T01] (  2,  2   )   short  ->  rax         "Inline return value spill temp"
+;* V02 tmp1         [V02    ] (  0,  0   )  struct ( 8) zero-ref    "Inline return value spill temp"
 ;* V03 tmp2         [V03    ] (  0,  0   )  struct ( 8) zero-ref    "Inlining Arg"
 ;  V04 tmp3         [V04,T00] (  2,  2   )  ushort  ->  rcx         V00._value(offs=0x00) P-INDEP "field V00._value (fldOffset=0x0)"
-;  V05 tmp4         [V05,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
-;  V06 rat0         [V06,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
+;  V05 tmp4         [V05,T01] (  2,  2   )  ushort  ->  rax         V02._value(offs=0x00) P-INDEP "field V02._value (fldOffset=0x0)"
+;  V06 tmp5         [V06,T02] (  2,  2   )  ushort  ->  rcx         V03._value(offs=0x00) P-INDEP "field V03._value (fldOffset=0x0)"
+;  V07 rat0         [V07,T03] (  2,  4   )   float  ->  mm0         "argument with side effect"
 ;
 ; Lcl frame size = 40
 
@@ -19143,119 +19213,62 @@ G_M23493_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )   float  ->  mm0        
-;  V01 arg1         [V01,T01] (  3,  3   )   float  ->  mm1        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M15612_IG01:
-       sub      rsp, 40
-       vzeroupper 
-						;; bbWeight=1    PerfScore 1.25
-G_M15612_IG02:
-       call     Silk.NET.Maths.Scalar:Min(float,float):float
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M15612_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 18, prolog size 7, PerfScore 5.55, (MethodHash=671dc303) for method JITTest.ScalarFloat:Min(float,float):float
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(float,float):float
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T01] (  9,  5   )   float  ->  mm0        
 ;  V01 arg1         [V01,T02] (  6,  4.25)   float  ->  mm1        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )   float  ->  zero-ref    "Inline return value spill temp"
-;  V04 tmp2         [V04,T03] (  5,  3   )   float  ->  mm1         "Inline return value spill temp"
-;  V05 tmp3         [V05,T00] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
-;* V06 tmp4         [V06    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
-;  V07 tmp5         [V07,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
+;* V04 tmp2         [V04    ] (  0,  0   )   float  ->  zero-ref    "Inline return value spill temp"
+;  V05 tmp3         [V05,T03] (  5,  3   )   float  ->  mm1         "Inline return value spill temp"
+;  V06 tmp4         [V06,T00] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
+;* V07 tmp5         [V07    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V08 tmp6         [V08,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
 ;
 ; Lcl frame size = 0
 
-G_M50508_IG01:
+G_M15612_IG01:
        vzeroupper 
 						;; bbWeight=1    PerfScore 1.00
-G_M50508_IG02:
+G_M15612_IG02:
        vucomiss xmm0, xmm1
-       jp       SHORT G_M50508_IG03
-       je       SHORT G_M50508_IG06
+       jp       SHORT G_M15612_IG03
+       je       SHORT G_M15612_IG06
 						;; bbWeight=1    PerfScore 3.00
-G_M50508_IG03:
+G_M15612_IG03:
        vucomiss xmm0, xmm0
-       jp       SHORT G_M50508_IG06
+       jp       SHORT G_M15612_IG06
        vucomiss xmm1, xmm0
-       ja       SHORT G_M50508_IG05
+       ja       SHORT G_M15612_IG05
 						;; bbWeight=0.25 PerfScore 1.00
-G_M50508_IG04:
-       jmp      SHORT G_M50508_IG09
+G_M15612_IG04:
+       jmp      SHORT G_M15612_IG09
 						;; bbWeight=0.50 PerfScore 1.00
-G_M50508_IG05:
+G_M15612_IG05:
        vmovaps  xmm1, xmm0
-       jmp      SHORT G_M50508_IG09
+       jmp      SHORT G_M15612_IG09
 						;; bbWeight=0.50 PerfScore 1.12
-G_M50508_IG06:
+G_M15612_IG06:
        vmovaps  xmm2, xmm0
        vmovd    eax, xmm2
        test     eax, eax
-       jl       SHORT G_M50508_IG08
+       jl       SHORT G_M15612_IG08
 						;; bbWeight=0.25 PerfScore 0.62
-G_M50508_IG07:
-       jmp      SHORT G_M50508_IG09
+G_M15612_IG07:
+       jmp      SHORT G_M15612_IG09
 						;; bbWeight=0.50 PerfScore 1.00
-G_M50508_IG08:
+G_M15612_IG08:
        vmovaps  xmm1, xmm0
 						;; bbWeight=0.50 PerfScore 0.12
-G_M50508_IG09:
+G_M15612_IG09:
        vmovaps  xmm0, xmm1
 						;; bbWeight=1    PerfScore 0.25
-G_M50508_IG10:
+G_M15612_IG10:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 54, prolog size 3, PerfScore 16.33, (MethodHash=1de43ab3) for method Silk.NET.Maths.Scalar:Min(float,float):float
+; Total bytes of code 54, prolog size 3, PerfScore 16.33, (MethodHash=671dc303) for method JITTest.ScalarFloat:Min(float,float):float
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarFloat:Max(float,float):float
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )   float  ->  mm0        
-;  V01 arg1         [V01,T01] (  3,  3   )   float  ->  mm1        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M26530_IG01:
-       sub      rsp, 40
-       vzeroupper 
-						;; bbWeight=1    PerfScore 1.25
-G_M26530_IG02:
-       call     Silk.NET.Maths.Scalar:Max(float,float):float
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M26530_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 18, prolog size 7, PerfScore 5.55, (MethodHash=9671985d) for method JITTest.ScalarFloat:Max(float,float):float
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(float,float):float
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
 ; rsp based frame
@@ -19266,58 +19279,59 @@ G_M26530_IG03:
 ;  V01 arg1         [V01,T02] (  7,  4.50)   float  ->  mm1        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )   float  ->  zero-ref    "Inline return value spill temp"
-;  V04 tmp2         [V04,T03] (  6,  3.50)   float  ->  mm1         "Inline return value spill temp"
-;  V05 tmp3         [V05,T00] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
-;* V06 tmp4         [V06    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
-;  V07 tmp5         [V07,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
+;* V04 tmp2         [V04    ] (  0,  0   )   float  ->  zero-ref    "Inline return value spill temp"
+;  V05 tmp3         [V05,T03] (  6,  3.50)   float  ->  mm1         "Inline return value spill temp"
+;  V06 tmp4         [V06,T00] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
+;* V07 tmp5         [V07    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V08 tmp6         [V08,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
 ;
 ; Lcl frame size = 0
 
-G_M9746_IG01:
+G_M26530_IG01:
        vzeroupper 
 						;; bbWeight=1    PerfScore 1.00
-G_M9746_IG02:
+G_M26530_IG02:
        vucomiss xmm0, xmm1
-       jp       SHORT G_M9746_IG03
-       je       SHORT G_M9746_IG07
+       jp       SHORT G_M26530_IG03
+       je       SHORT G_M26530_IG07
 						;; bbWeight=1    PerfScore 3.00
-G_M9746_IG03:
+G_M26530_IG03:
        vucomiss xmm0, xmm0
-       jp       SHORT G_M9746_IG06
+       jp       SHORT G_M26530_IG06
        vucomiss xmm0, xmm1
-       ja       SHORT G_M9746_IG05
+       ja       SHORT G_M26530_IG05
 						;; bbWeight=0.25 PerfScore 1.00
-G_M9746_IG04:
-       jmp      SHORT G_M9746_IG10
+G_M26530_IG04:
+       jmp      SHORT G_M26530_IG10
 						;; bbWeight=0.50 PerfScore 1.00
-G_M9746_IG05:
+G_M26530_IG05:
        vmovaps  xmm1, xmm0
-       jmp      SHORT G_M9746_IG10
+       jmp      SHORT G_M26530_IG10
 						;; bbWeight=0.50 PerfScore 1.12
-G_M9746_IG06:
+G_M26530_IG06:
        vmovaps  xmm1, xmm0
-       jmp      SHORT G_M9746_IG10
+       jmp      SHORT G_M26530_IG10
 						;; bbWeight=0.50 PerfScore 1.12
-G_M9746_IG07:
+G_M26530_IG07:
        vmovaps  xmm2, xmm1
        vmovd    eax, xmm2
        test     eax, eax
-       jl       SHORT G_M9746_IG09
+       jl       SHORT G_M26530_IG09
 						;; bbWeight=0.25 PerfScore 0.62
-G_M9746_IG08:
-       jmp      SHORT G_M9746_IG10
+G_M26530_IG08:
+       jmp      SHORT G_M26530_IG10
 						;; bbWeight=0.50 PerfScore 1.00
-G_M9746_IG09:
+G_M26530_IG09:
        vmovaps  xmm1, xmm0
 						;; bbWeight=0.50 PerfScore 0.12
-G_M9746_IG10:
+G_M26530_IG10:
        vmovaps  xmm0, xmm1
 						;; bbWeight=1    PerfScore 0.25
-G_M9746_IG11:
+G_M26530_IG11:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 60, prolog size 3, PerfScore 18.15, (MethodHash=ada7d9ed) for method Silk.NET.Maths.Scalar:Max(float,float):float
+; Total bytes of code 60, prolog size 3, PerfScore 18.15, (MethodHash=9671985d) for method JITTest.ScalarFloat:Max(float,float):float
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarFloat:Larger(float,float):bool
@@ -19474,6 +19488,132 @@ G_M12729_IG03:
 ; Total bytes of code 35, prolog size 7, PerfScore 10.95, (MethodHash=430fce46) for method JITTest.ScalarFloat:Clamp(float,float,float):float
 ; ============================================================
 
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(float,float):float
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T01] (  9,  5.25)   float  ->  mm0        
+;  V01 arg1         [V01,T02] (  7,  4.50)   float  ->  mm1        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )   float  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T03] (  6,  3.50)   float  ->  mm1         "Inline return value spill temp"
+;  V05 tmp3         [V05,T00] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V07 tmp5         [V07,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
+;
+; Lcl frame size = 0
+
+G_M9746_IG01:
+       vzeroupper 
+						;; bbWeight=1    PerfScore 1.00
+G_M9746_IG02:
+       vucomiss xmm0, xmm1
+       jp       SHORT G_M9746_IG03
+       je       SHORT G_M9746_IG07
+						;; bbWeight=1    PerfScore 3.00
+G_M9746_IG03:
+       vucomiss xmm0, xmm0
+       jp       SHORT G_M9746_IG06
+       vucomiss xmm0, xmm1
+       ja       SHORT G_M9746_IG05
+						;; bbWeight=0.25 PerfScore 1.00
+G_M9746_IG04:
+       jmp      SHORT G_M9746_IG10
+						;; bbWeight=0.50 PerfScore 1.00
+G_M9746_IG05:
+       vmovaps  xmm1, xmm0
+       jmp      SHORT G_M9746_IG10
+						;; bbWeight=0.50 PerfScore 1.12
+G_M9746_IG06:
+       vmovaps  xmm1, xmm0
+       jmp      SHORT G_M9746_IG10
+						;; bbWeight=0.50 PerfScore 1.12
+G_M9746_IG07:
+       vmovaps  xmm2, xmm1
+       vmovd    eax, xmm2
+       test     eax, eax
+       jl       SHORT G_M9746_IG09
+						;; bbWeight=0.25 PerfScore 0.62
+G_M9746_IG08:
+       jmp      SHORT G_M9746_IG10
+						;; bbWeight=0.50 PerfScore 1.00
+G_M9746_IG09:
+       vmovaps  xmm1, xmm0
+						;; bbWeight=0.50 PerfScore 0.12
+G_M9746_IG10:
+       vmovaps  xmm0, xmm1
+						;; bbWeight=1    PerfScore 0.25
+G_M9746_IG11:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 60, prolog size 3, PerfScore 18.15, (MethodHash=ada7d9ed) for method Silk.NET.Maths.Scalar:Max(float,float):float
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(float,float):float
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T01] (  9,  5   )   float  ->  mm0        
+;  V01 arg1         [V01,T02] (  6,  4.25)   float  ->  mm1        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )   float  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T03] (  5,  3   )   float  ->  mm1         "Inline return value spill temp"
+;  V05 tmp3         [V05,T00] (  2,  0.50)     int  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V07 tmp5         [V07,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
+;
+; Lcl frame size = 0
+
+G_M50508_IG01:
+       vzeroupper 
+						;; bbWeight=1    PerfScore 1.00
+G_M50508_IG02:
+       vucomiss xmm0, xmm1
+       jp       SHORT G_M50508_IG03
+       je       SHORT G_M50508_IG06
+						;; bbWeight=1    PerfScore 3.00
+G_M50508_IG03:
+       vucomiss xmm0, xmm0
+       jp       SHORT G_M50508_IG06
+       vucomiss xmm1, xmm0
+       ja       SHORT G_M50508_IG05
+						;; bbWeight=0.25 PerfScore 1.00
+G_M50508_IG04:
+       jmp      SHORT G_M50508_IG09
+						;; bbWeight=0.50 PerfScore 1.00
+G_M50508_IG05:
+       vmovaps  xmm1, xmm0
+       jmp      SHORT G_M50508_IG09
+						;; bbWeight=0.50 PerfScore 1.12
+G_M50508_IG06:
+       vmovaps  xmm2, xmm0
+       vmovd    eax, xmm2
+       test     eax, eax
+       jl       SHORT G_M50508_IG08
+						;; bbWeight=0.25 PerfScore 0.62
+G_M50508_IG07:
+       jmp      SHORT G_M50508_IG09
+						;; bbWeight=0.50 PerfScore 1.00
+G_M50508_IG08:
+       vmovaps  xmm1, xmm0
+						;; bbWeight=0.50 PerfScore 0.12
+G_M50508_IG09:
+       vmovaps  xmm0, xmm1
+						;; bbWeight=1    PerfScore 0.25
+G_M50508_IG10:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 54, prolog size 3, PerfScore 16.33, (MethodHash=1de43ab3) for method Silk.NET.Maths.Scalar:Min(float,float):float
+; ============================================================
+
 ; Assembly listing for method JITTest.ScalarFloat:Negate(float):float
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
@@ -19482,53 +19622,25 @@ G_M12729_IG03:
 ; Final local variable assignments
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )   float  ->  mm0        
-;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M20150_IG01:
-       sub      rsp, 40
-       vzeroupper 
-						;; bbWeight=1    PerfScore 1.25
-G_M20150_IG02:
-       call     Silk.NET.Maths.Scalar:Negate(float):float
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M20150_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 18, prolog size 7, PerfScore 5.55, (MethodHash=50f9b149) for method JITTest.ScalarFloat:Negate(float):float
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(float):float
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )   float  ->  mm0        
-;* V01 loc0         [V01    ] (  0,  0   )   float  ->  zero-ref    ld-addr-op
-;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V02 tmp1         [V02,T01] (  2,  2   )   float  ->  mm0         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M40518_IG01:
+G_M20150_IG01:
        vzeroupper 
 						;; bbWeight=1    PerfScore 1.00
-G_M40518_IG02:
+G_M20150_IG02:
        vmovss   xmm1, dword ptr [reloc @RWD00]
        vxorps   xmm0, xmm1
 						;; bbWeight=1    PerfScore 2.33
-G_M40518_IG03:
+G_M20150_IG03:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 RWD00  dd	80000000h
 
 
-; Total bytes of code 16, prolog size 3, PerfScore 6.13, (MethodHash=c9b261b9) for method Silk.NET.Maths.Scalar:Negate(float):float
+; Total bytes of code 16, prolog size 3, PerfScore 6.13, (MethodHash=50f9b149) for method JITTest.ScalarFloat:Negate(float):float
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarFloat:Equal(float,float):bool
@@ -21114,119 +21226,62 @@ G_M43461_IG03:
 ; partially interruptible
 ; Final local variable assignments
 ;
-;  V00 arg0         [V00,T00] (  3,  3   )  double  ->  mm0        
-;  V01 arg1         [V01,T01] (  3,  3   )  double  ->  mm1        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M43772_IG01:
-       sub      rsp, 40
-       vzeroupper 
-						;; bbWeight=1    PerfScore 1.25
-G_M43772_IG02:
-       call     Silk.NET.Maths.Scalar:Min(double,double):double
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M43772_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 18, prolog size 7, PerfScore 5.55, (MethodHash=a5dd5503) for method JITTest.ScalarDouble:Min(double,double):double
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Min(double,double):double
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
 ;  V00 arg0         [V00,T01] (  9,  5   )  double  ->  mm0        
 ;  V01 arg1         [V01,T02] (  6,  4.25)  double  ->  mm1        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )  double  ->  zero-ref    "Inline return value spill temp"
-;  V04 tmp2         [V04,T03] (  5,  3   )  double  ->  mm1         "Inline return value spill temp"
-;  V05 tmp3         [V05,T00] (  2,  0.50)    long  ->  rax         "Inline return value spill temp"
-;* V06 tmp4         [V06    ] (  0,  0   )  double  ->  zero-ref    ld-addr-op "Inlining Arg"
-;  V07 tmp5         [V07,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
+;* V04 tmp2         [V04    ] (  0,  0   )  double  ->  zero-ref    "Inline return value spill temp"
+;  V05 tmp3         [V05,T03] (  5,  3   )  double  ->  mm1         "Inline return value spill temp"
+;  V06 tmp4         [V06,T00] (  2,  0.50)    long  ->  rax         "Inline return value spill temp"
+;* V07 tmp5         [V07    ] (  0,  0   )  double  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V08 tmp6         [V08,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
 ;
 ; Lcl frame size = 0
 
-G_M52969_IG01:
+G_M43772_IG01:
        vzeroupper 
 						;; bbWeight=1    PerfScore 1.00
-G_M52969_IG02:
+G_M43772_IG02:
        vucomisd xmm0, xmm1
-       jp       SHORT G_M52969_IG03
-       je       SHORT G_M52969_IG06
+       jp       SHORT G_M43772_IG03
+       je       SHORT G_M43772_IG06
 						;; bbWeight=1    PerfScore 3.00
-G_M52969_IG03:
+G_M43772_IG03:
        vucomisd xmm0, xmm0
-       jp       SHORT G_M52969_IG06
+       jp       SHORT G_M43772_IG06
        vucomisd xmm1, xmm0
-       ja       SHORT G_M52969_IG05
+       ja       SHORT G_M43772_IG05
 						;; bbWeight=0.25 PerfScore 1.00
-G_M52969_IG04:
-       jmp      SHORT G_M52969_IG09
+G_M43772_IG04:
+       jmp      SHORT G_M43772_IG09
 						;; bbWeight=0.50 PerfScore 1.00
-G_M52969_IG05:
+G_M43772_IG05:
        vmovaps  xmm1, xmm0
-       jmp      SHORT G_M52969_IG09
+       jmp      SHORT G_M43772_IG09
 						;; bbWeight=0.50 PerfScore 1.12
-G_M52969_IG06:
+G_M43772_IG06:
        vmovaps  xmm2, xmm0
        vmovd    rax, xmm2
        test     rax, rax
-       jl       SHORT G_M52969_IG08
+       jl       SHORT G_M43772_IG08
 						;; bbWeight=0.25 PerfScore 0.62
-G_M52969_IG07:
-       jmp      SHORT G_M52969_IG09
+G_M43772_IG07:
+       jmp      SHORT G_M43772_IG09
 						;; bbWeight=0.50 PerfScore 1.00
-G_M52969_IG08:
+G_M43772_IG08:
        vmovaps  xmm1, xmm0
 						;; bbWeight=0.50 PerfScore 0.12
-G_M52969_IG09:
+G_M43772_IG09:
        vmovaps  xmm0, xmm1
 						;; bbWeight=1    PerfScore 0.25
-G_M52969_IG10:
+G_M43772_IG10:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 56, prolog size 3, PerfScore 16.43, (MethodHash=4bad3116) for method Silk.NET.Maths.Scalar:Min(double,double):double
+; Total bytes of code 56, prolog size 3, PerfScore 16.43, (MethodHash=a5dd5503) for method JITTest.ScalarDouble:Min(double,double):double
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarDouble:Max(double,double):double
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )  double  ->  mm0        
-;  V01 arg1         [V01,T01] (  3,  3   )  double  ->  mm1        
-;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M44770_IG01:
-       sub      rsp, 40
-       vzeroupper 
-						;; bbWeight=1    PerfScore 1.25
-G_M44770_IG02:
-       call     Silk.NET.Maths.Scalar:Max(double,double):double
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M44770_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 18, prolog size 7, PerfScore 5.55, (MethodHash=ad4d511d) for method JITTest.ScalarDouble:Max(double,double):double
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Max(double,double):double
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
 ; rsp based frame
@@ -21237,58 +21292,59 @@ G_M44770_IG03:
 ;  V01 arg1         [V01,T02] (  7,  4.50)  double  ->  mm1        
 ;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )  double  ->  zero-ref    "Inline return value spill temp"
-;  V04 tmp2         [V04,T03] (  6,  3.50)  double  ->  mm1         "Inline return value spill temp"
-;  V05 tmp3         [V05,T00] (  2,  0.50)    long  ->  rax         "Inline return value spill temp"
-;* V06 tmp4         [V06    ] (  0,  0   )  double  ->  zero-ref    ld-addr-op "Inlining Arg"
-;  V07 tmp5         [V07,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
+;* V04 tmp2         [V04    ] (  0,  0   )  double  ->  zero-ref    "Inline return value spill temp"
+;  V05 tmp3         [V05,T03] (  6,  3.50)  double  ->  mm1         "Inline return value spill temp"
+;  V06 tmp4         [V06,T00] (  2,  0.50)    long  ->  rax         "Inline return value spill temp"
+;* V07 tmp5         [V07    ] (  0,  0   )  double  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V08 tmp6         [V08,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
 ;
 ; Lcl frame size = 0
 
-G_M47351_IG01:
+G_M44770_IG01:
        vzeroupper 
 						;; bbWeight=1    PerfScore 1.00
-G_M47351_IG02:
+G_M44770_IG02:
        vucomisd xmm0, xmm1
-       jp       SHORT G_M47351_IG03
-       je       SHORT G_M47351_IG07
+       jp       SHORT G_M44770_IG03
+       je       SHORT G_M44770_IG07
 						;; bbWeight=1    PerfScore 3.00
-G_M47351_IG03:
+G_M44770_IG03:
        vucomisd xmm0, xmm0
-       jp       SHORT G_M47351_IG06
+       jp       SHORT G_M44770_IG06
        vucomisd xmm0, xmm1
-       ja       SHORT G_M47351_IG05
+       ja       SHORT G_M44770_IG05
 						;; bbWeight=0.25 PerfScore 1.00
-G_M47351_IG04:
-       jmp      SHORT G_M47351_IG10
+G_M44770_IG04:
+       jmp      SHORT G_M44770_IG10
 						;; bbWeight=0.50 PerfScore 1.00
-G_M47351_IG05:
+G_M44770_IG05:
        vmovaps  xmm1, xmm0
-       jmp      SHORT G_M47351_IG10
+       jmp      SHORT G_M44770_IG10
 						;; bbWeight=0.50 PerfScore 1.12
-G_M47351_IG06:
+G_M44770_IG06:
        vmovaps  xmm1, xmm0
-       jmp      SHORT G_M47351_IG10
+       jmp      SHORT G_M44770_IG10
 						;; bbWeight=0.50 PerfScore 1.12
-G_M47351_IG07:
+G_M44770_IG07:
        vmovaps  xmm2, xmm1
        vmovd    rax, xmm2
        test     rax, rax
-       jl       SHORT G_M47351_IG09
+       jl       SHORT G_M44770_IG09
 						;; bbWeight=0.25 PerfScore 0.62
-G_M47351_IG08:
-       jmp      SHORT G_M47351_IG10
+G_M44770_IG08:
+       jmp      SHORT G_M44770_IG10
 						;; bbWeight=0.50 PerfScore 1.00
-G_M47351_IG09:
+G_M44770_IG09:
        vmovaps  xmm1, xmm0
 						;; bbWeight=0.50 PerfScore 0.12
-G_M47351_IG10:
+G_M44770_IG10:
        vmovaps  xmm0, xmm1
 						;; bbWeight=1    PerfScore 0.25
-G_M47351_IG11:
+G_M44770_IG11:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 
-; Total bytes of code 62, prolog size 3, PerfScore 18.25, (MethodHash=b0584708) for method Silk.NET.Maths.Scalar:Max(double,double):double
+; Total bytes of code 62, prolog size 3, PerfScore 18.25, (MethodHash=ad4d511d) for method JITTest.ScalarDouble:Max(double,double):double
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarDouble:Larger(double,double):bool
@@ -21445,6 +21501,132 @@ G_M49084_IG03:
 ; Total bytes of code 35, prolog size 7, PerfScore 10.95, (MethodHash=95794043) for method JITTest.ScalarDouble:Clamp(double,double,double):double
 ; ============================================================
 
+; Assembly listing for method Silk.NET.Maths.Scalar:Max(double,double):double
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T01] (  9,  5.25)  double  ->  mm0        
+;  V01 arg1         [V01,T02] (  7,  4.50)  double  ->  mm1        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )  double  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T03] (  6,  3.50)  double  ->  mm1         "Inline return value spill temp"
+;  V05 tmp3         [V05,T00] (  2,  0.50)    long  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )  double  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V07 tmp5         [V07,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
+;
+; Lcl frame size = 0
+
+G_M47351_IG01:
+       vzeroupper 
+						;; bbWeight=1    PerfScore 1.00
+G_M47351_IG02:
+       vucomisd xmm0, xmm1
+       jp       SHORT G_M47351_IG03
+       je       SHORT G_M47351_IG07
+						;; bbWeight=1    PerfScore 3.00
+G_M47351_IG03:
+       vucomisd xmm0, xmm0
+       jp       SHORT G_M47351_IG06
+       vucomisd xmm0, xmm1
+       ja       SHORT G_M47351_IG05
+						;; bbWeight=0.25 PerfScore 1.00
+G_M47351_IG04:
+       jmp      SHORT G_M47351_IG10
+						;; bbWeight=0.50 PerfScore 1.00
+G_M47351_IG05:
+       vmovaps  xmm1, xmm0
+       jmp      SHORT G_M47351_IG10
+						;; bbWeight=0.50 PerfScore 1.12
+G_M47351_IG06:
+       vmovaps  xmm1, xmm0
+       jmp      SHORT G_M47351_IG10
+						;; bbWeight=0.50 PerfScore 1.12
+G_M47351_IG07:
+       vmovaps  xmm2, xmm1
+       vmovd    rax, xmm2
+       test     rax, rax
+       jl       SHORT G_M47351_IG09
+						;; bbWeight=0.25 PerfScore 0.62
+G_M47351_IG08:
+       jmp      SHORT G_M47351_IG10
+						;; bbWeight=0.50 PerfScore 1.00
+G_M47351_IG09:
+       vmovaps  xmm1, xmm0
+						;; bbWeight=0.50 PerfScore 0.12
+G_M47351_IG10:
+       vmovaps  xmm0, xmm1
+						;; bbWeight=1    PerfScore 0.25
+G_M47351_IG11:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 62, prolog size 3, PerfScore 18.25, (MethodHash=b0584708) for method Silk.NET.Maths.Scalar:Max(double,double):double
+; ============================================================
+
+; Assembly listing for method Silk.NET.Maths.Scalar:Min(double,double):double
+; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
+; optimized code
+; rsp based frame
+; partially interruptible
+; Final local variable assignments
+;
+;  V00 arg0         [V00,T01] (  9,  5   )  double  ->  mm0        
+;  V01 arg1         [V01,T02] (  6,  4.25)  double  ->  mm1        
+;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;* V03 tmp1         [V03    ] (  0,  0   )  double  ->  zero-ref    "Inline return value spill temp"
+;  V04 tmp2         [V04,T03] (  5,  3   )  double  ->  mm1         "Inline return value spill temp"
+;  V05 tmp3         [V05,T00] (  2,  0.50)    long  ->  rax         "Inline return value spill temp"
+;* V06 tmp4         [V06    ] (  0,  0   )  double  ->  zero-ref    ld-addr-op "Inlining Arg"
+;  V07 tmp5         [V07,T04] (  2,  0.50)  simd16  ->  mm2         "Inline stloc first use temp"
+;
+; Lcl frame size = 0
+
+G_M52969_IG01:
+       vzeroupper 
+						;; bbWeight=1    PerfScore 1.00
+G_M52969_IG02:
+       vucomisd xmm0, xmm1
+       jp       SHORT G_M52969_IG03
+       je       SHORT G_M52969_IG06
+						;; bbWeight=1    PerfScore 3.00
+G_M52969_IG03:
+       vucomisd xmm0, xmm0
+       jp       SHORT G_M52969_IG06
+       vucomisd xmm1, xmm0
+       ja       SHORT G_M52969_IG05
+						;; bbWeight=0.25 PerfScore 1.00
+G_M52969_IG04:
+       jmp      SHORT G_M52969_IG09
+						;; bbWeight=0.50 PerfScore 1.00
+G_M52969_IG05:
+       vmovaps  xmm1, xmm0
+       jmp      SHORT G_M52969_IG09
+						;; bbWeight=0.50 PerfScore 1.12
+G_M52969_IG06:
+       vmovaps  xmm2, xmm0
+       vmovd    rax, xmm2
+       test     rax, rax
+       jl       SHORT G_M52969_IG08
+						;; bbWeight=0.25 PerfScore 0.62
+G_M52969_IG07:
+       jmp      SHORT G_M52969_IG09
+						;; bbWeight=0.50 PerfScore 1.00
+G_M52969_IG08:
+       vmovaps  xmm1, xmm0
+						;; bbWeight=0.50 PerfScore 0.12
+G_M52969_IG09:
+       vmovaps  xmm0, xmm1
+						;; bbWeight=1    PerfScore 0.25
+G_M52969_IG10:
+       ret      
+						;; bbWeight=1    PerfScore 1.00
+
+; Total bytes of code 56, prolog size 3, PerfScore 16.43, (MethodHash=4bad3116) for method Silk.NET.Maths.Scalar:Min(double,double):double
+; ============================================================
+
 ; Assembly listing for method JITTest.ScalarDouble:Negate(double):double
 ; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
 ; optimized code
@@ -21453,54 +21635,26 @@ G_M49084_IG03:
 ; Final local variable assignments
 ;
 ;  V00 arg0         [V00,T00] (  3,  3   )  double  ->  mm0        
-;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
-;
-; Lcl frame size = 40
-
-G_M14451_IG01:
-       sub      rsp, 40
-       vzeroupper 
-						;; bbWeight=1    PerfScore 1.25
-G_M14451_IG02:
-       call     Silk.NET.Maths.Scalar:Negate(double):double
-       nop      
-						;; bbWeight=1    PerfScore 1.25
-G_M14451_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
-
-; Total bytes of code 18, prolog size 7, PerfScore 5.55, (MethodHash=2b35c78c) for method JITTest.ScalarDouble:Negate(double):double
-; ============================================================
-
-; Assembly listing for method Silk.NET.Maths.Scalar:Negate(double):double
-; Emitting BLENDED_CODE for X64 CPU with AVX - Windows
-; optimized code
-; rsp based frame
-; partially interruptible
-; Final local variable assignments
-;
-;  V00 arg0         [V00,T00] (  3,  3   )  double  ->  mm0        
-;* V01 loc0         [V01    ] (  0,  0   )  double  ->  zero-ref    ld-addr-op
-;# V02 OutArgs      [V02    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;# V01 OutArgs      [V01    ] (  1,  1   )  lclBlk ( 0) [rsp+0x00]   "OutgoingArgSpace"
+;  V02 tmp1         [V02,T01] (  2,  2   )  double  ->  mm0         "Inline return value spill temp"
 ;
 ; Lcl frame size = 0
 
-G_M6886_IG01:
+G_M14451_IG01:
        vzeroupper 
 						;; bbWeight=1    PerfScore 1.00
-G_M6886_IG02:
+G_M14451_IG02:
        vmovsd   xmm1, qword ptr [reloc @RWD08]
        vxorps   xmm0, xmm1
 						;; bbWeight=1    PerfScore 2.33
-G_M6886_IG03:
+G_M14451_IG03:
        ret      
 						;; bbWeight=1    PerfScore 1.00
 RWD00  dq	0000000000000000h
 RWD08  dq	8000000000000000h
 
 
-; Total bytes of code 16, prolog size 3, PerfScore 6.13, (MethodHash=38f1e519) for method Silk.NET.Maths.Scalar:Negate(double):double
+; Total bytes of code 16, prolog size 3, PerfScore 6.13, (MethodHash=2b35c78c) for method JITTest.ScalarDouble:Negate(double):double
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarDouble:Equal(double,double):bool
