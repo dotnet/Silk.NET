@@ -11,24 +11,36 @@ using System.Linq;
 using GenericMathsGenerator.VariableTypes;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace GenericMathsGenerator.ValueTypes
 {
-    [DebuggerDisplay("{OriginalName}: {LocalVariable}")]
+    [DebuggerDisplay("{Name}: {LocalVariable}")]
     public class LocalReferenceValue : IValue, IEquatable<LocalReferenceValue>
     {
-        public LocalReferenceValue(string originalName)
+        public LocalReferenceValue(string name)
         {
-            OriginalName = originalName;
+            Name = name;
         }
         
         public LocalVariable? LocalVariable { get; set; }
-        public string OriginalName { get; }
+        public string Name { get; }
 
         public int Step => LocalVariable?.Value.Step ?? 0;
+
         public ExpressionSyntax BuildExpression
-            (ImmutableArray<ExpressionSyntax> children, ref List<StatementSyntax> statements, TargetType targetType) 
-            => throw new InvalidOperationException();
+            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
+        {
+            if (LocalVariable is null)
+                throw new InvalidOperationException($"Local variable reference has not been resolved");
+            
+            var name = Name;
+            if (!bodyBuilder.ResolvedValues.ContainsKey(LocalVariable.Value))
+                bodyBuilder.Statements.Add(LocalDeclarationStatement(VariableDeclaration(bodyBuilder.Type.GetTypeSyntax(), SingletonSeparatedList(VariableDeclarator(
+                    name).WithInitializer(EqualsValueClause(bodyBuilder.ResolveValue(LocalVariable.Value)))))));
+            
+            return IdentifierName(name);
+        }
 
         public Optional<float> ConstantValue => LocalVariable?.Value.ConstantValue ?? default;
 
@@ -61,7 +73,7 @@ namespace GenericMathsGenerator.ValueTypes
                 return true;
             }
 
-            return Equals(LocalVariable, other.LocalVariable) && OriginalName == other.OriginalName;
+            return Equals(LocalVariable, other.LocalVariable) && Name == other.Name;
         }
 
         public override bool Equals(object? obj)
@@ -76,7 +88,7 @@ namespace GenericMathsGenerator.ValueTypes
         {
             unchecked
             {
-                return ((LocalVariable != null ? LocalVariable.GetHashCode() : 0) * 397) ^ OriginalName.GetHashCode();
+                return ((LocalVariable != null ? LocalVariable.GetHashCode() : 0) * 397) ^ Name.GetHashCode();
             }
         }
     }

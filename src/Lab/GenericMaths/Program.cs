@@ -10,6 +10,7 @@ namespace GenericMaths
         }
     }
 
+    [GenericMaths]
     public struct TypeSpecialization
     {
         public float Field;

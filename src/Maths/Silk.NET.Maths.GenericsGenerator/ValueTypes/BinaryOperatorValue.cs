@@ -45,7 +45,7 @@ namespace GenericMathsGenerator
         public int Step => _step.Value;
 
         public ExpressionSyntax BuildExpression
-            (ImmutableArray<ExpressionSyntax> children, ref List<StatementSyntax> statements, TargetType targetType)
+            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             Debug.Assert(children.Length == 2);
             return SyntaxFactory.BinaryExpression(OpSyntaxKind, children[0], children[1]);

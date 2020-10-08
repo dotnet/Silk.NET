@@ -35,7 +35,8 @@ namespace GenericMathsGenerator.ValueTypes
 
         public int Step => 0;
 
-        public ExpressionSyntax BuildExpression(ImmutableArray<ExpressionSyntax> children, ref List<StatementSyntax> statements, TargetType type)
+        public ExpressionSyntax BuildExpression
+            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             return CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)), IdentifierName(Name));
         }

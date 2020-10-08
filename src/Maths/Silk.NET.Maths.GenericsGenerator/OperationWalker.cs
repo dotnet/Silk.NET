@@ -91,8 +91,8 @@ namespace GenericMathsGenerator
             for (var index = 0; index < _localReferences.Count; index++)
             {
                 var localReference = _localReferences[index];
-                localReference.LocalVariable = _locals[localReference.OriginalName];
-                _locals[localReference.OriginalName].References.Add(localReference);
+                localReference.LocalVariable = _locals[localReference.Name];
+                _locals[localReference.Name].References.Add(localReference);
                 _localReferences[index] = localReference;
             }
         }

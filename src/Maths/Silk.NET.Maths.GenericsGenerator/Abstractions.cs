@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using GenericMathsGenerator.ValueTypes;
+using GenericMathsGenerator.VariableTypes;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -51,13 +52,38 @@ namespace GenericMathsGenerator
         IEnumerable<IVariable> Process(IEnumerable<IVariable> variables);
     }
 
+    public interface IBodyBuilder
+    {
+        List<StatementSyntax> Statements { get; set; }
+        TargetType Type { get; }
+        Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
+        ExpressionSyntax ResolveValue(IValue value);
+    }
+
+    public class ScalarBodyBuilder : IBodyBuilder
+    {
+        private readonly Func<IValue, IBodyBuilder, ExpressionSyntax> _resolveCallback;
+        
+        public ScalarBodyBuilder(List<StatementSyntax> statements, TargetType type, Func<IValue, IBodyBuilder, ExpressionSyntax> resolveCallback)
+        {
+            Statements = statements;
+            Type = type;
+            _resolveCallback = resolveCallback;
+            ResolvedValues = new Dictionary<IValue, ExpressionSyntax>();
+        }
+        public List<StatementSyntax> Statements { get; set; }
+        public TargetType Type { get; }
+        public Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
+        public ExpressionSyntax ResolveValue(IValue value) => _resolveCallback(value, this);
+    }
+
     public interface IValue : IEquatable<IValue>
     {
         Optional<float> ConstantValue { get; }
         IEnumerable<IValue> Children { get; set; }
         int Step { get; }
         ExpressionSyntax BuildExpression
-            (ImmutableArray<ExpressionSyntax> children, ref List<StatementSyntax> statements, TargetType type);
+            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children);
     }
 
     public interface IVariable : IEquatable<IVariable>
