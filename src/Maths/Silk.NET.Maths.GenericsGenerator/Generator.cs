@@ -150,26 +150,32 @@ namespace GenericMaths
                 foreach (var (tds, symbol, attribute) in types)
                     if (tds.Parent is NamespaceDeclarationSyntax nds)
                     {
-                        try
+                        Dictionary<TargetType, string> typeNames = TargetTypes.ToDictionary
+                            (x => x, x => tds.Identifier.Text + "_" + Enum.GetName(typeof(TargetType), x));
+                        foreach (var targetType in TargetTypes)
                         {
-                            var newType = SpecializeType(context, tds, TargetType.Int, genericParameter).WithIdentifier(Identifier(tds.Identifier.Text + "_Int"));
+                            try
+                            {
+                                var newType = SpecializeType(context, tds, targetType, genericParameter)
+                                    .WithIdentifier(Identifier(typeNames[targetType]));
 
-                            var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
-                            newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
-                                .Usings.Aggregate
-                                (
-                                    newNamespace,
-                                    (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
-                                );
-                            var str = newNamespace.NormalizeWhitespace().ToFullString();
-                            var name = $"{tds.Identifier.Text}_Maths_{Guid.NewGuid()}.cs";
-                            Debugger.Break();
-                            File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
-                            context.AddSource(name, str);
-                        }
-                        catch (DiagnosticException ex)
-                        {
-                            context.ReportDiagnostic(ex.Diagnostic);
+                                var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
+                                newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
+                                    .Usings.Aggregate
+                                    (
+                                        newNamespace,
+                                        (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
+                                    );
+                                var str = newNamespace.NormalizeWhitespace().ToFullString();
+                                var name = $"{tds.Identifier.Text}_Maths_{typeNames[targetType]}_{Guid.NewGuid()}.cs";
+                                Debugger.Break();
+                                File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
+                                context.AddSource(name, str);
+                            }
+                            catch (DiagnosticException ex)
+                            {
+                                context.ReportDiagnostic(ex.Diagnostic);
+                            }
                         }
                     }
             }
