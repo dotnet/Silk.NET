@@ -42,22 +42,25 @@ namespace GenericMathsGenerator.ValueTypes
             (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             Debug.Assert(children.Length == 0);
-            return LiteralExpression
+            return CastExpression
             (
-                SyntaxKind.NumericLiteralExpression, bodyBuilder.Type switch
-                {
-                    TargetType.Byte => Literal((byte) _value),
-                    TargetType.SByte => Literal((sbyte) _value),
-                    TargetType.UShort => Literal((ushort) _value),
-                    TargetType.Short => Literal((short) _value),
-                    TargetType.UInt => Literal((uint) _value),
-                    TargetType.Int => Literal((int) _value),
-                    TargetType.ULong => Literal((ulong) _value),
-                    TargetType.Long => Literal((long) _value),
-                    TargetType.Single => Literal((float) _value),
-                    TargetType.Double => Literal((double) _value),
-                    _ => throw new ArgumentOutOfRangeException(nameof(bodyBuilder.Type))
-                }
+                bodyBuilder.Type.GetTypeSyntax(), LiteralExpression
+                (
+                    SyntaxKind.NumericLiteralExpression, bodyBuilder.Type switch
+                    {
+                        TargetType.Byte => Literal((byte) _value),
+                        TargetType.SByte => Literal((sbyte) _value),
+                        TargetType.UShort => Literal((ushort) _value),
+                        TargetType.Short => Literal((short) _value),
+                        TargetType.UInt => Literal((uint) _value),
+                        TargetType.Int => Literal((int) _value),
+                        TargetType.ULong => Literal((ulong) _value),
+                        TargetType.Long => Literal((long) _value),
+                        TargetType.Single => Literal((float) _value),
+                        TargetType.Double => Literal((double) _value),
+                        _ => throw new ArgumentOutOfRangeException(nameof(bodyBuilder.Type))
+                    }
+                )
             );
         }
 
