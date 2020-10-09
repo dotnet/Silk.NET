@@ -64,7 +64,6 @@ namespace GenericMathsGenerator
             _localReferences = new List<LocalReferenceValue>();
             _floatType = context.Compilation.GetSpecialType(SpecialType.System_Single);
             _intType = context.Compilation.GetSpecialType(SpecialType.System_Int32);
-            Debugger.Break();
             try
             {
                 _currentLocation = root.Syntax.GetLocation();
@@ -80,7 +79,6 @@ namespace GenericMathsGenerator
                 context.ReportDiagnostic(Diagnostic.Create(Diagnostics.UnexpectedWalkerException, _currentLocation, ex.ToString()));
             }
 
-            Debugger.Break();
             ResolveReferences();
             _builder = null;
             return _currentVariables;
@@ -262,8 +260,10 @@ namespace GenericMathsGenerator
             {
                 if (!operation.ConstantValue.HasValue)
                 {
+#if DEBUG
                     Debugger.Launch();
                     Debugger.Break();
+#endif
                     Debug.Fail("non-constant literal?!");
                 }
 
@@ -275,8 +275,11 @@ namespace GenericMathsGenerator
             {
                 if (!operation.ConstantValue.HasValue)
                 {
+
+#if DEBUG
                     Debugger.Launch();
                     Debugger.Break();
+#endif
                     Debug.Fail("non-constant literal?!");
                 }
 

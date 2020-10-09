@@ -31,11 +31,9 @@ namespace GenericMathsGenerator
             const string genericParameter = "T";
             try
             {
-                context.AddSource
+                var attributeSourceText = SourceText.From
                 (
-                    "attribute", SourceText.From
-                    (
-                        @"
+                    @"
 using System;
 
 namespace GenericMaths
@@ -43,26 +41,34 @@ namespace GenericMaths
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class | AttributeTargets.Struct)]
     internal class GenericMathsAttribute : Attribute
     {
-        
+        /// <summary>Indicates whether to generate specialized versions, like ""NAME_Byte"". Defaults to false</summary>
+        public bool GenerateSpecialized { get; set; } = false;
+        /// <summary>Indicates whether to generate a generic version, like ""NAME<T>"". Defaults to true</summary>
+        public bool GenerateGeneric { get; set;  } = true;
     }
-}
-", Encoding.UTF8
-                    )
+}", Encoding.UTF8
+                );
+                context.AddSource
+                (
+                    "attribute", attributeSourceText
                 );
 
                 if (!(context.SyntaxReceiver is SyntaxReceiver sr))
                     return;
 
+                var compilation = context.Compilation as CSharpCompilation;
+                compilation = compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText(attributeSourceText, context.ParseOptions as CSharpParseOptions));
+                
                 var methods = sr.Methods.Select
                     (
                         x => (x,
                             ModelExtensions.GetDeclaredSymbol
-                                (context.Compilation.GetSemanticModel(x.SyntaxTree), x) as IMethodSymbol)
+                                (compilation.GetSemanticModel(x.SyntaxTree), x) as IMethodSymbol)
                     )
                     .Select
                     (
                         x => (x.x, x.Item2,
-                            x.Item2.GetAttributes().FirstOrDefault(x2 => x2.AttributeClass.Name == "GenericMaths"))
+                            x.Item2.GetAttributes().FirstOrDefault(x2 => x2.AttributeClass.Name == "GenericMathsAttribute"))
                     )
                     .Where(att => att.Item3 is not null)
                     .ToArray();
@@ -71,20 +77,28 @@ namespace GenericMaths
                     (
                         x => (x,
                             ModelExtensions.GetDeclaredSymbol
-                                (context.Compilation.GetSemanticModel(x.SyntaxTree), x) as ITypeSymbol)
+                                (compilation.GetSemanticModel(x.SyntaxTree), x) as ITypeSymbol)
                     )
                     .Select
                     (
                         x => (x.x, x.Item2,
-                            x.Item2.GetAttributes().FirstOrDefault(x2 => x2.AttributeClass.Name == "GenericMaths"))
+                            x.Item2.GetAttributes().FirstOrDefault(x2 => x2.AttributeClass.Name == "GenericMathsAttribute"))
                     )
                     .Where(att => att.Item3 is not null)
                     .ToArray();
-
                 foreach (var (declaration, symbol, attribute) in methods)
                 {
                     try
                     {
+                        var attributeParams = attribute.NamedArguments.ToDictionary(x => x.Key, x => x.Value);
+                        bool generateSpecialized = false;
+                        if (attributeParams.TryGetValue("GenerateSpecialized", out var g))
+                            generateSpecialized = (bool)g.Value;
+                        
+                        bool generateGeneric = true;
+                        if (attributeParams.TryGetValue("GenerateGeneric", out var g1))
+                            generateGeneric = (bool)g1.Value;
+                        
                         if (declaration.Parent is TypeDeclarationSyntax tds)
                         {
                             if (!tds.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
@@ -93,17 +107,15 @@ namespace GenericMaths
 
                             if (tds.Parent is NamespaceDeclarationSyntax nds)
                             {
-                                var semanticModel = context.Compilation.GetSemanticModel(declaration.SyntaxTree);
-
-                                if (!(semanticModel.GetDeclaredSymbol(declaration.ReturnType) is ITypeSymbol ts &&
-                                      ts.SpecialType == SpecialType.System_Single))
+                                var semanticModel = compilation.GetSemanticModel(nds.SyntaxTree);
+                                var methodSymbol = semanticModel.GetDeclaredSymbol(declaration) as IMethodSymbol;
+                                if (methodSymbol is null)
                                     continue;
 
-                                if (declaration.ParameterList.Parameters.Any
-                                (
-                                    x => !(semanticModel.GetDeclaredSymbol(declaration.ReturnType) is ITypeSymbol ts &&
-                                           ts.SpecialType == SpecialType.System_Single)
-                                ))
+                                if (methodSymbol.ReturnType.SpecialType != SpecialType.System_Single)
+                                    continue;
+
+                                if (methodSymbol.Parameters.Any(x => x.Type.SpecialType != SpecialType.System_Single))
                                     continue;
 
                                 List<MethodDeclarationSyntax>? methodResultDeclarations;
@@ -111,15 +123,13 @@ namespace GenericMaths
                                     methodResultDeclarations = ProcessMethod
                                     (
                                         context, semanticModel, declaration.Body, declaration.Identifier.Text, false,
-                                        genericParameter, default, declaration.Modifiers, declaration.TypeParameterList,
-                                        declaration.ExplicitInterfaceSpecifier, declaration.ParameterList,
-                                        declaration.ConstraintClauses
+                                        genericParameter, generateGeneric, default, declaration.Modifiers, declaration.TypeParameterList, declaration.ExplicitInterfaceSpecifier, declaration.ParameterList, declaration.ConstraintClauses, generateSpecialized
                                     );
                                 else
                                     methodResultDeclarations = ProcessMethod
                                     (
                                         context, semanticModel, declaration.ExpressionBody!,
-                                        declaration.Identifier.Text, false, genericParameter, default, declaration.Modifiers, declaration.TypeParameterList, declaration.ExplicitInterfaceSpecifier, declaration.ParameterList, declaration.ConstraintClauses
+                                        declaration.Identifier.Text, generateGeneric, genericParameter, default, declaration.Modifiers, declaration.TypeParameterList, declaration.ExplicitInterfaceSpecifier, declaration.ParameterList, declaration.ConstraintClauses, generateSpecialized
                                     );
 
                                 if (methodResultDeclarations is null)
@@ -135,7 +145,6 @@ namespace GenericMaths
                                     );
                                 var str = newNamespace.NormalizeWhitespace().ToFullString();
                                 var name = $"{tds.Identifier.Text}_Maths.cs";
-                                Debugger.Break();
                                 context.AddSource(name, str);
                             }
                         }
@@ -145,22 +154,55 @@ namespace GenericMaths
                         context.ReportDiagnostic(ex.Diagnostic);
                     }
                 }
-
-                Debugger.Launch();
+                
                 foreach (var (tds, symbol, attribute) in types)
                     if (tds.Parent is NamespaceDeclarationSyntax nds)
                     {
-                        #region Specialized Types
-                        Dictionary<TargetType, string> typeNames = TargetTypes.ToDictionary
-                            (x => x, x => tds.Identifier.Text + "_" + Enum.GetName(typeof(TargetType), x));
-                        foreach (var targetType in TargetTypes)
+                        var attributeParams = attribute.NamedArguments.ToDictionary(x => x.Key, x => x.Value);
+                        bool generateSpecialized = false;
+                        if (attributeParams.TryGetValue("GenerateSpecialized", out var g))
+                            generateSpecialized = (bool)g.Value;
+                        
+                        bool generateGeneric = true;
+                        if (attributeParams.TryGetValue("GenerateGeneric", out var g1))
+                            generateGeneric = (bool)g1.Value;
+
+                        if (generateSpecialized)
+                        {
+                            Dictionary<TargetType, string> typeNames = TargetTypes.ToDictionary
+                                (x => x, x => tds.Identifier.Text + "_" + Enum.GetName(typeof(TargetType), x));
+                            foreach (var targetType in TargetTypes)
+                            {
+                                try
+                                {
+                                    var newType = SpecializeType(context, tds, targetType)
+                                        .WithIdentifier(Identifier(typeNames[targetType]));
+
+                                    var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
+                                    newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
+                                        .Usings.Aggregate
+                                        (
+                                            newNamespace,
+                                            (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
+                                        );
+                                    var str = newNamespace.NormalizeWhitespace().ToFullString();
+                                    var name =
+                                        $"{tds.Identifier.Text}_Maths_{typeNames[targetType]}_{Guid.NewGuid()}.cs";
+                                    context.AddSource(name, str);
+                                }
+                                catch (DiagnosticException ex)
+                                {
+                                    context.ReportDiagnostic(ex.Diagnostic);
+                                }
+                            }
+                        }
+
+                        if (generateGeneric)
                         {
                             try
                             {
-                                var newType = SpecializeType(context, tds, targetType)
-                                    .WithIdentifier(Identifier(typeNames[targetType]));
-
-                                var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
+                                var newType = MakeGenericType(context, tds, genericParameter, TargetTypes);
+                                var newNamespace = nds.WithMembers(SingletonList(newType));
                                 newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
                                     .Usings.Aggregate
                                     (
@@ -168,8 +210,7 @@ namespace GenericMaths
                                         (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
                                     );
                                 var str = newNamespace.NormalizeWhitespace().ToFullString();
-                                var name = $"{tds.Identifier.Text}_Maths_{typeNames[targetType]}_{Guid.NewGuid()}.cs";
-                                File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
+                                var name = $"{tds.Identifier.Text}_Maths_Generic_{Guid.NewGuid()}.cs";
                                 context.AddSource(name, str);
                             }
                             catch (DiagnosticException ex)
@@ -177,42 +218,20 @@ namespace GenericMaths
                                 context.ReportDiagnostic(ex.Diagnostic);
                             }
                         }
-                        #endregion
-
-                        #region Generic Type
-                        try
-                        {
-                            var newType = MakeGenericType(context, tds, genericParameter, TargetTypes);
-                            var newNamespace = nds.WithMembers(SingletonList(newType));
-                            newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
-                                .Usings.Aggregate
-                                (
-                                    newNamespace,
-                                    (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
-                                );
-                            var str = newNamespace.NormalizeWhitespace().ToFullString();
-                            var name = $"{tds.Identifier.Text}_Maths_Generic_{Guid.NewGuid()}.cs";
-                            Debugger.Break();
-                            File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
-                            context.AddSource(name, str);
-                        }
-                        catch (DiagnosticException ex)
-                        {
-                            context.ReportDiagnostic(ex.Diagnostic);
-                        }
-                        #endregion
                     }
             }
             catch (DiagnosticException ex)
             {
                 context.ReportDiagnostic(ex.Diagnostic);
             }
+            #if DEBUG
             catch (Exception ex)
             {
                 Debugger.Launch();
                 Debugger.Break();
                 throw;
             }
+            #endif
         }
 
         private MemberDeclarationSyntax MakeGenericType
@@ -297,14 +316,13 @@ namespace GenericMaths
 
                         var targets = targetTypes.Select
                             (x => (x, $"{method.Identifier.Text}_S_{Enum.GetName(typeof(TargetType), x)}")).ToArray();
-                        Debugger.Break();
                         resultMembers.AddRange(ProcessMethodOperation
                         (
                             context, methodOperation, false, false, null,
                             targets,
                             throwHelper, null, method.AttributeLists, method.Modifiers,
                             method.TypeParameterList, method.ExplicitInterfaceSpecifier, method.ParameterList,
-                            method.ConstraintClauses
+                            method.ConstraintClauses, true
                         ));
                         resultMembers.Add(BuildGenericMethod(method, t, targets, throwHelper));
                         break;
@@ -492,13 +510,12 @@ namespace GenericMaths
                             continue;
                         }
 
-                        Debugger.Break();
                         var m = ProcessMethodOperation
                         (
                             context, methodOperation, false, false, null, new[]
                             {
                                 (targetType, method.Identifier.Text)
-                            }, $"THROW_HELPER_{method.Identifier}", null, method.AttributeLists, method.Modifiers, method.TypeParameterList, method.ExplicitInterfaceSpecifier, method.ParameterList, method.ConstraintClauses
+                            }, $"THROW_HELPER_{method.Identifier}", null, method.AttributeLists, method.Modifiers, method.TypeParameterList, method.ExplicitInterfaceSpecifier, method.ParameterList, method.ConstraintClauses, false
                         );
 
                         resultDeclarations.AddRange(m);
@@ -531,12 +548,14 @@ namespace GenericMaths
             string identifier,
             bool makeGenericDefinitionGenericRoot,
             string genericParameter,
+            bool generateGenericMethod,
             SyntaxList<AttributeListSyntax> attributeLists,
             SyntaxTokenList modifiers,
             TypeParameterListSyntax? typeParameterList,
             ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier,
             ParameterListSyntax parameterList,
-            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses
+            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses,
+            bool privatizeNonGeneric
         )
         {
             var op = model.GetOperation(body);
@@ -544,9 +563,9 @@ namespace GenericMaths
                 return null;
             return ProcessMethodOperation
             (
-                context, op, makeGenericDefinitionGenericRoot, true, identifier,
+                context, op, makeGenericDefinitionGenericRoot, generateGenericMethod, identifier,
                 TargetTypes.Select(x => (x, $"{identifier}_{Enum.GetName(typeof(TargetType), x)}")),
-                $"ThrowHelper_M_{identifier}", genericParameter, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses
+                $"ThrowHelper_M_{identifier}", genericParameter, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses, privatizeNonGeneric
             );
         }
 
@@ -563,7 +582,8 @@ namespace GenericMaths
             TypeParameterListSyntax? typeParameterList,
             ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier,
             ParameterListSyntax parameterList,
-            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses 
+            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses,
+            bool privatizeNonGeneric
         )
         {
             var op = model.GetOperation(body);
@@ -573,7 +593,7 @@ namespace GenericMaths
             (
                 context, op, makeGenericDefinitionGenericRoot, true, identifier,
                 TargetTypes.Select(x => (x, $"{identifier}_{Enum.GetName(typeof(TargetType), x)}")),
-                $"ThrowHelper_M_{identifier}", genericParameter, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses
+                $"ThrowHelper_M_{identifier}", genericParameter, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses, privatizeNonGeneric
             );
         }
 
@@ -597,10 +617,12 @@ namespace GenericMaths
             TypeParameterListSyntax? typeParameterList,
             ExplicitInterfaceSpecifierSyntax? explicitInterfaceSpecifier,
             ParameterListSyntax parameterList,
-            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses
+            SyntaxList<TypeParameterConstraintClauseSyntax> constraintClauses,
+            bool privatizeNonGeneric
         )
         {
-            Debug.Assert(!(generateGenericMethod && makeGenericDefinitionGenericRoot));
+            if (!generateGenericMethod)
+                Debug.Assert(!makeGenericDefinitionGenericRoot);
             Debug.Assert(generateGenericMethod == genericMethodName is not null);
             
             var variables = new OperationWalker().RootVisit(context, operation);
@@ -620,9 +642,8 @@ namespace GenericMaths
 
             GetBucketsAndParameters(firstReturn.Value, out List<ParameterReferenceValue> parameters, out ImmutableSortedDictionary<int, List<IValue>> sortedBuckets);
 
-            var methods = GetMethods(firstReturn.Value, makeGenericDefinitionGenericRoot, generateGenericMethod, genericMethodName, targetTypes, throwHelperName, genericParameter, parameters, sortedBuckets, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses);
+            var methods = GetMethods(firstReturn.Value, makeGenericDefinitionGenericRoot, generateGenericMethod, genericMethodName, targetTypes, throwHelperName, genericParameter, privatizeNonGeneric, parameters, sortedBuckets, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses);
 
-            Debugger.Break();
             return methods;
         }
 
@@ -634,6 +655,7 @@ namespace GenericMaths
             IEnumerable<(TargetType, string)> targetTypes,
             string throwHelperName,
             string genericParameter,
+            bool privatizeNonGeneric,
             List<ParameterReferenceValue> parameters,
             ImmutableSortedDictionary<int, List<IValue>> sortedBuckets,
             SyntaxList<AttributeListSyntax> attributeLists,
@@ -670,6 +692,17 @@ namespace GenericMaths
                     ParameterList(
                         SeparatedList(parameters.Select(x => Parameter(Identifier(x.ParameterName)).WithType(resolvedT)))),
                     constraintClauses, BuildMethodBody(sortedBuckets, value, targetType), null);
+                if (privatizeNonGeneric)
+                {
+                    var v = m.Modifiers.Select(x => new SyntaxToken?(x)).FirstOrDefault
+                    (
+                        x => x.HasValue && (x.Value.IsKind(SyntaxKind.PublicKeyword) || x.Value.IsKind(SyntaxKind.InternalKeyword) || x.Value.IsKind
+                            (SyntaxKind.ProtectedKeyword))
+                    );
+                    
+                    if (v is not null)
+                        m.WithModifiers(m.Modifiers.Replace(v.Value, Token(SyntaxKind.PrivateKeyword)));
+                }
                 methods.Add(m);
 
                 if (generateGenericMethod)
@@ -701,9 +734,19 @@ namespace GenericMaths
                         SeparatedList(new TypeParameterConstraintSyntax[] {TypeConstraint(IdentifierName("unmanaged"))})));
                 }
 
-                methods.Add(MethodDeclaration(attributeLists, modifiers, IdentifierName(genericParameter),
-                    explicitInterfaceSpecifier, Identifier(genericMethodName), typeParameterList, parameterList,
-                    constraintClauses, Block(lastStatement!), null));
+                methods.Add
+                (
+                    MethodDeclaration
+                    (
+                        attributeLists, modifiers, IdentifierName(genericParameter), explicitInterfaceSpecifier,
+                        Identifier(genericMethodName), typeParameterList,
+                        parameterList.WithParameters
+                        (
+                            SeparatedList
+                                (parameterList.Parameters.Select(x => x.WithType(IdentifierName(genericParameter))))
+                        ), constraintClauses, Block(lastStatement!), null
+                    )
+                );
             }
 
             return methods;
