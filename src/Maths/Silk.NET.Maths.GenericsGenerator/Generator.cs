@@ -150,13 +150,14 @@ namespace GenericMaths
                 foreach (var (tds, symbol, attribute) in types)
                     if (tds.Parent is NamespaceDeclarationSyntax nds)
                     {
+                        #region Specialized Types
                         Dictionary<TargetType, string> typeNames = TargetTypes.ToDictionary
                             (x => x, x => tds.Identifier.Text + "_" + Enum.GetName(typeof(TargetType), x));
                         foreach (var targetType in TargetTypes)
                         {
                             try
                             {
-                                var newType = SpecializeType(context, tds, targetType, genericParameter)
+                                var newType = SpecializeType(context, tds, targetType)
                                     .WithIdentifier(Identifier(typeNames[targetType]));
 
                                 var newNamespace = nds.WithMembers(SingletonList<MemberDeclarationSyntax>(newType));
@@ -168,7 +169,6 @@ namespace GenericMaths
                                     );
                                 var str = newNamespace.NormalizeWhitespace().ToFullString();
                                 var name = $"{tds.Identifier.Text}_Maths_{typeNames[targetType]}_{Guid.NewGuid()}.cs";
-                                Debugger.Break();
                                 File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
                                 context.AddSource(name, str);
                             }
@@ -177,6 +177,30 @@ namespace GenericMaths
                                 context.ReportDiagnostic(ex.Diagnostic);
                             }
                         }
+                        #endregion
+
+                        #region Generic Type
+                        try
+                        {
+                            var newType = MakeGenericType(context, tds, genericParameter, TargetTypes);
+                            var newNamespace = nds.WithMembers(SingletonList(newType));
+                            newNamespace = nds.SyntaxTree.GetCompilationUnitRoot()
+                                .Usings.Aggregate
+                                (
+                                    newNamespace,
+                                    (current, usingDirectiveSyntax) => current.AddUsings(usingDirectiveSyntax)
+                                );
+                            var str = newNamespace.NormalizeWhitespace().ToFullString();
+                            var name = $"{tds.Identifier.Text}_Maths_Generic_{Guid.NewGuid()}.cs";
+                            Debugger.Break();
+                            File.WriteAllText(@"C:\SILK.NET\src\Lab\GenericMaths\" + name, str);
+                            context.AddSource(name, str);
+                        }
+                        catch (DiagnosticException ex)
+                        {
+                            context.ReportDiagnostic(ex.Diagnostic);
+                        }
+                        #endregion
                     }
             }
             catch (DiagnosticException ex)
@@ -191,11 +215,249 @@ namespace GenericMaths
             }
         }
 
+        private MemberDeclarationSyntax MakeGenericType
+        (
+            GeneratorExecutionContext context,
+            TypeDeclarationSyntax sourceType,
+            string genericParameter,
+            IEnumerable<TargetType> targetTypes
+        )
+        {
+            var throwHelper = "M_THROW_HELPER";
+            var model = context.Compilation.GetSemanticModel(sourceType.SyntaxTree);
+            var resultMembers = new List<MemberDeclarationSyntax>();
+            var t = IdentifierName(genericParameter);
+
+            resultMembers
+                .Add // private static void M_THROW_HELPER() => throw new InvalidOperationException($"{typeof(T)}");
+                (
+                    MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), Identifier("M_THROW_HELPER"))
+                        .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword)))
+                        .WithExpressionBody
+                        (
+                            ArrowExpressionClause
+                            (
+                                ThrowExpression
+                                (
+                                    ObjectCreationExpression
+                                            (IdentifierName("InvalidOperationException"))
+                                        .WithArgumentList
+                                        (
+                                            ArgumentList
+                                            (
+                                                SingletonSeparatedList<ArgumentSyntax>
+                                                (
+                                                    Argument
+                                                    (
+                                                        InterpolatedStringExpression
+                                                                (Token(SyntaxKind.InterpolatedStringStartToken))
+                                                            .WithContents
+                                                            (
+                                                                SingletonList<InterpolatedStringContentSyntax>
+                                                                (
+                                                                    Interpolation(TypeOfExpression(IdentifierName("T")))
+                                                                )
+                                                            )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                )
+                            )
+                        )
+                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                );
+            
+            foreach (var member in sourceType.Members)
+            {
+                switch (member)
+                {
+                    case MethodDeclarationSyntax method:
+                        if (!(model.GetDeclaredSymbol
+                                (method) is { ReturnType: { SpecialType: SpecialType.System_Single } }) ||
+                            method.ParameterList.Parameters.Any
+                            (
+                                x => !(model.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
+                                       ts.SpecialType == SpecialType.System_Single)
+                            ))
+                        {
+                            resultMembers.Add(method);
+                            continue;
+                        }
+
+                        var methodOperation = method.Body is not null
+                            ? model.GetOperation(method.Body)
+                            : model.GetOperation(method.ExpressionBody!);
+
+                        if (methodOperation is null)
+                        {
+                            resultMembers.Add(method);
+                            continue;
+                        }
+
+                        var targets = targetTypes.Select
+                            (x => (x, $"{method.Identifier.Text}_S_{Enum.GetName(typeof(TargetType), x)}")).ToArray();
+                        Debugger.Break();
+                        resultMembers.AddRange(ProcessMethodOperation
+                        (
+                            context, methodOperation, false, false, null,
+                            targets,
+                            throwHelper, null, method.AttributeLists, method.Modifiers,
+                            method.TypeParameterList, method.ExplicitInterfaceSpecifier, method.ParameterList,
+                            method.ConstraintClauses
+                        ));
+                        resultMembers.Add(BuildGenericMethod(method, t, targets, throwHelper));
+                        break;
+                    case FieldDeclarationSyntax field:
+                        resultMembers.Add(field.WithDeclaration(field.Declaration.WithType(t)));
+                        break;
+                    case PropertyDeclarationSyntax property:
+                        resultMembers.Add(property.WithType(t));
+                        break;
+                }
+            }
+
+            return sourceType.WithMembers
+                    (List(resultMembers))
+                .WithAttributeLists(default)
+                .WithTypeParameterList
+                (
+                    (sourceType.TypeParameterList ?? TypeParameterList()).AddParameters(TypeParameter(genericParameter))
+                )
+                .WithConstraintClauses
+                (
+                    sourceType.ConstraintClauses.Add
+                    (
+                        TypeParameterConstraintClause
+                                (genericParameter)
+                            .WithConstraints
+                            (
+                                SingletonSeparatedList
+                                (
+                                    (TypeParameterConstraintSyntax) TypeConstraint
+                                        (IdentifierName("unmanaged"))
+                                )
+                            )
+                    )
+                );
+        }
+
+        private MethodDeclarationSyntax BuildGenericMethod(MethodDeclarationSyntax method, TypeSyntax t, IEnumerable<(TargetType x, string)> targets, string throwHelper)
+        {
+            StatementSyntax lastStatement = Block
+                (ExpressionStatement(InvocationExpression(IdentifierName(throwHelper))), ReturnStatement(DefaultExpression(t)));
+
+            foreach (var (type, name) in targets)
+            {
+                var resolvedT = type.GetTypeSyntax();
+                lastStatement = IfStatement
+                (
+                    BinaryExpression(SyntaxKind.EqualsExpression, TypeOfExpression(t), TypeOfExpression(resolvedT)),
+                    ReturnStatement
+                    (
+                        CastExpression
+                        (
+                            t,
+                            CastExpression
+                            (
+                                PredefinedType(Token(SyntaxKind.ObjectKeyword)),
+                                InvocationExpression
+                                (
+                                    IdentifierName(name),
+                                    ArgumentList
+                                    (
+                                        SeparatedList
+                                        (
+                                            method.ParameterList.Parameters.Select
+                                            (
+                                                x => Argument
+                                                (
+                                                    CastExpression
+                                                    (
+                                                        resolvedT,
+                                                        CastExpression
+                                                        (
+                                                            PredefinedType(Token(SyntaxKind.ObjectKeyword)),
+                                                            IdentifierName(x.Identifier.Text)
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ), ElseClause(lastStatement)
+                );
+            }
+
+            return method.WithReturnType(t)
+                .WithParameterList
+                (
+                    method.ParameterList.WithParameters
+                        (SeparatedList(method.ParameterList.Parameters.Select(x => x.WithType(t))))
+                )
+                .WithBody(Block(lastStatement))
+                // [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)768)]
+                // equivalent to AggressiveOptimization | AggressiveInlining
+                .WithAttributeLists
+                (
+                    SingletonList
+                    (
+                        AttributeList
+                        (
+                            SingletonSeparatedList
+                            (
+                                Attribute
+                                    (
+                                        QualifiedName
+                                        (
+                                            QualifiedName
+                                            (
+                                                QualifiedName(IdentifierName("System"), IdentifierName("Runtime")),
+                                                IdentifierName("CompilerServices")
+                                            ), IdentifierName("MethodImpl")
+                                        )
+                                    )
+                                    .WithArgumentList
+                                    (
+                                        AttributeArgumentList
+                                        (
+                                            SingletonSeparatedList
+                                            (
+                                                AttributeArgument
+                                                (
+                                                    CastExpression
+                                                    (
+                                                        QualifiedName
+                                                        (
+                                                            QualifiedName
+                                                            (
+                                                                QualifiedName
+                                                                (
+                                                                    IdentifierName("System"), IdentifierName("Runtime")
+                                                                ),
+                                                                IdentifierName("CompilerServices")
+                                                            ), IdentifierName("MethodImplOptions")
+                                                        ),
+                                                        LiteralExpression
+                                                            (SyntaxKind.NumericLiteralExpression, Literal(768))
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                            )
+                        )
+                    )
+                );
+        }
+
         private static TypeDeclarationSyntax SpecializeType(
             GeneratorExecutionContext context,
             TypeDeclarationSyntax tds,
-            TargetType targetType,
-            string genericParameter
+            TargetType targetType
         )
         {
             var model = context.Compilation.GetSemanticModel(tds.SyntaxTree);
@@ -208,13 +470,11 @@ namespace GenericMaths
                 {
                     case MethodDeclarationSyntax method:
                     {
-                        var semanticModel = context.Compilation.GetSemanticModel(method.SyntaxTree);
-
-                        if (!(semanticModel.GetDeclaredSymbol
+                        if (!(model.GetDeclaredSymbol
                                 (method) is { ReturnType: { SpecialType: SpecialType.System_Single } }) ||
                             method.ParameterList.Parameters.Any
                             (
-                                x => !(semanticModel.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
+                                x => !(model.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
                                        ts.SpecialType == SpecialType.System_Single)
                             ))
                         {
@@ -238,7 +498,7 @@ namespace GenericMaths
                             context, methodOperation, false, false, null, new[]
                             {
                                 (targetType, method.Identifier.Text)
-                            }, $"THROW_HELPER_{method.Identifier}", genericParameter, method.AttributeLists, method.Modifiers, method.TypeParameterList, method.ExplicitInterfaceSpecifier, method.ParameterList, method.ConstraintClauses
+                            }, $"THROW_HELPER_{method.Identifier}", null, method.AttributeLists, method.Modifiers, method.TypeParameterList, method.ExplicitInterfaceSpecifier, method.ParameterList, method.ConstraintClauses
                         );
 
                         resultDeclarations.AddRange(m);
@@ -391,7 +651,7 @@ namespace GenericMaths
                 methods.Add(MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), throwHelperName)
                     .WithExpressionBody(ArrowExpressionClause(ThrowExpression(
                         ObjectCreationExpression(QualifiedName(IdentifierName(nameof(System)),
-                            IdentifierName(nameof(System.ArgumentOutOfRangeException)))).WithArgumentList(
+                            IdentifierName(nameof(ArgumentOutOfRangeException)))).WithArgumentList(
                             ArgumentList(SingletonSeparatedList(Argument(LiteralExpression(SyntaxKind.StringLiteralExpression,
                                 Literal(genericParameter)))))))))
                     .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword)))
