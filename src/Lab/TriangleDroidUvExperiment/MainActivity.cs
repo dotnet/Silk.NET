@@ -13,7 +13,6 @@ namespace TriangleDroidUvExperiment
     {
         protected override void OnUltravioletRun()
         {
-            
             Program.Main(null!);
         }
     }

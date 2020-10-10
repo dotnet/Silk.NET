@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using SampleBase;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
+using SdlProvider = Silk.NET.SDL.SdlProvider;
 
 namespace Triangle
 {
@@ -30,6 +31,7 @@ namespace Triangle
 
         public static void Main(string[] args)
         {
+            //SdlProvider.SetMainReady = true;
 #if MINIMAL
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;

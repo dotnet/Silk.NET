@@ -10,6 +10,7 @@ using NativeLibrary3 = System.Runtime.InteropServices.NativeLibrary;
 using System.Runtime.InteropServices;
 #endif
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace Silk.NET.Core.Loader
@@ -250,6 +251,8 @@ namespace Silk.NET.Core.Loader
                 ThrowSymbolLoading(functionName);
                 return default;
             }
+            
+            Debug.WriteLine("Silk.NET loaded: " + functionName);
 
             return ret;
         }
