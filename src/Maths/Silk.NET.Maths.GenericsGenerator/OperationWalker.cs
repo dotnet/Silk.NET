@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using GenericMathsGenerator.ValueTypes;
 using GenericMathsGenerator.VariableTypes;
 using Microsoft.CodeAnalysis;
@@ -16,12 +17,55 @@ namespace GenericMathsGenerator
     public partial class OperationWalker : Microsoft.CodeAnalysis.Operations.OperationWalker
     {
         private class Builder
-        {
+        {    
+            private sealed class Scope
+            {
+                public List<IVariable> Variables { get; } = new List<IVariable>();
+                public List<Scope> Children { get; } = new List<Scope>();
+
+                public IScope Resolve() => new IScopeImpl
+                {
+                    Variables = Variables,
+                    Children = Children.Select(x => x.Resolve()).ToArray()
+                };
+            }
+            
+            private sealed class IScopeImpl : IScope
+            {
+                public IReadOnlyList<IVariable> Variables { get; set; }
+                public IReadOnlyList<IScope> Children { get; set; }
+            }
+            
             private List<IValue>? _currentChildren;
             public IValue? CurrentValue { get; private set; }
             private Stack<(IValue, List<IValue>)> _parentLists = new Stack<(IValue, List<IValue>)>();
 
+            private Scope? _currentScope;
+            private Stack<Scope> _scopes = new Stack<Scope>();
+            
             public int CurrentDepth => _parentLists.Count;
+
+            public IScope ResolveCurrentScope() => _currentScope.Resolve();
+
+            public void BeginScope()
+            {
+                if (_currentScope is not null)
+                    _scopes.Push(_currentScope);
+
+                _currentScope = new Scope();
+            }
+
+            public void EndScope()
+            {
+                var p = _scopes.Pop();
+                p.Children.Add(_currentScope);
+                _currentScope = p;
+            }
+
+            public void AddVariable(IVariable variable)
+            {
+                _currentScope.Variables.Add(variable);
+            }
             
             public void BeginValue(IValue value)
             {
@@ -52,14 +96,12 @@ namespace GenericMathsGenerator
         private ITypeSymbol _floatType;
         private ITypeSymbol _intType;
         private int _returnCount = 0;
-        private List<IVariable> _currentVariables;
         private Dictionary<string, LocalVariable> _locals;
         private List<LocalReferenceValue> _localReferences;
         private Location _currentLocation;
 
-        public IEnumerable<IVariable> RootVisit(GeneratorExecutionContext context, IOperation root)
+        public IScope? RootVisit(GeneratorExecutionContext context, IOperation root)
         {
-            _currentVariables = new List<IVariable>();
             _locals = new Dictionary<string, LocalVariable>();
             _localReferences = new List<LocalReferenceValue>();
             _floatType = context.Compilation.GetSpecialType(SpecialType.System_Single);
@@ -68,7 +110,9 @@ namespace GenericMathsGenerator
             {
                 _currentLocation = root.Syntax.GetLocation();
                 _builder = new Builder();
+                _builder.BeginScope();
                 base.Visit(root);
+                _builder.EndScope();
             }
             catch (DiagnosticException ex)
             {
@@ -80,8 +124,9 @@ namespace GenericMathsGenerator
             }
 
             ResolveReferences();
+            var s = _builder.ResolveCurrentScope();
             _builder = null;
-            return _currentVariables;
+            return s;
         }
 
         private void ResolveReferences()
@@ -139,7 +184,7 @@ namespace GenericMathsGenerator
             _builder = new Builder();
             base.VisitReturn(operation);
             VerifyBuilderComplete(operation);
-            _currentVariables.Add(new ReturnVariable(_builder.CurrentValue));
+            _builder.AddVariable(new ReturnVariable(_builder.CurrentValue));
             _builder = oldBuilder;
         }
 
@@ -154,7 +199,7 @@ namespace GenericMathsGenerator
                 base.VisitVariableDeclarator(declarator);
                 VerifyBuilderComplete(declarator);
                 var v = new LocalVariable(declarator.Symbol.Name, _builder.CurrentValue);
-                _currentVariables.Add(v);
+                _builder.AddVariable(v);
                 _locals[declarator.Symbol.Name] = v;
                 _builder = oldBuilder;
             }

@@ -100,6 +100,12 @@ namespace GenericMathsGenerator
     {
         IValue Value { get; set; }
     }
+    
+    public interface IScope
+    {
+        IReadOnlyList<IVariable> Variables { get; set; }
+        IReadOnlyList<IScope> Children { get; set; }
+    }
 
     public static class Extensions
     {

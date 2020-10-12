@@ -628,36 +628,16 @@ namespace GenericMaths
                 Debug.Assert(!makeGenericDefinitionGenericRoot);
             Debug.Assert(generateGenericMethod == genericMethodName is not null);
             
-            var variables = new OperationWalker().RootVisit(context, operation);
+            var scope = new OperationWalker().RootVisit(context, operation);
 
-            variables = _variableProcessors.Aggregate
-                    (variables, (current, variableProcessor) => variableProcessor.Process(current))
-                .ToArray();
+            if (scope is null)
+                return null;
 
-            static IValue ValueProcessRec(IValueProcessor processor, IValue value)
-            {
-                if (!value.Children.Any())
-                    return value;
-                return value.WithChildren
-                    (value.Children.Select(x => processor.Process(x, () => ValueProcessRec(processor, x))));
-            }
+            scope = ProcessScope(scope);
 
-            variables = variables.Select
-            (
-                x => x.WithValue
-                (
-                    _valueProcessors.Aggregate
-                    (
-                        x.Value,
-                        (current, valueProcessor) => valueProcessor.Process
-                            (current, () => ValueProcessRec(valueProcessor, current))
-                    )
-                )
-            );
-            
             // this implies we only care for the first return variable.
             // this also implies that we assume all calls to be pure.
-            var firstReturn = variables.FirstOrDefault(x => x is ReturnVariable);
+            var firstReturn = scope.Variables.FirstOrDefault(x => x is ReturnVariable);
 
             if (firstReturn is null)
                 throw new DiagnosticException(Diagnostic.Create(Diagnostics.NoReturn, null));
@@ -667,6 +647,28 @@ namespace GenericMaths
             var methods = GetMethods(firstReturn.Value, makeGenericDefinitionGenericRoot, generateGenericMethod, genericMethodName, targetTypes, throwHelperName, genericParameter, privatizeNonGeneric, parameters, sortedBuckets, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses);
 
             return methods;
+        }
+
+        private static IScope ProcessScope(IScope scope)
+        {
+            IEnumerable<IVariable> variables = scope.Variables;
+            variables = _variableProcessors
+                .Aggregate(variables, (current, variableProcessor) => variableProcessor.Process(current)).ToArray();
+
+            static IValue ValueProcessRec(IValueProcessor processor, IValue value)
+            {
+                if (!value.Children.Any())
+                    return value;
+                return value.WithChildren(value.Children.Select(x
+                    => processor.Process(x, () => ValueProcessRec(processor, x))));
+            }
+
+            variables = variables.Select(x => x.WithValue(_valueProcessors.Aggregate(x.Value,
+                (current, valueProcessor) => valueProcessor.Process(current, () => ValueProcessRec(valueProcessor, current)))));
+
+            scope.Variables = variables.ToArray();
+            scope.Children = scope.Children.Select(ProcessScope).ToArray();
+            return scope;
         }
 
         private static List<MethodDeclarationSyntax> GetMethods(
