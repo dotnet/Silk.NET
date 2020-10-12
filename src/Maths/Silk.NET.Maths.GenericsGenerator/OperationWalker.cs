@@ -23,7 +23,7 @@ namespace GenericMathsGenerator
 
             public int CurrentDepth => _parentLists.Count;
             
-            public void BeginScope(IValue value)
+            public void BeginValue(IValue value)
             {
                 if (CurrentValue is not null)
                 {
@@ -33,7 +33,7 @@ namespace GenericMathsGenerator
                 _currentChildren = new List<IValue>();
             }
 
-            public void EndScope()
+            public void EndValue()
             {
                 var v = CurrentValue.WithChildren(_currentChildren);
                 if (_parentLists.Count > 0)
@@ -100,9 +100,9 @@ namespace GenericMathsGenerator
             _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
             
-            _builder.BeginScope(new FieldReferenceValue(operation.Field.Name));
+            _builder.BeginValue(new FieldReferenceValue(operation.Field.Name));
             base.VisitFieldReference(operation);
-            _builder.EndScope();
+            _builder.EndValue();
         }
 
         public override void VisitPropertyReference(IPropertyReferenceOperation operation)
@@ -110,9 +110,9 @@ namespace GenericMathsGenerator
             _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
             
-            _builder.BeginScope(new PropertyReferenceValue(operation.Property.Name));
+            _builder.BeginValue(new PropertyReferenceValue(operation.Property.Name));
             base.VisitPropertyReference(operation);
-            _builder.EndScope();
+            _builder.EndValue();
         }
 
         public override void VisitParameterReference(IParameterReferenceOperation operation)
@@ -120,9 +120,9 @@ namespace GenericMathsGenerator
             _currentLocation = operation.Syntax.GetLocation();
             Debug.Assert(_builder is not null, "_builder is null");
         
-            _builder.BeginScope(new ParameterReferenceValue(operation.Parameter.Name));
+            _builder.BeginValue(new ParameterReferenceValue(operation.Parameter.Name));
             base.VisitParameterReference(operation);
-            _builder.EndScope();
+            _builder.EndValue();
         }
 
         public override void VisitReturn(IReturnOperation operation)
@@ -166,10 +166,10 @@ namespace GenericMathsGenerator
             Debug.Assert(_builder is not null, "_builder is null");
             
             var r = new LocalReferenceValue(operation.Local.Name);
-            _builder.BeginScope(r);
+            _builder.BeginValue(r);
             _localReferences.Add(r);
             base.VisitLocalReference(operation);
-            _builder.EndScope();
+            _builder.EndValue();
         }
 
         private void VerifyBuilderComplete(IOperation o)
@@ -218,9 +218,9 @@ namespace GenericMathsGenerator
                 )
             };
 
-            _builder.BeginScope(value);
+            _builder.BeginValue(value);
             base.VisitBinaryOperator(operation);
-            _builder.EndScope();
+            _builder.EndValue();
         }
 
         public override void VisitUnaryOperator(IUnaryOperation operation)
@@ -243,12 +243,12 @@ namespace GenericMathsGenerator
             };
 
             if (value is not null) 
-                _builder.BeginScope(value);
+                _builder.BeginValue(value);
 
             base.VisitUnaryOperator(operation);
             
             if (value is not null)
-                _builder.EndScope();
+                _builder.EndValue();
         }
 
         public override void VisitLiteral(ILiteralOperation operation)
@@ -267,9 +267,9 @@ namespace GenericMathsGenerator
                     Debug.Fail("non-constant literal?!");
                 }
 
-                _builder.BeginScope(new LiteralValue((float) operation.ConstantValue.Value));
+                _builder.BeginValue(new LiteralValue((float) operation.ConstantValue.Value));
                 base.VisitLiteral(operation);
-                _builder.EndScope();
+                _builder.EndValue();
             }
             else if (SymbolEqualityComparer.IncludeNullability.Equals(operation.Type, _intType))
             {
@@ -283,9 +283,9 @@ namespace GenericMathsGenerator
                     Debug.Fail("non-constant literal?!");
                 }
 
-                _builder.BeginScope(new LiteralValue((float)(int) operation.ConstantValue.Value));
+                _builder.BeginValue(new LiteralValue((float)(int) operation.ConstantValue.Value));
                 base.VisitLiteral(operation);
-                _builder.EndScope();
+                _builder.EndValue();
             }
             else
             {
