@@ -10,7 +10,7 @@ using GenericMathsGenerator.VariableTypes;
 
 namespace GenericMathsGenerator
 {
-    public class VariableInliner : IValueProcessor
+    public class VariableInliner : IVariableProcessor
     {
         public IEnumerable<IVariable> Process(IEnumerable<IVariable> variables)
         {

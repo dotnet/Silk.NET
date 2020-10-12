@@ -25,5 +25,11 @@ namespace GenericMathsGenerator
                         : x.Value.WithChildren(Process(x.Value.Children))
                 )
             );
+
+        public IValue Process
+            (IValue value, Func<IValue> next)
+            => value.ConstantValue.HasValue 
+                ? new LiteralValue(value.ConstantValue.Value) 
+                : next();
     }
 }

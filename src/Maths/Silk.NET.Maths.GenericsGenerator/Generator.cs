@@ -599,7 +599,10 @@ namespace GenericMaths
 
         private static readonly IValueProcessor[] _valueProcessors = {
             new ConstantFolder(),
-            new VariableInliner(),
+        };
+
+        private static readonly IVariableProcessor[] _variableProcessors = {
+            new VariableInliner()
         };
 
         private static List<MethodDeclarationSyntax> ProcessMethodOperation
@@ -627,11 +630,30 @@ namespace GenericMaths
             
             var variables = new OperationWalker().RootVisit(context, operation);
 
-            variables = _valueProcessors.Aggregate
-                    (variables, (current, valueProcessor) => valueProcessor.Process(current))
+            variables = _variableProcessors.Aggregate
+                    (variables, (current, variableProcessor) => variableProcessor.Process(current))
                 .ToArray();
 
-            
+            static IValue ValueProcessRec(IValueProcessor processor, IValue value)
+            {
+                if (!value.Children.Any())
+                    return value;
+                return value.WithChildren
+                    (value.Children.Select(x => processor.Process(x, () => ValueProcessRec(processor, x))));
+            }
+
+            variables = variables.Select
+            (
+                x => x.WithValue
+                (
+                    _valueProcessors.Aggregate
+                    (
+                        x.Value,
+                        (current, valueProcessor) => valueProcessor.Process
+                            (current, () => ValueProcessRec(valueProcessor, current))
+                    )
+                )
+            );
             
             // this implies we only care for the first return variable.
             // this also implies that we assume all calls to be pure.

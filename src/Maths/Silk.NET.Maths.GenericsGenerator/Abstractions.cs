@@ -49,6 +49,16 @@ namespace GenericMathsGenerator
     
     public interface IValueProcessor
     {
+        IValue Process(IValue value, Func<IValue> next);
+    }
+
+    /// <summary>
+    /// Variable Processors process the raw Variables one after another. They are run before <see cref="IValueProcessor"/>
+    /// These aren't needed in most cases. use <see cref="IValueProcessor"/> wherever possible
+    /// </summary>
+    /// <seealso cref="IValueProcessor"/>
+    public interface IVariableProcessor
+    {
         IEnumerable<IVariable> Process(IEnumerable<IVariable> variables);
     }
 
