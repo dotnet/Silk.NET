@@ -13,6 +13,10 @@ namespace TriangleDroidUvExperiment
     {
         protected override void OnUltravioletRun()
         {
+            //var main = this;
+            //var aaaa = SDL.Context;
+            //var oooo = MSingleton;
+            //SDL.SetupJNI();
             Program.Main(null!);
         }
     }
