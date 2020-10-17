@@ -26,7 +26,8 @@ namespace Silk.NET.OpenAL.Attributes
             var enumType = typeof(TFormat);
             var member = enumType.GetMember(format.ToString()).First();
 
-            if (!(member.GetCustomAttribute(typeof(FormatSizeAttribute)) is FormatSizeAttribute sizeAttribute)) {
+            if (!(member.GetCustomAttribute(typeof(FormatSizeAttribute)) is FormatSizeAttribute sizeAttribute))
+            {
                 throw new InvalidOperationException("The given buffer format doesn't have a format size set.");
             }
 

@@ -2,9 +2,12 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using Silk.NET.GLFW;
 
-namespace FramebufferResized {
-    class Program {
-        static unsafe void Main(string[] args) {
+namespace FramebufferResized
+{
+    class Program
+    {
+        static unsafe void Main(string[] args)
+        {
             var glfw = Glfw.GetApi();
             glfw.Init();
 
@@ -13,13 +16,15 @@ namespace FramebufferResized {
 
             glfw.SetFramebufferSizeCallback(windowHandle, FramebufferResize);
 
-            while (!glfw.WindowShouldClose(windowHandle)) {
+            while (!glfw.WindowShouldClose(windowHandle))
+            {
                 glfw.PollEvents();
             }
 
             glfw.DestroyWindow(windowHandle);
         }
-        private static unsafe void FramebufferResize(WindowHandle* window, int width, int height) {
+        private static unsafe void FramebufferResize(WindowHandle* window, int width, int height)
+        {
             Console.WriteLine($"framebuffer size: {width}, {height}");
         }
     }

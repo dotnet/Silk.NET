@@ -162,8 +162,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public uint[] GenAuxiliaryEffectSlots(int count)
         {
             var result = new uint[count];
-            unsafe {
-                fixed (uint* ptr = result) {
+            unsafe
+            {
+                fixed (uint* ptr = result)
+                {
                     GenAuxiliaryEffectSlots(count, ptr);
                 }
             }
@@ -180,7 +182,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public uint GenAuxiliaryEffectSlot()
         {
             uint result = 0;
-            unsafe {
+            unsafe
+            {
                 GenAuxiliaryEffectSlots(1, &result);
             }
 
@@ -195,8 +198,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <seealso cref="IsAuxiliaryEffectSlot" />
         public void DeleteAuxiliaryEffectSlots(uint[] slots)
         {
-            unsafe {
-                fixed (uint* ptr = slots) {
+            unsafe
+            {
+                fixed (uint* ptr = slots)
+                {
                     DeleteAuxiliaryEffectSlots(slots.Length, ptr);
                 }
             }
@@ -210,7 +215,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <seealso cref="IsAuxiliaryEffectSlot" />
         public void DeleteAuxiliaryEffectSlot(uint slot)
         {
-            unsafe {
+            unsafe
+            {
                 DeleteAuxiliaryEffectSlots(1, &slot);
             }
         }
@@ -249,8 +255,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public uint[] GenEffects(int count)
         {
             var result = new uint[count];
-            unsafe {
-                fixed (uint* ptr = result) {
+            unsafe
+            {
+                fixed (uint* ptr = result)
+                {
                     GenEffects(count, ptr);
                 }
             }
@@ -267,7 +275,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public uint GenEffect()
         {
             uint result = 0;
-            unsafe {
+            unsafe
+            {
                 GenEffects(1, &result);
             }
 
@@ -282,8 +291,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <seealso cref="IsEffect" />
         public void DeleteEffects(uint[] effects)
         {
-            unsafe {
-                fixed (uint* ptr = effects) {
+            unsafe
+            {
+                fixed (uint* ptr = effects)
+                {
                     DeleteEffects(effects.Length, ptr);
                 }
             }
@@ -297,7 +308,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <seealso cref="IsEffect" />
         public void DeleteEffect(uint effect)
         {
-            unsafe {
+            unsafe
+            {
                 DeleteEffects(1, &effect);
             }
         }
@@ -348,8 +360,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public uint[] GenFilters(int count)
         {
             var result = new uint[count];
-            unsafe {
-                fixed (uint* ptr = result) {
+            unsafe
+            {
+                fixed (uint* ptr = result)
+                {
                     GenFilters(count, ptr);
                 }
             }
@@ -366,7 +380,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public uint GenFilter()
         {
             uint result = 0;
-            unsafe {
+            unsafe
+            {
                 GenFilters(1, &result);
             }
 
@@ -381,8 +396,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <seealso cref="IsFilter" />
         public void DeleteFilters(uint[] filters)
         {
-            unsafe {
-                fixed (uint* ptr = filters) {
+            unsafe
+            {
+                fixed (uint* ptr = filters)
+                {
                     DeleteFilters(filters.Length, ptr);
                 }
             }
@@ -396,7 +413,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <seealso cref="IsFilter" />
         public void DeleteFilter(uint filter)
         {
-            unsafe {
+            unsafe
+            {
                 DeleteFilters(1, &filter);
             }
         }

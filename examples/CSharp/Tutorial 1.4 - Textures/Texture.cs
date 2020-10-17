@@ -15,7 +15,7 @@ namespace Tutorial
         public unsafe Texture(GL gl, string path)
         {
             //Loading an image using imagesharp.
-            Image<Rgba32> img = (Image<Rgba32>)Image.Load(path);
+            Image<Rgba32> img = (Image<Rgba32>) Image.Load(path);
             //We need to flip our image as image sharps coordinates has origin (0, 0) in the top-left corner,
             //where as openGL has origin in the bottom-left corner.
             img.Mutate(x => x.Flip(FlipMode.Vertical));
@@ -23,7 +23,7 @@ namespace Tutorial
             fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
             {
                 //Loading the actual image.
-                Load(gl, data, (uint)img.Width, (uint)img.Height);
+                Load(gl, data, (uint) img.Width, (uint) img.Height);
             }
 
             //Deleting the img from imagesharp.
@@ -49,12 +49,12 @@ namespace Tutorial
             Bind();
 
             //Setting the data of a texture.
-            _gl.TexImage2D(TextureTarget.Texture2D, 0, (int)InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, data);
+            _gl.TexImage2D(TextureTarget.Texture2D, 0, (int) InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, data);
             //Setting some texture perameters so the texture behaves as expected.
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)GLEnum.Repeat);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)GLEnum.Repeat);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)GLEnum.Linear);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)GLEnum.Linear);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int) GLEnum.Repeat);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int) GLEnum.Repeat);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int) GLEnum.Linear);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int) GLEnum.Linear);
 
             //Generating mipmaps.
             _gl.GenerateMipmap(TextureTarget.Texture2D);
