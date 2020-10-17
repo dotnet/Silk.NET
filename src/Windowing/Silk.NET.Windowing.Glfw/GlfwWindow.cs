@@ -51,6 +51,15 @@ namespace Silk.NET.Windowing.Glfw
                 return new Size(width, height);
             }
         }
+        
+        protected override unsafe Rectangle CoreBorderSize
+        {
+            get
+            {
+                _glfw.GetWindowFrameSize(_glfwWindow, out var l, out var t, out var r, out var b);
+                return Rectangle.FromLTRB(l, t, r, b);
+            }
+        }
 
         protected override IntPtr CoreHandle => (IntPtr) _glfwWindow;
 
