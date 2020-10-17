@@ -311,9 +311,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleDroid", "src\Lab\Tr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleDroidUvExperiment", "src\Lab\TriangleDroidUvExperiment\TriangleDroidUvExperiment.csproj", "{CE0516F7-78D2-474F-A4A1-6ED97EB7CD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JITTesting", "src\Lab\JITTesting\JITTesting.csproj", "{D8AF5C5A-C618-4F27-B2C2-4DF23CBFC212}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JITTesting", "src\Lab\JITTesting\JITTesting.csproj", "{D8AF5C5A-C618-4F27-B2C2-4DF23CBFC212}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLib", "src\Lab\TestLib\TestLib.csproj", "{C7FFA58B-BFB0-4A42-AB19-84384B19D4E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLib", "src\Lab\TestLib\TestLib.csproj", "{C7FFA58B-BFB0-4A42-AB19-84384B19D4E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleIOS", "src\Lab\TriangleIOS\TriangleIOS.csproj", "{8669819B-654F-4E41-9030-1CCA56D64E88}"
 EndProject
@@ -1933,6 +1933,7 @@ Global
 		{C7FFA58B-BFB0-4A42-AB19-84384B19D4E4}.Release|x86.Build.0 = Release|Any CPU
 		{8669819B-654F-4E41-9030-1CCA56D64E88}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{8669819B-654F-4E41-9030-1CCA56D64E88}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{8669819B-654F-4E41-9030-1CCA56D64E88}.Debug|Any CPU.Deploy.0 = Debug|iPhoneSimulator
 		{8669819B-654F-4E41-9030-1CCA56D64E88}.Debug|x64.ActiveCfg = Debug|iPhoneSimulator
 		{8669819B-654F-4E41-9030-1CCA56D64E88}.Debug|x64.Build.0 = Debug|iPhoneSimulator
 		{8669819B-654F-4E41-9030-1CCA56D64E88}.Debug|x86.ActiveCfg = Debug|iPhoneSimulator

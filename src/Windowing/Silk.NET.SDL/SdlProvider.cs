@@ -46,6 +46,7 @@ namespace Silk.NET.SDL
                     }
 
                     sdl.Init(InitFlags);
+                    sdl.ThrowError();
 
                     return sdl;
                 }
@@ -74,6 +75,7 @@ namespace Silk.NET.SDL
                     }
 
                     sdl.Init(InitFlags);
+                    sdl.ThrowError();
 
                     return sdl;
                 }
