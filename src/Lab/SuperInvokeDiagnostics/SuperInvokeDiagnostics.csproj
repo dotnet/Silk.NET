@@ -10,6 +10,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ultz.SuperInvoke.AOT" Version="1.0.2" />
+        <PackageReference Include="Ultz.SuperInvoke.AOT" Version="1.1.0" />
     </ItemGroup>
 </Project>
