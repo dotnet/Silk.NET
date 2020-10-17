@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct WriteDescriptorSetAccelerationStructureKHR
+    [NativeName("Name", "VkWriteDescriptorSetAccelerationStructureKHR")]
+    public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
     {
         public WriteDescriptorSetAccelerationStructureKHR
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             AccelerationStructureKHR* pAccelerationStructures = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AccelerationStructureCount = accelerationStructureCount;
-           PAccelerationStructures = pAccelerationStructures;
+            SType = sType;
+            PNext = pNext;
+            AccelerationStructureCount = accelerationStructureCount;
+            PAccelerationStructures = pAccelerationStructures;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "accelerationStructureCount")]
         public uint AccelerationStructureCount;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureKHR*")]
+        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Name", "pAccelerationStructures")]
         public AccelerationStructureKHR* PAccelerationStructures;
     }
 }

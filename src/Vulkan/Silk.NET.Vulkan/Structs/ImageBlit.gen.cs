@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ImageBlit
+    [NativeName("Name", "VkImageBlit")]
+    public unsafe partial struct ImageBlit
     {
         public ImageBlit
         (
@@ -22,25 +25,43 @@ namespace Silk.NET.Vulkan
             ImageSubresourceLayers dstSubresource = default
         )
         {
-           SrcSubresource = srcSubresource;
+            SrcSubresource = srcSubresource;
            SrcOffsets_0 = default;
            SrcOffsets_1 = default;
-           DstSubresource = dstSubresource;
+            DstSubresource = dstSubresource;
            DstOffsets_0 = default;
            DstOffsets_1 = default;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkImageSubresourceLayers")]
+        [NativeName("Type.Name", "VkImageSubresourceLayers")]
+        [NativeName("Name", "srcSubresource")]
         public ImageSubresourceLayers SrcSubresource;
         /// <summary></summary>
+        [NativeName("Type", "VkOffset3D")]
+        [NativeName("Type.Name", "VkOffset3D")]
+        [NativeName("Name", "srcOffsets")]
         public Offset3D SrcOffsets_0;
         /// <summary></summary>
+        [NativeName("Type", "VkOffset3D")]
+        [NativeName("Type.Name", "VkOffset3D")]
+        [NativeName("Name", "srcOffsets")]
         public Offset3D SrcOffsets_1;
 /// <summary></summary>
+        [NativeName("Type", "VkImageSubresourceLayers")]
+        [NativeName("Type.Name", "VkImageSubresourceLayers")]
+        [NativeName("Name", "dstSubresource")]
         public ImageSubresourceLayers DstSubresource;
         /// <summary></summary>
+        [NativeName("Type", "VkOffset3D")]
+        [NativeName("Type.Name", "VkOffset3D")]
+        [NativeName("Name", "dstOffsets")]
         public Offset3D DstOffsets_0;
         /// <summary></summary>
+        [NativeName("Type", "VkOffset3D")]
+        [NativeName("Type.Name", "VkOffset3D")]
+        [NativeName("Name", "dstOffsets")]
         public Offset3D DstOffsets_1;
     }
 }

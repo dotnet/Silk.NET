@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PipelineVertexInputDivisorStateCreateInfoEXT
+    [NativeName("Name", "VkPipelineVertexInputDivisorStateCreateInfoEXT")]
+    public unsafe partial struct PipelineVertexInputDivisorStateCreateInfoEXT
     {
         public PipelineVertexInputDivisorStateCreateInfoEXT
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             VertexInputBindingDivisorDescriptionEXT* pVertexBindingDivisors = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           VertexBindingDivisorCount = vertexBindingDivisorCount;
-           PVertexBindingDivisors = pVertexBindingDivisors;
+            SType = sType;
+            PNext = pNext;
+            VertexBindingDivisorCount = vertexBindingDivisorCount;
+            PVertexBindingDivisors = pVertexBindingDivisors;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vertexBindingDivisorCount")]
         public uint VertexBindingDivisorCount;
 /// <summary></summary>
+        [NativeName("Type", "VkVertexInputBindingDivisorDescriptionEXT*")]
+        [NativeName("Type.Name", "VkVertexInputBindingDivisorDescriptionEXT")]
+        [NativeName("Name", "pVertexBindingDivisors")]
         public VertexInputBindingDivisorDescriptionEXT* PVertexBindingDivisors;
     }
 }

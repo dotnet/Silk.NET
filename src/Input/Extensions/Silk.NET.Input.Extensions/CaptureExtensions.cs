@@ -1,6 +1,4 @@
-﻿using Silk.NET.Input.Common;
-
-namespace Silk.NET.Input.Extensions
+﻿namespace Silk.NET.Input.Extensions
 {
     public static class CaptureExtensions
     {

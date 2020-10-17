@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct InputAttachmentAspectReferenceKHR
+    [NativeName("Name", "VkInputAttachmentAspectReferenceKHR")]
+    public unsafe partial struct InputAttachmentAspectReferenceKHR
     {
         public InputAttachmentAspectReferenceKHR
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             ImageAspectFlags aspectMask = default
         )
         {
-           Subpass = subpass;
-           InputAttachmentIndex = inputAttachmentIndex;
-           AspectMask = aspectMask;
+            Subpass = subpass;
+            InputAttachmentIndex = inputAttachmentIndex;
+            AspectMask = aspectMask;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "subpass")]
         public uint Subpass;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "inputAttachmentIndex")]
         public uint InputAttachmentIndex;
 /// <summary></summary>
+        [NativeName("Type", "VkImageAspectFlags")]
+        [NativeName("Type.Name", "VkImageAspectFlags")]
+        [NativeName("Name", "aspectMask")]
         public ImageAspectFlags AspectMask;
     }
 }

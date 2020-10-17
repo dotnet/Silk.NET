@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MemoryHeap
+    [NativeName("Name", "VkMemoryHeap")]
+    public unsafe partial struct MemoryHeap
     {
         public MemoryHeap
         (
@@ -22,13 +25,19 @@ namespace Silk.NET.Vulkan
             MemoryHeapFlags flags = default
         )
         {
-           Size = size;
-           Flags = flags;
+            Size = size;
+            Flags = flags;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "size")]
         public ulong Size;
 /// <summary></summary>
+        [NativeName("Type", "VkMemoryHeapFlags")]
+        [NativeName("Type.Name", "VkMemoryHeapFlags")]
+        [NativeName("Name", "flags")]
         public MemoryHeapFlags Flags;
     }
 }

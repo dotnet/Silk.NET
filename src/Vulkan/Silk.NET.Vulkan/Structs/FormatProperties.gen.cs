@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct FormatProperties
+    [NativeName("Name", "VkFormatProperties")]
+    public unsafe partial struct FormatProperties
     {
         public FormatProperties
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             FormatFeatureFlags bufferFeatures = default
         )
         {
-           LinearTilingFeatures = linearTilingFeatures;
-           OptimalTilingFeatures = optimalTilingFeatures;
-           BufferFeatures = bufferFeatures;
+            LinearTilingFeatures = linearTilingFeatures;
+            OptimalTilingFeatures = optimalTilingFeatures;
+            BufferFeatures = bufferFeatures;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkFormatFeatureFlags")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags")]
+        [NativeName("Name", "linearTilingFeatures")]
         public FormatFeatureFlags LinearTilingFeatures;
 /// <summary></summary>
+        [NativeName("Type", "VkFormatFeatureFlags")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags")]
+        [NativeName("Name", "optimalTilingFeatures")]
         public FormatFeatureFlags OptimalTilingFeatures;
 /// <summary></summary>
+        [NativeName("Type", "VkFormatFeatureFlags")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags")]
+        [NativeName("Name", "bufferFeatures")]
         public FormatFeatureFlags BufferFeatures;
     }
 }

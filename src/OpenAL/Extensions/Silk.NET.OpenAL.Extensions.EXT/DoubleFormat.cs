@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
+
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
@@ -12,11 +14,11 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_double")]
     [NativeApi(Prefix = "al")]
-    public abstract class DoubleFormat : FormatExtensionBase<DoubleBufferFormat>
+    public partial class DoubleFormat : FormatExtensionBase<DoubleBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected DoubleFormat(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected DoubleFormat(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

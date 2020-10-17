@@ -4,10 +4,8 @@ using System.Drawing;
 using System.Linq;
 using Silk.NET.GLFW;
 using Silk.NET.Input;
-using Silk.NET.Input.Common;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
-using MouseButton = Silk.NET.Input.Common.MouseButton;
+using MouseButton = Silk.NET.Input.MouseButton;
 
 namespace InputTest
 {
@@ -15,8 +13,9 @@ namespace InputTest
     {
         private static void Main()
         {
+            //Window.PrioritizeSdl();
+            
             var opts = WindowOptions.Default;
-            opts.UseSingleThreadedWindow = false;
             opts.FramesPerSecond = 60;
             opts.UpdatesPerSecond = 60;
             var window = Window.Create(opts);
@@ -113,9 +112,15 @@ namespace InputTest
                     gamepad.ButtonUp += InputGamepadOnButtonUp;
                     gamepad.ThumbstickMoved += GamepadOnThumbstickMoved;
                     gamepad.TriggerMoved += GamepadOnTriggerMoved;
+<<<<<<< HEAD
                     Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
                     GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
                     Console.WriteLine("Button Count: " + count + " Expected Button Count: " + Enum.GetValues(typeof(GamepadButton)).Length);
+=======
+                    //Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
+                    //GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
+                    //Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
+>>>>>>> 2.0
                 }
                 else
                 {
@@ -194,6 +199,8 @@ namespace InputTest
                     mouse.MouseMove -= MouseOnMouseMove;
                 }
 
+                mouse.Cursor.IsConfined = true;
+
                 Console.Write("    Buttons: ");
                 Console.WriteLine(string.Join(", ", mouse.SupportedButtons.Select(x => x)));
                 Console.WriteLine($"    {mouse.ScrollWheels.Count} scroll wheels.");
@@ -225,12 +232,12 @@ namespace InputTest
             Console.WriteLine($"M{arg1.Index}> {arg2} up.");
         }
 
-        private static void MouseOnClick(IMouse arg1, MouseButton arg2)
+        private static void MouseOnClick(IMouse arg1, MouseButton arg2, PointF pos)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} single click.");
         }
 
-        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2)
+        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2, PointF pos)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} double click.");
         }

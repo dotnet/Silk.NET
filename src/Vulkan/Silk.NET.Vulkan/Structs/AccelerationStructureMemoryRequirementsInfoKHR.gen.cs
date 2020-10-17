@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct AccelerationStructureMemoryRequirementsInfoKHR
+    [NativeName("Name", "VkAccelerationStructureMemoryRequirementsInfoKHR")]
+    public unsafe partial struct AccelerationStructureMemoryRequirementsInfoKHR
     {
         public AccelerationStructureMemoryRequirementsInfoKHR
         (
@@ -25,22 +28,37 @@ namespace Silk.NET.Vulkan
             AccelerationStructureKHR accelerationStructure = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Type = type;
-           BuildType = buildType;
-           AccelerationStructure = accelerationStructure;
+            SType = sType;
+            PNext = pNext;
+            Type = type;
+            BuildType = buildType;
+            AccelerationStructure = accelerationStructure;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureMemoryRequirementsTypeKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureMemoryRequirementsTypeKHR")]
+        [NativeName("Name", "type")]
         public AccelerationStructureMemoryRequirementsTypeKHR Type;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureBuildTypeKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureBuildTypeKHR")]
+        [NativeName("Name", "buildType")]
         public AccelerationStructureBuildTypeKHR BuildType;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Name", "accelerationStructure")]
         public AccelerationStructureKHR AccelerationStructure;
     }
 }

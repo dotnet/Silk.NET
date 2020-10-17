@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES
 {
+    [NativeName("Name", "VariantCapEXT")]
     public enum VariantCapEXT
     {
+        [NativeName("Name", "GL_VARIANT_ARRAY_EXT")]
         VariantArrayExt = 0x87E8,
     }
 }

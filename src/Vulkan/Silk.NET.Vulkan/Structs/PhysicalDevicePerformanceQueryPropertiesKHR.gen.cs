@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDevicePerformanceQueryPropertiesKHR
+    [NativeName("Name", "VkPhysicalDevicePerformanceQueryPropertiesKHR")]
+    public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
     {
         public PhysicalDevicePerformanceQueryPropertiesKHR
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             Bool32 allowCommandBufferQueryCopies = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies;
+            SType = sType;
+            PNext = pNext;
+            AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "allowCommandBufferQueryCopies")]
         public Bool32 AllowCommandBufferQueryCopies;
     }
 }

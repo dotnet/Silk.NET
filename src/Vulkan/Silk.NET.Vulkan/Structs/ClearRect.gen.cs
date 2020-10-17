@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ClearRect
+    [NativeName("Name", "VkClearRect")]
+    public unsafe partial struct ClearRect
     {
         public ClearRect
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             uint layerCount = default
         )
         {
-           Rect = rect;
-           BaseArrayLayer = baseArrayLayer;
-           LayerCount = layerCount;
+            Rect = rect;
+            BaseArrayLayer = baseArrayLayer;
+            LayerCount = layerCount;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkRect2D")]
+        [NativeName("Type.Name", "VkRect2D")]
+        [NativeName("Name", "rect")]
         public Rect2D Rect;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "baseArrayLayer")]
         public uint BaseArrayLayer;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "layerCount")]
         public uint LayerCount;
     }
 }

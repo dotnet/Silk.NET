@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DeviceDiagnosticsConfigCreateInfoNV
+    [NativeName("Name", "VkDeviceDiagnosticsConfigCreateInfoNV")]
+    public unsafe partial struct DeviceDiagnosticsConfigCreateInfoNV
     {
         public DeviceDiagnosticsConfigCreateInfoNV
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             DeviceDiagnosticsConfigFlagsNV flags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceDiagnosticsConfigFlagsNV")]
+        [NativeName("Type.Name", "VkDeviceDiagnosticsConfigFlagsNV")]
+        [NativeName("Name", "flags")]
         public DeviceDiagnosticsConfigFlagsNV Flags;
     }
 }

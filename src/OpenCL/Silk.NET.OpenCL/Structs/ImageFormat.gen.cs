@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL
 {
-    public unsafe struct ImageFormat
+    [NativeName("Name", "cl_image_format")]
+    public unsafe partial struct ImageFormat
     {
         public ImageFormat
         (
@@ -22,13 +25,19 @@ namespace Silk.NET.OpenCL
             uint imageChannelDataType = default
         )
         {
-           ImageChannelOrder = imageChannelOrder;
-           ImageChannelDataType = imageChannelDataType;
+            ImageChannelOrder = imageChannelOrder;
+            ImageChannelDataType = imageChannelDataType;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "cl_channel_order")]
+        [NativeName("Type.Name", "cl_channel_order")]
+        [NativeName("Name", "image_channel_order")]
         public uint ImageChannelOrder;
 /// <summary></summary>
+        [NativeName("Type", "cl_channel_type")]
+        [NativeName("Type.Name", "cl_channel_type")]
+        [NativeName("Name", "image_channel_data_type")]
         public uint ImageChannelDataType;
     }
 }

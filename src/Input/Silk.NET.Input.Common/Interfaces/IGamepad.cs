@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Represents a gamepad/controller with a set amount of thumbsticks, buttons, and triggers.
@@ -44,7 +44,11 @@ namespace Silk.NET.Input.Common
         /// <remarks>
         /// This event is only called when the button is first pressed, and not every frame where the button is still pressed.
         /// </remarks>
+<<<<<<< HEAD
         event Action<IGamepad, Button> ButtonDown;
+=======
+        event Action<IGamepad, Button>? ButtonDown;
+>>>>>>> 2.0
 
         /// <summary>
         /// Called when a button is released.
@@ -52,16 +56,24 @@ namespace Silk.NET.Input.Common
         /// <remarks>
         /// This event is only called when the button is first released, and not every frame where the button is still released.
         /// </remarks>
+<<<<<<< HEAD
         event Action<IGamepad, Button> ButtonUp;
+=======
+        event Action<IGamepad, Button>? ButtonUp;
+>>>>>>> 2.0
 
         /// <summary>
         /// Called when a thumbstick is moved.
         /// </summary>
+<<<<<<< HEAD
         event Action<IGamepad, Thumbstick> ThumbstickMoved;
+=======
+        event Action<IGamepad, Thumbstick>? ThumbstickMoved;
+>>>>>>> 2.0
 
         /// <summary>
         /// Called when a trigger is moved.
         /// </summary>
-        event Action<IGamepad, Trigger> TriggerMoved;
+        event Action<IGamepad, Trigger>? TriggerMoved;
     }
 }

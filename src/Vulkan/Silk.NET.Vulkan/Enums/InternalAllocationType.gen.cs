@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkInternalAllocationType")]
     public enum InternalAllocationType
     {
+        [NativeName("Name", "VK_INTERNAL_ALLOCATION_TYPE_EXECUTABLE")]
         Executable = 0,
     }
 }

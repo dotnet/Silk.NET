@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SemaphoreGetFdInfoKHR
+    [NativeName("Name", "VkSemaphoreGetFdInfoKHR")]
+    public unsafe partial struct SemaphoreGetFdInfoKHR
     {
         public SemaphoreGetFdInfoKHR
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             ExternalSemaphoreHandleTypeFlags handleType = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Semaphore = semaphore;
-           HandleType = handleType;
+            SType = sType;
+            PNext = pNext;
+            Semaphore = semaphore;
+            HandleType = handleType;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkSemaphore")]
+        [NativeName("Type.Name", "VkSemaphore")]
+        [NativeName("Name", "semaphore")]
         public Semaphore Semaphore;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalSemaphoreHandleTypeFlagBits")]
+        [NativeName("Type.Name", "VkExternalSemaphoreHandleTypeFlagBits")]
+        [NativeName("Name", "handleType")]
         public ExternalSemaphoreHandleTypeFlags HandleType;
     }
 }

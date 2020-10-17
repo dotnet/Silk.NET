@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct FenceGetWin32HandleInfoKHR
+    [NativeName("Name", "VkFenceGetWin32HandleInfoKHR")]
+    public unsafe partial struct FenceGetWin32HandleInfoKHR
     {
         public FenceGetWin32HandleInfoKHR
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             ExternalFenceHandleTypeFlags handleType = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Fence = fence;
-           HandleType = handleType;
+            SType = sType;
+            PNext = pNext;
+            Fence = fence;
+            HandleType = handleType;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkFence")]
+        [NativeName("Type.Name", "VkFence")]
+        [NativeName("Name", "fence")]
         public Fence Fence;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalFenceHandleTypeFlagBits")]
+        [NativeName("Type.Name", "VkExternalFenceHandleTypeFlagBits")]
+        [NativeName("Name", "handleType")]
         public ExternalFenceHandleTypeFlags HandleType;
     }
 }

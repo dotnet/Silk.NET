@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ConformanceVersion
+    [NativeName("Name", "VkConformanceVersion")]
+    public unsafe partial struct ConformanceVersion
     {
         public ConformanceVersion
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             byte patch = default
         )
         {
-           Major = major;
-           Minor = minor;
-           Subminor = subminor;
-           Patch = patch;
+            Major = major;
+            Minor = minor;
+            Subminor = subminor;
+            Patch = patch;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "major")]
         public byte Major;
 /// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "minor")]
         public byte Minor;
 /// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "subminor")]
         public byte Subminor;
 /// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "patch")]
         public byte Patch;
     }
 }

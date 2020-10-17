@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DisplayModePropertiesKHR
+    [NativeName("Name", "VkDisplayModePropertiesKHR")]
+    public unsafe partial struct DisplayModePropertiesKHR
     {
         public DisplayModePropertiesKHR
         (
@@ -22,13 +25,19 @@ namespace Silk.NET.Vulkan
             DisplayModeParametersKHR parameters = default
         )
         {
-           DisplayMode = displayMode;
-           Parameters = parameters;
+            DisplayMode = displayMode;
+            Parameters = parameters;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkDisplayModeKHR")]
+        [NativeName("Type.Name", "VkDisplayModeKHR")]
+        [NativeName("Name", "displayMode")]
         public DisplayModeKHR DisplayMode;
 /// <summary></summary>
+        [NativeName("Type", "VkDisplayModeParametersKHR")]
+        [NativeName("Type.Name", "VkDisplayModeParametersKHR")]
+        [NativeName("Name", "parameters")]
         public DisplayModeParametersKHR Parameters;
     }
 }

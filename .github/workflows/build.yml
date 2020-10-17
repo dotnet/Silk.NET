@@ -16,11 +16,11 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.401
+        dotnet-version: 5.0.100-rc.1.20452.10
     - name: Test
       run: dotnet test --verbosity normal
     - name: Pack
-      run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0
+      run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0 -p:ContinuousIntegrationBuild=true
     - name: Setup NuGet
       if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
       uses: nuget/setup-nuget@v1

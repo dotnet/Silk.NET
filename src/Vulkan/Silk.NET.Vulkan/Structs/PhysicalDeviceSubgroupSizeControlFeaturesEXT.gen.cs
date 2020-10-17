@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceSubgroupSizeControlFeaturesEXT
+    [NativeName("Name", "VkPhysicalDeviceSubgroupSizeControlFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeaturesEXT
     {
         public PhysicalDeviceSubgroupSizeControlFeaturesEXT
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             Bool32 computeFullSubgroups = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SubgroupSizeControl = subgroupSizeControl;
-           ComputeFullSubgroups = computeFullSubgroups;
+            SType = sType;
+            PNext = pNext;
+            SubgroupSizeControl = subgroupSizeControl;
+            ComputeFullSubgroups = computeFullSubgroups;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "subgroupSizeControl")]
         public Bool32 SubgroupSizeControl;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "computeFullSubgroups")]
         public Bool32 ComputeFullSubgroups;
     }
 }

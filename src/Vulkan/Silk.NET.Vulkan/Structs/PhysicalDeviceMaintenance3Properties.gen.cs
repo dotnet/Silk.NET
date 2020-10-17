@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceMaintenance3Properties
+    [NativeName("Name", "VkPhysicalDeviceMaintenance3Properties")]
+    public unsafe partial struct PhysicalDeviceMaintenance3Properties
     {
         public PhysicalDeviceMaintenance3Properties
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             ulong maxMemoryAllocationSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxPerSetDescriptors = maxPerSetDescriptors;
-           MaxMemoryAllocationSize = maxMemoryAllocationSize;
+            SType = sType;
+            PNext = pNext;
+            MaxPerSetDescriptors = maxPerSetDescriptors;
+            MaxMemoryAllocationSize = maxMemoryAllocationSize;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPerSetDescriptors")]
         public uint MaxPerSetDescriptors;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "maxMemoryAllocationSize")]
         public ulong MaxMemoryAllocationSize;
     }
 }

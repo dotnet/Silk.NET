@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DisplayModeParametersKHR
+    [NativeName("Name", "VkDisplayModeParametersKHR")]
+    public unsafe partial struct DisplayModeParametersKHR
     {
         public DisplayModeParametersKHR
         (
@@ -22,13 +25,19 @@ namespace Silk.NET.Vulkan
             uint refreshRate = default
         )
         {
-           VisibleRegion = visibleRegion;
-           RefreshRate = refreshRate;
+            VisibleRegion = visibleRegion;
+            RefreshRate = refreshRate;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "visibleRegion")]
         public Extent2D VisibleRegion;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "refreshRate")]
         public uint RefreshRate;
     }
 }

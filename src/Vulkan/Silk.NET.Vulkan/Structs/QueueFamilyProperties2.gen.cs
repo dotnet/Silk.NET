@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct QueueFamilyProperties2
+    [NativeName("Name", "VkQueueFamilyProperties2")]
+    public unsafe partial struct QueueFamilyProperties2
     {
         public QueueFamilyProperties2
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             QueueFamilyProperties queueFamilyProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           QueueFamilyProperties = queueFamilyProperties;
+            SType = sType;
+            PNext = pNext;
+            QueueFamilyProperties = queueFamilyProperties;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkQueueFamilyProperties")]
+        [NativeName("Type.Name", "VkQueueFamilyProperties")]
+        [NativeName("Name", "queueFamilyProperties")]
         public QueueFamilyProperties QueueFamilyProperties;
     }
 }

@@ -3,24 +3,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using Microsoft.Extensions.DependencyModel;
+using Silk.NET.Core;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.Core.Platform;
-using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenGLES
 {
     public partial class GL
     {
-        [Obsolete
-        (
-            "Parameterless GetApi calls are deprecated and will be removed in a future release. Please create" +
-            "your GL instances using a context"
-        )]
-        public static GL GetApi() => LibraryLoader<GL>.Load
-            (new OpenGLESLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
-
         public static GL GetApi(IGLContextSource contextSource) => GetApi
         (
             contextSource.GLContext ?? throw new InvalidOperationException
@@ -30,13 +23,18 @@ namespace Silk.NET.OpenGLES
         public static GL GetApi(IGLContext ctx) => GetApi((INativeContext)ctx);
         public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
 
-        public static GL GetApi(INativeContext ctx) => LibraryActivator.CreateInstance<GL>
-            (new OpenGLESLibraryNameContainer().GetLibraryName(), SilkManager.Get(ctx));
+        public static GL GetApi(INativeContext ctx) => new GL(ctx);
 
         public bool TryGetExtension<T>(out T ext)
             where T : NativeExtension<GL>
         {
+<<<<<<< HEAD
             ext = LibraryLoader<GL>.Load<T>(this);
+=======
+            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T)Activator.CreateInstance(typeof(T), Context)
+                : null;
+>>>>>>> 2.0
             return ext != null;
         }
 
@@ -44,7 +42,11 @@ namespace Silk.NET.OpenGLES
         public override bool IsExtensionPresent(string extension)
         {
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
+<<<<<<< HEAD
                 .Select(x => GetString(StringName.Extensions, (uint)x)).ToList();
+=======
+                .Select(x => GetStringS(StringName.Extensions, (uint) x)).ToList();
+>>>>>>> 2.0
 
             return _extensions.Contains("GL_" + (extension.StartsWith("GL_") ? extension.Substring(3) : extension));
         }
@@ -134,7 +136,11 @@ namespace Silk.NET.OpenGLES
             GetProgram(program, GLEnum.ActiveAttributeMaxLength, out var lengthTmp);
             length = (uint)lengthTmp;
 
+<<<<<<< HEAD
             GetActiveAttrib(program, index, (uint)(length == 0 ? 1 : length * 2), out length, out size, out type, out var str);
+=======
+            GetActiveAttrib(program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out string str);
+>>>>>>> 2.0
 
             return str.Substring(0, (int)length);
         }

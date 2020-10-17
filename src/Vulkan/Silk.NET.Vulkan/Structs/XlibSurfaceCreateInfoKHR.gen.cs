@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct XlibSurfaceCreateInfoKHR
+    [NativeName("Name", "VkXlibSurfaceCreateInfoKHR")]
+    public unsafe partial struct XlibSurfaceCreateInfoKHR
     {
         public XlibSurfaceCreateInfoKHR
         (
@@ -25,22 +28,37 @@ namespace Silk.NET.Vulkan
             IntPtr window = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Dpy = dpy;
-           Window = window;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Dpy = dpy;
+            Window = window;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkXlibSurfaceCreateFlagsKHR")]
+        [NativeName("Type.Name", "VkXlibSurfaceCreateFlagsKHR")]
+        [NativeName("Name", "flags")]
         public uint Flags;
 /// <summary></summary>
+        [NativeName("Type", "Display*")]
+        [NativeName("Type.Name", "Display")]
+        [NativeName("Name", "dpy")]
         public IntPtr* Dpy;
 /// <summary></summary>
+        [NativeName("Type", "Window")]
+        [NativeName("Type.Name", "Window")]
+        [NativeName("Name", "window")]
         public IntPtr Window;
     }
 }

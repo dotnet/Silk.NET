@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDevicePushDescriptorPropertiesKHR
+    [NativeName("Name", "VkPhysicalDevicePushDescriptorPropertiesKHR")]
+    public unsafe partial struct PhysicalDevicePushDescriptorPropertiesKHR
     {
         public PhysicalDevicePushDescriptorPropertiesKHR
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             uint maxPushDescriptors = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxPushDescriptors = maxPushDescriptors;
+            SType = sType;
+            PNext = pNext;
+            MaxPushDescriptors = maxPushDescriptors;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPushDescriptors")]
         public uint MaxPushDescriptors;
     }
 }

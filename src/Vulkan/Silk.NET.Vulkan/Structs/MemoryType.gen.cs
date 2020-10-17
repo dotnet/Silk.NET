@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MemoryType
+    [NativeName("Name", "VkMemoryType")]
+    public unsafe partial struct MemoryType
     {
         public MemoryType
         (
@@ -22,13 +25,19 @@ namespace Silk.NET.Vulkan
             uint heapIndex = default
         )
         {
-           PropertyFlags = propertyFlags;
-           HeapIndex = heapIndex;
+            PropertyFlags = propertyFlags;
+            HeapIndex = heapIndex;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkMemoryPropertyFlags")]
+        [NativeName("Type.Name", "VkMemoryPropertyFlags")]
+        [NativeName("Name", "propertyFlags")]
         public MemoryPropertyFlags PropertyFlags;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "heapIndex")]
         public uint HeapIndex;
     }
 }

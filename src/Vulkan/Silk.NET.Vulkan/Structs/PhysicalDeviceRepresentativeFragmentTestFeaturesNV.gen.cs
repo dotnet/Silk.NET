@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
+    [NativeName("Name", "VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV")]
+    public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
     {
         public PhysicalDeviceRepresentativeFragmentTestFeaturesNV
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             Bool32 representativeFragmentTest = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RepresentativeFragmentTest = representativeFragmentTest;
+            SType = sType;
+            PNext = pNext;
+            RepresentativeFragmentTest = representativeFragmentTest;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "representativeFragmentTest")]
         public Bool32 RepresentativeFragmentTest;
     }
 }

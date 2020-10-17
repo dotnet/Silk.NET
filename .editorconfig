@@ -67,3 +67,9 @@ resharper_web_config_wrong_module_highlighting = warning
 indent_style = space
 indent_size = 4
 tab_width = 4
+
+# Silk Touch options
+silk_touch_vtable_generate = true
+silk_touch_vtable_tree_emit_assert = true
+silk_touch_sealed_vtable_creation = true
+silk_touch_vtable_preload = false

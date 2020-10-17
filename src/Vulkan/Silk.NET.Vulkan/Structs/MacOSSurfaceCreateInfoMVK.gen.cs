@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MacOSSurfaceCreateInfoMVK
+    [NativeName("Name", "VkMacOSSurfaceCreateInfoMVK")]
+    public unsafe partial struct MacOSSurfaceCreateInfoMVK
     {
         public MacOSSurfaceCreateInfoMVK
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             void* pView = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PView = pView;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PView = pView;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkMacOSSurfaceCreateFlagsMVK")]
+        [NativeName("Type.Name", "VkMacOSSurfaceCreateFlagsMVK")]
+        [NativeName("Name", "flags")]
         public uint Flags;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pView")]
         public void* PView;
     }
 }

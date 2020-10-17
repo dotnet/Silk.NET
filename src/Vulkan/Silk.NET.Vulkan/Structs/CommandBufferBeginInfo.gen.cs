@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct CommandBufferBeginInfo
+    [NativeName("Name", "VkCommandBufferBeginInfo")]
+    public unsafe partial struct CommandBufferBeginInfo
     {
         public CommandBufferBeginInfo
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.Vulkan
             CommandBufferInheritanceInfo* pInheritanceInfo = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PInheritanceInfo = pInheritanceInfo;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PInheritanceInfo = pInheritanceInfo;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkCommandBufferUsageFlags")]
+        [NativeName("Type.Name", "VkCommandBufferUsageFlags")]
+        [NativeName("Name", "flags")]
         public CommandBufferUsageFlags Flags;
 /// <summary></summary>
+        [NativeName("Type", "VkCommandBufferInheritanceInfo*")]
+        [NativeName("Type.Name", "VkCommandBufferInheritanceInfo")]
+        [NativeName("Name", "pInheritanceInfo")]
         public CommandBufferInheritanceInfo* PInheritanceInfo;
     }
 }

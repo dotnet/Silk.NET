@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DisplayPowerInfoEXT
+    [NativeName("Name", "VkDisplayPowerInfoEXT")]
+    public unsafe partial struct DisplayPowerInfoEXT
     {
         public DisplayPowerInfoEXT
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             DisplayPowerStateEXT powerState = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PowerState = powerState;
+            SType = sType;
+            PNext = pNext;
+            PowerState = powerState;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDisplayPowerStateEXT")]
+        [NativeName("Type.Name", "VkDisplayPowerStateEXT")]
+        [NativeName("Name", "powerState")]
         public DisplayPowerStateEXT PowerState;
     }
 }

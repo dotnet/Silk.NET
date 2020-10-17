@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
+    [NativeName("Name", "VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL")]
+    public unsafe partial struct PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
     {
         public PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             Bool32 shaderIntegerFunctions2 = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderIntegerFunctions2 = shaderIntegerFunctions2;
+            SType = sType;
+            PNext = pNext;
+            ShaderIntegerFunctions2 = shaderIntegerFunctions2;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderIntegerFunctions2")]
         public Bool32 ShaderIntegerFunctions2;
     }
 }

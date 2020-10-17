@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ImageViewASTCDecodeModeEXT
+    [NativeName("Name", "VkImageViewASTCDecodeModeEXT")]
+    public unsafe partial struct ImageViewASTCDecodeModeEXT
     {
         public ImageViewASTCDecodeModeEXT
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             Format decodeMode = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DecodeMode = decodeMode;
+            SType = sType;
+            PNext = pNext;
+            DecodeMode = decodeMode;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "decodeMode")]
         public Format DecodeMode;
     }
 }

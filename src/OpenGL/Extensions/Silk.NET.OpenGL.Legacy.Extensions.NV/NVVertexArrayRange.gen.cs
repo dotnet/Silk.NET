@@ -6,53 +6,30 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_vertex_array_range")]
-    public abstract unsafe partial class NVVertexArrayRange : NativeExtension<GL>
+    public unsafe partial class NVVertexArrayRange : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_vertex_array_range";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeNV")]
-        public abstract void FlushVertexArrayRange();
+        public partial void FlushVertexArrayRange();
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="length">
-        /// To be added.
-        /// </param>
-        /// <param name="pointer">
-        /// To be added.
-        /// This parameter's element count is computed from length.
-        /// </param>
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
-        public abstract unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="length">
-        /// To be added.
-        /// </param>
-        /// <param name="pointer">
-        /// To be added.
-        /// This parameter's element count is computed from length.
-        /// </param>
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
-        public abstract void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
-        public NVVertexArrayRange(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVVertexArrayRange(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

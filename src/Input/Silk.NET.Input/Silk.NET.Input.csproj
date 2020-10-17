@@ -2,11 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <IncludeBuildOutput>false</IncludeBuildOutput> <!-- Metapackage -->
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
-      <ProjectReference Include="..\Silk.NET.Input.Desktop\Silk.NET.Input.Desktop.csproj" />
+      <ProjectReference Include="..\Silk.NET.Input.Glfw\Silk.NET.Input.Glfw.csproj" />
+      <ProjectReference Include="..\Silk.NET.Input.Sdl\Silk.NET.Input.Sdl.csproj" />
     </ItemGroup>
     
     <Import Project="..\..\..\build\props\common.props" />

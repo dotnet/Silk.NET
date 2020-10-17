@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceMultiviewFeaturesKHR
+    [NativeName("Name", "VkPhysicalDeviceMultiviewFeaturesKHR")]
+    public unsafe partial struct PhysicalDeviceMultiviewFeaturesKHR
     {
         public PhysicalDeviceMultiviewFeaturesKHR
         (
@@ -25,22 +28,37 @@ namespace Silk.NET.Vulkan
             Bool32 multiviewTessellationShader = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Multiview = multiview;
-           MultiviewGeometryShader = multiviewGeometryShader;
-           MultiviewTessellationShader = multiviewTessellationShader;
+            SType = sType;
+            PNext = pNext;
+            Multiview = multiview;
+            MultiviewGeometryShader = multiviewGeometryShader;
+            MultiviewTessellationShader = multiviewTessellationShader;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "multiview")]
         public Bool32 Multiview;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "multiviewGeometryShader")]
         public Bool32 MultiviewGeometryShader;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "multiviewTessellationShader")]
         public Bool32 MultiviewTessellationShader;
     }
 }

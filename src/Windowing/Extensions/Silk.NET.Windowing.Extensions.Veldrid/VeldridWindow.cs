@@ -8,15 +8,13 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
+using Silk.NET.Core.Loader;
 using Silk.NET.GLFW;
-using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Desktop;
-using Ultz.SuperInvoke.Loader;
 using Veldrid;
 using Veldrid.OpenGL;
 using Veldrid.Vk;
 using Vulkan.Xlib;
-using VideoMode = Silk.NET.Windowing.Common.VideoMode;
+using VideoMode = Silk.NET.Windowing.VideoMode;
 using XWindow = Vulkan.Xlib.Window;
 
 namespace Silk.NET.Windowing.Extensions.Veldrid
@@ -80,7 +78,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             var opts = new WindowOptions
             (
                 windowCI.IsVisible,
-                true,
                 windowCI.Position,
                 windowCI.Size,
                 -1,
@@ -95,8 +92,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 windowCI.Title,
                 WindowState.Normal,
                 WindowBorder.Resizable,
-                deviceOptions.SyncToVerticalBlank ? VSyncMode.On : VSyncMode.Off,
-                5,
+                deviceOptions.SyncToVerticalBlank,
                 false,
                 VideoMode.Default,
                 null
@@ -107,7 +103,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 SetGlContextAttributes(deviceOptions, preferredBackend, ref opts);
             }
 
-            window = GlfwPlatform.Instance.CreateWindow(opts);
+            window = Window.Create(opts);
             window.Initialize();
             window.WindowState = windowCI.WindowState;
             gd = CreateGraphicsDevice(window, deviceOptions, preferredBackend);
@@ -174,7 +170,8 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
 
         private static unsafe SwapchainSource GetSwapchainSource(IView view)
         {
-            if (view.GetType().FullName == "Silk.NET.Windowing.Desktop.GlfwWindow")
+            if (view.GetType().FullName == "Silk.NET.Windowing.Desktop.GlfwWindow" ||
+                view.GetType().FullName == "Silk.NET.Windowing.Glfw.GlfwWindow")
             {
                 var handle = (WindowHandle*) view.Handle;
                 var glfw = GlfwProvider.GLFW.Value;

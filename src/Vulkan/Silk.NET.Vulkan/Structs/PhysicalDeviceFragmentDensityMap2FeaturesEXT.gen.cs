@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
+    [NativeName("Name", "VkPhysicalDeviceFragmentDensityMap2FeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
     {
         public PhysicalDeviceFragmentDensityMap2FeaturesEXT
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             Bool32 fragmentDensityMapDeferred = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FragmentDensityMapDeferred = fragmentDensityMapDeferred;
+            SType = sType;
+            PNext = pNext;
+            FragmentDensityMapDeferred = fragmentDensityMapDeferred;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "fragmentDensityMapDeferred")]
         public Bool32 FragmentDensityMapDeferred;
     }
 }

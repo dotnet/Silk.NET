@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DisplayEventInfoEXT
+    [NativeName("Name", "VkDisplayEventInfoEXT")]
+    public unsafe partial struct DisplayEventInfoEXT
     {
         public DisplayEventInfoEXT
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             DisplayEventTypeEXT displayEvent = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DisplayEvent = displayEvent;
+            SType = sType;
+            PNext = pNext;
+            DisplayEvent = displayEvent;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDisplayEventTypeEXT")]
+        [NativeName("Type.Name", "VkDisplayEventTypeEXT")]
+        [NativeName("Name", "displayEvent")]
         public DisplayEventTypeEXT DisplayEvent;
     }
 }

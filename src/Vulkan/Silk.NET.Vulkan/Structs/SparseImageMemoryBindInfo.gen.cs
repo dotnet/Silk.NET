@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SparseImageMemoryBindInfo
+    [NativeName("Name", "VkSparseImageMemoryBindInfo")]
+    public unsafe partial struct SparseImageMemoryBindInfo
     {
         public SparseImageMemoryBindInfo
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             SparseImageMemoryBind* pBinds = default
         )
         {
-           Image = image;
-           BindCount = bindCount;
-           PBinds = pBinds;
+            Image = image;
+            BindCount = bindCount;
+            PBinds = pBinds;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkImage")]
+        [NativeName("Type.Name", "VkImage")]
+        [NativeName("Name", "image")]
         public Image Image;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "bindCount")]
         public uint BindCount;
 /// <summary></summary>
+        [NativeName("Type", "VkSparseImageMemoryBind*")]
+        [NativeName("Type.Name", "VkSparseImageMemoryBind")]
+        [NativeName("Name", "pBinds")]
         public SparseImageMemoryBind* PBinds;
     }
 }

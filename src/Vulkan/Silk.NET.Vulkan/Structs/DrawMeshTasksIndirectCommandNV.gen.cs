@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DrawMeshTasksIndirectCommandNV
+    [NativeName("Name", "VkDrawMeshTasksIndirectCommandNV")]
+    public unsafe partial struct DrawMeshTasksIndirectCommandNV
     {
         public DrawMeshTasksIndirectCommandNV
         (
@@ -22,13 +25,19 @@ namespace Silk.NET.Vulkan
             uint firstTask = default
         )
         {
-           TaskCount = taskCount;
-           FirstTask = firstTask;
+            TaskCount = taskCount;
+            FirstTask = firstTask;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "taskCount")]
         public uint TaskCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "firstTask")]
         public uint FirstTask;
     }
 }

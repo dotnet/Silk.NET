@@ -5,9 +5,9 @@
 
 using System;
 using System.Drawing;
-using Silk.NET.Windowing.Common.Structs;
+using Silk.NET.Core;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// An interface representing a window.
@@ -21,18 +21,23 @@ namespace Silk.NET.Windowing.Common
         /// <remarks>
         /// This may be a <see cref="IWindow"/> or a <see cref="IMonitor"/>.
         /// </remarks>
-        IWindowHost Parent { get; }
+        IWindowHost? Parent { get; }
 
         /// <summary>
         /// Gets the monitor on which this window is active.
         /// </summary>
+<<<<<<< HEAD
         IMonitor Monitor { get; set; }
+=======
+        IMonitor? Monitor { get; set; }
+>>>>>>> 2.0
 
         /// <summary>
         /// Gets or sets whether the window has been requested to close.
         /// </summary>
         new bool IsClosing { get; set; }
 
+<<<<<<< HEAD
         /// <summary>
         /// Gets the distances in screen coordinates from the edges of the content area to the corresponding edges of
         /// the full window.
@@ -44,25 +49,27 @@ namespace Silk.NET.Windowing.Common
         // This is in IWindow because it can't be configured.
         Rectangle BorderSize { get; }
 
+=======
+>>>>>>> 2.0
         /// <summary>
         /// Raised when the window is moved.
         /// </summary>
-        event Action<Point> Move;
+        event Action<Point>? Move;
 
         /// <summary>
         /// Raised when the window state is changed.
         /// </summary>
-        event Action<WindowState> StateChanged;
+        event Action<WindowState>? StateChanged;
 
         /// <summary>
         /// Raised when the user drops files onto the window.
         /// </summary>
-        event Action<string[]> FileDrop;
+        event Action<string[]>? FileDrop;
 
         /// <summary>
         /// Sets the window icons.
         /// </summary>
         /// <param name="icons">Either a collection of window icons, or null to set to the default icon.</param>
-        void SetWindowIcon(Span<WindowIcon> icons);
+        void SetWindowIcon(ReadOnlySpan<RawImage> icons);
     }
 }

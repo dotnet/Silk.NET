@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
+    [NativeName("Name", "VkPhysicalDeviceYcbcrImageArraysFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
     {
         public PhysicalDeviceYcbcrImageArraysFeaturesEXT
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             Bool32 ycbcrImageArrays = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           YcbcrImageArrays = ycbcrImageArrays;
+            SType = sType;
+            PNext = pNext;
+            YcbcrImageArrays = ycbcrImageArrays;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "ycbcrImageArrays")]
         public Bool32 YcbcrImageArrays;
     }
 }

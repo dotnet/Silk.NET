@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DrawIndexedIndirectCommand
+    [NativeName("Name", "VkDrawIndexedIndirectCommand")]
+    public unsafe partial struct DrawIndexedIndirectCommand
     {
         public DrawIndexedIndirectCommand
         (
@@ -25,22 +28,37 @@ namespace Silk.NET.Vulkan
             uint firstInstance = default
         )
         {
-           IndexCount = indexCount;
-           InstanceCount = instanceCount;
-           FirstIndex = firstIndex;
-           VertexOffset = vertexOffset;
-           FirstInstance = firstInstance;
+            IndexCount = indexCount;
+            InstanceCount = instanceCount;
+            FirstIndex = firstIndex;
+            VertexOffset = vertexOffset;
+            FirstInstance = firstInstance;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "indexCount")]
         public uint IndexCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "instanceCount")]
         public uint InstanceCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "firstIndex")]
         public uint FirstIndex;
 /// <summary></summary>
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "vertexOffset")]
         public int VertexOffset;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "firstInstance")]
         public uint FirstInstance;
     }
 }

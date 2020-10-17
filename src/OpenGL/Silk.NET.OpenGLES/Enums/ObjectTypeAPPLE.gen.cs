@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES
 {
+    [NativeName("Name", "ObjectTypeAPPLE")]
     public enum ObjectTypeAPPLE
     {
+        [NativeName("Name", "GL_DRAW_PIXELS_APPLE")]
         DrawPixelsApple = 0x8A0A,
+        [NativeName("Name", "GL_FENCE_APPLE")]
         FenceApple = 0x8A0B,
     }
 }

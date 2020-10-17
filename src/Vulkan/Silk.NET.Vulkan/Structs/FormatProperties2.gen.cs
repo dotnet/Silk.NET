@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct FormatProperties2
+    [NativeName("Name", "VkFormatProperties2")]
+    public unsafe partial struct FormatProperties2
     {
         public FormatProperties2
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             FormatProperties formatProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FormatProperties = formatProperties;
+            SType = sType;
+            PNext = pNext;
+            FormatProperties = formatProperties;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkFormatProperties")]
+        [NativeName("Type.Name", "VkFormatProperties")]
+        [NativeName("Name", "formatProperties")]
         public FormatProperties FormatProperties;
     }
 }

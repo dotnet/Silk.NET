@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct LayerProperties
+    [NativeName("Name", "VkLayerProperties")]
+    public unsafe partial struct LayerProperties
     {
         public LayerProperties
         (
@@ -22,17 +25,29 @@ namespace Silk.NET.Vulkan
             uint implementationVersion = default
         )
         {
-           SpecVersion = specVersion;
-           ImplementationVersion = implementationVersion;
+            SpecVersion = specVersion;
+            ImplementationVersion = implementationVersion;
         }
 
         /// <summary></summary>
-       public fixed byte LayerName[256];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "layerName")]
+        public fixed byte LayerName[256];
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "specVersion")]
         public uint SpecVersion;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "implementationVersion")]
         public uint ImplementationVersion;
         /// <summary></summary>
-       public fixed byte Description[256];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "description")]
+        public fixed byte Description[256];
     }
 }

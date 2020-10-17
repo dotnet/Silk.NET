@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PresentTimeGOOGLE
+    [NativeName("Name", "VkPresentTimeGOOGLE")]
+    public unsafe partial struct PresentTimeGOOGLE
     {
         public PresentTimeGOOGLE
         (
@@ -22,13 +25,19 @@ namespace Silk.NET.Vulkan
             ulong desiredPresentTime = default
         )
         {
-           PresentID = presentID;
-           DesiredPresentTime = desiredPresentTime;
+            PresentID = presentID;
+            DesiredPresentTime = desiredPresentTime;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "presentID")]
         public uint PresentID;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "desiredPresentTime")]
         public ulong DesiredPresentTime;
     }
 }

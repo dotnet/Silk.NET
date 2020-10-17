@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL
 {
-    public unsafe struct MotionEstimationDescIntel
+    [NativeName("Name", "cl_motion_estimation_desc_intel")]
+    public unsafe partial struct MotionEstimationDescIntel
     {
         public MotionEstimationDescIntel
         (
@@ -24,19 +27,31 @@ namespace Silk.NET.OpenCL
             uint searchPathType = default
         )
         {
-           MbBlockType = mbBlockType;
-           SubpixelMode = subpixelMode;
-           SadAdjustMode = sadAdjustMode;
-           SearchPathType = searchPathType;
+            MbBlockType = mbBlockType;
+            SubpixelMode = subpixelMode;
+            SadAdjustMode = sadAdjustMode;
+            SearchPathType = searchPathType;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "mb_block_type")]
         public uint MbBlockType;
 /// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "subpixel_mode")]
         public uint SubpixelMode;
 /// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "sad_adjust_mode")]
         public uint SadAdjustMode;
 /// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "search_path_type")]
         public uint SearchPathType;
     }
 }

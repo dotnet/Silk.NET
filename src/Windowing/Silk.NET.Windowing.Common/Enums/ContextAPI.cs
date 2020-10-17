@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// Represents which API the graphics context should use.
@@ -26,7 +26,7 @@ namespace Silk.NET.Windowing.Common
         OpenGL,
 
         /// <summary>
-        /// Use OpenGL ES. This is standard for software intended to be compatable with embedded systems, such as phones.
+        /// Use OpenGL ES. This is standard for software intended to be compatible with embedded systems, such as phones.
         /// </summary>
         OpenGLES
     }

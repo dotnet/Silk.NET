@@ -9,12 +9,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Native;
-using Silk.NET.GLFW;
 using Silk.NET.Vulkan;
 using Silk.NET.Vulkan.Extensions.EXT;
 using Silk.NET.Vulkan.Extensions.KHR;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 using Image = Silk.NET.Vulkan.Image;
 
 namespace VulkanTriangle
@@ -32,7 +30,7 @@ namespace VulkanTriangle
             Cleanup();
         }
 
-        private IVulkanWindow _window;
+        private IWindow _window;
 
         private Instance _instance;
         private DebugUtilsMessengerEXT _debugMessenger;
@@ -75,8 +73,8 @@ namespace VulkanTriangle
         private void InitWindow()
         {
             var opts = WindowOptions.DefaultVulkan;
-            _window = Window.Create(opts) as IVulkanWindow;
-            if (_window is null || !_window.IsVulkanSupported)
+            _window = Window.Create(opts);
+            if (_window?.VkSurface is null)
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
@@ -111,7 +109,7 @@ namespace VulkanTriangle
         private unsafe void DrawFrame(double obj)
         {
             var fence = _inFlightFences[_currentFrame];
-            _vk.WaitForFences(_device, 1, ref fence, Vk.True, ulong.MaxValue);
+            _vk.WaitForFences(_device, 1, in fence, Vk.True, ulong.MaxValue);
 
             uint imageIndex;
             _vkSwapchain.AcquireNextImage
@@ -119,7 +117,7 @@ namespace VulkanTriangle
 
             if (_imagesInFlight[imageIndex].Handle != 0)
             {
-                _vk.WaitForFences(_device, 1, ref _imagesInFlight[imageIndex], Vk.True, ulong.MaxValue);
+                _vk.WaitForFences(_device, 1, in _imagesInFlight[imageIndex], Vk.True, ulong.MaxValue);
             }
 
             _imagesInFlight[imageIndex] = _inFlightFences[_currentFrame];
@@ -234,8 +232,13 @@ namespace VulkanTriangle
                 PApplicationInfo = &appInfo
             };
 
+<<<<<<< HEAD
             var extensions = (byte**) _window.GetRequiredExtensions(out var extCount);
             var newExtensions = stackalloc byte*[(int) (extCount + _instanceExtensions.Length)];
+=======
+            var extensions = (byte**) _window.VkSurface!.GetRequiredExtensions(out var extCount);
+            var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Length)];
+>>>>>>> 2.0
             for (var i = 0; i < extCount; i++)
             {
                 newExtensions[i] = extensions[i];
@@ -270,6 +273,7 @@ namespace VulkanTriangle
             }
 
             _vk.CurrentInstance = _instance;
+<<<<<<< HEAD
 
             if (!_vk.TryGetExtension(out _vkSurface))
             {
@@ -281,6 +285,14 @@ namespace VulkanTriangle
                 throw new NotSupportedException("KHR_swapchain extension not found.");
             }
 
+=======
+            
+            if (!_vk.TryGetInstanceExtension(_instance, out _vkSurface))
+            {
+                throw new NotSupportedException("KHR_surface extension not found.");
+            }
+            
+>>>>>>> 2.0
             Marshal.FreeHGlobal((IntPtr) appInfo.PApplicationName);
             Marshal.FreeHGlobal((IntPtr) appInfo.PEngineName);
 
@@ -293,7 +305,7 @@ namespace VulkanTriangle
         private unsafe void SetupDebugMessenger()
         {
             if (!EnableValidationLayers) return;
-            if (!_vk.TryGetExtension(out _debugUtils)) return;
+            if (!_vk.TryGetInstanceExtension(_instance, out _debugUtils)) return;
 
             var createInfo = new DebugUtilsMessengerCreateInfoEXT();
             PopulateDebugMessengerCreateInfo(ref createInfo);
@@ -335,7 +347,7 @@ namespace VulkanTriangle
 
         private unsafe void CreateSurface()
         {
-            _surface = _window.CreateSurface<AllocationCallbacks>(_instance.ToHandle(), null).ToSurface();
+            _surface = _window.VkSurface!.Create<AllocationCallbacks>(_instance.ToHandle(), null).ToSurface();
         }
 
         private unsafe void PickPhysicalDevice()
@@ -552,6 +564,11 @@ namespace VulkanTriangle
             }
 
             _vk.CurrentDevice = _device;
+
+            if (!_vk.TryGetDeviceExtension(_instance, _device, out _vkSwapchain))
+            {
+                throw new NotSupportedException("KHR_swapchain extension not found.");
+            }
         }
 
         private unsafe void CreateSwapChain()

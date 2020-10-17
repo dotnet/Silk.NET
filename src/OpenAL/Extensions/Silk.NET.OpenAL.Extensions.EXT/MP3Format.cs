@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
+
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
@@ -12,11 +14,11 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_MP3")]
     [NativeApi(Prefix = "al")]
-    public abstract class MP3Format : FormatExtensionBase<MP3BufferFormat>
+    public partial class MP3Format : FormatExtensionBase<MP3BufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected MP3Format(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected MP3Format(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

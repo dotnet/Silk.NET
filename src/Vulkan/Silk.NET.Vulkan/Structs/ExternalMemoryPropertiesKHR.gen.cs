@@ -8,13 +8,16 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ExternalMemoryPropertiesKHR
+    [NativeName("Name", "VkExternalMemoryPropertiesKHR")]
+    public unsafe partial struct ExternalMemoryPropertiesKHR
     {
         public ExternalMemoryPropertiesKHR
         (
@@ -23,16 +26,25 @@ namespace Silk.NET.Vulkan
             ExternalMemoryHandleTypeFlags compatibleHandleTypes = default
         )
         {
-           ExternalMemoryFeatures = externalMemoryFeatures;
-           ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-           CompatibleHandleTypes = compatibleHandleTypes;
+            ExternalMemoryFeatures = externalMemoryFeatures;
+            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
+            CompatibleHandleTypes = compatibleHandleTypes;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryFeatureFlags")]
+        [NativeName("Type.Name", "VkExternalMemoryFeatureFlags")]
+        [NativeName("Name", "externalMemoryFeatures")]
         public ExternalMemoryFeatureFlags ExternalMemoryFeatures;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryHandleTypeFlags")]
+        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlags")]
+        [NativeName("Name", "exportFromImportedHandleTypes")]
         public ExternalMemoryHandleTypeFlags ExportFromImportedHandleTypes;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryHandleTypeFlags")]
+        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlags")]
+        [NativeName("Name", "compatibleHandleTypes")]
         public ExternalMemoryHandleTypeFlags CompatibleHandleTypes;
     }
 }

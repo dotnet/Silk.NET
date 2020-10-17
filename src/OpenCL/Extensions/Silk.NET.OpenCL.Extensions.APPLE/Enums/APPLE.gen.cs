@@ -5,11 +5,13 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL.Extensions.APPLE
 {
+    [NativeName("Name", "GLenum")]
     public enum APPLE
     {
     }

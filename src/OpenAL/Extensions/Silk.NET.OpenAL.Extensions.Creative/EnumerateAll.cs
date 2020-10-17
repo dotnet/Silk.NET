@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
+
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
     /// <summary>
@@ -15,19 +17,19 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// </summary>
     [Extension("ALC_ENUMERATE_ALL_EXT")]
     [NativeApi(Prefix = "alc")]
-    public abstract class EnumerateAll : ContextExtensionBase
+    public partial class EnumerateAll : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EnumerateAll(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected EnumerateAll(INativeContext ctx)
+            : base(ctx)
         {
         }
 
         /// <inheritdoc />
-        public abstract unsafe string GetString(Device* device, GetEnumerateAllContextString param);
+        public unsafe partial string GetString(Device* device, GetEnumerateAllContextString param);
 
         /// <inheritdoc />
-        public abstract unsafe char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
+        public unsafe partial char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
 
         /// <inheritdoc cref="GetStringList(Device*, GetEnumerateAllContextStringList)" />
         public IEnumerable<string> GetStringList(GetEnumerateAllContextStringList param)

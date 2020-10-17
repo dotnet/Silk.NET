@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using SampleBase;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 
 namespace Triangle
 {
@@ -35,7 +34,7 @@ namespace Triangle
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;
             opts.UpdatesPerSecond = 90;
-            opts.VSync = VSyncMode.Off;
+            opts.VSync = false;
             _window = Window.GetView(opts);
 #else
             var opts = WindowOptions.Default;
@@ -53,7 +52,7 @@ namespace Triangle
 
         private static unsafe void Load()
         {
-            _gl = GL.GetApi();
+            _gl = GL.GetApi(_window);
             _gl.Enable(GLEnum.DebugOutput);
             _gl.Enable(GLEnum.DebugOutputSynchronous);
             _gl.DebugMessageCallback(OnDebug, null);
@@ -63,7 +62,7 @@ namespace Triangle
             fixed (float* vertices = _vertices)
             {
                 _gl.BufferData
-                    (GLEnum.ArrayBuffer, (uint) _vertices.Length * sizeof(float), vertices, GLEnum.StaticDraw);
+                    (GLEnum.ArrayBuffer, (UIntPtr)( _vertices.Length * sizeof(float)), vertices, GLEnum.StaticDraw);
             }
 
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
