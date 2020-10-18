@@ -33,7 +33,6 @@ dotnet_style_qualification_for_field = false:warning
 dotnet_style_qualification_for_method = false:warning
 dotnet_style_qualification_for_property = false:warning
 dotnet_style_require_accessibility_modifiers = for_non_interface_members:hint
-csharp_style_expression_bodied_methods = false:hint
 csharp_style_inlined_variable_declaration = true:hint
 dotnet_sort_system_directives_first = true
 
