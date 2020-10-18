@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -27,7 +27,7 @@ namespace Silk.NET.GLFW
                     if (!glfw.Init())
                     {
                         var code = glfw.GetError(out byte* pDesc);
-                        var len = new ReadOnlySpan<byte>(pDesc, int.MaxValue).IndexOf((byte)'\0');
+                        var len = new ReadOnlySpan<byte>(pDesc, int.MaxValue).IndexOf((byte) '\0');
                         var desc = len <= 0 ? "Unknown" : System.Text.Encoding.UTF8.GetString(pDesc, len);
                         throw new GlfwException($"GLFW Init failed, {code}: {desc}");
                     }

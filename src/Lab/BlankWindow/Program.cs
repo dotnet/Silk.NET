@@ -54,7 +54,8 @@ namespace BlankWindow
 
         public static void FileDrop(string[] args)
         {
-            foreach (var file in args) {
+            foreach (var file in args)
+            {
                 Console.WriteLine(file);
             }
         }

@@ -118,7 +118,7 @@ namespace Tutorial
         private static unsafe void OnRender(double obj)
         {
             Gl.Enable(EnableCap.DepthTest);
-            Gl.Clear((uint)(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
+            Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
 
             Vao.Bind();
             Texture.Bind();
@@ -126,7 +126,7 @@ namespace Tutorial
             Shader.SetUniform("uTexture0", 0);
 
             //Use elapsed time to convert to radians to allow our cube to rotate over time
-            var difference = (float)(window.Time * 100);
+            var difference = (float) (window.Time * 100);
 
             var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraTarget, CameraUp);

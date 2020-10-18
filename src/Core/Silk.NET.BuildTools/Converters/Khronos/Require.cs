@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {

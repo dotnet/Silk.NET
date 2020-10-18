@@ -34,6 +34,7 @@ namespace Silk.NET.Windowing.Internals
         protected abstract WindowBorder CoreWindowBorder { get; set; }
         protected abstract bool IsClosingSettable { set; }
         protected abstract Size SizeSettable { set; }
+        protected abstract Rectangle CoreBorderSize { get; }
 
         // Function bases - again extra functionality on top
         protected abstract void CoreInitialize(WindowOptions opts);
@@ -174,6 +175,8 @@ namespace Silk.NET.Windowing.Internals
             }
         }
 
+        // Other property implementations
         public bool TransparentFramebuffer => ExtendedOptionsCache.TransparentFramebuffer;
+        public Rectangle BorderSize => IsInitialized ? CoreBorderSize : default;
     }
 }

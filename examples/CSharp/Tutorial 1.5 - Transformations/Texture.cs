@@ -15,12 +15,12 @@ namespace Tutorial
 
         public unsafe Texture(GL gl, string path)
         {
-            Image<Rgba32> img = (Image<Rgba32>)Image.Load(path);
+            Image<Rgba32> img = (Image<Rgba32>) Image.Load(path);
             img.Mutate(x => x.Flip(FlipMode.Vertical));
 
             fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
             {
-                Load(gl, data, (uint)img.Width, (uint)img.Height);
+                Load(gl, data, (uint) img.Width, (uint) img.Height);
             }
 
             img.Dispose();
@@ -41,11 +41,11 @@ namespace Tutorial
             _handle = _gl.GenTexture();
             Bind();
 
-            _gl.TexImage2D(TextureTarget.Texture2D, 0, (int)InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, data);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)GLEnum.ClampToEdge);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)GLEnum.ClampToEdge);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)GLEnum.Linear);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)GLEnum.Linear);
+            _gl.TexImage2D(TextureTarget.Texture2D, 0, (int) InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, data);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int) GLEnum.ClampToEdge);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int) GLEnum.ClampToEdge);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int) GLEnum.Linear);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int) GLEnum.Linear);
             _gl.GenerateMipmap(TextureTarget.Texture2D);
         }
 

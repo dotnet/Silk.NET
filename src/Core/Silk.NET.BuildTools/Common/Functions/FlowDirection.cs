@@ -25,7 +25,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Output parameter, typically decorated with the out keyword.
         /// </summary>
         Out,
-        
+
         /// <summary>
         /// Both an input and output parameter.
         /// </summary>

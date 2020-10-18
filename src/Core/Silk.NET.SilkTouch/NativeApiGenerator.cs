@@ -566,6 +566,26 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         )
+                        .WithAttributeLists
+                        (
+                            SingletonList<AttributeListSyntax>
+                            (
+                                AttributeList
+                                (
+                                    SingletonSeparatedList<AttributeSyntax>
+                                    (
+                                        Attribute
+                                        (
+                                            QualifiedName
+                                            (
+                                                QualifiedName(IdentifierName("System"), IdentifierName("Diagnostics")),
+                                                IdentifierName("DebuggerHidden")
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
                 );
 
                 vTableMembers.Add
@@ -777,7 +797,24 @@ namespace Silk.NET.SilkTouch
                 (
                     MethodDeclaration
                             (QualifiedName(IdentifierName("System"), IdentifierName("IntPtr")), Identifier(name))
-                        .WithParameterList(ParameterList(SeparatedList(new [] { Parameter(Identifier(keyName)).WithType(PredefinedType(Token(SyntaxKind.IntKeyword))), Parameter(Identifier("entryPoint")).WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))})))
+                        .WithParameterList
+                        (
+                            ParameterList
+                            (
+                                SeparatedList
+                                (
+                                    new[]
+                                    {
+                                        Parameter
+                                                (Identifier(keyName))
+                                            .WithType(PredefinedType(Token(SyntaxKind.IntKeyword))),
+                                        Parameter
+                                                (Identifier("entryPoint"))
+                                            .WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))
+                                    }
+                                )
+                            )
+                        )
                         .WithAttributeLists
                         (
                             SingletonList
@@ -832,7 +869,10 @@ namespace Silk.NET.SilkTouch
                                                                 ),
                                                                 CastExpression
                                                                 (
-                                                                    IdentifierName("System.Runtime.CompilerServices.MethodImplOptions"), Num(512)
+                                                                    IdentifierName
+                                                                    (
+                                                                        "System.Runtime.CompilerServices.MethodImplOptions"
+                                                                    ), Num(512)
                                                                 )
                                                             )
                                                         )
@@ -848,6 +888,26 @@ namespace Silk.NET.SilkTouch
                         )
                         .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword)))
                         .WithBody(Block(body))
+                        .WithAttributeLists
+                        (
+                            SingletonList<AttributeListSyntax>
+                            (
+                                AttributeList
+                                (
+                                    SingletonSeparatedList<AttributeSyntax>
+                                    (
+                                        Attribute
+                                        (
+                                            QualifiedName
+                                            (
+                                                QualifiedName(IdentifierName("System"), IdentifierName("Diagnostics")),
+                                                IdentifierName("DebuggerHidden")
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
                 );
                 return IdentifierName(name);
             }
@@ -913,12 +973,29 @@ namespace Silk.NET.SilkTouch
                 }
 
                 body.Add(ReturnStatement(IdentifierName(localName)));
-                
+
                 methods.Add
                 (
                     MethodDeclaration
                             (QualifiedName(IdentifierName("System"), IdentifierName("IntPtr")), Identifier(name))
-                        .WithParameterList(ParameterList(SeparatedList(new [] { Parameter(Identifier(keyName)).WithType(PredefinedType(Token(SyntaxKind.IntKeyword))), Parameter(Identifier("entryPoint")).WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))})))
+                        .WithParameterList
+                        (
+                            ParameterList
+                            (
+                                SeparatedList
+                                (
+                                    new[]
+                                    {
+                                        Parameter
+                                                (Identifier(keyName))
+                                            .WithType(PredefinedType(Token(SyntaxKind.IntKeyword))),
+                                        Parameter
+                                                (Identifier("entryPoint"))
+                                            .WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))
+                                    }
+                                )
+                            )
+                        )
                         .WithAttributeLists
                         (
                             SingletonList
@@ -973,7 +1050,10 @@ namespace Silk.NET.SilkTouch
                                                                 ),
                                                                 CastExpression
                                                                 (
-                                                                    IdentifierName("System.Runtime.CompilerServices.MethodImplOptions"), Num(512)
+                                                                    IdentifierName
+                                                                    (
+                                                                        "System.Runtime.CompilerServices.MethodImplOptions"
+                                                                    ), Num(512)
                                                                 )
                                                             )
                                                         )
@@ -989,6 +1069,26 @@ namespace Silk.NET.SilkTouch
                         )
                         .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword)))
                         .WithBody(Block(body))
+                        .WithAttributeLists
+                        (
+                            SingletonList<AttributeListSyntax>
+                            (
+                                AttributeList
+                                (
+                                    SingletonSeparatedList<AttributeSyntax>
+                                    (
+                                        Attribute
+                                        (
+                                            QualifiedName
+                                            (
+                                                QualifiedName(IdentifierName("System"), IdentifierName("Diagnostics")),
+                                                IdentifierName("DebuggerHidden")
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
                 );
                 return IdentifierName(name);
             }

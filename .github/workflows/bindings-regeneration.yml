@@ -1,0 +1,34 @@
+name: Bindings Regeneration
+
+on:
+  schedule:
+    - cron: '0 0 * * Fri'
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.302
+    - name: Run a full run of BuildTools
+      run: dotnet run --project "src/Core/BuildTools/BuildTools.csproj" -- build/binder_scripts/fullrun.json
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
+    - name: Create or Update Pull Request
+      uses: gr2m/create-or-update-pull-request-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        title: Binding and specification updates
+        body: Regenerates the bindings and the cached specifications with the latest upstream specifications.
+        branch: patch/spec-updates
+        author: "Ultz Limited <31213871+UltzLtd@users.noreply.github.com>"
+        commit-message: Latest bindings as of ${{ steps.date.outputs.date }}

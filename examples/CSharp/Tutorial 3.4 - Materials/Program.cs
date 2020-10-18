@@ -135,7 +135,7 @@ namespace Tutorial
 
         private static unsafe void OnUpdate(double deltaTime)
         {
-            var moveSpeed = 2.5f * (float)deltaTime;
+            var moveSpeed = 2.5f * (float) deltaTime;
 
             if (primaryKeyboard.IsKeyPressed(Key.W))
             {
@@ -162,7 +162,7 @@ namespace Tutorial
         private static unsafe void OnRender(double deltaTime)
         {
             Gl.Enable(EnableCap.DepthTest);
-            Gl.Clear((uint)(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
+            Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
 
             VaoCube.Bind();
             LightingShader.Use();
@@ -178,7 +178,7 @@ namespace Tutorial
             LightingShader.SetUniform("material.shininess", 32.0f);
 
             //Track the difference in time so we can manipulate variables as time changes
-            var difference = (float)(DateTime.UtcNow - StartTime).TotalSeconds;
+            var difference = (float) (DateTime.UtcNow - StartTime).TotalSeconds;
             var lightColor = Vector3.Zero;
             lightColor.X = MathF.Sin(difference * 2.0f);
             lightColor.Y = MathF.Sin(difference * 0.7f);

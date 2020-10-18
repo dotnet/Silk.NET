@@ -57,7 +57,7 @@ namespace Tutorial
                 throw new Exception($"{name} uniform not found on shader.");
             }
             Use();
-            _gl.UniformMatrix4(location, 1, false, (float*)&value);
+            _gl.UniformMatrix4(location, 1, false, (float*) &value);
         }
 
         public void SetUniform(string name, float value)
