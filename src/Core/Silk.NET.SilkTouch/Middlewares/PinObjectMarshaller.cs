@@ -7,11 +7,11 @@ using System;
 using Microsoft.CodeAnalysis.CSharp;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace Silk.NET.SilkTouch.Middlewares
+namespace Silk.NET.SilkTouch
 {
-    public partial class NativeApiGenerator
+    public static partial class Middlewares
     {
-        private static void PinObjectMarshaller(ref IMarshalContext ctx, Action next)
+        public static void PinObjectMarshaller(ref IMarshalContext ctx, Action next)
         {
             for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {

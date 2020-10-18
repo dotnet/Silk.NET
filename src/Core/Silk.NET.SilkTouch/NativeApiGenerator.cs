@@ -49,13 +49,13 @@ namespace Silk.NET.SilkTouch
 
             marshalBuilder = new MarshalBuilder();
 
-            marshalBuilder.Use(ParameterInitMiddleware);
-            marshalBuilder.Use(StringMarshaller);
-            marshalBuilder.Use(PinMiddleware);
-            marshalBuilder.Use(SpanMarshaller);
-            marshalBuilder.Use(BoolMarshaller);
-            marshalBuilder.Use(PinObjectMarshaller);
-            marshalBuilder.Use(DelegateMarshaller);
+            marshalBuilder.Use(Middlewares.ParameterInitMiddleware);
+            marshalBuilder.Use(Middlewares.StringMarshaller);
+            marshalBuilder.Use(Middlewares.PinMiddleware);
+            marshalBuilder.Use(Middlewares.SpanMarshaller);
+            marshalBuilder.Use(Middlewares.BoolMarshaller);
+            marshalBuilder.Use(Middlewares.PinObjectMarshaller);
+            marshalBuilder.Use(Middlewares.DelegateMarshaller);
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
 
