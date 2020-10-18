@@ -167,40 +167,26 @@ namespace Silk.NET.SilkTouch
 
             int slotCount = 0;
             int gcCount = 0;
-            var methods = classDeclaration.Members.Where
-                    (x => x.IsKind(SyntaxKind.MethodDeclaration))
-                .Select(x => (MethodDeclarationSyntax) x)
-                .Select
-                (
-                    declaration => (declaration,
-                        symbol: compilation.GetSemanticModel(declaration.SyntaxTree).GetDeclaredSymbol(declaration))
-                )
-                .Where(x => !(x.symbol is null))
-                .Select
-                (
-                    x => (x.declaration, x.symbol,
-                        attribute: x.symbol.GetAttributes()
-                            .FirstOrDefault
-                            (
-                                x2 => SymbolEqualityComparer.Default.Equals(x2.AttributeClass, nativeApiAttributeSymbol)
-                            ))
-                )
-                .Select(x => (x.declaration, x.symbol, ToNativeApiAttribute(x.attribute)))
-                .Where
-                (
-                    x => x.declaration.Modifiers.Any
-                        (x2 => x2.IsKind(SyntaxKind.PartialKeyword)) && x.symbol.PartialImplementationPart is null
-                )
-                .Select
-                (
-                    x => (declaration: x.declaration, symbol: x.symbol,
-                        entryPoint: NativeApiAttribute.GetEntryPoint(x.Item3, classNativeApiAttribute, x.symbol.Name),
-                        callingConvention: NativeApiAttribute.GetCallingConvention(x.Item3, classNativeApiAttribute))
-                )
-                .ToArray();
             
             Dictionary<int, string> entryPoints = new Dictionary<int, string>();
-            foreach (var (declaration, symbol, entryPoint, callingConvention) in methods)
+            foreach (var (declaration, symbol, entryPoint, callingConvention) in 
+                from declaration in
+                    from member in classDeclaration.Members
+                    where member.IsKind(SyntaxKind.MethodDeclaration)
+                    select (MethodDeclarationSyntax) member
+                let symbol = compilation.GetSemanticModel(declaration.SyntaxTree).GetDeclaredSymbol(declaration)
+                where symbol is not null
+                let attribute = ToNativeApiAttribute
+                (
+                    symbol.GetAttributes()
+                        .FirstOrDefault
+                            (att => SymbolEqualityComparer.Default.Equals(att.AttributeClass, nativeApiAttributeSymbol))
+                )
+                where declaration.Modifiers.Any
+                    (modifier => modifier.IsKind(SyntaxKind.PartialKeyword)) && symbol.PartialImplementationPart is null
+                let entryPoint = NativeApiAttribute.GetEntryPoint(attribute, classNativeApiAttribute, symbol.Name)
+                let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
+                select (declaration, symbol, entryPoint, callingConvention))
                 ProcessMethod
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
