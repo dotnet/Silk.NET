@@ -5,10 +5,9 @@
 
 using System;
 using System.Linq;
-using Microsoft.CodeAnalysis;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace Silk.NET.SilkTouch
+namespace Silk.NET.SilkTouch.Middlewares
 {
     public partial class NativeApiGenerator
     {

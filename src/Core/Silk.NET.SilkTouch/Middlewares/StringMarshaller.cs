@@ -12,7 +12,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Silk.NET.Core.Native;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace Silk.NET.SilkTouch
+namespace Silk.NET.SilkTouch.Middlewares
 {
     public partial class NativeApiGenerator
     {
