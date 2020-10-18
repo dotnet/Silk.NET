@@ -66,6 +66,9 @@ namespace Silk.NET.Core.Native
 
         /// <summary>A platform-dependent character string: ANSI on Windows 98, and Unicode on Windows NT and Windows XP.</summary>
         LPTStr = 22,
+        
+        /// <summary>A UTF8-encoded, null-terminated character string.</summary>
+        LPUTF8Str = 48,
 
         /// <summary>A platform-dependent, signed integer: 4 bytes on 32-bit, 8 bytes on 64-bit.</summary>
         /// <seealso cref="System.IntPtr" />

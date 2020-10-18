@@ -7,11 +7,11 @@ namespace Silk.NET.Core.Native
 {
     public enum NativeStringEncoding
     {
-        BStr,
-        LPStr,
-        LPTStr,
-        LPUTF8Str,
-        LPWStr,
+        BStr = UnmanagedType.BStr,
+        LPStr = UnmanagedType.LPStr,
+        LPTStr = UnmanagedType.LPTStr,
+        LPUTF8Str = UnmanagedType.LPUTF8Str,
+        LPWStr = UnmanagedType.LPWStr,
         Ansi = LPStr,
         Auto = LPTStr,
         Uni = LPWStr,
