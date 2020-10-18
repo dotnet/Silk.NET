@@ -12,7 +12,7 @@ namespace Silk.NET.Core.Native
     /// <summary>
     /// Represents a block of global memory. That is, memory that is pinned and is valid so long as this object is alive.
     /// </summary>
-    public class GlobalMemory : IDisposable
+    public sealed class GlobalMemory : IDisposable
     {    
         // Actual object
         private readonly object _memoryObject;
