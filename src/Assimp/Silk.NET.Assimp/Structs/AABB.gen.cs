@@ -21,12 +21,24 @@ namespace Silk.NET.Assimp
     {
         public AABB
         (
-            System.Numerics.Vector3 mMin = default,
-            System.Numerics.Vector3 mMax = default
+            System.Numerics.Vector3? mMin = null,
+            System.Numerics.Vector3? mMax = null
         )
         {
-            MMin = mMin;
-            MMax = mMax;
+            fixed (AABB* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mMin is not null)
+            {
+                MMin = mMin.Value;
+            }
+
+            if (mMax is not null)
+            {
+                MMax = mMax.Value;
+            }
         }
 
 

@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SecondaryViewConfigurationSwapchainCreateInfoMSFT
         (
-            StructureType type = StructureType.TypeSecondaryViewConfigurationSwapchainCreateInfoMsft,
-            void* next = default,
-            ViewConfigurationType viewConfigurationType = default
+            StructureType? type = StructureType.TypeSecondaryViewConfigurationSwapchainCreateInfoMsft,
+            void* next = null,
+            ViewConfigurationType? viewConfigurationType = null
         )
         {
-            Type = type;
-            Next = next;
-            ViewConfigurationType = viewConfigurationType;
+            fixed (SecondaryViewConfigurationSwapchainCreateInfoMSFT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewConfigurationType is not null)
+            {
+                ViewConfigurationType = viewConfigurationType.Value;
+            }
         }
 
 /// <summary></summary>

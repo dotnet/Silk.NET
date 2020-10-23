@@ -21,20 +21,48 @@ namespace Silk.NET.OpenXR
     {
         public DebugUtilsMessengerCreateInfoEXT
         (
-            StructureType type = StructureType.TypeDebugUtilsMessengerCreateInfoExt,
-            void* next = default,
-            DebugUtilsMessageSeverityFlagsEXT messageSeverities = default,
-            DebugUtilsMessageTypeFlagsEXT messageTypes = default,
-            FuncPtr userCallback = default,
-            void* userData = default
+            StructureType? type = StructureType.TypeDebugUtilsMessengerCreateInfoExt,
+            void* next = null,
+            DebugUtilsMessageSeverityFlagsEXT? messageSeverities = null,
+            DebugUtilsMessageTypeFlagsEXT? messageTypes = null,
+            FuncPtr? userCallback = null,
+            void* userData = null
         )
         {
-            Type = type;
-            Next = next;
-            MessageSeverities = messageSeverities;
-            MessageTypes = messageTypes;
-            UserCallback = userCallback;
-            UserData = userData;
+            fixed (DebugUtilsMessengerCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (messageSeverities is not null)
+            {
+                MessageSeverities = messageSeverities.Value;
+            }
+
+            if (messageTypes is not null)
+            {
+                MessageTypes = messageTypes.Value;
+            }
+
+            if (userCallback is not null)
+            {
+                UserCallback = userCallback.Value;
+            }
+
+            if (userData is not null)
+            {
+                UserData = userData;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceMarkerInfoINTEL
         (
-            StructureType sType = StructureType.PerformanceMarkerInfoIntel,
-            void* pNext = default,
-            ulong marker = default
+            StructureType? sType = StructureType.PerformanceMarkerInfoIntel,
+            void* pNext = null,
+            ulong? marker = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Marker = marker;
+            fixed (PerformanceMarkerInfoINTEL* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (marker is not null)
+            {
+                Marker = marker.Value;
+            }
         }
 
 /// <summary></summary>

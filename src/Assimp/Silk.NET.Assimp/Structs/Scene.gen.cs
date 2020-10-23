@@ -21,40 +21,108 @@ namespace Silk.NET.Assimp
     {
         public Scene
         (
-            uint mFlags = default,
-            Node* mRootNode = default,
-            uint mNumMeshes = default,
-            Mesh** mMeshes = default,
-            uint mNumMaterials = default,
-            Material** mMaterials = default,
-            uint mNumAnimations = default,
-            Animation** mAnimations = default,
-            uint mNumTextures = default,
-            Texture** mTextures = default,
-            uint mNumLights = default,
-            Light** mLights = default,
-            uint mNumCameras = default,
-            Camera** mCameras = default,
-            Metadata* mMetaData = default,
-            void* mPrivate = default
+            uint? mFlags = null,
+            Node* mRootNode = null,
+            uint? mNumMeshes = null,
+            Mesh** mMeshes = null,
+            uint? mNumMaterials = null,
+            Material** mMaterials = null,
+            uint? mNumAnimations = null,
+            Animation** mAnimations = null,
+            uint? mNumTextures = null,
+            Texture** mTextures = null,
+            uint? mNumLights = null,
+            Light** mLights = null,
+            uint? mNumCameras = null,
+            Camera** mCameras = null,
+            Metadata* mMetaData = null,
+            void* mPrivate = null
         )
         {
-            MFlags = mFlags;
-            MRootNode = mRootNode;
-            MNumMeshes = mNumMeshes;
-            MMeshes = mMeshes;
-            MNumMaterials = mNumMaterials;
-            MMaterials = mMaterials;
-            MNumAnimations = mNumAnimations;
-            MAnimations = mAnimations;
-            MNumTextures = mNumTextures;
-            MTextures = mTextures;
-            MNumLights = mNumLights;
-            MLights = mLights;
-            MNumCameras = mNumCameras;
-            MCameras = mCameras;
-            MMetaData = mMetaData;
-            MPrivate = mPrivate;
+            fixed (Scene* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mFlags is not null)
+            {
+                MFlags = mFlags.Value;
+            }
+
+            if (mRootNode is not null)
+            {
+                MRootNode = mRootNode;
+            }
+
+            if (mNumMeshes is not null)
+            {
+                MNumMeshes = mNumMeshes.Value;
+            }
+
+            if (mMeshes is not null)
+            {
+                MMeshes = mMeshes;
+            }
+
+            if (mNumMaterials is not null)
+            {
+                MNumMaterials = mNumMaterials.Value;
+            }
+
+            if (mMaterials is not null)
+            {
+                MMaterials = mMaterials;
+            }
+
+            if (mNumAnimations is not null)
+            {
+                MNumAnimations = mNumAnimations.Value;
+            }
+
+            if (mAnimations is not null)
+            {
+                MAnimations = mAnimations;
+            }
+
+            if (mNumTextures is not null)
+            {
+                MNumTextures = mNumTextures.Value;
+            }
+
+            if (mTextures is not null)
+            {
+                MTextures = mTextures;
+            }
+
+            if (mNumLights is not null)
+            {
+                MNumLights = mNumLights.Value;
+            }
+
+            if (mLights is not null)
+            {
+                MLights = mLights;
+            }
+
+            if (mNumCameras is not null)
+            {
+                MNumCameras = mNumCameras.Value;
+            }
+
+            if (mCameras is not null)
+            {
+                MCameras = mCameras;
+            }
+
+            if (mMetaData is not null)
+            {
+                MMetaData = mMetaData;
+            }
+
+            if (mPrivate is not null)
+            {
+                MPrivate = mPrivate;
+            }
         }
 
 

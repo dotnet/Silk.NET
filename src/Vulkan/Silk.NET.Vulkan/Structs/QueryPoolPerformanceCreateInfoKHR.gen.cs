@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public QueryPoolPerformanceCreateInfoKHR
         (
-            StructureType sType = StructureType.QueryPoolPerformanceCreateInfoKhr,
-            void* pNext = default,
-            uint queueFamilyIndex = default,
-            uint counterIndexCount = default,
-            uint* pCounterIndices = default
+            StructureType? sType = StructureType.QueryPoolPerformanceCreateInfoKhr,
+            void* pNext = null,
+            uint? queueFamilyIndex = null,
+            uint? counterIndexCount = null,
+            uint* pCounterIndices = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            QueueFamilyIndex = queueFamilyIndex;
-            CounterIndexCount = counterIndexCount;
-            PCounterIndices = pCounterIndices;
+            fixed (QueryPoolPerformanceCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (queueFamilyIndex is not null)
+            {
+                QueueFamilyIndex = queueFamilyIndex.Value;
+            }
+
+            if (counterIndexCount is not null)
+            {
+                CounterIndexCount = counterIndexCount.Value;
+            }
+
+            if (pCounterIndices is not null)
+            {
+                PCounterIndices = pCounterIndices;
+            }
         }
 
 /// <summary></summary>

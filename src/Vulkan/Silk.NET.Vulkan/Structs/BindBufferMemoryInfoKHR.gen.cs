@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public BindBufferMemoryInfoKHR
         (
-            StructureType sType = StructureType.BindBufferMemoryInfo,
-            void* pNext = default,
-            Buffer buffer = default,
-            DeviceMemory memory = default,
-            ulong memoryOffset = default
+            StructureType? sType = StructureType.BindBufferMemoryInfo,
+            void* pNext = null,
+            Buffer? buffer = null,
+            DeviceMemory? memory = null,
+            ulong? memoryOffset = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Buffer = buffer;
-            Memory = memory;
-            MemoryOffset = memoryOffset;
+            fixed (BindBufferMemoryInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (memoryOffset is not null)
+            {
+                MemoryOffset = memoryOffset.Value;
+            }
         }
 
 /// <summary></summary>

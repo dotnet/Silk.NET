@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCoverageToColorStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineCoverageToColorStateCreateInfoNV,
-            void* pNext = default,
-            uint flags = default,
-            Bool32 coverageToColorEnable = default,
-            uint coverageToColorLocation = default
+            StructureType? sType = StructureType.PipelineCoverageToColorStateCreateInfoNV,
+            void* pNext = null,
+            uint? flags = null,
+            Bool32? coverageToColorEnable = null,
+            uint? coverageToColorLocation = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            CoverageToColorEnable = coverageToColorEnable;
-            CoverageToColorLocation = coverageToColorLocation;
+            fixed (PipelineCoverageToColorStateCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (coverageToColorEnable is not null)
+            {
+                CoverageToColorEnable = coverageToColorEnable.Value;
+            }
+
+            if (coverageToColorLocation is not null)
+            {
+                CoverageToColorLocation = coverageToColorLocation.Value;
+            }
         }
 
 /// <summary></summary>

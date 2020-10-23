@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public CheckpointDataNV
         (
-            StructureType sType = StructureType.CheckpointDataNV,
-            void* pNext = default,
-            PipelineStageFlags stage = default,
-            void* pCheckpointMarker = default
+            StructureType? sType = StructureType.CheckpointDataNV,
+            void* pNext = null,
+            PipelineStageFlags? stage = null,
+            void* pCheckpointMarker = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Stage = stage;
-            PCheckpointMarker = pCheckpointMarker;
+            fixed (CheckpointDataNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stage is not null)
+            {
+                Stage = stage.Value;
+            }
+
+            if (pCheckpointMarker is not null)
+            {
+                PCheckpointMarker = pCheckpointMarker;
+            }
         }
 
 /// <summary></summary>

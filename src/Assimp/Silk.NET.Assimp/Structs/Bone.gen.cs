@@ -21,16 +21,36 @@ namespace Silk.NET.Assimp
     {
         public Bone
         (
-            AssimpString mName = default,
-            uint mNumWeights = default,
-            VertexWeight* mWeights = default,
-            System.Numerics.Matrix4x4 mOffsetMatrix = default
+            AssimpString? mName = null,
+            uint? mNumWeights = null,
+            VertexWeight* mWeights = null,
+            System.Numerics.Matrix4x4? mOffsetMatrix = null
         )
         {
-            MName = mName;
-            MNumWeights = mNumWeights;
-            MWeights = mWeights;
-            MOffsetMatrix = mOffsetMatrix;
+            fixed (Bone* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mNumWeights is not null)
+            {
+                MNumWeights = mNumWeights.Value;
+            }
+
+            if (mWeights is not null)
+            {
+                MWeights = mWeights;
+            }
+
+            if (mOffsetMatrix is not null)
+            {
+                MOffsetMatrix = mOffsetMatrix.Value;
+            }
         }
 
 

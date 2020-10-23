@@ -46,6 +46,12 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glGetFloati_vOES")]
         public partial void GetFloat([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
+        [NativeApi(EntryPoint = "glGetFloati_vOES")]
+        public unsafe partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
+
+        [NativeApi(EntryPoint = "glGetFloati_vOES")]
+        public partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
+
         [NativeApi(EntryPoint = "glIsEnablediOES")]
         public partial bool IsEnabled([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
 

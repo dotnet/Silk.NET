@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public ImageFormatProperties
         (
-            Extent3D maxExtent = default,
-            uint maxMipLevels = default,
-            uint maxArrayLayers = default,
-            SampleCountFlags sampleCounts = default,
-            ulong maxResourceSize = default
+            Extent3D? maxExtent = null,
+            uint? maxMipLevels = null,
+            uint? maxArrayLayers = null,
+            SampleCountFlags? sampleCounts = null,
+            ulong? maxResourceSize = null
         )
         {
-            MaxExtent = maxExtent;
-            MaxMipLevels = maxMipLevels;
-            MaxArrayLayers = maxArrayLayers;
-            SampleCounts = sampleCounts;
-            MaxResourceSize = maxResourceSize;
+            fixed (ImageFormatProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (maxExtent is not null)
+            {
+                MaxExtent = maxExtent.Value;
+            }
+
+            if (maxMipLevels is not null)
+            {
+                MaxMipLevels = maxMipLevels.Value;
+            }
+
+            if (maxArrayLayers is not null)
+            {
+                MaxArrayLayers = maxArrayLayers.Value;
+            }
+
+            if (sampleCounts is not null)
+            {
+                SampleCounts = sampleCounts.Value;
+            }
+
+            if (maxResourceSize is not null)
+            {
+                MaxResourceSize = maxResourceSize.Value;
+            }
         }
 
 /// <summary></summary>

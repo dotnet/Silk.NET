@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCustomBorderColorPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceCustomBorderColorPropertiesExt,
-            void* pNext = default,
-            uint maxCustomBorderColorSamplers = default
+            StructureType? sType = StructureType.PhysicalDeviceCustomBorderColorPropertiesExt,
+            void* pNext = null,
+            uint? maxCustomBorderColorSamplers = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxCustomBorderColorSamplers = maxCustomBorderColorSamplers;
+            fixed (PhysicalDeviceCustomBorderColorPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxCustomBorderColorSamplers is not null)
+            {
+                MaxCustomBorderColorSamplers = maxCustomBorderColorSamplers.Value;
+            }
         }
 
 /// <summary></summary>

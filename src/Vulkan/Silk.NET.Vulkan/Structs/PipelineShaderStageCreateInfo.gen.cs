@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public PipelineShaderStageCreateInfo
         (
-            StructureType sType = StructureType.PipelineShaderStageCreateInfo,
-            void* pNext = default,
-            PipelineShaderStageCreateFlags flags = default,
-            ShaderStageFlags stage = default,
-            ShaderModule module = default,
-            byte* pName = default,
-            SpecializationInfo* pSpecializationInfo = default
+            StructureType? sType = StructureType.PipelineShaderStageCreateInfo,
+            void* pNext = null,
+            PipelineShaderStageCreateFlags? flags = null,
+            ShaderStageFlags? stage = null,
+            ShaderModule? module = null,
+            byte* pName = null,
+            SpecializationInfo* pSpecializationInfo = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Stage = stage;
-            Module = module;
-            PName = pName;
-            PSpecializationInfo = pSpecializationInfo;
+            fixed (PipelineShaderStageCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (stage is not null)
+            {
+                Stage = stage.Value;
+            }
+
+            if (module is not null)
+            {
+                Module = module.Value;
+            }
+
+            if (pName is not null)
+            {
+                PName = pName;
+            }
+
+            if (pSpecializationInfo is not null)
+            {
+                PSpecializationInfo = pSpecializationInfo;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainImageVulkanKHR
         (
-            StructureType type = StructureType.TypeSwapchainImageVulkanKhr,
-            void* next = default,
-            ulong image = default
+            StructureType? type = StructureType.TypeSwapchainImageVulkanKhr,
+            void* next = null,
+            ulong? image = null
         )
         {
-            Type = type;
-            Next = next;
-            Image = image;
+            fixed (SwapchainImageVulkanKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,22 +21,54 @@ namespace Silk.NET.OpenXR
     {
         public EventDataReferenceSpaceChangePending
         (
-            StructureType type = StructureType.TypeEventDataReferenceSpaceChangePending,
-            void* next = default,
-            Session session = default,
-            ReferenceSpaceType referenceSpaceType = default,
-            long changeTime = default,
-            uint poseValid = default,
-            Posef poseInPreviousSpace = default
+            StructureType? type = StructureType.TypeEventDataReferenceSpaceChangePending,
+            void* next = null,
+            Session? session = null,
+            ReferenceSpaceType? referenceSpaceType = null,
+            long? changeTime = null,
+            uint? poseValid = null,
+            Posef? poseInPreviousSpace = null
         )
         {
-            Type = type;
-            Next = next;
-            Session = session;
-            ReferenceSpaceType = referenceSpaceType;
-            ChangeTime = changeTime;
-            PoseValid = poseValid;
-            PoseInPreviousSpace = poseInPreviousSpace;
+            fixed (EventDataReferenceSpaceChangePending* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (session is not null)
+            {
+                Session = session.Value;
+            }
+
+            if (referenceSpaceType is not null)
+            {
+                ReferenceSpaceType = referenceSpaceType.Value;
+            }
+
+            if (changeTime is not null)
+            {
+                ChangeTime = changeTime.Value;
+            }
+
+            if (poseValid is not null)
+            {
+                PoseValid = poseValid.Value;
+            }
+
+            if (poseInPreviousSpace is not null)
+            {
+                PoseInPreviousSpace = poseInPreviousSpace.Value;
+            }
         }
 
 /// <summary></summary>

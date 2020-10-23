@@ -21,38 +21,54 @@ namespace Silk.NET.Assimp
     {
         public AnimMesh
         (
-            AssimpString mName = default,
-            System.Numerics.Vector3* mVertices = default,
-            System.Numerics.Vector3* mNormals = default,
-            System.Numerics.Vector3* mTangents = default,
-            System.Numerics.Vector3* mBitangents = default,
-            uint mNumVertices = default,
-            float mWeight = default
+            AssimpString? mName = null,
+            System.Numerics.Vector3* mVertices = null,
+            System.Numerics.Vector3* mNormals = null,
+            System.Numerics.Vector3* mTangents = null,
+            System.Numerics.Vector3* mBitangents = null,
+            uint? mNumVertices = null,
+            float? mWeight = null
         )
         {
-            MName = mName;
-            MVertices = mVertices;
-            MNormals = mNormals;
-            MTangents = mTangents;
-            MBitangents = mBitangents;
-           MColors_0 = default;
-           MColors_1 = default;
-           MColors_2 = default;
-           MColors_3 = default;
-           MColors_4 = default;
-           MColors_5 = default;
-           MColors_6 = default;
-           MColors_7 = default;
-           MTextureCoords_0 = default;
-           MTextureCoords_1 = default;
-           MTextureCoords_2 = default;
-           MTextureCoords_3 = default;
-           MTextureCoords_4 = default;
-           MTextureCoords_5 = default;
-           MTextureCoords_6 = default;
-           MTextureCoords_7 = default;
-            MNumVertices = mNumVertices;
-            MWeight = mWeight;
+            fixed (AnimMesh* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mVertices is not null)
+            {
+                MVertices = mVertices;
+            }
+
+            if (mNormals is not null)
+            {
+                MNormals = mNormals;
+            }
+
+            if (mTangents is not null)
+            {
+                MTangents = mTangents;
+            }
+
+            if (mBitangents is not null)
+            {
+                MBitangents = mBitangents;
+            }
+
+            if (mNumVertices is not null)
+            {
+                MNumVertices = mNumVertices.Value;
+            }
+
+            if (mWeight is not null)
+            {
+                MWeight = mWeight.Value;
+            }
         }
 
 

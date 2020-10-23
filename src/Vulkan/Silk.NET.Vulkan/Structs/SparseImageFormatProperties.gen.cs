@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SparseImageFormatProperties
         (
-            ImageAspectFlags aspectMask = default,
-            Extent3D imageGranularity = default,
-            SparseImageFormatFlags flags = default
+            ImageAspectFlags? aspectMask = null,
+            Extent3D? imageGranularity = null,
+            SparseImageFormatFlags? flags = null
         )
         {
-            AspectMask = aspectMask;
-            ImageGranularity = imageGranularity;
-            Flags = flags;
+            fixed (SparseImageFormatProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
+
+            if (imageGranularity is not null)
+            {
+                ImageGranularity = imageGranularity.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

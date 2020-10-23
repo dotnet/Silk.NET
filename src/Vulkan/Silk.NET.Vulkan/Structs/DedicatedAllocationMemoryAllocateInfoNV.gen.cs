@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public DedicatedAllocationMemoryAllocateInfoNV
         (
-            StructureType sType = StructureType.DedicatedAllocationMemoryAllocateInfoNV,
-            void* pNext = default,
-            Image image = default,
-            Buffer buffer = default
+            StructureType? sType = StructureType.DedicatedAllocationMemoryAllocateInfoNV,
+            void* pNext = null,
+            Image? image = null,
+            Buffer? buffer = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Image = image;
-            Buffer = buffer;
+            fixed (DedicatedAllocationMemoryAllocateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
         }
 
 /// <summary></summary>

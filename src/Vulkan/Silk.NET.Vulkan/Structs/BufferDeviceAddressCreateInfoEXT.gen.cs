@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public BufferDeviceAddressCreateInfoEXT
         (
-            StructureType sType = StructureType.BufferDeviceAddressCreateInfoExt,
-            void* pNext = default,
-            ulong deviceAddress = default
+            StructureType? sType = StructureType.BufferDeviceAddressCreateInfoExt,
+            void* pNext = null,
+            ulong? deviceAddress = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceAddress = deviceAddress;
+            fixed (BufferDeviceAddressCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
         }
 
 /// <summary></summary>

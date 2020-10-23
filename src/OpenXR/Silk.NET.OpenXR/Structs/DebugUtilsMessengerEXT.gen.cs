@@ -21,10 +21,18 @@ namespace Silk.NET.OpenXR
     {
         public DebugUtilsMessengerEXT
         (
-            ulong handle = default
+            ulong? handle = null
         )
         {
-            Handle = handle;
+            fixed (DebugUtilsMessengerEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 

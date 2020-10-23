@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PipelineExecutableInternalRepresentationKHR
         (
-            StructureType sType = StructureType.PipelineExecutableInternalRepresentationKhr,
-            void* pNext = default,
-            Bool32 isText = default,
-            UIntPtr dataSize = default,
-            void* pData = default
+            StructureType? sType = StructureType.PipelineExecutableInternalRepresentationKhr,
+            void* pNext = null,
+            Bool32? isText = null,
+            UIntPtr? dataSize = null,
+            void* pData = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            IsText = isText;
-            DataSize = dataSize;
-            PData = pData;
+            fixed (PipelineExecutableInternalRepresentationKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (isText is not null)
+            {
+                IsText = isText.Value;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (pData is not null)
+            {
+                PData = pData;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceConditionalRenderingFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceConditionalRenderingFeaturesExt,
-            void* pNext = default,
-            Bool32 conditionalRendering = default,
-            Bool32 inheritedConditionalRendering = default
+            StructureType? sType = StructureType.PhysicalDeviceConditionalRenderingFeaturesExt,
+            void* pNext = null,
+            Bool32? conditionalRendering = null,
+            Bool32? inheritedConditionalRendering = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ConditionalRendering = conditionalRendering;
-            InheritedConditionalRendering = inheritedConditionalRendering;
+            fixed (PhysicalDeviceConditionalRenderingFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (conditionalRendering is not null)
+            {
+                ConditionalRendering = conditionalRendering.Value;
+            }
+
+            if (inheritedConditionalRendering is not null)
+            {
+                InheritedConditionalRendering = inheritedConditionalRendering.Value;
+            }
         }
 
 /// <summary></summary>

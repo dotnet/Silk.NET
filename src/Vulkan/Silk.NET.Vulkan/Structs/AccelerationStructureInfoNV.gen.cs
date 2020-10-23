@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureInfoNV
         (
-            StructureType sType = StructureType.AccelerationStructureInfoNV,
-            void* pNext = default,
-            AccelerationStructureTypeNV type = default,
-            BuildAccelerationStructureFlagsNV flags = default,
-            uint instanceCount = default,
-            uint geometryCount = default,
-            GeometryNV* pGeometries = default
+            StructureType? sType = StructureType.AccelerationStructureInfoNV,
+            void* pNext = null,
+            AccelerationStructureTypeNV? type = null,
+            BuildAccelerationStructureFlagsNV? flags = null,
+            uint? instanceCount = null,
+            uint? geometryCount = null,
+            GeometryNV* pGeometries = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
-            Flags = flags;
-            InstanceCount = instanceCount;
-            GeometryCount = geometryCount;
-            PGeometries = pGeometries;
+            fixed (AccelerationStructureInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (instanceCount is not null)
+            {
+                InstanceCount = instanceCount.Value;
+            }
+
+            if (geometryCount is not null)
+            {
+                GeometryCount = geometryCount.Value;
+            }
+
+            if (pGeometries is not null)
+            {
+                PGeometries = pGeometries;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ViewportSwizzleNV
         (
-            ViewportCoordinateSwizzleNV x = default,
-            ViewportCoordinateSwizzleNV y = default,
-            ViewportCoordinateSwizzleNV z = default,
-            ViewportCoordinateSwizzleNV w = default
+            ViewportCoordinateSwizzleNV? x = null,
+            ViewportCoordinateSwizzleNV? y = null,
+            ViewportCoordinateSwizzleNV? z = null,
+            ViewportCoordinateSwizzleNV? w = null
         )
         {
-            X = x;
-            Y = y;
-            Z = z;
-            W = w;
+            fixed (ViewportSwizzleNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
         }
 
 /// <summary></summary>

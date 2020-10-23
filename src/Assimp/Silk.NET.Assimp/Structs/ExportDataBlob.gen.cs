@@ -21,16 +21,36 @@ namespace Silk.NET.Assimp
     {
         public ExportDataBlob
         (
-            uint size = default,
-            void* data = default,
-            AssimpString name = default,
-            ExportDataBlob* next = default
+            uint? size = null,
+            void* data = null,
+            AssimpString? name = null,
+            ExportDataBlob* next = null
         )
         {
-            Size = size;
-            Data = data;
-            Name = name;
-            Next = next;
+            fixed (ExportDataBlob* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (data is not null)
+            {
+                Data = data;
+            }
+
+            if (name is not null)
+            {
+                Name = name.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 

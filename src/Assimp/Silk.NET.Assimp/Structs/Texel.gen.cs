@@ -21,16 +21,36 @@ namespace Silk.NET.Assimp
     {
         public Texel
         (
-            byte b = default,
-            byte g = default,
-            byte r = default,
-            byte a = default
+            byte? b = null,
+            byte? g = null,
+            byte? r = null,
+            byte? a = null
         )
         {
-            B = b;
-            G = g;
-            R = r;
-            A = a;
+            fixed (Texel* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (g is not null)
+            {
+                G = g.Value;
+            }
+
+            if (r is not null)
+            {
+                R = r.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
 

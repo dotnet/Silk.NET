@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public AllocationCallbacks
         (
-            void* pUserData = default,
-            FuncPtr pfnAllocation = default,
-            FuncPtr pfnReallocation = default,
-            FuncPtr pfnFree = default,
-            FuncPtr pfnInternalAllocation = default,
-            FuncPtr pfnInternalFree = default
+            void* pUserData = null,
+            FuncPtr? pfnAllocation = null,
+            FuncPtr? pfnReallocation = null,
+            FuncPtr? pfnFree = null,
+            FuncPtr? pfnInternalAllocation = null,
+            FuncPtr? pfnInternalFree = null
         )
         {
-            PUserData = pUserData;
-            PfnAllocation = pfnAllocation;
-            PfnReallocation = pfnReallocation;
-            PfnFree = pfnFree;
-            PfnInternalAllocation = pfnInternalAllocation;
-            PfnInternalFree = pfnInternalFree;
+            fixed (AllocationCallbacks* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (pUserData is not null)
+            {
+                PUserData = pUserData;
+            }
+
+            if (pfnAllocation is not null)
+            {
+                PfnAllocation = pfnAllocation.Value;
+            }
+
+            if (pfnReallocation is not null)
+            {
+                PfnReallocation = pfnReallocation.Value;
+            }
+
+            if (pfnFree is not null)
+            {
+                PfnFree = pfnFree.Value;
+            }
+
+            if (pfnInternalAllocation is not null)
+            {
+                PfnInternalAllocation = pfnInternalAllocation.Value;
+            }
+
+            if (pfnInternalFree is not null)
+            {
+                PfnInternalFree = pfnInternalFree.Value;
+            }
         }
 
 /// <summary></summary>

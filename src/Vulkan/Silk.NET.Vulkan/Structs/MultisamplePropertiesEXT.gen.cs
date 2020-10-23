@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public MultisamplePropertiesEXT
         (
-            StructureType sType = StructureType.MultisamplePropertiesExt,
-            void* pNext = default,
-            Extent2D maxSampleLocationGridSize = default
+            StructureType? sType = StructureType.MultisamplePropertiesExt,
+            void* pNext = null,
+            Extent2D? maxSampleLocationGridSize = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxSampleLocationGridSize = maxSampleLocationGridSize;
+            fixed (MultisamplePropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxSampleLocationGridSize is not null)
+            {
+                MaxSampleLocationGridSize = maxSampleLocationGridSize.Value;
+            }
         }
 
 /// <summary></summary>

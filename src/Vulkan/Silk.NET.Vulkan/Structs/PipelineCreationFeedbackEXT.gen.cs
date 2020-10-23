@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCreationFeedbackEXT
         (
-            PipelineCreationFeedbackFlagsEXT flags = default,
-            ulong duration = default
+            PipelineCreationFeedbackFlagsEXT? flags = null,
+            ulong? duration = null
         )
         {
-            Flags = flags;
-            Duration = duration;
+            fixed (PipelineCreationFeedbackEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (duration is not null)
+            {
+                Duration = duration.Value;
+            }
         }
 
 /// <summary></summary>

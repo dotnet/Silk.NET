@@ -21,20 +21,48 @@ namespace Silk.NET.OpenXR
     {
         public EventDataPerfSettingsEXT
         (
-            StructureType type = StructureType.TypeEventDataPerfSettingsExt,
-            void* next = default,
-            PerfSettingsDomainEXT domain = default,
-            PerfSettingsSubDomainEXT subDomain = default,
-            PerfSettingsNotificationLevelEXT fromLevel = default,
-            PerfSettingsNotificationLevelEXT toLevel = default
+            StructureType? type = StructureType.TypeEventDataPerfSettingsExt,
+            void* next = null,
+            PerfSettingsDomainEXT? domain = null,
+            PerfSettingsSubDomainEXT? subDomain = null,
+            PerfSettingsNotificationLevelEXT? fromLevel = null,
+            PerfSettingsNotificationLevelEXT? toLevel = null
         )
         {
-            Type = type;
-            Next = next;
-            Domain = domain;
-            SubDomain = subDomain;
-            FromLevel = fromLevel;
-            ToLevel = toLevel;
+            fixed (EventDataPerfSettingsEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (domain is not null)
+            {
+                Domain = domain.Value;
+            }
+
+            if (subDomain is not null)
+            {
+                SubDomain = subDomain.Value;
+            }
+
+            if (fromLevel is not null)
+            {
+                FromLevel = fromLevel.Value;
+            }
+
+            if (toLevel is not null)
+            {
+                ToLevel = toLevel.Value;
+            }
         }
 
 /// <summary></summary>

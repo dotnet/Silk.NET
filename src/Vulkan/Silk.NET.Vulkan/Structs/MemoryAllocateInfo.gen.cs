@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public MemoryAllocateInfo
         (
-            StructureType sType = StructureType.MemoryAllocateInfo,
-            void* pNext = default,
-            ulong allocationSize = default,
-            uint memoryTypeIndex = default
+            StructureType? sType = StructureType.MemoryAllocateInfo,
+            void* pNext = null,
+            ulong? allocationSize = null,
+            uint? memoryTypeIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AllocationSize = allocationSize;
-            MemoryTypeIndex = memoryTypeIndex;
+            fixed (MemoryAllocateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (allocationSize is not null)
+            {
+                AllocationSize = allocationSize.Value;
+            }
+
+            if (memoryTypeIndex is not null)
+            {
+                MemoryTypeIndex = memoryTypeIndex.Value;
+            }
         }
 
 /// <summary></summary>

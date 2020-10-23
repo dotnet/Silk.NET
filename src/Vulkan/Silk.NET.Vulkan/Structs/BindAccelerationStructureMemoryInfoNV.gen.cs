@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public BindAccelerationStructureMemoryInfoNV
         (
-            StructureType sType = StructureType.BindAccelerationStructureMemoryInfoKhr,
-            void* pNext = default,
-            AccelerationStructureKHR accelerationStructure = default,
-            DeviceMemory memory = default,
-            ulong memoryOffset = default,
-            uint deviceIndexCount = default,
-            uint* pDeviceIndices = default
+            StructureType? sType = StructureType.BindAccelerationStructureMemoryInfoKhr,
+            void* pNext = null,
+            AccelerationStructureKHR? accelerationStructure = null,
+            DeviceMemory? memory = null,
+            ulong? memoryOffset = null,
+            uint? deviceIndexCount = null,
+            uint* pDeviceIndices = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AccelerationStructure = accelerationStructure;
-            Memory = memory;
-            MemoryOffset = memoryOffset;
-            DeviceIndexCount = deviceIndexCount;
-            PDeviceIndices = pDeviceIndices;
+            fixed (BindAccelerationStructureMemoryInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (accelerationStructure is not null)
+            {
+                AccelerationStructure = accelerationStructure.Value;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (memoryOffset is not null)
+            {
+                MemoryOffset = memoryOffset.Value;
+            }
+
+            if (deviceIndexCount is not null)
+            {
+                DeviceIndexCount = deviceIndexCount.Value;
+            }
+
+            if (pDeviceIndices is not null)
+            {
+                PDeviceIndices = pDeviceIndices;
+            }
         }
 
 /// <summary></summary>

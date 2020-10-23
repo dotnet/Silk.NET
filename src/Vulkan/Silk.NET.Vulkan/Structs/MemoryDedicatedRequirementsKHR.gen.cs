@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public MemoryDedicatedRequirementsKHR
         (
-            StructureType sType = StructureType.MemoryDedicatedRequirements,
-            void* pNext = default,
-            Bool32 prefersDedicatedAllocation = default,
-            Bool32 requiresDedicatedAllocation = default
+            StructureType? sType = StructureType.MemoryDedicatedRequirements,
+            void* pNext = null,
+            Bool32? prefersDedicatedAllocation = null,
+            Bool32? requiresDedicatedAllocation = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PrefersDedicatedAllocation = prefersDedicatedAllocation;
-            RequiresDedicatedAllocation = requiresDedicatedAllocation;
+            fixed (MemoryDedicatedRequirementsKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (prefersDedicatedAllocation is not null)
+            {
+                PrefersDedicatedAllocation = prefersDedicatedAllocation.Value;
+            }
+
+            if (requiresDedicatedAllocation is not null)
+            {
+                RequiresDedicatedAllocation = requiresDedicatedAllocation.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PipelineTessellationDomainOriginStateCreateInfoKHR
         (
-            StructureType sType = StructureType.PipelineTessellationDomainOriginStateCreateInfo,
-            void* pNext = default,
-            TessellationDomainOrigin domainOrigin = default
+            StructureType? sType = StructureType.PipelineTessellationDomainOriginStateCreateInfo,
+            void* pNext = null,
+            TessellationDomainOrigin? domainOrigin = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DomainOrigin = domainOrigin;
+            fixed (PipelineTessellationDomainOriginStateCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (domainOrigin is not null)
+            {
+                DomainOrigin = domainOrigin.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public ImportMemoryWin32HandleInfoKHR
         (
-            StructureType sType = StructureType.ImportMemoryWin32HandleInfoKhr,
-            void* pNext = default,
-            ExternalMemoryHandleTypeFlags handleType = default,
-            IntPtr handle = default,
-            IntPtr name = default
+            StructureType? sType = StructureType.ImportMemoryWin32HandleInfoKhr,
+            void* pNext = null,
+            ExternalMemoryHandleTypeFlags? handleType = null,
+            IntPtr? handle = null,
+            IntPtr? name = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleType = handleType;
-            Handle = handle;
-            Name = name;
+            fixed (ImportMemoryWin32HandleInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
+
+            if (name is not null)
+            {
+                Name = name.Value;
+            }
         }
 
 /// <summary></summary>

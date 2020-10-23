@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public ClearDepthStencilValue
         (
-            float depth = default,
-            uint stencil = default
+            float? depth = null,
+            uint? stencil = null
         )
         {
-            Depth = depth;
-            Stencil = stencil;
+            fixed (ClearDepthStencilValue* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
+
+            if (stencil is not null)
+            {
+                Stencil = stencil.Value;
+            }
         }
 
 /// <summary></summary>

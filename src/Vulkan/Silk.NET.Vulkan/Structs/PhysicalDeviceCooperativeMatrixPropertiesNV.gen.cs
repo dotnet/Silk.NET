@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCooperativeMatrixPropertiesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceCooperativeMatrixPropertiesNV,
-            void* pNext = default,
-            ShaderStageFlags cooperativeMatrixSupportedStages = default
+            StructureType? sType = StructureType.PhysicalDeviceCooperativeMatrixPropertiesNV,
+            void* pNext = null,
+            ShaderStageFlags? cooperativeMatrixSupportedStages = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CooperativeMatrixSupportedStages = cooperativeMatrixSupportedStages;
+            fixed (PhysicalDeviceCooperativeMatrixPropertiesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (cooperativeMatrixSupportedStages is not null)
+            {
+                CooperativeMatrixSupportedStages = cooperativeMatrixSupportedStages.Value;
+            }
         }
 
 /// <summary></summary>

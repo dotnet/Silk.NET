@@ -21,24 +21,60 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingOpenGLXcbKHR
         (
-            StructureType type = StructureType.TypeGraphicsBindingOpenglXcbKhr,
-            void* next = default,
-            IntPtr* connection = default,
-            uint screenNumber = default,
-            IntPtr fbconfigid = default,
-            IntPtr visualid = default,
-            IntPtr glxDrawable = default,
-            IntPtr glxContext = default
+            StructureType? type = StructureType.TypeGraphicsBindingOpenglXcbKhr,
+            void* next = null,
+            IntPtr* connection = null,
+            uint? screenNumber = null,
+            IntPtr? fbconfigid = null,
+            IntPtr? visualid = null,
+            IntPtr? glxDrawable = null,
+            IntPtr? glxContext = null
         )
         {
-            Type = type;
-            Next = next;
-            Connection = connection;
-            ScreenNumber = screenNumber;
-            Fbconfigid = fbconfigid;
-            Visualid = visualid;
-            GlxDrawable = glxDrawable;
-            GlxContext = glxContext;
+            fixed (GraphicsBindingOpenGLXcbKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (connection is not null)
+            {
+                Connection = connection;
+            }
+
+            if (screenNumber is not null)
+            {
+                ScreenNumber = screenNumber.Value;
+            }
+
+            if (fbconfigid is not null)
+            {
+                Fbconfigid = fbconfigid.Value;
+            }
+
+            if (visualid is not null)
+            {
+                Visualid = visualid.Value;
+            }
+
+            if (glxDrawable is not null)
+            {
+                GlxDrawable = glxDrawable.Value;
+            }
+
+            if (glxContext is not null)
+            {
+                GlxContext = glxContext.Value;
+            }
         }
 
 /// <summary></summary>

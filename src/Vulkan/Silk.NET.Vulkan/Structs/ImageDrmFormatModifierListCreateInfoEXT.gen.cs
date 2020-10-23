@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ImageDrmFormatModifierListCreateInfoEXT
         (
-            StructureType sType = StructureType.ImageDrmFormatModifierListCreateInfoExt,
-            void* pNext = default,
-            uint drmFormatModifierCount = default,
-            ulong* pDrmFormatModifiers = default
+            StructureType? sType = StructureType.ImageDrmFormatModifierListCreateInfoExt,
+            void* pNext = null,
+            uint? drmFormatModifierCount = null,
+            ulong* pDrmFormatModifiers = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DrmFormatModifierCount = drmFormatModifierCount;
-            PDrmFormatModifiers = pDrmFormatModifiers;
+            fixed (ImageDrmFormatModifierListCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (drmFormatModifierCount is not null)
+            {
+                DrmFormatModifierCount = drmFormatModifierCount.Value;
+            }
+
+            if (pDrmFormatModifiers is not null)
+            {
+                PDrmFormatModifiers = pDrmFormatModifiers;
+            }
         }
 
 /// <summary></summary>

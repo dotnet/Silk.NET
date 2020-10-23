@@ -21,20 +21,48 @@ namespace Silk.NET.OpenXR
     {
         public SystemProperties
         (
-            StructureType type = StructureType.TypeSystemProperties,
-            void* next = default,
-            ulong systemId = default,
-            uint vendorId = default,
-            SystemGraphicsProperties graphicsProperties = default,
-            SystemTrackingProperties trackingProperties = default
+            StructureType? type = StructureType.TypeSystemProperties,
+            void* next = null,
+            ulong? systemId = null,
+            uint? vendorId = null,
+            SystemGraphicsProperties? graphicsProperties = null,
+            SystemTrackingProperties? trackingProperties = null
         )
         {
-            Type = type;
-            Next = next;
-            SystemId = systemId;
-            VendorId = vendorId;
-            GraphicsProperties = graphicsProperties;
-            TrackingProperties = trackingProperties;
+            fixed (SystemProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (systemId is not null)
+            {
+                SystemId = systemId.Value;
+            }
+
+            if (vendorId is not null)
+            {
+                VendorId = vendorId.Value;
+            }
+
+            if (graphicsProperties is not null)
+            {
+                GraphicsProperties = graphicsProperties.Value;
+            }
+
+            if (trackingProperties is not null)
+            {
+                TrackingProperties = trackingProperties.Value;
+            }
         }
 
 /// <summary></summary>

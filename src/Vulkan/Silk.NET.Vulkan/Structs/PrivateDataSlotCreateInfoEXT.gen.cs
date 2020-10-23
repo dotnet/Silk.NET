@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PrivateDataSlotCreateInfoEXT
         (
-            StructureType sType = StructureType.PrivateDataSlotCreateInfoExt,
-            void* pNext = default,
-            PrivateDataSlotCreateFlagsEXT flags = default
+            StructureType? sType = StructureType.PrivateDataSlotCreateInfoExt,
+            void* pNext = null,
+            PrivateDataSlotCreateFlagsEXT? flags = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
+            fixed (PrivateDataSlotCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

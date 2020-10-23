@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public CommandBufferInheritanceConditionalRenderingInfoEXT
         (
-            StructureType sType = StructureType.CommandBufferInheritanceConditionalRenderingInfoExt,
-            void* pNext = default,
-            Bool32 conditionalRenderingEnable = default
+            StructureType? sType = StructureType.CommandBufferInheritanceConditionalRenderingInfoExt,
+            void* pNext = null,
+            Bool32? conditionalRenderingEnable = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ConditionalRenderingEnable = conditionalRenderingEnable;
+            fixed (CommandBufferInheritanceConditionalRenderingInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (conditionalRenderingEnable is not null)
+            {
+                ConditionalRenderingEnable = conditionalRenderingEnable.Value;
+            }
         }
 
 /// <summary></summary>

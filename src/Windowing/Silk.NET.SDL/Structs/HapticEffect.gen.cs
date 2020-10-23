@@ -22,22 +22,54 @@ namespace Silk.NET.SDL
     {
         public HapticEffect
         (
-            ushort type = default,
-            HapticConstant constant = default,
-            HapticPeriodic periodic = default,
-            HapticCondition condition = default,
-            HapticRamp ramp = default,
-            HapticLeftRight leftright = default,
-            HapticCustom custom = default
+            ushort? type = null,
+            HapticConstant? constant = null,
+            HapticPeriodic? periodic = null,
+            HapticCondition? condition = null,
+            HapticRamp? ramp = null,
+            HapticLeftRight? leftright = null,
+            HapticCustom? custom = null
         )
         {
-            Type = type;
-            Constant = constant;
-            Periodic = periodic;
-            Condition = condition;
-            Ramp = ramp;
-            Leftright = leftright;
-            Custom = custom;
+            fixed (HapticEffect* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (constant is not null)
+            {
+                Constant = constant.Value;
+            }
+
+            if (periodic is not null)
+            {
+                Periodic = periodic.Value;
+            }
+
+            if (condition is not null)
+            {
+                Condition = condition.Value;
+            }
+
+            if (ramp is not null)
+            {
+                Ramp = ramp.Value;
+            }
+
+            if (leftright is not null)
+            {
+                Leftright = leftright.Value;
+            }
+
+            if (custom is not null)
+            {
+                Custom = custom.Value;
+            }
         }
 
 

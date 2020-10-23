@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public HapticVibration
         (
-            StructureType type = StructureType.TypeHapticVibration,
-            void* next = default,
-            long duration = default,
-            float frequency = default,
-            float amplitude = default
+            StructureType? type = StructureType.TypeHapticVibration,
+            void* next = null,
+            long? duration = null,
+            float? frequency = null,
+            float? amplitude = null
         )
         {
-            Type = type;
-            Next = next;
-            Duration = duration;
-            Frequency = frequency;
-            Amplitude = amplitude;
+            fixed (HapticVibration* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (duration is not null)
+            {
+                Duration = duration.Value;
+            }
+
+            if (frequency is not null)
+            {
+                Frequency = frequency.Value;
+            }
+
+            if (amplitude is not null)
+            {
+                Amplitude = amplitude.Value;
+            }
         }
 
 /// <summary></summary>

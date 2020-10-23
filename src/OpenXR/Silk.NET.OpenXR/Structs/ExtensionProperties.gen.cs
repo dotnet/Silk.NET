@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public ExtensionProperties
         (
-            StructureType type = StructureType.TypeExtensionProperties,
-            void* next = default,
-            uint extensionVersion = default
+            StructureType? type = StructureType.TypeExtensionProperties,
+            void* next = null,
+            uint? extensionVersion = null
         )
         {
-            Type = type;
-            Next = next;
-            ExtensionVersion = extensionVersion;
+            fixed (ExtensionProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (extensionVersion is not null)
+            {
+                ExtensionVersion = extensionVersion.Value;
+            }
         }
 
 /// <summary></summary>

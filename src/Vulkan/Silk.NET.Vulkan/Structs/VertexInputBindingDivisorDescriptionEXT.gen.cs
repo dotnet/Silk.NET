@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public VertexInputBindingDivisorDescriptionEXT
         (
-            uint binding = default,
-            uint divisor = default
+            uint? binding = null,
+            uint? divisor = null
         )
         {
-            Binding = binding;
-            Divisor = divisor;
+            fixed (VertexInputBindingDivisorDescriptionEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (divisor is not null)
+            {
+                Divisor = divisor.Value;
+            }
         }
 
 /// <summary></summary>

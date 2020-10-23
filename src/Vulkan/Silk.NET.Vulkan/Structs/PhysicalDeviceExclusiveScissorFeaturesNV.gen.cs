@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExclusiveScissorFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceExclusiveScissorFeaturesNV,
-            void* pNext = default,
-            Bool32 exclusiveScissor = default
+            StructureType? sType = StructureType.PhysicalDeviceExclusiveScissorFeaturesNV,
+            void* pNext = null,
+            Bool32? exclusiveScissor = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ExclusiveScissor = exclusiveScissor;
+            fixed (PhysicalDeviceExclusiveScissorFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (exclusiveScissor is not null)
+            {
+                ExclusiveScissor = exclusiveScissor.Value;
+            }
         }
 
 /// <summary></summary>

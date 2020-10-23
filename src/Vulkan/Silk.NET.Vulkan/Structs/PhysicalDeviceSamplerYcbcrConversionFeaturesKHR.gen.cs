@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSamplerYcbcrConversionFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceSamplerYcbcrConversionFeatures,
-            void* pNext = default,
-            Bool32 samplerYcbcrConversion = default
+            StructureType? sType = StructureType.PhysicalDeviceSamplerYcbcrConversionFeatures,
+            void* pNext = null,
+            Bool32? samplerYcbcrConversion = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SamplerYcbcrConversion = samplerYcbcrConversion;
+            fixed (PhysicalDeviceSamplerYcbcrConversionFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (samplerYcbcrConversion is not null)
+            {
+                SamplerYcbcrConversion = samplerYcbcrConversion.Value;
+            }
         }
 
 /// <summary></summary>

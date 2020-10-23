@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public PipelineColorBlendStateCreateInfo
         (
-            StructureType sType = StructureType.PipelineColorBlendStateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            Bool32 logicOpEnable = default,
-            LogicOp logicOp = default,
-            uint attachmentCount = default,
-            PipelineColorBlendAttachmentState* pAttachments = default
+            StructureType? sType = StructureType.PipelineColorBlendStateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            Bool32? logicOpEnable = null,
+            LogicOp? logicOp = null,
+            uint? attachmentCount = null,
+            PipelineColorBlendAttachmentState* pAttachments = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            LogicOpEnable = logicOpEnable;
-            LogicOp = logicOp;
-            AttachmentCount = attachmentCount;
-            PAttachments = pAttachments;
+            fixed (PipelineColorBlendStateCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (logicOpEnable is not null)
+            {
+                LogicOpEnable = logicOpEnable.Value;
+            }
+
+            if (logicOp is not null)
+            {
+                LogicOp = logicOp.Value;
+            }
+
+            if (attachmentCount is not null)
+            {
+                AttachmentCount = attachmentCount.Value;
+            }
+
+            if (pAttachments is not null)
+            {
+                PAttachments = pAttachments;
+            }
         }
 
 /// <summary></summary>

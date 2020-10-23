@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public PresentTimeGOOGLE
         (
-            uint presentID = default,
-            ulong desiredPresentTime = default
+            uint? presentID = null,
+            ulong? desiredPresentTime = null
         )
         {
-            PresentID = presentID;
-            DesiredPresentTime = desiredPresentTime;
+            fixed (PresentTimeGOOGLE* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (presentID is not null)
+            {
+                PresentID = presentID.Value;
+            }
+
+            if (desiredPresentTime is not null)
+            {
+                DesiredPresentTime = desiredPresentTime.Value;
+            }
         }
 
 /// <summary></summary>

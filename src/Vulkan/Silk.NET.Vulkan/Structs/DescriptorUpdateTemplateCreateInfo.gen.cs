@@ -21,28 +21,72 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorUpdateTemplateCreateInfo
         (
-            StructureType sType = StructureType.DescriptorUpdateTemplateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            uint descriptorUpdateEntryCount = default,
-            DescriptorUpdateTemplateEntry* pDescriptorUpdateEntries = default,
-            DescriptorUpdateTemplateType templateType = default,
-            DescriptorSetLayout descriptorSetLayout = default,
-            PipelineBindPoint pipelineBindPoint = default,
-            PipelineLayout pipelineLayout = default,
-            uint set = default
+            StructureType? sType = StructureType.DescriptorUpdateTemplateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            uint? descriptorUpdateEntryCount = null,
+            DescriptorUpdateTemplateEntry* pDescriptorUpdateEntries = null,
+            DescriptorUpdateTemplateType? templateType = null,
+            DescriptorSetLayout? descriptorSetLayout = null,
+            PipelineBindPoint? pipelineBindPoint = null,
+            PipelineLayout? pipelineLayout = null,
+            uint? set = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            DescriptorUpdateEntryCount = descriptorUpdateEntryCount;
-            PDescriptorUpdateEntries = pDescriptorUpdateEntries;
-            TemplateType = templateType;
-            DescriptorSetLayout = descriptorSetLayout;
-            PipelineBindPoint = pipelineBindPoint;
-            PipelineLayout = pipelineLayout;
-            Set = set;
+            fixed (DescriptorUpdateTemplateCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (descriptorUpdateEntryCount is not null)
+            {
+                DescriptorUpdateEntryCount = descriptorUpdateEntryCount.Value;
+            }
+
+            if (pDescriptorUpdateEntries is not null)
+            {
+                PDescriptorUpdateEntries = pDescriptorUpdateEntries;
+            }
+
+            if (templateType is not null)
+            {
+                TemplateType = templateType.Value;
+            }
+
+            if (descriptorSetLayout is not null)
+            {
+                DescriptorSetLayout = descriptorSetLayout.Value;
+            }
+
+            if (pipelineBindPoint is not null)
+            {
+                PipelineBindPoint = pipelineBindPoint.Value;
+            }
+
+            if (pipelineLayout is not null)
+            {
+                PipelineLayout = pipelineLayout.Value;
+            }
+
+            if (set is not null)
+            {
+                Set = set.Value;
+            }
         }
 
 /// <summary></summary>

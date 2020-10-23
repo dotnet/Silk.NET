@@ -21,24 +21,60 @@ namespace Silk.NET.OpenXR
     {
         public VisibilityMaskKHR
         (
-            StructureType type = StructureType.TypeVisibilityMaskKhr,
-            void* next = default,
-            uint vertexCapacityInput = default,
-            uint vertexCountOutput = default,
-            Vector2f* vertices = default,
-            uint indexCapacityInput = default,
-            uint indexCountOutput = default,
-            uint* indices = default
+            StructureType? type = StructureType.TypeVisibilityMaskKhr,
+            void* next = null,
+            uint? vertexCapacityInput = null,
+            uint? vertexCountOutput = null,
+            Vector2f* vertices = null,
+            uint? indexCapacityInput = null,
+            uint? indexCountOutput = null,
+            uint* indices = null
         )
         {
-            Type = type;
-            Next = next;
-            VertexCapacityInput = vertexCapacityInput;
-            VertexCountOutput = vertexCountOutput;
-            Vertices = vertices;
-            IndexCapacityInput = indexCapacityInput;
-            IndexCountOutput = indexCountOutput;
-            Indices = indices;
+            fixed (VisibilityMaskKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (vertexCapacityInput is not null)
+            {
+                VertexCapacityInput = vertexCapacityInput.Value;
+            }
+
+            if (vertexCountOutput is not null)
+            {
+                VertexCountOutput = vertexCountOutput.Value;
+            }
+
+            if (vertices is not null)
+            {
+                Vertices = vertices;
+            }
+
+            if (indexCapacityInput is not null)
+            {
+                IndexCapacityInput = indexCapacityInput.Value;
+            }
+
+            if (indexCountOutput is not null)
+            {
+                IndexCountOutput = indexCountOutput.Value;
+            }
+
+            if (indices is not null)
+            {
+                Indices = indices;
+            }
         }
 
 /// <summary></summary>

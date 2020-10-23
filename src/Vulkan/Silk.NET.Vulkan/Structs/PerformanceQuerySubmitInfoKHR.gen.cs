@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceQuerySubmitInfoKHR
         (
-            StructureType sType = StructureType.PerformanceQuerySubmitInfoKhr,
-            void* pNext = default,
-            uint counterPassIndex = default
+            StructureType? sType = StructureType.PerformanceQuerySubmitInfoKhr,
+            void* pNext = null,
+            uint? counterPassIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CounterPassIndex = counterPassIndex;
+            fixed (PerformanceQuerySubmitInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (counterPassIndex is not null)
+            {
+                CounterPassIndex = counterPassIndex.Value;
+            }
         }
 
 /// <summary></summary>

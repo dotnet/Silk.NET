@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public ActionsSyncInfo
         (
-            StructureType type = StructureType.TypeActionsSyncInfo,
-            void* next = default,
-            uint countActiveActionSets = default,
-            ActiveActionSet* activeActionSets = default
+            StructureType? type = StructureType.TypeActionsSyncInfo,
+            void* next = null,
+            uint? countActiveActionSets = null,
+            ActiveActionSet* activeActionSets = null
         )
         {
-            Type = type;
-            Next = next;
-            CountActiveActionSets = countActiveActionSets;
-            ActiveActionSets = activeActionSets;
+            fixed (ActionsSyncInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (countActiveActionSets is not null)
+            {
+                CountActiveActionSets = countActiveActionSets.Value;
+            }
+
+            if (activeActionSets is not null)
+            {
+                ActiveActionSets = activeActionSets;
+            }
         }
 
 /// <summary></summary>

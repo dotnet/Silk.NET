@@ -21,22 +21,54 @@ namespace Silk.NET.OpenXR
     {
         public HandMeshMSFT
         (
-            StructureType type = StructureType.TypeHandMeshMsft,
-            void* next = default,
-            uint isActive = default,
-            uint indexBufferChanged = default,
-            uint vertexBufferChanged = default,
-            HandMeshIndexBufferMSFT indexBuffer = default,
-            HandMeshVertexBufferMSFT vertexBuffer = default
+            StructureType? type = StructureType.TypeHandMeshMsft,
+            void* next = null,
+            uint? isActive = null,
+            uint? indexBufferChanged = null,
+            uint? vertexBufferChanged = null,
+            HandMeshIndexBufferMSFT? indexBuffer = null,
+            HandMeshVertexBufferMSFT? vertexBuffer = null
         )
         {
-            Type = type;
-            Next = next;
-            IsActive = isActive;
-            IndexBufferChanged = indexBufferChanged;
-            VertexBufferChanged = vertexBufferChanged;
-            IndexBuffer = indexBuffer;
-            VertexBuffer = vertexBuffer;
+            fixed (HandMeshMSFT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (isActive is not null)
+            {
+                IsActive = isActive.Value;
+            }
+
+            if (indexBufferChanged is not null)
+            {
+                IndexBufferChanged = indexBufferChanged.Value;
+            }
+
+            if (vertexBufferChanged is not null)
+            {
+                VertexBufferChanged = vertexBufferChanged.Value;
+            }
+
+            if (indexBuffer is not null)
+            {
+                IndexBuffer = indexBuffer.Value;
+            }
+
+            if (vertexBuffer is not null)
+            {
+                VertexBuffer = vertexBuffer.Value;
+            }
         }
 
 /// <summary></summary>

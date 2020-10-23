@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public MemoryOpaqueCaptureAddressAllocateInfo
         (
-            StructureType sType = StructureType.MemoryOpaqueCaptureAddressAllocateInfo,
-            void* pNext = default,
-            ulong opaqueCaptureAddress = default
+            StructureType? sType = StructureType.MemoryOpaqueCaptureAddressAllocateInfo,
+            void* pNext = null,
+            ulong? opaqueCaptureAddress = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            OpaqueCaptureAddress = opaqueCaptureAddress;
+            fixed (MemoryOpaqueCaptureAddressAllocateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (opaqueCaptureAddress is not null)
+            {
+                OpaqueCaptureAddress = opaqueCaptureAddress.Value;
+            }
         }
 
 /// <summary></summary>

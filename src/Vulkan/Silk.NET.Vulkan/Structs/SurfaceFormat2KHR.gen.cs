@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceFormat2KHR
         (
-            StructureType sType = StructureType.SurfaceFormat2Khr,
-            void* pNext = default,
-            SurfaceFormatKHR surfaceFormat = default
+            StructureType? sType = StructureType.SurfaceFormat2Khr,
+            void* pNext = null,
+            SurfaceFormatKHR? surfaceFormat = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SurfaceFormat = surfaceFormat;
+            fixed (SurfaceFormat2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surfaceFormat is not null)
+            {
+                SurfaceFormat = surfaceFormat.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShadingRateImageFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceShadingRateImageFeaturesNV,
-            void* pNext = default,
-            Bool32 shadingRateImage = default,
-            Bool32 shadingRateCoarseSampleOrder = default
+            StructureType? sType = StructureType.PhysicalDeviceShadingRateImageFeaturesNV,
+            void* pNext = null,
+            Bool32? shadingRateImage = null,
+            Bool32? shadingRateCoarseSampleOrder = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShadingRateImage = shadingRateImage;
-            ShadingRateCoarseSampleOrder = shadingRateCoarseSampleOrder;
+            fixed (PhysicalDeviceShadingRateImageFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shadingRateImage is not null)
+            {
+                ShadingRateImage = shadingRateImage.Value;
+            }
+
+            if (shadingRateCoarseSampleOrder is not null)
+            {
+                ShadingRateCoarseSampleOrder = shadingRateCoarseSampleOrder.Value;
+            }
         }
 
 /// <summary></summary>

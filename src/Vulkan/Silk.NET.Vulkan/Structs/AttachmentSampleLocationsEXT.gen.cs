@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentSampleLocationsEXT
         (
-            uint attachmentIndex = default,
-            SampleLocationsInfoEXT sampleLocationsInfo = default
+            uint? attachmentIndex = null,
+            SampleLocationsInfoEXT? sampleLocationsInfo = null
         )
         {
-            AttachmentIndex = attachmentIndex;
-            SampleLocationsInfo = sampleLocationsInfo;
+            fixed (AttachmentSampleLocationsEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (attachmentIndex is not null)
+            {
+                AttachmentIndex = attachmentIndex.Value;
+            }
+
+            if (sampleLocationsInfo is not null)
+            {
+                SampleLocationsInfo = sampleLocationsInfo.Value;
+            }
         }
 
 /// <summary></summary>

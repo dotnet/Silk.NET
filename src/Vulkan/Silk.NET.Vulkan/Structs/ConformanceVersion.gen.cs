@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ConformanceVersion
         (
-            byte major = default,
-            byte minor = default,
-            byte subminor = default,
-            byte patch = default
+            byte? major = null,
+            byte? minor = null,
+            byte? subminor = null,
+            byte? patch = null
         )
         {
-            Major = major;
-            Minor = minor;
-            Subminor = subminor;
-            Patch = patch;
+            fixed (ConformanceVersion* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (major is not null)
+            {
+                Major = major.Value;
+            }
+
+            if (minor is not null)
+            {
+                Minor = minor.Value;
+            }
+
+            if (subminor is not null)
+            {
+                Subminor = subminor.Value;
+            }
+
+            if (patch is not null)
+            {
+                Patch = patch.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevice8BitStorageFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDevice8BitStorageFeatures,
-            void* pNext = default,
-            Bool32 storageBuffer8BitAccess = default,
-            Bool32 uniformAndStorageBuffer8BitAccess = default,
-            Bool32 storagePushConstant8 = default
+            StructureType? sType = StructureType.PhysicalDevice8BitStorageFeatures,
+            void* pNext = null,
+            Bool32? storageBuffer8BitAccess = null,
+            Bool32? uniformAndStorageBuffer8BitAccess = null,
+            Bool32? storagePushConstant8 = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            StorageBuffer8BitAccess = storageBuffer8BitAccess;
-            UniformAndStorageBuffer8BitAccess = uniformAndStorageBuffer8BitAccess;
-            StoragePushConstant8 = storagePushConstant8;
+            fixed (PhysicalDevice8BitStorageFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (storageBuffer8BitAccess is not null)
+            {
+                StorageBuffer8BitAccess = storageBuffer8BitAccess.Value;
+            }
+
+            if (uniformAndStorageBuffer8BitAccess is not null)
+            {
+                UniformAndStorageBuffer8BitAccess = uniformAndStorageBuffer8BitAccess.Value;
+            }
+
+            if (storagePushConstant8 is not null)
+            {
+                StoragePushConstant8 = storagePushConstant8.Value;
+            }
         }
 
 /// <summary></summary>

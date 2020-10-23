@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMemoryBudgetPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceMemoryBudgetPropertiesExt,
-            void* pNext = default
+            StructureType? sType = StructureType.PhysicalDeviceMemoryBudgetPropertiesExt,
+            void* pNext = null
         )
         {
-            SType = sType;
-            PNext = pNext;
+            fixed (PhysicalDeviceMemoryBudgetPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
         }
 
 /// <summary></summary>

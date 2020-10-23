@@ -21,12 +21,24 @@ namespace Silk.NET.Assimp
     {
         public Ray
         (
-            System.Numerics.Vector3 pos = default,
-            System.Numerics.Vector3 dir = default
+            System.Numerics.Vector3? pos = null,
+            System.Numerics.Vector3? dir = null
         )
         {
-            Pos = pos;
-            Dir = dir;
+            fixed (Ray* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (pos is not null)
+            {
+                Pos = pos.Value;
+            }
+
+            if (dir is not null)
+            {
+                Dir = dir.Value;
+            }
         }
 
 

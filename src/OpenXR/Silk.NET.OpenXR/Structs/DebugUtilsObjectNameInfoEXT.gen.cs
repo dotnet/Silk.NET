@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public DebugUtilsObjectNameInfoEXT
         (
-            StructureType type = StructureType.TypeDebugUtilsObjectNameInfoExt,
-            void* next = default,
-            ObjectType objectType = default,
-            ulong objectHandle = default,
-            byte* objectName = default
+            StructureType? type = StructureType.TypeDebugUtilsObjectNameInfoExt,
+            void* next = null,
+            ObjectType? objectType = null,
+            ulong? objectHandle = null,
+            byte* objectName = null
         )
         {
-            Type = type;
-            Next = next;
-            ObjectType = objectType;
-            ObjectHandle = objectHandle;
-            ObjectName = objectName;
+            fixed (DebugUtilsObjectNameInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (objectType is not null)
+            {
+                ObjectType = objectType.Value;
+            }
+
+            if (objectHandle is not null)
+            {
+                ObjectHandle = objectHandle.Value;
+            }
+
+            if (objectName is not null)
+            {
+                ObjectName = objectName;
+            }
         }
 
 /// <summary></summary>

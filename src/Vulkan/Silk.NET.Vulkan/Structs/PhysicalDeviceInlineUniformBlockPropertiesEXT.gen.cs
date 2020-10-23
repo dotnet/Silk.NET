@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceInlineUniformBlockPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceInlineUniformBlockPropertiesExt,
-            void* pNext = default,
-            uint maxInlineUniformBlockSize = default,
-            uint maxPerStageDescriptorInlineUniformBlocks = default,
-            uint maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = default,
-            uint maxDescriptorSetInlineUniformBlocks = default,
-            uint maxDescriptorSetUpdateAfterBindInlineUniformBlocks = default
+            StructureType? sType = StructureType.PhysicalDeviceInlineUniformBlockPropertiesExt,
+            void* pNext = null,
+            uint? maxInlineUniformBlockSize = null,
+            uint? maxPerStageDescriptorInlineUniformBlocks = null,
+            uint? maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = null,
+            uint? maxDescriptorSetInlineUniformBlocks = null,
+            uint? maxDescriptorSetUpdateAfterBindInlineUniformBlocks = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxInlineUniformBlockSize = maxInlineUniformBlockSize;
-            MaxPerStageDescriptorInlineUniformBlocks = maxPerStageDescriptorInlineUniformBlocks;
-            MaxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks;
-            MaxDescriptorSetInlineUniformBlocks = maxDescriptorSetInlineUniformBlocks;
-            MaxDescriptorSetUpdateAfterBindInlineUniformBlocks = maxDescriptorSetUpdateAfterBindInlineUniformBlocks;
+            fixed (PhysicalDeviceInlineUniformBlockPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxInlineUniformBlockSize is not null)
+            {
+                MaxInlineUniformBlockSize = maxInlineUniformBlockSize.Value;
+            }
+
+            if (maxPerStageDescriptorInlineUniformBlocks is not null)
+            {
+                MaxPerStageDescriptorInlineUniformBlocks = maxPerStageDescriptorInlineUniformBlocks.Value;
+            }
+
+            if (maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks is not null)
+            {
+                MaxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks.Value;
+            }
+
+            if (maxDescriptorSetInlineUniformBlocks is not null)
+            {
+                MaxDescriptorSetInlineUniformBlocks = maxDescriptorSetInlineUniformBlocks.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindInlineUniformBlocks is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindInlineUniformBlocks = maxDescriptorSetUpdateAfterBindInlineUniformBlocks.Value;
+            }
         }
 
 /// <summary></summary>

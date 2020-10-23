@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewUsageCreateInfo
         (
-            StructureType sType = StructureType.ImageViewUsageCreateInfo,
-            void* pNext = default,
-            ImageUsageFlags usage = default
+            StructureType? sType = StructureType.ImageViewUsageCreateInfo,
+            void* pNext = null,
+            ImageUsageFlags? usage = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Usage = usage;
+            fixed (ImageViewUsageCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
         }
 
 /// <summary></summary>

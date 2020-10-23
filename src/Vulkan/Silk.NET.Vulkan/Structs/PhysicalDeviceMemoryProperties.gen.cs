@@ -21,60 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMemoryProperties
         (
-            uint memoryTypeCount = default,
-            uint memoryHeapCount = default
+            uint? memoryTypeCount = null,
+            uint? memoryHeapCount = null
         )
         {
-            MemoryTypeCount = memoryTypeCount;
-           MemoryTypes_0 = default;
-           MemoryTypes_1 = default;
-           MemoryTypes_2 = default;
-           MemoryTypes_3 = default;
-           MemoryTypes_4 = default;
-           MemoryTypes_5 = default;
-           MemoryTypes_6 = default;
-           MemoryTypes_7 = default;
-           MemoryTypes_8 = default;
-           MemoryTypes_9 = default;
-           MemoryTypes_10 = default;
-           MemoryTypes_11 = default;
-           MemoryTypes_12 = default;
-           MemoryTypes_13 = default;
-           MemoryTypes_14 = default;
-           MemoryTypes_15 = default;
-           MemoryTypes_16 = default;
-           MemoryTypes_17 = default;
-           MemoryTypes_18 = default;
-           MemoryTypes_19 = default;
-           MemoryTypes_20 = default;
-           MemoryTypes_21 = default;
-           MemoryTypes_22 = default;
-           MemoryTypes_23 = default;
-           MemoryTypes_24 = default;
-           MemoryTypes_25 = default;
-           MemoryTypes_26 = default;
-           MemoryTypes_27 = default;
-           MemoryTypes_28 = default;
-           MemoryTypes_29 = default;
-           MemoryTypes_30 = default;
-           MemoryTypes_31 = default;
-            MemoryHeapCount = memoryHeapCount;
-           MemoryHeaps_0 = default;
-           MemoryHeaps_1 = default;
-           MemoryHeaps_2 = default;
-           MemoryHeaps_3 = default;
-           MemoryHeaps_4 = default;
-           MemoryHeaps_5 = default;
-           MemoryHeaps_6 = default;
-           MemoryHeaps_7 = default;
-           MemoryHeaps_8 = default;
-           MemoryHeaps_9 = default;
-           MemoryHeaps_10 = default;
-           MemoryHeaps_11 = default;
-           MemoryHeaps_12 = default;
-           MemoryHeaps_13 = default;
-           MemoryHeaps_14 = default;
-           MemoryHeaps_15 = default;
+            fixed (PhysicalDeviceMemoryProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (memoryTypeCount is not null)
+            {
+                MemoryTypeCount = memoryTypeCount.Value;
+            }
+
+            if (memoryHeapCount is not null)
+            {
+                MemoryHeapCount = memoryHeapCount.Value;
+            }
         }
 
 /// <summary></summary>

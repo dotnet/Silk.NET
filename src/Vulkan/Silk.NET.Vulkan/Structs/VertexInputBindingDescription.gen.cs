@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public VertexInputBindingDescription
         (
-            uint binding = default,
-            uint stride = default,
-            VertexInputRate inputRate = default
+            uint? binding = null,
+            uint? stride = null,
+            VertexInputRate? inputRate = null
         )
         {
-            Binding = binding;
-            Stride = stride;
-            InputRate = inputRate;
+            fixed (VertexInputBindingDescription* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
+
+            if (inputRate is not null)
+            {
+                InputRate = inputRate.Value;
+            }
         }
 
 /// <summary></summary>

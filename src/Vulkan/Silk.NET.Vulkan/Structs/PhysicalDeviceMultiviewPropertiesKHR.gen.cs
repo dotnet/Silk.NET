@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMultiviewPropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceMultiviewProperties,
-            void* pNext = default,
-            uint maxMultiviewViewCount = default,
-            uint maxMultiviewInstanceIndex = default
+            StructureType? sType = StructureType.PhysicalDeviceMultiviewProperties,
+            void* pNext = null,
+            uint? maxMultiviewViewCount = null,
+            uint? maxMultiviewInstanceIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxMultiviewViewCount = maxMultiviewViewCount;
-            MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex;
+            fixed (PhysicalDeviceMultiviewPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxMultiviewViewCount is not null)
+            {
+                MaxMultiviewViewCount = maxMultiviewViewCount.Value;
+            }
+
+            if (maxMultiviewInstanceIndex is not null)
+            {
+                MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex.Value;
+            }
         }
 
 /// <summary></summary>

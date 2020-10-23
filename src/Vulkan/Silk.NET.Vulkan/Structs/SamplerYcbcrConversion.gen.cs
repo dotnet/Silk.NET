@@ -21,10 +21,18 @@ namespace Silk.NET.Vulkan
     {
         public SamplerYcbcrConversion
         (
-            ulong handle = default
+            ulong? handle = null
         )
         {
-            Handle = handle;
+            fixed (SamplerYcbcrConversion* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 

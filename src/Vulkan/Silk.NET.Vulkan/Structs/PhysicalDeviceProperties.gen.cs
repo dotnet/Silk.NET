@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceProperties
         (
-            uint apiVersion = default,
-            uint driverVersion = default,
-            uint vendorID = default,
-            uint deviceID = default,
-            PhysicalDeviceType deviceType = default,
-            PhysicalDeviceLimits limits = default,
-            PhysicalDeviceSparseProperties sparseProperties = default
+            uint? apiVersion = null,
+            uint? driverVersion = null,
+            uint? vendorID = null,
+            uint? deviceID = null,
+            PhysicalDeviceType? deviceType = null,
+            PhysicalDeviceLimits? limits = null,
+            PhysicalDeviceSparseProperties? sparseProperties = null
         )
         {
-            ApiVersion = apiVersion;
-            DriverVersion = driverVersion;
-            VendorID = vendorID;
-            DeviceID = deviceID;
-            DeviceType = deviceType;
-            Limits = limits;
-            SparseProperties = sparseProperties;
+            fixed (PhysicalDeviceProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (apiVersion is not null)
+            {
+                ApiVersion = apiVersion.Value;
+            }
+
+            if (driverVersion is not null)
+            {
+                DriverVersion = driverVersion.Value;
+            }
+
+            if (vendorID is not null)
+            {
+                VendorID = vendorID.Value;
+            }
+
+            if (deviceID is not null)
+            {
+                DeviceID = deviceID.Value;
+            }
+
+            if (deviceType is not null)
+            {
+                DeviceType = deviceType.Value;
+            }
+
+            if (limits is not null)
+            {
+                Limits = limits.Value;
+            }
+
+            if (sparseProperties is not null)
+            {
+                SparseProperties = sparseProperties.Value;
+            }
         }
 
 /// <summary></summary>

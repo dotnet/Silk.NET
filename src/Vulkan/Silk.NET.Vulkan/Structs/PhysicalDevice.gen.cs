@@ -21,10 +21,18 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevice
         (
-            IntPtr handle = default
+            IntPtr? handle = null
         )
         {
-            Handle = handle;
+            fixed (PhysicalDevice* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 

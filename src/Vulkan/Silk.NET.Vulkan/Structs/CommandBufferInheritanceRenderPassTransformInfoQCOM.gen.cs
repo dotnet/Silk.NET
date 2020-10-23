@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public CommandBufferInheritanceRenderPassTransformInfoQCOM
         (
-            StructureType sType = StructureType.CommandBufferInheritanceRenderPassTransformInfoQCom,
-            void* pNext = default,
-            SurfaceTransformFlagsKHR transform = default,
-            Rect2D renderArea = default
+            StructureType? sType = StructureType.CommandBufferInheritanceRenderPassTransformInfoQCom,
+            void* pNext = null,
+            SurfaceTransformFlagsKHR? transform = null,
+            Rect2D? renderArea = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Transform = transform;
-            RenderArea = renderArea;
+            fixed (CommandBufferInheritanceRenderPassTransformInfoQCOM* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (transform is not null)
+            {
+                Transform = transform.Value;
+            }
+
+            if (renderArea is not null)
+            {
+                RenderArea = renderArea.Value;
+            }
         }
 
 /// <summary></summary>

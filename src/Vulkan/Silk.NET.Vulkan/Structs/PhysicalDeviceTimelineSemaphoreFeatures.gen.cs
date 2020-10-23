@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTimelineSemaphoreFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceTimelineSemaphoreFeatures,
-            void* pNext = default,
-            Bool32 timelineSemaphore = default
+            StructureType? sType = StructureType.PhysicalDeviceTimelineSemaphoreFeatures,
+            void* pNext = null,
+            Bool32? timelineSemaphore = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            TimelineSemaphore = timelineSemaphore;
+            fixed (PhysicalDeviceTimelineSemaphoreFeatures* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (timelineSemaphore is not null)
+            {
+                TimelineSemaphore = timelineSemaphore.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.SDL
     {
         public MessageBoxColor
         (
-            byte r = default,
-            byte g = default,
-            byte b = default
+            byte? r = null,
+            byte? g = null,
+            byte? b = null
         )
         {
-            R = r;
-            G = g;
-            B = b;
+            fixed (MessageBoxColor* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (r is not null)
+            {
+                R = r.Value;
+            }
+
+            if (g is not null)
+            {
+                G = g.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
         }
 
 

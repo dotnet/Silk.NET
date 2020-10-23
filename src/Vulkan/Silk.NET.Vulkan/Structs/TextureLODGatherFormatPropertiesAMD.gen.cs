@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public TextureLODGatherFormatPropertiesAMD
         (
-            StructureType sType = StructureType.TextureLodGatherFormatPropertiesAmd,
-            void* pNext = default,
-            Bool32 supportsTextureGatherLodbiasAmd = default
+            StructureType? sType = StructureType.TextureLodGatherFormatPropertiesAmd,
+            void* pNext = null,
+            Bool32? supportsTextureGatherLodbiasAmd = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SupportsTextureGatherLodbiasAmd = supportsTextureGatherLodbiasAmd;
+            fixed (TextureLODGatherFormatPropertiesAMD* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (supportsTextureGatherLodbiasAmd is not null)
+            {
+                SupportsTextureGatherLodbiasAmd = supportsTextureGatherLodbiasAmd.Value;
+            }
         }
 
 /// <summary></summary>

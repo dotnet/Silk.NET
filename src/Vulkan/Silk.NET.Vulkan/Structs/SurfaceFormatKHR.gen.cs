@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceFormatKHR
         (
-            Format format = default,
-            ColorSpaceKHR colorSpace = default
+            Format? format = null,
+            ColorSpaceKHR? colorSpace = null
         )
         {
-            Format = format;
-            ColorSpace = colorSpace;
+            fixed (SurfaceFormatKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (colorSpace is not null)
+            {
+                ColorSpace = colorSpace.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,30 +21,78 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceConservativeRasterizationPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceConservativeRasterizationPropertiesExt,
-            void* pNext = default,
-            float primitiveOverestimationSize = default,
-            float maxExtraPrimitiveOverestimationSize = default,
-            float extraPrimitiveOverestimationSizeGranularity = default,
-            Bool32 primitiveUnderestimation = default,
-            Bool32 conservativePointAndLineRasterization = default,
-            Bool32 degenerateTrianglesRasterized = default,
-            Bool32 degenerateLinesRasterized = default,
-            Bool32 fullyCoveredFragmentShaderInputVariable = default,
-            Bool32 conservativeRasterizationPostDepthCoverage = default
+            StructureType? sType = StructureType.PhysicalDeviceConservativeRasterizationPropertiesExt,
+            void* pNext = null,
+            float? primitiveOverestimationSize = null,
+            float? maxExtraPrimitiveOverestimationSize = null,
+            float? extraPrimitiveOverestimationSizeGranularity = null,
+            Bool32? primitiveUnderestimation = null,
+            Bool32? conservativePointAndLineRasterization = null,
+            Bool32? degenerateTrianglesRasterized = null,
+            Bool32? degenerateLinesRasterized = null,
+            Bool32? fullyCoveredFragmentShaderInputVariable = null,
+            Bool32? conservativeRasterizationPostDepthCoverage = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PrimitiveOverestimationSize = primitiveOverestimationSize;
-            MaxExtraPrimitiveOverestimationSize = maxExtraPrimitiveOverestimationSize;
-            ExtraPrimitiveOverestimationSizeGranularity = extraPrimitiveOverestimationSizeGranularity;
-            PrimitiveUnderestimation = primitiveUnderestimation;
-            ConservativePointAndLineRasterization = conservativePointAndLineRasterization;
-            DegenerateTrianglesRasterized = degenerateTrianglesRasterized;
-            DegenerateLinesRasterized = degenerateLinesRasterized;
-            FullyCoveredFragmentShaderInputVariable = fullyCoveredFragmentShaderInputVariable;
-            ConservativeRasterizationPostDepthCoverage = conservativeRasterizationPostDepthCoverage;
+            fixed (PhysicalDeviceConservativeRasterizationPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (primitiveOverestimationSize is not null)
+            {
+                PrimitiveOverestimationSize = primitiveOverestimationSize.Value;
+            }
+
+            if (maxExtraPrimitiveOverestimationSize is not null)
+            {
+                MaxExtraPrimitiveOverestimationSize = maxExtraPrimitiveOverestimationSize.Value;
+            }
+
+            if (extraPrimitiveOverestimationSizeGranularity is not null)
+            {
+                ExtraPrimitiveOverestimationSizeGranularity = extraPrimitiveOverestimationSizeGranularity.Value;
+            }
+
+            if (primitiveUnderestimation is not null)
+            {
+                PrimitiveUnderestimation = primitiveUnderestimation.Value;
+            }
+
+            if (conservativePointAndLineRasterization is not null)
+            {
+                ConservativePointAndLineRasterization = conservativePointAndLineRasterization.Value;
+            }
+
+            if (degenerateTrianglesRasterized is not null)
+            {
+                DegenerateTrianglesRasterized = degenerateTrianglesRasterized.Value;
+            }
+
+            if (degenerateLinesRasterized is not null)
+            {
+                DegenerateLinesRasterized = degenerateLinesRasterized.Value;
+            }
+
+            if (fullyCoveredFragmentShaderInputVariable is not null)
+            {
+                FullyCoveredFragmentShaderInputVariable = fullyCoveredFragmentShaderInputVariable.Value;
+            }
+
+            if (conservativeRasterizationPostDepthCoverage is not null)
+            {
+                ConservativeRasterizationPostDepthCoverage = conservativeRasterizationPostDepthCoverage.Value;
+            }
         }
 
 /// <summary></summary>

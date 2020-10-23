@@ -21,12 +21,24 @@ namespace Silk.NET.OpenCL
     {
         public BufferRegion
         (
-            UIntPtr origin = default,
-            UIntPtr size = default
+            UIntPtr? origin = null,
+            UIntPtr? size = null
         )
         {
-            Origin = origin;
-            Size = size;
+            fixed (BufferRegion* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (origin is not null)
+            {
+                Origin = origin.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

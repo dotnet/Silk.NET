@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderAtomicInt64FeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderAtomicInt64Features,
-            void* pNext = default,
-            Bool32 shaderBufferInt64Atomics = default,
-            Bool32 shaderSharedInt64Atomics = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderAtomicInt64Features,
+            void* pNext = null,
+            Bool32? shaderBufferInt64Atomics = null,
+            Bool32? shaderSharedInt64Atomics = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderBufferInt64Atomics = shaderBufferInt64Atomics;
-            ShaderSharedInt64Atomics = shaderSharedInt64Atomics;
+            fixed (PhysicalDeviceShaderAtomicInt64FeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderBufferInt64Atomics is not null)
+            {
+                ShaderBufferInt64Atomics = shaderBufferInt64Atomics.Value;
+            }
+
+            if (shaderSharedInt64Atomics is not null)
+            {
+                ShaderSharedInt64Atomics = shaderSharedInt64Atomics.Value;
+            }
         }
 
 /// <summary></summary>

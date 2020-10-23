@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineLibraryCreateInfoKHR
         (
-            StructureType sType = StructureType.PipelineLibraryCreateInfoKhr,
-            void* pNext = default,
-            uint libraryCount = default,
-            Pipeline* pLibraries = default
+            StructureType? sType = StructureType.PipelineLibraryCreateInfoKhr,
+            void* pNext = null,
+            uint? libraryCount = null,
+            Pipeline* pLibraries = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            LibraryCount = libraryCount;
-            PLibraries = pLibraries;
+            fixed (PipelineLibraryCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (libraryCount is not null)
+            {
+                LibraryCount = libraryCount.Value;
+            }
+
+            if (pLibraries is not null)
+            {
+                PLibraries = pLibraries;
+            }
         }
 
 /// <summary></summary>

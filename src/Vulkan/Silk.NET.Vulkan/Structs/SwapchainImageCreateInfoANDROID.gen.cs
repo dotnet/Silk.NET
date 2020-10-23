@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SwapchainImageCreateInfoANDROID
         (
-            StructureType sType = StructureType.SwapchainImageCreateInfoAndroid,
-            void* pNext = default,
-            SwapchainImageUsageFlagsANDROID usage = default
+            StructureType? sType = StructureType.SwapchainImageCreateInfoAndroid,
+            void* pNext = null,
+            SwapchainImageUsageFlagsANDROID? usage = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Usage = usage;
+            fixed (SwapchainImageCreateInfoANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
         }
 
 /// <summary></summary>

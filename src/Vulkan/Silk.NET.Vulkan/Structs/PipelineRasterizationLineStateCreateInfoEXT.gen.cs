@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public PipelineRasterizationLineStateCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineRasterizationLineStateCreateInfoExt,
-            void* pNext = default,
-            LineRasterizationModeEXT lineRasterizationMode = default,
-            Bool32 stippledLineEnable = default,
-            uint lineStippleFactor = default,
-            ushort lineStipplePattern = default
+            StructureType? sType = StructureType.PipelineRasterizationLineStateCreateInfoExt,
+            void* pNext = null,
+            LineRasterizationModeEXT? lineRasterizationMode = null,
+            Bool32? stippledLineEnable = null,
+            uint? lineStippleFactor = null,
+            ushort? lineStipplePattern = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            LineRasterizationMode = lineRasterizationMode;
-            StippledLineEnable = stippledLineEnable;
-            LineStippleFactor = lineStippleFactor;
-            LineStipplePattern = lineStipplePattern;
+            fixed (PipelineRasterizationLineStateCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (lineRasterizationMode is not null)
+            {
+                LineRasterizationMode = lineRasterizationMode.Value;
+            }
+
+            if (stippledLineEnable is not null)
+            {
+                StippledLineEnable = stippledLineEnable.Value;
+            }
+
+            if (lineStippleFactor is not null)
+            {
+                LineStippleFactor = lineStippleFactor.Value;
+            }
+
+            if (lineStipplePattern is not null)
+            {
+                LineStipplePattern = lineStipplePattern.Value;
+            }
         }
 
 /// <summary></summary>

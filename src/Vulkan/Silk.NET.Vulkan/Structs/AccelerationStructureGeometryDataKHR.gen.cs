@@ -22,14 +22,30 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureGeometryDataKHR
         (
-            AccelerationStructureGeometryTrianglesDataKHR triangles = default,
-            AccelerationStructureGeometryAabbsDataKHR aabbs = default,
-            AccelerationStructureGeometryInstancesDataKHR instances = default
+            AccelerationStructureGeometryTrianglesDataKHR? triangles = null,
+            AccelerationStructureGeometryAabbsDataKHR? aabbs = null,
+            AccelerationStructureGeometryInstancesDataKHR? instances = null
         )
         {
-            Triangles = triangles;
-            Aabbs = aabbs;
-            Instances = instances;
+            fixed (AccelerationStructureGeometryDataKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (triangles is not null)
+            {
+                Triangles = triangles.Value;
+            }
+
+            if (aabbs is not null)
+            {
+                Aabbs = aabbs.Value;
+            }
+
+            if (instances is not null)
+            {
+                Instances = instances.Value;
+            }
         }
 
 /// <summary></summary>

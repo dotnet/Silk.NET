@@ -22,12 +22,24 @@ namespace Silk.NET.Vulkan
     {
         public ClearValue
         (
-            ClearColorValue color = default,
-            ClearDepthStencilValue depthStencil = default
+            ClearColorValue? color = null,
+            ClearDepthStencilValue? depthStencil = null
         )
         {
-            Color = color;
-            DepthStencil = depthStencil;
+            fixed (ClearValue* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (color is not null)
+            {
+                Color = color.Value;
+            }
+
+            if (depthStencil is not null)
+            {
+                DepthStencil = depthStencil.Value;
+            }
         }
 
 /// <summary></summary>

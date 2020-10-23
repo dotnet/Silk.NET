@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public Rect2D
         (
-            Offset2D offset = default,
-            Extent2D extent = default
+            Offset2D? offset = null,
+            Extent2D? extent = null
         )
         {
-            Offset = offset;
-            Extent = extent;
+            fixed (Rect2D* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
         }
 
 /// <summary></summary>

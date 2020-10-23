@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetVariableDescriptorCountLayoutSupport
         (
-            StructureType sType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport,
-            void* pNext = default,
-            uint maxVariableDescriptorCount = default
+            StructureType? sType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport,
+            void* pNext = null,
+            uint? maxVariableDescriptorCount = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxVariableDescriptorCount = maxVariableDescriptorCount;
+            fixed (DescriptorSetVariableDescriptorCountLayoutSupport* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxVariableDescriptorCount is not null)
+            {
+                MaxVariableDescriptorCount = maxVariableDescriptorCount.Value;
+            }
         }
 
 /// <summary></summary>

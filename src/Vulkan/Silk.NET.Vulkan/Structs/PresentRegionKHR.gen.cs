@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public PresentRegionKHR
         (
-            uint rectangleCount = default,
-            RectLayerKHR* pRectangles = default
+            uint? rectangleCount = null,
+            RectLayerKHR* pRectangles = null
         )
         {
-            RectangleCount = rectangleCount;
-            PRectangles = pRectangles;
+            fixed (PresentRegionKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (rectangleCount is not null)
+            {
+                RectangleCount = rectangleCount.Value;
+            }
+
+            if (pRectangles is not null)
+            {
+                PRectangles = pRectangles;
+            }
         }
 
 /// <summary></summary>

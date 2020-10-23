@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTextureCompressionASTCHDRFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceTextureCompressionAstcHdrFeaturesExt,
-            void* pNext = default,
-            Bool32 textureCompressionAstcHdr = default
+            StructureType? sType = StructureType.PhysicalDeviceTextureCompressionAstcHdrFeaturesExt,
+            void* pNext = null,
+            Bool32? textureCompressionAstcHdr = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            TextureCompressionAstcHdr = textureCompressionAstcHdr;
+            fixed (PhysicalDeviceTextureCompressionASTCHDRFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (textureCompressionAstcHdr is not null)
+            {
+                TextureCompressionAstcHdr = textureCompressionAstcHdr.Value;
+            }
         }
 
 /// <summary></summary>

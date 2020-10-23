@@ -21,12 +21,24 @@ namespace Silk.NET.Assimp
     {
         public QuatKey
         (
-            double mTime = default,
-            System.Numerics.Quaternion mValue = default
+            double? mTime = null,
+            System.Numerics.Quaternion? mValue = null
         )
         {
-            MTime = mTime;
-            MValue = mValue;
+            fixed (QuatKey* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mTime is not null)
+            {
+                MTime = mTime.Value;
+            }
+
+            if (mValue is not null)
+            {
+                MValue = mValue.Value;
+            }
         }
 
 

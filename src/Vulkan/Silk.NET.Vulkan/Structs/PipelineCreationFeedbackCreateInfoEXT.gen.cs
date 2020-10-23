@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCreationFeedbackCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineCreationFeedbackCreateInfoExt,
-            void* pNext = default,
-            PipelineCreationFeedbackEXT* pPipelineCreationFeedback = default,
-            uint pipelineStageCreationFeedbackCount = default,
-            PipelineCreationFeedbackEXT* pPipelineStageCreationFeedbacks = default
+            StructureType? sType = StructureType.PipelineCreationFeedbackCreateInfoExt,
+            void* pNext = null,
+            PipelineCreationFeedbackEXT* pPipelineCreationFeedback = null,
+            uint? pipelineStageCreationFeedbackCount = null,
+            PipelineCreationFeedbackEXT* pPipelineStageCreationFeedbacks = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PPipelineCreationFeedback = pPipelineCreationFeedback;
-            PipelineStageCreationFeedbackCount = pipelineStageCreationFeedbackCount;
-            PPipelineStageCreationFeedbacks = pPipelineStageCreationFeedbacks;
+            fixed (PipelineCreationFeedbackCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pPipelineCreationFeedback is not null)
+            {
+                PPipelineCreationFeedback = pPipelineCreationFeedback;
+            }
+
+            if (pipelineStageCreationFeedbackCount is not null)
+            {
+                PipelineStageCreationFeedbackCount = pipelineStageCreationFeedbackCount.Value;
+            }
+
+            if (pPipelineStageCreationFeedbacks is not null)
+            {
+                PPipelineStageCreationFeedbacks = pPipelineStageCreationFeedbacks;
+            }
         }
 
 /// <summary></summary>

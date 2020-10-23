@@ -22,14 +22,30 @@ namespace Silk.NET.SDL
     {
         public GameControllerBindValue
         (
-            int button = default,
-            int axis = default,
-            GameControllerHatValue hat = default
+            int? button = null,
+            int? axis = null,
+            GameControllerHatValue? hat = null
         )
         {
-            Button = button;
-            Axis = axis;
-            Hat = hat;
+            fixed (GameControllerBindValue* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (axis is not null)
+            {
+                Axis = axis.Value;
+            }
+
+            if (hat is not null)
+            {
+                Hat = hat.Value;
+            }
         }
 
 

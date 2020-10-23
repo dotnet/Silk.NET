@@ -21,28 +21,72 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceCapabilitiesKHR
         (
-            uint minImageCount = default,
-            uint maxImageCount = default,
-            Extent2D currentExtent = default,
-            Extent2D minImageExtent = default,
-            Extent2D maxImageExtent = default,
-            uint maxImageArrayLayers = default,
-            SurfaceTransformFlagsKHR supportedTransforms = default,
-            SurfaceTransformFlagsKHR currentTransform = default,
-            CompositeAlphaFlagsKHR supportedCompositeAlpha = default,
-            ImageUsageFlags supportedUsageFlags = default
+            uint? minImageCount = null,
+            uint? maxImageCount = null,
+            Extent2D? currentExtent = null,
+            Extent2D? minImageExtent = null,
+            Extent2D? maxImageExtent = null,
+            uint? maxImageArrayLayers = null,
+            SurfaceTransformFlagsKHR? supportedTransforms = null,
+            SurfaceTransformFlagsKHR? currentTransform = null,
+            CompositeAlphaFlagsKHR? supportedCompositeAlpha = null,
+            ImageUsageFlags? supportedUsageFlags = null
         )
         {
-            MinImageCount = minImageCount;
-            MaxImageCount = maxImageCount;
-            CurrentExtent = currentExtent;
-            MinImageExtent = minImageExtent;
-            MaxImageExtent = maxImageExtent;
-            MaxImageArrayLayers = maxImageArrayLayers;
-            SupportedTransforms = supportedTransforms;
-            CurrentTransform = currentTransform;
-            SupportedCompositeAlpha = supportedCompositeAlpha;
-            SupportedUsageFlags = supportedUsageFlags;
+            fixed (SurfaceCapabilitiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (minImageCount is not null)
+            {
+                MinImageCount = minImageCount.Value;
+            }
+
+            if (maxImageCount is not null)
+            {
+                MaxImageCount = maxImageCount.Value;
+            }
+
+            if (currentExtent is not null)
+            {
+                CurrentExtent = currentExtent.Value;
+            }
+
+            if (minImageExtent is not null)
+            {
+                MinImageExtent = minImageExtent.Value;
+            }
+
+            if (maxImageExtent is not null)
+            {
+                MaxImageExtent = maxImageExtent.Value;
+            }
+
+            if (maxImageArrayLayers is not null)
+            {
+                MaxImageArrayLayers = maxImageArrayLayers.Value;
+            }
+
+            if (supportedTransforms is not null)
+            {
+                SupportedTransforms = supportedTransforms.Value;
+            }
+
+            if (currentTransform is not null)
+            {
+                CurrentTransform = currentTransform.Value;
+            }
+
+            if (supportedCompositeAlpha is not null)
+            {
+                SupportedCompositeAlpha = supportedCompositeAlpha.Value;
+            }
+
+            if (supportedUsageFlags is not null)
+            {
+                SupportedUsageFlags = supportedUsageFlags.Value;
+            }
         }
 
 /// <summary></summary>

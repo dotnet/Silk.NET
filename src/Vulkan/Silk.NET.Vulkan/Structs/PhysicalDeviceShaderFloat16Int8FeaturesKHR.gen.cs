@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderFloat16Int8FeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderFloat16Int8Features,
-            void* pNext = default,
-            Bool32 shaderFloat16 = default,
-            Bool32 shaderInt8 = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderFloat16Int8Features,
+            void* pNext = null,
+            Bool32? shaderFloat16 = null,
+            Bool32? shaderInt8 = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderFloat16 = shaderFloat16;
-            ShaderInt8 = shaderInt8;
+            fixed (PhysicalDeviceShaderFloat16Int8FeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderFloat16 is not null)
+            {
+                ShaderFloat16 = shaderFloat16.Value;
+            }
+
+            if (shaderInt8 is not null)
+            {
+                ShaderInt8 = shaderInt8.Value;
+            }
         }
 
 /// <summary></summary>

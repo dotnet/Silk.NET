@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DrmFormatModifierPropertiesEXT
         (
-            ulong drmFormatModifier = default,
-            uint drmFormatModifierPlaneCount = default,
-            FormatFeatureFlags drmFormatModifierTilingFeatures = default
+            ulong? drmFormatModifier = null,
+            uint? drmFormatModifierPlaneCount = null,
+            FormatFeatureFlags? drmFormatModifierTilingFeatures = null
         )
         {
-            DrmFormatModifier = drmFormatModifier;
-            DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount;
-            DrmFormatModifierTilingFeatures = drmFormatModifierTilingFeatures;
+            fixed (DrmFormatModifierPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (drmFormatModifier is not null)
+            {
+                DrmFormatModifier = drmFormatModifier.Value;
+            }
+
+            if (drmFormatModifierPlaneCount is not null)
+            {
+                DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount.Value;
+            }
+
+            if (drmFormatModifierTilingFeatures is not null)
+            {
+                DrmFormatModifierTilingFeatures = drmFormatModifierTilingFeatures.Value;
+            }
         }
 
 /// <summary></summary>

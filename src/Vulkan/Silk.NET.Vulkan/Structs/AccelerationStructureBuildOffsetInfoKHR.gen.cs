@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureBuildOffsetInfoKHR
         (
-            uint primitiveCount = default,
-            uint primitiveOffset = default,
-            uint firstVertex = default,
-            uint transformOffset = default
+            uint? primitiveCount = null,
+            uint? primitiveOffset = null,
+            uint? firstVertex = null,
+            uint? transformOffset = null
         )
         {
-            PrimitiveCount = primitiveCount;
-            PrimitiveOffset = primitiveOffset;
-            FirstVertex = firstVertex;
-            TransformOffset = transformOffset;
+            fixed (AccelerationStructureBuildOffsetInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (primitiveCount is not null)
+            {
+                PrimitiveCount = primitiveCount.Value;
+            }
+
+            if (primitiveOffset is not null)
+            {
+                PrimitiveOffset = primitiveOffset.Value;
+            }
+
+            if (firstVertex is not null)
+            {
+                FirstVertex = firstVertex.Value;
+            }
+
+            if (transformOffset is not null)
+            {
+                TransformOffset = transformOffset.Value;
+            }
         }
 
 /// <summary></summary>

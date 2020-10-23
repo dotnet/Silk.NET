@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceASTCDecodeFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceAstcDecodeFeaturesExt,
-            void* pNext = default,
-            Bool32 decodeModeSharedExponent = default
+            StructureType? sType = StructureType.PhysicalDeviceAstcDecodeFeaturesExt,
+            void* pNext = null,
+            Bool32? decodeModeSharedExponent = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DecodeModeSharedExponent = decodeModeSharedExponent;
+            fixed (PhysicalDeviceASTCDecodeFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (decodeModeSharedExponent is not null)
+            {
+                DecodeModeSharedExponent = decodeModeSharedExponent.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public IndirectCommandsStreamNV
         (
-            Buffer buffer = default,
-            ulong offset = default
+            Buffer? buffer = null,
+            ulong? offset = null
         )
         {
-            Buffer = buffer;
-            Offset = offset;
+            fixed (IndirectCommandsStreamNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PastPresentationTimingGOOGLE
         (
-            uint presentID = default,
-            ulong desiredPresentTime = default,
-            ulong actualPresentTime = default,
-            ulong earliestPresentTime = default,
-            ulong presentMargin = default
+            uint? presentID = null,
+            ulong? desiredPresentTime = null,
+            ulong? actualPresentTime = null,
+            ulong? earliestPresentTime = null,
+            ulong? presentMargin = null
         )
         {
-            PresentID = presentID;
-            DesiredPresentTime = desiredPresentTime;
-            ActualPresentTime = actualPresentTime;
-            EarliestPresentTime = earliestPresentTime;
-            PresentMargin = presentMargin;
+            fixed (PastPresentationTimingGOOGLE* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (presentID is not null)
+            {
+                PresentID = presentID.Value;
+            }
+
+            if (desiredPresentTime is not null)
+            {
+                DesiredPresentTime = desiredPresentTime.Value;
+            }
+
+            if (actualPresentTime is not null)
+            {
+                ActualPresentTime = actualPresentTime.Value;
+            }
+
+            if (earliestPresentTime is not null)
+            {
+                EarliestPresentTime = earliestPresentTime.Value;
+            }
+
+            if (presentMargin is not null)
+            {
+                PresentMargin = presentMargin.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public ActionStateGetInfo
         (
-            StructureType type = StructureType.TypeActionStateGetInfo,
-            void* next = default,
-            Action action = default,
-            ulong subactionPath = default
+            StructureType? type = StructureType.TypeActionStateGetInfo,
+            void* next = null,
+            Action? action = null,
+            ulong? subactionPath = null
         )
         {
-            Type = type;
-            Next = next;
-            Action = action;
-            SubactionPath = subactionPath;
+            fixed (ActionStateGetInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
+
+            if (subactionPath is not null)
+            {
+                SubactionPath = subactionPath.Value;
+            }
         }
 
 /// <summary></summary>

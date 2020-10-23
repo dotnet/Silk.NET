@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentReference
         (
-            uint attachment = default,
-            ImageLayout layout = default
+            uint? attachment = null,
+            ImageLayout? layout = null
         )
         {
-            Attachment = attachment;
-            Layout = layout;
+            fixed (AttachmentReference* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (attachment is not null)
+            {
+                Attachment = attachment.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ExternalMemoryPropertiesKHR
         (
-            ExternalMemoryFeatureFlags externalMemoryFeatures = default,
-            ExternalMemoryHandleTypeFlags exportFromImportedHandleTypes = default,
-            ExternalMemoryHandleTypeFlags compatibleHandleTypes = default
+            ExternalMemoryFeatureFlags? externalMemoryFeatures = null,
+            ExternalMemoryHandleTypeFlags? exportFromImportedHandleTypes = null,
+            ExternalMemoryHandleTypeFlags? compatibleHandleTypes = null
         )
         {
-            ExternalMemoryFeatures = externalMemoryFeatures;
-            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-            CompatibleHandleTypes = compatibleHandleTypes;
+            fixed (ExternalMemoryPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (externalMemoryFeatures is not null)
+            {
+                ExternalMemoryFeatures = externalMemoryFeatures.Value;
+            }
+
+            if (exportFromImportedHandleTypes is not null)
+            {
+                ExportFromImportedHandleTypes = exportFromImportedHandleTypes.Value;
+            }
+
+            if (compatibleHandleTypes is not null)
+            {
+                CompatibleHandleTypes = compatibleHandleTypes.Value;
+            }
         }
 
 /// <summary></summary>

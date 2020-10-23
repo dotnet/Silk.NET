@@ -21,14 +21,30 @@ namespace Silk.NET.SDL
     {
         public MessageBoxButtonData
         (
-            uint flags = default,
-            int buttonid = default,
-            byte* text = default
+            uint? flags = null,
+            int? buttonid = null,
+            byte* text = null
         )
         {
-            Flags = flags;
-            Buttonid = buttonid;
-            Text = text;
+            fixed (MessageBoxButtonData* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (buttonid is not null)
+            {
+                Buttonid = buttonid.Value;
+            }
+
+            if (text is not null)
+            {
+                Text = text;
+            }
         }
 
 

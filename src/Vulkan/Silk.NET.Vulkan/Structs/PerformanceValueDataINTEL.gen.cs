@@ -22,18 +22,42 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceValueDataINTEL
         (
-            uint value32 = default,
-            ulong value64 = default,
-            float valueFloat = default,
-            Bool32 valueBool = default,
-            byte* valueString = default
+            uint? value32 = null,
+            ulong? value64 = null,
+            float? valueFloat = null,
+            Bool32? valueBool = null,
+            byte* valueString = null
         )
         {
-            Value32 = value32;
-            Value64 = value64;
-            ValueFloat = valueFloat;
-            ValueBool = valueBool;
-            ValueString = valueString;
+            fixed (PerformanceValueDataINTEL* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (value32 is not null)
+            {
+                Value32 = value32.Value;
+            }
+
+            if (value64 is not null)
+            {
+                Value64 = value64.Value;
+            }
+
+            if (valueFloat is not null)
+            {
+                ValueFloat = valueFloat.Value;
+            }
+
+            if (valueBool is not null)
+            {
+                ValueBool = valueBool.Value;
+            }
+
+            if (valueString is not null)
+            {
+                ValueString = valueString;
+            }
         }
 
 /// <summary></summary>

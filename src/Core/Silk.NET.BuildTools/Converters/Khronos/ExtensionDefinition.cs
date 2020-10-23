@@ -215,7 +215,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 if (valueAttribute == null)
                     return;
 
-                extensionConstants.Add(new ExtensionConstant(name, valueAttribute.Value));
+                extensionConstants.Add(new ExtensionConstant(enumName, valueAttribute.Value));
             }
         }
     }

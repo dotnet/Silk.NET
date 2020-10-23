@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public HeadlessSurfaceCreateInfoEXT
         (
-            StructureType sType = StructureType.HeadlessSurfaceCreateInfoExt,
-            void* pNext = default,
-            uint flags = default
+            StructureType? sType = StructureType.HeadlessSurfaceCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
+            fixed (HeadlessSurfaceCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

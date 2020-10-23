@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PipelineDynamicStateCreateInfo
         (
-            StructureType sType = StructureType.PipelineDynamicStateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            uint dynamicStateCount = default,
-            DynamicState* pDynamicStates = default
+            StructureType? sType = StructureType.PipelineDynamicStateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            uint? dynamicStateCount = null,
+            DynamicState* pDynamicStates = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            DynamicStateCount = dynamicStateCount;
-            PDynamicStates = pDynamicStates;
+            fixed (PipelineDynamicStateCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (dynamicStateCount is not null)
+            {
+                DynamicStateCount = dynamicStateCount.Value;
+            }
+
+            if (pDynamicStates is not null)
+            {
+                PDynamicStates = pDynamicStates;
+            }
         }
 
 /// <summary></summary>

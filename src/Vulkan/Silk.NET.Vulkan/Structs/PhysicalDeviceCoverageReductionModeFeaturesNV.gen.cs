@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCoverageReductionModeFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceCoverageReductionModeFeaturesNV,
-            void* pNext = default,
-            Bool32 coverageReductionMode = default
+            StructureType? sType = StructureType.PhysicalDeviceCoverageReductionModeFeaturesNV,
+            void* pNext = null,
+            Bool32? coverageReductionMode = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CoverageReductionMode = coverageReductionMode;
+            fixed (PhysicalDeviceCoverageReductionModeFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (coverageReductionMode is not null)
+            {
+                CoverageReductionMode = coverageReductionMode.Value;
+            }
         }
 
 /// <summary></summary>

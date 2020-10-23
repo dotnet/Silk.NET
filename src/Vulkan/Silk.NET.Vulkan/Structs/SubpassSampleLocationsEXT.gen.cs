@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public SubpassSampleLocationsEXT
         (
-            uint subpassIndex = default,
-            SampleLocationsInfoEXT sampleLocationsInfo = default
+            uint? subpassIndex = null,
+            SampleLocationsInfoEXT? sampleLocationsInfo = null
         )
         {
-            SubpassIndex = subpassIndex;
-            SampleLocationsInfo = sampleLocationsInfo;
+            fixed (SubpassSampleLocationsEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (subpassIndex is not null)
+            {
+                SubpassIndex = subpassIndex.Value;
+            }
+
+            if (sampleLocationsInfo is not null)
+            {
+                SampleLocationsInfo = sampleLocationsInfo.Value;
+            }
         }
 
 /// <summary></summary>

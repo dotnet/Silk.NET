@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderClockFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderClockFeaturesKhr,
-            void* pNext = default,
-            Bool32 shaderSubgroupClock = default,
-            Bool32 shaderDeviceClock = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderClockFeaturesKhr,
+            void* pNext = null,
+            Bool32? shaderSubgroupClock = null,
+            Bool32? shaderDeviceClock = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderSubgroupClock = shaderSubgroupClock;
-            ShaderDeviceClock = shaderDeviceClock;
+            fixed (PhysicalDeviceShaderClockFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderSubgroupClock is not null)
+            {
+                ShaderSubgroupClock = shaderSubgroupClock.Value;
+            }
+
+            if (shaderDeviceClock is not null)
+            {
+                ShaderDeviceClock = shaderDeviceClock.Value;
+            }
         }
 
 /// <summary></summary>

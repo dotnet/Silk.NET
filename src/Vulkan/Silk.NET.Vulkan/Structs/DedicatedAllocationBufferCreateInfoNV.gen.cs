@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DedicatedAllocationBufferCreateInfoNV
         (
-            StructureType sType = StructureType.DedicatedAllocationBufferCreateInfoNV,
-            void* pNext = default,
-            Bool32 dedicatedAllocation = default
+            StructureType? sType = StructureType.DedicatedAllocationBufferCreateInfoNV,
+            void* pNext = null,
+            Bool32? dedicatedAllocation = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DedicatedAllocation = dedicatedAllocation;
+            fixed (DedicatedAllocationBufferCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dedicatedAllocation is not null)
+            {
+                DedicatedAllocation = dedicatedAllocation.Value;
+            }
         }
 
 /// <summary></summary>

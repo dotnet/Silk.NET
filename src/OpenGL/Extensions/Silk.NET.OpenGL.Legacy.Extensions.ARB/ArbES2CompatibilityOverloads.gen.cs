@@ -88,22 +88,40 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetShaderPrecisionFormat(shadertype, precisiontype, out range.GetPinnableReference(), out precision.GetPinnableReference());
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ShaderBinary(count, shaders, binaryformat, in binary.GetPinnableReference(), length);
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ARB binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
         {
             // SpanOverloader
-            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryformat, binary, length);
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ARB binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryformat, in binary.GetPinnableReference(), length);
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this ArbES2Compatibility thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
         }
 
     }

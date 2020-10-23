@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public CommandBufferBeginInfo
         (
-            StructureType sType = StructureType.CommandBufferBeginInfo,
-            void* pNext = default,
-            CommandBufferUsageFlags flags = default,
-            CommandBufferInheritanceInfo* pInheritanceInfo = default
+            StructureType? sType = StructureType.CommandBufferBeginInfo,
+            void* pNext = null,
+            CommandBufferUsageFlags? flags = null,
+            CommandBufferInheritanceInfo* pInheritanceInfo = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PInheritanceInfo = pInheritanceInfo;
+            fixed (CommandBufferBeginInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pInheritanceInfo is not null)
+            {
+                PInheritanceInfo = pInheritanceInfo;
+            }
         }
 
 /// <summary></summary>

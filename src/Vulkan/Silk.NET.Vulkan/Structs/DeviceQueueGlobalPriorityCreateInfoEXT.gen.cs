@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DeviceQueueGlobalPriorityCreateInfoEXT
         (
-            StructureType sType = StructureType.DeviceQueueGlobalPriorityCreateInfoExt,
-            void* pNext = default,
-            QueueGlobalPriorityEXT globalPriority = default
+            StructureType? sType = StructureType.DeviceQueueGlobalPriorityCreateInfoExt,
+            void* pNext = null,
+            QueueGlobalPriorityEXT? globalPriority = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            GlobalPriority = globalPriority;
+            fixed (DeviceQueueGlobalPriorityCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (globalPriority is not null)
+            {
+                GlobalPriority = globalPriority.Value;
+            }
         }
 
 /// <summary></summary>

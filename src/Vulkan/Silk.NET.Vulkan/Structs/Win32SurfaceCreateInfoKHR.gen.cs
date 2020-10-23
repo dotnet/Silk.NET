@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public Win32SurfaceCreateInfoKHR
         (
-            StructureType sType = StructureType.Win32SurfaceCreateInfoKhr,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr hinstance = default,
-            IntPtr hwnd = default
+            StructureType? sType = StructureType.Win32SurfaceCreateInfoKhr,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr? hinstance = null,
+            IntPtr? hwnd = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Hinstance = hinstance;
-            Hwnd = hwnd;
+            fixed (Win32SurfaceCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (hinstance is not null)
+            {
+                Hinstance = hinstance.Value;
+            }
+
+            if (hwnd is not null)
+            {
+                Hwnd = hwnd.Value;
+            }
         }
 
 /// <summary></summary>

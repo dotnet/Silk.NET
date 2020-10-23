@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public PipelineDiscardRectangleStateCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineDiscardRectangleStateCreateInfoExt,
-            void* pNext = default,
-            uint flags = default,
-            DiscardRectangleModeEXT discardRectangleMode = default,
-            uint discardRectangleCount = default,
-            Rect2D* pDiscardRectangles = default
+            StructureType? sType = StructureType.PipelineDiscardRectangleStateCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null,
+            DiscardRectangleModeEXT? discardRectangleMode = null,
+            uint? discardRectangleCount = null,
+            Rect2D* pDiscardRectangles = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            DiscardRectangleMode = discardRectangleMode;
-            DiscardRectangleCount = discardRectangleCount;
-            PDiscardRectangles = pDiscardRectangles;
+            fixed (PipelineDiscardRectangleStateCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (discardRectangleMode is not null)
+            {
+                DiscardRectangleMode = discardRectangleMode.Value;
+            }
+
+            if (discardRectangleCount is not null)
+            {
+                DiscardRectangleCount = discardRectangleCount.Value;
+            }
+
+            if (pDiscardRectangles is not null)
+            {
+                PDiscardRectangles = pDiscardRectangles;
+            }
         }
 
 /// <summary></summary>

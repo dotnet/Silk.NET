@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ImageSubresource
         (
-            ImageAspectFlags aspectMask = default,
-            uint mipLevel = default,
-            uint arrayLayer = default
+            ImageAspectFlags? aspectMask = null,
+            uint? mipLevel = null,
+            uint? arrayLayer = null
         )
         {
-            AspectMask = aspectMask;
-            MipLevel = mipLevel;
-            ArrayLayer = arrayLayer;
+            fixed (ImageSubresource* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
+
+            if (mipLevel is not null)
+            {
+                MipLevel = mipLevel.Value;
+            }
+
+            if (arrayLayer is not null)
+            {
+                ArrayLayer = arrayLayer.Value;
+            }
         }
 
 /// <summary></summary>

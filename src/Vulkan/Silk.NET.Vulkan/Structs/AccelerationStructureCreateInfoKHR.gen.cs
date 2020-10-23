@@ -21,24 +21,60 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureCreateInfoKHR
         (
-            StructureType sType = StructureType.AccelerationStructureCreateInfoKhr,
-            void* pNext = default,
-            ulong compactedSize = default,
-            AccelerationStructureTypeKHR type = default,
-            BuildAccelerationStructureFlagsKHR flags = default,
-            uint maxGeometryCount = default,
-            AccelerationStructureCreateGeometryTypeInfoKHR* pGeometryInfos = default,
-            ulong deviceAddress = default
+            StructureType? sType = StructureType.AccelerationStructureCreateInfoKhr,
+            void* pNext = null,
+            ulong? compactedSize = null,
+            AccelerationStructureTypeKHR? type = null,
+            BuildAccelerationStructureFlagsKHR? flags = null,
+            uint? maxGeometryCount = null,
+            AccelerationStructureCreateGeometryTypeInfoKHR* pGeometryInfos = null,
+            ulong? deviceAddress = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CompactedSize = compactedSize;
-            Type = type;
-            Flags = flags;
-            MaxGeometryCount = maxGeometryCount;
-            PGeometryInfos = pGeometryInfos;
-            DeviceAddress = deviceAddress;
+            fixed (AccelerationStructureCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (compactedSize is not null)
+            {
+                CompactedSize = compactedSize.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (maxGeometryCount is not null)
+            {
+                MaxGeometryCount = maxGeometryCount.Value;
+            }
+
+            if (pGeometryInfos is not null)
+            {
+                PGeometryInfos = pGeometryInfos;
+            }
+
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
         }
 
 /// <summary></summary>

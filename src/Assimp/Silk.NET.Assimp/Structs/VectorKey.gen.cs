@@ -21,12 +21,24 @@ namespace Silk.NET.Assimp
     {
         public VectorKey
         (
-            double mTime = default,
-            System.Numerics.Vector3 mValue = default
+            double? mTime = null,
+            System.Numerics.Vector3? mValue = null
         )
         {
-            MTime = mTime;
-            MValue = mValue;
+            fixed (VectorKey* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mTime is not null)
+            {
+                MTime = mTime.Value;
+            }
+
+            if (mValue is not null)
+            {
+                MValue = mValue.Value;
+            }
         }
 
 

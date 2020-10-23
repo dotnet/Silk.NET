@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceCapabilities2KHR
         (
-            StructureType sType = StructureType.SurfaceCapabilities2Khr,
-            void* pNext = default,
-            SurfaceCapabilitiesKHR surfaceCapabilities = default
+            StructureType? sType = StructureType.SurfaceCapabilities2Khr,
+            void* pNext = null,
+            SurfaceCapabilitiesKHR? surfaceCapabilities = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SurfaceCapabilities = surfaceCapabilities;
+            fixed (SurfaceCapabilities2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surfaceCapabilities is not null)
+            {
+                SurfaceCapabilities = surfaceCapabilities.Value;
+            }
         }
 
 /// <summary></summary>

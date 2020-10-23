@@ -21,12 +21,24 @@ namespace Silk.NET.Assimp
     {
         public Face
         (
-            uint mNumIndices = default,
-            uint* mIndices = default
+            uint? mNumIndices = null,
+            uint* mIndices = null
         )
         {
-            MNumIndices = mNumIndices;
-            MIndices = mIndices;
+            fixed (Face* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mNumIndices is not null)
+            {
+                MNumIndices = mNumIndices.Value;
+            }
+
+            if (mIndices is not null)
+            {
+                MIndices = mIndices;
+            }
         }
 
 

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SpecializationMapEntry
         (
-            uint constantID = default,
-            uint offset = default,
-            UIntPtr size = default
+            uint? constantID = null,
+            uint? offset = null,
+            UIntPtr? size = null
         )
         {
-            ConstantID = constantID;
-            Offset = offset;
-            Size = size;
+            fixed (SpecializationMapEntry* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (constantID is not null)
+            {
+                ConstantID = constantID.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

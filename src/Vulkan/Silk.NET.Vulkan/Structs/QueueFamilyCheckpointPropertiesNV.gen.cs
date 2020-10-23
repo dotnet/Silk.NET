@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public QueueFamilyCheckpointPropertiesNV
         (
-            StructureType sType = StructureType.QueueFamilyCheckpointPropertiesNV,
-            void* pNext = default,
-            PipelineStageFlags checkpointExecutionStageMask = default
+            StructureType? sType = StructureType.QueueFamilyCheckpointPropertiesNV,
+            void* pNext = null,
+            PipelineStageFlags? checkpointExecutionStageMask = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CheckpointExecutionStageMask = checkpointExecutionStageMask;
+            fixed (QueueFamilyCheckpointPropertiesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (checkpointExecutionStageMask is not null)
+            {
+                CheckpointExecutionStageMask = checkpointExecutionStageMask.Value;
+            }
         }
 
 /// <summary></summary>

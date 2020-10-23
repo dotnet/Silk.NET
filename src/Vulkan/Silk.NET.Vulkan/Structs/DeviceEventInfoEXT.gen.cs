@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DeviceEventInfoEXT
         (
-            StructureType sType = StructureType.DeviceEventInfoExt,
-            void* pNext = default,
-            DeviceEventTypeEXT deviceEvent = default
+            StructureType? sType = StructureType.DeviceEventInfoExt,
+            void* pNext = null,
+            DeviceEventTypeEXT? deviceEvent = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceEvent = deviceEvent;
+            fixed (DeviceEventInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceEvent is not null)
+            {
+                DeviceEvent = deviceEvent.Value;
+            }
         }
 
 /// <summary></summary>

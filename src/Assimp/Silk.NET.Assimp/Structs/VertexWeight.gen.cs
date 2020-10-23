@@ -21,12 +21,24 @@ namespace Silk.NET.Assimp
     {
         public VertexWeight
         (
-            uint mVertexId = default,
-            float mWeight = default
+            uint? mVertexId = null,
+            float? mWeight = null
         )
         {
-            MVertexId = mVertexId;
-            MWeight = mWeight;
+            fixed (VertexWeight* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mVertexId is not null)
+            {
+                MVertexId = mVertexId.Value;
+            }
+
+            if (mWeight is not null)
+            {
+                MWeight = mWeight.Value;
+            }
         }
 
 

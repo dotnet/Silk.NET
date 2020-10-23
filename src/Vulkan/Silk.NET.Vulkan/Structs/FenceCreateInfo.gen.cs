@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public FenceCreateInfo
         (
-            StructureType sType = StructureType.FenceCreateInfo,
-            void* pNext = default,
-            FenceCreateFlags flags = default
+            StructureType? sType = StructureType.FenceCreateInfo,
+            void* pNext = null,
+            FenceCreateFlags? flags = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
+            fixed (FenceCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

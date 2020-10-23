@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceVertexAttributeDivisorPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceVertexAttributeDivisorPropertiesExt,
-            void* pNext = default,
-            uint maxVertexAttribDivisor = default
+            StructureType? sType = StructureType.PhysicalDeviceVertexAttributeDivisorPropertiesExt,
+            void* pNext = null,
+            uint? maxVertexAttribDivisor = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxVertexAttribDivisor = maxVertexAttribDivisor;
+            fixed (PhysicalDeviceVertexAttributeDivisorPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxVertexAttribDivisor is not null)
+            {
+                MaxVertexAttribDivisor = maxVertexAttribDivisor.Value;
+            }
         }
 
 /// <summary></summary>

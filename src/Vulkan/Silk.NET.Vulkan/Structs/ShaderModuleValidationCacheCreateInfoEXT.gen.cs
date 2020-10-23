@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ShaderModuleValidationCacheCreateInfoEXT
         (
-            StructureType sType = StructureType.ShaderModuleValidationCacheCreateInfoExt,
-            void* pNext = default,
-            ValidationCacheEXT validationCache = default
+            StructureType? sType = StructureType.ShaderModuleValidationCacheCreateInfoExt,
+            void* pNext = null,
+            ValidationCacheEXT? validationCache = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ValidationCache = validationCache;
+            fixed (ShaderModuleValidationCacheCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (validationCache is not null)
+            {
+                ValidationCache = validationCache.Value;
+            }
         }
 
 /// <summary></summary>

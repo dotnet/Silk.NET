@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ImageFormatProperties2KHR
         (
-            StructureType sType = StructureType.ImageFormatProperties2,
-            void* pNext = default,
-            ImageFormatProperties imageFormatProperties = default
+            StructureType? sType = StructureType.ImageFormatProperties2,
+            void* pNext = null,
+            ImageFormatProperties? imageFormatProperties = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ImageFormatProperties = imageFormatProperties;
+            fixed (ImageFormatProperties2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageFormatProperties is not null)
+            {
+                ImageFormatProperties = imageFormatProperties.Value;
+            }
         }
 
 /// <summary></summary>

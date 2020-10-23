@@ -21,10 +21,18 @@ namespace Silk.NET.Vulkan
     {
         public BindShaderGroupIndirectCommandNV
         (
-            uint groupIndex = default
+            uint? groupIndex = null
         )
         {
-            GroupIndex = groupIndex;
+            fixed (BindShaderGroupIndirectCommandNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (groupIndex is not null)
+            {
+                GroupIndex = groupIndex.Value;
+            }
         }
 
 /// <summary></summary>

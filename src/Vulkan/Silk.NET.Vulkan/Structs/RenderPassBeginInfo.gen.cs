@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassBeginInfo
         (
-            StructureType sType = StructureType.RenderPassBeginInfo,
-            void* pNext = default,
-            RenderPass renderPass = default,
-            Framebuffer framebuffer = default,
-            Rect2D renderArea = default,
-            uint clearValueCount = default,
-            ClearValue* pClearValues = default
+            StructureType? sType = StructureType.RenderPassBeginInfo,
+            void* pNext = null,
+            RenderPass? renderPass = null,
+            Framebuffer? framebuffer = null,
+            Rect2D? renderArea = null,
+            uint? clearValueCount = null,
+            ClearValue* pClearValues = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RenderPass = renderPass;
-            Framebuffer = framebuffer;
-            RenderArea = renderArea;
-            ClearValueCount = clearValueCount;
-            PClearValues = pClearValues;
+            fixed (RenderPassBeginInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (renderPass is not null)
+            {
+                RenderPass = renderPass.Value;
+            }
+
+            if (framebuffer is not null)
+            {
+                Framebuffer = framebuffer.Value;
+            }
+
+            if (renderArea is not null)
+            {
+                RenderArea = renderArea.Value;
+            }
+
+            if (clearValueCount is not null)
+            {
+                ClearValueCount = clearValueCount.Value;
+            }
+
+            if (pClearValues is not null)
+            {
+                PClearValues = pClearValues;
+            }
         }
 
 /// <summary></summary>

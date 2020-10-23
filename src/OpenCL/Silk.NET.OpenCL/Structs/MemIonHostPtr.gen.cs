@@ -21,14 +21,30 @@ namespace Silk.NET.OpenCL
     {
         public MemIonHostPtr
         (
-            MemExtHostPtr extHostPtr = default,
-            int ionFiledesc = default,
-            void* ionHostptr = default
+            MemExtHostPtr? extHostPtr = null,
+            int? ionFiledesc = null,
+            void* ionHostptr = null
         )
         {
-            ExtHostPtr = extHostPtr;
-            IonFiledesc = ionFiledesc;
-            IonHostptr = ionHostptr;
+            fixed (MemIonHostPtr* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (extHostPtr is not null)
+            {
+                ExtHostPtr = extHostPtr.Value;
+            }
+
+            if (ionFiledesc is not null)
+            {
+                IonFiledesc = ionFiledesc.Value;
+            }
+
+            if (ionHostptr is not null)
+            {
+                IonHostptr = ionHostptr;
+            }
         }
 
 /// <summary></summary>

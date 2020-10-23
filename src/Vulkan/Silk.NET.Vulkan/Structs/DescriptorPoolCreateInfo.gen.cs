@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorPoolCreateInfo
         (
-            StructureType sType = StructureType.DescriptorPoolCreateInfo,
-            void* pNext = default,
-            DescriptorPoolCreateFlags flags = default,
-            uint maxSets = default,
-            uint poolSizeCount = default,
-            DescriptorPoolSize* pPoolSizes = default
+            StructureType? sType = StructureType.DescriptorPoolCreateInfo,
+            void* pNext = null,
+            DescriptorPoolCreateFlags? flags = null,
+            uint? maxSets = null,
+            uint? poolSizeCount = null,
+            DescriptorPoolSize* pPoolSizes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            MaxSets = maxSets;
-            PoolSizeCount = poolSizeCount;
-            PPoolSizes = pPoolSizes;
+            fixed (DescriptorPoolCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (maxSets is not null)
+            {
+                MaxSets = maxSets.Value;
+            }
+
+            if (poolSizeCount is not null)
+            {
+                PoolSizeCount = poolSizeCount.Value;
+            }
+
+            if (pPoolSizes is not null)
+            {
+                PPoolSizes = pPoolSizes;
+            }
         }
 
 /// <summary></summary>

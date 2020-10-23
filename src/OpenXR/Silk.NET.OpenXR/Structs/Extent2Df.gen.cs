@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public Extent2Df
         (
-            float width = default,
-            float height = default
+            float? width = null,
+            float? height = null
         )
         {
-            Width = width;
-            Height = height;
+            fixed (Extent2Df* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
         }
 
 /// <summary></summary>

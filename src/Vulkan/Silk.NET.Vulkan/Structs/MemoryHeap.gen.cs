@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public MemoryHeap
         (
-            ulong size = default,
-            MemoryHeapFlags flags = default
+            ulong? size = null,
+            MemoryHeapFlags? flags = null
         )
         {
-            Size = size;
-            Flags = flags;
+            fixed (MemoryHeap* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.SDL
     {
         public SysWMEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            SysWMmsg* msg = default
+            uint? type = null,
+            uint? timestamp = null,
+            SysWMmsg* msg = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            Msg = msg;
+            fixed (SysWMEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (msg is not null)
+            {
+                Msg = msg;
+            }
         }
 
 

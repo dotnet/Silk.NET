@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
         (
-            StructureType sType = StructureType.PhysicalDeviceMultiviewPerViewAttributesPropertiesNvx,
-            void* pNext = default,
-            Bool32 perViewPositionAllComponents = default
+            StructureType? sType = StructureType.PhysicalDeviceMultiviewPerViewAttributesPropertiesNvx,
+            void* pNext = null,
+            Bool32? perViewPositionAllComponents = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PerViewPositionAllComponents = perViewPositionAllComponents;
+            fixed (PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (perViewPositionAllComponents is not null)
+            {
+                PerViewPositionAllComponents = perViewPositionAllComponents.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public AcquireProfilingLockInfoKHR
         (
-            StructureType sType = StructureType.AcquireProfilingLockInfoKhr,
-            void* pNext = default,
-            AcquireProfilingLockFlagsKHR flags = default,
-            ulong timeout = default
+            StructureType? sType = StructureType.AcquireProfilingLockInfoKhr,
+            void* pNext = null,
+            AcquireProfilingLockFlagsKHR? flags = null,
+            ulong? timeout = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Timeout = timeout;
+            fixed (AcquireProfilingLockInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (timeout is not null)
+            {
+                Timeout = timeout.Value;
+            }
         }
 
 /// <summary></summary>

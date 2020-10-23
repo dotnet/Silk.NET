@@ -21,12 +21,24 @@ namespace Silk.NET.OpenCL
     {
         public ImageFormat
         (
-            uint imageChannelOrder = default,
-            uint imageChannelDataType = default
+            uint? imageChannelOrder = null,
+            uint? imageChannelDataType = null
         )
         {
-            ImageChannelOrder = imageChannelOrder;
-            ImageChannelDataType = imageChannelDataType;
+            fixed (ImageFormat* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (imageChannelOrder is not null)
+            {
+                ImageChannelOrder = imageChannelOrder.Value;
+            }
+
+            if (imageChannelDataType is not null)
+            {
+                ImageChannelDataType = imageChannelDataType.Value;
+            }
         }
 
 /// <summary></summary>

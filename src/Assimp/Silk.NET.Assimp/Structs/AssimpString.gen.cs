@@ -21,10 +21,18 @@ namespace Silk.NET.Assimp
     {
         public AssimpString
         (
-            uint length = default
+            uint? length = null
         )
         {
-            Length = length;
+            fixed (AssimpString* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
         }
 
 

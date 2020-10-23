@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceIndexTypeUint8FeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceIndexTypeUint8FeaturesExt,
-            void* pNext = default,
-            Bool32 indexTypeUint8 = default
+            StructureType? sType = StructureType.PhysicalDeviceIndexTypeUint8FeaturesExt,
+            void* pNext = null,
+            Bool32? indexTypeUint8 = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            IndexTypeUint8 = indexTypeUint8;
+            fixed (PhysicalDeviceIndexTypeUint8FeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (indexTypeUint8 is not null)
+            {
+                IndexTypeUint8 = indexTypeUint8.Value;
+            }
         }
 
 /// <summary></summary>

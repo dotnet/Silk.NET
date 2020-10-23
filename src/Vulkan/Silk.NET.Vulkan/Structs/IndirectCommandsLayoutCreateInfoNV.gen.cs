@@ -21,24 +21,60 @@ namespace Silk.NET.Vulkan
     {
         public IndirectCommandsLayoutCreateInfoNV
         (
-            StructureType sType = StructureType.IndirectCommandsLayoutCreateInfoNV,
-            void* pNext = default,
-            IndirectCommandsLayoutUsageFlagsNV flags = default,
-            PipelineBindPoint pipelineBindPoint = default,
-            uint tokenCount = default,
-            IndirectCommandsLayoutTokenNV* pTokens = default,
-            uint streamCount = default,
-            uint* pStreamStrides = default
+            StructureType? sType = StructureType.IndirectCommandsLayoutCreateInfoNV,
+            void* pNext = null,
+            IndirectCommandsLayoutUsageFlagsNV? flags = null,
+            PipelineBindPoint? pipelineBindPoint = null,
+            uint? tokenCount = null,
+            IndirectCommandsLayoutTokenNV* pTokens = null,
+            uint? streamCount = null,
+            uint* pStreamStrides = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PipelineBindPoint = pipelineBindPoint;
-            TokenCount = tokenCount;
-            PTokens = pTokens;
-            StreamCount = streamCount;
-            PStreamStrides = pStreamStrides;
+            fixed (IndirectCommandsLayoutCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pipelineBindPoint is not null)
+            {
+                PipelineBindPoint = pipelineBindPoint.Value;
+            }
+
+            if (tokenCount is not null)
+            {
+                TokenCount = tokenCount.Value;
+            }
+
+            if (pTokens is not null)
+            {
+                PTokens = pTokens;
+            }
+
+            if (streamCount is not null)
+            {
+                StreamCount = streamCount.Value;
+            }
+
+            if (pStreamStrides is not null)
+            {
+                PStreamStrides = pStreamStrides;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewAddressPropertiesNVX
         (
-            StructureType sType = StructureType.ImageViewAddressPropertiesNvx,
-            void* pNext = default,
-            ulong deviceAddress = default,
-            ulong size = default
+            StructureType? sType = StructureType.ImageViewAddressPropertiesNvx,
+            void* pNext = null,
+            ulong? deviceAddress = null,
+            ulong? size = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceAddress = deviceAddress;
-            Size = size;
+            fixed (ImageViewAddressPropertiesNVX* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

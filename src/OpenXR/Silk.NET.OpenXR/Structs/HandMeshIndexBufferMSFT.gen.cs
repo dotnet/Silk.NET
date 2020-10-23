@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public HandMeshIndexBufferMSFT
         (
-            uint indexBufferKey = default,
-            uint indexCapacityInput = default,
-            uint indexCountOutput = default,
-            uint* indices = default
+            uint? indexBufferKey = null,
+            uint? indexCapacityInput = null,
+            uint? indexCountOutput = null,
+            uint* indices = null
         )
         {
-            IndexBufferKey = indexBufferKey;
-            IndexCapacityInput = indexCapacityInput;
-            IndexCountOutput = indexCountOutput;
-            Indices = indices;
+            fixed (HandMeshIndexBufferMSFT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (indexBufferKey is not null)
+            {
+                IndexBufferKey = indexBufferKey.Value;
+            }
+
+            if (indexCapacityInput is not null)
+            {
+                IndexCapacityInput = indexCapacityInput.Value;
+            }
+
+            if (indexCountOutput is not null)
+            {
+                IndexCountOutput = indexCountOutput.Value;
+            }
+
+            if (indices is not null)
+            {
+                Indices = indices;
+            }
         }
 
 /// <summary></summary>

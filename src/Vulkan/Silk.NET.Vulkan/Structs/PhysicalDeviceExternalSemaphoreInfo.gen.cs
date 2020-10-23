@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExternalSemaphoreInfo
         (
-            StructureType sType = StructureType.PhysicalDeviceExternalSemaphoreInfo,
-            void* pNext = default,
-            ExternalSemaphoreHandleTypeFlags handleType = default
+            StructureType? sType = StructureType.PhysicalDeviceExternalSemaphoreInfo,
+            void* pNext = null,
+            ExternalSemaphoreHandleTypeFlags? handleType = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleType = handleType;
+            fixed (PhysicalDeviceExternalSemaphoreInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

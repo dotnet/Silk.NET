@@ -21,28 +21,72 @@ namespace Silk.NET.Vulkan
     {
         public DisplaySurfaceCreateInfoKHR
         (
-            StructureType sType = StructureType.DisplaySurfaceCreateInfoKhr,
-            void* pNext = default,
-            uint flags = default,
-            DisplayModeKHR displayMode = default,
-            uint planeIndex = default,
-            uint planeStackIndex = default,
-            SurfaceTransformFlagsKHR transform = default,
-            float globalAlpha = default,
-            DisplayPlaneAlphaFlagsKHR alphaMode = default,
-            Extent2D imageExtent = default
+            StructureType? sType = StructureType.DisplaySurfaceCreateInfoKhr,
+            void* pNext = null,
+            uint? flags = null,
+            DisplayModeKHR? displayMode = null,
+            uint? planeIndex = null,
+            uint? planeStackIndex = null,
+            SurfaceTransformFlagsKHR? transform = null,
+            float? globalAlpha = null,
+            DisplayPlaneAlphaFlagsKHR? alphaMode = null,
+            Extent2D? imageExtent = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            DisplayMode = displayMode;
-            PlaneIndex = planeIndex;
-            PlaneStackIndex = planeStackIndex;
-            Transform = transform;
-            GlobalAlpha = globalAlpha;
-            AlphaMode = alphaMode;
-            ImageExtent = imageExtent;
+            fixed (DisplaySurfaceCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (displayMode is not null)
+            {
+                DisplayMode = displayMode.Value;
+            }
+
+            if (planeIndex is not null)
+            {
+                PlaneIndex = planeIndex.Value;
+            }
+
+            if (planeStackIndex is not null)
+            {
+                PlaneStackIndex = planeStackIndex.Value;
+            }
+
+            if (transform is not null)
+            {
+                Transform = transform.Value;
+            }
+
+            if (globalAlpha is not null)
+            {
+                GlobalAlpha = globalAlpha.Value;
+            }
+
+            if (alphaMode is not null)
+            {
+                AlphaMode = alphaMode.Value;
+            }
+
+            if (imageExtent is not null)
+            {
+                ImageExtent = imageExtent.Value;
+            }
         }
 
 /// <summary></summary>

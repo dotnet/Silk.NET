@@ -76,6 +76,16 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandAcquireD3D11ObjectsKhr = 0x4020,
         [NativeName("Name", "CL_COMMAND_RELEASE_D3D11_OBJECTS_KHR")]
         CommandReleaseD3D11ObjectsKhr = 0x4021,
+        [NativeName("Name", "CL_DEPTH")]
+        Depth = 0x10BD,
+        [NativeName("Name", "CL_UNORM_INT16")]
+        UnormInt16 = 0x10D3,
+        [NativeName("Name", "CL_FLOAT")]
+        Float = 0x10DE,
+        [NativeName("Name", "CL_UUID_SIZE_KHR")]
+        UuidSizeKhr = 0x16,
+        [NativeName("Name", "CL_LUID_SIZE_KHR")]
+        LuidSizeKhr = 0x8,
         [NativeName("Name", "CL_DEVICE_UUID_KHR")]
         DeviceUuidKhr = 0x106A,
         [NativeName("Name", "CL_DRIVER_UUID_KHR")]
@@ -138,8 +148,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DepthStencil = 0x10BE,
         [NativeName("Name", "CL_UNORM_INT24")]
         UnormInt24 = 0x10DF,
-        [NativeName("Name", "CL_FLOAT")]
-        Float = 0x10DE,
         [NativeName("Name", "CL_COMMAND_GL_FENCE_SYNC_OBJECT_KHR")]
         CommandGLFenceSyncObjectKhr = 0x200D,
         [NativeName("Name", "CL_GL_NUM_SAMPLES")]

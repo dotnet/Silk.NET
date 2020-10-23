@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SparseImageOpaqueMemoryBindInfo
         (
-            Image image = default,
-            uint bindCount = default,
-            SparseMemoryBind* pBinds = default
+            Image? image = null,
+            uint? bindCount = null,
+            SparseMemoryBind* pBinds = null
         )
         {
-            Image = image;
-            BindCount = bindCount;
-            PBinds = pBinds;
+            fixed (SparseImageOpaqueMemoryBindInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
+
+            if (bindCount is not null)
+            {
+                BindCount = bindCount.Value;
+            }
+
+            if (pBinds is not null)
+            {
+                PBinds = pBinds;
+            }
         }
 
 /// <summary></summary>

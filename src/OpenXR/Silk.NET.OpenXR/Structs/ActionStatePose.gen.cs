@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public ActionStatePose
         (
-            StructureType type = StructureType.TypeActionStatePose,
-            void* next = default,
-            uint isActive = default
+            StructureType? type = StructureType.TypeActionStatePose,
+            void* next = null,
+            uint? isActive = null
         )
         {
-            Type = type;
-            Next = next;
-            IsActive = isActive;
+            fixed (ActionStatePose* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (isActive is not null)
+            {
+                IsActive = isActive.Value;
+            }
         }
 
 /// <summary></summary>

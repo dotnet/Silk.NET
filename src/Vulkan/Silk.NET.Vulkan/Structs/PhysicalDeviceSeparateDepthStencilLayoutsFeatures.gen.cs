@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSeparateDepthStencilLayoutsFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceSeparateDepthStencilLayoutsFeatures,
-            void* pNext = default,
-            Bool32 separateDepthStencilLayouts = default
+            StructureType? sType = StructureType.PhysicalDeviceSeparateDepthStencilLayoutsFeatures,
+            void* pNext = null,
+            Bool32? separateDepthStencilLayouts = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SeparateDepthStencilLayouts = separateDepthStencilLayouts;
+            fixed (PhysicalDeviceSeparateDepthStencilLayoutsFeatures* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (separateDepthStencilLayouts is not null)
+            {
+                SeparateDepthStencilLayouts = separateDepthStencilLayouts.Value;
+            }
         }
 
 /// <summary></summary>

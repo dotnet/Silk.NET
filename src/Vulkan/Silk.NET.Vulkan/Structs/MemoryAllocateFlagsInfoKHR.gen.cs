@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public MemoryAllocateFlagsInfoKHR
         (
-            StructureType sType = StructureType.MemoryAllocateFlagsInfo,
-            void* pNext = default,
-            MemoryAllocateFlags flags = default,
-            uint deviceMask = default
+            StructureType? sType = StructureType.MemoryAllocateFlagsInfo,
+            void* pNext = null,
+            MemoryAllocateFlags? flags = null,
+            uint? deviceMask = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            DeviceMask = deviceMask;
+            fixed (MemoryAllocateFlagsInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (deviceMask is not null)
+            {
+                DeviceMask = deviceMask.Value;
+            }
         }
 
 /// <summary></summary>

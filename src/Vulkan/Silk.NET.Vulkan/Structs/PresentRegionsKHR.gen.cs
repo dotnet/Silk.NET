@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PresentRegionsKHR
         (
-            StructureType sType = StructureType.PresentRegionsKhr,
-            void* pNext = default,
-            uint swapchainCount = default,
-            PresentRegionKHR* pRegions = default
+            StructureType? sType = StructureType.PresentRegionsKhr,
+            void* pNext = null,
+            uint? swapchainCount = null,
+            PresentRegionKHR* pRegions = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SwapchainCount = swapchainCount;
-            PRegions = pRegions;
+            fixed (PresentRegionsKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchainCount is not null)
+            {
+                SwapchainCount = swapchainCount.Value;
+            }
+
+            if (pRegions is not null)
+            {
+                PRegions = pRegions;
+            }
         }
 
 /// <summary></summary>

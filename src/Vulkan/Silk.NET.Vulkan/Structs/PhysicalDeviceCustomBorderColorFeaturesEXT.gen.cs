@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCustomBorderColorFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceCustomBorderColorFeaturesExt,
-            void* pNext = default,
-            Bool32 customBorderColors = default,
-            Bool32 customBorderColorWithoutFormat = default
+            StructureType? sType = StructureType.PhysicalDeviceCustomBorderColorFeaturesExt,
+            void* pNext = null,
+            Bool32? customBorderColors = null,
+            Bool32? customBorderColorWithoutFormat = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CustomBorderColors = customBorderColors;
-            CustomBorderColorWithoutFormat = customBorderColorWithoutFormat;
+            fixed (PhysicalDeviceCustomBorderColorFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (customBorderColors is not null)
+            {
+                CustomBorderColors = customBorderColors.Value;
+            }
+
+            if (customBorderColorWithoutFormat is not null)
+            {
+                CustomBorderColorWithoutFormat = customBorderColorWithoutFormat.Value;
+            }
         }
 
 /// <summary></summary>

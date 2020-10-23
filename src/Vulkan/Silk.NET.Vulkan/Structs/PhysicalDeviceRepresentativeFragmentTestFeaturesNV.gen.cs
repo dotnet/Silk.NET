@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceRepresentativeFragmentTestFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceRepresentativeFragmentTestFeaturesNV,
-            void* pNext = default,
-            Bool32 representativeFragmentTest = default
+            StructureType? sType = StructureType.PhysicalDeviceRepresentativeFragmentTestFeaturesNV,
+            void* pNext = null,
+            Bool32? representativeFragmentTest = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RepresentativeFragmentTest = representativeFragmentTest;
+            fixed (PhysicalDeviceRepresentativeFragmentTestFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (representativeFragmentTest is not null)
+            {
+                RepresentativeFragmentTest = representativeFragmentTest.Value;
+            }
         }
 
 /// <summary></summary>

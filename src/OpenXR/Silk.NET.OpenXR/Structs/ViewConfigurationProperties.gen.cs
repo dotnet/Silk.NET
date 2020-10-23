@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public ViewConfigurationProperties
         (
-            StructureType type = StructureType.TypeViewConfigurationProperties,
-            void* next = default,
-            ViewConfigurationType viewConfigurationType = default,
-            uint fovMutable = default
+            StructureType? type = StructureType.TypeViewConfigurationProperties,
+            void* next = null,
+            ViewConfigurationType? viewConfigurationType = null,
+            uint? fovMutable = null
         )
         {
-            Type = type;
-            Next = next;
-            ViewConfigurationType = viewConfigurationType;
-            FovMutable = fovMutable;
+            fixed (ViewConfigurationProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewConfigurationType is not null)
+            {
+                ViewConfigurationType = viewConfigurationType.Value;
+            }
+
+            if (fovMutable is not null)
+            {
+                FovMutable = fovMutable.Value;
+            }
         }
 
 /// <summary></summary>

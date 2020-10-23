@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderIntegerFunctions2FeaturesIntel,
-            void* pNext = default,
-            Bool32 shaderIntegerFunctions2 = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderIntegerFunctions2FeaturesIntel,
+            void* pNext = null,
+            Bool32? shaderIntegerFunctions2 = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderIntegerFunctions2 = shaderIntegerFunctions2;
+            fixed (PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderIntegerFunctions2 is not null)
+            {
+                ShaderIntegerFunctions2 = shaderIntegerFunctions2.Value;
+            }
         }
 
 /// <summary></summary>

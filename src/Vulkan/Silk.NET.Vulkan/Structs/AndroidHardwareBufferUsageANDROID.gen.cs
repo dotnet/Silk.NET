@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public AndroidHardwareBufferUsageANDROID
         (
-            StructureType sType = StructureType.AndroidHardwareBufferUsageAndroid,
-            void* pNext = default,
-            ulong androidHardwareBufferUsage = default
+            StructureType? sType = StructureType.AndroidHardwareBufferUsageAndroid,
+            void* pNext = null,
+            ulong? androidHardwareBufferUsage = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AndroidHardwareBufferUsage = androidHardwareBufferUsage;
+            fixed (AndroidHardwareBufferUsageANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (androidHardwareBufferUsage is not null)
+            {
+                AndroidHardwareBufferUsage = androidHardwareBufferUsage.Value;
+            }
         }
 
 /// <summary></summary>

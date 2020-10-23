@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFragmentDensityMap2PropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceFragmentDensityMap2PropertiesExt,
-            void* pNext = default,
-            Bool32 subsampledLoads = default,
-            Bool32 subsampledCoarseReconstructionEarlyAccess = default,
-            uint maxSubsampledArrayLayers = default,
-            uint maxDescriptorSetSubsampledSamplers = default
+            StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMap2PropertiesExt,
+            void* pNext = null,
+            Bool32? subsampledLoads = null,
+            Bool32? subsampledCoarseReconstructionEarlyAccess = null,
+            uint? maxSubsampledArrayLayers = null,
+            uint? maxDescriptorSetSubsampledSamplers = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SubsampledLoads = subsampledLoads;
-            SubsampledCoarseReconstructionEarlyAccess = subsampledCoarseReconstructionEarlyAccess;
-            MaxSubsampledArrayLayers = maxSubsampledArrayLayers;
-            MaxDescriptorSetSubsampledSamplers = maxDescriptorSetSubsampledSamplers;
+            fixed (PhysicalDeviceFragmentDensityMap2PropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (subsampledLoads is not null)
+            {
+                SubsampledLoads = subsampledLoads.Value;
+            }
+
+            if (subsampledCoarseReconstructionEarlyAccess is not null)
+            {
+                SubsampledCoarseReconstructionEarlyAccess = subsampledCoarseReconstructionEarlyAccess.Value;
+            }
+
+            if (maxSubsampledArrayLayers is not null)
+            {
+                MaxSubsampledArrayLayers = maxSubsampledArrayLayers.Value;
+            }
+
+            if (maxDescriptorSetSubsampledSamplers is not null)
+            {
+                MaxDescriptorSetSubsampledSamplers = maxDescriptorSetSubsampledSamplers.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public ImageResolve
         (
-            ImageSubresourceLayers srcSubresource = default,
-            Offset3D srcOffset = default,
-            ImageSubresourceLayers dstSubresource = default,
-            Offset3D dstOffset = default,
-            Extent3D extent = default
+            ImageSubresourceLayers? srcSubresource = null,
+            Offset3D? srcOffset = null,
+            ImageSubresourceLayers? dstSubresource = null,
+            Offset3D? dstOffset = null,
+            Extent3D? extent = null
         )
         {
-            SrcSubresource = srcSubresource;
-            SrcOffset = srcOffset;
-            DstSubresource = dstSubresource;
-            DstOffset = dstOffset;
-            Extent = extent;
+            fixed (ImageResolve* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (srcSubresource is not null)
+            {
+                SrcSubresource = srcSubresource.Value;
+            }
+
+            if (srcOffset is not null)
+            {
+                SrcOffset = srcOffset.Value;
+            }
+
+            if (dstSubresource is not null)
+            {
+                DstSubresource = dstSubresource.Value;
+            }
+
+            if (dstOffset is not null)
+            {
+                DstOffset = dstOffset.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
         }
 
 /// <summary></summary>

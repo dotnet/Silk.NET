@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExternalImageFormatInfo
         (
-            StructureType sType = StructureType.PhysicalDeviceExternalImageFormatInfo,
-            void* pNext = default,
-            ExternalMemoryHandleTypeFlags handleType = default
+            StructureType? sType = StructureType.PhysicalDeviceExternalImageFormatInfo,
+            void* pNext = null,
+            ExternalMemoryHandleTypeFlags? handleType = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleType = handleType;
+            fixed (PhysicalDeviceExternalImageFormatInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

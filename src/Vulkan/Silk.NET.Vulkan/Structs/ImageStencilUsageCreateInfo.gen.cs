@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ImageStencilUsageCreateInfo
         (
-            StructureType sType = StructureType.ImageStencilUsageCreateInfo,
-            void* pNext = default,
-            ImageUsageFlags stencilUsage = default
+            StructureType? sType = StructureType.ImageStencilUsageCreateInfo,
+            void* pNext = null,
+            ImageUsageFlags? stencilUsage = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            StencilUsage = stencilUsage;
+            fixed (ImageStencilUsageCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stencilUsage is not null)
+            {
+                StencilUsage = stencilUsage.Value;
+            }
         }
 
 /// <summary></summary>

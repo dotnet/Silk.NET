@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceImagelessFramebufferFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceImagelessFramebufferFeatures,
-            void* pNext = default,
-            Bool32 imagelessFramebuffer = default
+            StructureType? sType = StructureType.PhysicalDeviceImagelessFramebufferFeatures,
+            void* pNext = null,
+            Bool32? imagelessFramebuffer = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ImagelessFramebuffer = imagelessFramebuffer;
+            fixed (PhysicalDeviceImagelessFramebufferFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imagelessFramebuffer is not null)
+            {
+                ImagelessFramebuffer = imagelessFramebuffer.Value;
+            }
         }
 
 /// <summary></summary>

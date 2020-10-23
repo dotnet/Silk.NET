@@ -21,18 +21,42 @@ namespace Silk.NET.SDL
     {
         public RendererInfo
         (
-            byte* name = default,
-            uint flags = default,
-            uint numTextureFormats = default,
-            int maxTextureWidth = default,
-            int maxTextureHeight = default
+            byte* name = null,
+            uint? flags = null,
+            uint? numTextureFormats = null,
+            int? maxTextureWidth = null,
+            int? maxTextureHeight = null
         )
         {
-            Name = name;
-            Flags = flags;
-            NumTextureFormats = numTextureFormats;
-            MaxTextureWidth = maxTextureWidth;
-            MaxTextureHeight = maxTextureHeight;
+            fixed (RendererInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (numTextureFormats is not null)
+            {
+                NumTextureFormats = numTextureFormats.Value;
+            }
+
+            if (maxTextureWidth is not null)
+            {
+                MaxTextureWidth = maxTextureWidth.Value;
+            }
+
+            if (maxTextureHeight is not null)
+            {
+                MaxTextureHeight = maxTextureHeight.Value;
+            }
         }
 
 

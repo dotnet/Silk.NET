@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public NativeBufferUsage2ANDROID
         (
-            ulong consumer = default,
-            ulong producer = default
+            ulong? consumer = null,
+            ulong? producer = null
         )
         {
-            Consumer = consumer;
-            Producer = producer;
+            fixed (NativeBufferUsage2ANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (consumer is not null)
+            {
+                Consumer = consumer.Value;
+            }
+
+            if (producer is not null)
+            {
+                Producer = producer.Value;
+            }
         }
 
 /// <summary></summary>

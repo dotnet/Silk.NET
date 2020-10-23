@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassTransformBeginInfoQCOM
         (
-            StructureType sType = StructureType.RenderPassTransformBeginInfoQCom,
-            void* pNext = default,
-            SurfaceTransformFlagsKHR transform = default
+            StructureType? sType = StructureType.RenderPassTransformBeginInfoQCom,
+            void* pNext = null,
+            SurfaceTransformFlagsKHR? transform = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Transform = transform;
+            fixed (RenderPassTransformBeginInfoQCOM* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (transform is not null)
+            {
+                Transform = transform.Value;
+            }
         }
 
 /// <summary></summary>

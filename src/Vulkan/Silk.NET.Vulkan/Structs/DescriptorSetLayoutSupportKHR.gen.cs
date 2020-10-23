@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetLayoutSupportKHR
         (
-            StructureType sType = StructureType.DescriptorSetLayoutSupport,
-            void* pNext = default,
-            Bool32 supported = default
+            StructureType? sType = StructureType.DescriptorSetLayoutSupport,
+            void* pNext = null,
+            Bool32? supported = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Supported = supported;
+            fixed (DescriptorSetLayoutSupportKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (supported is not null)
+            {
+                Supported = supported.Value;
+            }
         }
 
 /// <summary></summary>

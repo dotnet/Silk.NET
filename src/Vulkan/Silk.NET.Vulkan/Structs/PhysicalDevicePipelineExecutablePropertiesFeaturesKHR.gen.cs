@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePipelineExecutablePropertiesFeaturesKhr,
-            void* pNext = default,
-            Bool32 pipelineExecutableInfo = default
+            StructureType? sType = StructureType.PhysicalDevicePipelineExecutablePropertiesFeaturesKhr,
+            void* pNext = null,
+            Bool32? pipelineExecutableInfo = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PipelineExecutableInfo = pipelineExecutableInfo;
+            fixed (PhysicalDevicePipelineExecutablePropertiesFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pipelineExecutableInfo is not null)
+            {
+                PipelineExecutableInfo = pipelineExecutableInfo.Value;
+            }
         }
 
 /// <summary></summary>

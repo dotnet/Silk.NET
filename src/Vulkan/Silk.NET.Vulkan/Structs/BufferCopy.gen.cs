@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public BufferCopy
         (
-            ulong srcOffset = default,
-            ulong dstOffset = default,
-            ulong size = default
+            ulong? srcOffset = null,
+            ulong? dstOffset = null,
+            ulong? size = null
         )
         {
-            SrcOffset = srcOffset;
-            DstOffset = dstOffset;
-            Size = size;
+            fixed (BufferCopy* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (srcOffset is not null)
+            {
+                SrcOffset = srcOffset.Value;
+            }
+
+            if (dstOffset is not null)
+            {
+                DstOffset = dstOffset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

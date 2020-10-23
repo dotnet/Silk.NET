@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceImageViewImageFormatInfoEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceImageViewImageFormatInfoExt,
-            void* pNext = default,
-            ImageViewType imageViewType = default
+            StructureType? sType = StructureType.PhysicalDeviceImageViewImageFormatInfoExt,
+            void* pNext = null,
+            ImageViewType? imageViewType = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ImageViewType = imageViewType;
+            fixed (PhysicalDeviceImageViewImageFormatInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageViewType is not null)
+            {
+                ImageViewType = imageViewType.Value;
+            }
         }
 
 /// <summary></summary>

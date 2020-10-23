@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ProtectedSubmitInfo
         (
-            StructureType sType = StructureType.ProtectedSubmitInfo,
-            void* pNext = default,
-            Bool32 protectedSubmit = default
+            StructureType? sType = StructureType.ProtectedSubmitInfo,
+            void* pNext = null,
+            Bool32? protectedSubmit = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ProtectedSubmit = protectedSubmit;
+            fixed (ProtectedSubmitInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (protectedSubmit is not null)
+            {
+                ProtectedSubmit = protectedSubmit.Value;
+            }
         }
 
 /// <summary></summary>

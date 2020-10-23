@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceLineRasterizationPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceLineRasterizationPropertiesExt,
-            void* pNext = default,
-            uint lineSubPixelPrecisionBits = default
+            StructureType? sType = StructureType.PhysicalDeviceLineRasterizationPropertiesExt,
+            void* pNext = null,
+            uint? lineSubPixelPrecisionBits = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            LineSubPixelPrecisionBits = lineSubPixelPrecisionBits;
+            fixed (PhysicalDeviceLineRasterizationPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (lineSubPixelPrecisionBits is not null)
+            {
+                LineSubPixelPrecisionBits = lineSubPixelPrecisionBits.Value;
+            }
         }
 
 /// <summary></summary>

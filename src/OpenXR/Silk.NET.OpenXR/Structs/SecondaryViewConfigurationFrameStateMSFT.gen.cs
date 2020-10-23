@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public SecondaryViewConfigurationFrameStateMSFT
         (
-            StructureType type = StructureType.TypeSecondaryViewConfigurationFrameStateMsft,
-            void* next = default,
-            uint viewConfigurationCount = default,
-            SecondaryViewConfigurationStateMSFT* viewConfigurationStates = default
+            StructureType? type = StructureType.TypeSecondaryViewConfigurationFrameStateMsft,
+            void* next = null,
+            uint? viewConfigurationCount = null,
+            SecondaryViewConfigurationStateMSFT* viewConfigurationStates = null
         )
         {
-            Type = type;
-            Next = next;
-            ViewConfigurationCount = viewConfigurationCount;
-            ViewConfigurationStates = viewConfigurationStates;
+            fixed (SecondaryViewConfigurationFrameStateMSFT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewConfigurationCount is not null)
+            {
+                ViewConfigurationCount = viewConfigurationCount.Value;
+            }
+
+            if (viewConfigurationStates is not null)
+            {
+                ViewConfigurationStates = viewConfigurationStates;
+            }
         }
 
 /// <summary></summary>

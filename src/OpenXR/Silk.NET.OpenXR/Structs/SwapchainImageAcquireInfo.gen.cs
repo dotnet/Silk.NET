@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainImageAcquireInfo
         (
-            StructureType type = StructureType.TypeSwapchainImageAcquireInfo,
-            void* next = default
+            StructureType? type = StructureType.TypeSwapchainImageAcquireInfo,
+            void* next = null
         )
         {
-            Type = type;
-            Next = next;
+            fixed (SwapchainImageAcquireInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 /// <summary></summary>

@@ -21,30 +21,78 @@ namespace Silk.NET.SDL
     {
         public HapticConstant
         (
-            ushort type = default,
-            HapticDirection direction = default,
-            uint length = default,
-            ushort delay = default,
-            ushort button = default,
-            ushort interval = default,
-            short level = default,
-            ushort attackLength = default,
-            ushort attackLevel = default,
-            ushort fadeLength = default,
-            ushort fadeLevel = default
+            ushort? type = null,
+            HapticDirection? direction = null,
+            uint? length = null,
+            ushort? delay = null,
+            ushort? button = null,
+            ushort? interval = null,
+            short? level = null,
+            ushort? attackLength = null,
+            ushort? attackLevel = null,
+            ushort? fadeLength = null,
+            ushort? fadeLevel = null
         )
         {
-            Type = type;
-            Direction = direction;
-            Length = length;
-            Delay = delay;
-            Button = button;
-            Interval = interval;
-            Level = level;
-            AttackLength = attackLength;
-            AttackLevel = attackLevel;
-            FadeLength = fadeLength;
-            FadeLevel = fadeLevel;
+            fixed (HapticConstant* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (direction is not null)
+            {
+                Direction = direction.Value;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
+
+            if (delay is not null)
+            {
+                Delay = delay.Value;
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (interval is not null)
+            {
+                Interval = interval.Value;
+            }
+
+            if (level is not null)
+            {
+                Level = level.Value;
+            }
+
+            if (attackLength is not null)
+            {
+                AttackLength = attackLength.Value;
+            }
+
+            if (attackLevel is not null)
+            {
+                AttackLevel = attackLevel.Value;
+            }
+
+            if (fadeLength is not null)
+            {
+                FadeLength = fadeLength.Value;
+            }
+
+            if (fadeLevel is not null)
+            {
+                FadeLevel = fadeLevel.Value;
+            }
         }
 
 

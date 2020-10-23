@@ -568,25 +568,25 @@ namespace Silk.NET.OpenGL
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
@@ -688,25 +688,25 @@ namespace Silk.NET.OpenGL
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
@@ -922,169 +922,169 @@ namespace Silk.NET.OpenGL
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1, T2>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1, T2>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1, T2>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1, T2>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1, T2>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1, T2>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T0> span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, column, out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T0> column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, row, columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] Span<T1> span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, column, out span.GetPinnableReference());
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), span);
         }
 
-        public static unsafe void GetnSeparableFilter<T0, T1, T2>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        public static unsafe void GetnSeparableFilter<T0, T1, T2>(this GL thisApi, [Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnSeparableFilter(target, format, type, rowBufSize, out row.GetPinnableReference(), columnBufSize, out column.GetPinnableReference(), out span.GetPinnableReference());
@@ -7420,7 +7420,19 @@ namespace Silk.NET.OpenGL
             thisApi.GetDouble(target, index, out data.GetPinnableReference());
         }
 
+        public static unsafe void GetDouble(this GL thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<double> data)
+        {
+            // SpanOverloader
+            thisApi.GetDouble(target, index, out data.GetPinnableReference());
+        }
+
         public static unsafe void GetFloat(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<float> data)
+        {
+            // SpanOverloader
+            thisApi.GetFloat(target, index, out data.GetPinnableReference());
+        }
+
+        public static unsafe void GetFloat(this GL thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<float> data)
         {
             // SpanOverloader
             thisApi.GetFloat(target, index, out data.GetPinnableReference());
@@ -7816,22 +7828,40 @@ namespace Silk.NET.OpenGL
             thisApi.ScissorIndexed(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ShaderBinary(count, shaders, binaryformat, in binary.GetPinnableReference(), length);
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
         }
 
-        public static unsafe void ShaderBinary(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        public static unsafe void ShaderBinary(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
         {
             // SpanOverloader
-            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryformat, binary, length);
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
         }
 
-        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
         {
             // SpanOverloader
-            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryformat, in binary.GetPinnableReference(), length);
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
         }
 
         public static unsafe void VertexAttribL1(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
@@ -8800,6 +8830,12 @@ namespace Silk.NET.OpenGL
             thisApi.GetInteger64(target, index, out data.GetPinnableReference());
         }
 
+        public static unsafe void GetInteger64(this GL thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<long> data)
+        {
+            // SpanOverloader
+            thisApi.GetInteger64(target, index, out data.GetPinnableReference());
+        }
+
         public static unsafe void GetMultisample(this GL thisApi, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> val)
         {
             // SpanOverloader
@@ -9125,6 +9161,12 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void GetInteger(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<int> data)
+        {
+            // SpanOverloader
+            thisApi.GetInteger(target, index, out data.GetPinnableReference());
+        }
+
+        public static unsafe void GetInteger(this GL thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<int> data)
         {
             // SpanOverloader
             thisApi.GetInteger(target, index, out data.GetPinnableReference());

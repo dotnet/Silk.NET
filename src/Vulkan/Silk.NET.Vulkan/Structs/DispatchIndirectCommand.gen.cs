@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DispatchIndirectCommand
         (
-            uint x = default,
-            uint y = default,
-            uint z = default
+            uint? x = null,
+            uint? y = null,
+            uint? z = null
         )
         {
-            X = x;
-            Y = y;
-            Z = z;
+            fixed (DispatchIndirectCommand* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public DisplayPlanePropertiesKHR
         (
-            DisplayKHR currentDisplay = default,
-            uint currentStackIndex = default
+            DisplayKHR? currentDisplay = null,
+            uint? currentStackIndex = null
         )
         {
-            CurrentDisplay = currentDisplay;
-            CurrentStackIndex = currentStackIndex;
+            fixed (DisplayPlanePropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (currentDisplay is not null)
+            {
+                CurrentDisplay = currentDisplay.Value;
+            }
+
+            if (currentStackIndex is not null)
+            {
+                CurrentStackIndex = currentStackIndex.Value;
+            }
         }
 
 /// <summary></summary>

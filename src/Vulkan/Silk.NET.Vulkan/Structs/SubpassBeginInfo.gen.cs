@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SubpassBeginInfo
         (
-            StructureType sType = StructureType.SubpassBeginInfo,
-            void* pNext = default,
-            SubpassContents contents = default
+            StructureType? sType = StructureType.SubpassBeginInfo,
+            void* pNext = null,
+            SubpassContents? contents = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Contents = contents;
+            fixed (SubpassBeginInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (contents is not null)
+            {
+                Contents = contents.Value;
+            }
         }
 
 /// <summary></summary>

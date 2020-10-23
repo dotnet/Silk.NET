@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public ApplicationInfo
         (
-            StructureType sType = StructureType.ApplicationInfo,
-            void* pNext = default,
-            byte* pApplicationName = default,
-            uint applicationVersion = default,
-            byte* pEngineName = default,
-            uint engineVersion = default,
-            uint apiVersion = default
+            StructureType? sType = StructureType.ApplicationInfo,
+            void* pNext = null,
+            byte* pApplicationName = null,
+            uint? applicationVersion = null,
+            byte* pEngineName = null,
+            uint? engineVersion = null,
+            uint? apiVersion = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PApplicationName = pApplicationName;
-            ApplicationVersion = applicationVersion;
-            PEngineName = pEngineName;
-            EngineVersion = engineVersion;
-            ApiVersion = apiVersion;
+            fixed (ApplicationInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pApplicationName is not null)
+            {
+                PApplicationName = pApplicationName;
+            }
+
+            if (applicationVersion is not null)
+            {
+                ApplicationVersion = applicationVersion.Value;
+            }
+
+            if (pEngineName is not null)
+            {
+                PEngineName = pEngineName;
+            }
+
+            if (engineVersion is not null)
+            {
+                EngineVersion = engineVersion.Value;
+            }
+
+            if (apiVersion is not null)
+            {
+                ApiVersion = apiVersion.Value;
+            }
         }
 
 /// <summary></summary>

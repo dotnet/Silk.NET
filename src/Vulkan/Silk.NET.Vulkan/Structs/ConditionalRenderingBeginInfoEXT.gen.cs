@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public ConditionalRenderingBeginInfoEXT
         (
-            StructureType sType = StructureType.ConditionalRenderingBeginInfoExt,
-            void* pNext = default,
-            Buffer buffer = default,
-            ulong offset = default,
-            ConditionalRenderingFlagsEXT flags = default
+            StructureType? sType = StructureType.ConditionalRenderingBeginInfoExt,
+            void* pNext = null,
+            Buffer? buffer = null,
+            ulong? offset = null,
+            ConditionalRenderingFlagsEXT? flags = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Buffer = buffer;
-            Offset = offset;
-            Flags = flags;
+            fixed (ConditionalRenderingBeginInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

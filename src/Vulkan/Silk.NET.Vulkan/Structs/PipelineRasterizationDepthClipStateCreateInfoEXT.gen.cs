@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineRasterizationDepthClipStateCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineRasterizationDepthClipStateCreateInfoExt,
-            void* pNext = default,
-            uint flags = default,
-            Bool32 depthClipEnable = default
+            StructureType? sType = StructureType.PipelineRasterizationDepthClipStateCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null,
+            Bool32? depthClipEnable = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            DepthClipEnable = depthClipEnable;
+            fixed (PipelineRasterizationDepthClipStateCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (depthClipEnable is not null)
+            {
+                DepthClipEnable = depthClipEnable.Value;
+            }
         }
 
 /// <summary></summary>

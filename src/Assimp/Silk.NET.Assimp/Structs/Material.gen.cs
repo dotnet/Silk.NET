@@ -21,14 +21,30 @@ namespace Silk.NET.Assimp
     {
         public Material
         (
-            MaterialProperty** mProperties = default,
-            uint mNumProperties = default,
-            uint mNumAllocated = default
+            MaterialProperty** mProperties = null,
+            uint? mNumProperties = null,
+            uint? mNumAllocated = null
         )
         {
-            MProperties = mProperties;
-            MNumProperties = mNumProperties;
-            MNumAllocated = mNumAllocated;
+            fixed (Material* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mProperties is not null)
+            {
+                MProperties = mProperties;
+            }
+
+            if (mNumProperties is not null)
+            {
+                MNumProperties = mNumProperties.Value;
+            }
+
+            if (mNumAllocated is not null)
+            {
+                MNumAllocated = mNumAllocated.Value;
+            }
         }
 
 

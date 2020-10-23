@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public FormatProperties
         (
-            FormatFeatureFlags linearTilingFeatures = default,
-            FormatFeatureFlags optimalTilingFeatures = default,
-            FormatFeatureFlags bufferFeatures = default
+            FormatFeatureFlags? linearTilingFeatures = null,
+            FormatFeatureFlags? optimalTilingFeatures = null,
+            FormatFeatureFlags? bufferFeatures = null
         )
         {
-            LinearTilingFeatures = linearTilingFeatures;
-            OptimalTilingFeatures = optimalTilingFeatures;
-            BufferFeatures = bufferFeatures;
+            fixed (FormatProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (linearTilingFeatures is not null)
+            {
+                LinearTilingFeatures = linearTilingFeatures.Value;
+            }
+
+            if (optimalTilingFeatures is not null)
+            {
+                OptimalTilingFeatures = optimalTilingFeatures.Value;
+            }
+
+            if (bufferFeatures is not null)
+            {
+                BufferFeatures = bufferFeatures.Value;
+            }
         }
 
 /// <summary></summary>

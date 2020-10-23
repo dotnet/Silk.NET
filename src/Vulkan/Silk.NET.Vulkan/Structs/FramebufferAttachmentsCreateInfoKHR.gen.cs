@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public FramebufferAttachmentsCreateInfoKHR
         (
-            StructureType sType = StructureType.FramebufferAttachmentsCreateInfo,
-            void* pNext = default,
-            uint attachmentImageInfoCount = default,
-            FramebufferAttachmentImageInfo* pAttachmentImageInfos = default
+            StructureType? sType = StructureType.FramebufferAttachmentsCreateInfo,
+            void* pNext = null,
+            uint? attachmentImageInfoCount = null,
+            FramebufferAttachmentImageInfo* pAttachmentImageInfos = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AttachmentImageInfoCount = attachmentImageInfoCount;
-            PAttachmentImageInfos = pAttachmentImageInfos;
+            fixed (FramebufferAttachmentsCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachmentImageInfoCount is not null)
+            {
+                AttachmentImageInfoCount = attachmentImageInfoCount.Value;
+            }
+
+            if (pAttachmentImageInfos is not null)
+            {
+                PAttachmentImageInfos = pAttachmentImageInfos;
+            }
         }
 
 /// <summary></summary>

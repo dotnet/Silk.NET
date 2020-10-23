@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public EventDataBaseHeader
         (
-            StructureType type = default,
-            void* next = default
+            StructureType? type = null,
+            void* next = null
         )
         {
-            Type = type;
-            Next = next;
+            fixed (EventDataBaseHeader* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 /// <summary></summary>

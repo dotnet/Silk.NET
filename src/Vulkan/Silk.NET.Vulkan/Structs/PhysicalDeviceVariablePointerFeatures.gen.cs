@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceVariablePointerFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceVariablePointersFeatures,
-            void* pNext = default,
-            Bool32 variablePointersStorageBuffer = default,
-            Bool32 variablePointers = default
+            StructureType? sType = StructureType.PhysicalDeviceVariablePointersFeatures,
+            void* pNext = null,
+            Bool32? variablePointersStorageBuffer = null,
+            Bool32? variablePointers = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            VariablePointersStorageBuffer = variablePointersStorageBuffer;
-            VariablePointers = variablePointers;
+            fixed (PhysicalDeviceVariablePointerFeatures* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (variablePointersStorageBuffer is not null)
+            {
+                VariablePointersStorageBuffer = variablePointersStorageBuffer.Value;
+            }
+
+            if (variablePointers is not null)
+            {
+                VariablePointers = variablePointers.Value;
+            }
         }
 
 /// <summary></summary>

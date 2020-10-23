@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SystemGetInfo
         (
-            StructureType type = StructureType.TypeSystemGetInfo,
-            void* next = default,
-            FormFactor formFactor = default
+            StructureType? type = StructureType.TypeSystemGetInfo,
+            void* next = null,
+            FormFactor? formFactor = null
         )
         {
-            Type = type;
-            Next = next;
-            FormFactor = formFactor;
+            fixed (SystemGetInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (formFactor is not null)
+            {
+                FormFactor = formFactor.Value;
+            }
         }
 
 /// <summary></summary>

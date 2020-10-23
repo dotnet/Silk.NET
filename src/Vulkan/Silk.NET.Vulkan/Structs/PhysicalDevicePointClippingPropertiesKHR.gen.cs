@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePointClippingPropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePointClippingProperties,
-            void* pNext = default,
-            PointClippingBehavior pointClippingBehavior = default
+            StructureType? sType = StructureType.PhysicalDevicePointClippingProperties,
+            void* pNext = null,
+            PointClippingBehavior? pointClippingBehavior = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PointClippingBehavior = pointClippingBehavior;
+            fixed (PhysicalDevicePointClippingPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pointClippingBehavior is not null)
+            {
+                PointClippingBehavior = pointClippingBehavior.Value;
+            }
         }
 
 /// <summary></summary>

@@ -50,6 +50,8 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         AffinityDomainNumaExt = 0x10,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_NEXT_FISSIONABLE_EXT")]
         AffinityDomainNextFissionableExt = 0x100,
+        [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
+        DeviceCxxForOpenclNumericVersionExt = 0x4230,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST_EXT")]
         MigrateMemObjectHostExt = 0x1,
         [NativeName("Name", "CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]

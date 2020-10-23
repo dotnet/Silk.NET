@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DeviceMemoryOverallocationCreateInfoAMD
         (
-            StructureType sType = StructureType.DeviceMemoryOverallocationCreateInfoAmd,
-            void* pNext = default,
-            MemoryOverallocationBehaviorAMD overallocationBehavior = default
+            StructureType? sType = StructureType.DeviceMemoryOverallocationCreateInfoAmd,
+            void* pNext = null,
+            MemoryOverallocationBehaviorAMD? overallocationBehavior = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            OverallocationBehavior = overallocationBehavior;
+            fixed (DeviceMemoryOverallocationCreateInfoAMD* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (overallocationBehavior is not null)
+            {
+                OverallocationBehavior = overallocationBehavior.Value;
+            }
         }
 
 /// <summary></summary>

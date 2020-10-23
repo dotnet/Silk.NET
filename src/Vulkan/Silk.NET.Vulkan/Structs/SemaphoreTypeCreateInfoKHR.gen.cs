@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public SemaphoreTypeCreateInfoKHR
         (
-            StructureType sType = StructureType.SemaphoreTypeCreateInfo,
-            void* pNext = default,
-            SemaphoreType semaphoreType = default,
-            ulong initialValue = default
+            StructureType? sType = StructureType.SemaphoreTypeCreateInfo,
+            void* pNext = null,
+            SemaphoreType? semaphoreType = null,
+            ulong? initialValue = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SemaphoreType = semaphoreType;
-            InitialValue = initialValue;
+            fixed (SemaphoreTypeCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (semaphoreType is not null)
+            {
+                SemaphoreType = semaphoreType.Value;
+            }
+
+            if (initialValue is not null)
+            {
+                InitialValue = initialValue.Value;
+            }
         }
 
 /// <summary></summary>

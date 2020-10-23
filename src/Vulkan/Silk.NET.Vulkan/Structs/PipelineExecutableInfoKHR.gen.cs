@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineExecutableInfoKHR
         (
-            StructureType sType = StructureType.PipelineExecutableInfoKhr,
-            void* pNext = default,
-            Pipeline pipeline = default,
-            uint executableIndex = default
+            StructureType? sType = StructureType.PipelineExecutableInfoKhr,
+            void* pNext = null,
+            Pipeline? pipeline = null,
+            uint? executableIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Pipeline = pipeline;
-            ExecutableIndex = executableIndex;
+            fixed (PipelineExecutableInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pipeline is not null)
+            {
+                Pipeline = pipeline.Value;
+            }
+
+            if (executableIndex is not null)
+            {
+                ExecutableIndex = executableIndex.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceHostQueryResetFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceHostQueryResetFeatures,
-            void* pNext = default,
-            Bool32 hostQueryReset = default
+            StructureType? sType = StructureType.PhysicalDeviceHostQueryResetFeatures,
+            void* pNext = null,
+            Bool32? hostQueryReset = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HostQueryReset = hostQueryReset;
+            fixed (PhysicalDeviceHostQueryResetFeatures* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (hostQueryReset is not null)
+            {
+                HostQueryReset = hostQueryReset.Value;
+            }
         }
 
 /// <summary></summary>

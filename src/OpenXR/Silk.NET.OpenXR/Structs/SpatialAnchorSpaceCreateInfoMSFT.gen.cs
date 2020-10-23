@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public SpatialAnchorSpaceCreateInfoMSFT
         (
-            StructureType type = StructureType.TypeSpatialAnchorSpaceCreateInfoMsft,
-            void* next = default,
-            SpatialAnchorMSFT anchor = default,
-            Posef poseInAnchorSpace = default
+            StructureType? type = StructureType.TypeSpatialAnchorSpaceCreateInfoMsft,
+            void* next = null,
+            SpatialAnchorMSFT? anchor = null,
+            Posef? poseInAnchorSpace = null
         )
         {
-            Type = type;
-            Next = next;
-            Anchor = anchor;
-            PoseInAnchorSpace = poseInAnchorSpace;
+            fixed (SpatialAnchorSpaceCreateInfoMSFT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (anchor is not null)
+            {
+                Anchor = anchor.Value;
+            }
+
+            if (poseInAnchorSpace is not null)
+            {
+                PoseInAnchorSpace = poseInAnchorSpace.Value;
+            }
         }
 
 /// <summary></summary>

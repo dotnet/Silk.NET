@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDiscardRectanglePropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceDiscardRectanglePropertiesExt,
-            void* pNext = default,
-            uint maxDiscardRectangles = default
+            StructureType? sType = StructureType.PhysicalDeviceDiscardRectanglePropertiesExt,
+            void* pNext = null,
+            uint? maxDiscardRectangles = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxDiscardRectangles = maxDiscardRectangles;
+            fixed (PhysicalDeviceDiscardRectanglePropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxDiscardRectangles is not null)
+            {
+                MaxDiscardRectangles = maxDiscardRectangles.Value;
+            }
         }
 
 /// <summary></summary>

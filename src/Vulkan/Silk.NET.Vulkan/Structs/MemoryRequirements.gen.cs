@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public MemoryRequirements
         (
-            ulong size = default,
-            ulong alignment = default,
-            uint memoryTypeBits = default
+            ulong? size = null,
+            ulong? alignment = null,
+            uint? memoryTypeBits = null
         )
         {
-            Size = size;
-            Alignment = alignment;
-            MemoryTypeBits = memoryTypeBits;
+            fixed (MemoryRequirements* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (alignment is not null)
+            {
+                Alignment = alignment.Value;
+            }
+
+            if (memoryTypeBits is not null)
+            {
+                MemoryTypeBits = memoryTypeBits.Value;
+            }
         }
 
 /// <summary></summary>

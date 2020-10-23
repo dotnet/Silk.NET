@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public ShadingRatePaletteNV
         (
-            uint shadingRatePaletteEntryCount = default,
-            ShadingRatePaletteEntryNV* pShadingRatePaletteEntries = default
+            uint? shadingRatePaletteEntryCount = null,
+            ShadingRatePaletteEntryNV* pShadingRatePaletteEntries = null
         )
         {
-            ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount;
-            PShadingRatePaletteEntries = pShadingRatePaletteEntries;
+            fixed (ShadingRatePaletteNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (shadingRatePaletteEntryCount is not null)
+            {
+                ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount.Value;
+            }
+
+            if (pShadingRatePaletteEntries is not null)
+            {
+                PShadingRatePaletteEntries = pShadingRatePaletteEntries;
+            }
         }
 
 /// <summary></summary>

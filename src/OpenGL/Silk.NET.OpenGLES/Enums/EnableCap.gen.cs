@@ -196,10 +196,16 @@ namespace Silk.NET.OpenGLES
         SampleMaskSgis = 0x80A0,
         [NativeName("Name", "GL_TEXTURE_COLOR_TABLE_SGI")]
         TextureColorTableSgi = 0x80BC,
+        [NativeName("Name", "GL_COLOR_TABLE")]
+        ColorTable = 0x80D0,
         [NativeName("Name", "GL_COLOR_TABLE_SGI")]
         ColorTableSgi = 0x80D0,
+        [NativeName("Name", "GL_POST_CONVOLUTION_COLOR_TABLE")]
+        PostConvolutionColorTable = 0x80D1,
         [NativeName("Name", "GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
         PostConvolutionColorTableSgi = 0x80D1,
+        [NativeName("Name", "GL_POST_COLOR_MATRIX_COLOR_TABLE")]
+        PostColorMatrixColorTable = 0x80D2,
         [NativeName("Name", "GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
         PostColorMatrixColorTableSgi = 0x80D2,
         [NativeName("Name", "GL_TEXTURE_4D_SGIS")]

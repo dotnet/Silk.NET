@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public NativeBufferANDROID
         (
-            StructureType sType = StructureType.NativeBufferAndroid,
-            void* pNext = default,
-            void* handle = default,
-            int stride = default,
-            int format = default,
-            int usage = default,
-            NativeBufferUsage2ANDROID usage2 = default
+            StructureType? sType = StructureType.NativeBufferAndroid,
+            void* pNext = null,
+            void* handle = null,
+            int? stride = null,
+            int? format = null,
+            int? usage = null,
+            NativeBufferUsage2ANDROID? usage2 = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Handle = handle;
-            Stride = stride;
-            Format = format;
-            Usage = usage;
-            Usage2 = usage2;
+            fixed (NativeBufferANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (usage2 is not null)
+            {
+                Usage2 = usage2.Value;
+            }
         }
 
 /// <summary></summary>

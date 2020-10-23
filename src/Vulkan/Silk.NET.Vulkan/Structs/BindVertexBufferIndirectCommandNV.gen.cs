@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public BindVertexBufferIndirectCommandNV
         (
-            ulong bufferAddress = default,
-            uint size = default,
-            uint stride = default
+            ulong? bufferAddress = null,
+            uint? size = null,
+            uint? stride = null
         )
         {
-            BufferAddress = bufferAddress;
-            Size = size;
-            Stride = stride;
+            fixed (BindVertexBufferIndirectCommandNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (bufferAddress is not null)
+            {
+                BufferAddress = bufferAddress.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
         }
 
 /// <summary></summary>

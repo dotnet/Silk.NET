@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTexelBufferAlignmentPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceTexelBufferAlignmentPropertiesExt,
-            void* pNext = default,
-            ulong storageTexelBufferOffsetAlignmentBytes = default,
-            Bool32 storageTexelBufferOffsetSingleTexelAlignment = default,
-            ulong uniformTexelBufferOffsetAlignmentBytes = default,
-            Bool32 uniformTexelBufferOffsetSingleTexelAlignment = default
+            StructureType? sType = StructureType.PhysicalDeviceTexelBufferAlignmentPropertiesExt,
+            void* pNext = null,
+            ulong? storageTexelBufferOffsetAlignmentBytes = null,
+            Bool32? storageTexelBufferOffsetSingleTexelAlignment = null,
+            ulong? uniformTexelBufferOffsetAlignmentBytes = null,
+            Bool32? uniformTexelBufferOffsetSingleTexelAlignment = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            StorageTexelBufferOffsetAlignmentBytes = storageTexelBufferOffsetAlignmentBytes;
-            StorageTexelBufferOffsetSingleTexelAlignment = storageTexelBufferOffsetSingleTexelAlignment;
-            UniformTexelBufferOffsetAlignmentBytes = uniformTexelBufferOffsetAlignmentBytes;
-            UniformTexelBufferOffsetSingleTexelAlignment = uniformTexelBufferOffsetSingleTexelAlignment;
+            fixed (PhysicalDeviceTexelBufferAlignmentPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (storageTexelBufferOffsetAlignmentBytes is not null)
+            {
+                StorageTexelBufferOffsetAlignmentBytes = storageTexelBufferOffsetAlignmentBytes.Value;
+            }
+
+            if (storageTexelBufferOffsetSingleTexelAlignment is not null)
+            {
+                StorageTexelBufferOffsetSingleTexelAlignment = storageTexelBufferOffsetSingleTexelAlignment.Value;
+            }
+
+            if (uniformTexelBufferOffsetAlignmentBytes is not null)
+            {
+                UniformTexelBufferOffsetAlignmentBytes = uniformTexelBufferOffsetAlignmentBytes.Value;
+            }
+
+            if (uniformTexelBufferOffsetSingleTexelAlignment is not null)
+            {
+                UniformTexelBufferOffsetSingleTexelAlignment = uniformTexelBufferOffsetSingleTexelAlignment.Value;
+            }
         }
 
 /// <summary></summary>

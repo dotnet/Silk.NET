@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceProperties2KHR
         (
-            StructureType sType = StructureType.PhysicalDeviceProperties2,
-            void* pNext = default,
-            PhysicalDeviceProperties properties = default
+            StructureType? sType = StructureType.PhysicalDeviceProperties2,
+            void* pNext = null,
+            PhysicalDeviceProperties? properties = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Properties = properties;
+            fixed (PhysicalDeviceProperties2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (properties is not null)
+            {
+                Properties = properties.Value;
+            }
         }
 
 /// <summary></summary>

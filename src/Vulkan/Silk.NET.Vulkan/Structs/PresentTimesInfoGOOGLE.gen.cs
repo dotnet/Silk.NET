@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PresentTimesInfoGOOGLE
         (
-            StructureType sType = StructureType.PresentTimesInfoGoogle,
-            void* pNext = default,
-            uint swapchainCount = default,
-            PresentTimeGOOGLE* pTimes = default
+            StructureType? sType = StructureType.PresentTimesInfoGoogle,
+            void* pNext = null,
+            uint? swapchainCount = null,
+            PresentTimeGOOGLE* pTimes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SwapchainCount = swapchainCount;
-            PTimes = pTimes;
+            fixed (PresentTimesInfoGOOGLE* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchainCount is not null)
+            {
+                SwapchainCount = swapchainCount.Value;
+            }
+
+            if (pTimes is not null)
+            {
+                PTimes = pTimes;
+            }
         }
 
 /// <summary></summary>

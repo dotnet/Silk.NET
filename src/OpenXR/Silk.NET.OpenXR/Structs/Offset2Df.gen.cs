@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public Offset2Df
         (
-            float x = default,
-            float y = default
+            float? x = null,
+            float? y = null
         )
         {
-            X = x;
-            Y = y;
+            fixed (Offset2Df* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
 /// <summary></summary>

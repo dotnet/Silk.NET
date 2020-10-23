@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SystemHandTrackingPropertiesEXT
         (
-            StructureType type = StructureType.TypeSystemHandTrackingPropertiesExt,
-            void* next = default,
-            uint supportsHandTracking = default
+            StructureType? type = StructureType.TypeSystemHandTrackingPropertiesExt,
+            void* next = null,
+            uint? supportsHandTracking = null
         )
         {
-            Type = type;
-            Next = next;
-            SupportsHandTracking = supportsHandTracking;
+            fixed (SystemHandTrackingPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (supportsHandTracking is not null)
+            {
+                SupportsHandTracking = supportsHandTracking.Value;
+            }
         }
 
 /// <summary></summary>

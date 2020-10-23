@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DrawIndexedIndirectCommand
         (
-            uint indexCount = default,
-            uint instanceCount = default,
-            uint firstIndex = default,
-            int vertexOffset = default,
-            uint firstInstance = default
+            uint? indexCount = null,
+            uint? instanceCount = null,
+            uint? firstIndex = null,
+            int? vertexOffset = null,
+            uint? firstInstance = null
         )
         {
-            IndexCount = indexCount;
-            InstanceCount = instanceCount;
-            FirstIndex = firstIndex;
-            VertexOffset = vertexOffset;
-            FirstInstance = firstInstance;
+            fixed (DrawIndexedIndirectCommand* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (indexCount is not null)
+            {
+                IndexCount = indexCount.Value;
+            }
+
+            if (instanceCount is not null)
+            {
+                InstanceCount = instanceCount.Value;
+            }
+
+            if (firstIndex is not null)
+            {
+                FirstIndex = firstIndex.Value;
+            }
+
+            if (vertexOffset is not null)
+            {
+                VertexOffset = vertexOffset.Value;
+            }
+
+            if (firstInstance is not null)
+            {
+                FirstInstance = firstInstance.Value;
+            }
         }
 
 /// <summary></summary>

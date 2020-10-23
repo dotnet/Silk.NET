@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SwapchainCounterCreateInfoEXT
         (
-            StructureType sType = StructureType.SwapchainCounterCreateInfoExt,
-            void* pNext = default,
-            SurfaceCounterFlagsEXT surfaceCounters = default
+            StructureType? sType = StructureType.SwapchainCounterCreateInfoExt,
+            void* pNext = null,
+            SurfaceCounterFlagsEXT? surfaceCounters = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SurfaceCounters = surfaceCounters;
+            fixed (SwapchainCounterCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surfaceCounters is not null)
+            {
+                SurfaceCounters = surfaceCounters.Value;
+            }
         }
 
 /// <summary></summary>

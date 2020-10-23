@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDiagnosticsConfigFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceDiagnosticsConfigFeaturesNV,
-            void* pNext = default,
-            Bool32 diagnosticsConfig = default
+            StructureType? sType = StructureType.PhysicalDeviceDiagnosticsConfigFeaturesNV,
+            void* pNext = null,
+            Bool32? diagnosticsConfig = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DiagnosticsConfig = diagnosticsConfig;
+            fixed (PhysicalDeviceDiagnosticsConfigFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (diagnosticsConfig is not null)
+            {
+                DiagnosticsConfig = diagnosticsConfig.Value;
+            }
         }
 
 /// <summary></summary>

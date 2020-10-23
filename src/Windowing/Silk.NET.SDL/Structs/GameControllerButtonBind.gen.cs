@@ -21,12 +21,24 @@ namespace Silk.NET.SDL
     {
         public GameControllerButtonBind
         (
-            GameControllerBindType bindType = default,
-            GameControllerBindValue value = default
+            GameControllerBindType? bindType = null,
+            GameControllerBindValue? value = null
         )
         {
-            BindType = bindType;
-            Value = value;
+            fixed (GameControllerButtonBind* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (bindType is not null)
+            {
+                BindType = bindType.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
 

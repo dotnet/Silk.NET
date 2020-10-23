@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDriverProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceDriverProperties,
-            void* pNext = default,
-            DriverId driverID = default,
-            ConformanceVersion conformanceVersion = default
+            StructureType? sType = StructureType.PhysicalDeviceDriverProperties,
+            void* pNext = null,
+            DriverId? driverID = null,
+            ConformanceVersion? conformanceVersion = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DriverID = driverID;
-            ConformanceVersion = conformanceVersion;
+            fixed (PhysicalDeviceDriverProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (driverID is not null)
+            {
+                DriverID = driverID.Value;
+            }
+
+            if (conformanceVersion is not null)
+            {
+                ConformanceVersion = conformanceVersion.Value;
+            }
         }
 
 /// <summary></summary>

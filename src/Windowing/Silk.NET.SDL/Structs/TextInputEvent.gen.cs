@@ -21,14 +21,30 @@ namespace Silk.NET.SDL
     {
         public TextInputEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint windowID = default
+            uint? type = null,
+            uint? timestamp = null,
+            uint? windowID = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            WindowID = windowID;
+            fixed (TextInputEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
         }
 
 

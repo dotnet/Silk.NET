@@ -21,30 +21,78 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceRayTracingFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceRayTracingFeaturesKhr,
-            void* pNext = default,
-            Bool32 rayTracing = default,
-            Bool32 rayTracingShaderGroupHandleCaptureReplay = default,
-            Bool32 rayTracingShaderGroupHandleCaptureReplayMixed = default,
-            Bool32 rayTracingAccelerationStructureCaptureReplay = default,
-            Bool32 rayTracingIndirectTraceRays = default,
-            Bool32 rayTracingIndirectAccelerationStructureBuild = default,
-            Bool32 rayTracingHostAccelerationStructureCommands = default,
-            Bool32 rayQuery = default,
-            Bool32 rayTracingPrimitiveCulling = default
+            StructureType? sType = StructureType.PhysicalDeviceRayTracingFeaturesKhr,
+            void* pNext = null,
+            Bool32? rayTracing = null,
+            Bool32? rayTracingShaderGroupHandleCaptureReplay = null,
+            Bool32? rayTracingShaderGroupHandleCaptureReplayMixed = null,
+            Bool32? rayTracingAccelerationStructureCaptureReplay = null,
+            Bool32? rayTracingIndirectTraceRays = null,
+            Bool32? rayTracingIndirectAccelerationStructureBuild = null,
+            Bool32? rayTracingHostAccelerationStructureCommands = null,
+            Bool32? rayQuery = null,
+            Bool32? rayTracingPrimitiveCulling = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RayTracing = rayTracing;
-            RayTracingShaderGroupHandleCaptureReplay = rayTracingShaderGroupHandleCaptureReplay;
-            RayTracingShaderGroupHandleCaptureReplayMixed = rayTracingShaderGroupHandleCaptureReplayMixed;
-            RayTracingAccelerationStructureCaptureReplay = rayTracingAccelerationStructureCaptureReplay;
-            RayTracingIndirectTraceRays = rayTracingIndirectTraceRays;
-            RayTracingIndirectAccelerationStructureBuild = rayTracingIndirectAccelerationStructureBuild;
-            RayTracingHostAccelerationStructureCommands = rayTracingHostAccelerationStructureCommands;
-            RayQuery = rayQuery;
-            RayTracingPrimitiveCulling = rayTracingPrimitiveCulling;
+            fixed (PhysicalDeviceRayTracingFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (rayTracing is not null)
+            {
+                RayTracing = rayTracing.Value;
+            }
+
+            if (rayTracingShaderGroupHandleCaptureReplay is not null)
+            {
+                RayTracingShaderGroupHandleCaptureReplay = rayTracingShaderGroupHandleCaptureReplay.Value;
+            }
+
+            if (rayTracingShaderGroupHandleCaptureReplayMixed is not null)
+            {
+                RayTracingShaderGroupHandleCaptureReplayMixed = rayTracingShaderGroupHandleCaptureReplayMixed.Value;
+            }
+
+            if (rayTracingAccelerationStructureCaptureReplay is not null)
+            {
+                RayTracingAccelerationStructureCaptureReplay = rayTracingAccelerationStructureCaptureReplay.Value;
+            }
+
+            if (rayTracingIndirectTraceRays is not null)
+            {
+                RayTracingIndirectTraceRays = rayTracingIndirectTraceRays.Value;
+            }
+
+            if (rayTracingIndirectAccelerationStructureBuild is not null)
+            {
+                RayTracingIndirectAccelerationStructureBuild = rayTracingIndirectAccelerationStructureBuild.Value;
+            }
+
+            if (rayTracingHostAccelerationStructureCommands is not null)
+            {
+                RayTracingHostAccelerationStructureCommands = rayTracingHostAccelerationStructureCommands.Value;
+            }
+
+            if (rayQuery is not null)
+            {
+                RayQuery = rayQuery.Value;
+            }
+
+            if (rayTracingPrimitiveCulling is not null)
+            {
+                RayTracingPrimitiveCulling = rayTracingPrimitiveCulling.Value;
+            }
         }
 
 /// <summary></summary>

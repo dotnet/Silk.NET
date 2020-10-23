@@ -21,22 +21,54 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingOpenGLXlibKHR
         (
-            StructureType type = StructureType.TypeGraphicsBindingOpenglXlibKhr,
-            void* next = default,
-            IntPtr* xDisplay = default,
-            uint visualid = default,
-            IntPtr glxFbconfig = default,
-            IntPtr glxDrawable = default,
-            IntPtr glxContext = default
+            StructureType? type = StructureType.TypeGraphicsBindingOpenglXlibKhr,
+            void* next = null,
+            IntPtr* xDisplay = null,
+            uint? visualid = null,
+            IntPtr? glxFbconfig = null,
+            IntPtr? glxDrawable = null,
+            IntPtr? glxContext = null
         )
         {
-            Type = type;
-            Next = next;
-            XDisplay = xDisplay;
-            Visualid = visualid;
-            GlxFbconfig = glxFbconfig;
-            GlxDrawable = glxDrawable;
-            GlxContext = glxContext;
+            fixed (GraphicsBindingOpenGLXlibKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (xDisplay is not null)
+            {
+                XDisplay = xDisplay;
+            }
+
+            if (visualid is not null)
+            {
+                Visualid = visualid.Value;
+            }
+
+            if (glxFbconfig is not null)
+            {
+                GlxFbconfig = glxFbconfig.Value;
+            }
+
+            if (glxDrawable is not null)
+            {
+                GlxDrawable = glxDrawable.Value;
+            }
+
+            if (glxContext is not null)
+            {
+                GlxContext = glxContext.Value;
+            }
         }
 
 /// <summary></summary>

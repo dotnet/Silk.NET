@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetLayoutBindingFlagsCreateInfoEXT
         (
-            StructureType sType = StructureType.DescriptorSetLayoutBindingFlagsCreateInfo,
-            void* pNext = default,
-            uint bindingCount = default,
-            DescriptorBindingFlags* pBindingFlags = default
+            StructureType? sType = StructureType.DescriptorSetLayoutBindingFlagsCreateInfo,
+            void* pNext = null,
+            uint? bindingCount = null,
+            DescriptorBindingFlags* pBindingFlags = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            BindingCount = bindingCount;
-            PBindingFlags = pBindingFlags;
+            fixed (DescriptorSetLayoutBindingFlagsCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (bindingCount is not null)
+            {
+                BindingCount = bindingCount.Value;
+            }
+
+            if (pBindingFlags is not null)
+            {
+                PBindingFlags = pBindingFlags;
+            }
         }
 
 /// <summary></summary>

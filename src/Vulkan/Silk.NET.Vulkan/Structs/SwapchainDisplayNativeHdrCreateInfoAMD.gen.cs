@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SwapchainDisplayNativeHdrCreateInfoAMD
         (
-            StructureType sType = StructureType.SwapchainDisplayNativeHdrCreateInfoAmd,
-            void* pNext = default,
-            Bool32 localDimmingEnable = default
+            StructureType? sType = StructureType.SwapchainDisplayNativeHdrCreateInfoAmd,
+            void* pNext = null,
+            Bool32? localDimmingEnable = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            LocalDimmingEnable = localDimmingEnable;
+            fixed (SwapchainDisplayNativeHdrCreateInfoAMD* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (localDimmingEnable is not null)
+            {
+                LocalDimmingEnable = localDimmingEnable.Value;
+            }
         }
 
 /// <summary></summary>

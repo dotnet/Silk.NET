@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExtendedDynamicStateFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceExtendedDynamicStateFeaturesExt,
-            void* pNext = default,
-            Bool32 extendedDynamicState = default
+            StructureType? sType = StructureType.PhysicalDeviceExtendedDynamicStateFeaturesExt,
+            void* pNext = null,
+            Bool32? extendedDynamicState = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ExtendedDynamicState = extendedDynamicState;
+            fixed (PhysicalDeviceExtendedDynamicStateFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (extendedDynamicState is not null)
+            {
+                ExtendedDynamicState = extendedDynamicState.Value;
+            }
         }
 
 /// <summary></summary>

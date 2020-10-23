@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetLayoutBinding
         (
-            uint binding = default,
-            DescriptorType descriptorType = default,
-            uint descriptorCount = default,
-            ShaderStageFlags stageFlags = default,
-            Sampler* pImmutableSamplers = default
+            uint? binding = null,
+            DescriptorType? descriptorType = null,
+            uint? descriptorCount = null,
+            ShaderStageFlags? stageFlags = null,
+            Sampler* pImmutableSamplers = null
         )
         {
-            Binding = binding;
-            DescriptorType = descriptorType;
-            DescriptorCount = descriptorCount;
-            StageFlags = stageFlags;
-            PImmutableSamplers = pImmutableSamplers;
+            fixed (DescriptorSetLayoutBinding* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (descriptorType is not null)
+            {
+                DescriptorType = descriptorType.Value;
+            }
+
+            if (descriptorCount is not null)
+            {
+                DescriptorCount = descriptorCount.Value;
+            }
+
+            if (stageFlags is not null)
+            {
+                StageFlags = stageFlags.Value;
+            }
+
+            if (pImmutableSamplers is not null)
+            {
+                PImmutableSamplers = pImmutableSamplers;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public InitializePerformanceApiInfoINTEL
         (
-            StructureType sType = StructureType.InitializePerformanceApiInfoIntel,
-            void* pNext = default,
-            void* pUserData = default
+            StructureType? sType = StructureType.InitializePerformanceApiInfoIntel,
+            void* pNext = null,
+            void* pUserData = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PUserData = pUserData;
+            fixed (InitializePerformanceApiInfoINTEL* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pUserData is not null)
+            {
+                PUserData = pUserData;
+            }
         }
 
 /// <summary></summary>

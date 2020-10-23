@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public HolographicWindowAttachmentMSFT
         (
-            StructureType type = StructureType.TypeHolographicWindowAttachmentMsft,
-            void* next = default,
-            IntPtr holographicSpace = default,
-            IntPtr coreWindow = default
+            StructureType? type = StructureType.TypeHolographicWindowAttachmentMsft,
+            void* next = null,
+            IntPtr? holographicSpace = null,
+            IntPtr? coreWindow = null
         )
         {
-            Type = type;
-            Next = next;
-            HolographicSpace = holographicSpace;
-            CoreWindow = coreWindow;
+            fixed (HolographicWindowAttachmentMSFT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (holographicSpace is not null)
+            {
+                HolographicSpace = holographicSpace.Value;
+            }
+
+            if (coreWindow is not null)
+            {
+                CoreWindow = coreWindow.Value;
+            }
         }
 
 /// <summary></summary>

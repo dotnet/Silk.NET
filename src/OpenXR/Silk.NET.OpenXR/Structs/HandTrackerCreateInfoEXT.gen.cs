@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public HandTrackerCreateInfoEXT
         (
-            StructureType type = StructureType.TypeHandTrackerCreateInfoExt,
-            void* next = default,
-            HandEXT hand = default,
-            HandJointSetEXT handJointSet = default
+            StructureType? type = StructureType.TypeHandTrackerCreateInfoExt,
+            void* next = null,
+            HandEXT? hand = null,
+            HandJointSetEXT? handJointSet = null
         )
         {
-            Type = type;
-            Next = next;
-            Hand = hand;
-            HandJointSet = handJointSet;
+            fixed (HandTrackerCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (hand is not null)
+            {
+                Hand = hand.Value;
+            }
+
+            if (handJointSet is not null)
+            {
+                HandJointSet = handJointSet.Value;
+            }
         }
 
 /// <summary></summary>

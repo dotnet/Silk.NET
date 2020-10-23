@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public SemaphoreGetWin32HandleInfoKHR
         (
-            StructureType sType = StructureType.SemaphoreGetWin32HandleInfoKhr,
-            void* pNext = default,
-            Semaphore semaphore = default,
-            ExternalSemaphoreHandleTypeFlags handleType = default
+            StructureType? sType = StructureType.SemaphoreGetWin32HandleInfoKhr,
+            void* pNext = null,
+            Semaphore? semaphore = null,
+            ExternalSemaphoreHandleTypeFlags? handleType = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Semaphore = semaphore;
-            HandleType = handleType;
+            fixed (SemaphoreGetWin32HandleInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (semaphore is not null)
+            {
+                Semaphore = semaphore.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

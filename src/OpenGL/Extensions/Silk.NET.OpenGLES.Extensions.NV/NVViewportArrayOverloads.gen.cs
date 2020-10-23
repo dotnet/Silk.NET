@@ -28,6 +28,12 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             thisApi.GetFloat(target, index, out data.GetPinnableReference());
         }
 
+        public static unsafe void GetFloat(this NVViewportArray thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<float> data)
+        {
+            // SpanOverloader
+            thisApi.GetFloat(target, index, out data.GetPinnableReference());
+        }
+
         public static unsafe void ScissorArray(this NVViewportArray thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
         {
             // SpanOverloader

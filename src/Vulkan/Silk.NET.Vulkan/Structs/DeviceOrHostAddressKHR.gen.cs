@@ -22,12 +22,24 @@ namespace Silk.NET.Vulkan
     {
         public DeviceOrHostAddressKHR
         (
-            ulong deviceAddress = default,
-            void* hostAddress = default
+            ulong? deviceAddress = null,
+            void* hostAddress = null
         )
         {
-            DeviceAddress = deviceAddress;
-            HostAddress = hostAddress;
+            fixed (DeviceOrHostAddressKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
+
+            if (hostAddress is not null)
+            {
+                HostAddress = hostAddress;
+            }
         }
 
 /// <summary></summary>

@@ -21,26 +21,66 @@ namespace Silk.NET.OpenXR
     {
         public DebugUtilsMessengerCallbackDataEXT
         (
-            StructureType type = StructureType.TypeDebugUtilsMessengerCallbackDataExt,
-            void* next = default,
-            byte* messageId = default,
-            byte* functionName = default,
-            byte* message = default,
-            uint objectCount = default,
-            DebugUtilsObjectNameInfoEXT* objects = default,
-            uint sessionLabelCount = default,
-            DebugUtilsLabelEXT* sessionLabels = default
+            StructureType? type = StructureType.TypeDebugUtilsMessengerCallbackDataExt,
+            void* next = null,
+            byte* messageId = null,
+            byte* functionName = null,
+            byte* message = null,
+            uint? objectCount = null,
+            DebugUtilsObjectNameInfoEXT* objects = null,
+            uint? sessionLabelCount = null,
+            DebugUtilsLabelEXT* sessionLabels = null
         )
         {
-            Type = type;
-            Next = next;
-            MessageId = messageId;
-            FunctionName = functionName;
-            Message = message;
-            ObjectCount = objectCount;
-            Objects = objects;
-            SessionLabelCount = sessionLabelCount;
-            SessionLabels = sessionLabels;
+            fixed (DebugUtilsMessengerCallbackDataEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (messageId is not null)
+            {
+                MessageId = messageId;
+            }
+
+            if (functionName is not null)
+            {
+                FunctionName = functionName;
+            }
+
+            if (message is not null)
+            {
+                Message = message;
+            }
+
+            if (objectCount is not null)
+            {
+                ObjectCount = objectCount.Value;
+            }
+
+            if (objects is not null)
+            {
+                Objects = objects;
+            }
+
+            if (sessionLabelCount is not null)
+            {
+                SessionLabelCount = sessionLabelCount.Value;
+            }
+
+            if (sessionLabels is not null)
+            {
+                SessionLabels = sessionLabels;
+            }
         }
 
 /// <summary></summary>

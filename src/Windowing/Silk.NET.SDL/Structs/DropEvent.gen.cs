@@ -21,16 +21,36 @@ namespace Silk.NET.SDL
     {
         public DropEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            byte* file = default,
-            uint windowID = default
+            uint? type = null,
+            uint? timestamp = null,
+            byte* file = null,
+            uint? windowID = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            File = file;
-            WindowID = windowID;
+            fixed (DropEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (file is not null)
+            {
+                File = file;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
         }
 
 

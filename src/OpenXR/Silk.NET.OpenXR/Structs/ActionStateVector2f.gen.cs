@@ -21,20 +21,48 @@ namespace Silk.NET.OpenXR
     {
         public ActionStateVector2f
         (
-            StructureType type = StructureType.TypeActionStateVector2f,
-            void* next = default,
-            Vector2f currentState = default,
-            uint changedSinceLastSync = default,
-            long lastChangeTime = default,
-            uint isActive = default
+            StructureType? type = StructureType.TypeActionStateVector2f,
+            void* next = null,
+            Vector2f? currentState = null,
+            uint? changedSinceLastSync = null,
+            long? lastChangeTime = null,
+            uint? isActive = null
         )
         {
-            Type = type;
-            Next = next;
-            CurrentState = currentState;
-            ChangedSinceLastSync = changedSinceLastSync;
-            LastChangeTime = lastChangeTime;
-            IsActive = isActive;
+            fixed (ActionStateVector2f* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (currentState is not null)
+            {
+                CurrentState = currentState.Value;
+            }
+
+            if (changedSinceLastSync is not null)
+            {
+                ChangedSinceLastSync = changedSinceLastSync.Value;
+            }
+
+            if (lastChangeTime is not null)
+            {
+                LastChangeTime = lastChangeTime.Value;
+            }
+
+            if (isActive is not null)
+            {
+                IsActive = isActive.Value;
+            }
         }
 
 /// <summary></summary>

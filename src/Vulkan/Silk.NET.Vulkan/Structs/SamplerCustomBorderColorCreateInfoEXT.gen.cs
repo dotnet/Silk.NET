@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public SamplerCustomBorderColorCreateInfoEXT
         (
-            StructureType sType = StructureType.SamplerCustomBorderColorCreateInfoExt,
-            void* pNext = default,
-            ClearColorValue customBorderColor = default,
-            Format format = default
+            StructureType? sType = StructureType.SamplerCustomBorderColorCreateInfoExt,
+            void* pNext = null,
+            ClearColorValue? customBorderColor = null,
+            Format? format = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CustomBorderColor = customBorderColor;
-            Format = format;
+            fixed (SamplerCustomBorderColorCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (customBorderColor is not null)
+            {
+                CustomBorderColor = customBorderColor.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,20 +21,48 @@ namespace Silk.NET.SDL
     {
         public HapticCondition
         (
-            ushort type = default,
-            HapticDirection direction = default,
-            uint length = default,
-            ushort delay = default,
-            ushort button = default,
-            ushort interval = default
+            ushort? type = null,
+            HapticDirection? direction = null,
+            uint? length = null,
+            ushort? delay = null,
+            ushort? button = null,
+            ushort? interval = null
         )
         {
-            Type = type;
-            Direction = direction;
-            Length = length;
-            Delay = delay;
-            Button = button;
-            Interval = interval;
+            fixed (HapticCondition* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (direction is not null)
+            {
+                Direction = direction.Value;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
+
+            if (delay is not null)
+            {
+                Delay = delay.Value;
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (interval is not null)
+            {
+                Interval = interval.Value;
+            }
         }
 
 

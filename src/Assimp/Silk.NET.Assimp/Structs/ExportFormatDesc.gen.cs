@@ -21,14 +21,30 @@ namespace Silk.NET.Assimp
     {
         public ExportFormatDesc
         (
-            byte* id = default,
-            byte* description = default,
-            byte* fileExtension = default
+            byte* id = null,
+            byte* description = null,
+            byte* fileExtension = null
         )
         {
-            Id = id;
-            Description = description;
-            FileExtension = fileExtension;
+            fixed (ExportFormatDesc* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (id is not null)
+            {
+                Id = id;
+            }
+
+            if (description is not null)
+            {
+                Description = description;
+            }
+
+            if (fileExtension is not null)
+            {
+                FileExtension = fileExtension;
+            }
         }
 
 

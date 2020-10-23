@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ValidationFlagsEXT
         (
-            StructureType sType = StructureType.ValidationFlagsExt,
-            void* pNext = default,
-            uint disabledValidationCheckCount = default,
-            ValidationCheckEXT* pDisabledValidationChecks = default
+            StructureType? sType = StructureType.ValidationFlagsExt,
+            void* pNext = null,
+            uint? disabledValidationCheckCount = null,
+            ValidationCheckEXT* pDisabledValidationChecks = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DisabledValidationCheckCount = disabledValidationCheckCount;
-            PDisabledValidationChecks = pDisabledValidationChecks;
+            fixed (ValidationFlagsEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (disabledValidationCheckCount is not null)
+            {
+                DisabledValidationCheckCount = disabledValidationCheckCount.Value;
+            }
+
+            if (pDisabledValidationChecks is not null)
+            {
+                PDisabledValidationChecks = pDisabledValidationChecks;
+            }
         }
 
 /// <summary></summary>

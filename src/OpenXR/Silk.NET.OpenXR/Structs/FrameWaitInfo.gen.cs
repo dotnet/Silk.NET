@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public FrameWaitInfo
         (
-            StructureType type = StructureType.TypeFrameWaitInfo,
-            void* next = default
+            StructureType? type = StructureType.TypeFrameWaitInfo,
+            void* next = null
         )
         {
-            Type = type;
-            Next = next;
+            fixed (FrameWaitInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 /// <summary></summary>

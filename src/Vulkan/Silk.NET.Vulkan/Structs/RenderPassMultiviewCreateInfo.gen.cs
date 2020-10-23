@@ -21,24 +21,60 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassMultiviewCreateInfo
         (
-            StructureType sType = StructureType.RenderPassMultiviewCreateInfo,
-            void* pNext = default,
-            uint subpassCount = default,
-            uint* pViewMasks = default,
-            uint dependencyCount = default,
-            int* pViewOffsets = default,
-            uint correlationMaskCount = default,
-            uint* pCorrelationMasks = default
+            StructureType? sType = StructureType.RenderPassMultiviewCreateInfo,
+            void* pNext = null,
+            uint? subpassCount = null,
+            uint* pViewMasks = null,
+            uint? dependencyCount = null,
+            int* pViewOffsets = null,
+            uint? correlationMaskCount = null,
+            uint* pCorrelationMasks = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SubpassCount = subpassCount;
-            PViewMasks = pViewMasks;
-            DependencyCount = dependencyCount;
-            PViewOffsets = pViewOffsets;
-            CorrelationMaskCount = correlationMaskCount;
-            PCorrelationMasks = pCorrelationMasks;
+            fixed (RenderPassMultiviewCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (subpassCount is not null)
+            {
+                SubpassCount = subpassCount.Value;
+            }
+
+            if (pViewMasks is not null)
+            {
+                PViewMasks = pViewMasks;
+            }
+
+            if (dependencyCount is not null)
+            {
+                DependencyCount = dependencyCount.Value;
+            }
+
+            if (pViewOffsets is not null)
+            {
+                PViewOffsets = pViewOffsets;
+            }
+
+            if (correlationMaskCount is not null)
+            {
+                CorrelationMaskCount = correlationMaskCount.Value;
+            }
+
+            if (pCorrelationMasks is not null)
+            {
+                PCorrelationMasks = pCorrelationMasks;
+            }
         }
 
 /// <summary></summary>

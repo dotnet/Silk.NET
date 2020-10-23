@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public QueryPoolCreateInfo
         (
-            StructureType sType = StructureType.QueryPoolCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            QueryType queryType = default,
-            uint queryCount = default,
-            QueryPipelineStatisticFlags pipelineStatistics = default
+            StructureType? sType = StructureType.QueryPoolCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            QueryType? queryType = null,
+            uint? queryCount = null,
+            QueryPipelineStatisticFlags? pipelineStatistics = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            QueryType = queryType;
-            QueryCount = queryCount;
-            PipelineStatistics = pipelineStatistics;
+            fixed (QueryPoolCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (queryType is not null)
+            {
+                QueryType = queryType.Value;
+            }
+
+            if (queryCount is not null)
+            {
+                QueryCount = queryCount.Value;
+            }
+
+            if (pipelineStatistics is not null)
+            {
+                PipelineStatistics = pipelineStatistics.Value;
+            }
         }
 
 /// <summary></summary>

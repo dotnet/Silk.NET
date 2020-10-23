@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public DebugUtilsObjectTagInfoEXT
         (
-            StructureType sType = StructureType.DebugUtilsObjectTagInfoExt,
-            void* pNext = default,
-            ObjectType objectType = default,
-            ulong objectHandle = default,
-            ulong tagName = default,
-            UIntPtr tagSize = default,
-            void* pTag = default
+            StructureType? sType = StructureType.DebugUtilsObjectTagInfoExt,
+            void* pNext = null,
+            ObjectType? objectType = null,
+            ulong? objectHandle = null,
+            ulong? tagName = null,
+            UIntPtr? tagSize = null,
+            void* pTag = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ObjectType = objectType;
-            ObjectHandle = objectHandle;
-            TagName = tagName;
-            TagSize = tagSize;
-            PTag = pTag;
+            fixed (DebugUtilsObjectTagInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (objectType is not null)
+            {
+                ObjectType = objectType.Value;
+            }
+
+            if (objectHandle is not null)
+            {
+                ObjectHandle = objectHandle.Value;
+            }
+
+            if (tagName is not null)
+            {
+                TagName = tagName.Value;
+            }
+
+            if (tagSize is not null)
+            {
+                TagSize = tagSize.Value;
+            }
+
+            if (pTag is not null)
+            {
+                PTag = pTag;
+            }
         }
 
 /// <summary></summary>

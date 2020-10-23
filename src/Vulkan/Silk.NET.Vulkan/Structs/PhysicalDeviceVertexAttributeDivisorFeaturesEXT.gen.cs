@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceVertexAttributeDivisorFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceVertexAttributeDivisorFeaturesExt,
-            void* pNext = default,
-            Bool32 vertexAttributeInstanceRateDivisor = default,
-            Bool32 vertexAttributeInstanceRateZeroDivisor = default
+            StructureType? sType = StructureType.PhysicalDeviceVertexAttributeDivisorFeaturesExt,
+            void* pNext = null,
+            Bool32? vertexAttributeInstanceRateDivisor = null,
+            Bool32? vertexAttributeInstanceRateZeroDivisor = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            VertexAttributeInstanceRateDivisor = vertexAttributeInstanceRateDivisor;
-            VertexAttributeInstanceRateZeroDivisor = vertexAttributeInstanceRateZeroDivisor;
+            fixed (PhysicalDeviceVertexAttributeDivisorFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (vertexAttributeInstanceRateDivisor is not null)
+            {
+                VertexAttributeInstanceRateDivisor = vertexAttributeInstanceRateDivisor.Value;
+            }
+
+            if (vertexAttributeInstanceRateZeroDivisor is not null)
+            {
+                VertexAttributeInstanceRateZeroDivisor = vertexAttributeInstanceRateZeroDivisor.Value;
+            }
         }
 
 /// <summary></summary>

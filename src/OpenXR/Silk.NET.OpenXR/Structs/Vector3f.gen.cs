@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public Vector3f
         (
-            float x = default,
-            float y = default,
-            float z = default
+            float? x = null,
+            float? y = null,
+            float? z = null
         )
         {
-            X = x;
-            Y = y;
-            Z = z;
+            fixed (Vector3f* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
         }
 
 /// <summary></summary>

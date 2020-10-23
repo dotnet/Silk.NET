@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCoherentMemoryFeaturesAMD
         (
-            StructureType sType = StructureType.PhysicalDeviceCoherentMemoryFeaturesAmd,
-            void* pNext = default,
-            Bool32 deviceCoherentMemory = default
+            StructureType? sType = StructureType.PhysicalDeviceCoherentMemoryFeaturesAmd,
+            void* pNext = null,
+            Bool32? deviceCoherentMemory = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceCoherentMemory = deviceCoherentMemory;
+            fixed (PhysicalDeviceCoherentMemoryFeaturesAMD* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceCoherentMemory is not null)
+            {
+                DeviceCoherentMemory = deviceCoherentMemory.Value;
+            }
         }
 
 /// <summary></summary>

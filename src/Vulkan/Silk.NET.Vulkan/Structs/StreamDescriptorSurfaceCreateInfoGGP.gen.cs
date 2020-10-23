@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public StreamDescriptorSurfaceCreateInfoGGP
         (
-            StructureType sType = StructureType.StreamDescriptorSurfaceCreateInfoGgp,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr streamDescriptor = default
+            StructureType? sType = StructureType.StreamDescriptorSurfaceCreateInfoGgp,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr? streamDescriptor = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            StreamDescriptor = streamDescriptor;
+            fixed (StreamDescriptorSurfaceCreateInfoGGP* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (streamDescriptor is not null)
+            {
+                StreamDescriptor = streamDescriptor.Value;
+            }
         }
 
 /// <summary></summary>

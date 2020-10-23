@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCoverageReductionStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineCoverageReductionStateCreateInfoNV,
-            void* pNext = default,
-            uint flags = default,
-            CoverageReductionModeNV coverageReductionMode = default
+            StructureType? sType = StructureType.PipelineCoverageReductionStateCreateInfoNV,
+            void* pNext = null,
+            uint? flags = null,
+            CoverageReductionModeNV? coverageReductionMode = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            CoverageReductionMode = coverageReductionMode;
+            fixed (PipelineCoverageReductionStateCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (coverageReductionMode is not null)
+            {
+                CoverageReductionMode = coverageReductionMode.Value;
+            }
         }
 
 /// <summary></summary>

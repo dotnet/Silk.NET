@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public MemoryType
         (
-            MemoryPropertyFlags propertyFlags = default,
-            uint heapIndex = default
+            MemoryPropertyFlags? propertyFlags = null,
+            uint? heapIndex = null
         )
         {
-            PropertyFlags = propertyFlags;
-            HeapIndex = heapIndex;
+            fixed (MemoryType* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (propertyFlags is not null)
+            {
+                PropertyFlags = propertyFlags.Value;
+            }
+
+            if (heapIndex is not null)
+            {
+                HeapIndex = heapIndex.Value;
+            }
         }
 
 /// <summary></summary>

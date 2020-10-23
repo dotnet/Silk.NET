@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainImageWaitInfo
         (
-            StructureType type = StructureType.TypeSwapchainImageWaitInfo,
-            void* next = default,
-            long timeout = default
+            StructureType? type = StructureType.TypeSwapchainImageWaitInfo,
+            void* next = null,
+            long? timeout = null
         )
         {
-            Type = type;
-            Next = next;
-            Timeout = timeout;
+            fixed (SwapchainImageWaitInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (timeout is not null)
+            {
+                Timeout = timeout.Value;
+            }
         }
 
 /// <summary></summary>

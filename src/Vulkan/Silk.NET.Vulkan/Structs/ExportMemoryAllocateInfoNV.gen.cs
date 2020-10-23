@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ExportMemoryAllocateInfoNV
         (
-            StructureType sType = StructureType.ExportMemoryAllocateInfoNV,
-            void* pNext = default,
-            ExternalMemoryHandleTypeFlagsNV handleTypes = default
+            StructureType? sType = StructureType.ExportMemoryAllocateInfoNV,
+            void* pNext = null,
+            ExternalMemoryHandleTypeFlagsNV? handleTypes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleTypes = handleTypes;
+            fixed (ExportMemoryAllocateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleTypes is not null)
+            {
+                HandleTypes = handleTypes.Value;
+            }
         }
 
 /// <summary></summary>

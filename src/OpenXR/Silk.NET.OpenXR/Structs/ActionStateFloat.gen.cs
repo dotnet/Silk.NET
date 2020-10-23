@@ -21,20 +21,48 @@ namespace Silk.NET.OpenXR
     {
         public ActionStateFloat
         (
-            StructureType type = StructureType.TypeActionStateFloat,
-            void* next = default,
-            float currentState = default,
-            uint changedSinceLastSync = default,
-            long lastChangeTime = default,
-            uint isActive = default
+            StructureType? type = StructureType.TypeActionStateFloat,
+            void* next = null,
+            float? currentState = null,
+            uint? changedSinceLastSync = null,
+            long? lastChangeTime = null,
+            uint? isActive = null
         )
         {
-            Type = type;
-            Next = next;
-            CurrentState = currentState;
-            ChangedSinceLastSync = changedSinceLastSync;
-            LastChangeTime = lastChangeTime;
-            IsActive = isActive;
+            fixed (ActionStateFloat* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (currentState is not null)
+            {
+                CurrentState = currentState.Value;
+            }
+
+            if (changedSinceLastSync is not null)
+            {
+                ChangedSinceLastSync = changedSinceLastSync.Value;
+            }
+
+            if (lastChangeTime is not null)
+            {
+                LastChangeTime = lastChangeTime.Value;
+            }
+
+            if (isActive is not null)
+            {
+                IsActive = isActive.Value;
+            }
         }
 
 /// <summary></summary>

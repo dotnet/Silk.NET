@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV,
-            void* pNext = default,
-            Bool32 dedicatedAllocationImageAliasing = default
+            StructureType? sType = StructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV,
+            void* pNext = null,
+            Bool32? dedicatedAllocationImageAliasing = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DedicatedAllocationImageAliasing = dedicatedAllocationImageAliasing;
+            fixed (PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dedicatedAllocationImageAliasing is not null)
+            {
+                DedicatedAllocationImageAliasing = dedicatedAllocationImageAliasing.Value;
+            }
         }
 
 /// <summary></summary>

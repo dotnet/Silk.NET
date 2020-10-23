@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public StridedBufferRegionKHR
         (
-            Buffer buffer = default,
-            ulong offset = default,
-            ulong stride = default,
-            ulong size = default
+            Buffer? buffer = null,
+            ulong? offset = null,
+            ulong? stride = null,
+            ulong? size = null
         )
         {
-            Buffer = buffer;
-            Offset = offset;
-            Stride = stride;
-            Size = size;
+            fixed (StridedBufferRegionKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

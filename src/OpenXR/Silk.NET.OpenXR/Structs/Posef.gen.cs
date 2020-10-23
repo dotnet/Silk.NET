@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public Posef
         (
-            Quaternionf orientation = default,
-            Vector3f position = default
+            Quaternionf? orientation = null,
+            Vector3f? position = null
         )
         {
-            Orientation = orientation;
-            Position = position;
+            fixed (Posef* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (orientation is not null)
+            {
+                Orientation = orientation.Value;
+            }
+
+            if (position is not null)
+            {
+                Position = position.Value;
+            }
         }
 
 /// <summary></summary>

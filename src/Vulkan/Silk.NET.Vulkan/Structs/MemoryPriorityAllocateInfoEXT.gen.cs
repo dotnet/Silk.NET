@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public MemoryPriorityAllocateInfoEXT
         (
-            StructureType sType = StructureType.MemoryPriorityAllocateInfoExt,
-            void* pNext = default,
-            float priority = default
+            StructureType? sType = StructureType.MemoryPriorityAllocateInfoExt,
+            void* pNext = null,
+            float? priority = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Priority = priority;
+            fixed (MemoryPriorityAllocateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
         }
 
 /// <summary></summary>

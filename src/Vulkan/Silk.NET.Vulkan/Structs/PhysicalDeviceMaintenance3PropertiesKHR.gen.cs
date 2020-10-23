@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMaintenance3PropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceMaintenance3Properties,
-            void* pNext = default,
-            uint maxPerSetDescriptors = default,
-            ulong maxMemoryAllocationSize = default
+            StructureType? sType = StructureType.PhysicalDeviceMaintenance3Properties,
+            void* pNext = null,
+            uint? maxPerSetDescriptors = null,
+            ulong? maxMemoryAllocationSize = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxPerSetDescriptors = maxPerSetDescriptors;
-            MaxMemoryAllocationSize = maxMemoryAllocationSize;
+            fixed (PhysicalDeviceMaintenance3PropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxPerSetDescriptors is not null)
+            {
+                MaxPerSetDescriptors = maxPerSetDescriptors.Value;
+            }
+
+            if (maxMemoryAllocationSize is not null)
+            {
+                MaxMemoryAllocationSize = maxMemoryAllocationSize.Value;
+            }
         }
 
 /// <summary></summary>

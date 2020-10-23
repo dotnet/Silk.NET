@@ -21,20 +21,48 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingEGLMNDX
         (
-            StructureType type = StructureType.TypeGraphicsBindingEglMndx,
-            void* next = default,
-            FuncPtr getProcAddress = default,
-            IntPtr display = default,
-            IntPtr config = default,
-            IntPtr context = default
+            StructureType? type = StructureType.TypeGraphicsBindingEglMndx,
+            void* next = null,
+            FuncPtr? getProcAddress = null,
+            IntPtr? display = null,
+            IntPtr? config = null,
+            IntPtr? context = null
         )
         {
-            Type = type;
-            Next = next;
-            GetProcAddress = getProcAddress;
-            Display = display;
-            Config = config;
-            Context = context;
+            fixed (GraphicsBindingEGLMNDX* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (getProcAddress is not null)
+            {
+                GetProcAddress = getProcAddress.Value;
+            }
+
+            if (display is not null)
+            {
+                Display = display.Value;
+            }
+
+            if (config is not null)
+            {
+                Config = config.Value;
+            }
+
+            if (context is not null)
+            {
+                Context = context.Value;
+            }
         }
 
 /// <summary></summary>

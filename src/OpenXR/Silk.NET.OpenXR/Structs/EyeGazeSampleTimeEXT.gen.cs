@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public EyeGazeSampleTimeEXT
         (
-            StructureType type = StructureType.TypeEyeGazeSampleTimeExt,
-            void* next = default,
-            long time = default
+            StructureType? type = StructureType.TypeEyeGazeSampleTimeExt,
+            void* next = null,
+            long? time = null
         )
         {
-            Type = type;
-            Next = next;
-            Time = time;
+            fixed (EyeGazeSampleTimeEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (time is not null)
+            {
+                Time = time.Value;
+            }
         }
 
 /// <summary></summary>

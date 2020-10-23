@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewASTCDecodeModeEXT
         (
-            StructureType sType = StructureType.ImageViewAstcDecodeModeExt,
-            void* pNext = default,
-            Format decodeMode = default
+            StructureType? sType = StructureType.ImageViewAstcDecodeModeExt,
+            void* pNext = null,
+            Format? decodeMode = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DecodeMode = decodeMode;
+            fixed (ImageViewASTCDecodeModeEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (decodeMode is not null)
+            {
+                DecodeMode = decodeMode.Value;
+            }
         }
 
 /// <summary></summary>

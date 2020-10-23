@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceProtectedMemoryProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceProtectedMemoryProperties,
-            void* pNext = default,
-            Bool32 protectedNoFault = default
+            StructureType? sType = StructureType.PhysicalDeviceProtectedMemoryProperties,
+            void* pNext = null,
+            Bool32? protectedNoFault = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ProtectedNoFault = protectedNoFault;
+            fixed (PhysicalDeviceProtectedMemoryProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (protectedNoFault is not null)
+            {
+                ProtectedNoFault = protectedNoFault.Value;
+            }
         }
 
 /// <summary></summary>

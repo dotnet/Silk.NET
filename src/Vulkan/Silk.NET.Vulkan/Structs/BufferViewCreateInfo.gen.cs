@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public BufferViewCreateInfo
         (
-            StructureType sType = StructureType.BufferViewCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            Buffer buffer = default,
-            Format format = default,
-            ulong offset = default,
-            ulong range = default
+            StructureType? sType = StructureType.BufferViewCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            Buffer? buffer = null,
+            Format? format = null,
+            ulong? offset = null,
+            ulong? range = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Buffer = buffer;
-            Format = format;
-            Offset = offset;
-            Range = range;
+            fixed (BufferViewCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (range is not null)
+            {
+                Range = range.Value;
+            }
         }
 
 /// <summary></summary>

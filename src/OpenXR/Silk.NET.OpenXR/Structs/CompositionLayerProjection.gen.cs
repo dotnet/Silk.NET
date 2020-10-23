@@ -21,20 +21,48 @@ namespace Silk.NET.OpenXR
     {
         public CompositionLayerProjection
         (
-            StructureType type = StructureType.TypeCompositionLayerProjection,
-            void* next = default,
-            CompositionLayerFlags layerFlags = default,
-            Space space = default,
-            uint viewCount = default,
-            CompositionLayerProjectionView* views = default
+            StructureType? type = StructureType.TypeCompositionLayerProjection,
+            void* next = null,
+            CompositionLayerFlags? layerFlags = null,
+            Space? space = null,
+            uint? viewCount = null,
+            CompositionLayerProjectionView* views = null
         )
         {
-            Type = type;
-            Next = next;
-            LayerFlags = layerFlags;
-            Space = space;
-            ViewCount = viewCount;
-            Views = views;
+            fixed (CompositionLayerProjection* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (layerFlags is not null)
+            {
+                LayerFlags = layerFlags.Value;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
+
+            if (viewCount is not null)
+            {
+                ViewCount = viewCount.Value;
+            }
+
+            if (views is not null)
+            {
+                Views = views;
+            }
         }
 
 /// <summary></summary>

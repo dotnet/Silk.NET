@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceYcbcrImageArraysFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceYcbcrImageArraysFeaturesExt,
-            void* pNext = default,
-            Bool32 ycbcrImageArrays = default
+            StructureType? sType = StructureType.PhysicalDeviceYcbcrImageArraysFeaturesExt,
+            void* pNext = null,
+            Bool32? ycbcrImageArrays = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            YcbcrImageArrays = ycbcrImageArrays;
+            fixed (PhysicalDeviceYcbcrImageArraysFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (ycbcrImageArrays is not null)
+            {
+                YcbcrImageArrays = ycbcrImageArrays.Value;
+            }
         }
 
 /// <summary></summary>

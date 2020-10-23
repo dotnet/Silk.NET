@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public BindImageMemorySwapchainInfoKHR
         (
-            StructureType sType = StructureType.BindImageMemorySwapchainInfoKhr,
-            void* pNext = default,
-            SwapchainKHR swapchain = default,
-            uint imageIndex = default
+            StructureType? sType = StructureType.BindImageMemorySwapchainInfoKhr,
+            void* pNext = null,
+            SwapchainKHR? swapchain = null,
+            uint? imageIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Swapchain = swapchain;
-            ImageIndex = imageIndex;
+            fixed (BindImageMemorySwapchainInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchain is not null)
+            {
+                Swapchain = swapchain.Value;
+            }
+
+            if (imageIndex is not null)
+            {
+                ImageIndex = imageIndex.Value;
+            }
         }
 
 /// <summary></summary>

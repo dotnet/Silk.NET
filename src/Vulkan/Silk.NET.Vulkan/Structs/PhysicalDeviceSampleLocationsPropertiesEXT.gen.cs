@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSampleLocationsPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceSampleLocationsPropertiesExt,
-            void* pNext = default,
-            SampleCountFlags sampleLocationSampleCounts = default,
-            Extent2D maxSampleLocationGridSize = default,
-            uint sampleLocationSubPixelBits = default,
-            Bool32 variableSampleLocations = default
+            StructureType? sType = StructureType.PhysicalDeviceSampleLocationsPropertiesExt,
+            void* pNext = null,
+            SampleCountFlags? sampleLocationSampleCounts = null,
+            Extent2D? maxSampleLocationGridSize = null,
+            uint? sampleLocationSubPixelBits = null,
+            Bool32? variableSampleLocations = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SampleLocationSampleCounts = sampleLocationSampleCounts;
-            MaxSampleLocationGridSize = maxSampleLocationGridSize;
-            SampleLocationSubPixelBits = sampleLocationSubPixelBits;
-            VariableSampleLocations = variableSampleLocations;
+            fixed (PhysicalDeviceSampleLocationsPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sampleLocationSampleCounts is not null)
+            {
+                SampleLocationSampleCounts = sampleLocationSampleCounts.Value;
+            }
+
+            if (maxSampleLocationGridSize is not null)
+            {
+                MaxSampleLocationGridSize = maxSampleLocationGridSize.Value;
+            }
+
+            if (sampleLocationSubPixelBits is not null)
+            {
+                SampleLocationSubPixelBits = sampleLocationSubPixelBits.Value;
+            }
+
+            if (variableSampleLocations is not null)
+            {
+                VariableSampleLocations = variableSampleLocations.Value;
+            }
         }
 
 /// <summary></summary>

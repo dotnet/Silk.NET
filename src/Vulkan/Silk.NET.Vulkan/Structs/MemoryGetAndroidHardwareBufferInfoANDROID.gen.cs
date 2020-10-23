@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public MemoryGetAndroidHardwareBufferInfoANDROID
         (
-            StructureType sType = StructureType.MemoryGetAndroidHardwareBufferInfoAndroid,
-            void* pNext = default,
-            DeviceMemory memory = default
+            StructureType? sType = StructureType.MemoryGetAndroidHardwareBufferInfoAndroid,
+            void* pNext = null,
+            DeviceMemory? memory = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Memory = memory;
+            fixed (MemoryGetAndroidHardwareBufferInfoANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
         }
 
 /// <summary></summary>

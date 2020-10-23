@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public GeneratedCommandsMemoryRequirementsInfoNV
         (
-            StructureType sType = StructureType.GeneratedCommandsMemoryRequirementsInfoNV,
-            void* pNext = default,
-            PipelineBindPoint pipelineBindPoint = default,
-            Pipeline pipeline = default,
-            IndirectCommandsLayoutNV indirectCommandsLayout = default,
-            uint maxSequencesCount = default
+            StructureType? sType = StructureType.GeneratedCommandsMemoryRequirementsInfoNV,
+            void* pNext = null,
+            PipelineBindPoint? pipelineBindPoint = null,
+            Pipeline? pipeline = null,
+            IndirectCommandsLayoutNV? indirectCommandsLayout = null,
+            uint? maxSequencesCount = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PipelineBindPoint = pipelineBindPoint;
-            Pipeline = pipeline;
-            IndirectCommandsLayout = indirectCommandsLayout;
-            MaxSequencesCount = maxSequencesCount;
+            fixed (GeneratedCommandsMemoryRequirementsInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pipelineBindPoint is not null)
+            {
+                PipelineBindPoint = pipelineBindPoint.Value;
+            }
+
+            if (pipeline is not null)
+            {
+                Pipeline = pipeline.Value;
+            }
+
+            if (indirectCommandsLayout is not null)
+            {
+                IndirectCommandsLayout = indirectCommandsLayout.Value;
+            }
+
+            if (maxSequencesCount is not null)
+            {
+                MaxSequencesCount = maxSequencesCount.Value;
+            }
         }
 
 /// <summary></summary>

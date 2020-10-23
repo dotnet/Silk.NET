@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceBufferAddressFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceBufferDeviceAddressFeaturesExt,
-            void* pNext = default,
-            Bool32 bufferDeviceAddress = default,
-            Bool32 bufferDeviceAddressCaptureReplay = default,
-            Bool32 bufferDeviceAddressMultiDevice = default
+            StructureType? sType = StructureType.PhysicalDeviceBufferDeviceAddressFeaturesExt,
+            void* pNext = null,
+            Bool32? bufferDeviceAddress = null,
+            Bool32? bufferDeviceAddressCaptureReplay = null,
+            Bool32? bufferDeviceAddressMultiDevice = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            BufferDeviceAddress = bufferDeviceAddress;
-            BufferDeviceAddressCaptureReplay = bufferDeviceAddressCaptureReplay;
-            BufferDeviceAddressMultiDevice = bufferDeviceAddressMultiDevice;
+            fixed (PhysicalDeviceBufferAddressFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (bufferDeviceAddress is not null)
+            {
+                BufferDeviceAddress = bufferDeviceAddress.Value;
+            }
+
+            if (bufferDeviceAddressCaptureReplay is not null)
+            {
+                BufferDeviceAddressCaptureReplay = bufferDeviceAddressCaptureReplay.Value;
+            }
+
+            if (bufferDeviceAddressMultiDevice is not null)
+            {
+                BufferDeviceAddressMultiDevice = bufferDeviceAddressMultiDevice.Value;
+            }
         }
 
 /// <summary></summary>

@@ -130,6 +130,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetInteger(target, index, out data.GetPinnableReference());
         }
 
+        public static unsafe void GetInteger(this ArbUniformBufferObject thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<int> data)
+        {
+            // SpanOverloader
+            thisApi.GetInteger(target, index, out data.GetPinnableReference());
+        }
+
         public static unsafe uint GetUniformBlockIndex(this ArbUniformBufferObject thisApi, [Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> uniformBlockName)
         {
             // SpanOverloader

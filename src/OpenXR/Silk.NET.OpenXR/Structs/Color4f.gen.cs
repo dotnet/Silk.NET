@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public Color4f
         (
-            float r = default,
-            float g = default,
-            float b = default,
-            float a = default
+            float? r = null,
+            float? g = null,
+            float? b = null,
+            float? a = null
         )
         {
-            R = r;
-            G = g;
-            B = b;
-            A = a;
+            fixed (Color4f* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (r is not null)
+            {
+                R = r.Value;
+            }
+
+            if (g is not null)
+            {
+                G = g.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
 /// <summary></summary>

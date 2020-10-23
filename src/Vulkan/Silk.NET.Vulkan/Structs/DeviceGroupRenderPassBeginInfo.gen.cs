@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DeviceGroupRenderPassBeginInfo
         (
-            StructureType sType = StructureType.DeviceGroupRenderPassBeginInfo,
-            void* pNext = default,
-            uint deviceMask = default,
-            uint deviceRenderAreaCount = default,
-            Rect2D* pDeviceRenderAreas = default
+            StructureType? sType = StructureType.DeviceGroupRenderPassBeginInfo,
+            void* pNext = null,
+            uint? deviceMask = null,
+            uint? deviceRenderAreaCount = null,
+            Rect2D* pDeviceRenderAreas = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceMask = deviceMask;
-            DeviceRenderAreaCount = deviceRenderAreaCount;
-            PDeviceRenderAreas = pDeviceRenderAreas;
+            fixed (DeviceGroupRenderPassBeginInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceMask is not null)
+            {
+                DeviceMask = deviceMask.Value;
+            }
+
+            if (deviceRenderAreaCount is not null)
+            {
+                DeviceRenderAreaCount = deviceRenderAreaCount.Value;
+            }
+
+            if (pDeviceRenderAreas is not null)
+            {
+                PDeviceRenderAreas = pDeviceRenderAreas;
+            }
         }
 
 /// <summary></summary>

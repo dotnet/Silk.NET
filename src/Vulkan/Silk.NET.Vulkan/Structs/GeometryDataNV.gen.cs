@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public GeometryDataNV
         (
-            GeometryTrianglesNV triangles = default,
-            GeometryAABBNV aabbs = default
+            GeometryTrianglesNV? triangles = null,
+            GeometryAABBNV? aabbs = null
         )
         {
-            Triangles = triangles;
-            Aabbs = aabbs;
+            fixed (GeometryDataNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (triangles is not null)
+            {
+                Triangles = triangles.Value;
+            }
+
+            if (aabbs is not null)
+            {
+                Aabbs = aabbs.Value;
+            }
         }
 
 /// <summary></summary>

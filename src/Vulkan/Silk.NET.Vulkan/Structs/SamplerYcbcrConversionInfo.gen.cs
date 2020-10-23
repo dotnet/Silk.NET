@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SamplerYcbcrConversionInfo
         (
-            StructureType sType = StructureType.SamplerYcbcrConversionInfo,
-            void* pNext = default,
-            SamplerYcbcrConversion conversion = default
+            StructureType? sType = StructureType.SamplerYcbcrConversionInfo,
+            void* pNext = null,
+            SamplerYcbcrConversion? conversion = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Conversion = conversion;
+            fixed (SamplerYcbcrConversionInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (conversion is not null)
+            {
+                Conversion = conversion.Value;
+            }
         }
 
 /// <summary></summary>

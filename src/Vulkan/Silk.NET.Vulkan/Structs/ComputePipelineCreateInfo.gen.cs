@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public ComputePipelineCreateInfo
         (
-            StructureType sType = StructureType.ComputePipelineCreateInfo,
-            void* pNext = default,
-            PipelineCreateFlags flags = default,
-            PipelineShaderStageCreateInfo stage = default,
-            PipelineLayout layout = default,
-            Pipeline basePipelineHandle = default,
-            int basePipelineIndex = default
+            StructureType? sType = StructureType.ComputePipelineCreateInfo,
+            void* pNext = null,
+            PipelineCreateFlags? flags = null,
+            PipelineShaderStageCreateInfo? stage = null,
+            PipelineLayout? layout = null,
+            Pipeline? basePipelineHandle = null,
+            int? basePipelineIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Stage = stage;
-            Layout = layout;
-            BasePipelineHandle = basePipelineHandle;
-            BasePipelineIndex = basePipelineIndex;
+            fixed (ComputePipelineCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (stage is not null)
+            {
+                Stage = stage.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (basePipelineHandle is not null)
+            {
+                BasePipelineHandle = basePipelineHandle.Value;
+            }
+
+            if (basePipelineIndex is not null)
+            {
+                BasePipelineIndex = basePipelineIndex.Value;
+            }
         }
 
 /// <summary></summary>

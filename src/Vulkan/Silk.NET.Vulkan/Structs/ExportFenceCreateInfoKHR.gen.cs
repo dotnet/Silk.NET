@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ExportFenceCreateInfoKHR
         (
-            StructureType sType = StructureType.ExportFenceCreateInfo,
-            void* pNext = default,
-            ExternalFenceHandleTypeFlags handleTypes = default
+            StructureType? sType = StructureType.ExportFenceCreateInfo,
+            void* pNext = null,
+            ExternalFenceHandleTypeFlags? handleTypes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleTypes = handleTypes;
+            fixed (ExportFenceCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleTypes is not null)
+            {
+                HandleTypes = handleTypes.Value;
+            }
         }
 
 /// <summary></summary>

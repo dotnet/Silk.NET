@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public HapticBaseHeader
         (
-            StructureType type = default,
-            void* next = default
+            StructureType? type = null,
+            void* next = null
         )
         {
-            Type = type;
-            Next = next;
+            fixed (HapticBaseHeader* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 /// <summary></summary>

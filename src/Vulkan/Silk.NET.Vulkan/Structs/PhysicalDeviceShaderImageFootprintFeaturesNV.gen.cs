@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderImageFootprintFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderImageFootprintFeaturesNV,
-            void* pNext = default,
-            Bool32 imageFootprint = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderImageFootprintFeaturesNV,
+            void* pNext = null,
+            Bool32? imageFootprint = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ImageFootprint = imageFootprint;
+            fixed (PhysicalDeviceShaderImageFootprintFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageFootprint is not null)
+            {
+                ImageFootprint = imageFootprint.Value;
+            }
         }
 
 /// <summary></summary>

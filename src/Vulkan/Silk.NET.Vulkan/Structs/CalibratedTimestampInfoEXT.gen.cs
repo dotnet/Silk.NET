@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public CalibratedTimestampInfoEXT
         (
-            StructureType sType = StructureType.CalibratedTimestampInfoExt,
-            void* pNext = default,
-            TimeDomainEXT timeDomain = default
+            StructureType? sType = StructureType.CalibratedTimestampInfoExt,
+            void* pNext = null,
+            TimeDomainEXT? timeDomain = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            TimeDomain = timeDomain;
+            fixed (CalibratedTimestampInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (timeDomain is not null)
+            {
+                TimeDomain = timeDomain.Value;
+            }
         }
 
 /// <summary></summary>

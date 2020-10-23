@@ -21,16 +21,36 @@ namespace Silk.NET.SDL
     {
         public Finger
         (
-            long id = default,
-            float x = default,
-            float y = default,
-            float pressure = default
+            long? id = null,
+            float? x = null,
+            float? y = null,
+            float? pressure = null
         )
         {
-            Id = id;
-            X = x;
-            Y = y;
-            Pressure = pressure;
+            fixed (Finger* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (id is not null)
+            {
+                Id = id.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (pressure is not null)
+            {
+                Pressure = pressure.Value;
+            }
         }
 
 

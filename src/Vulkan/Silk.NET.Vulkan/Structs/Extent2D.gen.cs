@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public Extent2D
         (
-            uint width = default,
-            uint height = default
+            uint? width = null,
+            uint? height = null
         )
         {
-            Width = width;
-            Height = height;
+            fixed (Extent2D* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceDeviceGeneratedCommandsFeaturesNV,
-            void* pNext = default,
-            Bool32 deviceGeneratedCommands = default
+            StructureType? sType = StructureType.PhysicalDeviceDeviceGeneratedCommandsFeaturesNV,
+            void* pNext = null,
+            Bool32? deviceGeneratedCommands = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceGeneratedCommands = deviceGeneratedCommands;
+            fixed (PhysicalDeviceDeviceGeneratedCommandsFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceGeneratedCommands is not null)
+            {
+                DeviceGeneratedCommands = deviceGeneratedCommands.Value;
+            }
         }
 
 /// <summary></summary>

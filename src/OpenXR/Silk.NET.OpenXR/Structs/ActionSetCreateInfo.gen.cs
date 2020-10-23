@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public ActionSetCreateInfo
         (
-            StructureType type = StructureType.TypeActionSetCreateInfo,
-            void* next = default,
-            uint priority = default
+            StructureType? type = StructureType.TypeActionSetCreateInfo,
+            void* next = null,
+            uint? priority = null
         )
         {
-            Type = type;
-            Next = next;
-            Priority = priority;
+            fixed (ActionSetCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
         }
 
 /// <summary></summary>

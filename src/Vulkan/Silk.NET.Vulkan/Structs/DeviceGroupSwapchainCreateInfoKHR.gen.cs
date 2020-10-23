@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DeviceGroupSwapchainCreateInfoKHR
         (
-            StructureType sType = StructureType.DeviceGroupSwapchainCreateInfoKhr,
-            void* pNext = default,
-            DeviceGroupPresentModeFlagsKHR modes = default
+            StructureType? sType = StructureType.DeviceGroupSwapchainCreateInfoKhr,
+            void* pNext = null,
+            DeviceGroupPresentModeFlagsKHR? modes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Modes = modes;
+            fixed (DeviceGroupSwapchainCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (modes is not null)
+            {
+                Modes = modes.Value;
+            }
         }
 
 /// <summary></summary>

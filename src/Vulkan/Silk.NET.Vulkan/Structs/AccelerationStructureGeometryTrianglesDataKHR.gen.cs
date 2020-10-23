@@ -21,24 +21,60 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureGeometryTrianglesDataKHR
         (
-            StructureType sType = StructureType.AccelerationStructureGeometryTrianglesDataKhr,
-            void* pNext = default,
-            Format vertexFormat = default,
-            DeviceOrHostAddressConstKHR vertexData = default,
-            ulong vertexStride = default,
-            IndexType indexType = default,
-            DeviceOrHostAddressConstKHR indexData = default,
-            DeviceOrHostAddressConstKHR transformData = default
+            StructureType? sType = StructureType.AccelerationStructureGeometryTrianglesDataKhr,
+            void* pNext = null,
+            Format? vertexFormat = null,
+            DeviceOrHostAddressConstKHR? vertexData = null,
+            ulong? vertexStride = null,
+            IndexType? indexType = null,
+            DeviceOrHostAddressConstKHR? indexData = null,
+            DeviceOrHostAddressConstKHR? transformData = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            VertexFormat = vertexFormat;
-            VertexData = vertexData;
-            VertexStride = vertexStride;
-            IndexType = indexType;
-            IndexData = indexData;
-            TransformData = transformData;
+            fixed (AccelerationStructureGeometryTrianglesDataKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (vertexFormat is not null)
+            {
+                VertexFormat = vertexFormat.Value;
+            }
+
+            if (vertexData is not null)
+            {
+                VertexData = vertexData.Value;
+            }
+
+            if (vertexStride is not null)
+            {
+                VertexStride = vertexStride.Value;
+            }
+
+            if (indexType is not null)
+            {
+                IndexType = indexType.Value;
+            }
+
+            if (indexData is not null)
+            {
+                IndexData = indexData.Value;
+            }
+
+            if (transformData is not null)
+            {
+                TransformData = transformData.Value;
+            }
         }
 
 /// <summary></summary>

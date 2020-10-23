@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DebugUtilsLabelEXT
         (
-            StructureType sType = StructureType.DebugUtilsLabelExt,
-            void* pNext = default,
-            byte* pLabelName = default
+            StructureType? sType = StructureType.DebugUtilsLabelExt,
+            void* pNext = null,
+            byte* pLabelName = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PLabelName = pLabelName;
+            fixed (DebugUtilsLabelEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pLabelName is not null)
+            {
+                PLabelName = pLabelName;
+            }
         }
 
 /// <summary></summary>

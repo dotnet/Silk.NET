@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DeferredOperationInfoKHR
         (
-            StructureType sType = StructureType.DeferredOperationInfoKhr,
-            void* pNext = default,
-            DeferredOperationKHR operationHandle = default
+            StructureType? sType = StructureType.DeferredOperationInfoKhr,
+            void* pNext = null,
+            DeferredOperationKHR? operationHandle = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            OperationHandle = operationHandle;
+            fixed (DeferredOperationInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (operationHandle is not null)
+            {
+                OperationHandle = operationHandle.Value;
+            }
         }
 
 /// <summary></summary>

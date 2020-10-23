@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public ApplicationInfo
         (
-            uint applicationVersion = default,
-            uint engineVersion = default,
-            ulong apiVersion = default
+            uint? applicationVersion = null,
+            uint? engineVersion = null,
+            ulong? apiVersion = null
         )
         {
-            ApplicationVersion = applicationVersion;
-            EngineVersion = engineVersion;
-            ApiVersion = apiVersion;
+            fixed (ApplicationInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (applicationVersion is not null)
+            {
+                ApplicationVersion = applicationVersion.Value;
+            }
+
+            if (engineVersion is not null)
+            {
+                EngineVersion = engineVersion.Value;
+            }
+
+            if (apiVersion is not null)
+            {
+                ApiVersion = apiVersion.Value;
+            }
         }
 
         /// <summary></summary>

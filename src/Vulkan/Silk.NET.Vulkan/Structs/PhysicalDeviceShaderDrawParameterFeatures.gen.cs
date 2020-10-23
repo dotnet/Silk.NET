@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderDrawParameterFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderDrawParametersFeatures,
-            void* pNext = default,
-            Bool32 shaderDrawParameters = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderDrawParametersFeatures,
+            void* pNext = null,
+            Bool32? shaderDrawParameters = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderDrawParameters = shaderDrawParameters;
+            fixed (PhysicalDeviceShaderDrawParameterFeatures* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderDrawParameters is not null)
+            {
+                ShaderDrawParameters = shaderDrawParameters.Value;
+            }
         }
 
 /// <summary></summary>

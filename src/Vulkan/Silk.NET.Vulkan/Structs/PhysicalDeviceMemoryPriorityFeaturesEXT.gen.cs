@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMemoryPriorityFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceMemoryPriorityFeaturesExt,
-            void* pNext = default,
-            Bool32 memoryPriority = default
+            StructureType? sType = StructureType.PhysicalDeviceMemoryPriorityFeaturesExt,
+            void* pNext = null,
+            Bool32? memoryPriority = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MemoryPriority = memoryPriority;
+            fixed (PhysicalDeviceMemoryPriorityFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memoryPriority is not null)
+            {
+                MemoryPriority = memoryPriority.Value;
+            }
         }
 
 /// <summary></summary>

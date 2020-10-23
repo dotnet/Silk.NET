@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DeviceGroupCommandBufferBeginInfoKHR
         (
-            StructureType sType = StructureType.DeviceGroupCommandBufferBeginInfo,
-            void* pNext = default,
-            uint deviceMask = default
+            StructureType? sType = StructureType.DeviceGroupCommandBufferBeginInfo,
+            void* pNext = null,
+            uint? deviceMask = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceMask = deviceMask;
+            fixed (DeviceGroupCommandBufferBeginInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceMask is not null)
+            {
+                DeviceMask = deviceMask.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ComponentMapping
         (
-            ComponentSwizzle r = default,
-            ComponentSwizzle g = default,
-            ComponentSwizzle b = default,
-            ComponentSwizzle a = default
+            ComponentSwizzle? r = null,
+            ComponentSwizzle? g = null,
+            ComponentSwizzle? b = null,
+            ComponentSwizzle? a = null
         )
         {
-            R = r;
-            G = g;
-            B = b;
-            A = a;
+            fixed (ComponentMapping* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (r is not null)
+            {
+                R = r.Value;
+            }
+
+            if (g is not null)
+            {
+                G = g.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
 /// <summary></summary>

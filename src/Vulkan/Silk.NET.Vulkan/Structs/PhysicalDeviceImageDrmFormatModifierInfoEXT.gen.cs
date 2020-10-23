@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceImageDrmFormatModifierInfoEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceImageDrmFormatModifierInfoExt,
-            void* pNext = default,
-            ulong drmFormatModifier = default,
-            SharingMode sharingMode = default,
-            uint queueFamilyIndexCount = default,
-            uint* pQueueFamilyIndices = default
+            StructureType? sType = StructureType.PhysicalDeviceImageDrmFormatModifierInfoExt,
+            void* pNext = null,
+            ulong? drmFormatModifier = null,
+            SharingMode? sharingMode = null,
+            uint? queueFamilyIndexCount = null,
+            uint* pQueueFamilyIndices = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DrmFormatModifier = drmFormatModifier;
-            SharingMode = sharingMode;
-            QueueFamilyIndexCount = queueFamilyIndexCount;
-            PQueueFamilyIndices = pQueueFamilyIndices;
+            fixed (PhysicalDeviceImageDrmFormatModifierInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (drmFormatModifier is not null)
+            {
+                DrmFormatModifier = drmFormatModifier.Value;
+            }
+
+            if (sharingMode is not null)
+            {
+                SharingMode = sharingMode.Value;
+            }
+
+            if (queueFamilyIndexCount is not null)
+            {
+                QueueFamilyIndexCount = queueFamilyIndexCount.Value;
+            }
+
+            if (pQueueFamilyIndices is not null)
+            {
+                PQueueFamilyIndices = pQueueFamilyIndices;
+            }
         }
 
 /// <summary></summary>

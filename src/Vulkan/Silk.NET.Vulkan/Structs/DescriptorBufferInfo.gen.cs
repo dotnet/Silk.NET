@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorBufferInfo
         (
-            Buffer buffer = default,
-            ulong offset = default,
-            ulong range = default
+            Buffer? buffer = null,
+            ulong? offset = null,
+            ulong? range = null
         )
         {
-            Buffer = buffer;
-            Offset = offset;
-            Range = range;
+            fixed (DescriptorBufferInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (range is not null)
+            {
+                Range = range.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureVersionKHR
         (
-            StructureType sType = StructureType.AccelerationStructureVersionKhr,
-            void* pNext = default,
-            byte* versionData = default
+            StructureType? sType = StructureType.AccelerationStructureVersionKhr,
+            void* pNext = null,
+            byte* versionData = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            VersionData = versionData;
+            fixed (AccelerationStructureVersionKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (versionData is not null)
+            {
+                VersionData = versionData;
+            }
         }
 
 /// <summary></summary>

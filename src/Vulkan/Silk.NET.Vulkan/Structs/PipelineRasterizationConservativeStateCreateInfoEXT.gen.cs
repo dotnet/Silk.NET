@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PipelineRasterizationConservativeStateCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineRasterizationConservativeStateCreateInfoExt,
-            void* pNext = default,
-            uint flags = default,
-            ConservativeRasterizationModeEXT conservativeRasterizationMode = default,
-            float extraPrimitiveOverestimationSize = default
+            StructureType? sType = StructureType.PipelineRasterizationConservativeStateCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null,
+            ConservativeRasterizationModeEXT? conservativeRasterizationMode = null,
+            float? extraPrimitiveOverestimationSize = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            ConservativeRasterizationMode = conservativeRasterizationMode;
-            ExtraPrimitiveOverestimationSize = extraPrimitiveOverestimationSize;
+            fixed (PipelineRasterizationConservativeStateCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (conservativeRasterizationMode is not null)
+            {
+                ConservativeRasterizationMode = conservativeRasterizationMode.Value;
+            }
+
+            if (extraPrimitiveOverestimationSize is not null)
+            {
+                ExtraPrimitiveOverestimationSize = extraPrimitiveOverestimationSize.Value;
+            }
         }
 
 /// <summary></summary>

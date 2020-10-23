@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public SparseMemoryBind
         (
-            ulong resourceOffset = default,
-            ulong size = default,
-            DeviceMemory memory = default,
-            ulong memoryOffset = default,
-            SparseMemoryBindFlags flags = default
+            ulong? resourceOffset = null,
+            ulong? size = null,
+            DeviceMemory? memory = null,
+            ulong? memoryOffset = null,
+            SparseMemoryBindFlags? flags = null
         )
         {
-            ResourceOffset = resourceOffset;
-            Size = size;
-            Memory = memory;
-            MemoryOffset = memoryOffset;
-            Flags = flags;
+            fixed (SparseMemoryBind* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (resourceOffset is not null)
+            {
+                ResourceOffset = resourceOffset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (memoryOffset is not null)
+            {
+                MemoryOffset = memoryOffset.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

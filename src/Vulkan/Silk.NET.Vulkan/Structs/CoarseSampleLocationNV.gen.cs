@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public CoarseSampleLocationNV
         (
-            uint pixelX = default,
-            uint pixelY = default,
-            uint sample = default
+            uint? pixelX = null,
+            uint? pixelY = null,
+            uint? sample = null
         )
         {
-            PixelX = pixelX;
-            PixelY = pixelY;
-            Sample = sample;
+            fixed (CoarseSampleLocationNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (pixelX is not null)
+            {
+                PixelX = pixelX.Value;
+            }
+
+            if (pixelY is not null)
+            {
+                PixelY = pixelY.Value;
+            }
+
+            if (sample is not null)
+            {
+                Sample = sample.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Assimp
     {
         public MeshMorphKey
         (
-            double mTime = default,
-            uint* mValues = default,
-            double* mWeights = default,
-            uint mNumValuesAndWeights = default
+            double? mTime = null,
+            uint* mValues = null,
+            double* mWeights = null,
+            uint? mNumValuesAndWeights = null
         )
         {
-            MTime = mTime;
-            MValues = mValues;
-            MWeights = mWeights;
-            MNumValuesAndWeights = mNumValuesAndWeights;
+            fixed (MeshMorphKey* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mTime is not null)
+            {
+                MTime = mTime.Value;
+            }
+
+            if (mValues is not null)
+            {
+                MValues = mValues;
+            }
+
+            if (mWeights is not null)
+            {
+                MWeights = mWeights;
+            }
+
+            if (mNumValuesAndWeights is not null)
+            {
+                MNumValuesAndWeights = mNumValuesAndWeights.Value;
+            }
         }
 
 

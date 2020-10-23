@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public BindImageMemoryInfo
         (
-            StructureType sType = StructureType.BindImageMemoryInfo,
-            void* pNext = default,
-            Image image = default,
-            DeviceMemory memory = default,
-            ulong memoryOffset = default
+            StructureType? sType = StructureType.BindImageMemoryInfo,
+            void* pNext = null,
+            Image? image = null,
+            DeviceMemory? memory = null,
+            ulong? memoryOffset = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Image = image;
-            Memory = memory;
-            MemoryOffset = memoryOffset;
+            fixed (BindImageMemoryInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (memoryOffset is not null)
+            {
+                MemoryOffset = memoryOffset.Value;
+            }
         }
 
 /// <summary></summary>

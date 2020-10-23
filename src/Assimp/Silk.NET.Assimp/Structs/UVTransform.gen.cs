@@ -21,14 +21,30 @@ namespace Silk.NET.Assimp
     {
         public UVTransform
         (
-            System.Numerics.Vector2 mTranslation = default,
-            System.Numerics.Vector2 mScaling = default,
-            float mRotation = default
+            System.Numerics.Vector2? mTranslation = null,
+            System.Numerics.Vector2? mScaling = null,
+            float? mRotation = null
         )
         {
-            MTranslation = mTranslation;
-            MScaling = mScaling;
-            MRotation = mRotation;
+            fixed (UVTransform* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mTranslation is not null)
+            {
+                MTranslation = mTranslation.Value;
+            }
+
+            if (mScaling is not null)
+            {
+                MScaling = mScaling.Value;
+            }
+
+            if (mRotation is not null)
+            {
+                MRotation = mRotation.Value;
+            }
         }
 
 

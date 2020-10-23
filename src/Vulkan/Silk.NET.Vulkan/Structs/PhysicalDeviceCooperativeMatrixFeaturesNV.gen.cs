@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCooperativeMatrixFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceCooperativeMatrixFeaturesNV,
-            void* pNext = default,
-            Bool32 cooperativeMatrix = default,
-            Bool32 cooperativeMatrixRobustBufferAccess = default
+            StructureType? sType = StructureType.PhysicalDeviceCooperativeMatrixFeaturesNV,
+            void* pNext = null,
+            Bool32? cooperativeMatrix = null,
+            Bool32? cooperativeMatrixRobustBufferAccess = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CooperativeMatrix = cooperativeMatrix;
-            CooperativeMatrixRobustBufferAccess = cooperativeMatrixRobustBufferAccess;
+            fixed (PhysicalDeviceCooperativeMatrixFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (cooperativeMatrix is not null)
+            {
+                CooperativeMatrix = cooperativeMatrix.Value;
+            }
+
+            if (cooperativeMatrixRobustBufferAccess is not null)
+            {
+                CooperativeMatrixRobustBufferAccess = cooperativeMatrixRobustBufferAccess.Value;
+            }
         }
 
 /// <summary></summary>

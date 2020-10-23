@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt,
-            void* pNext = default,
-            Bool32 shaderDemoteToHelperInvocation = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt,
+            void* pNext = null,
+            Bool32? shaderDemoteToHelperInvocation = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderDemoteToHelperInvocation = shaderDemoteToHelperInvocation;
+            fixed (PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderDemoteToHelperInvocation is not null)
+            {
+                ShaderDemoteToHelperInvocation = shaderDemoteToHelperInvocation.Value;
+            }
         }
 
 /// <summary></summary>

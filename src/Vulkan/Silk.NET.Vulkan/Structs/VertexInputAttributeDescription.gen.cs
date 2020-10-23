@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public VertexInputAttributeDescription
         (
-            uint location = default,
-            uint binding = default,
-            Format format = default,
-            uint offset = default
+            uint? location = null,
+            uint? binding = null,
+            Format? format = null,
+            uint? offset = null
         )
         {
-            Location = location;
-            Binding = binding;
-            Format = format;
-            Offset = offset;
+            fixed (VertexInputAttributeDescription* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (location is not null)
+            {
+                Location = location.Value;
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
         }
 
 /// <summary></summary>

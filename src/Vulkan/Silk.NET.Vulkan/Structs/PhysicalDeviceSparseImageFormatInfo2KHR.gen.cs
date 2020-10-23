@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSparseImageFormatInfo2KHR
         (
-            StructureType sType = StructureType.PhysicalDeviceSparseImageFormatInfo2,
-            void* pNext = default,
-            Format format = default,
-            ImageType type = default,
-            SampleCountFlags samples = default,
-            ImageUsageFlags usage = default,
-            ImageTiling tiling = default
+            StructureType? sType = StructureType.PhysicalDeviceSparseImageFormatInfo2,
+            void* pNext = null,
+            Format? format = null,
+            ImageType? type = null,
+            SampleCountFlags? samples = null,
+            ImageUsageFlags? usage = null,
+            ImageTiling? tiling = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Format = format;
-            Type = type;
-            Samples = samples;
-            Usage = usage;
-            Tiling = tiling;
+            fixed (PhysicalDeviceSparseImageFormatInfo2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (samples is not null)
+            {
+                Samples = samples.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (tiling is not null)
+            {
+                Tiling = tiling.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public MemoryFdPropertiesKHR
         (
-            StructureType sType = StructureType.MemoryFDPropertiesKhr,
-            void* pNext = default,
-            uint memoryTypeBits = default
+            StructureType? sType = StructureType.MemoryFDPropertiesKhr,
+            void* pNext = null,
+            uint? memoryTypeBits = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MemoryTypeBits = memoryTypeBits;
+            fixed (MemoryFdPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memoryTypeBits is not null)
+            {
+                MemoryTypeBits = memoryTypeBits.Value;
+            }
         }
 
 /// <summary></summary>

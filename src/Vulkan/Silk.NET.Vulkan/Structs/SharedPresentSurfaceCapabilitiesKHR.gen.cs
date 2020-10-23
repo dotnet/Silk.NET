@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SharedPresentSurfaceCapabilitiesKHR
         (
-            StructureType sType = StructureType.SharedPresentSurfaceCapabilitiesKhr,
-            void* pNext = default,
-            ImageUsageFlags sharedPresentSupportedUsageFlags = default
+            StructureType? sType = StructureType.SharedPresentSurfaceCapabilitiesKhr,
+            void* pNext = null,
+            ImageUsageFlags? sharedPresentSupportedUsageFlags = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SharedPresentSupportedUsageFlags = sharedPresentSupportedUsageFlags;
+            fixed (SharedPresentSurfaceCapabilitiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sharedPresentSupportedUsageFlags is not null)
+            {
+                SharedPresentSupportedUsageFlags = sharedPresentSupportedUsageFlags.Value;
+            }
         }
 
 /// <summary></summary>

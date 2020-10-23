@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public CommandBufferAllocateInfo
         (
-            StructureType sType = StructureType.CommandBufferAllocateInfo,
-            void* pNext = default,
-            CommandPool commandPool = default,
-            CommandBufferLevel level = default,
-            uint commandBufferCount = default
+            StructureType? sType = StructureType.CommandBufferAllocateInfo,
+            void* pNext = null,
+            CommandPool? commandPool = null,
+            CommandBufferLevel? level = null,
+            uint? commandBufferCount = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CommandPool = commandPool;
-            Level = level;
-            CommandBufferCount = commandBufferCount;
+            fixed (CommandBufferAllocateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (commandPool is not null)
+            {
+                CommandPool = commandPool.Value;
+            }
+
+            if (level is not null)
+            {
+                Level = level.Value;
+            }
+
+            if (commandBufferCount is not null)
+            {
+                CommandBufferCount = commandBufferCount.Value;
+            }
         }
 
 /// <summary></summary>

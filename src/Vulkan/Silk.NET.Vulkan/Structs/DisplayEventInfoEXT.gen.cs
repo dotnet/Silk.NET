@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DisplayEventInfoEXT
         (
-            StructureType sType = StructureType.DisplayEventInfoExt,
-            void* pNext = default,
-            DisplayEventTypeEXT displayEvent = default
+            StructureType? sType = StructureType.DisplayEventInfoExt,
+            void* pNext = null,
+            DisplayEventTypeEXT? displayEvent = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DisplayEvent = displayEvent;
+            fixed (DisplayEventInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (displayEvent is not null)
+            {
+                DisplayEvent = displayEvent.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineExecutableStatisticKHR
         (
-            StructureType sType = StructureType.PipelineExecutableStatisticKhr,
-            void* pNext = default,
-            PipelineExecutableStatisticFormatKHR format = default,
-            PipelineExecutableStatisticValueKHR value = default
+            StructureType? sType = StructureType.PipelineExecutableStatisticKhr,
+            void* pNext = null,
+            PipelineExecutableStatisticFormatKHR? format = null,
+            PipelineExecutableStatisticValueKHR? value = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Format = format;
-            Value = value;
+            fixed (PipelineExecutableStatisticKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
 /// <summary></summary>

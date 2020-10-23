@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public AabbPositionsNV
         (
-            float minX = default,
-            float minY = default,
-            float minZ = default,
-            float maxX = default,
-            float maxY = default,
-            float maxZ = default
+            float? minX = null,
+            float? minY = null,
+            float? minZ = null,
+            float? maxX = null,
+            float? maxY = null,
+            float? maxZ = null
         )
         {
-            MinX = minX;
-            MinY = minY;
-            MinZ = minZ;
-            MaxX = maxX;
-            MaxY = maxY;
-            MaxZ = maxZ;
+            fixed (AabbPositionsNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (minX is not null)
+            {
+                MinX = minX.Value;
+            }
+
+            if (minY is not null)
+            {
+                MinY = minY.Value;
+            }
+
+            if (minZ is not null)
+            {
+                MinZ = minZ.Value;
+            }
+
+            if (maxX is not null)
+            {
+                MaxX = maxX.Value;
+            }
+
+            if (maxY is not null)
+            {
+                MaxY = maxY.Value;
+            }
+
+            if (maxZ is not null)
+            {
+                MaxZ = maxZ.Value;
+            }
         }
 
 /// <summary></summary>

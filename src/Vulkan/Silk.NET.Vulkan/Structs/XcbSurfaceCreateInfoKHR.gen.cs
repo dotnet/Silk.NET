@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public XcbSurfaceCreateInfoKHR
         (
-            StructureType sType = StructureType.XcbSurfaceCreateInfoKhr,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr* connection = default,
-            IntPtr window = default
+            StructureType? sType = StructureType.XcbSurfaceCreateInfoKhr,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr* connection = null,
+            IntPtr? window = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Connection = connection;
-            Window = window;
+            fixed (XcbSurfaceCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (connection is not null)
+            {
+                Connection = connection;
+            }
+
+            if (window is not null)
+            {
+                Window = window.Value;
+            }
         }
 
 /// <summary></summary>

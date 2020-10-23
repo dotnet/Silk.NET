@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceRobustness2PropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceRobustness2PropertiesExt,
-            void* pNext = default,
-            ulong robustStorageBufferAccessSizeAlignment = default,
-            ulong robustUniformBufferAccessSizeAlignment = default
+            StructureType? sType = StructureType.PhysicalDeviceRobustness2PropertiesExt,
+            void* pNext = null,
+            ulong? robustStorageBufferAccessSizeAlignment = null,
+            ulong? robustUniformBufferAccessSizeAlignment = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RobustStorageBufferAccessSizeAlignment = robustStorageBufferAccessSizeAlignment;
-            RobustUniformBufferAccessSizeAlignment = robustUniformBufferAccessSizeAlignment;
+            fixed (PhysicalDeviceRobustness2PropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (robustStorageBufferAccessSizeAlignment is not null)
+            {
+                RobustStorageBufferAccessSizeAlignment = robustStorageBufferAccessSizeAlignment.Value;
+            }
+
+            if (robustUniformBufferAccessSizeAlignment is not null)
+            {
+                RobustUniformBufferAccessSizeAlignment = robustUniformBufferAccessSizeAlignment.Value;
+            }
         }
 
 /// <summary></summary>

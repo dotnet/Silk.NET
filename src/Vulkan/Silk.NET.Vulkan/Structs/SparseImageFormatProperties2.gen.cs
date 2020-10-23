@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SparseImageFormatProperties2
         (
-            StructureType sType = StructureType.SparseImageFormatProperties2,
-            void* pNext = default,
-            SparseImageFormatProperties properties = default
+            StructureType? sType = StructureType.SparseImageFormatProperties2,
+            void* pNext = null,
+            SparseImageFormatProperties? properties = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Properties = properties;
+            fixed (SparseImageFormatProperties2* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (properties is not null)
+            {
+                Properties = properties.Value;
+            }
         }
 
 /// <summary></summary>

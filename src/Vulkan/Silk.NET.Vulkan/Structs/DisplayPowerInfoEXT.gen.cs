@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DisplayPowerInfoEXT
         (
-            StructureType sType = StructureType.DisplayPowerInfoExt,
-            void* pNext = default,
-            DisplayPowerStateEXT powerState = default
+            StructureType? sType = StructureType.DisplayPowerInfoExt,
+            void* pNext = null,
+            DisplayPowerStateEXT? powerState = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PowerState = powerState;
+            fixed (DisplayPowerInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (powerState is not null)
+            {
+                PowerState = powerState.Value;
+            }
         }
 
 /// <summary></summary>

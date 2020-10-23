@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceToolPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceToolPropertiesExt,
-            void* pNext = default,
-            ToolPurposeFlagsEXT purposes = default
+            StructureType? sType = StructureType.PhysicalDeviceToolPropertiesExt,
+            void* pNext = null,
+            ToolPurposeFlagsEXT? purposes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Purposes = purposes;
+            fixed (PhysicalDeviceToolPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (purposes is not null)
+            {
+                Purposes = purposes.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public TimelineSemaphoreSubmitInfo
         (
-            StructureType sType = StructureType.TimelineSemaphoreSubmitInfo,
-            void* pNext = default,
-            uint waitSemaphoreValueCount = default,
-            ulong* pWaitSemaphoreValues = default,
-            uint signalSemaphoreValueCount = default,
-            ulong* pSignalSemaphoreValues = default
+            StructureType? sType = StructureType.TimelineSemaphoreSubmitInfo,
+            void* pNext = null,
+            uint? waitSemaphoreValueCount = null,
+            ulong* pWaitSemaphoreValues = null,
+            uint? signalSemaphoreValueCount = null,
+            ulong* pSignalSemaphoreValues = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            WaitSemaphoreValueCount = waitSemaphoreValueCount;
-            PWaitSemaphoreValues = pWaitSemaphoreValues;
-            SignalSemaphoreValueCount = signalSemaphoreValueCount;
-            PSignalSemaphoreValues = pSignalSemaphoreValues;
+            fixed (TimelineSemaphoreSubmitInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (waitSemaphoreValueCount is not null)
+            {
+                WaitSemaphoreValueCount = waitSemaphoreValueCount.Value;
+            }
+
+            if (pWaitSemaphoreValues is not null)
+            {
+                PWaitSemaphoreValues = pWaitSemaphoreValues;
+            }
+
+            if (signalSemaphoreValueCount is not null)
+            {
+                SignalSemaphoreValueCount = signalSemaphoreValueCount.Value;
+            }
+
+            if (pSignalSemaphoreValues is not null)
+            {
+                PSignalSemaphoreValues = pSignalSemaphoreValues;
+            }
         }
 
 /// <summary></summary>

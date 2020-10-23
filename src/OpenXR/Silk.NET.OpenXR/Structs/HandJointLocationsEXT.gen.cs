@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public HandJointLocationsEXT
         (
-            StructureType type = StructureType.TypeHandJointLocationsExt,
-            void* next = default,
-            uint isActive = default,
-            uint jointCount = default,
-            HandJointLocationEXT* jointLocations = default
+            StructureType? type = StructureType.TypeHandJointLocationsExt,
+            void* next = null,
+            uint? isActive = null,
+            uint? jointCount = null,
+            HandJointLocationEXT* jointLocations = null
         )
         {
-            Type = type;
-            Next = next;
-            IsActive = isActive;
-            JointCount = jointCount;
-            JointLocations = jointLocations;
+            fixed (HandJointLocationsEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (isActive is not null)
+            {
+                IsActive = isActive.Value;
+            }
+
+            if (jointCount is not null)
+            {
+                JointCount = jointCount.Value;
+            }
+
+            if (jointLocations is not null)
+            {
+                JointLocations = jointLocations;
+            }
         }
 
 /// <summary></summary>

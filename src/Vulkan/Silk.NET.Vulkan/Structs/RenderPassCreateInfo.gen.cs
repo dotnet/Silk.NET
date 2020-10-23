@@ -21,26 +21,66 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassCreateInfo
         (
-            StructureType sType = StructureType.RenderPassCreateInfo,
-            void* pNext = default,
-            RenderPassCreateFlags flags = default,
-            uint attachmentCount = default,
-            AttachmentDescription* pAttachments = default,
-            uint subpassCount = default,
-            SubpassDescription* pSubpasses = default,
-            uint dependencyCount = default,
-            SubpassDependency* pDependencies = default
+            StructureType? sType = StructureType.RenderPassCreateInfo,
+            void* pNext = null,
+            RenderPassCreateFlags? flags = null,
+            uint? attachmentCount = null,
+            AttachmentDescription* pAttachments = null,
+            uint? subpassCount = null,
+            SubpassDescription* pSubpasses = null,
+            uint? dependencyCount = null,
+            SubpassDependency* pDependencies = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            AttachmentCount = attachmentCount;
-            PAttachments = pAttachments;
-            SubpassCount = subpassCount;
-            PSubpasses = pSubpasses;
-            DependencyCount = dependencyCount;
-            PDependencies = pDependencies;
+            fixed (RenderPassCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (attachmentCount is not null)
+            {
+                AttachmentCount = attachmentCount.Value;
+            }
+
+            if (pAttachments is not null)
+            {
+                PAttachments = pAttachments;
+            }
+
+            if (subpassCount is not null)
+            {
+                SubpassCount = subpassCount.Value;
+            }
+
+            if (pSubpasses is not null)
+            {
+                PSubpasses = pSubpasses;
+            }
+
+            if (dependencyCount is not null)
+            {
+                DependencyCount = dependencyCount.Value;
+            }
+
+            if (pDependencies is not null)
+            {
+                PDependencies = pDependencies;
+            }
         }
 
 /// <summary></summary>

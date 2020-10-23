@@ -21,24 +21,60 @@ namespace Silk.NET.OpenXR
     {
         public ViewConfigurationView
         (
-            StructureType type = StructureType.TypeViewConfigurationView,
-            void* next = default,
-            uint recommendedImageRectWidth = default,
-            uint maxImageRectWidth = default,
-            uint recommendedImageRectHeight = default,
-            uint maxImageRectHeight = default,
-            uint recommendedSwapchainSampleCount = default,
-            uint maxSwapchainSampleCount = default
+            StructureType? type = StructureType.TypeViewConfigurationView,
+            void* next = null,
+            uint? recommendedImageRectWidth = null,
+            uint? maxImageRectWidth = null,
+            uint? recommendedImageRectHeight = null,
+            uint? maxImageRectHeight = null,
+            uint? recommendedSwapchainSampleCount = null,
+            uint? maxSwapchainSampleCount = null
         )
         {
-            Type = type;
-            Next = next;
-            RecommendedImageRectWidth = recommendedImageRectWidth;
-            MaxImageRectWidth = maxImageRectWidth;
-            RecommendedImageRectHeight = recommendedImageRectHeight;
-            MaxImageRectHeight = maxImageRectHeight;
-            RecommendedSwapchainSampleCount = recommendedSwapchainSampleCount;
-            MaxSwapchainSampleCount = maxSwapchainSampleCount;
+            fixed (ViewConfigurationView* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (recommendedImageRectWidth is not null)
+            {
+                RecommendedImageRectWidth = recommendedImageRectWidth.Value;
+            }
+
+            if (maxImageRectWidth is not null)
+            {
+                MaxImageRectWidth = maxImageRectWidth.Value;
+            }
+
+            if (recommendedImageRectHeight is not null)
+            {
+                RecommendedImageRectHeight = recommendedImageRectHeight.Value;
+            }
+
+            if (maxImageRectHeight is not null)
+            {
+                MaxImageRectHeight = maxImageRectHeight.Value;
+            }
+
+            if (recommendedSwapchainSampleCount is not null)
+            {
+                RecommendedSwapchainSampleCount = recommendedSwapchainSampleCount.Value;
+            }
+
+            if (maxSwapchainSampleCount is not null)
+            {
+                MaxSwapchainSampleCount = maxSwapchainSampleCount.Value;
+            }
         }
 
 /// <summary></summary>

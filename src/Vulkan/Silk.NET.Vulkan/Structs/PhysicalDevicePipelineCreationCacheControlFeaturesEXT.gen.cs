@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePipelineCreationCacheControlFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDevicePipelineCreationCacheControlFeaturesExt,
-            void* pNext = default,
-            Bool32 pipelineCreationCacheControl = default
+            StructureType? sType = StructureType.PhysicalDevicePipelineCreationCacheControlFeaturesExt,
+            void* pNext = null,
+            Bool32? pipelineCreationCacheControl = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PipelineCreationCacheControl = pipelineCreationCacheControl;
+            fixed (PhysicalDevicePipelineCreationCacheControlFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pipelineCreationCacheControl is not null)
+            {
+                PipelineCreationCacheControl = pipelineCreationCacheControl.Value;
+            }
         }
 
 /// <summary></summary>

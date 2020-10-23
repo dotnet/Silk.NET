@@ -21,14 +21,30 @@ namespace Silk.NET.SDL
     {
         public Version
         (
-            byte major = default,
-            byte minor = default,
-            byte patch = default
+            byte? major = null,
+            byte? minor = null,
+            byte? patch = null
         )
         {
-            Major = major;
-            Minor = minor;
-            Patch = patch;
+            fixed (Version* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (major is not null)
+            {
+                Major = major.Value;
+            }
+
+            if (minor is not null)
+            {
+                Minor = minor.Value;
+            }
+
+            if (patch is not null)
+            {
+                Patch = patch.Value;
+            }
         }
 
 

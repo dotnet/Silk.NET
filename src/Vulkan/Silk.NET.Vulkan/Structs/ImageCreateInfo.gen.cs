@@ -21,38 +21,102 @@ namespace Silk.NET.Vulkan
     {
         public ImageCreateInfo
         (
-            StructureType sType = StructureType.ImageCreateInfo,
-            void* pNext = default,
-            ImageCreateFlags flags = default,
-            ImageType imageType = default,
-            Format format = default,
-            Extent3D extent = default,
-            uint mipLevels = default,
-            uint arrayLayers = default,
-            SampleCountFlags samples = default,
-            ImageTiling tiling = default,
-            ImageUsageFlags usage = default,
-            SharingMode sharingMode = default,
-            uint queueFamilyIndexCount = default,
-            uint* pQueueFamilyIndices = default,
-            ImageLayout initialLayout = default
+            StructureType? sType = StructureType.ImageCreateInfo,
+            void* pNext = null,
+            ImageCreateFlags? flags = null,
+            ImageType? imageType = null,
+            Format? format = null,
+            Extent3D? extent = null,
+            uint? mipLevels = null,
+            uint? arrayLayers = null,
+            SampleCountFlags? samples = null,
+            ImageTiling? tiling = null,
+            ImageUsageFlags? usage = null,
+            SharingMode? sharingMode = null,
+            uint? queueFamilyIndexCount = null,
+            uint* pQueueFamilyIndices = null,
+            ImageLayout? initialLayout = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            ImageType = imageType;
-            Format = format;
-            Extent = extent;
-            MipLevels = mipLevels;
-            ArrayLayers = arrayLayers;
-            Samples = samples;
-            Tiling = tiling;
-            Usage = usage;
-            SharingMode = sharingMode;
-            QueueFamilyIndexCount = queueFamilyIndexCount;
-            PQueueFamilyIndices = pQueueFamilyIndices;
-            InitialLayout = initialLayout;
+            fixed (ImageCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (imageType is not null)
+            {
+                ImageType = imageType.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
+
+            if (mipLevels is not null)
+            {
+                MipLevels = mipLevels.Value;
+            }
+
+            if (arrayLayers is not null)
+            {
+                ArrayLayers = arrayLayers.Value;
+            }
+
+            if (samples is not null)
+            {
+                Samples = samples.Value;
+            }
+
+            if (tiling is not null)
+            {
+                Tiling = tiling.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (sharingMode is not null)
+            {
+                SharingMode = sharingMode.Value;
+            }
+
+            if (queueFamilyIndexCount is not null)
+            {
+                QueueFamilyIndexCount = queueFamilyIndexCount.Value;
+            }
+
+            if (pQueueFamilyIndices is not null)
+            {
+                PQueueFamilyIndices = pQueueFamilyIndices;
+            }
+
+            if (initialLayout is not null)
+            {
+                InitialLayout = initialLayout.Value;
+            }
         }
 
 /// <summary></summary>

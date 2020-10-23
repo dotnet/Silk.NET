@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ExternalMemoryBufferCreateInfoKHR
         (
-            StructureType sType = StructureType.ExternalMemoryBufferCreateInfo,
-            void* pNext = default,
-            ExternalMemoryHandleTypeFlags handleTypes = default
+            StructureType? sType = StructureType.ExternalMemoryBufferCreateInfo,
+            void* pNext = null,
+            ExternalMemoryHandleTypeFlags? handleTypes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleTypes = handleTypes;
+            fixed (ExternalMemoryBufferCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleTypes is not null)
+            {
+                HandleTypes = handleTypes.Value;
+            }
         }
 
 /// <summary></summary>

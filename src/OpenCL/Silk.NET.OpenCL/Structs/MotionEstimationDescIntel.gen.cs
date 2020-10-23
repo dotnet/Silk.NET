@@ -21,16 +21,36 @@ namespace Silk.NET.OpenCL
     {
         public MotionEstimationDescIntel
         (
-            uint mbBlockType = default,
-            uint subpixelMode = default,
-            uint sadAdjustMode = default,
-            uint searchPathType = default
+            uint? mbBlockType = null,
+            uint? subpixelMode = null,
+            uint? sadAdjustMode = null,
+            uint? searchPathType = null
         )
         {
-            MbBlockType = mbBlockType;
-            SubpixelMode = subpixelMode;
-            SadAdjustMode = sadAdjustMode;
-            SearchPathType = searchPathType;
+            fixed (MotionEstimationDescIntel* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mbBlockType is not null)
+            {
+                MbBlockType = mbBlockType.Value;
+            }
+
+            if (subpixelMode is not null)
+            {
+                SubpixelMode = subpixelMode.Value;
+            }
+
+            if (sadAdjustMode is not null)
+            {
+                SadAdjustMode = sadAdjustMode.Value;
+            }
+
+            if (searchPathType is not null)
+            {
+                SearchPathType = searchPathType.Value;
+            }
         }
 
 /// <summary></summary>

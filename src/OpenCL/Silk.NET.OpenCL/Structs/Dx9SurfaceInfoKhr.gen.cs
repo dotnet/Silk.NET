@@ -21,12 +21,24 @@ namespace Silk.NET.OpenCL
     {
         public Dx9SurfaceInfoKhr
         (
-            IntPtr resource = default,
-            IntPtr sharedHandle = default
+            IntPtr? resource = null,
+            IntPtr? sharedHandle = null
         )
         {
-            Resource = resource;
-            SharedHandle = sharedHandle;
+            fixed (Dx9SurfaceInfoKhr* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (resource is not null)
+            {
+                Resource = resource.Value;
+            }
+
+            if (sharedHandle is not null)
+            {
+                SharedHandle = sharedHandle.Value;
+            }
         }
 
 /// <summary></summary>

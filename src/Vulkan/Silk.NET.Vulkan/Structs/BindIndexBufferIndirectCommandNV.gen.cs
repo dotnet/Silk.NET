@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public BindIndexBufferIndirectCommandNV
         (
-            ulong bufferAddress = default,
-            uint size = default,
-            IndexType indexType = default
+            ulong? bufferAddress = null,
+            uint? size = null,
+            IndexType? indexType = null
         )
         {
-            BufferAddress = bufferAddress;
-            Size = size;
-            IndexType = indexType;
+            fixed (BindIndexBufferIndirectCommandNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (bufferAddress is not null)
+            {
+                BufferAddress = bufferAddress.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (indexType is not null)
+            {
+                IndexType = indexType.Value;
+            }
         }
 
 /// <summary></summary>

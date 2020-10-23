@@ -21,38 +21,72 @@ namespace Silk.NET.SDL
     {
         public AudioCVT
         (
-            int needed = default,
-            ushort srcFormat = default,
-            ushort dstFormat = default,
-            double rateIncr = default,
-            byte* buf = default,
-            int len = default,
-            int lenCvt = default,
-            int lenMult = default,
-            double lenRatio = default,
-            int filterIndex = default
+            int? needed = null,
+            ushort? srcFormat = null,
+            ushort? dstFormat = null,
+            double? rateIncr = null,
+            byte* buf = null,
+            int? len = null,
+            int? lenCvt = null,
+            int? lenMult = null,
+            double? lenRatio = null,
+            int? filterIndex = null
         )
         {
-            Needed = needed;
-            SrcFormat = srcFormat;
-            DstFormat = dstFormat;
-            RateIncr = rateIncr;
-            Buf = buf;
-            Len = len;
-            LenCvt = lenCvt;
-            LenMult = lenMult;
-            LenRatio = lenRatio;
-           Filters_0 = default;
-           Filters_1 = default;
-           Filters_2 = default;
-           Filters_3 = default;
-           Filters_4 = default;
-           Filters_5 = default;
-           Filters_6 = default;
-           Filters_7 = default;
-           Filters_8 = default;
-           Filters_9 = default;
-            FilterIndex = filterIndex;
+            fixed (AudioCVT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (needed is not null)
+            {
+                Needed = needed.Value;
+            }
+
+            if (srcFormat is not null)
+            {
+                SrcFormat = srcFormat.Value;
+            }
+
+            if (dstFormat is not null)
+            {
+                DstFormat = dstFormat.Value;
+            }
+
+            if (rateIncr is not null)
+            {
+                RateIncr = rateIncr.Value;
+            }
+
+            if (buf is not null)
+            {
+                Buf = buf;
+            }
+
+            if (len is not null)
+            {
+                Len = len.Value;
+            }
+
+            if (lenCvt is not null)
+            {
+                LenCvt = lenCvt.Value;
+            }
+
+            if (lenMult is not null)
+            {
+                LenMult = lenMult.Value;
+            }
+
+            if (lenRatio is not null)
+            {
+                LenRatio = lenRatio.Value;
+            }
+
+            if (filterIndex is not null)
+            {
+                FilterIndex = filterIndex.Value;
+            }
         }
 
 

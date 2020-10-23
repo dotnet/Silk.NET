@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PipelineRepresentativeFragmentTestStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineRepresentativeFragmentTestStateCreateInfoNV,
-            void* pNext = default,
-            Bool32 representativeFragmentTestEnable = default
+            StructureType? sType = StructureType.PipelineRepresentativeFragmentTestStateCreateInfoNV,
+            void* pNext = null,
+            Bool32? representativeFragmentTestEnable = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RepresentativeFragmentTestEnable = representativeFragmentTestEnable;
+            fixed (PipelineRepresentativeFragmentTestStateCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (representativeFragmentTestEnable is not null)
+            {
+                RepresentativeFragmentTestEnable = representativeFragmentTestEnable.Value;
+            }
         }
 
 /// <summary></summary>

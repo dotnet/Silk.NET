@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public ShaderStatisticsInfoAMD
         (
-            ShaderStageFlags shaderStageMask = default,
-            ShaderResourceUsageAMD resourceUsage = default,
-            uint numPhysicalVgprs = default,
-            uint numPhysicalSgprs = default,
-            uint numAvailableVgprs = default,
-            uint numAvailableSgprs = default
+            ShaderStageFlags? shaderStageMask = null,
+            ShaderResourceUsageAMD? resourceUsage = null,
+            uint? numPhysicalVgprs = null,
+            uint? numPhysicalSgprs = null,
+            uint? numAvailableVgprs = null,
+            uint? numAvailableSgprs = null
         )
         {
-            ShaderStageMask = shaderStageMask;
-            ResourceUsage = resourceUsage;
-            NumPhysicalVgprs = numPhysicalVgprs;
-            NumPhysicalSgprs = numPhysicalSgprs;
-            NumAvailableVgprs = numAvailableVgprs;
-            NumAvailableSgprs = numAvailableSgprs;
+            fixed (ShaderStatisticsInfoAMD* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (shaderStageMask is not null)
+            {
+                ShaderStageMask = shaderStageMask.Value;
+            }
+
+            if (resourceUsage is not null)
+            {
+                ResourceUsage = resourceUsage.Value;
+            }
+
+            if (numPhysicalVgprs is not null)
+            {
+                NumPhysicalVgprs = numPhysicalVgprs.Value;
+            }
+
+            if (numPhysicalSgprs is not null)
+            {
+                NumPhysicalSgprs = numPhysicalSgprs.Value;
+            }
+
+            if (numAvailableVgprs is not null)
+            {
+                NumAvailableVgprs = numAvailableVgprs.Value;
+            }
+
+            if (numAvailableSgprs is not null)
+            {
+                NumAvailableSgprs = numAvailableSgprs.Value;
+            }
         }
 
 /// <summary></summary>

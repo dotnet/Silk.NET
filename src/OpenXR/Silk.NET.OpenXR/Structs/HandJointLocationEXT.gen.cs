@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public HandJointLocationEXT
         (
-            SpaceLocationFlags locationFlags = default,
-            Posef pose = default,
-            float radius = default
+            SpaceLocationFlags? locationFlags = null,
+            Posef? pose = null,
+            float? radius = null
         )
         {
-            LocationFlags = locationFlags;
-            Pose = pose;
-            Radius = radius;
+            fixed (HandJointLocationEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (locationFlags is not null)
+            {
+                LocationFlags = locationFlags.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (radius is not null)
+            {
+                Radius = radius.Value;
+            }
         }
 
 /// <summary></summary>

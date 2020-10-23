@@ -256,85 +256,85 @@ namespace Silk.NET.OpenGL.Extensions.NV
             thisApi.DrawCommandsStatesAddress(in indirects.GetPinnableReference(), in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] void** indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, indirects, sizes, states, in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] void** indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, indirects, sizes, in states.GetPinnableReference(), fbos, count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] void** indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, indirects, sizes, in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] void** indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, indirects, in sizes.GetPinnableReference(), states, fbos, count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] void** indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, indirects, in sizes.GetPinnableReference(), states, in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] void** indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), fbos, count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] void** indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] in void* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, in indirects, sizes, states, in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] in void* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, in indirects, sizes, in states.GetPinnableReference(), fbos, count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] in void* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, in indirects, sizes, in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] in void* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), states, fbos, count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] in void* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), states, in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] in void* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), fbos, count);
         }
 
-        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Flow(FlowDirection.In)] in void* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void ListDrawCommandsStatesClient(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);

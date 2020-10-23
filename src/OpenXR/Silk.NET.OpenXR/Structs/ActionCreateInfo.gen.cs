@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public ActionCreateInfo
         (
-            StructureType type = StructureType.TypeActionCreateInfo,
-            void* next = default,
-            ActionType actionType = default,
-            uint countSubactionPaths = default,
-            ulong* subactionPaths = default
+            StructureType? type = StructureType.TypeActionCreateInfo,
+            void* next = null,
+            ActionType? actionType = null,
+            uint? countSubactionPaths = null,
+            ulong* subactionPaths = null
         )
         {
-            Type = type;
-            Next = next;
-            ActionType = actionType;
-            CountSubactionPaths = countSubactionPaths;
-            SubactionPaths = subactionPaths;
+            fixed (ActionCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (actionType is not null)
+            {
+                ActionType = actionType.Value;
+            }
+
+            if (countSubactionPaths is not null)
+            {
+                CountSubactionPaths = countSubactionPaths.Value;
+            }
+
+            if (subactionPaths is not null)
+            {
+                SubactionPaths = subactionPaths;
+            }
         }
 
 /// <summary></summary>

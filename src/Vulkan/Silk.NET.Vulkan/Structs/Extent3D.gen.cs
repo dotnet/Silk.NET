@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public Extent3D
         (
-            uint width = default,
-            uint height = default,
-            uint depth = default
+            uint? width = null,
+            uint? height = null,
+            uint? depth = null
         )
         {
-            Width = width;
-            Height = height;
-            Depth = depth;
+            fixed (Extent3D* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
         }
 
 /// <summary></summary>

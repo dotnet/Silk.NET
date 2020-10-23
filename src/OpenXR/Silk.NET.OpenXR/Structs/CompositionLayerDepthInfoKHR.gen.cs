@@ -21,22 +21,54 @@ namespace Silk.NET.OpenXR
     {
         public CompositionLayerDepthInfoKHR
         (
-            StructureType type = StructureType.TypeCompositionLayerDepthInfoKhr,
-            void* next = default,
-            SwapchainSubImage subImage = default,
-            float minDepth = default,
-            float maxDepth = default,
-            float nearZ = default,
-            float farZ = default
+            StructureType? type = StructureType.TypeCompositionLayerDepthInfoKhr,
+            void* next = null,
+            SwapchainSubImage? subImage = null,
+            float? minDepth = null,
+            float? maxDepth = null,
+            float? nearZ = null,
+            float? farZ = null
         )
         {
-            Type = type;
-            Next = next;
-            SubImage = subImage;
-            MinDepth = minDepth;
-            MaxDepth = maxDepth;
-            NearZ = nearZ;
-            FarZ = farZ;
+            fixed (CompositionLayerDepthInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (subImage is not null)
+            {
+                SubImage = subImage.Value;
+            }
+
+            if (minDepth is not null)
+            {
+                MinDepth = minDepth.Value;
+            }
+
+            if (maxDepth is not null)
+            {
+                MaxDepth = maxDepth.Value;
+            }
+
+            if (nearZ is not null)
+            {
+                NearZ = nearZ.Value;
+            }
+
+            if (farZ is not null)
+            {
+                FarZ = farZ.Value;
+            }
         }
 
 /// <summary></summary>

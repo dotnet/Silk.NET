@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public EventDataInstanceLossPending
         (
-            StructureType type = StructureType.TypeEventDataInstanceLossPending,
-            void* next = default,
-            long lossTime = default
+            StructureType? type = StructureType.TypeEventDataInstanceLossPending,
+            void* next = null,
+            long? lossTime = null
         )
         {
-            Type = type;
-            Next = next;
-            LossTime = lossTime;
+            fixed (EventDataInstanceLossPending* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (lossTime is not null)
+            {
+                LossTime = lossTime.Value;
+            }
         }
 
 /// <summary></summary>

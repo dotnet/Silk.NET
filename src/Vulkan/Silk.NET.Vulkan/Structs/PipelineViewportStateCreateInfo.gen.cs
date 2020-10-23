@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public PipelineViewportStateCreateInfo
         (
-            StructureType sType = StructureType.PipelineViewportStateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            uint viewportCount = default,
-            Viewport* pViewports = default,
-            uint scissorCount = default,
-            Rect2D* pScissors = default
+            StructureType? sType = StructureType.PipelineViewportStateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            uint? viewportCount = null,
+            Viewport* pViewports = null,
+            uint? scissorCount = null,
+            Rect2D* pScissors = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            ViewportCount = viewportCount;
-            PViewports = pViewports;
-            ScissorCount = scissorCount;
-            PScissors = pScissors;
+            fixed (PipelineViewportStateCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (viewportCount is not null)
+            {
+                ViewportCount = viewportCount.Value;
+            }
+
+            if (pViewports is not null)
+            {
+                PViewports = pViewports;
+            }
+
+            if (scissorCount is not null)
+            {
+                ScissorCount = scissorCount.Value;
+            }
+
+            if (pScissors is not null)
+            {
+                PScissors = pScissors;
+            }
         }
 
 /// <summary></summary>

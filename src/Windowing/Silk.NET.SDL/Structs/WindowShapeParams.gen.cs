@@ -22,12 +22,24 @@ namespace Silk.NET.SDL
     {
         public WindowShapeParams
         (
-            byte binarizationCutoff = default,
-            Color colorKey = default
+            byte? binarizationCutoff = null,
+            Color? colorKey = null
         )
         {
-            BinarizationCutoff = binarizationCutoff;
-            ColorKey = colorKey;
+            fixed (WindowShapeParams* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (binarizationCutoff is not null)
+            {
+                BinarizationCutoff = binarizationCutoff.Value;
+            }
+
+            if (colorKey is not null)
+            {
+                ColorKey = colorKey.Value;
+            }
         }
 
 

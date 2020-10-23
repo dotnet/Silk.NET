@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public DebugUtilsLabelEXT
         (
-            StructureType type = StructureType.TypeDebugUtilsLabelExt,
-            void* next = default,
-            byte* labelName = default
+            StructureType? type = StructureType.TypeDebugUtilsLabelExt,
+            void* next = null,
+            byte* labelName = null
         )
         {
-            Type = type;
-            Next = next;
-            LabelName = labelName;
+            fixed (DebugUtilsLabelEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (labelName is not null)
+            {
+                LabelName = labelName;
+            }
         }
 
 /// <summary></summary>

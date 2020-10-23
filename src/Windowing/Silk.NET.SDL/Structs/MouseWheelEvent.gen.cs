@@ -21,22 +21,54 @@ namespace Silk.NET.SDL
     {
         public MouseWheelEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint windowID = default,
-            uint which = default,
-            int x = default,
-            int y = default,
-            uint direction = default
+            uint? type = null,
+            uint? timestamp = null,
+            uint? windowID = null,
+            uint? which = null,
+            int? x = null,
+            int? y = null,
+            uint? direction = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            WindowID = windowID;
-            Which = which;
-            X = x;
-            Y = y;
-            Direction = direction;
+            fixed (MouseWheelEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (direction is not null)
+            {
+                Direction = direction.Value;
+            }
         }
 
 

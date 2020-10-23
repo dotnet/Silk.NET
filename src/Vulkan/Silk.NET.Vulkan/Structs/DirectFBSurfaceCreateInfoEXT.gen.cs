@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DirectFBSurfaceCreateInfoEXT
         (
-            StructureType sType = StructureType.DirectfbSurfaceCreateInfoExt,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr dfb = default,
-            IntPtr surface = default
+            StructureType? sType = StructureType.DirectfbSurfaceCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr? dfb = null,
+            IntPtr? surface = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Dfb = dfb;
-            Surface = surface;
+            fixed (DirectFBSurfaceCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (dfb is not null)
+            {
+                Dfb = dfb.Value;
+            }
+
+            if (surface is not null)
+            {
+                Surface = surface.Value;
+            }
         }
 
 /// <summary></summary>

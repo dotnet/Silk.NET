@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassFragmentDensityMapCreateInfoEXT
         (
-            StructureType sType = StructureType.RenderPassFragmentDensityMapCreateInfoExt,
-            void* pNext = default,
-            AttachmentReference fragmentDensityMapAttachment = default
+            StructureType? sType = StructureType.RenderPassFragmentDensityMapCreateInfoExt,
+            void* pNext = null,
+            AttachmentReference? fragmentDensityMapAttachment = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FragmentDensityMapAttachment = fragmentDensityMapAttachment;
+            fixed (RenderPassFragmentDensityMapCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fragmentDensityMapAttachment is not null)
+            {
+                FragmentDensityMapAttachment = fragmentDensityMapAttachment.Value;
+            }
         }
 
 /// <summary></summary>

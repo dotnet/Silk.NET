@@ -21,14 +21,30 @@ namespace Silk.NET.Assimp
     {
         public Metadata
         (
-            uint mNumProperties = default,
-            AssimpString* mKeys = default,
-            MetadataEntry* mValues = default
+            uint? mNumProperties = null,
+            AssimpString* mKeys = null,
+            MetadataEntry* mValues = null
         )
         {
-            MNumProperties = mNumProperties;
-            MKeys = mKeys;
-            MValues = mValues;
+            fixed (Metadata* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mNumProperties is not null)
+            {
+                MNumProperties = mNumProperties.Value;
+            }
+
+            if (mKeys is not null)
+            {
+                MKeys = mKeys;
+            }
+
+            if (mValues is not null)
+            {
+                MValues = mValues;
+            }
         }
 
 

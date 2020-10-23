@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public SystemHandTrackingMeshPropertiesMSFT
         (
-            StructureType type = StructureType.TypeSystemHandTrackingMeshPropertiesMsft,
-            void* next = default,
-            uint supportsHandTrackingMesh = default,
-            uint maxHandMeshIndexCount = default,
-            uint maxHandMeshVertexCount = default
+            StructureType? type = StructureType.TypeSystemHandTrackingMeshPropertiesMsft,
+            void* next = null,
+            uint? supportsHandTrackingMesh = null,
+            uint? maxHandMeshIndexCount = null,
+            uint? maxHandMeshVertexCount = null
         )
         {
-            Type = type;
-            Next = next;
-            SupportsHandTrackingMesh = supportsHandTrackingMesh;
-            MaxHandMeshIndexCount = maxHandMeshIndexCount;
-            MaxHandMeshVertexCount = maxHandMeshVertexCount;
+            fixed (SystemHandTrackingMeshPropertiesMSFT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (supportsHandTrackingMesh is not null)
+            {
+                SupportsHandTrackingMesh = supportsHandTrackingMesh.Value;
+            }
+
+            if (maxHandMeshIndexCount is not null)
+            {
+                MaxHandMeshIndexCount = maxHandMeshIndexCount.Value;
+            }
+
+            if (maxHandMeshVertexCount is not null)
+            {
+                MaxHandMeshVertexCount = maxHandMeshVertexCount.Value;
+            }
         }
 
 /// <summary></summary>

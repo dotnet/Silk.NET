@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public DisplayModeCreateInfoKHR
         (
-            StructureType sType = StructureType.DisplayModeCreateInfoKhr,
-            void* pNext = default,
-            uint flags = default,
-            DisplayModeParametersKHR parameters = default
+            StructureType? sType = StructureType.DisplayModeCreateInfoKhr,
+            void* pNext = null,
+            uint? flags = null,
+            DisplayModeParametersKHR? parameters = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Parameters = parameters;
+            fixed (DisplayModeCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
         }
 
 /// <summary></summary>

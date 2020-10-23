@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PipelineInfoKHR
         (
-            StructureType sType = StructureType.PipelineInfoKhr,
-            void* pNext = default,
-            Pipeline pipeline = default
+            StructureType? sType = StructureType.PipelineInfoKhr,
+            void* pNext = null,
+            Pipeline? pipeline = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Pipeline = pipeline;
+            fixed (PipelineInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pipeline is not null)
+            {
+                Pipeline = pipeline.Value;
+            }
         }
 
 /// <summary></summary>

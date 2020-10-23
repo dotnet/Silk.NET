@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public InstanceProperties
         (
-            StructureType type = StructureType.TypeInstanceProperties,
-            void* next = default,
-            ulong runtimeVersion = default
+            StructureType? type = StructureType.TypeInstanceProperties,
+            void* next = null,
+            ulong? runtimeVersion = null
         )
         {
-            Type = type;
-            Next = next;
-            RuntimeVersion = runtimeVersion;
+            fixed (InstanceProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (runtimeVersion is not null)
+            {
+                RuntimeVersion = runtimeVersion.Value;
+            }
         }
 
 /// <summary></summary>

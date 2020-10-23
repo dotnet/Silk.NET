@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingOpenGLWaylandKHR
         (
-            StructureType type = StructureType.TypeGraphicsBindingOpenglWaylandKhr,
-            void* next = default,
-            IntPtr* display = default
+            StructureType? type = StructureType.TypeGraphicsBindingOpenglWaylandKhr,
+            void* next = null,
+            IntPtr* display = null
         )
         {
-            Type = type;
-            Next = next;
-            Display = display;
+            fixed (GraphicsBindingOpenGLWaylandKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (display is not null)
+            {
+                Display = display;
+            }
         }
 
 /// <summary></summary>

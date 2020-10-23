@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PipelineRasterizationStateRasterizationOrderAMD
         (
-            StructureType sType = StructureType.PipelineRasterizationStateRasterizationOrderAmd,
-            void* pNext = default,
-            RasterizationOrderAMD rasterizationOrder = default
+            StructureType? sType = StructureType.PipelineRasterizationStateRasterizationOrderAmd,
+            void* pNext = null,
+            RasterizationOrderAMD? rasterizationOrder = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RasterizationOrder = rasterizationOrder;
+            fixed (PipelineRasterizationStateRasterizationOrderAMD* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (rasterizationOrder is not null)
+            {
+                RasterizationOrder = rasterizationOrder.Value;
+            }
         }
 
 /// <summary></summary>

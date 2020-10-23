@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public SparseImageMemoryRequirements
         (
-            SparseImageFormatProperties formatProperties = default,
-            uint imageMipTailFirstLod = default,
-            ulong imageMipTailSize = default,
-            ulong imageMipTailOffset = default,
-            ulong imageMipTailStride = default
+            SparseImageFormatProperties? formatProperties = null,
+            uint? imageMipTailFirstLod = null,
+            ulong? imageMipTailSize = null,
+            ulong? imageMipTailOffset = null,
+            ulong? imageMipTailStride = null
         )
         {
-            FormatProperties = formatProperties;
-            ImageMipTailFirstLod = imageMipTailFirstLod;
-            ImageMipTailSize = imageMipTailSize;
-            ImageMipTailOffset = imageMipTailOffset;
-            ImageMipTailStride = imageMipTailStride;
+            fixed (SparseImageMemoryRequirements* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (formatProperties is not null)
+            {
+                FormatProperties = formatProperties.Value;
+            }
+
+            if (imageMipTailFirstLod is not null)
+            {
+                ImageMipTailFirstLod = imageMipTailFirstLod.Value;
+            }
+
+            if (imageMipTailSize is not null)
+            {
+                ImageMipTailSize = imageMipTailSize.Value;
+            }
+
+            if (imageMipTailOffset is not null)
+            {
+                ImageMipTailOffset = imageMipTailOffset.Value;
+            }
+
+            if (imageMipTailStride is not null)
+            {
+                ImageMipTailStride = imageMipTailStride.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public ReferenceSpaceCreateInfo
         (
-            StructureType type = StructureType.TypeReferenceSpaceCreateInfo,
-            void* next = default,
-            ReferenceSpaceType referenceSpaceType = default,
-            Posef poseInReferenceSpace = default
+            StructureType? type = StructureType.TypeReferenceSpaceCreateInfo,
+            void* next = null,
+            ReferenceSpaceType? referenceSpaceType = null,
+            Posef? poseInReferenceSpace = null
         )
         {
-            Type = type;
-            Next = next;
-            ReferenceSpaceType = referenceSpaceType;
-            PoseInReferenceSpace = poseInReferenceSpace;
+            fixed (ReferenceSpaceCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (referenceSpaceType is not null)
+            {
+                ReferenceSpaceType = referenceSpaceType.Value;
+            }
+
+            if (poseInReferenceSpace is not null)
+            {
+                PoseInReferenceSpace = poseInReferenceSpace.Value;
+            }
         }
 
 /// <summary></summary>

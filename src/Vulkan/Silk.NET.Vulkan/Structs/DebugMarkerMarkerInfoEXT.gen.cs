@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DebugMarkerMarkerInfoEXT
         (
-            StructureType sType = StructureType.DebugMarkerMarkerInfoExt,
-            void* pNext = default,
-            byte* pMarkerName = default
+            StructureType? sType = StructureType.DebugMarkerMarkerInfoExt,
+            void* pNext = null,
+            byte* pMarkerName = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PMarkerName = pMarkerName;
+            fixed (DebugMarkerMarkerInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pMarkerName is not null)
+            {
+                PMarkerName = pMarkerName;
+            }
         }
 
 /// <summary></summary>

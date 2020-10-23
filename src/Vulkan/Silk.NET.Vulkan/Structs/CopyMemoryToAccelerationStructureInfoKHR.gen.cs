@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public CopyMemoryToAccelerationStructureInfoKHR
         (
-            StructureType sType = StructureType.CopyMemoryToAccelerationStructureInfoKhr,
-            void* pNext = default,
-            DeviceOrHostAddressConstKHR src = default,
-            AccelerationStructureKHR dst = default,
-            CopyAccelerationStructureModeKHR mode = default
+            StructureType? sType = StructureType.CopyMemoryToAccelerationStructureInfoKhr,
+            void* pNext = null,
+            DeviceOrHostAddressConstKHR? src = null,
+            AccelerationStructureKHR? dst = null,
+            CopyAccelerationStructureModeKHR? mode = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Src = src;
-            Dst = dst;
-            Mode = mode;
+            fixed (CopyMemoryToAccelerationStructureInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (src is not null)
+            {
+                Src = src.Value;
+            }
+
+            if (dst is not null)
+            {
+                Dst = dst.Value;
+            }
+
+            if (mode is not null)
+            {
+                Mode = mode.Value;
+            }
         }
 
 /// <summary></summary>

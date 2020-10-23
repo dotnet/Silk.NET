@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public QueryPoolPerformanceQueryCreateInfoINTEL
         (
-            StructureType sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
-            void* pNext = default,
-            QueryPoolSamplingModeINTEL performanceCountersSampling = default
+            StructureType? sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
+            void* pNext = null,
+            QueryPoolSamplingModeINTEL? performanceCountersSampling = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PerformanceCountersSampling = performanceCountersSampling;
+            fixed (QueryPoolPerformanceQueryCreateInfoINTEL* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (performanceCountersSampling is not null)
+            {
+                PerformanceCountersSampling = performanceCountersSampling.Value;
+            }
         }
 
 /// <summary></summary>

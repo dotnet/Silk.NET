@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public ActiveActionSet
         (
-            ActionSet actionSet = default,
-            ulong subactionPath = default
+            ActionSet? actionSet = null,
+            ulong? subactionPath = null
         )
         {
-            ActionSet = actionSet;
-            SubactionPath = subactionPath;
+            fixed (ActiveActionSet* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (actionSet is not null)
+            {
+                ActionSet = actionSet.Value;
+            }
+
+            if (subactionPath is not null)
+            {
+                SubactionPath = subactionPath.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DebugUtilsObjectNameInfoEXT
         (
-            StructureType sType = StructureType.DebugUtilsObjectNameInfoExt,
-            void* pNext = default,
-            ObjectType objectType = default,
-            ulong objectHandle = default,
-            byte* pObjectName = default
+            StructureType? sType = StructureType.DebugUtilsObjectNameInfoExt,
+            void* pNext = null,
+            ObjectType? objectType = null,
+            ulong? objectHandle = null,
+            byte* pObjectName = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ObjectType = objectType;
-            ObjectHandle = objectHandle;
-            PObjectName = pObjectName;
+            fixed (DebugUtilsObjectNameInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (objectType is not null)
+            {
+                ObjectType = objectType.Value;
+            }
+
+            if (objectHandle is not null)
+            {
+                ObjectHandle = objectHandle.Value;
+            }
+
+            if (pObjectName is not null)
+            {
+                PObjectName = pObjectName;
+            }
         }
 
 /// <summary></summary>

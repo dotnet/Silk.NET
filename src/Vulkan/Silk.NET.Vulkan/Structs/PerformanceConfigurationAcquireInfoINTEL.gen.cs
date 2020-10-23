@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceConfigurationAcquireInfoINTEL
         (
-            StructureType sType = StructureType.PerformanceConfigurationAcquireInfoIntel,
-            void* pNext = default,
-            PerformanceConfigurationTypeINTEL type = default
+            StructureType? sType = StructureType.PerformanceConfigurationAcquireInfoIntel,
+            void* pNext = null,
+            PerformanceConfigurationTypeINTEL? type = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
+            fixed (PerformanceConfigurationAcquireInfoINTEL* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
         }
 
 /// <summary></summary>

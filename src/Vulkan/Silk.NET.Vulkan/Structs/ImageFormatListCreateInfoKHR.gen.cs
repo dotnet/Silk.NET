@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ImageFormatListCreateInfoKHR
         (
-            StructureType sType = StructureType.ImageFormatListCreateInfo,
-            void* pNext = default,
-            uint viewFormatCount = default,
-            Format* pViewFormats = default
+            StructureType? sType = StructureType.ImageFormatListCreateInfo,
+            void* pNext = null,
+            uint? viewFormatCount = null,
+            Format* pViewFormats = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ViewFormatCount = viewFormatCount;
-            PViewFormats = pViewFormats;
+            fixed (ImageFormatListCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (viewFormatCount is not null)
+            {
+                ViewFormatCount = viewFormatCount.Value;
+            }
+
+            if (pViewFormats is not null)
+            {
+                PViewFormats = pViewFormats;
+            }
         }
 
 /// <summary></summary>

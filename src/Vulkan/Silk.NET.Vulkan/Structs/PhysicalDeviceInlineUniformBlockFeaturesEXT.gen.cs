@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceInlineUniformBlockFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceInlineUniformBlockFeaturesExt,
-            void* pNext = default,
-            Bool32 inlineUniformBlock = default,
-            Bool32 descriptorBindingInlineUniformBlockUpdateAfterBind = default
+            StructureType? sType = StructureType.PhysicalDeviceInlineUniformBlockFeaturesExt,
+            void* pNext = null,
+            Bool32? inlineUniformBlock = null,
+            Bool32? descriptorBindingInlineUniformBlockUpdateAfterBind = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            InlineUniformBlock = inlineUniformBlock;
-            DescriptorBindingInlineUniformBlockUpdateAfterBind = descriptorBindingInlineUniformBlockUpdateAfterBind;
+            fixed (PhysicalDeviceInlineUniformBlockFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (inlineUniformBlock is not null)
+            {
+                InlineUniformBlock = inlineUniformBlock.Value;
+            }
+
+            if (descriptorBindingInlineUniformBlockUpdateAfterBind is not null)
+            {
+                DescriptorBindingInlineUniformBlockUpdateAfterBind = descriptorBindingInlineUniformBlockUpdateAfterBind.Value;
+            }
         }
 
 /// <summary></summary>

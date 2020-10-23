@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public SampleLocationEXT
         (
-            float x = default,
-            float y = default
+            float? x = null,
+            float? y = null
         )
         {
-            X = x;
-            Y = y;
+            fixed (SampleLocationEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DevicePrivateDataCreateInfoEXT
         (
-            StructureType sType = StructureType.DevicePrivateDataCreateInfoExt,
-            void* pNext = default,
-            uint privateDataSlotRequestCount = default
+            StructureType? sType = StructureType.DevicePrivateDataCreateInfoExt,
+            void* pNext = null,
+            uint? privateDataSlotRequestCount = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PrivateDataSlotRequestCount = privateDataSlotRequestCount;
+            fixed (DevicePrivateDataCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (privateDataSlotRequestCount is not null)
+            {
+                PrivateDataSlotRequestCount = privateDataSlotRequestCount.Value;
+            }
         }
 
 /// <summary></summary>

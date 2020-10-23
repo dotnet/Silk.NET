@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public VulkanSwapchainFormatListCreateInfoKHR
         (
-            StructureType type = StructureType.TypeVulkanSwapchainFormatListCreateInfoKhr,
-            void* next = default,
-            uint viewFormatCount = default,
-            uint* viewFormats = default
+            StructureType? type = StructureType.TypeVulkanSwapchainFormatListCreateInfoKhr,
+            void* next = null,
+            uint? viewFormatCount = null,
+            uint* viewFormats = null
         )
         {
-            Type = type;
-            Next = next;
-            ViewFormatCount = viewFormatCount;
-            ViewFormats = viewFormats;
+            fixed (VulkanSwapchainFormatListCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewFormatCount is not null)
+            {
+                ViewFormatCount = viewFormatCount.Value;
+            }
+
+            if (viewFormats is not null)
+            {
+                ViewFormats = viewFormats;
+            }
         }
 
 /// <summary></summary>

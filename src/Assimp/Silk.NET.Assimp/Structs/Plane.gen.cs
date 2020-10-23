@@ -21,16 +21,36 @@ namespace Silk.NET.Assimp
     {
         public Plane
         (
-            float a = default,
-            float b = default,
-            float c = default,
-            float d = default
+            float? a = null,
+            float? b = null,
+            float? c = null,
+            float? d = null
         )
         {
-            A = a;
-            B = b;
-            C = c;
-            D = d;
+            fixed (Plane* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (c is not null)
+            {
+                C = c.Value;
+            }
+
+            if (d is not null)
+            {
+                D = d.Value;
+            }
         }
 
 

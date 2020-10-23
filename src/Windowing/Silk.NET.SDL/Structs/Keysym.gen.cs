@@ -21,16 +21,36 @@ namespace Silk.NET.SDL
     {
         public Keysym
         (
-            Scancode scancode = default,
-            int sym = default,
-            ushort mod = default,
-            uint unused = default
+            Scancode? scancode = null,
+            int? sym = null,
+            ushort? mod = null,
+            uint? unused = null
         )
         {
-            Scancode = scancode;
-            Sym = sym;
-            Mod = mod;
-            Unused = unused;
+            fixed (Keysym* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (scancode is not null)
+            {
+                Scancode = scancode.Value;
+            }
+
+            if (sym is not null)
+            {
+                Sym = sym.Value;
+            }
+
+            if (mod is not null)
+            {
+                Mod = mod.Value;
+            }
+
+            if (unused is not null)
+            {
+                Unused = unused.Value;
+            }
         }
 
 

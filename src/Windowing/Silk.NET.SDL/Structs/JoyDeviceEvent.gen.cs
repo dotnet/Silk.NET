@@ -21,14 +21,30 @@ namespace Silk.NET.SDL
     {
         public JoyDeviceEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            int which = default
+            uint? type = null,
+            uint? timestamp = null,
+            int? which = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            Which = which;
+            fixed (JoyDeviceEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
         }
 
 

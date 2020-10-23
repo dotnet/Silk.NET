@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineVertexInputDivisorStateCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineVertexInputDivisorStateCreateInfoExt,
-            void* pNext = default,
-            uint vertexBindingDivisorCount = default,
-            VertexInputBindingDivisorDescriptionEXT* pVertexBindingDivisors = default
+            StructureType? sType = StructureType.PipelineVertexInputDivisorStateCreateInfoExt,
+            void* pNext = null,
+            uint? vertexBindingDivisorCount = null,
+            VertexInputBindingDivisorDescriptionEXT* pVertexBindingDivisors = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            VertexBindingDivisorCount = vertexBindingDivisorCount;
-            PVertexBindingDivisors = pVertexBindingDivisors;
+            fixed (PipelineVertexInputDivisorStateCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (vertexBindingDivisorCount is not null)
+            {
+                VertexBindingDivisorCount = vertexBindingDivisorCount.Value;
+            }
+
+            if (pVertexBindingDivisors is not null)
+            {
+                PVertexBindingDivisors = pVertexBindingDivisors;
+            }
         }
 
 /// <summary></summary>

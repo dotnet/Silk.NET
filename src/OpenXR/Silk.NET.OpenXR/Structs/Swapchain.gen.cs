@@ -21,10 +21,18 @@ namespace Silk.NET.OpenXR
     {
         public Swapchain
         (
-            ulong handle = default
+            ulong? handle = null
         )
         {
-            Handle = handle;
+            fixed (Swapchain* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 

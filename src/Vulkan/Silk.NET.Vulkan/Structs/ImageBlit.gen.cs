@@ -21,16 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public ImageBlit
         (
-            ImageSubresourceLayers srcSubresource = default,
-            ImageSubresourceLayers dstSubresource = default
+            ImageSubresourceLayers? srcSubresource = null,
+            ImageSubresourceLayers? dstSubresource = null
         )
         {
-            SrcSubresource = srcSubresource;
-           SrcOffsets_0 = default;
-           SrcOffsets_1 = default;
-            DstSubresource = dstSubresource;
-           DstOffsets_0 = default;
-           DstOffsets_1 = default;
+            fixed (ImageBlit* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (srcSubresource is not null)
+            {
+                SrcSubresource = srcSubresource.Value;
+            }
+
+            if (dstSubresource is not null)
+            {
+                DstSubresource = dstSubresource.Value;
+            }
         }
 
 /// <summary></summary>

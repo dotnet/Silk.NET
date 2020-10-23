@@ -21,30 +21,78 @@ namespace Silk.NET.Vulkan
     {
         public RayTracingPipelineCreateInfoNV
         (
-            StructureType sType = StructureType.RayTracingPipelineCreateInfoNV,
-            void* pNext = default,
-            PipelineCreateFlags flags = default,
-            uint stageCount = default,
-            PipelineShaderStageCreateInfo* pStages = default,
-            uint groupCount = default,
-            RayTracingShaderGroupCreateInfoNV* pGroups = default,
-            uint maxRecursionDepth = default,
-            PipelineLayout layout = default,
-            Pipeline basePipelineHandle = default,
-            int basePipelineIndex = default
+            StructureType? sType = StructureType.RayTracingPipelineCreateInfoNV,
+            void* pNext = null,
+            PipelineCreateFlags? flags = null,
+            uint? stageCount = null,
+            PipelineShaderStageCreateInfo* pStages = null,
+            uint? groupCount = null,
+            RayTracingShaderGroupCreateInfoNV* pGroups = null,
+            uint? maxRecursionDepth = null,
+            PipelineLayout? layout = null,
+            Pipeline? basePipelineHandle = null,
+            int? basePipelineIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            StageCount = stageCount;
-            PStages = pStages;
-            GroupCount = groupCount;
-            PGroups = pGroups;
-            MaxRecursionDepth = maxRecursionDepth;
-            Layout = layout;
-            BasePipelineHandle = basePipelineHandle;
-            BasePipelineIndex = basePipelineIndex;
+            fixed (RayTracingPipelineCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (stageCount is not null)
+            {
+                StageCount = stageCount.Value;
+            }
+
+            if (pStages is not null)
+            {
+                PStages = pStages;
+            }
+
+            if (groupCount is not null)
+            {
+                GroupCount = groupCount.Value;
+            }
+
+            if (pGroups is not null)
+            {
+                PGroups = pGroups;
+            }
+
+            if (maxRecursionDepth is not null)
+            {
+                MaxRecursionDepth = maxRecursionDepth.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (basePipelineHandle is not null)
+            {
+                BasePipelineHandle = basePipelineHandle.Value;
+            }
+
+            if (basePipelineIndex is not null)
+            {
+                BasePipelineIndex = basePipelineIndex.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewHandleInfoNVX
         (
-            StructureType sType = StructureType.ImageViewHandleInfoNvx,
-            void* pNext = default,
-            ImageView imageView = default,
-            DescriptorType descriptorType = default,
-            Sampler sampler = default
+            StructureType? sType = StructureType.ImageViewHandleInfoNvx,
+            void* pNext = null,
+            ImageView? imageView = null,
+            DescriptorType? descriptorType = null,
+            Sampler? sampler = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ImageView = imageView;
-            DescriptorType = descriptorType;
-            Sampler = sampler;
+            fixed (ImageViewHandleInfoNVX* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageView is not null)
+            {
+                ImageView = imageView.Value;
+            }
+
+            if (descriptorType is not null)
+            {
+                DescriptorType = descriptorType.Value;
+            }
+
+            if (sampler is not null)
+            {
+                Sampler = sampler.Value;
+            }
         }
 
 /// <summary></summary>

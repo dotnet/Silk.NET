@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceValueINTEL
         (
-            PerformanceValueTypeINTEL type = default,
-            PerformanceValueDataINTEL data = default
+            PerformanceValueTypeINTEL? type = null,
+            PerformanceValueDataINTEL? data = null
         )
         {
-            Type = type;
-            Data = data;
+            fixed (PerformanceValueINTEL* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (data is not null)
+            {
+                Data = data.Value;
+            }
         }
 
 /// <summary></summary>

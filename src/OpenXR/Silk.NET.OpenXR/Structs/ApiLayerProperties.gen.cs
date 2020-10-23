@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public ApiLayerProperties
         (
-            StructureType type = StructureType.TypeApiLayerProperties,
-            void* next = default,
-            ulong specVersion = default,
-            uint layerVersion = default
+            StructureType? type = StructureType.TypeApiLayerProperties,
+            void* next = null,
+            ulong? specVersion = null,
+            uint? layerVersion = null
         )
         {
-            Type = type;
-            Next = next;
-            SpecVersion = specVersion;
-            LayerVersion = layerVersion;
+            fixed (ApiLayerProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (specVersion is not null)
+            {
+                SpecVersion = specVersion.Value;
+            }
+
+            if (layerVersion is not null)
+            {
+                LayerVersion = layerVersion.Value;
+            }
         }
 
 /// <summary></summary>

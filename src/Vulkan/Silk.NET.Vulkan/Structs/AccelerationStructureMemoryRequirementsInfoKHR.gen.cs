@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureMemoryRequirementsInfoKHR
         (
-            StructureType sType = StructureType.AccelerationStructureMemoryRequirementsInfoKhr,
-            void* pNext = default,
-            AccelerationStructureMemoryRequirementsTypeKHR type = default,
-            AccelerationStructureBuildTypeKHR buildType = default,
-            AccelerationStructureKHR accelerationStructure = default
+            StructureType? sType = StructureType.AccelerationStructureMemoryRequirementsInfoKhr,
+            void* pNext = null,
+            AccelerationStructureMemoryRequirementsTypeKHR? type = null,
+            AccelerationStructureBuildTypeKHR? buildType = null,
+            AccelerationStructureKHR? accelerationStructure = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
-            BuildType = buildType;
-            AccelerationStructure = accelerationStructure;
+            fixed (AccelerationStructureMemoryRequirementsInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (buildType is not null)
+            {
+                BuildType = buildType.Value;
+            }
+
+            if (accelerationStructure is not null)
+            {
+                AccelerationStructure = accelerationStructure.Value;
+            }
         }
 
 /// <summary></summary>

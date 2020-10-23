@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ClearRect
         (
-            Rect2D rect = default,
-            uint baseArrayLayer = default,
-            uint layerCount = default
+            Rect2D? rect = null,
+            uint? baseArrayLayer = null,
+            uint? layerCount = null
         )
         {
-            Rect = rect;
-            BaseArrayLayer = baseArrayLayer;
-            LayerCount = layerCount;
+            fixed (ClearRect* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (rect is not null)
+            {
+                Rect = rect.Value;
+            }
+
+            if (baseArrayLayer is not null)
+            {
+                BaseArrayLayer = baseArrayLayer.Value;
+            }
+
+            if (layerCount is not null)
+            {
+                LayerCount = layerCount.Value;
+            }
         }
 
 /// <summary></summary>

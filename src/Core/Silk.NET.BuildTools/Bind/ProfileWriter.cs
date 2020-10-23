@@ -140,43 +140,30 @@ namespace Silk.NET.BuildTools.Bind
                         first = false;
                     }
 
-                    sw.Write($"            {field.Type} {argName} = {field.DefaultAssignment ?? "default"}");
+                    var nullable = field.Type.ToString().Contains('*') ? null : "?";
+                    sw.Write($"            {field.Type}{nullable} {argName} = {field.DefaultAssignment ?? "null"}");
                 }
 
                 sw.WriteLine();
                 sw.WriteLine("        )");
                 sw.WriteLine("        {");
+                sw.WriteLine($"            fixed ({@struct.Name}* @this = &this)");
+                sw.WriteLine("            {");
+                sw.WriteLine("                // all fields automatically initialized here");
+                sw.WriteLine("            }");
                 foreach (var field in @struct.Fields)
                 {
                     if (!(field.Count is null))
-                    {
-                        if (!Field.FixedCapableTypes.Contains(field.Type.Name))
-                        {
-                            var count = field.Count.IsConstant
-                                ? int.Parse
-                                (
-                                    profile.Projects.SelectMany(x => x.Value.Classes.SelectMany(y => y.Constants))
-                                        .FirstOrDefault(x => x.NativeName == field.Count.ConstantName)
-                                        ?.Value ?? throw new InvalidDataException("Couldn't find constant referenced")
-                                )
-                                : field.Count.IsStatic
-                                    ? field.Count.StaticCount
-                                    : 1;
-                            for (var i = 0; i < count; i++)
-                            {
-                                sw.WriteLine
-                                (
-                                    $"           {field.Name}_{i} = default;"
-                                );
-                            }
-                        }
-
-                        continue;
-                    }
-
+                        continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
                     argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
-                    sw.WriteLine($"            {field.Name} = {argName};");
+                    sw.WriteLine();
+                    sw.WriteLine($"            if ({argName} is not null)");
+                    sw.WriteLine("            {");
+
+                    var value = field.Type.ToString().Contains('*') ? null : ".Value";
+                    sw.WriteLine($"                {field.Name} = {argName}{value};");
+                    sw.WriteLine("            }");
                 }
 
                 sw.WriteLine("        }");
@@ -230,9 +217,11 @@ namespace Silk.NET.BuildTools.Bind
                             ? int.Parse
                             (
                                 profile.Projects.SelectMany(x => x.Value.Classes.SelectMany(y => y.Constants))
-                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
-                                    ?
-                                    .Value?? throw new InvalidDataException("Couldn't find constant referenced")
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .Value ??
+                                profile.Projects.SelectMany(x => x.Value.Enums.SelectMany(y => y.Tokens))
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .Value ?? throw new InvalidDataException("Couldn't find constant referenced")
                             )
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount

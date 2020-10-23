@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public HandPoseTypeInfoMSFT
         (
-            StructureType type = StructureType.TypeHandPoseTypeInfoMsft,
-            void* next = default,
-            HandPoseTypeMSFT handPoseType = default
+            StructureType? type = StructureType.TypeHandPoseTypeInfoMsft,
+            void* next = null,
+            HandPoseTypeMSFT? handPoseType = null
         )
         {
-            Type = type;
-            Next = next;
-            HandPoseType = handPoseType;
+            fixed (HandPoseTypeInfoMSFT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (handPoseType is not null)
+            {
+                HandPoseType = handPoseType.Value;
+            }
         }
 
 /// <summary></summary>

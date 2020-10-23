@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PipelineViewportCoarseSampleOrderStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineViewportCoarseSampleOrderStateCreateInfoNV,
-            void* pNext = default,
-            CoarseSampleOrderTypeNV sampleOrderType = default,
-            uint customSampleOrderCount = default,
-            CoarseSampleOrderCustomNV* pCustomSampleOrders = default
+            StructureType? sType = StructureType.PipelineViewportCoarseSampleOrderStateCreateInfoNV,
+            void* pNext = null,
+            CoarseSampleOrderTypeNV? sampleOrderType = null,
+            uint? customSampleOrderCount = null,
+            CoarseSampleOrderCustomNV* pCustomSampleOrders = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SampleOrderType = sampleOrderType;
-            CustomSampleOrderCount = customSampleOrderCount;
-            PCustomSampleOrders = pCustomSampleOrders;
+            fixed (PipelineViewportCoarseSampleOrderStateCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sampleOrderType is not null)
+            {
+                SampleOrderType = sampleOrderType.Value;
+            }
+
+            if (customSampleOrderCount is not null)
+            {
+                CustomSampleOrderCount = customSampleOrderCount.Value;
+            }
+
+            if (pCustomSampleOrders is not null)
+            {
+                PCustomSampleOrders = pCustomSampleOrders;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public SpecializationInfo
         (
-            uint mapEntryCount = default,
-            SpecializationMapEntry* pMapEntries = default,
-            UIntPtr dataSize = default,
-            void* pData = default
+            uint? mapEntryCount = null,
+            SpecializationMapEntry* pMapEntries = null,
+            UIntPtr? dataSize = null,
+            void* pData = null
         )
         {
-            MapEntryCount = mapEntryCount;
-            PMapEntries = pMapEntries;
-            DataSize = dataSize;
-            PData = pData;
+            fixed (SpecializationInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mapEntryCount is not null)
+            {
+                MapEntryCount = mapEntryCount.Value;
+            }
+
+            if (pMapEntries is not null)
+            {
+                PMapEntries = pMapEntries;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (pData is not null)
+            {
+                PData = pData;
+            }
         }
 
 /// <summary></summary>

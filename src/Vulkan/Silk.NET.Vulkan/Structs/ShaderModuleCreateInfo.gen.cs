@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public ShaderModuleCreateInfo
         (
-            StructureType sType = StructureType.ShaderModuleCreateInfo,
-            void* pNext = default,
-            ShaderModuleCreateFlags flags = default,
-            UIntPtr codeSize = default,
-            uint* pCode = default
+            StructureType? sType = StructureType.ShaderModuleCreateInfo,
+            void* pNext = null,
+            ShaderModuleCreateFlags? flags = null,
+            UIntPtr? codeSize = null,
+            uint* pCode = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            CodeSize = codeSize;
-            PCode = pCode;
+            fixed (ShaderModuleCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (codeSize is not null)
+            {
+                CodeSize = codeSize.Value;
+            }
+
+            if (pCode is not null)
+            {
+                PCode = pCode;
+            }
         }
 
 /// <summary></summary>

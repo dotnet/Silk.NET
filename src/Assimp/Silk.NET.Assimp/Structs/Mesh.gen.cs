@@ -21,56 +21,108 @@ namespace Silk.NET.Assimp
     {
         public Mesh
         (
-            uint mPrimitiveTypes = default,
-            uint mNumVertices = default,
-            uint mNumFaces = default,
-            System.Numerics.Vector3* mVertices = default,
-            System.Numerics.Vector3* mNormals = default,
-            System.Numerics.Vector3* mTangents = default,
-            System.Numerics.Vector3* mBitangents = default,
-            Face* mFaces = default,
-            uint mNumBones = default,
-            Bone** mBones = default,
-            uint mMaterialIndex = default,
-            AssimpString mName = default,
-            uint mNumAnimMeshes = default,
-            AnimMesh** mAnimMeshes = default,
-            uint mMethod = default,
-            AABB mAABB = default
+            uint? mPrimitiveTypes = null,
+            uint? mNumVertices = null,
+            uint? mNumFaces = null,
+            System.Numerics.Vector3* mVertices = null,
+            System.Numerics.Vector3* mNormals = null,
+            System.Numerics.Vector3* mTangents = null,
+            System.Numerics.Vector3* mBitangents = null,
+            Face* mFaces = null,
+            uint? mNumBones = null,
+            Bone** mBones = null,
+            uint? mMaterialIndex = null,
+            AssimpString? mName = null,
+            uint? mNumAnimMeshes = null,
+            AnimMesh** mAnimMeshes = null,
+            uint? mMethod = null,
+            AABB? mAABB = null
         )
         {
-            MPrimitiveTypes = mPrimitiveTypes;
-            MNumVertices = mNumVertices;
-            MNumFaces = mNumFaces;
-            MVertices = mVertices;
-            MNormals = mNormals;
-            MTangents = mTangents;
-            MBitangents = mBitangents;
-           MColors_0 = default;
-           MColors_1 = default;
-           MColors_2 = default;
-           MColors_3 = default;
-           MColors_4 = default;
-           MColors_5 = default;
-           MColors_6 = default;
-           MColors_7 = default;
-           MTextureCoords_0 = default;
-           MTextureCoords_1 = default;
-           MTextureCoords_2 = default;
-           MTextureCoords_3 = default;
-           MTextureCoords_4 = default;
-           MTextureCoords_5 = default;
-           MTextureCoords_6 = default;
-           MTextureCoords_7 = default;
-            MFaces = mFaces;
-            MNumBones = mNumBones;
-            MBones = mBones;
-            MMaterialIndex = mMaterialIndex;
-            MName = mName;
-            MNumAnimMeshes = mNumAnimMeshes;
-            MAnimMeshes = mAnimMeshes;
-            MMethod = mMethod;
-            MAABB = mAABB;
+            fixed (Mesh* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mPrimitiveTypes is not null)
+            {
+                MPrimitiveTypes = mPrimitiveTypes.Value;
+            }
+
+            if (mNumVertices is not null)
+            {
+                MNumVertices = mNumVertices.Value;
+            }
+
+            if (mNumFaces is not null)
+            {
+                MNumFaces = mNumFaces.Value;
+            }
+
+            if (mVertices is not null)
+            {
+                MVertices = mVertices;
+            }
+
+            if (mNormals is not null)
+            {
+                MNormals = mNormals;
+            }
+
+            if (mTangents is not null)
+            {
+                MTangents = mTangents;
+            }
+
+            if (mBitangents is not null)
+            {
+                MBitangents = mBitangents;
+            }
+
+            if (mFaces is not null)
+            {
+                MFaces = mFaces;
+            }
+
+            if (mNumBones is not null)
+            {
+                MNumBones = mNumBones.Value;
+            }
+
+            if (mBones is not null)
+            {
+                MBones = mBones;
+            }
+
+            if (mMaterialIndex is not null)
+            {
+                MMaterialIndex = mMaterialIndex.Value;
+            }
+
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mNumAnimMeshes is not null)
+            {
+                MNumAnimMeshes = mNumAnimMeshes.Value;
+            }
+
+            if (mAnimMeshes is not null)
+            {
+                MAnimMeshes = mAnimMeshes;
+            }
+
+            if (mMethod is not null)
+            {
+                MMethod = mMethod.Value;
+            }
+
+            if (mAABB is not null)
+            {
+                MAABB = mAABB.Value;
+            }
         }
 
 

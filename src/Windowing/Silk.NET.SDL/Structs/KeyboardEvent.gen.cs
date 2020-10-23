@@ -21,24 +21,60 @@ namespace Silk.NET.SDL
     {
         public KeyboardEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint windowID = default,
-            byte state = default,
-            byte repeat = default,
-            byte padding2 = default,
-            byte padding3 = default,
-            Keysym keysym = default
+            uint? type = null,
+            uint? timestamp = null,
+            uint? windowID = null,
+            byte? state = null,
+            byte? repeat = null,
+            byte? padding2 = null,
+            byte? padding3 = null,
+            Keysym? keysym = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            WindowID = windowID;
-            State = state;
-            Repeat = repeat;
-            Padding2 = padding2;
-            Padding3 = padding3;
-            Keysym = keysym;
+            fixed (KeyboardEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
+
+            if (state is not null)
+            {
+                State = state.Value;
+            }
+
+            if (repeat is not null)
+            {
+                Repeat = repeat.Value;
+            }
+
+            if (padding2 is not null)
+            {
+                Padding2 = padding2.Value;
+            }
+
+            if (padding3 is not null)
+            {
+                Padding3 = padding3.Value;
+            }
+
+            if (keysym is not null)
+            {
+                Keysym = keysym.Value;
+            }
         }
 
 

@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DisplayPresentInfoKHR
         (
-            StructureType sType = StructureType.DisplayPresentInfoKhr,
-            void* pNext = default,
-            Rect2D srcRect = default,
-            Rect2D dstRect = default,
-            Bool32 persistent = default
+            StructureType? sType = StructureType.DisplayPresentInfoKhr,
+            void* pNext = null,
+            Rect2D? srcRect = null,
+            Rect2D? dstRect = null,
+            Bool32? persistent = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SrcRect = srcRect;
-            DstRect = dstRect;
-            Persistent = persistent;
+            fixed (DisplayPresentInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (srcRect is not null)
+            {
+                SrcRect = srcRect.Value;
+            }
+
+            if (dstRect is not null)
+            {
+                DstRect = dstRect.Value;
+            }
+
+            if (persistent is not null)
+            {
+                Persistent = persistent.Value;
+            }
         }
 
 /// <summary></summary>

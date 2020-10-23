@@ -21,16 +21,36 @@ namespace Silk.NET.SDL
     {
         public Palette
         (
-            int ncolors = default,
-            Color* colors = default,
-            uint version = default,
-            int refcount = default
+            int? ncolors = null,
+            Color* colors = null,
+            uint? version = null,
+            int? refcount = null
         )
         {
-            Ncolors = ncolors;
-            Colors = colors;
-            Version = version;
-            Refcount = refcount;
+            fixed (Palette* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (ncolors is not null)
+            {
+                Ncolors = ncolors.Value;
+            }
+
+            if (colors is not null)
+            {
+                Colors = colors;
+            }
+
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
+
+            if (refcount is not null)
+            {
+                Refcount = refcount.Value;
+            }
         }
 
 

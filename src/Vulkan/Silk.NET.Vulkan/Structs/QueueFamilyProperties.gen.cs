@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public QueueFamilyProperties
         (
-            QueueFlags queueFlags = default,
-            uint queueCount = default,
-            uint timestampValidBits = default,
-            Extent3D minImageTransferGranularity = default
+            QueueFlags? queueFlags = null,
+            uint? queueCount = null,
+            uint? timestampValidBits = null,
+            Extent3D? minImageTransferGranularity = null
         )
         {
-            QueueFlags = queueFlags;
-            QueueCount = queueCount;
-            TimestampValidBits = timestampValidBits;
-            MinImageTransferGranularity = minImageTransferGranularity;
+            fixed (QueueFamilyProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (queueFlags is not null)
+            {
+                QueueFlags = queueFlags.Value;
+            }
+
+            if (queueCount is not null)
+            {
+                QueueCount = queueCount.Value;
+            }
+
+            if (timestampValidBits is not null)
+            {
+                TimestampValidBits = timestampValidBits.Value;
+            }
+
+            if (minImageTransferGranularity is not null)
+            {
+                MinImageTransferGranularity = minImageTransferGranularity.Value;
+            }
         }
 
 /// <summary></summary>

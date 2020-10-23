@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ImportAndroidHardwareBufferInfoANDROID
         (
-            StructureType sType = StructureType.ImportAndroidHardwareBufferInfoAndroid,
-            void* pNext = default,
-            IntPtr* buffer = default
+            StructureType? sType = StructureType.ImportAndroidHardwareBufferInfoAndroid,
+            void* pNext = null,
+            IntPtr* buffer = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Buffer = buffer;
+            fixed (ImportAndroidHardwareBufferInfoANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer;
+            }
         }
 
 /// <summary></summary>

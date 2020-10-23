@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMultiviewFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceMultiviewFeatures,
-            void* pNext = default,
-            Bool32 multiview = default,
-            Bool32 multiviewGeometryShader = default,
-            Bool32 multiviewTessellationShader = default
+            StructureType? sType = StructureType.PhysicalDeviceMultiviewFeatures,
+            void* pNext = null,
+            Bool32? multiview = null,
+            Bool32? multiviewGeometryShader = null,
+            Bool32? multiviewTessellationShader = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Multiview = multiview;
-            MultiviewGeometryShader = multiviewGeometryShader;
-            MultiviewTessellationShader = multiviewTessellationShader;
+            fixed (PhysicalDeviceMultiviewFeatures* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (multiview is not null)
+            {
+                Multiview = multiview.Value;
+            }
+
+            if (multiviewGeometryShader is not null)
+            {
+                MultiviewGeometryShader = multiviewGeometryShader.Value;
+            }
+
+            if (multiviewTessellationShader is not null)
+            {
+                MultiviewTessellationShader = multiviewTessellationShader.Value;
+            }
         }
 
 /// <summary></summary>

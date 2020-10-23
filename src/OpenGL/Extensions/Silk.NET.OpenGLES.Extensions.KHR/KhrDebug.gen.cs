@@ -2504,10 +2504,10 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         public partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string label) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetPointervKHR")]
-        public unsafe partial void GetPointer([Flow(FlowDirection.In)] KHR pname, [Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetPointer([Flow(FlowDirection.In)] KHR pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetPointervKHR")]
-        public unsafe partial void GetPointer([Flow(FlowDirection.In)] KHR pname, [Flow(FlowDirection.Out)] out void* @params);
+        public unsafe partial void GetPointer([Flow(FlowDirection.In)] KHR pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glObjectLabelKHR")]
         public unsafe partial void ObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* label);

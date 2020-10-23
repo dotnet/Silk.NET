@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentDescriptionStencilLayout
         (
-            StructureType sType = StructureType.AttachmentDescriptionStencilLayout,
-            void* pNext = default,
-            ImageLayout stencilInitialLayout = default,
-            ImageLayout stencilFinalLayout = default
+            StructureType? sType = StructureType.AttachmentDescriptionStencilLayout,
+            void* pNext = null,
+            ImageLayout? stencilInitialLayout = null,
+            ImageLayout? stencilFinalLayout = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            StencilInitialLayout = stencilInitialLayout;
-            StencilFinalLayout = stencilFinalLayout;
+            fixed (AttachmentDescriptionStencilLayout* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stencilInitialLayout is not null)
+            {
+                StencilInitialLayout = stencilInitialLayout.Value;
+            }
+
+            if (stencilFinalLayout is not null)
+            {
+                StencilFinalLayout = stencilFinalLayout.Value;
+            }
         }
 
 /// <summary></summary>

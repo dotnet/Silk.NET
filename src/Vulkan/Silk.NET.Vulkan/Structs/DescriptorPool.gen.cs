@@ -21,10 +21,18 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorPool
         (
-            ulong handle = default
+            ulong? handle = null
         )
         {
-            Handle = handle;
+            fixed (DescriptorPool* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 

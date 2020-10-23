@@ -21,12 +21,24 @@ namespace Silk.NET.OpenCL
     {
         public MemExtHostPtr
         (
-            uint allocationType = default,
-            uint hostCachePolicy = default
+            uint? allocationType = null,
+            uint? hostCachePolicy = null
         )
         {
-            AllocationType = allocationType;
-            HostCachePolicy = hostCachePolicy;
+            fixed (MemExtHostPtr* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (allocationType is not null)
+            {
+                AllocationType = allocationType.Value;
+            }
+
+            if (hostCachePolicy is not null)
+            {
+                HostCachePolicy = hostCachePolicy.Value;
+            }
         }
 
 /// <summary></summary>

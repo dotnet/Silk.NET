@@ -368,6 +368,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         CommandReleaseDX9ObjectsIntel = 0x402B,
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
         EglYuvPlaneIntel = 0x4107,
+        [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
+        MemChannelIntel = 0x4213,
+        [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
+        MemForceHostMemoryIntel = 0x1048576,
         [NativeName("Name", "CL_ACCELERATOR_TYPE_MOTION_ESTIMATION_INTEL")]
         AcceleratorTypeMotionEstimationIntel = 0x0,
         [NativeName("Name", "CL_ME_SUBPIXEL_MODE_INTEGER_INTEL")]

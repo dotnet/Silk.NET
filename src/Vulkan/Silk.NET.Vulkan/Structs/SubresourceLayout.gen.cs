@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public SubresourceLayout
         (
-            ulong offset = default,
-            ulong size = default,
-            ulong rowPitch = default,
-            ulong arrayPitch = default,
-            ulong depthPitch = default
+            ulong? offset = null,
+            ulong? size = null,
+            ulong? rowPitch = null,
+            ulong? arrayPitch = null,
+            ulong? depthPitch = null
         )
         {
-            Offset = offset;
-            Size = size;
-            RowPitch = rowPitch;
-            ArrayPitch = arrayPitch;
-            DepthPitch = depthPitch;
+            fixed (SubresourceLayout* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (rowPitch is not null)
+            {
+                RowPitch = rowPitch.Value;
+            }
+
+            if (arrayPitch is not null)
+            {
+                ArrayPitch = arrayPitch.Value;
+            }
+
+            if (depthPitch is not null)
+            {
+                DepthPitch = depthPitch.Value;
+            }
         }
 
 /// <summary></summary>

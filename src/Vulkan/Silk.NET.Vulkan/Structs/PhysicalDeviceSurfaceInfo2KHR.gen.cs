@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSurfaceInfo2KHR
         (
-            StructureType sType = StructureType.PhysicalDeviceSurfaceInfo2Khr,
-            void* pNext = default,
-            SurfaceKHR surface = default
+            StructureType? sType = StructureType.PhysicalDeviceSurfaceInfo2Khr,
+            void* pNext = null,
+            SurfaceKHR? surface = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Surface = surface;
+            fixed (PhysicalDeviceSurfaceInfo2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surface is not null)
+            {
+                Surface = surface.Value;
+            }
         }
 
 /// <summary></summary>

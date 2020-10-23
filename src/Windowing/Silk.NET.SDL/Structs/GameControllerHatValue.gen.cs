@@ -21,12 +21,24 @@ namespace Silk.NET.SDL
     {
         public GameControllerHatValue
         (
-            int hat = default,
-            int hatMask = default
+            int? hat = null,
+            int? hatMask = null
         )
         {
-            Hat = hat;
-            HatMask = hatMask;
+            fixed (GameControllerHatValue* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (hat is not null)
+            {
+                Hat = hat.Value;
+            }
+
+            if (hatMask is not null)
+            {
+                HatMask = hatMask.Value;
+            }
         }
 
 

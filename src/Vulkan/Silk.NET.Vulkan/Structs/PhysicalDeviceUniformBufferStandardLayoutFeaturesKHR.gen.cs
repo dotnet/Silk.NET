@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceUniformBufferStandardLayoutFeatures,
-            void* pNext = default,
-            Bool32 uniformBufferStandardLayout = default
+            StructureType? sType = StructureType.PhysicalDeviceUniformBufferStandardLayoutFeatures,
+            void* pNext = null,
+            Bool32? uniformBufferStandardLayout = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            UniformBufferStandardLayout = uniformBufferStandardLayout;
+            fixed (PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (uniformBufferStandardLayout is not null)
+            {
+                UniformBufferStandardLayout = uniformBufferStandardLayout.Value;
+            }
         }
 
 /// <summary></summary>

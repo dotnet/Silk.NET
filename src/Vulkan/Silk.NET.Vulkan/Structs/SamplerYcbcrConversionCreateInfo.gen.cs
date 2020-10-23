@@ -21,28 +21,72 @@ namespace Silk.NET.Vulkan
     {
         public SamplerYcbcrConversionCreateInfo
         (
-            StructureType sType = StructureType.SamplerYcbcrConversionCreateInfo,
-            void* pNext = default,
-            Format format = default,
-            SamplerYcbcrModelConversion ycbcrModel = default,
-            SamplerYcbcrRange ycbcrRange = default,
-            ComponentMapping components = default,
-            ChromaLocation xChromaOffset = default,
-            ChromaLocation yChromaOffset = default,
-            Filter chromaFilter = default,
-            Bool32 forceExplicitReconstruction = default
+            StructureType? sType = StructureType.SamplerYcbcrConversionCreateInfo,
+            void* pNext = null,
+            Format? format = null,
+            SamplerYcbcrModelConversion? ycbcrModel = null,
+            SamplerYcbcrRange? ycbcrRange = null,
+            ComponentMapping? components = null,
+            ChromaLocation? xChromaOffset = null,
+            ChromaLocation? yChromaOffset = null,
+            Filter? chromaFilter = null,
+            Bool32? forceExplicitReconstruction = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Format = format;
-            YcbcrModel = ycbcrModel;
-            YcbcrRange = ycbcrRange;
-            Components = components;
-            XChromaOffset = xChromaOffset;
-            YChromaOffset = yChromaOffset;
-            ChromaFilter = chromaFilter;
-            ForceExplicitReconstruction = forceExplicitReconstruction;
+            fixed (SamplerYcbcrConversionCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (ycbcrModel is not null)
+            {
+                YcbcrModel = ycbcrModel.Value;
+            }
+
+            if (ycbcrRange is not null)
+            {
+                YcbcrRange = ycbcrRange.Value;
+            }
+
+            if (components is not null)
+            {
+                Components = components.Value;
+            }
+
+            if (xChromaOffset is not null)
+            {
+                XChromaOffset = xChromaOffset.Value;
+            }
+
+            if (yChromaOffset is not null)
+            {
+                YChromaOffset = yChromaOffset.Value;
+            }
+
+            if (chromaFilter is not null)
+            {
+                ChromaFilter = chromaFilter.Value;
+            }
+
+            if (forceExplicitReconstruction is not null)
+            {
+                ForceExplicitReconstruction = forceExplicitReconstruction.Value;
+            }
         }
 
 /// <summary></summary>

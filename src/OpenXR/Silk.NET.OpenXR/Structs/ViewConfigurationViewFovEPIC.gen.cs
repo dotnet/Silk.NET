@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public ViewConfigurationViewFovEPIC
         (
-            StructureType type = StructureType.TypeViewConfigurationViewFovEpic,
-            void* next = default,
-            Fovf recommendedFov = default,
-            Fovf maxMutableFov = default
+            StructureType? type = StructureType.TypeViewConfigurationViewFovEpic,
+            void* next = null,
+            Fovf? recommendedFov = null,
+            Fovf? maxMutableFov = null
         )
         {
-            Type = type;
-            Next = next;
-            RecommendedFov = recommendedFov;
-            MaxMutableFov = maxMutableFov;
+            fixed (ViewConfigurationViewFovEPIC* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (recommendedFov is not null)
+            {
+                RecommendedFov = recommendedFov.Value;
+            }
+
+            if (maxMutableFov is not null)
+            {
+                MaxMutableFov = maxMutableFov.Value;
+            }
         }
 
 /// <summary></summary>

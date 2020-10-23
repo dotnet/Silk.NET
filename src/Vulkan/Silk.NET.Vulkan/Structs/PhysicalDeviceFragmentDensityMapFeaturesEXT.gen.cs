@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFragmentDensityMapFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceFragmentDensityMapFeaturesExt,
-            void* pNext = default,
-            Bool32 fragmentDensityMap = default,
-            Bool32 fragmentDensityMapDynamic = default,
-            Bool32 fragmentDensityMapNonSubsampledImages = default
+            StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMapFeaturesExt,
+            void* pNext = null,
+            Bool32? fragmentDensityMap = null,
+            Bool32? fragmentDensityMapDynamic = null,
+            Bool32? fragmentDensityMapNonSubsampledImages = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FragmentDensityMap = fragmentDensityMap;
-            FragmentDensityMapDynamic = fragmentDensityMapDynamic;
-            FragmentDensityMapNonSubsampledImages = fragmentDensityMapNonSubsampledImages;
+            fixed (PhysicalDeviceFragmentDensityMapFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fragmentDensityMap is not null)
+            {
+                FragmentDensityMap = fragmentDensityMap.Value;
+            }
+
+            if (fragmentDensityMapDynamic is not null)
+            {
+                FragmentDensityMapDynamic = fragmentDensityMapDynamic.Value;
+            }
+
+            if (fragmentDensityMapNonSubsampledImages is not null)
+            {
+                FragmentDensityMapNonSubsampledImages = fragmentDensityMapNonSubsampledImages.Value;
+            }
         }
 
 /// <summary></summary>

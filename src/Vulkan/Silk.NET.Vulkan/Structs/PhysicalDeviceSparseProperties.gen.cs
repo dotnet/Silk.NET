@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSparseProperties
         (
-            Bool32 residencyStandard2DBlockShape = default,
-            Bool32 residencyStandard2DMultisampleBlockShape = default,
-            Bool32 residencyStandard3DBlockShape = default,
-            Bool32 residencyAlignedMipSize = default,
-            Bool32 residencyNonResidentStrict = default
+            Bool32? residencyStandard2DBlockShape = null,
+            Bool32? residencyStandard2DMultisampleBlockShape = null,
+            Bool32? residencyStandard3DBlockShape = null,
+            Bool32? residencyAlignedMipSize = null,
+            Bool32? residencyNonResidentStrict = null
         )
         {
-            ResidencyStandard2DBlockShape = residencyStandard2DBlockShape;
-            ResidencyStandard2DMultisampleBlockShape = residencyStandard2DMultisampleBlockShape;
-            ResidencyStandard3DBlockShape = residencyStandard3DBlockShape;
-            ResidencyAlignedMipSize = residencyAlignedMipSize;
-            ResidencyNonResidentStrict = residencyNonResidentStrict;
+            fixed (PhysicalDeviceSparseProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (residencyStandard2DBlockShape is not null)
+            {
+                ResidencyStandard2DBlockShape = residencyStandard2DBlockShape.Value;
+            }
+
+            if (residencyStandard2DMultisampleBlockShape is not null)
+            {
+                ResidencyStandard2DMultisampleBlockShape = residencyStandard2DMultisampleBlockShape.Value;
+            }
+
+            if (residencyStandard3DBlockShape is not null)
+            {
+                ResidencyStandard3DBlockShape = residencyStandard3DBlockShape.Value;
+            }
+
+            if (residencyAlignedMipSize is not null)
+            {
+                ResidencyAlignedMipSize = residencyAlignedMipSize.Value;
+            }
+
+            if (residencyNonResidentStrict is not null)
+            {
+                ResidencyNonResidentStrict = residencyNonResidentStrict.Value;
+            }
         }
 
 /// <summary></summary>

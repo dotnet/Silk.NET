@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public ViewportWScalingNV
         (
-            float xcoeff = default,
-            float ycoeff = default
+            float? xcoeff = null,
+            float? ycoeff = null
         )
         {
-            Xcoeff = xcoeff;
-            Ycoeff = ycoeff;
+            fixed (ViewportWScalingNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (xcoeff is not null)
+            {
+                Xcoeff = xcoeff.Value;
+            }
+
+            if (ycoeff is not null)
+            {
+                Ycoeff = ycoeff.Value;
+            }
         }
 
 /// <summary></summary>

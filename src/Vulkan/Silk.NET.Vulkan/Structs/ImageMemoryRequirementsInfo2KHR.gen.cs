@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ImageMemoryRequirementsInfo2KHR
         (
-            StructureType sType = StructureType.ImageMemoryRequirementsInfo2,
-            void* pNext = default,
-            Image image = default
+            StructureType? sType = StructureType.ImageMemoryRequirementsInfo2,
+            void* pNext = null,
+            Image? image = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Image = image;
+            fixed (ImageMemoryRequirementsInfo2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
         }
 
 /// <summary></summary>

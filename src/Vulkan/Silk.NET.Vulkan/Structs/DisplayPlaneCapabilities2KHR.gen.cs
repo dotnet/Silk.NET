@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DisplayPlaneCapabilities2KHR
         (
-            StructureType sType = StructureType.DisplayPlaneCapabilities2Khr,
-            void* pNext = default,
-            DisplayPlaneCapabilitiesKHR capabilities = default
+            StructureType? sType = StructureType.DisplayPlaneCapabilities2Khr,
+            void* pNext = null,
+            DisplayPlaneCapabilitiesKHR? capabilities = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Capabilities = capabilities;
+            fixed (DisplayPlaneCapabilities2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (capabilities is not null)
+            {
+                Capabilities = capabilities.Value;
+            }
         }
 
 /// <summary></summary>

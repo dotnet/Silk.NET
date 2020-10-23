@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public AndroidHardwareBufferPropertiesANDROID
         (
-            StructureType sType = StructureType.AndroidHardwareBufferPropertiesAndroid,
-            void* pNext = default,
-            ulong allocationSize = default,
-            uint memoryTypeBits = default
+            StructureType? sType = StructureType.AndroidHardwareBufferPropertiesAndroid,
+            void* pNext = null,
+            ulong? allocationSize = null,
+            uint? memoryTypeBits = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AllocationSize = allocationSize;
-            MemoryTypeBits = memoryTypeBits;
+            fixed (AndroidHardwareBufferPropertiesANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (allocationSize is not null)
+            {
+                AllocationSize = allocationSize.Value;
+            }
+
+            if (memoryTypeBits is not null)
+            {
+                MemoryTypeBits = memoryTypeBits.Value;
+            }
         }
 
 /// <summary></summary>

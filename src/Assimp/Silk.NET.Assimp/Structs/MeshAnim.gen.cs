@@ -21,14 +21,30 @@ namespace Silk.NET.Assimp
     {
         public MeshAnim
         (
-            AssimpString mName = default,
-            uint mNumKeys = default,
-            MeshKey* mKeys = default
+            AssimpString? mName = null,
+            uint? mNumKeys = null,
+            MeshKey* mKeys = null
         )
         {
-            MName = mName;
-            MNumKeys = mNumKeys;
-            MKeys = mKeys;
+            fixed (MeshAnim* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mNumKeys is not null)
+            {
+                MNumKeys = mNumKeys.Value;
+            }
+
+            if (mKeys is not null)
+            {
+                MKeys = mKeys;
+            }
         }
 
 

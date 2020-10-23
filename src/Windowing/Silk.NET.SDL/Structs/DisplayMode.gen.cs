@@ -21,18 +21,42 @@ namespace Silk.NET.SDL
     {
         public DisplayMode
         (
-            uint format = default,
-            int w = default,
-            int h = default,
-            int refreshRate = default,
-            void* driverdata = default
+            uint? format = null,
+            int? w = null,
+            int? h = null,
+            int? refreshRate = null,
+            void* driverdata = null
         )
         {
-            Format = format;
-            W = w;
-            H = h;
-            RefreshRate = refreshRate;
-            Driverdata = driverdata;
+            fixed (DisplayMode* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
+
+            if (h is not null)
+            {
+                H = h.Value;
+            }
+
+            if (refreshRate is not null)
+            {
+                RefreshRate = refreshRate.Value;
+            }
+
+            if (driverdata is not null)
+            {
+                Driverdata = driverdata;
+            }
         }
 
 

@@ -21,16 +21,36 @@ namespace Silk.NET.Assimp
     {
         public Texture
         (
-            uint mWidth = default,
-            uint mHeight = default,
-            Texel* pcData = default,
-            AssimpString mFilename = default
+            uint? mWidth = null,
+            uint? mHeight = null,
+            Texel* pcData = null,
+            AssimpString? mFilename = null
         )
         {
-            MWidth = mWidth;
-            MHeight = mHeight;
-            PcData = pcData;
-            MFilename = mFilename;
+            fixed (Texture* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mWidth is not null)
+            {
+                MWidth = mWidth.Value;
+            }
+
+            if (mHeight is not null)
+            {
+                MHeight = mHeight.Value;
+            }
+
+            if (pcData is not null)
+            {
+                PcData = pcData;
+            }
+
+            if (mFilename is not null)
+            {
+                MFilename = mFilename.Value;
+            }
         }
 
 

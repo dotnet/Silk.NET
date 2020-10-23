@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExternalFenceInfoKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceExternalFenceInfo,
-            void* pNext = default,
-            ExternalFenceHandleTypeFlags handleType = default
+            StructureType? sType = StructureType.PhysicalDeviceExternalFenceInfo,
+            void* pNext = null,
+            ExternalFenceHandleTypeFlags? handleType = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleType = handleType;
+            fixed (PhysicalDeviceExternalFenceInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

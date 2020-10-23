@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PresentFrameTokenGGP
         (
-            StructureType sType = StructureType.PresentFrameTokenGgp,
-            void* pNext = default,
-            IntPtr frameToken = default
+            StructureType? sType = StructureType.PresentFrameTokenGgp,
+            void* pNext = null,
+            IntPtr? frameToken = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FrameToken = frameToken;
+            fixed (PresentFrameTokenGGP* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (frameToken is not null)
+            {
+                FrameToken = frameToken.Value;
+            }
         }
 
 /// <summary></summary>

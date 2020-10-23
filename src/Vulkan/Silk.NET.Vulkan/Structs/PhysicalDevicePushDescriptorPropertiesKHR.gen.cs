@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePushDescriptorPropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePushDescriptorPropertiesKhr,
-            void* pNext = default,
-            uint maxPushDescriptors = default
+            StructureType? sType = StructureType.PhysicalDevicePushDescriptorPropertiesKhr,
+            void* pNext = null,
+            uint? maxPushDescriptors = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxPushDescriptors = maxPushDescriptors;
+            fixed (PhysicalDevicePushDescriptorPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxPushDescriptors is not null)
+            {
+                MaxPushDescriptors = maxPushDescriptors.Value;
+            }
         }
 
 /// <summary></summary>

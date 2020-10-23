@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public SessionCreateInfo
         (
-            StructureType type = StructureType.TypeSessionCreateInfo,
-            void* next = default,
-            SessionCreateFlags createFlags = default,
-            ulong systemId = default
+            StructureType? type = StructureType.TypeSessionCreateInfo,
+            void* next = null,
+            SessionCreateFlags? createFlags = null,
+            ulong? systemId = null
         )
         {
-            Type = type;
-            Next = next;
-            CreateFlags = createFlags;
-            SystemId = systemId;
+            fixed (SessionCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (createFlags is not null)
+            {
+                CreateFlags = createFlags.Value;
+            }
+
+            if (systemId is not null)
+            {
+                SystemId = systemId.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.SDL
     {
         public HapticLeftRight
         (
-            ushort type = default,
-            uint length = default,
-            ushort largeMagnitude = default,
-            ushort smallMagnitude = default
+            ushort? type = null,
+            uint? length = null,
+            ushort? largeMagnitude = null,
+            ushort? smallMagnitude = null
         )
         {
-            Type = type;
-            Length = length;
-            LargeMagnitude = largeMagnitude;
-            SmallMagnitude = smallMagnitude;
+            fixed (HapticLeftRight* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
+
+            if (largeMagnitude is not null)
+            {
+                LargeMagnitude = largeMagnitude.Value;
+            }
+
+            if (smallMagnitude is not null)
+            {
+                SmallMagnitude = smallMagnitude.Value;
+            }
         }
 
 

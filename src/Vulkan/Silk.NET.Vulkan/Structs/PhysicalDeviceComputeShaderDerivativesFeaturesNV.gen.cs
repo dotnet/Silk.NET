@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceComputeShaderDerivativesFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceComputeShaderDerivativesFeaturesNV,
-            void* pNext = default,
-            Bool32 computeDerivativeGroupQuads = default,
-            Bool32 computeDerivativeGroupLinear = default
+            StructureType? sType = StructureType.PhysicalDeviceComputeShaderDerivativesFeaturesNV,
+            void* pNext = null,
+            Bool32? computeDerivativeGroupQuads = null,
+            Bool32? computeDerivativeGroupLinear = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ComputeDerivativeGroupQuads = computeDerivativeGroupQuads;
-            ComputeDerivativeGroupLinear = computeDerivativeGroupLinear;
+            fixed (PhysicalDeviceComputeShaderDerivativesFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (computeDerivativeGroupQuads is not null)
+            {
+                ComputeDerivativeGroupQuads = computeDerivativeGroupQuads.Value;
+            }
+
+            if (computeDerivativeGroupLinear is not null)
+            {
+                ComputeDerivativeGroupLinear = computeDerivativeGroupLinear.Value;
+            }
         }
 
 /// <summary></summary>

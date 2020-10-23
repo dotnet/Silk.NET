@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public EventDataEventsLost
         (
-            StructureType type = StructureType.TypeEventDataEventsLost,
-            void* next = default,
-            uint lostEventCount = default
+            StructureType? type = StructureType.TypeEventDataEventsLost,
+            void* next = null,
+            uint? lostEventCount = null
         )
         {
-            Type = type;
-            Next = next;
-            LostEventCount = lostEventCount;
+            fixed (EventDataEventsLost* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (lostEventCount is not null)
+            {
+                LostEventCount = lostEventCount.Value;
+            }
         }
 
 /// <summary></summary>

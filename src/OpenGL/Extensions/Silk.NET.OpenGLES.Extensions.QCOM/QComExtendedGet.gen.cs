@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     {
         public const string ExtensionName = "QCOM_extended_get";
         [NativeApi(EntryPoint = "glExtGetBufferPointervQCOM")]
-        public unsafe partial void ExtGetBufferPointer([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void ExtGetBufferPointer([Flow(FlowDirection.In)] QCOM target, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glExtGetBufferPointervQCOM")]
-        public unsafe partial void ExtGetBufferPointer([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.Out)] out void* @params);
+        public unsafe partial void ExtGetBufferPointer([Flow(FlowDirection.In)] QCOM target, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glExtGetBuffersQCOM")]
         public unsafe partial void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] uint* buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numBuffers);

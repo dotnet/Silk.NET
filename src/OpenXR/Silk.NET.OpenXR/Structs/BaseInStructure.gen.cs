@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public BaseInStructure
         (
-            StructureType type = default,
-            BaseInStructure* next = default
+            StructureType? type = null,
+            BaseInStructure* next = null
         )
         {
-            Type = type;
-            Next = next;
+            fixed (BaseInStructure* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public HandJointVelocityEXT
         (
-            SpaceVelocityFlags velocityFlags = default,
-            Vector3f linearVelocity = default,
-            Vector3f angularVelocity = default
+            SpaceVelocityFlags? velocityFlags = null,
+            Vector3f? linearVelocity = null,
+            Vector3f? angularVelocity = null
         )
         {
-            VelocityFlags = velocityFlags;
-            LinearVelocity = linearVelocity;
-            AngularVelocity = angularVelocity;
+            fixed (HandJointVelocityEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (velocityFlags is not null)
+            {
+                VelocityFlags = velocityFlags.Value;
+            }
+
+            if (linearVelocity is not null)
+            {
+                LinearVelocity = linearVelocity.Value;
+            }
+
+            if (angularVelocity is not null)
+            {
+                AngularVelocity = angularVelocity.Value;
+            }
         }
 
 /// <summary></summary>

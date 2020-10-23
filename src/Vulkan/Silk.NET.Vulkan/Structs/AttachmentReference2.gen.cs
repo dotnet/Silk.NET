@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentReference2
         (
-            StructureType sType = StructureType.AttachmentReference2,
-            void* pNext = default,
-            uint attachment = default,
-            ImageLayout layout = default,
-            ImageAspectFlags aspectMask = default
+            StructureType? sType = StructureType.AttachmentReference2,
+            void* pNext = null,
+            uint? attachment = null,
+            ImageLayout? layout = null,
+            ImageAspectFlags? aspectMask = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Attachment = attachment;
-            Layout = layout;
-            AspectMask = aspectMask;
+            fixed (AttachmentReference2* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachment is not null)
+            {
+                Attachment = attachment.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
         }
 
 /// <summary></summary>

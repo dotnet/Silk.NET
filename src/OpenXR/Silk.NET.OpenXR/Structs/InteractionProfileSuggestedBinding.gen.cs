@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public InteractionProfileSuggestedBinding
         (
-            StructureType type = StructureType.TypeInteractionProfileSuggestedBinding,
-            void* next = default,
-            ulong interactionProfile = default,
-            uint countSuggestedBindings = default,
-            ActionSuggestedBinding* suggestedBindings = default
+            StructureType? type = StructureType.TypeInteractionProfileSuggestedBinding,
+            void* next = null,
+            ulong? interactionProfile = null,
+            uint? countSuggestedBindings = null,
+            ActionSuggestedBinding* suggestedBindings = null
         )
         {
-            Type = type;
-            Next = next;
-            InteractionProfile = interactionProfile;
-            CountSuggestedBindings = countSuggestedBindings;
-            SuggestedBindings = suggestedBindings;
+            fixed (InteractionProfileSuggestedBinding* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (interactionProfile is not null)
+            {
+                InteractionProfile = interactionProfile.Value;
+            }
+
+            if (countSuggestedBindings is not null)
+            {
+                CountSuggestedBindings = countSuggestedBindings.Value;
+            }
+
+            if (suggestedBindings is not null)
+            {
+                SuggestedBindings = suggestedBindings;
+            }
         }
 
 /// <summary></summary>

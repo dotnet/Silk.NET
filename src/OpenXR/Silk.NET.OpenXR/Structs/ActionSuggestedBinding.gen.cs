@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public ActionSuggestedBinding
         (
-            Action action = default,
-            ulong binding = default
+            Action? action = null,
+            ulong? binding = null
         )
         {
-            Action = action;
-            Binding = binding;
+            fixed (ActionSuggestedBinding* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
         }
 
 /// <summary></summary>

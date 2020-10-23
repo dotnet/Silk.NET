@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public RectLayerKHR
         (
-            Offset2D offset = default,
-            Extent2D extent = default,
-            uint layer = default
+            Offset2D? offset = null,
+            Extent2D? extent = null,
+            uint? layer = null
         )
         {
-            Offset = offset;
-            Extent = extent;
-            Layer = layer;
+            fixed (RectLayerKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
+
+            if (layer is not null)
+            {
+                Layer = layer.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public DrawIndirectCommand
         (
-            uint vertexCount = default,
-            uint instanceCount = default,
-            uint firstVertex = default,
-            uint firstInstance = default
+            uint? vertexCount = null,
+            uint? instanceCount = null,
+            uint? firstVertex = null,
+            uint? firstInstance = null
         )
         {
-            VertexCount = vertexCount;
-            InstanceCount = instanceCount;
-            FirstVertex = firstVertex;
-            FirstInstance = firstInstance;
+            fixed (DrawIndirectCommand* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (vertexCount is not null)
+            {
+                VertexCount = vertexCount.Value;
+            }
+
+            if (instanceCount is not null)
+            {
+                InstanceCount = instanceCount.Value;
+            }
+
+            if (firstVertex is not null)
+            {
+                FirstVertex = firstVertex.Value;
+            }
+
+            if (firstInstance is not null)
+            {
+                FirstInstance = firstInstance.Value;
+            }
         }
 
 /// <summary></summary>

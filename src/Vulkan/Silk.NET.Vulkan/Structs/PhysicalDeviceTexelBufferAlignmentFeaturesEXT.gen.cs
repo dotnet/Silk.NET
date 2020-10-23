@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTexelBufferAlignmentFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceTexelBufferAlignmentFeaturesExt,
-            void* pNext = default,
-            Bool32 texelBufferAlignment = default
+            StructureType? sType = StructureType.PhysicalDeviceTexelBufferAlignmentFeaturesExt,
+            void* pNext = null,
+            Bool32? texelBufferAlignment = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            TexelBufferAlignment = texelBufferAlignment;
+            fixed (PhysicalDeviceTexelBufferAlignmentFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (texelBufferAlignment is not null)
+            {
+                TexelBufferAlignment = texelBufferAlignment.Value;
+            }
         }
 
 /// <summary></summary>

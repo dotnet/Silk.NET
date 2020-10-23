@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceCounterKHR
         (
-            StructureType sType = StructureType.PerformanceCounterKhr,
-            void* pNext = default,
-            PerformanceCounterUnitKHR unit = default,
-            PerformanceCounterScopeKHR scope = default,
-            PerformanceCounterStorageKHR storage = default
+            StructureType? sType = StructureType.PerformanceCounterKhr,
+            void* pNext = null,
+            PerformanceCounterUnitKHR? unit = null,
+            PerformanceCounterScopeKHR? scope = null,
+            PerformanceCounterStorageKHR? storage = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Unit = unit;
-            Scope = scope;
-            Storage = storage;
+            fixed (PerformanceCounterKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (unit is not null)
+            {
+                Unit = unit.Value;
+            }
+
+            if (scope is not null)
+            {
+                Scope = scope.Value;
+            }
+
+            if (storage is not null)
+            {
+                Storage = storage.Value;
+            }
         }
 
 /// <summary></summary>

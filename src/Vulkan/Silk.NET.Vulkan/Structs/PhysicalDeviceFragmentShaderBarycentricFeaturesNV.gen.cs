@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFragmentShaderBarycentricFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceFragmentShaderBarycentricFeaturesNV,
-            void* pNext = default,
-            Bool32 fragmentShaderBarycentric = default
+            StructureType? sType = StructureType.PhysicalDeviceFragmentShaderBarycentricFeaturesNV,
+            void* pNext = null,
+            Bool32? fragmentShaderBarycentric = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FragmentShaderBarycentric = fragmentShaderBarycentric;
+            fixed (PhysicalDeviceFragmentShaderBarycentricFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fragmentShaderBarycentric is not null)
+            {
+                FragmentShaderBarycentric = fragmentShaderBarycentric.Value;
+            }
         }
 
 /// <summary></summary>

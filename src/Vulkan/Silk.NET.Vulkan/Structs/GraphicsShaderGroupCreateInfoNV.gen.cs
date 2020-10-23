@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public GraphicsShaderGroupCreateInfoNV
         (
-            StructureType sType = StructureType.GraphicsShaderGroupCreateInfoNV,
-            void* pNext = default,
-            uint stageCount = default,
-            PipelineShaderStageCreateInfo* pStages = default,
-            PipelineVertexInputStateCreateInfo* pVertexInputState = default,
-            PipelineTessellationStateCreateInfo* pTessellationState = default
+            StructureType? sType = StructureType.GraphicsShaderGroupCreateInfoNV,
+            void* pNext = null,
+            uint? stageCount = null,
+            PipelineShaderStageCreateInfo* pStages = null,
+            PipelineVertexInputStateCreateInfo* pVertexInputState = null,
+            PipelineTessellationStateCreateInfo* pTessellationState = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            StageCount = stageCount;
-            PStages = pStages;
-            PVertexInputState = pVertexInputState;
-            PTessellationState = pTessellationState;
+            fixed (GraphicsShaderGroupCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stageCount is not null)
+            {
+                StageCount = stageCount.Value;
+            }
+
+            if (pStages is not null)
+            {
+                PStages = pStages;
+            }
+
+            if (pVertexInputState is not null)
+            {
+                PVertexInputState = pVertexInputState;
+            }
+
+            if (pTessellationState is not null)
+            {
+                PTessellationState = pTessellationState;
+            }
         }
 
 /// <summary></summary>

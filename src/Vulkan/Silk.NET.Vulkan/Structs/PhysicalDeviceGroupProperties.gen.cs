@@ -21,48 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceGroupProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceGroupProperties,
-            void* pNext = default,
-            uint physicalDeviceCount = default,
-            Bool32 subsetAllocation = default
+            StructureType? sType = StructureType.PhysicalDeviceGroupProperties,
+            void* pNext = null,
+            uint? physicalDeviceCount = null,
+            Bool32? subsetAllocation = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PhysicalDeviceCount = physicalDeviceCount;
-           PhysicalDevices_0 = default;
-           PhysicalDevices_1 = default;
-           PhysicalDevices_2 = default;
-           PhysicalDevices_3 = default;
-           PhysicalDevices_4 = default;
-           PhysicalDevices_5 = default;
-           PhysicalDevices_6 = default;
-           PhysicalDevices_7 = default;
-           PhysicalDevices_8 = default;
-           PhysicalDevices_9 = default;
-           PhysicalDevices_10 = default;
-           PhysicalDevices_11 = default;
-           PhysicalDevices_12 = default;
-           PhysicalDevices_13 = default;
-           PhysicalDevices_14 = default;
-           PhysicalDevices_15 = default;
-           PhysicalDevices_16 = default;
-           PhysicalDevices_17 = default;
-           PhysicalDevices_18 = default;
-           PhysicalDevices_19 = default;
-           PhysicalDevices_20 = default;
-           PhysicalDevices_21 = default;
-           PhysicalDevices_22 = default;
-           PhysicalDevices_23 = default;
-           PhysicalDevices_24 = default;
-           PhysicalDevices_25 = default;
-           PhysicalDevices_26 = default;
-           PhysicalDevices_27 = default;
-           PhysicalDevices_28 = default;
-           PhysicalDevices_29 = default;
-           PhysicalDevices_30 = default;
-           PhysicalDevices_31 = default;
-            SubsetAllocation = subsetAllocation;
+            fixed (PhysicalDeviceGroupProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (physicalDeviceCount is not null)
+            {
+                PhysicalDeviceCount = physicalDeviceCount.Value;
+            }
+
+            if (subsetAllocation is not null)
+            {
+                SubsetAllocation = subsetAllocation.Value;
+            }
         }
 
 /// <summary></summary>

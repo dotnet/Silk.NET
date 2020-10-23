@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorPoolSize
         (
-            DescriptorType type = default,
-            uint descriptorCount = default
+            DescriptorType? type = null,
+            uint? descriptorCount = null
         )
         {
-            Type = type;
-            DescriptorCount = descriptorCount;
+            fixed (DescriptorPoolSize* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (descriptorCount is not null)
+            {
+                DescriptorCount = descriptorCount.Value;
+            }
         }
 
 /// <summary></summary>

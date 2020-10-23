@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMeshShaderFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceMeshShaderFeaturesNV,
-            void* pNext = default,
-            Bool32 taskShader = default,
-            Bool32 meshShader = default
+            StructureType? sType = StructureType.PhysicalDeviceMeshShaderFeaturesNV,
+            void* pNext = null,
+            Bool32? taskShader = null,
+            Bool32? meshShader = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            TaskShader = taskShader;
-            MeshShader = meshShader;
+            fixed (PhysicalDeviceMeshShaderFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (taskShader is not null)
+            {
+                TaskShader = taskShader.Value;
+            }
+
+            if (meshShader is not null)
+            {
+                MeshShader = meshShader.Value;
+            }
         }
 
 /// <summary></summary>

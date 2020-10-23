@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFragmentDensityMap2FeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceFragmentDensityMap2FeaturesExt,
-            void* pNext = default,
-            Bool32 fragmentDensityMapDeferred = default
+            StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMap2FeaturesExt,
+            void* pNext = null,
+            Bool32? fragmentDensityMapDeferred = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FragmentDensityMapDeferred = fragmentDensityMapDeferred;
+            fixed (PhysicalDeviceFragmentDensityMap2FeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fragmentDensityMapDeferred is not null)
+            {
+                FragmentDensityMapDeferred = fragmentDensityMapDeferred.Value;
+            }
         }
 
 /// <summary></summary>

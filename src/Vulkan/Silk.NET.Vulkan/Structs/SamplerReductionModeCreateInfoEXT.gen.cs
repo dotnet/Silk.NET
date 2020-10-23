@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SamplerReductionModeCreateInfoEXT
         (
-            StructureType sType = StructureType.SamplerReductionModeCreateInfo,
-            void* pNext = default,
-            SamplerReductionMode reductionMode = default
+            StructureType? sType = StructureType.SamplerReductionModeCreateInfo,
+            void* pNext = null,
+            SamplerReductionMode? reductionMode = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ReductionMode = reductionMode;
+            fixed (SamplerReductionModeCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (reductionMode is not null)
+            {
+                ReductionMode = reductionMode.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,18 +21,42 @@ namespace Silk.NET.SDL
     {
         public TextEditingEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint windowID = default,
-            int start = default,
-            int length = default
+            uint? type = null,
+            uint? timestamp = null,
+            uint? windowID = null,
+            int? start = null,
+            int? length = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            WindowID = windowID;
-            Start = start;
-            Length = length;
+            fixed (TextEditingEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
+
+            if (start is not null)
+            {
+                Start = start.Value;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
         }
 
 

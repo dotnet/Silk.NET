@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public ViewState
         (
-            StructureType type = StructureType.TypeViewState,
-            void* next = default,
-            ViewStateFlags viewStateFlags = default
+            StructureType? type = StructureType.TypeViewState,
+            void* next = null,
+            ViewStateFlags? viewStateFlags = null
         )
         {
-            Type = type;
-            Next = next;
-            ViewStateFlags = viewStateFlags;
+            fixed (ViewState* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewStateFlags is not null)
+            {
+                ViewStateFlags = viewStateFlags.Value;
+            }
         }
 
 /// <summary></summary>

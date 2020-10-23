@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public SpaceLocation
         (
-            StructureType type = StructureType.TypeSpaceLocation,
-            void* next = default,
-            SpaceLocationFlags locationFlags = default,
-            Posef pose = default
+            StructureType? type = StructureType.TypeSpaceLocation,
+            void* next = null,
+            SpaceLocationFlags? locationFlags = null,
+            Posef? pose = null
         )
         {
-            Type = type;
-            Next = next;
-            LocationFlags = locationFlags;
-            Pose = pose;
+            fixed (SpaceLocation* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (locationFlags is not null)
+            {
+                LocationFlags = locationFlags.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
         }
 
 /// <summary></summary>

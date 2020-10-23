@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public WriteDescriptorSetAccelerationStructureNV
         (
-            StructureType sType = StructureType.WriteDescriptorSetAccelerationStructureKhr,
-            void* pNext = default,
-            uint accelerationStructureCount = default,
-            AccelerationStructureKHR* pAccelerationStructures = default
+            StructureType? sType = StructureType.WriteDescriptorSetAccelerationStructureKhr,
+            void* pNext = null,
+            uint? accelerationStructureCount = null,
+            AccelerationStructureKHR* pAccelerationStructures = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AccelerationStructureCount = accelerationStructureCount;
-            PAccelerationStructures = pAccelerationStructures;
+            fixed (WriteDescriptorSetAccelerationStructureNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (accelerationStructureCount is not null)
+            {
+                AccelerationStructureCount = accelerationStructureCount.Value;
+            }
+
+            if (pAccelerationStructures is not null)
+            {
+                PAccelerationStructures = pAccelerationStructures;
+            }
         }
 
 /// <summary></summary>

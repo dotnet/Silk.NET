@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassInputAttachmentAspectCreateInfoKHR
         (
-            StructureType sType = StructureType.RenderPassInputAttachmentAspectCreateInfo,
-            void* pNext = default,
-            uint aspectReferenceCount = default,
-            InputAttachmentAspectReference* pAspectReferences = default
+            StructureType? sType = StructureType.RenderPassInputAttachmentAspectCreateInfo,
+            void* pNext = null,
+            uint? aspectReferenceCount = null,
+            InputAttachmentAspectReference* pAspectReferences = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AspectReferenceCount = aspectReferenceCount;
-            PAspectReferences = pAspectReferences;
+            fixed (RenderPassInputAttachmentAspectCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (aspectReferenceCount is not null)
+            {
+                AspectReferenceCount = aspectReferenceCount.Value;
+            }
+
+            if (pAspectReferences is not null)
+            {
+                PAspectReferences = pAspectReferences;
+            }
         }
 
 /// <summary></summary>

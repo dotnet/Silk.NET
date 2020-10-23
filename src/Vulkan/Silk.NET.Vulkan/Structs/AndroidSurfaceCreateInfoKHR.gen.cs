@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public AndroidSurfaceCreateInfoKHR
         (
-            StructureType sType = StructureType.AndroidSurfaceCreateInfoKhr,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr* window = default
+            StructureType? sType = StructureType.AndroidSurfaceCreateInfoKhr,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr* window = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Window = window;
+            fixed (AndroidSurfaceCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (window is not null)
+            {
+                Window = window;
+            }
         }
 
 /// <summary></summary>

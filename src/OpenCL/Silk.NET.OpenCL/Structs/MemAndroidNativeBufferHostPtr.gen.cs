@@ -21,12 +21,24 @@ namespace Silk.NET.OpenCL
     {
         public MemAndroidNativeBufferHostPtr
         (
-            MemExtHostPtr extHostPtr = default,
-            void* anbPtr = default
+            MemExtHostPtr? extHostPtr = null,
+            void* anbPtr = null
         )
         {
-            ExtHostPtr = extHostPtr;
-            AnbPtr = anbPtr;
+            fixed (MemAndroidNativeBufferHostPtr* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (extHostPtr is not null)
+            {
+                ExtHostPtr = extHostPtr.Value;
+            }
+
+            if (anbPtr is not null)
+            {
+                AnbPtr = anbPtr;
+            }
         }
 
 /// <summary></summary>

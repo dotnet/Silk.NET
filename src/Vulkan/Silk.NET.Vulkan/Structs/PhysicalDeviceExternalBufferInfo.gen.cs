@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExternalBufferInfo
         (
-            StructureType sType = StructureType.PhysicalDeviceExternalBufferInfo,
-            void* pNext = default,
-            BufferCreateFlags flags = default,
-            BufferUsageFlags usage = default,
-            ExternalMemoryHandleTypeFlags handleType = default
+            StructureType? sType = StructureType.PhysicalDeviceExternalBufferInfo,
+            void* pNext = null,
+            BufferCreateFlags? flags = null,
+            BufferUsageFlags? usage = null,
+            ExternalMemoryHandleTypeFlags? handleType = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Usage = usage;
-            HandleType = handleType;
+            fixed (PhysicalDeviceExternalBufferInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

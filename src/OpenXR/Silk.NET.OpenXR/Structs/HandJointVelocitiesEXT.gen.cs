@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public HandJointVelocitiesEXT
         (
-            StructureType type = StructureType.TypeHandJointVelocitiesExt,
-            void* next = default,
-            uint jointCount = default,
-            HandJointVelocityEXT* jointVelocities = default
+            StructureType? type = StructureType.TypeHandJointVelocitiesExt,
+            void* next = null,
+            uint? jointCount = null,
+            HandJointVelocityEXT* jointVelocities = null
         )
         {
-            Type = type;
-            Next = next;
-            JointCount = jointCount;
-            JointVelocities = jointVelocities;
+            fixed (HandJointVelocitiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (jointCount is not null)
+            {
+                JointCount = jointCount.Value;
+            }
+
+            if (jointVelocities is not null)
+            {
+                JointVelocities = jointVelocities;
+            }
         }
 
 /// <summary></summary>

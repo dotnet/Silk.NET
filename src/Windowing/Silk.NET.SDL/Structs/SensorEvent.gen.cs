@@ -21,14 +21,30 @@ namespace Silk.NET.SDL
     {
         public SensorEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            int which = default
+            uint? type = null,
+            uint? timestamp = null,
+            int? which = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            Which = which;
+            fixed (SensorEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
         }
 
 

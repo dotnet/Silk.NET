@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePrivateDataFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDevicePrivateDataFeaturesExt,
-            void* pNext = default,
-            Bool32 privateData = default
+            StructureType? sType = StructureType.PhysicalDevicePrivateDataFeaturesExt,
+            void* pNext = null,
+            Bool32? privateData = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PrivateData = privateData;
+            fixed (PhysicalDevicePrivateDataFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (privateData is not null)
+            {
+                PrivateData = privateData.Value;
+            }
         }
 
 /// <summary></summary>

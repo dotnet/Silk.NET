@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DisplayNativeHdrSurfaceCapabilitiesAMD
         (
-            StructureType sType = StructureType.DisplayNativeHdrSurfaceCapabilitiesAmd,
-            void* pNext = default,
-            Bool32 localDimmingSupport = default
+            StructureType? sType = StructureType.DisplayNativeHdrSurfaceCapabilitiesAmd,
+            void* pNext = null,
+            Bool32? localDimmingSupport = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            LocalDimmingSupport = localDimmingSupport;
+            fixed (DisplayNativeHdrSurfaceCapabilitiesAMD* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (localDimmingSupport is not null)
+            {
+                LocalDimmingSupport = localDimmingSupport.Value;
+            }
         }
 
 /// <summary></summary>

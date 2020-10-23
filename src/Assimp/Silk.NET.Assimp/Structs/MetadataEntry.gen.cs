@@ -21,12 +21,24 @@ namespace Silk.NET.Assimp
     {
         public MetadataEntry
         (
-            MetadataType mType = default,
-            void* mData = default
+            MetadataType? mType = null,
+            void* mData = null
         )
         {
-            MType = mType;
-            MData = mData;
+            fixed (MetadataEntry* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mType is not null)
+            {
+                MType = mType.Value;
+            }
+
+            if (mData is not null)
+            {
+                MData = mData;
+            }
         }
 
 

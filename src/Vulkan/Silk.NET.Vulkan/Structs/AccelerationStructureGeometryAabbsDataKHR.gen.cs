@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureGeometryAabbsDataKHR
         (
-            StructureType sType = StructureType.AccelerationStructureGeometryAabbsDataKhr,
-            void* pNext = default,
-            DeviceOrHostAddressConstKHR data = default,
-            ulong stride = default
+            StructureType? sType = StructureType.AccelerationStructureGeometryAabbsDataKhr,
+            void* pNext = null,
+            DeviceOrHostAddressConstKHR? data = null,
+            ulong? stride = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Data = data;
-            Stride = stride;
+            fixed (AccelerationStructureGeometryAabbsDataKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (data is not null)
+            {
+                Data = data.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
         }
 
 /// <summary></summary>

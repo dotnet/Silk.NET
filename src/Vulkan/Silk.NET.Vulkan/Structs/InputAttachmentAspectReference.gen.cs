@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public InputAttachmentAspectReference
         (
-            uint subpass = default,
-            uint inputAttachmentIndex = default,
-            ImageAspectFlags aspectMask = default
+            uint? subpass = null,
+            uint? inputAttachmentIndex = null,
+            ImageAspectFlags? aspectMask = null
         )
         {
-            Subpass = subpass;
-            InputAttachmentIndex = inputAttachmentIndex;
-            AspectMask = aspectMask;
+            fixed (InputAttachmentAspectReference* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (subpass is not null)
+            {
+                Subpass = subpass.Value;
+            }
+
+            if (inputAttachmentIndex is not null)
+            {
+                InputAttachmentIndex = inputAttachmentIndex.Value;
+            }
+
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
         }
 
 /// <summary></summary>

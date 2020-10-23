@@ -21,20 +21,48 @@ namespace Silk.NET.OpenXR
     {
         public FrameEndInfo
         (
-            StructureType type = StructureType.TypeFrameEndInfo,
-            void* next = default,
-            long displayTime = default,
-            EnvironmentBlendMode environmentBlendMode = default,
-            uint layerCount = default,
-            CompositionLayerBaseHeader** layers = default
+            StructureType? type = StructureType.TypeFrameEndInfo,
+            void* next = null,
+            long? displayTime = null,
+            EnvironmentBlendMode? environmentBlendMode = null,
+            uint? layerCount = null,
+            CompositionLayerBaseHeader** layers = null
         )
         {
-            Type = type;
-            Next = next;
-            DisplayTime = displayTime;
-            EnvironmentBlendMode = environmentBlendMode;
-            LayerCount = layerCount;
-            Layers = layers;
+            fixed (FrameEndInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (displayTime is not null)
+            {
+                DisplayTime = displayTime.Value;
+            }
+
+            if (environmentBlendMode is not null)
+            {
+                EnvironmentBlendMode = environmentBlendMode.Value;
+            }
+
+            if (layerCount is not null)
+            {
+                LayerCount = layerCount.Value;
+            }
+
+            if (layers is not null)
+            {
+                Layers = layers;
+            }
         }
 
 /// <summary></summary>

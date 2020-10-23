@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public DeviceGroupDeviceCreateInfoKHR
         (
-            StructureType sType = StructureType.DeviceGroupDeviceCreateInfo,
-            void* pNext = default,
-            uint physicalDeviceCount = default,
-            PhysicalDevice* pPhysicalDevices = default
+            StructureType? sType = StructureType.DeviceGroupDeviceCreateInfo,
+            void* pNext = null,
+            uint? physicalDeviceCount = null,
+            PhysicalDevice* pPhysicalDevices = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PhysicalDeviceCount = physicalDeviceCount;
-            PPhysicalDevices = pPhysicalDevices;
+            fixed (DeviceGroupDeviceCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (physicalDeviceCount is not null)
+            {
+                PhysicalDeviceCount = physicalDeviceCount.Value;
+            }
+
+            if (pPhysicalDevices is not null)
+            {
+                PPhysicalDevices = pPhysicalDevices;
+            }
         }
 
 /// <summary></summary>

@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DeviceGroupPresentInfoKHR
         (
-            StructureType sType = StructureType.DeviceGroupPresentInfoKhr,
-            void* pNext = default,
-            uint swapchainCount = default,
-            uint* pDeviceMasks = default,
-            DeviceGroupPresentModeFlagsKHR mode = default
+            StructureType? sType = StructureType.DeviceGroupPresentInfoKhr,
+            void* pNext = null,
+            uint? swapchainCount = null,
+            uint* pDeviceMasks = null,
+            DeviceGroupPresentModeFlagsKHR? mode = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SwapchainCount = swapchainCount;
-            PDeviceMasks = pDeviceMasks;
-            Mode = mode;
+            fixed (DeviceGroupPresentInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchainCount is not null)
+            {
+                SwapchainCount = swapchainCount.Value;
+            }
+
+            if (pDeviceMasks is not null)
+            {
+                PDeviceMasks = pDeviceMasks;
+            }
+
+            if (mode is not null)
+            {
+                Mode = mode.Value;
+            }
         }
 
 /// <summary></summary>

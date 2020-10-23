@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public BaseOutStructure
         (
-            StructureType sType = default,
-            BaseOutStructure* pNext = default
+            StructureType? sType = null,
+            BaseOutStructure* pNext = null
         )
         {
-            SType = sType;
-            PNext = pNext;
+            fixed (BaseOutStructure* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
         }
 
 /// <summary></summary>

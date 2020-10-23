@@ -21,16 +21,36 @@ namespace Silk.NET.SDL
     {
         public Rect
         (
-            int x = default,
-            int y = default,
-            int w = default,
-            int h = default
+            int? x = null,
+            int? y = null,
+            int? w = null,
+            int? h = null
         )
         {
-            X = x;
-            Y = y;
-            W = w;
-            H = h;
+            fixed (Rect* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
+
+            if (h is not null)
+            {
+                H = h.Value;
+            }
         }
 
 

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceBlendOperationAdvancedFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceBlendOperationAdvancedFeaturesExt,
-            void* pNext = default,
-            Bool32 advancedBlendCoherentOperations = default
+            StructureType? sType = StructureType.PhysicalDeviceBlendOperationAdvancedFeaturesExt,
+            void* pNext = null,
+            Bool32? advancedBlendCoherentOperations = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AdvancedBlendCoherentOperations = advancedBlendCoherentOperations;
+            fixed (PhysicalDeviceBlendOperationAdvancedFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (advancedBlendCoherentOperations is not null)
+            {
+                AdvancedBlendCoherentOperations = advancedBlendCoherentOperations.Value;
+            }
         }
 
 /// <summary></summary>

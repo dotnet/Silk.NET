@@ -21,24 +21,60 @@ namespace Silk.NET.OpenXR
     {
         public CompositionLayerCubeKHR
         (
-            StructureType type = StructureType.TypeCompositionLayerCubeKhr,
-            void* next = default,
-            CompositionLayerFlags layerFlags = default,
-            Space space = default,
-            EyeVisibility eyeVisibility = default,
-            Swapchain swapchain = default,
-            uint imageArrayIndex = default,
-            Quaternionf orientation = default
+            StructureType? type = StructureType.TypeCompositionLayerCubeKhr,
+            void* next = null,
+            CompositionLayerFlags? layerFlags = null,
+            Space? space = null,
+            EyeVisibility? eyeVisibility = null,
+            Swapchain? swapchain = null,
+            uint? imageArrayIndex = null,
+            Quaternionf? orientation = null
         )
         {
-            Type = type;
-            Next = next;
-            LayerFlags = layerFlags;
-            Space = space;
-            EyeVisibility = eyeVisibility;
-            Swapchain = swapchain;
-            ImageArrayIndex = imageArrayIndex;
-            Orientation = orientation;
+            fixed (CompositionLayerCubeKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (layerFlags is not null)
+            {
+                LayerFlags = layerFlags.Value;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
+
+            if (eyeVisibility is not null)
+            {
+                EyeVisibility = eyeVisibility.Value;
+            }
+
+            if (swapchain is not null)
+            {
+                Swapchain = swapchain.Value;
+            }
+
+            if (imageArrayIndex is not null)
+            {
+                ImageArrayIndex = imageArrayIndex.Value;
+            }
+
+            if (orientation is not null)
+            {
+                Orientation = orientation.Value;
+            }
         }
 
 /// <summary></summary>

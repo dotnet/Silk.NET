@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ExternalImageFormatPropertiesKHR
         (
-            StructureType sType = StructureType.ExternalImageFormatProperties,
-            void* pNext = default,
-            ExternalMemoryProperties externalMemoryProperties = default
+            StructureType? sType = StructureType.ExternalImageFormatProperties,
+            void* pNext = null,
+            ExternalMemoryProperties? externalMemoryProperties = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ExternalMemoryProperties = externalMemoryProperties;
+            fixed (ExternalImageFormatPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (externalMemoryProperties is not null)
+            {
+                ExternalMemoryProperties = externalMemoryProperties.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceImageRobustnessFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceImageRobustnessFeaturesExt,
-            void* pNext = default,
-            Bool32 robustImageAccess = default
+            StructureType? sType = StructureType.PhysicalDeviceImageRobustnessFeaturesExt,
+            void* pNext = null,
+            Bool32? robustImageAccess = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RobustImageAccess = robustImageAccess;
+            fixed (PhysicalDeviceImageRobustnessFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (robustImageAccess is not null)
+            {
+                RobustImageAccess = robustImageAccess.Value;
+            }
         }
 
 /// <summary></summary>

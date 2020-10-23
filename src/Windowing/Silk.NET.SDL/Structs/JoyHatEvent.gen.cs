@@ -21,22 +21,54 @@ namespace Silk.NET.SDL
     {
         public JoyHatEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            int which = default,
-            byte hat = default,
-            byte value = default,
-            byte padding1 = default,
-            byte padding2 = default
+            uint? type = null,
+            uint? timestamp = null,
+            int? which = null,
+            byte? hat = null,
+            byte? value = null,
+            byte? padding1 = null,
+            byte? padding2 = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
-            Which = which;
-            Hat = hat;
-            Value = value;
-            Padding1 = padding1;
-            Padding2 = padding2;
+            fixed (JoyHatEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (hat is not null)
+            {
+                Hat = hat.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
+
+            if (padding1 is not null)
+            {
+                Padding1 = padding1.Value;
+            }
+
+            if (padding2 is not null)
+            {
+                Padding2 = padding2.Value;
+            }
         }
 
 

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceIDPropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceIDProperties,
-            void* pNext = default,
-            uint deviceNodeMask = default,
-            Bool32 deviceLuidvalid = default
+            StructureType? sType = StructureType.PhysicalDeviceIDProperties,
+            void* pNext = null,
+            uint? deviceNodeMask = null,
+            Bool32? deviceLuidvalid = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceNodeMask = deviceNodeMask;
-            DeviceLuidvalid = deviceLuidvalid;
+            fixed (PhysicalDeviceIDPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceNodeMask is not null)
+            {
+                DeviceNodeMask = deviceNodeMask.Value;
+            }
+
+            if (deviceLuidvalid is not null)
+            {
+                DeviceLuidvalid = deviceLuidvalid.Value;
+            }
         }
 
 /// <summary></summary>

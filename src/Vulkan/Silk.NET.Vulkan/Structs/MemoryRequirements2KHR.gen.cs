@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public MemoryRequirements2KHR
         (
-            StructureType sType = StructureType.MemoryRequirements2,
-            void* pNext = default,
-            MemoryRequirements memoryRequirements = default
+            StructureType? sType = StructureType.MemoryRequirements2,
+            void* pNext = null,
+            MemoryRequirements? memoryRequirements = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MemoryRequirements = memoryRequirements;
+            fixed (MemoryRequirements2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memoryRequirements is not null)
+            {
+                MemoryRequirements = memoryRequirements.Value;
+            }
         }
 
 /// <summary></summary>

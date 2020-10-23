@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public EventDataVisibilityMaskChangedKHR
         (
-            StructureType type = StructureType.TypeEventDataVisibilityMaskChangedKhr,
-            void* next = default,
-            Session session = default,
-            ViewConfigurationType viewConfigurationType = default,
-            uint viewIndex = default
+            StructureType? type = StructureType.TypeEventDataVisibilityMaskChangedKhr,
+            void* next = null,
+            Session? session = null,
+            ViewConfigurationType? viewConfigurationType = null,
+            uint? viewIndex = null
         )
         {
-            Type = type;
-            Next = next;
-            Session = session;
-            ViewConfigurationType = viewConfigurationType;
-            ViewIndex = viewIndex;
+            fixed (EventDataVisibilityMaskChangedKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (session is not null)
+            {
+                Session = session.Value;
+            }
+
+            if (viewConfigurationType is not null)
+            {
+                ViewConfigurationType = viewConfigurationType.Value;
+            }
+
+            if (viewIndex is not null)
+            {
+                ViewIndex = viewIndex.Value;
+            }
         }
 
 /// <summary></summary>

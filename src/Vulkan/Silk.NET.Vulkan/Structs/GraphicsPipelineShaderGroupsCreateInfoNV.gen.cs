@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public GraphicsPipelineShaderGroupsCreateInfoNV
         (
-            StructureType sType = StructureType.GraphicsPipelineShaderGroupsCreateInfoNV,
-            void* pNext = default,
-            uint groupCount = default,
-            GraphicsShaderGroupCreateInfoNV* pGroups = default,
-            uint pipelineCount = default,
-            Pipeline* pPipelines = default
+            StructureType? sType = StructureType.GraphicsPipelineShaderGroupsCreateInfoNV,
+            void* pNext = null,
+            uint? groupCount = null,
+            GraphicsShaderGroupCreateInfoNV* pGroups = null,
+            uint? pipelineCount = null,
+            Pipeline* pPipelines = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            GroupCount = groupCount;
-            PGroups = pGroups;
-            PipelineCount = pipelineCount;
-            PPipelines = pPipelines;
+            fixed (GraphicsPipelineShaderGroupsCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (groupCount is not null)
+            {
+                GroupCount = groupCount.Value;
+            }
+
+            if (pGroups is not null)
+            {
+                PGroups = pGroups;
+            }
+
+            if (pipelineCount is not null)
+            {
+                PipelineCount = pipelineCount.Value;
+            }
+
+            if (pPipelines is not null)
+            {
+                PPipelines = pPipelines;
+            }
         }
 
 /// <summary></summary>

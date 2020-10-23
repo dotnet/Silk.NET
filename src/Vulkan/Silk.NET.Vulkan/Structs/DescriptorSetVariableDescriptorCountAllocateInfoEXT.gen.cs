@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetVariableDescriptorCountAllocateInfoEXT
         (
-            StructureType sType = StructureType.DescriptorSetVariableDescriptorCountAllocateInfo,
-            void* pNext = default,
-            uint descriptorSetCount = default,
-            uint* pDescriptorCounts = default
+            StructureType? sType = StructureType.DescriptorSetVariableDescriptorCountAllocateInfo,
+            void* pNext = null,
+            uint? descriptorSetCount = null,
+            uint* pDescriptorCounts = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DescriptorSetCount = descriptorSetCount;
-            PDescriptorCounts = pDescriptorCounts;
+            fixed (DescriptorSetVariableDescriptorCountAllocateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (descriptorSetCount is not null)
+            {
+                DescriptorSetCount = descriptorSetCount.Value;
+            }
+
+            if (pDescriptorCounts is not null)
+            {
+                PDescriptorCounts = pDescriptorCounts;
+            }
         }
 
 /// <summary></summary>

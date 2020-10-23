@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public MappedMemoryRange
         (
-            StructureType sType = StructureType.MappedMemoryRange,
-            void* pNext = default,
-            DeviceMemory memory = default,
-            ulong offset = default,
-            ulong size = default
+            StructureType? sType = StructureType.MappedMemoryRange,
+            void* pNext = null,
+            DeviceMemory? memory = null,
+            ulong? offset = null,
+            ulong? size = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Memory = memory;
-            Offset = offset;
-            Size = size;
+            fixed (MappedMemoryRange* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

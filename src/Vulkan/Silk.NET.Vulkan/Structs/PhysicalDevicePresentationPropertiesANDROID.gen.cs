@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePresentationPropertiesANDROID
         (
-            StructureType sType = StructureType.PhysicalDevicePresentationPropertiesAndroid,
-            void* pNext = default,
-            Bool32 sharedImage = default
+            StructureType? sType = StructureType.PhysicalDevicePresentationPropertiesAndroid,
+            void* pNext = null,
+            Bool32? sharedImage = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SharedImage = sharedImage;
+            fixed (PhysicalDevicePresentationPropertiesANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sharedImage is not null)
+            {
+                SharedImage = sharedImage.Value;
+            }
         }
 
 /// <summary></summary>

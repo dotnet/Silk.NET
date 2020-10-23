@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public MetalSurfaceCreateInfoEXT
         (
-            StructureType sType = StructureType.MetalSurfaceCreateInfoExt,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr* pLayer = default
+            StructureType? sType = StructureType.MetalSurfaceCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr* pLayer = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PLayer = pLayer;
+            fixed (MetalSurfaceCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pLayer is not null)
+            {
+                PLayer = pLayer;
+            }
         }
 
 /// <summary></summary>

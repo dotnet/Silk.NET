@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public SubpassDescriptionDepthStencilResolveKHR
         (
-            StructureType sType = StructureType.SubpassDescriptionDepthStencilResolve,
-            void* pNext = default,
-            ResolveModeFlags depthResolveMode = default,
-            ResolveModeFlags stencilResolveMode = default,
-            AttachmentReference2* pDepthStencilResolveAttachment = default
+            StructureType? sType = StructureType.SubpassDescriptionDepthStencilResolve,
+            void* pNext = null,
+            ResolveModeFlags? depthResolveMode = null,
+            ResolveModeFlags? stencilResolveMode = null,
+            AttachmentReference2* pDepthStencilResolveAttachment = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DepthResolveMode = depthResolveMode;
-            StencilResolveMode = stencilResolveMode;
-            PDepthStencilResolveAttachment = pDepthStencilResolveAttachment;
+            fixed (SubpassDescriptionDepthStencilResolveKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (depthResolveMode is not null)
+            {
+                DepthResolveMode = depthResolveMode.Value;
+            }
+
+            if (stencilResolveMode is not null)
+            {
+                StencilResolveMode = stencilResolveMode.Value;
+            }
+
+            if (pDepthStencilResolveAttachment is not null)
+            {
+                PDepthStencilResolveAttachment = pDepthStencilResolveAttachment;
+            }
         }
 
 /// <summary></summary>

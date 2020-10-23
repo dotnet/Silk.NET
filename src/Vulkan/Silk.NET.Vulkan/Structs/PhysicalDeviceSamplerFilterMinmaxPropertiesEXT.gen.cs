@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSamplerFilterMinmaxPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceSamplerFilterMinmaxProperties,
-            void* pNext = default,
-            Bool32 filterMinmaxSingleComponentFormats = default,
-            Bool32 filterMinmaxImageComponentMapping = default
+            StructureType? sType = StructureType.PhysicalDeviceSamplerFilterMinmaxProperties,
+            void* pNext = null,
+            Bool32? filterMinmaxSingleComponentFormats = null,
+            Bool32? filterMinmaxImageComponentMapping = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FilterMinmaxSingleComponentFormats = filterMinmaxSingleComponentFormats;
-            FilterMinmaxImageComponentMapping = filterMinmaxImageComponentMapping;
+            fixed (PhysicalDeviceSamplerFilterMinmaxPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (filterMinmaxSingleComponentFormats is not null)
+            {
+                FilterMinmaxSingleComponentFormats = filterMinmaxSingleComponentFormats.Value;
+            }
+
+            if (filterMinmaxImageComponentMapping is not null)
+            {
+                FilterMinmaxImageComponentMapping = filterMinmaxImageComponentMapping.Value;
+            }
         }
 
 /// <summary></summary>

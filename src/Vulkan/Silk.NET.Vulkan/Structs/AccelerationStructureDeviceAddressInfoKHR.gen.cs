@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureDeviceAddressInfoKHR
         (
-            StructureType sType = StructureType.AccelerationStructureDeviceAddressInfoKhr,
-            void* pNext = default,
-            AccelerationStructureKHR accelerationStructure = default
+            StructureType? sType = StructureType.AccelerationStructureDeviceAddressInfoKhr,
+            void* pNext = null,
+            AccelerationStructureKHR? accelerationStructure = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AccelerationStructure = accelerationStructure;
+            fixed (AccelerationStructureDeviceAddressInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (accelerationStructure is not null)
+            {
+                AccelerationStructure = accelerationStructure.Value;
+            }
         }
 
 /// <summary></summary>

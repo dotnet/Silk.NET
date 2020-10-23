@@ -37,6 +37,12 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
         public partial void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] out int data);
 
+        [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
+        public unsafe partial void GetInteger([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* data);
+
+        [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
+        public partial void GetInteger([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] out int data);
+
         [NativeApi(EntryPoint = "glReadBufferIndexedEXT")]
         public partial void ReadBufferIndexed([Flow(FlowDirection.In)] EXT src, [Flow(FlowDirection.In)] int index);
 

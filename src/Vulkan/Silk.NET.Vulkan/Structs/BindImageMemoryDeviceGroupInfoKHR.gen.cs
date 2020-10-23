@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public BindImageMemoryDeviceGroupInfoKHR
         (
-            StructureType sType = StructureType.BindImageMemoryDeviceGroupInfo,
-            void* pNext = default,
-            uint deviceIndexCount = default,
-            uint* pDeviceIndices = default,
-            uint splitInstanceBindRegionCount = default,
-            Rect2D* pSplitInstanceBindRegions = default
+            StructureType? sType = StructureType.BindImageMemoryDeviceGroupInfo,
+            void* pNext = null,
+            uint? deviceIndexCount = null,
+            uint* pDeviceIndices = null,
+            uint? splitInstanceBindRegionCount = null,
+            Rect2D* pSplitInstanceBindRegions = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceIndexCount = deviceIndexCount;
-            PDeviceIndices = pDeviceIndices;
-            SplitInstanceBindRegionCount = splitInstanceBindRegionCount;
-            PSplitInstanceBindRegions = pSplitInstanceBindRegions;
+            fixed (BindImageMemoryDeviceGroupInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceIndexCount is not null)
+            {
+                DeviceIndexCount = deviceIndexCount.Value;
+            }
+
+            if (pDeviceIndices is not null)
+            {
+                PDeviceIndices = pDeviceIndices;
+            }
+
+            if (splitInstanceBindRegionCount is not null)
+            {
+                SplitInstanceBindRegionCount = splitInstanceBindRegionCount.Value;
+            }
+
+            if (pSplitInstanceBindRegions is not null)
+            {
+                PSplitInstanceBindRegions = pSplitInstanceBindRegions;
+            }
         }
 
 /// <summary></summary>

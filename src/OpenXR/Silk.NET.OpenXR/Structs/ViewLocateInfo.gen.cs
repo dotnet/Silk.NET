@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public ViewLocateInfo
         (
-            StructureType type = StructureType.TypeViewLocateInfo,
-            void* next = default,
-            ViewConfigurationType viewConfigurationType = default,
-            long displayTime = default,
-            Space space = default
+            StructureType? type = StructureType.TypeViewLocateInfo,
+            void* next = null,
+            ViewConfigurationType? viewConfigurationType = null,
+            long? displayTime = null,
+            Space? space = null
         )
         {
-            Type = type;
-            Next = next;
-            ViewConfigurationType = viewConfigurationType;
-            DisplayTime = displayTime;
-            Space = space;
+            fixed (ViewLocateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewConfigurationType is not null)
+            {
+                ViewConfigurationType = viewConfigurationType.Value;
+            }
+
+            if (displayTime is not null)
+            {
+                DisplayTime = displayTime.Value;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
         }
 
 /// <summary></summary>

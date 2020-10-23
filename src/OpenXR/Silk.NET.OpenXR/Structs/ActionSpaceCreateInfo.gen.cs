@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public ActionSpaceCreateInfo
         (
-            StructureType type = StructureType.TypeActionSpaceCreateInfo,
-            void* next = default,
-            Action action = default,
-            ulong subactionPath = default,
-            Posef poseInActionSpace = default
+            StructureType? type = StructureType.TypeActionSpaceCreateInfo,
+            void* next = null,
+            Action? action = null,
+            ulong? subactionPath = null,
+            Posef? poseInActionSpace = null
         )
         {
-            Type = type;
-            Next = next;
-            Action = action;
-            SubactionPath = subactionPath;
-            PoseInActionSpace = poseInActionSpace;
+            fixed (ActionSpaceCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
+
+            if (subactionPath is not null)
+            {
+                SubactionPath = subactionPath.Value;
+            }
+
+            if (poseInActionSpace is not null)
+            {
+                PoseInActionSpace = poseInActionSpace.Value;
+            }
         }
 
 /// <summary></summary>

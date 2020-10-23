@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public BufferMemoryRequirementsInfo2KHR
         (
-            StructureType sType = StructureType.BufferMemoryRequirementsInfo2,
-            void* pNext = default,
-            Buffer buffer = default
+            StructureType? sType = StructureType.BufferMemoryRequirementsInfo2,
+            void* pNext = null,
+            Buffer? buffer = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Buffer = buffer;
+            fixed (BufferMemoryRequirementsInfo2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
         }
 
 /// <summary></summary>

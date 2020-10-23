@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderSubgroupExtendedTypesFeatures,
-            void* pNext = default,
-            Bool32 shaderSubgroupExtendedTypes = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderSubgroupExtendedTypesFeatures,
+            void* pNext = null,
+            Bool32? shaderSubgroupExtendedTypes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderSubgroupExtendedTypes = shaderSubgroupExtendedTypes;
+            fixed (PhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderSubgroupExtendedTypes is not null)
+            {
+                ShaderSubgroupExtendedTypes = shaderSubgroupExtendedTypes.Value;
+            }
         }
 
 /// <summary></summary>

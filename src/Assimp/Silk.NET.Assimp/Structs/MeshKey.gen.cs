@@ -21,12 +21,24 @@ namespace Silk.NET.Assimp
     {
         public MeshKey
         (
-            double mTime = default,
-            uint mValue = default
+            double? mTime = null,
+            uint? mValue = null
         )
         {
-            MTime = mTime;
-            MValue = mValue;
+            fixed (MeshKey* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (mTime is not null)
+            {
+                MTime = mTime.Value;
+            }
+
+            if (mValue is not null)
+            {
+                MValue = mValue.Value;
+            }
         }
 
 

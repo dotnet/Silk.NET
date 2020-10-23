@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public RayTracingPipelineInterfaceCreateInfoKHR
         (
-            StructureType sType = StructureType.RayTracingPipelineInterfaceCreateInfoKhr,
-            void* pNext = default,
-            uint maxPayloadSize = default,
-            uint maxAttributeSize = default,
-            uint maxCallableSize = default
+            StructureType? sType = StructureType.RayTracingPipelineInterfaceCreateInfoKhr,
+            void* pNext = null,
+            uint? maxPayloadSize = null,
+            uint? maxAttributeSize = null,
+            uint? maxCallableSize = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxPayloadSize = maxPayloadSize;
-            MaxAttributeSize = maxAttributeSize;
-            MaxCallableSize = maxCallableSize;
+            fixed (RayTracingPipelineInterfaceCreateInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxPayloadSize is not null)
+            {
+                MaxPayloadSize = maxPayloadSize.Value;
+            }
+
+            if (maxAttributeSize is not null)
+            {
+                MaxAttributeSize = maxAttributeSize.Value;
+            }
+
+            if (maxCallableSize is not null)
+            {
+                MaxCallableSize = maxCallableSize.Value;
+            }
         }
 
 /// <summary></summary>

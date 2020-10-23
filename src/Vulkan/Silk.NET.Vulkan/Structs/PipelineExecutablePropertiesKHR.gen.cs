@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineExecutablePropertiesKHR
         (
-            StructureType sType = StructureType.PipelineExecutablePropertiesKhr,
-            void* pNext = default,
-            ShaderStageFlags stages = default,
-            uint subgroupSize = default
+            StructureType? sType = StructureType.PipelineExecutablePropertiesKhr,
+            void* pNext = null,
+            ShaderStageFlags? stages = null,
+            uint? subgroupSize = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Stages = stages;
-            SubgroupSize = subgroupSize;
+            fixed (PipelineExecutablePropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stages is not null)
+            {
+                Stages = stages.Value;
+            }
+
+            if (subgroupSize is not null)
+            {
+                SubgroupSize = subgroupSize.Value;
+            }
         }
 
 /// <summary></summary>

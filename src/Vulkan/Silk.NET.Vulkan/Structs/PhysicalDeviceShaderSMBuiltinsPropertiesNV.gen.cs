@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderSMBuiltinsPropertiesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderSMBuiltinsPropertiesNV,
-            void* pNext = default,
-            uint shaderSmcount = default,
-            uint shaderWarpsPerSM = default
+            StructureType? sType = StructureType.PhysicalDeviceShaderSMBuiltinsPropertiesNV,
+            void* pNext = null,
+            uint? shaderSmcount = null,
+            uint? shaderWarpsPerSM = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderSmcount = shaderSmcount;
-            ShaderWarpsPerSM = shaderWarpsPerSM;
+            fixed (PhysicalDeviceShaderSMBuiltinsPropertiesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderSmcount is not null)
+            {
+                ShaderSmcount = shaderSmcount.Value;
+            }
+
+            if (shaderWarpsPerSM is not null)
+            {
+                ShaderWarpsPerSM = shaderWarpsPerSM.Value;
+            }
         }
 
 /// <summary></summary>

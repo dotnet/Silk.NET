@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceScalarBlockLayoutFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceScalarBlockLayoutFeatures,
-            void* pNext = default,
-            Bool32 scalarBlockLayout = default
+            StructureType? sType = StructureType.PhysicalDeviceScalarBlockLayoutFeatures,
+            void* pNext = null,
+            Bool32? scalarBlockLayout = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ScalarBlockLayout = scalarBlockLayout;
+            fixed (PhysicalDeviceScalarBlockLayoutFeatures* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (scalarBlockLayout is not null)
+            {
+                ScalarBlockLayout = scalarBlockLayout.Value;
+            }
         }
 
 /// <summary></summary>

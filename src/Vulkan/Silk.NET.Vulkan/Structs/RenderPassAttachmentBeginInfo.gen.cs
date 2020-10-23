@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassAttachmentBeginInfo
         (
-            StructureType sType = StructureType.RenderPassAttachmentBeginInfo,
-            void* pNext = default,
-            uint attachmentCount = default,
-            ImageView* pAttachments = default
+            StructureType? sType = StructureType.RenderPassAttachmentBeginInfo,
+            void* pNext = null,
+            uint? attachmentCount = null,
+            ImageView* pAttachments = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AttachmentCount = attachmentCount;
-            PAttachments = pAttachments;
+            fixed (RenderPassAttachmentBeginInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachmentCount is not null)
+            {
+                AttachmentCount = attachmentCount.Value;
+            }
+
+            if (pAttachments is not null)
+            {
+                PAttachments = pAttachments;
+            }
         }
 
 /// <summary></summary>

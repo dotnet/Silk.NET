@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineShaderStageRequiredSubgroupSizeCreateInfoExt,
-            void* pNext = default,
-            uint requiredSubgroupSize = default
+            StructureType? sType = StructureType.PipelineShaderStageRequiredSubgroupSizeCreateInfoExt,
+            void* pNext = null,
+            uint? requiredSubgroupSize = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RequiredSubgroupSize = requiredSubgroupSize;
+            fixed (PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (requiredSubgroupSize is not null)
+            {
+                RequiredSubgroupSize = requiredSubgroupSize.Value;
+            }
         }
 
 /// <summary></summary>

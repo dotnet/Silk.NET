@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineViewportExclusiveScissorStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineViewportExclusiveScissorStateCreateInfoNV,
-            void* pNext = default,
-            uint exclusiveScissorCount = default,
-            Rect2D* pExclusiveScissors = default
+            StructureType? sType = StructureType.PipelineViewportExclusiveScissorStateCreateInfoNV,
+            void* pNext = null,
+            uint? exclusiveScissorCount = null,
+            Rect2D* pExclusiveScissors = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ExclusiveScissorCount = exclusiveScissorCount;
-            PExclusiveScissors = pExclusiveScissors;
+            fixed (PipelineViewportExclusiveScissorStateCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (exclusiveScissorCount is not null)
+            {
+                ExclusiveScissorCount = exclusiveScissorCount.Value;
+            }
+
+            if (pExclusiveScissors is not null)
+            {
+                PExclusiveScissors = pExclusiveScissors;
+            }
         }
 
 /// <summary></summary>

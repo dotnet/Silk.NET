@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public CoarseSampleOrderCustomNV
         (
-            ShadingRatePaletteEntryNV shadingRate = default,
-            uint sampleCount = default,
-            uint sampleLocationCount = default,
-            CoarseSampleLocationNV* pSampleLocations = default
+            ShadingRatePaletteEntryNV? shadingRate = null,
+            uint? sampleCount = null,
+            uint? sampleLocationCount = null,
+            CoarseSampleLocationNV* pSampleLocations = null
         )
         {
-            ShadingRate = shadingRate;
-            SampleCount = sampleCount;
-            SampleLocationCount = sampleLocationCount;
-            PSampleLocations = pSampleLocations;
+            fixed (CoarseSampleOrderCustomNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (shadingRate is not null)
+            {
+                ShadingRate = shadingRate.Value;
+            }
+
+            if (sampleCount is not null)
+            {
+                SampleCount = sampleCount.Value;
+            }
+
+            if (sampleLocationCount is not null)
+            {
+                SampleLocationCount = sampleLocationCount.Value;
+            }
+
+            if (pSampleLocations is not null)
+            {
+                PSampleLocations = pSampleLocations;
+            }
         }
 
 /// <summary></summary>

@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public SystemTrackingProperties
         (
-            uint orientationTracking = default,
-            uint positionTracking = default
+            uint? orientationTracking = null,
+            uint? positionTracking = null
         )
         {
-            OrientationTracking = orientationTracking;
-            PositionTracking = positionTracking;
+            fixed (SystemTrackingProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (orientationTracking is not null)
+            {
+                OrientationTracking = orientationTracking.Value;
+            }
+
+            if (positionTracking is not null)
+            {
+                PositionTracking = positionTracking.Value;
+            }
         }
 
 /// <summary></summary>

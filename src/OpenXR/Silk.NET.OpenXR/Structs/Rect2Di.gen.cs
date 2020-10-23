@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public Rect2Di
         (
-            Offset2Di offset = default,
-            Extent2Di extent = default
+            Offset2Di? offset = null,
+            Extent2Di? extent = null
         )
         {
-            Offset = offset;
-            Extent = extent;
+            fixed (Rect2Di* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
         }
 
 /// <summary></summary>

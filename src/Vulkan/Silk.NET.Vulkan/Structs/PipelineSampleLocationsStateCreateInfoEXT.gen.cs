@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineSampleLocationsStateCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineSampleLocationsStateCreateInfoExt,
-            void* pNext = default,
-            Bool32 sampleLocationsEnable = default,
-            SampleLocationsInfoEXT sampleLocationsInfo = default
+            StructureType? sType = StructureType.PipelineSampleLocationsStateCreateInfoExt,
+            void* pNext = null,
+            Bool32? sampleLocationsEnable = null,
+            SampleLocationsInfoEXT? sampleLocationsInfo = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SampleLocationsEnable = sampleLocationsEnable;
-            SampleLocationsInfo = sampleLocationsInfo;
+            fixed (PipelineSampleLocationsStateCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sampleLocationsEnable is not null)
+            {
+                SampleLocationsEnable = sampleLocationsEnable.Value;
+            }
+
+            if (sampleLocationsInfo is not null)
+            {
+                SampleLocationsInfo = sampleLocationsInfo.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public DisplayPlaneInfo2KHR
         (
-            StructureType sType = StructureType.DisplayPlaneInfo2Khr,
-            void* pNext = default,
-            DisplayModeKHR mode = default,
-            uint planeIndex = default
+            StructureType? sType = StructureType.DisplayPlaneInfo2Khr,
+            void* pNext = null,
+            DisplayModeKHR? mode = null,
+            uint? planeIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Mode = mode;
-            PlaneIndex = planeIndex;
+            fixed (DisplayPlaneInfo2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (mode is not null)
+            {
+                Mode = mode.Value;
+            }
+
+            if (planeIndex is not null)
+            {
+                PlaneIndex = planeIndex.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public Offset3D
         (
-            int x = default,
-            int y = default,
-            int z = default
+            int? x = null,
+            int? y = null,
+            int? z = null
         )
         {
-            X = x;
-            Y = y;
-            Z = z;
+            fixed (Offset3D* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
         }
 
 /// <summary></summary>

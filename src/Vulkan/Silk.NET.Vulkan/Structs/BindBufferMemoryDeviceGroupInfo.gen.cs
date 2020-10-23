@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public BindBufferMemoryDeviceGroupInfo
         (
-            StructureType sType = StructureType.BindBufferMemoryDeviceGroupInfo,
-            void* pNext = default,
-            uint deviceIndexCount = default,
-            uint* pDeviceIndices = default
+            StructureType? sType = StructureType.BindBufferMemoryDeviceGroupInfo,
+            void* pNext = null,
+            uint? deviceIndexCount = null,
+            uint* pDeviceIndices = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceIndexCount = deviceIndexCount;
-            PDeviceIndices = pDeviceIndices;
+            fixed (BindBufferMemoryDeviceGroupInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceIndexCount is not null)
+            {
+                DeviceIndexCount = deviceIndexCount.Value;
+            }
+
+            if (pDeviceIndices is not null)
+            {
+                PDeviceIndices = pDeviceIndices;
+            }
         }
 
 /// <summary></summary>

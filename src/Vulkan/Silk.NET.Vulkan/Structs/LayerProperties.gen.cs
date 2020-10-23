@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public LayerProperties
         (
-            uint specVersion = default,
-            uint implementationVersion = default
+            uint? specVersion = null,
+            uint? implementationVersion = null
         )
         {
-            SpecVersion = specVersion;
-            ImplementationVersion = implementationVersion;
+            fixed (LayerProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (specVersion is not null)
+            {
+                SpecVersion = specVersion.Value;
+            }
+
+            if (implementationVersion is not null)
+            {
+                ImplementationVersion = implementationVersion.Value;
+            }
         }
 
         /// <summary></summary>

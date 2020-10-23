@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public SubpassDependency
         (
-            uint srcSubpass = default,
-            uint dstSubpass = default,
-            PipelineStageFlags srcStageMask = default,
-            PipelineStageFlags dstStageMask = default,
-            AccessFlags srcAccessMask = default,
-            AccessFlags dstAccessMask = default,
-            DependencyFlags dependencyFlags = default
+            uint? srcSubpass = null,
+            uint? dstSubpass = null,
+            PipelineStageFlags? srcStageMask = null,
+            PipelineStageFlags? dstStageMask = null,
+            AccessFlags? srcAccessMask = null,
+            AccessFlags? dstAccessMask = null,
+            DependencyFlags? dependencyFlags = null
         )
         {
-            SrcSubpass = srcSubpass;
-            DstSubpass = dstSubpass;
-            SrcStageMask = srcStageMask;
-            DstStageMask = dstStageMask;
-            SrcAccessMask = srcAccessMask;
-            DstAccessMask = dstAccessMask;
-            DependencyFlags = dependencyFlags;
+            fixed (SubpassDependency* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (srcSubpass is not null)
+            {
+                SrcSubpass = srcSubpass.Value;
+            }
+
+            if (dstSubpass is not null)
+            {
+                DstSubpass = dstSubpass.Value;
+            }
+
+            if (srcStageMask is not null)
+            {
+                SrcStageMask = srcStageMask.Value;
+            }
+
+            if (dstStageMask is not null)
+            {
+                DstStageMask = dstStageMask.Value;
+            }
+
+            if (srcAccessMask is not null)
+            {
+                SrcAccessMask = srcAccessMask.Value;
+            }
+
+            if (dstAccessMask is not null)
+            {
+                DstAccessMask = dstAccessMask.Value;
+            }
+
+            if (dependencyFlags is not null)
+            {
+                DependencyFlags = dependencyFlags.Value;
+            }
         }
 
 /// <summary></summary>

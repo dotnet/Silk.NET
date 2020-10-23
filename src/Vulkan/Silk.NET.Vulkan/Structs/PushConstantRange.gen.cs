@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PushConstantRange
         (
-            ShaderStageFlags stageFlags = default,
-            uint offset = default,
-            uint size = default
+            ShaderStageFlags? stageFlags = null,
+            uint? offset = null,
+            uint? size = null
         )
         {
-            StageFlags = stageFlags;
-            Offset = offset;
-            Size = size;
+            fixed (PushConstantRange* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (stageFlags is not null)
+            {
+                StageFlags = stageFlags.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

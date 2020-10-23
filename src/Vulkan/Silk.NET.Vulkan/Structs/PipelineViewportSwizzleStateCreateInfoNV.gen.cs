@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PipelineViewportSwizzleStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineViewportSwizzleStateCreateInfoNV,
-            void* pNext = default,
-            uint flags = default,
-            uint viewportCount = default,
-            ViewportSwizzleNV* pViewportSwizzles = default
+            StructureType? sType = StructureType.PipelineViewportSwizzleStateCreateInfoNV,
+            void* pNext = null,
+            uint? flags = null,
+            uint? viewportCount = null,
+            ViewportSwizzleNV* pViewportSwizzles = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            ViewportCount = viewportCount;
-            PViewportSwizzles = pViewportSwizzles;
+            fixed (PipelineViewportSwizzleStateCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (viewportCount is not null)
+            {
+                ViewportCount = viewportCount.Value;
+            }
+
+            if (pViewportSwizzles is not null)
+            {
+                PViewportSwizzles = pViewportSwizzles;
+            }
         }
 
 /// <summary></summary>

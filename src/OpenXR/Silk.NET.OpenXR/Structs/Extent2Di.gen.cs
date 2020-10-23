@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public Extent2Di
         (
-            int width = default,
-            int height = default
+            int? width = null,
+            int? height = null
         )
         {
-            Width = width;
-            Height = height;
+            fixed (Extent2Di* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
         }
 
 /// <summary></summary>

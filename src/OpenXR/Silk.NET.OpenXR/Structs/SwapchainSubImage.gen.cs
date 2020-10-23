@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainSubImage
         (
-            Swapchain swapchain = default,
-            Rect2Di imageRect = default,
-            uint imageArrayIndex = default
+            Swapchain? swapchain = null,
+            Rect2Di? imageRect = null,
+            uint? imageArrayIndex = null
         )
         {
-            Swapchain = swapchain;
-            ImageRect = imageRect;
-            ImageArrayIndex = imageArrayIndex;
+            fixed (SwapchainSubImage* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (swapchain is not null)
+            {
+                Swapchain = swapchain.Value;
+            }
+
+            if (imageRect is not null)
+            {
+                ImageRect = imageRect.Value;
+            }
+
+            if (imageArrayIndex is not null)
+            {
+                ImageArrayIndex = imageArrayIndex.Value;
+            }
         }
 
 /// <summary></summary>

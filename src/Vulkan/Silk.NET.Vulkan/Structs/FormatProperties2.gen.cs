@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public FormatProperties2
         (
-            StructureType sType = StructureType.FormatProperties2,
-            void* pNext = default,
-            FormatProperties formatProperties = default
+            StructureType? sType = StructureType.FormatProperties2,
+            void* pNext = null,
+            FormatProperties? formatProperties = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FormatProperties = formatProperties;
+            fixed (FormatProperties2* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (formatProperties is not null)
+            {
+                FormatProperties = formatProperties.Value;
+            }
         }
 
 /// <summary></summary>

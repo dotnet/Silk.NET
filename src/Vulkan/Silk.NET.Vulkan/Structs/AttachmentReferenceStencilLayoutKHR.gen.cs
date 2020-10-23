@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentReferenceStencilLayoutKHR
         (
-            StructureType sType = StructureType.AttachmentReferenceStencilLayout,
-            void* pNext = default,
-            ImageLayout stencilLayout = default
+            StructureType? sType = StructureType.AttachmentReferenceStencilLayout,
+            void* pNext = null,
+            ImageLayout? stencilLayout = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            StencilLayout = stencilLayout;
+            fixed (AttachmentReferenceStencilLayoutKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stencilLayout is not null)
+            {
+                StencilLayout = stencilLayout.Value;
+            }
         }
 
 /// <summary></summary>

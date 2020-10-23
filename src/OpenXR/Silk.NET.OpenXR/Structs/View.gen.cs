@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public View
         (
-            StructureType type = StructureType.TypeView,
-            void* next = default,
-            Posef pose = default,
-            Fovf fov = default
+            StructureType? type = StructureType.TypeView,
+            void* next = null,
+            Posef? pose = null,
+            Fovf? fov = null
         )
         {
-            Type = type;
-            Next = next;
-            Pose = pose;
-            Fov = fov;
+            fixed (View* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (fov is not null)
+            {
+                Fov = fov.Value;
+            }
         }
 
 /// <summary></summary>

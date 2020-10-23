@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DeviceQueueInfo2
         (
-            StructureType sType = StructureType.DeviceQueueInfo2,
-            void* pNext = default,
-            DeviceQueueCreateFlags flags = default,
-            uint queueFamilyIndex = default,
-            uint queueIndex = default
+            StructureType? sType = StructureType.DeviceQueueInfo2,
+            void* pNext = null,
+            DeviceQueueCreateFlags? flags = null,
+            uint? queueFamilyIndex = null,
+            uint? queueIndex = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            QueueFamilyIndex = queueFamilyIndex;
-            QueueIndex = queueIndex;
+            fixed (DeviceQueueInfo2* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (queueFamilyIndex is not null)
+            {
+                QueueFamilyIndex = queueFamilyIndex.Value;
+            }
+
+            if (queueIndex is not null)
+            {
+                QueueIndex = queueIndex.Value;
+            }
         }
 
 /// <summary></summary>

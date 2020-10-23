@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceRobustness2FeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceRobustness2FeaturesExt,
-            void* pNext = default,
-            Bool32 robustBufferAccess2 = default,
-            Bool32 robustImageAccess2 = default,
-            Bool32 nullDescriptor = default
+            StructureType? sType = StructureType.PhysicalDeviceRobustness2FeaturesExt,
+            void* pNext = null,
+            Bool32? robustBufferAccess2 = null,
+            Bool32? robustImageAccess2 = null,
+            Bool32? nullDescriptor = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            RobustBufferAccess2 = robustBufferAccess2;
-            RobustImageAccess2 = robustImageAccess2;
-            NullDescriptor = nullDescriptor;
+            fixed (PhysicalDeviceRobustness2FeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (robustBufferAccess2 is not null)
+            {
+                RobustBufferAccess2 = robustBufferAccess2.Value;
+            }
+
+            if (robustImageAccess2 is not null)
+            {
+                RobustImageAccess2 = robustImageAccess2.Value;
+            }
+
+            if (nullDescriptor is not null)
+            {
+                NullDescriptor = nullDescriptor.Value;
+            }
         }
 
 /// <summary></summary>

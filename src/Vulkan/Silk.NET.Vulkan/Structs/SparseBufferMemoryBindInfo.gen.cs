@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SparseBufferMemoryBindInfo
         (
-            Buffer buffer = default,
-            uint bindCount = default,
-            SparseMemoryBind* pBinds = default
+            Buffer? buffer = null,
+            uint? bindCount = null,
+            SparseMemoryBind* pBinds = null
         )
         {
-            Buffer = buffer;
-            BindCount = bindCount;
-            PBinds = pBinds;
+            fixed (SparseBufferMemoryBindInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (bindCount is not null)
+            {
+                BindCount = bindCount.Value;
+            }
+
+            if (pBinds is not null)
+            {
+                PBinds = pBinds;
+            }
         }
 
 /// <summary></summary>

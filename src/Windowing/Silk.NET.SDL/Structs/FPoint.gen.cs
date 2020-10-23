@@ -21,12 +21,24 @@ namespace Silk.NET.SDL
     {
         public FPoint
         (
-            float x = default,
-            float y = default
+            float? x = null,
+            float? y = null
         )
         {
-            X = x;
-            Y = y;
+            fixed (FPoint* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
 

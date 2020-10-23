@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public IOSSurfaceCreateInfoMVK
         (
-            StructureType sType = StructureType.IosSurfaceCreateInfoMvk,
-            void* pNext = default,
-            uint flags = default,
-            void* pView = default
+            StructureType? sType = StructureType.IosSurfaceCreateInfoMvk,
+            void* pNext = null,
+            uint? flags = null,
+            void* pView = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PView = pView;
+            fixed (IOSSurfaceCreateInfoMVK* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pView is not null)
+            {
+                PView = pView;
+            }
         }
 
 /// <summary></summary>

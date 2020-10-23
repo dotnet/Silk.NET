@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SessionBeginInfo
         (
-            StructureType type = StructureType.TypeSessionBeginInfo,
-            void* next = default,
-            ViewConfigurationType primaryViewConfigurationType = default
+            StructureType? type = StructureType.TypeSessionBeginInfo,
+            void* next = null,
+            ViewConfigurationType? primaryViewConfigurationType = null
         )
         {
-            Type = type;
-            Next = next;
-            PrimaryViewConfigurationType = primaryViewConfigurationType;
+            fixed (SessionBeginInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (primaryViewConfigurationType is not null)
+            {
+                PrimaryViewConfigurationType = primaryViewConfigurationType.Value;
+            }
         }
 
 /// <summary></summary>

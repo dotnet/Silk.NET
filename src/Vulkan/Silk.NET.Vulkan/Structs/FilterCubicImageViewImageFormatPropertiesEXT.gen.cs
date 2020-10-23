@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public FilterCubicImageViewImageFormatPropertiesEXT
         (
-            StructureType sType = StructureType.FilterCubicImageViewImageFormatPropertiesExt,
-            void* pNext = default,
-            Bool32 filterCubic = default,
-            Bool32 filterCubicMinmax = default
+            StructureType? sType = StructureType.FilterCubicImageViewImageFormatPropertiesExt,
+            void* pNext = null,
+            Bool32? filterCubic = null,
+            Bool32? filterCubicMinmax = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FilterCubic = filterCubic;
-            FilterCubicMinmax = filterCubicMinmax;
+            fixed (FilterCubicImageViewImageFormatPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (filterCubic is not null)
+            {
+                FilterCubic = filterCubic.Value;
+            }
+
+            if (filterCubicMinmax is not null)
+            {
+                FilterCubicMinmax = filterCubicMinmax.Value;
+            }
         }
 
 /// <summary></summary>

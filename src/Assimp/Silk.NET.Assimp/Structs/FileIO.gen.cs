@@ -21,14 +21,30 @@ namespace Silk.NET.Assimp
     {
         public FileIO
         (
-            void* openProc = default,
-            void* closeProc = default,
-            byte* userData = default
+            void* openProc = null,
+            void* closeProc = null,
+            byte* userData = null
         )
         {
-            OpenProc = openProc;
-            CloseProc = closeProc;
-            UserData = userData;
+            fixed (FileIO* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (openProc is not null)
+            {
+                OpenProc = openProc;
+            }
+
+            if (closeProc is not null)
+            {
+                CloseProc = closeProc;
+            }
+
+            if (userData is not null)
+            {
+                UserData = userData;
+            }
         }
 
 

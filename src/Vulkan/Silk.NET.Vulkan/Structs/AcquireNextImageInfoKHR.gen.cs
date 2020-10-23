@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public AcquireNextImageInfoKHR
         (
-            StructureType sType = StructureType.AcquireNextImageInfoKhr,
-            void* pNext = default,
-            SwapchainKHR swapchain = default,
-            ulong timeout = default,
-            Semaphore semaphore = default,
-            Fence fence = default,
-            uint deviceMask = default
+            StructureType? sType = StructureType.AcquireNextImageInfoKhr,
+            void* pNext = null,
+            SwapchainKHR? swapchain = null,
+            ulong? timeout = null,
+            Semaphore? semaphore = null,
+            Fence? fence = null,
+            uint? deviceMask = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Swapchain = swapchain;
-            Timeout = timeout;
-            Semaphore = semaphore;
-            Fence = fence;
-            DeviceMask = deviceMask;
+            fixed (AcquireNextImageInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchain is not null)
+            {
+                Swapchain = swapchain.Value;
+            }
+
+            if (timeout is not null)
+            {
+                Timeout = timeout.Value;
+            }
+
+            if (semaphore is not null)
+            {
+                Semaphore = semaphore.Value;
+            }
+
+            if (fence is not null)
+            {
+                Fence = fence.Value;
+            }
+
+            if (deviceMask is not null)
+            {
+                DeviceMask = deviceMask.Value;
+            }
         }
 
 /// <summary></summary>

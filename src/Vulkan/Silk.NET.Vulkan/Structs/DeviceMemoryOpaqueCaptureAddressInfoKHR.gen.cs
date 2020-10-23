@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DeviceMemoryOpaqueCaptureAddressInfoKHR
         (
-            StructureType sType = StructureType.DeviceMemoryOpaqueCaptureAddressInfo,
-            void* pNext = default,
-            DeviceMemory memory = default
+            StructureType? sType = StructureType.DeviceMemoryOpaqueCaptureAddressInfo,
+            void* pNext = null,
+            DeviceMemory? memory = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Memory = memory;
+            fixed (DeviceMemoryOpaqueCaptureAddressInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
         }
 
 /// <summary></summary>

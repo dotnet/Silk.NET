@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public BindImagePlaneMemoryInfo
         (
-            StructureType sType = StructureType.BindImagePlaneMemoryInfo,
-            void* pNext = default,
-            ImageAspectFlags planeAspect = default
+            StructureType? sType = StructureType.BindImagePlaneMemoryInfo,
+            void* pNext = null,
+            ImageAspectFlags? planeAspect = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PlaneAspect = planeAspect;
+            fixed (BindImagePlaneMemoryInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (planeAspect is not null)
+            {
+                PlaneAspect = planeAspect.Value;
+            }
         }
 
 /// <summary></summary>

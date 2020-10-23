@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCompilerControlCreateInfoAMD
         (
-            StructureType sType = StructureType.PipelineCompilerControlCreateInfoAmd,
-            void* pNext = default,
-            PipelineCompilerControlFlagsAMD compilerControlFlags = default
+            StructureType? sType = StructureType.PipelineCompilerControlCreateInfoAmd,
+            void* pNext = null,
+            PipelineCompilerControlFlagsAMD? compilerControlFlags = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CompilerControlFlags = compilerControlFlags;
+            fixed (PipelineCompilerControlCreateInfoAMD* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (compilerControlFlags is not null)
+            {
+                CompilerControlFlags = compilerControlFlags.Value;
+            }
         }
 
 /// <summary></summary>

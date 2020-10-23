@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTimelineSemaphorePropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceTimelineSemaphoreProperties,
-            void* pNext = default,
-            ulong maxTimelineSemaphoreValueDifference = default
+            StructureType? sType = StructureType.PhysicalDeviceTimelineSemaphoreProperties,
+            void* pNext = null,
+            ulong? maxTimelineSemaphoreValueDifference = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference;
+            fixed (PhysicalDeviceTimelineSemaphorePropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxTimelineSemaphoreValueDifference is not null)
+            {
+                MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference.Value;
+            }
         }
 
 /// <summary></summary>

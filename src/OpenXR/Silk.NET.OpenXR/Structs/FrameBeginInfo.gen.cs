@@ -21,12 +21,24 @@ namespace Silk.NET.OpenXR
     {
         public FrameBeginInfo
         (
-            StructureType type = StructureType.TypeFrameBeginInfo,
-            void* next = default
+            StructureType? type = StructureType.TypeFrameBeginInfo,
+            void* next = null
         )
         {
-            Type = type;
-            Next = next;
+            fixed (FrameBeginInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 /// <summary></summary>

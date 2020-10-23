@@ -21,12 +21,24 @@ namespace Silk.NET.SDL
     {
         public CommonEvent
         (
-            uint type = default,
-            uint timestamp = default
+            uint? type = null,
+            uint? timestamp = null
         )
         {
-            Type = type;
-            Timestamp = timestamp;
+            fixed (CommonEvent* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
         }
 
 

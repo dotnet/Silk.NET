@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorImageInfo
         (
-            Sampler sampler = default,
-            ImageView imageView = default,
-            ImageLayout imageLayout = default
+            Sampler? sampler = null,
+            ImageView? imageView = null,
+            ImageLayout? imageLayout = null
         )
         {
-            Sampler = sampler;
-            ImageView = imageView;
-            ImageLayout = imageLayout;
+            fixed (DescriptorImageInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sampler is not null)
+            {
+                Sampler = sampler.Value;
+            }
+
+            if (imageView is not null)
+            {
+                ImageView = imageView.Value;
+            }
+
+            if (imageLayout is not null)
+            {
+                ImageLayout = imageLayout.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSubgroupSizeControlPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceSubgroupSizeControlPropertiesExt,
-            void* pNext = default,
-            uint minSubgroupSize = default,
-            uint maxSubgroupSize = default,
-            uint maxComputeWorkgroupSubgroups = default,
-            ShaderStageFlags requiredSubgroupSizeStages = default
+            StructureType? sType = StructureType.PhysicalDeviceSubgroupSizeControlPropertiesExt,
+            void* pNext = null,
+            uint? minSubgroupSize = null,
+            uint? maxSubgroupSize = null,
+            uint? maxComputeWorkgroupSubgroups = null,
+            ShaderStageFlags? requiredSubgroupSizeStages = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MinSubgroupSize = minSubgroupSize;
-            MaxSubgroupSize = maxSubgroupSize;
-            MaxComputeWorkgroupSubgroups = maxComputeWorkgroupSubgroups;
-            RequiredSubgroupSizeStages = requiredSubgroupSizeStages;
+            fixed (PhysicalDeviceSubgroupSizeControlPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (minSubgroupSize is not null)
+            {
+                MinSubgroupSize = minSubgroupSize.Value;
+            }
+
+            if (maxSubgroupSize is not null)
+            {
+                MaxSubgroupSize = maxSubgroupSize.Value;
+            }
+
+            if (maxComputeWorkgroupSubgroups is not null)
+            {
+                MaxComputeWorkgroupSubgroups = maxComputeWorkgroupSubgroups.Value;
+            }
+
+            if (requiredSubgroupSizeStages is not null)
+            {
+                RequiredSubgroupSizeStages = requiredSubgroupSizeStages.Value;
+            }
         }
 
 /// <summary></summary>

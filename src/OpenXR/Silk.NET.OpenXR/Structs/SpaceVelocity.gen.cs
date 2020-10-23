@@ -21,18 +21,42 @@ namespace Silk.NET.OpenXR
     {
         public SpaceVelocity
         (
-            StructureType type = StructureType.TypeSpaceVelocity,
-            void* next = default,
-            SpaceVelocityFlags velocityFlags = default,
-            Vector3f linearVelocity = default,
-            Vector3f angularVelocity = default
+            StructureType? type = StructureType.TypeSpaceVelocity,
+            void* next = null,
+            SpaceVelocityFlags? velocityFlags = null,
+            Vector3f? linearVelocity = null,
+            Vector3f? angularVelocity = null
         )
         {
-            Type = type;
-            Next = next;
-            VelocityFlags = velocityFlags;
-            LinearVelocity = linearVelocity;
-            AngularVelocity = angularVelocity;
+            fixed (SpaceVelocity* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (velocityFlags is not null)
+            {
+                VelocityFlags = velocityFlags.Value;
+            }
+
+            if (linearVelocity is not null)
+            {
+                LinearVelocity = linearVelocity.Value;
+            }
+
+            if (angularVelocity is not null)
+            {
+                AngularVelocity = angularVelocity.Value;
+            }
         }
 
 /// <summary></summary>

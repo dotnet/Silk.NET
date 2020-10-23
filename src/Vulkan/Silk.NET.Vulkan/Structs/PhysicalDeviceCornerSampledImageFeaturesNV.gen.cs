@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCornerSampledImageFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceCornerSampledImageFeaturesNV,
-            void* pNext = default,
-            Bool32 cornerSampledImage = default
+            StructureType? sType = StructureType.PhysicalDeviceCornerSampledImageFeaturesNV,
+            void* pNext = null,
+            Bool32? cornerSampledImage = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CornerSampledImage = cornerSampledImage;
+            fixed (PhysicalDeviceCornerSampledImageFeaturesNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (cornerSampledImage is not null)
+            {
+                CornerSampledImage = cornerSampledImage.Value;
+            }
         }
 
 /// <summary></summary>

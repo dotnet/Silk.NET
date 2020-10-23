@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureGeometryKHR
         (
-            StructureType sType = StructureType.AccelerationStructureGeometryKhr,
-            void* pNext = default,
-            GeometryTypeKHR geometryType = default,
-            AccelerationStructureGeometryDataKHR geometry = default,
-            GeometryFlagsKHR flags = default
+            StructureType? sType = StructureType.AccelerationStructureGeometryKhr,
+            void* pNext = null,
+            GeometryTypeKHR? geometryType = null,
+            AccelerationStructureGeometryDataKHR? geometry = null,
+            GeometryFlagsKHR? flags = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            GeometryType = geometryType;
-            Geometry = geometry;
-            Flags = flags;
+            fixed (AccelerationStructureGeometryKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (geometryType is not null)
+            {
+                GeometryType = geometryType.Value;
+            }
+
+            if (geometry is not null)
+            {
+                Geometry = geometry.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SamplerYcbcrConversionImageFormatPropertiesKHR
         (
-            StructureType sType = StructureType.SamplerYcbcrConversionImageFormatProperties,
-            void* pNext = default,
-            uint combinedImageSamplerDescriptorCount = default
+            StructureType? sType = StructureType.SamplerYcbcrConversionImageFormatProperties,
+            void* pNext = null,
+            uint? combinedImageSamplerDescriptorCount = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CombinedImageSamplerDescriptorCount = combinedImageSamplerDescriptorCount;
+            fixed (SamplerYcbcrConversionImageFormatPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (combinedImageSamplerDescriptorCount is not null)
+            {
+                CombinedImageSamplerDescriptorCount = combinedImageSamplerDescriptorCount.Value;
+            }
         }
 
 /// <summary></summary>

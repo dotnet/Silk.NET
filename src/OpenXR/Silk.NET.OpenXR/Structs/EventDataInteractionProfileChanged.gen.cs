@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public EventDataInteractionProfileChanged
         (
-            StructureType type = StructureType.TypeEventDataInteractionProfileChanged,
-            void* next = default,
-            Session session = default
+            StructureType? type = StructureType.TypeEventDataInteractionProfileChanged,
+            void* next = null,
+            Session? session = null
         )
         {
-            Type = type;
-            Next = next;
-            Session = session;
+            fixed (EventDataInteractionProfileChanged* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (session is not null)
+            {
+                Session = session.Value;
+            }
         }
 
 /// <summary></summary>

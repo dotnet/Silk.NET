@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public DebugMarkerObjectNameInfoEXT
         (
-            StructureType sType = StructureType.DebugMarkerObjectNameInfoExt,
-            void* pNext = default,
-            DebugReportObjectTypeEXT objectType = default,
-            ulong @object = default,
-            byte* pObjectName = default
+            StructureType? sType = StructureType.DebugMarkerObjectNameInfoExt,
+            void* pNext = null,
+            DebugReportObjectTypeEXT? objectType = null,
+            ulong? @object = null,
+            byte* pObjectName = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ObjectType = objectType;
-            Object = @object;
-            PObjectName = pObjectName;
+            fixed (DebugMarkerObjectNameInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (objectType is not null)
+            {
+                ObjectType = objectType.Value;
+            }
+
+            if (@object is not null)
+            {
+                Object = @object.Value;
+            }
+
+            if (pObjectName is not null)
+            {
+                PObjectName = pObjectName;
+            }
         }
 
 /// <summary></summary>

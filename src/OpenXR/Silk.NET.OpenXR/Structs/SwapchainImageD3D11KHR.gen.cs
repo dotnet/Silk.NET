@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainImageD3D11KHR
         (
-            StructureType type = StructureType.TypeSwapchainImageD3D11Khr,
-            void* next = default,
-            IntPtr texture = default
+            StructureType? type = StructureType.TypeSwapchainImageD3D11Khr,
+            void* next = null,
+            IntPtr? texture = null
         )
         {
-            Type = type;
-            Next = next;
-            Texture = texture;
+            fixed (SwapchainImageD3D11KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (texture is not null)
+            {
+                Texture = texture.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public MemoryGetWin32HandleInfoKHR
         (
-            StructureType sType = StructureType.MemoryGetWin32HandleInfoKhr,
-            void* pNext = default,
-            DeviceMemory memory = default,
-            ExternalMemoryHandleTypeFlags handleType = default
+            StructureType? sType = StructureType.MemoryGetWin32HandleInfoKhr,
+            void* pNext = null,
+            DeviceMemory? memory = null,
+            ExternalMemoryHandleTypeFlags? handleType = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Memory = memory;
-            HandleType = handleType;
+            fixed (MemoryGetWin32HandleInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

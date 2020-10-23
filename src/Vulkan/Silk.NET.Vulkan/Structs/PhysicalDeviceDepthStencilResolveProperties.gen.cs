@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDepthStencilResolveProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceDepthStencilResolveProperties,
-            void* pNext = default,
-            ResolveModeFlags supportedDepthResolveModes = default,
-            ResolveModeFlags supportedStencilResolveModes = default,
-            Bool32 independentResolveNone = default,
-            Bool32 independentResolve = default
+            StructureType? sType = StructureType.PhysicalDeviceDepthStencilResolveProperties,
+            void* pNext = null,
+            ResolveModeFlags? supportedDepthResolveModes = null,
+            ResolveModeFlags? supportedStencilResolveModes = null,
+            Bool32? independentResolveNone = null,
+            Bool32? independentResolve = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SupportedDepthResolveModes = supportedDepthResolveModes;
-            SupportedStencilResolveModes = supportedStencilResolveModes;
-            IndependentResolveNone = independentResolveNone;
-            IndependentResolve = independentResolve;
+            fixed (PhysicalDeviceDepthStencilResolveProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (supportedDepthResolveModes is not null)
+            {
+                SupportedDepthResolveModes = supportedDepthResolveModes.Value;
+            }
+
+            if (supportedStencilResolveModes is not null)
+            {
+                SupportedStencilResolveModes = supportedStencilResolveModes.Value;
+            }
+
+            if (independentResolveNone is not null)
+            {
+                IndependentResolveNone = independentResolveNone.Value;
+            }
+
+            if (independentResolve is not null)
+            {
+                IndependentResolve = independentResolve.Value;
+            }
         }
 
 /// <summary></summary>

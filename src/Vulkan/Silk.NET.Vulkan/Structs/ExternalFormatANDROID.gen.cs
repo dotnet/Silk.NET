@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ExternalFormatANDROID
         (
-            StructureType sType = StructureType.ExternalFormatAndroid,
-            void* pNext = default,
-            ulong externalFormat = default
+            StructureType? sType = StructureType.ExternalFormatAndroid,
+            void* pNext = null,
+            ulong? externalFormat = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ExternalFormat = externalFormat;
+            fixed (ExternalFormatANDROID* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (externalFormat is not null)
+            {
+                ExternalFormat = externalFormat.Value;
+            }
         }
 
 /// <summary></summary>

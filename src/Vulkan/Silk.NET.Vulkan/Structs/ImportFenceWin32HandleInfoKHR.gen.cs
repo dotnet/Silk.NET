@@ -21,22 +21,54 @@ namespace Silk.NET.Vulkan
     {
         public ImportFenceWin32HandleInfoKHR
         (
-            StructureType sType = StructureType.ImportFenceWin32HandleInfoKhr,
-            void* pNext = default,
-            Fence fence = default,
-            FenceImportFlags flags = default,
-            ExternalFenceHandleTypeFlags handleType = default,
-            IntPtr handle = default,
-            IntPtr name = default
+            StructureType? sType = StructureType.ImportFenceWin32HandleInfoKhr,
+            void* pNext = null,
+            Fence? fence = null,
+            FenceImportFlags? flags = null,
+            ExternalFenceHandleTypeFlags? handleType = null,
+            IntPtr? handle = null,
+            IntPtr? name = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Fence = fence;
-            Flags = flags;
-            HandleType = handleType;
-            Handle = handle;
-            Name = name;
+            fixed (ImportFenceWin32HandleInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fence is not null)
+            {
+                Fence = fence.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
+
+            if (name is not null)
+            {
+                Name = name.Value;
+            }
         }
 
 /// <summary></summary>

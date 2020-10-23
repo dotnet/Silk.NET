@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PipelineTessellationStateCreateInfo
         (
-            StructureType sType = StructureType.PipelineTessellationStateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            uint patchControlPoints = default
+            StructureType? sType = StructureType.PipelineTessellationStateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            uint? patchControlPoints = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PatchControlPoints = patchControlPoints;
+            fixed (PipelineTessellationStateCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (patchControlPoints is not null)
+            {
+                PatchControlPoints = patchControlPoints.Value;
+            }
         }
 
 /// <summary></summary>

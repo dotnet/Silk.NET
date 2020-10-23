@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public WriteDescriptorSetInlineUniformBlockEXT
         (
-            StructureType sType = StructureType.WriteDescriptorSetInlineUniformBlockExt,
-            void* pNext = default,
-            uint dataSize = default,
-            void* pData = default
+            StructureType? sType = StructureType.WriteDescriptorSetInlineUniformBlockExt,
+            void* pNext = null,
+            uint? dataSize = null,
+            void* pData = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            DataSize = dataSize;
-            PData = pData;
+            fixed (WriteDescriptorSetInlineUniformBlockEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (pData is not null)
+            {
+                PData = pData;
+            }
         }
 
 /// <summary></summary>

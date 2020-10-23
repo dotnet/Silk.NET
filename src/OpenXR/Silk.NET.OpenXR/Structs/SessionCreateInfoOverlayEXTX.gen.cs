@@ -21,16 +21,36 @@ namespace Silk.NET.OpenXR
     {
         public SessionCreateInfoOverlayEXTX
         (
-            StructureType type = StructureType.TypeSessionCreateInfoOverlayExtx,
-            void* next = default,
-            OverlaySessionCreateFlagsEXTX createFlags = default,
-            uint sessionLayersPlacement = default
+            StructureType? type = StructureType.TypeSessionCreateInfoOverlayExtx,
+            void* next = null,
+            OverlaySessionCreateFlagsEXTX? createFlags = null,
+            uint? sessionLayersPlacement = null
         )
         {
-            Type = type;
-            Next = next;
-            CreateFlags = createFlags;
-            SessionLayersPlacement = sessionLayersPlacement;
+            fixed (SessionCreateInfoOverlayEXTX* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (createFlags is not null)
+            {
+                CreateFlags = createFlags.Value;
+            }
+
+            if (sessionLayersPlacement is not null)
+            {
+                SessionLayersPlacement = sessionLayersPlacement.Value;
+            }
         }
 
 /// <summary></summary>

@@ -21,20 +21,48 @@ namespace Silk.NET.Vulkan
     {
         public SemaphoreWaitInfoKHR
         (
-            StructureType sType = StructureType.SemaphoreWaitInfo,
-            void* pNext = default,
-            SemaphoreWaitFlags flags = default,
-            uint semaphoreCount = default,
-            Semaphore* pSemaphores = default,
-            ulong* pValues = default
+            StructureType? sType = StructureType.SemaphoreWaitInfo,
+            void* pNext = null,
+            SemaphoreWaitFlags? flags = null,
+            uint? semaphoreCount = null,
+            Semaphore* pSemaphores = null,
+            ulong* pValues = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            SemaphoreCount = semaphoreCount;
-            PSemaphores = pSemaphores;
-            PValues = pValues;
+            fixed (SemaphoreWaitInfoKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (semaphoreCount is not null)
+            {
+                SemaphoreCount = semaphoreCount.Value;
+            }
+
+            if (pSemaphores is not null)
+            {
+                PSemaphores = pSemaphores;
+            }
+
+            if (pValues is not null)
+            {
+                PValues = pValues;
+            }
         }
 
 /// <summary></summary>

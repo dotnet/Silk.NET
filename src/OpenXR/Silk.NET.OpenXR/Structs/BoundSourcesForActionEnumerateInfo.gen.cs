@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public BoundSourcesForActionEnumerateInfo
         (
-            StructureType type = StructureType.TypeBoundSourcesForActionEnumerateInfo,
-            void* next = default,
-            Action action = default
+            StructureType? type = StructureType.TypeBoundSourcesForActionEnumerateInfo,
+            void* next = null,
+            Action? action = null
         )
         {
-            Type = type;
-            Next = next;
-            Action = action;
+            fixed (BoundSourcesForActionEnumerateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
         }
 
 /// <summary></summary>

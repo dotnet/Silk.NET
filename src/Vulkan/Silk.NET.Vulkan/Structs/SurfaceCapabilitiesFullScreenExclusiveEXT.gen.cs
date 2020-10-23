@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceCapabilitiesFullScreenExclusiveEXT
         (
-            StructureType sType = StructureType.SurfaceCapabilitiesFullScreenExclusiveExt,
-            void* pNext = default,
-            Bool32 fullScreenExclusiveSupported = default
+            StructureType? sType = StructureType.SurfaceCapabilitiesFullScreenExclusiveExt,
+            void* pNext = null,
+            Bool32? fullScreenExclusiveSupported = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            FullScreenExclusiveSupported = fullScreenExclusiveSupported;
+            fixed (SurfaceCapabilitiesFullScreenExclusiveEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fullScreenExclusiveSupported is not null)
+            {
+                FullScreenExclusiveSupported = fullScreenExclusiveSupported.Value;
+            }
         }
 
 /// <summary></summary>

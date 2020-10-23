@@ -21,18 +21,42 @@ namespace Silk.NET.Vulkan
     {
         public ExternalSemaphoreProperties
         (
-            StructureType sType = StructureType.ExternalSemaphoreProperties,
-            void* pNext = default,
-            ExternalSemaphoreHandleTypeFlags exportFromImportedHandleTypes = default,
-            ExternalSemaphoreHandleTypeFlags compatibleHandleTypes = default,
-            ExternalSemaphoreFeatureFlags externalSemaphoreFeatures = default
+            StructureType? sType = StructureType.ExternalSemaphoreProperties,
+            void* pNext = null,
+            ExternalSemaphoreHandleTypeFlags? exportFromImportedHandleTypes = null,
+            ExternalSemaphoreHandleTypeFlags? compatibleHandleTypes = null,
+            ExternalSemaphoreFeatureFlags? externalSemaphoreFeatures = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-            CompatibleHandleTypes = compatibleHandleTypes;
-            ExternalSemaphoreFeatures = externalSemaphoreFeatures;
+            fixed (ExternalSemaphoreProperties* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (exportFromImportedHandleTypes is not null)
+            {
+                ExportFromImportedHandleTypes = exportFromImportedHandleTypes.Value;
+            }
+
+            if (compatibleHandleTypes is not null)
+            {
+                CompatibleHandleTypes = compatibleHandleTypes.Value;
+            }
+
+            if (externalSemaphoreFeatures is not null)
+            {
+                ExternalSemaphoreFeatures = externalSemaphoreFeatures.Value;
+            }
         }
 
 /// <summary></summary>

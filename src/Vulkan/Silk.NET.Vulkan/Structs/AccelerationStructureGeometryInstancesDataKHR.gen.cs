@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureGeometryInstancesDataKHR
         (
-            StructureType sType = StructureType.AccelerationStructureGeometryInstancesDataKhr,
-            void* pNext = default,
-            Bool32 arrayOfPointers = default,
-            DeviceOrHostAddressConstKHR data = default
+            StructureType? sType = StructureType.AccelerationStructureGeometryInstancesDataKhr,
+            void* pNext = null,
+            Bool32? arrayOfPointers = null,
+            DeviceOrHostAddressConstKHR? data = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            ArrayOfPointers = arrayOfPointers;
-            Data = data;
+            fixed (AccelerationStructureGeometryInstancesDataKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (arrayOfPointers is not null)
+            {
+                ArrayOfPointers = arrayOfPointers.Value;
+            }
+
+            if (data is not null)
+            {
+                Data = data.Value;
+            }
         }
 
 /// <summary></summary>

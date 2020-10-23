@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public SystemEyeGazeInteractionPropertiesEXT
         (
-            StructureType type = StructureType.TypeSystemEyeGazeInteractionPropertiesExt,
-            void* next = default,
-            uint supportsEyeGazeInteraction = default
+            StructureType? type = StructureType.TypeSystemEyeGazeInteractionPropertiesExt,
+            void* next = null,
+            uint? supportsEyeGazeInteraction = null
         )
         {
-            Type = type;
-            Next = next;
-            SupportsEyeGazeInteraction = supportsEyeGazeInteraction;
+            fixed (SystemEyeGazeInteractionPropertiesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (supportsEyeGazeInteraction is not null)
+            {
+                SupportsEyeGazeInteraction = supportsEyeGazeInteraction.Value;
+            }
         }
 
 /// <summary></summary>

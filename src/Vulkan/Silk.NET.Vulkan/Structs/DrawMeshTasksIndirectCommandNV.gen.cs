@@ -21,12 +21,24 @@ namespace Silk.NET.Vulkan
     {
         public DrawMeshTasksIndirectCommandNV
         (
-            uint taskCount = default,
-            uint firstTask = default
+            uint? taskCount = null,
+            uint? firstTask = null
         )
         {
-            TaskCount = taskCount;
-            FirstTask = firstTask;
+            fixed (DrawMeshTasksIndirectCommandNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (taskCount is not null)
+            {
+                TaskCount = taskCount.Value;
+            }
+
+            if (firstTask is not null)
+            {
+                FirstTask = firstTask.Value;
+            }
         }
 
 /// <summary></summary>

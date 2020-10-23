@@ -21,10 +21,18 @@ namespace Silk.NET.Vulkan
     {
         public CommandBuffer
         (
-            IntPtr handle = default
+            IntPtr? handle = null
         )
         {
-            Handle = handle;
+            fixed (CommandBuffer* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 

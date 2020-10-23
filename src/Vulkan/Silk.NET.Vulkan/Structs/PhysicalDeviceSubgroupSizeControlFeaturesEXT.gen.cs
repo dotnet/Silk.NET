@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSubgroupSizeControlFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceSubgroupSizeControlFeaturesExt,
-            void* pNext = default,
-            Bool32 subgroupSizeControl = default,
-            Bool32 computeFullSubgroups = default
+            StructureType? sType = StructureType.PhysicalDeviceSubgroupSizeControlFeaturesExt,
+            void* pNext = null,
+            Bool32? subgroupSizeControl = null,
+            Bool32? computeFullSubgroups = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            SubgroupSizeControl = subgroupSizeControl;
-            ComputeFullSubgroups = computeFullSubgroups;
+            fixed (PhysicalDeviceSubgroupSizeControlFeaturesEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (subgroupSizeControl is not null)
+            {
+                SubgroupSizeControl = subgroupSizeControl.Value;
+            }
+
+            if (computeFullSubgroups is not null)
+            {
+                ComputeFullSubgroups = computeFullSubgroups.Value;
+            }
         }
 
 /// <summary></summary>

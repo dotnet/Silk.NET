@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ImportMemoryHostPointerInfoEXT
         (
-            StructureType sType = StructureType.ImportMemoryHostPointerInfoExt,
-            void* pNext = default,
-            ExternalMemoryHandleTypeFlags handleType = default,
-            void* pHostPointer = default
+            StructureType? sType = StructureType.ImportMemoryHostPointerInfoExt,
+            void* pNext = null,
+            ExternalMemoryHandleTypeFlags? handleType = null,
+            void* pHostPointer = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleType = handleType;
-            PHostPointer = pHostPointer;
+            fixed (ImportMemoryHostPointerInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
+
+            if (pHostPointer is not null)
+            {
+                PHostPointer = pHostPointer;
+            }
         }
 
 /// <summary></summary>

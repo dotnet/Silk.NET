@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureCreateInfoNV
         (
-            StructureType sType = StructureType.AccelerationStructureCreateInfoNV,
-            void* pNext = default,
-            ulong compactedSize = default,
-            AccelerationStructureInfoNV info = default
+            StructureType? sType = StructureType.AccelerationStructureCreateInfoNV,
+            void* pNext = null,
+            ulong? compactedSize = null,
+            AccelerationStructureInfoNV? info = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            CompactedSize = compactedSize;
-            Info = info;
+            fixed (AccelerationStructureCreateInfoNV* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (compactedSize is not null)
+            {
+                CompactedSize = compactedSize.Value;
+            }
+
+            if (info is not null)
+            {
+                Info = info.Value;
+            }
         }
 
 /// <summary></summary>

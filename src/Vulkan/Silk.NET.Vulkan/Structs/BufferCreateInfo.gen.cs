@@ -21,24 +21,60 @@ namespace Silk.NET.Vulkan
     {
         public BufferCreateInfo
         (
-            StructureType sType = StructureType.BufferCreateInfo,
-            void* pNext = default,
-            BufferCreateFlags flags = default,
-            ulong size = default,
-            BufferUsageFlags usage = default,
-            SharingMode sharingMode = default,
-            uint queueFamilyIndexCount = default,
-            uint* pQueueFamilyIndices = default
+            StructureType? sType = StructureType.BufferCreateInfo,
+            void* pNext = null,
+            BufferCreateFlags? flags = null,
+            ulong? size = null,
+            BufferUsageFlags? usage = null,
+            SharingMode? sharingMode = null,
+            uint? queueFamilyIndexCount = null,
+            uint* pQueueFamilyIndices = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Size = size;
-            Usage = usage;
-            SharingMode = sharingMode;
-            QueueFamilyIndexCount = queueFamilyIndexCount;
-            PQueueFamilyIndices = pQueueFamilyIndices;
+            fixed (BufferCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (sharingMode is not null)
+            {
+                SharingMode = sharingMode.Value;
+            }
+
+            if (queueFamilyIndexCount is not null)
+            {
+                QueueFamilyIndexCount = queueFamilyIndexCount.Value;
+            }
+
+            if (pQueueFamilyIndices is not null)
+            {
+                PQueueFamilyIndices = pQueueFamilyIndices;
+            }
         }
 
 /// <summary></summary>

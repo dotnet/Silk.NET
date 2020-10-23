@@ -21,14 +21,30 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingD3D11KHR
         (
-            StructureType type = StructureType.TypeGraphicsBindingD3D11Khr,
-            void* next = default,
-            IntPtr device = default
+            StructureType? type = StructureType.TypeGraphicsBindingD3D11Khr,
+            void* next = null,
+            IntPtr? device = null
         )
         {
-            Type = type;
-            Next = next;
-            Device = device;
+            fixed (GraphicsBindingD3D11KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (device is not null)
+            {
+                Device = device.Value;
+            }
         }
 
 /// <summary></summary>

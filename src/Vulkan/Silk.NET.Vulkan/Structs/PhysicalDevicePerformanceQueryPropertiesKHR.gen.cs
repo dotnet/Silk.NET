@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePerformanceQueryPropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePerformanceQueryPropertiesKhr,
-            void* pNext = default,
-            Bool32 allowCommandBufferQueryCopies = default
+            StructureType? sType = StructureType.PhysicalDevicePerformanceQueryPropertiesKhr,
+            void* pNext = null,
+            Bool32? allowCommandBufferQueryCopies = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies;
+            fixed (PhysicalDevicePerformanceQueryPropertiesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (allowCommandBufferQueryCopies is not null)
+            {
+                AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies.Value;
+            }
         }
 
 /// <summary></summary>

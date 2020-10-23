@@ -2694,6 +2694,30 @@ namespace Silk.NET.OpenGL
         NoResetNotification = 0x8261,
         [NativeName("Name", "GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT")]
         ContextFlagRobustAccessBit = 0x4,
+        [NativeName("Name", "GL_COLOR_TABLE")]
+        ColorTable = 0x80D0,
+        [NativeName("Name", "GL_POST_CONVOLUTION_COLOR_TABLE")]
+        PostConvolutionColorTable = 0x80D1,
+        [NativeName("Name", "GL_POST_COLOR_MATRIX_COLOR_TABLE")]
+        PostColorMatrixColorTable = 0x80D2,
+        [NativeName("Name", "GL_PROXY_COLOR_TABLE")]
+        ProxyColorTable = 0x80D3,
+        [NativeName("Name", "GL_PROXY_POST_CONVOLUTION_COLOR_TABLE")]
+        ProxyPostConvolutionColorTable = 0x80D4,
+        [NativeName("Name", "GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE")]
+        ProxyPostColorMatrixColorTable = 0x80D5,
+        [NativeName("Name", "GL_CONVOLUTION_1D")]
+        Convolution1D = 0x8010,
+        [NativeName("Name", "GL_CONVOLUTION_2D")]
+        Convolution2D = 0x8011,
+        [NativeName("Name", "GL_SEPARABLE_2D")]
+        Separable2D = 0x8012,
+        [NativeName("Name", "GL_HISTOGRAM")]
+        Histogram = 0x8024,
+        [NativeName("Name", "GL_PROXY_HISTOGRAM")]
+        ProxyHistogram = 0x8025,
+        [NativeName("Name", "GL_MINMAX")]
+        Minmax = 0x802E,
         [NativeName("Name", "GL_CONTEXT_RELEASE_BEHAVIOR")]
         ContextReleaseBehavior = 0x82FB,
         [NativeName("Name", "GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH")]

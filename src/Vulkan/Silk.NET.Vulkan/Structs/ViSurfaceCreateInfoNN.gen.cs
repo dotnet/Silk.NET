@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public ViSurfaceCreateInfoNN
         (
-            StructureType sType = StructureType.VISurfaceCreateInfoNN,
-            void* pNext = default,
-            uint flags = default,
-            void* window = default
+            StructureType? sType = StructureType.VISurfaceCreateInfoNN,
+            void* pNext = null,
+            uint? flags = null,
+            void* window = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Window = window;
+            fixed (ViSurfaceCreateInfoNN* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (window is not null)
+            {
+                Window = window;
+            }
         }
 
 /// <summary></summary>

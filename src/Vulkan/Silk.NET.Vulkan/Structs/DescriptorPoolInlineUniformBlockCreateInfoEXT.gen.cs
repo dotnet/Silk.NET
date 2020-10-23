@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorPoolInlineUniformBlockCreateInfoEXT
         (
-            StructureType sType = StructureType.DescriptorPoolInlineUniformBlockCreateInfoExt,
-            void* pNext = default,
-            uint maxInlineUniformBlockBindings = default
+            StructureType? sType = StructureType.DescriptorPoolInlineUniformBlockCreateInfoExt,
+            void* pNext = null,
+            uint? maxInlineUniformBlockBindings = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            MaxInlineUniformBlockBindings = maxInlineUniformBlockBindings;
+            fixed (DescriptorPoolInlineUniformBlockCreateInfoEXT* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxInlineUniformBlockBindings is not null)
+            {
+                MaxInlineUniformBlockBindings = maxInlineUniformBlockBindings.Value;
+            }
         }
 
 /// <summary></summary>

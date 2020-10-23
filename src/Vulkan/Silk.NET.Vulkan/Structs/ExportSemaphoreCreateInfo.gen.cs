@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public ExportSemaphoreCreateInfo
         (
-            StructureType sType = StructureType.ExportSemaphoreCreateInfo,
-            void* pNext = default,
-            ExternalSemaphoreHandleTypeFlags handleTypes = default
+            StructureType? sType = StructureType.ExportSemaphoreCreateInfo,
+            void* pNext = null,
+            ExternalSemaphoreHandleTypeFlags? handleTypes = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            HandleTypes = handleTypes;
+            fixed (ExportSemaphoreCreateInfo* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleTypes is not null)
+            {
+                HandleTypes = handleTypes.Value;
+            }
         }
 
 /// <summary></summary>

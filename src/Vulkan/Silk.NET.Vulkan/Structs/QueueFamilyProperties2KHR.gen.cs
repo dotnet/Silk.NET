@@ -21,14 +21,30 @@ namespace Silk.NET.Vulkan
     {
         public QueueFamilyProperties2KHR
         (
-            StructureType sType = StructureType.QueueFamilyProperties2,
-            void* pNext = default,
-            QueueFamilyProperties queueFamilyProperties = default
+            StructureType? sType = StructureType.QueueFamilyProperties2,
+            void* pNext = null,
+            QueueFamilyProperties? queueFamilyProperties = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            QueueFamilyProperties = queueFamilyProperties;
+            fixed (QueueFamilyProperties2KHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (queueFamilyProperties is not null)
+            {
+                QueueFamilyProperties = queueFamilyProperties.Value;
+            }
         }
 
 /// <summary></summary>

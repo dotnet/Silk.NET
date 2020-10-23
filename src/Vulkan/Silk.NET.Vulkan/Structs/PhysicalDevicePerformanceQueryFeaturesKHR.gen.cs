@@ -21,16 +21,36 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePerformanceQueryFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePerformanceQueryFeaturesKhr,
-            void* pNext = default,
-            Bool32 performanceCounterQueryPools = default,
-            Bool32 performanceCounterMultipleQueryPools = default
+            StructureType? sType = StructureType.PhysicalDevicePerformanceQueryFeaturesKhr,
+            void* pNext = null,
+            Bool32? performanceCounterQueryPools = null,
+            Bool32? performanceCounterMultipleQueryPools = null
         )
         {
-            SType = sType;
-            PNext = pNext;
-            PerformanceCounterQueryPools = performanceCounterQueryPools;
-            PerformanceCounterMultipleQueryPools = performanceCounterMultipleQueryPools;
+            fixed (PhysicalDevicePerformanceQueryFeaturesKHR* @this = &this)
+            {
+                // all fields automatically initialized here
+            }
+
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (performanceCounterQueryPools is not null)
+            {
+                PerformanceCounterQueryPools = performanceCounterQueryPools.Value;
+            }
+
+            if (performanceCounterMultipleQueryPools is not null)
+            {
+                PerformanceCounterMultipleQueryPools = performanceCounterMultipleQueryPools.Value;
+            }
         }
 
 /// <summary></summary>
