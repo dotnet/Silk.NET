@@ -8500,6 +8500,20 @@
               "Attributes": []
             },
             {
+              "Name": "PlatformXcbExt",
+              "NativeName": "EGL_PLATFORM_XCB_EXT",
+              "Value": "0x31DC",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "PlatformXcbScreenExt",
+              "NativeName": "EGL_PLATFORM_XCB_SCREEN_EXT",
+              "Value": "0x31DE",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "ProtectedContentExt",
               "NativeName": "EGL_PROTECTED_CONTENT_EXT",
               "Value": "0x32C0",
