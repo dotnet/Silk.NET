@@ -78,7 +78,8 @@ public interface ISlotLoadOverride
 }
 ```
 
-Not a critical change, but would make sense to make the core easier to understand:
+Not a critical change, but would make sense to make the core easier to understand, because Context, to me, implies some kind of state, which this does not provide.
+This simply provides a mecanism to load an address, not access to some kind of native state.
 ```diff
 - public interface INativeContext
 + public interface IAddressLoader
