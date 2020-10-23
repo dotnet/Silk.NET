@@ -94,6 +94,8 @@ namespace Silk.NET.EGL.Extensions.EXT
         PlatformWaylandExt = 0x31D8,
         PlatformX11Ext = 0x31D5,
         PlatformX11ScreenExt = 0x31D6,
+        PlatformXcbExt = 0x31DC,
+        PlatformXcbScreenExt = 0x31DE,
         ProtectedContentExt = 0x32C0,
         Cta8613MaxContentLightLevelExt = 0x3360,
         Cta8613MaxFrameAverageLevelExt = 0x3361,
