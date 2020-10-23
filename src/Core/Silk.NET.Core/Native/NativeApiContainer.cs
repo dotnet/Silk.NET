@@ -3,7 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+#nullable enable
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Silk.NET.Core.Contexts;
 
@@ -14,8 +16,23 @@ namespace Silk.NET.Core.Native
         private readonly INativeContext _ctx;
         private IVTable _vTable;
 
-        protected NativeApiContainer(INativeContext ctx)
+        protected NativeApiContainer(string library) : this(null, library)
         {
+        }
+        
+        protected NativeApiContainer(INativeContext ctx) : this(ctx, null)
+        {
+        }
+
+        private NativeApiContainer(INativeContext? ctx, string? library)
+        {
+            if (ctx is null)
+            {
+                Debug.Assert(library is not null);
+
+                ctx = CreateDefaultContext(library);
+            }
+
             _ctx = ctx;
             // Virtual member call should be fine unless we have a rogue implementer
             // The only implementer of this function should be SilkTouch
@@ -34,7 +51,7 @@ namespace Silk.NET.Core.Native
             GcUtility = new GcUtility(1, CoreGcSlotCount());
             // ReSharper restore VirtualMemberCallInConstructor
         }
-
+        
         public GcUtility GcUtility { get; }
 
         public IVTable CurrentVTable => _vTable;
@@ -45,6 +62,7 @@ namespace Silk.NET.Core.Native
             CurrentVTable.Dispose();
         }
 
+        protected virtual INativeContext CreateDefaultContext(string name) => new DefaultNativeContext(name);
         protected virtual int CoreGetSlotCount() => 0;
         protected virtual int CoreGcSlotCount() => 0;
         protected virtual IVTable CreateVTable() => new ConcurrentDictionaryVTable();
