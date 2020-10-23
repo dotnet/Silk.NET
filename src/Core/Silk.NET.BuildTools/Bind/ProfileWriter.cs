@@ -712,7 +712,7 @@ namespace Silk.NET.BuildTools.Bind
             csproj.WriteLine("  <PropertyGroup>");
             csproj.WriteLine("    <TargetFramework>netstandard2.0</TargetFramework>");
             csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
-            csproj.WriteLine("    <LangVersion>preview</LangVersion>");
+            csproj.WriteLine("    <LangVersion>9.0</LangVersion>");
             csproj.WriteLine("  </PropertyGroup>");
             csproj.WriteLine();
             csproj.WriteLine("  <ItemGroup>");
