@@ -444,10 +444,6 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("            : base(ctx)");
                     sw.WriteLine("        {");
                     sw.WriteLine("        }");
-                    sw.WriteLine($"        public {@class.ClassName}(string library)");
-                    sw.WriteLine("            : base(library)");
-                    sw.WriteLine("        {");
-                    sw.WriteLine("        }");
                     sw.WriteLine("    }");
                     sw.WriteLine("}");
                     sw.WriteLine();
@@ -613,10 +609,6 @@ namespace Silk.NET.BuildTools.Bind
 
                         sw.WriteLine($"        public {name}(INativeContext ctx)");
                         sw.WriteLine("            : base(ctx)");
-                        sw.WriteLine("        {");
-                        sw.WriteLine("        }");
-                        sw.WriteLine($"        public {@class.ClassName}(string library)");
-                        sw.WriteLine("            : base(library)");
                         sw.WriteLine("        {");
                         sw.WriteLine("        }");
                         sw.WriteLine("    }");

@@ -32,12 +32,6 @@ namespace Silk.NET.GLFW
             : base(ctx)
         {
         }
-        
-        /// <inheritdoc />
-        protected Glfw(string library)
-            : base(library)
-        {
-        }
 
         /// <summary>
         /// Gets the default callback which gets called when a GLFW-Error occurs.
@@ -3940,7 +3934,7 @@ namespace Silk.NET.GLFW
         /// <returns>The instance.</returns>
         public static Glfw GetApi()
         {
-            return new Glfw(new GlfwLibraryNameContainer().GetLibraryName());
+            return new Glfw(CreateDefaultContext(new GlfwLibraryNameContainer().GetLibraryName()));
         }
 
         /// <inheritdoc />

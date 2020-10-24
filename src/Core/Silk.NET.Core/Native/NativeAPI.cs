@@ -20,12 +20,6 @@ namespace Silk.NET.Core.Native
             : base(ctx)
         {
         }
-        
-        /// <inheritdoc />
-        protected NativeAPI(string library)
-            : base(library)
-        {
-        }
 
         /// <summary>
         /// Whether or not an extension is present. This function might not be valid for some APIs.

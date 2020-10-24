@@ -28,7 +28,7 @@ namespace Silk.NET.GLFW
         }
 
         /// <inheritdoc />
-        public IntPtr GetProcAddress(string proc) => _glfw.GetProcAddress(proc);
+        public IntPtr GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
 
         /// <inheritdoc />
         public unsafe IntPtr Handle => (IntPtr) _window;

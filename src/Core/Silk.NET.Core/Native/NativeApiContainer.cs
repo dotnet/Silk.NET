@@ -15,24 +15,9 @@ namespace Silk.NET.Core.Native
     {
         internal readonly INativeContext _ctx;
         private IVTable _vTable;
-
-        protected NativeApiContainer(string library) : this(null, library)
-        {
-        }
         
-        protected NativeApiContainer(INativeContext ctx) : this(ctx, null)
+        protected NativeApiContainer(INativeContext ctx)
         {
-        }
-
-        private NativeApiContainer(INativeContext? ctx, string? library)
-        {
-            if (ctx is null)
-            {
-                Debug.Assert(library is not null);
-
-                ctx = CreateDefaultContext(library);
-            }
-
             _ctx = ctx;
             // Virtual member call should be fine unless we have a rogue implementer
             // The only implementer of this function should be SilkTouch
@@ -62,7 +47,6 @@ namespace Silk.NET.Core.Native
             CurrentVTable.Dispose();
         }
 
-        protected virtual INativeContext CreateDefaultContext(string name) => new DefaultNativeContext(name);
         protected virtual int CoreGetSlotCount() => 0;
         protected virtual int CoreGcSlotCount() => 0;
         protected virtual IVTable CreateVTable() => new ConcurrentDictionaryVTable();

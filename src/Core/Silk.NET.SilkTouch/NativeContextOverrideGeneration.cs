@@ -31,14 +31,21 @@ namespace Silk.NET.SilkTouch
 
             StatementSyntax last = ReturnStatement
             (
-                InvocationExpression
-                (
-                    MemberAccessExpression
-                    (
-                        SyntaxKind.SimpleMemberAccessExpression, BaseExpression(),
-                        IdentifierName("CreateDefaultContext")
-                    ), ArgumentList(SingletonSeparatedList(Argument(IdentifierName("n"))))
-                )
+                ObjectCreationExpression(
+                        QualifiedName(
+                            QualifiedName(
+                                QualifiedName(
+                                    QualifiedName(
+                                        IdentifierName("Silk"),
+                                        IdentifierName("NET")),
+                                    IdentifierName("Core")),
+                                IdentifierName("Contexts")),
+                            IdentifierName("DefaultNativeContext")))
+                    .WithArgumentList(
+                        ArgumentList(
+                            SingletonSeparatedList(
+                                Argument(
+                                    IdentifierName("n")))))
             );
 
             int i = 0;
@@ -61,7 +68,7 @@ namespace Silk.NET.SilkTouch
             members.Add
             (
                 MethodDeclaration(IdentifierName("INativeContext"), Identifier("CreateDefaultContext"))
-                    .WithModifiers(TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)))
                     .WithParameterList
                     (
                         ParameterList

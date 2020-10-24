@@ -52,6 +52,6 @@ namespace TestLib
 
         // public partial int GetWindowTextA(IntPtr hwnd, [Count(Parameter = "hwnd")] ref string str, int maxCount);
 
-        public TestClass2() : base("user32.dll") { }
+        public TestClass2() : base(CreateDefaultContext("user32.dll")) { }
     }
 }
