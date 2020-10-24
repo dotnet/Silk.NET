@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.SDL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl;
@@ -17,6 +18,17 @@ namespace Silk.NET.Windowing.Sdl
     internal class SdlPlatform : IWindowPlatform
     {
         private SdlView? _view;
+
+        public static SdlPlatform GetOrRegister()
+        {
+            var val = Window.GetOrDefault<SdlPlatform>();
+            if (val is null)
+            {
+                Window.Add(val = new SdlPlatform());
+            }
+
+            return val;
+        }
 
         private Lazy<bool> _isApplicable = new Lazy<bool>
         (
@@ -95,5 +107,8 @@ namespace Silk.NET.Windowing.Sdl
 
         public IMonitor GetMainMonitor() => new SdlMonitor(0);
         public bool IsSourceOfView(IView view) => view is SdlView;
+
+        public unsafe SdlView From(void* handle, IGLContext? ctx)
+            => IsViewOnly ? new SdlView(handle, ctx) : new SdlWindow(handle, ctx);
     }
 }

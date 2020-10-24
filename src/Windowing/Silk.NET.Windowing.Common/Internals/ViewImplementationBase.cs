@@ -186,7 +186,7 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Misc properties
-        protected bool IsInitialized { get; private set; }
+        protected bool IsInitialized { get; set; }
         public Size Size => IsInitialized ? CoreSize : default;
         public IntPtr Handle => IsInitialized ? CoreHandle : IntPtr.Zero;
         public GraphicsAPI API => _optionsCache.API;

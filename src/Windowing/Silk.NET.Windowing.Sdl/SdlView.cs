@@ -22,7 +22,7 @@ namespace Silk.NET.Windowing.Sdl
     internal unsafe class SdlView : ViewImplementationBase
     {
         private const int WaitTimeout = 10;
-        private SdlGLContext? _ctx;
+        private IGLContext? _ctx;
         private SdlVkSurface? _vk;
         private int _continue;
 
@@ -31,6 +31,16 @@ namespace Silk.NET.Windowing.Sdl
             Sdl = SdlProvider.SDL.Value;
             ParentView = parent;
             InitialMonitor = monitor;
+        }
+
+        public SdlView(void* nativeHandle, IGLContext? ctx) : base(default)
+        {
+            Sdl = SdlProvider.SDL.Value;
+            ParentView = null;
+            InitialMonitor = null;
+            IsInitialized = true;
+            SdlWindow = Sdl.CreateWindowFrom(nativeHandle);
+            _ctx = ctx;
         }
 
         // Events
@@ -55,7 +65,7 @@ namespace Silk.NET.Windowing.Sdl
         protected SdlView? ParentView { get; }
         protected SdlMonitor? InitialMonitor { get; set; }
 
-        public override Size FramebufferSize => _ctx?.FramebufferSize ?? CoreSize;
+        public override Size FramebufferSize => (_ctx as SdlGLContext)?.FramebufferSize ?? CoreSize;
 
         public override VideoMode VideoMode
         {
