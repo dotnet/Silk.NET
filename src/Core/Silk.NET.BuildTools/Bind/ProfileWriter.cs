@@ -536,7 +536,7 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                         sw.Write(task.LicenseText());
                         sw.WriteLine("using System;");
                         sw.WriteLine("using System.Runtime.InteropServices;");
-sw.WriteLine("using System.Runtime.CompilerServices;");
+                        sw.WriteLine("using System.Runtime.CompilerServices;");
                         sw.WriteLine("using System.Text;");
                         sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(task)};");
                         sw.WriteLine("using Silk.NET.Core.Native;");
