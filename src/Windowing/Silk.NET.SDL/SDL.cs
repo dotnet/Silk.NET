@@ -913,7 +913,7 @@ namespace Silk.NET.SDL
 
         public static Sdl GetApi()
         {
-            return new Sdl(new DefaultNativeContext(new SDLLibraryNameContainer().GetLibraryName()));
+            return new Sdl(CreateDefaultContext(new SDLLibraryNameContainer().GetLibraryName()));
         }
 
         public override bool IsExtensionPresent(string extension) => GLExtensionSupported(extension) == SdlBool.True;

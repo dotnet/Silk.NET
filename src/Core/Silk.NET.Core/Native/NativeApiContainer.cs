@@ -3,7 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+#nullable enable
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Silk.NET.Core.Contexts;
 
@@ -34,7 +36,7 @@ namespace Silk.NET.Core.Native
             GcUtility = new GcUtility(1, CoreGcSlotCount());
             // ReSharper restore VirtualMemberCallInConstructor
         }
-
+        
         public GcUtility GcUtility { get; }
 
         public IVTable CurrentVTable => _vTable;

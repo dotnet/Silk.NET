@@ -9,7 +9,7 @@ namespace JITTesting
     {
         static unsafe void Main(string[] args)
         {
-            var lib = new TestClass2(new DefaultNativeContext("user32.dll"));
+            var lib = new TestClass2();
 
             var a = Marshal.StringToHGlobalAnsi("Test 1");
             var b = Marshal.StringToHGlobalAnsi("Hello from SilkToch!");
