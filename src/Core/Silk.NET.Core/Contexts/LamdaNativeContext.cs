@@ -16,7 +16,7 @@ namespace Silk.NET.Core.Contexts
             _getProcAddress = getProcAddress;
         }
 
-        public IntPtr GetProcAddress(string proc)
+        public IntPtr GetProcAddress(string proc, int? slot = default)
         {
             return _getProcAddress(proc);
         }

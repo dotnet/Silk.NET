@@ -15,7 +15,7 @@ namespace Silk.NET.SilkTouch
     public partial class NativeApiGenerator
     {
         private TypeDeclarationSyntax GenerateVTable
-            (bool preloadVTable, Dictionary<int, string> entryPoints, bool emitAssert)
+            (bool preloadVTable, Dictionary<int, string> entryPoints, bool emitAssert, bool vNext)
         {
             var vTableMembers = new List<MemberDeclarationSyntax>();
 
@@ -237,7 +237,7 @@ namespace Silk.NET.SilkTouch
                             )
                         )
                     )
-                    .WithBody(Block(BuildLoad(ref vTableMembers, entryPoints, emitAssert, preloadVTable)))
+                    .WithBody(Block(BuildLoad(ref vTableMembers, entryPoints, emitAssert, preloadVTable, vNext)))
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
             );
 
@@ -296,13 +296,13 @@ namespace Silk.NET.SilkTouch
         }
         
                 private IEnumerable<StatementSyntax> BuildLoad
-            (ref List<MemberDeclarationSyntax> vTableMembers, Dictionary<int, string> entryPoints, bool emitAssert, bool preloadVTable)
+            (ref List<MemberDeclarationSyntax> vTableMembers, Dictionary<int, string> entryPoints, bool emitAssert, bool preloadVTable, bool vNext)
         {
             const string keyName = "slot";
             
             Span<int> orderedKeys = entryPoints.Keys.OrderBy(x => x).ToArray();
 
-            var exp = BuildSubLoad(ref vTableMembers, orderedKeys, entryPoints, emitAssert, preloadVTable);
+            var exp = BuildSubLoad(ref vTableMembers, orderedKeys, entryPoints, emitAssert, preloadVTable, vNext);
 
             return new[] {ReturnStatement(InvocationExpression(exp, ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))};
 
@@ -312,7 +312,8 @@ namespace Silk.NET.SilkTouch
                 ReadOnlySpan<int> keys,
                 IReadOnlyDictionary<int, string> entryPoints,
                 bool emitAssert, 
-                bool preloadVTable
+                bool preloadVTable,
+                bool vNext
             )
             {
                 var body = new List<StatementSyntax>();
@@ -326,13 +327,13 @@ namespace Silk.NET.SilkTouch
                         (
                             BinaryExpression(SyntaxKind.EqualsExpression, IdentifierName(keyName), Num(keys[0])),
                             ReturnStatement
-                                (InvocationExpression(BuildFinalSubLoad(ref methods, keys[0], entryPoints[keys[0]], emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))
+                                (InvocationExpression(BuildFinalSubLoad(ref methods, keys[0], entryPoints[keys[0]], emitAssert, preloadVTable, vNext), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))
                         )
                     );
                     if (keys.Length > 1)
                     {
                         body.Add
-                            (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, keys.Slice(1), entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))));
+                            (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, keys.Slice(1), entryPoints, emitAssert, preloadVTable, vNext), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))));
                     }
                     else
                     {
@@ -355,9 +356,9 @@ namespace Silk.NET.SilkTouch
                         IfStatement
                         (
                             BinaryExpression(SyntaxKind.LessThanExpression, IdentifierName(keyName), Num(midKey)),
-                            ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, lower, entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))),
+                            ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, lower, entryPoints, emitAssert, preloadVTable, vNext), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))),
                             ElseClause
-                                (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, upper, entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))))
+                                (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, upper, entryPoints, emitAssert, preloadVTable, vNext), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))))
                         )
                     );
                 }
@@ -481,7 +482,7 @@ namespace Silk.NET.SilkTouch
                 return IdentifierName(name);
             }
 
-            static IdentifierNameSyntax BuildFinalSubLoad(ref List<MemberDeclarationSyntax> methods, int key, string entryPoint, bool emitAssert, bool preloadVTable)
+            static IdentifierNameSyntax BuildFinalSubLoad(ref List<MemberDeclarationSyntax> methods, int key, string entryPoint, bool emitAssert, bool preloadVTable, bool vNext)
             {
                 var name = $"Load_Final_{key}_{entryPoint}";
                 var body = new List<StatementSyntax>();
@@ -521,6 +522,7 @@ namespace Silk.NET.SilkTouch
                             ), ReturnStatement(IdentifierName(localName))
                         )
                     );
+
                     body.Add
                     (
                         ExpressionStatement
@@ -534,7 +536,17 @@ namespace Silk.NET.SilkTouch
                                     (
                                         SyntaxKind.SimpleMemberAccessExpression, IdentifierName("_ctx"),
                                         IdentifierName("GetProcAddress")
-                                    ), ArgumentList(SingletonSeparatedList(Argument(IdentifierName("entryPoint"))))
+                                    ), ArgumentList
+                                    (
+                                        SeparatedList
+                                        (
+                                            new[]
+                                            {
+                                                Argument(IdentifierName("entryPoint")),
+                                                Argument(IdentifierName("slot"))
+                                            }
+                                        )
+                                    )
                                 )
                             )
                         )

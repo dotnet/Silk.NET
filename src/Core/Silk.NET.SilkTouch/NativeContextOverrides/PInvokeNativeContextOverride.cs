@@ -191,22 +191,38 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 (
                     List<MemberDeclarationSyntax>
                     (
-                        entrypoints.Select
-                                (GetMethodFromEntrypoint)
+                        entrypoints.Select(GetMethodFromEntrypoint)
                             .Append
                             (
-                                MethodDeclaration
-                                        (IdentifierName("IntPtr"), Identifier("GetProcAddress"))
+                                MethodDeclaration(IdentifierName("IntPtr"), Identifier("GetProcAddress"))
                                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
                                     .WithParameterList
                                     (
                                         ParameterList
                                         (
-                                            SingletonSeparatedList
+                                            SeparatedList
                                             (
-                                                Parameter
-                                                        (Identifier("p"))
-                                                    .WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))
+                                                new[]
+                                                {
+                                                    Parameter
+                                                            (Identifier("p"))
+                                                        .WithType(PredefinedType(Token(SyntaxKind.StringKeyword))),
+                                                    Parameter
+                                                            (Identifier("s"))
+                                                        .WithType
+                                                            (NullableType(PredefinedType(Token(SyntaxKind.IntKeyword))))
+                                                        .WithDefault
+                                                        (
+                                                            EqualsValueClause
+                                                            (
+                                                                LiteralExpression
+                                                                (
+                                                                    SyntaxKind.DefaultLiteralExpression,
+                                                                    Token(SyntaxKind.DefaultKeyword)
+                                                                )
+                                                            )
+                                                        )
+                                                }
                                             )
                                         )
                                     )

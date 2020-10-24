@@ -275,7 +275,15 @@ namespace Silk.NET.SilkTouch
 
             if (generateVTable && entryPoints.Count > 0)
             {
-                newMembers.Add(GenerateVTable(preloadVTable, entryPoints, emitAssert));
+                newMembers.Add
+                (
+                    GenerateVTable
+                    (
+                        preloadVTable, entryPoints, emitAssert,
+                        sourceContext.ParseOptions.PreprocessorSymbolNames.Any
+                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */)
+                    )
+                );
                 newMembers.Add
                 (
                     MethodDeclaration(IdentifierName("IVTable"), Identifier("CreateVTable"))
