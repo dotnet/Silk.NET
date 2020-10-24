@@ -21,7 +21,7 @@ namespace Silk.NET.SilkTouch
     
         private void ProcessNativeContextOverrides
         (
-            Entrypoint[] entrypoints,
+            EntryPoint[] entrypoints,
             ref List<MemberDeclarationSyntax> members,
             ITypeSymbol classSymbol,
             ClassDeclarationSyntax classDeclaration

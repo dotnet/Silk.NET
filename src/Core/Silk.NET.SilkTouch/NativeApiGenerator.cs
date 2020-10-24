@@ -181,7 +181,7 @@ namespace Silk.NET.SilkTouch
             int gcCount = 0;
             
             Dictionary<int, string> entryPoints = new Dictionary<int, string>();
-            var processedEntrypoints = new List<Entrypoint>();
+            var processedEntrypoints = new List<EntryPoint>();
             foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
                     from member in classDeclaration.Members
                     where member.IsKind(SyntaxKind.MethodDeclaration)
@@ -364,7 +364,7 @@ namespace Silk.NET.SilkTouch
             MethodDeclarationSyntax declaration,
             List<MemberDeclarationSyntax> newMembers,
             ref int gcCount,
-            List<Entrypoint> processedEntrypoints
+            List<EntryPoint> processedEntrypoints
         )
         {
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
@@ -402,7 +402,7 @@ namespace Silk.NET.SilkTouch
                 entryPoints[ctx.Slot] = entryPoint;
                 processedEntrypoints.Add
                 (
-                    new Entrypoint
+                    new EntryPoint
                     (
                         entryPoint, ctx.Slot, callingConvention,
                         ctx.LoadTypes.Select

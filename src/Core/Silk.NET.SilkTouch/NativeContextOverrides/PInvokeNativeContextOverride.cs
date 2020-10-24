@@ -15,9 +15,9 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
 {
     public sealed class PInvokeNativeContextOverride : INativeContextOverride
     {
-        public TypeDeclarationSyntax Type(string name, string lib, Entrypoint[] entrypoints)
+        public TypeDeclarationSyntax Type(string name, string lib, EntryPoint[] entrypoints)
         {
-            static BlockSyntax GetSlotSwitch(Entrypoint[] entrypoints, List<MemberDeclarationSyntax> members)
+            static BlockSyntax GetSlotSwitch(EntryPoint[] entrypoints, List<MemberDeclarationSyntax> members)
             {
                 members.Add
                 (
@@ -118,7 +118,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 (
                     List<MemberDeclarationSyntax> methods,
                     ReadOnlySpan<int> keys,
-                    Dictionary<int, Entrypoint> entryPoints,
+                    Dictionary<int, EntryPoint> entryPoints,
                     bool emitAssert
                 )
                 {
@@ -352,7 +352,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 }
 
                 static IdentifierNameSyntax BuildFinalSubLoad
-                    (List<MemberDeclarationSyntax> methods, Entrypoint entrypoint, bool emitAssert)
+                    (List<MemberDeclarationSyntax> methods, EntryPoint entrypoint, bool emitAssert)
                 {
                     var name = $"Load_Final_{entrypoint.Slot}_{entrypoint.Name}";
                     var body = new List<StatementSyntax>();
@@ -541,7 +541,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 }
             }
 
-            MethodDeclarationSyntax GetMethodFromEntrypoint(Entrypoint entrypoint)
+            MethodDeclarationSyntax GetMethodFromEntrypoint(EntryPoint entrypoint)
                 => MethodDeclaration(entrypoint.LoadTypes.Last(), Identifier($"I_{entrypoint.Slot}"))
                     .WithAttributeLists
                     (

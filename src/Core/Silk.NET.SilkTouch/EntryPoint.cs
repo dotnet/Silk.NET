@@ -9,14 +9,14 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch
 {
-    public readonly struct Entrypoint
+    public readonly struct EntryPoint
     {
         public readonly string Name;
         public readonly int Slot;
         public readonly CallingConvention CallingConvention;
         public readonly TypeSyntax[] LoadTypes;
 
-        public Entrypoint(string name, int slot, CallingConvention callingConvention, TypeSyntax[] loadTypes)
+        public EntryPoint(string name, int slot, CallingConvention callingConvention, TypeSyntax[] loadTypes)
         {
             Name = name;
             Slot = slot;
