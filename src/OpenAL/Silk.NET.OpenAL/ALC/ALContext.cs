@@ -85,7 +85,7 @@ namespace Silk.NET.OpenAL
         public static unsafe ALContext GetApi()
         {
             var ctx = new MultiNativeContext
-                (new DefaultNativeContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
             var ret = new ALContext(ctx);
             ctx.Contexts[1] = new LamdaNativeContext(
                 x =>

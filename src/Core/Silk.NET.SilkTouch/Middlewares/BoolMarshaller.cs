@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -13,9 +12,9 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeApiGenerator
+    public static partial class Middlewares
     {
-        private static void BoolMarshaller(ref IMarshalContext ctx, Action next)
+        public static void BoolMarshaller(ref IMarshalContext ctx, Action next)
         {
             static ITypeSymbol Type(Compilation compilation, UnmanagedType? type)
             {

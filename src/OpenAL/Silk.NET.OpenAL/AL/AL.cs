@@ -341,7 +341,7 @@ namespace Silk.NET.OpenAL
         public static AL GetApi()
         {
             var ctx = new MultiNativeContext
-                (new DefaultNativeContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
             var ret = new AL(ctx);
             ctx.Contexts[1] = new LamdaNativeContext
                 (x => x.EndsWith("GetProcAddress") ? default : ret.GetProcAddress(x));
