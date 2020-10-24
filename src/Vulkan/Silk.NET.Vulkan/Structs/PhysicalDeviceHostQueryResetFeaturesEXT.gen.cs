@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceHostQueryResetFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceHostQueryResetFeatures,
-            void* pNext = default,
-            Bool32 hostQueryReset = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceHostQueryResetFeatures,
+            void* pNext = null,
+            Bool32? hostQueryReset = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            HostQueryReset = hostQueryReset;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (hostQueryReset is not null)
+            {
+                HostQueryReset = hostQueryReset.Value;
+            }
         }
 
 /// <summary></summary>

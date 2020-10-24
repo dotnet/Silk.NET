@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DispatchIndirectCommand
         (
-            uint x = default,
-            uint y = default,
-            uint z = default
-        )
+            uint? x = null,
+            uint? y = null,
+            uint? z = null
+        ) : this()
         {
-            X = x;
-            Y = y;
-            Z = z;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
         }
 
 /// <summary></summary>

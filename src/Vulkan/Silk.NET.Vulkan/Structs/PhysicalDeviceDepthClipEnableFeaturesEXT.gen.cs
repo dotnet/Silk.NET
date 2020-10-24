@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDepthClipEnableFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceDepthClipEnableFeaturesExt,
-            void* pNext = default,
-            Bool32 depthClipEnable = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceDepthClipEnableFeaturesExt,
+            void* pNext = null,
+            Bool32? depthClipEnable = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DepthClipEnable = depthClipEnable;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (depthClipEnable is not null)
+            {
+                DepthClipEnable = depthClipEnable.Value;
+            }
         }
 
 /// <summary></summary>

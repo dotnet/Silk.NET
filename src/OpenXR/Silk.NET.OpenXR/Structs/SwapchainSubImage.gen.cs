@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainSubImage
         (
-            Swapchain swapchain = default,
-            Rect2Di imageRect = default,
-            uint imageArrayIndex = default
-        )
+            Swapchain? swapchain = null,
+            Rect2Di? imageRect = null,
+            uint? imageArrayIndex = null
+        ) : this()
         {
-            Swapchain = swapchain;
-            ImageRect = imageRect;
-            ImageArrayIndex = imageArrayIndex;
+            if (swapchain is not null)
+            {
+                Swapchain = swapchain.Value;
+            }
+
+            if (imageRect is not null)
+            {
+                ImageRect = imageRect.Value;
+            }
+
+            if (imageArrayIndex is not null)
+            {
+                ImageArrayIndex = imageArrayIndex.Value;
+            }
         }
 
 /// <summary></summary>

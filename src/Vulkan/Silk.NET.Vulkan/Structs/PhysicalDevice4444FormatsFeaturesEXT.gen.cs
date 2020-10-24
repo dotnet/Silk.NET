@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevice4444FormatsFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDevice4444FormatsFeaturesExt,
-            void* pNext = default,
-            Bool32 formatA4R4G4B4 = default,
-            Bool32 formatA4B4G4R4 = default
-        )
+            StructureType? sType = StructureType.PhysicalDevice4444FormatsFeaturesExt,
+            void* pNext = null,
+            Bool32? formatA4R4G4B4 = null,
+            Bool32? formatA4B4G4R4 = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            FormatA4R4G4B4 = formatA4R4G4B4;
-            FormatA4B4G4R4 = formatA4B4G4R4;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (formatA4R4G4B4 is not null)
+            {
+                FormatA4R4G4B4 = formatA4R4G4B4.Value;
+            }
+
+            if (formatA4B4G4R4 is not null)
+            {
+                FormatA4B4G4R4 = formatA4B4G4R4.Value;
+            }
         }
 
 /// <summary></summary>

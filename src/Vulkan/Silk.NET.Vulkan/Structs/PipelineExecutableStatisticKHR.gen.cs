@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PipelineExecutableStatisticKHR
         (
-            StructureType sType = StructureType.PipelineExecutableStatisticKhr,
-            void* pNext = default,
-            PipelineExecutableStatisticFormatKHR format = default,
-            PipelineExecutableStatisticValueKHR value = default
-        )
+            StructureType? sType = StructureType.PipelineExecutableStatisticKhr,
+            void* pNext = null,
+            PipelineExecutableStatisticFormatKHR? format = null,
+            PipelineExecutableStatisticValueKHR? value = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Format = format;
-            Value = value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
 /// <summary></summary>

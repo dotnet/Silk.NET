@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public DirectFBSurfaceCreateInfoEXT
         (
-            StructureType sType = StructureType.DirectfbSurfaceCreateInfoExt,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr dfb = default,
-            IntPtr surface = default
-        )
+            StructureType? sType = StructureType.DirectfbSurfaceCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr? dfb = null,
+            IntPtr? surface = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Dfb = dfb;
-            Surface = surface;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (dfb is not null)
+            {
+                Dfb = dfb.Value;
+            }
+
+            if (surface is not null)
+            {
+                Surface = surface.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderImageFootprintFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderImageFootprintFeaturesNV,
-            void* pNext = default,
-            Bool32 imageFootprint = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShaderImageFootprintFeaturesNV,
+            void* pNext = null,
+            Bool32? imageFootprint = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ImageFootprint = imageFootprint;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageFootprint is not null)
+            {
+                ImageFootprint = imageFootprint.Value;
+            }
         }
 
 /// <summary></summary>

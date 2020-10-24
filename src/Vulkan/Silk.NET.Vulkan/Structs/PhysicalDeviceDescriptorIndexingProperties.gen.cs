@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,58 +22,157 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDescriptorIndexingProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceDescriptorIndexingProperties,
-            void* pNext = default,
-            uint maxUpdateAfterBindDescriptorsInAllPools = default,
-            Bool32 shaderUniformBufferArrayNonUniformIndexingNative = default,
-            Bool32 shaderSampledImageArrayNonUniformIndexingNative = default,
-            Bool32 shaderStorageBufferArrayNonUniformIndexingNative = default,
-            Bool32 shaderStorageImageArrayNonUniformIndexingNative = default,
-            Bool32 shaderInputAttachmentArrayNonUniformIndexingNative = default,
-            Bool32 robustBufferAccessUpdateAfterBind = default,
-            Bool32 quadDivergentImplicitLod = default,
-            uint maxPerStageDescriptorUpdateAfterBindSamplers = default,
-            uint maxPerStageDescriptorUpdateAfterBindUniformBuffers = default,
-            uint maxPerStageDescriptorUpdateAfterBindStorageBuffers = default,
-            uint maxPerStageDescriptorUpdateAfterBindSampledImages = default,
-            uint maxPerStageDescriptorUpdateAfterBindStorageImages = default,
-            uint maxPerStageDescriptorUpdateAfterBindInputAttachments = default,
-            uint maxPerStageUpdateAfterBindResources = default,
-            uint maxDescriptorSetUpdateAfterBindSamplers = default,
-            uint maxDescriptorSetUpdateAfterBindUniformBuffers = default,
-            uint maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = default,
-            uint maxDescriptorSetUpdateAfterBindStorageBuffers = default,
-            uint maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = default,
-            uint maxDescriptorSetUpdateAfterBindSampledImages = default,
-            uint maxDescriptorSetUpdateAfterBindStorageImages = default,
-            uint maxDescriptorSetUpdateAfterBindInputAttachments = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceDescriptorIndexingProperties,
+            void* pNext = null,
+            uint? maxUpdateAfterBindDescriptorsInAllPools = null,
+            Bool32? shaderUniformBufferArrayNonUniformIndexingNative = null,
+            Bool32? shaderSampledImageArrayNonUniformIndexingNative = null,
+            Bool32? shaderStorageBufferArrayNonUniformIndexingNative = null,
+            Bool32? shaderStorageImageArrayNonUniformIndexingNative = null,
+            Bool32? shaderInputAttachmentArrayNonUniformIndexingNative = null,
+            Bool32? robustBufferAccessUpdateAfterBind = null,
+            Bool32? quadDivergentImplicitLod = null,
+            uint? maxPerStageDescriptorUpdateAfterBindSamplers = null,
+            uint? maxPerStageDescriptorUpdateAfterBindUniformBuffers = null,
+            uint? maxPerStageDescriptorUpdateAfterBindStorageBuffers = null,
+            uint? maxPerStageDescriptorUpdateAfterBindSampledImages = null,
+            uint? maxPerStageDescriptorUpdateAfterBindStorageImages = null,
+            uint? maxPerStageDescriptorUpdateAfterBindInputAttachments = null,
+            uint? maxPerStageUpdateAfterBindResources = null,
+            uint? maxDescriptorSetUpdateAfterBindSamplers = null,
+            uint? maxDescriptorSetUpdateAfterBindUniformBuffers = null,
+            uint? maxDescriptorSetUpdateAfterBindUniformBuffersDynamic = null,
+            uint? maxDescriptorSetUpdateAfterBindStorageBuffers = null,
+            uint? maxDescriptorSetUpdateAfterBindStorageBuffersDynamic = null,
+            uint? maxDescriptorSetUpdateAfterBindSampledImages = null,
+            uint? maxDescriptorSetUpdateAfterBindStorageImages = null,
+            uint? maxDescriptorSetUpdateAfterBindInputAttachments = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxUpdateAfterBindDescriptorsInAllPools = maxUpdateAfterBindDescriptorsInAllPools;
-            ShaderUniformBufferArrayNonUniformIndexingNative = shaderUniformBufferArrayNonUniformIndexingNative;
-            ShaderSampledImageArrayNonUniformIndexingNative = shaderSampledImageArrayNonUniformIndexingNative;
-            ShaderStorageBufferArrayNonUniformIndexingNative = shaderStorageBufferArrayNonUniformIndexingNative;
-            ShaderStorageImageArrayNonUniformIndexingNative = shaderStorageImageArrayNonUniformIndexingNative;
-            ShaderInputAttachmentArrayNonUniformIndexingNative = shaderInputAttachmentArrayNonUniformIndexingNative;
-            RobustBufferAccessUpdateAfterBind = robustBufferAccessUpdateAfterBind;
-            QuadDivergentImplicitLod = quadDivergentImplicitLod;
-            MaxPerStageDescriptorUpdateAfterBindSamplers = maxPerStageDescriptorUpdateAfterBindSamplers;
-            MaxPerStageDescriptorUpdateAfterBindUniformBuffers = maxPerStageDescriptorUpdateAfterBindUniformBuffers;
-            MaxPerStageDescriptorUpdateAfterBindStorageBuffers = maxPerStageDescriptorUpdateAfterBindStorageBuffers;
-            MaxPerStageDescriptorUpdateAfterBindSampledImages = maxPerStageDescriptorUpdateAfterBindSampledImages;
-            MaxPerStageDescriptorUpdateAfterBindStorageImages = maxPerStageDescriptorUpdateAfterBindStorageImages;
-            MaxPerStageDescriptorUpdateAfterBindInputAttachments = maxPerStageDescriptorUpdateAfterBindInputAttachments;
-            MaxPerStageUpdateAfterBindResources = maxPerStageUpdateAfterBindResources;
-            MaxDescriptorSetUpdateAfterBindSamplers = maxDescriptorSetUpdateAfterBindSamplers;
-            MaxDescriptorSetUpdateAfterBindUniformBuffers = maxDescriptorSetUpdateAfterBindUniformBuffers;
-            MaxDescriptorSetUpdateAfterBindUniformBuffersDynamic = maxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
-            MaxDescriptorSetUpdateAfterBindStorageBuffers = maxDescriptorSetUpdateAfterBindStorageBuffers;
-            MaxDescriptorSetUpdateAfterBindStorageBuffersDynamic = maxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
-            MaxDescriptorSetUpdateAfterBindSampledImages = maxDescriptorSetUpdateAfterBindSampledImages;
-            MaxDescriptorSetUpdateAfterBindStorageImages = maxDescriptorSetUpdateAfterBindStorageImages;
-            MaxDescriptorSetUpdateAfterBindInputAttachments = maxDescriptorSetUpdateAfterBindInputAttachments;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxUpdateAfterBindDescriptorsInAllPools is not null)
+            {
+                MaxUpdateAfterBindDescriptorsInAllPools = maxUpdateAfterBindDescriptorsInAllPools.Value;
+            }
+
+            if (shaderUniformBufferArrayNonUniformIndexingNative is not null)
+            {
+                ShaderUniformBufferArrayNonUniformIndexingNative = shaderUniformBufferArrayNonUniformIndexingNative.Value;
+            }
+
+            if (shaderSampledImageArrayNonUniformIndexingNative is not null)
+            {
+                ShaderSampledImageArrayNonUniformIndexingNative = shaderSampledImageArrayNonUniformIndexingNative.Value;
+            }
+
+            if (shaderStorageBufferArrayNonUniformIndexingNative is not null)
+            {
+                ShaderStorageBufferArrayNonUniformIndexingNative = shaderStorageBufferArrayNonUniformIndexingNative.Value;
+            }
+
+            if (shaderStorageImageArrayNonUniformIndexingNative is not null)
+            {
+                ShaderStorageImageArrayNonUniformIndexingNative = shaderStorageImageArrayNonUniformIndexingNative.Value;
+            }
+
+            if (shaderInputAttachmentArrayNonUniformIndexingNative is not null)
+            {
+                ShaderInputAttachmentArrayNonUniformIndexingNative = shaderInputAttachmentArrayNonUniformIndexingNative.Value;
+            }
+
+            if (robustBufferAccessUpdateAfterBind is not null)
+            {
+                RobustBufferAccessUpdateAfterBind = robustBufferAccessUpdateAfterBind.Value;
+            }
+
+            if (quadDivergentImplicitLod is not null)
+            {
+                QuadDivergentImplicitLod = quadDivergentImplicitLod.Value;
+            }
+
+            if (maxPerStageDescriptorUpdateAfterBindSamplers is not null)
+            {
+                MaxPerStageDescriptorUpdateAfterBindSamplers = maxPerStageDescriptorUpdateAfterBindSamplers.Value;
+            }
+
+            if (maxPerStageDescriptorUpdateAfterBindUniformBuffers is not null)
+            {
+                MaxPerStageDescriptorUpdateAfterBindUniformBuffers = maxPerStageDescriptorUpdateAfterBindUniformBuffers.Value;
+            }
+
+            if (maxPerStageDescriptorUpdateAfterBindStorageBuffers is not null)
+            {
+                MaxPerStageDescriptorUpdateAfterBindStorageBuffers = maxPerStageDescriptorUpdateAfterBindStorageBuffers.Value;
+            }
+
+            if (maxPerStageDescriptorUpdateAfterBindSampledImages is not null)
+            {
+                MaxPerStageDescriptorUpdateAfterBindSampledImages = maxPerStageDescriptorUpdateAfterBindSampledImages.Value;
+            }
+
+            if (maxPerStageDescriptorUpdateAfterBindStorageImages is not null)
+            {
+                MaxPerStageDescriptorUpdateAfterBindStorageImages = maxPerStageDescriptorUpdateAfterBindStorageImages.Value;
+            }
+
+            if (maxPerStageDescriptorUpdateAfterBindInputAttachments is not null)
+            {
+                MaxPerStageDescriptorUpdateAfterBindInputAttachments = maxPerStageDescriptorUpdateAfterBindInputAttachments.Value;
+            }
+
+            if (maxPerStageUpdateAfterBindResources is not null)
+            {
+                MaxPerStageUpdateAfterBindResources = maxPerStageUpdateAfterBindResources.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindSamplers is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindSamplers = maxDescriptorSetUpdateAfterBindSamplers.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindUniformBuffers is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindUniformBuffers = maxDescriptorSetUpdateAfterBindUniformBuffers.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindUniformBuffersDynamic is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindUniformBuffersDynamic = maxDescriptorSetUpdateAfterBindUniformBuffersDynamic.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindStorageBuffers is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindStorageBuffers = maxDescriptorSetUpdateAfterBindStorageBuffers.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindStorageBuffersDynamic is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindStorageBuffersDynamic = maxDescriptorSetUpdateAfterBindStorageBuffersDynamic.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindSampledImages is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindSampledImages = maxDescriptorSetUpdateAfterBindSampledImages.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindStorageImages is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindStorageImages = maxDescriptorSetUpdateAfterBindStorageImages.Value;
+            }
+
+            if (maxDescriptorSetUpdateAfterBindInputAttachments is not null)
+            {
+                MaxDescriptorSetUpdateAfterBindInputAttachments = maxDescriptorSetUpdateAfterBindInputAttachments.Value;
+            }
         }
 
 /// <summary></summary>

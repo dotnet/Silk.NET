@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ProtectedSubmitInfo
         (
-            StructureType sType = StructureType.ProtectedSubmitInfo,
-            void* pNext = default,
-            Bool32 protectedSubmit = default
-        )
+            StructureType? sType = StructureType.ProtectedSubmitInfo,
+            void* pNext = null,
+            Bool32? protectedSubmit = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ProtectedSubmit = protectedSubmit;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (protectedSubmit is not null)
+            {
+                ProtectedSubmit = protectedSubmit.Value;
+            }
         }
 
 /// <summary></summary>

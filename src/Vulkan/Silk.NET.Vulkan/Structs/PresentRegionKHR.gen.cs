@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public PresentRegionKHR
         (
-            uint rectangleCount = default,
-            RectLayerKHR* pRectangles = default
-        )
+            uint? rectangleCount = null,
+            RectLayerKHR* pRectangles = null
+        ) : this()
         {
-            RectangleCount = rectangleCount;
-            PRectangles = pRectangles;
+            if (rectangleCount is not null)
+            {
+                RectangleCount = rectangleCount.Value;
+            }
+
+            if (pRectangles is not null)
+            {
+                PRectangles = pRectangles;
+            }
         }
 
 /// <summary></summary>

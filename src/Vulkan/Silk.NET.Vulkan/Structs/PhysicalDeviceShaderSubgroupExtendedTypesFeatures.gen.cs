@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderSubgroupExtendedTypesFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderSubgroupExtendedTypesFeatures,
-            void* pNext = default,
-            Bool32 shaderSubgroupExtendedTypes = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShaderSubgroupExtendedTypesFeatures,
+            void* pNext = null,
+            Bool32? shaderSubgroupExtendedTypes = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderSubgroupExtendedTypes = shaderSubgroupExtendedTypes;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderSubgroupExtendedTypes is not null)
+            {
+                ShaderSubgroupExtendedTypes = shaderSubgroupExtendedTypes.Value;
+            }
         }
 
 /// <summary></summary>

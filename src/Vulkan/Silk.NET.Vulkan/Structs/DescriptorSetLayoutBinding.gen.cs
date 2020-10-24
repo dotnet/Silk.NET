@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetLayoutBinding
         (
-            uint binding = default,
-            DescriptorType descriptorType = default,
-            uint descriptorCount = default,
-            ShaderStageFlags stageFlags = default,
-            Sampler* pImmutableSamplers = default
-        )
+            uint? binding = null,
+            DescriptorType? descriptorType = null,
+            uint? descriptorCount = null,
+            ShaderStageFlags? stageFlags = null,
+            Sampler* pImmutableSamplers = null
+        ) : this()
         {
-            Binding = binding;
-            DescriptorType = descriptorType;
-            DescriptorCount = descriptorCount;
-            StageFlags = stageFlags;
-            PImmutableSamplers = pImmutableSamplers;
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (descriptorType is not null)
+            {
+                DescriptorType = descriptorType.Value;
+            }
+
+            if (descriptorCount is not null)
+            {
+                DescriptorCount = descriptorCount.Value;
+            }
+
+            if (stageFlags is not null)
+            {
+                StageFlags = stageFlags.Value;
+            }
+
+            if (pImmutableSamplers is not null)
+            {
+                PImmutableSamplers = pImmutableSamplers;
+            }
         }
 
 /// <summary></summary>

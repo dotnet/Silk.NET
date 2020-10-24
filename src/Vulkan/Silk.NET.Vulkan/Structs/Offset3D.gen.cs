@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public Offset3D
         (
-            int x = default,
-            int y = default,
-            int z = default
-        )
+            int? x = null,
+            int? y = null,
+            int? z = null
+        ) : this()
         {
-            X = x;
-            Y = y;
-            Z = z;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
         }
 
 /// <summary></summary>

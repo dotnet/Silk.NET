@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassInputAttachmentAspectCreateInfo
         (
-            StructureType sType = StructureType.RenderPassInputAttachmentAspectCreateInfo,
-            void* pNext = default,
-            uint aspectReferenceCount = default,
-            InputAttachmentAspectReference* pAspectReferences = default
-        )
+            StructureType? sType = StructureType.RenderPassInputAttachmentAspectCreateInfo,
+            void* pNext = null,
+            uint? aspectReferenceCount = null,
+            InputAttachmentAspectReference* pAspectReferences = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AspectReferenceCount = aspectReferenceCount;
-            PAspectReferences = pAspectReferences;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (aspectReferenceCount is not null)
+            {
+                AspectReferenceCount = aspectReferenceCount.Value;
+            }
+
+            if (pAspectReferences is not null)
+            {
+                PAspectReferences = pAspectReferences;
+            }
         }
 
 /// <summary></summary>

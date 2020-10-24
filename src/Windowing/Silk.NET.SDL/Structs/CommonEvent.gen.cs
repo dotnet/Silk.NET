@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.SDL
     {
         public CommonEvent
         (
-            uint type = default,
-            uint timestamp = default
-        )
+            uint? type = null,
+            uint? timestamp = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
         }
 
 

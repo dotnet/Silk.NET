@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public SemaphoreTypeCreateInfoKHR
         (
-            StructureType sType = StructureType.SemaphoreTypeCreateInfo,
-            void* pNext = default,
-            SemaphoreType semaphoreType = default,
-            ulong initialValue = default
-        )
+            StructureType? sType = StructureType.SemaphoreTypeCreateInfo,
+            void* pNext = null,
+            SemaphoreType? semaphoreType = null,
+            ulong? initialValue = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SemaphoreType = semaphoreType;
-            InitialValue = initialValue;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (semaphoreType is not null)
+            {
+                SemaphoreType = semaphoreType.Value;
+            }
+
+            if (initialValue is not null)
+            {
+                InitialValue = initialValue.Value;
+            }
         }
 
 /// <summary></summary>

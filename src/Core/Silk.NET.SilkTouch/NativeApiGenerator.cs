@@ -15,6 +15,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.SilkTouch.NativeContextOverrides;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
@@ -46,16 +47,27 @@ namespace Silk.NET.SilkTouch
 
             if (nativeApiAttribute is null)
                 return;
+                
+            var pInvokeAttribute = context.Compilation.GetTypeByMetadataName
+                ("Silk.NET.Core.Native.PInvokeOverride");
 
+            if (pInvokeAttribute is null)
+                return;
+
+            _nativeContextAttributes[pInvokeAttribute] = array => (
+                (string) array[0].Value! /* first return is just the lib target */, new PInvokeNativeContextOverride());
+            
+            
             marshalBuilder = new MarshalBuilder();
 
-            marshalBuilder.Use(ParameterInitMiddleware);
-            marshalBuilder.Use(StringMarshaller);
-            marshalBuilder.Use(PinMiddleware);
-            marshalBuilder.Use(SpanMarshaller);
-            marshalBuilder.Use(BoolMarshaller);
-            marshalBuilder.Use(PinObjectMarshaller);
-            marshalBuilder.Use(DelegateMarshaller);
+            marshalBuilder.Use(Middlewares.ParameterInitMiddleware);
+            marshalBuilder.Use(Middlewares.StringMarshaller);
+            marshalBuilder.Use(Middlewares.PinMiddleware);
+            marshalBuilder.Use(Middlewares.SpanMarshaller);
+            marshalBuilder.Use(Middlewares.BoolMarshaller);
+            marshalBuilder.Use(Middlewares.PinObjectMarshaller);
+            marshalBuilder.Use(Middlewares.DelegateMarshaller);
+            marshalBuilder.Use(Middlewares.GenericPointerMarshaller);
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
 
@@ -113,16 +125,16 @@ namespace Silk.NET.SilkTouch
             if (!compilation.HasImplicitConversion
                 (classSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeApiContainer")))
                 return null;
-
+            
             var classIsSealed = classDeclaration.Modifiers.Any(x => x.Text == "sealed");
-            var generatedSeal = false;
+            var generateSeal = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
                     (classDeclaration.SyntaxTree)
                 .TryGetValue("silk_touch_sealed_vtable_creation", out var generateSealstr))
             {
                 if (bool.TryParse(generateSealstr, out var v))
-                    generatedSeal = v;
+                    generateSeal = v;
             }
             
             
@@ -167,210 +179,34 @@ namespace Silk.NET.SilkTouch
 
             int slotCount = 0;
             int gcCount = 0;
-            var methods = classDeclaration.Members.Where
-                    (x => x.IsKind(SyntaxKind.MethodDeclaration))
-                .Select(x => (MethodDeclarationSyntax) x)
-                .Select
-                (
-                    declaration => (declaration,
-                        symbol: compilation.GetSemanticModel(declaration.SyntaxTree).GetDeclaredSymbol(declaration))
-                )
-                .Where(x => !(x.symbol is null))
-                .Select
-                (
-                    x => (x.declaration, x.symbol,
-                        attribute: x.symbol.GetAttributes()
-                            .FirstOrDefault
-                            (
-                                x2 => SymbolEqualityComparer.Default.Equals(x2.AttributeClass, nativeApiAttributeSymbol)
-                            ))
-                )
-                .Select(x => (x.declaration, x.symbol, ToNativeApiAttribute(x.attribute)))
-                .Where
-                (
-                    x => x.declaration.Modifiers.Any
-                        (x2 => x2.IsKind(SyntaxKind.PartialKeyword)) && x.symbol.PartialImplementationPart is null
-                )
-                .Select
-                (
-                    x => (declaration: x.declaration, symbol: x.symbol,
-                        entryPoint: NativeApiAttribute.GetEntryPoint(x.Item3, classNativeApiAttribute, x.symbol.Name),
-                        callingConvention: NativeApiAttribute.GetCallingConvention(x.Item3, classNativeApiAttribute))
-                )
-                .ToArray();
+            
             Dictionary<int, string> entryPoints = new Dictionary<int, string>();
-            foreach (var (declaration, symbol, entryPoint, callingConvention) in methods)
+            var processedEntrypoints = new List<EntryPoint>();
+            foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
+                    from member in classDeclaration.Members
+                    where member.IsKind(SyntaxKind.MethodDeclaration)
+                    select (MethodDeclarationSyntax) member
+                let symbol = compilation.GetSemanticModel(declaration.SyntaxTree).GetDeclaredSymbol(declaration)
+                where symbol is not null
+                let attribute = ToNativeApiAttribute
+                (
+                    symbol.GetAttributes()
+                        .FirstOrDefault
+                            (att => SymbolEqualityComparer.Default.Equals(att.AttributeClass, nativeApiAttributeSymbol))
+                )
+                where declaration.Modifiers.Any
+                    (modifier => modifier.IsKind(SyntaxKind.PartialKeyword)) && symbol.PartialImplementationPart is null
+                let entryPoint = NativeApiAttribute.GetEntryPoint(attribute, classNativeApiAttribute, symbol.Name)
+                let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
+                select (declaration, symbol, entryPoint, callingConvention))
             {
-                try
-                {
-                    var marshalBuilder = rootMarshalBuilder.Clone();
-
-                    void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
-                    {
-                        // this is terminal, we never call next
-
-                        var parameters = ctx.ResolveAllLoadParameters();
-
-                        var fPtrType = FunctionPointerType
-                        (
-                            FunctionPointerCallingConvention
-                            (
-                                Token(SyntaxKind.UnmanagedKeyword),
-                                FunctionPointerUnmanagedCallingConventionList
-                                (
-                                    SingletonSeparatedList
-                                    (
-                                        FunctionPointerUnmanagedCallingConvention
-                                            (Identifier(GetCallingConvention(callingConvention)))
-                                    )
-                                )
-                            ),
-                            FunctionPointerParameterList
-                            (
-                                SeparatedList
-                                (
-                                    ctx.LoadTypes.Select
-                                    (
-                                        x => FunctionPointerParameter
-                                        (
-                                            IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
-                                        )
-                                    )
-                                )
-                            )
-                        );
-                        entryPoints[ctx.Slot] = entryPoint;
-
-                        ExpressionSyntax loadCallTarget;
-
-                        if ((classIsSealed || generatedSeal) && generateVTable)
-                        {
-                            loadCallTarget = MemberAccessExpression
-                            (
-                                SyntaxKind.SimpleMemberAccessExpression,
-                                ParenthesizedExpression
-                                (
-                                    BinaryExpression
-                                    (
-                                        SyntaxKind.AsExpression, IdentifierName("CurrentVTable"),
-                                        IdentifierName("GeneratedVTable")
-                                    )
-                                ), IdentifierName("Load")
-                            );
-                        }
-                        else
-                        {
-                            loadCallTarget = IdentifierName("Load");
-                        }
-
-                        // build load + invocation
-                        Func<IMarshalContext, ExpressionSyntax> expression = ctx => InvocationExpression
-                        (
-                            ParenthesizedExpression
-                            (
-                                CastExpression
-                                (
-                                    fPtrType, InvocationExpression
-                                    (
-                                        loadCallTarget, ArgumentList
-                                        (
-                                            SeparatedList
-                                            (
-                                                new[]
-                                                {
-                                                    Argument
-                                                    (
-                                                        LiteralExpression
-                                                            (SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot))
-                                                    ),
-                                                    Argument
-                                                    (
-                                                        LiteralExpression
-                                                            (SyntaxKind.StringLiteralExpression, Literal(entryPoint))
-                                                    )
-                                                }
-                                            )
-                                        )
-                                    )
-                                )
-                            ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
-                        );
-
-                        if (ctx.ReturnsVoid)
-                        {
-                            var exp = expression(ctx); // this forces evaluation of everything until this point.
-                            ctx.AddSideEffect(ctx => ExpressionStatement(exp));
-                            ctx.ResultVariable = null;
-                        }
-                        else
-                        {
-                            var id = ctx.DeclareVariable(ctx.ReturnLoadType, false);
-                            ctx.ResultVariable = id;
-                            ctx.SetVariable(id, expression);
-                            _ = ctx.ResolveVariable(id).Value; // force evaluation of ret
-                        }
-
-                        ctx.CurrentResultType = ctx.ReturnLoadType;
-                    }
-
-                    marshalBuilder.Use(BuildLoadInvoke);
-
-                    slotCount++;
-
-
-                    var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slotCount);
-
-                    marshalBuilder.Run(context);
-
-                    var block = context.BuildFinalBlock();
-
-                    gcCount += context.GCCount;
-
-                    if (declaration.Modifiers.All(x => x.Text != "unsafe"))
-                    {
-                        // this is not done as a middleware to allow middleware to prepend any variable declaration, even if it's unsafe
-                        block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
-                    }
-
-                    var method = declaration.WithBody
-                            (block)
-                        .WithAttributeLists(default)
-                        .WithSemicolonToken(default)
-                        .WithParameterList
-                        (
-                            ParameterList
-                            (
-                                SeparatedList
-                                (
-                                    declaration.ParameterList.Parameters.Select
-                                    (
-                                        (x, i) => x.WithAttributeLists
-                                                (default)
-                                            .WithType
-                                            (
-                                                IdentifierName
-                                                (
-                                                    symbol.Parameters[i]
-                                                        .Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
-                                                )
-                                            )
-                                    )
-                                )
-                            )
-                        )
-                        .WithReturnType
-                        (
-                            IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
-                        );
-
-                    // append to members
-                    newMembers.Add(method);
-                }
-                catch (Exception ex)
-                {
-                    sourceContext.ReportDiagnostic
-                        (Diagnostic.Create(Diagnostics.MethodClassFailure, declaration.GetLocation(), ex.ToString()));
-                }
+                var slot = slotCount++;
+                ProcessMethod
+                (
+                    sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
+                    generateSeal, generateVTable, slot, compilation, symbol, declaration, newMembers,
+                    ref gcCount, processedEntrypoints
+                );
             }
 
             if (slotCount > 0)
@@ -439,259 +275,45 @@ namespace Silk.NET.SilkTouch
 
             if (generateVTable && entryPoints.Count > 0)
             {
-                var vTableMembers = new List<MemberDeclarationSyntax>();
-
-                var initializeStatements = new List<StatementSyntax>();
-
-                if (!preloadVTable)
-                {
-                    vTableMembers.Add
-                    (
-                        FieldDeclaration
-                        (
-                            List<AttributeListSyntax>(), TokenList(Token(SyntaxKind.PrivateKeyword)),
-                            VariableDeclaration
-                            (
-                                IdentifierName("Silk.NET.Core.Contexts.INativeContext"),
-                                SingletonSeparatedList(VariableDeclarator("_ctx"))
-                            )
-                        )
-                    );
-                    
-                    initializeStatements.Add
-                    (
-                        ExpressionStatement
-                        (
-                            AssignmentExpression
-                                (SyntaxKind.SimpleAssignmentExpression, IdentifierName("_ctx"), IdentifierName("ctx"))
-                        )
-                    );
-                }
-                else
-                {
-                    foreach (var v in entryPoints.Values.Distinct())
-                    {
-                        initializeStatements.Add
-                        (
-                            ExpressionStatement
-                            (
-                                AssignmentExpression
-                                (
-                                    SyntaxKind.SimpleAssignmentExpression, IdentifierName($"_{v}"),
-                                    InvocationExpression
-                                    (
-                                        MemberAccessExpression
-                                        (
-                                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName("ctx"),
-                                            IdentifierName("GetProcAddress")
-                                        ), ArgumentList(SingletonSeparatedList(Argument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(v)))))
-                                    )
-                                )
-                            )
-                        );
-                    }
-                }
-
-                vTableMembers.Add
-                (
-                    MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), "Initialize")
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                        .WithParameterList
-                        (
-                            ParameterList
-                            (
-                                SeparatedList
-                                (
-                                    new[]
-                                    {
-                                        Parameter
-                                                (Identifier("ctx"))
-                                            .WithType(IdentifierName("Silk.NET.Core.Contexts.INativeContext")),
-                                        Parameter
-                                                (Identifier("maxSlots"))
-                                            .WithType(PredefinedType(Token(SyntaxKind.IntKeyword)))
-                                    }
-                                )
-                            )
-                        )
-                        .WithBody
-                        (
-                            Block
-                            (
-                                initializeStatements
-                            )
-                        )
-                );
-
-                List<VariableDeclaratorSyntax> slotVars = new List<VariableDeclaratorSyntax>();
-                foreach (var entrypoint in entryPoints.Values.Distinct())
-                {
-                    var name = $"_{entrypoint}";
-                    slotVars.Add(VariableDeclarator(name));
-                }
-
-                vTableMembers.Add
-                (
-                    MethodDeclaration
-                            (PredefinedType(Token(SyntaxKind.VoidKeyword)), "GeneratedThrowHelperInvalidSlot")
-                        .WithParameterList(ParameterList())
-                        .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword)))
-                        .WithBody
-                        (
-                            Block
-                            (
-                                ThrowStatement
-                                (
-                                    ObjectCreationExpression
-                                        (
-                                            QualifiedName
-                                                (IdentifierName("System"), IdentifierName("InvalidOperationException"))
-                                        )
-                                        .WithArgumentList
-                                        (
-                                            ArgumentList
-                                            (
-                                                SingletonSeparatedList
-                                                (
-                                                    Argument
-                                                    (
-                                                        LiteralExpression
-                                                        (
-                                                            SyntaxKind.StringLiteralExpression, Literal("Invalid Slot")
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                )
-                            )
-                        )
-                        .WithAttributeLists
-                        (
-                            SingletonList<AttributeListSyntax>
-                            (
-                                AttributeList
-                                (
-                                    SingletonSeparatedList<AttributeSyntax>
-                                    (
-                                        Attribute
-                                        (
-                                            QualifiedName
-                                            (
-                                                QualifiedName(IdentifierName("System"), IdentifierName("Diagnostics")),
-                                                IdentifierName("DebuggerHidden")
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                );
-
-                vTableMembers.Add
-                (
-                    FieldDeclaration
-                    (
-                        List<AttributeListSyntax>(), TokenList(Token(SyntaxKind.PrivateKeyword)),
-                        VariableDeclaration(IdentifierName("System.IntPtr"), SeparatedList(slotVars))
-                    )
-                );
-
-                vTableMembers.Add
-                (
-                    MethodDeclaration(IdentifierName("System.IntPtr"), "Load")
-                        .WithParameterList
-                        (
-                            ParameterList
-                            (
-                                SeparatedList
-                                (
-                                    new[]
-                                    {
-                                        Parameter
-                                                (Identifier("slot"))
-                                            .WithType(PredefinedType(Token(SyntaxKind.IntKeyword))),
-                                        Parameter
-                                                (Identifier("entryPoint"))
-                                            .WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))
-                                    }
-                                )
-                            )
-                        )
-                        .WithBody(Block(BuildLoad(ref vTableMembers, entryPoints, emitAssert, preloadVTable)))
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                );
-
-                vTableMembers.Add
-                (
-                    MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), "Purge")
-                        .WithParameterList(ParameterList(SeparatedList<ParameterSyntax>()))
-                        .WithBody
-                        (
-                            Block
-                            (
-                                entryPoints.Values.Distinct().Select
-                                (
-                                    x => ExpressionStatement
-                                    (
-                                        AssignmentExpression
-                                        (
-                                            SyntaxKind.SimpleAssignmentExpression, IdentifierName($"_{x}"),
-                                            DefaultExpression(IdentifierName("System.IntPtr"))
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                );
-
-                vTableMembers.Add
-                (
-                    MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), "Dispose")
-                        .WithParameterList(ParameterList(SeparatedList<ParameterSyntax>()))
-                        .WithBody(Block())
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                );
-
                 newMembers.Add
                 (
-                    ClassDeclaration
+                    GenerateVTable
                     (
-                        List<AttributeListSyntax>(),
-                        TokenList(Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.SealedKeyword)),
-                        Identifier("GeneratedVTable"), null,
-                        BaseList
-                        (
-                            SingletonSeparatedList
-                                ((BaseTypeSyntax) SimpleBaseType(IdentifierName("Silk.NET.Core.Native.IVTable")))
-                        ), List<TypeParameterConstraintClauseSyntax>(), List(vTableMembers)
+                        preloadVTable, entryPoints, emitAssert,
+                        sourceContext.ParseOptions.PreprocessorSymbolNames.Any
+                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */)
                     )
                 );
-
-                SyntaxToken[] createVTableModifiers;
-
-                if (generatedSeal)
-                    createVTableModifiers = new[] {Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.SealedKeyword), Token(SyntaxKind.OverrideKeyword)};
-                else    
-                    createVTableModifiers = new[] {Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)};
-                
                 newMembers.Add
                 (
                     MethodDeclaration(IdentifierName("IVTable"), Identifier("CreateVTable"))
-                        .WithModifiers(TokenList(createVTableModifiers))
+                        .WithModifiers
+                        (
+                            TokenList
+                            (
+                                generateSeal
+                                    ? new[]
+                                    {
+                                        Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.SealedKeyword),
+                                        Token(SyntaxKind.OverrideKeyword)
+                                    }
+                                    : new[] {Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)}
+                            )
+                        )
                         .WithExpressionBody
                         (
                             ArrowExpressionClause
                             (
                                 ObjectCreationExpression
-                                        (IdentifierName("GeneratedVTable"))
-                                    .WithArgumentList(ArgumentList())
+                                    (IdentifierName("GeneratedVTable"))
+                                .WithArgumentList(ArgumentList())
                             )
                         )
                         .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                 );
             }
+
+            ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, classSymbol, classDeclaration);
 
             var newNamespace = namespaceDeclaration.WithMembers
                 (
@@ -709,7 +331,7 @@ namespace Silk.NET.SilkTouch
 
             var result = newNamespace.NormalizeWhitespace().ToFullString();
             stopwatch.Stop();
-            bool reportTelemetry = true;
+            var reportTelemetry = true;
 #if !DEBUG
             reportTelemetry = sourceContext.AnalyzerConfigOptions.GlobalOptions.TryGetValue
                 ("silk_touch_telemetry", out var telstr) && bool.Parse(telstr);
@@ -726,376 +348,194 @@ namespace Silk.NET.SilkTouch
             return result;
         }
 
-        private IEnumerable<StatementSyntax> BuildLoad
-            (ref List<MemberDeclarationSyntax> vTableMembers, Dictionary<int, string> entryPoints, bool emitAssert, bool preloadVTable)
+        private static void ProcessMethod
+        (
+            GeneratorExecutionContext sourceContext,
+            MarshalBuilder rootMarshalBuilder,
+            CallingConvention callingConvention,
+            Dictionary<int, string> entryPoints,
+            string entryPoint,
+            bool classIsSealed,
+            bool generateSeal,
+            bool generateVTable,
+            int slot,
+            Compilation compilation,
+            IMethodSymbol symbol,
+            MethodDeclarationSyntax declaration,
+            List<MemberDeclarationSyntax> newMembers,
+            ref int gcCount,
+            List<EntryPoint> processedEntrypoints
+        )
         {
-            const string keyName = "slot";
-            
-            Span<int> orderedKeys = entryPoints.Keys.OrderBy(x => x).ToArray();
-
-            var exp = BuildSubLoad(ref vTableMembers, orderedKeys, entryPoints, emitAssert, preloadVTable);
-
-            return new[] {ReturnStatement(InvocationExpression(exp, ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))};
-
-            static IdentifierNameSyntax BuildSubLoad
-            (
-                ref List<MemberDeclarationSyntax> methods,
-                ReadOnlySpan<int> keys,
-                IReadOnlyDictionary<int, string> entryPoints,
-                bool emitAssert, 
-                bool preloadVTable
-            )
+            void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
             {
-                var body = new List<StatementSyntax>();
-                var name = $"Load_{keys[0]}_{keys[keys.Length - 1]}";
-                if (keys.Length % 2 != 0)
-                {
-                    // uneven, load lowest
-                    body.Add
-                    (
-                        IfStatement
-                        (
-                            BinaryExpression(SyntaxKind.EqualsExpression, IdentifierName(keyName), Num(keys[0])),
-                            ReturnStatement
-                                (InvocationExpression(BuildFinalSubLoad(ref methods, keys[0], entryPoints[keys[0]], emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))
-                        )
-                    );
-                    if (keys.Length > 1)
-                    {
-                        body.Add
-                            (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, keys.Slice(1), entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))));
-                    }
-                    else
-                    {
-                        // throw & return default
-                        body.Add
-                            (ExpressionStatement(InvocationExpression(IdentifierName("GeneratedThrowHelperInvalidSlot"))));
-                        body.Add(ReturnStatement(DefaultExpression(IdentifierName("System.IntPtr"))));
-                    }
-                }
-                else
-                {
-                    // even, but not one, split.
-                    var halfIndex = keys.Length / 2;
-                    var lower = keys.Slice(0, halfIndex);
-                    var upper = keys.Slice(halfIndex);
-                    var midKey = keys[halfIndex];
+                // this is terminal, we never call next
 
-                    body.Add
-                    (
-                        IfStatement
-                        (
-                            BinaryExpression(SyntaxKind.LessThanExpression, IdentifierName(keyName), Num(midKey)),
-                            ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, lower, entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))),
-                            ElseClause
-                                (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, upper, entryPoints, emitAssert, preloadVTable), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))))
-                        )
-                    );
-                }
+                var parameters = ctx.ResolveAllLoadParameters();
 
-                methods.Add
+                var fPtrType = FunctionPointerType
                 (
-                    MethodDeclaration
-                            (QualifiedName(IdentifierName("System"), IdentifierName("IntPtr")), Identifier(name))
-                        .WithParameterList
-                        (
-                            ParameterList
-                            (
-                                SeparatedList
-                                (
-                                    new[]
-                                    {
-                                        Parameter
-                                                (Identifier(keyName))
-                                            .WithType(PredefinedType(Token(SyntaxKind.IntKeyword))),
-                                        Parameter
-                                                (Identifier("entryPoint"))
-                                            .WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))
-                                    }
-                                )
-                            )
-                        )
-                        .WithAttributeLists
-                        (
-                            SingletonList
-                            (
-                                AttributeList
-                                (
-                                    SingletonSeparatedList
-                                    (
-                                        Attribute
-                                            (
-                                                QualifiedName
-                                                (
-                                                    QualifiedName
-                                                    (
-                                                        QualifiedName
-                                                            (IdentifierName("System"), IdentifierName("Runtime")),
-                                                        IdentifierName("CompilerServices")
-                                                    ), IdentifierName("MethodImpl")
-                                                )
-                                            )
-
-                                            #region [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining | System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization)]
-
-                                            .WithArgumentList
-                                            (
-                                                AttributeArgumentList
-                                                (
-                                                    SingletonSeparatedList
-                                                    (
-                                                        AttributeArgument
-                                                        (
-                                                            BinaryExpression
-                                                            (
-                                                                SyntaxKind.BitwiseOrExpression,
-                                                                MemberAccessExpression
-                                                                (
-                                                                    SyntaxKind.SimpleMemberAccessExpression,
-                                                                    MemberAccessExpression
-                                                                    (
-                                                                        SyntaxKind.SimpleMemberAccessExpression,
-                                                                        MemberAccessExpression
-                                                                        (
-                                                                            SyntaxKind.SimpleMemberAccessExpression,
-                                                                            MemberAccessExpression
-                                                                            (
-                                                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                                                IdentifierName("System"),
-                                                                                IdentifierName("Runtime")
-                                                                            ), IdentifierName("CompilerServices")
-                                                                        ), IdentifierName("MethodImplOptions")
-                                                                    ), IdentifierName("AggressiveInlining")
-                                                                ),
-                                                                CastExpression
-                                                                (
-                                                                    IdentifierName
-                                                                    (
-                                                                        "System.Runtime.CompilerServices.MethodImplOptions"
-                                                                    ), Num(512)
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-
-                                        #endregion
-
-                                    )
-                                )
-                            )
-                        )
-                        .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword)))
-                        .WithBody(Block(body))
-                        .WithAttributeLists
-                        (
-                            SingletonList<AttributeListSyntax>
-                            (
-                                AttributeList
-                                (
-                                    SingletonSeparatedList<AttributeSyntax>
-                                    (
-                                        Attribute
-                                        (
-                                            QualifiedName
-                                            (
-                                                QualifiedName(IdentifierName("System"), IdentifierName("Diagnostics")),
-                                                IdentifierName("DebuggerHidden")
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                );
-                return IdentifierName(name);
-            }
-
-            static IdentifierNameSyntax BuildFinalSubLoad(ref List<MemberDeclarationSyntax> methods, int key, string entryPoint, bool emitAssert, bool preloadVTable)
-            {
-                var name = $"Load_Final_{key}_{entryPoint}";
-                var body = new List<StatementSyntax>();
-                if (emitAssert)
-                    body.Add(ExpressionStatement(
-                        InvocationExpression(
-                                MemberAccessExpression(
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    MemberAccessExpression(
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        MemberAccessExpression(
-                                            SyntaxKind.SimpleMemberAccessExpression,
-                                            IdentifierName("System"),
-                                            IdentifierName("Diagnostics")),
-                                        IdentifierName("Debug")),
-                                    IdentifierName("Assert")))
-                            .WithArgumentList(
-                                ArgumentList(
-                                    SingletonSeparatedList(
-                                        Argument(
-                                            BinaryExpression(
-                                                SyntaxKind.EqualsExpression,
-                                                IdentifierName(keyName),
-                                                Num(key))))))));
-
-                var localName = $"_{entryPoint}";
-                if (!preloadVTable)
-                {
-                    body.Add
+                    FunctionPointerCallingConvention
                     (
-                        IfStatement
+                        Token(SyntaxKind.UnmanagedKeyword),
+                        FunctionPointerUnmanagedCallingConventionList
+                        (
+                            SingletonSeparatedList
+                            (
+                                FunctionPointerUnmanagedCallingConvention
+                                    (Identifier(GetCallingConvention(callingConvention)))
+                            )
+                        )
+                    ),
+                    FunctionPointerParameterList
+                    (
+                        SeparatedList
+                        (
+                            ctx.LoadTypes.Select
+                            (
+                                x => FunctionPointerParameter
+                                    (IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))
+                            )
+                        )
+                    )
+                );
+                entryPoints[ctx.Slot] = entryPoint;
+                processedEntrypoints.Add
+                (
+                    new EntryPoint
+                    (
+                        entryPoint, ctx.Slot, callingConvention,
+                        ctx.LoadTypes.Select
+                            (
+                                x => (TypeSyntax) IdentifierName
+                                    (x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
+                            )
+                            .ToArray()
+                    )
+                );
+
+                ExpressionSyntax loadCallTarget;
+
+                if ((classIsSealed || generateSeal) && generateVTable)
+                {
+                    loadCallTarget = MemberAccessExpression
+                    (
+                        SyntaxKind.SimpleMemberAccessExpression,
+                        ParenthesizedExpression
                         (
                             BinaryExpression
                             (
-                                SyntaxKind.NotEqualsExpression, IdentifierName(localName),
-                                DefaultExpression(IdentifierName("System.IntPtr"))
-                            ), ReturnStatement(IdentifierName(localName))
-                        )
-                    );
-                    body.Add
-                    (
-                        ExpressionStatement
-                        (
-                            AssignmentExpression
-                            (
-                                SyntaxKind.SimpleAssignmentExpression, IdentifierName(localName),
-                                InvocationExpression
-                                (
-                                    MemberAccessExpression
-                                    (
-                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("_ctx"),
-                                        IdentifierName("GetProcAddress")
-                                    ), ArgumentList(SingletonSeparatedList(Argument(IdentifierName("entryPoint"))))
-                                )
+                                SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName("GeneratedVTable")
                             )
-                        )
+                        ), IdentifierName("Load")
                     );
                 }
+                else
+                {
+                    loadCallTarget = IdentifierName("Load");
+                }
 
-                body.Add(ReturnStatement(IdentifierName(localName)));
-
-                methods.Add
+                // build load + invocation
+                Func<IMarshalContext, ExpressionSyntax> expression = ctx => InvocationExpression
                 (
-                    MethodDeclaration
-                            (QualifiedName(IdentifierName("System"), IdentifierName("IntPtr")), Identifier(name))
-                        .WithParameterList
+                    ParenthesizedExpression
+                    (
+                        CastExpression
                         (
-                            ParameterList
+                            fPtrType, InvocationExpression
                             (
-                                SeparatedList
+                                loadCallTarget, ArgumentList
                                 (
-                                    new[]
-                                    {
-                                        Parameter
-                                                (Identifier(keyName))
-                                            .WithType(PredefinedType(Token(SyntaxKind.IntKeyword))),
-                                        Parameter
-                                                (Identifier("entryPoint"))
-                                            .WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))
-                                    }
-                                )
-                            )
-                        )
-                        .WithAttributeLists
-                        (
-                            SingletonList
-                            (
-                                AttributeList
-                                (
-                                    SingletonSeparatedList
+                                    SeparatedList
                                     (
-                                        Attribute
-                                            (
-                                                QualifiedName
-                                                (
-                                                    QualifiedName
-                                                    (
-                                                        QualifiedName
-                                                            (IdentifierName("System"), IdentifierName("Runtime")),
-                                                        IdentifierName("CompilerServices")
-                                                    ), IdentifierName("MethodImpl")
-                                                )
-                                            )
-
-                                            #region [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining | System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization)]
-
-                                            .WithArgumentList
-                                            (
-                                                AttributeArgumentList
-                                                (
-                                                    SingletonSeparatedList<AttributeArgumentSyntax>
-                                                    (
-                                                        AttributeArgument
-                                                        (
-                                                            BinaryExpression
-                                                            (
-                                                                SyntaxKind.BitwiseOrExpression,
-                                                                MemberAccessExpression
-                                                                (
-                                                                    SyntaxKind.SimpleMemberAccessExpression,
-                                                                    MemberAccessExpression
-                                                                    (
-                                                                        SyntaxKind.SimpleMemberAccessExpression,
-                                                                        MemberAccessExpression
-                                                                        (
-                                                                            SyntaxKind.SimpleMemberAccessExpression,
-                                                                            MemberAccessExpression
-                                                                            (
-                                                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                                                IdentifierName("System"),
-                                                                                IdentifierName("Runtime")
-                                                                            ), IdentifierName("CompilerServices")
-                                                                        ), IdentifierName("MethodImplOptions")
-                                                                    ), IdentifierName("AggressiveInlining")
-                                                                ),
-                                                                CastExpression
-                                                                (
-                                                                    IdentifierName
-                                                                    (
-                                                                        "System.Runtime.CompilerServices.MethodImplOptions"
-                                                                    ), Num(512)
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-
-                                        #endregion
-
+                                        new[]
+                                        {
+                                            Argument
+                                                (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot))),
+                                            Argument
+                                                (LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(entryPoint)))
+                                        }
                                     )
                                 )
                             )
                         )
-                        .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword)))
-                        .WithBody(Block(body))
-                        .WithAttributeLists
-                        (
-                            SingletonList<AttributeListSyntax>
-                            (
-                                AttributeList
-                                (
-                                    SingletonSeparatedList<AttributeSyntax>
-                                    (
-                                        Attribute
-                                        (
-                                            QualifiedName
-                                            (
-                                                QualifiedName(IdentifierName("System"), IdentifierName("Diagnostics")),
-                                                IdentifierName("DebuggerHidden")
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
+                    ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
                 );
-                return IdentifierName(name);
+
+                if (ctx.ReturnsVoid)
+                {
+                    var exp = expression(ctx); // this forces evaluation of everything until this point.
+                    ctx.AddSideEffect(ctx => ExpressionStatement(exp));
+                    ctx.ResultVariable = null;
+                }
+                else
+                {
+                    var id = ctx.DeclareVariable(ctx.ReturnLoadType, false);
+                    ctx.ResultVariable = id;
+                    ctx.SetVariable(id, expression);
+                    _ = ctx.ResolveVariable(id).Value; // force evaluation of ret
+                }
+
+                ctx.CurrentResultType = ctx.ReturnLoadType;
             }
 
-            static LiteralExpressionSyntax Num
-                (int i)
-                => LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(i));
+            try
+            {
+                var marshalBuilder = rootMarshalBuilder.Clone();
+
+                marshalBuilder.Use(BuildLoadInvoke);
+
+                var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slot);
+
+                marshalBuilder.Run(context);
+
+                var block = context.BuildFinalBlock();
+
+                gcCount += context.GCCount;
+
+                if (declaration.Modifiers.All(x => x.Text != "unsafe"))
+                {
+                    // this is not done as a middleware to allow middleware to prepend any variable declaration, even if it's unsafe
+                    block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
+                }
+
+                var method = declaration.WithBody
+                        (block)
+                    .WithAttributeLists(default)
+                    .WithSemicolonToken(default)
+                    .WithParameterList
+                    (
+                        ParameterList
+                        (
+                            SeparatedList
+                            (
+                                declaration.ParameterList.Parameters.Select
+                                (
+                                    (x, i) => x.WithAttributeLists
+                                            (default)
+                                        .WithType
+                                        (
+                                            IdentifierName
+                                            (
+                                                symbol.Parameters[i]
+                                                    .Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
+                                            )
+                                        )
+                                )
+                            )
+                        )
+                    )
+                    .WithReturnType
+                        (IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)));
+
+                // append to members
+                newMembers.Add(method);
+            }
+            catch (Exception ex)
+            {
+                sourceContext.ReportDiagnostic
+                    (Diagnostic.Create(Diagnostics.MethodClassFailure, declaration.GetLocation(), ex.ToString()));
+            }
         }
 
         private static string GetCallingConvention(CallingConvention convention)

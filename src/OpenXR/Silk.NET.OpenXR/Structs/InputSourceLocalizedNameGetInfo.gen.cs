@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public InputSourceLocalizedNameGetInfo
         (
-            StructureType type = StructureType.TypeInputSourceLocalizedNameGetInfo,
-            void* next = default,
-            ulong sourcePath = default,
-            InputSourceLocalizedNameFlags whichComponents = default
-        )
+            StructureType? type = StructureType.TypeInputSourceLocalizedNameGetInfo,
+            void* next = null,
+            ulong? sourcePath = null,
+            InputSourceLocalizedNameFlags? whichComponents = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            SourcePath = sourcePath;
-            WhichComponents = whichComponents;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (sourcePath is not null)
+            {
+                SourcePath = sourcePath.Value;
+            }
+
+            if (whichComponents is not null)
+            {
+                WhichComponents = whichComponents.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public CoarseSampleLocationNV
         (
-            uint pixelX = default,
-            uint pixelY = default,
-            uint sample = default
-        )
+            uint? pixelX = null,
+            uint? pixelY = null,
+            uint? sample = null
+        ) : this()
         {
-            PixelX = pixelX;
-            PixelY = pixelY;
-            Sample = sample;
+            if (pixelX is not null)
+            {
+                PixelX = pixelX.Value;
+            }
+
+            if (pixelY is not null)
+            {
+                PixelY = pixelY.Value;
+            }
+
+            if (sample is not null)
+            {
+                Sample = sample.Value;
+            }
         }
 
 /// <summary></summary>

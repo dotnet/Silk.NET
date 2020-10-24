@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public BufferCopy
         (
-            ulong srcOffset = default,
-            ulong dstOffset = default,
-            ulong size = default
-        )
+            ulong? srcOffset = null,
+            ulong? dstOffset = null,
+            ulong? size = null
+        ) : this()
         {
-            SrcOffset = srcOffset;
-            DstOffset = dstOffset;
-            Size = size;
+            if (srcOffset is not null)
+            {
+                SrcOffset = srcOffset.Value;
+            }
+
+            if (dstOffset is not null)
+            {
+                DstOffset = dstOffset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

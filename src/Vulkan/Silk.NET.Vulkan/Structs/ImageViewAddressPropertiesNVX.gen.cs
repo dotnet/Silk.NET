@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewAddressPropertiesNVX
         (
-            StructureType sType = StructureType.ImageViewAddressPropertiesNvx,
-            void* pNext = default,
-            ulong deviceAddress = default,
-            ulong size = default
-        )
+            StructureType? sType = StructureType.ImageViewAddressPropertiesNvx,
+            void* pNext = null,
+            ulong? deviceAddress = null,
+            ulong? size = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceAddress = deviceAddress;
-            Size = size;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

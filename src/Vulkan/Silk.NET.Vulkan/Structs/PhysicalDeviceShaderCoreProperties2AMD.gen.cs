@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderCoreProperties2AMD
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderCoreProperties2Amd,
-            void* pNext = default,
-            ShaderCorePropertiesFlagsAMD shaderCoreFeatures = default,
-            uint activeComputeUnitCount = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShaderCoreProperties2Amd,
+            void* pNext = null,
+            ShaderCorePropertiesFlagsAMD? shaderCoreFeatures = null,
+            uint? activeComputeUnitCount = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderCoreFeatures = shaderCoreFeatures;
-            ActiveComputeUnitCount = activeComputeUnitCount;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderCoreFeatures is not null)
+            {
+                ShaderCoreFeatures = shaderCoreFeatures.Value;
+            }
+
+            if (activeComputeUnitCount is not null)
+            {
+                ActiveComputeUnitCount = activeComputeUnitCount.Value;
+            }
         }
 
 /// <summary></summary>

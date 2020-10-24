@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureCreateGeometryTypeInfoKHR
         (
-            StructureType sType = StructureType.AccelerationStructureCreateGeometryTypeInfoKhr,
-            void* pNext = default,
-            GeometryTypeKHR geometryType = default,
-            uint maxPrimitiveCount = default,
-            IndexType indexType = default,
-            uint maxVertexCount = default,
-            Format vertexFormat = default,
-            Bool32 allowsTransforms = default
-        )
+            StructureType? sType = StructureType.AccelerationStructureCreateGeometryTypeInfoKhr,
+            void* pNext = null,
+            GeometryTypeKHR? geometryType = null,
+            uint? maxPrimitiveCount = null,
+            IndexType? indexType = null,
+            uint? maxVertexCount = null,
+            Format? vertexFormat = null,
+            Bool32? allowsTransforms = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            GeometryType = geometryType;
-            MaxPrimitiveCount = maxPrimitiveCount;
-            IndexType = indexType;
-            MaxVertexCount = maxVertexCount;
-            VertexFormat = vertexFormat;
-            AllowsTransforms = allowsTransforms;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (geometryType is not null)
+            {
+                GeometryType = geometryType.Value;
+            }
+
+            if (maxPrimitiveCount is not null)
+            {
+                MaxPrimitiveCount = maxPrimitiveCount.Value;
+            }
+
+            if (indexType is not null)
+            {
+                IndexType = indexType.Value;
+            }
+
+            if (maxVertexCount is not null)
+            {
+                MaxVertexCount = maxVertexCount.Value;
+            }
+
+            if (vertexFormat is not null)
+            {
+                VertexFormat = vertexFormat.Value;
+            }
+
+            if (allowsTransforms is not null)
+            {
+                AllowsTransforms = allowsTransforms.Value;
+            }
         }
 
 /// <summary></summary>

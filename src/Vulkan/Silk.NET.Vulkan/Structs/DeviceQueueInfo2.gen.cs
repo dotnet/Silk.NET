@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public DeviceQueueInfo2
         (
-            StructureType sType = StructureType.DeviceQueueInfo2,
-            void* pNext = default,
-            DeviceQueueCreateFlags flags = default,
-            uint queueFamilyIndex = default,
-            uint queueIndex = default
-        )
+            StructureType? sType = StructureType.DeviceQueueInfo2,
+            void* pNext = null,
+            DeviceQueueCreateFlags? flags = null,
+            uint? queueFamilyIndex = null,
+            uint? queueIndex = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            QueueFamilyIndex = queueFamilyIndex;
-            QueueIndex = queueIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (queueFamilyIndex is not null)
+            {
+                QueueFamilyIndex = queueFamilyIndex.Value;
+            }
+
+            if (queueIndex is not null)
+            {
+                QueueIndex = queueIndex.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTextureCompressionASTCHDRFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceTextureCompressionAstcHdrFeaturesExt,
-            void* pNext = default,
-            Bool32 textureCompressionAstcHdr = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceTextureCompressionAstcHdrFeaturesExt,
+            void* pNext = null,
+            Bool32? textureCompressionAstcHdr = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            TextureCompressionAstcHdr = textureCompressionAstcHdr;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (textureCompressionAstcHdr is not null)
+            {
+                TextureCompressionAstcHdr = textureCompressionAstcHdr.Value;
+            }
         }
 
 /// <summary></summary>

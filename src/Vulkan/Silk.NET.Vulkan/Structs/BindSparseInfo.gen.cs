@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,79 @@ namespace Silk.NET.Vulkan
     {
         public BindSparseInfo
         (
-            StructureType sType = StructureType.BindSparseInfo,
-            void* pNext = default,
-            uint waitSemaphoreCount = default,
-            Semaphore* pWaitSemaphores = default,
-            uint bufferBindCount = default,
-            SparseBufferMemoryBindInfo* pBufferBinds = default,
-            uint imageOpaqueBindCount = default,
-            SparseImageOpaqueMemoryBindInfo* pImageOpaqueBinds = default,
-            uint imageBindCount = default,
-            SparseImageMemoryBindInfo* pImageBinds = default,
-            uint signalSemaphoreCount = default,
-            Semaphore* pSignalSemaphores = default
-        )
+            StructureType? sType = StructureType.BindSparseInfo,
+            void* pNext = null,
+            uint? waitSemaphoreCount = null,
+            Semaphore* pWaitSemaphores = null,
+            uint? bufferBindCount = null,
+            SparseBufferMemoryBindInfo* pBufferBinds = null,
+            uint? imageOpaqueBindCount = null,
+            SparseImageOpaqueMemoryBindInfo* pImageOpaqueBinds = null,
+            uint? imageBindCount = null,
+            SparseImageMemoryBindInfo* pImageBinds = null,
+            uint? signalSemaphoreCount = null,
+            Semaphore* pSignalSemaphores = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            WaitSemaphoreCount = waitSemaphoreCount;
-            PWaitSemaphores = pWaitSemaphores;
-            BufferBindCount = bufferBindCount;
-            PBufferBinds = pBufferBinds;
-            ImageOpaqueBindCount = imageOpaqueBindCount;
-            PImageOpaqueBinds = pImageOpaqueBinds;
-            ImageBindCount = imageBindCount;
-            PImageBinds = pImageBinds;
-            SignalSemaphoreCount = signalSemaphoreCount;
-            PSignalSemaphores = pSignalSemaphores;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (waitSemaphoreCount is not null)
+            {
+                WaitSemaphoreCount = waitSemaphoreCount.Value;
+            }
+
+            if (pWaitSemaphores is not null)
+            {
+                PWaitSemaphores = pWaitSemaphores;
+            }
+
+            if (bufferBindCount is not null)
+            {
+                BufferBindCount = bufferBindCount.Value;
+            }
+
+            if (pBufferBinds is not null)
+            {
+                PBufferBinds = pBufferBinds;
+            }
+
+            if (imageOpaqueBindCount is not null)
+            {
+                ImageOpaqueBindCount = imageOpaqueBindCount.Value;
+            }
+
+            if (pImageOpaqueBinds is not null)
+            {
+                PImageOpaqueBinds = pImageOpaqueBinds;
+            }
+
+            if (imageBindCount is not null)
+            {
+                ImageBindCount = imageBindCount.Value;
+            }
+
+            if (pImageBinds is not null)
+            {
+                PImageBinds = pImageBinds;
+            }
+
+            if (signalSemaphoreCount is not null)
+            {
+                SignalSemaphoreCount = signalSemaphoreCount.Value;
+            }
+
+            if (pSignalSemaphores is not null)
+            {
+                PSignalSemaphores = pSignalSemaphores;
+            }
         }
 
 /// <summary></summary>

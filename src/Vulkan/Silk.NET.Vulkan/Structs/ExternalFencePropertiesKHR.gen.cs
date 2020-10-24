@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ExternalFencePropertiesKHR
         (
-            StructureType sType = StructureType.ExternalFenceProperties,
-            void* pNext = default,
-            ExternalFenceHandleTypeFlags exportFromImportedHandleTypes = default,
-            ExternalFenceHandleTypeFlags compatibleHandleTypes = default,
-            ExternalFenceFeatureFlags externalFenceFeatures = default
-        )
+            StructureType? sType = StructureType.ExternalFenceProperties,
+            void* pNext = null,
+            ExternalFenceHandleTypeFlags? exportFromImportedHandleTypes = null,
+            ExternalFenceHandleTypeFlags? compatibleHandleTypes = null,
+            ExternalFenceFeatureFlags? externalFenceFeatures = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-            CompatibleHandleTypes = compatibleHandleTypes;
-            ExternalFenceFeatures = externalFenceFeatures;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (exportFromImportedHandleTypes is not null)
+            {
+                ExportFromImportedHandleTypes = exportFromImportedHandleTypes.Value;
+            }
+
+            if (compatibleHandleTypes is not null)
+            {
+                CompatibleHandleTypes = compatibleHandleTypes.Value;
+            }
+
+            if (externalFenceFeatures is not null)
+            {
+                ExternalFenceFeatures = externalFenceFeatures.Value;
+            }
         }
 
 /// <summary></summary>

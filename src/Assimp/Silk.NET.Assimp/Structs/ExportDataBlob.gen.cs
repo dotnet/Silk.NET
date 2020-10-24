@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Assimp
     {
         public ExportDataBlob
         (
-            uint size = default,
-            void* data = default,
-            AssimpString name = default,
-            ExportDataBlob* next = default
-        )
+            uint? size = null,
+            void* data = null,
+            AssimpString? name = null,
+            ExportDataBlob* next = null
+        ) : this()
         {
-            Size = size;
-            Data = data;
-            Name = name;
-            Next = next;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (data is not null)
+            {
+                Data = data;
+            }
+
+            if (name is not null)
+            {
+                Name = name.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 

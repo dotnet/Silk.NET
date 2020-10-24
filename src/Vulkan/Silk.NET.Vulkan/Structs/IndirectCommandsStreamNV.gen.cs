@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public IndirectCommandsStreamNV
         (
-            Buffer buffer = default,
-            ulong offset = default
-        )
+            Buffer? buffer = null,
+            ulong? offset = null
+        ) : this()
         {
-            Buffer = buffer;
-            Offset = offset;
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
         }
 
 /// <summary></summary>

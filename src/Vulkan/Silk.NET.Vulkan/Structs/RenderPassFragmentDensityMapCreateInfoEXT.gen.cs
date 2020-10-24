@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassFragmentDensityMapCreateInfoEXT
         (
-            StructureType sType = StructureType.RenderPassFragmentDensityMapCreateInfoExt,
-            void* pNext = default,
-            AttachmentReference fragmentDensityMapAttachment = default
-        )
+            StructureType? sType = StructureType.RenderPassFragmentDensityMapCreateInfoExt,
+            void* pNext = null,
+            AttachmentReference? fragmentDensityMapAttachment = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            FragmentDensityMapAttachment = fragmentDensityMapAttachment;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fragmentDensityMapAttachment is not null)
+            {
+                FragmentDensityMapAttachment = fragmentDensityMapAttachment.Value;
+            }
         }
 
 /// <summary></summary>

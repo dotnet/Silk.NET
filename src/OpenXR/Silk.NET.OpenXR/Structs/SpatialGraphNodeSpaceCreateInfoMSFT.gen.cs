@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public SpatialGraphNodeSpaceCreateInfoMSFT
         (
-            StructureType type = StructureType.TypeSpatialGraphNodeSpaceCreateInfoMsft,
-            void* next = default,
-            SpatialGraphNodeTypeMSFT nodeType = default,
-            Posef pose = default
-        )
+            StructureType? type = StructureType.TypeSpatialGraphNodeSpaceCreateInfoMsft,
+            void* next = null,
+            SpatialGraphNodeTypeMSFT? nodeType = null,
+            Posef? pose = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            NodeType = nodeType;
-            Pose = pose;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (nodeType is not null)
+            {
+                NodeType = nodeType.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
         }
 
 /// <summary></summary>

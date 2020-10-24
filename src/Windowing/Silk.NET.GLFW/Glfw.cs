@@ -3934,7 +3934,7 @@ namespace Silk.NET.GLFW
         /// <returns>The instance.</returns>
         public static Glfw GetApi()
         {
-            return new Glfw(new DefaultNativeContext(new GlfwLibraryNameContainer().GetLibraryName()));
+            return new Glfw(CreateDefaultContext(new GlfwLibraryNameContainer().GetLibraryName()));
         }
 
         /// <inheritdoc />

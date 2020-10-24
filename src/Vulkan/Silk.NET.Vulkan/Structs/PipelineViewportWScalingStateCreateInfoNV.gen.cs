@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PipelineViewportWScalingStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineViewportWScalingStateCreateInfoNV,
-            void* pNext = default,
-            Bool32 viewportWScalingEnable = default,
-            uint viewportCount = default,
-            ViewportWScalingNV* pViewportWScalings = default
-        )
+            StructureType? sType = StructureType.PipelineViewportWScalingStateCreateInfoNV,
+            void* pNext = null,
+            Bool32? viewportWScalingEnable = null,
+            uint? viewportCount = null,
+            ViewportWScalingNV* pViewportWScalings = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ViewportWScalingEnable = viewportWScalingEnable;
-            ViewportCount = viewportCount;
-            PViewportWScalings = pViewportWScalings;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (viewportWScalingEnable is not null)
+            {
+                ViewportWScalingEnable = viewportWScalingEnable.Value;
+            }
+
+            if (viewportCount is not null)
+            {
+                ViewportCount = viewportCount.Value;
+            }
+
+            if (pViewportWScalings is not null)
+            {
+                PViewportWScalings = pViewportWScalings;
+            }
         }
 
 /// <summary></summary>

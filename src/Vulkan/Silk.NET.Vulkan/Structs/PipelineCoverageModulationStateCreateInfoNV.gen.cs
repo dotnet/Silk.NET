@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCoverageModulationStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineCoverageModulationStateCreateInfoNV,
-            void* pNext = default,
-            uint flags = default,
-            CoverageModulationModeNV coverageModulationMode = default,
-            Bool32 coverageModulationTableEnable = default,
-            uint coverageModulationTableCount = default,
-            float* pCoverageModulationTable = default
-        )
+            StructureType? sType = StructureType.PipelineCoverageModulationStateCreateInfoNV,
+            void* pNext = null,
+            uint? flags = null,
+            CoverageModulationModeNV? coverageModulationMode = null,
+            Bool32? coverageModulationTableEnable = null,
+            uint? coverageModulationTableCount = null,
+            float* pCoverageModulationTable = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            CoverageModulationMode = coverageModulationMode;
-            CoverageModulationTableEnable = coverageModulationTableEnable;
-            CoverageModulationTableCount = coverageModulationTableCount;
-            PCoverageModulationTable = pCoverageModulationTable;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (coverageModulationMode is not null)
+            {
+                CoverageModulationMode = coverageModulationMode.Value;
+            }
+
+            if (coverageModulationTableEnable is not null)
+            {
+                CoverageModulationTableEnable = coverageModulationTableEnable.Value;
+            }
+
+            if (coverageModulationTableCount is not null)
+            {
+                CoverageModulationTableCount = coverageModulationTableCount.Value;
+            }
+
+            if (pCoverageModulationTable is not null)
+            {
+                PCoverageModulationTable = pCoverageModulationTable;
+            }
         }
 
 /// <summary></summary>

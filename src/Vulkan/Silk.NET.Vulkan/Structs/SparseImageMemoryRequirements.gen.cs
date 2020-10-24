@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public SparseImageMemoryRequirements
         (
-            SparseImageFormatProperties formatProperties = default,
-            uint imageMipTailFirstLod = default,
-            ulong imageMipTailSize = default,
-            ulong imageMipTailOffset = default,
-            ulong imageMipTailStride = default
-        )
+            SparseImageFormatProperties? formatProperties = null,
+            uint? imageMipTailFirstLod = null,
+            ulong? imageMipTailSize = null,
+            ulong? imageMipTailOffset = null,
+            ulong? imageMipTailStride = null
+        ) : this()
         {
-            FormatProperties = formatProperties;
-            ImageMipTailFirstLod = imageMipTailFirstLod;
-            ImageMipTailSize = imageMipTailSize;
-            ImageMipTailOffset = imageMipTailOffset;
-            ImageMipTailStride = imageMipTailStride;
+            if (formatProperties is not null)
+            {
+                FormatProperties = formatProperties.Value;
+            }
+
+            if (imageMipTailFirstLod is not null)
+            {
+                ImageMipTailFirstLod = imageMipTailFirstLod.Value;
+            }
+
+            if (imageMipTailSize is not null)
+            {
+                ImageMipTailSize = imageMipTailSize.Value;
+            }
+
+            if (imageMipTailOffset is not null)
+            {
+                ImageMipTailOffset = imageMipTailOffset.Value;
+            }
+
+            if (imageMipTailStride is not null)
+            {
+                ImageMipTailStride = imageMipTailStride.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ShaderResourceUsageAMD
         (
-            uint numUsedVgprs = default,
-            uint numUsedSgprs = default,
-            uint ldsSizePerLocalWorkGroup = default,
-            UIntPtr ldsUsageSizeInBytes = default,
-            UIntPtr scratchMemUsageInBytes = default
-        )
+            uint? numUsedVgprs = null,
+            uint? numUsedSgprs = null,
+            uint? ldsSizePerLocalWorkGroup = null,
+            UIntPtr? ldsUsageSizeInBytes = null,
+            UIntPtr? scratchMemUsageInBytes = null
+        ) : this()
         {
-            NumUsedVgprs = numUsedVgprs;
-            NumUsedSgprs = numUsedSgprs;
-            LdsSizePerLocalWorkGroup = ldsSizePerLocalWorkGroup;
-            LdsUsageSizeInBytes = ldsUsageSizeInBytes;
-            ScratchMemUsageInBytes = scratchMemUsageInBytes;
+            if (numUsedVgprs is not null)
+            {
+                NumUsedVgprs = numUsedVgprs.Value;
+            }
+
+            if (numUsedSgprs is not null)
+            {
+                NumUsedSgprs = numUsedSgprs.Value;
+            }
+
+            if (ldsSizePerLocalWorkGroup is not null)
+            {
+                LdsSizePerLocalWorkGroup = ldsSizePerLocalWorkGroup.Value;
+            }
+
+            if (ldsUsageSizeInBytes is not null)
+            {
+                LdsUsageSizeInBytes = ldsUsageSizeInBytes.Value;
+            }
+
+            if (scratchMemUsageInBytes is not null)
+            {
+                ScratchMemUsageInBytes = scratchMemUsageInBytes.Value;
+            }
         }
 
 /// <summary></summary>

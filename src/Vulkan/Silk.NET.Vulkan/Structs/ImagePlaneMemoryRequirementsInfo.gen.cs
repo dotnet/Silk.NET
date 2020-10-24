@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ImagePlaneMemoryRequirementsInfo
         (
-            StructureType sType = StructureType.ImagePlaneMemoryRequirementsInfo,
-            void* pNext = default,
-            ImageAspectFlags planeAspect = default
-        )
+            StructureType? sType = StructureType.ImagePlaneMemoryRequirementsInfo,
+            void* pNext = null,
+            ImageAspectFlags? planeAspect = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PlaneAspect = planeAspect;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (planeAspect is not null)
+            {
+                PlaneAspect = planeAspect.Value;
+            }
         }
 
 /// <summary></summary>

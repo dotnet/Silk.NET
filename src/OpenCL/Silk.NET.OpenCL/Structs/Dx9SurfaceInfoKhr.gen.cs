@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenCL
     {
         public Dx9SurfaceInfoKhr
         (
-            IntPtr resource = default,
-            IntPtr sharedHandle = default
-        )
+            IntPtr? resource = null,
+            IntPtr? sharedHandle = null
+        ) : this()
         {
-            Resource = resource;
-            SharedHandle = sharedHandle;
+            if (resource is not null)
+            {
+                Resource = resource.Value;
+            }
+
+            if (sharedHandle is not null)
+            {
+                SharedHandle = sharedHandle.Value;
+            }
         }
 
 /// <summary></summary>

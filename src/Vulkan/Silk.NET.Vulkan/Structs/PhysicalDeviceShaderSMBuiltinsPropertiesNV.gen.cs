@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderSMBuiltinsPropertiesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderSMBuiltinsPropertiesNV,
-            void* pNext = default,
-            uint shaderSmcount = default,
-            uint shaderWarpsPerSM = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShaderSMBuiltinsPropertiesNV,
+            void* pNext = null,
+            uint? shaderSmcount = null,
+            uint? shaderWarpsPerSM = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderSmcount = shaderSmcount;
-            ShaderWarpsPerSM = shaderWarpsPerSM;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderSmcount is not null)
+            {
+                ShaderSmcount = shaderSmcount.Value;
+            }
+
+            if (shaderWarpsPerSM is not null)
+            {
+                ShaderWarpsPerSM = shaderWarpsPerSM.Value;
+            }
         }
 
 /// <summary></summary>

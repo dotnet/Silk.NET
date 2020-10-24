@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.OpenXR
     {
         public InteractionProfileAnalogThresholdVALVE
         (
-            StructureType type = StructureType.TypeInteractionProfileAnalogThresholdValve,
-            void* next = default,
-            Action action = default,
-            ulong binding = default,
-            float onThreshold = default,
-            float offThreshold = default,
-            HapticBaseHeader* onHaptic = default,
-            HapticBaseHeader* offHaptic = default
-        )
+            StructureType? type = StructureType.TypeInteractionProfileAnalogThresholdValve,
+            void* next = null,
+            Action? action = null,
+            ulong? binding = null,
+            float? onThreshold = null,
+            float? offThreshold = null,
+            HapticBaseHeader* onHaptic = null,
+            HapticBaseHeader* offHaptic = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Action = action;
-            Binding = binding;
-            OnThreshold = onThreshold;
-            OffThreshold = offThreshold;
-            OnHaptic = onHaptic;
-            OffHaptic = offHaptic;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (onThreshold is not null)
+            {
+                OnThreshold = onThreshold.Value;
+            }
+
+            if (offThreshold is not null)
+            {
+                OffThreshold = offThreshold.Value;
+            }
+
+            if (onHaptic is not null)
+            {
+                OnHaptic = onHaptic;
+            }
+
+            if (offHaptic is not null)
+            {
+                OffHaptic = offHaptic;
+            }
         }
 
 /// <summary></summary>

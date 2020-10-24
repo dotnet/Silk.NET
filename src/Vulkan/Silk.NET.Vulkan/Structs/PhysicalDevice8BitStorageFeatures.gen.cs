@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevice8BitStorageFeatures
         (
-            StructureType sType = StructureType.PhysicalDevice8BitStorageFeatures,
-            void* pNext = default,
-            Bool32 storageBuffer8BitAccess = default,
-            Bool32 uniformAndStorageBuffer8BitAccess = default,
-            Bool32 storagePushConstant8 = default
-        )
+            StructureType? sType = StructureType.PhysicalDevice8BitStorageFeatures,
+            void* pNext = null,
+            Bool32? storageBuffer8BitAccess = null,
+            Bool32? uniformAndStorageBuffer8BitAccess = null,
+            Bool32? storagePushConstant8 = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            StorageBuffer8BitAccess = storageBuffer8BitAccess;
-            UniformAndStorageBuffer8BitAccess = uniformAndStorageBuffer8BitAccess;
-            StoragePushConstant8 = storagePushConstant8;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (storageBuffer8BitAccess is not null)
+            {
+                StorageBuffer8BitAccess = storageBuffer8BitAccess.Value;
+            }
+
+            if (uniformAndStorageBuffer8BitAccess is not null)
+            {
+                UniformAndStorageBuffer8BitAccess = uniformAndStorageBuffer8BitAccess.Value;
+            }
+
+            if (storagePushConstant8 is not null)
+            {
+                StoragePushConstant8 = storagePushConstant8.Value;
+            }
         }
 
 /// <summary></summary>

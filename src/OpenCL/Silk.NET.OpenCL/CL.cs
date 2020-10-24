@@ -11,7 +11,7 @@ namespace Silk.NET.OpenCL
     {
         public static CL GetApi()
         {
-             return new CL(new DefaultNativeContext(new OpenCLLibraryNameContainer().GetLibraryName()));
+             return new CL(CreateDefaultContext(new OpenCLLibraryNameContainer().GetLibraryName()));
         }
 
         public bool TryGetExtension<T>(out T ext)

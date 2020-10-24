@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public InstanceCreateInfoAndroidKHR
         (
-            StructureType type = StructureType.TypeInstanceCreateInfoAndroidKhr,
-            void* next = default,
-            void* applicationVM = default,
-            void* applicationActivity = default
-        )
+            StructureType? type = StructureType.TypeInstanceCreateInfoAndroidKhr,
+            void* next = null,
+            void* applicationVM = null,
+            void* applicationActivity = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            ApplicationVM = applicationVM;
-            ApplicationActivity = applicationActivity;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (applicationVM is not null)
+            {
+                ApplicationVM = applicationVM;
+            }
+
+            if (applicationActivity is not null)
+            {
+                ApplicationActivity = applicationActivity;
+            }
         }
 
 /// <summary></summary>

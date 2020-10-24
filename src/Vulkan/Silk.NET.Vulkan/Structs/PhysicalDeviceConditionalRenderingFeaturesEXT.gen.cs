@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceConditionalRenderingFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceConditionalRenderingFeaturesExt,
-            void* pNext = default,
-            Bool32 conditionalRendering = default,
-            Bool32 inheritedConditionalRendering = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceConditionalRenderingFeaturesExt,
+            void* pNext = null,
+            Bool32? conditionalRendering = null,
+            Bool32? inheritedConditionalRendering = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ConditionalRendering = conditionalRendering;
-            InheritedConditionalRendering = inheritedConditionalRendering;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (conditionalRendering is not null)
+            {
+                ConditionalRendering = conditionalRendering.Value;
+            }
+
+            if (inheritedConditionalRendering is not null)
+            {
+                InheritedConditionalRendering = inheritedConditionalRendering.Value;
+            }
         }
 
 /// <summary></summary>

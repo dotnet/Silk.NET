@@ -4,12 +4,14 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.OpenGLES;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
@@ -45,6 +47,12 @@ namespace Silk.NET.OpenGLES.Extensions.OES
 
         [NativeApi(EntryPoint = "glGetFloati_vOES")]
         public partial void GetFloat([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
+
+        [NativeApi(EntryPoint = "glGetFloati_vOES")]
+        public unsafe partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
+
+        [NativeApi(EntryPoint = "glGetFloati_vOES")]
+        public partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glIsEnablediOES")]
         public partial bool IsEnabled([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);

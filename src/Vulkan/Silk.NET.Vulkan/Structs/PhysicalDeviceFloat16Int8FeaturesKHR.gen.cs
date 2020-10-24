@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFloat16Int8FeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderFloat16Int8Features,
-            void* pNext = default,
-            Bool32 shaderFloat16 = default,
-            Bool32 shaderInt8 = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShaderFloat16Int8Features,
+            void* pNext = null,
+            Bool32? shaderFloat16 = null,
+            Bool32? shaderInt8 = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderFloat16 = shaderFloat16;
-            ShaderInt8 = shaderInt8;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderFloat16 is not null)
+            {
+                ShaderFloat16 = shaderFloat16.Value;
+            }
+
+            if (shaderInt8 is not null)
+            {
+                ShaderInt8 = shaderInt8.Value;
+            }
         }
 
 /// <summary></summary>

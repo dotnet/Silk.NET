@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PipelineInputAssemblyStateCreateInfo
         (
-            StructureType sType = StructureType.PipelineInputAssemblyStateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            PrimitiveTopology topology = default,
-            Bool32 primitiveRestartEnable = default
-        )
+            StructureType? sType = StructureType.PipelineInputAssemblyStateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            PrimitiveTopology? topology = null,
+            Bool32? primitiveRestartEnable = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Topology = topology;
-            PrimitiveRestartEnable = primitiveRestartEnable;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (topology is not null)
+            {
+                Topology = topology.Value;
+            }
+
+            if (primitiveRestartEnable is not null)
+            {
+                PrimitiveRestartEnable = primitiveRestartEnable.Value;
+            }
         }
 
 /// <summary></summary>

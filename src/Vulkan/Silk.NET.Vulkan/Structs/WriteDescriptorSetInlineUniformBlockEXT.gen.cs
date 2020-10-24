@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public WriteDescriptorSetInlineUniformBlockEXT
         (
-            StructureType sType = StructureType.WriteDescriptorSetInlineUniformBlockExt,
-            void* pNext = default,
-            uint dataSize = default,
-            void* pData = default
-        )
+            StructureType? sType = StructureType.WriteDescriptorSetInlineUniformBlockExt,
+            void* pNext = null,
+            uint? dataSize = null,
+            void* pData = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DataSize = dataSize;
-            PData = pData;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (pData is not null)
+            {
+                PData = pData;
+            }
         }
 
 /// <summary></summary>

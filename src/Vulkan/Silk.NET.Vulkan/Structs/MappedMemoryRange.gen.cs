@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public MappedMemoryRange
         (
-            StructureType sType = StructureType.MappedMemoryRange,
-            void* pNext = default,
-            DeviceMemory memory = default,
-            ulong offset = default,
-            ulong size = default
-        )
+            StructureType? sType = StructureType.MappedMemoryRange,
+            void* pNext = null,
+            DeviceMemory? memory = null,
+            ulong? offset = null,
+            ulong? size = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Memory = memory;
-            Offset = offset;
-            Size = size;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

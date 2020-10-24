@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCompilerControlCreateInfoAMD
         (
-            StructureType sType = StructureType.PipelineCompilerControlCreateInfoAmd,
-            void* pNext = default,
-            PipelineCompilerControlFlagsAMD compilerControlFlags = default
-        )
+            StructureType? sType = StructureType.PipelineCompilerControlCreateInfoAmd,
+            void* pNext = null,
+            PipelineCompilerControlFlagsAMD? compilerControlFlags = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            CompilerControlFlags = compilerControlFlags;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (compilerControlFlags is not null)
+            {
+                CompilerControlFlags = compilerControlFlags.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingOpenGLESAndroidKHR
         (
-            StructureType type = StructureType.TypeGraphicsBindingOpenglESAndroidKhr,
-            void* next = default,
-            IntPtr display = default,
-            IntPtr config = default,
-            IntPtr context = default
-        )
+            StructureType? type = StructureType.TypeGraphicsBindingOpenglESAndroidKhr,
+            void* next = null,
+            IntPtr? display = null,
+            IntPtr? config = null,
+            IntPtr? context = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Display = display;
-            Config = config;
-            Context = context;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (display is not null)
+            {
+                Display = display.Value;
+            }
+
+            if (config is not null)
+            {
+                Config = config.Value;
+            }
+
+            if (context is not null)
+            {
+                Context = context.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,38 +22,49 @@ namespace Silk.NET.Assimp
     {
         public AnimMesh
         (
-            AssimpString mName = default,
-            System.Numerics.Vector3* mVertices = default,
-            System.Numerics.Vector3* mNormals = default,
-            System.Numerics.Vector3* mTangents = default,
-            System.Numerics.Vector3* mBitangents = default,
-            uint mNumVertices = default,
-            float mWeight = default
-        )
+            AssimpString? mName = null,
+            System.Numerics.Vector3* mVertices = null,
+            System.Numerics.Vector3* mNormals = null,
+            System.Numerics.Vector3* mTangents = null,
+            System.Numerics.Vector3* mBitangents = null,
+            uint? mNumVertices = null,
+            float? mWeight = null
+        ) : this()
         {
-            MName = mName;
-            MVertices = mVertices;
-            MNormals = mNormals;
-            MTangents = mTangents;
-            MBitangents = mBitangents;
-           MColors_0 = default;
-           MColors_1 = default;
-           MColors_2 = default;
-           MColors_3 = default;
-           MColors_4 = default;
-           MColors_5 = default;
-           MColors_6 = default;
-           MColors_7 = default;
-           MTextureCoords_0 = default;
-           MTextureCoords_1 = default;
-           MTextureCoords_2 = default;
-           MTextureCoords_3 = default;
-           MTextureCoords_4 = default;
-           MTextureCoords_5 = default;
-           MTextureCoords_6 = default;
-           MTextureCoords_7 = default;
-            MNumVertices = mNumVertices;
-            MWeight = mWeight;
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mVertices is not null)
+            {
+                MVertices = mVertices;
+            }
+
+            if (mNormals is not null)
+            {
+                MNormals = mNormals;
+            }
+
+            if (mTangents is not null)
+            {
+                MTangents = mTangents;
+            }
+
+            if (mBitangents is not null)
+            {
+                MBitangents = mBitangents;
+            }
+
+            if (mNumVertices is not null)
+            {
+                MNumVertices = mNumVertices.Value;
+            }
+
+            if (mWeight is not null)
+            {
+                MWeight = mWeight.Value;
+            }
         }
 
 
@@ -84,82 +96,68 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiColor4D *[8]")]
         [NativeName("Type.Name", "aiColor4D *[8]")]
         [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_0;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_1;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_2;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_3;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_4;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_5;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_6;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_7;
+        public MColorsBuffer MColors;
+
+        public struct MColorsBuffer
+        {
+            public System.Numerics.Vector4* Element0;
+            public System.Numerics.Vector4* Element1;
+            public System.Numerics.Vector4* Element2;
+            public System.Numerics.Vector4* Element3;
+            public System.Numerics.Vector4* Element4;
+            public System.Numerics.Vector4* Element5;
+            public System.Numerics.Vector4* Element6;
+            public System.Numerics.Vector4* Element7;
+            public ref System.Numerics.Vector4* this[int index]
+            {
+                get
+                {
+                    if (index > 7 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (System.Numerics.Vector4** ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+        }
+
         
         [NativeName("Type", "aiVector3D *[8]")]
         [NativeName("Type.Name", "aiVector3D *[8]")]
         [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_0;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_1;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_2;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_3;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_4;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_5;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_6;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_7;
+        public MTextureCoordsBuffer MTextureCoords;
+
+        public struct MTextureCoordsBuffer
+        {
+            public System.Numerics.Vector3* Element0;
+            public System.Numerics.Vector3* Element1;
+            public System.Numerics.Vector3* Element2;
+            public System.Numerics.Vector3* Element3;
+            public System.Numerics.Vector3* Element4;
+            public System.Numerics.Vector3* Element5;
+            public System.Numerics.Vector3* Element6;
+            public System.Numerics.Vector3* Element7;
+            public ref System.Numerics.Vector3* this[int index]
+            {
+                get
+                {
+                    if (index > 7 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (System.Numerics.Vector3** ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+        }
+
 
         [NativeName("Type", "unsigned int")]
         [NativeName("Type.Name", "unsigned int")]

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureBuildGeometryInfoKHR
         (
-            StructureType sType = StructureType.AccelerationStructureBuildGeometryInfoKhr,
-            void* pNext = default,
-            AccelerationStructureTypeKHR type = default,
-            BuildAccelerationStructureFlagsKHR flags = default,
-            Bool32 update = default,
-            AccelerationStructureKHR srcAccelerationStructure = default,
-            AccelerationStructureKHR dstAccelerationStructure = default,
-            Bool32 geometryArrayOfPointers = default,
-            uint geometryCount = default,
-            AccelerationStructureGeometryKHR** ppGeometries = default,
-            DeviceOrHostAddressKHR scratchData = default
-        )
+            StructureType? sType = StructureType.AccelerationStructureBuildGeometryInfoKhr,
+            void* pNext = null,
+            AccelerationStructureTypeKHR? type = null,
+            BuildAccelerationStructureFlagsKHR? flags = null,
+            Bool32? update = null,
+            AccelerationStructureKHR? srcAccelerationStructure = null,
+            AccelerationStructureKHR? dstAccelerationStructure = null,
+            Bool32? geometryArrayOfPointers = null,
+            uint? geometryCount = null,
+            AccelerationStructureGeometryKHR** ppGeometries = null,
+            DeviceOrHostAddressKHR? scratchData = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
-            Flags = flags;
-            Update = update;
-            SrcAccelerationStructure = srcAccelerationStructure;
-            DstAccelerationStructure = dstAccelerationStructure;
-            GeometryArrayOfPointers = geometryArrayOfPointers;
-            GeometryCount = geometryCount;
-            PpGeometries = ppGeometries;
-            ScratchData = scratchData;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (update is not null)
+            {
+                Update = update.Value;
+            }
+
+            if (srcAccelerationStructure is not null)
+            {
+                SrcAccelerationStructure = srcAccelerationStructure.Value;
+            }
+
+            if (dstAccelerationStructure is not null)
+            {
+                DstAccelerationStructure = dstAccelerationStructure.Value;
+            }
+
+            if (geometryArrayOfPointers is not null)
+            {
+                GeometryArrayOfPointers = geometryArrayOfPointers.Value;
+            }
+
+            if (geometryCount is not null)
+            {
+                GeometryCount = geometryCount.Value;
+            }
+
+            if (ppGeometries is not null)
+            {
+                PpGeometries = ppGeometries;
+            }
+
+            if (scratchData is not null)
+            {
+                ScratchData = scratchData.Value;
+            }
         }
 
 /// <summary></summary>

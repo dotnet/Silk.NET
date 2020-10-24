@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceVulkanMemoryModelFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceVulkanMemoryModelFeatures,
-            void* pNext = default,
-            Bool32 vulkanMemoryModel = default,
-            Bool32 vulkanMemoryModelDeviceScope = default,
-            Bool32 vulkanMemoryModelAvailabilityVisibilityChains = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceVulkanMemoryModelFeatures,
+            void* pNext = null,
+            Bool32? vulkanMemoryModel = null,
+            Bool32? vulkanMemoryModelDeviceScope = null,
+            Bool32? vulkanMemoryModelAvailabilityVisibilityChains = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            VulkanMemoryModel = vulkanMemoryModel;
-            VulkanMemoryModelDeviceScope = vulkanMemoryModelDeviceScope;
-            VulkanMemoryModelAvailabilityVisibilityChains = vulkanMemoryModelAvailabilityVisibilityChains;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (vulkanMemoryModel is not null)
+            {
+                VulkanMemoryModel = vulkanMemoryModel.Value;
+            }
+
+            if (vulkanMemoryModelDeviceScope is not null)
+            {
+                VulkanMemoryModelDeviceScope = vulkanMemoryModelDeviceScope.Value;
+            }
+
+            if (vulkanMemoryModelAvailabilityVisibilityChains is not null)
+            {
+                VulkanMemoryModelAvailabilityVisibilityChains = vulkanMemoryModelAvailabilityVisibilityChains.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.SDL
     {
         public Finger
         (
-            long id = default,
-            float x = default,
-            float y = default,
-            float pressure = default
-        )
+            long? id = null,
+            float? x = null,
+            float? y = null,
+            float? pressure = null
+        ) : this()
         {
-            Id = id;
-            X = x;
-            Y = y;
-            Pressure = pressure;
+            if (id is not null)
+            {
+                Id = id.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (pressure is not null)
+            {
+                Pressure = pressure.Value;
+            }
         }
 
 

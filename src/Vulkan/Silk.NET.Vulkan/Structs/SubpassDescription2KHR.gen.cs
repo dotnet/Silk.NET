@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,34 +22,85 @@ namespace Silk.NET.Vulkan
     {
         public SubpassDescription2KHR
         (
-            StructureType sType = StructureType.SubpassDescription2,
-            void* pNext = default,
-            SubpassDescriptionFlags flags = default,
-            PipelineBindPoint pipelineBindPoint = default,
-            uint viewMask = default,
-            uint inputAttachmentCount = default,
-            AttachmentReference2* pInputAttachments = default,
-            uint colorAttachmentCount = default,
-            AttachmentReference2* pColorAttachments = default,
-            AttachmentReference2* pResolveAttachments = default,
-            AttachmentReference2* pDepthStencilAttachment = default,
-            uint preserveAttachmentCount = default,
-            uint* pPreserveAttachments = default
-        )
+            StructureType? sType = StructureType.SubpassDescription2,
+            void* pNext = null,
+            SubpassDescriptionFlags? flags = null,
+            PipelineBindPoint? pipelineBindPoint = null,
+            uint? viewMask = null,
+            uint? inputAttachmentCount = null,
+            AttachmentReference2* pInputAttachments = null,
+            uint? colorAttachmentCount = null,
+            AttachmentReference2* pColorAttachments = null,
+            AttachmentReference2* pResolveAttachments = null,
+            AttachmentReference2* pDepthStencilAttachment = null,
+            uint? preserveAttachmentCount = null,
+            uint* pPreserveAttachments = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PipelineBindPoint = pipelineBindPoint;
-            ViewMask = viewMask;
-            InputAttachmentCount = inputAttachmentCount;
-            PInputAttachments = pInputAttachments;
-            ColorAttachmentCount = colorAttachmentCount;
-            PColorAttachments = pColorAttachments;
-            PResolveAttachments = pResolveAttachments;
-            PDepthStencilAttachment = pDepthStencilAttachment;
-            PreserveAttachmentCount = preserveAttachmentCount;
-            PPreserveAttachments = pPreserveAttachments;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pipelineBindPoint is not null)
+            {
+                PipelineBindPoint = pipelineBindPoint.Value;
+            }
+
+            if (viewMask is not null)
+            {
+                ViewMask = viewMask.Value;
+            }
+
+            if (inputAttachmentCount is not null)
+            {
+                InputAttachmentCount = inputAttachmentCount.Value;
+            }
+
+            if (pInputAttachments is not null)
+            {
+                PInputAttachments = pInputAttachments;
+            }
+
+            if (colorAttachmentCount is not null)
+            {
+                ColorAttachmentCount = colorAttachmentCount.Value;
+            }
+
+            if (pColorAttachments is not null)
+            {
+                PColorAttachments = pColorAttachments;
+            }
+
+            if (pResolveAttachments is not null)
+            {
+                PResolveAttachments = pResolveAttachments;
+            }
+
+            if (pDepthStencilAttachment is not null)
+            {
+                PDepthStencilAttachment = pDepthStencilAttachment;
+            }
+
+            if (preserveAttachmentCount is not null)
+            {
+                PreserveAttachmentCount = preserveAttachmentCount.Value;
+            }
+
+            if (pPreserveAttachments is not null)
+            {
+                PPreserveAttachments = pPreserveAttachments;
+            }
         }
 
 /// <summary></summary>

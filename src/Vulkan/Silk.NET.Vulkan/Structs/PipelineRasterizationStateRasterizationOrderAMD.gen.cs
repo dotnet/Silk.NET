@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PipelineRasterizationStateRasterizationOrderAMD
         (
-            StructureType sType = StructureType.PipelineRasterizationStateRasterizationOrderAmd,
-            void* pNext = default,
-            RasterizationOrderAMD rasterizationOrder = default
-        )
+            StructureType? sType = StructureType.PipelineRasterizationStateRasterizationOrderAmd,
+            void* pNext = null,
+            RasterizationOrderAMD? rasterizationOrder = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            RasterizationOrder = rasterizationOrder;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (rasterizationOrder is not null)
+            {
+                RasterizationOrder = rasterizationOrder.Value;
+            }
         }
 
 /// <summary></summary>

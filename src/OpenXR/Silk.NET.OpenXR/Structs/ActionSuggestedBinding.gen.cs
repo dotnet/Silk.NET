@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenXR
     {
         public ActionSuggestedBinding
         (
-            Action action = default,
-            ulong binding = default
-        )
+            Action? action = null,
+            ulong? binding = null
+        ) : this()
         {
-            Action = action;
-            Binding = binding;
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,208 +22,607 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceLimits
         (
-            uint maxImageDimension1D = default,
-            uint maxImageDimension2D = default,
-            uint maxImageDimension3D = default,
-            uint maxImageDimensionCube = default,
-            uint maxImageArrayLayers = default,
-            uint maxTexelBufferElements = default,
-            uint maxUniformBufferRange = default,
-            uint maxStorageBufferRange = default,
-            uint maxPushConstantsSize = default,
-            uint maxMemoryAllocationCount = default,
-            uint maxSamplerAllocationCount = default,
-            ulong bufferImageGranularity = default,
-            ulong sparseAddressSpaceSize = default,
-            uint maxBoundDescriptorSets = default,
-            uint maxPerStageDescriptorSamplers = default,
-            uint maxPerStageDescriptorUniformBuffers = default,
-            uint maxPerStageDescriptorStorageBuffers = default,
-            uint maxPerStageDescriptorSampledImages = default,
-            uint maxPerStageDescriptorStorageImages = default,
-            uint maxPerStageDescriptorInputAttachments = default,
-            uint maxPerStageResources = default,
-            uint maxDescriptorSetSamplers = default,
-            uint maxDescriptorSetUniformBuffers = default,
-            uint maxDescriptorSetUniformBuffersDynamic = default,
-            uint maxDescriptorSetStorageBuffers = default,
-            uint maxDescriptorSetStorageBuffersDynamic = default,
-            uint maxDescriptorSetSampledImages = default,
-            uint maxDescriptorSetStorageImages = default,
-            uint maxDescriptorSetInputAttachments = default,
-            uint maxVertexInputAttributes = default,
-            uint maxVertexInputBindings = default,
-            uint maxVertexInputAttributeOffset = default,
-            uint maxVertexInputBindingStride = default,
-            uint maxVertexOutputComponents = default,
-            uint maxTessellationGenerationLevel = default,
-            uint maxTessellationPatchSize = default,
-            uint maxTessellationControlPerVertexInputComponents = default,
-            uint maxTessellationControlPerVertexOutputComponents = default,
-            uint maxTessellationControlPerPatchOutputComponents = default,
-            uint maxTessellationControlTotalOutputComponents = default,
-            uint maxTessellationEvaluationInputComponents = default,
-            uint maxTessellationEvaluationOutputComponents = default,
-            uint maxGeometryShaderInvocations = default,
-            uint maxGeometryInputComponents = default,
-            uint maxGeometryOutputComponents = default,
-            uint maxGeometryOutputVertices = default,
-            uint maxGeometryTotalOutputComponents = default,
-            uint maxFragmentInputComponents = default,
-            uint maxFragmentOutputAttachments = default,
-            uint maxFragmentDualSrcAttachments = default,
-            uint maxFragmentCombinedOutputResources = default,
-            uint maxComputeSharedMemorySize = default,
-            uint maxComputeWorkGroupInvocations = default,
-            uint subPixelPrecisionBits = default,
-            uint subTexelPrecisionBits = default,
-            uint mipmapPrecisionBits = default,
-            uint maxDrawIndexedIndexValue = default,
-            uint maxDrawIndirectCount = default,
-            float maxSamplerLodBias = default,
-            float maxSamplerAnisotropy = default,
-            uint maxViewports = default,
-            uint viewportSubPixelBits = default,
-            UIntPtr minMemoryMapAlignment = default,
-            ulong minTexelBufferOffsetAlignment = default,
-            ulong minUniformBufferOffsetAlignment = default,
-            ulong minStorageBufferOffsetAlignment = default,
-            int minTexelOffset = default,
-            uint maxTexelOffset = default,
-            int minTexelGatherOffset = default,
-            uint maxTexelGatherOffset = default,
-            float minInterpolationOffset = default,
-            float maxInterpolationOffset = default,
-            uint subPixelInterpolationOffsetBits = default,
-            uint maxFramebufferWidth = default,
-            uint maxFramebufferHeight = default,
-            uint maxFramebufferLayers = default,
-            SampleCountFlags framebufferColorSampleCounts = default,
-            SampleCountFlags framebufferDepthSampleCounts = default,
-            SampleCountFlags framebufferStencilSampleCounts = default,
-            SampleCountFlags framebufferNoAttachmentsSampleCounts = default,
-            uint maxColorAttachments = default,
-            SampleCountFlags sampledImageColorSampleCounts = default,
-            SampleCountFlags sampledImageIntegerSampleCounts = default,
-            SampleCountFlags sampledImageDepthSampleCounts = default,
-            SampleCountFlags sampledImageStencilSampleCounts = default,
-            SampleCountFlags storageImageSampleCounts = default,
-            uint maxSampleMaskWords = default,
-            Bool32 timestampComputeAndGraphics = default,
-            float timestampPeriod = default,
-            uint maxClipDistances = default,
-            uint maxCullDistances = default,
-            uint maxCombinedClipAndCullDistances = default,
-            uint discreteQueuePriorities = default,
-            float pointSizeGranularity = default,
-            float lineWidthGranularity = default,
-            Bool32 strictLines = default,
-            Bool32 standardSampleLocations = default,
-            ulong optimalBufferCopyOffsetAlignment = default,
-            ulong optimalBufferCopyRowPitchAlignment = default,
-            ulong nonCoherentAtomSize = default
-        )
+            uint? maxImageDimension1D = null,
+            uint? maxImageDimension2D = null,
+            uint? maxImageDimension3D = null,
+            uint? maxImageDimensionCube = null,
+            uint? maxImageArrayLayers = null,
+            uint? maxTexelBufferElements = null,
+            uint? maxUniformBufferRange = null,
+            uint? maxStorageBufferRange = null,
+            uint? maxPushConstantsSize = null,
+            uint? maxMemoryAllocationCount = null,
+            uint? maxSamplerAllocationCount = null,
+            ulong? bufferImageGranularity = null,
+            ulong? sparseAddressSpaceSize = null,
+            uint? maxBoundDescriptorSets = null,
+            uint? maxPerStageDescriptorSamplers = null,
+            uint? maxPerStageDescriptorUniformBuffers = null,
+            uint? maxPerStageDescriptorStorageBuffers = null,
+            uint? maxPerStageDescriptorSampledImages = null,
+            uint? maxPerStageDescriptorStorageImages = null,
+            uint? maxPerStageDescriptorInputAttachments = null,
+            uint? maxPerStageResources = null,
+            uint? maxDescriptorSetSamplers = null,
+            uint? maxDescriptorSetUniformBuffers = null,
+            uint? maxDescriptorSetUniformBuffersDynamic = null,
+            uint? maxDescriptorSetStorageBuffers = null,
+            uint? maxDescriptorSetStorageBuffersDynamic = null,
+            uint? maxDescriptorSetSampledImages = null,
+            uint? maxDescriptorSetStorageImages = null,
+            uint? maxDescriptorSetInputAttachments = null,
+            uint? maxVertexInputAttributes = null,
+            uint? maxVertexInputBindings = null,
+            uint? maxVertexInputAttributeOffset = null,
+            uint? maxVertexInputBindingStride = null,
+            uint? maxVertexOutputComponents = null,
+            uint? maxTessellationGenerationLevel = null,
+            uint? maxTessellationPatchSize = null,
+            uint? maxTessellationControlPerVertexInputComponents = null,
+            uint? maxTessellationControlPerVertexOutputComponents = null,
+            uint? maxTessellationControlPerPatchOutputComponents = null,
+            uint? maxTessellationControlTotalOutputComponents = null,
+            uint? maxTessellationEvaluationInputComponents = null,
+            uint? maxTessellationEvaluationOutputComponents = null,
+            uint? maxGeometryShaderInvocations = null,
+            uint? maxGeometryInputComponents = null,
+            uint? maxGeometryOutputComponents = null,
+            uint? maxGeometryOutputVertices = null,
+            uint? maxGeometryTotalOutputComponents = null,
+            uint? maxFragmentInputComponents = null,
+            uint? maxFragmentOutputAttachments = null,
+            uint? maxFragmentDualSrcAttachments = null,
+            uint? maxFragmentCombinedOutputResources = null,
+            uint? maxComputeSharedMemorySize = null,
+            uint? maxComputeWorkGroupInvocations = null,
+            uint? subPixelPrecisionBits = null,
+            uint? subTexelPrecisionBits = null,
+            uint? mipmapPrecisionBits = null,
+            uint? maxDrawIndexedIndexValue = null,
+            uint? maxDrawIndirectCount = null,
+            float? maxSamplerLodBias = null,
+            float? maxSamplerAnisotropy = null,
+            uint? maxViewports = null,
+            uint? viewportSubPixelBits = null,
+            UIntPtr? minMemoryMapAlignment = null,
+            ulong? minTexelBufferOffsetAlignment = null,
+            ulong? minUniformBufferOffsetAlignment = null,
+            ulong? minStorageBufferOffsetAlignment = null,
+            int? minTexelOffset = null,
+            uint? maxTexelOffset = null,
+            int? minTexelGatherOffset = null,
+            uint? maxTexelGatherOffset = null,
+            float? minInterpolationOffset = null,
+            float? maxInterpolationOffset = null,
+            uint? subPixelInterpolationOffsetBits = null,
+            uint? maxFramebufferWidth = null,
+            uint? maxFramebufferHeight = null,
+            uint? maxFramebufferLayers = null,
+            SampleCountFlags? framebufferColorSampleCounts = null,
+            SampleCountFlags? framebufferDepthSampleCounts = null,
+            SampleCountFlags? framebufferStencilSampleCounts = null,
+            SampleCountFlags? framebufferNoAttachmentsSampleCounts = null,
+            uint? maxColorAttachments = null,
+            SampleCountFlags? sampledImageColorSampleCounts = null,
+            SampleCountFlags? sampledImageIntegerSampleCounts = null,
+            SampleCountFlags? sampledImageDepthSampleCounts = null,
+            SampleCountFlags? sampledImageStencilSampleCounts = null,
+            SampleCountFlags? storageImageSampleCounts = null,
+            uint? maxSampleMaskWords = null,
+            Bool32? timestampComputeAndGraphics = null,
+            float? timestampPeriod = null,
+            uint? maxClipDistances = null,
+            uint? maxCullDistances = null,
+            uint? maxCombinedClipAndCullDistances = null,
+            uint? discreteQueuePriorities = null,
+            float? pointSizeGranularity = null,
+            float? lineWidthGranularity = null,
+            Bool32? strictLines = null,
+            Bool32? standardSampleLocations = null,
+            ulong? optimalBufferCopyOffsetAlignment = null,
+            ulong? optimalBufferCopyRowPitchAlignment = null,
+            ulong? nonCoherentAtomSize = null
+        ) : this()
         {
-            MaxImageDimension1D = maxImageDimension1D;
-            MaxImageDimension2D = maxImageDimension2D;
-            MaxImageDimension3D = maxImageDimension3D;
-            MaxImageDimensionCube = maxImageDimensionCube;
-            MaxImageArrayLayers = maxImageArrayLayers;
-            MaxTexelBufferElements = maxTexelBufferElements;
-            MaxUniformBufferRange = maxUniformBufferRange;
-            MaxStorageBufferRange = maxStorageBufferRange;
-            MaxPushConstantsSize = maxPushConstantsSize;
-            MaxMemoryAllocationCount = maxMemoryAllocationCount;
-            MaxSamplerAllocationCount = maxSamplerAllocationCount;
-            BufferImageGranularity = bufferImageGranularity;
-            SparseAddressSpaceSize = sparseAddressSpaceSize;
-            MaxBoundDescriptorSets = maxBoundDescriptorSets;
-            MaxPerStageDescriptorSamplers = maxPerStageDescriptorSamplers;
-            MaxPerStageDescriptorUniformBuffers = maxPerStageDescriptorUniformBuffers;
-            MaxPerStageDescriptorStorageBuffers = maxPerStageDescriptorStorageBuffers;
-            MaxPerStageDescriptorSampledImages = maxPerStageDescriptorSampledImages;
-            MaxPerStageDescriptorStorageImages = maxPerStageDescriptorStorageImages;
-            MaxPerStageDescriptorInputAttachments = maxPerStageDescriptorInputAttachments;
-            MaxPerStageResources = maxPerStageResources;
-            MaxDescriptorSetSamplers = maxDescriptorSetSamplers;
-            MaxDescriptorSetUniformBuffers = maxDescriptorSetUniformBuffers;
-            MaxDescriptorSetUniformBuffersDynamic = maxDescriptorSetUniformBuffersDynamic;
-            MaxDescriptorSetStorageBuffers = maxDescriptorSetStorageBuffers;
-            MaxDescriptorSetStorageBuffersDynamic = maxDescriptorSetStorageBuffersDynamic;
-            MaxDescriptorSetSampledImages = maxDescriptorSetSampledImages;
-            MaxDescriptorSetStorageImages = maxDescriptorSetStorageImages;
-            MaxDescriptorSetInputAttachments = maxDescriptorSetInputAttachments;
-            MaxVertexInputAttributes = maxVertexInputAttributes;
-            MaxVertexInputBindings = maxVertexInputBindings;
-            MaxVertexInputAttributeOffset = maxVertexInputAttributeOffset;
-            MaxVertexInputBindingStride = maxVertexInputBindingStride;
-            MaxVertexOutputComponents = maxVertexOutputComponents;
-            MaxTessellationGenerationLevel = maxTessellationGenerationLevel;
-            MaxTessellationPatchSize = maxTessellationPatchSize;
-            MaxTessellationControlPerVertexInputComponents = maxTessellationControlPerVertexInputComponents;
-            MaxTessellationControlPerVertexOutputComponents = maxTessellationControlPerVertexOutputComponents;
-            MaxTessellationControlPerPatchOutputComponents = maxTessellationControlPerPatchOutputComponents;
-            MaxTessellationControlTotalOutputComponents = maxTessellationControlTotalOutputComponents;
-            MaxTessellationEvaluationInputComponents = maxTessellationEvaluationInputComponents;
-            MaxTessellationEvaluationOutputComponents = maxTessellationEvaluationOutputComponents;
-            MaxGeometryShaderInvocations = maxGeometryShaderInvocations;
-            MaxGeometryInputComponents = maxGeometryInputComponents;
-            MaxGeometryOutputComponents = maxGeometryOutputComponents;
-            MaxGeometryOutputVertices = maxGeometryOutputVertices;
-            MaxGeometryTotalOutputComponents = maxGeometryTotalOutputComponents;
-            MaxFragmentInputComponents = maxFragmentInputComponents;
-            MaxFragmentOutputAttachments = maxFragmentOutputAttachments;
-            MaxFragmentDualSrcAttachments = maxFragmentDualSrcAttachments;
-            MaxFragmentCombinedOutputResources = maxFragmentCombinedOutputResources;
-            MaxComputeSharedMemorySize = maxComputeSharedMemorySize;
-            MaxComputeWorkGroupInvocations = maxComputeWorkGroupInvocations;
-            SubPixelPrecisionBits = subPixelPrecisionBits;
-            SubTexelPrecisionBits = subTexelPrecisionBits;
-            MipmapPrecisionBits = mipmapPrecisionBits;
-            MaxDrawIndexedIndexValue = maxDrawIndexedIndexValue;
-            MaxDrawIndirectCount = maxDrawIndirectCount;
-            MaxSamplerLodBias = maxSamplerLodBias;
-            MaxSamplerAnisotropy = maxSamplerAnisotropy;
-            MaxViewports = maxViewports;
-            ViewportSubPixelBits = viewportSubPixelBits;
-            MinMemoryMapAlignment = minMemoryMapAlignment;
-            MinTexelBufferOffsetAlignment = minTexelBufferOffsetAlignment;
-            MinUniformBufferOffsetAlignment = minUniformBufferOffsetAlignment;
-            MinStorageBufferOffsetAlignment = minStorageBufferOffsetAlignment;
-            MinTexelOffset = minTexelOffset;
-            MaxTexelOffset = maxTexelOffset;
-            MinTexelGatherOffset = minTexelGatherOffset;
-            MaxTexelGatherOffset = maxTexelGatherOffset;
-            MinInterpolationOffset = minInterpolationOffset;
-            MaxInterpolationOffset = maxInterpolationOffset;
-            SubPixelInterpolationOffsetBits = subPixelInterpolationOffsetBits;
-            MaxFramebufferWidth = maxFramebufferWidth;
-            MaxFramebufferHeight = maxFramebufferHeight;
-            MaxFramebufferLayers = maxFramebufferLayers;
-            FramebufferColorSampleCounts = framebufferColorSampleCounts;
-            FramebufferDepthSampleCounts = framebufferDepthSampleCounts;
-            FramebufferStencilSampleCounts = framebufferStencilSampleCounts;
-            FramebufferNoAttachmentsSampleCounts = framebufferNoAttachmentsSampleCounts;
-            MaxColorAttachments = maxColorAttachments;
-            SampledImageColorSampleCounts = sampledImageColorSampleCounts;
-            SampledImageIntegerSampleCounts = sampledImageIntegerSampleCounts;
-            SampledImageDepthSampleCounts = sampledImageDepthSampleCounts;
-            SampledImageStencilSampleCounts = sampledImageStencilSampleCounts;
-            StorageImageSampleCounts = storageImageSampleCounts;
-            MaxSampleMaskWords = maxSampleMaskWords;
-            TimestampComputeAndGraphics = timestampComputeAndGraphics;
-            TimestampPeriod = timestampPeriod;
-            MaxClipDistances = maxClipDistances;
-            MaxCullDistances = maxCullDistances;
-            MaxCombinedClipAndCullDistances = maxCombinedClipAndCullDistances;
-            DiscreteQueuePriorities = discreteQueuePriorities;
-            PointSizeGranularity = pointSizeGranularity;
-            LineWidthGranularity = lineWidthGranularity;
-            StrictLines = strictLines;
-            StandardSampleLocations = standardSampleLocations;
-            OptimalBufferCopyOffsetAlignment = optimalBufferCopyOffsetAlignment;
-            OptimalBufferCopyRowPitchAlignment = optimalBufferCopyRowPitchAlignment;
-            NonCoherentAtomSize = nonCoherentAtomSize;
+            if (maxImageDimension1D is not null)
+            {
+                MaxImageDimension1D = maxImageDimension1D.Value;
+            }
+
+            if (maxImageDimension2D is not null)
+            {
+                MaxImageDimension2D = maxImageDimension2D.Value;
+            }
+
+            if (maxImageDimension3D is not null)
+            {
+                MaxImageDimension3D = maxImageDimension3D.Value;
+            }
+
+            if (maxImageDimensionCube is not null)
+            {
+                MaxImageDimensionCube = maxImageDimensionCube.Value;
+            }
+
+            if (maxImageArrayLayers is not null)
+            {
+                MaxImageArrayLayers = maxImageArrayLayers.Value;
+            }
+
+            if (maxTexelBufferElements is not null)
+            {
+                MaxTexelBufferElements = maxTexelBufferElements.Value;
+            }
+
+            if (maxUniformBufferRange is not null)
+            {
+                MaxUniformBufferRange = maxUniformBufferRange.Value;
+            }
+
+            if (maxStorageBufferRange is not null)
+            {
+                MaxStorageBufferRange = maxStorageBufferRange.Value;
+            }
+
+            if (maxPushConstantsSize is not null)
+            {
+                MaxPushConstantsSize = maxPushConstantsSize.Value;
+            }
+
+            if (maxMemoryAllocationCount is not null)
+            {
+                MaxMemoryAllocationCount = maxMemoryAllocationCount.Value;
+            }
+
+            if (maxSamplerAllocationCount is not null)
+            {
+                MaxSamplerAllocationCount = maxSamplerAllocationCount.Value;
+            }
+
+            if (bufferImageGranularity is not null)
+            {
+                BufferImageGranularity = bufferImageGranularity.Value;
+            }
+
+            if (sparseAddressSpaceSize is not null)
+            {
+                SparseAddressSpaceSize = sparseAddressSpaceSize.Value;
+            }
+
+            if (maxBoundDescriptorSets is not null)
+            {
+                MaxBoundDescriptorSets = maxBoundDescriptorSets.Value;
+            }
+
+            if (maxPerStageDescriptorSamplers is not null)
+            {
+                MaxPerStageDescriptorSamplers = maxPerStageDescriptorSamplers.Value;
+            }
+
+            if (maxPerStageDescriptorUniformBuffers is not null)
+            {
+                MaxPerStageDescriptorUniformBuffers = maxPerStageDescriptorUniformBuffers.Value;
+            }
+
+            if (maxPerStageDescriptorStorageBuffers is not null)
+            {
+                MaxPerStageDescriptorStorageBuffers = maxPerStageDescriptorStorageBuffers.Value;
+            }
+
+            if (maxPerStageDescriptorSampledImages is not null)
+            {
+                MaxPerStageDescriptorSampledImages = maxPerStageDescriptorSampledImages.Value;
+            }
+
+            if (maxPerStageDescriptorStorageImages is not null)
+            {
+                MaxPerStageDescriptorStorageImages = maxPerStageDescriptorStorageImages.Value;
+            }
+
+            if (maxPerStageDescriptorInputAttachments is not null)
+            {
+                MaxPerStageDescriptorInputAttachments = maxPerStageDescriptorInputAttachments.Value;
+            }
+
+            if (maxPerStageResources is not null)
+            {
+                MaxPerStageResources = maxPerStageResources.Value;
+            }
+
+            if (maxDescriptorSetSamplers is not null)
+            {
+                MaxDescriptorSetSamplers = maxDescriptorSetSamplers.Value;
+            }
+
+            if (maxDescriptorSetUniformBuffers is not null)
+            {
+                MaxDescriptorSetUniformBuffers = maxDescriptorSetUniformBuffers.Value;
+            }
+
+            if (maxDescriptorSetUniformBuffersDynamic is not null)
+            {
+                MaxDescriptorSetUniformBuffersDynamic = maxDescriptorSetUniformBuffersDynamic.Value;
+            }
+
+            if (maxDescriptorSetStorageBuffers is not null)
+            {
+                MaxDescriptorSetStorageBuffers = maxDescriptorSetStorageBuffers.Value;
+            }
+
+            if (maxDescriptorSetStorageBuffersDynamic is not null)
+            {
+                MaxDescriptorSetStorageBuffersDynamic = maxDescriptorSetStorageBuffersDynamic.Value;
+            }
+
+            if (maxDescriptorSetSampledImages is not null)
+            {
+                MaxDescriptorSetSampledImages = maxDescriptorSetSampledImages.Value;
+            }
+
+            if (maxDescriptorSetStorageImages is not null)
+            {
+                MaxDescriptorSetStorageImages = maxDescriptorSetStorageImages.Value;
+            }
+
+            if (maxDescriptorSetInputAttachments is not null)
+            {
+                MaxDescriptorSetInputAttachments = maxDescriptorSetInputAttachments.Value;
+            }
+
+            if (maxVertexInputAttributes is not null)
+            {
+                MaxVertexInputAttributes = maxVertexInputAttributes.Value;
+            }
+
+            if (maxVertexInputBindings is not null)
+            {
+                MaxVertexInputBindings = maxVertexInputBindings.Value;
+            }
+
+            if (maxVertexInputAttributeOffset is not null)
+            {
+                MaxVertexInputAttributeOffset = maxVertexInputAttributeOffset.Value;
+            }
+
+            if (maxVertexInputBindingStride is not null)
+            {
+                MaxVertexInputBindingStride = maxVertexInputBindingStride.Value;
+            }
+
+            if (maxVertexOutputComponents is not null)
+            {
+                MaxVertexOutputComponents = maxVertexOutputComponents.Value;
+            }
+
+            if (maxTessellationGenerationLevel is not null)
+            {
+                MaxTessellationGenerationLevel = maxTessellationGenerationLevel.Value;
+            }
+
+            if (maxTessellationPatchSize is not null)
+            {
+                MaxTessellationPatchSize = maxTessellationPatchSize.Value;
+            }
+
+            if (maxTessellationControlPerVertexInputComponents is not null)
+            {
+                MaxTessellationControlPerVertexInputComponents = maxTessellationControlPerVertexInputComponents.Value;
+            }
+
+            if (maxTessellationControlPerVertexOutputComponents is not null)
+            {
+                MaxTessellationControlPerVertexOutputComponents = maxTessellationControlPerVertexOutputComponents.Value;
+            }
+
+            if (maxTessellationControlPerPatchOutputComponents is not null)
+            {
+                MaxTessellationControlPerPatchOutputComponents = maxTessellationControlPerPatchOutputComponents.Value;
+            }
+
+            if (maxTessellationControlTotalOutputComponents is not null)
+            {
+                MaxTessellationControlTotalOutputComponents = maxTessellationControlTotalOutputComponents.Value;
+            }
+
+            if (maxTessellationEvaluationInputComponents is not null)
+            {
+                MaxTessellationEvaluationInputComponents = maxTessellationEvaluationInputComponents.Value;
+            }
+
+            if (maxTessellationEvaluationOutputComponents is not null)
+            {
+                MaxTessellationEvaluationOutputComponents = maxTessellationEvaluationOutputComponents.Value;
+            }
+
+            if (maxGeometryShaderInvocations is not null)
+            {
+                MaxGeometryShaderInvocations = maxGeometryShaderInvocations.Value;
+            }
+
+            if (maxGeometryInputComponents is not null)
+            {
+                MaxGeometryInputComponents = maxGeometryInputComponents.Value;
+            }
+
+            if (maxGeometryOutputComponents is not null)
+            {
+                MaxGeometryOutputComponents = maxGeometryOutputComponents.Value;
+            }
+
+            if (maxGeometryOutputVertices is not null)
+            {
+                MaxGeometryOutputVertices = maxGeometryOutputVertices.Value;
+            }
+
+            if (maxGeometryTotalOutputComponents is not null)
+            {
+                MaxGeometryTotalOutputComponents = maxGeometryTotalOutputComponents.Value;
+            }
+
+            if (maxFragmentInputComponents is not null)
+            {
+                MaxFragmentInputComponents = maxFragmentInputComponents.Value;
+            }
+
+            if (maxFragmentOutputAttachments is not null)
+            {
+                MaxFragmentOutputAttachments = maxFragmentOutputAttachments.Value;
+            }
+
+            if (maxFragmentDualSrcAttachments is not null)
+            {
+                MaxFragmentDualSrcAttachments = maxFragmentDualSrcAttachments.Value;
+            }
+
+            if (maxFragmentCombinedOutputResources is not null)
+            {
+                MaxFragmentCombinedOutputResources = maxFragmentCombinedOutputResources.Value;
+            }
+
+            if (maxComputeSharedMemorySize is not null)
+            {
+                MaxComputeSharedMemorySize = maxComputeSharedMemorySize.Value;
+            }
+
+            if (maxComputeWorkGroupInvocations is not null)
+            {
+                MaxComputeWorkGroupInvocations = maxComputeWorkGroupInvocations.Value;
+            }
+
+            if (subPixelPrecisionBits is not null)
+            {
+                SubPixelPrecisionBits = subPixelPrecisionBits.Value;
+            }
+
+            if (subTexelPrecisionBits is not null)
+            {
+                SubTexelPrecisionBits = subTexelPrecisionBits.Value;
+            }
+
+            if (mipmapPrecisionBits is not null)
+            {
+                MipmapPrecisionBits = mipmapPrecisionBits.Value;
+            }
+
+            if (maxDrawIndexedIndexValue is not null)
+            {
+                MaxDrawIndexedIndexValue = maxDrawIndexedIndexValue.Value;
+            }
+
+            if (maxDrawIndirectCount is not null)
+            {
+                MaxDrawIndirectCount = maxDrawIndirectCount.Value;
+            }
+
+            if (maxSamplerLodBias is not null)
+            {
+                MaxSamplerLodBias = maxSamplerLodBias.Value;
+            }
+
+            if (maxSamplerAnisotropy is not null)
+            {
+                MaxSamplerAnisotropy = maxSamplerAnisotropy.Value;
+            }
+
+            if (maxViewports is not null)
+            {
+                MaxViewports = maxViewports.Value;
+            }
+
+            if (viewportSubPixelBits is not null)
+            {
+                ViewportSubPixelBits = viewportSubPixelBits.Value;
+            }
+
+            if (minMemoryMapAlignment is not null)
+            {
+                MinMemoryMapAlignment = minMemoryMapAlignment.Value;
+            }
+
+            if (minTexelBufferOffsetAlignment is not null)
+            {
+                MinTexelBufferOffsetAlignment = minTexelBufferOffsetAlignment.Value;
+            }
+
+            if (minUniformBufferOffsetAlignment is not null)
+            {
+                MinUniformBufferOffsetAlignment = minUniformBufferOffsetAlignment.Value;
+            }
+
+            if (minStorageBufferOffsetAlignment is not null)
+            {
+                MinStorageBufferOffsetAlignment = minStorageBufferOffsetAlignment.Value;
+            }
+
+            if (minTexelOffset is not null)
+            {
+                MinTexelOffset = minTexelOffset.Value;
+            }
+
+            if (maxTexelOffset is not null)
+            {
+                MaxTexelOffset = maxTexelOffset.Value;
+            }
+
+            if (minTexelGatherOffset is not null)
+            {
+                MinTexelGatherOffset = minTexelGatherOffset.Value;
+            }
+
+            if (maxTexelGatherOffset is not null)
+            {
+                MaxTexelGatherOffset = maxTexelGatherOffset.Value;
+            }
+
+            if (minInterpolationOffset is not null)
+            {
+                MinInterpolationOffset = minInterpolationOffset.Value;
+            }
+
+            if (maxInterpolationOffset is not null)
+            {
+                MaxInterpolationOffset = maxInterpolationOffset.Value;
+            }
+
+            if (subPixelInterpolationOffsetBits is not null)
+            {
+                SubPixelInterpolationOffsetBits = subPixelInterpolationOffsetBits.Value;
+            }
+
+            if (maxFramebufferWidth is not null)
+            {
+                MaxFramebufferWidth = maxFramebufferWidth.Value;
+            }
+
+            if (maxFramebufferHeight is not null)
+            {
+                MaxFramebufferHeight = maxFramebufferHeight.Value;
+            }
+
+            if (maxFramebufferLayers is not null)
+            {
+                MaxFramebufferLayers = maxFramebufferLayers.Value;
+            }
+
+            if (framebufferColorSampleCounts is not null)
+            {
+                FramebufferColorSampleCounts = framebufferColorSampleCounts.Value;
+            }
+
+            if (framebufferDepthSampleCounts is not null)
+            {
+                FramebufferDepthSampleCounts = framebufferDepthSampleCounts.Value;
+            }
+
+            if (framebufferStencilSampleCounts is not null)
+            {
+                FramebufferStencilSampleCounts = framebufferStencilSampleCounts.Value;
+            }
+
+            if (framebufferNoAttachmentsSampleCounts is not null)
+            {
+                FramebufferNoAttachmentsSampleCounts = framebufferNoAttachmentsSampleCounts.Value;
+            }
+
+            if (maxColorAttachments is not null)
+            {
+                MaxColorAttachments = maxColorAttachments.Value;
+            }
+
+            if (sampledImageColorSampleCounts is not null)
+            {
+                SampledImageColorSampleCounts = sampledImageColorSampleCounts.Value;
+            }
+
+            if (sampledImageIntegerSampleCounts is not null)
+            {
+                SampledImageIntegerSampleCounts = sampledImageIntegerSampleCounts.Value;
+            }
+
+            if (sampledImageDepthSampleCounts is not null)
+            {
+                SampledImageDepthSampleCounts = sampledImageDepthSampleCounts.Value;
+            }
+
+            if (sampledImageStencilSampleCounts is not null)
+            {
+                SampledImageStencilSampleCounts = sampledImageStencilSampleCounts.Value;
+            }
+
+            if (storageImageSampleCounts is not null)
+            {
+                StorageImageSampleCounts = storageImageSampleCounts.Value;
+            }
+
+            if (maxSampleMaskWords is not null)
+            {
+                MaxSampleMaskWords = maxSampleMaskWords.Value;
+            }
+
+            if (timestampComputeAndGraphics is not null)
+            {
+                TimestampComputeAndGraphics = timestampComputeAndGraphics.Value;
+            }
+
+            if (timestampPeriod is not null)
+            {
+                TimestampPeriod = timestampPeriod.Value;
+            }
+
+            if (maxClipDistances is not null)
+            {
+                MaxClipDistances = maxClipDistances.Value;
+            }
+
+            if (maxCullDistances is not null)
+            {
+                MaxCullDistances = maxCullDistances.Value;
+            }
+
+            if (maxCombinedClipAndCullDistances is not null)
+            {
+                MaxCombinedClipAndCullDistances = maxCombinedClipAndCullDistances.Value;
+            }
+
+            if (discreteQueuePriorities is not null)
+            {
+                DiscreteQueuePriorities = discreteQueuePriorities.Value;
+            }
+
+            if (pointSizeGranularity is not null)
+            {
+                PointSizeGranularity = pointSizeGranularity.Value;
+            }
+
+            if (lineWidthGranularity is not null)
+            {
+                LineWidthGranularity = lineWidthGranularity.Value;
+            }
+
+            if (strictLines is not null)
+            {
+                StrictLines = strictLines.Value;
+            }
+
+            if (standardSampleLocations is not null)
+            {
+                StandardSampleLocations = standardSampleLocations.Value;
+            }
+
+            if (optimalBufferCopyOffsetAlignment is not null)
+            {
+                OptimalBufferCopyOffsetAlignment = optimalBufferCopyOffsetAlignment.Value;
+            }
+
+            if (optimalBufferCopyRowPitchAlignment is not null)
+            {
+                OptimalBufferCopyRowPitchAlignment = optimalBufferCopyRowPitchAlignment.Value;
+            }
+
+            if (nonCoherentAtomSize is not null)
+            {
+                NonCoherentAtomSize = nonCoherentAtomSize.Value;
+            }
         }
 
 /// <summary></summary>

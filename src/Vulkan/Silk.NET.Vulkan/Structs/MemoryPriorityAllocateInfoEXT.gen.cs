@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public MemoryPriorityAllocateInfoEXT
         (
-            StructureType sType = StructureType.MemoryPriorityAllocateInfoExt,
-            void* pNext = default,
-            float priority = default
-        )
+            StructureType? sType = StructureType.MemoryPriorityAllocateInfoExt,
+            void* pNext = null,
+            float? priority = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Priority = priority;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
         }
 
 /// <summary></summary>

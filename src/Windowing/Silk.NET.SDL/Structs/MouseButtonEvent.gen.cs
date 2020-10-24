@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.SDL
     {
         public MouseButtonEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint windowID = default,
-            uint which = default,
-            byte button = default,
-            byte state = default,
-            byte clicks = default,
-            byte padding1 = default,
-            int x = default,
-            int y = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            uint? windowID = null,
+            uint? which = null,
+            byte? button = null,
+            byte? state = null,
+            byte? clicks = null,
+            byte? padding1 = null,
+            int? x = null,
+            int? y = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            WindowID = windowID;
-            Which = which;
-            Button = button;
-            State = state;
-            Clicks = clicks;
-            Padding1 = padding1;
-            X = x;
-            Y = y;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (state is not null)
+            {
+                State = state.Value;
+            }
+
+            if (clicks is not null)
+            {
+                Clicks = clicks.Value;
+            }
+
+            if (padding1 is not null)
+            {
+                Padding1 = padding1.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
 

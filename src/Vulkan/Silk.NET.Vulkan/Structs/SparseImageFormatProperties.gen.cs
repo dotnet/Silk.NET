@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SparseImageFormatProperties
         (
-            ImageAspectFlags aspectMask = default,
-            Extent3D imageGranularity = default,
-            SparseImageFormatFlags flags = default
-        )
+            ImageAspectFlags? aspectMask = null,
+            Extent3D? imageGranularity = null,
+            SparseImageFormatFlags? flags = null
+        ) : this()
         {
-            AspectMask = aspectMask;
-            ImageGranularity = imageGranularity;
-            Flags = flags;
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
+
+            if (imageGranularity is not null)
+            {
+                ImageGranularity = imageGranularity.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PresentFrameTokenGGP
         (
-            StructureType sType = StructureType.PresentFrameTokenGgp,
-            void* pNext = default,
-            IntPtr frameToken = default
-        )
+            StructureType? sType = StructureType.PresentFrameTokenGgp,
+            void* pNext = null,
+            IntPtr? frameToken = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            FrameToken = frameToken;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (frameToken is not null)
+            {
+                FrameToken = frameToken.Value;
+            }
         }
 
 /// <summary></summary>

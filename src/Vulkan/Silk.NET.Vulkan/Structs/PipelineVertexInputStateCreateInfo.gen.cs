@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public PipelineVertexInputStateCreateInfo
         (
-            StructureType sType = StructureType.PipelineVertexInputStateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            uint vertexBindingDescriptionCount = default,
-            VertexInputBindingDescription* pVertexBindingDescriptions = default,
-            uint vertexAttributeDescriptionCount = default,
-            VertexInputAttributeDescription* pVertexAttributeDescriptions = default
-        )
+            StructureType? sType = StructureType.PipelineVertexInputStateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            uint? vertexBindingDescriptionCount = null,
+            VertexInputBindingDescription* pVertexBindingDescriptions = null,
+            uint? vertexAttributeDescriptionCount = null,
+            VertexInputAttributeDescription* pVertexAttributeDescriptions = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            VertexBindingDescriptionCount = vertexBindingDescriptionCount;
-            PVertexBindingDescriptions = pVertexBindingDescriptions;
-            VertexAttributeDescriptionCount = vertexAttributeDescriptionCount;
-            PVertexAttributeDescriptions = pVertexAttributeDescriptions;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (vertexBindingDescriptionCount is not null)
+            {
+                VertexBindingDescriptionCount = vertexBindingDescriptionCount.Value;
+            }
+
+            if (pVertexBindingDescriptions is not null)
+            {
+                PVertexBindingDescriptions = pVertexBindingDescriptions;
+            }
+
+            if (vertexAttributeDescriptionCount is not null)
+            {
+                VertexAttributeDescriptionCount = vertexAttributeDescriptionCount.Value;
+            }
+
+            if (pVertexAttributeDescriptions is not null)
+            {
+                PVertexAttributeDescriptions = pVertexAttributeDescriptions;
+            }
         }
 
 /// <summary></summary>

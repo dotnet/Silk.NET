@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public ActionStatePose
         (
-            StructureType type = StructureType.TypeActionStatePose,
-            void* next = default,
-            uint isActive = default
-        )
+            StructureType? type = StructureType.TypeActionStatePose,
+            void* next = null,
+            uint? isActive = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            IsActive = isActive;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (isActive is not null)
+            {
+                IsActive = isActive.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTimelineSemaphoreFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceTimelineSemaphoreFeatures,
-            void* pNext = default,
-            Bool32 timelineSemaphore = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceTimelineSemaphoreFeatures,
+            void* pNext = null,
+            Bool32? timelineSemaphore = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            TimelineSemaphore = timelineSemaphore;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (timelineSemaphore is not null)
+            {
+                TimelineSemaphore = timelineSemaphore.Value;
+            }
         }
 
 /// <summary></summary>

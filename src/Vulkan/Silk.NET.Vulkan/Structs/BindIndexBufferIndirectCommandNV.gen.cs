@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public BindIndexBufferIndirectCommandNV
         (
-            ulong bufferAddress = default,
-            uint size = default,
-            IndexType indexType = default
-        )
+            ulong? bufferAddress = null,
+            uint? size = null,
+            IndexType? indexType = null
+        ) : this()
         {
-            BufferAddress = bufferAddress;
-            Size = size;
-            IndexType = indexType;
+            if (bufferAddress is not null)
+            {
+                BufferAddress = bufferAddress.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (indexType is not null)
+            {
+                IndexType = indexType.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,36 +22,91 @@ namespace Silk.NET.Assimp
     {
         public Light
         (
-            AssimpString mName = default,
-            LightSourceType mType = default,
-            System.Numerics.Vector3 mPosition = default,
-            System.Numerics.Vector3 mDirection = default,
-            System.Numerics.Vector3 mUp = default,
-            float mAttenuationConstant = default,
-            float mAttenuationLinear = default,
-            float mAttenuationQuadratic = default,
-            System.Numerics.Vector3 mColorDiffuse = default,
-            System.Numerics.Vector3 mColorSpecular = default,
-            System.Numerics.Vector3 mColorAmbient = default,
-            float mAngleInnerCone = default,
-            float mAngleOuterCone = default,
-            System.Numerics.Vector2 mSize = default
-        )
+            AssimpString? mName = null,
+            LightSourceType? mType = null,
+            System.Numerics.Vector3? mPosition = null,
+            System.Numerics.Vector3? mDirection = null,
+            System.Numerics.Vector3? mUp = null,
+            float? mAttenuationConstant = null,
+            float? mAttenuationLinear = null,
+            float? mAttenuationQuadratic = null,
+            System.Numerics.Vector3? mColorDiffuse = null,
+            System.Numerics.Vector3? mColorSpecular = null,
+            System.Numerics.Vector3? mColorAmbient = null,
+            float? mAngleInnerCone = null,
+            float? mAngleOuterCone = null,
+            System.Numerics.Vector2? mSize = null
+        ) : this()
         {
-            MName = mName;
-            MType = mType;
-            MPosition = mPosition;
-            MDirection = mDirection;
-            MUp = mUp;
-            MAttenuationConstant = mAttenuationConstant;
-            MAttenuationLinear = mAttenuationLinear;
-            MAttenuationQuadratic = mAttenuationQuadratic;
-            MColorDiffuse = mColorDiffuse;
-            MColorSpecular = mColorSpecular;
-            MColorAmbient = mColorAmbient;
-            MAngleInnerCone = mAngleInnerCone;
-            MAngleOuterCone = mAngleOuterCone;
-            MSize = mSize;
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mType is not null)
+            {
+                MType = mType.Value;
+            }
+
+            if (mPosition is not null)
+            {
+                MPosition = mPosition.Value;
+            }
+
+            if (mDirection is not null)
+            {
+                MDirection = mDirection.Value;
+            }
+
+            if (mUp is not null)
+            {
+                MUp = mUp.Value;
+            }
+
+            if (mAttenuationConstant is not null)
+            {
+                MAttenuationConstant = mAttenuationConstant.Value;
+            }
+
+            if (mAttenuationLinear is not null)
+            {
+                MAttenuationLinear = mAttenuationLinear.Value;
+            }
+
+            if (mAttenuationQuadratic is not null)
+            {
+                MAttenuationQuadratic = mAttenuationQuadratic.Value;
+            }
+
+            if (mColorDiffuse is not null)
+            {
+                MColorDiffuse = mColorDiffuse.Value;
+            }
+
+            if (mColorSpecular is not null)
+            {
+                MColorSpecular = mColorSpecular.Value;
+            }
+
+            if (mColorAmbient is not null)
+            {
+                MColorAmbient = mColorAmbient.Value;
+            }
+
+            if (mAngleInnerCone is not null)
+            {
+                MAngleInnerCone = mAngleInnerCone.Value;
+            }
+
+            if (mAngleOuterCone is not null)
+            {
+                MAngleOuterCone = mAngleOuterCone.Value;
+            }
+
+            if (mSize is not null)
+            {
+                MSize = mSize.Value;
+            }
         }
 
 

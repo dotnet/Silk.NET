@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.OpenXR
     {
         public CompositionLayerEquirectKHR
         (
-            StructureType type = StructureType.TypeCompositionLayerEquirectKhr,
-            void* next = default,
-            CompositionLayerFlags layerFlags = default,
-            Space space = default,
-            EyeVisibility eyeVisibility = default,
-            SwapchainSubImage subImage = default,
-            Posef pose = default,
-            float radius = default,
-            Vector2f scale = default,
-            Vector2f bias = default
-        )
+            StructureType? type = StructureType.TypeCompositionLayerEquirectKhr,
+            void* next = null,
+            CompositionLayerFlags? layerFlags = null,
+            Space? space = null,
+            EyeVisibility? eyeVisibility = null,
+            SwapchainSubImage? subImage = null,
+            Posef? pose = null,
+            float? radius = null,
+            Vector2f? scale = null,
+            Vector2f? bias = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            LayerFlags = layerFlags;
-            Space = space;
-            EyeVisibility = eyeVisibility;
-            SubImage = subImage;
-            Pose = pose;
-            Radius = radius;
-            Scale = scale;
-            Bias = bias;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (layerFlags is not null)
+            {
+                LayerFlags = layerFlags.Value;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
+
+            if (eyeVisibility is not null)
+            {
+                EyeVisibility = eyeVisibility.Value;
+            }
+
+            if (subImage is not null)
+            {
+                SubImage = subImage.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (radius is not null)
+            {
+                Radius = radius.Value;
+            }
+
+            if (scale is not null)
+            {
+                Scale = scale.Value;
+            }
+
+            if (bias is not null)
+            {
+                Bias = bias.Value;
+            }
         }
 
 /// <summary></summary>

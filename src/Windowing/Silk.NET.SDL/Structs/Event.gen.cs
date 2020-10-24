@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,62 +23,169 @@ namespace Silk.NET.SDL
     {
         public Event
         (
-            uint type = default,
-            CommonEvent common = default,
-            DisplayEvent display = default,
-            WindowEvent window = default,
-            KeyboardEvent key = default,
-            TextEditingEvent edit = default,
-            TextInputEvent text = default,
-            MouseMotionEvent motion = default,
-            MouseButtonEvent button = default,
-            MouseWheelEvent wheel = default,
-            JoyAxisEvent jaxis = default,
-            JoyBallEvent jball = default,
-            JoyHatEvent jhat = default,
-            JoyButtonEvent jbutton = default,
-            JoyDeviceEvent jdevice = default,
-            ControllerAxisEvent caxis = default,
-            ControllerButtonEvent cbutton = default,
-            ControllerDeviceEvent cdevice = default,
-            AudioDeviceEvent adevice = default,
-            SensorEvent sensor = default,
-            QuitEvent quit = default,
-            UserEvent user = default,
-            SysWMEvent syswm = default,
-            TouchFingerEvent tfinger = default,
-            MultiGestureEvent mgesture = default,
-            DollarGestureEvent dgesture = default,
-            DropEvent drop = default
-        )
+            uint? type = null,
+            CommonEvent? common = null,
+            DisplayEvent? display = null,
+            WindowEvent? window = null,
+            KeyboardEvent? key = null,
+            TextEditingEvent? edit = null,
+            TextInputEvent? text = null,
+            MouseMotionEvent? motion = null,
+            MouseButtonEvent? button = null,
+            MouseWheelEvent? wheel = null,
+            JoyAxisEvent? jaxis = null,
+            JoyBallEvent? jball = null,
+            JoyHatEvent? jhat = null,
+            JoyButtonEvent? jbutton = null,
+            JoyDeviceEvent? jdevice = null,
+            ControllerAxisEvent? caxis = null,
+            ControllerButtonEvent? cbutton = null,
+            ControllerDeviceEvent? cdevice = null,
+            AudioDeviceEvent? adevice = null,
+            SensorEvent? sensor = null,
+            QuitEvent? quit = null,
+            UserEvent? user = null,
+            SysWMEvent? syswm = null,
+            TouchFingerEvent? tfinger = null,
+            MultiGestureEvent? mgesture = null,
+            DollarGestureEvent? dgesture = null,
+            DropEvent? drop = null
+        ) : this()
         {
-            Type = type;
-            Common = common;
-            Display = display;
-            Window = window;
-            Key = key;
-            Edit = edit;
-            Text = text;
-            Motion = motion;
-            Button = button;
-            Wheel = wheel;
-            Jaxis = jaxis;
-            Jball = jball;
-            Jhat = jhat;
-            Jbutton = jbutton;
-            Jdevice = jdevice;
-            Caxis = caxis;
-            Cbutton = cbutton;
-            Cdevice = cdevice;
-            Adevice = adevice;
-            Sensor = sensor;
-            Quit = quit;
-            User = user;
-            Syswm = syswm;
-            Tfinger = tfinger;
-            Mgesture = mgesture;
-            Dgesture = dgesture;
-            Drop = drop;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (common is not null)
+            {
+                Common = common.Value;
+            }
+
+            if (display is not null)
+            {
+                Display = display.Value;
+            }
+
+            if (window is not null)
+            {
+                Window = window.Value;
+            }
+
+            if (key is not null)
+            {
+                Key = key.Value;
+            }
+
+            if (edit is not null)
+            {
+                Edit = edit.Value;
+            }
+
+            if (text is not null)
+            {
+                Text = text.Value;
+            }
+
+            if (motion is not null)
+            {
+                Motion = motion.Value;
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (wheel is not null)
+            {
+                Wheel = wheel.Value;
+            }
+
+            if (jaxis is not null)
+            {
+                Jaxis = jaxis.Value;
+            }
+
+            if (jball is not null)
+            {
+                Jball = jball.Value;
+            }
+
+            if (jhat is not null)
+            {
+                Jhat = jhat.Value;
+            }
+
+            if (jbutton is not null)
+            {
+                Jbutton = jbutton.Value;
+            }
+
+            if (jdevice is not null)
+            {
+                Jdevice = jdevice.Value;
+            }
+
+            if (caxis is not null)
+            {
+                Caxis = caxis.Value;
+            }
+
+            if (cbutton is not null)
+            {
+                Cbutton = cbutton.Value;
+            }
+
+            if (cdevice is not null)
+            {
+                Cdevice = cdevice.Value;
+            }
+
+            if (adevice is not null)
+            {
+                Adevice = adevice.Value;
+            }
+
+            if (sensor is not null)
+            {
+                Sensor = sensor.Value;
+            }
+
+            if (quit is not null)
+            {
+                Quit = quit.Value;
+            }
+
+            if (user is not null)
+            {
+                User = user.Value;
+            }
+
+            if (syswm is not null)
+            {
+                Syswm = syswm.Value;
+            }
+
+            if (tfinger is not null)
+            {
+                Tfinger = tfinger.Value;
+            }
+
+            if (mgesture is not null)
+            {
+                Mgesture = mgesture.Value;
+            }
+
+            if (dgesture is not null)
+            {
+                Dgesture = dgesture.Value;
+            }
+
+            if (drop is not null)
+            {
+                Drop = drop.Value;
+            }
         }
 
 

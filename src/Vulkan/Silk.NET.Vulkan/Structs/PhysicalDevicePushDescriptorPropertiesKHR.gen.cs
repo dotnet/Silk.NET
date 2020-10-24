@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePushDescriptorPropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePushDescriptorPropertiesKhr,
-            void* pNext = default,
-            uint maxPushDescriptors = default
-        )
+            StructureType? sType = StructureType.PhysicalDevicePushDescriptorPropertiesKhr,
+            void* pNext = null,
+            uint? maxPushDescriptors = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxPushDescriptors = maxPushDescriptors;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxPushDescriptors is not null)
+            {
+                MaxPushDescriptors = maxPushDescriptors.Value;
+            }
         }
 
 /// <summary></summary>

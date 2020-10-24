@@ -598,7 +598,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetDouble(pname, index, out @params.GetPinnableReference());
         }
 
+        public static unsafe void GetDouble(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] GetPName pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<double> @params)
+        {
+            // SpanOverloader
+            thisApi.GetDouble(pname, index, out @params.GetPinnableReference());
+        }
+
         public static unsafe void GetDoubleIndexed(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<double> data)
+        {
+            // SpanOverloader
+            thisApi.GetDoubleIndexed(target, index, out data.GetPinnableReference());
+        }
+
+        public static unsafe void GetDoubleIndexed(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<double> data)
         {
             // SpanOverloader
             thisApi.GetDoubleIndexed(target, index, out data.GetPinnableReference());
@@ -610,7 +622,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetFloat(pname, index, out @params.GetPinnableReference());
         }
 
+        public static unsafe void GetFloat(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] GetPName pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // SpanOverloader
+            thisApi.GetFloat(pname, index, out @params.GetPinnableReference());
+        }
+
         public static unsafe void GetFloatIndexed(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<float> data)
+        {
+            // SpanOverloader
+            thisApi.GetFloatIndexed(target, index, out data.GetPinnableReference());
+        }
+
+        public static unsafe void GetFloatIndexed(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<float> data)
         {
             // SpanOverloader
             thisApi.GetFloatIndexed(target, index, out data.GetPinnableReference());
@@ -629,6 +653,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         }
 
         public static unsafe void GetIntegerIndexed(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<int> data)
+        {
+            // SpanOverloader
+            thisApi.GetIntegerIndexed(target, index, out data.GetPinnableReference());
+        }
+
+        public static unsafe void GetIntegerIndexed(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<int> data)
         {
             // SpanOverloader
             thisApi.GetIntegerIndexed(target, index, out data.GetPinnableReference());

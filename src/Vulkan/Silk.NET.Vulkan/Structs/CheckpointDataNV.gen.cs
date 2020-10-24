@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public CheckpointDataNV
         (
-            StructureType sType = StructureType.CheckpointDataNV,
-            void* pNext = default,
-            PipelineStageFlags stage = default,
-            void* pCheckpointMarker = default
-        )
+            StructureType? sType = StructureType.CheckpointDataNV,
+            void* pNext = null,
+            PipelineStageFlags? stage = null,
+            void* pCheckpointMarker = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Stage = stage;
-            PCheckpointMarker = pCheckpointMarker;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stage is not null)
+            {
+                Stage = stage.Value;
+            }
+
+            if (pCheckpointMarker is not null)
+            {
+                PCheckpointMarker = pCheckpointMarker;
+            }
         }
 
 /// <summary></summary>

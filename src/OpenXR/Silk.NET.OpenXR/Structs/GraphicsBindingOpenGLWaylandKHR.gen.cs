@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingOpenGLWaylandKHR
         (
-            StructureType type = StructureType.TypeGraphicsBindingOpenglWaylandKhr,
-            void* next = default,
-            IntPtr* display = default
-        )
+            StructureType? type = StructureType.TypeGraphicsBindingOpenglWaylandKhr,
+            void* next = null,
+            IntPtr* display = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Display = display;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (display is not null)
+            {
+                Display = display;
+            }
         }
 
 /// <summary></summary>

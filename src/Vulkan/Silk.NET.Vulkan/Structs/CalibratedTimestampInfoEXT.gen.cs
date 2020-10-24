@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public CalibratedTimestampInfoEXT
         (
-            StructureType sType = StructureType.CalibratedTimestampInfoExt,
-            void* pNext = default,
-            TimeDomainEXT timeDomain = default
-        )
+            StructureType? sType = StructureType.CalibratedTimestampInfoExt,
+            void* pNext = null,
+            TimeDomainEXT? timeDomain = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            TimeDomain = timeDomain;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (timeDomain is not null)
+            {
+                TimeDomain = timeDomain.Value;
+            }
         }
 
 /// <summary></summary>

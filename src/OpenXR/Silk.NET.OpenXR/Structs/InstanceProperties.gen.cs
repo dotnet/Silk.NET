@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public InstanceProperties
         (
-            StructureType type = StructureType.TypeInstanceProperties,
-            void* next = default,
-            ulong runtimeVersion = default
-        )
+            StructureType? type = StructureType.TypeInstanceProperties,
+            void* next = null,
+            ulong? runtimeVersion = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            RuntimeVersion = runtimeVersion;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (runtimeVersion is not null)
+            {
+                RuntimeVersion = runtimeVersion.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePerformanceQueryPropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePerformanceQueryPropertiesKhr,
-            void* pNext = default,
-            Bool32 allowCommandBufferQueryCopies = default
-        )
+            StructureType? sType = StructureType.PhysicalDevicePerformanceQueryPropertiesKhr,
+            void* pNext = null,
+            Bool32? allowCommandBufferQueryCopies = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (allowCommandBufferQueryCopies is not null)
+            {
+                AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies.Value;
+            }
         }
 
 /// <summary></summary>

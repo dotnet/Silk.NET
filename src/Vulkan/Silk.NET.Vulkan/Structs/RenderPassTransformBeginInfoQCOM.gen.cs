@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassTransformBeginInfoQCOM
         (
-            StructureType sType = StructureType.RenderPassTransformBeginInfoQCom,
-            void* pNext = default,
-            SurfaceTransformFlagsKHR transform = default
-        )
+            StructureType? sType = StructureType.RenderPassTransformBeginInfoQCom,
+            void* pNext = null,
+            SurfaceTransformFlagsKHR? transform = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Transform = transform;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (transform is not null)
+            {
+                Transform = transform.Value;
+            }
         }
 
 /// <summary></summary>

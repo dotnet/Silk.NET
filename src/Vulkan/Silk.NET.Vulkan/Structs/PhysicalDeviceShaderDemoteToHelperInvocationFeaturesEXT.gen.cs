@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt,
-            void* pNext = default,
-            Bool32 shaderDemoteToHelperInvocation = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt,
+            void* pNext = null,
+            Bool32? shaderDemoteToHelperInvocation = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderDemoteToHelperInvocation = shaderDemoteToHelperInvocation;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderDemoteToHelperInvocation is not null)
+            {
+                ShaderDemoteToHelperInvocation = shaderDemoteToHelperInvocation.Value;
+            }
         }
 
 /// <summary></summary>

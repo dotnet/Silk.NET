@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public MemoryAllocateInfo
         (
-            StructureType sType = StructureType.MemoryAllocateInfo,
-            void* pNext = default,
-            ulong allocationSize = default,
-            uint memoryTypeIndex = default
-        )
+            StructureType? sType = StructureType.MemoryAllocateInfo,
+            void* pNext = null,
+            ulong? allocationSize = null,
+            uint? memoryTypeIndex = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AllocationSize = allocationSize;
-            MemoryTypeIndex = memoryTypeIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (allocationSize is not null)
+            {
+                AllocationSize = allocationSize.Value;
+            }
+
+            if (memoryTypeIndex is not null)
+            {
+                MemoryTypeIndex = memoryTypeIndex.Value;
+            }
         }
 
 /// <summary></summary>

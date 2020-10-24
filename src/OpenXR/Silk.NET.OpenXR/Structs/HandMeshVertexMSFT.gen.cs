@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenXR
     {
         public HandMeshVertexMSFT
         (
-            Vector3f position = default,
-            Vector3f normal = default
-        )
+            Vector3f? position = null,
+            Vector3f? normal = null
+        ) : this()
         {
-            Position = position;
-            Normal = normal;
+            if (position is not null)
+            {
+                Position = position.Value;
+            }
+
+            if (normal is not null)
+            {
+                Normal = normal.Value;
+            }
         }
 
 /// <summary></summary>

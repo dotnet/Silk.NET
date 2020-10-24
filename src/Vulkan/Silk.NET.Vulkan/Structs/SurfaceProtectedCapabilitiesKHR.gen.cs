@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceProtectedCapabilitiesKHR
         (
-            StructureType sType = StructureType.SurfaceProtectedCapabilitiesKhr,
-            void* pNext = default,
-            Bool32 supportsProtected = default
-        )
+            StructureType? sType = StructureType.SurfaceProtectedCapabilitiesKhr,
+            void* pNext = null,
+            Bool32? supportsProtected = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SupportsProtected = supportsProtected;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (supportsProtected is not null)
+            {
+                SupportsProtected = supportsProtected.Value;
+            }
         }
 
 /// <summary></summary>

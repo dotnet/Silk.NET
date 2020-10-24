@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Assimp
     {
         public ImporterDesc
         (
-            byte* mName = default,
-            byte* mAuthor = default,
-            byte* mMaintainer = default,
-            byte* mComments = default,
-            uint mFlags = default,
-            uint mMinMajor = default,
-            uint mMinMinor = default,
-            uint mMaxMajor = default,
-            uint mMaxMinor = default,
-            byte* mFileExtensions = default
-        )
+            byte* mName = null,
+            byte* mAuthor = null,
+            byte* mMaintainer = null,
+            byte* mComments = null,
+            uint? mFlags = null,
+            uint? mMinMajor = null,
+            uint? mMinMinor = null,
+            uint? mMaxMajor = null,
+            uint? mMaxMinor = null,
+            byte* mFileExtensions = null
+        ) : this()
         {
-            MName = mName;
-            MAuthor = mAuthor;
-            MMaintainer = mMaintainer;
-            MComments = mComments;
-            MFlags = mFlags;
-            MMinMajor = mMinMajor;
-            MMinMinor = mMinMinor;
-            MMaxMajor = mMaxMajor;
-            MMaxMinor = mMaxMinor;
-            MFileExtensions = mFileExtensions;
+            if (mName is not null)
+            {
+                MName = mName;
+            }
+
+            if (mAuthor is not null)
+            {
+                MAuthor = mAuthor;
+            }
+
+            if (mMaintainer is not null)
+            {
+                MMaintainer = mMaintainer;
+            }
+
+            if (mComments is not null)
+            {
+                MComments = mComments;
+            }
+
+            if (mFlags is not null)
+            {
+                MFlags = mFlags.Value;
+            }
+
+            if (mMinMajor is not null)
+            {
+                MMinMajor = mMinMajor.Value;
+            }
+
+            if (mMinMinor is not null)
+            {
+                MMinMinor = mMinMinor.Value;
+            }
+
+            if (mMaxMajor is not null)
+            {
+                MMaxMajor = mMaxMajor.Value;
+            }
+
+            if (mMaxMinor is not null)
+            {
+                MMaxMinor = mMaxMinor.Value;
+            }
+
+            if (mFileExtensions is not null)
+            {
+                MFileExtensions = mFileExtensions;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCustomBorderColorPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceCustomBorderColorPropertiesExt,
-            void* pNext = default,
-            uint maxCustomBorderColorSamplers = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceCustomBorderColorPropertiesExt,
+            void* pNext = null,
+            uint? maxCustomBorderColorSamplers = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxCustomBorderColorSamplers = maxCustomBorderColorSamplers;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxCustomBorderColorSamplers is not null)
+            {
+                MaxCustomBorderColorSamplers = maxCustomBorderColorSamplers.Value;
+            }
         }
 
 /// <summary></summary>

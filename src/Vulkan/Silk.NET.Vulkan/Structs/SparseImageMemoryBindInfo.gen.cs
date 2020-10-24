@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SparseImageMemoryBindInfo
         (
-            Image image = default,
-            uint bindCount = default,
-            SparseImageMemoryBind* pBinds = default
-        )
+            Image? image = null,
+            uint? bindCount = null,
+            SparseImageMemoryBind* pBinds = null
+        ) : this()
         {
-            Image = image;
-            BindCount = bindCount;
-            PBinds = pBinds;
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
+
+            if (bindCount is not null)
+            {
+                BindCount = bindCount.Value;
+            }
+
+            if (pBinds is not null)
+            {
+                PBinds = pBinds;
+            }
         }
 
 /// <summary></summary>

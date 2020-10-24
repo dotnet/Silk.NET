@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceImageFormatInfo2KHR
         (
-            StructureType sType = StructureType.PhysicalDeviceImageFormatInfo2,
-            void* pNext = default,
-            Format format = default,
-            ImageType type = default,
-            ImageTiling tiling = default,
-            ImageUsageFlags usage = default,
-            ImageCreateFlags flags = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceImageFormatInfo2,
+            void* pNext = null,
+            Format? format = null,
+            ImageType? type = null,
+            ImageTiling? tiling = null,
+            ImageUsageFlags? usage = null,
+            ImageCreateFlags? flags = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Format = format;
-            Type = type;
-            Tiling = tiling;
-            Usage = usage;
-            Flags = flags;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (tiling is not null)
+            {
+                Tiling = tiling.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

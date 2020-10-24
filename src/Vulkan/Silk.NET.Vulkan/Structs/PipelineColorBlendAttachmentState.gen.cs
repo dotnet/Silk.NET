@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Vulkan
     {
         public PipelineColorBlendAttachmentState
         (
-            Bool32 blendEnable = default,
-            BlendFactor srcColorBlendFactor = default,
-            BlendFactor dstColorBlendFactor = default,
-            BlendOp colorBlendOp = default,
-            BlendFactor srcAlphaBlendFactor = default,
-            BlendFactor dstAlphaBlendFactor = default,
-            BlendOp alphaBlendOp = default,
-            ColorComponentFlags colorWriteMask = default
-        )
+            Bool32? blendEnable = null,
+            BlendFactor? srcColorBlendFactor = null,
+            BlendFactor? dstColorBlendFactor = null,
+            BlendOp? colorBlendOp = null,
+            BlendFactor? srcAlphaBlendFactor = null,
+            BlendFactor? dstAlphaBlendFactor = null,
+            BlendOp? alphaBlendOp = null,
+            ColorComponentFlags? colorWriteMask = null
+        ) : this()
         {
-            BlendEnable = blendEnable;
-            SrcColorBlendFactor = srcColorBlendFactor;
-            DstColorBlendFactor = dstColorBlendFactor;
-            ColorBlendOp = colorBlendOp;
-            SrcAlphaBlendFactor = srcAlphaBlendFactor;
-            DstAlphaBlendFactor = dstAlphaBlendFactor;
-            AlphaBlendOp = alphaBlendOp;
-            ColorWriteMask = colorWriteMask;
+            if (blendEnable is not null)
+            {
+                BlendEnable = blendEnable.Value;
+            }
+
+            if (srcColorBlendFactor is not null)
+            {
+                SrcColorBlendFactor = srcColorBlendFactor.Value;
+            }
+
+            if (dstColorBlendFactor is not null)
+            {
+                DstColorBlendFactor = dstColorBlendFactor.Value;
+            }
+
+            if (colorBlendOp is not null)
+            {
+                ColorBlendOp = colorBlendOp.Value;
+            }
+
+            if (srcAlphaBlendFactor is not null)
+            {
+                SrcAlphaBlendFactor = srcAlphaBlendFactor.Value;
+            }
+
+            if (dstAlphaBlendFactor is not null)
+            {
+                DstAlphaBlendFactor = dstAlphaBlendFactor.Value;
+            }
+
+            if (alphaBlendOp is not null)
+            {
+                AlphaBlendOp = alphaBlendOp.Value;
+            }
+
+            if (colorWriteMask is not null)
+            {
+                ColorWriteMask = colorWriteMask.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingD3D12KHR
         (
-            StructureType type = StructureType.TypeGraphicsBindingD3D12Khr,
-            void* next = default,
-            IntPtr device = default,
-            IntPtr queue = default
-        )
+            StructureType? type = StructureType.TypeGraphicsBindingD3D12Khr,
+            void* next = null,
+            IntPtr? device = null,
+            IntPtr? queue = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Device = device;
-            Queue = queue;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (device is not null)
+            {
+                Device = device.Value;
+            }
+
+            if (queue is not null)
+            {
+                Queue = queue.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenCL
     {
         public MotionEstimationDescIntel
         (
-            uint mbBlockType = default,
-            uint subpixelMode = default,
-            uint sadAdjustMode = default,
-            uint searchPathType = default
-        )
+            uint? mbBlockType = null,
+            uint? subpixelMode = null,
+            uint? sadAdjustMode = null,
+            uint? searchPathType = null
+        ) : this()
         {
-            MbBlockType = mbBlockType;
-            SubpixelMode = subpixelMode;
-            SadAdjustMode = sadAdjustMode;
-            SearchPathType = searchPathType;
+            if (mbBlockType is not null)
+            {
+                MbBlockType = mbBlockType.Value;
+            }
+
+            if (subpixelMode is not null)
+            {
+                SubpixelMode = subpixelMode.Value;
+            }
+
+            if (sadAdjustMode is not null)
+            {
+                SadAdjustMode = sadAdjustMode.Value;
+            }
+
+            if (searchPathType is not null)
+            {
+                SearchPathType = searchPathType.Value;
+            }
         }
 
 /// <summary></summary>

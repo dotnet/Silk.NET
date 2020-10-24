@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.SDL
     {
         public MultiGestureEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            long touchId = default,
-            float dTheta = default,
-            float dDist = default,
-            float x = default,
-            float y = default,
-            ushort numFingers = default,
-            ushort padding = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            long? touchId = null,
+            float? dTheta = null,
+            float? dDist = null,
+            float? x = null,
+            float? y = null,
+            ushort? numFingers = null,
+            ushort? padding = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            TouchId = touchId;
-            DTheta = dTheta;
-            DDist = dDist;
-            X = x;
-            Y = y;
-            NumFingers = numFingers;
-            Padding = padding;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (touchId is not null)
+            {
+                TouchId = touchId.Value;
+            }
+
+            if (dTheta is not null)
+            {
+                DTheta = dTheta.Value;
+            }
+
+            if (dDist is not null)
+            {
+                DDist = dDist.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (numFingers is not null)
+            {
+                NumFingers = numFingers.Value;
+            }
+
+            if (padding is not null)
+            {
+                Padding = padding.Value;
+            }
         }
 
 

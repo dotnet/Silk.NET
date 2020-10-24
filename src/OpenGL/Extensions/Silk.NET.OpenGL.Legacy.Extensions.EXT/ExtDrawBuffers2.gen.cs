@@ -4,12 +4,14 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
@@ -63,6 +65,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 
         [NativeApi(EntryPoint = "glGetIntegerIndexedvEXT")]
         public partial void GetIntegerIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out int data);
+
+        [NativeApi(EntryPoint = "glGetIntegerIndexedvEXT")]
+        public unsafe partial void GetIntegerIndexed([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] int* data);
+
+        [NativeApi(EntryPoint = "glGetIntegerIndexedvEXT")]
+        public partial void GetIntegerIndexed([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glIsEnabledIndexedEXT")]
         public partial bool IsEnabledIndexed([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index);

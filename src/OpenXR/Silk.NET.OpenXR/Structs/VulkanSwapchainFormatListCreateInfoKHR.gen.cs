@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public VulkanSwapchainFormatListCreateInfoKHR
         (
-            StructureType type = StructureType.TypeVulkanSwapchainFormatListCreateInfoKhr,
-            void* next = default,
-            uint viewFormatCount = default,
-            uint* viewFormats = default
-        )
+            StructureType? type = StructureType.TypeVulkanSwapchainFormatListCreateInfoKhr,
+            void* next = null,
+            uint? viewFormatCount = null,
+            uint* viewFormats = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            ViewFormatCount = viewFormatCount;
-            ViewFormats = viewFormats;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewFormatCount is not null)
+            {
+                ViewFormatCount = viewFormatCount.Value;
+            }
+
+            if (viewFormats is not null)
+            {
+                ViewFormats = viewFormats;
+            }
         }
 
 /// <summary></summary>

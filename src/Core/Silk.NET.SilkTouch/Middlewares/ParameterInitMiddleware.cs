@@ -5,14 +5,13 @@
 
 using System;
 using System.Linq;
-using Microsoft.CodeAnalysis;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeApiGenerator
+    public static partial class Middlewares
     {
-        private void ParameterInitMiddleware(ref IMarshalContext ctx, Action next)
+        public static void ParameterInitMiddleware(ref IMarshalContext ctx, Action next)
         {
             for (int index = 0; index < ctx.MethodSymbol.Parameters.Length; index++)
             {

@@ -84,7 +84,7 @@ namespace Silk.NET.Core.Contexts
         public UnmanagedLibrary Library { get; }
 
         /// <inheritdoc />
-        public IntPtr GetProcAddress(string proc)
+        public IntPtr GetProcAddress(string proc, int? slot = default)
         {
             return Library.LoadFunction(proc);
         }

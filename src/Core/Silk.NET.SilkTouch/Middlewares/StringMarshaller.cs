@@ -14,7 +14,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeApiGenerator
+    public static partial class Middlewares
     {
         private static ExpressionSyntax _sysMarshal = // System.Runtime.InteropServices.Marshal
             MemberAccessExpression
@@ -87,8 +87,8 @@ namespace Silk.NET.SilkTouch
             };
 
         private const UnmanagedType Default = UnmanagedType.LPStr;
-        
-        private static void StringMarshaller(ref IMarshalContext ctx, Action next)
+
+        public static void StringMarshaller(ref IMarshalContext ctx, Action next)
         {
             var @string = ctx.Compilation.GetSpecialType(SpecialType.System_String);
             var intptr = ctx.Compilation.GetSpecialType(SpecialType.System_IntPtr);

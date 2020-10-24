@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceBufferDeviceAddressFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceBufferDeviceAddressFeatures,
-            void* pNext = default,
-            Bool32 bufferDeviceAddress = default,
-            Bool32 bufferDeviceAddressCaptureReplay = default,
-            Bool32 bufferDeviceAddressMultiDevice = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceBufferDeviceAddressFeatures,
+            void* pNext = null,
+            Bool32? bufferDeviceAddress = null,
+            Bool32? bufferDeviceAddressCaptureReplay = null,
+            Bool32? bufferDeviceAddressMultiDevice = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            BufferDeviceAddress = bufferDeviceAddress;
-            BufferDeviceAddressCaptureReplay = bufferDeviceAddressCaptureReplay;
-            BufferDeviceAddressMultiDevice = bufferDeviceAddressMultiDevice;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (bufferDeviceAddress is not null)
+            {
+                BufferDeviceAddress = bufferDeviceAddress.Value;
+            }
+
+            if (bufferDeviceAddressCaptureReplay is not null)
+            {
+                BufferDeviceAddressCaptureReplay = bufferDeviceAddressCaptureReplay.Value;
+            }
+
+            if (bufferDeviceAddressMultiDevice is not null)
+            {
+                BufferDeviceAddressMultiDevice = bufferDeviceAddressMultiDevice.Value;
+            }
         }
 
 /// <summary></summary>

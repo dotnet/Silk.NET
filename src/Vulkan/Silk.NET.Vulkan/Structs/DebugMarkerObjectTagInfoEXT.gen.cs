@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public DebugMarkerObjectTagInfoEXT
         (
-            StructureType sType = StructureType.DebugMarkerObjectTagInfoExt,
-            void* pNext = default,
-            DebugReportObjectTypeEXT objectType = default,
-            ulong @object = default,
-            ulong tagName = default,
-            UIntPtr tagSize = default,
-            void* pTag = default
-        )
+            StructureType? sType = StructureType.DebugMarkerObjectTagInfoExt,
+            void* pNext = null,
+            DebugReportObjectTypeEXT? objectType = null,
+            ulong? @object = null,
+            ulong? tagName = null,
+            UIntPtr? tagSize = null,
+            void* pTag = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ObjectType = objectType;
-            Object = @object;
-            TagName = tagName;
-            TagSize = tagSize;
-            PTag = pTag;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (objectType is not null)
+            {
+                ObjectType = objectType.Value;
+            }
+
+            if (@object is not null)
+            {
+                Object = @object.Value;
+            }
+
+            if (tagName is not null)
+            {
+                TagName = tagName.Value;
+            }
+
+            if (tagSize is not null)
+            {
+                TagSize = tagSize.Value;
+            }
+
+            if (pTag is not null)
+            {
+                PTag = pTag;
+            }
         }
 
 /// <summary></summary>

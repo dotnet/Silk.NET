@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public Extent2D
         (
-            uint width = default,
-            uint height = default
-        )
+            uint? width = null,
+            uint? height = null
+        ) : this()
         {
-            Width = width;
-            Height = height;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
         }
 
 /// <summary></summary>

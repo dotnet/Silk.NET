@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public SparseImageMemoryBind
         (
-            ImageSubresource subresource = default,
-            Offset3D offset = default,
-            Extent3D extent = default,
-            DeviceMemory memory = default,
-            ulong memoryOffset = default,
-            SparseMemoryBindFlags flags = default
-        )
+            ImageSubresource? subresource = null,
+            Offset3D? offset = null,
+            Extent3D? extent = null,
+            DeviceMemory? memory = null,
+            ulong? memoryOffset = null,
+            SparseMemoryBindFlags? flags = null
+        ) : this()
         {
-            Subresource = subresource;
-            Offset = offset;
-            Extent = extent;
-            Memory = memory;
-            MemoryOffset = memoryOffset;
-            Flags = flags;
+            if (subresource is not null)
+            {
+                Subresource = subresource.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (memoryOffset is not null)
+            {
+                MemoryOffset = memoryOffset.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

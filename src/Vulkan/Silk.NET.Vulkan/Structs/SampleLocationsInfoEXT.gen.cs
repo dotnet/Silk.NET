@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public SampleLocationsInfoEXT
         (
-            StructureType sType = StructureType.SampleLocationsInfoExt,
-            void* pNext = default,
-            SampleCountFlags sampleLocationsPerPixel = default,
-            Extent2D sampleLocationGridSize = default,
-            uint sampleLocationsCount = default,
-            SampleLocationEXT* pSampleLocations = default
-        )
+            StructureType? sType = StructureType.SampleLocationsInfoExt,
+            void* pNext = null,
+            SampleCountFlags? sampleLocationsPerPixel = null,
+            Extent2D? sampleLocationGridSize = null,
+            uint? sampleLocationsCount = null,
+            SampleLocationEXT* pSampleLocations = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SampleLocationsPerPixel = sampleLocationsPerPixel;
-            SampleLocationGridSize = sampleLocationGridSize;
-            SampleLocationsCount = sampleLocationsCount;
-            PSampleLocations = pSampleLocations;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sampleLocationsPerPixel is not null)
+            {
+                SampleLocationsPerPixel = sampleLocationsPerPixel.Value;
+            }
+
+            if (sampleLocationGridSize is not null)
+            {
+                SampleLocationGridSize = sampleLocationGridSize.Value;
+            }
+
+            if (sampleLocationsCount is not null)
+            {
+                SampleLocationsCount = sampleLocationsCount.Value;
+            }
+
+            if (pSampleLocations is not null)
+            {
+                PSampleLocations = pSampleLocations;
+            }
         }
 
 /// <summary></summary>

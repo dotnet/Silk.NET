@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Assimp
     {
         public MeshMorphKey
         (
-            double mTime = default,
-            uint* mValues = default,
-            double* mWeights = default,
-            uint mNumValuesAndWeights = default
-        )
+            double? mTime = null,
+            uint* mValues = null,
+            double* mWeights = null,
+            uint? mNumValuesAndWeights = null
+        ) : this()
         {
-            MTime = mTime;
-            MValues = mValues;
-            MWeights = mWeights;
-            MNumValuesAndWeights = mNumValuesAndWeights;
+            if (mTime is not null)
+            {
+                MTime = mTime.Value;
+            }
+
+            if (mValues is not null)
+            {
+                MValues = mValues;
+            }
+
+            if (mWeights is not null)
+            {
+                MWeights = mWeights;
+            }
+
+            if (mNumValuesAndWeights is not null)
+            {
+                MNumValuesAndWeights = mNumValuesAndWeights.Value;
+            }
         }
 
 

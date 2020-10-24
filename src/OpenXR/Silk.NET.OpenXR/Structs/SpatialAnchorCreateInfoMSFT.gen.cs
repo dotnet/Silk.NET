@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.OpenXR
     {
         public SpatialAnchorCreateInfoMSFT
         (
-            StructureType type = StructureType.TypeSpatialAnchorCreateInfoMsft,
-            void* next = default,
-            Space space = default,
-            Posef pose = default,
-            long time = default
-        )
+            StructureType? type = StructureType.TypeSpatialAnchorCreateInfoMsft,
+            void* next = null,
+            Space? space = null,
+            Posef? pose = null,
+            long? time = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Space = space;
-            Pose = pose;
-            Time = time;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (time is not null)
+            {
+                Time = time.Value;
+            }
         }
 
 /// <summary></summary>

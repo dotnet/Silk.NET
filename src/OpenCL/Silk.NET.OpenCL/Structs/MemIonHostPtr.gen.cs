@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenCL
     {
         public MemIonHostPtr
         (
-            MemExtHostPtr extHostPtr = default,
-            int ionFiledesc = default,
-            void* ionHostptr = default
-        )
+            MemExtHostPtr? extHostPtr = null,
+            int? ionFiledesc = null,
+            void* ionHostptr = null
+        ) : this()
         {
-            ExtHostPtr = extHostPtr;
-            IonFiledesc = ionFiledesc;
-            IonHostptr = ionHostptr;
+            if (extHostPtr is not null)
+            {
+                ExtHostPtr = extHostPtr.Value;
+            }
+
+            if (ionFiledesc is not null)
+            {
+                IonFiledesc = ionFiledesc.Value;
+            }
+
+            if (ionHostptr is not null)
+            {
+                IonHostptr = ionHostptr;
+            }
         }
 
 /// <summary></summary>

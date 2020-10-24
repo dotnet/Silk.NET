@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureBuildOffsetInfoKHR
         (
-            uint primitiveCount = default,
-            uint primitiveOffset = default,
-            uint firstVertex = default,
-            uint transformOffset = default
-        )
+            uint? primitiveCount = null,
+            uint? primitiveOffset = null,
+            uint? firstVertex = null,
+            uint? transformOffset = null
+        ) : this()
         {
-            PrimitiveCount = primitiveCount;
-            PrimitiveOffset = primitiveOffset;
-            FirstVertex = firstVertex;
-            TransformOffset = transformOffset;
+            if (primitiveCount is not null)
+            {
+                PrimitiveCount = primitiveCount.Value;
+            }
+
+            if (primitiveOffset is not null)
+            {
+                PrimitiveOffset = primitiveOffset.Value;
+            }
+
+            if (firstVertex is not null)
+            {
+                FirstVertex = firstVertex.Value;
+            }
+
+            if (transformOffset is not null)
+            {
+                TransformOffset = transformOffset.Value;
+            }
         }
 
 /// <summary></summary>

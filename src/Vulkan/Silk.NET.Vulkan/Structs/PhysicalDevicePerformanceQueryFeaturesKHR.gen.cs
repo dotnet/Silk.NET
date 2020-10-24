@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePerformanceQueryFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePerformanceQueryFeaturesKhr,
-            void* pNext = default,
-            Bool32 performanceCounterQueryPools = default,
-            Bool32 performanceCounterMultipleQueryPools = default
-        )
+            StructureType? sType = StructureType.PhysicalDevicePerformanceQueryFeaturesKhr,
+            void* pNext = null,
+            Bool32? performanceCounterQueryPools = null,
+            Bool32? performanceCounterMultipleQueryPools = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PerformanceCounterQueryPools = performanceCounterQueryPools;
-            PerformanceCounterMultipleQueryPools = performanceCounterMultipleQueryPools;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (performanceCounterQueryPools is not null)
+            {
+                PerformanceCounterQueryPools = performanceCounterQueryPools.Value;
+            }
+
+            if (performanceCounterMultipleQueryPools is not null)
+            {
+                PerformanceCounterMultipleQueryPools = performanceCounterMultipleQueryPools.Value;
+            }
         }
 
 /// <summary></summary>

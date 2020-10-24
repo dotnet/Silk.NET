@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Vulkan
     {
         public DeviceCreateInfo
         (
-            StructureType sType = StructureType.DeviceCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            uint queueCreateInfoCount = default,
-            DeviceQueueCreateInfo* pQueueCreateInfos = default,
-            uint enabledLayerCount = default,
-            byte** ppEnabledLayerNames = default,
-            uint enabledExtensionCount = default,
-            byte** ppEnabledExtensionNames = default,
-            PhysicalDeviceFeatures* pEnabledFeatures = default
-        )
+            StructureType? sType = StructureType.DeviceCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            uint? queueCreateInfoCount = null,
+            DeviceQueueCreateInfo* pQueueCreateInfos = null,
+            uint? enabledLayerCount = null,
+            byte** ppEnabledLayerNames = null,
+            uint? enabledExtensionCount = null,
+            byte** ppEnabledExtensionNames = null,
+            PhysicalDeviceFeatures* pEnabledFeatures = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            QueueCreateInfoCount = queueCreateInfoCount;
-            PQueueCreateInfos = pQueueCreateInfos;
-            EnabledLayerCount = enabledLayerCount;
-            PpEnabledLayerNames = ppEnabledLayerNames;
-            EnabledExtensionCount = enabledExtensionCount;
-            PpEnabledExtensionNames = ppEnabledExtensionNames;
-            PEnabledFeatures = pEnabledFeatures;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (queueCreateInfoCount is not null)
+            {
+                QueueCreateInfoCount = queueCreateInfoCount.Value;
+            }
+
+            if (pQueueCreateInfos is not null)
+            {
+                PQueueCreateInfos = pQueueCreateInfos;
+            }
+
+            if (enabledLayerCount is not null)
+            {
+                EnabledLayerCount = enabledLayerCount.Value;
+            }
+
+            if (ppEnabledLayerNames is not null)
+            {
+                PpEnabledLayerNames = ppEnabledLayerNames;
+            }
+
+            if (enabledExtensionCount is not null)
+            {
+                EnabledExtensionCount = enabledExtensionCount.Value;
+            }
+
+            if (ppEnabledExtensionNames is not null)
+            {
+                PpEnabledExtensionNames = ppEnabledExtensionNames;
+            }
+
+            if (pEnabledFeatures is not null)
+            {
+                PEnabledFeatures = pEnabledFeatures;
+            }
         }
 
 /// <summary></summary>

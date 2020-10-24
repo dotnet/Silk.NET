@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public GraphicsShaderGroupCreateInfoNV
         (
-            StructureType sType = StructureType.GraphicsShaderGroupCreateInfoNV,
-            void* pNext = default,
-            uint stageCount = default,
-            PipelineShaderStageCreateInfo* pStages = default,
-            PipelineVertexInputStateCreateInfo* pVertexInputState = default,
-            PipelineTessellationStateCreateInfo* pTessellationState = default
-        )
+            StructureType? sType = StructureType.GraphicsShaderGroupCreateInfoNV,
+            void* pNext = null,
+            uint? stageCount = null,
+            PipelineShaderStageCreateInfo* pStages = null,
+            PipelineVertexInputStateCreateInfo* pVertexInputState = null,
+            PipelineTessellationStateCreateInfo* pTessellationState = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            StageCount = stageCount;
-            PStages = pStages;
-            PVertexInputState = pVertexInputState;
-            PTessellationState = pTessellationState;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stageCount is not null)
+            {
+                StageCount = stageCount.Value;
+            }
+
+            if (pStages is not null)
+            {
+                PStages = pStages;
+            }
+
+            if (pVertexInputState is not null)
+            {
+                PVertexInputState = pVertexInputState;
+            }
+
+            if (pTessellationState is not null)
+            {
+                PTessellationState = pTessellationState;
+            }
         }
 
 /// <summary></summary>

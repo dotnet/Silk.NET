@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public MemoryBarrier
         (
-            StructureType sType = StructureType.MemoryBarrier,
-            void* pNext = default,
-            AccessFlags srcAccessMask = default,
-            AccessFlags dstAccessMask = default
-        )
+            StructureType? sType = StructureType.MemoryBarrier,
+            void* pNext = null,
+            AccessFlags? srcAccessMask = null,
+            AccessFlags? dstAccessMask = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SrcAccessMask = srcAccessMask;
-            DstAccessMask = dstAccessMask;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (srcAccessMask is not null)
+            {
+                SrcAccessMask = srcAccessMask.Value;
+            }
+
+            if (dstAccessMask is not null)
+            {
+                DstAccessMask = dstAccessMask.Value;
+            }
         }
 
 /// <summary></summary>

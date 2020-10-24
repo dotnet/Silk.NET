@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Assimp
     {
         public Metadata
         (
-            uint mNumProperties = default,
-            AssimpString* mKeys = default,
-            MetadataEntry* mValues = default
-        )
+            uint? mNumProperties = null,
+            AssimpString* mKeys = null,
+            MetadataEntry* mValues = null
+        ) : this()
         {
-            MNumProperties = mNumProperties;
-            MKeys = mKeys;
-            MValues = mValues;
+            if (mNumProperties is not null)
+            {
+                MNumProperties = mNumProperties.Value;
+            }
+
+            if (mKeys is not null)
+            {
+                MKeys = mKeys;
+            }
+
+            if (mValues is not null)
+            {
+                MValues = mValues;
+            }
         }
 
 

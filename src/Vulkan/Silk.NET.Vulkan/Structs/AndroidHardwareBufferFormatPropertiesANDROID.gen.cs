@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Vulkan
     {
         public AndroidHardwareBufferFormatPropertiesANDROID
         (
-            StructureType sType = StructureType.AndroidHardwareBufferFormatPropertiesAndroid,
-            void* pNext = default,
-            Format format = default,
-            ulong externalFormat = default,
-            FormatFeatureFlags formatFeatures = default,
-            ComponentMapping samplerYcbcrConversionComponents = default,
-            SamplerYcbcrModelConversion suggestedYcbcrModel = default,
-            SamplerYcbcrRange suggestedYcbcrRange = default,
-            ChromaLocation suggestedXChromaOffset = default,
-            ChromaLocation suggestedYChromaOffset = default
-        )
+            StructureType? sType = StructureType.AndroidHardwareBufferFormatPropertiesAndroid,
+            void* pNext = null,
+            Format? format = null,
+            ulong? externalFormat = null,
+            FormatFeatureFlags? formatFeatures = null,
+            ComponentMapping? samplerYcbcrConversionComponents = null,
+            SamplerYcbcrModelConversion? suggestedYcbcrModel = null,
+            SamplerYcbcrRange? suggestedYcbcrRange = null,
+            ChromaLocation? suggestedXChromaOffset = null,
+            ChromaLocation? suggestedYChromaOffset = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Format = format;
-            ExternalFormat = externalFormat;
-            FormatFeatures = formatFeatures;
-            SamplerYcbcrConversionComponents = samplerYcbcrConversionComponents;
-            SuggestedYcbcrModel = suggestedYcbcrModel;
-            SuggestedYcbcrRange = suggestedYcbcrRange;
-            SuggestedXChromaOffset = suggestedXChromaOffset;
-            SuggestedYChromaOffset = suggestedYChromaOffset;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (externalFormat is not null)
+            {
+                ExternalFormat = externalFormat.Value;
+            }
+
+            if (formatFeatures is not null)
+            {
+                FormatFeatures = formatFeatures.Value;
+            }
+
+            if (samplerYcbcrConversionComponents is not null)
+            {
+                SamplerYcbcrConversionComponents = samplerYcbcrConversionComponents.Value;
+            }
+
+            if (suggestedYcbcrModel is not null)
+            {
+                SuggestedYcbcrModel = suggestedYcbcrModel.Value;
+            }
+
+            if (suggestedYcbcrRange is not null)
+            {
+                SuggestedYcbcrRange = suggestedYcbcrRange.Value;
+            }
+
+            if (suggestedXChromaOffset is not null)
+            {
+                SuggestedXChromaOffset = suggestedXChromaOffset.Value;
+            }
+
+            if (suggestedYChromaOffset is not null)
+            {
+                SuggestedYChromaOffset = suggestedYChromaOffset.Value;
+            }
         }
 
 /// <summary></summary>

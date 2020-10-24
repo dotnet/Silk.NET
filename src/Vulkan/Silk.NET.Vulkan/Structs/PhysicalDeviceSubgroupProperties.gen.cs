@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSubgroupProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceSubgroupProperties,
-            void* pNext = default,
-            uint subgroupSize = default,
-            ShaderStageFlags supportedStages = default,
-            SubgroupFeatureFlags supportedOperations = default,
-            Bool32 quadOperationsInAllStages = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceSubgroupProperties,
+            void* pNext = null,
+            uint? subgroupSize = null,
+            ShaderStageFlags? supportedStages = null,
+            SubgroupFeatureFlags? supportedOperations = null,
+            Bool32? quadOperationsInAllStages = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SubgroupSize = subgroupSize;
-            SupportedStages = supportedStages;
-            SupportedOperations = supportedOperations;
-            QuadOperationsInAllStages = quadOperationsInAllStages;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (subgroupSize is not null)
+            {
+                SubgroupSize = subgroupSize.Value;
+            }
+
+            if (supportedStages is not null)
+            {
+                SupportedStages = supportedStages.Value;
+            }
+
+            if (supportedOperations is not null)
+            {
+                SupportedOperations = supportedOperations.Value;
+            }
+
+            if (quadOperationsInAllStages is not null)
+            {
+                QuadOperationsInAllStages = quadOperationsInAllStages.Value;
+            }
         }
 
 /// <summary></summary>

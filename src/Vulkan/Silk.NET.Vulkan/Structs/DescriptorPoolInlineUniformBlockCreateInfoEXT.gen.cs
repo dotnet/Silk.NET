@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorPoolInlineUniformBlockCreateInfoEXT
         (
-            StructureType sType = StructureType.DescriptorPoolInlineUniformBlockCreateInfoExt,
-            void* pNext = default,
-            uint maxInlineUniformBlockBindings = default
-        )
+            StructureType? sType = StructureType.DescriptorPoolInlineUniformBlockCreateInfoExt,
+            void* pNext = null,
+            uint? maxInlineUniformBlockBindings = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxInlineUniformBlockBindings = maxInlineUniformBlockBindings;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxInlineUniformBlockBindings is not null)
+            {
+                MaxInlineUniformBlockBindings = maxInlineUniformBlockBindings.Value;
+            }
         }
 
 /// <summary></summary>

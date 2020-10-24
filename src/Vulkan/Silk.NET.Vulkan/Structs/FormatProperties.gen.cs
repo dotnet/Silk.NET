@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public FormatProperties
         (
-            FormatFeatureFlags linearTilingFeatures = default,
-            FormatFeatureFlags optimalTilingFeatures = default,
-            FormatFeatureFlags bufferFeatures = default
-        )
+            FormatFeatureFlags? linearTilingFeatures = null,
+            FormatFeatureFlags? optimalTilingFeatures = null,
+            FormatFeatureFlags? bufferFeatures = null
+        ) : this()
         {
-            LinearTilingFeatures = linearTilingFeatures;
-            OptimalTilingFeatures = optimalTilingFeatures;
-            BufferFeatures = bufferFeatures;
+            if (linearTilingFeatures is not null)
+            {
+                LinearTilingFeatures = linearTilingFeatures.Value;
+            }
+
+            if (optimalTilingFeatures is not null)
+            {
+                OptimalTilingFeatures = optimalTilingFeatures.Value;
+            }
+
+            if (bufferFeatures is not null)
+            {
+                BufferFeatures = bufferFeatures.Value;
+            }
         }
 
 /// <summary></summary>

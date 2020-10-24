@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCooperativeMatrixFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceCooperativeMatrixFeaturesNV,
-            void* pNext = default,
-            Bool32 cooperativeMatrix = default,
-            Bool32 cooperativeMatrixRobustBufferAccess = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceCooperativeMatrixFeaturesNV,
+            void* pNext = null,
+            Bool32? cooperativeMatrix = null,
+            Bool32? cooperativeMatrixRobustBufferAccess = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            CooperativeMatrix = cooperativeMatrix;
-            CooperativeMatrixRobustBufferAccess = cooperativeMatrixRobustBufferAccess;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (cooperativeMatrix is not null)
+            {
+                CooperativeMatrix = cooperativeMatrix.Value;
+            }
+
+            if (cooperativeMatrixRobustBufferAccess is not null)
+            {
+                CooperativeMatrixRobustBufferAccess = cooperativeMatrixRobustBufferAccess.Value;
+            }
         }
 
 /// <summary></summary>

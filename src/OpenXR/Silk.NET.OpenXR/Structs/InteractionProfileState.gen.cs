@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public InteractionProfileState
         (
-            StructureType type = StructureType.TypeInteractionProfileState,
-            void* next = default,
-            ulong interactionProfile = default
-        )
+            StructureType? type = StructureType.TypeInteractionProfileState,
+            void* next = null,
+            ulong? interactionProfile = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            InteractionProfile = interactionProfile;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (interactionProfile is not null)
+            {
+                InteractionProfile = interactionProfile.Value;
+            }
         }
 
 /// <summary></summary>

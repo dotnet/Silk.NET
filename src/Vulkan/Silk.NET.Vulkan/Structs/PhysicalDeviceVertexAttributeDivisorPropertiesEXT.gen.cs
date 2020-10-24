@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceVertexAttributeDivisorPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceVertexAttributeDivisorPropertiesExt,
-            void* pNext = default,
-            uint maxVertexAttribDivisor = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceVertexAttributeDivisorPropertiesExt,
+            void* pNext = null,
+            uint? maxVertexAttribDivisor = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxVertexAttribDivisor = maxVertexAttribDivisor;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxVertexAttribDivisor is not null)
+            {
+                MaxVertexAttribDivisor = maxVertexAttribDivisor.Value;
+            }
         }
 
 /// <summary></summary>

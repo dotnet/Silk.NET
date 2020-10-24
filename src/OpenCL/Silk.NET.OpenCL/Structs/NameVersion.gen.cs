@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.OpenCL
     {
         public NameVersion
         (
-            uint version = default
-        )
+            uint? version = null
+        ) : this()
         {
-            Version = version;
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
         }
 
 /// <summary></summary>

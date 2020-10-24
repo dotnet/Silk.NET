@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.SDL
     {
         public Keysym
         (
-            Scancode scancode = default,
-            int sym = default,
-            ushort mod = default,
-            uint unused = default
-        )
+            Scancode? scancode = null,
+            int? sym = null,
+            ushort? mod = null,
+            uint? unused = null
+        ) : this()
         {
-            Scancode = scancode;
-            Sym = sym;
-            Mod = mod;
-            Unused = unused;
+            if (scancode is not null)
+            {
+                Scancode = scancode.Value;
+            }
+
+            if (sym is not null)
+            {
+                Sym = sym.Value;
+            }
+
+            if (mod is not null)
+            {
+                Mod = mod.Value;
+            }
+
+            if (unused is not null)
+            {
+                Unused = unused.Value;
+            }
         }
 
 

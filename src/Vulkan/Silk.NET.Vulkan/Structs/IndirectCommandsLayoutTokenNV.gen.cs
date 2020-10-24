@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,38 +22,97 @@ namespace Silk.NET.Vulkan
     {
         public IndirectCommandsLayoutTokenNV
         (
-            StructureType sType = StructureType.IndirectCommandsLayoutTokenNV,
-            void* pNext = default,
-            IndirectCommandsTokenTypeNV tokenType = default,
-            uint stream = default,
-            uint offset = default,
-            uint vertexBindingUnit = default,
-            Bool32 vertexDynamicStride = default,
-            PipelineLayout pushconstantPipelineLayout = default,
-            ShaderStageFlags pushconstantShaderStageFlags = default,
-            uint pushconstantOffset = default,
-            uint pushconstantSize = default,
-            IndirectStateFlagsNV indirectStateFlags = default,
-            uint indexTypeCount = default,
-            IndexType* pIndexTypes = default,
-            uint* pIndexTypeValues = default
-        )
+            StructureType? sType = StructureType.IndirectCommandsLayoutTokenNV,
+            void* pNext = null,
+            IndirectCommandsTokenTypeNV? tokenType = null,
+            uint? stream = null,
+            uint? offset = null,
+            uint? vertexBindingUnit = null,
+            Bool32? vertexDynamicStride = null,
+            PipelineLayout? pushconstantPipelineLayout = null,
+            ShaderStageFlags? pushconstantShaderStageFlags = null,
+            uint? pushconstantOffset = null,
+            uint? pushconstantSize = null,
+            IndirectStateFlagsNV? indirectStateFlags = null,
+            uint? indexTypeCount = null,
+            IndexType* pIndexTypes = null,
+            uint* pIndexTypeValues = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            TokenType = tokenType;
-            Stream = stream;
-            Offset = offset;
-            VertexBindingUnit = vertexBindingUnit;
-            VertexDynamicStride = vertexDynamicStride;
-            PushconstantPipelineLayout = pushconstantPipelineLayout;
-            PushconstantShaderStageFlags = pushconstantShaderStageFlags;
-            PushconstantOffset = pushconstantOffset;
-            PushconstantSize = pushconstantSize;
-            IndirectStateFlags = indirectStateFlags;
-            IndexTypeCount = indexTypeCount;
-            PIndexTypes = pIndexTypes;
-            PIndexTypeValues = pIndexTypeValues;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (tokenType is not null)
+            {
+                TokenType = tokenType.Value;
+            }
+
+            if (stream is not null)
+            {
+                Stream = stream.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (vertexBindingUnit is not null)
+            {
+                VertexBindingUnit = vertexBindingUnit.Value;
+            }
+
+            if (vertexDynamicStride is not null)
+            {
+                VertexDynamicStride = vertexDynamicStride.Value;
+            }
+
+            if (pushconstantPipelineLayout is not null)
+            {
+                PushconstantPipelineLayout = pushconstantPipelineLayout.Value;
+            }
+
+            if (pushconstantShaderStageFlags is not null)
+            {
+                PushconstantShaderStageFlags = pushconstantShaderStageFlags.Value;
+            }
+
+            if (pushconstantOffset is not null)
+            {
+                PushconstantOffset = pushconstantOffset.Value;
+            }
+
+            if (pushconstantSize is not null)
+            {
+                PushconstantSize = pushconstantSize.Value;
+            }
+
+            if (indirectStateFlags is not null)
+            {
+                IndirectStateFlags = indirectStateFlags.Value;
+            }
+
+            if (indexTypeCount is not null)
+            {
+                IndexTypeCount = indexTypeCount.Value;
+            }
+
+            if (pIndexTypes is not null)
+            {
+                PIndexTypes = pIndexTypes;
+            }
+
+            if (pIndexTypeValues is not null)
+            {
+                PIndexTypeValues = pIndexTypeValues;
+            }
         }
 
 /// <summary></summary>

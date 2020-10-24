@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public HandMeshSpaceCreateInfoMSFT
         (
-            StructureType type = StructureType.TypeHandMeshSpaceCreateInfoMsft,
-            void* next = default,
-            HandPoseTypeMSFT handPoseType = default,
-            Posef poseInHandMeshSpace = default
-        )
+            StructureType? type = StructureType.TypeHandMeshSpaceCreateInfoMsft,
+            void* next = null,
+            HandPoseTypeMSFT? handPoseType = null,
+            Posef? poseInHandMeshSpace = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            HandPoseType = handPoseType;
-            PoseInHandMeshSpace = poseInHandMeshSpace;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (handPoseType is not null)
+            {
+                HandPoseType = handPoseType.Value;
+            }
+
+            if (poseInHandMeshSpace is not null)
+            {
+                PoseInHandMeshSpace = poseInHandMeshSpace.Value;
+            }
         }
 
 /// <summary></summary>

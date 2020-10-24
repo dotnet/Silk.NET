@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.OpenXR
     {
         public SecondaryViewConfigurationLayerInfoMSFT
         (
-            StructureType type = StructureType.TypeSecondaryViewConfigurationLayerInfoMsft,
-            void* next = default,
-            ViewConfigurationType viewConfigurationType = default,
-            EnvironmentBlendMode environmentBlendMode = default,
-            uint layerCount = default,
-            CompositionLayerBaseHeader** layers = default
-        )
+            StructureType? type = StructureType.TypeSecondaryViewConfigurationLayerInfoMsft,
+            void* next = null,
+            ViewConfigurationType? viewConfigurationType = null,
+            EnvironmentBlendMode? environmentBlendMode = null,
+            uint? layerCount = null,
+            CompositionLayerBaseHeader** layers = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            ViewConfigurationType = viewConfigurationType;
-            EnvironmentBlendMode = environmentBlendMode;
-            LayerCount = layerCount;
-            Layers = layers;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewConfigurationType is not null)
+            {
+                ViewConfigurationType = viewConfigurationType.Value;
+            }
+
+            if (environmentBlendMode is not null)
+            {
+                EnvironmentBlendMode = environmentBlendMode.Value;
+            }
+
+            if (layerCount is not null)
+            {
+                LayerCount = layerCount.Value;
+            }
+
+            if (layers is not null)
+            {
+                Layers = layers;
+            }
         }
 
 /// <summary></summary>

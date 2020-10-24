@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenCL
     {
         public ImageFormat
         (
-            uint imageChannelOrder = default,
-            uint imageChannelDataType = default
-        )
+            uint? imageChannelOrder = null,
+            uint? imageChannelDataType = null
+        ) : this()
         {
-            ImageChannelOrder = imageChannelOrder;
-            ImageChannelDataType = imageChannelDataType;
+            if (imageChannelOrder is not null)
+            {
+                ImageChannelOrder = imageChannelOrder.Value;
+            }
+
+            if (imageChannelDataType is not null)
+            {
+                ImageChannelDataType = imageChannelDataType.Value;
+            }
         }
 
 /// <summary></summary>

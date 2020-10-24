@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Vulkan
     {
         public RefreshCycleDurationGOOGLE
         (
-            ulong refreshDuration = default
-        )
+            ulong? refreshDuration = null
+        ) : this()
         {
-            RefreshDuration = refreshDuration;
+            if (refreshDuration is not null)
+            {
+                RefreshDuration = refreshDuration.Value;
+            }
         }
 
 /// <summary></summary>

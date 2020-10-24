@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PipelineExecutablePropertiesKHR
         (
-            StructureType sType = StructureType.PipelineExecutablePropertiesKhr,
-            void* pNext = default,
-            ShaderStageFlags stages = default,
-            uint subgroupSize = default
-        )
+            StructureType? sType = StructureType.PipelineExecutablePropertiesKhr,
+            void* pNext = null,
+            ShaderStageFlags? stages = null,
+            uint? subgroupSize = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Stages = stages;
-            SubgroupSize = subgroupSize;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stages is not null)
+            {
+                Stages = stages.Value;
+            }
+
+            if (subgroupSize is not null)
+            {
+                SubgroupSize = subgroupSize.Value;
+            }
         }
 
 /// <summary></summary>

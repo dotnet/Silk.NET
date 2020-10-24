@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public BufferImageCopy
         (
-            ulong bufferOffset = default,
-            uint bufferRowLength = default,
-            uint bufferImageHeight = default,
-            ImageSubresourceLayers imageSubresource = default,
-            Offset3D imageOffset = default,
-            Extent3D imageExtent = default
-        )
+            ulong? bufferOffset = null,
+            uint? bufferRowLength = null,
+            uint? bufferImageHeight = null,
+            ImageSubresourceLayers? imageSubresource = null,
+            Offset3D? imageOffset = null,
+            Extent3D? imageExtent = null
+        ) : this()
         {
-            BufferOffset = bufferOffset;
-            BufferRowLength = bufferRowLength;
-            BufferImageHeight = bufferImageHeight;
-            ImageSubresource = imageSubresource;
-            ImageOffset = imageOffset;
-            ImageExtent = imageExtent;
+            if (bufferOffset is not null)
+            {
+                BufferOffset = bufferOffset.Value;
+            }
+
+            if (bufferRowLength is not null)
+            {
+                BufferRowLength = bufferRowLength.Value;
+            }
+
+            if (bufferImageHeight is not null)
+            {
+                BufferImageHeight = bufferImageHeight.Value;
+            }
+
+            if (imageSubresource is not null)
+            {
+                ImageSubresource = imageSubresource.Value;
+            }
+
+            if (imageOffset is not null)
+            {
+                ImageOffset = imageOffset.Value;
+            }
+
+            if (imageExtent is not null)
+            {
+                ImageExtent = imageExtent.Value;
+            }
         }
 
 /// <summary></summary>

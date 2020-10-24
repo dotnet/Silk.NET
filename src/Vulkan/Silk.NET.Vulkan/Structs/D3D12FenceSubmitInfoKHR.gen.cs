@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public D3D12FenceSubmitInfoKHR
         (
-            StructureType sType = StructureType.D3D12FenceSubmitInfoKhr,
-            void* pNext = default,
-            uint waitSemaphoreValuesCount = default,
-            ulong* pWaitSemaphoreValues = default,
-            uint signalSemaphoreValuesCount = default,
-            ulong* pSignalSemaphoreValues = default
-        )
+            StructureType? sType = StructureType.D3D12FenceSubmitInfoKhr,
+            void* pNext = null,
+            uint? waitSemaphoreValuesCount = null,
+            ulong* pWaitSemaphoreValues = null,
+            uint? signalSemaphoreValuesCount = null,
+            ulong* pSignalSemaphoreValues = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            WaitSemaphoreValuesCount = waitSemaphoreValuesCount;
-            PWaitSemaphoreValues = pWaitSemaphoreValues;
-            SignalSemaphoreValuesCount = signalSemaphoreValuesCount;
-            PSignalSemaphoreValues = pSignalSemaphoreValues;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (waitSemaphoreValuesCount is not null)
+            {
+                WaitSemaphoreValuesCount = waitSemaphoreValuesCount.Value;
+            }
+
+            if (pWaitSemaphoreValues is not null)
+            {
+                PWaitSemaphoreValues = pWaitSemaphoreValues;
+            }
+
+            if (signalSemaphoreValuesCount is not null)
+            {
+                SignalSemaphoreValuesCount = signalSemaphoreValuesCount.Value;
+            }
+
+            if (pSignalSemaphoreValues is not null)
+            {
+                PSignalSemaphoreValues = pSignalSemaphoreValues;
+            }
         }
 
 /// <summary></summary>

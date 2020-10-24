@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExternalMemoryHostPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceExternalMemoryHostPropertiesExt,
-            void* pNext = default,
-            ulong minImportedHostPointerAlignment = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceExternalMemoryHostPropertiesExt,
+            void* pNext = null,
+            ulong? minImportedHostPointerAlignment = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MinImportedHostPointerAlignment = minImportedHostPointerAlignment;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (minImportedHostPointerAlignment is not null)
+            {
+                MinImportedHostPointerAlignment = minImportedHostPointerAlignment.Value;
+            }
         }
 
 /// <summary></summary>
