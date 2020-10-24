@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ExternalFenceHandleTypeFlags? exportFromImportedHandleTypes = null,
             ExternalFenceHandleTypeFlags? compatibleHandleTypes = null,
             ExternalFenceFeatureFlags? externalFenceFeatures = null
-        )
+        ) : this()
         {
-            fixed (ExternalFenceProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

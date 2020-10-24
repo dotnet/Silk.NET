@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SurfaceCapabilitiesFullScreenExclusiveExt,
             void* pNext = null,
             Bool32? fullScreenExclusiveSupported = null
-        )
+        ) : this()
         {
-            fixed (SurfaceCapabilitiesFullScreenExclusiveEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

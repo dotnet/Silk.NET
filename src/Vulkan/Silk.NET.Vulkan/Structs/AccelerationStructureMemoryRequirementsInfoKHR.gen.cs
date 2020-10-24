@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             AccelerationStructureMemoryRequirementsTypeKHR? type = null,
             AccelerationStructureBuildTypeKHR? buildType = null,
             AccelerationStructureKHR? accelerationStructure = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureMemoryRequirementsInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

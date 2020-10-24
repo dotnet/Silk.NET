@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.EventCreateInfo,
             void* pNext = null,
             uint? flags = null
-        )
+        ) : this()
         {
-            fixed (EventCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

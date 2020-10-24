@@ -25,13 +25,8 @@ namespace Silk.NET.SDL
         (
             byte? binarizationCutoff = null,
             Color? colorKey = null
-        )
+        ) : this()
         {
-            fixed (WindowShapeParams* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (binarizationCutoff is not null)
             {
                 BinarizationCutoff = binarizationCutoff.Value;

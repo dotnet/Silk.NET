@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             Action? action = null,
             ulong? subactionPath = null
-        )
+        ) : this()
         {
-            fixed (ActionStateGetInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PresentFrameTokenGgp,
             void* pNext = null,
             IntPtr? frameToken = null
-        )
+        ) : this()
         {
-            fixed (PresentFrameTokenGGP* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

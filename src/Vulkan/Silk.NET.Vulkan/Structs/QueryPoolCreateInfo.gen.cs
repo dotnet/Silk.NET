@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             QueryType? queryType = null,
             uint? queryCount = null,
             QueryPipelineStatisticFlags? pipelineStatistics = null
-        )
+        ) : this()
         {
-            fixed (QueryPoolCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

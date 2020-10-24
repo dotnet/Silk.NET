@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ShaderModuleValidationCacheCreateInfoExt,
             void* pNext = null,
             ValidationCacheEXT? validationCache = null
-        )
+        ) : this()
         {
-            fixed (ShaderModuleValidationCacheCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

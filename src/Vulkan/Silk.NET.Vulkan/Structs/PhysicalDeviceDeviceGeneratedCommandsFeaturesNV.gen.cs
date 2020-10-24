@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceDeviceGeneratedCommandsFeaturesNV,
             void* pNext = null,
             Bool32? deviceGeneratedCommands = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceDeviceGeneratedCommandsFeaturesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

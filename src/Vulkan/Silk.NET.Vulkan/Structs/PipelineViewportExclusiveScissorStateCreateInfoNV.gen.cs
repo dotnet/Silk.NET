@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? exclusiveScissorCount = null,
             Rect2D* pExclusiveScissors = null
-        )
+        ) : this()
         {
-            fixed (PipelineViewportExclusiveScissorStateCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

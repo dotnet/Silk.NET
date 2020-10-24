@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             DescriptorType? type = null,
             uint? descriptorCount = null
-        )
+        ) : this()
         {
-            fixed (DescriptorPoolSize* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

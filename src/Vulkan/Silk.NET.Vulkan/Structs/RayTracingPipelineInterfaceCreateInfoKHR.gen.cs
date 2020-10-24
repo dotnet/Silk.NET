@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? maxPayloadSize = null,
             uint? maxAttributeSize = null,
             uint? maxCallableSize = null
-        )
+        ) : this()
         {
-            fixed (RayTracingPipelineInterfaceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

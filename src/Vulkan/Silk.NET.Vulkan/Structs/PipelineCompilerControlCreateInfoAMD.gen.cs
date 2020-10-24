@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PipelineCompilerControlCreateInfoAmd,
             void* pNext = null,
             PipelineCompilerControlFlagsAMD? compilerControlFlags = null
-        )
+        ) : this()
         {
-            fixed (PipelineCompilerControlCreateInfoAMD* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

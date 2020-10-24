@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.MultisamplePropertiesExt,
             void* pNext = null,
             Extent2D? maxSampleLocationGridSize = null
-        )
+        ) : this()
         {
-            fixed (MultisamplePropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeGraphicsBindingD3D11Khr,
             void* next = null,
             IntPtr? device = null
-        )
+        ) : this()
         {
-            fixed (GraphicsBindingD3D11KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

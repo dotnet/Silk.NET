@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             Bool32? subsampledCoarseReconstructionEarlyAccess = null,
             uint? maxSubsampledArrayLayers = null,
             uint? maxDescriptorSetSubsampledSamplers = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceFragmentDensityMap2PropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

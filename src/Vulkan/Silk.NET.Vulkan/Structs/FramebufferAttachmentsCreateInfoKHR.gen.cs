@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? attachmentImageInfoCount = null,
             FramebufferAttachmentImageInfo* pAttachmentImageInfos = null
-        )
+        ) : this()
         {
-            fixed (FramebufferAttachmentsCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

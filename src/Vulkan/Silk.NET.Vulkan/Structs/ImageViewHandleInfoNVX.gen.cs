@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ImageView? imageView = null,
             DescriptorType? descriptorType = null,
             Sampler? sampler = null
-        )
+        ) : this()
         {
-            fixed (ImageViewHandleInfoNVX* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

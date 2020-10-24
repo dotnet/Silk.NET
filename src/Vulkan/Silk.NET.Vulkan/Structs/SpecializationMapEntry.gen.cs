@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             uint? constantID = null,
             uint? offset = null,
             UIntPtr? size = null
-        )
+        ) : this()
         {
-            fixed (SpecializationMapEntry* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (constantID is not null)
             {
                 ConstantID = constantID.Value;

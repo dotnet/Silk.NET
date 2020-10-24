@@ -24,13 +24,8 @@ namespace Silk.NET.OpenXR
         (
             ActionSet? actionSet = null,
             ulong? subactionPath = null
-        )
+        ) : this()
         {
-            fixed (ActiveActionSet* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (actionSet is not null)
             {
                 ActionSet = actionSet.Value;

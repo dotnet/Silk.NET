@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? specVersion = null,
             uint? implementationVersion = null
-        )
+        ) : this()
         {
-            fixed (LayerProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (specVersion is not null)
             {
                 SpecVersion = specVersion.Value;

@@ -30,13 +30,8 @@ namespace Silk.NET.OpenXR
             byte** enabledApiLayerNames = null,
             uint? enabledExtensionCount = null,
             byte** enabledExtensionNames = null
-        )
+        ) : this()
         {
-            fixed (InstanceCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

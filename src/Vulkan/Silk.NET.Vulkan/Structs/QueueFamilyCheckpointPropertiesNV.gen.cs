@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.QueueFamilyCheckpointPropertiesNV,
             void* pNext = null,
             PipelineStageFlags? checkpointExecutionStageMask = null
-        )
+        ) : this()
         {
-            fixed (QueueFamilyCheckpointPropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

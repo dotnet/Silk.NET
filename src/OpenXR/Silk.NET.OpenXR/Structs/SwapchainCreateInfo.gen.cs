@@ -33,13 +33,8 @@ namespace Silk.NET.OpenXR
             uint? faceCount = null,
             uint? arraySize = null,
             uint? mipCount = null
-        )
+        ) : this()
         {
-            fixed (SwapchainCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

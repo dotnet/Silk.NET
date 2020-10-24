@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             IntPtr? display = null,
             IntPtr? config = null,
             IntPtr? context = null
-        )
+        ) : this()
         {
-            fixed (GraphicsBindingOpenGLESAndroidKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

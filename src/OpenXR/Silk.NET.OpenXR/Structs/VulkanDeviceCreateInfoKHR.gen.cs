@@ -30,13 +30,8 @@ namespace Silk.NET.OpenXR
             Silk.NET.Core.Native.VkHandle? vulkanPhysicalDevice = null,
             void* vulkanCreateInfo = null,
             void* vulkanAllocator = null
-        )
+        ) : this()
         {
-            fixed (VulkanDeviceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? flags = null,
             DisplayModeParametersKHR? parameters = null
-        )
+        ) : this()
         {
-            fixed (DisplayModeCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

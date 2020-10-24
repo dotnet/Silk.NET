@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ExternalMemoryHandleTypeFlags? handleType = null,
             IntPtr? handle = null,
             IntPtr? name = null
-        )
+        ) : this()
         {
-            fixed (ImportMemoryWin32HandleInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

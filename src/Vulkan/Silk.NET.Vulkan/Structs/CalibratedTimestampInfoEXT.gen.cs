@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.CalibratedTimestampInfoExt,
             void* pNext = null,
             TimeDomainEXT? timeDomain = null
-        )
+        ) : this()
         {
-            fixed (CalibratedTimestampInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             Bool32? occlusionQueryEnable = null,
             QueryControlFlags? queryFlags = null,
             QueryPipelineStatisticFlags? pipelineStatistics = null
-        )
+        ) : this()
         {
-            fixed (CommandBufferInheritanceInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             Bool32? stippledLineEnable = null,
             uint? lineStippleFactor = null,
             ushort? lineStipplePattern = null
-        )
+        ) : this()
         {
-            fixed (PipelineRasterizationLineStateCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

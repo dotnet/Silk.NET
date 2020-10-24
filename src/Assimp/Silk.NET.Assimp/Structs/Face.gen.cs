@@ -24,13 +24,8 @@ namespace Silk.NET.Assimp
         (
             uint? mNumIndices = null,
             uint* mIndices = null
-        )
+        ) : this()
         {
-            fixed (Face* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mNumIndices is not null)
             {
                 MNumIndices = mNumIndices.Value;

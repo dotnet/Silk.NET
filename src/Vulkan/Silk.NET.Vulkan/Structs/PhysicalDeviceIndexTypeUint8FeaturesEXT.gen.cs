@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceIndexTypeUint8FeaturesExt,
             void* pNext = null,
             Bool32? indexTypeUint8 = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceIndexTypeUint8FeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

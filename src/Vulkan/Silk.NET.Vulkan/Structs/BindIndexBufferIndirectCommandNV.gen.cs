@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             ulong? bufferAddress = null,
             uint? size = null,
             IndexType? indexType = null
-        )
+        ) : this()
         {
-            fixed (BindIndexBufferIndirectCommandNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (bufferAddress is not null)
             {
                 BufferAddress = bufferAddress.Value;

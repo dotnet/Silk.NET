@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceLineRasterizationPropertiesExt,
             void* pNext = null,
             uint? lineSubPixelPrecisionBits = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceLineRasterizationPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

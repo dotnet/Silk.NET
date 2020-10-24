@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.TextureLodGatherFormatPropertiesAmd,
             void* pNext = null,
             Bool32? supportsTextureGatherLodbiasAmd = null
-        )
+        ) : this()
         {
-            fixed (TextureLODGatherFormatPropertiesAMD* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

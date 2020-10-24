@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? swapchainCount = null,
             uint* pDeviceMasks = null,
             DeviceGroupPresentModeFlagsKHR? mode = null
-        )
+        ) : this()
         {
-            fixed (DeviceGroupPresentInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

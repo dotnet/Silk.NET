@@ -26,13 +26,8 @@ namespace Silk.NET.Assimp
             float? b = null,
             float? c = null,
             float? d = null
-        )
+        ) : this()
         {
-            fixed (Plane* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (a is not null)
             {
                 A = a.Value;

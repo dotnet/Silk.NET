@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             uint? nodeCapacityInput = null,
             uint? nodeCountOutput = null,
             ControllerModelNodeStateMSFT* nodeStates = null
-        )
+        ) : this()
         {
-            fixed (ControllerModelStateMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

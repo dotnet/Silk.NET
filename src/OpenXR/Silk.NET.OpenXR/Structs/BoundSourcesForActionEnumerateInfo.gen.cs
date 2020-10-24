@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeBoundSourcesForActionEnumerateInfo,
             void* next = null,
             Action? action = null
-        )
+        ) : this()
         {
-            fixed (BoundSourcesForActionEnumerateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

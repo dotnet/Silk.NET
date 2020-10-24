@@ -23,13 +23,8 @@ namespace Silk.NET.SDL
         public AtomicT
         (
             int? value = null
-        )
+        ) : this()
         {
-            fixed (AtomicT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (value is not null)
             {
                 Value = value.Value;

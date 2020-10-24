@@ -29,13 +29,8 @@ namespace Silk.NET.SDL
             byte? state = null,
             byte? padding1 = null,
             byte? padding2 = null
-        )
+        ) : this()
         {
-            fixed (JoyButtonEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

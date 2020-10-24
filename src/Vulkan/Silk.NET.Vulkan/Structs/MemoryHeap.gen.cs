@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             ulong? size = null,
             MemoryHeapFlags? flags = null
-        )
+        ) : this()
         {
-            fixed (MemoryHeap* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (size is not null)
             {
                 Size = size.Value;

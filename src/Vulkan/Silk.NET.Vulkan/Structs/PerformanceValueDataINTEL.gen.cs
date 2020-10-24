@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             float? valueFloat = null,
             Bool32? valueBool = null,
             byte* valueString = null
-        )
+        ) : this()
         {
-            fixed (PerformanceValueDataINTEL* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (value32 is not null)
             {
                 Value32 = value32.Value;

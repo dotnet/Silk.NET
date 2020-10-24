@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             Session? session = null,
             SessionState? state = null,
             long? time = null
-        )
+        ) : this()
         {
-            fixed (EventDataSessionStateChanged* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

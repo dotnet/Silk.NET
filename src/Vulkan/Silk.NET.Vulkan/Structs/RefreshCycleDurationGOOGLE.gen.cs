@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public RefreshCycleDurationGOOGLE
         (
             ulong? refreshDuration = null
-        )
+        ) : this()
         {
-            fixed (RefreshCycleDurationGOOGLE* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (refreshDuration is not null)
             {
                 RefreshDuration = refreshDuration.Value;

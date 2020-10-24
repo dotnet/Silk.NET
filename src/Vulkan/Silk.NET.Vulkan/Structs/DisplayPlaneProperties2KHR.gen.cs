@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DisplayPlaneProperties2Khr,
             void* pNext = null,
             DisplayPlanePropertiesKHR? displayPlaneProperties = null
-        )
+        ) : this()
         {
-            fixed (DisplayPlaneProperties2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

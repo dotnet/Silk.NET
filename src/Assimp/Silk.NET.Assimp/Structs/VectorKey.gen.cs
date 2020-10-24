@@ -24,13 +24,8 @@ namespace Silk.NET.Assimp
         (
             double? mTime = null,
             System.Numerics.Vector3? mValue = null
-        )
+        ) : this()
         {
-            fixed (VectorKey* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mTime is not null)
             {
                 MTime = mTime.Value;

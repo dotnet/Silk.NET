@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeSwapchainImageD3D12Khr,
             void* next = null,
             IntPtr? texture = null
-        )
+        ) : this()
         {
-            fixed (SwapchainImageD3D12KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

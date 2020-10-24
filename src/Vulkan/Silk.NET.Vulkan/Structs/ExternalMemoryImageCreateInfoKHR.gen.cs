@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ExternalMemoryImageCreateInfo,
             void* pNext = null,
             ExternalMemoryHandleTypeFlags? handleTypes = null
-        )
+        ) : this()
         {
-            fixed (ExternalMemoryImageCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

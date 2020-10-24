@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             void* applicationVM = null,
             void* applicationActivity = null
-        )
+        ) : this()
         {
-            fixed (InstanceCreateInfoAndroidKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

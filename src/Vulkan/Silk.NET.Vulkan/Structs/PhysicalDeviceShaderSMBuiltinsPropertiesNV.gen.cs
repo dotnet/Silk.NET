@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? shaderSmcount = null,
             uint? shaderWarpsPerSM = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceShaderSMBuiltinsPropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

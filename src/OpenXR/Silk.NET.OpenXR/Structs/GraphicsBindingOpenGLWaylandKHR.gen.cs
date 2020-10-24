@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeGraphicsBindingOpenglWaylandKhr,
             void* next = null,
             IntPtr* display = null
-        )
+        ) : this()
         {
-            fixed (GraphicsBindingOpenGLWaylandKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

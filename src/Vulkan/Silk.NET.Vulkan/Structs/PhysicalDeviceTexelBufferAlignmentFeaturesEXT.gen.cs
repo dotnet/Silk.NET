@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceTexelBufferAlignmentFeaturesExt,
             void* pNext = null,
             Bool32? texelBufferAlignment = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceTexelBufferAlignmentFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

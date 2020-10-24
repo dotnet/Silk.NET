@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? maxMultiviewViewCount = null,
             uint? maxMultiviewInstanceIndex = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceMultiviewProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

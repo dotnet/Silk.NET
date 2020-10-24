@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             uint? queueFamilyIndex = null,
             uint? queueCount = null,
             float* pQueuePriorities = null
-        )
+        ) : this()
         {
-            fixed (DeviceQueueCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

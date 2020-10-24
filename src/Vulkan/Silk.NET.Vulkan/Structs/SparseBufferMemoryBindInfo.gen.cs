@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             Buffer? buffer = null,
             uint? bindCount = null,
             SparseMemoryBind* pBinds = null
-        )
+        ) : this()
         {
-            fixed (SparseBufferMemoryBindInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (buffer is not null)
             {
                 Buffer = buffer.Value;

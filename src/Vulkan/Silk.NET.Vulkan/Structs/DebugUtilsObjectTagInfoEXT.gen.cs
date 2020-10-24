@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             ulong? tagName = null,
             UIntPtr? tagSize = null,
             void* pTag = null
-        )
+        ) : this()
         {
-            fixed (DebugUtilsObjectTagInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

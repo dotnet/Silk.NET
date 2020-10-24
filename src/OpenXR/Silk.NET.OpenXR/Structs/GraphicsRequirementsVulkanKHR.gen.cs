@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             ulong? minApiVersionSupported = null,
             ulong? maxApiVersionSupported = null
-        )
+        ) : this()
         {
-            fixed (GraphicsRequirementsVulkanKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             DisplayModeKHR? displayMode = null,
             DisplayModeParametersKHR? parameters = null
-        )
+        ) : this()
         {
-            fixed (DisplayModePropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (displayMode is not null)
             {
                 DisplayMode = displayMode.Value;

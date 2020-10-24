@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             DeviceOrHostAddressConstKHR? data = null,
             ulong? stride = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureGeometryAabbsDataKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

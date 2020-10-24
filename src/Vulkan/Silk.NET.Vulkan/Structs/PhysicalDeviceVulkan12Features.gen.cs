@@ -71,13 +71,8 @@ namespace Silk.NET.Vulkan
             Bool32? shaderOutputViewportIndex = null,
             Bool32? shaderOutputLayer = null,
             Bool32? subgroupBroadcastDynamicId = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceVulkan12Features* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

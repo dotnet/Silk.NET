@@ -29,13 +29,8 @@ namespace Silk.NET.OpenXR
             long? changeTime = null,
             uint? poseValid = null,
             Posef? poseInPreviousSpace = null
-        )
+        ) : this()
         {
-            fixed (EventDataReferenceSpaceChangePending* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

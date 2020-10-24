@@ -26,13 +26,8 @@ namespace Silk.NET.OpenCL
             uint? subpixelMode = null,
             uint? sadAdjustMode = null,
             uint? searchPathType = null
-        )
+        ) : this()
         {
-            fixed (MotionEstimationDescIntel* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mbBlockType is not null)
             {
                 MbBlockType = mbBlockType.Value;

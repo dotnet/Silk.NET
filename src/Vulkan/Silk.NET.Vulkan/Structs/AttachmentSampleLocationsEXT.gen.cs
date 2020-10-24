@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? attachmentIndex = null,
             SampleLocationsInfoEXT? sampleLocationsInfo = null
-        )
+        ) : this()
         {
-            fixed (AttachmentSampleLocationsEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (attachmentIndex is not null)
             {
                 AttachmentIndex = attachmentIndex.Value;

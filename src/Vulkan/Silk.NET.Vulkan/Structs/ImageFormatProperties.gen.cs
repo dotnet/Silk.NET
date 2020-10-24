@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? maxArrayLayers = null,
             SampleCountFlags? sampleCounts = null,
             ulong? maxResourceSize = null
-        )
+        ) : this()
         {
-            fixed (ImageFormatProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (maxExtent is not null)
             {
                 MaxExtent = maxExtent.Value;

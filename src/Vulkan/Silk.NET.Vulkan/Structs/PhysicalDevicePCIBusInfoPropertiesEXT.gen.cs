@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             uint? pciBus = null,
             uint? pciDevice = null,
             uint? pciFunction = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevicePCIBusInfoPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -34,13 +34,8 @@ namespace Silk.NET.Vulkan
             SparseImageMemoryBindInfo* pImageBinds = null,
             uint? signalSemaphoreCount = null,
             Semaphore* pSignalSemaphores = null
-        )
+        ) : this()
         {
-            fixed (BindSparseInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

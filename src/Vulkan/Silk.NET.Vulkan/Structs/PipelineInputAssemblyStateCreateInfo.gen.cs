@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? flags = null,
             PrimitiveTopology? topology = null,
             Bool32? primitiveRestartEnable = null
-        )
+        ) : this()
         {
-            fixed (PipelineInputAssemblyStateCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DebugMarkerMarkerInfoExt,
             void* pNext = null,
             byte* pMarkerName = null
-        )
+        ) : this()
         {
-            fixed (DebugMarkerMarkerInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

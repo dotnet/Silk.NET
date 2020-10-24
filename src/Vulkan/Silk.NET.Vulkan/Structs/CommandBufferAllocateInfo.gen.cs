@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             CommandPool? commandPool = null,
             CommandBufferLevel? level = null,
             uint? commandBufferCount = null
-        )
+        ) : this()
         {
-            fixed (CommandBufferAllocateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

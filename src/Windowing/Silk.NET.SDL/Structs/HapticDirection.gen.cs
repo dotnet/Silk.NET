@@ -23,13 +23,8 @@ namespace Silk.NET.SDL
         public HapticDirection
         (
             byte? type = null
-        )
+        ) : this()
         {
-            fixed (HapticDirection* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

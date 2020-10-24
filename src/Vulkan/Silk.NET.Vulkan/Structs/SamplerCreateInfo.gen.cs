@@ -40,13 +40,8 @@ namespace Silk.NET.Vulkan
             float? maxLod = null,
             BorderColor? borderColor = null,
             Bool32? unnormalizedCoordinates = null
-        )
+        ) : this()
         {
-            fixed (SamplerCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

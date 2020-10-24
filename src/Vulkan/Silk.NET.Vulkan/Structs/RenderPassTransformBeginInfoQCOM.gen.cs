@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.RenderPassTransformBeginInfoQCom,
             void* pNext = null,
             SurfaceTransformFlagsKHR? transform = null
-        )
+        ) : this()
         {
-            fixed (RenderPassTransformBeginInfoQCOM* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

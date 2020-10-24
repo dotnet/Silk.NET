@@ -30,13 +30,8 @@ namespace Silk.NET.OpenXR
             uint? maxImageRectHeight = null,
             uint? recommendedSwapchainSampleCount = null,
             uint? maxSwapchainSampleCount = null
-        )
+        ) : this()
         {
-            fixed (ViewConfigurationView* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

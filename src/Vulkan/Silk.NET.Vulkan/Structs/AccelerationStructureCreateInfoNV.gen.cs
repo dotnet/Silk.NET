@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             ulong? compactedSize = null,
             AccelerationStructureInfoNV? info = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

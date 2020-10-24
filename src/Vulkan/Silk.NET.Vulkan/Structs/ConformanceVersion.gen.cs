@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             byte? minor = null,
             byte? subminor = null,
             byte? patch = null
-        )
+        ) : this()
         {
-            fixed (ConformanceVersion* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (major is not null)
             {
                 Major = major.Value;

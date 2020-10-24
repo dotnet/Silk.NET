@@ -23,13 +23,8 @@ namespace Silk.NET.Assimp
         public AssimpString
         (
             uint? length = null
-        )
+        ) : this()
         {
-            fixed (AssimpString* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (length is not null)
             {
                 Length = length.Value;

@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             PhysicalDeviceType? deviceType = null,
             PhysicalDeviceLimits? limits = null,
             PhysicalDeviceSparseProperties? sparseProperties = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (apiVersion is not null)
             {
                 ApiVersion = apiVersion.Value;

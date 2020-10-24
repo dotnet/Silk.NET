@@ -25,13 +25,8 @@ namespace Silk.NET.OpenCL
             MemExtHostPtr? extHostPtr = null,
             int? ionFiledesc = null,
             void* ionHostptr = null
-        )
+        ) : this()
         {
-            fixed (MemIonHostPtr* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (extHostPtr is not null)
             {
                 ExtHostPtr = extHostPtr.Value;

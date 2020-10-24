@@ -36,13 +36,8 @@ namespace Silk.NET.Vulkan
             Bool32? protectedNoFault = null,
             uint? maxPerSetDescriptors = null,
             ulong? maxMemoryAllocationSize = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceVulkan11Properties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

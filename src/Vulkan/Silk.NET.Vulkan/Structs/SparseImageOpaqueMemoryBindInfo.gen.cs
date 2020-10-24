@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             Image? image = null,
             uint? bindCount = null,
             SparseMemoryBind* pBinds = null
-        )
+        ) : this()
         {
-            fixed (SparseImageOpaqueMemoryBindInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (image is not null)
             {
                 Image = image.Value;

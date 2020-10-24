@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             Buffer? buffer = null,
             ulong? offset = null,
             ulong? range = null
-        )
+        ) : this()
         {
-            fixed (DescriptorBufferInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (buffer is not null)
             {
                 Buffer = buffer.Value;

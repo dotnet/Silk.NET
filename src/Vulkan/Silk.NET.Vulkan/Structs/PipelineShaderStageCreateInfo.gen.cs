@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             ShaderModule? module = null,
             byte* pName = null,
             SpecializationInfo* pSpecializationInfo = null
-        )
+        ) : this()
         {
-            fixed (PipelineShaderStageCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

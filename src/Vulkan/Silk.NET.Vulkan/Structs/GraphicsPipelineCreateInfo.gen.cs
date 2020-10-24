@@ -41,13 +41,8 @@ namespace Silk.NET.Vulkan
             uint? subpass = null,
             Pipeline? basePipelineHandle = null,
             int? basePipelineIndex = null
-        )
+        ) : this()
         {
-            fixed (GraphicsPipelineCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

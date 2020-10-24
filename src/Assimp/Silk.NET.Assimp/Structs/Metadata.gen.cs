@@ -25,13 +25,8 @@ namespace Silk.NET.Assimp
             uint? mNumProperties = null,
             AssimpString* mKeys = null,
             MetadataEntry* mValues = null
-        )
+        ) : this()
         {
-            fixed (Metadata* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mNumProperties is not null)
             {
                 MNumProperties = mNumProperties.Value;

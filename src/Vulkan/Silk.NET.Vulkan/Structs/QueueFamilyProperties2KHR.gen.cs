@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.QueueFamilyProperties2,
             void* pNext = null,
             QueueFamilyProperties? queueFamilyProperties = null
-        )
+        ) : this()
         {
-            fixed (QueueFamilyProperties2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

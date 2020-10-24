@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeInteractionProfileState,
             void* next = null,
             ulong? interactionProfile = null
-        )
+        ) : this()
         {
-            fixed (InteractionProfileState* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

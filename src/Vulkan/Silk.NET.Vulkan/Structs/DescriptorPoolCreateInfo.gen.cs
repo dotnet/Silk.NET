@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             uint? maxSets = null,
             uint? poolSizeCount = null,
             DescriptorPoolSize* pPoolSizes = null
-        )
+        ) : this()
         {
-            fixed (DescriptorPoolCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -32,13 +32,8 @@ namespace Silk.NET.SDL
             int? lenMult = null,
             double? lenRatio = null,
             int? filterIndex = null
-        )
+        ) : this()
         {
-            fixed (AudioCVT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (needed is not null)
             {
                 Needed = needed.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             ExternalMemoryFeatureFlagsNV? externalMemoryFeatures = null,
             ExternalMemoryHandleTypeFlagsNV? exportFromImportedHandleTypes = null,
             ExternalMemoryHandleTypeFlagsNV? compatibleHandleTypes = null
-        )
+        ) : this()
         {
-            fixed (ExternalImageFormatPropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (imageFormatProperties is not null)
             {
                 ImageFormatProperties = imageFormatProperties.Value;

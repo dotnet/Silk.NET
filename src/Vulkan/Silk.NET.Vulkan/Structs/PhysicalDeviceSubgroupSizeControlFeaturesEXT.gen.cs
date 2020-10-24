@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? subgroupSizeControl = null,
             Bool32? computeFullSubgroups = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSubgroupSizeControlFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

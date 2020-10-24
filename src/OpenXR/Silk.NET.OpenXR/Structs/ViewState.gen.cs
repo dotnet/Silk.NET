@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeViewState,
             void* next = null,
             ViewStateFlags? viewStateFlags = null
-        )
+        ) : this()
         {
-            fixed (ViewState* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

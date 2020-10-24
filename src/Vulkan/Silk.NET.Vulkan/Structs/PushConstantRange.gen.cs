@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             ShaderStageFlags? stageFlags = null,
             uint? offset = null,
             uint? size = null
-        )
+        ) : this()
         {
-            fixed (PushConstantRange* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (stageFlags is not null)
             {
                 StageFlags = stageFlags.Value;

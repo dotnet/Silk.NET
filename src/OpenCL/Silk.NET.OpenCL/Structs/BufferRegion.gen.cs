@@ -24,13 +24,8 @@ namespace Silk.NET.OpenCL
         (
             UIntPtr? origin = null,
             UIntPtr? size = null
-        )
+        ) : this()
         {
-            fixed (BufferRegion* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (origin is not null)
             {
                 Origin = origin.Value;

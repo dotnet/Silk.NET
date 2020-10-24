@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             Offset2D? maxDstPosition = null,
             Extent2D? minDstExtent = null,
             Extent2D? maxDstExtent = null
-        )
+        ) : this()
         {
-            fixed (DisplayPlaneCapabilitiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (supportedAlpha is not null)
             {
                 SupportedAlpha = supportedAlpha.Value;

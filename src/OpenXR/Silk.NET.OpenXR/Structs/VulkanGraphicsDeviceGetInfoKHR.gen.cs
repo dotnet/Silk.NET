@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             ulong? systemId = null,
             Silk.NET.Core.Native.VkHandle? vulkanInstance = null
-        )
+        ) : this()
         {
-            fixed (VulkanGraphicsDeviceGetInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

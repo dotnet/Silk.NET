@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             ulong? sourcePath = null,
             InputSourceLocalizedNameFlags? whichComponents = null
-        )
+        ) : this()
         {
-            fixed (InputSourceLocalizedNameGetInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

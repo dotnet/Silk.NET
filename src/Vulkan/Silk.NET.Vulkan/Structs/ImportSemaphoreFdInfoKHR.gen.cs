@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             SemaphoreImportFlags? flags = null,
             ExternalSemaphoreHandleTypeFlags? handleType = null,
             int? fd = null
-        )
+        ) : this()
         {
-            fixed (ImportSemaphoreFdInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

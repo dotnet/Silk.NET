@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             long? duration = null,
             float? frequency = null,
             float? amplitude = null
-        )
+        ) : this()
         {
-            fixed (HapticVibration* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

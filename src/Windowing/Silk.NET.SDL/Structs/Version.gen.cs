@@ -25,13 +25,8 @@ namespace Silk.NET.SDL
             byte? major = null,
             byte? minor = null,
             byte? patch = null
-        )
+        ) : this()
         {
-            fixed (Version* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (major is not null)
             {
                 Major = major.Value;

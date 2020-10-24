@@ -34,13 +34,8 @@ namespace Silk.NET.SDL
             Rect? clipRect = null,
             BlitMap* map = null,
             int? refcount = null
-        )
+        ) : this()
         {
-            fixed (Surface* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (flags is not null)
             {
                 Flags = flags.Value;

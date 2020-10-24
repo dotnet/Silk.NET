@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
         (
             ClearColorValue? color = null,
             ClearDepthStencilValue? depthStencil = null
-        )
+        ) : this()
         {
-            fixed (ClearValue* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (color is not null)
             {
                 Color = color.Value;

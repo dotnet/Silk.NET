@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.BindImagePlaneMemoryInfo,
             void* pNext = null,
             ImageAspectFlags? planeAspect = null
-        )
+        ) : this()
         {
-            fixed (BindImagePlaneMemoryInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

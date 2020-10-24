@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? width = null,
             uint? height = null
-        )
+        ) : this()
         {
-            fixed (Extent2D* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (width is not null)
             {
                 Width = width.Value;

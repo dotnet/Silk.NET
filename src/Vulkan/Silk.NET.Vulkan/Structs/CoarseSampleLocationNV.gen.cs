@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             uint? pixelX = null,
             uint? pixelY = null,
             uint? sample = null
-        )
+        ) : this()
         {
-            fixed (CoarseSampleLocationNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (pixelX is not null)
             {
                 PixelX = pixelX.Value;

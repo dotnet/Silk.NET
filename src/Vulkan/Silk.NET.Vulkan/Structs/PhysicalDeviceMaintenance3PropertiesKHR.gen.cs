@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? maxPerSetDescriptors = null,
             ulong? maxMemoryAllocationSize = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceMaintenance3PropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

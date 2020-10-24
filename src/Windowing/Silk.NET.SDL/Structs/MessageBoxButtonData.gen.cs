@@ -25,13 +25,8 @@ namespace Silk.NET.SDL
             uint? flags = null,
             int? buttonid = null,
             byte* text = null
-        )
+        ) : this()
         {
-            fixed (MessageBoxButtonData* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (flags is not null)
             {
                 Flags = flags.Value;

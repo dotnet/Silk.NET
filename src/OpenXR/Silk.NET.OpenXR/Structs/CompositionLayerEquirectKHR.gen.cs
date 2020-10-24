@@ -32,13 +32,8 @@ namespace Silk.NET.OpenXR
             float? radius = null,
             Vector2f? scale = null,
             Vector2f? bias = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerEquirectKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

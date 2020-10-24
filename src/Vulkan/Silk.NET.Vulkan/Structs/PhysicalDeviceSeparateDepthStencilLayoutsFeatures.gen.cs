@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceSeparateDepthStencilLayoutsFeatures,
             void* pNext = null,
             Bool32? separateDepthStencilLayouts = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSeparateDepthStencilLayoutsFeatures* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

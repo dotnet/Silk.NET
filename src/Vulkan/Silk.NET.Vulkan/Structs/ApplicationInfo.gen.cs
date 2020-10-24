@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             byte* pEngineName = null,
             uint? engineVersion = null,
             uint? apiVersion = null
-        )
+        ) : this()
         {
-            fixed (ApplicationInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             SurfaceTransformFlagsKHR? supportedTransforms = null,
             Bool32? planeReorderPossible = null,
             Bool32? persistentContent = null
-        )
+        ) : this()
         {
-            fixed (DisplayPropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (display is not null)
             {
                 Display = display.Value;

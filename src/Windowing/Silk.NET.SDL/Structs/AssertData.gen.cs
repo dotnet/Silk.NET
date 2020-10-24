@@ -29,13 +29,8 @@ namespace Silk.NET.SDL
             int? linenum = null,
             byte* function = null,
             AssertData* next = null
-        )
+        ) : this()
         {
-            fixed (AssertData* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (alwaysIgnore is not null)
             {
                 AlwaysIgnore = alwaysIgnore.Value;

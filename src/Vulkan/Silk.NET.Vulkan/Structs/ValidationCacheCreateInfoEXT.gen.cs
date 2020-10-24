@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? flags = null,
             UIntPtr? initialDataSize = null,
             void* pInitialData = null
-        )
+        ) : this()
         {
-            fixed (ValidationCacheCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

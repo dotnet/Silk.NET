@@ -28,13 +28,8 @@ namespace Silk.NET.Assimp
             uint? mDataLength = null,
             PropertyTypeInfo? mType = null,
             byte* mData = null
-        )
+        ) : this()
         {
-            fixed (MaterialProperty* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mKey is not null)
             {
                 MKey = mKey.Value;

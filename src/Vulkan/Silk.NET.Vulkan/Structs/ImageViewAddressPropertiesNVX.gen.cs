@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             ulong? deviceAddress = null,
             ulong? size = null
-        )
+        ) : this()
         {
-            fixed (ImageViewAddressPropertiesNVX* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

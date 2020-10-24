@@ -23,13 +23,8 @@ namespace Silk.NET.OpenXR
         public Space
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (Space* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

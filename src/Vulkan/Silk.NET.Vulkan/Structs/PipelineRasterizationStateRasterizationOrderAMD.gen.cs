@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PipelineRasterizationStateRasterizationOrderAmd,
             void* pNext = null,
             RasterizationOrderAMD? rasterizationOrder = null
-        )
+        ) : this()
         {
-            fixed (PipelineRasterizationStateRasterizationOrderAMD* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

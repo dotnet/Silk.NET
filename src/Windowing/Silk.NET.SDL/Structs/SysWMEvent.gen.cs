@@ -25,13 +25,8 @@ namespace Silk.NET.SDL
             uint? type = null,
             uint? timestamp = null,
             SysWMmsg* msg = null
-        )
+        ) : this()
         {
-            fixed (SysWMEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

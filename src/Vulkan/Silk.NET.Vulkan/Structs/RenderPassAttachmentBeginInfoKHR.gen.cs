@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? attachmentCount = null,
             ImageView* pAttachments = null
-        )
+        ) : this()
         {
-            fixed (RenderPassAttachmentBeginInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

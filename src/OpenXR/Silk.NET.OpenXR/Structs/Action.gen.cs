@@ -23,13 +23,8 @@ namespace Silk.NET.OpenXR
         public Action
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (Action* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

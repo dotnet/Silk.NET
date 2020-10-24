@@ -30,13 +30,8 @@ namespace Silk.NET.OpenXR
             Swapchain? swapchain = null,
             uint? imageArrayIndex = null,
             Quaternionf? orientation = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerCubeKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

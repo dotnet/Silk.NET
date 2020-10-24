@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             float? minLuminance = null,
             float? maxContentLightLevel = null,
             float? maxFrameAverageLightLevel = null
-        )
+        ) : this()
         {
-            fixed (HdrMetadataEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV,
             void* pNext = null,
             Bool32? dedicatedAllocationImageAliasing = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

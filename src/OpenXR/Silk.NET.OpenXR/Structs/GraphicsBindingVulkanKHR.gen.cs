@@ -29,13 +29,8 @@ namespace Silk.NET.OpenXR
             Silk.NET.Core.Native.VkHandle? device = null,
             uint? queueFamilyIndex = null,
             uint? queueIndex = null
-        )
+        ) : this()
         {
-            fixed (GraphicsBindingVulkanKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

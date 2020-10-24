@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             ClearColorValue? customBorderColor = null,
             Format? format = null
-        )
+        ) : this()
         {
-            fixed (SamplerCustomBorderColorCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

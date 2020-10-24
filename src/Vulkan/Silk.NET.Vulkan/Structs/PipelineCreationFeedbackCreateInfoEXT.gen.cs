@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             PipelineCreationFeedbackEXT* pPipelineCreationFeedback = null,
             uint? pipelineStageCreationFeedbackCount = null,
             PipelineCreationFeedbackEXT* pPipelineStageCreationFeedbacks = null
-        )
+        ) : this()
         {
-            fixed (PipelineCreationFeedbackCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

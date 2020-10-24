@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             ImageSubresourceLayers? imageSubresource = null,
             Offset3D? imageOffset = null,
             Extent3D? imageExtent = null
-        )
+        ) : this()
         {
-            fixed (BufferImageCopy* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (bufferOffset is not null)
             {
                 BufferOffset = bufferOffset.Value;

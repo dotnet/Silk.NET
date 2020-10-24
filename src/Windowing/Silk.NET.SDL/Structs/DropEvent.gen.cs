@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             uint? timestamp = null,
             byte* file = null,
             uint? windowID = null
-        )
+        ) : this()
         {
-            fixed (DropEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

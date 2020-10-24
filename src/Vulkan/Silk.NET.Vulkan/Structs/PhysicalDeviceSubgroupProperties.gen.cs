@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             ShaderStageFlags? supportedStages = null,
             SubgroupFeatureFlags? supportedOperations = null,
             Bool32? quadOperationsInAllStages = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSubgroupProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

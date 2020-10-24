@@ -30,13 +30,8 @@ namespace Silk.NET.Assimp
             uint? cameras = null,
             uint? lights = null,
             uint? total = null
-        )
+        ) : this()
         {
-            fixed (MemoryInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (textures is not null)
             {
                 Textures = textures.Value;

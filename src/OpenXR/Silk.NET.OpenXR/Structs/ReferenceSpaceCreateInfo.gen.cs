@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             ReferenceSpaceType? referenceSpaceType = null,
             Posef? poseInReferenceSpace = null
-        )
+        ) : this()
         {
-            fixed (ReferenceSpaceCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

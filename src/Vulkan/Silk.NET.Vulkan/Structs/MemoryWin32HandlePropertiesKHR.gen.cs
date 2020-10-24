@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.MemoryWin32HandlePropertiesKhr,
             void* pNext = null,
             uint? memoryTypeBits = null
-        )
+        ) : this()
         {
-            fixed (MemoryWin32HandlePropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

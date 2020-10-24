@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeInstanceProperties,
             void* next = null,
             ulong? runtimeVersion = null
-        )
+        ) : this()
         {
-            fixed (InstanceProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

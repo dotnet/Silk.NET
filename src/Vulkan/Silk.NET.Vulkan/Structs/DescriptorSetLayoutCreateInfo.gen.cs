@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             DescriptorSetLayoutCreateFlags? flags = null,
             uint? bindingCount = null,
             DescriptorSetLayoutBinding* pBindings = null
-        )
+        ) : this()
         {
-            fixed (DescriptorSetLayoutCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

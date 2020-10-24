@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             uint* pSampleMask = null,
             Bool32? alphaToCoverageEnable = null,
             Bool32? alphaToOneEnable = null
-        )
+        ) : this()
         {
-            fixed (PipelineMultisampleStateCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

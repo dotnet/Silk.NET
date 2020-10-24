@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DisplayPowerInfoExt,
             void* pNext = null,
             DisplayPowerStateEXT? powerState = null
-        )
+        ) : this()
         {
-            fixed (DisplayPowerInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

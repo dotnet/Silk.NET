@@ -25,13 +25,8 @@ namespace Silk.NET.SDL
             uint? type = null,
             uint? timestamp = null,
             int? which = null
-        )
+        ) : this()
         {
-            fixed (SensorEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ObjectType? objectType = null,
             ulong? objectHandle = null,
             byte* pObjectName = null
-        )
+        ) : this()
         {
-            fixed (DebugUtilsObjectNameInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

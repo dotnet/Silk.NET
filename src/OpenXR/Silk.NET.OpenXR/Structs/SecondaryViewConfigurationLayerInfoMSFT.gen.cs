@@ -28,13 +28,8 @@ namespace Silk.NET.OpenXR
             EnvironmentBlendMode? environmentBlendMode = null,
             uint? layerCount = null,
             CompositionLayerBaseHeader** layers = null
-        )
+        ) : this()
         {
-            fixed (SecondaryViewConfigurationLayerInfoMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

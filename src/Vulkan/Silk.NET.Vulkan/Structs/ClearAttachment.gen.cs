@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             ImageAspectFlags? aspectMask = null,
             uint? colorAttachment = null,
             ClearValue? clearValue = null
-        )
+        ) : this()
         {
-            fixed (ClearAttachment* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (aspectMask is not null)
             {
                 AspectMask = aspectMask.Value;

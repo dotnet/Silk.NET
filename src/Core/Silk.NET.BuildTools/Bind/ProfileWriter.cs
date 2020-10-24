@@ -146,19 +146,24 @@ namespace Silk.NET.BuildTools.Bind
                 }
 
                 sw.WriteLine();
-                sw.WriteLine("        )");
+                sw.WriteLine("        ) : this()");
                 sw.WriteLine("        {");
-                sw.WriteLine($"            fixed ({@struct.Name}* @this = &this)");
-                sw.WriteLine("            {");
-                sw.WriteLine("                // all fields automatically initialized here");
-                sw.WriteLine("            }");
+                first = true;
                 foreach (var field in @struct.Fields)
                 {
                     if (!(field.Count is null))
                         continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
                     argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
-                    sw.WriteLine();
+                    if (!first)
+                    {
+                        sw.WriteLine();
+                    }
+                    else
+                    {
+                        first = false;
+                    }
+
                     sw.WriteLine($"            if ({argName} is not null)");
                     sw.WriteLine("            {");
 

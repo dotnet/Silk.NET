@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             ViewConfigurationType? viewConfigurationType = null,
             long? displayTime = null,
             Space? space = null
-        )
+        ) : this()
         {
-            fixed (ViewLocateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

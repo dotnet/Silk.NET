@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             DisplayKHR? currentDisplay = null,
             uint? currentStackIndex = null
-        )
+        ) : this()
         {
-            fixed (DisplayPlanePropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (currentDisplay is not null)
             {
                 CurrentDisplay = currentDisplay.Value;

@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             uint? compareMask = null,
             uint? writeMask = null,
             uint? reference = null
-        )
+        ) : this()
         {
-            fixed (StencilOpState* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (failOp is not null)
             {
                 FailOp = failOp.Value;

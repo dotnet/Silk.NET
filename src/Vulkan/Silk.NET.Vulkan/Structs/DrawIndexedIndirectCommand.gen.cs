@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? firstIndex = null,
             int? vertexOffset = null,
             uint? firstInstance = null
-        )
+        ) : this()
         {
-            fixed (DrawIndexedIndirectCommand* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (indexCount is not null)
             {
                 IndexCount = indexCount.Value;

@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             AttachmentSampleLocationsEXT* pAttachmentInitialSampleLocations = null,
             uint? postSubpassSampleLocationsCount = null,
             SubpassSampleLocationsEXT* pPostSubpassSampleLocations = null
-        )
+        ) : this()
         {
-            fixed (RenderPassSampleLocationsBeginInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

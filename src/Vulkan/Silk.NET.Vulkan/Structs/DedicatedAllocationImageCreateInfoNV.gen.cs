@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DedicatedAllocationImageCreateInfoNV,
             void* pNext = null,
             Bool32? dedicatedAllocation = null
-        )
+        ) : this()
         {
-            fixed (DedicatedAllocationImageCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

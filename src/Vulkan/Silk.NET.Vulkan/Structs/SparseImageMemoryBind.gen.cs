@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             DeviceMemory? memory = null,
             ulong? memoryOffset = null,
             SparseMemoryBindFlags? flags = null
-        )
+        ) : this()
         {
-            fixed (SparseImageMemoryBind* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (subresource is not null)
             {
                 Subresource = subresource.Value;

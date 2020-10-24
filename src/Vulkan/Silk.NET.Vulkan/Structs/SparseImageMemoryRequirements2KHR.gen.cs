@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SparseImageMemoryRequirements2,
             void* pNext = null,
             SparseImageMemoryRequirements? memoryRequirements = null
-        )
+        ) : this()
         {
-            fixed (SparseImageMemoryRequirements2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

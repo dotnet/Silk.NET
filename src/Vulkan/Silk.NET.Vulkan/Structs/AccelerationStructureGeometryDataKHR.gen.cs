@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             AccelerationStructureGeometryTrianglesDataKHR? triangles = null,
             AccelerationStructureGeometryAabbsDataKHR? aabbs = null,
             AccelerationStructureGeometryInstancesDataKHR? instances = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureGeometryDataKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (triangles is not null)
             {
                 Triangles = triangles.Value;

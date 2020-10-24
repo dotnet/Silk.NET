@@ -36,13 +36,8 @@ namespace Silk.NET.Vulkan
             Bool32? protectedMemory = null,
             Bool32? samplerYcbcrConversion = null,
             Bool32? shaderDrawParameters = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceVulkan11Features* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             PipelineCreationFeedbackFlagsEXT? flags = null,
             ulong? duration = null
-        )
+        ) : this()
         {
-            fixed (PipelineCreationFeedbackEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (flags is not null)
             {
                 Flags = flags.Value;

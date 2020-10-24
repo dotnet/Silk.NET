@@ -30,13 +30,8 @@ namespace Silk.NET.OpenXR
             SwapchainSubImage? subImage = null,
             Posef? pose = null,
             Extent2Df? size = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerQuad* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

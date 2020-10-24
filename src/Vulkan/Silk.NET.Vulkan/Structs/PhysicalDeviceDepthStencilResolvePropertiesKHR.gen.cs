@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             ResolveModeFlags? supportedStencilResolveModes = null,
             Bool32? independentResolveNone = null,
             Bool32? independentResolve = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceDepthStencilResolvePropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

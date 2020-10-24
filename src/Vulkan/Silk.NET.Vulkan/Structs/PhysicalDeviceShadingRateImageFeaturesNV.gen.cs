@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? shadingRateImage = null,
             Bool32? shadingRateCoarseSampleOrder = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceShadingRateImageFeaturesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -24,13 +24,8 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeSwapchainImageAcquireInfo,
             void* next = null
-        )
+        ) : this()
         {
-            fixed (SwapchainImageAcquireInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

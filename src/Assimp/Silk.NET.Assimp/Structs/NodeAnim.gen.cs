@@ -31,13 +31,8 @@ namespace Silk.NET.Assimp
             VectorKey* mScalingKeys = null,
             AnimBehaviour? mPreState = null,
             AnimBehaviour? mPostState = null
-        )
+        ) : this()
         {
-            fixed (NodeAnim* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mNodeName is not null)
             {
                 MNodeName = mNodeName.Value;

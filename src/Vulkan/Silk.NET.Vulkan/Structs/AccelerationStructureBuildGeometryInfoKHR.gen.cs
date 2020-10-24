@@ -33,13 +33,8 @@ namespace Silk.NET.Vulkan
             uint? geometryCount = null,
             AccelerationStructureGeometryKHR** ppGeometries = null,
             DeviceOrHostAddressKHR? scratchData = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureBuildGeometryInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             Color* colors = null,
             uint? version = null,
             int? refcount = null
-        )
+        ) : this()
         {
-            fixed (Palette* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (ncolors is not null)
             {
                 Ncolors = ncolors.Value;

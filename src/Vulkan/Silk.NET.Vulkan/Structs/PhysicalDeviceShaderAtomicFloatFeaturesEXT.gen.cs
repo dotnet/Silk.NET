@@ -36,13 +36,8 @@ namespace Silk.NET.Vulkan
             Bool32? shaderImageFloat32AtomicAdd = null,
             Bool32? sparseImageFloat32Atomics = null,
             Bool32? sparseImageFloat32AtomicAdd = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceShaderAtomicFloatFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

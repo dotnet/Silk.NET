@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceSamplerYcbcrConversionFeatures,
             void* pNext = null,
             Bool32? samplerYcbcrConversion = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSamplerYcbcrConversionFeatures* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

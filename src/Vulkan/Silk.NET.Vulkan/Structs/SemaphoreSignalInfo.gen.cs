@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Semaphore? semaphore = null,
             ulong? value = null
-        )
+        ) : this()
         {
-            fixed (SemaphoreSignalInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

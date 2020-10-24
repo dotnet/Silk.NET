@@ -38,13 +38,8 @@ namespace Silk.NET.Assimp
             Camera** mCameras = null,
             Metadata* mMetaData = null,
             void* mPrivate = null
-        )
+        ) : this()
         {
-            fixed (Scene* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mFlags is not null)
             {
                 MFlags = mFlags.Value;

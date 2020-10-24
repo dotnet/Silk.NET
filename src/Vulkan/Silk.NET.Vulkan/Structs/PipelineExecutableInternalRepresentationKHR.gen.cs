@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? isText = null,
             UIntPtr? dataSize = null,
             void* pData = null
-        )
+        ) : this()
         {
-            fixed (PipelineExecutableInternalRepresentationKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

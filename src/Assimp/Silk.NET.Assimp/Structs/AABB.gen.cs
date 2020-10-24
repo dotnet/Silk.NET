@@ -24,13 +24,8 @@ namespace Silk.NET.Assimp
         (
             System.Numerics.Vector3? mMin = null,
             System.Numerics.Vector3? mMax = null
-        )
+        ) : this()
         {
-            fixed (AABB* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mMin is not null)
             {
                 MMin = mMin.Value;

@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? multiview = null,
             Bool32? multiviewGeometryShader = null,
             Bool32? multiviewTessellationShader = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceMultiviewFeaturesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

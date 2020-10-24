@@ -32,13 +32,8 @@ namespace Silk.NET.SDL
             float? dy = null,
             float? pressure = null,
             uint? windowID = null
-        )
+        ) : this()
         {
-            fixed (TouchFingerEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.SDL
             byte? r = null,
             byte? g = null,
             byte? b = null
-        )
+        ) : this()
         {
-            fixed (MessageBoxColor* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (r is not null)
             {
                 R = r.Value;

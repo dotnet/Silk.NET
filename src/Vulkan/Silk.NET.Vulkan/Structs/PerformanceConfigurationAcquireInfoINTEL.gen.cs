@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PerformanceConfigurationAcquireInfoIntel,
             void* pNext = null,
             PerformanceConfigurationTypeINTEL? type = null
-        )
+        ) : this()
         {
-            fixed (PerformanceConfigurationAcquireInfoINTEL* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

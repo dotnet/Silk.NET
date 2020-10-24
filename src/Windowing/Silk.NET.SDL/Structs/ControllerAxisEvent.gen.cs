@@ -31,13 +31,8 @@ namespace Silk.NET.SDL
             byte? padding3 = null,
             short? value = null,
             ushort? padding4 = null
-        )
+        ) : this()
         {
-            fixed (ControllerAxisEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

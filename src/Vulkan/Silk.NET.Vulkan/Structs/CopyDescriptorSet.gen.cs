@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             uint? dstBinding = null,
             uint? dstArrayElement = null,
             uint? descriptorCount = null
-        )
+        ) : this()
         {
-            fixed (CopyDescriptorSet* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

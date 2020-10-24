@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             IntPtr? device = null,
             IntPtr? queue = null
-        )
+        ) : this()
         {
-            fixed (GraphicsBindingD3D12KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

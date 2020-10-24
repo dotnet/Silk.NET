@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             float? y = null,
             float? z = null,
             float? w = null
-        )
+        ) : this()
         {
-            fixed (Quaternionf* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

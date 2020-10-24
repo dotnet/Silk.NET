@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ulong? actualPresentTime = null,
             ulong? earliestPresentTime = null,
             ulong? presentMargin = null
-        )
+        ) : this()
         {
-            fixed (PastPresentationTimingGOOGLE* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (presentID is not null)
             {
                 PresentID = presentID.Value;

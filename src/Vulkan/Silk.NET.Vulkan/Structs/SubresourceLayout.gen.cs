@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ulong? rowPitch = null,
             ulong? arrayPitch = null,
             ulong? depthPitch = null
-        )
+        ) : this()
         {
-            fixed (SubresourceLayout* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (offset is not null)
             {
                 Offset = offset.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DevicePrivateDataCreateInfoExt,
             void* pNext = null,
             uint? privateDataSlotRequestCount = null
-        )
+        ) : this()
         {
-            fixed (DevicePrivateDataCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

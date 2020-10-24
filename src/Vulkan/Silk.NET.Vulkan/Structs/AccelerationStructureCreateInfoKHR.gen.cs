@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             uint? maxGeometryCount = null,
             AccelerationStructureCreateGeometryTypeInfoKHR* pGeometryInfos = null,
             ulong? deviceAddress = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

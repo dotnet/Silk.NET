@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.MemoryRequirements2,
             void* pNext = null,
             MemoryRequirements? memoryRequirements = null
-        )
+        ) : this()
         {
-            fixed (MemoryRequirements2* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

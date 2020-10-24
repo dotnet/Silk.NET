@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PipelineShaderStageRequiredSubgroupSizeCreateInfoExt,
             void* pNext = null,
             uint? requiredSubgroupSize = null
-        )
+        ) : this()
         {
-            fixed (PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

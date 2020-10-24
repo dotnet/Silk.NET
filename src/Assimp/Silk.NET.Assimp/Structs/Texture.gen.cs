@@ -26,13 +26,8 @@ namespace Silk.NET.Assimp
             uint? mHeight = null,
             Texel* pcData = null,
             AssimpString? mFilename = null
-        )
+        ) : this()
         {
-            fixed (Texture* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mWidth is not null)
             {
                 MWidth = mWidth.Value;

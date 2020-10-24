@@ -37,13 +37,8 @@ namespace Silk.NET.Vulkan
             uint? queueFamilyIndexCount = null,
             uint* pQueueFamilyIndices = null,
             ImageLayout? initialLayout = null
-        )
+        ) : this()
         {
-            fixed (ImageCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

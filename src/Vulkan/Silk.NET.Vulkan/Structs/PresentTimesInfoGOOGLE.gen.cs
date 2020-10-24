@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? swapchainCount = null,
             PresentTimeGOOGLE* pTimes = null
-        )
+        ) : this()
         {
-            fixed (PresentTimesInfoGOOGLE* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

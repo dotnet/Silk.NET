@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             long? i64 = null,
             ulong? u64 = null,
             double? f64 = null
-        )
+        ) : this()
         {
-            fixed (PipelineExecutableStatisticValueKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (b32 is not null)
             {
                 B32 = b32.Value;

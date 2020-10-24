@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             uint? layerCount = null,
             uint? viewFormatCount = null,
             Format* pViewFormats = null
-        )
+        ) : this()
         {
-            fixed (FramebufferAttachmentImageInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

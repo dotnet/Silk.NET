@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceVertexAttributeDivisorPropertiesExt,
             void* pNext = null,
             uint? maxVertexAttribDivisor = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceVertexAttributeDivisorPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

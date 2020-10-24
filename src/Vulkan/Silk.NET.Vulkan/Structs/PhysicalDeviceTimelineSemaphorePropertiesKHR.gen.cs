@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceTimelineSemaphoreProperties,
             void* pNext = null,
             ulong? maxTimelineSemaphoreValueDifference = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceTimelineSemaphorePropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -37,13 +37,8 @@ namespace Silk.NET.Vulkan
             uint? indexTypeCount = null,
             IndexType* pIndexTypes = null,
             uint* pIndexTypeValues = null
-        )
+        ) : this()
         {
-            fixed (IndirectCommandsLayoutTokenNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

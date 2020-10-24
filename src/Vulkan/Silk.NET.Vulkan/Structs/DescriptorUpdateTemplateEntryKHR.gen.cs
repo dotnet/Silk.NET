@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             DescriptorType? descriptorType = null,
             UIntPtr? offset = null,
             UIntPtr? stride = null
-        )
+        ) : this()
         {
-            fixed (DescriptorUpdateTemplateEntryKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (dstBinding is not null)
             {
                 DstBinding = dstBinding.Value;

@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public Sampler
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (Sampler* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

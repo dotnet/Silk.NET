@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? flags = null,
             Bool32? coverageToColorEnable = null,
             uint? coverageToColorLocation = null
-        )
+        ) : this()
         {
-            fixed (PipelineCoverageToColorStateCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SharedPresentSurfaceCapabilitiesKhr,
             void* pNext = null,
             ImageUsageFlags? sharedPresentSupportedUsageFlags = null
-        )
+        ) : this()
         {
-            fixed (SharedPresentSurfaceCapabilitiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -30,13 +30,8 @@ namespace Silk.NET.SDL
             byte? padding2 = null,
             byte? padding3 = null,
             Keysym? keysym = null
-        )
+        ) : this()
         {
-            fixed (KeyboardEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

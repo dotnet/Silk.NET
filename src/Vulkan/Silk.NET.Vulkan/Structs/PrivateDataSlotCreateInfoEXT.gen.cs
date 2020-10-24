@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PrivateDataSlotCreateInfoExt,
             void* pNext = null,
             PrivateDataSlotCreateFlagsEXT? flags = null
-        )
+        ) : this()
         {
-            fixed (PrivateDataSlotCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             Fovf? recommendedFov = null,
             Fovf? maxMutableFov = null
-        )
+        ) : this()
         {
-            fixed (ViewConfigurationViewFovEPIC* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

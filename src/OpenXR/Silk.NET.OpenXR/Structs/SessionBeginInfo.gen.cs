@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeSessionBeginInfo,
             void* next = null,
             ViewConfigurationType? primaryViewConfigurationType = null
-        )
+        ) : this()
         {
-            fixed (SessionBeginInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

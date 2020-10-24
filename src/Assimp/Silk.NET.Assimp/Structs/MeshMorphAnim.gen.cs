@@ -25,13 +25,8 @@ namespace Silk.NET.Assimp
             AssimpString? mName = null,
             uint? mNumKeys = null,
             MeshMorphKey* mKeys = null
-        )
+        ) : this()
         {
-            fixed (MeshMorphAnim* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mName is not null)
             {
                 MName = mName.Value;

@@ -29,13 +29,8 @@ namespace Silk.NET.OpenXR
             uint? vertexBufferChanged = null,
             HandMeshIndexBufferMSFT? indexBuffer = null,
             HandMeshVertexBufferMSFT? vertexBuffer = null
-        )
+        ) : this()
         {
-            fixed (HandMeshMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

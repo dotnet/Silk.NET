@@ -35,13 +35,8 @@ namespace Silk.NET.Vulkan
             uint? uint32_1 = null,
             uint? uint32_2 = null,
             uint? uint32_3 = null
-        )
+        ) : this()
         {
-            fixed (ClearColorValue* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (float32_0 is not null)
             {
                 Float32_0 = float32_0.Value;

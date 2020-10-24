@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             Semaphore? semaphore = null,
             Fence? fence = null,
             uint? deviceMask = null
-        )
+        ) : this()
         {
-            fixed (AcquireNextImageInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? flags = null,
             Bool32? depthClipEnable = null
-        )
+        ) : this()
         {
-            fixed (PipelineRasterizationDepthClipStateCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

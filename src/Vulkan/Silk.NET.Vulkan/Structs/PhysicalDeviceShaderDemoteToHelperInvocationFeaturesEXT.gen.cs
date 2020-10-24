@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt,
             void* pNext = null,
             Bool32? shaderDemoteToHelperInvocation = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

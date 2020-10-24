@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             ViewConfigurationType? viewConfigurationType = null,
             uint? active = null
-        )
+        ) : this()
         {
-            fixed (SecondaryViewConfigurationStateMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

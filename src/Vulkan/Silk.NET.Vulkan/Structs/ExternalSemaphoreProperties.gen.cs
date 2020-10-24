@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ExternalSemaphoreHandleTypeFlags? exportFromImportedHandleTypes = null,
             ExternalSemaphoreHandleTypeFlags? compatibleHandleTypes = null,
             ExternalSemaphoreFeatureFlags? externalSemaphoreFeatures = null
-        )
+        ) : this()
         {
-            fixed (ExternalSemaphoreProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

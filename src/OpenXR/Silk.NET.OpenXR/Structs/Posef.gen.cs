@@ -24,13 +24,8 @@ namespace Silk.NET.OpenXR
         (
             Quaternionf? orientation = null,
             Vector3f? position = null
-        )
+        ) : this()
         {
-            fixed (Posef* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (orientation is not null)
             {
                 Orientation = orientation.Value;

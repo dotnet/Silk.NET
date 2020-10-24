@@ -25,13 +25,8 @@ namespace Silk.NET.Assimp
             System.Numerics.Vector2? mTranslation = null,
             System.Numerics.Vector2? mScaling = null,
             float? mRotation = null
-        )
+        ) : this()
         {
-            fixed (UVTransform* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mTranslation is not null)
             {
                 MTranslation = mTranslation.Value;

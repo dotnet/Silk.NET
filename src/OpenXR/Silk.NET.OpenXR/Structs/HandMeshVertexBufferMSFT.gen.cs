@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             uint? vertexCapacityInput = null,
             uint? vertexCountOutput = null,
             HandMeshVertexMSFT* vertices = null
-        )
+        ) : this()
         {
-            fixed (HandMeshVertexBufferMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (vertexUpdateTime is not null)
             {
                 VertexUpdateTime = vertexUpdateTime.Value;

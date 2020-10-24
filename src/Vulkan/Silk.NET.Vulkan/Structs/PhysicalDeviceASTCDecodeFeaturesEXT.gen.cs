@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceAstcDecodeFeaturesExt,
             void* pNext = null,
             Bool32? decodeModeSharedExponent = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceASTCDecodeFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             ChromaLocation? yChromaOffset = null,
             Filter? chromaFilter = null,
             Bool32? forceExplicitReconstruction = null
-        )
+        ) : this()
         {
-            fixed (SamplerYcbcrConversionCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -30,13 +30,8 @@ namespace Silk.NET.SDL
             float? error = null,
             float? x = null,
             float? y = null
-        )
+        ) : this()
         {
-            fixed (DollarGestureEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

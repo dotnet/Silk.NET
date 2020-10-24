@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? viewportWScalingEnable = null,
             uint? viewportCount = null,
             ViewportWScalingNV* pViewportWScalings = null
-        )
+        ) : this()
         {
-            fixed (PipelineViewportWScalingStateCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

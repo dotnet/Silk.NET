@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             uint? sampleCount = null,
             uint? sampleLocationCount = null,
             CoarseSampleLocationNV* pSampleLocations = null
-        )
+        ) : this()
         {
-            fixed (CoarseSampleOrderCustomNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (shadingRate is not null)
             {
                 ShadingRate = shadingRate.Value;

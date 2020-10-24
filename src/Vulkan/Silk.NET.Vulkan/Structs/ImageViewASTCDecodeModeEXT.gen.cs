@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ImageViewAstcDecodeModeExt,
             void* pNext = null,
             Format? decodeMode = null
-        )
+        ) : this()
         {
-            fixed (ImageViewASTCDecodeModeEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

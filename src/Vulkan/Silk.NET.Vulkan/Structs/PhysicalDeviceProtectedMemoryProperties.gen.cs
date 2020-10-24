@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceProtectedMemoryProperties,
             void* pNext = null,
             Bool32? protectedNoFault = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceProtectedMemoryProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

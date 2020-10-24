@@ -38,13 +38,8 @@ namespace Silk.NET.Vulkan
             uint? minVgprAllocation = null,
             uint? maxVgprAllocation = null,
             uint? vgprAllocationGranularity = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceShaderCorePropertiesAMD* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

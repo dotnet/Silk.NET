@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeDebugUtilsLabelExt,
             void* next = null,
             byte* labelName = null
-        )
+        ) : this()
         {
-            fixed (DebugUtilsLabelEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

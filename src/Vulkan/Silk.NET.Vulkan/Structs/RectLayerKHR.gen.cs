@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             Offset2D? offset = null,
             Extent2D? extent = null,
             uint? layer = null
-        )
+        ) : this()
         {
-            fixed (RectLayerKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (offset is not null)
             {
                 Offset = offset.Value;

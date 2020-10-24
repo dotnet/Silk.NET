@@ -35,13 +35,8 @@ namespace Silk.NET.Vulkan
             AttachmentReference2* pDepthStencilAttachment = null,
             uint? preserveAttachmentCount = null,
             uint* pPreserveAttachments = null
-        )
+        ) : this()
         {
-            fixed (SubpassDescription2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

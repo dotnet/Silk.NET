@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Rect2D? srcRect = null,
             Rect2D? dstRect = null,
             Bool32? persistent = null
-        )
+        ) : this()
         {
-            fixed (DisplayPresentInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

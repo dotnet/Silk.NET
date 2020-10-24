@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? storageBuffer8BitAccess = null,
             Bool32? uniformAndStorageBuffer8BitAccess = null,
             Bool32? storagePushConstant8 = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevice8BitStorageFeatures* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

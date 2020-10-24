@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ResolveModeFlags? depthResolveMode = null,
             ResolveModeFlags? stencilResolveMode = null,
             AttachmentReference2* pDepthStencilResolveAttachment = null
-        )
+        ) : this()
         {
-            fixed (SubpassDescriptionDepthStencilResolveKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

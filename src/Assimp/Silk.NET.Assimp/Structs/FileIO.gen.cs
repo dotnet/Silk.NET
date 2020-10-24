@@ -25,13 +25,8 @@ namespace Silk.NET.Assimp
             void* openProc = null,
             void* closeProc = null,
             byte* userData = null
-        )
+        ) : this()
         {
-            fixed (FileIO* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (openProc is not null)
             {
                 OpenProc = openProc;

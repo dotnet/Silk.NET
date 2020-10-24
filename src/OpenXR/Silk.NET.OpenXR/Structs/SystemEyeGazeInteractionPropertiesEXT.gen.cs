@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeSystemEyeGazeInteractionPropertiesExt,
             void* next = null,
             uint? supportsEyeGazeInteraction = null
-        )
+        ) : this()
         {
-            fixed (SystemEyeGazeInteractionPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

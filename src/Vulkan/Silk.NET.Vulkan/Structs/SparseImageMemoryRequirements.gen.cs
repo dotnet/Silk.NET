@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ulong? imageMipTailSize = null,
             ulong? imageMipTailOffset = null,
             ulong? imageMipTailStride = null
-        )
+        ) : this()
         {
-            fixed (SparseImageMemoryRequirements* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (formatProperties is not null)
             {
                 FormatProperties = formatProperties.Value;

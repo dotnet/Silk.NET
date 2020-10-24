@@ -28,13 +28,8 @@ namespace Silk.NET.OpenXR
             DebugUtilsMessageTypeFlagsEXT? messageTypes = null,
             FuncPtr? userCallback = null,
             void* userData = null
-        )
+        ) : this()
         {
-            fixed (DebugUtilsMessengerCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

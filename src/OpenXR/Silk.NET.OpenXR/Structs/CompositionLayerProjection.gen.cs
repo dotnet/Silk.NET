@@ -28,13 +28,8 @@ namespace Silk.NET.OpenXR
             Space? space = null,
             uint? viewCount = null,
             CompositionLayerProjectionView* views = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerProjection* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

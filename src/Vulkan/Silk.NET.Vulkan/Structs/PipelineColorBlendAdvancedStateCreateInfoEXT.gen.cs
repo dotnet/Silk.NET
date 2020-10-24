@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? srcPremultiplied = null,
             Bool32? dstPremultiplied = null,
             BlendOverlapEXT? blendOverlap = null
-        )
+        ) : this()
         {
-            fixed (PipelineColorBlendAdvancedStateCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

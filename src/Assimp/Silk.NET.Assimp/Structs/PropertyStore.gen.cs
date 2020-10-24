@@ -23,13 +23,8 @@ namespace Silk.NET.Assimp
         public PropertyStore
         (
             byte? sentinel = null
-        )
+        ) : this()
         {
-            fixed (PropertyStore* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sentinel is not null)
             {
                 Sentinel = sentinel.Value;

@@ -28,13 +28,8 @@ namespace Silk.NET.OpenXR
             PerfSettingsSubDomainEXT? subDomain = null,
             PerfSettingsNotificationLevelEXT? fromLevel = null,
             PerfSettingsNotificationLevelEXT? toLevel = null
-        )
+        ) : this()
         {
-            fixed (EventDataPerfSettingsEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

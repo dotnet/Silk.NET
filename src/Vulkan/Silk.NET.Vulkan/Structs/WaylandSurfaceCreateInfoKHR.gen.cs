@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? flags = null,
             IntPtr* display = null,
             IntPtr* surface = null
-        )
+        ) : this()
         {
-            fixed (WaylandSurfaceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

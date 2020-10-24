@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             uint? binding = null,
             Format? format = null,
             uint? offset = null
-        )
+        ) : this()
         {
-            fixed (VertexInputAttributeDescription* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (location is not null)
             {
                 Location = location.Value;

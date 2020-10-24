@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.BufferDeviceAddressCreateInfoExt,
             void* pNext = null,
             ulong? deviceAddress = null
-        )
+        ) : this()
         {
-            fixed (BufferDeviceAddressCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

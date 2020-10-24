@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PerformanceCounterDescriptionKhr,
             void* pNext = null,
             PerformanceCounterDescriptionFlagsKHR? flags = null
-        )
+        ) : this()
         {
-            fixed (PerformanceCounterDescriptionKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

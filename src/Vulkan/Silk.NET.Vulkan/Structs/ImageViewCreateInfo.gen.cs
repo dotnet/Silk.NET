@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             Format? format = null,
             ComponentMapping? components = null,
             ImageSubresourceRange? subresourceRange = null
-        )
+        ) : this()
         {
-            fixed (ImageViewCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

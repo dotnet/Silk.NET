@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PipelineRepresentativeFragmentTestStateCreateInfoNV,
             void* pNext = null,
             Bool32? representativeFragmentTestEnable = null
-        )
+        ) : this()
         {
-            fixed (PipelineRepresentativeFragmentTestStateCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

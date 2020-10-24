@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeActionStatePose,
             void* next = null,
             uint? isActive = null
-        )
+        ) : this()
         {
-            fixed (ActionStatePose* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

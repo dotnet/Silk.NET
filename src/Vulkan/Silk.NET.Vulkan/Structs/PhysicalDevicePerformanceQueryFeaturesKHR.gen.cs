@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? performanceCounterQueryPools = null,
             Bool32? performanceCounterMultipleQueryPools = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevicePerformanceQueryFeaturesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

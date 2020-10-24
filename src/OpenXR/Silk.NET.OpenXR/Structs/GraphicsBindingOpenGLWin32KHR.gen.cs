@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             IntPtr? hDC = null,
             IntPtr? hGlrc = null
-        )
+        ) : this()
         {
-            fixed (GraphicsBindingOpenGLWin32KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

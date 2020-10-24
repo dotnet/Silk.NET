@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceFragmentShaderBarycentricFeaturesNV,
             void* pNext = null,
             Bool32? fragmentShaderBarycentric = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceFragmentShaderBarycentricFeaturesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

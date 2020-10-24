@@ -24,13 +24,8 @@ namespace Silk.NET.Assimp
         (
             System.Numerics.Vector3? pos = null,
             System.Numerics.Vector3? dir = null
-        )
+        ) : this()
         {
-            fixed (Ray* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (pos is not null)
             {
                 Pos = pos.Value;

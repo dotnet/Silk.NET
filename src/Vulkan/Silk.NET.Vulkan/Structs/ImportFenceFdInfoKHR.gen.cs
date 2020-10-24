@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             FenceImportFlags? flags = null,
             ExternalFenceHandleTypeFlags? handleType = null,
             int? fd = null
-        )
+        ) : this()
         {
-            fixed (ImportFenceFdInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

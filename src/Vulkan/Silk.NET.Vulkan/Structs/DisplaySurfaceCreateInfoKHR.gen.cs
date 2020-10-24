@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             float? globalAlpha = null,
             DisplayPlaneAlphaFlagsKHR? alphaMode = null,
             Extent2D? imageExtent = null
-        )
+        ) : this()
         {
-            fixed (DisplaySurfaceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

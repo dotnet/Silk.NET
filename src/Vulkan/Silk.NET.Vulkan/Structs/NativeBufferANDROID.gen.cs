@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             int? format = null,
             int? usage = null,
             NativeBufferUsage2ANDROID? usage2 = null
-        )
+        ) : this()
         {
-            fixed (NativeBufferANDROID* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeEyeGazeSampleTimeExt,
             void* next = null,
             long? time = null
-        )
+        ) : this()
         {
-            fixed (EyeGazeSampleTimeEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

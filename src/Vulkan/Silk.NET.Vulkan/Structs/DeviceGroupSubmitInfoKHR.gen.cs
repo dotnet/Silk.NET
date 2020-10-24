@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             uint* pCommandBufferDeviceMasks = null,
             uint? signalSemaphoreCount = null,
             uint* pSignalSemaphoreDeviceIndices = null
-        )
+        ) : this()
         {
-            fixed (DeviceGroupSubmitInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

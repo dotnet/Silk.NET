@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceSurfaceInfo2Khr,
             void* pNext = null,
             SurfaceKHR? surface = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSurfaceInfo2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

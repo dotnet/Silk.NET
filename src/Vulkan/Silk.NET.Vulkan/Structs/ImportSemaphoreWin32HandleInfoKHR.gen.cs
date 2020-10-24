@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             ExternalSemaphoreHandleTypeFlags? handleType = null,
             IntPtr? handle = null,
             IntPtr? name = null
-        )
+        ) : this()
         {
-            fixed (ImportSemaphoreWin32HandleInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

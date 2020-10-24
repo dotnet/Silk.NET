@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.MemoryGetAndroidHardwareBufferInfoAndroid,
             void* pNext = null,
             DeviceMemory? memory = null
-        )
+        ) : this()
         {
-            fixed (MemoryGetAndroidHardwareBufferInfoANDROID* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? attachment = null,
             ImageLayout? layout = null,
             ImageAspectFlags? aspectMask = null
-        )
+        ) : this()
         {
-            fixed (AttachmentReference2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -29,13 +29,8 @@ namespace Silk.NET.SDL
             int? x = null,
             int? y = null,
             uint? direction = null
-        )
+        ) : this()
         {
-            fixed (MouseWheelEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

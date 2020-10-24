@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             ulong? maxInstanceCount = null,
             ulong? maxTriangleCount = null,
             uint? maxDescriptorSetAccelerationStructures = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceRayTracingPropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

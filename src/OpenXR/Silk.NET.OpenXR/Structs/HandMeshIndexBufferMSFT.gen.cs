@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             uint? indexCapacityInput = null,
             uint? indexCountOutput = null,
             uint* indices = null
-        )
+        ) : this()
         {
-            fixed (HandMeshIndexBufferMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (indexBufferKey is not null)
             {
                 IndexBufferKey = indexBufferKey.Value;

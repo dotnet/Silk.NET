@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDevicePresentationPropertiesAndroid,
             void* pNext = null,
             Bool32? sharedImage = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevicePresentationPropertiesANDROID* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

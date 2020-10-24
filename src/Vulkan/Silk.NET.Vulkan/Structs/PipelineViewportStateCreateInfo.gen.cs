@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             Viewport* pViewports = null,
             uint? scissorCount = null,
             Rect2D* pScissors = null
-        )
+        ) : this()
         {
-            fixed (PipelineViewportStateCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

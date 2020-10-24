@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             float? angleRight = null,
             float? angleUp = null,
             float? angleDown = null
-        )
+        ) : this()
         {
-            fixed (Fovf* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (angleLeft is not null)
             {
                 AngleLeft = angleLeft.Value;

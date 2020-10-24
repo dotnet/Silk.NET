@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             ObjectType? objectType = null,
             ulong? objectHandle = null,
             byte* objectName = null
-        )
+        ) : this()
         {
-            fixed (DebugUtilsObjectNameInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

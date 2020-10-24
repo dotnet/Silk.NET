@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeSecondaryViewConfigurationSwapchainCreateInfoMsft,
             void* next = null,
             ViewConfigurationType? viewConfigurationType = null
-        )
+        ) : this()
         {
-            fixed (SecondaryViewConfigurationSwapchainCreateInfoMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

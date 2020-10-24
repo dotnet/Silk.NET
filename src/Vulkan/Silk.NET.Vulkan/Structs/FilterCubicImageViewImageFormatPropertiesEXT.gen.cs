@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? filterCubic = null,
             Bool32? filterCubicMinmax = null
-        )
+        ) : this()
         {
-            fixed (FilterCubicImageViewImageFormatPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -29,13 +29,8 @@ namespace Silk.NET.OpenXR
             FuncPtr? pfnGetInstanceProcAddr = null,
             void* vulkanCreateInfo = null,
             void* vulkanAllocator = null
-        )
+        ) : this()
         {
-            fixed (VulkanInstanceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

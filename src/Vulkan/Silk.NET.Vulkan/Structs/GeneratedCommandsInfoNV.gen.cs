@@ -37,13 +37,8 @@ namespace Silk.NET.Vulkan
             ulong? sequencesCountOffset = null,
             Buffer? sequencesIndexBuffer = null,
             ulong? sequencesIndexOffset = null
-        )
+        ) : this()
         {
-            fixed (GeneratedCommandsInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

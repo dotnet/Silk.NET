@@ -31,13 +31,8 @@ namespace Silk.NET.Assimp
             MeshAnim** mMeshChannels = null,
             uint? mNumMorphMeshChannels = null,
             MeshMorphAnim** mMorphMeshChannels = null
-        )
+        ) : this()
         {
-            fixed (Animation* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mName is not null)
             {
                 MName = mName.Value;

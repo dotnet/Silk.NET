@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             ValidationFeatureEnableEXT* pEnabledValidationFeatures = null,
             uint? disabledValidationFeatureCount = null,
             ValidationFeatureDisableEXT* pDisabledValidationFeatures = null
-        )
+        ) : this()
         {
-            fixed (ValidationFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

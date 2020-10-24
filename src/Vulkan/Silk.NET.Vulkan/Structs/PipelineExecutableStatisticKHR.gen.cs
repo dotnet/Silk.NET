@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             PipelineExecutableStatisticFormatKHR? format = null,
             PipelineExecutableStatisticValueKHR? value = null
-        )
+        ) : this()
         {
-            fixed (PipelineExecutableStatisticKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

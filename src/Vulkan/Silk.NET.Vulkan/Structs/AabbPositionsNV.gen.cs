@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             float? maxX = null,
             float? maxY = null,
             float? maxZ = null
-        )
+        ) : this()
         {
-            fixed (AabbPositionsNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (minX is not null)
             {
                 MinX = minX.Value;

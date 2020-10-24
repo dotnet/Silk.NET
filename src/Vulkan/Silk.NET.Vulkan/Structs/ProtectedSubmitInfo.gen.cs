@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ProtectedSubmitInfo,
             void* pNext = null,
             Bool32? protectedSubmit = null
-        )
+        ) : this()
         {
-            fixed (ProtectedSubmitInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

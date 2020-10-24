@@ -33,13 +33,8 @@ namespace Silk.NET.Vulkan
             Bool32? degenerateLinesRasterized = null,
             Bool32? fullyCoveredFragmentShaderInputVariable = null,
             Bool32? conservativeRasterizationPostDepthCoverage = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceConservativeRasterizationPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? viewFormatCount = null,
             Format* pViewFormats = null
-        )
+        ) : this()
         {
-            fixed (ImageFormatListCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

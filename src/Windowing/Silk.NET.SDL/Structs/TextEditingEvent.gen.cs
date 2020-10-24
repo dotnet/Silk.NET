@@ -27,13 +27,8 @@ namespace Silk.NET.SDL
             uint? windowID = null,
             int? start = null,
             int? length = null
-        )
+        ) : this()
         {
-            fixed (TextEditingEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

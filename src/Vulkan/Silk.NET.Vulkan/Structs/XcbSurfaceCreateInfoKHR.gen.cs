@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? flags = null,
             IntPtr* connection = null,
             IntPtr? window = null
-        )
+        ) : this()
         {
-            fixed (XcbSurfaceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

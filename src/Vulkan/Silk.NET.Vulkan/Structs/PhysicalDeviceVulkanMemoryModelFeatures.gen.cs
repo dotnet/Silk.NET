@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? vulkanMemoryModel = null,
             Bool32? vulkanMemoryModelDeviceScope = null,
             Bool32? vulkanMemoryModelAvailabilityVisibilityChains = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceVulkanMemoryModelFeatures* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

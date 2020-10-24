@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             ExternalFenceHandleTypeFlags? handleType = null,
             IntPtr? handle = null,
             IntPtr? name = null
-        )
+        ) : this()
         {
-            fixed (ImportFenceWin32HandleInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             long? time = null,
             HandPoseTypeMSFT? handPoseType = null
-        )
+        ) : this()
         {
-            fixed (HandMeshUpdateInfoMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

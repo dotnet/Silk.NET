@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             SamplerYcbcrRange? suggestedYcbcrRange = null,
             ChromaLocation? suggestedXChromaOffset = null,
             ChromaLocation? suggestedYChromaOffset = null
-        )
+        ) : this()
         {
-            fixed (AndroidHardwareBufferFormatPropertiesANDROID* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

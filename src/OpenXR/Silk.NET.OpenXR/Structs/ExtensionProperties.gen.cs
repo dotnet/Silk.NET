@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeExtensionProperties,
             void* next = null,
             uint? extensionVersion = null
-        )
+        ) : this()
         {
-            fixed (ExtensionProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

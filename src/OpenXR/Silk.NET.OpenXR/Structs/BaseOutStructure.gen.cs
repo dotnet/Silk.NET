@@ -24,13 +24,8 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = null,
             BaseOutStructure* next = null
-        )
+        ) : this()
         {
-            fixed (BaseOutStructure* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

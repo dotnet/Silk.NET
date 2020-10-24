@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             long? predictedDisplayTime = null,
             long? predictedDisplayPeriod = null,
             uint? shouldRender = null
-        )
+        ) : this()
         {
-            fixed (FrameState* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

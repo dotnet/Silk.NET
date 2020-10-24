@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             Bool32? storageTexelBufferOffsetSingleTexelAlignment = null,
             ulong? uniformTexelBufferOffsetAlignmentBytes = null,
             Bool32? uniformTexelBufferOffsetSingleTexelAlignment = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceTexelBufferAlignmentPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

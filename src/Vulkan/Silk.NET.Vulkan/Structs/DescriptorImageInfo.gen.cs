@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             Sampler? sampler = null,
             ImageView? imageView = null,
             ImageLayout? imageLayout = null
-        )
+        ) : this()
         {
-            fixed (DescriptorImageInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sampler is not null)
             {
                 Sampler = sampler.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDevicePrivateDataFeaturesExt,
             void* pNext = null,
             Bool32? privateData = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevicePrivateDataFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

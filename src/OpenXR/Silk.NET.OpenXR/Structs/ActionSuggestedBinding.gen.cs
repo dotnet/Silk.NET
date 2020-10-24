@@ -24,13 +24,8 @@ namespace Silk.NET.OpenXR
         (
             Action? action = null,
             ulong? binding = null
-        )
+        ) : this()
         {
-            fixed (ActionSuggestedBinding* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (action is not null)
             {
                 Action = action.Value;

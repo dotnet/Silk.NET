@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             Session? session = null,
             ViewConfigurationType? viewConfigurationType = null,
             uint? viewIndex = null
-        )
+        ) : this()
         {
-            fixed (EventDataVisibilityMaskChangedKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

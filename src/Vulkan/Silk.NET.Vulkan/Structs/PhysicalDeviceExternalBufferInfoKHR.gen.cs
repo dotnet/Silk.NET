@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             BufferCreateFlags? flags = null,
             BufferUsageFlags? usage = null,
             ExternalMemoryHandleTypeFlags? handleType = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceExternalBufferInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

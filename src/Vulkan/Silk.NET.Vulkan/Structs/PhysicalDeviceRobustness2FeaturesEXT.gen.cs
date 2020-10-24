@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? robustBufferAccess2 = null,
             Bool32? robustImageAccess2 = null,
             Bool32? nullDescriptor = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceRobustness2FeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

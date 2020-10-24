@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.AccelerationStructureDeviceAddressInfoKhr,
             void* pNext = null,
             AccelerationStructureKHR? accelerationStructure = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureDeviceAddressInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

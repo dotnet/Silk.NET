@@ -31,13 +31,8 @@ namespace Silk.NET.SDL
             byte? padding3 = null,
             int? data1 = null,
             int? data2 = null
-        )
+        ) : this()
         {
-            fixed (WindowEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

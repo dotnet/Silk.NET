@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? flags = null,
             IntPtr* dpy = null,
             IntPtr? window = null
-        )
+        ) : this()
         {
-            fixed (XlibSurfaceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

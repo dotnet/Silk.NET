@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ImageViewUsageCreateInfo,
             void* pNext = null,
             ImageUsageFlags? usage = null
-        )
+        ) : this()
         {
-            fixed (ImageViewUsageCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

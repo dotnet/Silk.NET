@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             Buffer? buffer = null,
             ulong? offset = null
-        )
+        ) : this()
         {
-            fixed (IndirectCommandsStreamNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (buffer is not null)
             {
                 Buffer = buffer.Value;

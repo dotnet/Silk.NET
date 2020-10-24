@@ -31,13 +31,8 @@ namespace Silk.NET.OpenXR
             DebugUtilsObjectNameInfoEXT* objects = null,
             uint? sessionLabelCount = null,
             DebugUtilsLabelEXT* sessionLabels = null
-        )
+        ) : this()
         {
-            fixed (DebugUtilsMessengerCallbackDataEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

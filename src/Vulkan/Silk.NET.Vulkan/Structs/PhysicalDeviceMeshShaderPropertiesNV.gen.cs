@@ -35,13 +35,8 @@ namespace Silk.NET.Vulkan
             uint? maxMeshMultiviewViewCount = null,
             uint? meshOutputPerVertexGranularity = null,
             uint? meshOutputPerPrimitiveGranularity = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceMeshShaderPropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -38,13 +38,8 @@ namespace Silk.NET.Assimp
             AnimMesh** mAnimMeshes = null,
             uint? mMethod = null,
             AABB? mAABB = null
-        )
+        ) : this()
         {
-            fixed (Mesh* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mPrimitiveTypes is not null)
             {
                 MPrimitiveTypes = mPrimitiveTypes.Value;

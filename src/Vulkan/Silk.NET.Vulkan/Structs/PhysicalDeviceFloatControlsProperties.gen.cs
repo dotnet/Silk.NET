@@ -41,13 +41,8 @@ namespace Silk.NET.Vulkan
             Bool32? shaderRoundingModeRtzfloat16 = null,
             Bool32? shaderRoundingModeRtzfloat32 = null,
             Bool32? shaderRoundingModeRtzfloat64 = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceFloatControlsProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

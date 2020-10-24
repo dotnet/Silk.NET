@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             uint? visible = null,
             OverlayMainSessionFlagsEXTX? flags = null
-        )
+        ) : this()
         {
-            fixed (EventDataMainSessionVisibilityChangedEXTX* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             Posef? pose = null,
             Fovf? fov = null,
             SwapchainSubImage? subImage = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerProjectionView* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

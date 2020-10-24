@@ -24,13 +24,8 @@ namespace Silk.NET.OpenCL
         (
             MemExtHostPtr? extHostPtr = null,
             void* anbPtr = null
-        )
+        ) : this()
         {
-            fixed (MemAndroidNativeBufferHostPtr* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (extHostPtr is not null)
             {
                 ExtHostPtr = extHostPtr.Value;

@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             SharingMode? sharingMode = null,
             uint? queueFamilyIndexCount = null,
             uint* pQueueFamilyIndices = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceImageDrmFormatModifierInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

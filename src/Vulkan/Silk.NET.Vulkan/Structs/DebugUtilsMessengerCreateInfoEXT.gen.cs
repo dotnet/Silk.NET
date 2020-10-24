@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             DebugUtilsMessageTypeFlagsEXT? messageType = null,
             FuncPtr? pfnUserCallback = null,
             void* pUserData = null
-        )
+        ) : this()
         {
-            fixed (DebugUtilsMessengerCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

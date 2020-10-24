@@ -28,13 +28,8 @@ namespace Silk.NET.OpenXR
             uint? vendorId = null,
             SystemGraphicsProperties? graphicsProperties = null,
             SystemTrackingProperties? trackingProperties = null
-        )
+        ) : this()
         {
-            fixed (SystemProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

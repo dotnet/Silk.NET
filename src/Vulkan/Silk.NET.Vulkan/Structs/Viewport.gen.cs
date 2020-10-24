@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             float? height = null,
             float? minDepth = null,
             float? maxDepth = null
-        )
+        ) : this()
         {
-            fixed (Viewport* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeEventDataInteractionProfileChanged,
             void* next = null,
             Session? session = null
-        )
+        ) : this()
         {
-            fixed (EventDataInteractionProfileChanged* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

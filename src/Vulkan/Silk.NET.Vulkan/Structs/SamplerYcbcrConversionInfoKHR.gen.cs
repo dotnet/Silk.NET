@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SamplerYcbcrConversionInfo,
             void* pNext = null,
             SamplerYcbcrConversion? conversion = null
-        )
+        ) : this()
         {
-            fixed (SamplerYcbcrConversionInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

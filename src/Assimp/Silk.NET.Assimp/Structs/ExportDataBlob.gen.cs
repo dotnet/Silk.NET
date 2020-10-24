@@ -26,13 +26,8 @@ namespace Silk.NET.Assimp
             void* data = null,
             AssimpString? name = null,
             ExportDataBlob* next = null
-        )
+        ) : this()
         {
-            fixed (ExportDataBlob* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (size is not null)
             {
                 Size = size.Value;

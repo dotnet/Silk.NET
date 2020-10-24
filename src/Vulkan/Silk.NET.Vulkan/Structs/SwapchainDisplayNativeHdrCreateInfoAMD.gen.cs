@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SwapchainDisplayNativeHdrCreateInfoAmd,
             void* pNext = null,
             Bool32? localDimmingEnable = null
-        )
+        ) : this()
         {
-            fixed (SwapchainDisplayNativeHdrCreateInfoAMD* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ExternalImageFormatProperties,
             void* pNext = null,
             ExternalMemoryProperties? externalMemoryProperties = null
-        )
+        ) : this()
         {
-            fixed (ExternalImageFormatPropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

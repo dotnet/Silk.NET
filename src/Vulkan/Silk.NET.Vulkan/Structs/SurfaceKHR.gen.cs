@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public SurfaceKHR
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (SurfaceKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

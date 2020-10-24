@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? computeDerivativeGroupQuads = null,
             Bool32? computeDerivativeGroupLinear = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceComputeShaderDerivativesFeaturesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? attachment = null,
             ImageLayout? layout = null
-        )
+        ) : this()
         {
-            fixed (AttachmentReference* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (attachment is not null)
             {
                 Attachment = attachment.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             int? button = null,
             int? axis = null,
             GameControllerHatValue? hat = null
-        )
+        ) : this()
         {
-            fixed (GameControllerBindValue* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (button is not null)
             {
                 Button = button.Value;

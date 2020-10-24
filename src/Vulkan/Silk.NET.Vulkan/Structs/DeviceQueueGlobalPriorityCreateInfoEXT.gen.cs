@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DeviceQueueGlobalPriorityCreateInfoExt,
             void* pNext = null,
             QueueGlobalPriorityEXT? globalPriority = null
-        )
+        ) : this()
         {
-            fixed (DeviceQueueGlobalPriorityCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SurfaceFullScreenExclusiveWin32InfoExt,
             void* pNext = null,
             IntPtr? hmonitor = null
-        )
+        ) : this()
         {
-            fixed (SurfaceFullScreenExclusiveWin32InfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

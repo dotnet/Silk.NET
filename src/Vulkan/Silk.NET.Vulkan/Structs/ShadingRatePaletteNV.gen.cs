@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? shadingRatePaletteEntryCount = null,
             ShadingRatePaletteEntryNV* pShadingRatePaletteEntries = null
-        )
+        ) : this()
         {
-            fixed (ShadingRatePaletteNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (shadingRatePaletteEntryCount is not null)
             {
                 ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount.Value;

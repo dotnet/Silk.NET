@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Image? image = null,
             Buffer? buffer = null
-        )
+        ) : this()
         {
-            fixed (DedicatedAllocationMemoryAllocateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

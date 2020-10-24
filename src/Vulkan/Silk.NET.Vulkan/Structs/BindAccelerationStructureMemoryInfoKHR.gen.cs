@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             ulong? memoryOffset = null,
             uint? deviceIndexCount = null,
             uint* pDeviceIndices = null
-        )
+        ) : this()
         {
-            fixed (BindAccelerationStructureMemoryInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

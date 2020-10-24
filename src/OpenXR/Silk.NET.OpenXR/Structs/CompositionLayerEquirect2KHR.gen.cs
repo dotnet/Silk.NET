@@ -33,13 +33,8 @@ namespace Silk.NET.OpenXR
             float? centralHorizontalAngle = null,
             float? upperVerticalAngle = null,
             float? lowerVerticalAngle = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerEquirect2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

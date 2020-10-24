@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             uint? releaseCount = null,
             DeviceMemory* pReleaseSyncs = null,
             ulong* pReleaseKeys = null
-        )
+        ) : this()
         {
-            fixed (Win32KeyedMutexAcquireReleaseInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

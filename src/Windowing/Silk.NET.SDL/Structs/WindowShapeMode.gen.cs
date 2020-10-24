@@ -24,13 +24,8 @@ namespace Silk.NET.SDL
         (
             WindowShapeModeVal? mode = null,
             WindowShapeParams? parameters = null
-        )
+        ) : this()
         {
-            fixed (WindowShapeMode* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mode is not null)
             {
                 Mode = mode.Value;

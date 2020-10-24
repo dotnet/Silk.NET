@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             SubpassDescription* pSubpasses = null,
             uint? dependencyCount = null,
             SubpassDependency* pDependencies = null
-        )
+        ) : this()
         {
-            fixed (RenderPassCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

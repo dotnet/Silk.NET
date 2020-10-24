@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             uint? width = null,
             uint? height = null,
             uint? layers = null
-        )
+        ) : this()
         {
-            fixed (FramebufferCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

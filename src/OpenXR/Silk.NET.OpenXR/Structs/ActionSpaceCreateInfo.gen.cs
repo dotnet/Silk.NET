@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             Action? action = null,
             ulong? subactionPath = null,
             Posef? poseInActionSpace = null
-        )
+        ) : this()
         {
-            fixed (ActionSpaceCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

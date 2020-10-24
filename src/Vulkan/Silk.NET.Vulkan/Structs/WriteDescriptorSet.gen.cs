@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             DescriptorImageInfo* pImageInfo = null,
             DescriptorBufferInfo* pBufferInfo = null,
             BufferView* pTexelBufferView = null
-        )
+        ) : this()
         {
-            fixed (WriteDescriptorSet* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Image? image = null,
             DeviceMemory? memory = null,
             ulong? memoryOffset = null
-        )
+        ) : this()
         {
-            fixed (BindImageMemoryInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

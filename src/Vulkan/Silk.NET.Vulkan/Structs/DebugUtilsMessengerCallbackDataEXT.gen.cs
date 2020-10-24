@@ -34,13 +34,8 @@ namespace Silk.NET.Vulkan
             DebugUtilsLabelEXT* pCmdBufLabels = null,
             uint? objectCount = null,
             DebugUtilsObjectNameInfoEXT* pObjects = null
-        )
+        ) : this()
         {
-            fixed (DebugUtilsMessengerCallbackDataEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

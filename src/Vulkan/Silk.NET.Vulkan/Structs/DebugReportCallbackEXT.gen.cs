@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public DebugReportCallbackEXT
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (DebugReportCallbackEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

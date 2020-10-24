@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             SpecializationMapEntry* pMapEntries = null,
             UIntPtr? dataSize = null,
             void* pData = null
-        )
+        ) : this()
         {
-            fixed (SpecializationInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mapEntryCount is not null)
             {
                 MapEntryCount = mapEntryCount.Value;

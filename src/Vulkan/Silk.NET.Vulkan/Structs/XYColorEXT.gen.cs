@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             float? x = null,
             float? y = null
-        )
+        ) : this()
         {
-            fixed (XYColorEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

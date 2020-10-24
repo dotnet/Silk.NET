@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             uint? supportsHandTrackingMesh = null,
             uint? maxHandMeshIndexCount = null,
             uint? maxHandMeshVertexCount = null
-        )
+        ) : this()
         {
-            fixed (SystemHandTrackingMeshPropertiesMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

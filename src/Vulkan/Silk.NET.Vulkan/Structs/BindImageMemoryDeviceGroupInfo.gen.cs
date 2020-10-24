@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             uint* pDeviceIndices = null,
             uint? splitInstanceBindRegionCount = null,
             Rect2D* pSplitInstanceBindRegions = null
-        )
+        ) : this()
         {
-            fixed (BindImageMemoryDeviceGroupInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

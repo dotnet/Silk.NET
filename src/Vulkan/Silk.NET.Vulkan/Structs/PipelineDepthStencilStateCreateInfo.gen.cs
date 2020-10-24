@@ -34,13 +34,8 @@ namespace Silk.NET.Vulkan
             StencilOpState? back = null,
             float? minDepthBounds = null,
             float? maxDepthBounds = null
-        )
+        ) : this()
         {
-            fixed (PipelineDepthStencilStateCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

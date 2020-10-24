@@ -23,13 +23,8 @@ namespace Silk.NET.OpenXR
         public HandTrackerEXT
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (HandTrackerEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

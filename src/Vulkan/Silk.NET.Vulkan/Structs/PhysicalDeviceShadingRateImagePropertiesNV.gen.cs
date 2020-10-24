@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Extent2D? shadingRateTexelSize = null,
             uint? shadingRatePaletteSize = null,
             uint? shadingRateMaxCoarseSamples = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceShadingRateImagePropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

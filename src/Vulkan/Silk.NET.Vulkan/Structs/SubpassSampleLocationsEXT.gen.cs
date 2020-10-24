@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? subpassIndex = null,
             SampleLocationsInfoEXT? sampleLocationsInfo = null
-        )
+        ) : this()
         {
-            fixed (SubpassSampleLocationsEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (subpassIndex is not null)
             {
                 SubpassIndex = subpassIndex.Value;

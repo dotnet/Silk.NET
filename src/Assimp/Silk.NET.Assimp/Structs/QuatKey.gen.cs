@@ -24,13 +24,8 @@ namespace Silk.NET.Assimp
         (
             double? mTime = null,
             System.Numerics.Quaternion? mValue = null
-        )
+        ) : this()
         {
-            fixed (QuatKey* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mTime is not null)
             {
                 MTime = mTime.Value;

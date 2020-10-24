@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             ulong? allocationSize = null,
             uint? memoryTypeIndex = null
-        )
+        ) : this()
         {
-            fixed (MemoryAllocateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

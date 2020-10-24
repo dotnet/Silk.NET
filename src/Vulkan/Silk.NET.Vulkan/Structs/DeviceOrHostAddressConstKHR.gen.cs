@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
         (
             ulong? deviceAddress = null,
             void* hostAddress = null
-        )
+        ) : this()
         {
-            fixed (DeviceOrHostAddressConstKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (deviceAddress is not null)
             {
                 DeviceAddress = deviceAddress.Value;

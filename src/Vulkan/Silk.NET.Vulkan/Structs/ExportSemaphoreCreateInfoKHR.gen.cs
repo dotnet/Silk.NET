@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ExportSemaphoreCreateInfo,
             void* pNext = null,
             ExternalSemaphoreHandleTypeFlags? handleTypes = null
-        )
+        ) : this()
         {
-            fixed (ExportSemaphoreCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

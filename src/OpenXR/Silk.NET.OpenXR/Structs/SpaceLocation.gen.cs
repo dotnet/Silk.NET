@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             SpaceLocationFlags? locationFlags = null,
             Posef? pose = null
-        )
+        ) : this()
         {
-            fixed (SpaceLocation* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

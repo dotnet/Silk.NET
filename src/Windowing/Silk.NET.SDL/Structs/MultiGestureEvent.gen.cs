@@ -31,13 +31,8 @@ namespace Silk.NET.SDL
             float? y = null,
             ushort? numFingers = null,
             ushort? padding = null
-        )
+        ) : this()
         {
-            fixed (MultiGestureEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

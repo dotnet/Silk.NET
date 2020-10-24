@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             int? sym = null,
             ushort? mod = null,
             uint? unused = null
-        )
+        ) : this()
         {
-            fixed (Keysym* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (scancode is not null)
             {
                 Scancode = scancode.Value;

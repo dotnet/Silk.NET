@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ExternalFormatAndroid,
             void* pNext = null,
             ulong? externalFormat = null
-        )
+        ) : this()
         {
-            fixed (ExternalFormatANDROID* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

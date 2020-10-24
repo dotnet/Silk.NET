@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceExternalFenceInfo,
             void* pNext = null,
             ExternalFenceHandleTypeFlags? handleType = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceExternalFenceInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             MemoryAllocateFlags? flags = null,
             uint? deviceMask = null
-        )
+        ) : this()
         {
-            fixed (MemoryAllocateFlagsInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

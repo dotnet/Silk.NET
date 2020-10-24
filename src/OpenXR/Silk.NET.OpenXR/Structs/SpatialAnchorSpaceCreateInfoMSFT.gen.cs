@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             SpatialAnchorMSFT? anchor = null,
             Posef? poseInAnchorSpace = null
-        )
+        ) : this()
         {
-            fixed (SpatialAnchorSpaceCreateInfoMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

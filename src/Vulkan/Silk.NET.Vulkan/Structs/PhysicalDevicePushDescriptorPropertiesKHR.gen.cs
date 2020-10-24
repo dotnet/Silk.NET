@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDevicePushDescriptorPropertiesKhr,
             void* pNext = null,
             uint? maxPushDescriptors = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevicePushDescriptorPropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

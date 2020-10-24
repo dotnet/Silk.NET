@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             ulong? offset = null,
             ulong? stride = null,
             ulong? size = null
-        )
+        ) : this()
         {
-            fixed (StridedBufferRegionKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (buffer is not null)
             {
                 Buffer = buffer.Value;

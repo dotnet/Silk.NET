@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DeviceMemoryOpaqueCaptureAddressInfo,
             void* pNext = null,
             DeviceMemory? memory = null
-        )
+        ) : this()
         {
-            fixed (DeviceMemoryOpaqueCaptureAddressInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

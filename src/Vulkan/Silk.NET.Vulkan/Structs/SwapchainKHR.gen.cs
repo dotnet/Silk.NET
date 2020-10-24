@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public SwapchainKHR
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (SwapchainKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

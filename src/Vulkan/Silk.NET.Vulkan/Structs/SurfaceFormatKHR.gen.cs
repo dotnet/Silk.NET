@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             Format? format = null,
             ColorSpaceKHR? colorSpace = null
-        )
+        ) : this()
         {
-            fixed (SurfaceFormatKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (format is not null)
             {
                 Format = format.Value;

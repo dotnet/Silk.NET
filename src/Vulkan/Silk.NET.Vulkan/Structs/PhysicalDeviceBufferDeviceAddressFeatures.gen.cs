@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? bufferDeviceAddress = null,
             Bool32? bufferDeviceAddressCaptureReplay = null,
             Bool32? bufferDeviceAddressMultiDevice = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceBufferDeviceAddressFeatures* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

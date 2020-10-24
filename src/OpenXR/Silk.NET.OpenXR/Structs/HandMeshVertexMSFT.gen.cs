@@ -24,13 +24,8 @@ namespace Silk.NET.OpenXR
         (
             Vector3f? position = null,
             Vector3f? normal = null
-        )
+        ) : this()
         {
-            fixed (HandMeshVertexMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (position is not null)
             {
                 Position = position.Value;

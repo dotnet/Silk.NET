@@ -40,13 +40,8 @@ namespace Silk.NET.Vulkan
             PresentModeKHR? presentMode = null,
             Bool32? clipped = null,
             SwapchainKHR? oldSwapchain = null
-        )
+        ) : this()
         {
-            fixed (SwapchainCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

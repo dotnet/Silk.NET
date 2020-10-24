@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? sampleLocationsEnable = null,
             SampleLocationsInfoEXT? sampleLocationsInfo = null
-        )
+        ) : this()
         {
-            fixed (PipelineSampleLocationsStateCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

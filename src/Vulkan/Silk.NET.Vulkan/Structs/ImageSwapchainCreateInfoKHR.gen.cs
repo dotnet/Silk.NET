@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ImageSwapchainCreateInfoKhr,
             void* pNext = null,
             SwapchainKHR? swapchain = null
-        )
+        ) : this()
         {
-            fixed (ImageSwapchainCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

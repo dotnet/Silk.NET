@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DeviceGroupSwapchainCreateInfoKhr,
             void* pNext = null,
             DeviceGroupPresentModeFlagsKHR? modes = null
-        )
+        ) : this()
         {
-            fixed (DeviceGroupSwapchainCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

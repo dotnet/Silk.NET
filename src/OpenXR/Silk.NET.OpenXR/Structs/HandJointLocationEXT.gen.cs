@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             SpaceLocationFlags? locationFlags = null,
             Posef? pose = null,
             float? radius = null
-        )
+        ) : this()
         {
-            fixed (HandJointLocationEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (locationFlags is not null)
             {
                 LocationFlags = locationFlags.Value;

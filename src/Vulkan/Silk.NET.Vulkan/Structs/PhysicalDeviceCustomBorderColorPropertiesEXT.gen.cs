@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceCustomBorderColorPropertiesExt,
             void* pNext = null,
             uint? maxCustomBorderColorSamplers = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceCustomBorderColorPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

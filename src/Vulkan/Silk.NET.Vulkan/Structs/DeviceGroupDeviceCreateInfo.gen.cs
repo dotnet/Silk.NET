@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? physicalDeviceCount = null,
             PhysicalDevice* pPhysicalDevices = null
-        )
+        ) : this()
         {
-            fixed (DeviceGroupDeviceCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

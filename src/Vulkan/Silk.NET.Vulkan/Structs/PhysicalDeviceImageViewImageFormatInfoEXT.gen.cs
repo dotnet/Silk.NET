@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceImageViewImageFormatInfoExt,
             void* pNext = null,
             ImageViewType? imageViewType = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceImageViewImageFormatInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

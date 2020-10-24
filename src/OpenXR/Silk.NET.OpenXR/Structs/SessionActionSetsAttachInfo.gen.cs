@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             uint? countActionSets = null,
             ActionSet* actionSets = null
-        )
+        ) : this()
         {
-            fixed (SessionActionSetsAttachInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             AttachmentStoreOp? stencilStoreOp = null,
             ImageLayout? initialLayout = null,
             ImageLayout? finalLayout = null
-        )
+        ) : this()
         {
-            fixed (AttachmentDescription* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (flags is not null)
             {
                 Flags = flags.Value;

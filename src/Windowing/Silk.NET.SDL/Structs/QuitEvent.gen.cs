@@ -24,13 +24,8 @@ namespace Silk.NET.SDL
         (
             uint? type = null,
             uint? timestamp = null
-        )
+        ) : this()
         {
-            fixed (QuitEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

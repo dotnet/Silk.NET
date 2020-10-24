@@ -35,13 +35,8 @@ namespace Silk.NET.Vulkan
             float? depthBiasClamp = null,
             float? depthBiasSlopeFactor = null,
             float? lineWidth = null
-        )
+        ) : this()
         {
-            fixed (PipelineRasterizationStateCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

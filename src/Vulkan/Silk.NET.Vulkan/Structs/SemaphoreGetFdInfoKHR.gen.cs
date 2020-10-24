@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Semaphore? semaphore = null,
             ExternalSemaphoreHandleTypeFlags? handleType = null
-        )
+        ) : this()
         {
-            fixed (SemaphoreGetFdInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

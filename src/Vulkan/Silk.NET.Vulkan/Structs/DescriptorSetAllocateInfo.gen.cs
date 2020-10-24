@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             DescriptorPool? descriptorPool = null,
             uint? descriptorSetCount = null,
             DescriptorSetLayout* pSetLayouts = null
-        )
+        ) : this()
         {
-            fixed (DescriptorSetAllocateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

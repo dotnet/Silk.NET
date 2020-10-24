@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? binding = null,
             uint? divisor = null
-        )
+        ) : this()
         {
-            fixed (VertexInputBindingDivisorDescriptionEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (binding is not null)
             {
                 Binding = binding.Value;

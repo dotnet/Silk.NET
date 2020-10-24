@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             Extent2D? visibleRegion = null,
             uint? refreshRate = null
-        )
+        ) : this()
         {
-            fixed (DisplayModeParametersKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (visibleRegion is not null)
             {
                 VisibleRegion = visibleRegion.Value;

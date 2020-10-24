@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             uint? numAabbs = null,
             uint? stride = null,
             ulong? offset = null
-        )
+        ) : this()
         {
-            fixed (GeometryAABBNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -34,13 +34,8 @@ namespace Silk.NET.Vulkan
             Bool32? transformFeedbackStreamsLinesTriangles = null,
             Bool32? transformFeedbackRasterizationStreamSelect = null,
             Bool32? transformFeedbackDraw = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceTransformFeedbackPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

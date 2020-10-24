@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             Posef? pose = null,
             Fovf? fov = null
-        )
+        ) : this()
         {
-            fixed (View* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             BlendFactor? dstAlphaBlendFactor = null,
             BlendOp? alphaBlendOp = null,
             ColorComponentFlags? colorWriteMask = null
-        )
+        ) : this()
         {
-            fixed (PipelineColorBlendAttachmentState* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (blendEnable is not null)
             {
                 BlendEnable = blendEnable.Value;

@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             DeviceMemory? memory = null,
             ulong? memoryOffset = null,
             SparseMemoryBindFlags? flags = null
-        )
+        ) : this()
         {
-            fixed (SparseMemoryBind* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (resourceOffset is not null)
             {
                 ResourceOffset = resourceOffset.Value;

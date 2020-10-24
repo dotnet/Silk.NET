@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             float? y = null,
             float? w = null,
             float? h = null
-        )
+        ) : this()
         {
-            fixed (FRect* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             byte? g = null,
             byte? b = null,
             byte? a = null
-        )
+        ) : this()
         {
-            fixed (Color* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (r is not null)
             {
                 R = r.Value;

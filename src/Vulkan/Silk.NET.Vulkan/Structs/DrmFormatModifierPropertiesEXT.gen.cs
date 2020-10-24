@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             ulong? drmFormatModifier = null,
             uint? drmFormatModifierPlaneCount = null,
             FormatFeatureFlags? drmFormatModifierTilingFeatures = null
-        )
+        ) : this()
         {
-            fixed (DrmFormatModifierPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (drmFormatModifier is not null)
             {
                 DrmFormatModifier = drmFormatModifier.Value;

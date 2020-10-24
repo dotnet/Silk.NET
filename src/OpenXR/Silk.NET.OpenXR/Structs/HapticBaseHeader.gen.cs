@@ -24,13 +24,8 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = null,
             void* next = null
-        )
+        ) : this()
         {
-            fixed (HapticBaseHeader* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

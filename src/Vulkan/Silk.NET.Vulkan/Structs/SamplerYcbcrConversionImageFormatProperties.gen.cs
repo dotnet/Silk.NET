@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SamplerYcbcrConversionImageFormatProperties,
             void* pNext = null,
             uint? combinedImageSamplerDescriptorCount = null
-        )
+        ) : this()
         {
-            fixed (SamplerYcbcrConversionImageFormatProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

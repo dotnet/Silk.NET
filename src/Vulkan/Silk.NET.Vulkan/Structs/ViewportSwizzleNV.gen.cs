@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             ViewportCoordinateSwizzleNV? y = null,
             ViewportCoordinateSwizzleNV? z = null,
             ViewportCoordinateSwizzleNV? w = null
-        )
+        ) : this()
         {
-            fixed (ViewportSwizzleNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

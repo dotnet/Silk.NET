@@ -28,13 +28,8 @@ namespace Silk.NET.OpenXR
             uint? changedSinceLastSync = null,
             long? lastChangeTime = null,
             uint? isActive = null
-        )
+        ) : this()
         {
-            fixed (ActionStateFloat* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

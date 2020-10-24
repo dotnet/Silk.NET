@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             uint? dstQueueFamilyIndex = null,
             Image? image = null,
             ImageSubresourceRange? subresourceRange = null
-        )
+        ) : this()
         {
-            fixed (ImageMemoryBarrier* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

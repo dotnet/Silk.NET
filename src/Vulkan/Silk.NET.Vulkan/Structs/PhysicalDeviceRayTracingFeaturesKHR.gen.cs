@@ -33,13 +33,8 @@ namespace Silk.NET.Vulkan
             Bool32? rayTracingHostAccelerationStructureCommands = null,
             Bool32? rayQuery = null,
             Bool32? rayTracingPrimitiveCulling = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceRayTracingFeaturesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

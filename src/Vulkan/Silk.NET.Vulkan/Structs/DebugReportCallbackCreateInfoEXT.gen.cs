@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             DebugReportFlagsEXT? flags = null,
             FuncPtr? pfnCallback = null,
             void* pUserData = null
-        )
+        ) : this()
         {
-            fixed (DebugReportCallbackCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

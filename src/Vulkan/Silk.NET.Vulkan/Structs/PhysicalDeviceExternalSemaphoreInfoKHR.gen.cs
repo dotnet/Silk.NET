@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceExternalSemaphoreInfo,
             void* pNext = null,
             ExternalSemaphoreHandleTypeFlags? handleType = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceExternalSemaphoreInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

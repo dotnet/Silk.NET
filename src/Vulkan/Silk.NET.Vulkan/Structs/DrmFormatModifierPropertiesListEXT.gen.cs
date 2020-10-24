@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? drmFormatModifierCount = null,
             DrmFormatModifierPropertiesEXT* pDrmFormatModifierProperties = null
-        )
+        ) : this()
         {
-            fixed (DrmFormatModifierPropertiesListEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

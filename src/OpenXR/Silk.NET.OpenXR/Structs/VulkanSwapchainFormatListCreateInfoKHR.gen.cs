@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             uint? viewFormatCount = null,
             uint* viewFormats = null
-        )
+        ) : this()
         {
-            fixed (VulkanSwapchainFormatListCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             Swapchain? swapchain = null,
             Rect2Di? imageRect = null,
             uint? imageArrayIndex = null
-        )
+        ) : this()
         {
-            fixed (SwapchainSubImage* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (swapchain is not null)
             {
                 Swapchain = swapchain.Value;

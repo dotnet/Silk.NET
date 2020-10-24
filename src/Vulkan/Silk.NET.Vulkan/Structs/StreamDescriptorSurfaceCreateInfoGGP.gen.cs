@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? flags = null,
             IntPtr? streamDescriptor = null
-        )
+        ) : this()
         {
-            fixed (StreamDescriptorSurfaceCreateInfoGGP* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

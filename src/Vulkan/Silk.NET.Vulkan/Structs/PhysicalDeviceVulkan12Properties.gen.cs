@@ -74,13 +74,8 @@ namespace Silk.NET.Vulkan
             Bool32? filterMinmaxImageComponentMapping = null,
             ulong? maxTimelineSemaphoreValueDifference = null,
             SampleCountFlags? framebufferIntegerColorSampleCounts = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceVulkan12Properties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

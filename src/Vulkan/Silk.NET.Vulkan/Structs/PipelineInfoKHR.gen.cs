@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PipelineInfoKhr,
             void* pNext = null,
             Pipeline? pipeline = null
-        )
+        ) : this()
         {
-            fixed (PipelineInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

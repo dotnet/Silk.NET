@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             uint? binding = null,
             uint? stride = null,
             VertexInputRate? inputRate = null
-        )
+        ) : this()
         {
-            fixed (VertexInputBindingDescription* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (binding is not null)
             {
                 Binding = binding.Value;

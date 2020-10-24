@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceYcbcrImageArraysFeaturesExt,
             void* pNext = null,
             Bool32? ycbcrImageArrays = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceYcbcrImageArraysFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

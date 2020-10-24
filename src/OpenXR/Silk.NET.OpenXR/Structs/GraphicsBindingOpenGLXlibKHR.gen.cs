@@ -29,13 +29,8 @@ namespace Silk.NET.OpenXR
             IntPtr? glxFbconfig = null,
             IntPtr? glxDrawable = null,
             IntPtr? glxContext = null
-        )
+        ) : this()
         {
-            fixed (GraphicsBindingOpenGLXlibKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

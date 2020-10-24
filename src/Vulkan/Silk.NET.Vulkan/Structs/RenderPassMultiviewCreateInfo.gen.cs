@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             int* pViewOffsets = null,
             uint? correlationMaskCount = null,
             uint* pCorrelationMasks = null
-        )
+        ) : this()
         {
-            fixed (RenderPassMultiviewCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

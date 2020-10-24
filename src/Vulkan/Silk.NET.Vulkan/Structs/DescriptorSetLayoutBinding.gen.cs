@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? descriptorCount = null,
             ShaderStageFlags? stageFlags = null,
             Sampler* pImmutableSamplers = null
-        )
+        ) : this()
         {
-            fixed (DescriptorSetLayoutBinding* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (binding is not null)
             {
                 Binding = binding.Value;

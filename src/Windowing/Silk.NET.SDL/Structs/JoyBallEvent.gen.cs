@@ -31,13 +31,8 @@ namespace Silk.NET.SDL
             byte? padding3 = null,
             short? xrel = null,
             short? yrel = null
-        )
+        ) : this()
         {
-            fixed (JoyBallEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

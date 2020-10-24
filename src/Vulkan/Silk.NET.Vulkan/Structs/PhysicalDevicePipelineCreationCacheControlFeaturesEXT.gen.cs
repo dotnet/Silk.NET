@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDevicePipelineCreationCacheControlFeaturesExt,
             void* pNext = null,
             Bool32? pipelineCreationCacheControl = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevicePipelineCreationCacheControlFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

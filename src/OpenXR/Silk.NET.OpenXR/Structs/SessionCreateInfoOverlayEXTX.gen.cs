@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             OverlaySessionCreateFlagsEXTX? createFlags = null,
             uint? sessionLayersPlacement = null
-        )
+        ) : this()
         {
-            fixed (SessionCreateInfoOverlayEXTX* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

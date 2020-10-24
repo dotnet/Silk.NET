@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.MemoryPriorityAllocateInfoExt,
             void* pNext = null,
             float? priority = null
-        )
+        ) : this()
         {
-            fixed (MemoryPriorityAllocateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

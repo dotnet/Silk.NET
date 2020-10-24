@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             ulong? size = null,
             ulong? alignment = null,
             uint? memoryTypeBits = null
-        )
+        ) : this()
         {
-            fixed (MemoryRequirements* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (size is not null)
             {
                 Size = size.Value;

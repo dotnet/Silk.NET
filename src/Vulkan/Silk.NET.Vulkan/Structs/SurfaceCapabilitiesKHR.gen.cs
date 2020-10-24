@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             SurfaceTransformFlagsKHR? currentTransform = null,
             CompositeAlphaFlagsKHR? supportedCompositeAlpha = null,
             ImageUsageFlags? supportedUsageFlags = null
-        )
+        ) : this()
         {
-            fixed (SurfaceCapabilitiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (minImageCount is not null)
             {
                 MinImageCount = minImageCount.Value;

@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             uint? maxSubgroupSize = null,
             uint? maxComputeWorkgroupSubgroups = null,
             ShaderStageFlags? requiredSubgroupSizeStages = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSubgroupSizeControlPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

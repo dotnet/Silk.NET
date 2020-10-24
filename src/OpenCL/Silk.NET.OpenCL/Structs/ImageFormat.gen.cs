@@ -24,13 +24,8 @@ namespace Silk.NET.OpenCL
         (
             uint? imageChannelOrder = null,
             uint? imageChannelDataType = null
-        )
+        ) : this()
         {
-            fixed (ImageFormat* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (imageChannelOrder is not null)
             {
                 ImageChannelOrder = imageChannelOrder.Value;

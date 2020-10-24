@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeControllerModelKeyStateMsft,
             void* next = null,
             ulong? modelKey = null
-        )
+        ) : this()
         {
-            fixed (ControllerModelKeyStateMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             float? g = null,
             float? b = null,
             float? a = null
-        )
+        ) : this()
         {
-            fixed (Color4f* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (r is not null)
             {
                 R = r.Value;

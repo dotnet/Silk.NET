@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             ulong? interactionProfile = null,
             uint? countSuggestedBindings = null,
             ActionSuggestedBinding* suggestedBindings = null
-        )
+        ) : this()
         {
-            fixed (InteractionProfileSuggestedBinding* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

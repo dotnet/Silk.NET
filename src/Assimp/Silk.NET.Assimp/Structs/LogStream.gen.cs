@@ -24,13 +24,8 @@ namespace Silk.NET.Assimp
         (
             void* callback = null,
             byte* user = null
-        )
+        ) : this()
         {
-            fixed (LogStream* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (callback is not null)
             {
                 Callback = callback;

@@ -30,13 +30,8 @@ namespace Silk.NET.OpenXR
             float? offThreshold = null,
             HapticBaseHeader* onHaptic = null,
             HapticBaseHeader* offHaptic = null
-        )
+        ) : this()
         {
-            fixed (InteractionProfileAnalogThresholdVALVE* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

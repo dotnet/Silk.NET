@@ -24,13 +24,8 @@ namespace Silk.NET.SDL
         (
             GameControllerBindType? bindType = null,
             GameControllerBindValue? value = null
-        )
+        ) : this()
         {
-            fixed (GameControllerButtonBind* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (bindType is not null)
             {
                 BindType = bindType.Value;

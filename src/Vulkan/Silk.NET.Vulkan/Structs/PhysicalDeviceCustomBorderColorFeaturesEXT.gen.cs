@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? customBorderColors = null,
             Bool32? customBorderColorWithoutFormat = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceCustomBorderColorFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

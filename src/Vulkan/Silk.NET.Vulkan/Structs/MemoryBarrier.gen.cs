@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             AccessFlags? srcAccessMask = null,
             AccessFlags? dstAccessMask = null
-        )
+        ) : this()
         {
-            fixed (MemoryBarrier* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

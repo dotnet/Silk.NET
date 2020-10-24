@@ -40,13 +40,8 @@ namespace Silk.NET.SDL
             byte? ashift = null,
             int? refcount = null,
             PixelFormat* next = null
-        )
+        ) : this()
         {
-            fixed (PixelFormat* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (format is not null)
             {
                 Format = format.Value;

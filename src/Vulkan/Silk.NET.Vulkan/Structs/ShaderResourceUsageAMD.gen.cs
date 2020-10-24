@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? ldsSizePerLocalWorkGroup = null,
             UIntPtr? ldsUsageSizeInBytes = null,
             UIntPtr? scratchMemUsageInBytes = null
-        )
+        ) : this()
         {
-            fixed (ShaderResourceUsageAMD* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (numUsedVgprs is not null)
             {
                 NumUsedVgprs = numUsedVgprs.Value;

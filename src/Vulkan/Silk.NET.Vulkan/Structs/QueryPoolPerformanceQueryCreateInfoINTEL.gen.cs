@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
             void* pNext = null,
             QueryPoolSamplingModeINTEL? performanceCountersSampling = null
-        )
+        ) : this()
         {
-            fixed (QueryPoolPerformanceQueryCreateInfoINTEL* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

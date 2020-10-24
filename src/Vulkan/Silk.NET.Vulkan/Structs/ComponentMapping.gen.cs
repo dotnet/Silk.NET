@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             ComponentSwizzle? g = null,
             ComponentSwizzle? b = null,
             ComponentSwizzle? a = null
-        )
+        ) : this()
         {
-            fixed (ComponentMapping* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (r is not null)
             {
                 R = r.Value;

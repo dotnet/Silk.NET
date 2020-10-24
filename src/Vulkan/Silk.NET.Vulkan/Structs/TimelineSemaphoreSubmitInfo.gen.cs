@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             ulong* pWaitSemaphoreValues = null,
             uint? signalSemaphoreValueCount = null,
             ulong* pSignalSemaphoreValues = null
-        )
+        ) : this()
         {
-            fixed (TimelineSemaphoreSubmitInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

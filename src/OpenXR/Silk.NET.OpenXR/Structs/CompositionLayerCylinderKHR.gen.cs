@@ -32,13 +32,8 @@ namespace Silk.NET.OpenXR
             float? radius = null,
             float? centralAngle = null,
             float? aspectRatio = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerCylinderKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

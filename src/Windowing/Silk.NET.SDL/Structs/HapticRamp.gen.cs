@@ -34,13 +34,8 @@ namespace Silk.NET.SDL
             ushort? attackLevel = null,
             ushort? fadeLength = null,
             ushort? fadeLevel = null
-        )
+        ) : this()
         {
-            fixed (HapticRamp* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.FormatProperties2,
             void* pNext = null,
             FormatProperties? formatProperties = null
-        )
+        ) : this()
         {
-            fixed (FormatProperties2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

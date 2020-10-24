@@ -77,13 +77,8 @@ namespace Silk.NET.Vulkan
             Bool32? sparseResidencyAliased = null,
             Bool32? variableMultisampleRate = null,
             Bool32? inheritedQueries = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceFeatures* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (robustBufferAccess is not null)
             {
                 RobustBufferAccess = robustBufferAccess.Value;

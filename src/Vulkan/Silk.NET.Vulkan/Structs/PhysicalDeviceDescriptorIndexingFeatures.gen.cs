@@ -44,13 +44,8 @@ namespace Silk.NET.Vulkan
             Bool32? descriptorBindingPartiallyBound = null,
             Bool32? descriptorBindingVariableDescriptorCount = null,
             Bool32? runtimeDescriptorArray = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceDescriptorIndexingFeatures* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

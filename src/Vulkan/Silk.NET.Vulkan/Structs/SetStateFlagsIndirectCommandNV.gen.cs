@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public SetStateFlagsIndirectCommandNV
         (
             uint? data = null
-        )
+        ) : this()
         {
-            fixed (SetStateFlagsIndirectCommandNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (data is not null)
             {
                 Data = data.Value;

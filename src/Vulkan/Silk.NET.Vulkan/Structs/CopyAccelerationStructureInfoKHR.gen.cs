@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             AccelerationStructureKHR? src = null,
             AccelerationStructureKHR? dst = null,
             CopyAccelerationStructureModeKHR? mode = null
-        )
+        ) : this()
         {
-            fixed (CopyAccelerationStructureInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

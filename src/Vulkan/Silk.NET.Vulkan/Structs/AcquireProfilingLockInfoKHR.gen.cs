@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             AcquireProfilingLockFlagsKHR? flags = null,
             ulong? timeout = null
-        )
+        ) : this()
         {
-            fixed (AcquireProfilingLockInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

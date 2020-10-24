@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             ulong* pWaitSemaphoreValues = null,
             uint? signalSemaphoreValuesCount = null,
             ulong* pSignalSemaphoreValues = null
-        )
+        ) : this()
         {
-            fixed (D3D12FenceSubmitInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             ShaderCorePropertiesFlagsAMD? shaderCoreFeatures = null,
             uint? activeComputeUnitCount = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceShaderCoreProperties2AMD* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

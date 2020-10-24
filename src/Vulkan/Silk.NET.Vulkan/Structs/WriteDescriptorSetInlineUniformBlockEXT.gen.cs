@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? dataSize = null,
             void* pData = null
-        )
+        ) : this()
         {
-            fixed (WriteDescriptorSetInlineUniformBlockEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

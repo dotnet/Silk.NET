@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             PipelineShaderStageCreateInfo* pStages = null,
             PipelineVertexInputStateCreateInfo* pVertexInputState = null,
             PipelineTessellationStateCreateInfo* pTessellationState = null
-        )
+        ) : this()
         {
-            fixed (GraphicsShaderGroupCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

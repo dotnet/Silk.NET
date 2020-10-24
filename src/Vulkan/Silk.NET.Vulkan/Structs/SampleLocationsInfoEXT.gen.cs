@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             Extent2D? sampleLocationGridSize = null,
             uint? sampleLocationsCount = null,
             SampleLocationEXT* pSampleLocations = null
-        )
+        ) : this()
         {
-            fixed (SampleLocationsInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

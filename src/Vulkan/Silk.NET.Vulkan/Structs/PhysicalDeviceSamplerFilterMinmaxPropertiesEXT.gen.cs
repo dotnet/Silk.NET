@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? filterMinmaxSingleComponentFormats = null,
             Bool32? filterMinmaxImageComponentMapping = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSamplerFilterMinmaxPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

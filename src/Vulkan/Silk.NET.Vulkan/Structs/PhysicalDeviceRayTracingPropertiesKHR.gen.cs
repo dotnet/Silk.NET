@@ -33,13 +33,8 @@ namespace Silk.NET.Vulkan
             ulong? maxPrimitiveCount = null,
             uint? maxDescriptorSetAccelerationStructures = null,
             uint? shaderGroupHandleCaptureReplaySize = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceRayTracingPropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

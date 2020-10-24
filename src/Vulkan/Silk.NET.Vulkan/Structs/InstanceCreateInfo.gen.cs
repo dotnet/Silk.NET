@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             byte** ppEnabledLayerNames = null,
             uint? enabledExtensionCount = null,
             byte** ppEnabledExtensionNames = null
-        )
+        ) : this()
         {
-            fixed (InstanceCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

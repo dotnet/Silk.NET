@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             uint? subpass = null,
             uint? inputAttachmentIndex = null,
             ImageAspectFlags? aspectMask = null
-        )
+        ) : this()
         {
-            fixed (InputAttachmentAspectReference* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (subpass is not null)
             {
                 Subpass = subpass.Value;

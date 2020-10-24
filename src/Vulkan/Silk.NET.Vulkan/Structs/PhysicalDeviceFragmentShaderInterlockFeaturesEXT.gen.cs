@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? fragmentShaderSampleInterlock = null,
             Bool32? fragmentShaderPixelInterlock = null,
             Bool32? fragmentShaderShadingRateInterlock = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceFragmentShaderInterlockFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

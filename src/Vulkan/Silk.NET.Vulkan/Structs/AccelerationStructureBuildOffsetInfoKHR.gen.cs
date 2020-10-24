@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             uint? primitiveOffset = null,
             uint? firstVertex = null,
             uint? transformOffset = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureBuildOffsetInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (primitiveCount is not null)
             {
                 PrimitiveCount = primitiveCount.Value;

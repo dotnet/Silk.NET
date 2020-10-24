@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ExportFenceCreateInfo,
             void* pNext = null,
             ExternalFenceHandleTypeFlags? handleTypes = null
-        )
+        ) : this()
         {
-            fixed (ExportFenceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

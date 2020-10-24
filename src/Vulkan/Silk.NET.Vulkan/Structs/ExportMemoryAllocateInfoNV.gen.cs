@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ExportMemoryAllocateInfoNV,
             void* pNext = null,
             ExternalMemoryHandleTypeFlagsNV? handleTypes = null
-        )
+        ) : this()
         {
-            fixed (ExportMemoryAllocateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

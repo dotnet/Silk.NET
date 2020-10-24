@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             float? x = null,
             float? y = null,
             float? pressure = null
-        )
+        ) : this()
         {
-            fixed (Finger* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (id is not null)
             {
                 Id = id.Value;

@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? shadingRateImageEnable = null,
             uint? viewportCount = null,
             ShadingRatePaletteNV* pShadingRatePalettes = null
-        )
+        ) : this()
         {
-            fixed (PipelineViewportShadingRateImageStateCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

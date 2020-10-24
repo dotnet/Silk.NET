@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? rectangleCount = null,
             RectLayerKHR* pRectangles = null
-        )
+        ) : this()
         {
-            fixed (PresentRegionKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (rectangleCount is not null)
             {
                 RectangleCount = rectangleCount.Value;

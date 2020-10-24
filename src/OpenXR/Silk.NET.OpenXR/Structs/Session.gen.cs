@@ -23,13 +23,8 @@ namespace Silk.NET.OpenXR
         public Session
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (Session* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

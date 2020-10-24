@@ -31,13 +31,8 @@ namespace Silk.NET.OpenCL
             UIntPtr? imageSlicePitch = null,
             uint? numMipLevels = null,
             uint? numSamples = null
-        )
+        ) : this()
         {
-            fixed (ImageDesc* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (imageType is not null)
             {
                 ImageType = imageType.Value;

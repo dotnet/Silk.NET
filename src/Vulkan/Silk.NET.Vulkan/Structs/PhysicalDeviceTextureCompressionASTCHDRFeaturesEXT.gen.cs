@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceTextureCompressionAstcHdrFeaturesExt,
             void* pNext = null,
             Bool32? textureCompressionAstcHdr = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceTextureCompressionASTCHDRFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

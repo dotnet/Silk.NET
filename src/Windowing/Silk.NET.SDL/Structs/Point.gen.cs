@@ -24,13 +24,8 @@ namespace Silk.NET.SDL
         (
             int? x = null,
             int? y = null
-        )
+        ) : this()
         {
-            fixed (Point* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

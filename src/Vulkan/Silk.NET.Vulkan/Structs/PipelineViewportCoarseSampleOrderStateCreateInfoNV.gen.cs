@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             CoarseSampleOrderTypeNV? sampleOrderType = null,
             uint? customSampleOrderCount = null,
             CoarseSampleOrderCustomNV* pCustomSampleOrders = null
-        )
+        ) : this()
         {
-            fixed (PipelineViewportCoarseSampleOrderStateCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

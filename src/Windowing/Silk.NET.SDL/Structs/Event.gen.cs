@@ -50,13 +50,8 @@ namespace Silk.NET.SDL
             MultiGestureEvent? mgesture = null,
             DollarGestureEvent? dgesture = null,
             DropEvent? drop = null
-        )
+        ) : this()
         {
-            fixed (Event* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

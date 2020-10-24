@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             SampleCountFlags? samples = null,
             ImageUsageFlags? usage = null,
             ImageTiling? tiling = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSparseImageFormatInfo2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

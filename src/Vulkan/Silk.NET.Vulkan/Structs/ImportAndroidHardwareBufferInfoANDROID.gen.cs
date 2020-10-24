@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ImportAndroidHardwareBufferInfoAndroid,
             void* pNext = null,
             IntPtr* buffer = null
-        )
+        ) : this()
         {
-            fixed (ImportAndroidHardwareBufferInfoANDROID* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

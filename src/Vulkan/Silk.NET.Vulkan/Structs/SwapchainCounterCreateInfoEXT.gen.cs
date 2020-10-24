@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SwapchainCounterCreateInfoExt,
             void* pNext = null,
             SurfaceCounterFlagsEXT? surfaceCounters = null
-        )
+        ) : this()
         {
-            fixed (SwapchainCounterCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

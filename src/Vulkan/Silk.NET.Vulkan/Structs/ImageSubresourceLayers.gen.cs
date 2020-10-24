@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             uint? mipLevel = null,
             uint? baseArrayLayer = null,
             uint? layerCount = null
-        )
+        ) : this()
         {
-            fixed (ImageSubresourceLayers* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (aspectMask is not null)
             {
                 AspectMask = aspectMask.Value;

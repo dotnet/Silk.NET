@@ -32,13 +32,8 @@ namespace Silk.NET.Assimp
             uint? mMaxMajor = null,
             uint? mMaxMinor = null,
             byte* mFileExtensions = null
-        )
+        ) : this()
         {
-            fixed (ImporterDesc* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mName is not null)
             {
                 MName = mName;

@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? flags = null,
             uint? viewportCount = null,
             ViewportSwizzleNV* pViewportSwizzles = null
-        )
+        ) : this()
         {
-            fixed (PipelineViewportSwizzleStateCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

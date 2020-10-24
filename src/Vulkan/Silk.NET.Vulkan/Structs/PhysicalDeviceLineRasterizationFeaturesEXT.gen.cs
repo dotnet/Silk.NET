@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             Bool32? stippledRectangularLines = null,
             Bool32? stippledBresenhamLines = null,
             Bool32? stippledSmoothLines = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceLineRasterizationFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

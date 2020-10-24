@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             AccessFlags? srcAccessMask = null,
             AccessFlags? dstAccessMask = null,
             DependencyFlags? dependencyFlags = null
-        )
+        ) : this()
         {
-            fixed (SubpassDependency* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (srcSubpass is not null)
             {
                 SrcSubpass = srcSubpass.Value;

@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             Extent2D? maxSampleLocationGridSize = null,
             uint? sampleLocationSubPixelBits = null,
             Bool32? variableSampleLocations = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSampleLocationsPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

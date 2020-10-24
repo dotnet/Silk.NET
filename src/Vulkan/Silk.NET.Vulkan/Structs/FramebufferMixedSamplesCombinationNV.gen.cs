@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             SampleCountFlags? rasterizationSamples = null,
             SampleCountFlags? depthStencilSamples = null,
             SampleCountFlags? colorSamples = null
-        )
+        ) : this()
         {
-            fixed (FramebufferMixedSamplesCombinationNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

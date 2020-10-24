@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.AttachmentReferenceStencilLayout,
             void* pNext = null,
             ImageLayout? stencilLayout = null
-        )
+        ) : this()
         {
-            fixed (AttachmentReferenceStencilLayoutKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -30,13 +30,8 @@ namespace Silk.NET.OpenXR
             uint? indexCapacityInput = null,
             uint? indexCountOutput = null,
             uint* indices = null
-        )
+        ) : this()
         {
-            fixed (VisibilityMaskKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

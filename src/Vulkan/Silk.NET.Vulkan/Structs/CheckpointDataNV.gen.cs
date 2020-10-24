@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             PipelineStageFlags? stage = null,
             void* pCheckpointMarker = null
-        )
+        ) : this()
         {
-            fixed (CheckpointDataNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

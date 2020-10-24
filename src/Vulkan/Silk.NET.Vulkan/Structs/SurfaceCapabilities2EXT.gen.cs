@@ -35,13 +35,8 @@ namespace Silk.NET.Vulkan
             CompositeAlphaFlagsKHR? supportedCompositeAlpha = null,
             ImageUsageFlags? supportedUsageFlags = null,
             SurfaceCounterFlagsEXT? supportedSurfaceCounters = null
-        )
+        ) : this()
         {
-            fixed (SurfaceCapabilities2EXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

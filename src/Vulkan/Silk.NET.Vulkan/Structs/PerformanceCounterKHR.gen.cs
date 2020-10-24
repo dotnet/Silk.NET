@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             PerformanceCounterUnitKHR? unit = null,
             PerformanceCounterScopeKHR? scope = null,
             PerformanceCounterStorageKHR? storage = null
-        )
+        ) : this()
         {
-            fixed (PerformanceCounterKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

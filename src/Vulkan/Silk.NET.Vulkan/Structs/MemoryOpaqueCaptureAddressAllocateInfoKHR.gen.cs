@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.MemoryOpaqueCaptureAddressAllocateInfo,
             void* pNext = null,
             ulong? opaqueCaptureAddress = null
-        )
+        ) : this()
         {
-            fixed (MemoryOpaqueCaptureAddressAllocateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

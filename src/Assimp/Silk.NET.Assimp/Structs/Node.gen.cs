@@ -30,13 +30,8 @@ namespace Silk.NET.Assimp
             uint? mNumMeshes = null,
             uint* mMeshes = null,
             Metadata* mMetaData = null
-        )
+        ) : this()
         {
-            fixed (Node* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mName is not null)
             {
                 MName = mName.Value;

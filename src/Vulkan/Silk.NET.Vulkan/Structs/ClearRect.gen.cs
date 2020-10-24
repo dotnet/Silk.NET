@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             Rect2D? rect = null,
             uint? baseArrayLayer = null,
             uint? layerCount = null
-        )
+        ) : this()
         {
-            fixed (ClearRect* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (rect is not null)
             {
                 Rect = rect.Value;

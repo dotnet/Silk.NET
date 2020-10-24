@@ -24,13 +24,8 @@ namespace Silk.NET.Assimp
         (
             MetadataType? mType = null,
             void* mData = null
-        )
+        ) : this()
         {
-            fixed (MetadataEntry* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mType is not null)
             {
                 MType = mType.Value;

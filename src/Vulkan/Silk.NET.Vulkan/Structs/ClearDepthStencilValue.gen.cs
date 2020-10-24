@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             float? depth = null,
             uint? stencil = null
-        )
+        ) : this()
         {
-            fixed (ClearDepthStencilValue* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (depth is not null)
             {
                 Depth = depth.Value;

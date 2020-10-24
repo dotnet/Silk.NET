@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             uint? queueCount = null,
             uint? timestampValidBits = null,
             Extent3D? minImageTransferGranularity = null
-        )
+        ) : this()
         {
-            fixed (QueueFamilyProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (queueFlags is not null)
             {
                 QueueFlags = queueFlags.Value;

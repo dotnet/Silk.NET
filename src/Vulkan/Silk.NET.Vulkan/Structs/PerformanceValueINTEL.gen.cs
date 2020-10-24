@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             PerformanceValueTypeINTEL? type = null,
             PerformanceValueDataINTEL? data = null
-        )
+        ) : this()
         {
-            fixed (PerformanceValueINTEL* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

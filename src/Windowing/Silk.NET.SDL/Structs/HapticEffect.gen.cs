@@ -30,13 +30,8 @@ namespace Silk.NET.SDL
             HapticRamp? ramp = null,
             HapticLeftRight? leftright = null,
             HapticCustom? custom = null
-        )
+        ) : this()
         {
-            fixed (HapticEffect* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

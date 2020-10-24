@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             SpaceVelocityFlags? velocityFlags = null,
             Vector3f? linearVelocity = null,
             Vector3f? angularVelocity = null
-        )
+        ) : this()
         {
-            fixed (HandJointVelocityEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (velocityFlags is not null)
             {
                 VelocityFlags = velocityFlags.Value;

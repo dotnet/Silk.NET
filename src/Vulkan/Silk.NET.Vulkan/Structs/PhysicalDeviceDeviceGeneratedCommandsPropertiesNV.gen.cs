@@ -33,13 +33,8 @@ namespace Silk.NET.Vulkan
             uint? minSequencesCountBufferOffsetAlignment = null,
             uint? minSequencesIndexBufferOffsetAlignment = null,
             uint? minIndirectCommandsBufferOffsetAlignment = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceDeviceGeneratedCommandsPropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

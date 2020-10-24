@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             PipelineCacheCreateFlags? flags = null,
             UIntPtr? initialDataSize = null,
             void* pInitialData = null
-        )
+        ) : this()
         {
-            fixed (PipelineCacheCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

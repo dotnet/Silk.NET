@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.BufferMemoryRequirementsInfo2,
             void* pNext = null,
             Buffer? buffer = null
-        )
+        ) : this()
         {
-            fixed (BufferMemoryRequirementsInfo2* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

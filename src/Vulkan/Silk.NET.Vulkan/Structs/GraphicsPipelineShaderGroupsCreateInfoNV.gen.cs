@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             GraphicsShaderGroupCreateInfoNV* pGroups = null,
             uint? pipelineCount = null,
             Pipeline* pPipelines = null
-        )
+        ) : this()
         {
-            fixed (GraphicsPipelineShaderGroupsCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

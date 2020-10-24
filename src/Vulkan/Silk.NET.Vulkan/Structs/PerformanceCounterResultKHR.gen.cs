@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             ulong? uint64 = null,
             float? float32 = null,
             double? float64 = null
-        )
+        ) : this()
         {
-            fixed (PerformanceCounterResultKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (int32 is not null)
             {
                 Int32 = int32.Value;

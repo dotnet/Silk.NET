@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             IndexType? indexType = null,
             DeviceOrHostAddressConstKHR? indexData = null,
             DeviceOrHostAddressConstKHR? transformData = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureGeometryTrianglesDataKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

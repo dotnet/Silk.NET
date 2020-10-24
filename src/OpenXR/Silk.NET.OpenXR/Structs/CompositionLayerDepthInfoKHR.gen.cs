@@ -29,13 +29,8 @@ namespace Silk.NET.OpenXR
             float? maxDepth = null,
             float? nearZ = null,
             float? farZ = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerDepthInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

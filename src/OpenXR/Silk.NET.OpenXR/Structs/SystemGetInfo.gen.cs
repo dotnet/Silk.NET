@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeSystemGetInfo,
             void* next = null,
             FormFactor? formFactor = null
-        )
+        ) : this()
         {
-            fixed (SystemGetInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

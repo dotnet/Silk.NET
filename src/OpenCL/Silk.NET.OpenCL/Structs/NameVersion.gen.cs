@@ -23,13 +23,8 @@ namespace Silk.NET.OpenCL
         public NameVersion
         (
             uint? version = null
-        )
+        ) : this()
         {
-            fixed (NameVersion* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (version is not null)
             {
                 Version = version.Value;

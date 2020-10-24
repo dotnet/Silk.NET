@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public Instance
         (
             IntPtr? handle = null
-        )
+        ) : this()
         {
-            fixed (Instance* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

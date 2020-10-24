@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             HandEXT? hand = null,
             HandJointSetEXT? handJointSet = null
-        )
+        ) : this()
         {
-            fixed (HandTrackerCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

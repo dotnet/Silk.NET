@@ -24,13 +24,8 @@ namespace Silk.NET.OpenXR
         (
             int? x = null,
             int? y = null
-        )
+        ) : this()
         {
-            fixed (Offset2Di* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

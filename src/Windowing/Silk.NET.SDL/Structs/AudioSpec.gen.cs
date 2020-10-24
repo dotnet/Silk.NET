@@ -31,13 +31,8 @@ namespace Silk.NET.SDL
             uint? size = null,
             void* callback = null,
             void* userdata = null
-        )
+        ) : this()
         {
-            fixed (AudioSpec* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (freq is not null)
             {
                 Freq = freq.Value;

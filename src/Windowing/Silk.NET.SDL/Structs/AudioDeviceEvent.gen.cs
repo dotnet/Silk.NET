@@ -29,13 +29,8 @@ namespace Silk.NET.SDL
             byte? padding1 = null,
             byte? padding2 = null,
             byte? padding3 = null
-        )
+        ) : this()
         {
-            fixed (AudioDeviceEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

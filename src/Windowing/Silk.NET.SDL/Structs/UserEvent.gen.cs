@@ -28,13 +28,8 @@ namespace Silk.NET.SDL
             int? code = null,
             void* data1 = null,
             void* data2 = null
-        )
+        ) : this()
         {
-            fixed (UserEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

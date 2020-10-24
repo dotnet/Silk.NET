@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             uint? maxVertexCount = null,
             Format? vertexFormat = null,
             Bool32? allowsTransforms = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureCreateGeometryTypeInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

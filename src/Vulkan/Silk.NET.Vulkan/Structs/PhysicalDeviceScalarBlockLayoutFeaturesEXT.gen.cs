@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceScalarBlockLayoutFeatures,
             void* pNext = null,
             Bool32? scalarBlockLayout = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceScalarBlockLayoutFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

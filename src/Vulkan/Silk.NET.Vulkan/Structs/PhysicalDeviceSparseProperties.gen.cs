@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? residencyStandard3DBlockShape = null,
             Bool32? residencyAlignedMipSize = null,
             Bool32? residencyNonResidentStrict = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceSparseProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (residencyStandard2DBlockShape is not null)
             {
                 ResidencyStandard2DBlockShape = residencyStandard2DBlockShape.Value;

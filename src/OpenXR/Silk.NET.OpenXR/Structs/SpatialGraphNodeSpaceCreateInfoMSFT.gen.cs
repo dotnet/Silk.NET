@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             SpatialGraphNodeTypeMSFT? nodeType = null,
             Posef? pose = null
-        )
+        ) : this()
         {
-            fixed (SpatialGraphNodeSpaceCreateInfoMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Assimp
             byte* id = null,
             byte* description = null,
             byte* fileExtension = null
-        )
+        ) : this()
         {
-            fixed (ExportFormatDesc* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (id is not null)
             {
                 Id = id;

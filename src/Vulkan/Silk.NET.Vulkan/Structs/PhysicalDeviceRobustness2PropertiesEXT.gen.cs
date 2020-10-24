@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             ulong? robustStorageBufferAccessSizeAlignment = null,
             ulong? robustUniformBufferAccessSizeAlignment = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceRobustness2PropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

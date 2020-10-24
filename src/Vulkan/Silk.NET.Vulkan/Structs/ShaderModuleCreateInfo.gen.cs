@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ShaderModuleCreateFlags? flags = null,
             UIntPtr? codeSize = null,
             uint* pCode = null
-        )
+        ) : this()
         {
-            fixed (ShaderModuleCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

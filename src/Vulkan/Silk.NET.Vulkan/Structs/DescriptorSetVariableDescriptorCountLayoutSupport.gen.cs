@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport,
             void* pNext = null,
             uint? maxVariableDescriptorCount = null
-        )
+        ) : this()
         {
-            fixed (DescriptorSetVariableDescriptorCountLayoutSupport* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

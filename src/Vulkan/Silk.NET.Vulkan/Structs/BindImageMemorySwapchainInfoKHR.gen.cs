@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             SwapchainKHR? swapchain = null,
             uint? imageIndex = null
-        )
+        ) : this()
         {
-            fixed (BindImageMemorySwapchainInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

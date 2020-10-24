@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             ComponentTypeNV? cType = null,
             ComponentTypeNV? dType = null,
             ScopeNV? scope = null
-        )
+        ) : this()
         {
-            fixed (CooperativeMatrixPropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

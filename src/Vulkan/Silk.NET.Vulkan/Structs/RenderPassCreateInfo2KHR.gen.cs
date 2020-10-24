@@ -33,13 +33,8 @@ namespace Silk.NET.Vulkan
             SubpassDependency2* pDependencies = null,
             uint? correlatedViewMaskCount = null,
             uint* pCorrelatedViewMasks = null
-        )
+        ) : this()
         {
-            fixed (RenderPassCreateInfo2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

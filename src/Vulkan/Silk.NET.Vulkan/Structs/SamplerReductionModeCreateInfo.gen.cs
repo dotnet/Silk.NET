@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SamplerReductionModeCreateInfo,
             void* pNext = null,
             SamplerReductionMode? reductionMode = null
-        )
+        ) : this()
         {
-            fixed (SamplerReductionModeCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Assimp
             uint? mNumWeights = null,
             VertexWeight* mWeights = null,
             System.Numerics.Matrix4x4? mOffsetMatrix = null
-        )
+        ) : this()
         {
-            fixed (Bone* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mName is not null)
             {
                 MName = mName.Value;

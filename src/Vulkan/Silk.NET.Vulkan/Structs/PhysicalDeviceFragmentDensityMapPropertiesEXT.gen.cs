@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Extent2D? minFragmentDensityTexelSize = null,
             Extent2D? maxFragmentDensityTexelSize = null,
             Bool32? fragmentDensityInvocations = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceFragmentDensityMapPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

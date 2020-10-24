@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             Rect2D? renderArea = null,
             uint? clearValueCount = null,
             ClearValue* pClearValues = null
-        )
+        ) : this()
         {
-            fixed (RenderPassBeginInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

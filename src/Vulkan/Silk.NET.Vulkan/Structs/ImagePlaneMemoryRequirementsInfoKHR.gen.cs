@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ImagePlaneMemoryRequirementsInfo,
             void* pNext = null,
             ImageAspectFlags? planeAspect = null
-        )
+        ) : this()
         {
-            fixed (ImagePlaneMemoryRequirementsInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

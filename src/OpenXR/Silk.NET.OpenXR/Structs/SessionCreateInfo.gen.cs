@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             SessionCreateFlags? createFlags = null,
             ulong? systemId = null
-        )
+        ) : this()
         {
-            fixed (SessionCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -29,13 +29,8 @@ namespace Silk.NET.SDL
             int? numbuttons = null,
             MessageBoxButtonData* buttons = null,
             MessageBoxColorScheme* colorScheme = null
-        )
+        ) : this()
         {
-            fixed (MessageBoxData* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (flags is not null)
             {
                 Flags = flags.Value;

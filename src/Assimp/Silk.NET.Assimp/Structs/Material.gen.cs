@@ -25,13 +25,8 @@ namespace Silk.NET.Assimp
             MaterialProperty** mProperties = null,
             uint? mNumProperties = null,
             uint? mNumAllocated = null
-        )
+        ) : this()
         {
-            fixed (Material* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mProperties is not null)
             {
                 MProperties = mProperties;

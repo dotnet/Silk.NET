@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             ImageSubresourceLayers? srcSubresource = null,
             ImageSubresourceLayers? dstSubresource = null
-        )
+        ) : this()
         {
-            fixed (ImageBlit* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (srcSubresource is not null)
             {
                 SrcSubresource = srcSubresource.Value;

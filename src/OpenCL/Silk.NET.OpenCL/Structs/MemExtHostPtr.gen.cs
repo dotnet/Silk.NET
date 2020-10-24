@@ -24,13 +24,8 @@ namespace Silk.NET.OpenCL
         (
             uint? allocationType = null,
             uint? hostCachePolicy = null
-        )
+        ) : this()
         {
-            fixed (MemExtHostPtr* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (allocationType is not null)
             {
                 AllocationType = allocationType.Value;

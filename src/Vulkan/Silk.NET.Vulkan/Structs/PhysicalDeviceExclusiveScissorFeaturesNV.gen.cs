@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceExclusiveScissorFeaturesNV,
             void* pNext = null,
             Bool32? exclusiveScissor = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceExclusiveScissorFeaturesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

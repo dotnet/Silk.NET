@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ulong? drmFormatModifier = null,
             uint? drmFormatModifierPlaneCount = null,
             SubresourceLayout* pPlaneLayouts = null
-        )
+        ) : this()
         {
-            fixed (ImageDrmFormatModifierExplicitCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             uint? instanceShaderBindingTableRecordOffset = null,
             GeometryInstanceFlagsKHR? flags = null,
             ulong? accelerationStructureReference = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureInstanceKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (transform is not null)
             {
                 Transform = transform.Value;

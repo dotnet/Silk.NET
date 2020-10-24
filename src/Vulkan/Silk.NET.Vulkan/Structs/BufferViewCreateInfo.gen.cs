@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             Format? format = null,
             ulong? offset = null,
             ulong? range = null
-        )
+        ) : this()
         {
-            fixed (BufferViewCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

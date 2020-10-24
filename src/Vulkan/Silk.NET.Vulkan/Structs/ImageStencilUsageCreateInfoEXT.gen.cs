@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ImageStencilUsageCreateInfo,
             void* pNext = null,
             ImageUsageFlags? stencilUsage = null
-        )
+        ) : this()
         {
-            fixed (ImageStencilUsageCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

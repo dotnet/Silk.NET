@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DeviceDiagnosticsConfigCreateInfoNV,
             void* pNext = null,
             DeviceDiagnosticsConfigFlagsNV? flags = null
-        )
+        ) : this()
         {
-            fixed (DeviceDiagnosticsConfigCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

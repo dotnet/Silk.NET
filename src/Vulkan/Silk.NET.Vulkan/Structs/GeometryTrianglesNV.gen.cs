@@ -35,13 +35,8 @@ namespace Silk.NET.Vulkan
             IndexType? indexType = null,
             Buffer? transformData = null,
             ulong? transformOffset = null
-        )
+        ) : this()
         {
-            fixed (GeometryTrianglesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

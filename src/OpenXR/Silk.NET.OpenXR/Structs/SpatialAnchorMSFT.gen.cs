@@ -23,13 +23,8 @@ namespace Silk.NET.OpenXR
         public SpatialAnchorMSFT
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (SpatialAnchorMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

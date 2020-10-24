@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             uint? maxSwapchainImageHeight = null,
             uint? maxSwapchainImageWidth = null,
             uint? maxLayerCount = null
-        )
+        ) : this()
         {
-            fixed (SystemGraphicsProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (maxSwapchainImageHeight is not null)
             {
                 MaxSwapchainImageHeight = maxSwapchainImageHeight.Value;

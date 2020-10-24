@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public ExtensionProperties
         (
             uint? specVersion = null
-        )
+        ) : this()
         {
-            fixed (ExtensionProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (specVersion is not null)
             {
                 SpecVersion = specVersion.Value;

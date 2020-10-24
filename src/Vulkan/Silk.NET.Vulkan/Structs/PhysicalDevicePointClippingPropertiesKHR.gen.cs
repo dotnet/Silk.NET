@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDevicePointClippingProperties,
             void* pNext = null,
             PointClippingBehavior? pointClippingBehavior = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevicePointClippingPropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

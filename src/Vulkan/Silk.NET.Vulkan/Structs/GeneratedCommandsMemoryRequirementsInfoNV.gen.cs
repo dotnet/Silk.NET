@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             Pipeline? pipeline = null,
             IndirectCommandsLayoutNV? indirectCommandsLayout = null,
             uint? maxSequencesCount = null
-        )
+        ) : this()
         {
-            fixed (GeneratedCommandsMemoryRequirementsInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

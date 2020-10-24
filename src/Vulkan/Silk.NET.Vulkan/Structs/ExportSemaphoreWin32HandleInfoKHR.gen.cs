@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             IntPtr* pAttributes = null,
             int? dwAccess = null,
             IntPtr? name = null
-        )
+        ) : this()
         {
-            fixed (ExportSemaphoreWin32HandleInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

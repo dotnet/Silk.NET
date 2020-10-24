@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public AccelerationStructureKHR
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

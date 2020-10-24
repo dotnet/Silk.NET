@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             VertexInputBindingDescription* pVertexBindingDescriptions = null,
             uint? vertexAttributeDescriptionCount = null,
             VertexInputAttributeDescription* pVertexAttributeDescriptions = null
-        )
+        ) : this()
         {
-            fixed (PipelineVertexInputStateCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

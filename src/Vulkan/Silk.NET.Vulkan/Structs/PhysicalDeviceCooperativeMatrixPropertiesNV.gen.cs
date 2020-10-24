@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceCooperativeMatrixPropertiesNV,
             void* pNext = null,
             ShaderStageFlags? cooperativeMatrixSupportedStages = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceCooperativeMatrixPropertiesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

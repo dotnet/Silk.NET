@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? conditionalRendering = null,
             Bool32? inheritedConditionalRendering = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceConditionalRenderingFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

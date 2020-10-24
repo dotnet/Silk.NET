@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeSystemHandTrackingPropertiesExt,
             void* next = null,
             uint? supportsHandTracking = null
-        )
+        ) : this()
         {
-            fixed (SystemHandTrackingPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             DiscardRectangleModeEXT? discardRectangleMode = null,
             uint? discardRectangleCount = null,
             Rect2D* pDiscardRectangles = null
-        )
+        ) : this()
         {
-            fixed (PipelineDiscardRectangleStateCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

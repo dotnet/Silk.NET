@@ -29,13 +29,8 @@ namespace Silk.NET.Assimp
             System.Numerics.Vector3* mBitangents = null,
             uint? mNumVertices = null,
             float? mWeight = null
-        )
+        ) : this()
         {
-            fixed (AnimMesh* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mName is not null)
             {
                 MName = mName.Value;

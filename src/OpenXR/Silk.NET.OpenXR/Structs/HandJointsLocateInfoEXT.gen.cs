@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             Space? baseSpace = null,
             long? time = null
-        )
+        ) : this()
         {
-            fixed (HandJointsLocateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

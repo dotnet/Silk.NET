@@ -27,13 +27,8 @@ namespace Silk.NET.SDL
             int? h = null,
             int? refreshRate = null,
             void* driverdata = null
-        )
+        ) : this()
         {
-            fixed (DisplayMode* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (format is not null)
             {
                 Format = format.Value;

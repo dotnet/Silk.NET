@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public Device
         (
             IntPtr? handle = null
-        )
+        ) : this()
         {
-            fixed (Device* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

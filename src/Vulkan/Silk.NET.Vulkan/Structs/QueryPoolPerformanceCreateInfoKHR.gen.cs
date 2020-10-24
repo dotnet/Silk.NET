@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             uint? queueFamilyIndex = null,
             uint? counterIndexCount = null,
             uint* pCounterIndices = null
-        )
+        ) : this()
         {
-            fixed (QueryPoolPerformanceCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

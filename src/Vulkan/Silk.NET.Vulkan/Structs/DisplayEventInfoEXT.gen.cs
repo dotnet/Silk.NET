@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DisplayEventInfoExt,
             void* pNext = null,
             DisplayEventTypeEXT? displayEvent = null
-        )
+        ) : this()
         {
-            fixed (DisplayEventInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

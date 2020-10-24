@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.MemoryHostPointerPropertiesExt,
             void* pNext = null,
             uint? memoryTypeBits = null
-        )
+        ) : this()
         {
-            fixed (MemoryHostPointerPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

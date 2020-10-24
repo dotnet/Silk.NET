@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? formatA4R4G4B4 = null,
             Bool32? formatA4B4G4R4 = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDevice4444FormatsFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

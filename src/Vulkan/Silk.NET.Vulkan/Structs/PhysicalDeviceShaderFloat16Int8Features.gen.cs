@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? shaderFloat16 = null,
             Bool32? shaderInt8 = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceShaderFloat16Int8Features* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

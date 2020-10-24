@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceImagelessFramebufferFeatures,
             void* pNext = null,
             Bool32? imagelessFramebuffer = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceImagelessFramebufferFeaturesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? deviceIndexCount = null,
             uint* pDeviceIndices = null
-        )
+        ) : this()
         {
-            fixed (BindBufferMemoryDeviceGroupInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

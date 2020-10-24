@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             DebugReportObjectTypeEXT? objectType = null,
             ulong? @object = null,
             byte* pObjectName = null
-        )
+        ) : this()
         {
-            fixed (DebugMarkerObjectNameInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

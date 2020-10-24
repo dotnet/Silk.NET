@@ -28,13 +28,8 @@ namespace Silk.NET.OpenXR
             float? minNearZ = null,
             float? recommendedFarZ = null,
             float? maxFarZ = null
-        )
+        ) : this()
         {
-            fixed (ViewConfigurationDepthRangeEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

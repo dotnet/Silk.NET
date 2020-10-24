@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             ImageSubresourceLayers? dstSubresource = null,
             Offset3D? dstOffset = null,
             Extent3D? extent = null
-        )
+        ) : this()
         {
-            fixed (ImageResolve* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (srcSubresource is not null)
             {
                 SrcSubresource = srcSubresource.Value;

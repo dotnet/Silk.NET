@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             uint? numPhysicalSgprs = null,
             uint? numAvailableVgprs = null,
             uint? numAvailableSgprs = null
-        )
+        ) : this()
         {
-            fixed (ShaderStatisticsInfoAMD* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (shaderStageMask is not null)
             {
                 ShaderStageMask = shaderStageMask.Value;

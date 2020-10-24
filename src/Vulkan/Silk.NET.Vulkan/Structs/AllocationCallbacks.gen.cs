@@ -28,13 +28,8 @@ namespace Silk.NET.Vulkan
             FuncPtr? pfnFree = null,
             FuncPtr? pfnInternalAllocation = null,
             FuncPtr? pfnInternalFree = null
-        )
+        ) : this()
         {
-            fixed (AllocationCallbacks* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (pUserData is not null)
             {
                 PUserData = pUserData;

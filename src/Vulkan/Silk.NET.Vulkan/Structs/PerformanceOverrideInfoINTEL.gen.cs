@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             PerformanceOverrideTypeINTEL? type = null,
             Bool32? enable = null,
             ulong? parameter = null
-        )
+        ) : this()
         {
-            fixed (PerformanceOverrideInfoINTEL* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             CommandPoolCreateFlags? flags = null,
             uint? queueFamilyIndex = null
-        )
+        ) : this()
         {
-            fixed (CommandPoolCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

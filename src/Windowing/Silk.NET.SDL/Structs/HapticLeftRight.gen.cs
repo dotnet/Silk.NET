@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             uint? length = null,
             ushort? largeMagnitude = null,
             ushort? smallMagnitude = null
-        )
+        ) : this()
         {
-            fixed (HapticLeftRight* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

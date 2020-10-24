@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PerformanceMarkerInfoIntel,
             void* pNext = null,
             ulong? marker = null
-        )
+        ) : this()
         {
-            fixed (PerformanceMarkerInfoINTEL* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

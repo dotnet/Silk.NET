@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             float? x = null,
             float? y = null,
             float? z = null
-        )
+        ) : this()
         {
-            fixed (Vector3f* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

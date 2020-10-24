@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             LogicOp? logicOp = null,
             uint? attachmentCount = null,
             PipelineColorBlendAttachmentState* pAttachments = null
-        )
+        ) : this()
         {
-            fixed (PipelineColorBlendStateCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

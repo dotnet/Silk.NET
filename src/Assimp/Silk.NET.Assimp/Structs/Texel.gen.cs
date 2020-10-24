@@ -26,13 +26,8 @@ namespace Silk.NET.Assimp
             byte? g = null,
             byte? r = null,
             byte? a = null
-        )
+        ) : this()
         {
-            fixed (Texel* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (b is not null)
             {
                 B = b.Value;

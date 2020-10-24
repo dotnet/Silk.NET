@@ -122,13 +122,8 @@ namespace Silk.NET.Vulkan
             ulong? optimalBufferCopyOffsetAlignment = null,
             ulong? optimalBufferCopyRowPitchAlignment = null,
             ulong? nonCoherentAtomSize = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceLimits* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (maxImageDimension1D is not null)
             {
                 MaxImageDimension1D = maxImageDimension1D.Value;

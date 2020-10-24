@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SemaphoreCreateInfo,
             void* pNext = null,
             uint? flags = null
-        )
+        ) : this()
         {
-            fixed (SemaphoreCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

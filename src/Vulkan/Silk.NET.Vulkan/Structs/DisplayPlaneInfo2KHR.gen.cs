@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             DisplayModeKHR? mode = null,
             uint? planeIndex = null
-        )
+        ) : this()
         {
-            fixed (DisplayPlaneInfo2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             AccessFlags? dstAccessMask = null,
             DependencyFlags? dependencyFlags = null,
             int? viewOffset = null
-        )
+        ) : this()
         {
-            fixed (SubpassDependency2KHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

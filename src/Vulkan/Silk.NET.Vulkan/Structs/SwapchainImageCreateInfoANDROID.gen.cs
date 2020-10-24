@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.SwapchainImageCreateInfoAndroid,
             void* pNext = null,
             SwapchainImageUsageFlagsANDROID? usage = null
-        )
+        ) : this()
         {
-            fixed (SwapchainImageCreateInfoANDROID* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

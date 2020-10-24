@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceExternalMemoryHostPropertiesExt,
             void* pNext = null,
             ulong? minImportedHostPointerAlignment = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceExternalMemoryHostPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

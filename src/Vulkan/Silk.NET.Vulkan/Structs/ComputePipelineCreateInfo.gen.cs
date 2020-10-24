@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             PipelineLayout? layout = null,
             Pipeline? basePipelineHandle = null,
             int? basePipelineIndex = null
-        )
+        ) : this()
         {
-            fixed (ComputePipelineCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

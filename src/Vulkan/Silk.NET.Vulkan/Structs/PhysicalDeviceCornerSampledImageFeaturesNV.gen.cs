@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceCornerSampledImageFeaturesNV,
             void* pNext = null,
             Bool32? cornerSampledImage = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceCornerSampledImageFeaturesNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             Color4f? colorScale = null,
             Color4f? colorBias = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerColorScaleBiasKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

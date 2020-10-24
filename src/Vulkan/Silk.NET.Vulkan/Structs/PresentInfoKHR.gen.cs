@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             SwapchainKHR* pSwapchains = null,
             uint* pImageIndices = null,
             Result* pResults = null
-        )
+        ) : this()
         {
-            fixed (PresentInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

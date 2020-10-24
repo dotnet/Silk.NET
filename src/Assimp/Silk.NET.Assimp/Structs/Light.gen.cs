@@ -36,13 +36,8 @@ namespace Silk.NET.Assimp
             float? mAngleInnerCone = null,
             float? mAngleOuterCone = null,
             System.Numerics.Vector2? mSize = null
-        )
+        ) : this()
         {
-            fixed (Light* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mName is not null)
             {
                 MName = mName.Value;

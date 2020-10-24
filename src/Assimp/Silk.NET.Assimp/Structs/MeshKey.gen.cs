@@ -24,13 +24,8 @@ namespace Silk.NET.Assimp
         (
             double? mTime = null,
             uint? mValue = null
-        )
+        ) : this()
         {
-            fixed (MeshKey* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mTime is not null)
             {
                 MTime = mTime.Value;

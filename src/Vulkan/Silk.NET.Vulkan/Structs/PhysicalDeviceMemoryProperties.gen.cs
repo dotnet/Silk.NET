@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             uint? memoryTypeCount = null,
             uint? memoryHeapCount = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceMemoryProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (memoryTypeCount is not null)
             {
                 MemoryTypeCount = memoryTypeCount.Value;

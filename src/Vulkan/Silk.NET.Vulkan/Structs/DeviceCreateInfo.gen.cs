@@ -32,13 +32,8 @@ namespace Silk.NET.Vulkan
             uint? enabledExtensionCount = null,
             byte** ppEnabledExtensionNames = null,
             PhysicalDeviceFeatures* pEnabledFeatures = null
-        )
+        ) : this()
         {
-            fixed (DeviceCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

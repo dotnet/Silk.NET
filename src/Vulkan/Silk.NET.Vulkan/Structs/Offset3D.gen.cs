@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             int? x = null,
             int? y = null,
             int? z = null
-        )
+        ) : this()
         {
-            fixed (Offset3D* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

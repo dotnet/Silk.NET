@@ -27,13 +27,8 @@ namespace Silk.NET.SDL
             uint? numTextureFormats = null,
             int? maxTextureWidth = null,
             int? maxTextureHeight = null
-        )
+        ) : this()
         {
-            fixed (RendererInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (name is not null)
             {
                 Name = name;

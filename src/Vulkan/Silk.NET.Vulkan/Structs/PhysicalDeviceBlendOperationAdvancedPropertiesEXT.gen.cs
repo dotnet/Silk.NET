@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             Bool32? advancedBlendNonPremultipliedDstColor = null,
             Bool32? advancedBlendCorrelatedOverlap = null,
             Bool32? advancedBlendAllOperations = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceBlendOperationAdvancedPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

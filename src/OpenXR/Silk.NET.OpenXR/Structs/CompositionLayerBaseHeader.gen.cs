@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             CompositionLayerFlags? layerFlags = null,
             Space? space = null
-        )
+        ) : this()
         {
-            fixed (CompositionLayerBaseHeader* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceMultiviewPerViewAttributesPropertiesNvx,
             void* pNext = null,
             Bool32? perViewPositionAllComponents = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

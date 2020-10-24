@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             uint? anyHitShader = null,
             uint? intersectionShader = null,
             void* pShaderGroupCaptureReplayHandle = null
-        )
+        ) : this()
         {
-            fixed (RayTracingShaderGroupCreateInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

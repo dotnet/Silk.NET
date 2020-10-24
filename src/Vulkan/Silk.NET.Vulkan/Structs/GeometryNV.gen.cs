@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             GeometryTypeKHR? geometryType = null,
             GeometryDataNV? geometry = null,
             GeometryFlagsKHR? flags = null
-        )
+        ) : this()
         {
-            fixed (GeometryNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

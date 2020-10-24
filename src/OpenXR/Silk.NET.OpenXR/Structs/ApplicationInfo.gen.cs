@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             uint? applicationVersion = null,
             uint? engineVersion = null,
             ulong? apiVersion = null
-        )
+        ) : this()
         {
-            fixed (ApplicationInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (applicationVersion is not null)
             {
                 ApplicationVersion = applicationVersion.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeHandPoseTypeInfoMsft,
             void* next = null,
             HandPoseTypeMSFT? handPoseType = null
-        )
+        ) : this()
         {
-            fixed (HandPoseTypeInfoMSFT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

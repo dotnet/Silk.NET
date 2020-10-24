@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.FenceCreateInfo,
             void* pNext = null,
             FenceCreateFlags? flags = null
-        )
+        ) : this()
         {
-            fixed (FenceCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -23,13 +23,8 @@ namespace Silk.NET.Vulkan
         public Buffer
         (
             ulong? handle = null
-        )
+        ) : this()
         {
-            fixed (Buffer* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (handle is not null)
             {
                 Handle = handle.Value;

@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = null,
             BaseOutStructure* pNext = null
-        )
+        ) : this()
         {
-            fixed (BaseOutStructure* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Fence? fence = null,
             ExternalFenceHandleTypeFlags? handleType = null
-        )
+        ) : this()
         {
-            fixed (FenceGetFdInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

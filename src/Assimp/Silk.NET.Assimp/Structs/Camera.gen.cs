@@ -30,13 +30,8 @@ namespace Silk.NET.Assimp
             float? mClipPlaneNear = null,
             float? mClipPlaneFar = null,
             float? mAspect = null
-        )
+        ) : this()
         {
-            fixed (Camera* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (mName is not null)
             {
                 MName = mName.Value;

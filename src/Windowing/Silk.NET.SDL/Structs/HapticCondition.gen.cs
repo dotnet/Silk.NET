@@ -28,13 +28,8 @@ namespace Silk.NET.SDL
             ushort? delay = null,
             ushort? button = null,
             ushort? interval = null
-        )
+        ) : this()
         {
-            fixed (HapticCondition* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

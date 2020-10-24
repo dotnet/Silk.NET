@@ -27,13 +27,8 @@ namespace Silk.NET.OpenXR
             ActionType? actionType = null,
             uint? countSubactionPaths = null,
             ulong* subactionPaths = null
-        )
+        ) : this()
         {
-            fixed (ActionCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

@@ -24,13 +24,8 @@ namespace Silk.NET.OpenCL
         (
             IntPtr? resource = null,
             IntPtr? sharedHandle = null
-        )
+        ) : this()
         {
-            fixed (Dx9SurfaceInfoKhr* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (resource is not null)
             {
                 Resource = resource.Value;

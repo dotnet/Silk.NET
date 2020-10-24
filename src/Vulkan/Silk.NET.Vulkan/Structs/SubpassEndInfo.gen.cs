@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.SubpassEndInfo,
             void* pNext = null
-        )
+        ) : this()
         {
-            fixed (SubpassEndInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

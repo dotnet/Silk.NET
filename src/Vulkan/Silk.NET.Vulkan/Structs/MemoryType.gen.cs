@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             MemoryPropertyFlags? propertyFlags = null,
             uint? heapIndex = null
-        )
+        ) : this()
         {
-            fixed (MemoryType* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (propertyFlags is not null)
             {
                 PropertyFlags = propertyFlags.Value;

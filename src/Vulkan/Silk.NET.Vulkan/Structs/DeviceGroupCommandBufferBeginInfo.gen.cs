@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DeviceGroupCommandBufferBeginInfo,
             void* pNext = null,
             uint? deviceMask = null
-        )
+        ) : this()
         {
-            fixed (DeviceGroupCommandBufferBeginInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

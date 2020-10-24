@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             Bool32? coverageModulationTableEnable = null,
             uint? coverageModulationTableCount = null,
             float* pCoverageModulationTable = null
-        )
+        ) : this()
         {
-            fixed (PipelineCoverageModulationStateCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

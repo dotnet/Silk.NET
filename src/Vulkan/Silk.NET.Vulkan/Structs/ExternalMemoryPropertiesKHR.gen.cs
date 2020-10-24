@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             ExternalMemoryFeatureFlags? externalMemoryFeatures = null,
             ExternalMemoryHandleTypeFlags? exportFromImportedHandleTypes = null,
             ExternalMemoryHandleTypeFlags? compatibleHandleTypes = null
-        )
+        ) : this()
         {
-            fixed (ExternalMemoryPropertiesKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (externalMemoryFeatures is not null)
             {
                 ExternalMemoryFeatures = externalMemoryFeatures.Value;

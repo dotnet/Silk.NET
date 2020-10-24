@@ -30,13 +30,8 @@ namespace Silk.NET.Vulkan
             IndirectCommandsLayoutTokenNV* pTokens = null,
             uint? streamCount = null,
             uint* pStreamStrides = null
-        )
+        ) : this()
         {
-            fixed (IndirectCommandsLayoutCreateInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

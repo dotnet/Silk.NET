@@ -25,13 +25,8 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeSwapchainImageWaitInfo,
             void* next = null,
             long? timeout = null
-        )
+        ) : this()
         {
-            fixed (SwapchainImageWaitInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

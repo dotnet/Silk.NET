@@ -32,13 +32,8 @@ namespace Silk.NET.SDL
             byte? padding1 = null,
             int? x = null,
             int? y = null
-        )
+        ) : this()
         {
-            fixed (MouseButtonEvent* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

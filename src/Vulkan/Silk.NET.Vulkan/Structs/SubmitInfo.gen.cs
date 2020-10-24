@@ -31,13 +31,8 @@ namespace Silk.NET.Vulkan
             CommandBuffer* pCommandBuffers = null,
             uint? signalSemaphoreCount = null,
             Semaphore* pSignalSemaphores = null
-        )
+        ) : this()
         {
-            fixed (SubmitInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

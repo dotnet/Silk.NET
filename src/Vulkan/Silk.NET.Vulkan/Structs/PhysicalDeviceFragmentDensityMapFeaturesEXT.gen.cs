@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Bool32? fragmentDensityMap = null,
             Bool32? fragmentDensityMapDynamic = null,
             Bool32? fragmentDensityMapNonSubsampledImages = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceFragmentDensityMapFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

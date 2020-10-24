@@ -29,13 +29,8 @@ namespace Silk.NET.Assimp
             void* seekProc = null,
             void* flushProc = null,
             byte* userData = null
-        )
+        ) : this()
         {
-            fixed (File* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (readProc is not null)
             {
                 ReadProc = readProc;

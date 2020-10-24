@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.RenderPassFragmentDensityMapCreateInfoExt,
             void* pNext = null,
             AttachmentReference? fragmentDensityMapAttachment = null
-        )
+        ) : this()
         {
-            fixed (RenderPassFragmentDensityMapCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

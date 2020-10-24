@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Buffer? buffer = null,
             ulong? offset = null,
             ConditionalRenderingFlagsEXT? flags = null
-        )
+        ) : this()
         {
-            fixed (ConditionalRenderingBeginInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

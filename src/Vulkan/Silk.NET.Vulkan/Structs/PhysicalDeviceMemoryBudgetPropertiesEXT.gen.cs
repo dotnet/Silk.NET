@@ -24,13 +24,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PhysicalDeviceMemoryBudgetPropertiesExt,
             void* pNext = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceMemoryBudgetPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

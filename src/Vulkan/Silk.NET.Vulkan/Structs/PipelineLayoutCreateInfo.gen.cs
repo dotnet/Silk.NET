@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             DescriptorSetLayout* pSetLayouts = null,
             uint? pushConstantRangeCount = null,
             PushConstantRange* pPushConstantRanges = null
-        )
+        ) : this()
         {
-            fixed (PipelineLayoutCreateInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

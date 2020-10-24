@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             CommandBufferUsageFlags? flags = null,
             CommandBufferInheritanceInfo* pInheritanceInfo = null
-        )
+        ) : this()
         {
-            fixed (CommandBufferBeginInfo* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

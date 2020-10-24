@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             FormatFeatureFlags? linearTilingFeatures = null,
             FormatFeatureFlags? optimalTilingFeatures = null,
             FormatFeatureFlags? bufferFeatures = null
-        )
+        ) : this()
         {
-            fixed (FormatProperties* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (linearTilingFeatures is not null)
             {
                 LinearTilingFeatures = linearTilingFeatures.Value;

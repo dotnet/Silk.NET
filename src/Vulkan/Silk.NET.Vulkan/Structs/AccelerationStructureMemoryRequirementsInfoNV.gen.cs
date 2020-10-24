@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             AccelerationStructureMemoryRequirementsTypeNV? type = null,
             AccelerationStructureNV? accelerationStructure = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureMemoryRequirementsInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

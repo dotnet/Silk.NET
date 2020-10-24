@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMap2FeaturesExt,
             void* pNext = null,
             Bool32? fragmentDensityMapDeferred = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceFragmentDensityMap2FeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

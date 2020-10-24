@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PhysicalDeviceExternalImageFormatInfo,
             void* pNext = null,
             ExternalMemoryHandleTypeFlags? handleType = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceExternalImageFormatInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

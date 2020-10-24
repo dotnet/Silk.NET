@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             ulong? srcOffset = null,
             ulong? dstOffset = null,
             ulong? size = null
-        )
+        ) : this()
         {
-            fixed (BufferCopy* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (srcOffset is not null)
             {
                 SrcOffset = srcOffset.Value;

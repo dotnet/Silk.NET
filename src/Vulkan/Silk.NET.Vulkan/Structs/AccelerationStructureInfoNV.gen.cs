@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             uint? instanceCount = null,
             uint? geometryCount = null,
             GeometryNV* pGeometries = null
-        )
+        ) : this()
         {
-            fixed (AccelerationStructureInfoNV* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

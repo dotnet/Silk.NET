@@ -27,13 +27,8 @@ namespace Silk.NET.Vulkan
             Buffer? buffer = null,
             DeviceMemory? memory = null,
             ulong? memoryOffset = null
-        )
+        ) : this()
         {
-            fixed (BindBufferMemoryInfoKHR* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.SDL
             int? y = null,
             int? w = null,
             int? h = null
-        )
+        ) : this()
         {
-            fixed (Rect* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

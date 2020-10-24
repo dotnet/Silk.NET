@@ -26,13 +26,8 @@ namespace Silk.NET.OpenXR
             void* next = null,
             uint? jointCount = null,
             HandJointVelocityEXT* jointVelocities = null
-        )
+        ) : this()
         {
-            fixed (HandJointVelocitiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (type is not null)
             {
                 Type = type.Value;

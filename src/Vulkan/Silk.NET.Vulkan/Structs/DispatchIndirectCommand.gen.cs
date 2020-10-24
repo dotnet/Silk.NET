@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             uint? x = null,
             uint? y = null,
             uint? z = null
-        )
+        ) : this()
         {
-            fixed (DispatchIndirectCommand* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (x is not null)
             {
                 X = x.Value;

@@ -25,13 +25,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.InitializePerformanceApiInfoIntel,
             void* pNext = null,
             void* pUserData = null
-        )
+        ) : this()
         {
-            fixed (InitializePerformanceApiInfoINTEL* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

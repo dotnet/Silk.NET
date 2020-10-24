@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Bool32? inlineUniformBlock = null,
             Bool32? descriptorBindingInlineUniformBlockUpdateAfterBind = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceInlineUniformBlockFeaturesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

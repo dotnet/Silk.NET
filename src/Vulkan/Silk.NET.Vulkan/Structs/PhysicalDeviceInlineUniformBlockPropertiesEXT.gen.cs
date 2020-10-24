@@ -29,13 +29,8 @@ namespace Silk.NET.Vulkan
             uint? maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks = null,
             uint? maxDescriptorSetInlineUniformBlocks = null,
             uint? maxDescriptorSetUpdateAfterBindInlineUniformBlocks = null
-        )
+        ) : this()
         {
-            fixed (PhysicalDeviceInlineUniformBlockPropertiesEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;

@@ -26,13 +26,8 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? vertexBindingDivisorCount = null,
             VertexInputBindingDivisorDescriptionEXT* pVertexBindingDivisors = null
-        )
+        ) : this()
         {
-            fixed (PipelineVertexInputDivisorStateCreateInfoEXT* @this = &this)
-            {
-                // all fields automatically initialized here
-            }
-
             if (sType is not null)
             {
                 SType = sType.Value;
