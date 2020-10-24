@@ -109,6 +109,10 @@
       <Project>{20E576FC-D978-4CA3-9A4D-775C6432C213}</Project>
       <Name>Silk.NET.Windowing.Sdl.Android</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Windowing\Silk.NET.SDL\Silk.NET.SDL.csproj">
+      <Project>{f16edd0f-5abe-4b25-98ee-8397e55b5cba}</Project>
+      <Name>Silk.NET.SDL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj">
       <Project>{ff526329-094a-4b25-abc5-750d62e48101}</Project>
       <Name>Silk.NET.Windowing.Sdl</Name>

@@ -39,6 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Properties", "Build P
 		build\csharp_typemap.json = build\csharp_typemap.json
 		generator.json = generator.json
 		build\gl_typemap.json = build\gl_typemap.json
+		build\props\common.targets = build\props\common.targets
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Input.Common", "src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj", "{8FFF49D6-B029-400B-8510-1A088868DFA6}"
