@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DisplayProperties2KHR
         (
-            StructureType sType = StructureType.DisplayProperties2Khr,
-            void* pNext = default,
-            DisplayPropertiesKHR displayProperties = default
-        )
+            StructureType? sType = StructureType.DisplayProperties2Khr,
+            void* pNext = null,
+            DisplayPropertiesKHR? displayProperties = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DisplayProperties = displayProperties;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (displayProperties is not null)
+            {
+                DisplayProperties = displayProperties.Value;
+            }
         }
 
 /// <summary></summary>

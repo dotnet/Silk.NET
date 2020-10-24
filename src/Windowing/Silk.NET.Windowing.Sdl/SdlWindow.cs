@@ -9,6 +9,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using Silk.NET.Core;
+using Silk.NET.Core.Contexts;
 using Silk.NET.SDL;
 using Point = System.Drawing.Point;
 using RawImage = Silk.NET.Core.RawImage;
@@ -25,6 +26,10 @@ namespace Silk.NET.Windowing.Sdl
             : base(new ViewOptions(opts), parent, monitor)
         {
             _extendedOptionsCache = opts;
+        }
+
+        public SdlWindow(void* nativeHandle, IGLContext? ctx) : base(nativeHandle, ctx)
+        {
         }
 
         public bool IsVisible

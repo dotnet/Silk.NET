@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PipelineLibraryCreateInfoKHR
         (
-            StructureType sType = StructureType.PipelineLibraryCreateInfoKhr,
-            void* pNext = default,
-            uint libraryCount = default,
-            Pipeline* pLibraries = default
-        )
+            StructureType? sType = StructureType.PipelineLibraryCreateInfoKhr,
+            void* pNext = null,
+            uint? libraryCount = null,
+            Pipeline* pLibraries = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            LibraryCount = libraryCount;
-            PLibraries = pLibraries;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (libraryCount is not null)
+            {
+                LibraryCount = libraryCount.Value;
+            }
+
+            if (pLibraries is not null)
+            {
+                PLibraries = pLibraries;
+            }
         }
 
 /// <summary></summary>

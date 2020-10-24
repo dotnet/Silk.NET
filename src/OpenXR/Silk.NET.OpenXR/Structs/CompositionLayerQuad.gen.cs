@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.OpenXR
     {
         public CompositionLayerQuad
         (
-            StructureType type = StructureType.TypeCompositionLayerQuad,
-            void* next = default,
-            CompositionLayerFlags layerFlags = default,
-            Space space = default,
-            EyeVisibility eyeVisibility = default,
-            SwapchainSubImage subImage = default,
-            Posef pose = default,
-            Extent2Df size = default
-        )
+            StructureType? type = StructureType.TypeCompositionLayerQuad,
+            void* next = null,
+            CompositionLayerFlags? layerFlags = null,
+            Space? space = null,
+            EyeVisibility? eyeVisibility = null,
+            SwapchainSubImage? subImage = null,
+            Posef? pose = null,
+            Extent2Df? size = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            LayerFlags = layerFlags;
-            Space = space;
-            EyeVisibility = eyeVisibility;
-            SubImage = subImage;
-            Pose = pose;
-            Size = size;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (layerFlags is not null)
+            {
+                LayerFlags = layerFlags.Value;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
+
+            if (eyeVisibility is not null)
+            {
+                EyeVisibility = eyeVisibility.Value;
+            }
+
+            if (subImage is not null)
+            {
+                SubImage = subImage.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

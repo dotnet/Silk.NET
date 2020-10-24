@@ -20,5 +20,11 @@ namespace Silk.NET.OpenGL
         PostConvolutionColorTable = 0x80D1,
         [NativeName("Name", "GL_POST_COLOR_MATRIX_COLOR_TABLE")]
         PostColorMatrixColorTable = 0x80D2,
+        [NativeName("Name", "GL_PROXY_COLOR_TABLE")]
+        ProxyColorTable = 0x80D3,
+        [NativeName("Name", "GL_PROXY_POST_CONVOLUTION_COLOR_TABLE")]
+        ProxyPostConvolutionColorTable = 0x80D4,
+        [NativeName("Name", "GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE")]
+        ProxyPostColorMatrixColorTable = 0x80D5,
     }
 }

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.SDL
     {
         public SysWMEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            SysWMmsg* msg = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            SysWMmsg* msg = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            Msg = msg;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (msg is not null)
+            {
+                Msg = msg;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentDescription2KHR
         (
-            StructureType sType = StructureType.AttachmentDescription2,
-            void* pNext = default,
-            AttachmentDescriptionFlags flags = default,
-            Format format = default,
-            SampleCountFlags samples = default,
-            AttachmentLoadOp loadOp = default,
-            AttachmentStoreOp storeOp = default,
-            AttachmentLoadOp stencilLoadOp = default,
-            AttachmentStoreOp stencilStoreOp = default,
-            ImageLayout initialLayout = default,
-            ImageLayout finalLayout = default
-        )
+            StructureType? sType = StructureType.AttachmentDescription2,
+            void* pNext = null,
+            AttachmentDescriptionFlags? flags = null,
+            Format? format = null,
+            SampleCountFlags? samples = null,
+            AttachmentLoadOp? loadOp = null,
+            AttachmentStoreOp? storeOp = null,
+            AttachmentLoadOp? stencilLoadOp = null,
+            AttachmentStoreOp? stencilStoreOp = null,
+            ImageLayout? initialLayout = null,
+            ImageLayout? finalLayout = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Format = format;
-            Samples = samples;
-            LoadOp = loadOp;
-            StoreOp = storeOp;
-            StencilLoadOp = stencilLoadOp;
-            StencilStoreOp = stencilStoreOp;
-            InitialLayout = initialLayout;
-            FinalLayout = finalLayout;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (samples is not null)
+            {
+                Samples = samples.Value;
+            }
+
+            if (loadOp is not null)
+            {
+                LoadOp = loadOp.Value;
+            }
+
+            if (storeOp is not null)
+            {
+                StoreOp = storeOp.Value;
+            }
+
+            if (stencilLoadOp is not null)
+            {
+                StencilLoadOp = stencilLoadOp.Value;
+            }
+
+            if (stencilStoreOp is not null)
+            {
+                StencilStoreOp = stencilStoreOp.Value;
+            }
+
+            if (initialLayout is not null)
+            {
+                InitialLayout = initialLayout.Value;
+            }
+
+            if (finalLayout is not null)
+            {
+                FinalLayout = finalLayout.Value;
+            }
         }
 
 /// <summary></summary>

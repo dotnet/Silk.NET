@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SamplerYcbcrConversionImageFormatProperties
         (
-            StructureType sType = StructureType.SamplerYcbcrConversionImageFormatProperties,
-            void* pNext = default,
-            uint combinedImageSamplerDescriptorCount = default
-        )
+            StructureType? sType = StructureType.SamplerYcbcrConversionImageFormatProperties,
+            void* pNext = null,
+            uint? combinedImageSamplerDescriptorCount = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            CombinedImageSamplerDescriptorCount = combinedImageSamplerDescriptorCount;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (combinedImageSamplerDescriptorCount is not null)
+            {
+                CombinedImageSamplerDescriptorCount = combinedImageSamplerDescriptorCount.Value;
+            }
         }
 
 /// <summary></summary>

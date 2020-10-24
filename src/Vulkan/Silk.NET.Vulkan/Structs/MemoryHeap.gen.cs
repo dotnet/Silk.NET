@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public MemoryHeap
         (
-            ulong size = default,
-            MemoryHeapFlags flags = default
-        )
+            ulong? size = null,
+            MemoryHeapFlags? flags = null
+        ) : this()
         {
-            Size = size;
-            Flags = flags;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

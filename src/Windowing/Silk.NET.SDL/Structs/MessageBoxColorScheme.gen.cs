@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -23,26 +24,36 @@ namespace Silk.NET.SDL
         [NativeName("Type", "SDL_MessageBoxColor [5]")]
         [NativeName("Type.Name", "SDL_MessageBoxColor [5]")]
         [NativeName("Name", "colors")]
-        public MessageBoxColor Colors_0;
-        
-        [NativeName("Type", "SDL_MessageBoxColor [5]")]
-        [NativeName("Type.Name", "SDL_MessageBoxColor [5]")]
-        [NativeName("Name", "colors")]
-        public MessageBoxColor Colors_1;
-        
-        [NativeName("Type", "SDL_MessageBoxColor [5]")]
-        [NativeName("Type.Name", "SDL_MessageBoxColor [5]")]
-        [NativeName("Name", "colors")]
-        public MessageBoxColor Colors_2;
-        
-        [NativeName("Type", "SDL_MessageBoxColor [5]")]
-        [NativeName("Type.Name", "SDL_MessageBoxColor [5]")]
-        [NativeName("Name", "colors")]
-        public MessageBoxColor Colors_3;
-        
-        [NativeName("Type", "SDL_MessageBoxColor [5]")]
-        [NativeName("Type.Name", "SDL_MessageBoxColor [5]")]
-        [NativeName("Name", "colors")]
-        public MessageBoxColor Colors_4;
+        public ColorsBuffer Colors;
+
+        public struct ColorsBuffer
+        {
+            public MessageBoxColor Element0;
+            public MessageBoxColor Element1;
+            public MessageBoxColor Element2;
+            public MessageBoxColor Element3;
+            public MessageBoxColor Element4;
+            public ref MessageBoxColor this[int index]
+            {
+                get
+                {
+                    if (index > 4 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (MessageBoxColor* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<MessageBoxColor> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 5);
+#endif
+        }
+
     }
 }

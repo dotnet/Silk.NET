@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCreationFeedbackEXT
         (
-            PipelineCreationFeedbackFlagsEXT flags = default,
-            ulong duration = default
-        )
+            PipelineCreationFeedbackFlagsEXT? flags = null,
+            ulong? duration = null
+        ) : this()
         {
-            Flags = flags;
-            Duration = duration;
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (duration is not null)
+            {
+                Duration = duration.Value;
+            }
         }
 
 /// <summary></summary>

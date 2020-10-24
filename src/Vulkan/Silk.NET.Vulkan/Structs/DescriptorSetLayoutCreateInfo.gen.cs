@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetLayoutCreateInfo
         (
-            StructureType sType = StructureType.DescriptorSetLayoutCreateInfo,
-            void* pNext = default,
-            DescriptorSetLayoutCreateFlags flags = default,
-            uint bindingCount = default,
-            DescriptorSetLayoutBinding* pBindings = default
-        )
+            StructureType? sType = StructureType.DescriptorSetLayoutCreateInfo,
+            void* pNext = null,
+            DescriptorSetLayoutCreateFlags? flags = null,
+            uint? bindingCount = null,
+            DescriptorSetLayoutBinding* pBindings = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            BindingCount = bindingCount;
-            PBindings = pBindings;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (bindingCount is not null)
+            {
+                BindingCount = bindingCount.Value;
+            }
+
+            if (pBindings is not null)
+            {
+                PBindings = pBindings;
+            }
         }
 
 /// <summary></summary>

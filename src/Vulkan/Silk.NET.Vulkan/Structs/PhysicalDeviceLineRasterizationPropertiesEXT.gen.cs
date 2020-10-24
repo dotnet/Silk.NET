@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceLineRasterizationPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceLineRasterizationPropertiesExt,
-            void* pNext = default,
-            uint lineSubPixelPrecisionBits = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceLineRasterizationPropertiesExt,
+            void* pNext = null,
+            uint? lineSubPixelPrecisionBits = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            LineSubPixelPrecisionBits = lineSubPixelPrecisionBits;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (lineSubPixelPrecisionBits is not null)
+            {
+                LineSubPixelPrecisionBits = lineSubPixelPrecisionBits.Value;
+            }
         }
 
 /// <summary></summary>

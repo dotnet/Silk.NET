@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public HandTrackerCreateInfoEXT
         (
-            StructureType type = StructureType.TypeHandTrackerCreateInfoExt,
-            void* next = default,
-            HandEXT hand = default,
-            HandJointSetEXT handJointSet = default
-        )
+            StructureType? type = StructureType.TypeHandTrackerCreateInfoExt,
+            void* next = null,
+            HandEXT? hand = null,
+            HandJointSetEXT? handJointSet = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Hand = hand;
-            HandJointSet = handJointSet;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (hand is not null)
+            {
+                Hand = hand.Value;
+            }
+
+            if (handJointSet is not null)
+            {
+                HandJointSet = handJointSet.Value;
+            }
         }
 
 /// <summary></summary>

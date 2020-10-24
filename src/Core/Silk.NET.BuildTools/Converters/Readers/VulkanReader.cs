@@ -326,19 +326,55 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             var spec = (VulkanSpecification) obj;
             return spec.Constants.Select
-            (
-                x => new Constant
-                {
-                    Name = Naming.Translate(TrimName(x.Name, task), task.FunctionPrefix), NativeName = x.Name, Value = x.Value,
-                    Type = x.Type switch
+                (
+                    x => new Constant
                     {
-                        ConstantType.Float32 => new Type {Name = "float"},
-                        ConstantType.UInt32 => new Type {Name = "uint"},
-                        ConstantType.UInt64 => new Type {Name = "ulong"},
-                        _ => new Type{Name = "ulong"}
+                        Name = Naming.Translate(TrimName(x.Name, task), task.FunctionPrefix),
+                        NativeName = x.Name,
+                        Value = x.Value,
+                        Type = x.Type switch
+                        {
+                            ConstantType.Float32 => new Type {Name = "float"},
+                            ConstantType.UInt32 => new Type {Name = "uint"},
+                            ConstantType.UInt64 => new Type {Name = "ulong"},
+                            _ => new Type{Name = "ulong"}
+                        },
+                        ExtensionName = "Core"
                     }
-                }
-            );
+                )
+                .Concat
+                (
+                    spec.Extensions.SelectMany
+                    (
+                        x => x.Constants.Select
+                        (
+                            y => new Constant
+                            {
+                                Name = Naming.Translate(TrimName(y.Name, task), task.FunctionPrefix),
+                                NativeName = y.Name,
+                                Value = y.Value,
+                                Type = new Type {Name = "uint"},
+                                ExtensionName = TrimName(x.Name, task)
+                            }
+                        )
+                    )
+                ).Concat
+                (
+                    spec.Extensions.SelectMany
+                    (
+                        x => x.EnumExtensions.Where(y => y.ExtendedType is null).Select
+                        (
+                            y => new Constant
+                            {
+                                Name = Naming.Translate(TrimName(y.Name, task), task.FunctionPrefix),
+                                NativeName = y.Name,
+                                Value = y.Value,
+                                Type = new Type {Name = "uint"},
+                                ExtensionName = TrimName(x.Name, task)
+                            }
+                        )
+                    )
+                );
         }
 
         /// <summary>

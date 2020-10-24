@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineShaderStageRequiredSubgroupSizeCreateInfoExt,
-            void* pNext = default,
-            uint requiredSubgroupSize = default
-        )
+            StructureType? sType = StructureType.PipelineShaderStageRequiredSubgroupSizeCreateInfoExt,
+            void* pNext = null,
+            uint? requiredSubgroupSize = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            RequiredSubgroupSize = requiredSubgroupSize;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (requiredSubgroupSize is not null)
+            {
+                RequiredSubgroupSize = requiredSubgroupSize.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PipelineColorBlendAdvancedStateCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineColorBlendAdvancedStateCreateInfoExt,
-            void* pNext = default,
-            Bool32 srcPremultiplied = default,
-            Bool32 dstPremultiplied = default,
-            BlendOverlapEXT blendOverlap = default
-        )
+            StructureType? sType = StructureType.PipelineColorBlendAdvancedStateCreateInfoExt,
+            void* pNext = null,
+            Bool32? srcPremultiplied = null,
+            Bool32? dstPremultiplied = null,
+            BlendOverlapEXT? blendOverlap = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SrcPremultiplied = srcPremultiplied;
-            DstPremultiplied = dstPremultiplied;
-            BlendOverlap = blendOverlap;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (srcPremultiplied is not null)
+            {
+                SrcPremultiplied = srcPremultiplied.Value;
+            }
+
+            if (dstPremultiplied is not null)
+            {
+                DstPremultiplied = dstPremultiplied.Value;
+            }
+
+            if (blendOverlap is not null)
+            {
+                BlendOverlap = blendOverlap.Value;
+            }
         }
 
 /// <summary></summary>

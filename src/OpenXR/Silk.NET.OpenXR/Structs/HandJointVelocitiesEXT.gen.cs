@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public HandJointVelocitiesEXT
         (
-            StructureType type = StructureType.TypeHandJointVelocitiesExt,
-            void* next = default,
-            uint jointCount = default,
-            HandJointVelocityEXT* jointVelocities = default
-        )
+            StructureType? type = StructureType.TypeHandJointVelocitiesExt,
+            void* next = null,
+            uint? jointCount = null,
+            HandJointVelocityEXT* jointVelocities = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            JointCount = jointCount;
-            JointVelocities = jointVelocities;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (jointCount is not null)
+            {
+                JointCount = jointCount.Value;
+            }
+
+            if (jointVelocities is not null)
+            {
+                JointVelocities = jointVelocities;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,44 +22,115 @@ namespace Silk.NET.SDL
     {
         public PixelFormat
         (
-            uint format = default,
-            Palette* palette = default,
-            byte bitsPerPixel = default,
-            byte bytesPerPixel = default,
-            uint rmask = default,
-            uint gmask = default,
-            uint bmask = default,
-            uint amask = default,
-            byte rloss = default,
-            byte gloss = default,
-            byte bloss = default,
-            byte aloss = default,
-            byte rshift = default,
-            byte gshift = default,
-            byte bshift = default,
-            byte ashift = default,
-            int refcount = default,
-            PixelFormat* next = default
-        )
+            uint? format = null,
+            Palette* palette = null,
+            byte? bitsPerPixel = null,
+            byte? bytesPerPixel = null,
+            uint? rmask = null,
+            uint? gmask = null,
+            uint? bmask = null,
+            uint? amask = null,
+            byte? rloss = null,
+            byte? gloss = null,
+            byte? bloss = null,
+            byte? aloss = null,
+            byte? rshift = null,
+            byte? gshift = null,
+            byte? bshift = null,
+            byte? ashift = null,
+            int? refcount = null,
+            PixelFormat* next = null
+        ) : this()
         {
-            Format = format;
-            Palette = palette;
-            BitsPerPixel = bitsPerPixel;
-            BytesPerPixel = bytesPerPixel;
-            Rmask = rmask;
-            Gmask = gmask;
-            Bmask = bmask;
-            Amask = amask;
-            Rloss = rloss;
-            Gloss = gloss;
-            Bloss = bloss;
-            Aloss = aloss;
-            Rshift = rshift;
-            Gshift = gshift;
-            Bshift = bshift;
-            Ashift = ashift;
-            Refcount = refcount;
-            Next = next;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (palette is not null)
+            {
+                Palette = palette;
+            }
+
+            if (bitsPerPixel is not null)
+            {
+                BitsPerPixel = bitsPerPixel.Value;
+            }
+
+            if (bytesPerPixel is not null)
+            {
+                BytesPerPixel = bytesPerPixel.Value;
+            }
+
+            if (rmask is not null)
+            {
+                Rmask = rmask.Value;
+            }
+
+            if (gmask is not null)
+            {
+                Gmask = gmask.Value;
+            }
+
+            if (bmask is not null)
+            {
+                Bmask = bmask.Value;
+            }
+
+            if (amask is not null)
+            {
+                Amask = amask.Value;
+            }
+
+            if (rloss is not null)
+            {
+                Rloss = rloss.Value;
+            }
+
+            if (gloss is not null)
+            {
+                Gloss = gloss.Value;
+            }
+
+            if (bloss is not null)
+            {
+                Bloss = bloss.Value;
+            }
+
+            if (aloss is not null)
+            {
+                Aloss = aloss.Value;
+            }
+
+            if (rshift is not null)
+            {
+                Rshift = rshift.Value;
+            }
+
+            if (gshift is not null)
+            {
+                Gshift = gshift.Value;
+            }
+
+            if (bshift is not null)
+            {
+                Bshift = bshift.Value;
+            }
+
+            if (ashift is not null)
+            {
+                Ashift = ashift.Value;
+            }
+
+            if (refcount is not null)
+            {
+                Refcount = refcount.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 

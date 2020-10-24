@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public SemaphoreGetFdInfoKHR
         (
-            StructureType sType = StructureType.SemaphoreGetFDInfoKhr,
-            void* pNext = default,
-            Semaphore semaphore = default,
-            ExternalSemaphoreHandleTypeFlags handleType = default
-        )
+            StructureType? sType = StructureType.SemaphoreGetFDInfoKhr,
+            void* pNext = null,
+            Semaphore? semaphore = null,
+            ExternalSemaphoreHandleTypeFlags? handleType = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Semaphore = semaphore;
-            HandleType = handleType;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (semaphore is not null)
+            {
+                Semaphore = semaphore.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

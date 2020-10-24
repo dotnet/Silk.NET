@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ClearRect
         (
-            Rect2D rect = default,
-            uint baseArrayLayer = default,
-            uint layerCount = default
-        )
+            Rect2D? rect = null,
+            uint? baseArrayLayer = null,
+            uint? layerCount = null
+        ) : this()
         {
-            Rect = rect;
-            BaseArrayLayer = baseArrayLayer;
-            LayerCount = layerCount;
+            if (rect is not null)
+            {
+                Rect = rect.Value;
+            }
+
+            if (baseArrayLayer is not null)
+            {
+                BaseArrayLayer = baseArrayLayer.Value;
+            }
+
+            if (layerCount is not null)
+            {
+                LayerCount = layerCount.Value;
+            }
         }
 
 /// <summary></summary>

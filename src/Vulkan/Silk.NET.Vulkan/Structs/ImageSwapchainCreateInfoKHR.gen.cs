@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ImageSwapchainCreateInfoKHR
         (
-            StructureType sType = StructureType.ImageSwapchainCreateInfoKhr,
-            void* pNext = default,
-            SwapchainKHR swapchain = default
-        )
+            StructureType? sType = StructureType.ImageSwapchainCreateInfoKhr,
+            void* pNext = null,
+            SwapchainKHR? swapchain = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Swapchain = swapchain;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchain is not null)
+            {
+                Swapchain = swapchain.Value;
+            }
         }
 
 /// <summary></summary>

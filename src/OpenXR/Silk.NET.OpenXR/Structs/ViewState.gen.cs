@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public ViewState
         (
-            StructureType type = StructureType.TypeViewState,
-            void* next = default,
-            ViewStateFlags viewStateFlags = default
-        )
+            StructureType? type = StructureType.TypeViewState,
+            void* next = null,
+            ViewStateFlags? viewStateFlags = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            ViewStateFlags = viewStateFlags;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewStateFlags is not null)
+            {
+                ViewStateFlags = viewStateFlags.Value;
+            }
         }
 
 /// <summary></summary>

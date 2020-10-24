@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorImageInfo
         (
-            Sampler sampler = default,
-            ImageView imageView = default,
-            ImageLayout imageLayout = default
-        )
+            Sampler? sampler = null,
+            ImageView? imageView = null,
+            ImageLayout? imageLayout = null
+        ) : this()
         {
-            Sampler = sampler;
-            ImageView = imageView;
-            ImageLayout = imageLayout;
+            if (sampler is not null)
+            {
+                Sampler = sampler.Value;
+            }
+
+            if (imageView is not null)
+            {
+                ImageView = imageView.Value;
+            }
+
+            if (imageLayout is not null)
+            {
+                ImageLayout = imageLayout.Value;
+            }
         }
 
 /// <summary></summary>

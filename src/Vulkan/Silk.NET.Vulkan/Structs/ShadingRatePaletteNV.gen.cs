@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public ShadingRatePaletteNV
         (
-            uint shadingRatePaletteEntryCount = default,
-            ShadingRatePaletteEntryNV* pShadingRatePaletteEntries = default
-        )
+            uint? shadingRatePaletteEntryCount = null,
+            ShadingRatePaletteEntryNV* pShadingRatePaletteEntries = null
+        ) : this()
         {
-            ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount;
-            PShadingRatePaletteEntries = pShadingRatePaletteEntries;
+            if (shadingRatePaletteEntryCount is not null)
+            {
+                ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount.Value;
+            }
+
+            if (pShadingRatePaletteEntries is not null)
+            {
+                PShadingRatePaletteEntries = pShadingRatePaletteEntries;
+            }
         }
 
 /// <summary></summary>

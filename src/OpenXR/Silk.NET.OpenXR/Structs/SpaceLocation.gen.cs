@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public SpaceLocation
         (
-            StructureType type = StructureType.TypeSpaceLocation,
-            void* next = default,
-            SpaceLocationFlags locationFlags = default,
-            Posef pose = default
-        )
+            StructureType? type = StructureType.TypeSpaceLocation,
+            void* next = null,
+            SpaceLocationFlags? locationFlags = null,
+            Posef? pose = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            LocationFlags = locationFlags;
-            Pose = pose;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (locationFlags is not null)
+            {
+                LocationFlags = locationFlags.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
         }
 
 /// <summary></summary>

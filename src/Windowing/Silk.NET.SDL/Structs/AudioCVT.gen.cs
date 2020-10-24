@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,38 +22,67 @@ namespace Silk.NET.SDL
     {
         public AudioCVT
         (
-            int needed = default,
-            ushort srcFormat = default,
-            ushort dstFormat = default,
-            double rateIncr = default,
-            byte* buf = default,
-            int len = default,
-            int lenCvt = default,
-            int lenMult = default,
-            double lenRatio = default,
-            int filterIndex = default
-        )
+            int? needed = null,
+            ushort? srcFormat = null,
+            ushort? dstFormat = null,
+            double? rateIncr = null,
+            byte* buf = null,
+            int? len = null,
+            int? lenCvt = null,
+            int? lenMult = null,
+            double? lenRatio = null,
+            int? filterIndex = null
+        ) : this()
         {
-            Needed = needed;
-            SrcFormat = srcFormat;
-            DstFormat = dstFormat;
-            RateIncr = rateIncr;
-            Buf = buf;
-            Len = len;
-            LenCvt = lenCvt;
-            LenMult = lenMult;
-            LenRatio = lenRatio;
-           Filters_0 = default;
-           Filters_1 = default;
-           Filters_2 = default;
-           Filters_3 = default;
-           Filters_4 = default;
-           Filters_5 = default;
-           Filters_6 = default;
-           Filters_7 = default;
-           Filters_8 = default;
-           Filters_9 = default;
-            FilterIndex = filterIndex;
+            if (needed is not null)
+            {
+                Needed = needed.Value;
+            }
+
+            if (srcFormat is not null)
+            {
+                SrcFormat = srcFormat.Value;
+            }
+
+            if (dstFormat is not null)
+            {
+                DstFormat = dstFormat.Value;
+            }
+
+            if (rateIncr is not null)
+            {
+                RateIncr = rateIncr.Value;
+            }
+
+            if (buf is not null)
+            {
+                Buf = buf;
+            }
+
+            if (len is not null)
+            {
+                Len = len.Value;
+            }
+
+            if (lenCvt is not null)
+            {
+                LenCvt = lenCvt.Value;
+            }
+
+            if (lenMult is not null)
+            {
+                LenMult = lenMult.Value;
+            }
+
+            if (lenRatio is not null)
+            {
+                LenRatio = lenRatio.Value;
+            }
+
+            if (filterIndex is not null)
+            {
+                FilterIndex = filterIndex.Value;
+            }
         }
 
 
@@ -104,52 +134,37 @@ namespace Silk.NET.SDL
         [NativeName("Type", "SDL_AudioFilter [10]")]
         [NativeName("Type.Name", "SDL_AudioFilter [10]")]
         [NativeName("Name", "filters")]
-        public void* Filters_0;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_1;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_2;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_3;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_4;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_5;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_6;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_7;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_8;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_9;
+        public FiltersBuffer Filters;
+
+        public struct FiltersBuffer
+        {
+            public void* Element0;
+            public void* Element1;
+            public void* Element2;
+            public void* Element3;
+            public void* Element4;
+            public void* Element5;
+            public void* Element6;
+            public void* Element7;
+            public void* Element8;
+            public void* Element9;
+            public ref void* this[int index]
+            {
+                get
+                {
+                    if (index > 9 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (void** ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+        }
+
 
         [NativeName("Type", "int")]
         [NativeName("Type.Name", "int")]

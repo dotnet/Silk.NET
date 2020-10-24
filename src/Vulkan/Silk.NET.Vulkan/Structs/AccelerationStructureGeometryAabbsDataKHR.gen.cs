@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureGeometryAabbsDataKHR
         (
-            StructureType sType = StructureType.AccelerationStructureGeometryAabbsDataKhr,
-            void* pNext = default,
-            DeviceOrHostAddressConstKHR data = default,
-            ulong stride = default
-        )
+            StructureType? sType = StructureType.AccelerationStructureGeometryAabbsDataKhr,
+            void* pNext = null,
+            DeviceOrHostAddressConstKHR? data = null,
+            ulong? stride = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Data = data;
-            Stride = stride;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (data is not null)
+            {
+                Data = data.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
         }
 
 /// <summary></summary>

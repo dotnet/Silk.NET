@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenCL
     {
         public BufferRegion
         (
-            UIntPtr origin = default,
-            UIntPtr size = default
-        )
+            UIntPtr? origin = null,
+            UIntPtr? size = null
+        ) : this()
         {
-            Origin = origin;
-            Size = size;
+            if (origin is not null)
+            {
+                Origin = origin.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

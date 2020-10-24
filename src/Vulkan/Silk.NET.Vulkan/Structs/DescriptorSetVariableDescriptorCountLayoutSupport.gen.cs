@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetVariableDescriptorCountLayoutSupport
         (
-            StructureType sType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport,
-            void* pNext = default,
-            uint maxVariableDescriptorCount = default
-        )
+            StructureType? sType = StructureType.DescriptorSetVariableDescriptorCountLayoutSupport,
+            void* pNext = null,
+            uint? maxVariableDescriptorCount = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxVariableDescriptorCount = maxVariableDescriptorCount;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxVariableDescriptorCount is not null)
+            {
+                MaxVariableDescriptorCount = maxVariableDescriptorCount.Value;
+            }
         }
 
 /// <summary></summary>

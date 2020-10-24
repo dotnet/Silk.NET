@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public BindBufferMemoryDeviceGroupInfoKHR
         (
-            StructureType sType = StructureType.BindBufferMemoryDeviceGroupInfo,
-            void* pNext = default,
-            uint deviceIndexCount = default,
-            uint* pDeviceIndices = default
-        )
+            StructureType? sType = StructureType.BindBufferMemoryDeviceGroupInfo,
+            void* pNext = null,
+            uint? deviceIndexCount = null,
+            uint* pDeviceIndices = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceIndexCount = deviceIndexCount;
-            PDeviceIndices = pDeviceIndices;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceIndexCount is not null)
+            {
+                DeviceIndexCount = deviceIndexCount.Value;
+            }
+
+            if (pDeviceIndices is not null)
+            {
+                PDeviceIndices = pDeviceIndices;
+            }
         }
 
 /// <summary></summary>

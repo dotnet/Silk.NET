@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,20 +23,43 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceCounterResultKHR
         (
-            int int32 = default,
-            long int64 = default,
-            uint uint32 = default,
-            ulong uint64 = default,
-            float float32 = default,
-            double float64 = default
-        )
+            int? int32 = null,
+            long? int64 = null,
+            uint? uint32 = null,
+            ulong? uint64 = null,
+            float? float32 = null,
+            double? float64 = null
+        ) : this()
         {
-            Int32 = int32;
-            Int64 = int64;
-            Uint32 = uint32;
-            Uint64 = uint64;
-            Float32 = float32;
-            Float64 = float64;
+            if (int32 is not null)
+            {
+                Int32 = int32.Value;
+            }
+
+            if (int64 is not null)
+            {
+                Int64 = int64.Value;
+            }
+
+            if (uint32 is not null)
+            {
+                Uint32 = uint32.Value;
+            }
+
+            if (uint64 is not null)
+            {
+                Uint64 = uint64.Value;
+            }
+
+            if (float32 is not null)
+            {
+                Float32 = float32.Value;
+            }
+
+            if (float64 is not null)
+            {
+                Float64 = float64.Value;
+            }
         }
 
 /// <summary></summary>

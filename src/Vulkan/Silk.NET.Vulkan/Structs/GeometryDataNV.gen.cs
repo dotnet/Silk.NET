@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public GeometryDataNV
         (
-            GeometryTrianglesNV triangles = default,
-            GeometryAABBNV aabbs = default
-        )
+            GeometryTrianglesNV? triangles = null,
+            GeometryAABBNV? aabbs = null
+        ) : this()
         {
-            Triangles = triangles;
-            Aabbs = aabbs;
+            if (triangles is not null)
+            {
+                Triangles = triangles.Value;
+            }
+
+            if (aabbs is not null)
+            {
+                Aabbs = aabbs.Value;
+            }
         }
 
 /// <summary></summary>

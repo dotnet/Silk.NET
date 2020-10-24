@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public DrawMeshTasksIndirectCommandNV
         (
-            uint taskCount = default,
-            uint firstTask = default
-        )
+            uint? taskCount = null,
+            uint? firstTask = null
+        ) : this()
         {
-            TaskCount = taskCount;
-            FirstTask = firstTask;
+            if (taskCount is not null)
+            {
+                TaskCount = taskCount.Value;
+            }
+
+            if (firstTask is not null)
+            {
+                FirstTask = firstTask.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public ApiLayerProperties
         (
-            StructureType type = StructureType.TypeApiLayerProperties,
-            void* next = default,
-            ulong specVersion = default,
-            uint layerVersion = default
-        )
+            StructureType? type = StructureType.TypeApiLayerProperties,
+            void* next = null,
+            ulong? specVersion = null,
+            uint? layerVersion = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            SpecVersion = specVersion;
-            LayerVersion = layerVersion;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (specVersion is not null)
+            {
+                SpecVersion = specVersion.Value;
+            }
+
+            if (layerVersion is not null)
+            {
+                LayerVersion = layerVersion.Value;
+            }
         }
 
 /// <summary></summary>

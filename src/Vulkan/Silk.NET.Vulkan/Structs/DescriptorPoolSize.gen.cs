@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorPoolSize
         (
-            DescriptorType type = default,
-            uint descriptorCount = default
-        )
+            DescriptorType? type = null,
+            uint? descriptorCount = null
+        ) : this()
         {
-            Type = type;
-            DescriptorCount = descriptorCount;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (descriptorCount is not null)
+            {
+                DescriptorCount = descriptorCount.Value;
+            }
         }
 
 /// <summary></summary>

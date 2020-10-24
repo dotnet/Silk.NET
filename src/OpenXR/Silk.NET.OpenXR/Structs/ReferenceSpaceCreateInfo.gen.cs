@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public ReferenceSpaceCreateInfo
         (
-            StructureType type = StructureType.TypeReferenceSpaceCreateInfo,
-            void* next = default,
-            ReferenceSpaceType referenceSpaceType = default,
-            Posef poseInReferenceSpace = default
-        )
+            StructureType? type = StructureType.TypeReferenceSpaceCreateInfo,
+            void* next = null,
+            ReferenceSpaceType? referenceSpaceType = null,
+            Posef? poseInReferenceSpace = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            ReferenceSpaceType = referenceSpaceType;
-            PoseInReferenceSpace = poseInReferenceSpace;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (referenceSpaceType is not null)
+            {
+                ReferenceSpaceType = referenceSpaceType.Value;
+            }
+
+            if (poseInReferenceSpace is not null)
+            {
+                PoseInReferenceSpace = poseInReferenceSpace.Value;
+            }
         }
 
 /// <summary></summary>

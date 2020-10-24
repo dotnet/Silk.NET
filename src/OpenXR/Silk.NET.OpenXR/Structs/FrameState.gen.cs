@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.OpenXR
     {
         public FrameState
         (
-            StructureType type = StructureType.TypeFrameState,
-            void* next = default,
-            long predictedDisplayTime = default,
-            long predictedDisplayPeriod = default,
-            uint shouldRender = default
-        )
+            StructureType? type = StructureType.TypeFrameState,
+            void* next = null,
+            long? predictedDisplayTime = null,
+            long? predictedDisplayPeriod = null,
+            uint? shouldRender = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            PredictedDisplayTime = predictedDisplayTime;
-            PredictedDisplayPeriod = predictedDisplayPeriod;
-            ShouldRender = shouldRender;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (predictedDisplayTime is not null)
+            {
+                PredictedDisplayTime = predictedDisplayTime.Value;
+            }
+
+            if (predictedDisplayPeriod is not null)
+            {
+                PredictedDisplayPeriod = predictedDisplayPeriod.Value;
+            }
+
+            if (shouldRender is not null)
+            {
+                ShouldRender = shouldRender.Value;
+            }
         }
 
 /// <summary></summary>

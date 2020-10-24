@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ImageStencilUsageCreateInfo
         (
-            StructureType sType = StructureType.ImageStencilUsageCreateInfo,
-            void* pNext = default,
-            ImageUsageFlags stencilUsage = default
-        )
+            StructureType? sType = StructureType.ImageStencilUsageCreateInfo,
+            void* pNext = null,
+            ImageUsageFlags? stencilUsage = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            StencilUsage = stencilUsage;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stencilUsage is not null)
+            {
+                StencilUsage = stencilUsage.Value;
+            }
         }
 
 /// <summary></summary>

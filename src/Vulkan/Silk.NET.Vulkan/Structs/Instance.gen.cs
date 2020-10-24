@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Vulkan
     {
         public Instance
         (
-            IntPtr handle = default
-        )
+            IntPtr? handle = null
+        ) : this()
         {
-            Handle = handle;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 

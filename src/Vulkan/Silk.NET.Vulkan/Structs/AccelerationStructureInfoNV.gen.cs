@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureInfoNV
         (
-            StructureType sType = StructureType.AccelerationStructureInfoNV,
-            void* pNext = default,
-            AccelerationStructureTypeNV type = default,
-            BuildAccelerationStructureFlagsNV flags = default,
-            uint instanceCount = default,
-            uint geometryCount = default,
-            GeometryNV* pGeometries = default
-        )
+            StructureType? sType = StructureType.AccelerationStructureInfoNV,
+            void* pNext = null,
+            AccelerationStructureTypeNV? type = null,
+            BuildAccelerationStructureFlagsNV? flags = null,
+            uint? instanceCount = null,
+            uint? geometryCount = null,
+            GeometryNV* pGeometries = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
-            Flags = flags;
-            InstanceCount = instanceCount;
-            GeometryCount = geometryCount;
-            PGeometries = pGeometries;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (instanceCount is not null)
+            {
+                InstanceCount = instanceCount.Value;
+            }
+
+            if (geometryCount is not null)
+            {
+                GeometryCount = geometryCount.Value;
+            }
+
+            if (pGeometries is not null)
+            {
+                PGeometries = pGeometries;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public PipelineLayoutCreateInfo
         (
-            StructureType sType = StructureType.PipelineLayoutCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            uint setLayoutCount = default,
-            DescriptorSetLayout* pSetLayouts = default,
-            uint pushConstantRangeCount = default,
-            PushConstantRange* pPushConstantRanges = default
-        )
+            StructureType? sType = StructureType.PipelineLayoutCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            uint? setLayoutCount = null,
+            DescriptorSetLayout* pSetLayouts = null,
+            uint? pushConstantRangeCount = null,
+            PushConstantRange* pPushConstantRanges = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            SetLayoutCount = setLayoutCount;
-            PSetLayouts = pSetLayouts;
-            PushConstantRangeCount = pushConstantRangeCount;
-            PPushConstantRanges = pPushConstantRanges;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (setLayoutCount is not null)
+            {
+                SetLayoutCount = setLayoutCount.Value;
+            }
+
+            if (pSetLayouts is not null)
+            {
+                PSetLayouts = pSetLayouts;
+            }
+
+            if (pushConstantRangeCount is not null)
+            {
+                PushConstantRangeCount = pushConstantRangeCount.Value;
+            }
+
+            if (pPushConstantRanges is not null)
+            {
+                PPushConstantRanges = pPushConstantRanges;
+            }
         }
 
 /// <summary></summary>

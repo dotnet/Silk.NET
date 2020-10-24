@@ -28,6 +28,14 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         PrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]
         PrintfBuffersizeArm = 0x40B1,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_ARM")]
+        DeviceSchedulingControlsCapabilitiesArm = 0x41E4,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_ARM")]
+        KernelExecInfoWorkgroupBatchSizeArm = 0x41E5,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
+        KernelExecInfoWorkgroupBatchSizeModifierArm = 0x41E6,
+        [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
+        QueueKernelBatchingArm = 0x41E7,
         [NativeName("Name", "CL_DEVICE_SVM_CAPABILITIES_ARM")]
         DeviceSvmCapabilitiesArm = 0x40B6,
         [NativeName("Name", "CL_MEM_USES_SVM_POINTER_ARM")]

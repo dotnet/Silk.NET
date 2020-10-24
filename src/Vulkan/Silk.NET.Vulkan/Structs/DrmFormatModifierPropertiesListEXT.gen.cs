@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public DrmFormatModifierPropertiesListEXT
         (
-            StructureType sType = StructureType.DrmFormatModifierPropertiesListExt,
-            void* pNext = default,
-            uint drmFormatModifierCount = default,
-            DrmFormatModifierPropertiesEXT* pDrmFormatModifierProperties = default
-        )
+            StructureType? sType = StructureType.DrmFormatModifierPropertiesListExt,
+            void* pNext = null,
+            uint? drmFormatModifierCount = null,
+            DrmFormatModifierPropertiesEXT* pDrmFormatModifierProperties = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DrmFormatModifierCount = drmFormatModifierCount;
-            PDrmFormatModifierProperties = pDrmFormatModifierProperties;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (drmFormatModifierCount is not null)
+            {
+                DrmFormatModifierCount = drmFormatModifierCount.Value;
+            }
+
+            if (pDrmFormatModifierProperties is not null)
+            {
+                PDrmFormatModifierProperties = pDrmFormatModifierProperties;
+            }
         }
 
 /// <summary></summary>

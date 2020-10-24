@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public HandJointVelocityEXT
         (
-            SpaceVelocityFlags velocityFlags = default,
-            Vector3f linearVelocity = default,
-            Vector3f angularVelocity = default
-        )
+            SpaceVelocityFlags? velocityFlags = null,
+            Vector3f? linearVelocity = null,
+            Vector3f? angularVelocity = null
+        ) : this()
         {
-            VelocityFlags = velocityFlags;
-            LinearVelocity = linearVelocity;
-            AngularVelocity = angularVelocity;
+            if (velocityFlags is not null)
+            {
+                VelocityFlags = velocityFlags.Value;
+            }
+
+            if (linearVelocity is not null)
+            {
+                LinearVelocity = linearVelocity.Value;
+            }
+
+            if (angularVelocity is not null)
+            {
+                AngularVelocity = angularVelocity.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public StencilOpState
         (
-            StencilOp failOp = default,
-            StencilOp passOp = default,
-            StencilOp depthFailOp = default,
-            CompareOp compareOp = default,
-            uint compareMask = default,
-            uint writeMask = default,
-            uint reference = default
-        )
+            StencilOp? failOp = null,
+            StencilOp? passOp = null,
+            StencilOp? depthFailOp = null,
+            CompareOp? compareOp = null,
+            uint? compareMask = null,
+            uint? writeMask = null,
+            uint? reference = null
+        ) : this()
         {
-            FailOp = failOp;
-            PassOp = passOp;
-            DepthFailOp = depthFailOp;
-            CompareOp = compareOp;
-            CompareMask = compareMask;
-            WriteMask = writeMask;
-            Reference = reference;
+            if (failOp is not null)
+            {
+                FailOp = failOp.Value;
+            }
+
+            if (passOp is not null)
+            {
+                PassOp = passOp.Value;
+            }
+
+            if (depthFailOp is not null)
+            {
+                DepthFailOp = depthFailOp.Value;
+            }
+
+            if (compareOp is not null)
+            {
+                CompareOp = compareOp.Value;
+            }
+
+            if (compareMask is not null)
+            {
+                CompareMask = compareMask.Value;
+            }
+
+            if (writeMask is not null)
+            {
+                WriteMask = writeMask.Value;
+            }
+
+            if (reference is not null)
+            {
+                Reference = reference.Value;
+            }
         }
 
 /// <summary></summary>

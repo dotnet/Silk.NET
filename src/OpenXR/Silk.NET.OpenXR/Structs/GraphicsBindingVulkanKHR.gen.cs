@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsBindingVulkanKHR
         (
-            StructureType type = StructureType.TypeGraphicsBindingVulkanKhr,
-            void* next = default,
-            Silk.NET.Core.Native.VkHandle instance = default,
-            Silk.NET.Core.Native.VkHandle physicalDevice = default,
-            Silk.NET.Core.Native.VkHandle device = default,
-            uint queueFamilyIndex = default,
-            uint queueIndex = default
-        )
+            StructureType? type = StructureType.TypeGraphicsBindingVulkanKhr,
+            void* next = null,
+            Silk.NET.Core.Native.VkHandle? instance = null,
+            Silk.NET.Core.Native.VkHandle? physicalDevice = null,
+            Silk.NET.Core.Native.VkHandle? device = null,
+            uint? queueFamilyIndex = null,
+            uint? queueIndex = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Instance = instance;
-            PhysicalDevice = physicalDevice;
-            Device = device;
-            QueueFamilyIndex = queueFamilyIndex;
-            QueueIndex = queueIndex;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (instance is not null)
+            {
+                Instance = instance.Value;
+            }
+
+            if (physicalDevice is not null)
+            {
+                PhysicalDevice = physicalDevice.Value;
+            }
+
+            if (device is not null)
+            {
+                Device = device.Value;
+            }
+
+            if (queueFamilyIndex is not null)
+            {
+                QueueFamilyIndex = queueFamilyIndex.Value;
+            }
+
+            if (queueIndex is not null)
+            {
+                QueueIndex = queueIndex.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,44 +22,115 @@ namespace Silk.NET.Vulkan
     {
         public SwapchainCreateInfoKHR
         (
-            StructureType sType = StructureType.SwapchainCreateInfoKhr,
-            void* pNext = default,
-            SwapchainCreateFlagsKHR flags = default,
-            SurfaceKHR surface = default,
-            uint minImageCount = default,
-            Format imageFormat = default,
-            ColorSpaceKHR imageColorSpace = default,
-            Extent2D imageExtent = default,
-            uint imageArrayLayers = default,
-            ImageUsageFlags imageUsage = default,
-            SharingMode imageSharingMode = default,
-            uint queueFamilyIndexCount = default,
-            uint* pQueueFamilyIndices = default,
-            SurfaceTransformFlagsKHR preTransform = default,
-            CompositeAlphaFlagsKHR compositeAlpha = default,
-            PresentModeKHR presentMode = default,
-            Bool32 clipped = default,
-            SwapchainKHR oldSwapchain = default
-        )
+            StructureType? sType = StructureType.SwapchainCreateInfoKhr,
+            void* pNext = null,
+            SwapchainCreateFlagsKHR? flags = null,
+            SurfaceKHR? surface = null,
+            uint? minImageCount = null,
+            Format? imageFormat = null,
+            ColorSpaceKHR? imageColorSpace = null,
+            Extent2D? imageExtent = null,
+            uint? imageArrayLayers = null,
+            ImageUsageFlags? imageUsage = null,
+            SharingMode? imageSharingMode = null,
+            uint? queueFamilyIndexCount = null,
+            uint* pQueueFamilyIndices = null,
+            SurfaceTransformFlagsKHR? preTransform = null,
+            CompositeAlphaFlagsKHR? compositeAlpha = null,
+            PresentModeKHR? presentMode = null,
+            Bool32? clipped = null,
+            SwapchainKHR? oldSwapchain = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Surface = surface;
-            MinImageCount = minImageCount;
-            ImageFormat = imageFormat;
-            ImageColorSpace = imageColorSpace;
-            ImageExtent = imageExtent;
-            ImageArrayLayers = imageArrayLayers;
-            ImageUsage = imageUsage;
-            ImageSharingMode = imageSharingMode;
-            QueueFamilyIndexCount = queueFamilyIndexCount;
-            PQueueFamilyIndices = pQueueFamilyIndices;
-            PreTransform = preTransform;
-            CompositeAlpha = compositeAlpha;
-            PresentMode = presentMode;
-            Clipped = clipped;
-            OldSwapchain = oldSwapchain;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (surface is not null)
+            {
+                Surface = surface.Value;
+            }
+
+            if (minImageCount is not null)
+            {
+                MinImageCount = minImageCount.Value;
+            }
+
+            if (imageFormat is not null)
+            {
+                ImageFormat = imageFormat.Value;
+            }
+
+            if (imageColorSpace is not null)
+            {
+                ImageColorSpace = imageColorSpace.Value;
+            }
+
+            if (imageExtent is not null)
+            {
+                ImageExtent = imageExtent.Value;
+            }
+
+            if (imageArrayLayers is not null)
+            {
+                ImageArrayLayers = imageArrayLayers.Value;
+            }
+
+            if (imageUsage is not null)
+            {
+                ImageUsage = imageUsage.Value;
+            }
+
+            if (imageSharingMode is not null)
+            {
+                ImageSharingMode = imageSharingMode.Value;
+            }
+
+            if (queueFamilyIndexCount is not null)
+            {
+                QueueFamilyIndexCount = queueFamilyIndexCount.Value;
+            }
+
+            if (pQueueFamilyIndices is not null)
+            {
+                PQueueFamilyIndices = pQueueFamilyIndices;
+            }
+
+            if (preTransform is not null)
+            {
+                PreTransform = preTransform.Value;
+            }
+
+            if (compositeAlpha is not null)
+            {
+                CompositeAlpha = compositeAlpha.Value;
+            }
+
+            if (presentMode is not null)
+            {
+                PresentMode = presentMode.Value;
+            }
+
+            if (clipped is not null)
+            {
+                Clipped = clipped.Value;
+            }
+
+            if (oldSwapchain is not null)
+            {
+                OldSwapchain = oldSwapchain.Value;
+            }
         }
 
 /// <summary></summary>

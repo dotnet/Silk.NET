@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public RayTracingShaderGroupCreateInfoNV
         (
-            StructureType sType = StructureType.RayTracingShaderGroupCreateInfoNV,
-            void* pNext = default,
-            RayTracingShaderGroupTypeKHR type = default,
-            uint generalShader = default,
-            uint closestHitShader = default,
-            uint anyHitShader = default,
-            uint intersectionShader = default
-        )
+            StructureType? sType = StructureType.RayTracingShaderGroupCreateInfoNV,
+            void* pNext = null,
+            RayTracingShaderGroupTypeKHR? type = null,
+            uint? generalShader = null,
+            uint? closestHitShader = null,
+            uint? anyHitShader = null,
+            uint? intersectionShader = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
-            GeneralShader = generalShader;
-            ClosestHitShader = closestHitShader;
-            AnyHitShader = anyHitShader;
-            IntersectionShader = intersectionShader;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (generalShader is not null)
+            {
+                GeneralShader = generalShader.Value;
+            }
+
+            if (closestHitShader is not null)
+            {
+                ClosestHitShader = closestHitShader.Value;
+            }
+
+            if (anyHitShader is not null)
+            {
+                AnyHitShader = anyHitShader.Value;
+            }
+
+            if (intersectionShader is not null)
+            {
+                IntersectionShader = intersectionShader.Value;
+            }
         }
 
 /// <summary></summary>

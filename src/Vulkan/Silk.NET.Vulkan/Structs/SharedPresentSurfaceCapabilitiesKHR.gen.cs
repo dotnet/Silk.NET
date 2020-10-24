@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SharedPresentSurfaceCapabilitiesKHR
         (
-            StructureType sType = StructureType.SharedPresentSurfaceCapabilitiesKhr,
-            void* pNext = default,
-            ImageUsageFlags sharedPresentSupportedUsageFlags = default
-        )
+            StructureType? sType = StructureType.SharedPresentSurfaceCapabilitiesKhr,
+            void* pNext = null,
+            ImageUsageFlags? sharedPresentSupportedUsageFlags = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SharedPresentSupportedUsageFlags = sharedPresentSupportedUsageFlags;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (sharedPresentSupportedUsageFlags is not null)
+            {
+                SharedPresentSupportedUsageFlags = sharedPresentSupportedUsageFlags.Value;
+            }
         }
 
 /// <summary></summary>

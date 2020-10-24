@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public VertexInputBindingDivisorDescriptionEXT
         (
-            uint binding = default,
-            uint divisor = default
-        )
+            uint? binding = null,
+            uint? divisor = null
+        ) : this()
         {
-            Binding = binding;
-            Divisor = divisor;
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (divisor is not null)
+            {
+                Divisor = divisor.Value;
+            }
         }
 
 /// <summary></summary>

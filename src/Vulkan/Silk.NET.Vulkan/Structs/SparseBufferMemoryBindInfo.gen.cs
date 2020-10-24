@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SparseBufferMemoryBindInfo
         (
-            Buffer buffer = default,
-            uint bindCount = default,
-            SparseMemoryBind* pBinds = default
-        )
+            Buffer? buffer = null,
+            uint? bindCount = null,
+            SparseMemoryBind* pBinds = null
+        ) : this()
         {
-            Buffer = buffer;
-            BindCount = bindCount;
-            PBinds = pBinds;
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (bindCount is not null)
+            {
+                BindCount = bindCount.Value;
+            }
+
+            if (pBinds is not null)
+            {
+                PBinds = pBinds;
+            }
         }
 
 /// <summary></summary>

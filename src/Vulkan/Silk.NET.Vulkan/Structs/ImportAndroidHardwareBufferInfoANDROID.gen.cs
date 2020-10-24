@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ImportAndroidHardwareBufferInfoANDROID
         (
-            StructureType sType = StructureType.ImportAndroidHardwareBufferInfoAndroid,
-            void* pNext = default,
-            IntPtr* buffer = default
-        )
+            StructureType? sType = StructureType.ImportAndroidHardwareBufferInfoAndroid,
+            void* pNext = null,
+            IntPtr* buffer = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Buffer = buffer;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer;
+            }
         }
 
 /// <summary></summary>

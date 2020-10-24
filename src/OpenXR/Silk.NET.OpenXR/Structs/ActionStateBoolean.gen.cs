@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.OpenXR
     {
         public ActionStateBoolean
         (
-            StructureType type = StructureType.TypeActionStateBoolean,
-            void* next = default,
-            uint currentState = default,
-            uint changedSinceLastSync = default,
-            long lastChangeTime = default,
-            uint isActive = default
-        )
+            StructureType? type = StructureType.TypeActionStateBoolean,
+            void* next = null,
+            uint? currentState = null,
+            uint? changedSinceLastSync = null,
+            long? lastChangeTime = null,
+            uint? isActive = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            CurrentState = currentState;
-            ChangedSinceLastSync = changedSinceLastSync;
-            LastChangeTime = lastChangeTime;
-            IsActive = isActive;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (currentState is not null)
+            {
+                CurrentState = currentState.Value;
+            }
+
+            if (changedSinceLastSync is not null)
+            {
+                ChangedSinceLastSync = changedSinceLastSync.Value;
+            }
+
+            if (lastChangeTime is not null)
+            {
+                LastChangeTime = lastChangeTime.Value;
+            }
+
+            if (isActive is not null)
+            {
+                IsActive = isActive.Value;
+            }
         }
 
 /// <summary></summary>

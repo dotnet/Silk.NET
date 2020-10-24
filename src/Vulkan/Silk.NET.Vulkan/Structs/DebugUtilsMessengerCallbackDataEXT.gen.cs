@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,79 @@ namespace Silk.NET.Vulkan
     {
         public DebugUtilsMessengerCallbackDataEXT
         (
-            StructureType sType = StructureType.DebugUtilsMessengerCallbackDataExt,
-            void* pNext = default,
-            uint flags = default,
-            byte* pMessageIdName = default,
-            int messageIdNumber = default,
-            byte* pMessage = default,
-            uint queueLabelCount = default,
-            DebugUtilsLabelEXT* pQueueLabels = default,
-            uint cmdBufLabelCount = default,
-            DebugUtilsLabelEXT* pCmdBufLabels = default,
-            uint objectCount = default,
-            DebugUtilsObjectNameInfoEXT* pObjects = default
-        )
+            StructureType? sType = StructureType.DebugUtilsMessengerCallbackDataExt,
+            void* pNext = null,
+            uint? flags = null,
+            byte* pMessageIdName = null,
+            int? messageIdNumber = null,
+            byte* pMessage = null,
+            uint? queueLabelCount = null,
+            DebugUtilsLabelEXT* pQueueLabels = null,
+            uint? cmdBufLabelCount = null,
+            DebugUtilsLabelEXT* pCmdBufLabels = null,
+            uint? objectCount = null,
+            DebugUtilsObjectNameInfoEXT* pObjects = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PMessageIdName = pMessageIdName;
-            MessageIdNumber = messageIdNumber;
-            PMessage = pMessage;
-            QueueLabelCount = queueLabelCount;
-            PQueueLabels = pQueueLabels;
-            CmdBufLabelCount = cmdBufLabelCount;
-            PCmdBufLabels = pCmdBufLabels;
-            ObjectCount = objectCount;
-            PObjects = pObjects;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pMessageIdName is not null)
+            {
+                PMessageIdName = pMessageIdName;
+            }
+
+            if (messageIdNumber is not null)
+            {
+                MessageIdNumber = messageIdNumber.Value;
+            }
+
+            if (pMessage is not null)
+            {
+                PMessage = pMessage;
+            }
+
+            if (queueLabelCount is not null)
+            {
+                QueueLabelCount = queueLabelCount.Value;
+            }
+
+            if (pQueueLabels is not null)
+            {
+                PQueueLabels = pQueueLabels;
+            }
+
+            if (cmdBufLabelCount is not null)
+            {
+                CmdBufLabelCount = cmdBufLabelCount.Value;
+            }
+
+            if (pCmdBufLabels is not null)
+            {
+                PCmdBufLabels = pCmdBufLabels;
+            }
+
+            if (objectCount is not null)
+            {
+                ObjectCount = objectCount.Value;
+            }
+
+            if (pObjects is not null)
+            {
+                PObjects = pObjects;
+            }
         }
 
 /// <summary></summary>

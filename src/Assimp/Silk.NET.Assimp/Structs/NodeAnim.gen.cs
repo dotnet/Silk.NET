@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Assimp
     {
         public NodeAnim
         (
-            AssimpString mNodeName = default,
-            uint mNumPositionKeys = default,
-            VectorKey* mPositionKeys = default,
-            uint mNumRotationKeys = default,
-            QuatKey* mRotationKeys = default,
-            uint mNumScalingKeys = default,
-            VectorKey* mScalingKeys = default,
-            AnimBehaviour mPreState = default,
-            AnimBehaviour mPostState = default
-        )
+            AssimpString? mNodeName = null,
+            uint? mNumPositionKeys = null,
+            VectorKey* mPositionKeys = null,
+            uint? mNumRotationKeys = null,
+            QuatKey* mRotationKeys = null,
+            uint? mNumScalingKeys = null,
+            VectorKey* mScalingKeys = null,
+            AnimBehaviour? mPreState = null,
+            AnimBehaviour? mPostState = null
+        ) : this()
         {
-            MNodeName = mNodeName;
-            MNumPositionKeys = mNumPositionKeys;
-            MPositionKeys = mPositionKeys;
-            MNumRotationKeys = mNumRotationKeys;
-            MRotationKeys = mRotationKeys;
-            MNumScalingKeys = mNumScalingKeys;
-            MScalingKeys = mScalingKeys;
-            MPreState = mPreState;
-            MPostState = mPostState;
+            if (mNodeName is not null)
+            {
+                MNodeName = mNodeName.Value;
+            }
+
+            if (mNumPositionKeys is not null)
+            {
+                MNumPositionKeys = mNumPositionKeys.Value;
+            }
+
+            if (mPositionKeys is not null)
+            {
+                MPositionKeys = mPositionKeys;
+            }
+
+            if (mNumRotationKeys is not null)
+            {
+                MNumRotationKeys = mNumRotationKeys.Value;
+            }
+
+            if (mRotationKeys is not null)
+            {
+                MRotationKeys = mRotationKeys;
+            }
+
+            if (mNumScalingKeys is not null)
+            {
+                MNumScalingKeys = mNumScalingKeys.Value;
+            }
+
+            if (mScalingKeys is not null)
+            {
+                MScalingKeys = mScalingKeys;
+            }
+
+            if (mPreState is not null)
+            {
+                MPreState = mPreState.Value;
+            }
+
+            if (mPostState is not null)
+            {
+                MPostState = mPostState.Value;
+            }
         }
 
 

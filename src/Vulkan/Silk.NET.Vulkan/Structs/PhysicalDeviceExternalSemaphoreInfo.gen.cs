@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExternalSemaphoreInfo
         (
-            StructureType sType = StructureType.PhysicalDeviceExternalSemaphoreInfo,
-            void* pNext = default,
-            ExternalSemaphoreHandleTypeFlags handleType = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceExternalSemaphoreInfo,
+            void* pNext = null,
+            ExternalSemaphoreHandleTypeFlags? handleType = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            HandleType = handleType;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

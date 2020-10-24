@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public MemoryRequirements
         (
-            ulong size = default,
-            ulong alignment = default,
-            uint memoryTypeBits = default
-        )
+            ulong? size = null,
+            ulong? alignment = null,
+            uint? memoryTypeBits = null
+        ) : this()
         {
-            Size = size;
-            Alignment = alignment;
-            MemoryTypeBits = memoryTypeBits;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (alignment is not null)
+            {
+                Alignment = alignment.Value;
+            }
+
+            if (memoryTypeBits is not null)
+            {
+                MemoryTypeBits = memoryTypeBits.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExternalBufferInfoKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceExternalBufferInfo,
-            void* pNext = default,
-            BufferCreateFlags flags = default,
-            BufferUsageFlags usage = default,
-            ExternalMemoryHandleTypeFlags handleType = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceExternalBufferInfo,
+            void* pNext = null,
+            BufferCreateFlags? flags = null,
+            BufferUsageFlags? usage = null,
+            ExternalMemoryHandleTypeFlags? handleType = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Usage = usage;
-            HandleType = handleType;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

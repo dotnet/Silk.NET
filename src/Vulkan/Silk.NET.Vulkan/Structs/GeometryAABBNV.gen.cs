@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public GeometryAABBNV
         (
-            StructureType sType = StructureType.GeometryAabbNV,
-            void* pNext = default,
-            Buffer aabbData = default,
-            uint numAabbs = default,
-            uint stride = default,
-            ulong offset = default
-        )
+            StructureType? sType = StructureType.GeometryAabbNV,
+            void* pNext = null,
+            Buffer? aabbData = null,
+            uint? numAabbs = null,
+            uint? stride = null,
+            ulong? offset = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AabbData = aabbData;
-            NumAabbs = numAabbs;
-            Stride = stride;
-            Offset = offset;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (aabbData is not null)
+            {
+                AabbData = aabbData.Value;
+            }
+
+            if (numAabbs is not null)
+            {
+                NumAabbs = numAabbs.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
         }
 
 /// <summary></summary>

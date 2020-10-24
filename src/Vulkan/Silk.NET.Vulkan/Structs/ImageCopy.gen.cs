@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ImageCopy
         (
-            ImageSubresourceLayers srcSubresource = default,
-            Offset3D srcOffset = default,
-            ImageSubresourceLayers dstSubresource = default,
-            Offset3D dstOffset = default,
-            Extent3D extent = default
-        )
+            ImageSubresourceLayers? srcSubresource = null,
+            Offset3D? srcOffset = null,
+            ImageSubresourceLayers? dstSubresource = null,
+            Offset3D? dstOffset = null,
+            Extent3D? extent = null
+        ) : this()
         {
-            SrcSubresource = srcSubresource;
-            SrcOffset = srcOffset;
-            DstSubresource = dstSubresource;
-            DstOffset = dstOffset;
-            Extent = extent;
+            if (srcSubresource is not null)
+            {
+                SrcSubresource = srcSubresource.Value;
+            }
+
+            if (srcOffset is not null)
+            {
+                SrcOffset = srcOffset.Value;
+            }
+
+            if (dstSubresource is not null)
+            {
+                DstSubresource = dstSubresource.Value;
+            }
+
+            if (dstOffset is not null)
+            {
+                DstOffset = dstOffset.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,12 +23,19 @@ namespace Silk.NET.Vulkan
     {
         public DeviceOrHostAddressKHR
         (
-            ulong deviceAddress = default,
-            void* hostAddress = default
-        )
+            ulong? deviceAddress = null,
+            void* hostAddress = null
+        ) : this()
         {
-            DeviceAddress = deviceAddress;
-            HostAddress = hostAddress;
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
+
+            if (hostAddress is not null)
+            {
+                HostAddress = hostAddress;
+            }
         }
 
 /// <summary></summary>

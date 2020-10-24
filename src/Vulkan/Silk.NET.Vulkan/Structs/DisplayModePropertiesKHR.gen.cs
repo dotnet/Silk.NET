@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public DisplayModePropertiesKHR
         (
-            DisplayModeKHR displayMode = default,
-            DisplayModeParametersKHR parameters = default
-        )
+            DisplayModeKHR? displayMode = null,
+            DisplayModeParametersKHR? parameters = null
+        ) : this()
         {
-            DisplayMode = displayMode;
-            Parameters = parameters;
+            if (displayMode is not null)
+            {
+                DisplayMode = displayMode.Value;
+            }
+
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewHandleInfoNVX
         (
-            StructureType sType = StructureType.ImageViewHandleInfoNvx,
-            void* pNext = default,
-            ImageView imageView = default,
-            DescriptorType descriptorType = default,
-            Sampler sampler = default
-        )
+            StructureType? sType = StructureType.ImageViewHandleInfoNvx,
+            void* pNext = null,
+            ImageView? imageView = null,
+            DescriptorType? descriptorType = null,
+            Sampler? sampler = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ImageView = imageView;
-            DescriptorType = descriptorType;
-            Sampler = sampler;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageView is not null)
+            {
+                ImageView = imageView.Value;
+            }
+
+            if (descriptorType is not null)
+            {
+                DescriptorType = descriptorType.Value;
+            }
+
+            if (sampler is not null)
+            {
+                Sampler = sampler.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTimelineSemaphoreProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceTimelineSemaphoreProperties,
-            void* pNext = default,
-            ulong maxTimelineSemaphoreValueDifference = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceTimelineSemaphoreProperties,
+            void* pNext = null,
+            ulong? maxTimelineSemaphoreValueDifference = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxTimelineSemaphoreValueDifference is not null)
+            {
+                MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference.Value;
+            }
         }
 
 /// <summary></summary>

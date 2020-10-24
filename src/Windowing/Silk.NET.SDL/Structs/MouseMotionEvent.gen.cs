@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.SDL
     {
         public MouseMotionEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint windowID = default,
-            uint which = default,
-            uint state = default,
-            int x = default,
-            int y = default,
-            int xrel = default,
-            int yrel = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            uint? windowID = null,
+            uint? which = null,
+            uint? state = null,
+            int? x = null,
+            int? y = null,
+            int? xrel = null,
+            int? yrel = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            WindowID = windowID;
-            Which = which;
-            State = state;
-            X = x;
-            Y = y;
-            Xrel = xrel;
-            Yrel = yrel;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (state is not null)
+            {
+                State = state.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (xrel is not null)
+            {
+                Xrel = xrel.Value;
+            }
+
+            if (yrel is not null)
+            {
+                Yrel = yrel.Value;
+            }
         }
 
 

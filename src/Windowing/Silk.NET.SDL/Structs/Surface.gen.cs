@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,79 @@ namespace Silk.NET.SDL
     {
         public Surface
         (
-            uint flags = default,
-            PixelFormat* format = default,
-            int w = default,
-            int h = default,
-            int pitch = default,
-            void* pixels = default,
-            void* userdata = default,
-            int locked = default,
-            void* lockData = default,
-            Rect clipRect = default,
-            BlitMap* map = default,
-            int refcount = default
-        )
+            uint? flags = null,
+            PixelFormat* format = null,
+            int? w = null,
+            int? h = null,
+            int? pitch = null,
+            void* pixels = null,
+            void* userdata = null,
+            int? locked = null,
+            void* lockData = null,
+            Rect? clipRect = null,
+            BlitMap* map = null,
+            int? refcount = null
+        ) : this()
         {
-            Flags = flags;
-            Format = format;
-            W = w;
-            H = h;
-            Pitch = pitch;
-            Pixels = pixels;
-            Userdata = userdata;
-            Locked = locked;
-            LockData = lockData;
-            ClipRect = clipRect;
-            Map = map;
-            Refcount = refcount;
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
+
+            if (h is not null)
+            {
+                H = h.Value;
+            }
+
+            if (pitch is not null)
+            {
+                Pitch = pitch.Value;
+            }
+
+            if (pixels is not null)
+            {
+                Pixels = pixels;
+            }
+
+            if (userdata is not null)
+            {
+                Userdata = userdata;
+            }
+
+            if (locked is not null)
+            {
+                Locked = locked.Value;
+            }
+
+            if (lockData is not null)
+            {
+                LockData = lockData;
+            }
+
+            if (clipRect is not null)
+            {
+                ClipRect = clipRect.Value;
+            }
+
+            if (map is not null)
+            {
+                Map = map;
+            }
+
+            if (refcount is not null)
+            {
+                Refcount = refcount.Value;
+            }
         }
 
 

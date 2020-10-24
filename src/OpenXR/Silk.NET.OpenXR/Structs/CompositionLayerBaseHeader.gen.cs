@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public CompositionLayerBaseHeader
         (
-            StructureType type = default,
-            void* next = default,
-            CompositionLayerFlags layerFlags = default,
-            Space space = default
-        )
+            StructureType? type = null,
+            void* next = null,
+            CompositionLayerFlags? layerFlags = null,
+            Space? space = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            LayerFlags = layerFlags;
-            Space = space;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (layerFlags is not null)
+            {
+                LayerFlags = layerFlags.Value;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
         }
 
 /// <summary></summary>

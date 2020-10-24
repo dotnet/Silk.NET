@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public InputAttachmentAspectReference
         (
-            uint subpass = default,
-            uint inputAttachmentIndex = default,
-            ImageAspectFlags aspectMask = default
-        )
+            uint? subpass = null,
+            uint? inputAttachmentIndex = null,
+            ImageAspectFlags? aspectMask = null
+        ) : this()
         {
-            Subpass = subpass;
-            InputAttachmentIndex = inputAttachmentIndex;
-            AspectMask = aspectMask;
+            if (subpass is not null)
+            {
+                Subpass = subpass.Value;
+            }
+
+            if (inputAttachmentIndex is not null)
+            {
+                InputAttachmentIndex = inputAttachmentIndex.Value;
+            }
+
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
         }
 
 /// <summary></summary>

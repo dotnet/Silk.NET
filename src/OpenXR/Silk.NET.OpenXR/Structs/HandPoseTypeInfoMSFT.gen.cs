@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public HandPoseTypeInfoMSFT
         (
-            StructureType type = StructureType.TypeHandPoseTypeInfoMsft,
-            void* next = default,
-            HandPoseTypeMSFT handPoseType = default
-        )
+            StructureType? type = StructureType.TypeHandPoseTypeInfoMsft,
+            void* next = null,
+            HandPoseTypeMSFT? handPoseType = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            HandPoseType = handPoseType;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (handPoseType is not null)
+            {
+                HandPoseType = handPoseType.Value;
+            }
         }
 
 /// <summary></summary>

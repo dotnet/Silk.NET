@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public ActionStateGetInfo
         (
-            StructureType type = StructureType.TypeActionStateGetInfo,
-            void* next = default,
-            Action action = default,
-            ulong subactionPath = default
-        )
+            StructureType? type = StructureType.TypeActionStateGetInfo,
+            void* next = null,
+            Action? action = null,
+            ulong? subactionPath = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Action = action;
-            SubactionPath = subactionPath;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (action is not null)
+            {
+                Action = action.Value;
+            }
+
+            if (subactionPath is not null)
+            {
+                SubactionPath = subactionPath.Value;
+            }
         }
 
 /// <summary></summary>

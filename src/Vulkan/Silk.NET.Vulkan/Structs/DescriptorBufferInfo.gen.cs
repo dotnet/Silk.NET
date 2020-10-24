@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorBufferInfo
         (
-            Buffer buffer = default,
-            ulong offset = default,
-            ulong range = default
-        )
+            Buffer? buffer = null,
+            ulong? offset = null,
+            ulong? range = null
+        ) : this()
         {
-            Buffer = buffer;
-            Offset = offset;
-            Range = range;
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (range is not null)
+            {
+                Range = range.Value;
+            }
         }
 
 /// <summary></summary>

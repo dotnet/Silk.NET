@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceBlendOperationAdvancedPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceBlendOperationAdvancedPropertiesExt,
-            void* pNext = default,
-            uint advancedBlendMaxColorAttachments = default,
-            Bool32 advancedBlendIndependentBlend = default,
-            Bool32 advancedBlendNonPremultipliedSrcColor = default,
-            Bool32 advancedBlendNonPremultipliedDstColor = default,
-            Bool32 advancedBlendCorrelatedOverlap = default,
-            Bool32 advancedBlendAllOperations = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceBlendOperationAdvancedPropertiesExt,
+            void* pNext = null,
+            uint? advancedBlendMaxColorAttachments = null,
+            Bool32? advancedBlendIndependentBlend = null,
+            Bool32? advancedBlendNonPremultipliedSrcColor = null,
+            Bool32? advancedBlendNonPremultipliedDstColor = null,
+            Bool32? advancedBlendCorrelatedOverlap = null,
+            Bool32? advancedBlendAllOperations = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AdvancedBlendMaxColorAttachments = advancedBlendMaxColorAttachments;
-            AdvancedBlendIndependentBlend = advancedBlendIndependentBlend;
-            AdvancedBlendNonPremultipliedSrcColor = advancedBlendNonPremultipliedSrcColor;
-            AdvancedBlendNonPremultipliedDstColor = advancedBlendNonPremultipliedDstColor;
-            AdvancedBlendCorrelatedOverlap = advancedBlendCorrelatedOverlap;
-            AdvancedBlendAllOperations = advancedBlendAllOperations;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (advancedBlendMaxColorAttachments is not null)
+            {
+                AdvancedBlendMaxColorAttachments = advancedBlendMaxColorAttachments.Value;
+            }
+
+            if (advancedBlendIndependentBlend is not null)
+            {
+                AdvancedBlendIndependentBlend = advancedBlendIndependentBlend.Value;
+            }
+
+            if (advancedBlendNonPremultipliedSrcColor is not null)
+            {
+                AdvancedBlendNonPremultipliedSrcColor = advancedBlendNonPremultipliedSrcColor.Value;
+            }
+
+            if (advancedBlendNonPremultipliedDstColor is not null)
+            {
+                AdvancedBlendNonPremultipliedDstColor = advancedBlendNonPremultipliedDstColor.Value;
+            }
+
+            if (advancedBlendCorrelatedOverlap is not null)
+            {
+                AdvancedBlendCorrelatedOverlap = advancedBlendCorrelatedOverlap.Value;
+            }
+
+            if (advancedBlendAllOperations is not null)
+            {
+                AdvancedBlendAllOperations = advancedBlendAllOperations.Value;
+            }
         }
 
 /// <summary></summary>

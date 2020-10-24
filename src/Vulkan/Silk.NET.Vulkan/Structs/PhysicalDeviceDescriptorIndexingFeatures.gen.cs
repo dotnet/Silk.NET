@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,52 +22,139 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDescriptorIndexingFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceDescriptorIndexingFeatures,
-            void* pNext = default,
-            Bool32 shaderInputAttachmentArrayDynamicIndexing = default,
-            Bool32 shaderUniformTexelBufferArrayDynamicIndexing = default,
-            Bool32 shaderStorageTexelBufferArrayDynamicIndexing = default,
-            Bool32 shaderUniformBufferArrayNonUniformIndexing = default,
-            Bool32 shaderSampledImageArrayNonUniformIndexing = default,
-            Bool32 shaderStorageBufferArrayNonUniformIndexing = default,
-            Bool32 shaderStorageImageArrayNonUniformIndexing = default,
-            Bool32 shaderInputAttachmentArrayNonUniformIndexing = default,
-            Bool32 shaderUniformTexelBufferArrayNonUniformIndexing = default,
-            Bool32 shaderStorageTexelBufferArrayNonUniformIndexing = default,
-            Bool32 descriptorBindingUniformBufferUpdateAfterBind = default,
-            Bool32 descriptorBindingSampledImageUpdateAfterBind = default,
-            Bool32 descriptorBindingStorageImageUpdateAfterBind = default,
-            Bool32 descriptorBindingStorageBufferUpdateAfterBind = default,
-            Bool32 descriptorBindingUniformTexelBufferUpdateAfterBind = default,
-            Bool32 descriptorBindingStorageTexelBufferUpdateAfterBind = default,
-            Bool32 descriptorBindingUpdateUnusedWhilePending = default,
-            Bool32 descriptorBindingPartiallyBound = default,
-            Bool32 descriptorBindingVariableDescriptorCount = default,
-            Bool32 runtimeDescriptorArray = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceDescriptorIndexingFeatures,
+            void* pNext = null,
+            Bool32? shaderInputAttachmentArrayDynamicIndexing = null,
+            Bool32? shaderUniformTexelBufferArrayDynamicIndexing = null,
+            Bool32? shaderStorageTexelBufferArrayDynamicIndexing = null,
+            Bool32? shaderUniformBufferArrayNonUniformIndexing = null,
+            Bool32? shaderSampledImageArrayNonUniformIndexing = null,
+            Bool32? shaderStorageBufferArrayNonUniformIndexing = null,
+            Bool32? shaderStorageImageArrayNonUniformIndexing = null,
+            Bool32? shaderInputAttachmentArrayNonUniformIndexing = null,
+            Bool32? shaderUniformTexelBufferArrayNonUniformIndexing = null,
+            Bool32? shaderStorageTexelBufferArrayNonUniformIndexing = null,
+            Bool32? descriptorBindingUniformBufferUpdateAfterBind = null,
+            Bool32? descriptorBindingSampledImageUpdateAfterBind = null,
+            Bool32? descriptorBindingStorageImageUpdateAfterBind = null,
+            Bool32? descriptorBindingStorageBufferUpdateAfterBind = null,
+            Bool32? descriptorBindingUniformTexelBufferUpdateAfterBind = null,
+            Bool32? descriptorBindingStorageTexelBufferUpdateAfterBind = null,
+            Bool32? descriptorBindingUpdateUnusedWhilePending = null,
+            Bool32? descriptorBindingPartiallyBound = null,
+            Bool32? descriptorBindingVariableDescriptorCount = null,
+            Bool32? runtimeDescriptorArray = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderInputAttachmentArrayDynamicIndexing = shaderInputAttachmentArrayDynamicIndexing;
-            ShaderUniformTexelBufferArrayDynamicIndexing = shaderUniformTexelBufferArrayDynamicIndexing;
-            ShaderStorageTexelBufferArrayDynamicIndexing = shaderStorageTexelBufferArrayDynamicIndexing;
-            ShaderUniformBufferArrayNonUniformIndexing = shaderUniformBufferArrayNonUniformIndexing;
-            ShaderSampledImageArrayNonUniformIndexing = shaderSampledImageArrayNonUniformIndexing;
-            ShaderStorageBufferArrayNonUniformIndexing = shaderStorageBufferArrayNonUniformIndexing;
-            ShaderStorageImageArrayNonUniformIndexing = shaderStorageImageArrayNonUniformIndexing;
-            ShaderInputAttachmentArrayNonUniformIndexing = shaderInputAttachmentArrayNonUniformIndexing;
-            ShaderUniformTexelBufferArrayNonUniformIndexing = shaderUniformTexelBufferArrayNonUniformIndexing;
-            ShaderStorageTexelBufferArrayNonUniformIndexing = shaderStorageTexelBufferArrayNonUniformIndexing;
-            DescriptorBindingUniformBufferUpdateAfterBind = descriptorBindingUniformBufferUpdateAfterBind;
-            DescriptorBindingSampledImageUpdateAfterBind = descriptorBindingSampledImageUpdateAfterBind;
-            DescriptorBindingStorageImageUpdateAfterBind = descriptorBindingStorageImageUpdateAfterBind;
-            DescriptorBindingStorageBufferUpdateAfterBind = descriptorBindingStorageBufferUpdateAfterBind;
-            DescriptorBindingUniformTexelBufferUpdateAfterBind = descriptorBindingUniformTexelBufferUpdateAfterBind;
-            DescriptorBindingStorageTexelBufferUpdateAfterBind = descriptorBindingStorageTexelBufferUpdateAfterBind;
-            DescriptorBindingUpdateUnusedWhilePending = descriptorBindingUpdateUnusedWhilePending;
-            DescriptorBindingPartiallyBound = descriptorBindingPartiallyBound;
-            DescriptorBindingVariableDescriptorCount = descriptorBindingVariableDescriptorCount;
-            RuntimeDescriptorArray = runtimeDescriptorArray;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderInputAttachmentArrayDynamicIndexing is not null)
+            {
+                ShaderInputAttachmentArrayDynamicIndexing = shaderInputAttachmentArrayDynamicIndexing.Value;
+            }
+
+            if (shaderUniformTexelBufferArrayDynamicIndexing is not null)
+            {
+                ShaderUniformTexelBufferArrayDynamicIndexing = shaderUniformTexelBufferArrayDynamicIndexing.Value;
+            }
+
+            if (shaderStorageTexelBufferArrayDynamicIndexing is not null)
+            {
+                ShaderStorageTexelBufferArrayDynamicIndexing = shaderStorageTexelBufferArrayDynamicIndexing.Value;
+            }
+
+            if (shaderUniformBufferArrayNonUniformIndexing is not null)
+            {
+                ShaderUniformBufferArrayNonUniformIndexing = shaderUniformBufferArrayNonUniformIndexing.Value;
+            }
+
+            if (shaderSampledImageArrayNonUniformIndexing is not null)
+            {
+                ShaderSampledImageArrayNonUniformIndexing = shaderSampledImageArrayNonUniformIndexing.Value;
+            }
+
+            if (shaderStorageBufferArrayNonUniformIndexing is not null)
+            {
+                ShaderStorageBufferArrayNonUniformIndexing = shaderStorageBufferArrayNonUniformIndexing.Value;
+            }
+
+            if (shaderStorageImageArrayNonUniformIndexing is not null)
+            {
+                ShaderStorageImageArrayNonUniformIndexing = shaderStorageImageArrayNonUniformIndexing.Value;
+            }
+
+            if (shaderInputAttachmentArrayNonUniformIndexing is not null)
+            {
+                ShaderInputAttachmentArrayNonUniformIndexing = shaderInputAttachmentArrayNonUniformIndexing.Value;
+            }
+
+            if (shaderUniformTexelBufferArrayNonUniformIndexing is not null)
+            {
+                ShaderUniformTexelBufferArrayNonUniformIndexing = shaderUniformTexelBufferArrayNonUniformIndexing.Value;
+            }
+
+            if (shaderStorageTexelBufferArrayNonUniformIndexing is not null)
+            {
+                ShaderStorageTexelBufferArrayNonUniformIndexing = shaderStorageTexelBufferArrayNonUniformIndexing.Value;
+            }
+
+            if (descriptorBindingUniformBufferUpdateAfterBind is not null)
+            {
+                DescriptorBindingUniformBufferUpdateAfterBind = descriptorBindingUniformBufferUpdateAfterBind.Value;
+            }
+
+            if (descriptorBindingSampledImageUpdateAfterBind is not null)
+            {
+                DescriptorBindingSampledImageUpdateAfterBind = descriptorBindingSampledImageUpdateAfterBind.Value;
+            }
+
+            if (descriptorBindingStorageImageUpdateAfterBind is not null)
+            {
+                DescriptorBindingStorageImageUpdateAfterBind = descriptorBindingStorageImageUpdateAfterBind.Value;
+            }
+
+            if (descriptorBindingStorageBufferUpdateAfterBind is not null)
+            {
+                DescriptorBindingStorageBufferUpdateAfterBind = descriptorBindingStorageBufferUpdateAfterBind.Value;
+            }
+
+            if (descriptorBindingUniformTexelBufferUpdateAfterBind is not null)
+            {
+                DescriptorBindingUniformTexelBufferUpdateAfterBind = descriptorBindingUniformTexelBufferUpdateAfterBind.Value;
+            }
+
+            if (descriptorBindingStorageTexelBufferUpdateAfterBind is not null)
+            {
+                DescriptorBindingStorageTexelBufferUpdateAfterBind = descriptorBindingStorageTexelBufferUpdateAfterBind.Value;
+            }
+
+            if (descriptorBindingUpdateUnusedWhilePending is not null)
+            {
+                DescriptorBindingUpdateUnusedWhilePending = descriptorBindingUpdateUnusedWhilePending.Value;
+            }
+
+            if (descriptorBindingPartiallyBound is not null)
+            {
+                DescriptorBindingPartiallyBound = descriptorBindingPartiallyBound.Value;
+            }
+
+            if (descriptorBindingVariableDescriptorCount is not null)
+            {
+                DescriptorBindingVariableDescriptorCount = descriptorBindingVariableDescriptorCount.Value;
+            }
+
+            if (runtimeDescriptorArray is not null)
+            {
+                RuntimeDescriptorArray = runtimeDescriptorArray.Value;
+            }
         }
 
 /// <summary></summary>

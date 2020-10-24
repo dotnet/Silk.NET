@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShadingRateImagePropertiesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceShadingRateImagePropertiesNV,
-            void* pNext = default,
-            Extent2D shadingRateTexelSize = default,
-            uint shadingRatePaletteSize = default,
-            uint shadingRateMaxCoarseSamples = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShadingRateImagePropertiesNV,
+            void* pNext = null,
+            Extent2D? shadingRateTexelSize = null,
+            uint? shadingRatePaletteSize = null,
+            uint? shadingRateMaxCoarseSamples = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShadingRateTexelSize = shadingRateTexelSize;
-            ShadingRatePaletteSize = shadingRatePaletteSize;
-            ShadingRateMaxCoarseSamples = shadingRateMaxCoarseSamples;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shadingRateTexelSize is not null)
+            {
+                ShadingRateTexelSize = shadingRateTexelSize.Value;
+            }
+
+            if (shadingRatePaletteSize is not null)
+            {
+                ShadingRatePaletteSize = shadingRatePaletteSize.Value;
+            }
+
+            if (shadingRateMaxCoarseSamples is not null)
+            {
+                ShadingRateMaxCoarseSamples = shadingRateMaxCoarseSamples.Value;
+            }
         }
 
 /// <summary></summary>

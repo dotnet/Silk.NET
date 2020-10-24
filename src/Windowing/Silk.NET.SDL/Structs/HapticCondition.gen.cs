@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.SDL
     {
         public HapticCondition
         (
-            ushort type = default,
-            HapticDirection direction = default,
-            uint length = default,
-            ushort delay = default,
-            ushort button = default,
-            ushort interval = default
-        )
+            ushort? type = null,
+            HapticDirection? direction = null,
+            uint? length = null,
+            ushort? delay = null,
+            ushort? button = null,
+            ushort? interval = null
+        ) : this()
         {
-            Type = type;
-            Direction = direction;
-            Length = length;
-            Delay = delay;
-            Button = button;
-            Interval = interval;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (direction is not null)
+            {
+                Direction = direction.Value;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
+
+            if (delay is not null)
+            {
+                Delay = delay.Value;
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (interval is not null)
+            {
+                Interval = interval.Value;
+            }
         }
 
 

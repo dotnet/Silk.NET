@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Vulkan
     {
         public SubmitInfo
         (
-            StructureType sType = StructureType.SubmitInfo,
-            void* pNext = default,
-            uint waitSemaphoreCount = default,
-            Semaphore* pWaitSemaphores = default,
-            PipelineStageFlags* pWaitDstStageMask = default,
-            uint commandBufferCount = default,
-            CommandBuffer* pCommandBuffers = default,
-            uint signalSemaphoreCount = default,
-            Semaphore* pSignalSemaphores = default
-        )
+            StructureType? sType = StructureType.SubmitInfo,
+            void* pNext = null,
+            uint? waitSemaphoreCount = null,
+            Semaphore* pWaitSemaphores = null,
+            PipelineStageFlags* pWaitDstStageMask = null,
+            uint? commandBufferCount = null,
+            CommandBuffer* pCommandBuffers = null,
+            uint? signalSemaphoreCount = null,
+            Semaphore* pSignalSemaphores = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            WaitSemaphoreCount = waitSemaphoreCount;
-            PWaitSemaphores = pWaitSemaphores;
-            PWaitDstStageMask = pWaitDstStageMask;
-            CommandBufferCount = commandBufferCount;
-            PCommandBuffers = pCommandBuffers;
-            SignalSemaphoreCount = signalSemaphoreCount;
-            PSignalSemaphores = pSignalSemaphores;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (waitSemaphoreCount is not null)
+            {
+                WaitSemaphoreCount = waitSemaphoreCount.Value;
+            }
+
+            if (pWaitSemaphores is not null)
+            {
+                PWaitSemaphores = pWaitSemaphores;
+            }
+
+            if (pWaitDstStageMask is not null)
+            {
+                PWaitDstStageMask = pWaitDstStageMask;
+            }
+
+            if (commandBufferCount is not null)
+            {
+                CommandBufferCount = commandBufferCount.Value;
+            }
+
+            if (pCommandBuffers is not null)
+            {
+                PCommandBuffers = pCommandBuffers;
+            }
+
+            if (signalSemaphoreCount is not null)
+            {
+                SignalSemaphoreCount = signalSemaphoreCount.Value;
+            }
+
+            if (pSignalSemaphores is not null)
+            {
+                PSignalSemaphores = pSignalSemaphores;
+            }
         }
 
 /// <summary></summary>

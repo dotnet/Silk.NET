@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassBeginInfo
         (
-            StructureType sType = StructureType.RenderPassBeginInfo,
-            void* pNext = default,
-            RenderPass renderPass = default,
-            Framebuffer framebuffer = default,
-            Rect2D renderArea = default,
-            uint clearValueCount = default,
-            ClearValue* pClearValues = default
-        )
+            StructureType? sType = StructureType.RenderPassBeginInfo,
+            void* pNext = null,
+            RenderPass? renderPass = null,
+            Framebuffer? framebuffer = null,
+            Rect2D? renderArea = null,
+            uint? clearValueCount = null,
+            ClearValue* pClearValues = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            RenderPass = renderPass;
-            Framebuffer = framebuffer;
-            RenderArea = renderArea;
-            ClearValueCount = clearValueCount;
-            PClearValues = pClearValues;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (renderPass is not null)
+            {
+                RenderPass = renderPass.Value;
+            }
+
+            if (framebuffer is not null)
+            {
+                Framebuffer = framebuffer.Value;
+            }
+
+            if (renderArea is not null)
+            {
+                RenderArea = renderArea.Value;
+            }
+
+            if (clearValueCount is not null)
+            {
+                ClearValueCount = clearValueCount.Value;
+            }
+
+            if (pClearValues is not null)
+            {
+                PClearValues = pClearValues;
+            }
         }
 
 /// <summary></summary>

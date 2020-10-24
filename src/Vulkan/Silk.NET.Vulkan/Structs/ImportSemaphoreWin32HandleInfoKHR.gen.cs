@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public ImportSemaphoreWin32HandleInfoKHR
         (
-            StructureType sType = StructureType.ImportSemaphoreWin32HandleInfoKhr,
-            void* pNext = default,
-            Semaphore semaphore = default,
-            SemaphoreImportFlags flags = default,
-            ExternalSemaphoreHandleTypeFlags handleType = default,
-            IntPtr handle = default,
-            IntPtr name = default
-        )
+            StructureType? sType = StructureType.ImportSemaphoreWin32HandleInfoKhr,
+            void* pNext = null,
+            Semaphore? semaphore = null,
+            SemaphoreImportFlags? flags = null,
+            ExternalSemaphoreHandleTypeFlags? handleType = null,
+            IntPtr? handle = null,
+            IntPtr? name = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Semaphore = semaphore;
-            Flags = flags;
-            HandleType = handleType;
-            Handle = handle;
-            Name = name;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (semaphore is not null)
+            {
+                Semaphore = semaphore.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
+
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
+
+            if (name is not null)
+            {
+                Name = name.Value;
+            }
         }
 
 /// <summary></summary>

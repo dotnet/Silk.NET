@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePrivateDataFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDevicePrivateDataFeaturesExt,
-            void* pNext = default,
-            Bool32 privateData = default
-        )
+            StructureType? sType = StructureType.PhysicalDevicePrivateDataFeaturesExt,
+            void* pNext = null,
+            Bool32? privateData = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PrivateData = privateData;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (privateData is not null)
+            {
+                PrivateData = privateData.Value;
+            }
         }
 
 /// <summary></summary>

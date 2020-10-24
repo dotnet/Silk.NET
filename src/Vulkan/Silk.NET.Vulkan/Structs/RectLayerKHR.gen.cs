@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public RectLayerKHR
         (
-            Offset2D offset = default,
-            Extent2D extent = default,
-            uint layer = default
-        )
+            Offset2D? offset = null,
+            Extent2D? extent = null,
+            uint? layer = null
+        ) : this()
         {
-            Offset = offset;
-            Extent = extent;
-            Layer = layer;
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
+
+            if (layer is not null)
+            {
+                Layer = layer.Value;
+            }
         }
 
 /// <summary></summary>

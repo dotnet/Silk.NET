@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Assimp
     {
         public File
         (
-            void* readProc = default,
-            void* writeProc = default,
-            void* tellProc = default,
-            void* fileSizeProc = default,
-            void* seekProc = default,
-            void* flushProc = default,
-            byte* userData = default
-        )
+            void* readProc = null,
+            void* writeProc = null,
+            void* tellProc = null,
+            void* fileSizeProc = null,
+            void* seekProc = null,
+            void* flushProc = null,
+            byte* userData = null
+        ) : this()
         {
-            ReadProc = readProc;
-            WriteProc = writeProc;
-            TellProc = tellProc;
-            FileSizeProc = fileSizeProc;
-            SeekProc = seekProc;
-            FlushProc = flushProc;
-            UserData = userData;
+            if (readProc is not null)
+            {
+                ReadProc = readProc;
+            }
+
+            if (writeProc is not null)
+            {
+                WriteProc = writeProc;
+            }
+
+            if (tellProc is not null)
+            {
+                TellProc = tellProc;
+            }
+
+            if (fileSizeProc is not null)
+            {
+                FileSizeProc = fileSizeProc;
+            }
+
+            if (seekProc is not null)
+            {
+                SeekProc = seekProc;
+            }
+
+            if (flushProc is not null)
+            {
+                FlushProc = flushProc;
+            }
+
+            if (userData is not null)
+            {
+                UserData = userData;
+            }
         }
 
 

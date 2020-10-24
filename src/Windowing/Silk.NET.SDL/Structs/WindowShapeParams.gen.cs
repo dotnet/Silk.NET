@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,12 +23,19 @@ namespace Silk.NET.SDL
     {
         public WindowShapeParams
         (
-            byte binarizationCutoff = default,
-            Color colorKey = default
-        )
+            byte? binarizationCutoff = null,
+            Color? colorKey = null
+        ) : this()
         {
-            BinarizationCutoff = binarizationCutoff;
-            ColorKey = colorKey;
+            if (binarizationCutoff is not null)
+            {
+                BinarizationCutoff = binarizationCutoff.Value;
+            }
+
+            if (colorKey is not null)
+            {
+                ColorKey = colorKey.Value;
+            }
         }
 
 

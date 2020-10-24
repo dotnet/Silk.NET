@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassCreateInfo2
         (
-            StructureType sType = StructureType.RenderPassCreateInfo2,
-            void* pNext = default,
-            RenderPassCreateFlags flags = default,
-            uint attachmentCount = default,
-            AttachmentDescription2* pAttachments = default,
-            uint subpassCount = default,
-            SubpassDescription2* pSubpasses = default,
-            uint dependencyCount = default,
-            SubpassDependency2* pDependencies = default,
-            uint correlatedViewMaskCount = default,
-            uint* pCorrelatedViewMasks = default
-        )
+            StructureType? sType = StructureType.RenderPassCreateInfo2,
+            void* pNext = null,
+            RenderPassCreateFlags? flags = null,
+            uint? attachmentCount = null,
+            AttachmentDescription2* pAttachments = null,
+            uint? subpassCount = null,
+            SubpassDescription2* pSubpasses = null,
+            uint? dependencyCount = null,
+            SubpassDependency2* pDependencies = null,
+            uint? correlatedViewMaskCount = null,
+            uint* pCorrelatedViewMasks = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            AttachmentCount = attachmentCount;
-            PAttachments = pAttachments;
-            SubpassCount = subpassCount;
-            PSubpasses = pSubpasses;
-            DependencyCount = dependencyCount;
-            PDependencies = pDependencies;
-            CorrelatedViewMaskCount = correlatedViewMaskCount;
-            PCorrelatedViewMasks = pCorrelatedViewMasks;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (attachmentCount is not null)
+            {
+                AttachmentCount = attachmentCount.Value;
+            }
+
+            if (pAttachments is not null)
+            {
+                PAttachments = pAttachments;
+            }
+
+            if (subpassCount is not null)
+            {
+                SubpassCount = subpassCount.Value;
+            }
+
+            if (pSubpasses is not null)
+            {
+                PSubpasses = pSubpasses;
+            }
+
+            if (dependencyCount is not null)
+            {
+                DependencyCount = dependencyCount.Value;
+            }
+
+            if (pDependencies is not null)
+            {
+                PDependencies = pDependencies;
+            }
+
+            if (correlatedViewMaskCount is not null)
+            {
+                CorrelatedViewMaskCount = correlatedViewMaskCount.Value;
+            }
+
+            if (pCorrelatedViewMasks is not null)
+            {
+                PCorrelatedViewMasks = pCorrelatedViewMasks;
+            }
         }
 
 /// <summary></summary>

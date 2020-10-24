@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Assimp
     {
         public FileIO
         (
-            void* openProc = default,
-            void* closeProc = default,
-            byte* userData = default
-        )
+            void* openProc = null,
+            void* closeProc = null,
+            byte* userData = null
+        ) : this()
         {
-            OpenProc = openProc;
-            CloseProc = closeProc;
-            UserData = userData;
+            if (openProc is not null)
+            {
+                OpenProc = openProc;
+            }
+
+            if (closeProc is not null)
+            {
+                CloseProc = closeProc;
+            }
+
+            if (userData is not null)
+            {
+                UserData = userData;
+            }
         }
 
 

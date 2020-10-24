@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ConditionalRenderingBeginInfoEXT
         (
-            StructureType sType = StructureType.ConditionalRenderingBeginInfoExt,
-            void* pNext = default,
-            Buffer buffer = default,
-            ulong offset = default,
-            ConditionalRenderingFlagsEXT flags = default
-        )
+            StructureType? sType = StructureType.ConditionalRenderingBeginInfoExt,
+            void* pNext = null,
+            Buffer? buffer = null,
+            ulong? offset = null,
+            ConditionalRenderingFlagsEXT? flags = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Buffer = buffer;
-            Offset = offset;
-            Flags = flags;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

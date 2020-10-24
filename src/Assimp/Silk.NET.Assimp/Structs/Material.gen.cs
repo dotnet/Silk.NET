@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Assimp
     {
         public Material
         (
-            MaterialProperty** mProperties = default,
-            uint mNumProperties = default,
-            uint mNumAllocated = default
-        )
+            MaterialProperty** mProperties = null,
+            uint? mNumProperties = null,
+            uint? mNumAllocated = null
+        ) : this()
         {
-            MProperties = mProperties;
-            MNumProperties = mNumProperties;
-            MNumAllocated = mNumAllocated;
+            if (mProperties is not null)
+            {
+                MProperties = mProperties;
+            }
+
+            if (mNumProperties is not null)
+            {
+                MNumProperties = mNumProperties.Value;
+            }
+
+            if (mNumAllocated is not null)
+            {
+                MNumAllocated = mNumAllocated.Value;
+            }
         }
 
 

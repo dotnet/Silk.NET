@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public SemaphoreWaitInfo
         (
-            StructureType sType = StructureType.SemaphoreWaitInfo,
-            void* pNext = default,
-            SemaphoreWaitFlags flags = default,
-            uint semaphoreCount = default,
-            Semaphore* pSemaphores = default,
-            ulong* pValues = default
-        )
+            StructureType? sType = StructureType.SemaphoreWaitInfo,
+            void* pNext = null,
+            SemaphoreWaitFlags? flags = null,
+            uint? semaphoreCount = null,
+            Semaphore* pSemaphores = null,
+            ulong* pValues = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            SemaphoreCount = semaphoreCount;
-            PSemaphores = pSemaphores;
-            PValues = pValues;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (semaphoreCount is not null)
+            {
+                SemaphoreCount = semaphoreCount.Value;
+            }
+
+            if (pSemaphores is not null)
+            {
+                PSemaphores = pSemaphores;
+            }
+
+            if (pValues is not null)
+            {
+                PValues = pValues;
+            }
         }
 
 /// <summary></summary>

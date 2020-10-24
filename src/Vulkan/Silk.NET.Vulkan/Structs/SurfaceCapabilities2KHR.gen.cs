@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceCapabilities2KHR
         (
-            StructureType sType = StructureType.SurfaceCapabilities2Khr,
-            void* pNext = default,
-            SurfaceCapabilitiesKHR surfaceCapabilities = default
-        )
+            StructureType? sType = StructureType.SurfaceCapabilities2Khr,
+            void* pNext = null,
+            SurfaceCapabilitiesKHR? surfaceCapabilities = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SurfaceCapabilities = surfaceCapabilities;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surfaceCapabilities is not null)
+            {
+                SurfaceCapabilities = surfaceCapabilities.Value;
+            }
         }
 
 /// <summary></summary>

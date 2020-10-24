@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMultiviewProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceMultiviewProperties,
-            void* pNext = default,
-            uint maxMultiviewViewCount = default,
-            uint maxMultiviewInstanceIndex = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceMultiviewProperties,
+            void* pNext = null,
+            uint? maxMultiviewViewCount = null,
+            uint? maxMultiviewInstanceIndex = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxMultiviewViewCount = maxMultiviewViewCount;
-            MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxMultiviewViewCount is not null)
+            {
+                MaxMultiviewViewCount = maxMultiviewViewCount.Value;
+            }
+
+            if (maxMultiviewInstanceIndex is not null)
+            {
+                MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex.Value;
+            }
         }
 
 /// <summary></summary>

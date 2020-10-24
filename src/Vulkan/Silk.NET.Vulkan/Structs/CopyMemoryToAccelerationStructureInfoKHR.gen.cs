@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public CopyMemoryToAccelerationStructureInfoKHR
         (
-            StructureType sType = StructureType.CopyMemoryToAccelerationStructureInfoKhr,
-            void* pNext = default,
-            DeviceOrHostAddressConstKHR src = default,
-            AccelerationStructureKHR dst = default,
-            CopyAccelerationStructureModeKHR mode = default
-        )
+            StructureType? sType = StructureType.CopyMemoryToAccelerationStructureInfoKhr,
+            void* pNext = null,
+            DeviceOrHostAddressConstKHR? src = null,
+            AccelerationStructureKHR? dst = null,
+            CopyAccelerationStructureModeKHR? mode = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Src = src;
-            Dst = dst;
-            Mode = mode;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (src is not null)
+            {
+                Src = src.Value;
+            }
+
+            if (dst is not null)
+            {
+                Dst = dst.Value;
+            }
+
+            if (mode is not null)
+            {
+                Mode = mode.Value;
+            }
         }
 
 /// <summary></summary>

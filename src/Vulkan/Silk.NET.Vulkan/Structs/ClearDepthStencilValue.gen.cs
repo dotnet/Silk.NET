@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public ClearDepthStencilValue
         (
-            float depth = default,
-            uint stencil = default
-        )
+            float? depth = null,
+            uint? stencil = null
+        ) : this()
         {
-            Depth = depth;
-            Stencil = stencil;
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
+
+            if (stencil is not null)
+            {
+                Stencil = stencil.Value;
+            }
         }
 
 /// <summary></summary>

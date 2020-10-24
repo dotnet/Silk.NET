@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceVertexAttributeDivisorFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceVertexAttributeDivisorFeaturesExt,
-            void* pNext = default,
-            Bool32 vertexAttributeInstanceRateDivisor = default,
-            Bool32 vertexAttributeInstanceRateZeroDivisor = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceVertexAttributeDivisorFeaturesExt,
+            void* pNext = null,
+            Bool32? vertexAttributeInstanceRateDivisor = null,
+            Bool32? vertexAttributeInstanceRateZeroDivisor = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            VertexAttributeInstanceRateDivisor = vertexAttributeInstanceRateDivisor;
-            VertexAttributeInstanceRateZeroDivisor = vertexAttributeInstanceRateZeroDivisor;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (vertexAttributeInstanceRateDivisor is not null)
+            {
+                VertexAttributeInstanceRateDivisor = vertexAttributeInstanceRateDivisor.Value;
+            }
+
+            if (vertexAttributeInstanceRateZeroDivisor is not null)
+            {
+                VertexAttributeInstanceRateZeroDivisor = vertexAttributeInstanceRateZeroDivisor.Value;
+            }
         }
 
 /// <summary></summary>

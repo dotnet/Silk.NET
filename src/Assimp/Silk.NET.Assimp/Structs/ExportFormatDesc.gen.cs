@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Assimp
     {
         public ExportFormatDesc
         (
-            byte* id = default,
-            byte* description = default,
-            byte* fileExtension = default
-        )
+            byte* id = null,
+            byte* description = null,
+            byte* fileExtension = null
+        ) : this()
         {
-            Id = id;
-            Description = description;
-            FileExtension = fileExtension;
+            if (id is not null)
+            {
+                Id = id;
+            }
+
+            if (description is not null)
+            {
+                Description = description;
+            }
+
+            if (fileExtension is not null)
+            {
+                FileExtension = fileExtension;
+            }
         }
 
 

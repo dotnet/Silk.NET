@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public ImageFormatListCreateInfo
         (
-            StructureType sType = StructureType.ImageFormatListCreateInfo,
-            void* pNext = default,
-            uint viewFormatCount = default,
-            Format* pViewFormats = default
-        )
+            StructureType? sType = StructureType.ImageFormatListCreateInfo,
+            void* pNext = null,
+            uint? viewFormatCount = null,
+            Format* pViewFormats = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ViewFormatCount = viewFormatCount;
-            PViewFormats = pViewFormats;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (viewFormatCount is not null)
+            {
+                ViewFormatCount = viewFormatCount.Value;
+            }
+
+            if (pViewFormats is not null)
+            {
+                PViewFormats = pViewFormats;
+            }
         }
 
 /// <summary></summary>

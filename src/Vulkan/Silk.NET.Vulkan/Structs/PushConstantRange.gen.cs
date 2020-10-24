@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PushConstantRange
         (
-            ShaderStageFlags stageFlags = default,
-            uint offset = default,
-            uint size = default
-        )
+            ShaderStageFlags? stageFlags = null,
+            uint? offset = null,
+            uint? size = null
+        ) : this()
         {
-            StageFlags = stageFlags;
-            Offset = offset;
-            Size = size;
+            if (stageFlags is not null)
+            {
+                StageFlags = stageFlags.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

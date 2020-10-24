@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Assimp
     {
         public AABB
         (
-            System.Numerics.Vector3 mMin = default,
-            System.Numerics.Vector3 mMax = default
-        )
+            System.Numerics.Vector3? mMin = null,
+            System.Numerics.Vector3? mMax = null
+        ) : this()
         {
-            MMin = mMin;
-            MMax = mMax;
+            if (mMin is not null)
+            {
+                MMin = mMin.Value;
+            }
+
+            if (mMax is not null)
+            {
+                MMax = mMax.Value;
+            }
         }
 
 

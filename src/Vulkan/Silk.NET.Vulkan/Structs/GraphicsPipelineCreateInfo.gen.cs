@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,46 +22,121 @@ namespace Silk.NET.Vulkan
     {
         public GraphicsPipelineCreateInfo
         (
-            StructureType sType = StructureType.GraphicsPipelineCreateInfo,
-            void* pNext = default,
-            PipelineCreateFlags flags = default,
-            uint stageCount = default,
-            PipelineShaderStageCreateInfo* pStages = default,
-            PipelineVertexInputStateCreateInfo* pVertexInputState = default,
-            PipelineInputAssemblyStateCreateInfo* pInputAssemblyState = default,
-            PipelineTessellationStateCreateInfo* pTessellationState = default,
-            PipelineViewportStateCreateInfo* pViewportState = default,
-            PipelineRasterizationStateCreateInfo* pRasterizationState = default,
-            PipelineMultisampleStateCreateInfo* pMultisampleState = default,
-            PipelineDepthStencilStateCreateInfo* pDepthStencilState = default,
-            PipelineColorBlendStateCreateInfo* pColorBlendState = default,
-            PipelineDynamicStateCreateInfo* pDynamicState = default,
-            PipelineLayout layout = default,
-            RenderPass renderPass = default,
-            uint subpass = default,
-            Pipeline basePipelineHandle = default,
-            int basePipelineIndex = default
-        )
+            StructureType? sType = StructureType.GraphicsPipelineCreateInfo,
+            void* pNext = null,
+            PipelineCreateFlags? flags = null,
+            uint? stageCount = null,
+            PipelineShaderStageCreateInfo* pStages = null,
+            PipelineVertexInputStateCreateInfo* pVertexInputState = null,
+            PipelineInputAssemblyStateCreateInfo* pInputAssemblyState = null,
+            PipelineTessellationStateCreateInfo* pTessellationState = null,
+            PipelineViewportStateCreateInfo* pViewportState = null,
+            PipelineRasterizationStateCreateInfo* pRasterizationState = null,
+            PipelineMultisampleStateCreateInfo* pMultisampleState = null,
+            PipelineDepthStencilStateCreateInfo* pDepthStencilState = null,
+            PipelineColorBlendStateCreateInfo* pColorBlendState = null,
+            PipelineDynamicStateCreateInfo* pDynamicState = null,
+            PipelineLayout? layout = null,
+            RenderPass? renderPass = null,
+            uint? subpass = null,
+            Pipeline? basePipelineHandle = null,
+            int? basePipelineIndex = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            StageCount = stageCount;
-            PStages = pStages;
-            PVertexInputState = pVertexInputState;
-            PInputAssemblyState = pInputAssemblyState;
-            PTessellationState = pTessellationState;
-            PViewportState = pViewportState;
-            PRasterizationState = pRasterizationState;
-            PMultisampleState = pMultisampleState;
-            PDepthStencilState = pDepthStencilState;
-            PColorBlendState = pColorBlendState;
-            PDynamicState = pDynamicState;
-            Layout = layout;
-            RenderPass = renderPass;
-            Subpass = subpass;
-            BasePipelineHandle = basePipelineHandle;
-            BasePipelineIndex = basePipelineIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (stageCount is not null)
+            {
+                StageCount = stageCount.Value;
+            }
+
+            if (pStages is not null)
+            {
+                PStages = pStages;
+            }
+
+            if (pVertexInputState is not null)
+            {
+                PVertexInputState = pVertexInputState;
+            }
+
+            if (pInputAssemblyState is not null)
+            {
+                PInputAssemblyState = pInputAssemblyState;
+            }
+
+            if (pTessellationState is not null)
+            {
+                PTessellationState = pTessellationState;
+            }
+
+            if (pViewportState is not null)
+            {
+                PViewportState = pViewportState;
+            }
+
+            if (pRasterizationState is not null)
+            {
+                PRasterizationState = pRasterizationState;
+            }
+
+            if (pMultisampleState is not null)
+            {
+                PMultisampleState = pMultisampleState;
+            }
+
+            if (pDepthStencilState is not null)
+            {
+                PDepthStencilState = pDepthStencilState;
+            }
+
+            if (pColorBlendState is not null)
+            {
+                PColorBlendState = pColorBlendState;
+            }
+
+            if (pDynamicState is not null)
+            {
+                PDynamicState = pDynamicState;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (renderPass is not null)
+            {
+                RenderPass = renderPass.Value;
+            }
+
+            if (subpass is not null)
+            {
+                Subpass = subpass.Value;
+            }
+
+            if (basePipelineHandle is not null)
+            {
+                BasePipelineHandle = basePipelineHandle.Value;
+            }
+
+            if (basePipelineIndex is not null)
+            {
+                BasePipelineIndex = basePipelineIndex.Value;
+            }
         }
 
 /// <summary></summary>

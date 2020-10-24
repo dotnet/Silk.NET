@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,79 @@ namespace Silk.NET.Vulkan
     {
         public PipelineDepthStencilStateCreateInfo
         (
-            StructureType sType = StructureType.PipelineDepthStencilStateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            Bool32 depthTestEnable = default,
-            Bool32 depthWriteEnable = default,
-            CompareOp depthCompareOp = default,
-            Bool32 depthBoundsTestEnable = default,
-            Bool32 stencilTestEnable = default,
-            StencilOpState front = default,
-            StencilOpState back = default,
-            float minDepthBounds = default,
-            float maxDepthBounds = default
-        )
+            StructureType? sType = StructureType.PipelineDepthStencilStateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            Bool32? depthTestEnable = null,
+            Bool32? depthWriteEnable = null,
+            CompareOp? depthCompareOp = null,
+            Bool32? depthBoundsTestEnable = null,
+            Bool32? stencilTestEnable = null,
+            StencilOpState? front = null,
+            StencilOpState? back = null,
+            float? minDepthBounds = null,
+            float? maxDepthBounds = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            DepthTestEnable = depthTestEnable;
-            DepthWriteEnable = depthWriteEnable;
-            DepthCompareOp = depthCompareOp;
-            DepthBoundsTestEnable = depthBoundsTestEnable;
-            StencilTestEnable = stencilTestEnable;
-            Front = front;
-            Back = back;
-            MinDepthBounds = minDepthBounds;
-            MaxDepthBounds = maxDepthBounds;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (depthTestEnable is not null)
+            {
+                DepthTestEnable = depthTestEnable.Value;
+            }
+
+            if (depthWriteEnable is not null)
+            {
+                DepthWriteEnable = depthWriteEnable.Value;
+            }
+
+            if (depthCompareOp is not null)
+            {
+                DepthCompareOp = depthCompareOp.Value;
+            }
+
+            if (depthBoundsTestEnable is not null)
+            {
+                DepthBoundsTestEnable = depthBoundsTestEnable.Value;
+            }
+
+            if (stencilTestEnable is not null)
+            {
+                StencilTestEnable = stencilTestEnable.Value;
+            }
+
+            if (front is not null)
+            {
+                Front = front.Value;
+            }
+
+            if (back is not null)
+            {
+                Back = back.Value;
+            }
+
+            if (minDepthBounds is not null)
+            {
+                MinDepthBounds = minDepthBounds.Value;
+            }
+
+            if (maxDepthBounds is not null)
+            {
+                MaxDepthBounds = maxDepthBounds.Value;
+            }
         }
 
 /// <summary></summary>

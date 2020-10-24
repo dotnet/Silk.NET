@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SwapchainDisplayNativeHdrCreateInfoAMD
         (
-            StructureType sType = StructureType.SwapchainDisplayNativeHdrCreateInfoAmd,
-            void* pNext = default,
-            Bool32 localDimmingEnable = default
-        )
+            StructureType? sType = StructureType.SwapchainDisplayNativeHdrCreateInfoAmd,
+            void* pNext = null,
+            Bool32? localDimmingEnable = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            LocalDimmingEnable = localDimmingEnable;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (localDimmingEnable is not null)
+            {
+                LocalDimmingEnable = localDimmingEnable.Value;
+            }
         }
 
 /// <summary></summary>

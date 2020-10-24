@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public DeviceGroupRenderPassBeginInfoKHR
         (
-            StructureType sType = StructureType.DeviceGroupRenderPassBeginInfo,
-            void* pNext = default,
-            uint deviceMask = default,
-            uint deviceRenderAreaCount = default,
-            Rect2D* pDeviceRenderAreas = default
-        )
+            StructureType? sType = StructureType.DeviceGroupRenderPassBeginInfo,
+            void* pNext = null,
+            uint? deviceMask = null,
+            uint? deviceRenderAreaCount = null,
+            Rect2D* pDeviceRenderAreas = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceMask = deviceMask;
-            DeviceRenderAreaCount = deviceRenderAreaCount;
-            PDeviceRenderAreas = pDeviceRenderAreas;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceMask is not null)
+            {
+                DeviceMask = deviceMask.Value;
+            }
+
+            if (deviceRenderAreaCount is not null)
+            {
+                DeviceRenderAreaCount = deviceRenderAreaCount.Value;
+            }
+
+            if (pDeviceRenderAreas is not null)
+            {
+                PDeviceRenderAreas = pDeviceRenderAreas;
+            }
         }
 
 /// <summary></summary>

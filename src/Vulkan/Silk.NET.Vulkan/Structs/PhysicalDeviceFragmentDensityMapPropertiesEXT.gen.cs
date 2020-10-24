@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFragmentDensityMapPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceFragmentDensityMapPropertiesExt,
-            void* pNext = default,
-            Extent2D minFragmentDensityTexelSize = default,
-            Extent2D maxFragmentDensityTexelSize = default,
-            Bool32 fragmentDensityInvocations = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMapPropertiesExt,
+            void* pNext = null,
+            Extent2D? minFragmentDensityTexelSize = null,
+            Extent2D? maxFragmentDensityTexelSize = null,
+            Bool32? fragmentDensityInvocations = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MinFragmentDensityTexelSize = minFragmentDensityTexelSize;
-            MaxFragmentDensityTexelSize = maxFragmentDensityTexelSize;
-            FragmentDensityInvocations = fragmentDensityInvocations;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (minFragmentDensityTexelSize is not null)
+            {
+                MinFragmentDensityTexelSize = minFragmentDensityTexelSize.Value;
+            }
+
+            if (maxFragmentDensityTexelSize is not null)
+            {
+                MaxFragmentDensityTexelSize = maxFragmentDensityTexelSize.Value;
+            }
+
+            if (fragmentDensityInvocations is not null)
+            {
+                FragmentDensityInvocations = fragmentDensityInvocations.Value;
+            }
         }
 
 /// <summary></summary>

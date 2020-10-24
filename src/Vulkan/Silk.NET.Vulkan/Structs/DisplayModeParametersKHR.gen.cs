@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public DisplayModeParametersKHR
         (
-            Extent2D visibleRegion = default,
-            uint refreshRate = default
-        )
+            Extent2D? visibleRegion = null,
+            uint? refreshRate = null
+        ) : this()
         {
-            VisibleRegion = visibleRegion;
-            RefreshRate = refreshRate;
+            if (visibleRegion is not null)
+            {
+                VisibleRegion = visibleRegion.Value;
+            }
+
+            if (refreshRate is not null)
+            {
+                RefreshRate = refreshRate.Value;
+            }
         }
 
 /// <summary></summary>

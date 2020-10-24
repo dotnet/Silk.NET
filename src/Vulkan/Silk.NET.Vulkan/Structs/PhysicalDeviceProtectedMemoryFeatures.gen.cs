@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceProtectedMemoryFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceProtectedMemoryFeatures,
-            void* pNext = default,
-            Bool32 protectedMemory = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceProtectedMemoryFeatures,
+            void* pNext = null,
+            Bool32? protectedMemory = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ProtectedMemory = protectedMemory;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (protectedMemory is not null)
+            {
+                ProtectedMemory = protectedMemory.Value;
+            }
         }
 
 /// <summary></summary>

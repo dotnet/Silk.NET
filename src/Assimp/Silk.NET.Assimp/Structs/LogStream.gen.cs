@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Assimp
     {
         public LogStream
         (
-            void* callback = default,
-            byte* user = default
-        )
+            void* callback = null,
+            byte* user = null
+        ) : this()
         {
-            Callback = callback;
-            User = user;
+            if (callback is not null)
+            {
+                Callback = callback;
+            }
+
+            if (user is not null)
+            {
+                User = user;
+            }
         }
 
 

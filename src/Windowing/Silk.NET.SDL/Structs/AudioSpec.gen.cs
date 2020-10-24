@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.SDL
     {
         public AudioSpec
         (
-            int freq = default,
-            ushort format = default,
-            byte channels = default,
-            byte silence = default,
-            ushort samples = default,
-            ushort padding = default,
-            uint size = default,
-            void* callback = default,
-            void* userdata = default
-        )
+            int? freq = null,
+            ushort? format = null,
+            byte? channels = null,
+            byte? silence = null,
+            ushort? samples = null,
+            ushort? padding = null,
+            uint? size = null,
+            void* callback = null,
+            void* userdata = null
+        ) : this()
         {
-            Freq = freq;
-            Format = format;
-            Channels = channels;
-            Silence = silence;
-            Samples = samples;
-            Padding = padding;
-            Size = size;
-            Callback = callback;
-            Userdata = userdata;
+            if (freq is not null)
+            {
+                Freq = freq.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (channels is not null)
+            {
+                Channels = channels.Value;
+            }
+
+            if (silence is not null)
+            {
+                Silence = silence.Value;
+            }
+
+            if (samples is not null)
+            {
+                Samples = samples.Value;
+            }
+
+            if (padding is not null)
+            {
+                Padding = padding.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (callback is not null)
+            {
+                Callback = callback;
+            }
+
+            if (userdata is not null)
+            {
+                Userdata = userdata;
+            }
         }
 
 

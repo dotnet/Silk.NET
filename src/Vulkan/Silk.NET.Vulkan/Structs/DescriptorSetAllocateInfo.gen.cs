@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorSetAllocateInfo
         (
-            StructureType sType = StructureType.DescriptorSetAllocateInfo,
-            void* pNext = default,
-            DescriptorPool descriptorPool = default,
-            uint descriptorSetCount = default,
-            DescriptorSetLayout* pSetLayouts = default
-        )
+            StructureType? sType = StructureType.DescriptorSetAllocateInfo,
+            void* pNext = null,
+            DescriptorPool? descriptorPool = null,
+            uint? descriptorSetCount = null,
+            DescriptorSetLayout* pSetLayouts = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DescriptorPool = descriptorPool;
-            DescriptorSetCount = descriptorSetCount;
-            PSetLayouts = pSetLayouts;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (descriptorPool is not null)
+            {
+                DescriptorPool = descriptorPool.Value;
+            }
+
+            if (descriptorSetCount is not null)
+            {
+                DescriptorSetCount = descriptorSetCount.Value;
+            }
+
+            if (pSetLayouts is not null)
+            {
+                PSetLayouts = pSetLayouts;
+            }
         }
 
 /// <summary></summary>

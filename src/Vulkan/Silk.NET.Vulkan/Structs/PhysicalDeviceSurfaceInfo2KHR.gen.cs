@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceSurfaceInfo2KHR
         (
-            StructureType sType = StructureType.PhysicalDeviceSurfaceInfo2Khr,
-            void* pNext = default,
-            SurfaceKHR surface = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceSurfaceInfo2Khr,
+            void* pNext = null,
+            SurfaceKHR? surface = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Surface = surface;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surface is not null)
+            {
+                Surface = surface.Value;
+            }
         }
 
 /// <summary></summary>
