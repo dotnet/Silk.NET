@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -138,52 +139,37 @@ namespace Silk.NET.SDL
         [NativeName("Type", "SDL_AudioFilter [10]")]
         [NativeName("Type.Name", "SDL_AudioFilter [10]")]
         [NativeName("Name", "filters")]
-        public void* Filters_0;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_1;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_2;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_3;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_4;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_5;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_6;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_7;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_8;
-        
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
-        [NativeName("Name", "filters")]
-        public void* Filters_9;
+        public FiltersBuffer Filters;
+
+        public struct FiltersBuffer
+        {
+            public void* Element0;
+            public void* Element1;
+            public void* Element2;
+            public void* Element3;
+            public void* Element4;
+            public void* Element5;
+            public void* Element6;
+            public void* Element7;
+            public void* Element8;
+            public void* Element9;
+            public ref void* this[int index]
+            {
+                get
+                {
+                    if (index > 9 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (void** ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+        }
+
 
         [NativeName("Type", "int")]
         [NativeName("Type.Name", "int")]

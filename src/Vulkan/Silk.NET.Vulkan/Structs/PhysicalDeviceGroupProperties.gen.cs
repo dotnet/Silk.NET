@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -72,162 +73,64 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkPhysicalDevice")]
         [NativeName("Type.Name", "VkPhysicalDevice")]
         [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_0;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_1;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_2;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_3;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_4;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_5;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_6;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_7;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_8;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_9;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_10;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_11;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_12;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_13;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_14;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_15;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_16;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_17;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_18;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_19;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_20;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_21;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_22;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_23;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_24;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_25;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_26;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_27;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_28;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_29;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_30;
-        /// <summary></summary>
-        [NativeName("Type", "VkPhysicalDevice")]
-        [NativeName("Type.Name", "VkPhysicalDevice")]
-        [NativeName("Name", "physicalDevices")]
-        public PhysicalDevice PhysicalDevices_31;
+        public PhysicalDevicesBuffer PhysicalDevices;
+
+        public struct PhysicalDevicesBuffer
+        {
+            public PhysicalDevice Element0;
+            public PhysicalDevice Element1;
+            public PhysicalDevice Element2;
+            public PhysicalDevice Element3;
+            public PhysicalDevice Element4;
+            public PhysicalDevice Element5;
+            public PhysicalDevice Element6;
+            public PhysicalDevice Element7;
+            public PhysicalDevice Element8;
+            public PhysicalDevice Element9;
+            public PhysicalDevice Element10;
+            public PhysicalDevice Element11;
+            public PhysicalDevice Element12;
+            public PhysicalDevice Element13;
+            public PhysicalDevice Element14;
+            public PhysicalDevice Element15;
+            public PhysicalDevice Element16;
+            public PhysicalDevice Element17;
+            public PhysicalDevice Element18;
+            public PhysicalDevice Element19;
+            public PhysicalDevice Element20;
+            public PhysicalDevice Element21;
+            public PhysicalDevice Element22;
+            public PhysicalDevice Element23;
+            public PhysicalDevice Element24;
+            public PhysicalDevice Element25;
+            public PhysicalDevice Element26;
+            public PhysicalDevice Element27;
+            public PhysicalDevice Element28;
+            public PhysicalDevice Element29;
+            public PhysicalDevice Element30;
+            public PhysicalDevice Element31;
+            public ref PhysicalDevice this[int index]
+            {
+                get
+                {
+                    if (index > 31 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (PhysicalDevice* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<PhysicalDevice> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 32);
+#endif
+        }
+
 /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]

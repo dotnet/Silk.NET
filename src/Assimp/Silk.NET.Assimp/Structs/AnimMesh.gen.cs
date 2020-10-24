@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -100,82 +101,68 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiColor4D *[8]")]
         [NativeName("Type.Name", "aiColor4D *[8]")]
         [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_0;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_1;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_2;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_3;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_4;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_5;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_6;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public System.Numerics.Vector4* MColors_7;
+        public MColorsBuffer MColors;
+
+        public struct MColorsBuffer
+        {
+            public System.Numerics.Vector4* Element0;
+            public System.Numerics.Vector4* Element1;
+            public System.Numerics.Vector4* Element2;
+            public System.Numerics.Vector4* Element3;
+            public System.Numerics.Vector4* Element4;
+            public System.Numerics.Vector4* Element5;
+            public System.Numerics.Vector4* Element6;
+            public System.Numerics.Vector4* Element7;
+            public ref System.Numerics.Vector4* this[int index]
+            {
+                get
+                {
+                    if (index > 7 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (System.Numerics.Vector4** ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+        }
+
         
         [NativeName("Type", "aiVector3D *[8]")]
         [NativeName("Type.Name", "aiVector3D *[8]")]
         [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_0;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_1;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_2;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_3;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_4;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_5;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_6;
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public System.Numerics.Vector3* MTextureCoords_7;
+        public MTextureCoordsBuffer MTextureCoords;
+
+        public struct MTextureCoordsBuffer
+        {
+            public System.Numerics.Vector3* Element0;
+            public System.Numerics.Vector3* Element1;
+            public System.Numerics.Vector3* Element2;
+            public System.Numerics.Vector3* Element3;
+            public System.Numerics.Vector3* Element4;
+            public System.Numerics.Vector3* Element5;
+            public System.Numerics.Vector3* Element6;
+            public System.Numerics.Vector3* Element7;
+            public ref System.Numerics.Vector3* this[int index]
+            {
+                get
+                {
+                    if (index > 7 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (System.Numerics.Vector3** ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+        }
+
 
         [NativeName("Type", "unsigned int")]
         [NativeName("Type.Name", "unsigned int")]
