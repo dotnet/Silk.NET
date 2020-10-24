@@ -13,13 +13,18 @@ namespace Silk.NET.Core.Native
         /// <summary>
         /// The <see cref="INativeContext"/> this instance was created with.
         /// </summary>
-        public INativeContext Context { get; }
+        public INativeContext Context => _ctx;
 
         /// <inheritdoc />
         protected NativeAPI(INativeContext ctx)
             : base(ctx)
         {
-            Context = ctx;
+        }
+        
+        /// <inheritdoc />
+        protected NativeAPI(string library)
+            : base(library)
+        {
         }
 
         /// <summary>

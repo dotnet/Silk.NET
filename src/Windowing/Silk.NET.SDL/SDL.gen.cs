@@ -16195,6 +16195,11 @@ namespace Silk.NET.SDL
             : base(ctx)
         {
         }
+        
+                public Sdl(string library)
+                    : base(library)
+                {
+                }
     }
 }
 

@@ -13,7 +13,7 @@ namespace Silk.NET.Core.Native
 {
     public abstract class NativeApiContainer : IDisposable
     {
-        private readonly INativeContext _ctx;
+        internal readonly INativeContext _ctx;
         private IVTable _vTable;
 
         protected NativeApiContainer(string library) : this(null, library)

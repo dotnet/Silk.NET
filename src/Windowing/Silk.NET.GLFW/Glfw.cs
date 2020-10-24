@@ -32,6 +32,12 @@ namespace Silk.NET.GLFW
             : base(ctx)
         {
         }
+        
+        /// <inheritdoc />
+        protected Glfw(string library)
+            : base(library)
+        {
+        }
 
         /// <summary>
         /// Gets the default callback which gets called when a GLFW-Error occurs.

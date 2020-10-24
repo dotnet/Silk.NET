@@ -15,6 +15,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.SilkTouch.NativeContextOverrides;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
@@ -46,7 +47,17 @@ namespace Silk.NET.SilkTouch
 
             if (nativeApiAttribute is null)
                 return;
+                
+            var pInvokeAttribute = context.Compilation.GetTypeByMetadataName
+                ("Silk.NET.Core.Native.PInvokeOverride");
 
+            if (pInvokeAttribute is null)
+                return;
+
+            _nativeContextAttributes[pInvokeAttribute] = array => (
+                (string) array[0].Value! /* first return is just the lib target */, new PInvokeNativeContextOverride());
+            
+            
             marshalBuilder = new MarshalBuilder();
 
             marshalBuilder.Use(Middlewares.ParameterInitMiddleware);
@@ -71,7 +82,7 @@ namespace Silk.NET.SilkTouch
                     var name =
                         $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                     context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+                    File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
                 }
                 catch (Exception ex)
                 {
@@ -113,7 +124,7 @@ namespace Silk.NET.SilkTouch
             if (!compilation.HasImplicitConversion
                 (classSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeApiContainer")))
                 return null;
-
+            
             var classIsSealed = classDeclaration.Modifiers.Any(x => x.Text == "sealed");
             var generateSeal = false;
 
@@ -169,8 +180,8 @@ namespace Silk.NET.SilkTouch
             int gcCount = 0;
             
             Dictionary<int, string> entryPoints = new Dictionary<int, string>();
-            foreach (var (declaration, symbol, entryPoint, callingConvention) in 
-                from declaration in
+            var processedEntrypoints = new List<Entrypoint>();
+            foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
                     from member in classDeclaration.Members
                     where member.IsKind(SyntaxKind.MethodDeclaration)
                     select (MethodDeclarationSyntax) member
@@ -187,12 +198,15 @@ namespace Silk.NET.SilkTouch
                 let entryPoint = NativeApiAttribute.GetEntryPoint(attribute, classNativeApiAttribute, symbol.Name)
                 let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
                 select (declaration, symbol, entryPoint, callingConvention))
+            {
+                var slot = slotCount++;
                 ProcessMethod
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
-                    generateSeal, generateVTable, ref slotCount, compilation, symbol, declaration, newMembers,
-                    ref gcCount
+                    generateSeal, generateVTable, slot, compilation, symbol, declaration, newMembers,
+                    ref gcCount, processedEntrypoints
                 );
+            }
 
             if (slotCount > 0)
             {
@@ -290,6 +304,8 @@ namespace Silk.NET.SilkTouch
                 );
             }
 
+            ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, classSymbol, classDeclaration);
+
             var newNamespace = namespaceDeclaration.WithMembers
                 (
                     List
@@ -333,12 +349,13 @@ namespace Silk.NET.SilkTouch
             bool classIsSealed,
             bool generateSeal,
             bool generateVTable,
-            ref int slotCount,
+            int slot,
             Compilation compilation,
             IMethodSymbol symbol,
             MethodDeclarationSyntax declaration,
             List<MemberDeclarationSyntax> newMembers,
-            ref int gcCount
+            ref int gcCount,
+            List<Entrypoint> processedEntrypoints
         )
         {
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
@@ -374,6 +391,19 @@ namespace Silk.NET.SilkTouch
                     )
                 );
                 entryPoints[ctx.Slot] = entryPoint;
+                processedEntrypoints.Add
+                (
+                    new Entrypoint
+                    (
+                        entryPoint, ctx.Slot, callingConvention,
+                        ctx.LoadTypes.Select
+                            (
+                                x => (TypeSyntax) IdentifierName
+                                    (x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
+                            )
+                            .ToArray()
+                    )
+                );
 
                 ExpressionSyntax loadCallTarget;
 
@@ -446,10 +476,7 @@ namespace Silk.NET.SilkTouch
 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                slotCount++;
-
-
-                var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slotCount);
+                var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slot);
 
                 marshalBuilder.Run(context);
 
