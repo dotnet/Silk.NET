@@ -506,7 +506,7 @@ namespace Silk.NET.Windowing.Glfw
             GC.SuppressFinalize(this);
         }
 
-        public IntPtr GetProcAddress(string proc) => _glfw.GetProcAddress(proc);
+        public IntPtr GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
 
         public override void Close()
         {

@@ -43,7 +43,7 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         public void Dispose() => _view.Sdl.GLDeleteContext(_ctx);
-        public IntPtr GetProcAddress(string proc) => (IntPtr) _view.Sdl.GLGetProcAddress(proc);
+        public IntPtr GetProcAddress(string proc, int? slot = default) => (IntPtr) _view.Sdl.GLGetProcAddress(proc);
         public IntPtr Handle => (IntPtr) _ctx;
         public bool IsCurrent => _view.Sdl.GLGetCurrentContext() == _ctx;
         public void SwapInterval(int interval) => _view.Sdl.GLSetSwapInterval(interval);
