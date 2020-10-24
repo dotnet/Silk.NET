@@ -67,6 +67,7 @@ namespace Silk.NET.SilkTouch
             marshalBuilder.Use(Middlewares.BoolMarshaller);
             marshalBuilder.Use(Middlewares.PinObjectMarshaller);
             marshalBuilder.Use(Middlewares.DelegateMarshaller);
+            marshalBuilder.Use(Middlewares.GenericPointerMarshaller);
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
 
