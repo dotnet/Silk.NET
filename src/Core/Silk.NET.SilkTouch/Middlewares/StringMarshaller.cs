@@ -17,7 +17,7 @@ namespace Silk.NET.SilkTouch
 {
     public static partial class Middlewares
     {
-        private static ExpressionSyntax _sysMarshal = // System.Runtime.InteropServices.Marshal
+        private static ExpressionSyntax _marshal = // Silk.NET.Core.Native.SilkMarshal
             MemberAccessExpression
             (
                 SyntaxKind.SimpleMemberAccessExpression,
@@ -25,67 +25,26 @@ namespace Silk.NET.SilkTouch
                 (
                     SyntaxKind.SimpleMemberAccessExpression,
                     MemberAccessExpression
-                        (SyntaxKind.SimpleMemberAccessExpression, IdentifierName("System"), IdentifierName("Runtime")),
-                    IdentifierName("InteropServices")
-                ), IdentifierName("Marshal")
-            );
-        private static ExpressionSyntax _freeHGlobal = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("FreeHGlobal"));
-        private static ExpressionSyntax _allocHGlobal = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("AllocHGlobal"));
-        private static Dictionary<UnmanagedType, ExpressionSyntax> _stringToPtr =
-            new Dictionary<UnmanagedType, ExpressionSyntax>
-            {
-                [UnmanagedType.BStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("StringToBSTR")),
-                [UnmanagedType.LPWStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("StringToHGlobalUni")),
-                [UnmanagedType.LPStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("StringToHGlobalAnsi")),
-                [UnmanagedType.LPTStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("StringToHGlobalAuto")),
-            };
-        private static Dictionary<UnmanagedType, ExpressionSyntax> _stringFromPtr =
-            new Dictionary<UnmanagedType, ExpressionSyntax>
-            {
-                [UnmanagedType.BStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("PtrToStringBSTR")),
-                [UnmanagedType.LPWStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("PtrToStringUni")),
-                [UnmanagedType.LPStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("PtrToStringAnsi")),
-                [UnmanagedType.LPTStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("PtrToStringAuto")),
-            };
-        private static Dictionary<UnmanagedType, ExpressionSyntax> _freeString =
-            new Dictionary<UnmanagedType, ExpressionSyntax>
-            {
-                [UnmanagedType.BStr] = MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, _sysMarshal, IdentifierName("FreeBSTR")),
-                [UnmanagedType.LPWStr] = _freeHGlobal,
-                [UnmanagedType.LPStr] = _freeHGlobal,
-                [UnmanagedType.LPTStr] = _freeHGlobal,
-            };
-
-        private static Dictionary<UnmanagedType, ExpressionSyntax> _allocString =
-            new Dictionary<UnmanagedType, ExpressionSyntax>
-            {
-                [UnmanagedType.BStr] =
-                    // Silk.NET.Core.Native.SilkMarshal.AllocBStr
-                    MemberAccessExpression
                     (
                         SyntaxKind.SimpleMemberAccessExpression,
                         MemberAccessExpression
                         (
-                            SyntaxKind.SimpleMemberAccessExpression,
-                            MemberAccessExpression
-                            (
-                                SyntaxKind.SimpleMemberAccessExpression,
-                                MemberAccessExpression
-                                (
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    MemberAccessExpression
-                                    (
-                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
-                                        IdentifierName("NET")
-                                    ), IdentifierName("Core")
-                                ), IdentifierName("Native")
-                            ), IdentifierName("SilkMarshal")
-                        ), IdentifierName("AllocBStr")
-                    ),
-                [UnmanagedType.LPWStr] = _allocHGlobal,
-                [UnmanagedType.LPStr] = _allocHGlobal,
-                [UnmanagedType.LPTStr] = _allocHGlobal,
-            };
+                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
+                            IdentifierName("NET")
+                        ), IdentifierName("Core")
+                    ), IdentifierName("Native")
+                ), IdentifierName("SilkMarshal")
+            );
+
+        private static TypeSyntax _nativeStringEncoding = // Silk.NET.Core.Native.NativeStringEncoding
+            QualifiedName
+            (
+                QualifiedName
+                (
+                    QualifiedName(QualifiedName(IdentifierName("Silk"), IdentifierName("NET")), IdentifierName("Core")),
+                    IdentifierName("Native")
+                ), IdentifierName("NativeStringEncoding")
+            );
 
         private const UnmanagedType Default = UnmanagedType.LPStr;
 
@@ -130,9 +89,32 @@ namespace Silk.NET.SilkTouch
                                 IdentifierName(charType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
                                 InvocationExpression
                                 (
-                                    _stringToPtr[marshalAs],
+                                    MemberAccessExpression
+                                    (
+                                        SyntaxKind.SimpleMemberAccessExpression, _marshal, IdentifierName("StringToPtr")
+                                    ),
                                     ArgumentList
-                                        (SingletonSeparatedList(Argument(parameter.Value)))
+                                    (
+                                        SeparatedList
+                                        (
+                                            new[]
+                                            {
+                                                Argument(parameter.Value),
+                                                Argument
+                                                (
+                                                    CastExpression
+                                                    (
+                                                        _nativeStringEncoding,
+                                                        LiteralExpression
+                                                        (
+                                                            SyntaxKind.NumericLiteralExpression,
+                                                            Literal((int) marshalAs)
+                                                        )
+                                                    )
+                                                )
+                                            }
+                                        )
+                                    )
                                 )
                             )
                         );
@@ -159,22 +141,38 @@ namespace Silk.NET.SilkTouch
                             "Computed" => throw new Exception(),
                             _ => throw new ArgumentOutOfRangeException(c.Key)
                         };
-                        
+
                         ctx.SetVariable
                         (
-                            id,
-                            ctx => CastExpression
+                            id, ctx => CastExpression
                             (
                                 IdentifierName(charType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
                                 InvocationExpression
                                 (
-                                    _allocString[marshalAs],
-                                    ArgumentList
+                                    MemberAccessExpression
                                     (
-                                        SingletonSeparatedList
+                                        SyntaxKind.SimpleMemberAccessExpression, _marshal,
+                                        IdentifierName("AllocateStringPtr")
+                                    ), ArgumentList
+                                    (
+                                        SeparatedList
                                         (
-                                            Argument
-                                                (CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count))
+                                            new[]
+                                            {
+                                                Argument(parameter.Value),
+                                                Argument
+                                                (
+                                                    CastExpression
+                                                    (
+                                                        _nativeStringEncoding,
+                                                        LiteralExpression
+                                                        (
+                                                            SyntaxKind.NumericLiteralExpression,
+                                                            Literal((int) marshalAs)
+                                                        )
+                                                    )
+                                                )
+                                            }
                                         )
                                     )
                                 )
@@ -238,26 +236,38 @@ namespace Silk.NET.SilkTouch
                 var resultVariable = ctx.ResolveVariable(ctx.ResultVariable.Value);
                 ctx.SetVariable
                 (
-                    returnLocal,
-                    ctx => InvocationExpression
+                    returnLocal, ctx => InvocationExpression
                     (
-                        _stringFromPtr[returnMarshalAs],
+                        MemberAccessExpression
+                            (SyntaxKind.SimpleMemberAccessExpression, _marshal, IdentifierName("PtrToString")),
                         ArgumentList
                         (
-                            SingletonSeparatedList
+                            SeparatedList
                             (
-                                Argument
-                                (
-                                    CastExpression
+                                new[]
+                                {
+                                    Argument
                                     (
-                                        IdentifierName
+                                        CastExpression
                                         (
-                                            ctx.Compilation.GetSpecialType
-                                                    (SpecialType.System_IntPtr)
-                                                .ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
-                                        ), resultVariable.Value
+                                            IdentifierName
+                                            (
+                                                ctx.Compilation.GetSpecialType
+                                                        (SpecialType.System_IntPtr)
+                                                    .ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
+                                            ), resultVariable.Value
+                                        )
+                                    ),
+                                    Argument
+                                    (
+                                        CastExpression
+                                        (
+                                            _nativeStringEncoding,
+                                            LiteralExpression
+                                                (SyntaxKind.NumericLiteralExpression, Literal((int) returnMarshalAs))
+                                        )
                                     )
-                                )
+                                }
                             )
                         )
                     )
@@ -284,25 +294,43 @@ namespace Silk.NET.SilkTouch
                         (
                             AssignmentExpression
                             (
-                                SyntaxKind.SimpleAssignmentExpression,
-                                IdentifierName(FormatName(n)),
+                                SyntaxKind.SimpleAssignmentExpression, IdentifierName(FormatName(n)),
                                 InvocationExpression
                                 (
-                                    _stringFromPtr[marshalAs],
-                                    ArgumentList
+                                    MemberAccessExpression
                                     (
-                                        SingletonSeparatedList
+                                        SyntaxKind.SimpleMemberAccessExpression, _marshal,
+                                        IdentifierName("PtrToString")
+                                    ), ArgumentList
+                                    (
+                                        SeparatedList
                                         (
-                                            Argument
-                                            (
-                                                CastExpression
+                                            new[]
+                                            {
+                                                Argument
                                                 (
-                                                    IdentifierName
+                                                    CastExpression
                                                     (
-                                                        intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
-                                                    ), p2.Value
+                                                        IdentifierName
+                                                        (
+                                                            intptr.ToDisplayString
+                                                                (SymbolDisplayFormat.FullyQualifiedFormat)
+                                                        ), p2.Value
+                                                    )
+                                                ),
+                                                Argument
+                                                (
+                                                    CastExpression
+                                                    (
+                                                        _nativeStringEncoding,
+                                                        LiteralExpression
+                                                        (
+                                                            SyntaxKind.NumericLiteralExpression,
+                                                            Literal((int) returnMarshalAs)
+                                                        )
+                                                    )
                                                 )
-                                            )
+                                            }
                                         )
                                     )
                                 )
@@ -320,13 +348,35 @@ namespace Silk.NET.SilkTouch
                     (
                         InvocationExpression
                         (
-                            _freeString[marshalAs],
+                            MemberAccessExpression
+                                (SyntaxKind.SimpleMemberAccessExpression, _marshal, IdentifierName("FreeStringPtr")),
                             ArgumentList
                             (
-                                SingletonSeparatedList
+                                SeparatedList
                                 (
-                                    Argument
-                                        (CastExpression(IdentifierName(intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), p1.Value))
+                                    new[]
+                                    {
+                                        Argument
+                                        (
+                                            CastExpression
+                                            (
+                                                IdentifierName
+                                                    (intptr.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
+                                                p1.Value
+                                            )
+                                        ),
+                                        Argument
+                                        (
+                                            CastExpression
+                                            (
+                                                _nativeStringEncoding,
+                                                LiteralExpression
+                                                (
+                                                    SyntaxKind.NumericLiteralExpression, Literal((int) returnMarshalAs)
+                                                )
+                                            )
+                                        )
+                                    }
                                 )
                             )
                         )
