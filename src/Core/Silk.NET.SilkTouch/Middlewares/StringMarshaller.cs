@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -136,17 +137,21 @@ namespace Silk.NET.SilkTouch
                             )
                         );
                         ctx.DeclareExtraRef(id); // readback
+                        ctx.DeclareExtraRef(id); // free
                         ctx.SetParameterToVariable(index, id);
+                        ctx.DeclareExtraRef(ctx.ParameterVariables[index]); // ptrToString
                         break;
                     case RefKind.Out:
                     {
-                       b[index] = false;
+                        b[index] = false;
                             
                         if (!ctx.TryGetAttribute(index, "Silk.NET.Core.Attributes.CountAttribute", out var countData))
                         {
                             continue; // diagnostic?
                         }
-
+                        
+                        Debugger.Launch();
+                        
                         var c = countData.NamedArguments[0];
 
                         ExpressionSyntax count = c.Key switch
@@ -177,6 +182,10 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         );
+                        ctx.SetParameterToVariable(index, id);
+                        ctx.DeclareExtraRef(ctx.ParameterVariables[index]); // ptrToString
+                        ctx.DeclareExtraRef(id); // free
+                        
                         var alloced = ctx.ResolveVariable(id);
                         ctx.AddSideEffect(ctx => ExpressionStatement(InvocationExpression(MemberAccessExpression
                         (
@@ -197,17 +206,13 @@ namespace Silk.NET.SilkTouch
                                         ), IdentifierName("Core")
                                     ), IdentifierName("Native")
                                 ), IdentifierName("SilkMarshal")
-                            ), IdentifierName("AllocBStr")
+                            ), IdentifierName("ZeroStart")
                         ), ArgumentList(SeparatedList(new[] { Argument(alloced.Value), Argument(count) })))));
-                       
                         
-                        ctx.SetParameterToVariable(index, id);
                         ctx.ShouldPinParameter[index] = false;
                         break;
                     }
                 }
-                ctx.DeclareExtraRef(ctx.ParameterVariables[index]); // ptrToString
-                ctx.DeclareExtraRef(id); // free
             }
 
             var marshalReturn = !ctx.ReturnsVoid && SymbolEqualityComparer.Default.Equals(ctx.ReturnLoadType, @string);
