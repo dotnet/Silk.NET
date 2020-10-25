@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -22,6 +23,12 @@ namespace Silk.NET.Core.Native
         /// <param name="length">The length of the string pointer, in bytes.</param>
         /// <returns>A pointer to the created string.</returns>
         public static IntPtr AllocBStr(int length) => Marshal.StringToBSTR(new string('\0', length));
+        
+        /// <summary>
+        /// Free a BStr pointer
+        /// </summary>
+        /// <param name="ptr">The pointer to be freed.</param>
+        public static void FreeBStr(IntPtr ptr) => Marshal.FreeBSTR(ptr);
 
         // Store the GlobalMemory instances so that on .NET 5 the pinned object heap isn't prematurely garbage collected
         // This means that the GlobalMemory is only freed when the user calls Free.
@@ -74,6 +81,13 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
+        [DebuggerHidden]
+        [DebuggerStepThrough]
+        private static T ThrowInvalidEncoding<T>()
+        {
+            throw new ArgumentOutOfRangeException("encoding");
+        }
+
         /// <summary>
         /// Gets a <see cref="GlobalMemory"/> object containing a copy of the input string marshalled per the specified
         /// native string encoding.
@@ -94,7 +108,7 @@ namespace Silk.NET.Core.Native
                 NativeStringEncoding.LPTStr => Utf8ToMemory(input),
                 NativeStringEncoding.LPUTF8Str => Utf8ToMemory(input),
                 NativeStringEncoding.LPWStr => WideToMemory(input),
-                _ => throw new ArgumentOutOfRangeException(nameof(encoding))
+                _ => ThrowInvalidEncoding<GlobalMemory>()
             };
 
             static unsafe GlobalMemory Utf8ToMemory(string input)
@@ -143,6 +157,49 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>
+        /// Allocates a string pointer
+        /// </summary>
+        /// <param name="length">Length of the memory to be allocated</param>
+        /// <param name="encoding">The encoding of the string stored in this memory region</param>
+        /// <returns>The pointer to the allocated memory</returns>
+        /// <seealso cref="FreeStringPtr(System.IntPtr,Silk.NET.Core.Native.NativeStringEncoding)"/>
+        public static IntPtr AllocateStringPtr(int length, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+            => encoding switch
+            {
+                NativeStringEncoding.BStr => AllocBStr(length),
+                NativeStringEncoding.LPStr => Allocate(length),
+                NativeStringEncoding.LPTStr => Allocate(length),
+                NativeStringEncoding.LPUTF8Str => Allocate(length),
+                NativeStringEncoding.LPWStr => Allocate(length),
+                _ => ThrowInvalidEncoding<IntPtr>()
+            };
+        
+        /// <summary>
+        /// Free a string pointer
+        /// </summary>
+        /// <param name="ptr">The pointer to be freed</param>
+        /// <param name="encoding">The encoding used to allocate this pointer</param>
+        /// <seealso cref="AllocateStringPtr"/>
+        public static void FreeStringPtr(IntPtr ptr, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+        {
+            switch (encoding)
+            {
+                case NativeStringEncoding.BStr:
+                    FreeBStr(ptr);
+                    break;
+                case NativeStringEncoding.LPStr:
+                case NativeStringEncoding.LPTStr:
+                case NativeStringEncoding.LPUTF8Str:
+                case NativeStringEncoding.LPWStr:
+                    Free(ptr);
+                    break;
+                default:
+                    ThrowInvalidEncoding<IntPtr>();
+                    break;
+            }
+        }
+
+        /// <summary>
         /// Gets a pointer to memory containing a copy of the input string marshalled per the specified
         /// native string encoding.
         /// </summary>
@@ -170,7 +227,7 @@ namespace Silk.NET.Core.Native
                 NativeStringEncoding.LPTStr => Utf8PtrToString(input),
                 NativeStringEncoding.LPUTF8Str => Utf8PtrToString(input),
                 NativeStringEncoding.LPWStr => WideToString(input),
-                _ => throw new ArgumentOutOfRangeException(nameof(encoding))
+                _ => ThrowInvalidEncoding<string>()
             };
 
             static unsafe string BStrToString(IntPtr ptr)
