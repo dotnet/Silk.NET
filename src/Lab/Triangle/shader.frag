@@ -1,6 +1,6 @@
-#version 330
+#version 300 es
 
-out vec4 outputColor;
+out mediump vec4 outputColor;
 
 void main()
 {
