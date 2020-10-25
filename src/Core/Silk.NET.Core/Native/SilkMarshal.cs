@@ -162,8 +162,8 @@ namespace Silk.NET.Core.Native
         /// <param name="length">Length of the memory to be allocated</param>
         /// <param name="encoding">The encoding of the string stored in this memory region</param>
         /// <returns>The pointer to the allocated memory</returns>
-        /// <seealso cref="FreeStringPtr(System.IntPtr,Silk.NET.Core.Native.NativeStringEncoding)"/>
-        public static IntPtr AllocateStringPtr(int length, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+        /// <seealso cref="FreeString"/>
+        public static IntPtr AllocateString(int length, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
             => encoding switch
             {
                 NativeStringEncoding.BStr => AllocBStr(length),
@@ -179,8 +179,8 @@ namespace Silk.NET.Core.Native
         /// </summary>
         /// <param name="ptr">The pointer to be freed</param>
         /// <param name="encoding">The encoding used to allocate this pointer</param>
-        /// <seealso cref="AllocateStringPtr"/>
-        public static void FreeStringPtr(IntPtr ptr, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+        /// <seealso cref="AllocateString"/>
+        public static void FreeString(IntPtr ptr, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
         {
             switch (encoding)
             {

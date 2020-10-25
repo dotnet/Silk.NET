@@ -152,14 +152,17 @@ namespace Silk.NET.SilkTouch
                                     MemberAccessExpression
                                     (
                                         SyntaxKind.SimpleMemberAccessExpression, _marshal,
-                                        IdentifierName("AllocateStringPtr")
+                                        IdentifierName("AllocateString")
                                     ), ArgumentList
                                     (
                                         SeparatedList
                                         (
                                             new[]
                                             {
-                                                Argument(parameter.Value),
+                                                Argument
+                                                (
+                                                    CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count)
+                                                ),
                                                 Argument
                                                 (
                                                     CastExpression
@@ -183,27 +186,50 @@ namespace Silk.NET.SilkTouch
                         ctx.DeclareExtraRef(id); // free
                         
                         var alloced = ctx.ResolveVariable(id);
-                        ctx.AddSideEffect(ctx => ExpressionStatement(InvocationExpression(MemberAccessExpression
+                        ctx.AddSideEffect
                         (
-                            SyntaxKind.SimpleMemberAccessExpression,
-                            MemberAccessExpression
+                            ctx => ExpressionStatement
                             (
-                                SyntaxKind.SimpleMemberAccessExpression,
-                                MemberAccessExpression
+                                InvocationExpression
                                 (
-                                    SyntaxKind.SimpleMemberAccessExpression,
                                     MemberAccessExpression
                                     (
                                         SyntaxKind.SimpleMemberAccessExpression,
                                         MemberAccessExpression
                                         (
-                                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
-                                            IdentifierName("NET")
-                                        ), IdentifierName("Core")
-                                    ), IdentifierName("Native")
-                                ), IdentifierName("SilkMarshal")
-                            ), IdentifierName("ZeroStart")
-                        ), ArgumentList(SeparatedList(new[] { Argument(alloced.Value), Argument(CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count)) })))));
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            MemberAccessExpression
+                                            (
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                MemberAccessExpression
+                                                (
+                                                    SyntaxKind.SimpleMemberAccessExpression,
+                                                    MemberAccessExpression
+                                                    (
+                                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
+                                                        IdentifierName("NET")
+                                                    ), IdentifierName("Core")
+                                                ), IdentifierName("Native")
+                                            ), IdentifierName("SilkMarshal")
+                                        ), IdentifierName("ZeroStart")
+                                    ),
+                                    ArgumentList
+                                    (
+                                        SeparatedList
+                                        (
+                                            new[]
+                                            {
+                                                Argument(alloced.Value),
+                                                Argument
+                                                (
+                                                    CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count)
+                                                )
+                                            }
+                                        )
+                                    )
+                                )
+                            )
+                        );
                         
                         ctx.ShouldPinParameter[index] = false;
                         break;
@@ -349,7 +375,7 @@ namespace Silk.NET.SilkTouch
                         InvocationExpression
                         (
                             MemberAccessExpression
-                                (SyntaxKind.SimpleMemberAccessExpression, _marshal, IdentifierName("FreeStringPtr")),
+                                (SyntaxKind.SimpleMemberAccessExpression, _marshal, IdentifierName("FreeString")),
                             ArgumentList
                             (
                                 SeparatedList
