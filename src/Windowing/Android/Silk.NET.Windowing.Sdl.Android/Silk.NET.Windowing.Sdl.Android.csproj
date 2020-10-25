@@ -19,6 +19,7 @@
     <AndroidClassParser>class-parse</AndroidClassParser>
     <AndroidCodegenTarget>XAJavaInterop1</AndroidCodegenTarget>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,6 +67,10 @@
     <ProjectReference Include="..\..\Silk.NET.SDL\Silk.NET.SDL.csproj">
       <Project>{F16EDD0F-5ABE-4B25-98EE-8397E55B5CBA}</Project>
       <Name>Silk.NET.SDL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj">
+      <Project>{ff526329-094a-4b25-abc5-750d62e48101}</Project>
+      <Name>Silk.NET.Windowing.Sdl</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />

@@ -49,6 +49,7 @@ namespace Triangle
             _window = Window.Create(opts);
 #endif
             _window.Load += Load;
+            _window.Load += InputTest.Program.OnLoad(_window);
             _window.Render += RenderFrame;
             _window.Update += UpdateFrame;
             _window.Resize += Resize;

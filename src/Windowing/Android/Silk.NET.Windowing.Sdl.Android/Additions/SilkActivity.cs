@@ -1,10 +1,12 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
 using System;
 using System.Runtime.InteropServices;
+using Android.App;
+using Android.Content.PM;
 using Org.Libsdl.App;
 using Silk.NET.Core.Native;
 using Silk.NET.SDL;
@@ -13,10 +15,15 @@ namespace Silk.NET.Windowing.Sdl.Android
 {
     public abstract class SilkActivity : SDLActivity
     {
+        public const ConfigChanges ConfigChangesFlags =
+            ConfigChanges.Orientation | ConfigChanges.KeyboardHidden | ConfigChanges.ScreenSize;
+        
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         internal delegate void MainFunc();
+
         internal static SilkActivity Instance { get; private set; }
         internal static MainFunc CurrentMain { get; private set; }
+
         [DllImport("libmain.so", EntryPoint = "sdSetMain")]
         internal static extern void SetupMain(FuncPtr funcPtr);
 

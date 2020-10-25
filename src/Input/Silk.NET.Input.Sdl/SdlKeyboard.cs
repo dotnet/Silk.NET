@@ -23,6 +23,8 @@ namespace Silk.NET.Input.Sdl
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;
         public event Action<IKeyboard, char>? KeyChar;
+        public void BeginInput() => _ctx.Sdl.StartTextInput();
+        public void EndInput() => _ctx.Sdl.StopTextInput();
 
         public unsafe void DoEvent(Event @event)
         {

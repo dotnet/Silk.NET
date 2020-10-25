@@ -39,5 +39,17 @@ namespace Silk.NET.Input
         /// Called when a character is received.
         /// </summary>
         event Action<IKeyboard, char>? KeyChar;
+
+        /// <summary>
+        /// Begins taking keyboard input. Required on mobile, where keyboard input is usually delivered via an on-screen
+        /// keyboard.
+        /// </summary>
+        void BeginInput();
+
+        /// <summary>
+        /// Ends taking keyboard input. Required on mobile, where this method closes the on-screen keyboard.
+        /// </summary>
+        /// <seealso cref="BeginInput"/>
+        void EndInput();
     }
 }

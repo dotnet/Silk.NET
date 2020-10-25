@@ -105,6 +105,10 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Input\Silk.NET.Input.Sdl\Silk.NET.Input.Sdl.csproj">
+      <Project>{377a7d9a-2691-4683-ab81-03b1642b3a78}</Project>
+      <Name>Silk.NET.Input.Sdl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Windowing\Android\Silk.NET.Windowing.Sdl.Android\Silk.NET.Windowing.Sdl.Android.csproj">
       <Project>{20E576FC-D978-4CA3-9A4D-775C6432C213}</Project>
       <Name>Silk.NET.Windowing.Sdl.Android</Name>

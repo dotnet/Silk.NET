@@ -12,6 +12,7 @@
       <ProjectReference Include="..\..\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
       <ProjectReference Include="..\..\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
       <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+      <ProjectReference Include="..\InputTest\InputTest.csproj" />
       <ProjectReference Include="..\SampleBase\SampleBase.csproj" />
     </ItemGroup>
     

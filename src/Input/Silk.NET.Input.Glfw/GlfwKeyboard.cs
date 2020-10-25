@@ -27,7 +27,15 @@ namespace Silk.NET.Input.Glfw
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;
         public event Action<IKeyboard, char>? KeyChar;
+        public void BeginInput()
+        {
+            // do nothing
+        }
 
+        public void EndInput()
+        {
+            // do nothing
+        }
 
         public unsafe void Subscribe(GlfwEvents events)
         {
