@@ -205,7 +205,7 @@ namespace Silk.NET.SilkTouch
                                     ), IdentifierName("Native")
                                 ), IdentifierName("SilkMarshal")
                             ), IdentifierName("ZeroStart")
-                        ), ArgumentList(SeparatedList(new[] { Argument(alloced.Value), Argument(count) })))));
+                        ), ArgumentList(SeparatedList(new[] { Argument(alloced.Value), Argument(CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count)) })))));
                         
                         ctx.ShouldPinParameter[index] = false;
                         break;
