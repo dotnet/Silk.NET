@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public HandMeshVertexBufferMSFT
         (
-            long vertexUpdateTime = default,
-            uint vertexCapacityInput = default,
-            uint vertexCountOutput = default,
-            HandMeshVertexMSFT* vertices = default
-        )
+            long? vertexUpdateTime = null,
+            uint? vertexCapacityInput = null,
+            uint? vertexCountOutput = null,
+            HandMeshVertexMSFT* vertices = null
+        ) : this()
         {
-            VertexUpdateTime = vertexUpdateTime;
-            VertexCapacityInput = vertexCapacityInput;
-            VertexCountOutput = vertexCountOutput;
-            Vertices = vertices;
+            if (vertexUpdateTime is not null)
+            {
+                VertexUpdateTime = vertexUpdateTime.Value;
+            }
+
+            if (vertexCapacityInput is not null)
+            {
+                VertexCapacityInput = vertexCapacityInput.Value;
+            }
+
+            if (vertexCountOutput is not null)
+            {
+                VertexCountOutput = vertexCountOutput.Value;
+            }
+
+            if (vertices is not null)
+            {
+                Vertices = vertices;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public QueueFamilyCheckpointPropertiesNV
         (
-            StructureType sType = StructureType.QueueFamilyCheckpointPropertiesNV,
-            void* pNext = default,
-            PipelineStageFlags checkpointExecutionStageMask = default
-        )
+            StructureType? sType = StructureType.QueueFamilyCheckpointPropertiesNV,
+            void* pNext = null,
+            PipelineStageFlags? checkpointExecutionStageMask = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            CheckpointExecutionStageMask = checkpointExecutionStageMask;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (checkpointExecutionStageMask is not null)
+            {
+                CheckpointExecutionStageMask = checkpointExecutionStageMask.Value;
+            }
         }
 
 /// <summary></summary>

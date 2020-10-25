@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public QueryPoolCreateInfoINTEL
         (
-            StructureType sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
-            void* pNext = default,
-            QueryPoolSamplingModeINTEL performanceCountersSampling = default
-        )
+            StructureType? sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
+            void* pNext = null,
+            QueryPoolSamplingModeINTEL? performanceCountersSampling = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PerformanceCountersSampling = performanceCountersSampling;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (performanceCountersSampling is not null)
+            {
+                PerformanceCountersSampling = performanceCountersSampling.Value;
+            }
         }
 
 /// <summary></summary>

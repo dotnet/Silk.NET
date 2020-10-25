@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainImageOpenGLKHR
         (
-            StructureType type = StructureType.TypeSwapchainImageOpenglKhr,
-            void* next = default,
-            uint image = default
-        )
+            StructureType? type = StructureType.TypeSwapchainImageOpenglKhr,
+            void* next = null,
+            uint? image = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Image = image;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
         }
 
 /// <summary></summary>

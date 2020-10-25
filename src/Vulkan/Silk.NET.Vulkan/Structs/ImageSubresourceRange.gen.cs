@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ImageSubresourceRange
         (
-            ImageAspectFlags aspectMask = default,
-            uint baseMipLevel = default,
-            uint levelCount = default,
-            uint baseArrayLayer = default,
-            uint layerCount = default
-        )
+            ImageAspectFlags? aspectMask = null,
+            uint? baseMipLevel = null,
+            uint? levelCount = null,
+            uint? baseArrayLayer = null,
+            uint? layerCount = null
+        ) : this()
         {
-            AspectMask = aspectMask;
-            BaseMipLevel = baseMipLevel;
-            LevelCount = levelCount;
-            BaseArrayLayer = baseArrayLayer;
-            LayerCount = layerCount;
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
+
+            if (baseMipLevel is not null)
+            {
+                BaseMipLevel = baseMipLevel.Value;
+            }
+
+            if (levelCount is not null)
+            {
+                LevelCount = levelCount.Value;
+            }
+
+            if (baseArrayLayer is not null)
+            {
+                BaseArrayLayer = baseArrayLayer.Value;
+            }
+
+            if (layerCount is not null)
+            {
+                LayerCount = layerCount.Value;
+            }
         }
 
 /// <summary></summary>

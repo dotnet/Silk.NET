@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public WriteDescriptorSetAccelerationStructureKHR
         (
-            StructureType sType = StructureType.WriteDescriptorSetAccelerationStructureKhr,
-            void* pNext = default,
-            uint accelerationStructureCount = default,
-            AccelerationStructureKHR* pAccelerationStructures = default
-        )
+            StructureType? sType = StructureType.WriteDescriptorSetAccelerationStructureKhr,
+            void* pNext = null,
+            uint? accelerationStructureCount = null,
+            AccelerationStructureKHR* pAccelerationStructures = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AccelerationStructureCount = accelerationStructureCount;
-            PAccelerationStructures = pAccelerationStructures;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (accelerationStructureCount is not null)
+            {
+                AccelerationStructureCount = accelerationStructureCount.Value;
+            }
+
+            if (pAccelerationStructures is not null)
+            {
+                PAccelerationStructures = pAccelerationStructures;
+            }
         }
 
 /// <summary></summary>

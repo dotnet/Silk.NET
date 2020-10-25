@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenXR
     {
         public SystemTrackingProperties
         (
-            uint orientationTracking = default,
-            uint positionTracking = default
-        )
+            uint? orientationTracking = null,
+            uint? positionTracking = null
+        ) : this()
         {
-            OrientationTracking = orientationTracking;
-            PositionTracking = positionTracking;
+            if (orientationTracking is not null)
+            {
+                OrientationTracking = orientationTracking.Value;
+            }
+
+            if (positionTracking is not null)
+            {
+                PositionTracking = positionTracking.Value;
+            }
         }
 
 /// <summary></summary>

@@ -31,5 +31,10 @@ namespace Silk.NET.BuildTools.Common
         /// The value of the constant.
         /// </summary>
         public string Value { get; set; }
+        
+        /// <summary>
+        /// The extension to which this constant belongs.
+        /// </summary>
+        public string ExtensionName { get; set; }
     }
 }

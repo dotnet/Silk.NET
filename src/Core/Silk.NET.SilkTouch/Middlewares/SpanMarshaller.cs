@@ -6,14 +6,13 @@
 using System;
 using System.Linq;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeApiGenerator
+    public static partial class Middlewares
     {
-        private static void SpanMarshaller(ref IMarshalContext ctx, Action next)
+        public static void SpanMarshaller(ref IMarshalContext ctx, Action next)
         {
             bool[] b = new bool[ctx.ParameterVariables.Length];
             

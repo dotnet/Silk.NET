@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -12,9 +11,9 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeApiGenerator
+    public static partial class Middlewares
     {
-        private static void DelegateMarshaller(ref IMarshalContext ctx, Action next)
+        public static void DelegateMarshaller(ref IMarshalContext ctx, Action next)
         {
             for (var index = 0; index < ctx.ParameterVariables.Length; index++)
             {

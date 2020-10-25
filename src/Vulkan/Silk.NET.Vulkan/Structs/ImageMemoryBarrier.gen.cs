@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Vulkan
     {
         public ImageMemoryBarrier
         (
-            StructureType sType = StructureType.ImageMemoryBarrier,
-            void* pNext = default,
-            AccessFlags srcAccessMask = default,
-            AccessFlags dstAccessMask = default,
-            ImageLayout oldLayout = default,
-            ImageLayout newLayout = default,
-            uint srcQueueFamilyIndex = default,
-            uint dstQueueFamilyIndex = default,
-            Image image = default,
-            ImageSubresourceRange subresourceRange = default
-        )
+            StructureType? sType = StructureType.ImageMemoryBarrier,
+            void* pNext = null,
+            AccessFlags? srcAccessMask = null,
+            AccessFlags? dstAccessMask = null,
+            ImageLayout? oldLayout = null,
+            ImageLayout? newLayout = null,
+            uint? srcQueueFamilyIndex = null,
+            uint? dstQueueFamilyIndex = null,
+            Image? image = null,
+            ImageSubresourceRange? subresourceRange = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SrcAccessMask = srcAccessMask;
-            DstAccessMask = dstAccessMask;
-            OldLayout = oldLayout;
-            NewLayout = newLayout;
-            SrcQueueFamilyIndex = srcQueueFamilyIndex;
-            DstQueueFamilyIndex = dstQueueFamilyIndex;
-            Image = image;
-            SubresourceRange = subresourceRange;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (srcAccessMask is not null)
+            {
+                SrcAccessMask = srcAccessMask.Value;
+            }
+
+            if (dstAccessMask is not null)
+            {
+                DstAccessMask = dstAccessMask.Value;
+            }
+
+            if (oldLayout is not null)
+            {
+                OldLayout = oldLayout.Value;
+            }
+
+            if (newLayout is not null)
+            {
+                NewLayout = newLayout.Value;
+            }
+
+            if (srcQueueFamilyIndex is not null)
+            {
+                SrcQueueFamilyIndex = srcQueueFamilyIndex.Value;
+            }
+
+            if (dstQueueFamilyIndex is not null)
+            {
+                DstQueueFamilyIndex = dstQueueFamilyIndex.Value;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
+
+            if (subresourceRange is not null)
+            {
+                SubresourceRange = subresourceRange.Value;
+            }
         }
 
 /// <summary></summary>

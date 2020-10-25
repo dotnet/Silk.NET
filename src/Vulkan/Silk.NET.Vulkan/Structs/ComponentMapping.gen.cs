@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public ComponentMapping
         (
-            ComponentSwizzle r = default,
-            ComponentSwizzle g = default,
-            ComponentSwizzle b = default,
-            ComponentSwizzle a = default
-        )
+            ComponentSwizzle? r = null,
+            ComponentSwizzle? g = null,
+            ComponentSwizzle? b = null,
+            ComponentSwizzle? a = null
+        ) : this()
         {
-            R = r;
-            G = g;
-            B = b;
-            A = a;
+            if (r is not null)
+            {
+                R = r.Value;
+            }
+
+            if (g is not null)
+            {
+                G = g.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
 /// <summary></summary>

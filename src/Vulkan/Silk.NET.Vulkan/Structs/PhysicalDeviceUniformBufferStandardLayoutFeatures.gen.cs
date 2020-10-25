@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceUniformBufferStandardLayoutFeatures
         (
-            StructureType sType = StructureType.PhysicalDeviceUniformBufferStandardLayoutFeatures,
-            void* pNext = default,
-            Bool32 uniformBufferStandardLayout = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceUniformBufferStandardLayoutFeatures,
+            void* pNext = null,
+            Bool32? uniformBufferStandardLayout = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            UniformBufferStandardLayout = uniformBufferStandardLayout;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (uniformBufferStandardLayout is not null)
+            {
+                UniformBufferStandardLayout = uniformBufferStandardLayout.Value;
+            }
         }
 
 /// <summary></summary>

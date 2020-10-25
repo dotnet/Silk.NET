@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.OpenXR
     {
         public HapticVibration
         (
-            StructureType type = StructureType.TypeHapticVibration,
-            void* next = default,
-            long duration = default,
-            float frequency = default,
-            float amplitude = default
-        )
+            StructureType? type = StructureType.TypeHapticVibration,
+            void* next = null,
+            long? duration = null,
+            float? frequency = null,
+            float? amplitude = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Duration = duration;
-            Frequency = frequency;
-            Amplitude = amplitude;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (duration is not null)
+            {
+                Duration = duration.Value;
+            }
+
+            if (frequency is not null)
+            {
+                Frequency = frequency.Value;
+            }
+
+            if (amplitude is not null)
+            {
+                Amplitude = amplitude.Value;
+            }
         }
 
 /// <summary></summary>

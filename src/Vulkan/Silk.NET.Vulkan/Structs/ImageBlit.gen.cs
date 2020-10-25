@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public ImageBlit
         (
-            ImageSubresourceLayers srcSubresource = default,
-            ImageSubresourceLayers dstSubresource = default
-        )
+            ImageSubresourceLayers? srcSubresource = null,
+            ImageSubresourceLayers? dstSubresource = null
+        ) : this()
         {
-            SrcSubresource = srcSubresource;
-           SrcOffsets_0 = default;
-           SrcOffsets_1 = default;
-            DstSubresource = dstSubresource;
-           DstOffsets_0 = default;
-           DstOffsets_1 = default;
+            if (srcSubresource is not null)
+            {
+                SrcSubresource = srcSubresource.Value;
+            }
+
+            if (dstSubresource is not null)
+            {
+                DstSubresource = dstSubresource.Value;
+            }
         }
 
 /// <summary></summary>
@@ -42,12 +46,34 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkOffset3D")]
         [NativeName("Type.Name", "VkOffset3D")]
         [NativeName("Name", "srcOffsets")]
-        public Offset3D SrcOffsets_0;
-        /// <summary></summary>
-        [NativeName("Type", "VkOffset3D")]
-        [NativeName("Type.Name", "VkOffset3D")]
-        [NativeName("Name", "srcOffsets")]
-        public Offset3D SrcOffsets_1;
+        public SrcOffsetsBuffer SrcOffsets;
+
+        public struct SrcOffsetsBuffer
+        {
+            public Offset3D Element0;
+            public Offset3D Element1;
+            public ref Offset3D this[int index]
+            {
+                get
+                {
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (Offset3D* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<Offset3D> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
+#endif
+        }
+
 /// <summary></summary>
         [NativeName("Type", "VkImageSubresourceLayers")]
         [NativeName("Type.Name", "VkImageSubresourceLayers")]
@@ -57,11 +83,33 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkOffset3D")]
         [NativeName("Type.Name", "VkOffset3D")]
         [NativeName("Name", "dstOffsets")]
-        public Offset3D DstOffsets_0;
-        /// <summary></summary>
-        [NativeName("Type", "VkOffset3D")]
-        [NativeName("Type.Name", "VkOffset3D")]
-        [NativeName("Name", "dstOffsets")]
-        public Offset3D DstOffsets_1;
+        public DstOffsetsBuffer DstOffsets;
+
+        public struct DstOffsetsBuffer
+        {
+            public Offset3D Element0;
+            public Offset3D Element1;
+            public ref Offset3D this[int index]
+            {
+                get
+                {
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (Offset3D* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<Offset3D> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
+#endif
+        }
+
     }
 }

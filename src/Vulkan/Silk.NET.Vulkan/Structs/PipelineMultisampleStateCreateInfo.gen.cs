@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Vulkan
     {
         public PipelineMultisampleStateCreateInfo
         (
-            StructureType sType = StructureType.PipelineMultisampleStateCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            SampleCountFlags rasterizationSamples = default,
-            Bool32 sampleShadingEnable = default,
-            float minSampleShading = default,
-            uint* pSampleMask = default,
-            Bool32 alphaToCoverageEnable = default,
-            Bool32 alphaToOneEnable = default
-        )
+            StructureType? sType = StructureType.PipelineMultisampleStateCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            SampleCountFlags? rasterizationSamples = null,
+            Bool32? sampleShadingEnable = null,
+            float? minSampleShading = null,
+            uint* pSampleMask = null,
+            Bool32? alphaToCoverageEnable = null,
+            Bool32? alphaToOneEnable = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            RasterizationSamples = rasterizationSamples;
-            SampleShadingEnable = sampleShadingEnable;
-            MinSampleShading = minSampleShading;
-            PSampleMask = pSampleMask;
-            AlphaToCoverageEnable = alphaToCoverageEnable;
-            AlphaToOneEnable = alphaToOneEnable;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (rasterizationSamples is not null)
+            {
+                RasterizationSamples = rasterizationSamples.Value;
+            }
+
+            if (sampleShadingEnable is not null)
+            {
+                SampleShadingEnable = sampleShadingEnable.Value;
+            }
+
+            if (minSampleShading is not null)
+            {
+                MinSampleShading = minSampleShading.Value;
+            }
+
+            if (pSampleMask is not null)
+            {
+                PSampleMask = pSampleMask;
+            }
+
+            if (alphaToCoverageEnable is not null)
+            {
+                AlphaToCoverageEnable = alphaToCoverageEnable.Value;
+            }
+
+            if (alphaToOneEnable is not null)
+            {
+                AlphaToOneEnable = alphaToOneEnable.Value;
+            }
         }
 
 /// <summary></summary>

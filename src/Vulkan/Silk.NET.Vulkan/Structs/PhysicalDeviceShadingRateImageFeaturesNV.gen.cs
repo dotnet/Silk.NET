@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShadingRateImageFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceShadingRateImageFeaturesNV,
-            void* pNext = default,
-            Bool32 shadingRateImage = default,
-            Bool32 shadingRateCoarseSampleOrder = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShadingRateImageFeaturesNV,
+            void* pNext = null,
+            Bool32? shadingRateImage = null,
+            Bool32? shadingRateCoarseSampleOrder = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShadingRateImage = shadingRateImage;
-            ShadingRateCoarseSampleOrder = shadingRateCoarseSampleOrder;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shadingRateImage is not null)
+            {
+                ShadingRateImage = shadingRateImage.Value;
+            }
+
+            if (shadingRateCoarseSampleOrder is not null)
+            {
+                ShadingRateCoarseSampleOrder = shadingRateCoarseSampleOrder.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public AndroidSurfaceCreateInfoKHR
         (
-            StructureType sType = StructureType.AndroidSurfaceCreateInfoKhr,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr* window = default
-        )
+            StructureType? sType = StructureType.AndroidSurfaceCreateInfoKhr,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr* window = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Window = window;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (window is not null)
+            {
+                Window = window;
+            }
         }
 
 /// <summary></summary>

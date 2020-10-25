@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Vulkan
     {
         public DisplayPlaneCapabilitiesKHR
         (
-            DisplayPlaneAlphaFlagsKHR supportedAlpha = default,
-            Offset2D minSrcPosition = default,
-            Offset2D maxSrcPosition = default,
-            Extent2D minSrcExtent = default,
-            Extent2D maxSrcExtent = default,
-            Offset2D minDstPosition = default,
-            Offset2D maxDstPosition = default,
-            Extent2D minDstExtent = default,
-            Extent2D maxDstExtent = default
-        )
+            DisplayPlaneAlphaFlagsKHR? supportedAlpha = null,
+            Offset2D? minSrcPosition = null,
+            Offset2D? maxSrcPosition = null,
+            Extent2D? minSrcExtent = null,
+            Extent2D? maxSrcExtent = null,
+            Offset2D? minDstPosition = null,
+            Offset2D? maxDstPosition = null,
+            Extent2D? minDstExtent = null,
+            Extent2D? maxDstExtent = null
+        ) : this()
         {
-            SupportedAlpha = supportedAlpha;
-            MinSrcPosition = minSrcPosition;
-            MaxSrcPosition = maxSrcPosition;
-            MinSrcExtent = minSrcExtent;
-            MaxSrcExtent = maxSrcExtent;
-            MinDstPosition = minDstPosition;
-            MaxDstPosition = maxDstPosition;
-            MinDstExtent = minDstExtent;
-            MaxDstExtent = maxDstExtent;
+            if (supportedAlpha is not null)
+            {
+                SupportedAlpha = supportedAlpha.Value;
+            }
+
+            if (minSrcPosition is not null)
+            {
+                MinSrcPosition = minSrcPosition.Value;
+            }
+
+            if (maxSrcPosition is not null)
+            {
+                MaxSrcPosition = maxSrcPosition.Value;
+            }
+
+            if (minSrcExtent is not null)
+            {
+                MinSrcExtent = minSrcExtent.Value;
+            }
+
+            if (maxSrcExtent is not null)
+            {
+                MaxSrcExtent = maxSrcExtent.Value;
+            }
+
+            if (minDstPosition is not null)
+            {
+                MinDstPosition = minDstPosition.Value;
+            }
+
+            if (maxDstPosition is not null)
+            {
+                MaxDstPosition = maxDstPosition.Value;
+            }
+
+            if (minDstExtent is not null)
+            {
+                MinDstExtent = minDstExtent.Value;
+            }
+
+            if (maxDstExtent is not null)
+            {
+                MaxDstExtent = maxDstExtent.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public LayerProperties
         (
-            uint specVersion = default,
-            uint implementationVersion = default
-        )
+            uint? specVersion = null,
+            uint? implementationVersion = null
+        ) : this()
         {
-            SpecVersion = specVersion;
-            ImplementationVersion = implementationVersion;
+            if (specVersion is not null)
+            {
+                SpecVersion = specVersion.Value;
+            }
+
+            if (implementationVersion is not null)
+            {
+                ImplementationVersion = implementationVersion.Value;
+            }
         }
 
         /// <summary></summary>

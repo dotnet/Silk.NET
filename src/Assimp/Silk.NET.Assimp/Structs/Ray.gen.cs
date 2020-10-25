@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Assimp
     {
         public Ray
         (
-            System.Numerics.Vector3 pos = default,
-            System.Numerics.Vector3 dir = default
-        )
+            System.Numerics.Vector3? pos = null,
+            System.Numerics.Vector3? dir = null
+        ) : this()
         {
-            Pos = pos;
-            Dir = dir;
+            if (pos is not null)
+            {
+                Pos = pos.Value;
+            }
+
+            if (dir is not null)
+            {
+                Dir = dir.Value;
+            }
         }
 
 

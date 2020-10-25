@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.OpenXR
     {
         public EventDataReferenceSpaceChangePending
         (
-            StructureType type = StructureType.TypeEventDataReferenceSpaceChangePending,
-            void* next = default,
-            Session session = default,
-            ReferenceSpaceType referenceSpaceType = default,
-            long changeTime = default,
-            uint poseValid = default,
-            Posef poseInPreviousSpace = default
-        )
+            StructureType? type = StructureType.TypeEventDataReferenceSpaceChangePending,
+            void* next = null,
+            Session? session = null,
+            ReferenceSpaceType? referenceSpaceType = null,
+            long? changeTime = null,
+            uint? poseValid = null,
+            Posef? poseInPreviousSpace = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Session = session;
-            ReferenceSpaceType = referenceSpaceType;
-            ChangeTime = changeTime;
-            PoseValid = poseValid;
-            PoseInPreviousSpace = poseInPreviousSpace;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (session is not null)
+            {
+                Session = session.Value;
+            }
+
+            if (referenceSpaceType is not null)
+            {
+                ReferenceSpaceType = referenceSpaceType.Value;
+            }
+
+            if (changeTime is not null)
+            {
+                ChangeTime = changeTime.Value;
+            }
+
+            if (poseValid is not null)
+            {
+                PoseValid = poseValid.Value;
+            }
+
+            if (poseInPreviousSpace is not null)
+            {
+                PoseInPreviousSpace = poseInPreviousSpace.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceScalarBlockLayoutFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceScalarBlockLayoutFeatures,
-            void* pNext = default,
-            Bool32 scalarBlockLayout = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceScalarBlockLayoutFeatures,
+            void* pNext = null,
+            Bool32? scalarBlockLayout = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ScalarBlockLayout = scalarBlockLayout;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (scalarBlockLayout is not null)
+            {
+                ScalarBlockLayout = scalarBlockLayout.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenXR
     {
         public ActiveActionSet
         (
-            ActionSet actionSet = default,
-            ulong subactionPath = default
-        )
+            ActionSet? actionSet = null,
+            ulong? subactionPath = null
+        ) : this()
         {
-            ActionSet = actionSet;
-            SubactionPath = subactionPath;
+            if (actionSet is not null)
+            {
+                ActionSet = actionSet.Value;
+            }
+
+            if (subactionPath is not null)
+            {
+                SubactionPath = subactionPath.Value;
+            }
         }
 
 /// <summary></summary>

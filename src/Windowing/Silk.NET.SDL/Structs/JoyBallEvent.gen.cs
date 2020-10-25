@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.SDL
     {
         public JoyBallEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            int which = default,
-            byte ball = default,
-            byte padding1 = default,
-            byte padding2 = default,
-            byte padding3 = default,
-            short xrel = default,
-            short yrel = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            int? which = null,
+            byte? ball = null,
+            byte? padding1 = null,
+            byte? padding2 = null,
+            byte? padding3 = null,
+            short? xrel = null,
+            short? yrel = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            Which = which;
-            Ball = ball;
-            Padding1 = padding1;
-            Padding2 = padding2;
-            Padding3 = padding3;
-            Xrel = xrel;
-            Yrel = yrel;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (ball is not null)
+            {
+                Ball = ball.Value;
+            }
+
+            if (padding1 is not null)
+            {
+                Padding1 = padding1.Value;
+            }
+
+            if (padding2 is not null)
+            {
+                Padding2 = padding2.Value;
+            }
+
+            if (padding3 is not null)
+            {
+                Padding3 = padding3.Value;
+            }
+
+            if (xrel is not null)
+            {
+                Xrel = xrel.Value;
+            }
+
+            if (yrel is not null)
+            {
+                Yrel = yrel.Value;
+            }
         }
 
 

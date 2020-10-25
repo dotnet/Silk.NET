@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV,
-            void* pNext = default,
-            Bool32 dedicatedAllocationImageAliasing = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV,
+            void* pNext = null,
+            Bool32? dedicatedAllocationImageAliasing = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DedicatedAllocationImageAliasing = dedicatedAllocationImageAliasing;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dedicatedAllocationImageAliasing is not null)
+            {
+                DedicatedAllocationImageAliasing = dedicatedAllocationImageAliasing.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.OpenXR
     {
         public ViewConfigurationDepthRangeEXT
         (
-            StructureType type = StructureType.TypeViewConfigurationDepthRangeExt,
-            void* next = default,
-            float recommendedNearZ = default,
-            float minNearZ = default,
-            float recommendedFarZ = default,
-            float maxFarZ = default
-        )
+            StructureType? type = StructureType.TypeViewConfigurationDepthRangeExt,
+            void* next = null,
+            float? recommendedNearZ = null,
+            float? minNearZ = null,
+            float? recommendedFarZ = null,
+            float? maxFarZ = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            RecommendedNearZ = recommendedNearZ;
-            MinNearZ = minNearZ;
-            RecommendedFarZ = recommendedFarZ;
-            MaxFarZ = maxFarZ;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (recommendedNearZ is not null)
+            {
+                RecommendedNearZ = recommendedNearZ.Value;
+            }
+
+            if (minNearZ is not null)
+            {
+                MinNearZ = minNearZ.Value;
+            }
+
+            if (recommendedFarZ is not null)
+            {
+                RecommendedFarZ = recommendedFarZ.Value;
+            }
+
+            if (maxFarZ is not null)
+            {
+                MaxFarZ = maxFarZ.Value;
+            }
         }
 
 /// <summary></summary>

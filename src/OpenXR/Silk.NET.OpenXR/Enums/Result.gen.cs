@@ -130,5 +130,7 @@ namespace Silk.NET.OpenXR
         ErrorCreateSpatialAnchorFailedMsft = -1000039001,
         [NativeName("Name", "XR_ERROR_SECONDARY_VIEW_CONFIGURATION_TYPE_NOT_ENABLED_MSFT")]
         ErrorSecondaryViewConfigurationTypeNotEnabledMsft = -1000053000,
+        [NativeName("Name", "XR_ERROR_CONTROLLER_MODEL_KEY_INVALID_MSFT")]
+        ErrorControllerModelKeyInvalidMsft = -1000055000,
     }
 }

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PipelineViewportExclusiveScissorStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineViewportExclusiveScissorStateCreateInfoNV,
-            void* pNext = default,
-            uint exclusiveScissorCount = default,
-            Rect2D* pExclusiveScissors = default
-        )
+            StructureType? sType = StructureType.PipelineViewportExclusiveScissorStateCreateInfoNV,
+            void* pNext = null,
+            uint? exclusiveScissorCount = null,
+            Rect2D* pExclusiveScissors = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ExclusiveScissorCount = exclusiveScissorCount;
-            PExclusiveScissors = pExclusiveScissors;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (exclusiveScissorCount is not null)
+            {
+                ExclusiveScissorCount = exclusiveScissorCount.Value;
+            }
+
+            if (pExclusiveScissors is not null)
+            {
+                PExclusiveScissors = pExclusiveScissors;
+            }
         }
 
 /// <summary></summary>

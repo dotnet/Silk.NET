@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceQuerySubmitInfoKHR
         (
-            StructureType sType = StructureType.PerformanceQuerySubmitInfoKhr,
-            void* pNext = default,
-            uint counterPassIndex = default
-        )
+            StructureType? sType = StructureType.PerformanceQuerySubmitInfoKhr,
+            void* pNext = null,
+            uint? counterPassIndex = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            CounterPassIndex = counterPassIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (counterPassIndex is not null)
+            {
+                CounterPassIndex = counterPassIndex.Value;
+            }
         }
 
 /// <summary></summary>

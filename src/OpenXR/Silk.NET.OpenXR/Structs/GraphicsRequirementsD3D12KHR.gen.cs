@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsRequirementsD3D12KHR
         (
-            StructureType type = StructureType.TypeGraphicsRequirementsD3D12Khr,
-            void* next = default,
-            ulong adapterLuid = default,
-            uint minFeatureLevel = default
-        )
+            StructureType? type = StructureType.TypeGraphicsRequirementsD3D12Khr,
+            void* next = null,
+            ulong? adapterLuid = null,
+            uint? minFeatureLevel = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            AdapterLuid = adapterLuid;
-            MinFeatureLevel = minFeatureLevel;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (adapterLuid is not null)
+            {
+                AdapterLuid = adapterLuid.Value;
+            }
+
+            if (minFeatureLevel is not null)
+            {
+                MinFeatureLevel = minFeatureLevel.Value;
+            }
         }
 
 /// <summary></summary>

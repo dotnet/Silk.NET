@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceASTCDecodeFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceAstcDecodeFeaturesExt,
-            void* pNext = default,
-            Bool32 decodeModeSharedExponent = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceAstcDecodeFeaturesExt,
+            void* pNext = null,
+            Bool32? decodeModeSharedExponent = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DecodeModeSharedExponent = decodeModeSharedExponent;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (decodeModeSharedExponent is not null)
+            {
+                DecodeModeSharedExponent = decodeModeSharedExponent.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceExclusiveScissorFeaturesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceExclusiveScissorFeaturesNV,
-            void* pNext = default,
-            Bool32 exclusiveScissor = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceExclusiveScissorFeaturesNV,
+            void* pNext = null,
+            Bool32? exclusiveScissor = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ExclusiveScissor = exclusiveScissor;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (exclusiveScissor is not null)
+            {
+                ExclusiveScissor = exclusiveScissor.Value;
+            }
         }
 
 /// <summary></summary>

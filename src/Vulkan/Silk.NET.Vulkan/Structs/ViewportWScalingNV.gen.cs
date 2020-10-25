@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public ViewportWScalingNV
         (
-            float xcoeff = default,
-            float ycoeff = default
-        )
+            float? xcoeff = null,
+            float? ycoeff = null
+        ) : this()
         {
-            Xcoeff = xcoeff;
-            Ycoeff = ycoeff;
+            if (xcoeff is not null)
+            {
+                Xcoeff = xcoeff.Value;
+            }
+
+            if (ycoeff is not null)
+            {
+                Ycoeff = ycoeff.Value;
+            }
         }
 
 /// <summary></summary>

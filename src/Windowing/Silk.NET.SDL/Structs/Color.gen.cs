@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.SDL
     {
         public Color
         (
-            byte r = default,
-            byte g = default,
-            byte b = default,
-            byte a = default
-        )
+            byte? r = null,
+            byte? g = null,
+            byte? b = null,
+            byte? a = null
+        ) : this()
         {
-            R = r;
-            G = g;
-            B = b;
-            A = a;
+            if (r is not null)
+            {
+                R = r.Value;
+            }
+
+            if (g is not null)
+            {
+                G = g.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
 

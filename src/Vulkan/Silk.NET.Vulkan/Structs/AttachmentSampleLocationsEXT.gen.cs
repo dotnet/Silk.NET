@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentSampleLocationsEXT
         (
-            uint attachmentIndex = default,
-            SampleLocationsInfoEXT sampleLocationsInfo = default
-        )
+            uint? attachmentIndex = null,
+            SampleLocationsInfoEXT? sampleLocationsInfo = null
+        ) : this()
         {
-            AttachmentIndex = attachmentIndex;
-            SampleLocationsInfo = sampleLocationsInfo;
+            if (attachmentIndex is not null)
+            {
+                AttachmentIndex = attachmentIndex.Value;
+            }
+
+            if (sampleLocationsInfo is not null)
+            {
+                SampleLocationsInfo = sampleLocationsInfo.Value;
+            }
         }
 
 /// <summary></summary>

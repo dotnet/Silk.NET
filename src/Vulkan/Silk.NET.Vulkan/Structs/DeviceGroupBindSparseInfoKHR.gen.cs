@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public DeviceGroupBindSparseInfoKHR
         (
-            StructureType sType = StructureType.DeviceGroupBindSparseInfo,
-            void* pNext = default,
-            uint resourceDeviceIndex = default,
-            uint memoryDeviceIndex = default
-        )
+            StructureType? sType = StructureType.DeviceGroupBindSparseInfo,
+            void* pNext = null,
+            uint? resourceDeviceIndex = null,
+            uint? memoryDeviceIndex = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ResourceDeviceIndex = resourceDeviceIndex;
-            MemoryDeviceIndex = memoryDeviceIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (resourceDeviceIndex is not null)
+            {
+                ResourceDeviceIndex = resourceDeviceIndex.Value;
+            }
+
+            if (memoryDeviceIndex is not null)
+            {
+                MemoryDeviceIndex = memoryDeviceIndex.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public ShaderStatisticsInfoAMD
         (
-            ShaderStageFlags shaderStageMask = default,
-            ShaderResourceUsageAMD resourceUsage = default,
-            uint numPhysicalVgprs = default,
-            uint numPhysicalSgprs = default,
-            uint numAvailableVgprs = default,
-            uint numAvailableSgprs = default
-        )
+            ShaderStageFlags? shaderStageMask = null,
+            ShaderResourceUsageAMD? resourceUsage = null,
+            uint? numPhysicalVgprs = null,
+            uint? numPhysicalSgprs = null,
+            uint? numAvailableVgprs = null,
+            uint? numAvailableSgprs = null
+        ) : this()
         {
-            ShaderStageMask = shaderStageMask;
-            ResourceUsage = resourceUsage;
-            NumPhysicalVgprs = numPhysicalVgprs;
-            NumPhysicalSgprs = numPhysicalSgprs;
-            NumAvailableVgprs = numAvailableVgprs;
-            NumAvailableSgprs = numAvailableSgprs;
+            if (shaderStageMask is not null)
+            {
+                ShaderStageMask = shaderStageMask.Value;
+            }
+
+            if (resourceUsage is not null)
+            {
+                ResourceUsage = resourceUsage.Value;
+            }
+
+            if (numPhysicalVgprs is not null)
+            {
+                NumPhysicalVgprs = numPhysicalVgprs.Value;
+            }
+
+            if (numPhysicalSgprs is not null)
+            {
+                NumPhysicalSgprs = numPhysicalSgprs.Value;
+            }
+
+            if (numAvailableVgprs is not null)
+            {
+                NumAvailableVgprs = numAvailableVgprs.Value;
+            }
+
+            if (numAvailableSgprs is not null)
+            {
+                NumAvailableSgprs = numAvailableSgprs.Value;
+            }
         }
 
 /// <summary></summary>

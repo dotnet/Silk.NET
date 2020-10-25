@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public CommandBufferBeginInfo
         (
-            StructureType sType = StructureType.CommandBufferBeginInfo,
-            void* pNext = default,
-            CommandBufferUsageFlags flags = default,
-            CommandBufferInheritanceInfo* pInheritanceInfo = default
-        )
+            StructureType? sType = StructureType.CommandBufferBeginInfo,
+            void* pNext = null,
+            CommandBufferUsageFlags? flags = null,
+            CommandBufferInheritanceInfo* pInheritanceInfo = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PInheritanceInfo = pInheritanceInfo;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pInheritanceInfo is not null)
+            {
+                PInheritanceInfo = pInheritanceInfo;
+            }
         }
 
 /// <summary></summary>

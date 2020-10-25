@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,36 +22,91 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceVulkan11Properties
         (
-            StructureType sType = StructureType.PhysicalDeviceVulkan11Properties,
-            void* pNext = default,
-            uint deviceNodeMask = default,
-            Bool32 deviceLuidvalid = default,
-            uint subgroupSize = default,
-            ShaderStageFlags subgroupSupportedStages = default,
-            SubgroupFeatureFlags subgroupSupportedOperations = default,
-            Bool32 subgroupQuadOperationsInAllStages = default,
-            PointClippingBehavior pointClippingBehavior = default,
-            uint maxMultiviewViewCount = default,
-            uint maxMultiviewInstanceIndex = default,
-            Bool32 protectedNoFault = default,
-            uint maxPerSetDescriptors = default,
-            ulong maxMemoryAllocationSize = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceVulkan11Properties,
+            void* pNext = null,
+            uint? deviceNodeMask = null,
+            Bool32? deviceLuidvalid = null,
+            uint? subgroupSize = null,
+            ShaderStageFlags? subgroupSupportedStages = null,
+            SubgroupFeatureFlags? subgroupSupportedOperations = null,
+            Bool32? subgroupQuadOperationsInAllStages = null,
+            PointClippingBehavior? pointClippingBehavior = null,
+            uint? maxMultiviewViewCount = null,
+            uint? maxMultiviewInstanceIndex = null,
+            Bool32? protectedNoFault = null,
+            uint? maxPerSetDescriptors = null,
+            ulong? maxMemoryAllocationSize = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceNodeMask = deviceNodeMask;
-            DeviceLuidvalid = deviceLuidvalid;
-            SubgroupSize = subgroupSize;
-            SubgroupSupportedStages = subgroupSupportedStages;
-            SubgroupSupportedOperations = subgroupSupportedOperations;
-            SubgroupQuadOperationsInAllStages = subgroupQuadOperationsInAllStages;
-            PointClippingBehavior = pointClippingBehavior;
-            MaxMultiviewViewCount = maxMultiviewViewCount;
-            MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex;
-            ProtectedNoFault = protectedNoFault;
-            MaxPerSetDescriptors = maxPerSetDescriptors;
-            MaxMemoryAllocationSize = maxMemoryAllocationSize;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceNodeMask is not null)
+            {
+                DeviceNodeMask = deviceNodeMask.Value;
+            }
+
+            if (deviceLuidvalid is not null)
+            {
+                DeviceLuidvalid = deviceLuidvalid.Value;
+            }
+
+            if (subgroupSize is not null)
+            {
+                SubgroupSize = subgroupSize.Value;
+            }
+
+            if (subgroupSupportedStages is not null)
+            {
+                SubgroupSupportedStages = subgroupSupportedStages.Value;
+            }
+
+            if (subgroupSupportedOperations is not null)
+            {
+                SubgroupSupportedOperations = subgroupSupportedOperations.Value;
+            }
+
+            if (subgroupQuadOperationsInAllStages is not null)
+            {
+                SubgroupQuadOperationsInAllStages = subgroupQuadOperationsInAllStages.Value;
+            }
+
+            if (pointClippingBehavior is not null)
+            {
+                PointClippingBehavior = pointClippingBehavior.Value;
+            }
+
+            if (maxMultiviewViewCount is not null)
+            {
+                MaxMultiviewViewCount = maxMultiviewViewCount.Value;
+            }
+
+            if (maxMultiviewInstanceIndex is not null)
+            {
+                MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex.Value;
+            }
+
+            if (protectedNoFault is not null)
+            {
+                ProtectedNoFault = protectedNoFault.Value;
+            }
+
+            if (maxPerSetDescriptors is not null)
+            {
+                MaxPerSetDescriptors = maxPerSetDescriptors.Value;
+            }
+
+            if (maxMemoryAllocationSize is not null)
+            {
+                MaxMemoryAllocationSize = maxMemoryAllocationSize.Value;
+            }
         }
 
 /// <summary></summary>

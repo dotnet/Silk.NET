@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentReference2KHR
         (
-            StructureType sType = StructureType.AttachmentReference2,
-            void* pNext = default,
-            uint attachment = default,
-            ImageLayout layout = default,
-            ImageAspectFlags aspectMask = default
-        )
+            StructureType? sType = StructureType.AttachmentReference2,
+            void* pNext = null,
+            uint? attachment = null,
+            ImageLayout? layout = null,
+            ImageAspectFlags? aspectMask = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Attachment = attachment;
-            Layout = layout;
-            AspectMask = aspectMask;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachment is not null)
+            {
+                Attachment = attachment.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
         }
 
 /// <summary></summary>

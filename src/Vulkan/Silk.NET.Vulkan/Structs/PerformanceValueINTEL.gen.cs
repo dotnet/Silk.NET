@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceValueINTEL
         (
-            PerformanceValueTypeINTEL type = default,
-            PerformanceValueDataINTEL data = default
-        )
+            PerformanceValueTypeINTEL? type = null,
+            PerformanceValueDataINTEL? data = null
+        ) : this()
         {
-            Type = type;
-            Data = data;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (data is not null)
+            {
+                Data = data.Value;
+            }
         }
 
 /// <summary></summary>

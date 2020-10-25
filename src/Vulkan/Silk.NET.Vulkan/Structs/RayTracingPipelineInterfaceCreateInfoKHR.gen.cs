@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public RayTracingPipelineInterfaceCreateInfoKHR
         (
-            StructureType sType = StructureType.RayTracingPipelineInterfaceCreateInfoKhr,
-            void* pNext = default,
-            uint maxPayloadSize = default,
-            uint maxAttributeSize = default,
-            uint maxCallableSize = default
-        )
+            StructureType? sType = StructureType.RayTracingPipelineInterfaceCreateInfoKhr,
+            void* pNext = null,
+            uint? maxPayloadSize = null,
+            uint? maxAttributeSize = null,
+            uint? maxCallableSize = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxPayloadSize = maxPayloadSize;
-            MaxAttributeSize = maxAttributeSize;
-            MaxCallableSize = maxCallableSize;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxPayloadSize is not null)
+            {
+                MaxPayloadSize = maxPayloadSize.Value;
+            }
+
+            if (maxAttributeSize is not null)
+            {
+                MaxAttributeSize = maxAttributeSize.Value;
+            }
+
+            if (maxCallableSize is not null)
+            {
+                MaxCallableSize = maxCallableSize.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenCL
     {
         public MemExtHostPtr
         (
-            uint allocationType = default,
-            uint hostCachePolicy = default
-        )
+            uint? allocationType = null,
+            uint? hostCachePolicy = null
+        ) : this()
         {
-            AllocationType = allocationType;
-            HostCachePolicy = hostCachePolicy;
+            if (allocationType is not null)
+            {
+                AllocationType = allocationType.Value;
+            }
+
+            if (hostCachePolicy is not null)
+            {
+                HostCachePolicy = hostCachePolicy.Value;
+            }
         }
 
 /// <summary></summary>

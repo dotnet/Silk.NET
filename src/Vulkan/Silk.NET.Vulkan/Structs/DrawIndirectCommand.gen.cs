@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public DrawIndirectCommand
         (
-            uint vertexCount = default,
-            uint instanceCount = default,
-            uint firstVertex = default,
-            uint firstInstance = default
-        )
+            uint? vertexCount = null,
+            uint? instanceCount = null,
+            uint? firstVertex = null,
+            uint? firstInstance = null
+        ) : this()
         {
-            VertexCount = vertexCount;
-            InstanceCount = instanceCount;
-            FirstVertex = firstVertex;
-            FirstInstance = firstInstance;
+            if (vertexCount is not null)
+            {
+                VertexCount = vertexCount.Value;
+            }
+
+            if (instanceCount is not null)
+            {
+                InstanceCount = instanceCount.Value;
+            }
+
+            if (firstVertex is not null)
+            {
+                FirstVertex = firstVertex.Value;
+            }
+
+            if (firstInstance is not null)
+            {
+                FirstInstance = firstInstance.Value;
+            }
         }
 
 /// <summary></summary>

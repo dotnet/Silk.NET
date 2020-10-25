@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenXR
     {
         public Posef
         (
-            Quaternionf orientation = default,
-            Vector3f position = default
-        )
+            Quaternionf? orientation = null,
+            Vector3f? position = null
+        ) : this()
         {
-            Orientation = orientation;
-            Position = position;
+            if (orientation is not null)
+            {
+                Orientation = orientation.Value;
+            }
+
+            if (position is not null)
+            {
+                Position = position.Value;
+            }
         }
 
 /// <summary></summary>

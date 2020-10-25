@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentReference
         (
-            uint attachment = default,
-            ImageLayout layout = default
-        )
+            uint? attachment = null,
+            ImageLayout? layout = null
+        ) : this()
         {
-            Attachment = attachment;
-            Layout = layout;
+            if (attachment is not null)
+            {
+                Attachment = attachment.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public AcquireNextImageInfoKHR
         (
-            StructureType sType = StructureType.AcquireNextImageInfoKhr,
-            void* pNext = default,
-            SwapchainKHR swapchain = default,
-            ulong timeout = default,
-            Semaphore semaphore = default,
-            Fence fence = default,
-            uint deviceMask = default
-        )
+            StructureType? sType = StructureType.AcquireNextImageInfoKhr,
+            void* pNext = null,
+            SwapchainKHR? swapchain = null,
+            ulong? timeout = null,
+            Semaphore? semaphore = null,
+            Fence? fence = null,
+            uint? deviceMask = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Swapchain = swapchain;
-            Timeout = timeout;
-            Semaphore = semaphore;
-            Fence = fence;
-            DeviceMask = deviceMask;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchain is not null)
+            {
+                Swapchain = swapchain.Value;
+            }
+
+            if (timeout is not null)
+            {
+                Timeout = timeout.Value;
+            }
+
+            if (semaphore is not null)
+            {
+                Semaphore = semaphore.Value;
+            }
+
+            if (fence is not null)
+            {
+                Fence = fence.Value;
+            }
+
+            if (deviceMask is not null)
+            {
+                DeviceMask = deviceMask.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public SubresourceLayout
         (
-            ulong offset = default,
-            ulong size = default,
-            ulong rowPitch = default,
-            ulong arrayPitch = default,
-            ulong depthPitch = default
-        )
+            ulong? offset = null,
+            ulong? size = null,
+            ulong? rowPitch = null,
+            ulong? arrayPitch = null,
+            ulong? depthPitch = null
+        ) : this()
         {
-            Offset = offset;
-            Size = size;
-            RowPitch = rowPitch;
-            ArrayPitch = arrayPitch;
-            DepthPitch = depthPitch;
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (rowPitch is not null)
+            {
+                RowPitch = rowPitch.Value;
+            }
+
+            if (arrayPitch is not null)
+            {
+                ArrayPitch = arrayPitch.Value;
+            }
+
+            if (depthPitch is not null)
+            {
+                DepthPitch = depthPitch.Value;
+            }
         }
 
 /// <summary></summary>

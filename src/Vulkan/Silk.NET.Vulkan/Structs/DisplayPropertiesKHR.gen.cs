@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public DisplayPropertiesKHR
         (
-            DisplayKHR display = default,
-            byte* displayName = default,
-            Extent2D physicalDimensions = default,
-            Extent2D physicalResolution = default,
-            SurfaceTransformFlagsKHR supportedTransforms = default,
-            Bool32 planeReorderPossible = default,
-            Bool32 persistentContent = default
-        )
+            DisplayKHR? display = null,
+            byte* displayName = null,
+            Extent2D? physicalDimensions = null,
+            Extent2D? physicalResolution = null,
+            SurfaceTransformFlagsKHR? supportedTransforms = null,
+            Bool32? planeReorderPossible = null,
+            Bool32? persistentContent = null
+        ) : this()
         {
-            Display = display;
-            DisplayName = displayName;
-            PhysicalDimensions = physicalDimensions;
-            PhysicalResolution = physicalResolution;
-            SupportedTransforms = supportedTransforms;
-            PlaneReorderPossible = planeReorderPossible;
-            PersistentContent = persistentContent;
+            if (display is not null)
+            {
+                Display = display.Value;
+            }
+
+            if (displayName is not null)
+            {
+                DisplayName = displayName;
+            }
+
+            if (physicalDimensions is not null)
+            {
+                PhysicalDimensions = physicalDimensions.Value;
+            }
+
+            if (physicalResolution is not null)
+            {
+                PhysicalResolution = physicalResolution.Value;
+            }
+
+            if (supportedTransforms is not null)
+            {
+                SupportedTransforms = supportedTransforms.Value;
+            }
+
+            if (planeReorderPossible is not null)
+            {
+                PlaneReorderPossible = planeReorderPossible.Value;
+            }
+
+            if (persistentContent is not null)
+            {
+                PersistentContent = persistentContent.Value;
+            }
         }
 
 /// <summary></summary>

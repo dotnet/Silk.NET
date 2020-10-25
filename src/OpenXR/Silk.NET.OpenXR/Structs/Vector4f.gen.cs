@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public Vector4f
         (
-            float x = default,
-            float y = default,
-            float z = default,
-            float w = default
-        )
+            float? x = null,
+            float? y = null,
+            float? z = null,
+            float? w = null
+        ) : this()
         {
-            X = x;
-            Y = y;
-            Z = z;
-            W = w;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
         }
 
 /// <summary></summary>

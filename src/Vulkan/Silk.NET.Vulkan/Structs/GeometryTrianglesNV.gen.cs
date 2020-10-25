@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,34 +22,85 @@ namespace Silk.NET.Vulkan
     {
         public GeometryTrianglesNV
         (
-            StructureType sType = StructureType.GeometryTrianglesNV,
-            void* pNext = default,
-            Buffer vertexData = default,
-            ulong vertexOffset = default,
-            uint vertexCount = default,
-            ulong vertexStride = default,
-            Format vertexFormat = default,
-            Buffer indexData = default,
-            ulong indexOffset = default,
-            uint indexCount = default,
-            IndexType indexType = default,
-            Buffer transformData = default,
-            ulong transformOffset = default
-        )
+            StructureType? sType = StructureType.GeometryTrianglesNV,
+            void* pNext = null,
+            Buffer? vertexData = null,
+            ulong? vertexOffset = null,
+            uint? vertexCount = null,
+            ulong? vertexStride = null,
+            Format? vertexFormat = null,
+            Buffer? indexData = null,
+            ulong? indexOffset = null,
+            uint? indexCount = null,
+            IndexType? indexType = null,
+            Buffer? transformData = null,
+            ulong? transformOffset = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            VertexData = vertexData;
-            VertexOffset = vertexOffset;
-            VertexCount = vertexCount;
-            VertexStride = vertexStride;
-            VertexFormat = vertexFormat;
-            IndexData = indexData;
-            IndexOffset = indexOffset;
-            IndexCount = indexCount;
-            IndexType = indexType;
-            TransformData = transformData;
-            TransformOffset = transformOffset;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (vertexData is not null)
+            {
+                VertexData = vertexData.Value;
+            }
+
+            if (vertexOffset is not null)
+            {
+                VertexOffset = vertexOffset.Value;
+            }
+
+            if (vertexCount is not null)
+            {
+                VertexCount = vertexCount.Value;
+            }
+
+            if (vertexStride is not null)
+            {
+                VertexStride = vertexStride.Value;
+            }
+
+            if (vertexFormat is not null)
+            {
+                VertexFormat = vertexFormat.Value;
+            }
+
+            if (indexData is not null)
+            {
+                IndexData = indexData.Value;
+            }
+
+            if (indexOffset is not null)
+            {
+                IndexOffset = indexOffset.Value;
+            }
+
+            if (indexCount is not null)
+            {
+                IndexCount = indexCount.Value;
+            }
+
+            if (indexType is not null)
+            {
+                IndexType = indexType.Value;
+            }
+
+            if (transformData is not null)
+            {
+                TransformData = transformData.Value;
+            }
+
+            if (transformOffset is not null)
+            {
+                TransformOffset = transformOffset.Value;
+            }
         }
 
 /// <summary></summary>

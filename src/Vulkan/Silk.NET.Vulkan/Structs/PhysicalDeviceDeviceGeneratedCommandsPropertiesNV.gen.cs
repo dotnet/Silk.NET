@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceDeviceGeneratedCommandsPropertiesNV,
-            void* pNext = default,
-            uint maxGraphicsShaderGroupCount = default,
-            uint maxIndirectSequenceCount = default,
-            uint maxIndirectCommandsTokenCount = default,
-            uint maxIndirectCommandsStreamCount = default,
-            uint maxIndirectCommandsTokenOffset = default,
-            uint maxIndirectCommandsStreamStride = default,
-            uint minSequencesCountBufferOffsetAlignment = default,
-            uint minSequencesIndexBufferOffsetAlignment = default,
-            uint minIndirectCommandsBufferOffsetAlignment = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceDeviceGeneratedCommandsPropertiesNV,
+            void* pNext = null,
+            uint? maxGraphicsShaderGroupCount = null,
+            uint? maxIndirectSequenceCount = null,
+            uint? maxIndirectCommandsTokenCount = null,
+            uint? maxIndirectCommandsStreamCount = null,
+            uint? maxIndirectCommandsTokenOffset = null,
+            uint? maxIndirectCommandsStreamStride = null,
+            uint? minSequencesCountBufferOffsetAlignment = null,
+            uint? minSequencesIndexBufferOffsetAlignment = null,
+            uint? minIndirectCommandsBufferOffsetAlignment = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxGraphicsShaderGroupCount = maxGraphicsShaderGroupCount;
-            MaxIndirectSequenceCount = maxIndirectSequenceCount;
-            MaxIndirectCommandsTokenCount = maxIndirectCommandsTokenCount;
-            MaxIndirectCommandsStreamCount = maxIndirectCommandsStreamCount;
-            MaxIndirectCommandsTokenOffset = maxIndirectCommandsTokenOffset;
-            MaxIndirectCommandsStreamStride = maxIndirectCommandsStreamStride;
-            MinSequencesCountBufferOffsetAlignment = minSequencesCountBufferOffsetAlignment;
-            MinSequencesIndexBufferOffsetAlignment = minSequencesIndexBufferOffsetAlignment;
-            MinIndirectCommandsBufferOffsetAlignment = minIndirectCommandsBufferOffsetAlignment;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxGraphicsShaderGroupCount is not null)
+            {
+                MaxGraphicsShaderGroupCount = maxGraphicsShaderGroupCount.Value;
+            }
+
+            if (maxIndirectSequenceCount is not null)
+            {
+                MaxIndirectSequenceCount = maxIndirectSequenceCount.Value;
+            }
+
+            if (maxIndirectCommandsTokenCount is not null)
+            {
+                MaxIndirectCommandsTokenCount = maxIndirectCommandsTokenCount.Value;
+            }
+
+            if (maxIndirectCommandsStreamCount is not null)
+            {
+                MaxIndirectCommandsStreamCount = maxIndirectCommandsStreamCount.Value;
+            }
+
+            if (maxIndirectCommandsTokenOffset is not null)
+            {
+                MaxIndirectCommandsTokenOffset = maxIndirectCommandsTokenOffset.Value;
+            }
+
+            if (maxIndirectCommandsStreamStride is not null)
+            {
+                MaxIndirectCommandsStreamStride = maxIndirectCommandsStreamStride.Value;
+            }
+
+            if (minSequencesCountBufferOffsetAlignment is not null)
+            {
+                MinSequencesCountBufferOffsetAlignment = minSequencesCountBufferOffsetAlignment.Value;
+            }
+
+            if (minSequencesIndexBufferOffsetAlignment is not null)
+            {
+                MinSequencesIndexBufferOffsetAlignment = minSequencesIndexBufferOffsetAlignment.Value;
+            }
+
+            if (minIndirectCommandsBufferOffsetAlignment is not null)
+            {
+                MinIndirectCommandsBufferOffsetAlignment = minIndirectCommandsBufferOffsetAlignment.Value;
+            }
         }
 
 /// <summary></summary>

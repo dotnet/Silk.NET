@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Assimp
     {
         public Plane
         (
-            float a = default,
-            float b = default,
-            float c = default,
-            float d = default
-        )
+            float? a = null,
+            float? b = null,
+            float? c = null,
+            float? d = null
+        ) : this()
         {
-            A = a;
-            B = b;
-            C = c;
-            D = d;
+            if (a is not null)
+            {
+                A = a.Value;
+            }
+
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (c is not null)
+            {
+                C = c.Value;
+            }
+
+            if (d is not null)
+            {
+                D = d.Value;
+            }
         }
 
 

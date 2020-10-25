@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public ExtensionProperties
         (
-            StructureType type = StructureType.TypeExtensionProperties,
-            void* next = default,
-            uint extensionVersion = default
-        )
+            StructureType? type = StructureType.TypeExtensionProperties,
+            void* next = null,
+            uint? extensionVersion = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            ExtensionVersion = extensionVersion;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (extensionVersion is not null)
+            {
+                ExtensionVersion = extensionVersion.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.SDL
     {
         public WindowEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint windowID = default,
-            byte @event = default,
-            byte padding1 = default,
-            byte padding2 = default,
-            byte padding3 = default,
-            int data1 = default,
-            int data2 = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            uint? windowID = null,
+            byte? @event = null,
+            byte? padding1 = null,
+            byte? padding2 = null,
+            byte? padding3 = null,
+            int? data1 = null,
+            int? data2 = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            WindowID = windowID;
-            Event = @event;
-            Padding1 = padding1;
-            Padding2 = padding2;
-            Padding3 = padding3;
-            Data1 = data1;
-            Data2 = data2;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
+
+            if (@event is not null)
+            {
+                Event = @event.Value;
+            }
+
+            if (padding1 is not null)
+            {
+                Padding1 = padding1.Value;
+            }
+
+            if (padding2 is not null)
+            {
+                Padding2 = padding2.Value;
+            }
+
+            if (padding3 is not null)
+            {
+                Padding3 = padding3.Value;
+            }
+
+            if (data1 is not null)
+            {
+                Data1 = data1.Value;
+            }
+
+            if (data2 is not null)
+            {
+                Data2 = data2.Value;
+            }
         }
 
 

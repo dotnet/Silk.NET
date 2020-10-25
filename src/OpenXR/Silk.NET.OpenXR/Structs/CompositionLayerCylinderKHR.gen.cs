@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.OpenXR
     {
         public CompositionLayerCylinderKHR
         (
-            StructureType type = StructureType.TypeCompositionLayerCylinderKhr,
-            void* next = default,
-            CompositionLayerFlags layerFlags = default,
-            Space space = default,
-            EyeVisibility eyeVisibility = default,
-            SwapchainSubImage subImage = default,
-            Posef pose = default,
-            float radius = default,
-            float centralAngle = default,
-            float aspectRatio = default
-        )
+            StructureType? type = StructureType.TypeCompositionLayerCylinderKhr,
+            void* next = null,
+            CompositionLayerFlags? layerFlags = null,
+            Space? space = null,
+            EyeVisibility? eyeVisibility = null,
+            SwapchainSubImage? subImage = null,
+            Posef? pose = null,
+            float? radius = null,
+            float? centralAngle = null,
+            float? aspectRatio = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            LayerFlags = layerFlags;
-            Space = space;
-            EyeVisibility = eyeVisibility;
-            SubImage = subImage;
-            Pose = pose;
-            Radius = radius;
-            CentralAngle = centralAngle;
-            AspectRatio = aspectRatio;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (layerFlags is not null)
+            {
+                LayerFlags = layerFlags.Value;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
+
+            if (eyeVisibility is not null)
+            {
+                EyeVisibility = eyeVisibility.Value;
+            }
+
+            if (subImage is not null)
+            {
+                SubImage = subImage.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (radius is not null)
+            {
+                Radius = radius.Value;
+            }
+
+            if (centralAngle is not null)
+            {
+                CentralAngle = centralAngle.Value;
+            }
+
+            if (aspectRatio is not null)
+            {
+                AspectRatio = aspectRatio.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public SemaphoreSignalInfo
         (
-            StructureType sType = StructureType.SemaphoreSignalInfo,
-            void* pNext = default,
-            Semaphore semaphore = default,
-            ulong value = default
-        )
+            StructureType? sType = StructureType.SemaphoreSignalInfo,
+            void* pNext = null,
+            Semaphore? semaphore = null,
+            ulong? value = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Semaphore = semaphore;
-            Value = value;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (semaphore is not null)
+            {
+                Semaphore = semaphore.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
 /// <summary></summary>

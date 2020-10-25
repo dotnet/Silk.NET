@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public AccelerationStructureMemoryRequirementsInfoNV
         (
-            StructureType sType = StructureType.AccelerationStructureMemoryRequirementsInfoNV,
-            void* pNext = default,
-            AccelerationStructureMemoryRequirementsTypeNV type = default,
-            AccelerationStructureNV accelerationStructure = default
-        )
+            StructureType? sType = StructureType.AccelerationStructureMemoryRequirementsInfoNV,
+            void* pNext = null,
+            AccelerationStructureMemoryRequirementsTypeNV? type = null,
+            AccelerationStructureNV? accelerationStructure = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
-            AccelerationStructure = accelerationStructure;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (accelerationStructure is not null)
+            {
+                AccelerationStructure = accelerationStructure.Value;
+            }
         }
 
 /// <summary></summary>

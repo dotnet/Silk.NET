@@ -14,7 +14,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeApiGenerator
+    public static partial class Middlewares
     {
         private static ExpressionSyntax _sysMarshal = // System.Runtime.InteropServices.Marshal
             MemberAccessExpression
@@ -86,7 +86,9 @@ namespace Silk.NET.SilkTouch
                 [UnmanagedType.LPTStr] = _allocHGlobal,
             };
 
-        private static void StringMarshaller(ref IMarshalContext ctx, Action next)
+        private const UnmanagedType Default = UnmanagedType.LPStr;
+
+        public static void StringMarshaller(ref IMarshalContext ctx, Action next)
         {
             var @string = ctx.Compilation.GetSpecialType(SpecialType.System_String);
             var intptr = ctx.Compilation.GetSpecialType(SpecialType.System_IntPtr);
@@ -101,7 +103,7 @@ namespace Silk.NET.SilkTouch
                 b[index] = !SymbolEqualityComparer.Default.Equals(ctx.LoadTypes[index], @string);
                 if (b[index]) continue;
                 
-                var marshalAs = ctx.ParameterMarshalOptions[index]?.UnmanagedType ?? UnmanagedType.LPStr;
+                var marshalAs = ctx.ParameterMarshalOptions[index]?.UnmanagedType ?? Default;
 
                 var charType = ctx.Compilation.CreatePointerTypeSymbol(marshalAs switch
                 {
@@ -133,11 +135,13 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         );
-                        ctx.DeclareExtraRef(id, 1); // readback
+                        ctx.DeclareExtraRef(id); // readback
                         ctx.SetParameterToVariable(index, id);
                         break;
                     case RefKind.Out:
                     {
+                       b[index] = false;
+                            
                         if (!ctx.TryGetAttribute(index, "Silk.NET.Core.Attributes.CountAttribute", out var countData))
                         {
                             continue; // diagnostic?
@@ -174,12 +178,7 @@ namespace Silk.NET.SilkTouch
                             )
                         );
                         
-                        // second address of
-                        var pp = ctx.Compilation.CreatePointerTypeSymbol(charType);
-                        var id2 = ctx.DeclareVariable(pp);
-                        var parameter2 = ctx.ResolveVariable(id);
-                        ctx.SetVariable(id2, ctx => PrefixUnaryExpression(SyntaxKind.AddressOfExpression, parameter2.Value));
-                        ctx.SetParameterToVariable(index, id2);
+                        ctx.SetParameterToVariable(index, id);
                         ctx.ShouldPinParameter[index] = false;
                         break;
                     }
@@ -190,7 +189,7 @@ namespace Silk.NET.SilkTouch
 
             var marshalReturn = !ctx.ReturnsVoid && SymbolEqualityComparer.Default.Equals(ctx.ReturnLoadType, @string);
             int returnLocal = default;
-            var returnMarshalAs = ctx.ReturnMarshalOptions?.UnmanagedType ?? UnmanagedType.LPStr;
+            var returnMarshalAs = ctx.ReturnMarshalOptions?.UnmanagedType ?? Default;
             if (marshalReturn)
             {
                 returnLocal = ctx.DeclareVariable(@string);
@@ -244,18 +243,13 @@ namespace Silk.NET.SilkTouch
             {
                 if (b[index]) continue;
                 
-                var marshalAs = ctx.ParameterMarshalOptions[index]?.UnmanagedType ?? UnmanagedType.LPStr;
+                var marshalAs = ctx.ParameterMarshalOptions[index]?.UnmanagedType ?? Default;
 
                 if (ctx.MethodSymbol.Parameters[index].RefKind == RefKind.None ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Ref ||
                     ctx.MethodSymbol.Parameters[index].RefKind == RefKind.Out)
                 {
                     var p2 = ctx.ResolveVariable(ctx.ParameterVariables[index]);
-                    if (ctx.MethodSymbol.Parameters[index].RefKind != RefKind.None)
-                    {
-                        var p3 = p2;
-                        p2 = new Lazy<ExpressionSyntax>(() => ParenthesizedExpression(PrefixUnaryExpression(SyntaxKind.PointerIndirectionExpression, p3.Value)));
-                    }
 
                     var n = ctx.MethodSymbol.Parameters[index].Name;
                     ctx.AddSideEffect

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public ViSurfaceCreateInfoNN
         (
-            StructureType sType = StructureType.VISurfaceCreateInfoNN,
-            void* pNext = default,
-            uint flags = default,
-            void* window = default
-        )
+            StructureType? sType = StructureType.VISurfaceCreateInfoNN,
+            void* pNext = null,
+            uint? flags = null,
+            void* window = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Window = window;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (window is not null)
+            {
+                Window = window;
+            }
         }
 
 /// <summary></summary>

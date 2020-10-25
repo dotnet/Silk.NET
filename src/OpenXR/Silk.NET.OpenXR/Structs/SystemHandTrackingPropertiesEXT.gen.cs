@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public SystemHandTrackingPropertiesEXT
         (
-            StructureType type = StructureType.TypeSystemHandTrackingPropertiesExt,
-            void* next = default,
-            uint supportsHandTracking = default
-        )
+            StructureType? type = StructureType.TypeSystemHandTrackingPropertiesExt,
+            void* next = null,
+            uint? supportsHandTracking = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            SupportsHandTracking = supportsHandTracking;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (supportsHandTracking is not null)
+            {
+                SupportsHandTracking = supportsHandTracking.Value;
+            }
         }
 
 /// <summary></summary>

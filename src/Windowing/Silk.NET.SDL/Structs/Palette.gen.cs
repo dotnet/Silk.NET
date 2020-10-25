@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.SDL
     {
         public Palette
         (
-            int ncolors = default,
-            Color* colors = default,
-            uint version = default,
-            int refcount = default
-        )
+            int? ncolors = null,
+            Color* colors = null,
+            uint? version = null,
+            int? refcount = null
+        ) : this()
         {
-            Ncolors = ncolors;
-            Colors = colors;
-            Version = version;
-            Refcount = refcount;
+            if (ncolors is not null)
+            {
+                Ncolors = ncolors.Value;
+            }
+
+            if (colors is not null)
+            {
+                Colors = colors;
+            }
+
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
+
+            if (refcount is not null)
+            {
+                Refcount = refcount.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public SubpassDescriptionDepthStencilResolve
         (
-            StructureType sType = StructureType.SubpassDescriptionDepthStencilResolve,
-            void* pNext = default,
-            ResolveModeFlags depthResolveMode = default,
-            ResolveModeFlags stencilResolveMode = default,
-            AttachmentReference2* pDepthStencilResolveAttachment = default
-        )
+            StructureType? sType = StructureType.SubpassDescriptionDepthStencilResolve,
+            void* pNext = null,
+            ResolveModeFlags? depthResolveMode = null,
+            ResolveModeFlags? stencilResolveMode = null,
+            AttachmentReference2* pDepthStencilResolveAttachment = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DepthResolveMode = depthResolveMode;
-            StencilResolveMode = stencilResolveMode;
-            PDepthStencilResolveAttachment = pDepthStencilResolveAttachment;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (depthResolveMode is not null)
+            {
+                DepthResolveMode = depthResolveMode.Value;
+            }
+
+            if (stencilResolveMode is not null)
+            {
+                StencilResolveMode = stencilResolveMode.Value;
+            }
+
+            if (pDepthStencilResolveAttachment is not null)
+            {
+                PDepthStencilResolveAttachment = pDepthStencilResolveAttachment;
+            }
         }
 
 /// <summary></summary>

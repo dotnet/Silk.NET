@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public MultisamplePropertiesEXT
         (
-            StructureType sType = StructureType.MultisamplePropertiesExt,
-            void* pNext = default,
-            Extent2D maxSampleLocationGridSize = default
-        )
+            StructureType? sType = StructureType.MultisamplePropertiesExt,
+            void* pNext = null,
+            Extent2D? maxSampleLocationGridSize = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxSampleLocationGridSize = maxSampleLocationGridSize;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxSampleLocationGridSize is not null)
+            {
+                MaxSampleLocationGridSize = maxSampleLocationGridSize.Value;
+            }
         }
 
 /// <summary></summary>

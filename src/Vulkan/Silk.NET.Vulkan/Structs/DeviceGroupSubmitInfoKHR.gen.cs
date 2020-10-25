@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Vulkan
     {
         public DeviceGroupSubmitInfoKHR
         (
-            StructureType sType = StructureType.DeviceGroupSubmitInfo,
-            void* pNext = default,
-            uint waitSemaphoreCount = default,
-            uint* pWaitSemaphoreDeviceIndices = default,
-            uint commandBufferCount = default,
-            uint* pCommandBufferDeviceMasks = default,
-            uint signalSemaphoreCount = default,
-            uint* pSignalSemaphoreDeviceIndices = default
-        )
+            StructureType? sType = StructureType.DeviceGroupSubmitInfo,
+            void* pNext = null,
+            uint? waitSemaphoreCount = null,
+            uint* pWaitSemaphoreDeviceIndices = null,
+            uint? commandBufferCount = null,
+            uint* pCommandBufferDeviceMasks = null,
+            uint? signalSemaphoreCount = null,
+            uint* pSignalSemaphoreDeviceIndices = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            WaitSemaphoreCount = waitSemaphoreCount;
-            PWaitSemaphoreDeviceIndices = pWaitSemaphoreDeviceIndices;
-            CommandBufferCount = commandBufferCount;
-            PCommandBufferDeviceMasks = pCommandBufferDeviceMasks;
-            SignalSemaphoreCount = signalSemaphoreCount;
-            PSignalSemaphoreDeviceIndices = pSignalSemaphoreDeviceIndices;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (waitSemaphoreCount is not null)
+            {
+                WaitSemaphoreCount = waitSemaphoreCount.Value;
+            }
+
+            if (pWaitSemaphoreDeviceIndices is not null)
+            {
+                PWaitSemaphoreDeviceIndices = pWaitSemaphoreDeviceIndices;
+            }
+
+            if (commandBufferCount is not null)
+            {
+                CommandBufferCount = commandBufferCount.Value;
+            }
+
+            if (pCommandBufferDeviceMasks is not null)
+            {
+                PCommandBufferDeviceMasks = pCommandBufferDeviceMasks;
+            }
+
+            if (signalSemaphoreCount is not null)
+            {
+                SignalSemaphoreCount = signalSemaphoreCount.Value;
+            }
+
+            if (pSignalSemaphoreDeviceIndices is not null)
+            {
+                PSignalSemaphoreDeviceIndices = pSignalSemaphoreDeviceIndices;
+            }
         }
 
 /// <summary></summary>

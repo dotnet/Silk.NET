@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.SDL
     {
         public GameControllerHatValue
         (
-            int hat = default,
-            int hatMask = default
-        )
+            int? hat = null,
+            int? hatMask = null
+        ) : this()
         {
-            Hat = hat;
-            HatMask = hatMask;
+            if (hat is not null)
+            {
+                Hat = hat.Value;
+            }
+
+            if (hatMask is not null)
+            {
+                HatMask = hatMask.Value;
+            }
         }
 
 

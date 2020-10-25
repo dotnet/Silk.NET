@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceRayTracingPropertiesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceRayTracingPropertiesNV,
-            void* pNext = default,
-            uint shaderGroupHandleSize = default,
-            uint maxRecursionDepth = default,
-            uint maxShaderGroupStride = default,
-            uint shaderGroupBaseAlignment = default,
-            ulong maxGeometryCount = default,
-            ulong maxInstanceCount = default,
-            ulong maxTriangleCount = default,
-            uint maxDescriptorSetAccelerationStructures = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceRayTracingPropertiesNV,
+            void* pNext = null,
+            uint? shaderGroupHandleSize = null,
+            uint? maxRecursionDepth = null,
+            uint? maxShaderGroupStride = null,
+            uint? shaderGroupBaseAlignment = null,
+            ulong? maxGeometryCount = null,
+            ulong? maxInstanceCount = null,
+            ulong? maxTriangleCount = null,
+            uint? maxDescriptorSetAccelerationStructures = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderGroupHandleSize = shaderGroupHandleSize;
-            MaxRecursionDepth = maxRecursionDepth;
-            MaxShaderGroupStride = maxShaderGroupStride;
-            ShaderGroupBaseAlignment = shaderGroupBaseAlignment;
-            MaxGeometryCount = maxGeometryCount;
-            MaxInstanceCount = maxInstanceCount;
-            MaxTriangleCount = maxTriangleCount;
-            MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderGroupHandleSize is not null)
+            {
+                ShaderGroupHandleSize = shaderGroupHandleSize.Value;
+            }
+
+            if (maxRecursionDepth is not null)
+            {
+                MaxRecursionDepth = maxRecursionDepth.Value;
+            }
+
+            if (maxShaderGroupStride is not null)
+            {
+                MaxShaderGroupStride = maxShaderGroupStride.Value;
+            }
+
+            if (shaderGroupBaseAlignment is not null)
+            {
+                ShaderGroupBaseAlignment = shaderGroupBaseAlignment.Value;
+            }
+
+            if (maxGeometryCount is not null)
+            {
+                MaxGeometryCount = maxGeometryCount.Value;
+            }
+
+            if (maxInstanceCount is not null)
+            {
+                MaxInstanceCount = maxInstanceCount.Value;
+            }
+
+            if (maxTriangleCount is not null)
+            {
+                MaxTriangleCount = maxTriangleCount.Value;
+            }
+
+            if (maxDescriptorSetAccelerationStructures is not null)
+            {
+                MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures.Value;
+            }
         }
 
 /// <summary></summary>

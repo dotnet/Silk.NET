@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -28,10 +28,10 @@ namespace Silk.NET.GLFW
         }
 
         /// <inheritdoc />
-        public IntPtr GetProcAddress(string proc) => _glfw.GetProcAddress(proc);
+        public IntPtr GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
 
         /// <inheritdoc />
-        public unsafe IntPtr Handle => (IntPtr)_window;
+        public unsafe IntPtr Handle => (IntPtr) _window;
 
         /// <inheritdoc />
         public unsafe bool IsCurrent => _glfw.GetCurrentContext() == _window;

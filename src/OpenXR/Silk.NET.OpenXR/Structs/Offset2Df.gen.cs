@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenXR
     {
         public Offset2Df
         (
-            float x = default,
-            float y = default
-        )
+            float? x = null,
+            float? y = null
+        ) : this()
         {
-            X = x;
-            Y = y;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
 /// <summary></summary>

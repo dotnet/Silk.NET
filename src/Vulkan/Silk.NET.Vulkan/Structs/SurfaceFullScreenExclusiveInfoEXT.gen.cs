@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceFullScreenExclusiveInfoEXT
         (
-            StructureType sType = StructureType.SurfaceFullScreenExclusiveInfoExt,
-            void* pNext = default,
-            FullScreenExclusiveEXT fullScreenExclusive = default
-        )
+            StructureType? sType = StructureType.SurfaceFullScreenExclusiveInfoExt,
+            void* pNext = null,
+            FullScreenExclusiveEXT? fullScreenExclusive = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            FullScreenExclusive = fullScreenExclusive;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fullScreenExclusive is not null)
+            {
+                FullScreenExclusive = fullScreenExclusive.Value;
+            }
         }
 
 /// <summary></summary>

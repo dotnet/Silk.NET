@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.SDL
     {
         public ControllerButtonEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            int which = default,
-            byte button = default,
-            byte state = default,
-            byte padding1 = default,
-            byte padding2 = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            int? which = null,
+            byte? button = null,
+            byte? state = null,
+            byte? padding1 = null,
+            byte? padding2 = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            Which = which;
-            Button = button;
-            State = state;
-            Padding1 = padding1;
-            Padding2 = padding2;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (state is not null)
+            {
+                State = state.Value;
+            }
+
+            if (padding1 is not null)
+            {
+                Padding1 = padding1.Value;
+            }
+
+            if (padding2 is not null)
+            {
+                Padding2 = padding2.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,79 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTransformFeedbackPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceTransformFeedbackPropertiesExt,
-            void* pNext = default,
-            uint maxTransformFeedbackStreams = default,
-            uint maxTransformFeedbackBuffers = default,
-            ulong maxTransformFeedbackBufferSize = default,
-            uint maxTransformFeedbackStreamDataSize = default,
-            uint maxTransformFeedbackBufferDataSize = default,
-            uint maxTransformFeedbackBufferDataStride = default,
-            Bool32 transformFeedbackQueries = default,
-            Bool32 transformFeedbackStreamsLinesTriangles = default,
-            Bool32 transformFeedbackRasterizationStreamSelect = default,
-            Bool32 transformFeedbackDraw = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceTransformFeedbackPropertiesExt,
+            void* pNext = null,
+            uint? maxTransformFeedbackStreams = null,
+            uint? maxTransformFeedbackBuffers = null,
+            ulong? maxTransformFeedbackBufferSize = null,
+            uint? maxTransformFeedbackStreamDataSize = null,
+            uint? maxTransformFeedbackBufferDataSize = null,
+            uint? maxTransformFeedbackBufferDataStride = null,
+            Bool32? transformFeedbackQueries = null,
+            Bool32? transformFeedbackStreamsLinesTriangles = null,
+            Bool32? transformFeedbackRasterizationStreamSelect = null,
+            Bool32? transformFeedbackDraw = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxTransformFeedbackStreams = maxTransformFeedbackStreams;
-            MaxTransformFeedbackBuffers = maxTransformFeedbackBuffers;
-            MaxTransformFeedbackBufferSize = maxTransformFeedbackBufferSize;
-            MaxTransformFeedbackStreamDataSize = maxTransformFeedbackStreamDataSize;
-            MaxTransformFeedbackBufferDataSize = maxTransformFeedbackBufferDataSize;
-            MaxTransformFeedbackBufferDataStride = maxTransformFeedbackBufferDataStride;
-            TransformFeedbackQueries = transformFeedbackQueries;
-            TransformFeedbackStreamsLinesTriangles = transformFeedbackStreamsLinesTriangles;
-            TransformFeedbackRasterizationStreamSelect = transformFeedbackRasterizationStreamSelect;
-            TransformFeedbackDraw = transformFeedbackDraw;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxTransformFeedbackStreams is not null)
+            {
+                MaxTransformFeedbackStreams = maxTransformFeedbackStreams.Value;
+            }
+
+            if (maxTransformFeedbackBuffers is not null)
+            {
+                MaxTransformFeedbackBuffers = maxTransformFeedbackBuffers.Value;
+            }
+
+            if (maxTransformFeedbackBufferSize is not null)
+            {
+                MaxTransformFeedbackBufferSize = maxTransformFeedbackBufferSize.Value;
+            }
+
+            if (maxTransformFeedbackStreamDataSize is not null)
+            {
+                MaxTransformFeedbackStreamDataSize = maxTransformFeedbackStreamDataSize.Value;
+            }
+
+            if (maxTransformFeedbackBufferDataSize is not null)
+            {
+                MaxTransformFeedbackBufferDataSize = maxTransformFeedbackBufferDataSize.Value;
+            }
+
+            if (maxTransformFeedbackBufferDataStride is not null)
+            {
+                MaxTransformFeedbackBufferDataStride = maxTransformFeedbackBufferDataStride.Value;
+            }
+
+            if (transformFeedbackQueries is not null)
+            {
+                TransformFeedbackQueries = transformFeedbackQueries.Value;
+            }
+
+            if (transformFeedbackStreamsLinesTriangles is not null)
+            {
+                TransformFeedbackStreamsLinesTriangles = transformFeedbackStreamsLinesTriangles.Value;
+            }
+
+            if (transformFeedbackRasterizationStreamSelect is not null)
+            {
+                TransformFeedbackRasterizationStreamSelect = transformFeedbackRasterizationStreamSelect.Value;
+            }
+
+            if (transformFeedbackDraw is not null)
+            {
+                TransformFeedbackDraw = transformFeedbackDraw.Value;
+            }
         }
 
 /// <summary></summary>

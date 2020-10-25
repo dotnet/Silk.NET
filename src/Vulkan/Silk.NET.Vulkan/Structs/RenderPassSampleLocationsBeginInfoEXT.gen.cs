@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassSampleLocationsBeginInfoEXT
         (
-            StructureType sType = StructureType.RenderPassSampleLocationsBeginInfoExt,
-            void* pNext = default,
-            uint attachmentInitialSampleLocationsCount = default,
-            AttachmentSampleLocationsEXT* pAttachmentInitialSampleLocations = default,
-            uint postSubpassSampleLocationsCount = default,
-            SubpassSampleLocationsEXT* pPostSubpassSampleLocations = default
-        )
+            StructureType? sType = StructureType.RenderPassSampleLocationsBeginInfoExt,
+            void* pNext = null,
+            uint? attachmentInitialSampleLocationsCount = null,
+            AttachmentSampleLocationsEXT* pAttachmentInitialSampleLocations = null,
+            uint? postSubpassSampleLocationsCount = null,
+            SubpassSampleLocationsEXT* pPostSubpassSampleLocations = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AttachmentInitialSampleLocationsCount = attachmentInitialSampleLocationsCount;
-            PAttachmentInitialSampleLocations = pAttachmentInitialSampleLocations;
-            PostSubpassSampleLocationsCount = postSubpassSampleLocationsCount;
-            PPostSubpassSampleLocations = pPostSubpassSampleLocations;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachmentInitialSampleLocationsCount is not null)
+            {
+                AttachmentInitialSampleLocationsCount = attachmentInitialSampleLocationsCount.Value;
+            }
+
+            if (pAttachmentInitialSampleLocations is not null)
+            {
+                PAttachmentInitialSampleLocations = pAttachmentInitialSampleLocations;
+            }
+
+            if (postSubpassSampleLocationsCount is not null)
+            {
+                PostSubpassSampleLocationsCount = postSubpassSampleLocationsCount.Value;
+            }
+
+            if (pPostSubpassSampleLocations is not null)
+            {
+                PPostSubpassSampleLocations = pPostSubpassSampleLocations;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenXR
     {
         public Rect2Di
         (
-            Offset2Di offset = default,
-            Extent2Di extent = default
-        )
+            Offset2Di? offset = null,
+            Extent2Di? extent = null
+        ) : this()
         {
-            Offset = offset;
-            Extent = extent;
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (extent is not null)
+            {
+                Extent = extent.Value;
+            }
         }
 
 /// <summary></summary>

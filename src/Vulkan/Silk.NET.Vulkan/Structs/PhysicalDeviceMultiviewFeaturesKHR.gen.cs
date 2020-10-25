@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMultiviewFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceMultiviewFeatures,
-            void* pNext = default,
-            Bool32 multiview = default,
-            Bool32 multiviewGeometryShader = default,
-            Bool32 multiviewTessellationShader = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceMultiviewFeatures,
+            void* pNext = null,
+            Bool32? multiview = null,
+            Bool32? multiviewGeometryShader = null,
+            Bool32? multiviewTessellationShader = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Multiview = multiview;
-            MultiviewGeometryShader = multiviewGeometryShader;
-            MultiviewTessellationShader = multiviewTessellationShader;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (multiview is not null)
+            {
+                Multiview = multiview.Value;
+            }
+
+            if (multiviewGeometryShader is not null)
+            {
+                MultiviewGeometryShader = multiviewGeometryShader.Value;
+            }
+
+            if (multiviewTessellationShader is not null)
+            {
+                MultiviewTessellationShader = multiviewTessellationShader.Value;
+            }
         }
 
 /// <summary></summary>

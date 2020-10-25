@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.SDL
     {
         public AudioDeviceEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint which = default,
-            byte iscapture = default,
-            byte padding1 = default,
-            byte padding2 = default,
-            byte padding3 = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            uint? which = null,
+            byte? iscapture = null,
+            byte? padding1 = null,
+            byte? padding2 = null,
+            byte? padding3 = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            Which = which;
-            Iscapture = iscapture;
-            Padding1 = padding1;
-            Padding2 = padding2;
-            Padding3 = padding3;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (which is not null)
+            {
+                Which = which.Value;
+            }
+
+            if (iscapture is not null)
+            {
+                Iscapture = iscapture.Value;
+            }
+
+            if (padding1 is not null)
+            {
+                Padding1 = padding1.Value;
+            }
+
+            if (padding2 is not null)
+            {
+                Padding2 = padding2.Value;
+            }
+
+            if (padding3 is not null)
+            {
+                Padding3 = padding3.Value;
+            }
         }
 
 

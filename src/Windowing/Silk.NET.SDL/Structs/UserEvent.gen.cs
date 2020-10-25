@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.SDL
     {
         public UserEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint windowID = default,
-            int code = default,
-            void* data1 = default,
-            void* data2 = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            uint? windowID = null,
+            int? code = null,
+            void* data1 = null,
+            void* data2 = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            WindowID = windowID;
-            Code = code;
-            Data1 = data1;
-            Data2 = data2;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
+
+            if (code is not null)
+            {
+                Code = code.Value;
+            }
+
+            if (data1 is not null)
+            {
+                Data1 = data1;
+            }
+
+            if (data2 is not null)
+            {
+                Data2 = data2;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Vulkan
     {
         public InstanceCreateInfo
         (
-            StructureType sType = StructureType.InstanceCreateInfo,
-            void* pNext = default,
-            uint flags = default,
-            ApplicationInfo* pApplicationInfo = default,
-            uint enabledLayerCount = default,
-            byte** ppEnabledLayerNames = default,
-            uint enabledExtensionCount = default,
-            byte** ppEnabledExtensionNames = default
-        )
+            StructureType? sType = StructureType.InstanceCreateInfo,
+            void* pNext = null,
+            uint? flags = null,
+            ApplicationInfo* pApplicationInfo = null,
+            uint? enabledLayerCount = null,
+            byte** ppEnabledLayerNames = null,
+            uint? enabledExtensionCount = null,
+            byte** ppEnabledExtensionNames = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            PApplicationInfo = pApplicationInfo;
-            EnabledLayerCount = enabledLayerCount;
-            PpEnabledLayerNames = ppEnabledLayerNames;
-            EnabledExtensionCount = enabledExtensionCount;
-            PpEnabledExtensionNames = ppEnabledExtensionNames;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pApplicationInfo is not null)
+            {
+                PApplicationInfo = pApplicationInfo;
+            }
+
+            if (enabledLayerCount is not null)
+            {
+                EnabledLayerCount = enabledLayerCount.Value;
+            }
+
+            if (ppEnabledLayerNames is not null)
+            {
+                PpEnabledLayerNames = ppEnabledLayerNames;
+            }
+
+            if (enabledExtensionCount is not null)
+            {
+                EnabledExtensionCount = enabledExtensionCount.Value;
+            }
+
+            if (ppEnabledExtensionNames is not null)
+            {
+                PpEnabledExtensionNames = ppEnabledExtensionNames;
+            }
         }
 
 /// <summary></summary>

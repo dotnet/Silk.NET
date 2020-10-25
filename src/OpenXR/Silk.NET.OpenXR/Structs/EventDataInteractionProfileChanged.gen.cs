@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public EventDataInteractionProfileChanged
         (
-            StructureType type = StructureType.TypeEventDataInteractionProfileChanged,
-            void* next = default,
-            Session session = default
-        )
+            StructureType? type = StructureType.TypeEventDataInteractionProfileChanged,
+            void* next = null,
+            Session? session = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Session = session;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (session is not null)
+            {
+                Session = session.Value;
+            }
         }
 
 /// <summary></summary>

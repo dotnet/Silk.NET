@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public FenceGetWin32HandleInfoKHR
         (
-            StructureType sType = StructureType.FenceGetWin32HandleInfoKhr,
-            void* pNext = default,
-            Fence fence = default,
-            ExternalFenceHandleTypeFlags handleType = default
-        )
+            StructureType? sType = StructureType.FenceGetWin32HandleInfoKhr,
+            void* pNext = null,
+            Fence? fence = null,
+            ExternalFenceHandleTypeFlags? handleType = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Fence = fence;
-            HandleType = handleType;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fence is not null)
+            {
+                Fence = fence.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>

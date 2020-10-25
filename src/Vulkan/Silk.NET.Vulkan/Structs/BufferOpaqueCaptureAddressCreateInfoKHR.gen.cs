@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public BufferOpaqueCaptureAddressCreateInfoKHR
         (
-            StructureType sType = StructureType.BufferOpaqueCaptureAddressCreateInfo,
-            void* pNext = default,
-            ulong opaqueCaptureAddress = default
-        )
+            StructureType? sType = StructureType.BufferOpaqueCaptureAddressCreateInfo,
+            void* pNext = null,
+            ulong? opaqueCaptureAddress = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            OpaqueCaptureAddress = opaqueCaptureAddress;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (opaqueCaptureAddress is not null)
+            {
+                OpaqueCaptureAddress = opaqueCaptureAddress.Value;
+            }
         }
 
 /// <summary></summary>

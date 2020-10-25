@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public RenderPassAttachmentBeginInfoKHR
         (
-            StructureType sType = StructureType.RenderPassAttachmentBeginInfo,
-            void* pNext = default,
-            uint attachmentCount = default,
-            ImageView* pAttachments = default
-        )
+            StructureType? sType = StructureType.RenderPassAttachmentBeginInfo,
+            void* pNext = null,
+            uint? attachmentCount = null,
+            ImageView* pAttachments = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AttachmentCount = attachmentCount;
-            PAttachments = pAttachments;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachmentCount is not null)
+            {
+                AttachmentCount = attachmentCount.Value;
+            }
+
+            if (pAttachments is not null)
+            {
+                PAttachments = pAttachments;
+            }
         }
 
 /// <summary></summary>

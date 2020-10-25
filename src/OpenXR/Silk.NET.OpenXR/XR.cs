@@ -15,7 +15,7 @@ namespace Silk.NET.OpenXR
         public Instance? CurrentInstance { get; set; }
         public static XR GetApi()
         {
-             var ret = new XR(new DefaultNativeContext(new OpenXRLibraryNameContainer().GetLibraryName()));
+             var ret = new XR(CreateDefaultContext(new OpenXRLibraryNameContainer().GetLibraryName()));
              return ret;
         }
 

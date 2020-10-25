@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMaintenance3Properties
         (
-            StructureType sType = StructureType.PhysicalDeviceMaintenance3Properties,
-            void* pNext = default,
-            uint maxPerSetDescriptors = default,
-            ulong maxMemoryAllocationSize = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceMaintenance3Properties,
+            void* pNext = null,
+            uint? maxPerSetDescriptors = null,
+            ulong? maxMemoryAllocationSize = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxPerSetDescriptors = maxPerSetDescriptors;
-            MaxMemoryAllocationSize = maxMemoryAllocationSize;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxPerSetDescriptors is not null)
+            {
+                MaxPerSetDescriptors = maxPerSetDescriptors.Value;
+            }
+
+            if (maxMemoryAllocationSize is not null)
+            {
+                MaxMemoryAllocationSize = maxMemoryAllocationSize.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Assimp
     {
         public Node
         (
-            AssimpString mName = default,
-            System.Numerics.Matrix4x4 mTransformation = default,
-            Node* mParent = default,
-            uint mNumChildren = default,
-            Node** mChildren = default,
-            uint mNumMeshes = default,
-            uint* mMeshes = default,
-            Metadata* mMetaData = default
-        )
+            AssimpString? mName = null,
+            System.Numerics.Matrix4x4? mTransformation = null,
+            Node* mParent = null,
+            uint? mNumChildren = null,
+            Node** mChildren = null,
+            uint? mNumMeshes = null,
+            uint* mMeshes = null,
+            Metadata* mMetaData = null
+        ) : this()
         {
-            MName = mName;
-            MTransformation = mTransformation;
-            MParent = mParent;
-            MNumChildren = mNumChildren;
-            MChildren = mChildren;
-            MNumMeshes = mNumMeshes;
-            MMeshes = mMeshes;
-            MMetaData = mMetaData;
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mTransformation is not null)
+            {
+                MTransformation = mTransformation.Value;
+            }
+
+            if (mParent is not null)
+            {
+                MParent = mParent;
+            }
+
+            if (mNumChildren is not null)
+            {
+                MNumChildren = mNumChildren.Value;
+            }
+
+            if (mChildren is not null)
+            {
+                MChildren = mChildren;
+            }
+
+            if (mNumMeshes is not null)
+            {
+                MNumMeshes = mNumMeshes.Value;
+            }
+
+            if (mMeshes is not null)
+            {
+                MMeshes = mMeshes;
+            }
+
+            if (mMetaData is not null)
+            {
+                MMetaData = mMetaData;
+            }
         }
 
 

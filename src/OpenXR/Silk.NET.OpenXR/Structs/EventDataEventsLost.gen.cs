@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public EventDataEventsLost
         (
-            StructureType type = StructureType.TypeEventDataEventsLost,
-            void* next = default,
-            uint lostEventCount = default
-        )
+            StructureType? type = StructureType.TypeEventDataEventsLost,
+            void* next = null,
+            uint? lostEventCount = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            LostEventCount = lostEventCount;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (lostEventCount is not null)
+            {
+                LostEventCount = lostEventCount.Value;
+            }
         }
 
 /// <summary></summary>

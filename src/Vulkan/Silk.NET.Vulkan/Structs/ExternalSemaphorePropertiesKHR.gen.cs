@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ExternalSemaphorePropertiesKHR
         (
-            StructureType sType = StructureType.ExternalSemaphoreProperties,
-            void* pNext = default,
-            ExternalSemaphoreHandleTypeFlags exportFromImportedHandleTypes = default,
-            ExternalSemaphoreHandleTypeFlags compatibleHandleTypes = default,
-            ExternalSemaphoreFeatureFlags externalSemaphoreFeatures = default
-        )
+            StructureType? sType = StructureType.ExternalSemaphoreProperties,
+            void* pNext = null,
+            ExternalSemaphoreHandleTypeFlags? exportFromImportedHandleTypes = null,
+            ExternalSemaphoreHandleTypeFlags? compatibleHandleTypes = null,
+            ExternalSemaphoreFeatureFlags? externalSemaphoreFeatures = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-            CompatibleHandleTypes = compatibleHandleTypes;
-            ExternalSemaphoreFeatures = externalSemaphoreFeatures;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (exportFromImportedHandleTypes is not null)
+            {
+                ExportFromImportedHandleTypes = exportFromImportedHandleTypes.Value;
+            }
+
+            if (compatibleHandleTypes is not null)
+            {
+                CompatibleHandleTypes = compatibleHandleTypes.Value;
+            }
+
+            if (externalSemaphoreFeatures is not null)
+            {
+                ExternalSemaphoreFeatures = externalSemaphoreFeatures.Value;
+            }
         }
 
 /// <summary></summary>

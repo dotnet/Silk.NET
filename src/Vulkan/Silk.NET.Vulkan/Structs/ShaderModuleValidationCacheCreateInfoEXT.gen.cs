@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ShaderModuleValidationCacheCreateInfoEXT
         (
-            StructureType sType = StructureType.ShaderModuleValidationCacheCreateInfoExt,
-            void* pNext = default,
-            ValidationCacheEXT validationCache = default
-        )
+            StructureType? sType = StructureType.ShaderModuleValidationCacheCreateInfoExt,
+            void* pNext = null,
+            ValidationCacheEXT? validationCache = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ValidationCache = validationCache;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (validationCache is not null)
+            {
+                ValidationCache = validationCache.Value;
+            }
         }
 
 /// <summary></summary>

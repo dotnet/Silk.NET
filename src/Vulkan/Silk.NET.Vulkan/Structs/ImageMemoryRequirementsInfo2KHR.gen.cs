@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ImageMemoryRequirementsInfo2KHR
         (
-            StructureType sType = StructureType.ImageMemoryRequirementsInfo2,
-            void* pNext = default,
-            Image image = default
-        )
+            StructureType? sType = StructureType.ImageMemoryRequirementsInfo2,
+            void* pNext = null,
+            Image? image = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Image = image;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
         }
 
 /// <summary></summary>

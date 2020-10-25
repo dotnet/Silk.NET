@@ -14,12 +14,12 @@ namespace Silk.NET.GLFW
         /// Gets or sets the width of this image in pixels.
         /// </summary>
         public int Width { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the height of this image in pixels.
         /// </summary>
         public int Height { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the image's bytes.
         /// </summary>

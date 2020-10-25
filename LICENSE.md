@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2019 Ultz
+Copyright (c) 2019-2020 Ultz Limited
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SpecializationMapEntry
         (
-            uint constantID = default,
-            uint offset = default,
-            UIntPtr size = default
-        )
+            uint? constantID = null,
+            uint? offset = null,
+            UIntPtr? size = null
+        ) : this()
         {
-            ConstantID = constantID;
-            Offset = offset;
-            Size = size;
+            if (constantID is not null)
+            {
+                ConstantID = constantID.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

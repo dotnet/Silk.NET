@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Assimp
     {
         public VectorKey
         (
-            double mTime = default,
-            System.Numerics.Vector3 mValue = default
-        )
+            double? mTime = null,
+            System.Numerics.Vector3? mValue = null
+        ) : this()
         {
-            MTime = mTime;
-            MValue = mValue;
+            if (mTime is not null)
+            {
+                MTime = mTime.Value;
+            }
+
+            if (mValue is not null)
+            {
+                MValue = mValue.Value;
+            }
         }
 
 

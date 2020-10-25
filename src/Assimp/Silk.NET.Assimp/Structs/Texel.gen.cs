@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Assimp
     {
         public Texel
         (
-            byte b = default,
-            byte g = default,
-            byte r = default,
-            byte a = default
-        )
+            byte? b = null,
+            byte? g = null,
+            byte? r = null,
+            byte? a = null
+        ) : this()
         {
-            B = b;
-            G = g;
-            R = r;
-            A = a;
+            if (b is not null)
+            {
+                B = b.Value;
+            }
+
+            if (g is not null)
+            {
+                G = g.Value;
+            }
+
+            if (r is not null)
+            {
+                R = r.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
 

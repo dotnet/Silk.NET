@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Vulkan
     {
         public CommandBufferInheritanceInfo
         (
-            StructureType sType = StructureType.CommandBufferInheritanceInfo,
-            void* pNext = default,
-            RenderPass renderPass = default,
-            uint subpass = default,
-            Framebuffer framebuffer = default,
-            Bool32 occlusionQueryEnable = default,
-            QueryControlFlags queryFlags = default,
-            QueryPipelineStatisticFlags pipelineStatistics = default
-        )
+            StructureType? sType = StructureType.CommandBufferInheritanceInfo,
+            void* pNext = null,
+            RenderPass? renderPass = null,
+            uint? subpass = null,
+            Framebuffer? framebuffer = null,
+            Bool32? occlusionQueryEnable = null,
+            QueryControlFlags? queryFlags = null,
+            QueryPipelineStatisticFlags? pipelineStatistics = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            RenderPass = renderPass;
-            Subpass = subpass;
-            Framebuffer = framebuffer;
-            OcclusionQueryEnable = occlusionQueryEnable;
-            QueryFlags = queryFlags;
-            PipelineStatistics = pipelineStatistics;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (renderPass is not null)
+            {
+                RenderPass = renderPass.Value;
+            }
+
+            if (subpass is not null)
+            {
+                Subpass = subpass.Value;
+            }
+
+            if (framebuffer is not null)
+            {
+                Framebuffer = framebuffer.Value;
+            }
+
+            if (occlusionQueryEnable is not null)
+            {
+                OcclusionQueryEnable = occlusionQueryEnable.Value;
+            }
+
+            if (queryFlags is not null)
+            {
+                QueryFlags = queryFlags.Value;
+            }
+
+            if (pipelineStatistics is not null)
+            {
+                PipelineStatistics = pipelineStatistics.Value;
+            }
         }
 
 /// <summary></summary>

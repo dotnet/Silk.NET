@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceIndexTypeUint8FeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceIndexTypeUint8FeaturesExt,
-            void* pNext = default,
-            Bool32 indexTypeUint8 = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceIndexTypeUint8FeaturesExt,
+            void* pNext = null,
+            Bool32? indexTypeUint8 = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            IndexTypeUint8 = indexTypeUint8;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (indexTypeUint8 is not null)
+            {
+                IndexTypeUint8 = indexTypeUint8.Value;
+            }
         }
 
 /// <summary></summary>

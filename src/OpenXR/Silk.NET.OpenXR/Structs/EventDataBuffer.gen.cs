@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenXR
     {
         public EventDataBuffer
         (
-            StructureType type = StructureType.TypeEventDataBuffer,
-            void* next = default
-        )
+            StructureType? type = StructureType.TypeEventDataBuffer,
+            void* next = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 /// <summary></summary>

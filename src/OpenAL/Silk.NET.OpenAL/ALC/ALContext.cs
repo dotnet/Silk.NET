@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -85,7 +85,7 @@ namespace Silk.NET.OpenAL
         public static unsafe ALContext GetApi()
         {
             var ctx = new MultiNativeContext
-                (new DefaultNativeContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
             var ret = new ALContext(ctx);
             ctx.Contexts[1] = new LamdaNativeContext(
                 x =>
@@ -123,7 +123,8 @@ namespace Silk.NET.OpenAL
         /// <inheritdoc cref="MakeContextCurrent(Context*)" />
         public bool MakeContextCurrent(IntPtr context)
         {
-            unsafe {
+            unsafe
+            {
                 return MakeContextCurrent((Context*) context);
             }
         }
@@ -131,7 +132,8 @@ namespace Silk.NET.OpenAL
         /// <inheritdoc cref="GetCurrentContext" />
         public IntPtr GetCurrentContextHandle()
         {
-            unsafe {
+            unsafe
+            {
                 return new IntPtr(GetCurrentContext());
             }
         }

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ExternalImageFormatPropertiesKHR
         (
-            StructureType sType = StructureType.ExternalImageFormatProperties,
-            void* pNext = default,
-            ExternalMemoryProperties externalMemoryProperties = default
-        )
+            StructureType? sType = StructureType.ExternalImageFormatProperties,
+            void* pNext = null,
+            ExternalMemoryProperties? externalMemoryProperties = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ExternalMemoryProperties = externalMemoryProperties;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (externalMemoryProperties is not null)
+            {
+                ExternalMemoryProperties = externalMemoryProperties.Value;
+            }
         }
 
 /// <summary></summary>

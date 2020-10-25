@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public SessionCreateInfoOverlayEXTX
         (
-            StructureType type = StructureType.TypeSessionCreateInfoOverlayExtx,
-            void* next = default,
-            OverlaySessionCreateFlagsEXTX createFlags = default,
-            uint sessionLayersPlacement = default
-        )
+            StructureType? type = StructureType.TypeSessionCreateInfoOverlayExtx,
+            void* next = null,
+            OverlaySessionCreateFlagsEXTX? createFlags = null,
+            uint? sessionLayersPlacement = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            CreateFlags = createFlags;
-            SessionLayersPlacement = sessionLayersPlacement;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (createFlags is not null)
+            {
+                CreateFlags = createFlags.Value;
+            }
+
+            if (sessionLayersPlacement is not null)
+            {
+                SessionLayersPlacement = sessionLayersPlacement.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public BindImageMemoryInfo
         (
-            StructureType sType = StructureType.BindImageMemoryInfo,
-            void* pNext = default,
-            Image image = default,
-            DeviceMemory memory = default,
-            ulong memoryOffset = default
-        )
+            StructureType? sType = StructureType.BindImageMemoryInfo,
+            void* pNext = null,
+            Image? image = null,
+            DeviceMemory? memory = null,
+            ulong? memoryOffset = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Image = image;
-            Memory = memory;
-            MemoryOffset = memoryOffset;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
+
+            if (memory is not null)
+            {
+                Memory = memory.Value;
+            }
+
+            if (memoryOffset is not null)
+            {
+                MemoryOffset = memoryOffset.Value;
+            }
         }
 
 /// <summary></summary>

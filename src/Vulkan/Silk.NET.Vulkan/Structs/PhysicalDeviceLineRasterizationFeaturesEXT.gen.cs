@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceLineRasterizationFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceLineRasterizationFeaturesExt,
-            void* pNext = default,
-            Bool32 rectangularLines = default,
-            Bool32 bresenhamLines = default,
-            Bool32 smoothLines = default,
-            Bool32 stippledRectangularLines = default,
-            Bool32 stippledBresenhamLines = default,
-            Bool32 stippledSmoothLines = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceLineRasterizationFeaturesExt,
+            void* pNext = null,
+            Bool32? rectangularLines = null,
+            Bool32? bresenhamLines = null,
+            Bool32? smoothLines = null,
+            Bool32? stippledRectangularLines = null,
+            Bool32? stippledBresenhamLines = null,
+            Bool32? stippledSmoothLines = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            RectangularLines = rectangularLines;
-            BresenhamLines = bresenhamLines;
-            SmoothLines = smoothLines;
-            StippledRectangularLines = stippledRectangularLines;
-            StippledBresenhamLines = stippledBresenhamLines;
-            StippledSmoothLines = stippledSmoothLines;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (rectangularLines is not null)
+            {
+                RectangularLines = rectangularLines.Value;
+            }
+
+            if (bresenhamLines is not null)
+            {
+                BresenhamLines = bresenhamLines.Value;
+            }
+
+            if (smoothLines is not null)
+            {
+                SmoothLines = smoothLines.Value;
+            }
+
+            if (stippledRectangularLines is not null)
+            {
+                StippledRectangularLines = stippledRectangularLines.Value;
+            }
+
+            if (stippledBresenhamLines is not null)
+            {
+                StippledBresenhamLines = stippledBresenhamLines.Value;
+            }
+
+            if (stippledSmoothLines is not null)
+            {
+                StippledSmoothLines = stippledSmoothLines.Value;
+            }
         }
 
 /// <summary></summary>

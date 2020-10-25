@@ -40,15 +40,17 @@ namespace Silk.NET.OpenAL.Extensions.EXT
             int bufferSize = 4096
         )
         {
-            if (frequency <= 0) {
+            if (frequency <= 0)
+            {
                 throw new ArgumentOutOfRangeException(nameof(frequency));
             }
 
-            if (bufferSize <= 0) {
+            if (bufferSize <= 0)
+            {
                 throw new ArgumentOutOfRangeException(nameof(bufferSize));
             }
 
-            var actualSampleFormat = sampleFormat ?? (TBufferFormat) (object) BufferFormat.Mono16;
+            var actualSampleFormat = sampleFormat ?? (TBufferFormat)(object)BufferFormat.Mono16;
 
             _captureAPI = captureAPI;
 
@@ -57,12 +59,14 @@ namespace Silk.NET.OpenAL.Extensions.EXT
 
             _handle = _captureAPI.CaptureOpenDevice(deviceName, frequency, actualSampleFormat, bufferSize);
 
-            if (_handle == null) {
+            if (_handle == null)
+            {
                 CurrentDevice = "IntPtr.Zero";
                 _handle = _captureAPI.CaptureOpenDevice(null, frequency, actualSampleFormat, bufferSize);
             }
 
-            if (_handle == null) {
+            if (_handle == null)
+            {
                 // Everything we tried failed. Capture may not be supported, bail out.
                 CurrentDevice = "None";
 
@@ -88,7 +92,8 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         {
             get
             {
-                unsafe {
+                unsafe
+                {
                     return _captureAPI.GetAvailableSamples(_handle);
                 }
             }
@@ -112,13 +117,17 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         /// <inheritdoc />
         public void Dispose()
         {
-            if (_isDisposed) {
+            if (_isDisposed)
+            {
                 return;
             }
 
-            unsafe {
-                if (_handle != null) {
-                    if (IsRunning) {
+            unsafe
+            {
+                if (_handle != null)
+                {
+                    if (IsRunning)
+                    {
                         Stop();
                     }
 
@@ -136,7 +145,8 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         /// </summary>
         public void Start()
         {
-            unsafe {
+            unsafe
+            {
                 _captureAPI.CaptureStart(_handle);
             }
 
@@ -148,7 +158,8 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         /// </summary>
         public void Stop()
         {
-            unsafe {
+            unsafe
+            {
                 _captureAPI.CaptureStop(_handle);
             }
 
@@ -178,11 +189,13 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         public void CaptureSamples<TManagedFormat>(int sampleCount, in TManagedFormat[] buffer)
             where TManagedFormat : unmanaged
         {
-            if (buffer == null) {
+            if (buffer == null)
+            {
                 throw new ArgumentNullException(nameof(buffer));
             }
 
-            unsafe {
+            unsafe
+            {
                 _captureAPI.CaptureSamples(_handle, SampleFormat, sampleCount, in buffer);
             }
         }

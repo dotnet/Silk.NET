@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Linq;
 using Silk.NET.Input;
@@ -65,14 +65,19 @@ namespace MonitorPlayground
                     }
                 }
 
+                if (input.Keyboards[0].IsKeyPressed(Key.Space))
+                {
+                    window.Center();
+                }
+
                 if (input.Keyboards[0].IsKeyPressed(Key.Escape))
                 {
                     window.Close();
                 }
-                
+
                 input.Mice[0].Position = new PointF(window.Size.Width / 2f, window.Size.Height / 2f);
             };
-            
+
             window.Run();
         }
     }

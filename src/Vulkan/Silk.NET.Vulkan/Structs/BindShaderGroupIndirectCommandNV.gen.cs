@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Vulkan
     {
         public BindShaderGroupIndirectCommandNV
         (
-            uint groupIndex = default
-        )
+            uint? groupIndex = null
+        ) : this()
         {
-            GroupIndex = groupIndex;
+            if (groupIndex is not null)
+            {
+                GroupIndex = groupIndex.Value;
+            }
         }
 
 /// <summary></summary>

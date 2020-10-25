@@ -28,7 +28,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetDouble(target, index, out data.GetPinnableReference());
         }
 
+        public static unsafe void GetDouble(this ArbViewportArray thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<double> data)
+        {
+            // SpanOverloader
+            thisApi.GetDouble(target, index, out data.GetPinnableReference());
+        }
+
         public static unsafe void GetFloat(this ArbViewportArray thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<float> data)
+        {
+            // SpanOverloader
+            thisApi.GetFloat(target, index, out data.GetPinnableReference());
+        }
+
+        public static unsafe void GetFloat(this ArbViewportArray thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<float> data)
         {
             // SpanOverloader
             thisApi.GetFloat(target, index, out data.GetPinnableReference());

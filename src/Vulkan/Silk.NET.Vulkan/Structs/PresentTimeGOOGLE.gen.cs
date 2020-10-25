@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public PresentTimeGOOGLE
         (
-            uint presentID = default,
-            ulong desiredPresentTime = default
-        )
+            uint? presentID = null,
+            ulong? desiredPresentTime = null
+        ) : this()
         {
-            PresentID = presentID;
-            DesiredPresentTime = desiredPresentTime;
+            if (presentID is not null)
+            {
+                PresentID = presentID.Value;
+            }
+
+            if (desiredPresentTime is not null)
+            {
+                DesiredPresentTime = desiredPresentTime.Value;
+            }
         }
 
 /// <summary></summary>

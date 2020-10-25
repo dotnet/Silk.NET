@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Vulkan
     {
         public WriteDescriptorSet
         (
-            StructureType sType = StructureType.WriteDescriptorSet,
-            void* pNext = default,
-            DescriptorSet dstSet = default,
-            uint dstBinding = default,
-            uint dstArrayElement = default,
-            uint descriptorCount = default,
-            DescriptorType descriptorType = default,
-            DescriptorImageInfo* pImageInfo = default,
-            DescriptorBufferInfo* pBufferInfo = default,
-            BufferView* pTexelBufferView = default
-        )
+            StructureType? sType = StructureType.WriteDescriptorSet,
+            void* pNext = null,
+            DescriptorSet? dstSet = null,
+            uint? dstBinding = null,
+            uint? dstArrayElement = null,
+            uint? descriptorCount = null,
+            DescriptorType? descriptorType = null,
+            DescriptorImageInfo* pImageInfo = null,
+            DescriptorBufferInfo* pBufferInfo = null,
+            BufferView* pTexelBufferView = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DstSet = dstSet;
-            DstBinding = dstBinding;
-            DstArrayElement = dstArrayElement;
-            DescriptorCount = descriptorCount;
-            DescriptorType = descriptorType;
-            PImageInfo = pImageInfo;
-            PBufferInfo = pBufferInfo;
-            PTexelBufferView = pTexelBufferView;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dstSet is not null)
+            {
+                DstSet = dstSet.Value;
+            }
+
+            if (dstBinding is not null)
+            {
+                DstBinding = dstBinding.Value;
+            }
+
+            if (dstArrayElement is not null)
+            {
+                DstArrayElement = dstArrayElement.Value;
+            }
+
+            if (descriptorCount is not null)
+            {
+                DescriptorCount = descriptorCount.Value;
+            }
+
+            if (descriptorType is not null)
+            {
+                DescriptorType = descriptorType.Value;
+            }
+
+            if (pImageInfo is not null)
+            {
+                PImageInfo = pImageInfo;
+            }
+
+            if (pBufferInfo is not null)
+            {
+                PBufferInfo = pBufferInfo;
+            }
+
+            if (pTexelBufferView is not null)
+            {
+                PTexelBufferView = pTexelBufferView;
+            }
         }
 
 /// <summary></summary>

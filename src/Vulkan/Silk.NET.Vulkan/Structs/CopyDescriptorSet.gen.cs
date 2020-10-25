@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Vulkan
     {
         public CopyDescriptorSet
         (
-            StructureType sType = StructureType.CopyDescriptorSet,
-            void* pNext = default,
-            DescriptorSet srcSet = default,
-            uint srcBinding = default,
-            uint srcArrayElement = default,
-            DescriptorSet dstSet = default,
-            uint dstBinding = default,
-            uint dstArrayElement = default,
-            uint descriptorCount = default
-        )
+            StructureType? sType = StructureType.CopyDescriptorSet,
+            void* pNext = null,
+            DescriptorSet? srcSet = null,
+            uint? srcBinding = null,
+            uint? srcArrayElement = null,
+            DescriptorSet? dstSet = null,
+            uint? dstBinding = null,
+            uint? dstArrayElement = null,
+            uint? descriptorCount = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SrcSet = srcSet;
-            SrcBinding = srcBinding;
-            SrcArrayElement = srcArrayElement;
-            DstSet = dstSet;
-            DstBinding = dstBinding;
-            DstArrayElement = dstArrayElement;
-            DescriptorCount = descriptorCount;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (srcSet is not null)
+            {
+                SrcSet = srcSet.Value;
+            }
+
+            if (srcBinding is not null)
+            {
+                SrcBinding = srcBinding.Value;
+            }
+
+            if (srcArrayElement is not null)
+            {
+                SrcArrayElement = srcArrayElement.Value;
+            }
+
+            if (dstSet is not null)
+            {
+                DstSet = dstSet.Value;
+            }
+
+            if (dstBinding is not null)
+            {
+                DstBinding = dstBinding.Value;
+            }
+
+            if (dstArrayElement is not null)
+            {
+                DstArrayElement = dstArrayElement.Value;
+            }
+
+            if (descriptorCount is not null)
+            {
+                DescriptorCount = descriptorCount.Value;
+            }
         }
 
 /// <summary></summary>

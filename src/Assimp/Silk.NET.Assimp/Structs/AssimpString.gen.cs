@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Assimp
     {
         public AssimpString
         (
-            uint length = default
-        )
+            uint? length = null
+        ) : this()
         {
-            Length = length;
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
         }
 
 

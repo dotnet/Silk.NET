@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,18 +23,37 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceValueDataINTEL
         (
-            uint value32 = default,
-            ulong value64 = default,
-            float valueFloat = default,
-            Bool32 valueBool = default,
-            byte* valueString = default
-        )
+            uint? value32 = null,
+            ulong? value64 = null,
+            float? valueFloat = null,
+            Bool32? valueBool = null,
+            byte* valueString = null
+        ) : this()
         {
-            Value32 = value32;
-            Value64 = value64;
-            ValueFloat = valueFloat;
-            ValueBool = valueBool;
-            ValueString = valueString;
+            if (value32 is not null)
+            {
+                Value32 = value32.Value;
+            }
+
+            if (value64 is not null)
+            {
+                Value64 = value64.Value;
+            }
+
+            if (valueFloat is not null)
+            {
+                ValueFloat = valueFloat.Value;
+            }
+
+            if (valueBool is not null)
+            {
+                ValueBool = valueBool.Value;
+            }
+
+            if (valueString is not null)
+            {
+                ValueString = valueString;
+            }
         }
 
 /// <summary></summary>

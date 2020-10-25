@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
         (
-            StructureType sType = StructureType.PhysicalDevicePipelineExecutablePropertiesFeaturesKhr,
-            void* pNext = default,
-            Bool32 pipelineExecutableInfo = default
-        )
+            StructureType? sType = StructureType.PhysicalDevicePipelineExecutablePropertiesFeaturesKhr,
+            void* pNext = null,
+            Bool32? pipelineExecutableInfo = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PipelineExecutableInfo = pipelineExecutableInfo;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pipelineExecutableInfo is not null)
+            {
+                PipelineExecutableInfo = pipelineExecutableInfo.Value;
+            }
         }
 
 /// <summary></summary>

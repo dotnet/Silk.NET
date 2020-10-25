@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public DescriptorUpdateTemplateEntryKHR
         (
-            uint dstBinding = default,
-            uint dstArrayElement = default,
-            uint descriptorCount = default,
-            DescriptorType descriptorType = default,
-            UIntPtr offset = default,
-            UIntPtr stride = default
-        )
+            uint? dstBinding = null,
+            uint? dstArrayElement = null,
+            uint? descriptorCount = null,
+            DescriptorType? descriptorType = null,
+            UIntPtr? offset = null,
+            UIntPtr? stride = null
+        ) : this()
         {
-            DstBinding = dstBinding;
-            DstArrayElement = dstArrayElement;
-            DescriptorCount = descriptorCount;
-            DescriptorType = descriptorType;
-            Offset = offset;
-            Stride = stride;
+            if (dstBinding is not null)
+            {
+                DstBinding = dstBinding.Value;
+            }
+
+            if (dstArrayElement is not null)
+            {
+                DstArrayElement = dstArrayElement.Value;
+            }
+
+            if (descriptorCount is not null)
+            {
+                DescriptorCount = descriptorCount.Value;
+            }
+
+            if (descriptorType is not null)
+            {
+                DescriptorType = descriptorType.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
         }
 
 /// <summary></summary>

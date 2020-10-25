@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ImageFormatProperties2KHR
         (
-            StructureType sType = StructureType.ImageFormatProperties2,
-            void* pNext = default,
-            ImageFormatProperties imageFormatProperties = default
-        )
+            StructureType? sType = StructureType.ImageFormatProperties2,
+            void* pNext = null,
+            ImageFormatProperties? imageFormatProperties = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ImageFormatProperties = imageFormatProperties;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageFormatProperties is not null)
+            {
+                ImageFormatProperties = imageFormatProperties.Value;
+            }
         }
 
 /// <summary></summary>

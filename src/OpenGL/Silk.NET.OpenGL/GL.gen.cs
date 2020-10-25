@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -423,16 +424,16 @@ namespace Silk.NET.OpenGL
         public partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Flow(FlowDirection.Out)] out long @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferPointerv")]
-        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferPointerv")]
-        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] out void* @params);
+        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferPointerv")]
-        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferPointerv")]
-        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] out void* @params);
+        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferSubData")]
         public unsafe partial void GetNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* data);
@@ -621,28 +622,28 @@ namespace Silk.NET.OpenGL
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMapdv")]
         public unsafe partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] double* v);
@@ -741,28 +742,28 @@ namespace Silk.NET.OpenGL
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnPixelMapfv")]
         public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* values);
@@ -906,100 +907,100 @@ namespace Silk.NET.OpenGL
         public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
+        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
+        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
+        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
+        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T0 span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T0 column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+        public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] out T0 row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] out T1 column, [Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnTexImage")]
         public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
@@ -5288,11 +5289,23 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glGetDoublei_v")]
         public partial void GetDouble([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
 
+        [NativeApi(EntryPoint = "glGetDoublei_v")]
+        public unsafe partial void GetDouble([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
+
+        [NativeApi(EntryPoint = "glGetDoublei_v")]
+        public partial void GetDouble([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
+
         [NativeApi(EntryPoint = "glGetFloati_v")]
         public unsafe partial void GetFloat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetFloati_v")]
         public partial void GetFloat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
+
+        [NativeApi(EntryPoint = "glGetFloati_v")]
+        public unsafe partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
+
+        [NativeApi(EntryPoint = "glGetFloati_v")]
+        public partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetProgramBinary")]
         public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
@@ -5694,16 +5707,28 @@ namespace Silk.NET.OpenGL
         public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int v);
 
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+        public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+        public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary")]
+        public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary")]
+        public unsafe partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glShaderBinary")]
+        public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+
+        [NativeApi(EntryPoint = "glShaderBinary")]
+        public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glUseProgramStages")]
         public partial void UseProgramStages([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint stages, [Flow(FlowDirection.In)] uint program);
@@ -6989,6 +7014,12 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glGetInteger64i_v")]
         public partial void GetInteger64([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out long data);
 
+        [NativeApi(EntryPoint = "glGetInteger64i_v")]
+        public unsafe partial void GetInteger64([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] long* data);
+
+        [NativeApi(EntryPoint = "glGetInteger64i_v")]
+        public partial void GetInteger64([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out long data);
+
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
         public unsafe partial void GetMultisample([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val);
 
@@ -7291,6 +7322,12 @@ namespace Silk.NET.OpenGL
 
         [NativeApi(EntryPoint = "glGetIntegeri_v")]
         public partial void GetInteger([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out int data);
+
+        [NativeApi(EntryPoint = "glGetIntegeri_v")]
+        public unsafe partial void GetInteger([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] int* data);
+
+        [NativeApi(EntryPoint = "glGetIntegeri_v")]
+        public partial void GetInteger([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glGetUniformBlockIndex")]
         public unsafe partial uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] byte* uniformBlockName);

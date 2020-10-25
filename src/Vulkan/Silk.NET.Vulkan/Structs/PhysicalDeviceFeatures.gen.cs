@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,118 +22,337 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFeatures
         (
-            Bool32 robustBufferAccess = default,
-            Bool32 fullDrawIndexUint32 = default,
-            Bool32 imageCubeArray = default,
-            Bool32 independentBlend = default,
-            Bool32 geometryShader = default,
-            Bool32 tessellationShader = default,
-            Bool32 sampleRateShading = default,
-            Bool32 dualSrcBlend = default,
-            Bool32 logicOp = default,
-            Bool32 multiDrawIndirect = default,
-            Bool32 drawIndirectFirstInstance = default,
-            Bool32 depthClamp = default,
-            Bool32 depthBiasClamp = default,
-            Bool32 fillModeNonSolid = default,
-            Bool32 depthBounds = default,
-            Bool32 wideLines = default,
-            Bool32 largePoints = default,
-            Bool32 alphaToOne = default,
-            Bool32 multiViewport = default,
-            Bool32 samplerAnisotropy = default,
-            Bool32 textureCompressionEtc2 = default,
-            Bool32 textureCompressionAstcLdr = default,
-            Bool32 textureCompressionBC = default,
-            Bool32 occlusionQueryPrecise = default,
-            Bool32 pipelineStatisticsQuery = default,
-            Bool32 vertexPipelineStoresAndAtomics = default,
-            Bool32 fragmentStoresAndAtomics = default,
-            Bool32 shaderTessellationAndGeometryPointSize = default,
-            Bool32 shaderImageGatherExtended = default,
-            Bool32 shaderStorageImageExtendedFormats = default,
-            Bool32 shaderStorageImageMultisample = default,
-            Bool32 shaderStorageImageReadWithoutFormat = default,
-            Bool32 shaderStorageImageWriteWithoutFormat = default,
-            Bool32 shaderUniformBufferArrayDynamicIndexing = default,
-            Bool32 shaderSampledImageArrayDynamicIndexing = default,
-            Bool32 shaderStorageBufferArrayDynamicIndexing = default,
-            Bool32 shaderStorageImageArrayDynamicIndexing = default,
-            Bool32 shaderClipDistance = default,
-            Bool32 shaderCullDistance = default,
-            Bool32 shaderFloat64 = default,
-            Bool32 shaderInt64 = default,
-            Bool32 shaderInt16 = default,
-            Bool32 shaderResourceResidency = default,
-            Bool32 shaderResourceMinLod = default,
-            Bool32 sparseBinding = default,
-            Bool32 sparseResidencyBuffer = default,
-            Bool32 sparseResidencyImage2D = default,
-            Bool32 sparseResidencyImage3D = default,
-            Bool32 sparseResidency2Samples = default,
-            Bool32 sparseResidency4Samples = default,
-            Bool32 sparseResidency8Samples = default,
-            Bool32 sparseResidency16Samples = default,
-            Bool32 sparseResidencyAliased = default,
-            Bool32 variableMultisampleRate = default,
-            Bool32 inheritedQueries = default
-        )
+            Bool32? robustBufferAccess = null,
+            Bool32? fullDrawIndexUint32 = null,
+            Bool32? imageCubeArray = null,
+            Bool32? independentBlend = null,
+            Bool32? geometryShader = null,
+            Bool32? tessellationShader = null,
+            Bool32? sampleRateShading = null,
+            Bool32? dualSrcBlend = null,
+            Bool32? logicOp = null,
+            Bool32? multiDrawIndirect = null,
+            Bool32? drawIndirectFirstInstance = null,
+            Bool32? depthClamp = null,
+            Bool32? depthBiasClamp = null,
+            Bool32? fillModeNonSolid = null,
+            Bool32? depthBounds = null,
+            Bool32? wideLines = null,
+            Bool32? largePoints = null,
+            Bool32? alphaToOne = null,
+            Bool32? multiViewport = null,
+            Bool32? samplerAnisotropy = null,
+            Bool32? textureCompressionEtc2 = null,
+            Bool32? textureCompressionAstcLdr = null,
+            Bool32? textureCompressionBC = null,
+            Bool32? occlusionQueryPrecise = null,
+            Bool32? pipelineStatisticsQuery = null,
+            Bool32? vertexPipelineStoresAndAtomics = null,
+            Bool32? fragmentStoresAndAtomics = null,
+            Bool32? shaderTessellationAndGeometryPointSize = null,
+            Bool32? shaderImageGatherExtended = null,
+            Bool32? shaderStorageImageExtendedFormats = null,
+            Bool32? shaderStorageImageMultisample = null,
+            Bool32? shaderStorageImageReadWithoutFormat = null,
+            Bool32? shaderStorageImageWriteWithoutFormat = null,
+            Bool32? shaderUniformBufferArrayDynamicIndexing = null,
+            Bool32? shaderSampledImageArrayDynamicIndexing = null,
+            Bool32? shaderStorageBufferArrayDynamicIndexing = null,
+            Bool32? shaderStorageImageArrayDynamicIndexing = null,
+            Bool32? shaderClipDistance = null,
+            Bool32? shaderCullDistance = null,
+            Bool32? shaderFloat64 = null,
+            Bool32? shaderInt64 = null,
+            Bool32? shaderInt16 = null,
+            Bool32? shaderResourceResidency = null,
+            Bool32? shaderResourceMinLod = null,
+            Bool32? sparseBinding = null,
+            Bool32? sparseResidencyBuffer = null,
+            Bool32? sparseResidencyImage2D = null,
+            Bool32? sparseResidencyImage3D = null,
+            Bool32? sparseResidency2Samples = null,
+            Bool32? sparseResidency4Samples = null,
+            Bool32? sparseResidency8Samples = null,
+            Bool32? sparseResidency16Samples = null,
+            Bool32? sparseResidencyAliased = null,
+            Bool32? variableMultisampleRate = null,
+            Bool32? inheritedQueries = null
+        ) : this()
         {
-            RobustBufferAccess = robustBufferAccess;
-            FullDrawIndexUint32 = fullDrawIndexUint32;
-            ImageCubeArray = imageCubeArray;
-            IndependentBlend = independentBlend;
-            GeometryShader = geometryShader;
-            TessellationShader = tessellationShader;
-            SampleRateShading = sampleRateShading;
-            DualSrcBlend = dualSrcBlend;
-            LogicOp = logicOp;
-            MultiDrawIndirect = multiDrawIndirect;
-            DrawIndirectFirstInstance = drawIndirectFirstInstance;
-            DepthClamp = depthClamp;
-            DepthBiasClamp = depthBiasClamp;
-            FillModeNonSolid = fillModeNonSolid;
-            DepthBounds = depthBounds;
-            WideLines = wideLines;
-            LargePoints = largePoints;
-            AlphaToOne = alphaToOne;
-            MultiViewport = multiViewport;
-            SamplerAnisotropy = samplerAnisotropy;
-            TextureCompressionEtc2 = textureCompressionEtc2;
-            TextureCompressionAstcLdr = textureCompressionAstcLdr;
-            TextureCompressionBC = textureCompressionBC;
-            OcclusionQueryPrecise = occlusionQueryPrecise;
-            PipelineStatisticsQuery = pipelineStatisticsQuery;
-            VertexPipelineStoresAndAtomics = vertexPipelineStoresAndAtomics;
-            FragmentStoresAndAtomics = fragmentStoresAndAtomics;
-            ShaderTessellationAndGeometryPointSize = shaderTessellationAndGeometryPointSize;
-            ShaderImageGatherExtended = shaderImageGatherExtended;
-            ShaderStorageImageExtendedFormats = shaderStorageImageExtendedFormats;
-            ShaderStorageImageMultisample = shaderStorageImageMultisample;
-            ShaderStorageImageReadWithoutFormat = shaderStorageImageReadWithoutFormat;
-            ShaderStorageImageWriteWithoutFormat = shaderStorageImageWriteWithoutFormat;
-            ShaderUniformBufferArrayDynamicIndexing = shaderUniformBufferArrayDynamicIndexing;
-            ShaderSampledImageArrayDynamicIndexing = shaderSampledImageArrayDynamicIndexing;
-            ShaderStorageBufferArrayDynamicIndexing = shaderStorageBufferArrayDynamicIndexing;
-            ShaderStorageImageArrayDynamicIndexing = shaderStorageImageArrayDynamicIndexing;
-            ShaderClipDistance = shaderClipDistance;
-            ShaderCullDistance = shaderCullDistance;
-            ShaderFloat64 = shaderFloat64;
-            ShaderInt64 = shaderInt64;
-            ShaderInt16 = shaderInt16;
-            ShaderResourceResidency = shaderResourceResidency;
-            ShaderResourceMinLod = shaderResourceMinLod;
-            SparseBinding = sparseBinding;
-            SparseResidencyBuffer = sparseResidencyBuffer;
-            SparseResidencyImage2D = sparseResidencyImage2D;
-            SparseResidencyImage3D = sparseResidencyImage3D;
-            SparseResidency2Samples = sparseResidency2Samples;
-            SparseResidency4Samples = sparseResidency4Samples;
-            SparseResidency8Samples = sparseResidency8Samples;
-            SparseResidency16Samples = sparseResidency16Samples;
-            SparseResidencyAliased = sparseResidencyAliased;
-            VariableMultisampleRate = variableMultisampleRate;
-            InheritedQueries = inheritedQueries;
+            if (robustBufferAccess is not null)
+            {
+                RobustBufferAccess = robustBufferAccess.Value;
+            }
+
+            if (fullDrawIndexUint32 is not null)
+            {
+                FullDrawIndexUint32 = fullDrawIndexUint32.Value;
+            }
+
+            if (imageCubeArray is not null)
+            {
+                ImageCubeArray = imageCubeArray.Value;
+            }
+
+            if (independentBlend is not null)
+            {
+                IndependentBlend = independentBlend.Value;
+            }
+
+            if (geometryShader is not null)
+            {
+                GeometryShader = geometryShader.Value;
+            }
+
+            if (tessellationShader is not null)
+            {
+                TessellationShader = tessellationShader.Value;
+            }
+
+            if (sampleRateShading is not null)
+            {
+                SampleRateShading = sampleRateShading.Value;
+            }
+
+            if (dualSrcBlend is not null)
+            {
+                DualSrcBlend = dualSrcBlend.Value;
+            }
+
+            if (logicOp is not null)
+            {
+                LogicOp = logicOp.Value;
+            }
+
+            if (multiDrawIndirect is not null)
+            {
+                MultiDrawIndirect = multiDrawIndirect.Value;
+            }
+
+            if (drawIndirectFirstInstance is not null)
+            {
+                DrawIndirectFirstInstance = drawIndirectFirstInstance.Value;
+            }
+
+            if (depthClamp is not null)
+            {
+                DepthClamp = depthClamp.Value;
+            }
+
+            if (depthBiasClamp is not null)
+            {
+                DepthBiasClamp = depthBiasClamp.Value;
+            }
+
+            if (fillModeNonSolid is not null)
+            {
+                FillModeNonSolid = fillModeNonSolid.Value;
+            }
+
+            if (depthBounds is not null)
+            {
+                DepthBounds = depthBounds.Value;
+            }
+
+            if (wideLines is not null)
+            {
+                WideLines = wideLines.Value;
+            }
+
+            if (largePoints is not null)
+            {
+                LargePoints = largePoints.Value;
+            }
+
+            if (alphaToOne is not null)
+            {
+                AlphaToOne = alphaToOne.Value;
+            }
+
+            if (multiViewport is not null)
+            {
+                MultiViewport = multiViewport.Value;
+            }
+
+            if (samplerAnisotropy is not null)
+            {
+                SamplerAnisotropy = samplerAnisotropy.Value;
+            }
+
+            if (textureCompressionEtc2 is not null)
+            {
+                TextureCompressionEtc2 = textureCompressionEtc2.Value;
+            }
+
+            if (textureCompressionAstcLdr is not null)
+            {
+                TextureCompressionAstcLdr = textureCompressionAstcLdr.Value;
+            }
+
+            if (textureCompressionBC is not null)
+            {
+                TextureCompressionBC = textureCompressionBC.Value;
+            }
+
+            if (occlusionQueryPrecise is not null)
+            {
+                OcclusionQueryPrecise = occlusionQueryPrecise.Value;
+            }
+
+            if (pipelineStatisticsQuery is not null)
+            {
+                PipelineStatisticsQuery = pipelineStatisticsQuery.Value;
+            }
+
+            if (vertexPipelineStoresAndAtomics is not null)
+            {
+                VertexPipelineStoresAndAtomics = vertexPipelineStoresAndAtomics.Value;
+            }
+
+            if (fragmentStoresAndAtomics is not null)
+            {
+                FragmentStoresAndAtomics = fragmentStoresAndAtomics.Value;
+            }
+
+            if (shaderTessellationAndGeometryPointSize is not null)
+            {
+                ShaderTessellationAndGeometryPointSize = shaderTessellationAndGeometryPointSize.Value;
+            }
+
+            if (shaderImageGatherExtended is not null)
+            {
+                ShaderImageGatherExtended = shaderImageGatherExtended.Value;
+            }
+
+            if (shaderStorageImageExtendedFormats is not null)
+            {
+                ShaderStorageImageExtendedFormats = shaderStorageImageExtendedFormats.Value;
+            }
+
+            if (shaderStorageImageMultisample is not null)
+            {
+                ShaderStorageImageMultisample = shaderStorageImageMultisample.Value;
+            }
+
+            if (shaderStorageImageReadWithoutFormat is not null)
+            {
+                ShaderStorageImageReadWithoutFormat = shaderStorageImageReadWithoutFormat.Value;
+            }
+
+            if (shaderStorageImageWriteWithoutFormat is not null)
+            {
+                ShaderStorageImageWriteWithoutFormat = shaderStorageImageWriteWithoutFormat.Value;
+            }
+
+            if (shaderUniformBufferArrayDynamicIndexing is not null)
+            {
+                ShaderUniformBufferArrayDynamicIndexing = shaderUniformBufferArrayDynamicIndexing.Value;
+            }
+
+            if (shaderSampledImageArrayDynamicIndexing is not null)
+            {
+                ShaderSampledImageArrayDynamicIndexing = shaderSampledImageArrayDynamicIndexing.Value;
+            }
+
+            if (shaderStorageBufferArrayDynamicIndexing is not null)
+            {
+                ShaderStorageBufferArrayDynamicIndexing = shaderStorageBufferArrayDynamicIndexing.Value;
+            }
+
+            if (shaderStorageImageArrayDynamicIndexing is not null)
+            {
+                ShaderStorageImageArrayDynamicIndexing = shaderStorageImageArrayDynamicIndexing.Value;
+            }
+
+            if (shaderClipDistance is not null)
+            {
+                ShaderClipDistance = shaderClipDistance.Value;
+            }
+
+            if (shaderCullDistance is not null)
+            {
+                ShaderCullDistance = shaderCullDistance.Value;
+            }
+
+            if (shaderFloat64 is not null)
+            {
+                ShaderFloat64 = shaderFloat64.Value;
+            }
+
+            if (shaderInt64 is not null)
+            {
+                ShaderInt64 = shaderInt64.Value;
+            }
+
+            if (shaderInt16 is not null)
+            {
+                ShaderInt16 = shaderInt16.Value;
+            }
+
+            if (shaderResourceResidency is not null)
+            {
+                ShaderResourceResidency = shaderResourceResidency.Value;
+            }
+
+            if (shaderResourceMinLod is not null)
+            {
+                ShaderResourceMinLod = shaderResourceMinLod.Value;
+            }
+
+            if (sparseBinding is not null)
+            {
+                SparseBinding = sparseBinding.Value;
+            }
+
+            if (sparseResidencyBuffer is not null)
+            {
+                SparseResidencyBuffer = sparseResidencyBuffer.Value;
+            }
+
+            if (sparseResidencyImage2D is not null)
+            {
+                SparseResidencyImage2D = sparseResidencyImage2D.Value;
+            }
+
+            if (sparseResidencyImage3D is not null)
+            {
+                SparseResidencyImage3D = sparseResidencyImage3D.Value;
+            }
+
+            if (sparseResidency2Samples is not null)
+            {
+                SparseResidency2Samples = sparseResidency2Samples.Value;
+            }
+
+            if (sparseResidency4Samples is not null)
+            {
+                SparseResidency4Samples = sparseResidency4Samples.Value;
+            }
+
+            if (sparseResidency8Samples is not null)
+            {
+                SparseResidency8Samples = sparseResidency8Samples.Value;
+            }
+
+            if (sparseResidency16Samples is not null)
+            {
+                SparseResidency16Samples = sparseResidency16Samples.Value;
+            }
+
+            if (sparseResidencyAliased is not null)
+            {
+                SparseResidencyAliased = sparseResidencyAliased.Value;
+            }
+
+            if (variableMultisampleRate is not null)
+            {
+                VariableMultisampleRate = variableMultisampleRate.Value;
+            }
+
+            if (inheritedQueries is not null)
+            {
+                InheritedQueries = inheritedQueries.Value;
+            }
         }
 
 /// <summary></summary>

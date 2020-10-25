@@ -39,7 +39,7 @@ namespace Silk.NET.GLFW
         /// <seealso cref="SetErrorCallback" />
         public static GlfwCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) =>
         {
-            var ex = new GlfwException($"{errorCode}: {description}") {ErrorCode = errorCode};
+            var ex = new GlfwException($"{errorCode}: {description}") { ErrorCode = errorCode };
             if (_isWindows)
             {
                 // we can actually be helpful on windows which is cool
@@ -3934,7 +3934,7 @@ namespace Silk.NET.GLFW
         /// <returns>The instance.</returns>
         public static Glfw GetApi()
         {
-            return new Glfw(new DefaultNativeContext(new GlfwLibraryNameContainer().GetLibraryName()));
+            return new Glfw(CreateDefaultContext(new GlfwLibraryNameContainer().GetLibraryName()));
         }
 
         /// <inheritdoc />

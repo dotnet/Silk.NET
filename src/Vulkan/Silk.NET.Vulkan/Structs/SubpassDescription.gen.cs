@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Vulkan
     {
         public SubpassDescription
         (
-            SubpassDescriptionFlags flags = default,
-            PipelineBindPoint pipelineBindPoint = default,
-            uint inputAttachmentCount = default,
-            AttachmentReference* pInputAttachments = default,
-            uint colorAttachmentCount = default,
-            AttachmentReference* pColorAttachments = default,
-            AttachmentReference* pResolveAttachments = default,
-            AttachmentReference* pDepthStencilAttachment = default,
-            uint preserveAttachmentCount = default,
-            uint* pPreserveAttachments = default
-        )
+            SubpassDescriptionFlags? flags = null,
+            PipelineBindPoint? pipelineBindPoint = null,
+            uint? inputAttachmentCount = null,
+            AttachmentReference* pInputAttachments = null,
+            uint? colorAttachmentCount = null,
+            AttachmentReference* pColorAttachments = null,
+            AttachmentReference* pResolveAttachments = null,
+            AttachmentReference* pDepthStencilAttachment = null,
+            uint? preserveAttachmentCount = null,
+            uint* pPreserveAttachments = null
+        ) : this()
         {
-            Flags = flags;
-            PipelineBindPoint = pipelineBindPoint;
-            InputAttachmentCount = inputAttachmentCount;
-            PInputAttachments = pInputAttachments;
-            ColorAttachmentCount = colorAttachmentCount;
-            PColorAttachments = pColorAttachments;
-            PResolveAttachments = pResolveAttachments;
-            PDepthStencilAttachment = pDepthStencilAttachment;
-            PreserveAttachmentCount = preserveAttachmentCount;
-            PPreserveAttachments = pPreserveAttachments;
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pipelineBindPoint is not null)
+            {
+                PipelineBindPoint = pipelineBindPoint.Value;
+            }
+
+            if (inputAttachmentCount is not null)
+            {
+                InputAttachmentCount = inputAttachmentCount.Value;
+            }
+
+            if (pInputAttachments is not null)
+            {
+                PInputAttachments = pInputAttachments;
+            }
+
+            if (colorAttachmentCount is not null)
+            {
+                ColorAttachmentCount = colorAttachmentCount.Value;
+            }
+
+            if (pColorAttachments is not null)
+            {
+                PColorAttachments = pColorAttachments;
+            }
+
+            if (pResolveAttachments is not null)
+            {
+                PResolveAttachments = pResolveAttachments;
+            }
+
+            if (pDepthStencilAttachment is not null)
+            {
+                PDepthStencilAttachment = pDepthStencilAttachment;
+            }
+
+            if (preserveAttachmentCount is not null)
+            {
+                PreserveAttachmentCount = preserveAttachmentCount.Value;
+            }
+
+            if (pPreserveAttachments is not null)
+            {
+                PPreserveAttachments = pPreserveAttachments;
+            }
         }
 
 /// <summary></summary>

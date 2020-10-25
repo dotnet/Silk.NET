@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public AabbPositionsKHR
         (
-            float minX = default,
-            float minY = default,
-            float minZ = default,
-            float maxX = default,
-            float maxY = default,
-            float maxZ = default
-        )
+            float? minX = null,
+            float? minY = null,
+            float? minZ = null,
+            float? maxX = null,
+            float? maxY = null,
+            float? maxZ = null
+        ) : this()
         {
-            MinX = minX;
-            MinY = minY;
-            MinZ = minZ;
-            MaxX = maxX;
-            MaxY = maxY;
-            MaxZ = maxZ;
+            if (minX is not null)
+            {
+                MinX = minX.Value;
+            }
+
+            if (minY is not null)
+            {
+                MinY = minY.Value;
+            }
+
+            if (minZ is not null)
+            {
+                MinZ = minZ.Value;
+            }
+
+            if (maxX is not null)
+            {
+                MaxX = maxX.Value;
+            }
+
+            if (maxY is not null)
+            {
+                MaxY = maxY.Value;
+            }
+
+            if (maxZ is not null)
+            {
+                MaxZ = maxZ.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public MemoryType
         (
-            MemoryPropertyFlags propertyFlags = default,
-            uint heapIndex = default
-        )
+            MemoryPropertyFlags? propertyFlags = null,
+            uint? heapIndex = null
+        ) : this()
         {
-            PropertyFlags = propertyFlags;
-            HeapIndex = heapIndex;
+            if (propertyFlags is not null)
+            {
+                PropertyFlags = propertyFlags.Value;
+            }
+
+            if (heapIndex is not null)
+            {
+                HeapIndex = heapIndex.Value;
+            }
         }
 
 /// <summary></summary>
