@@ -150,8 +150,6 @@ namespace Silk.NET.SilkTouch
                             continue; // diagnostic?
                         }
                         
-                        Debugger.Launch();
-                        
                         var c = countData.NamedArguments[0];
 
                         ExpressionSyntax count = c.Key switch
