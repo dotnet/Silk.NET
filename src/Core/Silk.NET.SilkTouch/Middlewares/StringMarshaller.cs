@@ -177,6 +177,29 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         );
+                        var alloced = ctx.ResolveVariable(id);
+                        ctx.AddSideEffect(ctx => ExpressionStatement(InvocationExpression(MemberAccessExpression
+                        (
+                            SyntaxKind.SimpleMemberAccessExpression,
+                            MemberAccessExpression
+                            (
+                                SyntaxKind.SimpleMemberAccessExpression,
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    MemberAccessExpression
+                                    (
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
+                                            IdentifierName("NET")
+                                        ), IdentifierName("Core")
+                                    ), IdentifierName("Native")
+                                ), IdentifierName("SilkMarshal")
+                            ), IdentifierName("AllocBStr")
+                        ), ArgumentList(SeparatedList(new[] { Argument(alloced.Value), Argument(count) })))));
+                       
                         
                         ctx.SetParameterToVariable(index, id);
                         ctx.ShouldPinParameter[index] = false;
