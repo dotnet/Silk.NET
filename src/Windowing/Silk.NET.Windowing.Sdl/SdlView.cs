@@ -205,6 +205,7 @@ namespace Silk.NET.Windowing.Sdl
                 while (Interlocked.CompareExchange(ref _continue, 0, 1) == 0 &&
                        (gotEvent = Sdl.WaitEventTimeout(&@event, WaitTimeout)) == 0)
                 {
+                    System.Diagnostics.Debug.WriteLine((EventType) @event.Common.Type);
                     // do nothing
                 }
 

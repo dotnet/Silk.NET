@@ -1,4 +1,5 @@
 using Android.App;
+using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl.Android;
 using Triangle;
 
@@ -9,6 +10,7 @@ namespace TriangleDroid
     {
         protected override void OnRun()
         {
+            Program.API = new GraphicsAPI(ContextAPI.OpenGLES, ContextProfile.Compatability, ContextFlags.Default, new APIVersion(3, 0));
             Program.Main(null!);
         }
     }

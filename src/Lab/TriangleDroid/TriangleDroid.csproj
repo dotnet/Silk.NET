@@ -113,6 +113,10 @@
       <Project>{f16edd0f-5abe-4b25-98ee-8397e55b5cba}</Project>
       <Name>Silk.NET.SDL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj">
+      <Project>{956f722c-dfd3-435e-9d2e-a0549c4d8bc0}</Project>
+      <Name>Silk.NET.Windowing.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj">
       <Project>{ff526329-094a-4b25-abc5-750d62e48101}</Project>
       <Name>Silk.NET.Windowing.Sdl</Name>

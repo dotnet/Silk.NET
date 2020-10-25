@@ -34,6 +34,7 @@ namespace Silk.NET.Windowing.Sdl.Android
 
             // SdlProvider.SetMainReady = true;
             Instance.Run();
+            Instance = null;
         }
 
         public override unsafe void LoadLibraries()

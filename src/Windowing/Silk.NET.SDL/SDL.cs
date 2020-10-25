@@ -909,7 +909,7 @@ namespace Silk.NET.SDL
             {
                 return null;
             }
-            
+
             ClearError();
             return new SdlException(str);
         }
@@ -917,7 +917,11 @@ namespace Silk.NET.SDL
         public static Sdl GetApi()
         {
             var libName = new SDLLibraryNameContainer().GetLibraryName();
+#if !__ANDROID__
             var ctx = CreateDefaultContext(libName);
+#else
+            var ctx = new OVERRIDE_1();
+#endif
             return new Sdl(ctx);
         }
 
