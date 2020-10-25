@@ -239,7 +239,7 @@ namespace Silk.NET.SilkTouch
                     returnLocal, ctx => InvocationExpression
                     (
                         MemberAccessExpression
-                            (SyntaxKind.SimpleMemberAccessExpression, _marshal, IdentifierName("StringFromPtr")),
+                            (SyntaxKind.SimpleMemberAccessExpression, _marshal, IdentifierName("PtrToString")),
                         ArgumentList
                         (
                             SeparatedList
@@ -300,7 +300,7 @@ namespace Silk.NET.SilkTouch
                                     MemberAccessExpression
                                     (
                                         SyntaxKind.SimpleMemberAccessExpression, _marshal,
-                                        IdentifierName("StringFromPtr")
+                                        IdentifierName("PtrToString")
                                     ), ArgumentList
                                     (
                                         SeparatedList
