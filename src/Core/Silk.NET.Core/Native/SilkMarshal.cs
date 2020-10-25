@@ -162,15 +162,23 @@ namespace Silk.NET.Core.Native
         /// <param name="encoding">The encoding of the string in memory.</param>
         /// <returns>The string read from memory.</returns>
         public static string PtrToString(IntPtr input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
-            => encoding switch
+        {
+            return encoding switch
             {
-                NativeStringEncoding.BStr => Marshal.PtrToStringBSTR(input),
-                NativeStringEncoding.LPStr => Marshal.PtrToStringAnsi(input),
-                NativeStringEncoding.LPTStr => Marshal.PtrToStringAuto(input),
+                NativeStringEncoding.BStr => BStrToString(input),
+                NativeStringEncoding.LPStr => AnsiToString(input),
+                NativeStringEncoding.LPTStr => Utf8PtrToString(input),
                 NativeStringEncoding.LPUTF8Str => Utf8PtrToString(input),
-                NativeStringEncoding.LPWStr => Marshal.PtrToStringUni(input),
+                NativeStringEncoding.LPWStr => WideToString(input),
                 _ => throw new ArgumentOutOfRangeException(nameof(encoding))
             };
+
+            static unsafe string BStrToString(IntPtr ptr)
+                => new string((char*) ptr, 0, (int)(*((uint*)ptr - 1) / sizeof(char)));
+
+            static unsafe string AnsiToString(IntPtr ptr) => new string((sbyte*) ptr);
+            static unsafe string WideToString(IntPtr ptr) => new string((char*) ptr);
+        }
 
         /// <summary>
         /// Reads a null-terminated string from global memory, with the given native encoding.
@@ -335,16 +343,12 @@ namespace Silk.NET.Core.Native
 
         private static unsafe string Utf8PtrToString(IntPtr ptr)
         {
-#if NETCOREAPP3_1 || NET5_0
-            return Marshal.PtrToStringUTF8(ptr);
-#else
             var span = new Span<byte>((void*) ptr, int.MaxValue);
             span = span.Slice(0, span.IndexOf(default(byte)));
             fixed (byte* bytes = span)
             {
                 return Encoding.UTF8.GetString(bytes, span.Length);
             }
-#endif
         }
 
         // "Unsafe" methods
