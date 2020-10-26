@@ -45,6 +45,7 @@ namespace Silk.NET.Input
         /// keyboard.
         /// Not required on desktop (it does nothing), but recommended to ensure easy porting to other platforms.
         /// </summary>
+        /// <seealso cref="EndInput"/>
         void BeginInput();
 
         /// <summary>
