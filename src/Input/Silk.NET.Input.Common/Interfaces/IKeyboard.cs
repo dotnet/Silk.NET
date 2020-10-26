@@ -43,11 +43,13 @@ namespace Silk.NET.Input
         /// <summary>
         /// Begins taking keyboard input. Required on mobile, where keyboard input is usually delivered via an on-screen
         /// keyboard.
+        /// Not required on desktop (it does nothing), but recommended to ensure easy porting to other platforms.
         /// </summary>
         void BeginInput();
 
         /// <summary>
         /// Ends taking keyboard input. Required on mobile, where this method closes the on-screen keyboard.
+        /// Not required on desktop (it does nothing), but recommended to ensure easy porting to other platforms.
         /// </summary>
         /// <seealso cref="BeginInput"/>
         void EndInput();
