@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFrameworks>netcoreapp3;netstandard2.0</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;netstandard2.0</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
