@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using SampleBase;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
+using SdlProvider = Silk.NET.SDL.SdlProvider;
 
 namespace Triangle
 {
@@ -27,22 +28,28 @@ namespace Triangle
         private static IWindow _window;
 #endif
         private static Shader _shader;
+        
+        public static GraphicsAPI API { get; set; } = GraphicsAPI.Default;
 
         public static void Main(string[] args)
         {
+            //SdlProvider.SetMainReady = true;
 #if MINIMAL
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;
             opts.UpdatesPerSecond = 90;
+            opts.API = API;
             opts.VSync = false;
             _window = Window.GetView(opts);
 #else
             var opts = WindowOptions.Default;
             opts.FramesPerSecond = 90;
+            opts.API = API;
             opts.UpdatesPerSecond = 90;
             _window = Window.Create(opts);
 #endif
             _window.Load += Load;
+            _window.Load += InputTest.Program.OnLoad(_window);
             _window.Render += RenderFrame;
             _window.Update += UpdateFrame;
             _window.Resize += Resize;
@@ -53,6 +60,13 @@ namespace Triangle
         private static unsafe void Load()
         {
             _gl = GL.GetApi(_window);
+            Console.WriteLine("=== BEGIN OPENGL INFORMATION");
+            foreach (StringName val in Enum.GetValues(typeof(StringName)))
+            {
+                Console.WriteLine($"{val} = {_gl.GetStringS(val)}");
+            }
+            Console.WriteLine("=== END OPENGL INFORMATION");
+            
             _gl.Enable(GLEnum.DebugOutput);
             _gl.Enable(GLEnum.DebugOutputSynchronous);
             _gl.DebugMessageCallback(OnDebug, null);
@@ -112,6 +126,7 @@ namespace Triangle
 
         private static void End()
         {
+            Console.WriteLine("Ending...");
             _gl.BindBuffer(GLEnum.ArrayBuffer, 0);
             _gl.BindVertexArray(0);
             _gl.UseProgram(0);

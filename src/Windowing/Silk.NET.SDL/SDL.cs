@@ -8,6 +8,9 @@ using Silk.NET.Core.Contexts;
 
 namespace Silk.NET.SDL
 {
+#if __ANDROID__
+    [PInvokeOverride("libSDL2.so")]
+#endif
     public partial class Sdl
     {
         public const uint InitTimer = 0x00000001;
@@ -906,14 +909,20 @@ namespace Silk.NET.SDL
             {
                 return null;
             }
-            
+
             ClearError();
             return new SdlException(str);
         }
 
         public static Sdl GetApi()
         {
-            return new Sdl(CreateDefaultContext(new SDLLibraryNameContainer().GetLibraryName()));
+            var libName = new SDLLibraryNameContainer().GetLibraryName();
+#if !__ANDROID__
+            var ctx = CreateDefaultContext(libName);
+#else
+            var ctx = new OVERRIDE_1();
+#endif
+            return new Sdl(ctx);
         }
 
         public override bool IsExtensionPresent(string extension) => GLExtensionSupported(extension) == SdlBool.True;

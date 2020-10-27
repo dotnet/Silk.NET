@@ -165,6 +165,12 @@ namespace Silk.NET.OpenGL
         public void GetShaderInfoLog(uint shader, out string info)
         {
             GetShader(shader, GLEnum.InfoLogLength, out var length2);
+            if (length2 <= 0)
+            {
+                info = string.Empty;
+                return;
+            }
+            
             var length = (uint) length2;
             GetShaderInfoLog(shader, length * 2, out length, out info);
             info = info.Substring(0, (int) length);

@@ -40,6 +40,7 @@ namespace Silk.NET.Windowing.Sdl
             }
 
             _ctx = _view.Sdl.GLCreateContext(_view.SdlWindow);
+            _view.Sdl.ThrowError();
         }
 
         public void Dispose() => _view.Sdl.GLDeleteContext(_ctx);

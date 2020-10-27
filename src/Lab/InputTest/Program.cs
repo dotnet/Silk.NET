@@ -9,7 +9,7 @@ using MouseButton = Silk.NET.Input.MouseButton;
 
 namespace InputTest
 {
-    internal class Program
+    public class Program
     {
         private static void Main()
         {
@@ -19,7 +19,12 @@ namespace InputTest
             opts.FramesPerSecond = 60;
             opts.UpdatesPerSecond = 60;
             var window = Window.Create(opts);
-            window.Load += () =>
+            window.Load += OnLoad(window);
+            window.Run();
+        }
+
+        public static Action OnLoad(IView window) =>
+            () =>
             {
                 var input = window.CreateInput();
                 input.ConnectionChanged += DoConnect;
@@ -53,8 +58,6 @@ namespace InputTest
                 //    Debug.WriteLine(input.Mice[0].ScrollWheels[0].X + " " + input.Mice[0].ScrollWheels[0].Y);
                 //};
             };
-            window.Run();
-        }
 
         private static void GamepadOnTriggerMoved(IGamepad g, Trigger t)
         {
