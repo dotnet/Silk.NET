@@ -641,10 +641,20 @@ namespace GenericMaths
             scope = ProcessScope(scope);
 
             // this implies
-            // - we only care for the first return variable.
+            // - we only care for the first (depth-first) return variable.
             // - we assume all calls to be pure.
-            // - the first and only return has to be in the outermost scope!
-            var firstReturn = scope.Scopables.OfType<ReturnVariable>().FirstOrDefault();
+            ReturnVariable? firstReturn = null;
+            Stack<Scope> toSearch = new Stack<Scope>();
+            toSearch.Push(scope);
+            while (firstReturn is null && toSearch.Count > 0)
+            {
+                var v = toSearch.Pop();
+                firstReturn = v.Scopables.OfType<ReturnVariable>().FirstOrDefault();
+                foreach (var s in v.Scopables.OfType<Scope>())
+                {
+                    toSearch.Push(s);
+                }
+            }
 
             if (firstReturn is null)
                 throw new DiagnosticException(Diagnostic.Create(Diagnostics.NoReturn, null));
