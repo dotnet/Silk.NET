@@ -178,6 +178,17 @@ namespace GenericMathsGenerator
             }
         }
 
+        public override void VisitBlock(IBlockOperation operation)
+        {
+            _currentLocation = operation.Syntax.GetLocation();
+            
+            _debugScopeBuilder.Begin('S', $"BEGIN SCOPE");
+            BeginScope();
+            base.VisitBlock(operation);
+            EndScope();
+            _debugScopeBuilder.End();
+        }
+
         public override void VisitSimpleAssignment(ISimpleAssignmentOperation operation)
         {
             if (operation.Target is ILocalReferenceOperation lro)
