@@ -20,6 +20,7 @@ namespace GenericMathsGenerator
     {
         private ITypeSymbol _floatType;
         private ITypeSymbol _intType;
+        private ITypeSymbol _boolType;
         private int _returnCount = 0;
         private Dictionary<string, IVariable> _locals;
         private List<LocalReferenceValue> _localReferences;
@@ -138,6 +139,7 @@ namespace GenericMathsGenerator
             _localReferences = new List<LocalReferenceValue>();
             _floatType = context.Compilation.GetSpecialType(SpecialType.System_Single);
             _intType = context.Compilation.GetSpecialType(SpecialType.System_Int32);
+            _boolType = context.Compilation.GetSpecialType(SpecialType.System_Boolean);
             try
             {
                 _currentLocation = root.Syntax.GetLocation();
@@ -163,6 +165,18 @@ namespace GenericMathsGenerator
             file.Flush();
             file.Dispose();
             return _scope;
+        }
+
+        private Type AsInternalType(ITypeSymbol symbol)
+        {
+            if (SymbolEqualityComparer.IncludeNullability.Equals(symbol, _boolType))
+                return Type.Boolean;
+
+            if (SymbolEqualityComparer.IncludeNullability.Equals(symbol, _intType)
+            || SymbolEqualityComparer.IncludeNullability.Equals(symbol, _floatType))
+                return Type.Numeric;
+
+            return Type.Unknown;
         }
 
         private void ResolveReferences()
@@ -208,7 +222,7 @@ namespace GenericMathsGenerator
             _currentLocation = operation.Syntax.GetLocation();
             
             _debugScopeBuilder.Begin('V', $"Ref {operation.Field.Name}");
-            BeginValue(new FieldReferenceValue(operation.Field.Name));
+            BeginValue(new FieldReferenceValue(operation.Field.Name, AsInternalType(operation.Field.Type)));
             base.VisitFieldReference(operation);
             EndValue();
             _debugScopeBuilder.End();
@@ -219,7 +233,7 @@ namespace GenericMathsGenerator
             _currentLocation = operation.Syntax.GetLocation();
             
             _debugScopeBuilder.Begin('V', $"Ref {operation.Property.Name}");
-            BeginValue(new PropertyReferenceValue(operation.Property.Name));
+            BeginValue(new PropertyReferenceValue(operation.Property.Name, AsInternalType(operation.Property.Type)));
             base.VisitPropertyReference(operation);
             EndValue();
             _debugScopeBuilder.End();
@@ -230,7 +244,7 @@ namespace GenericMathsGenerator
             _currentLocation = operation.Syntax.GetLocation();
         
             _debugScopeBuilder.Begin('V', $"Ref {operation.Parameter.Name}");
-            BeginValue(new ParameterReferenceValue(operation.Parameter.Name));
+            BeginValue(new ParameterReferenceValue(operation.Parameter.Name, AsInternalType(operation.Parameter.Type)));
             base.VisitParameterReference(operation);
             EndValue();
             _debugScopeBuilder.End();
@@ -363,46 +377,29 @@ namespace GenericMathsGenerator
         public override void VisitLiteral(ILiteralOperation operation)
         {
             _currentLocation = operation.Syntax.GetLocation();
-
-            if (SymbolEqualityComparer.IncludeNullability.Equals(operation.Type, _floatType))
+            
+            if (!operation.ConstantValue.HasValue)
             {
-                if (!operation.ConstantValue.HasValue)
-                {
 #if DEBUG
-                    Debugger.Launch();
-                    Debugger.Break();
+                Debugger.Launch();
+                Debugger.Break();
 #endif
-                    Debug.Fail("non-constant literal?!");
-                }
-
-                _debugScopeBuilder.Begin('V', $"Literal {(float)operation.ConstantValue.Value}f");
-                BeginValue(new LiteralValue((float) operation.ConstantValue.Value));
-                base.VisitLiteral(operation);
-                EndValue();
-                _debugScopeBuilder.End();
+                Debug.Fail("non-constant literal?!");
             }
-            else if (SymbolEqualityComparer.IncludeNullability.Equals(operation.Type, _intType))
-            {
-                if (!operation.ConstantValue.HasValue)
-                {
-
-#if DEBUG
-                    Debugger.Launch();
-                    Debugger.Break();
-#endif
-                    Debug.Fail("non-constant literal?!");
-                }
-                
-                _debugScopeBuilder.Begin('V', $"Literal {(int)operation.ConstantValue.Value}i");
-                BeginValue(new LiteralValue((float)(int) operation.ConstantValue.Value));
-                base.VisitLiteral(operation);
-                EndValue();
-                _debugScopeBuilder.End();
-            }
-            else
+            
+            var t = AsInternalType(operation.Type);
+            if (t == Type.Unknown)
             {
                 throw new DiagnosticException(Diagnostic.Create(Diagnostics.TypeMissmatch, _currentLocation, operation.Type.Name));
             }
+            _debugScopeBuilder.Begin('V', $"Literal {operation.ConstantValue.Value}");
+            var val = operation.ConstantValue.Value;
+            if (val is int i)
+                val = (float) i;
+            BeginValue(new LiteralValue(val, t));
+            base.VisitLiteral(operation);
+            EndValue();
+            _debugScopeBuilder.End();
         }
     }
 }

@@ -19,13 +19,15 @@ namespace GenericMathsGenerator
     {
         public string ParameterName { get; }
 
-        public ParameterReferenceValue(string parameterName)
+        public ParameterReferenceValue(string parameterName, Type type)
         {
             ParameterName = parameterName;
+            Type = type;
         }
 
         public IValue? Parent { get; set; }
-        public Optional<float> ConstantValue => default;
+        public Type Type { get; }
+        public Optional<object> ConstantValue => default;
 
         public IEnumerable<IValue> Children
         {

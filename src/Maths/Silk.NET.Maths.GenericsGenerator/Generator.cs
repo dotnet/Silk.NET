@@ -173,8 +173,8 @@ namespace GenericMaths
 
                         if (generateSpecialized)
                         {
-                            Dictionary<TargetType, string> typeNames = TargetTypes.ToDictionary
-                                (x => x, x => tds.Identifier.Text + "_" + Enum.GetName(typeof(TargetType), x));
+                            Dictionary<NumericTargetType, string> typeNames = TargetTypes.ToDictionary
+                                (x => x, x => tds.Identifier.Text + "_" + Enum.GetName(typeof(NumericTargetType), x));
                             foreach (var targetType in TargetTypes)
                             {
                                 try
@@ -244,7 +244,7 @@ namespace GenericMaths
             GeneratorExecutionContext context,
             TypeDeclarationSyntax sourceType,
             string genericParameter,
-            IEnumerable<TargetType> targetTypes
+            IEnumerable<NumericTargetType> targetTypes
         )
         {
             var throwHelper = "M_THROW_HELPER";
@@ -320,7 +320,7 @@ namespace GenericMaths
                         }
 
                         var targets = targetTypes.Select
-                            (x => (x, $"{method.Identifier.Text}_S_{Enum.GetName(typeof(TargetType), x)}")).ToArray();
+                            (x => (x, $"{method.Identifier.Text}_S_{Enum.GetName(typeof(NumericTargetType), x)}")).ToArray();
                         resultMembers.AddRange(ProcessMethodOperation
                         (
                             context, methodOperation, false, false, null,
@@ -365,7 +365,7 @@ namespace GenericMaths
                 );
         }
 
-        private MethodDeclarationSyntax BuildGenericMethod(MethodDeclarationSyntax method, TypeSyntax t, IEnumerable<(TargetType x, string)> targets, string throwHelper)
+        private MethodDeclarationSyntax BuildGenericMethod(MethodDeclarationSyntax method, TypeSyntax t, IEnumerable<(NumericTargetType x, string)> targets, string throwHelper)
         {
             StatementSyntax lastStatement = Block
                 (ExpressionStatement(InvocationExpression(IdentifierName(throwHelper))), ReturnStatement(DefaultExpression(t)));
@@ -480,12 +480,12 @@ namespace GenericMaths
         private static TypeDeclarationSyntax SpecializeType(
             GeneratorExecutionContext context,
             TypeDeclarationSyntax tds,
-            TargetType targetType
+            NumericTargetType numericTargetType
         )
         {
             var model = context.Compilation.GetSemanticModel(tds.SyntaxTree);
-            var resolvedT = targetType.GetTypeSyntax();
-            var targetTypeName = Enum.GetName(typeof(TargetType), targetType);
+            var resolvedT = numericTargetType.GetTypeSyntax();
+            var targetTypeName = Enum.GetName(typeof(NumericTargetType), numericTargetType);
             var resultDeclarations = new List<MemberDeclarationSyntax>();
             foreach (var member in tds.Members)
             {
@@ -519,7 +519,7 @@ namespace GenericMaths
                         (
                             context, methodOperation, false, false, null, new[]
                             {
-                                (targetType, method.Identifier.Text)
+                                (targetType: numericTargetType, method.Identifier.Text)
                             }, $"THROW_HELPER_{method.Identifier}", null, method.AttributeLists, method.Modifiers, method.TypeParameterList, method.ExplicitInterfaceSpecifier, method.ParameterList, method.ConstraintClauses, false
                         );
 
@@ -569,7 +569,7 @@ namespace GenericMaths
             return ProcessMethodOperation
             (
                 context, op, makeGenericDefinitionGenericRoot, generateGenericMethod, identifier,
-                TargetTypes.Select(x => (x, $"{identifier}_{Enum.GetName(typeof(TargetType), x)}")),
+                TargetTypes.Select(x => (x, $"{identifier}_{Enum.GetName(typeof(NumericTargetType), x)}")),
                 $"ThrowHelper_M_{identifier}", genericParameter, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses, privatizeNonGeneric
             );
         }
@@ -597,7 +597,7 @@ namespace GenericMaths
             return ProcessMethodOperation
             (
                 context, op, makeGenericDefinitionGenericRoot, true, identifier,
-                TargetTypes.Select(x => (x, $"{identifier}_{Enum.GetName(typeof(TargetType), x)}")),
+                TargetTypes.Select(x => (x, $"{identifier}_{Enum.GetName(typeof(NumericTargetType), x)}")),
                 $"ThrowHelper_M_{identifier}", genericParameter, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses, privatizeNonGeneric
             );
         }
@@ -617,7 +617,7 @@ namespace GenericMaths
             bool makeGenericDefinitionGenericRoot,
             bool generateGenericMethod,
             string? genericMethodName,
-            IEnumerable<(TargetType, string)> targetTypes,
+            IEnumerable<(NumericTargetType, string)> targetTypes,
             string throwHelperName,
             string genericParameter,
             SyntaxList<AttributeListSyntax> attributeLists,
@@ -719,7 +719,7 @@ namespace GenericMaths
             bool makeGenericDefinitionGenericRoot,
             bool generateGenericMethod,
             string? genericMethodName,
-            IEnumerable<(TargetType, string)> targetTypes,
+            IEnumerable<(NumericTargetType, string)> targetTypes,
             string throwHelperName,
             string genericParameter,
             bool privatizeNonGeneric,
@@ -850,34 +850,34 @@ namespace GenericMaths
             sortedBuckets = buckets.ToImmutableSortedDictionary(x => x.Key, x => x.Value, Comparer<int>.Default);
         }
 
-        private static IEnumerable<TargetType> TargetTypes = new[]
+        private static IEnumerable<NumericTargetType> TargetTypes = new[]
         {
-            TargetType.Byte,
-            TargetType.SByte,
-            TargetType.UShort,
-            TargetType.Short,
-            TargetType.UInt,
-            TargetType.Int,
-            TargetType.ULong,
-            TargetType.Long,
-            TargetType.Single,
-            TargetType.Double
+            NumericTargetType.Byte,
+            NumericTargetType.SByte,
+            NumericTargetType.UShort,
+            NumericTargetType.Short,
+            NumericTargetType.UInt,
+            NumericTargetType.Int,
+            NumericTargetType.ULong,
+            NumericTargetType.Long,
+            NumericTargetType.Single,
+            NumericTargetType.Double
         };
 
         private static BlockSyntax BuildMethodBody
-            (ImmutableSortedDictionary<int, List<IValue>> sortedBuckets, IValue sourceValue, TargetType targetType)
+            (ImmutableSortedDictionary<int, List<IValue>> sortedBuckets, IValue sourceValue, NumericTargetType numericTargetType)
         {
             static ExpressionSyntax ResolveCallback(IValue value, IBodyBuilder builder)
             {
                 GetBucketsAndParameters(value, out var parameters, out var sortedBuckets);
-                ResolveBuckets(sortedBuckets, builder.Type, builder);
+                ResolveBuckets(sortedBuckets, builder.NumericType, builder);
                 return builder.ResolvedValues[value];
             }
             
             var extraStatements = new List<StatementSyntax>();
 
-            var bodyBuilder = new ScalarBodyBuilder(extraStatements, targetType, ResolveCallback);
-            ResolveBuckets(sortedBuckets, targetType, bodyBuilder);
+            var bodyBuilder = new ScalarBodyBuilder(extraStatements, numericTargetType, ResolveCallback);
+            ResolveBuckets(sortedBuckets, numericTargetType, bodyBuilder);
 
             extraStatements = bodyBuilder.Statements;
             extraStatements.Add(ReturnStatement(bodyBuilder.ResolvedValues[sourceValue]));
@@ -886,7 +886,7 @@ namespace GenericMaths
 
         private static void ResolveBuckets(
             ImmutableSortedDictionary<int, List<IValue>> sortedBuckets,
-            TargetType targetType,
+            NumericTargetType numericTargetType,
             IBodyBuilder bodyBuilder
         )
         {
@@ -895,7 +895,7 @@ namespace GenericMaths
                 foreach (var value in bucket.Value)
                 {
                     var children = value.Children.Select(x => bodyBuilder.ResolvedValues[x]);
-                    bodyBuilder.ResolvedValues[value] = ParenthesizedExpression(CastExpression(targetType.GetTypeSyntax(),
+                    bodyBuilder.ResolvedValues[value] = ParenthesizedExpression(CastExpression(numericTargetType.GetTypeSyntax(),
                         ParenthesizedExpression(value.BuildExpression(bodyBuilder, children.ToImmutableArray()))));
                 }
             }

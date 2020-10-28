@@ -20,7 +20,10 @@ namespace GenericMathsGenerator
         private IValue _left;
         private IValue _right;
         private Lazy<int> _step;
-        private Lazy<Optional<float>> _constantValue;
+        private Lazy<Optional<object>> _constantValue;
+
+
+        public Type Type => Type.Numeric;
 
         public IValue Left
         {
@@ -52,7 +55,7 @@ namespace GenericMathsGenerator
         }
 
         public IValue? Parent { get; set; }
-        public Optional<float> ConstantValue => _constantValue.Value;
+        public Optional<object> ConstantValue => _constantValue.Value;
         public IEnumerable<IValue> Children
         {
             get => new[] {Left, Right};
@@ -63,9 +66,15 @@ namespace GenericMathsGenerator
                     throw new ArgumentOutOfRangeException(nameof(arr.Length), "Binary operator values have 2 children");
                 if (arr.Length > 0)
                 {
+                    if (arr[0].Type != Type.Numeric && arr[0].Type != Type.Unknown)
+                        throw new TypeMismatchException($"Type was {Enum.GetName(typeof(Type), arr[0].Type)} but should be {nameof(Type.Numeric)}");
                     _left = arr[0];
                     if (arr.Length > 1)
+                    {
+                        if (arr[1].Type != Type.Numeric && arr[1].Type != Type.Unknown)
+                            throw new TypeMismatchException($"Type was {Enum.GetName(typeof(Type), arr[1].Type)} but should be {nameof(Type.Numeric)}");
                         _right = arr[1];
+                    }
                 }
 
                 Recalculate();
@@ -75,7 +84,7 @@ namespace GenericMathsGenerator
         private void Recalculate()
         {
             _step = new Lazy<int>(() => (Left.Step > Right.Step ? Left.Step : Right.Step) + 1);
-            _constantValue = new Lazy<Optional<float>>(() => Left.ConstantValue.HasValue && Right.ConstantValue.HasValue ? new Optional<float>(Process(Left.ConstantValue.Value, Right.ConstantValue.Value)) : default);
+            _constantValue = new Lazy<Optional<object>>(() => Left.ConstantValue.HasValue && Right.ConstantValue.HasValue ? new Optional<object>(Process((float)Left.ConstantValue.Value, (float)Right.ConstantValue.Value)) : default);
         }
 
         protected abstract float Process(float left, float right);

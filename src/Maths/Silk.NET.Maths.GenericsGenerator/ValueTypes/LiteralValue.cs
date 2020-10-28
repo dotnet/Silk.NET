@@ -21,12 +21,26 @@ namespace GenericMathsGenerator.ValueTypes
         public LiteralValue(float value)
         {
             _value = value;
+            Type = Type.Numeric;
         }
 
-        private float _value;
+        public LiteralValue(bool value)
+        {
+            _value = value;
+            Type = Type.Boolean;
+        }
 
+        public LiteralValue(object value, Type type = Type.Unknown)
+        {
+            _value = value;
+            Type = type;
+        }
+
+        private object _value;
+
+        public Type Type { get; }
         public IValue? Parent { get; set; }
-        public Optional<float> ConstantValue => new Optional<float>(_value);
+        public Optional<object> ConstantValue => new Optional<object>(_value);
         public IEnumerable<IValue> Children
         {
             get => ImmutableArray<IValue>.Empty;
@@ -43,26 +57,34 @@ namespace GenericMathsGenerator.ValueTypes
             (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             Debug.Assert(children.Length == 0);
-            return CastExpression
-            (
-                bodyBuilder.Type.GetTypeSyntax(), LiteralExpression
+            return Type switch
+            {
+                Type.Numeric => CastExpression
                 (
-                    SyntaxKind.NumericLiteralExpression, bodyBuilder.Type switch
-                    {
-                        TargetType.Byte => Literal((byte) _value),
-                        TargetType.SByte => Literal((sbyte) _value),
-                        TargetType.UShort => Literal((ushort) _value),
-                        TargetType.Short => Literal((short) _value),
-                        TargetType.UInt => Literal((uint) _value),
-                        TargetType.Int => Literal((int) _value),
-                        TargetType.ULong => Literal((ulong) _value),
-                        TargetType.Long => Literal((long) _value),
-                        TargetType.Single => Literal((float) _value),
-                        TargetType.Double => Literal((double) _value),
-                        _ => throw new ArgumentOutOfRangeException(nameof(bodyBuilder.Type))
-                    }
-                )
-            );
+                    bodyBuilder.NumericType.GetTypeSyntax(), LiteralExpression
+                    (
+                        SyntaxKind.NumericLiteralExpression, bodyBuilder.NumericType switch
+                        {
+                            NumericTargetType.Byte => Literal((byte) (float)_value),
+                            NumericTargetType.SByte => Literal((sbyte) (float)_value),
+                            NumericTargetType.UShort => Literal((ushort) (float)_value),
+                            NumericTargetType.Short => Literal((short) (float)_value),
+                            NumericTargetType.UInt => Literal((uint) (float)_value),
+                            NumericTargetType.Int => Literal((int) (float)_value),
+                            NumericTargetType.ULong => Literal((ulong) (float)_value),
+                            NumericTargetType.Long => Literal((long) (float)_value),
+                            NumericTargetType.Single => Literal((float)_value),
+                            NumericTargetType.Double => Literal((double) (float)_value),
+                            _ => throw new ArgumentOutOfRangeException(nameof(bodyBuilder.NumericType))
+                        }
+                    )
+                ),
+                Type.Boolean => ((bool) _value)
+                    ? LiteralExpression(SyntaxKind.TrueLiteralExpression)
+                    : LiteralExpression(SyntaxKind.FalseLiteralExpression),
+                _ => throw new TypeMismatchException
+                    ($"Trying to resolve {Enum.GetName(typeof(Type), Type)} Type Literal")
+            };
         }
 
         public bool Equals(LiteralValue? other)

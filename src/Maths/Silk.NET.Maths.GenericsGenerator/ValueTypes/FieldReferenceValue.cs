@@ -16,14 +16,16 @@ namespace GenericMathsGenerator.ValueTypes
 {
     public class FieldReferenceValue : IValue, IEquatable<FieldReferenceValue>
     {
-        public FieldReferenceValue(string name)
+        public FieldReferenceValue(string name, Type type)
         {
             Name = name;
+            Type = type;
         }
         public string Name { get; }
 
         public IValue? Parent { get; set; }
-        public Optional<float> ConstantValue => default;
+        public Type Type { get; }
+        public Optional<object> ConstantValue => default;
         public IEnumerable<IValue> Children
         {
             get => ImmutableArray<IValue>.Empty;

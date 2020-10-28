@@ -18,7 +18,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace GenericMathsGenerator
 {
-    public enum TargetType
+    public enum NumericTargetType
     {
         Byte,
         SByte,
@@ -34,19 +34,19 @@ namespace GenericMathsGenerator
 
     public static class TargetTypeUtils
     {
-        public static TypeSyntax GetTypeSyntax(this TargetType targetType) => targetType switch
+        public static TypeSyntax GetTypeSyntax(this NumericTargetType numericTargetType) => numericTargetType switch
         {
-            TargetType.Byte => PredefinedType(Token(SyntaxKind.ByteKeyword)),
-            TargetType.SByte => PredefinedType(Token(SyntaxKind.SByteKeyword)),
-            TargetType.UShort => PredefinedType(Token(SyntaxKind.UShortKeyword)),
-            TargetType.Short => PredefinedType(Token(SyntaxKind.ShortKeyword)),
-            TargetType.UInt => PredefinedType(Token(SyntaxKind.UIntKeyword)),
-            TargetType.Int => PredefinedType(Token(SyntaxKind.IntKeyword)),
-            TargetType.ULong => PredefinedType(Token(SyntaxKind.ULongKeyword)),
-            TargetType.Long => PredefinedType(Token(SyntaxKind.LongKeyword)),
-            TargetType.Single => PredefinedType(Token(SyntaxKind.FloatKeyword)),
-            TargetType.Double => PredefinedType(Token(SyntaxKind.DoubleKeyword)),
-            _ => throw new ArgumentOutOfRangeException(nameof(targetType))
+            NumericTargetType.Byte => PredefinedType(Token(SyntaxKind.ByteKeyword)),
+            NumericTargetType.SByte => PredefinedType(Token(SyntaxKind.SByteKeyword)),
+            NumericTargetType.UShort => PredefinedType(Token(SyntaxKind.UShortKeyword)),
+            NumericTargetType.Short => PredefinedType(Token(SyntaxKind.ShortKeyword)),
+            NumericTargetType.UInt => PredefinedType(Token(SyntaxKind.UIntKeyword)),
+            NumericTargetType.Int => PredefinedType(Token(SyntaxKind.IntKeyword)),
+            NumericTargetType.ULong => PredefinedType(Token(SyntaxKind.ULongKeyword)),
+            NumericTargetType.Long => PredefinedType(Token(SyntaxKind.LongKeyword)),
+            NumericTargetType.Single => PredefinedType(Token(SyntaxKind.FloatKeyword)),
+            NumericTargetType.Double => PredefinedType(Token(SyntaxKind.DoubleKeyword)),
+            _ => throw new ArgumentOutOfRangeException(nameof(numericTargetType))
         };
     }
     
@@ -68,7 +68,7 @@ namespace GenericMathsGenerator
     public interface IBodyBuilder
     {
         List<StatementSyntax> Statements { get; set; }
-        TargetType Type { get; }
+        NumericTargetType NumericType { get; }
         Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
         List<IVariable> ResolvedVariables { get; }
         ExpressionSyntax ResolveValue(IValue value);
@@ -78,16 +78,16 @@ namespace GenericMathsGenerator
     {
         private readonly Func<IValue, IBodyBuilder, ExpressionSyntax> _resolveCallback;
         
-        public ScalarBodyBuilder(List<StatementSyntax> statements, TargetType type, Func<IValue, IBodyBuilder, ExpressionSyntax> resolveCallback)
+        public ScalarBodyBuilder(List<StatementSyntax> statements, NumericTargetType type, Func<IValue, IBodyBuilder, ExpressionSyntax> resolveCallback)
         {
             Statements = statements;
-            Type = type;
+            NumericType = type;
             _resolveCallback = resolveCallback;
             ResolvedValues = new Dictionary<IValue, ExpressionSyntax>();
             ResolvedVariables = new List<IVariable>();
         }
         public List<StatementSyntax> Statements { get; set; }
-        public TargetType Type { get; }
+        public NumericTargetType NumericType { get; }
         public Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
         public List<IVariable> ResolvedVariables { get; }
         public ExpressionSyntax ResolveValue(IValue value) => _resolveCallback(value, this);
@@ -96,11 +96,19 @@ namespace GenericMathsGenerator
     public interface IValue : IEquatable<IValue>
     {
         IValue? Parent { get; set; }
-        Optional<float> ConstantValue { get; }
+        Type Type { get; }
+        Optional<object> ConstantValue { get; }
         IEnumerable<IValue> Children { get; set; }
         int Step { get; }
         ExpressionSyntax BuildExpression
             (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children);
+    }
+
+    public enum Type
+    {
+        Unknown = default,
+        Numeric,
+        Boolean,
     }
 
     public interface IVariable : IScopable, IEquatable<IVariable>

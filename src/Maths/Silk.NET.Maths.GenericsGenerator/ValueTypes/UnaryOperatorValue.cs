@@ -19,7 +19,7 @@ namespace GenericMathsGenerator
     {
         private IValue _child;
         private Lazy<int> _step;
-        private Lazy<Optional<float>> _constantValue;
+        private Lazy<Optional<object>> _constantValue;
 
         public IValue Child
         {
@@ -41,7 +41,9 @@ namespace GenericMathsGenerator
 
         public IValue? Parent { get; set; }
 
-        public Optional<float> ConstantValue
+        public Type Type => Type.Numeric;
+
+        public Optional<object> ConstantValue
             => _constantValue.Value;
 
         public IEnumerable<IValue> Children
@@ -54,7 +56,12 @@ namespace GenericMathsGenerator
                     throw new ArgumentOutOfRangeException
                         (nameof(arr.Length), "Unary operator values have 1 child");
                 if (arr.Length > 0)
+                {
+                    if (arr[0].Type != Type.Numeric)
+                        throw new TypeMismatchException($"Type was {Enum.GetName(typeof(Type), arr[0].Type)} but should be {nameof(Type.Numeric)}");
                     _child = arr[0];
+                }
+
                 Recalculate();
             }
         }
@@ -62,7 +69,7 @@ namespace GenericMathsGenerator
         private void Recalculate()
         {
             _step = new Lazy<int>(() => Child.Step + 1);
-            _constantValue = new Lazy<Optional<float>>(() => Child.ConstantValue.HasValue ? new Optional<float>(Process(Child.ConstantValue.Value)) : default);
+            _constantValue = new Lazy<Optional<object>>(() => Child.ConstantValue.HasValue ? new Optional<object>(Process((float)Child.ConstantValue.Value)) : default);
         }
 
         protected abstract float Process(float f);

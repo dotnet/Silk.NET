@@ -61,12 +61,19 @@ namespace GenericMathsGenerator.ValueTypes
                             (
                                 VariableDeclaration
                                 (
-                                    bodyBuilder.Type.GetTypeSyntax(),
+                                    Type switch
+                                    {
+                                        Type.Numeric => bodyBuilder.NumericType.GetTypeSyntax(),
+                                        Type.Boolean => PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                                        _ => throw new TypeMismatchException
+                                            ($"Trying to resolve {Enum.GetName(typeof(Type), Type)} Type Literal")
+                                    },
                                     SingletonSeparatedList
                                     (
                                         VariableDeclarator
                                                 (name)
-                                            .WithInitializer(EqualsValueClause(bodyBuilder.ResolveValue(LocalVariable.Value)))
+                                            .WithInitializer
+                                                (EqualsValueClause(bodyBuilder.ResolveValue(LocalVariable.Value)))
                                     )
                                 )
                             )
@@ -86,7 +93,8 @@ namespace GenericMathsGenerator.ValueTypes
         }
 
         public IValue? Parent { get; set; }
-        public Optional<float> ConstantValue => LocalVariable?.Value.ConstantValue ?? default;
+        public Type Type => LocalVariable?.Value.Type ?? Type.Unknown;
+        public Optional<object> ConstantValue => LocalVariable?.Value.ConstantValue ?? default;
 
         public IEnumerable<IValue> Children
         {

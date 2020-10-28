@@ -13,7 +13,7 @@ namespace GenericMathsGenerator
     public class ConstantFolder : IValueProcessor
     {
         public IEnumerable<IValue> Process(IEnumerable<IValue> values) 
-            => values.Select(x => x.ConstantValue.HasValue ? new LiteralValue(x.ConstantValue.Value) : x.WithChildren(Process(x.Children)));
+            => values.Select(x => x.ConstantValue.HasValue ? new LiteralValue(x.ConstantValue.Value, x.Type) : x.WithChildren(Process(x.Children)));
 
         public IEnumerable<IVariable> Process(IEnumerable<IVariable> variables)
             => variables.Select
@@ -21,7 +21,7 @@ namespace GenericMathsGenerator
                 x => x.WithValue
                 (
                     x.Value.ConstantValue.HasValue
-                        ? new LiteralValue(x.Value.ConstantValue.Value)
+                        ? new LiteralValue(x.Value.ConstantValue.Value, x.Value.Type)
                         : x.Value.WithChildren(Process(x.Value.Children))
                 )
             );
@@ -29,7 +29,7 @@ namespace GenericMathsGenerator
         public IValue Process
             (IValue value, Func<IValue> next)
             => value.ConstantValue.HasValue 
-                ? new LiteralValue(value.ConstantValue.Value) 
+                ? new LiteralValue(value.ConstantValue.Value, value.Type) 
                 : next();
     }
 }
