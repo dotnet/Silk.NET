@@ -24,7 +24,8 @@ namespace GenericMathsGenerator.ValueTypes
         }
 
         private float _value;
-        
+
+        public IValue? Parent { get; set; }
         public Optional<float> ConstantValue => new Optional<float>(_value);
         public IEnumerable<IValue> Children
         {

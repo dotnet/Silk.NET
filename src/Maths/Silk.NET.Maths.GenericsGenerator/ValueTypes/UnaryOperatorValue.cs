@@ -39,6 +39,8 @@ namespace GenericMathsGenerator
             return SyntaxFactory.PrefixUnaryExpression(OpSyntaxKind, children[0]);
         }
 
+        public IValue? Parent { get; set; }
+
         public Optional<float> ConstantValue
             => _constantValue.Value;
 
@@ -48,10 +50,11 @@ namespace GenericMathsGenerator
             set
             {
                 var arr = value.ToArray();
-                if (arr.Length != 1)
+                if (arr.Length > 1)
                     throw new ArgumentOutOfRangeException
-                        (nameof(arr.Length), "Unary operator values have exactly 1 child");
-                _child = arr[0];
+                        (nameof(arr.Length), "Unary operator values have 1 child");
+                if (arr.Length > 0)
+                    _child = arr[0];
                 Recalculate();
             }
         }

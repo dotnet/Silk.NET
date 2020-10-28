@@ -22,6 +22,7 @@ namespace GenericMathsGenerator.ValueTypes
         }
         public string Name { get; }
 
+        public IValue? Parent { get; set; }
         public Optional<float> ConstantValue => default;
         public IEnumerable<IValue> Children
         {

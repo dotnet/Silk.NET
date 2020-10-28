@@ -15,13 +15,14 @@ namespace GenericMathsGenerator.VariableTypes
     {
         public string OriginalName { get; }
         public IValue Value { get; set; }
-        public List<LocalReferenceValue> References { get; set; }
+        public List<IVariableReference> References { get; set; }
+        public int ExtraReferences { get; set; }
 
         public LocalVariable(string originalName, IValue value)
         {
             OriginalName = originalName;
             Value = value;
-            References = new List<LocalReferenceValue>();
+            References = new List<IVariableReference>();
         }
 
         public bool Equals(LocalVariable? other)

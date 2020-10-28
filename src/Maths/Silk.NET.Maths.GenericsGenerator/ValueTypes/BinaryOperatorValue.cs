@@ -51,6 +51,7 @@ namespace GenericMathsGenerator
             return SyntaxFactory.BinaryExpression(OpSyntaxKind, children[0], children[1]);
         }
 
+        public IValue? Parent { get; set; }
         public Optional<float> ConstantValue => _constantValue.Value;
         public IEnumerable<IValue> Children
         {
@@ -58,10 +59,15 @@ namespace GenericMathsGenerator
             set
             {
                 var arr = value.ToArray();
-                if (arr.Length != 2)
-                    throw new ArgumentOutOfRangeException(nameof(arr.Length), "Binary operator values have exactly 2 children");
-                _left = arr[0];
-                _right = arr[1];
+                if (arr.Length > 2)
+                    throw new ArgumentOutOfRangeException(nameof(arr.Length), "Binary operator values have 2 children");
+                if (arr.Length > 0)
+                {
+                    _left = arr[0];
+                    if (arr.Length > 1)
+                        _right = arr[1];
+                }
+
                 Recalculate();
             }
         }

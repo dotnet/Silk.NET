@@ -57,6 +57,10 @@ namespace GenericMaths
                     return;
 
                 var compilation = context.Compilation as CSharpCompilation;
+
+                if (compilation is null)
+                    return;
+                
                 compilation = compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText(attributeSourceText, context.ParseOptions as CSharpParseOptions));
                 
                 var methods = sr.Methods.Select
@@ -211,6 +215,7 @@ namespace GenericMaths
                                     );
                                 var str = newNamespace.NormalizeWhitespace().ToFullString();
                                 var name = $"{tds.Identifier.Text}_Maths_Generic_{Guid.NewGuid()}.cs";
+                                File.WriteAllText(@"C:\Silk.NET\src\Lab\GenericMaths\" + name, str);
                                 context.AddSource(name, str);
                             }
                             catch (DiagnosticException ex)
@@ -635,9 +640,11 @@ namespace GenericMaths
 
             scope = ProcessScope(scope);
 
-            // this implies we only care for the first return variable.
-            // this also implies that we assume all calls to be pure.
-            var firstReturn = scope.Variables.FirstOrDefault(x => x is ReturnVariable);
+            // this implies
+            // - we only care for the first return variable.
+            // - we assume all calls to be pure.
+            // - the first and only return has to be in the outermost scope!
+            var firstReturn = scope.Scopables.OfType<ReturnVariable>().FirstOrDefault();
 
             if (firstReturn is null)
                 throw new DiagnosticException(Diagnostic.Create(Diagnostics.NoReturn, null));
@@ -649,11 +656,18 @@ namespace GenericMaths
             return methods;
         }
 
-        private static IScope ProcessScope(IScope scope)
+        private static Scope ProcessScope(Scope scope, List<IVariable>? variables = null)
         {
-            IEnumerable<IVariable> variables = scope.Variables;
-            variables = _variableProcessors
-                .Aggregate(variables, (current, variableProcessor) => variableProcessor.Process(current)).ToArray();
+            void ProcessTheThings(ref List<IVariable> list)
+            {
+                list = _variableProcessors.Aggregate((IEnumerable<IVariable>) list,
+                    (current, variableProcessor) => variableProcessor.Process(current)).ToList();
+
+                list = list.Select(x => x.WithValue(_valueProcessors.Aggregate(x.Value,
+                        (current, valueProcessor)
+                            => valueProcessor.Process(current, () => ValueProcessRec(valueProcessor, current)))))
+                    .ToList();
+            }
 
             static IValue ValueProcessRec(IValueProcessor processor, IValue value)
             {
@@ -662,12 +676,31 @@ namespace GenericMaths
                 return value.WithChildren(value.Children.Select(x
                     => processor.Process(x, () => ValueProcessRec(processor, x))));
             }
+            
+            variables ??= new List<IVariable>();
+            var newScopables = new List<IScopable>();
+            foreach (var scopable in scope.Scopables)
+            {
+                if (!(scopable is IVariable v))
+                {
+                    ProcessTheThings(ref variables);
 
-            variables = variables.Select(x => x.WithValue(_valueProcessors.Aggregate(x.Value,
-                (current, valueProcessor) => valueProcessor.Process(current, () => ValueProcessRec(valueProcessor, current)))));
+                    var childScope = scopable as Scope;
+                    Debug.Assert(childScope is not null);
+                    var vars = new List<IVariable>();
+                    vars.AddRange(variables);
+                    var newScope = ProcessScope(childScope, vars);
+                    newScopables.Add(newScope);
+                }
+                else
+                {
+                    newScopables.Add(v);
+                    variables.Add(v);
+                }
+            }
 
-            scope.Variables = variables.ToArray();
-            scope.Children = scope.Children.Select(ProcessScope).ToArray();
+            ProcessTheThings(ref variables);
+            scope.Scopables = newScopables;
             return scope;
         }
 

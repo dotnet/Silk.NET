@@ -24,6 +24,7 @@ namespace GenericMathsGenerator
             ParameterName = parameterName;
         }
 
+        public IValue? Parent { get; set; }
         public Optional<float> ConstantValue => default;
 
         public IEnumerable<IValue> Children

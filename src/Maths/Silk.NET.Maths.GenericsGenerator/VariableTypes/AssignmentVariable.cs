@@ -3,27 +3,25 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using GenericMathsGenerator.ValueTypes;
 
 namespace GenericMathsGenerator.VariableTypes
 {
-    [DebuggerDisplay("return ({Value})")]
-    public class ReturnVariable : IVariable, IEquatable<ReturnVariable>
+    public sealed class AssignmentVariable : IVariable
     {
+        public string OriginalName { get; }
         public IValue Value { get; set; }
         public List<IVariableReference> References { get; set; }
         public int ExtraReferences { get; set; }
 
-        public ReturnVariable(IValue value)
+        public AssignmentVariable(string originalName, IValue value)
         {
+            OriginalName = originalName;
             Value = value;
             References = new List<IVariableReference>();
         }
 
-        public bool Equals(ReturnVariable? other)
+        public bool Equals(LocalVariable? other)
         {
             if (ReferenceEquals(null, other))
             {
@@ -35,21 +33,24 @@ namespace GenericMathsGenerator.VariableTypes
                 return true;
             }
 
-            return Value.Equals(other.Value);
+            return OriginalName == other.OriginalName && Value.Equals(other.Value);
         }
 
         public override bool Equals(object? obj)
         {
-            return ReferenceEquals(this, obj) || obj is ReturnVariable other && Equals(other);
+            return ReferenceEquals(this, obj) || obj is AssignmentVariable other && Equals(other);
         }
         
         public bool Equals
             (IVariable other)
-            => ReferenceEquals(this, other) || other is ReturnVariable o && Equals(o);
+            => ReferenceEquals(this, other) || other is AssignmentVariable o && Equals(o);
 
         public override int GetHashCode()
         {
-            return Value.GetHashCode();
+            unchecked
+            {
+                return (OriginalName.GetHashCode() * 397) ^ Value.GetHashCode();
+            }
         }
     }
 }
