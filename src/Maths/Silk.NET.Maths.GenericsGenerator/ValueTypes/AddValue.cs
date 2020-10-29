@@ -10,9 +10,11 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     public class AddValue : BinaryOperatorValue
     {
+        public override Type Type => Type.Numeric;
+    
         protected override object Process(object left, object right)
         {
-            if (Type == Type.Numeric)
+            if (Left.Type == Type.Numeric && Right.Type == Type.Numeric)
                 return (float)left + (float)right;
             
             throw new ArgumentException("Cannot add non-numeric");

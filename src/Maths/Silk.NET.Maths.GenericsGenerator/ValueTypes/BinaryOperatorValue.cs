@@ -22,8 +22,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         private Lazy<int> _step;
         private Lazy<Optional<object>> _constantValue;
 
-
-        public Type Type => Type.Numeric;
+        public abstract Type Type { get; }
 
         public IValue Left
         {
