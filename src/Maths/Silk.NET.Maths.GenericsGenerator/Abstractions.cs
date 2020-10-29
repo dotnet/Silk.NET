@@ -70,31 +70,24 @@ namespace GenericMathsGenerator
         List<StatementSyntax> Statements { get; set; }
         NumericTargetType NumericType { get; }
         Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
-        List<IVariable> ResolvedVariables { get; }
-        ExpressionSyntax ResolveValue(IValue value);
     }
 
     public class ScalarBodyBuilder : IBodyBuilder
     {
-        private readonly Func<IValue, IBodyBuilder, ExpressionSyntax> _resolveCallback;
-        
-        public ScalarBodyBuilder(List<StatementSyntax> statements, NumericTargetType type, Func<IValue, IBodyBuilder, ExpressionSyntax> resolveCallback)
+        public ScalarBodyBuilder(List<StatementSyntax> statements, NumericTargetType type)
         {
             Statements = statements;
             NumericType = type;
-            _resolveCallback = resolveCallback;
             ResolvedValues = new Dictionary<IValue, ExpressionSyntax>();
-            ResolvedVariables = new List<IVariable>();
         }
         public List<StatementSyntax> Statements { get; set; }
         public NumericTargetType NumericType { get; }
         public Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
-        public List<IVariable> ResolvedVariables { get; }
-        public ExpressionSyntax ResolveValue(IValue value) => _resolveCallback(value, this);
     }
 
     public interface IValue : IEquatable<IValue>
     {
+        Scope Scope { get; set; }
         IValue? Parent { get; set; }
         Type Type { get; }
         Optional<object> ConstantValue { get; }
@@ -111,11 +104,12 @@ namespace GenericMathsGenerator
         Boolean,
     }
 
-    public interface IVariable : IScopable, IEquatable<IVariable>
+    public interface IVariable : IScopeable, IEquatable<IVariable>
     {
         IValue Value { get; set; }
         List<IVariableReference> References { get; set; }
         int ExtraReferences { get; set; }
+        StatementSyntax BuildStatement(IBodyBuilder builder, ExpressionSyntax value);
     }
 
     public interface IVariableReference : IValue
@@ -123,15 +117,30 @@ namespace GenericMathsGenerator
         
     }
 
-    public interface IScopable
+    public interface IScopeable
     {
         
     }
     
-    public sealed class Scope : IScopable
+    public sealed class Scope : IScopeable
     {
-        public List<IScopable> Scopables = new List<IScopable>();
+        public List<IScopeable> Scopeables = new List<IScopeable>();
+        private IValue _condition;
         public Scope Parent { get; set; }
+
+        public IValue Condition
+        {
+            get => _condition;
+            set
+            {
+                if (value.Type != Type.Boolean)
+                    throw new TypeMismatchException
+                    (
+                        $"Conditions type was {Enum.GetName(typeof(Type), value.Type)} but should be {nameof(Type.Boolean)}"
+                    );
+                _condition = value;
+            }
+        }
 
         [Conditional("DEBUG")]
         public void DebugWrite(TextWriter file, int indentation = 0)
@@ -217,13 +226,13 @@ namespace GenericMathsGenerator
             Indent(file, indentation);
             file.WriteLine("BEGIN SCOPE");
             
-            foreach (var scopable in Scopables)
+            foreach (var scopeable in Scopeables)
             {
-                if (scopable is Scope s)
+                if (scopeable is Scope s)
                 {
                     s.DebugWrite(file, indentation + 1);
                 }
-                else if (scopable is IVariable v)
+                else if (scopeable is IVariable v)
                 {
                     switch (v)
                     {

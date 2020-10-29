@@ -39,6 +39,7 @@ namespace GenericMathsGenerator
             return SyntaxFactory.PrefixUnaryExpression(OpSyntaxKind, children[0]);
         }
 
+        public Scope Scope { get; set; }
         public IValue? Parent { get; set; }
 
         public Type Type => Type.Numeric;

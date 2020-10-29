@@ -39,6 +39,7 @@ namespace GenericMathsGenerator.ValueTypes
         private object _value;
 
         public Type Type { get; }
+        public Scope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Optional<object> ConstantValue => new Optional<object>(_value);
         public IEnumerable<IValue> Children

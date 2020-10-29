@@ -17,7 +17,7 @@ namespace GenericMathsGenerator
             (
                 x =>
                 {
-                    if (x.References.Count == 1)
+                    if (x.References.Count == 1 && x.ExtraReferences <= 0)
                     {
                         var @ref = x.References[0];
                         var value = x.Value;

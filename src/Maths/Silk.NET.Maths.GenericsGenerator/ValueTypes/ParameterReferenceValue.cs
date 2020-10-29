@@ -25,6 +25,7 @@ namespace GenericMathsGenerator
             Type = type;
         }
 
+        public Scope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Type Type { get; }
         public Optional<object> ConstantValue => default;

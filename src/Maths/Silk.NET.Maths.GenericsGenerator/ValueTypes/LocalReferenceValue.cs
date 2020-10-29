@@ -36,62 +36,10 @@ namespace GenericMathsGenerator.ValueTypes
                 throw new InvalidOperationException($"Local variable reference has not been resolved");
             
             var name = Name;
-            if (!bodyBuilder.ResolvedVariables.Contains(LocalVariable))
-            {
-                switch (LocalVariable)
-                {
-                    case AssignmentVariable assignmentVariable:
-                        bodyBuilder.Statements.Add
-                        (
-                            ExpressionStatement
-                            (
-                                AssignmentExpression
-                                (
-                                    SyntaxKind.SimpleAssignmentExpression,
-                                    IdentifierName(assignmentVariable.OriginalName),
-                                    bodyBuilder.ResolveValue(LocalVariable.Value)
-                                )
-                            )
-                        );
-                        break;
-                    case LocalVariable localVariable:
-                        bodyBuilder.Statements.Add
-                        (
-                            LocalDeclarationStatement
-                            (
-                                VariableDeclaration
-                                (
-                                    Type switch
-                                    {
-                                        Type.Numeric => bodyBuilder.NumericType.GetTypeSyntax(),
-                                        Type.Boolean => PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                                        _ => throw new TypeMismatchException
-                                            ($"Trying to resolve {Enum.GetName(typeof(Type), Type)} Type Literal")
-                                    },
-                                    SingletonSeparatedList
-                                    (
-                                        VariableDeclarator
-                                                (name)
-                                            .WithInitializer
-                                                (EqualsValueClause(bodyBuilder.ResolveValue(LocalVariable.Value)))
-                                    )
-                                )
-                            )
-                        );
-                        break;
-                    case ReturnVariable returnVariable:
-                        throw new InvalidOperationException("Cannot reference a return \"variable\"");
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(LocalVariable));
-                }
-
-                bodyBuilder.ResolvedVariables.Add(LocalVariable);
-            }
-
             return IdentifierName(name);
         }
 
+        public Scope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Type Type => LocalVariable?.Value.Type ?? Type.Unknown;
         public Optional<object> ConstantValue => LocalVariable?.Value.ConstantValue ?? default;

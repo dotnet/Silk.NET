@@ -63,9 +63,9 @@ namespace GenericMathsGenerator
         
         private DebugScopeBuilder _debugScopeBuilder;
 
-        private void BeginScope()
+        private void BeginScope(IValue condition)
         {
-            var v = new Scope();
+            var v = new Scope {Condition = condition};
             if (_scope is not null)
             {
                 v.Parent = _scope;
@@ -84,7 +84,7 @@ namespace GenericMathsGenerator
             {
                 var v = _scope;
                 _scope = _scopes.Pop();
-                _scope.Scopables.Add(v);
+                _scope.Scopeables.Add(v);
             }
             else
             {
@@ -131,7 +131,7 @@ namespace GenericMathsGenerator
 #else
             file = TextWriter.Null;
 #endif
-            Debugger.Launch();
+            
             _debugScopeBuilder = new DebugScopeBuilder(file);
             _values = new Stack<IValue>();
             _scopes = new Stack<Scope>();
@@ -144,7 +144,7 @@ namespace GenericMathsGenerator
             {
                 _currentLocation = root.Syntax.GetLocation();
                 _debugScopeBuilder.Begin('S', "ROOT");
-                BeginScope();
+                BeginScope(new LiteralValue(true));
                 base.Visit(root);
             }
             catch (DiagnosticException ex)
@@ -197,7 +197,7 @@ namespace GenericMathsGenerator
             _currentLocation = operation.Syntax.GetLocation();
             
             _debugScopeBuilder.Begin('S', $"BEGIN SCOPE");
-            BeginScope();
+            BeginScope(new LiteralValue(true));
             base.VisitBlock(operation);
             EndScope();
             _debugScopeBuilder.End();
@@ -210,7 +210,7 @@ namespace GenericMathsGenerator
                 _debugScopeBuilder.Begin('A', $"Assign {lro.Local.Name}");
                 base.Visit(operation.Value);
                 var v = new AssignmentVariable(lro.Local.Name, _values.Pop());
-                _scope.Scopables.Add(v);
+                _scope.Scopeables.Add(v);
                 _locals[lro.Local.Name].ExtraReferences++;
                 _locals[lro.Local.Name] = v;
                 _debugScopeBuilder.End();
@@ -262,7 +262,7 @@ namespace GenericMathsGenerator
 
             _debugScopeBuilder.Begin('R', "Return");
             base.VisitReturn(operation);
-            _scope.Scopables.Add(new ReturnVariable(_values.Pop()));
+            _scope.Scopeables.Add(new ReturnVariable(_values.Pop()));
             _debugScopeBuilder.End();
         }
 
@@ -276,7 +276,7 @@ namespace GenericMathsGenerator
                 _debugScopeBuilder.Begin('D', $"Declaration {declarator.Symbol.Name}");
                 base.VisitVariableDeclarator(declarator);
                 var v = new LocalVariable(declarator.Symbol.Name, _values.Pop());
-                _scope.Scopables.Add(v);
+                _scope.Scopeables.Add(v);
                 _locals[declarator.Symbol.Name] = v;
                 _debugScopeBuilder.End();
             }

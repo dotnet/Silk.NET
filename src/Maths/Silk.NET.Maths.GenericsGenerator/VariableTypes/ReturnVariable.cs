@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using GenericMathsGenerator.ValueTypes;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace GenericMathsGenerator.VariableTypes
 {
@@ -16,6 +18,8 @@ namespace GenericMathsGenerator.VariableTypes
         public IValue Value { get; set; }
         public List<IVariableReference> References { get; set; }
         public int ExtraReferences { get; set; }
+        public StatementSyntax BuildStatement(IBodyBuilder builder, ExpressionSyntax value) 
+            => ReturnStatement(value);
 
         public ReturnVariable(IValue value)
         {

@@ -4,6 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace GenericMathsGenerator.VariableTypes
 {
@@ -13,6 +16,9 @@ namespace GenericMathsGenerator.VariableTypes
         public IValue Value { get; set; }
         public List<IVariableReference> References { get; set; }
         public int ExtraReferences { get; set; }
+        public StatementSyntax BuildStatement(IBodyBuilder builder, ExpressionSyntax value)
+            => ExpressionStatement
+            (AssignmentExpression(SyntaxKind.SimpleAssignmentExpression, IdentifierName(OriginalName), value));
 
         public AssignmentVariable(string originalName, IValue value)
         {

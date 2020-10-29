@@ -23,6 +23,7 @@ namespace GenericMathsGenerator.ValueTypes
         }
         public string Name { get; }
 
+        public Scope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Type Type { get; }
         public Optional<object> ConstantValue => default;

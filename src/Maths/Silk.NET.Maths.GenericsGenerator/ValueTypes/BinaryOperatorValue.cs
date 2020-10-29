@@ -54,6 +54,7 @@ namespace GenericMathsGenerator
             return SyntaxFactory.BinaryExpression(OpSyntaxKind, children[0], children[1]);
         }
 
+        public Scope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Optional<object> ConstantValue => _constantValue.Value;
         public IEnumerable<IValue> Children

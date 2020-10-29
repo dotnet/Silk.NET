@@ -7,6 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using GenericMathsGenerator.ValueTypes;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace GenericMathsGenerator.VariableTypes
 {
@@ -17,6 +20,22 @@ namespace GenericMathsGenerator.VariableTypes
         public IValue Value { get; set; }
         public List<IVariableReference> References { get; set; }
         public int ExtraReferences { get; set; }
+
+        public StatementSyntax BuildStatement(IBodyBuilder builder, ExpressionSyntax value)
+            => LocalDeclarationStatement
+            (
+                VariableDeclaration
+                (
+                    Value.Type switch
+                    {
+                        Type.Numeric => builder.NumericType.GetTypeSyntax(),
+                        Type.Boolean => PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                        _ => throw new TypeMismatchException
+                            ($"Trying to resolve {Enum.GetName(typeof(Type), Value.Type)} Type Literal")
+                    },
+                    SingletonSeparatedList(VariableDeclarator(OriginalName).WithInitializer(EqualsValueClause(value)))
+                )
+            );
 
         public LocalVariable(string originalName, IValue value)
         {
