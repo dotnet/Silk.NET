@@ -70,10 +70,10 @@ namespace GenericMathsGenerator
         private void Recalculate()
         {
             _step = new Lazy<int>(() => Child.Step + 1);
-            _constantValue = new Lazy<Optional<object>>(() => Child.ConstantValue.HasValue ? new Optional<object>(Process((float)Child.ConstantValue.Value)) : default);
+            _constantValue = new Lazy<Optional<object>>(() => Child.ConstantValue.HasValue ? new Optional<object>(Process(Child.ConstantValue.Value)) : default);
         }
 
-        protected abstract float Process(float f);
+        protected abstract object Process(object f);
         protected abstract string OpStr { get; }
         protected abstract SyntaxKind OpSyntaxKind { get; }
 
