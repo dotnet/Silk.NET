@@ -8,19 +8,18 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    public class NotEqualsValue : BinaryOperatorValue
+    public class LessThanOrEqualValue : BinaryOperatorValue
     {
         public override Type Type => Type.Boolean;
-    
         protected override object Process(object left, object right)
         {
-            if (Left.Type != Right.Type)
-                throw new ArgumentException("Cannot compare types of unequal Type");
+            if (Left.Type == Type.Numeric && Right.Type == Type.Numeric)
+                return (float) left <= (float) right;
             
-            return left != right;
+            throw new ArgumentException("Cannot compare non-numeric values");
         }
 
-        protected override string OpStr => "!=";
-        protected override SyntaxKind OpSyntaxKind => SyntaxKind.NotEqualsExpression;
+        protected override string OpStr => "<=";
+        protected override SyntaxKind OpSyntaxKind => SyntaxKind.LessThanOrEqualExpression;
     }
 }

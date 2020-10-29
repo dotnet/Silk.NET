@@ -11,6 +11,8 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     public class ConditionalAndValue : BinaryOperatorValue
     {
+        public override Type Type => Type.Boolean;
+        
         protected override object Process(object left, object right)
         {
             if (Type == Type.Boolean)

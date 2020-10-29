@@ -33,6 +33,7 @@ namespace GenericMaths
         {
             var a = Field + Property;
             var b = 5;
+            if (b < 10)
             {
                 b = b + 5;
             }

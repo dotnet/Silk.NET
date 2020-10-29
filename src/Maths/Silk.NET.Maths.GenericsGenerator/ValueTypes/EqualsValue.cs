@@ -20,7 +20,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
             return left == right;
         }
 
-        protected override string OpStr { get; }
-        protected override SyntaxKind OpSyntaxKind { get; }
+        protected override string OpStr => "==";
+        protected override SyntaxKind OpSyntaxKind => SyntaxKind.EqualsExpression;
     }
 }

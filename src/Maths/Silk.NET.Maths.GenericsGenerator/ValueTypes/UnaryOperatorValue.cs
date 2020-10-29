@@ -42,7 +42,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public Scope Scope { get; set; }
         public IValue? Parent { get; set; }
 
-        public Type Type => Type.Numeric;
+        public Type Type => Child.Type;
 
         public Optional<object> ConstantValue
             => _constantValue.Value;
