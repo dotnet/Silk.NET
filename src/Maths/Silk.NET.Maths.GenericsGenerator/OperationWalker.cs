@@ -206,7 +206,7 @@ namespace Silk.NET.Maths.GenericsGenerator
             _debugScopeBuilder.End();
             _debugScopeBuilder.Begin('S', "BEGIN FALSE");
             BeginScope(new NegateValue {Child = condition});
-            base.Visit(operation.WhenTrue);
+            base.Visit(operation.WhenFalse);
             EndScope();
             _debugScopeBuilder.End();
         }
