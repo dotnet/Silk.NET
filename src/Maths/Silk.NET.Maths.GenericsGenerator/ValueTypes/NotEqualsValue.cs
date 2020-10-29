@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis.CSharp;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    public class EqualsValue : BinaryOperatorValue
+    public class NotEqualsValue : BinaryOperatorValue
     {
         public override Type Type => Type.Boolean;
     
@@ -17,7 +17,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
             if (Left.Type != Right.Type)
                 throw new ArgumentException("Cannot compare types of unequal Type");
             
-            return left == right;
+            return left != right;
         }
 
         protected override string OpStr { get; }
