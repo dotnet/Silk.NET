@@ -7,7 +7,7 @@ using System;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator
 {
     public static class Helpers
     {

@@ -8,13 +8,11 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
-using GenericMathsGenerator.VariableTypes;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace GenericMathsGenerator.ValueTypes
+namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     [DebuggerDisplay("{Name}: {LocalVariable}")]
     public class LocalReferenceValue : IValue, IVariableReference, IEquatable<LocalReferenceValue>

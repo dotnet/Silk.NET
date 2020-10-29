@@ -7,14 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using GenericMathsGenerator.ValueTypes;
-using GenericMathsGenerator.VariableTypes;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Operations;
+using Silk.NET.Maths.GenericsGenerator.ValueTypes;
+using Silk.NET.Maths.GenericsGenerator.VariableTypes;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator
 {
     public partial class OperationWalker : Microsoft.CodeAnalysis.Operations.OperationWalker
     {
@@ -192,6 +190,27 @@ namespace GenericMathsGenerator
             }
         }
 
+        public override void VisitConditional(IConditionalOperation operation)
+        {
+            _currentLocation = operation.Syntax.GetLocation();
+            
+            _debugScopeBuilder.Begin('S', "BEGIN IF");
+            _debugScopeBuilder.Begin('C', "BEGIN CONDITION");
+            base.Visit(operation.Condition);
+            _debugScopeBuilder.End();
+            _debugScopeBuilder.Begin('S', "BEGIN TRUE");
+            var condition = _values.Pop();
+            BeginScope(condition);
+            base.Visit(operation.WhenTrue);
+            EndScope();
+            _debugScopeBuilder.End();
+            _debugScopeBuilder.Begin('S', "BEGIN FALSE");
+            BeginScope(new NegateValue {Child = condition});
+            base.Visit(operation.WhenTrue);
+            EndScope();
+            _debugScopeBuilder.End();
+        }
+
         public override void VisitBlock(IBlockOperation operation)
         {
             _currentLocation = operation.Syntax.GetLocation();
@@ -319,7 +338,7 @@ namespace GenericMathsGenerator
                 BinaryOperatorKind.RightShift => new RightShiftValue(),
                 BinaryOperatorKind.And => new AndValue(),
                 BinaryOperatorKind.Or => new OrValue(),
-                BinaryOperatorKind.ExclusiveOr => new XorValue(),
+                BinaryOperatorKind.ExclusiveOr => new XorValue(),*/
                 BinaryOperatorKind.ConditionalAnd => new ConditionalAndValue(),
                 BinaryOperatorKind.ConditionalOr => new ConditionalOrValue(),
                 BinaryOperatorKind.Equals => new EqualsValue(),
@@ -327,7 +346,7 @@ namespace GenericMathsGenerator
                 BinaryOperatorKind.LessThan => new LessThanValue(),
                 BinaryOperatorKind.LessThanOrEqual => new LessThanOrEqualValue(),
                 BinaryOperatorKind.GreaterThanOrEqual => new GreaterThanOrEqualValue(),
-                BinaryOperatorKind.GreaterThan => new GreaterThanValue(),*/
+                BinaryOperatorKind.GreaterThan => new GreaterThanValue(),
                 _ => throw new DiagnosticException
                 (
                     Diagnostic.Create

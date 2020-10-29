@@ -12,7 +12,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     [DebuggerDisplay("{OpStr}({Child})")]
     public abstract class UnaryOperatorValue : IValue, IEquatable<UnaryOperatorValue>

@@ -5,9 +5,8 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using GenericMathsGenerator.ValueTypes;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator.ValueProcessors
 {
     public class VariableInliner : IVariableProcessor
     {

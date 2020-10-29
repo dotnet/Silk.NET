@@ -12,7 +12,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     [DebuggerDisplay("{ParameterName}")]
     public class ParameterReferenceValue : IValue, IEquatable<ParameterReferenceValue>

@@ -4,9 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using GenericMathsGenerator.ValueTypes;
+using Silk.NET.Maths.GenericsGenerator.ValueTypes;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator.ValueProcessors
 {
     public class ConstantFolder : IValueProcessor
     {

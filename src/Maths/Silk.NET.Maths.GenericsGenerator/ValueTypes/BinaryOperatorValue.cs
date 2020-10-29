@@ -12,7 +12,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     [DebuggerDisplay("({Left}) {OpStr} ({Right})")]
     public abstract class BinaryOperatorValue : IValue, IEquatable<BinaryOperatorValue>

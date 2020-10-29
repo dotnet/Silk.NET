@@ -13,7 +13,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace GenericMathsGenerator.ValueTypes
+namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     [DebuggerDisplay("{_value}")]
     public class LiteralValue : IValue, IEquatable<LiteralValue>

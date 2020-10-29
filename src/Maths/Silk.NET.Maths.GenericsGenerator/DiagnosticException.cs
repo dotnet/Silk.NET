@@ -6,7 +6,7 @@
 using System;
 using Microsoft.CodeAnalysis;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator
 {
     public class DiagnosticException : Exception
     {

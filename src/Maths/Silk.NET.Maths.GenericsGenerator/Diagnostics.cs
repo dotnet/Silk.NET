@@ -3,10 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using Microsoft.CodeAnalysis;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator
 {
     public static class Diagnostics
     {

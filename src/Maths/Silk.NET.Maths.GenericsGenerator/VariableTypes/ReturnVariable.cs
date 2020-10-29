@@ -6,11 +6,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using GenericMathsGenerator.ValueTypes;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace GenericMathsGenerator.VariableTypes
+namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
 {
     [DebuggerDisplay("return ({Value})")]
     public class ReturnVariable : IVariable, IEquatable<ReturnVariable>

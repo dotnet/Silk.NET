@@ -10,15 +10,16 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using GenericMathsGenerator.ValueTypes;
-using GenericMathsGenerator.VariableTypes;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
+using Silk.NET.Maths.GenericsGenerator.ValueProcessors;
+using Silk.NET.Maths.GenericsGenerator.ValueTypes;
+using Silk.NET.Maths.GenericsGenerator.VariableTypes;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator
 {
     [Generator]
     public class Generator : ISourceGenerator

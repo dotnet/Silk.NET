@@ -12,7 +12,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace GenericMathsGenerator.ValueTypes
+namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     public class PropertyReferenceValue : IValue, IEquatable<PropertyReferenceValue>
     {

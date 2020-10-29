@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace GenericMathsGenerator.VariableTypes
+namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
 {
     public sealed class AssignmentVariable : IVariable
     {

@@ -6,7 +6,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator
 {
     public class TypeMismatchException : Exception
     {

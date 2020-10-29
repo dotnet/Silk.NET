@@ -6,7 +6,7 @@
 using System;
 using Microsoft.CodeAnalysis.CSharp;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     public class NegateValue : UnaryOperatorValue
     {

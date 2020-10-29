@@ -9,14 +9,14 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using GenericMathsGenerator.ValueTypes;
-using GenericMathsGenerator.VariableTypes;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.Maths.GenericsGenerator.ValueTypes;
+using Silk.NET.Maths.GenericsGenerator.VariableTypes;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
-namespace GenericMathsGenerator
+namespace Silk.NET.Maths.GenericsGenerator
 {
     public enum NumericTargetType
     {
