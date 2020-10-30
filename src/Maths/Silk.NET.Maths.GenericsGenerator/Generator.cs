@@ -298,13 +298,9 @@ namespace GenericMaths
                 switch (member)
                 {
                     case MethodDeclarationSyntax method:
-                        if (!(model.GetDeclaredSymbol
-                                (method) is { ReturnType: { SpecialType: SpecialType.System_Single } }) ||
-                            method.ParameterList.Parameters.Any
-                            (
-                                x => !(model.GetDeclaredSymbol(method.ReturnType) is ITypeSymbol ts &&
-                                       ts.SpecialType == SpecialType.System_Single)
-                            ))
+                        var methodSymbol = model.GetDeclaredSymbol(method);
+                        if (!(methodSymbol is { ReturnType: { SpecialType: SpecialType.System_Single } }) ||
+                            methodSymbol.Parameters.Any(x => x.Type.SpecialType != SpecialType.System_Single))
                         {
                             resultMembers.Add(method);
                             continue;
@@ -761,7 +757,7 @@ namespace GenericMaths
                     typeParameterList,
                     parameterList.WithParameters
                         (SeparatedList(parameterList.Parameters.Select(x => x.WithType(resolvedT)))), constraintClauses,
-                    Block(BuildScope(rootScope, targetType)), null
+                    Block(BuildScope(rootScope, targetType) ?? EmptyStatement()), null
                 );
                 if (privatizeNonGeneric)
                 {
@@ -915,19 +911,19 @@ namespace GenericMaths
             NumericTargetType.Double
         };
 
-        private static StatementSyntax BuildScope
-            (Scope scope, NumericTargetType numericTargetType)
+        private static StatementSyntax? BuildScope(Scope scope, NumericTargetType numericTargetType)
         {
             if (scope.Condition.ConstantValue.HasValue)
                 if (!(bool) scope.Condition.ConstantValue.Value)
                     return Block();
-            
+
             static ExpressionSyntax ResolveValue(IValue value, IBodyBuilder builder)
             {
                 if (builder.ResolvedValues.TryGetValue(value, out var v))
                     return v;
 
-                var exp = value.BuildExpression(builder, value.Children.Select(x => ResolveValue(x, builder)).ToImmutableArray());
+                var exp = value.BuildExpression
+                    (builder, value.Children.Select(x => ResolveValue(x, builder)).ToImmutableArray());
                 return builder.ResolvedValues[value] = value.Type switch
                 {
                     Type.Numeric => ParenthesizedExpression
@@ -946,24 +942,34 @@ namespace GenericMaths
             {
                 switch (scopeable)
                 {
-                    case IVariable variable when variable.References.Count + variable.ExtraReferences > 1 || variable is ReturnVariable:
-                        bodyBuilder.Statements.Add(variable.BuildStatement(bodyBuilder, ResolveValue(variable.Value, bodyBuilder)));
+                    case IVariable variable when variable.References.Count + variable.ExtraReferences > 1 ||
+                                                 variable is ReturnVariable:
+                        bodyBuilder.Statements.Add
+                            (variable.BuildStatement(bodyBuilder, ResolveValue(variable.Value, bodyBuilder)));
                         break;
                     case IVariable variable:
                         break;
                     case Scope childScope:
-                        bodyBuilder.Statements.Add(BuildScope(childScope, numericTargetType));
+                        var v = BuildScope(childScope, numericTargetType);
+                        if (v is not null)
+                            bodyBuilder.Statements.Add(v);
                         break;
                     default:
-                        throw new ArgumentOutOfRangeException(nameof(scopeable), $"Unknown scopable type {scopeable.GetType()}");
+                        throw new ArgumentOutOfRangeException
+                            (nameof(scopeable), $"Unknown scopable type {scopeable.GetType()}");
                 }
             }
-            
-            if (scope.Condition.ConstantValue.HasValue)
-                if ((bool)scope.Condition.ConstantValue.Value)
-                    return Block(statements);
 
-            return IfStatement(ResolveValue(scope.Condition, bodyBuilder), Block(statements));
+            if (statements.Count > 0)
+            {
+                if (scope.Condition.ConstantValue.HasValue)
+                    if ((bool) scope.Condition.ConstantValue.Value)
+                        return Block(statements);
+
+                return IfStatement(ResolveValue(scope.Condition, bodyBuilder), Block(statements));
+            }
+
+            return null;
         }
 
         private static IReadOnlyCollection<IVariable> GetDependencies(IVariable variable)

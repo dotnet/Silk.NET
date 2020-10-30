@@ -15,10 +15,21 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
             {
                 Type.Numeric => -(float) f,
                 Type.Boolean => !(bool) f,
-                _ => throw new ArgumentException("cannot process unary unknown", nameof(f))
+                _ => throw new ArgumentException("cannot process unary unknown", nameof(Type))
             };
 
-        protected override string OpStr => "-";
-        protected override SyntaxKind OpSyntaxKind => SyntaxKind.UnaryMinusExpression;
+        protected override string OpStr
+            => Type switch
+            {
+                Type.Numeric => "-", Type.Boolean => "!",
+                _ => throw new ArgumentException("cannot process unary unknown", nameof(Type))
+            };
+
+        protected override SyntaxKind OpSyntaxKind
+            => Type switch
+            {
+                Type.Numeric => SyntaxKind.UnaryMinusExpression, Type.Boolean => SyntaxKind.LogicalNotExpression,
+                _ => throw new ArgumentException("cannot process unary unknown", nameof(Type))
+            };
     }
 }
