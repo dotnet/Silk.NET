@@ -53,16 +53,6 @@ namespace Silk.NET.Maths.GenericsGenerator.Scopes
             if (scopeBuilder.Statements.Count < 1)
                 return;
 
-
-            if (Condition.ConstantValue.HasValue)
-            {
-                if ((bool) Condition.ConstantValue.Value)
-                {
-                    sourceScopeBuilder.Statements.Add(Block(scopeBuilder.Statements));
-                    return;
-                }
-            }
-
             sourceScopeBuilder.Statements.Add
                 (WhileStatement(scopeBuilder.Resolve(Condition), Block(scopeBuilder.Statements)));
         }
