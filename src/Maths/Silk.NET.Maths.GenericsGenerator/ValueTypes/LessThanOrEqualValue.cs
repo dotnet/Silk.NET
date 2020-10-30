@@ -4,11 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    public class LessThanOrEqualValue : BinaryOperatorValue
+    public sealed class LessThanOrEqualValue : BinaryOperatorValue
     {
         public override Type Type => Type.Boolean;
         protected override object Process(object left, object right)
@@ -21,5 +22,14 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 
         protected override string OpStr => "<=";
         protected override SyntaxKind OpSyntaxKind => SyntaxKind.LessThanOrEqualExpression;
+        public override void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine("BEGIN LESS THAN OR EQUAL");
+
+            indentation++;
+            Right.DebugWrite(writer, indentation);
+            Left.DebugWrite(writer, indentation);
+        }
     }
 }

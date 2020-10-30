@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 
@@ -27,6 +28,11 @@ namespace Silk.NET.Maths.GenericsGenerator
             }
 
             return list;
+        }
+        
+        public static void Indent(TextWriter textWriter, int count)
+        {
+            textWriter.Write(new string(' ', count * 2));
         }
     }
 }

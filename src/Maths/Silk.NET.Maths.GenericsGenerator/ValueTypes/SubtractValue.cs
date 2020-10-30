@@ -4,11 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    public class SubtractValue : BinaryOperatorValue
+    public sealed class SubtractValue : BinaryOperatorValue
     {
         public override Type Type => Type.Numeric;
         
@@ -22,5 +23,14 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 
         protected override string OpStr => "-";
         protected override SyntaxKind OpSyntaxKind => SyntaxKind.SubtractExpression;
+        public override void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine("BEGIN SUB");
+
+            indentation++;
+            Left.DebugWrite(writer, indentation);
+            Right.DebugWrite(writer, indentation);
+        }
     }
 }

@@ -4,11 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    public class DivideValue : BinaryOperatorValue
+    public sealed class DivideValue : BinaryOperatorValue
     {
         public override Type Type => Type.Numeric;
             
@@ -22,5 +23,14 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 
         protected override string OpStr => "/";
         protected override SyntaxKind OpSyntaxKind => SyntaxKind.DivideExpression;
+        public override void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine("BEGIN DIV");
+
+            indentation++;
+            Right.DebugWrite(writer, indentation);
+            Left.DebugWrite(writer, indentation);
+        }
     }
 }

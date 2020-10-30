@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -14,7 +15,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    public class PropertyReferenceValue : IValue, IEquatable<PropertyReferenceValue>
+    public sealed class PropertyReferenceValue : IValue, IEquatable<PropertyReferenceValue>
     {
         public PropertyReferenceValue(string name, Type type)
         {
@@ -23,7 +24,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         }
         public string Name { get; }
 
-        public Scope Scope { get; set; }
+        public IScope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Type Type { get; }
         public Optional<object> ConstantValue => default;
@@ -40,7 +41,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public int Step => 0;
 
         public ExpressionSyntax BuildExpression
-            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
+            (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             return CastExpression(PredefinedType(Token(SyntaxKind.ObjectKeyword)), IdentifierName(Name));
         }
@@ -70,6 +71,12 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public override int GetHashCode()
         {
             return Name.GetHashCode();
+        }
+
+        public void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine($"PROPERTY REF {Name}");
         }
     }
 }

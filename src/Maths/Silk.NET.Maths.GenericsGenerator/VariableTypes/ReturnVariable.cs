@@ -6,19 +6,20 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
 {
     [DebuggerDisplay("return ({Value})")]
-    public class ReturnVariable : IVariable, IEquatable<ReturnVariable>
+    public sealed class ReturnVariable : IVariable, IEquatable<ReturnVariable>
     {
         public IValue Value { get; set; }
         public List<IVariableReference> References { get; set; }
         public int ExtraReferences { get; set; }
-        public StatementSyntax BuildStatement(IBodyBuilder builder, ExpressionSyntax value) 
-            => ReturnStatement(value);
+        public void BuildStatement(IScopeBuilder builder) 
+            => builder.Statements.Add(ReturnStatement(builder.Resolve(Value)));
 
         public ReturnVariable(IValue value)
         {
@@ -53,6 +54,13 @@ namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
         public override int GetHashCode()
         {
             return Value.GetHashCode();
+        }
+
+        public void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine($"BEGIN RETURN REFC: {References.Count} + {ExtraReferences}");
+            Value.DebugWrite(writer, indentation + 1);
         }
     }
 }

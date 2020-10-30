@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Operations;
+using Silk.NET.Maths.GenericsGenerator.Scopes;
 using Silk.NET.Maths.GenericsGenerator.ValueTypes;
 using Silk.NET.Maths.GenericsGenerator.VariableTypes;
 
@@ -23,8 +24,8 @@ namespace Silk.NET.Maths.GenericsGenerator
         private Dictionary<string, IVariable> _locals;
         private List<LocalReferenceValue> _localReferences;
         private Location _currentLocation;
-        private Stack<Scope> _scopes;
-        private Scope? _scope;
+        private Stack<IScope> _scopes;
+        private IScope? _scope;
         private Stack<IValue> _values;
         private IValue? _value;
 
@@ -61,9 +62,9 @@ namespace Silk.NET.Maths.GenericsGenerator
         
         private DebugScopeBuilder _debugScopeBuilder;
 
-        private void BeginScope(IValue condition)
+        private void BeginScope(IScope scope)
         {
-            var v = new Scope {Condition = condition};
+            var v = scope;
             if (_scope is not null)
             {
                 v.Parent = _scope;
@@ -121,7 +122,7 @@ namespace Silk.NET.Maths.GenericsGenerator
             }
         }
         
-        public Scope? RootVisit(GeneratorExecutionContext context, IOperation root)
+        public IScope? RootVisit(GeneratorExecutionContext context, IOperation root)
         {
             TextWriter file = TextWriter.Null;
 #if DEBUG
@@ -130,7 +131,7 @@ namespace Silk.NET.Maths.GenericsGenerator
 
             _debugScopeBuilder = new DebugScopeBuilder(file);
             _values = new Stack<IValue>();
-            _scopes = new Stack<Scope>();
+            _scopes = new Stack<IScope>();
             _locals = new Dictionary<string, IVariable>();
             _localReferences = new List<LocalReferenceValue>();
             _floatType = context.Compilation.GetSpecialType(SpecialType.System_Single);
@@ -140,7 +141,7 @@ namespace Silk.NET.Maths.GenericsGenerator
             {
                 _currentLocation = root.Syntax.GetLocation();
                 _debugScopeBuilder.Begin('S', "ROOT");
-                BeginScope(new LiteralValue(true));
+                BeginScope(new Block());
                 base.Visit(root);
             }
             catch (DiagnosticException ex)
@@ -198,12 +199,12 @@ namespace Silk.NET.Maths.GenericsGenerator
             _debugScopeBuilder.End();
             _debugScopeBuilder.Begin('S', "BEGIN TRUE");
             var condition = _values.Pop();
-            BeginScope(condition);
+            BeginScope(new If(condition));
             base.Visit(operation.WhenTrue);
             EndScope();
             _debugScopeBuilder.End();
             _debugScopeBuilder.Begin('S', "BEGIN FALSE");
-            BeginScope(new NegateValue {Child = condition});
+            BeginScope(new If(new NegateValue {Child = condition}));
             base.Visit(operation.WhenFalse);
             EndScope();
             _debugScopeBuilder.End();
@@ -214,7 +215,7 @@ namespace Silk.NET.Maths.GenericsGenerator
             _currentLocation = operation.Syntax.GetLocation();
             
             _debugScopeBuilder.Begin('S', $"BEGIN SCOPE");
-            BeginScope(new LiteralValue(true));
+            BeginScope(new Block());
             base.VisitBlock(operation);
             EndScope();
             _debugScopeBuilder.End();

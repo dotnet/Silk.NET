@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueProcessors
 {
-    public class VariableInliner : IVariableProcessor
+    public sealed class VariableInliner : IVariableProcessor
     {
         public IEnumerable<IVariable> Process(IEnumerable<IVariable> variables)
         {

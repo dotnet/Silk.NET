@@ -4,11 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    public class NegateValue : UnaryOperatorValue
+    public sealed class NegateValue : UnaryOperatorValue
     {
         protected override object Process(object f)
             => Type switch
@@ -31,5 +32,14 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
                 Type.Numeric => SyntaxKind.UnaryMinusExpression, Type.Boolean => SyntaxKind.LogicalNotExpression,
                 _ => throw new ArgumentException("cannot process unary unknown", nameof(Type))
             };
+
+        public override void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine("BEGIN NOT");
+
+            indentation++;
+            Child.DebugWrite(writer, indentation);
+        }
     }
 }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -15,7 +16,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     [DebuggerDisplay("{ParameterName}")]
-    public class ParameterReferenceValue : IValue, IEquatable<ParameterReferenceValue>
+    public sealed class ParameterReferenceValue : IValue, IEquatable<ParameterReferenceValue>
     {
         public string ParameterName { get; }
 
@@ -25,7 +26,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
             Type = type;
         }
 
-        public Scope Scope { get; set; }
+        public IScope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Type Type { get; }
         public Optional<object> ConstantValue => default;
@@ -43,7 +44,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public int Step => 0;
 
         public ExpressionSyntax BuildExpression
-            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
+            (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             return SyntaxFactory.IdentifierName(ParameterName);
         }
@@ -75,6 +76,12 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public override int GetHashCode()
         {
             return ParameterName.GetHashCode();
+        }
+
+        public void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine($"PARAM REF {ParameterName}");
         }
     }
 }

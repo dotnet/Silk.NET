@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -16,7 +17,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     [DebuggerDisplay("{_value}")]
-    public class LiteralValue : IValue, IEquatable<LiteralValue>
+    public sealed class LiteralValue : IValue, IEquatable<LiteralValue>
     {
         public LiteralValue(float value)
         {
@@ -39,7 +40,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         private object _value;
 
         public Type Type { get; }
-        public Scope Scope { get; set; }
+        public IScope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Optional<object> ConstantValue => new Optional<object>(_value);
         public IEnumerable<IValue> Children
@@ -55,16 +56,16 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public int Step => 0;
 
         public ExpressionSyntax BuildExpression
-            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
+            (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             Debug.Assert(children.Length == 0);
             return Type switch
             {
                 Type.Numeric => CastExpression
                 (
-                    bodyBuilder.NumericType.GetTypeSyntax(), LiteralExpression
+                    scopeBuilder.NumericType.GetTypeSyntax(), LiteralExpression
                     (
-                        SyntaxKind.NumericLiteralExpression, bodyBuilder.NumericType switch
+                        SyntaxKind.NumericLiteralExpression, scopeBuilder.NumericType switch
                         {
                             NumericTargetType.Byte => Literal((byte) (float)_value),
                             NumericTargetType.SByte => Literal((sbyte) (float)_value),
@@ -76,7 +77,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
                             NumericTargetType.Long => Literal((long) (float)_value),
                             NumericTargetType.Single => Literal((float)_value),
                             NumericTargetType.Double => Literal((double) (float)_value),
-                            _ => throw new ArgumentOutOfRangeException(nameof(bodyBuilder.NumericType))
+                            _ => throw new ArgumentOutOfRangeException(nameof(scopeBuilder.NumericType))
                         }
                     )
                 ),
@@ -115,6 +116,12 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public override int GetHashCode()
         {
             return _value.GetHashCode();
+        }
+
+        public void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine($"LITERAL {ConstantValue.Value}");
         }
     }
 }

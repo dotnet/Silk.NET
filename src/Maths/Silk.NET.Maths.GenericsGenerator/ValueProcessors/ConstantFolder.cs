@@ -8,7 +8,7 @@ using Silk.NET.Maths.GenericsGenerator.ValueTypes;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueProcessors
 {
-    public class ConstantFolder : IValueProcessor
+    public sealed class ConstantFolder : IValueProcessor
     {
         public IValue Process
             (IValue value, Func<IValue> next)

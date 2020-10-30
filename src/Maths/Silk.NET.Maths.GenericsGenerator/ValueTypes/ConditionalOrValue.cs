@@ -4,12 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
-using Type = Silk.NET.Maths.GenericsGenerator.Type;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    public class ConditionalOrValue : BinaryOperatorValue
+    public sealed class ConditionalOrValue : BinaryOperatorValue
     {
         public override Type Type => Type.Boolean;
 
@@ -23,5 +23,14 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 
         protected override string OpStr => "||";
         protected override SyntaxKind OpSyntaxKind => SyntaxKind.LogicalOrExpression;
+        public override void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine("BEGIN CONDITIONAL OR");
+
+            indentation++;
+            Right.DebugWrite(writer, indentation);
+            Left.DebugWrite(writer, indentation);
+        }
     }
 }

@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -13,28 +14,41 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
 {
     [DebuggerDisplay("{OriginalName} = ({Value}) ")]
-    public class LocalVariable : IVariable, IEquatable<LocalVariable>
+    public sealed class LocalVariable : IVariable, IEquatable<LocalVariable>
     {
         public string OriginalName { get; }
         public IValue Value { get; set; }
         public List<IVariableReference> References { get; set; }
         public int ExtraReferences { get; set; }
 
-        public StatementSyntax BuildStatement(IBodyBuilder builder, ExpressionSyntax value)
-            => LocalDeclarationStatement
+        public void BuildStatement(IScopeBuilder builder)
+        {
+            if (References.Count <= 1 && ExtraReferences <= 0)
+                return;
+            
+            builder.Statements.Add
             (
-                VariableDeclaration
+                LocalDeclarationStatement
                 (
-                    Value.Type switch
-                    {
-                        Type.Numeric => builder.NumericType.GetTypeSyntax(),
-                        Type.Boolean => PredefinedType(Token(SyntaxKind.BoolKeyword)),
-                        _ => throw new TypeMismatchException
-                            ($"Trying to resolve {Enum.GetName(typeof(Type), Value.Type)} Type Literal")
-                    },
-                    SingletonSeparatedList(VariableDeclarator(OriginalName).WithInitializer(EqualsValueClause(value)))
+                    VariableDeclaration
+                    (
+                        Value.Type switch
+                        {
+                            Type.Numeric => builder.NumericType.GetTypeSyntax(),
+                            Type.Boolean => PredefinedType(Token(SyntaxKind.BoolKeyword)),
+                            _ => throw new TypeMismatchException
+                                ($"Trying to resolve {Enum.GetName(typeof(Type), Value.Type)} Type Literal")
+                        },
+                        SingletonSeparatedList
+                        (
+                            VariableDeclarator
+                                    (OriginalName)
+                                .WithInitializer(EqualsValueClause(builder.Resolve(Value)))
+                        )
+                    )
                 )
             );
+        }
 
         public LocalVariable(string originalName, IValue value)
         {
@@ -73,6 +87,13 @@ namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
             {
                 return (OriginalName.GetHashCode() * 397) ^ Value.GetHashCode();
             }
+        }
+
+        public void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine($"BEGIN LOCAL VAR {OriginalName} REFC: {References.Count} + {ExtraReferences}");
+            Value.DebugWrite(writer, indentation + 1);
         }
     }
 }

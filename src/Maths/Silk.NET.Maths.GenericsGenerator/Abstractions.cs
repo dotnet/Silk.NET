@@ -65,36 +65,60 @@ namespace Silk.NET.Maths.GenericsGenerator
         IEnumerable<IVariable> Process(IEnumerable<IVariable> variable);
     }
 
-    public interface IBodyBuilder
+    public interface IScopeBuilder
     {
         List<StatementSyntax> Statements { get; set; }
         NumericTargetType NumericType { get; }
-        Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
+        ExpressionSyntax Resolve(IValue value);
+        IScopeBuilder CreateSubBuilder();
     }
 
-    public class ScalarBodyBuilder : IBodyBuilder
+    public sealed class ScalarScopeBuilder : IScopeBuilder
     {
-        public ScalarBodyBuilder(List<StatementSyntax> statements, NumericTargetType type)
+        public ScalarScopeBuilder(NumericTargetType type)
         {
-            Statements = statements;
+            Statements = new List<StatementSyntax>();
             NumericType = type;
             ResolvedValues = new Dictionary<IValue, ExpressionSyntax>();
         }
         public List<StatementSyntax> Statements { get; set; }
         public NumericTargetType NumericType { get; }
-        public Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
+
+        public ExpressionSyntax Resolve(IValue value)
+        {
+            if (ResolvedValues.TryGetValue(value, out var v))
+                return v;
+
+            var exp = value.BuildExpression(this, value.Children.Select(Resolve).ToImmutableArray());
+            return ResolvedValues[value] = value.Type switch
+            {
+                Type.Numeric => ParenthesizedExpression
+                    (CastExpression(NumericType.GetTypeSyntax(), ParenthesizedExpression(exp))),
+                Type.Boolean => ParenthesizedExpression
+                    (CastExpression(PredefinedType(Token(SyntaxKind.BoolKeyword)), ParenthesizedExpression(exp))),
+                _ => throw new ArgumentOutOfRangeException
+                    (nameof(value.Type), $"Unknown Type {Enum.GetName(typeof(Type), value.Type)}")
+            };
+        }
+
+        public IScopeBuilder CreateSubBuilder()
+        {
+            return new ScalarScopeBuilder(NumericType);
+        }
+
+        private Dictionary<IValue, ExpressionSyntax> ResolvedValues { get; }
     }
 
-    public interface IValue : IEquatable<IValue>
+    public interface IValue : IEquatable<IValue>, IDebugWriteable
     {
-        Scope Scope { get; set; }
+        IScope Scope { get; set; }
         IValue? Parent { get; set; }
         Type Type { get; }
         Optional<object> ConstantValue { get; }
         IEnumerable<IValue> Children { get; set; }
         int Step { get; }
         ExpressionSyntax BuildExpression
-            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children);
+            (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children);
     }
 
     public enum Type
@@ -109,7 +133,6 @@ namespace Silk.NET.Maths.GenericsGenerator
         IValue Value { get; set; }
         List<IVariableReference> References { get; set; }
         int ExtraReferences { get; set; }
-        StatementSyntax BuildStatement(IBodyBuilder builder, ExpressionSyntax value);
     }
 
     public interface IVariableReference : IValue
@@ -117,158 +140,20 @@ namespace Silk.NET.Maths.GenericsGenerator
         
     }
 
-    public interface IScopeable
+    public interface IDebugWriteable
     {
-        
+        void DebugWrite(TextWriter writer, int indentation = 0);
     }
-    
-    public sealed class Scope : IScopeable
+
+    public interface IScopeable : IDebugWriteable
     {
-        public List<IScopeable> Scopeables = new List<IScopeable>();
-        private IValue _condition;
-        public Scope Parent { get; set; }
+        void BuildStatement(IScopeBuilder builder);
+    }
 
-        public IValue Condition
-        {
-            get => _condition;
-            set
-            {
-                if (value.Type != Type.Boolean)
-                    throw new TypeMismatchException
-                    (
-                        $"Conditions type was {Enum.GetName(typeof(Type), value.Type)} but should be {nameof(Type.Boolean)}"
-                    );
-                _condition = value;
-            }
-        }
-
-        [Conditional("DEBUG")]
-        public void DebugWrite(TextWriter file, int indentation = 0)
-        {
-            static void Indent(TextWriter file, int count)
-            {
-                file.Write(new string(' ', count * 2));
-            }
-
-            static void DebugWriteValue(TextWriter writer, int indentation, IValue value)
-            {
-                switch (value)
-                {
-                    case AddValue addValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine("BEGIN ADD");
-
-                        indentation++;
-                        DebugWriteValue(writer, indentation, addValue.Left);
-                        DebugWriteValue(writer, indentation, addValue.Right);
-                        indentation--;
-                        break;
-                    case DivideValue divideValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine("BEGIN DIV");
-
-                        indentation++;
-                        DebugWriteValue(writer, indentation, divideValue.Left);
-                        DebugWriteValue(writer, indentation, divideValue.Right);
-                        indentation--;
-                        break;
-                    case MultiplyValue multiplyValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine("BEGIN MUL");
-
-                        indentation++;
-                        DebugWriteValue(writer, indentation, multiplyValue.Left);
-                        DebugWriteValue(writer, indentation, multiplyValue.Right);
-                        indentation--;
-                        break;
-                    case SubtractValue subtractValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine("BEGIN SUB");
-
-                        indentation++;
-                        DebugWriteValue(writer, indentation, subtractValue.Left);
-                        DebugWriteValue(writer, indentation, subtractValue.Right);
-                        indentation--;
-                        break;
-                    case NegateValue negateValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine("BEGIN NEGATE");
-
-                        indentation++;
-                        DebugWriteValue(writer, indentation, negateValue.Child);
-                        indentation--;
-                        break;
-                    case ParameterReferenceValue parameterReferenceValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine($"PARAM REF {parameterReferenceValue.ParameterName}");
-                        break;
-                    case FieldReferenceValue fieldReferenceValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine($"PARAM REF {fieldReferenceValue.Name}");
-                        break;
-                    case LiteralValue literalValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine($"LITERAL {literalValue.ConstantValue.Value}");
-                        break;
-                    case LocalReferenceValue localReferenceValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine($"LOCAL REF {localReferenceValue.Name}");
-                        break;
-                    case PropertyReferenceValue propertyReferenceValue:
-                        Indent(writer, indentation);
-                        writer.WriteLine($"PROPERTY REF {propertyReferenceValue.Name}");
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(value));
-                }
-            }
-            
-            Indent(file, indentation);
-            file.WriteLine("BEGIN SCOPE");
-            
-            foreach (var scopeable in Scopeables)
-            {
-                if (scopeable is Scope s)
-                {
-                    s.DebugWrite(file, indentation + 1);
-                }
-                else if (scopeable is IVariable v)
-                {
-                    switch (v)
-                    {
-                        case LocalVariable localVariable:
-                            indentation++;
-                            
-                            Indent(file, indentation);
-                            file.WriteLine($"BEGIN LOCAL VAR {localVariable.OriginalName} REFC: {localVariable.References.Count}");
-                            DebugWriteValue(file, indentation + 1, localVariable.Value);
-
-                            indentation--;
-                            break;
-                        case ReturnVariable returnVariable:
-                            indentation++;
-                            
-                            Indent(file, indentation);
-                            file.WriteLine($"BEGIN RETURN REFC: {returnVariable.References.Count}");
-                            DebugWriteValue(file, indentation + 1, returnVariable.Value);
-
-                            indentation--;
-                            break;
-                        case AssignmentVariable assignmentVariable:
-                            indentation++;
-
-                            Indent(file, indentation);
-                            file.WriteLine($"BEGIN ASSIGNMENT VAR {assignmentVariable.OriginalName} REFC: {assignmentVariable.References.Count}");
-                            DebugWriteValue(file, indentation + 1, assignmentVariable.Value);
-
-                            indentation--;
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException(nameof(v));
-                    }
-                }
-            }
-        }
+    public interface IScope : IScopeable
+    {
+        List<IScopeable> Scopeables { get; set; }
+        IScope Parent { get; set; }
     }
 
     public static class Extensions

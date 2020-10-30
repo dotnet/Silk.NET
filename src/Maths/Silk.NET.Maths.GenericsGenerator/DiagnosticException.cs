@@ -8,7 +8,7 @@ using Microsoft.CodeAnalysis;
 
 namespace Silk.NET.Maths.GenericsGenerator
 {
-    public class DiagnosticException : Exception
+    public sealed class DiagnosticException : Exception
     {
         public Diagnostic Diagnostic { get; }
 

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -15,7 +16,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
     [DebuggerDisplay("{Name}: {LocalVariable}")]
-    public class LocalReferenceValue : IValue, IVariableReference, IEquatable<LocalReferenceValue>
+    public sealed class LocalReferenceValue : IValue, IVariableReference, IEquatable<LocalReferenceValue>
     {
         public LocalReferenceValue(string name)
         {
@@ -28,7 +29,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public int Step => (LocalVariable?.Value.Step + 1) ?? 0;
 
         public ExpressionSyntax BuildExpression
-            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
+            (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             if (LocalVariable is null)
                 throw new InvalidOperationException($"Local variable reference has not been resolved");
@@ -37,7 +38,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
             return IdentifierName(name);
         }
 
-        public Scope Scope { get; set; }
+        public IScope Scope { get; set; }
         public IValue? Parent { get; set; }
         public Type Type => LocalVariable?.Value.Type ?? Type.Unknown;
         public Optional<object> ConstantValue => LocalVariable?.Value.ConstantValue ?? default;
@@ -88,6 +89,12 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
             {
                 return ((LocalVariable != null ? LocalVariable.GetHashCode() : 0) * 397) ^ Name.GetHashCode();
             }
+        }
+
+        public void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine($"LOCAL REF {Name}");
         }
     }
 }

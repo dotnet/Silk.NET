@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths.GenericsGenerator
 {
-    public class TypeMismatchException : Exception
+    public sealed class TypeMismatchException : Exception
     {
         public TypeMismatchException() { }
         protected TypeMismatchException(SerializationInfo info, StreamingContext context) : base(info, context) { }

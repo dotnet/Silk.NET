@@ -22,7 +22,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.Maths.GenericsGenerator
 {
     [Generator]
-    public class Generator : ISourceGenerator
+    public sealed class Generator : ISourceGenerator
     {
         public void Initialize(GeneratorInitializationContext context) 
             => context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
@@ -638,7 +638,7 @@ namespace GenericMaths
             scope = ProcessScope(scope);
 
             var rootScope = scope;
-            while (rootScope.Scopeables.Count == 1 && rootScope.Scopeables[0] is Scope s)
+            while (rootScope.Scopeables.Count == 1 && rootScope.Scopeables[0] is IScope s)
                 rootScope = s;
 
             var methods = GetMethods(rootScope, makeGenericDefinitionGenericRoot, generateGenericMethod, genericMethodName, targetTypes, throwHelperName, genericParameter, privatizeNonGeneric, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses);
@@ -646,7 +646,7 @@ namespace GenericMaths
             return methods;
         }
 
-        private static Scope ProcessScope(Scope scope, List<IVariable>? variables = null)
+        private static IScope ProcessScope(IScope scope, List<IVariable>? variables = null)
         {
             void ProcessTheThings(ref List<IVariable> list)
             {
@@ -667,7 +667,7 @@ namespace GenericMaths
                     => processor.Process(x, () => ValueProcessRec(processor, x))));
             }
 
-            static void RecAssignScope(IValue value, Scope scope)
+            static void RecAssignScope(IValue value, IScope scope)
             {
                 value.Scope = scope;
                 foreach (var child in value.Children)
@@ -684,16 +684,8 @@ namespace GenericMaths
                 {
                     ProcessTheThings(ref variables);
 
-                    var childScope = scopeable as Scope;
+                    var childScope = scopeable as IScope;
                     Debug.Assert(childScope is not null);
-                    
-                    bool isIgnored = false;
-                    if (childScope.Condition.ConstantValue.HasValue)
-                    {
-                        isIgnored = !(bool)childScope.Condition.ConstantValue.Value;
-                    }
-                    if (isIgnored)
-                        continue;
                     
                     var vars = new List<IVariable>();
                     vars.AddRange(variables);
@@ -714,7 +706,7 @@ namespace GenericMaths
         }
 
         private static List<MethodDeclarationSyntax> GetMethods(
-            Scope rootScope,
+            IScope rootScope,
             bool makeGenericDefinitionGenericRoot,
             bool generateGenericMethod,
             string? genericMethodName,
@@ -751,13 +743,15 @@ namespace GenericMaths
             {
                 var resolvedT = targetType.GetTypeSyntax();
 
+                var scopeBuilder = new ScalarScopeBuilder(targetType);
+                rootScope.BuildStatement(scopeBuilder);
                 var m = MethodDeclaration
                 (
                     attributeLists, modifiers, resolvedT, explicitInterfaceSpecifier, Identifier(mId),
                     typeParameterList,
                     parameterList.WithParameters
                         (SeparatedList(parameterList.Parameters.Select(x => x.WithType(resolvedT)))), constraintClauses,
-                    Block(BuildScope(rootScope, targetType) ?? EmptyStatement()), null
+                    Block(scopeBuilder.Statements), null
                 );
                 if (privatizeNonGeneric)
                 {
@@ -855,48 +849,6 @@ namespace GenericMaths
             return methods;
         }
 
-        private static void GetBucketsAndParameters
-        (
-            IValue value,
-            out List<ParameterReferenceValue> parameters,
-            out ImmutableDictionary<Scope, ImmutableSortedDictionary<int, List<IValue>>> sortedBuckets
-        )
-        {
-            var stack = new Stack<IValue>();
-            stack.Push(value);
-
-            parameters = new List<ParameterReferenceValue>();
-            var buckets = new Dictionary<Scope, Dictionary<int, List<IValue>>>();
-            while (stack.Count != 0)
-            {
-                var current = stack.Pop();
-                foreach (var child in current.Children)
-                {
-                    stack.Push(child);
-                }
-
-                if (!buckets.TryGetValue(current.Scope, out var scopedBucket))
-                {
-                    buckets[current.Scope] = scopedBucket = new Dictionary<int, List<IValue>>();
-                }
-
-                if (scopedBucket.TryGetValue(current.Step, out var list))
-                    list.Add(current);
-                else
-                    scopedBucket[current.Step] = new List<IValue> {current};
-
-                if (current is ParameterReferenceValue prv)
-                    parameters.Add(prv);
-            }
-
-            parameters = parameters.Distinct().ToList();
-            sortedBuckets = buckets.ToImmutableDictionary
-            (
-                x => x.Key,
-                x => x.Value.ToImmutableSortedDictionary(x2 => x2.Key, x2 => x2.Value, Comparer<int>.Default)
-            );
-        }
-
         private static IEnumerable<NumericTargetType> TargetTypes = new[]
         {
             NumericTargetType.Byte,
@@ -910,67 +862,6 @@ namespace GenericMaths
             NumericTargetType.Single,
             NumericTargetType.Double
         };
-
-        private static StatementSyntax? BuildScope(Scope scope, NumericTargetType numericTargetType)
-        {
-            if (scope.Condition.ConstantValue.HasValue)
-                if (!(bool) scope.Condition.ConstantValue.Value)
-                    return Block();
-
-            static ExpressionSyntax ResolveValue(IValue value, IBodyBuilder builder)
-            {
-                if (builder.ResolvedValues.TryGetValue(value, out var v))
-                    return v;
-
-                var exp = value.BuildExpression
-                    (builder, value.Children.Select(x => ResolveValue(x, builder)).ToImmutableArray());
-                return builder.ResolvedValues[value] = value.Type switch
-                {
-                    Type.Numeric => ParenthesizedExpression
-                        (CastExpression(builder.NumericType.GetTypeSyntax(), ParenthesizedExpression(exp))),
-                    Type.Boolean => ParenthesizedExpression
-                        (CastExpression(PredefinedType(Token(SyntaxKind.BoolKeyword)), ParenthesizedExpression(exp))),
-                    _ => throw new ArgumentOutOfRangeException
-                        (nameof(value.Type), $"Unknown Type {Enum.GetName(typeof(Type), value.Type)}")
-                };
-            }
-
-            var statements = new List<StatementSyntax>();
-            var bodyBuilder = new ScalarBodyBuilder(statements, numericTargetType);
-
-            foreach (var scopeable in scope.Scopeables)
-            {
-                switch (scopeable)
-                {
-                    case IVariable variable when variable.References.Count + variable.ExtraReferences > 1 ||
-                                                 variable is ReturnVariable:
-                        bodyBuilder.Statements.Add
-                            (variable.BuildStatement(bodyBuilder, ResolveValue(variable.Value, bodyBuilder)));
-                        break;
-                    case IVariable variable:
-                        break;
-                    case Scope childScope:
-                        var v = BuildScope(childScope, numericTargetType);
-                        if (v is not null)
-                            bodyBuilder.Statements.Add(v);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException
-                            (nameof(scopeable), $"Unknown scopable type {scopeable.GetType()}");
-                }
-            }
-
-            if (statements.Count > 0)
-            {
-                if (scope.Condition.ConstantValue.HasValue)
-                    if ((bool) scope.Condition.ConstantValue.Value)
-                        return Block(statements);
-
-                return IfStatement(ResolveValue(scope.Condition, bodyBuilder), Block(statements));
-            }
-
-            return null;
-        }
 
         private static IReadOnlyCollection<IVariable> GetDependencies(IVariable variable)
         {
@@ -1025,7 +916,7 @@ namespace GenericMaths
             return possibleTypes;
         }
         
-        public class SyntaxReceiver : ISyntaxReceiver
+        public sealed class SyntaxReceiver : ISyntaxReceiver
         {
             public List<TypeDeclarationSyntax> Types = new List<TypeDeclarationSyntax>();
             public List<MethodDeclarationSyntax> Methods = new List<MethodDeclarationSyntax>();

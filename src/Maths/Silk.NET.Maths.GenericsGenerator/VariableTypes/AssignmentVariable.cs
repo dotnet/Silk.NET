@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using System.IO;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -16,9 +17,23 @@ namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
         public IValue Value { get; set; }
         public List<IVariableReference> References { get; set; }
         public int ExtraReferences { get; set; }
-        public StatementSyntax BuildStatement(IBodyBuilder builder, ExpressionSyntax value)
-            => ExpressionStatement
-            (AssignmentExpression(SyntaxKind.SimpleAssignmentExpression, IdentifierName(OriginalName), value));
+        public void BuildStatement(IScopeBuilder builder)
+        {
+            if (References.Count < 1 && ExtraReferences <= 0)
+                return;
+            
+            builder.Statements.Add
+            (
+                ExpressionStatement
+                (
+                    AssignmentExpression
+                    (
+                        SyntaxKind.SimpleAssignmentExpression, IdentifierName(OriginalName),
+                        builder.Resolve(Value)
+                    )
+                )
+            );
+        }
 
         public AssignmentVariable(string originalName, IValue value)
         {
@@ -57,6 +72,13 @@ namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
             {
                 return (OriginalName.GetHashCode() * 397) ^ Value.GetHashCode();
             }
+        }
+
+        public void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine($"BEGIN ASSIGNMENT VAR {OriginalName} REFC: {References.Count} + {ExtraReferences}");
+            Value.DebugWrite(writer, indentation + 1);
         }
     }
 }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -33,13 +34,13 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 
         public int Step => _step.Value;
         public ExpressionSyntax BuildExpression
-            (IBodyBuilder bodyBuilder, ImmutableArray<ExpressionSyntax> children)
+            (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             Debug.Assert(children.Length == 1);
             return SyntaxFactory.PrefixUnaryExpression(OpSyntaxKind, children[0]);
         }
 
-        public Scope Scope { get; set; }
+        public IScope Scope { get; set; }
         public IValue? Parent { get; set; }
 
         public Type Type => Child.Type;
@@ -108,5 +109,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
                 return (_child.GetHashCode() * 397) ^ OpStr.GetHashCode();
             }
         }
+
+        public abstract void DebugWrite(TextWriter writer, int indentation = 0);
     }
 }
