@@ -122,14 +122,9 @@ namespace Silk.NET.Maths.GenericsGenerator
             }
         }
         
-        public IScope? RootVisit(GeneratorExecutionContext context, IOperation root)
+        public IScope? RootVisit(GeneratorExecutionContext context, IOperation root, TextWriter debugOutput)
         {
-            TextWriter file = TextWriter.Null;
-#if DEBUG
-            // file = File.CreateText(@"C:\Silk.NET\src\Lab\GenericMaths\debug.txt");
-#endif
-
-            _debugScopeBuilder = new DebugScopeBuilder(file);
+            _debugScopeBuilder = new DebugScopeBuilder(debugOutput);
             _values = new Stack<IValue>();
             _scopes = new Stack<IScope>();
             _locals = new Dictionary<string, IVariable>();
@@ -155,12 +150,10 @@ namespace Silk.NET.Maths.GenericsGenerator
 
             ResolveReferences();
             _debugScopeBuilder.End();
-            file.WriteLine();
-            file.WriteLine();
-            file.WriteLine();
-            _scope.DebugWrite(file);
-            file.Flush();
-            file.Dispose();
+            debugOutput.WriteLine();
+            debugOutput.WriteLine();
+            debugOutput.WriteLine();
+            _scope.DebugWrite(debugOutput);
             return _scope;
         }
 
@@ -187,6 +180,14 @@ namespace Silk.NET.Maths.GenericsGenerator
                 _locals[localReference.Name].References.Add(localReference);
                 _localReferences[index] = localReference;
             }
+        }
+
+        public override void VisitExpressionStatement(IExpressionStatementOperation operation)
+        {            
+            _debugScopeBuilder.Begin('V', "Extra");
+            base.VisitExpressionStatement(operation);
+            _scope.Scopeables.Add(new ExtraVariable(_values.Pop()));
+            _debugScopeBuilder.End();
         }
 
         public override void VisitConditional(IConditionalOperation operation)
@@ -223,32 +224,11 @@ namespace Silk.NET.Maths.GenericsGenerator
 
         public override void VisitSimpleAssignment(ISimpleAssignmentOperation operation)
         {
-            if (operation.Target is ILocalReferenceOperation localReferenceOperation)
-            {
-                _debugScopeBuilder.Begin('A', $"Assign {localReferenceOperation.Local.Name}");
-                base.Visit(operation.Value);
-                var v = new AssignmentVariable(localReferenceOperation.Local.Name, _values.Pop());
-                _scope.Scopeables.Add(v);
-                _locals[localReferenceOperation.Local.Name].ExtraReferences++;
-                _locals[localReferenceOperation.Local.Name] = v;
-                _debugScopeBuilder.End();
-            } else if (operation.Target is IParameterReferenceOperation parameterReferenceOperation)
-            {
-                _debugScopeBuilder.Begin('A', $"Assign {parameterReferenceOperation.Parameter.Name}");
-                base.Visit(operation.Value);
-                _scope.Scopeables.Add(new AssignmentVariable(parameterReferenceOperation.Parameter.Name, _values.Pop()));
-                _debugScopeBuilder.End();
-            } else if (operation.Target is IPropertyReferenceOperation propertyReferenceOperation)
-            {
-                _debugScopeBuilder.Begin('A', $"Assign {propertyReferenceOperation.Property.Name}");
-                base.Visit(operation.Value);
-                _scope.Scopeables.Add(new AssignmentVariable(propertyReferenceOperation.Property.Name, _values.Pop()));
-                _debugScopeBuilder.End();
-            }
-            else
-            {
-                throw new DiagnosticException(Diagnostic.Create(Diagnostics.UnsupportedMember, _currentLocation, operation.GetType()));
-            }
+            _debugScopeBuilder.Begin('V', "Assign");
+            BeginValue(new AssignmentValue());
+            base.VisitSimpleAssignment(operation);
+            EndValue();
+            _debugScopeBuilder.End();
         }
 
         public override void VisitFieldReference(IFieldReferenceOperation operation)

@@ -26,7 +26,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public override void DebugWrite(TextWriter writer, int indentation = 0)
         {
             Helpers.Indent(writer, indentation);
-            writer.WriteLine("BEGIN MUl");
+            writer.WriteLine("BEGIN MUL");
 
             indentation++;
             Right.DebugWrite(writer, indentation);

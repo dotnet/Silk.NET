@@ -25,7 +25,7 @@ namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
         {
             if (References.Count <= 1 && ExtraReferences <= 0)
                 return;
-            
+
             builder.Statements.Add
             (
                 LocalDeclarationStatement
@@ -43,7 +43,11 @@ namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
                         (
                             VariableDeclarator
                                     (OriginalName)
-                                .WithInitializer(EqualsValueClause(builder.Resolve(Value)))
+                                .WithInitializer
+                                (
+                                    EqualsValueClause
+                                        (Helpers.Cast(builder.NumericType, Value.Type, builder.Resolve(Value)))
+                                )
                         )
                     )
                 )

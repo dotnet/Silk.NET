@@ -216,7 +216,7 @@ namespace GenericMaths
                                     );
                                 var str = newNamespace.NormalizeWhitespace().ToFullString();
                                 var name = $"{tds.Identifier.Text}_Maths_Generic_{Guid.NewGuid()}.cs";
-                                File.WriteAllText(@"C:\Silk.NET\src\Lab\GenericMaths\" + name, str);
+                                // File.WriteAllText(Helpers.DebugFolder + name, str);
                                 context.AddSource(name, str);
                             }
                             catch (DiagnosticException ex)
@@ -629,8 +629,16 @@ namespace GenericMaths
             if (!generateGenericMethod)
                 Debug.Assert(!makeGenericDefinitionGenericRoot);
             Debug.Assert(generateGenericMethod == genericMethodName is not null);
-            
-            var scope = new OperationWalker().RootVisit(context, operation);
+
+#if DEBUG
+            using var debugOutput = File.CreateText(Helpers.DebugFolder + "debug.txt");
+#else
+            using var debugOutput = TextWriter.Null;
+#endif
+            var scope = new OperationWalker().RootVisit
+            (
+                context, operation, debugOutput
+            );
 
             if (scope is null)
                 return null;
@@ -640,6 +648,11 @@ namespace GenericMaths
             var rootScope = scope;
             while (rootScope.Scopeables.Count == 1 && rootScope.Scopeables[0] is IScope s)
                 rootScope = s;
+            
+            debugOutput.WriteLine();
+            debugOutput.WriteLine("-- PROCESSED --");
+            debugOutput.WriteLine();
+            rootScope.DebugWrite(debugOutput);
 
             var methods = GetMethods(rootScope, makeGenericDefinitionGenericRoot, generateGenericMethod, genericMethodName, targetTypes, throwHelperName, genericParameter, privatizeNonGeneric, attributeLists, modifiers, typeParameterList, explicitInterfaceSpecifier, parameterList, constraintClauses);
 

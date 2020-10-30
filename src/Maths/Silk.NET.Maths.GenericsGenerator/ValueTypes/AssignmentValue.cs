@@ -6,25 +6,34 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
-    [DebuggerDisplay("({Left}) {OpStr} ({Right})")]
-    public abstract class BinaryOperatorValue : IValue, IEquatable<BinaryOperatorValue>
+    public sealed class AssignmentValue : IValue, IEquatable<AssignmentValue>
     {
         private IValue _left;
         private IValue _right;
         private Lazy<int> _step;
-        private Lazy<Optional<object>> _constantValue;
+        
+        public void DebugWrite(TextWriter writer, int indentation = 0)
+        {
+            Helpers.Indent(writer, indentation);
+            writer.WriteLine("BEGIN ASSIGNMENT");
+            Left.DebugWrite(writer, indentation + 1);
+            Right.DebugWrite(writer, indentation + 1);
+        }
 
-        public abstract Type Type { get; }
-
+        public IScope Scope { get; set; }
+        public IValue? Parent { get; set; }
+        public Type Type => Left.Type; // it's very likely we don't know the type of right, but it's very likely we know the type of left
+        public Optional<object> ConstantValue => default;
+        
         public IValue Left
         {
             get => _left;
@@ -45,26 +54,14 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
             }
         }
 
-        public int Step => _step.Value;
-
-        public ExpressionSyntax BuildExpression
-            (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
-        {
-            Debug.Assert(children.Length == 2);
-            return SyntaxFactory.BinaryExpression(OpSyntaxKind, Helpers.Cast(scopeBuilder.NumericType, Right.Type, children[0]), Helpers.Cast(scopeBuilder.NumericType, Left.Type, children[1]));
-        }
-
-        public IScope Scope { get; set; }
-        public IValue? Parent { get; set; }
-        public Optional<object> ConstantValue => _constantValue.Value;
         public IEnumerable<IValue> Children
         {
-            get => new[] {Left, Right};
+            get => new[] {_left, _right};
             set
             {
                 var arr = value.ToArray();
                 if (arr.Length > 2)
-                    throw new ArgumentOutOfRangeException(nameof(arr.Length), "Binary operator values have 2 children");
+                    throw new ArgumentOutOfRangeException(nameof(arr.Length), "Assignment values have 2 children");
                 if (arr.Length > 0)
                 {
                     if (arr[0].Type != Type.Numeric && arr[0].Type != Type.Unknown)
@@ -77,22 +74,23 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
                         _right = arr[1];
                     }
                 }
-
-                Recalculate();
             }
         }
 
-        private void Recalculate()
+        public void Recalculate()
         {
             _step = new Lazy<int>(() => (Left.Step > Right.Step ? Left.Step : Right.Step) + 1);
-            _constantValue = new Lazy<Optional<object>>(() => Left.ConstantValue.HasValue && Right.ConstantValue.HasValue ? new Optional<object>(Process(Left.ConstantValue.Value, Right.ConstantValue.Value)) : default);
         }
 
-        protected abstract object Process(object left, object right);
-        protected abstract string OpStr { get; }
-        protected abstract SyntaxKind OpSyntaxKind { get; }
+        public int Step => _step.Value;
+        public ExpressionSyntax BuildExpression(IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
+        {
+            return AssignmentExpression(SyntaxKind.SimpleAssignmentExpression, children[0] , Helpers.Cast(scopeBuilder.NumericType, Left.Type, children[1]));
+        }
 
-        public bool Equals(BinaryOperatorValue? other)
+        public bool Equals(IValue other) => other is AssignmentValue v && Equals(v);
+
+        public bool Equals(AssignmentValue? other)
         {
             if (ReferenceEquals(null, other))
             {
@@ -104,29 +102,36 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
                 return true;
             }
 
-            return _left.Equals(other._left) && _right.Equals(other._right) && OpStr == other.OpStr;
+            return _left.Equals(other._left) && _right.Equals(other._right) && _step.Equals(other._step) && Scope.Equals(other.Scope) && Equals(Parent, other.Parent) && Type == other.Type;
         }
 
         public override bool Equals(object? obj)
         {
-            return ReferenceEquals(this, obj) || obj is BinaryOperatorValue other && Equals(other);
+            return ReferenceEquals(this, obj) || obj is AssignmentValue other && Equals(other);
         }
-        
-        public bool Equals
-            (IValue other)
-            => ReferenceEquals(this, other) || other is BinaryOperatorValue o && Equals(o);
 
         public override int GetHashCode()
         {
             unchecked
             {
                 var hashCode = _left.GetHashCode();
-                hashCode = (hashCode * 397) ^ _right.GetHashCode();
-                hashCode = (hashCode * 397) ^ OpStr.GetHashCode();
+                hashCode = (hashCode * 397) ^ (_right?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ (_step?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ (Scope?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ (Parent != null ? Parent.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (int) Type;
                 return hashCode;
             }
         }
 
-        public abstract void DebugWrite(TextWriter writer, int indentation = 0);
+        public static bool operator ==(AssignmentValue? left, AssignmentValue? right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(AssignmentValue? left, AssignmentValue? right)
+        {
+            return !Equals(left, right);
+        }
     }
 }

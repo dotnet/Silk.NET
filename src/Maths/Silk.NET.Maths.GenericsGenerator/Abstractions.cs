@@ -90,15 +90,7 @@ namespace Silk.NET.Maths.GenericsGenerator
                 return v;
 
             var exp = value.BuildExpression(this, value.Children.Select(Resolve).ToImmutableArray());
-            return ResolvedValues[value] = value.Type switch
-            {
-                Type.Numeric => ParenthesizedExpression
-                    (CastExpression(NumericType.GetTypeSyntax(), ParenthesizedExpression(exp))),
-                Type.Boolean => ParenthesizedExpression
-                    (CastExpression(PredefinedType(Token(SyntaxKind.BoolKeyword)), ParenthesizedExpression(exp))),
-                _ => throw new ArgumentOutOfRangeException
-                    (nameof(value.Type), $"Unknown Type {Enum.GetName(typeof(Type), value.Type)}")
-            };
+            return ResolvedValues[value] = exp;
         }
 
         public IScopeBuilder CreateSubBuilder()

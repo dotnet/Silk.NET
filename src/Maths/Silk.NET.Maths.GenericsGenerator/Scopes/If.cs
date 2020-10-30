@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -28,10 +28,15 @@ namespace Silk.NET.Maths.GenericsGenerator.Scopes
         {
             Helpers.Indent(writer, indentation);
             writer.WriteLine("BEGIN IF");
+            Helpers.Indent(writer, indentation + 1);
+            writer.WriteLine("BEGIN CONDITION");
+            Condition.DebugWrite(writer, indentation + 2);
+            Helpers.Indent(writer, indentation + 1);
+            writer.WriteLine("BEGIN BODY");
 
             foreach (var scopeable in Scopeables)
             {
-                scopeable.DebugWrite(writer, indentation + 1);
+                scopeable.DebugWrite(writer, indentation + 2);
             }
         }
 
@@ -50,19 +55,21 @@ namespace Silk.NET.Maths.GenericsGenerator.Scopes
                 scopeable.BuildStatement(scopeBuilder);
             }
 
+            if (scopeBuilder.Statements.Count < 1)
+                return;
+
 
             if (Condition.ConstantValue.HasValue)
             {
                 if ((bool) Condition.ConstantValue.Value)
                 {
                     sourceScopeBuilder.Statements.Add(Block(scopeBuilder.Statements));
-                }
-                else
-                {
-                    sourceScopeBuilder.Statements.Add
-                        (IfStatement(scopeBuilder.Resolve(Condition), Block(scopeBuilder.Statements)));
+                    return;
                 }
             }
+
+            sourceScopeBuilder.Statements.Add
+                (IfStatement(scopeBuilder.Resolve(Condition), Block(scopeBuilder.Statements)));
         }
     }
 }

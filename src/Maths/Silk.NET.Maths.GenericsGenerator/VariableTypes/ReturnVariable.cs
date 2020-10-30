@@ -18,8 +18,10 @@ namespace Silk.NET.Maths.GenericsGenerator.VariableTypes
         public IValue Value { get; set; }
         public List<IVariableReference> References { get; set; }
         public int ExtraReferences { get; set; }
-        public void BuildStatement(IScopeBuilder builder) 
-            => builder.Statements.Add(ReturnStatement(builder.Resolve(Value)));
+
+        public void BuildStatement(IScopeBuilder builder)
+            => builder.Statements.Add
+                (ReturnStatement(Helpers.Cast(builder.NumericType, Value.Type, builder.Resolve(Value))));
 
         public ReturnVariable(IValue value)
         {

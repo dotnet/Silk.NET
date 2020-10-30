@@ -7,6 +7,9 @@ using System;
 using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.Maths.GenericsGenerator
 {
@@ -34,5 +37,19 @@ namespace Silk.NET.Maths.GenericsGenerator
         {
             textWriter.Write(new string(' ', count * 2));
         }
+
+        public static ExpressionSyntax Cast(NumericTargetType t1, Type t2, ExpressionSyntax source)
+            => t2 switch
+            {
+                Type.Numeric => ParenthesizedExpression
+                    (CastExpression(t1.GetTypeSyntax(), ParenthesizedExpression(source))),
+                Type.Boolean => ParenthesizedExpression
+                    (CastExpression(PredefinedType(Token(SyntaxKind.BoolKeyword)), ParenthesizedExpression(source))),
+                _ => throw new ArgumentOutOfRangeException(nameof(t1), $"Unknown Type {Enum.GetName(typeof(Type), t1)}")
+            };
+        
+        public const string DebugFolder = @"C:\Silk.NET\src\Lab\GenericMaths\";
     }
+
+    public class NumericType { }
 }

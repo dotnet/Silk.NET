@@ -12,6 +12,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
 {
@@ -46,7 +47,7 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
         public ExpressionSyntax BuildExpression
             (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
         {
-            return SyntaxFactory.IdentifierName(ParameterName);
+            return IdentifierName(ParameterName);
         }
 
         public bool Equals(ParameterReferenceValue? other)

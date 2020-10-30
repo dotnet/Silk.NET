@@ -37,7 +37,8 @@ namespace Silk.NET.Maths.GenericsGenerator.ValueTypes
             (IScopeBuilder scopeBuilder, ImmutableArray<ExpressionSyntax> children)
         {
             Debug.Assert(children.Length == 1);
-            return SyntaxFactory.PrefixUnaryExpression(OpSyntaxKind, children[0]);
+            return SyntaxFactory.PrefixUnaryExpression
+                (OpSyntaxKind, Helpers.Cast(scopeBuilder.NumericType, Child.Type, children[0]));
         }
 
         public IScope Scope { get; set; }
