@@ -182,6 +182,23 @@ namespace Silk.NET.Maths.GenericsGenerator
             }
         }
 
+        public override void VisitWhileLoop(IWhileLoopOperation operation)
+        {
+            _currentLocation = operation.Syntax.GetLocation();
+
+            _debugScopeBuilder.Begin('S', "BEGIN WHILE");
+            _debugScopeBuilder.Begin('C', "BEGIN CONDITION");
+            base.Visit(operation.Condition);
+            _debugScopeBuilder.End();
+            _debugScopeBuilder.Begin('S', "BEGIN BODY");
+            var condition = _values.Pop();
+            BeginScope(new WhileLoop(condition));
+            base.Visit(operation.Body);
+            EndScope();
+            _debugScopeBuilder.End();
+            _debugScopeBuilder.End();
+        }
+
         public override void VisitExpressionStatement(IExpressionStatementOperation operation)
         {            
             _debugScopeBuilder.Begin('V', "Extra");
@@ -208,6 +225,7 @@ namespace Silk.NET.Maths.GenericsGenerator
             BeginScope(new If(new NegateValue {Child = condition}));
             base.Visit(operation.WhenFalse);
             EndScope();
+            _debugScopeBuilder.End();
             _debugScopeBuilder.End();
         }
 

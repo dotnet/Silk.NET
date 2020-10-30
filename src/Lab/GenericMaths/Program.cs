@@ -32,7 +32,7 @@ namespace GenericMaths
         public float Method(float b)
         {
             var a = Field + Property;
-            if (b < 10)
+            while (b < 100)
             {
                 b = b + 5;
             }
