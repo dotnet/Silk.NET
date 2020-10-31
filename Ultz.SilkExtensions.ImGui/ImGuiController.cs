@@ -13,9 +13,9 @@ namespace Ultz.SilkExtensions.ImGui
 {
     public class ImGuiController : IDisposable
     {
-        private readonly GL _gl;
-        private readonly IView _view;
-        private readonly IInputContext _input;
+        private GL _gl;
+        private IView _view;
+        private IInputContext _input;
         private bool _frameBegun;
 
         // OpenGL objects
@@ -39,6 +39,45 @@ namespace Ultz.SilkExtensions.ImGui
         /// </summary>
         public ImGuiController(GL gl, IView view, IInputContext input)
         {
+            Init(gl, view, input);
+
+            var io = ImGuiNET.ImGui.GetIO();
+
+            io.Fonts.AddFontDefault();
+                
+            io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
+
+            CreateDeviceResources();
+            SetKeyMappings();
+
+            SetPerFrameImGuiData(1f / 60f);
+
+            BeginFrame();
+        }
+
+        /// <summary>
+        /// Constructs a new ImGuiController with font configuration.
+        /// </summary>
+        public unsafe ImGuiController(GL gl, IView view, IInputContext input, ImGuiFontConfig imGuiFontConfig)
+        {
+            Init(gl, view, input);
+            
+            var io = ImGuiNET.ImGui.GetIO();
+            
+            io.Fonts.AddFontFromFileTTF(imGuiFontConfig.FontPath, imGuiFontConfig.FontSize);
+
+            io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
+
+            CreateDeviceResources();
+            SetKeyMappings();
+
+            SetPerFrameImGuiData(1f / 60f);
+
+            BeginFrame();
+        }
+
+        private void Init(GL gl, IView view, IInputContext input)
+        {
             _gl = gl;
             _glVersion = new Version(gl.GetInteger(GLEnum.MajorVersion), gl.GetInteger(GLEnum.MinorVersion));
             _view = view;
@@ -48,16 +87,10 @@ namespace Ultz.SilkExtensions.ImGui
 
             IntPtr context = ImGuiNET.ImGui.CreateContext();
             ImGuiNET.ImGui.SetCurrentContext(context);
-            var io = ImGuiNET.ImGui.GetIO();
-            io.Fonts.AddFontDefault();
+        }
 
-            io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
-
-            CreateDeviceResources();
-            SetKeyMappings();
-
-            SetPerFrameImGuiData(1f / 60f);
-
+        private void BeginFrame()
+        {
             ImGuiNET.ImGui.NewFrame();
             _frameBegun = true;
             _keyboard = _input.Keyboards[0];

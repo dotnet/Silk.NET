@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
@@ -20,14 +21,19 @@ namespace Example.ImGui
             ImGuiController controller = null;
             GL gl = null;
             IInputContext inputContext = null;
-            
+
+            var projectDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory!, @"..\..\.."));
+            var fontPath = Path.Combine(projectDir, "OpenSans-Regular.ttf");
+            var fontConfig = new ImGuiFontConfig(fontPath, 30);
+
             // Our loading function
             window.Load += () =>
             {
                 controller = new ImGuiController(
                     gl = window.CreateOpenGL(), // load OpenGL
                     window, // pass in our window
-                    inputContext = window.CreateInput() // create an input context
+                    inputContext = window.CreateInput(), // create an input context,
+                    fontConfig
                 );
             };
             
