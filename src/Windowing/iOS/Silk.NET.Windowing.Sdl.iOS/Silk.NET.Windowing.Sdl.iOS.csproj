@@ -13,6 +13,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+        <ProjectReference Include="..\..\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj" />
     </ItemGroup>
     <ItemGroup>
         <NativeLibs Include="$(MSBuildThisFileDirectory)\*.a" />

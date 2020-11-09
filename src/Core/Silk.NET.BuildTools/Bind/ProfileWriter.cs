@@ -364,7 +364,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.Write(task.LicenseText());
                     sw.WriteLine("using System;");
                     sw.WriteLine("using System.Runtime.InteropServices;");
-sw.WriteLine("using System.Runtime.CompilerServices;");
+                    sw.WriteLine("using System.Runtime.CompilerServices;");
                     sw.WriteLine("using System.Text;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine("using Silk.NET.Core.Attributes;");
@@ -393,6 +393,11 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                         .ToArray();
                     foreach (var function in allFunctions)
                     {
+                        if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
+                        {
+                            sw.WriteLine($"#if {function.PreprocessorConditions}");
+                        }
+
                         using (var sr = new StringReader(function.Doc))
                         {
                             string line;
@@ -417,6 +422,11 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                             }
                         }
 
+                        if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
+                        {
+                            sw.WriteLine("#endif");
+                        }
+
                         sw.WriteLine();
                     }
 
@@ -425,6 +435,11 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                         var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                             ? swOverloads ??= CreateOverloadsFile(folder, @class.ClassName, false)
                             : sw;
+                        if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
+                        {
+                            sw2u.WriteLine($"#if {overload.Base.PreprocessorConditions}");
+                        }
+
                         if (sw2u == swOverloads)
                         {
                             overload.Signature.Parameters.Insert
@@ -460,6 +475,12 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                         }
 
                         sw2u.WriteLine("        }");
+                        
+                        if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
+                        {
+                            sw2u.WriteLine($"#endif");
+                        }
+                        
                         sw2u.WriteLine();
                     }
 
@@ -563,6 +584,11 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
                         foreach (var function in i.Functions)
                         {
+                            if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
+                            {
+                                sw.WriteLine($"#if {function.PreprocessorConditions}");
+                            }
+
                             using (var sr = new StringReader(function.Doc))
                             {
                                 string line;
@@ -586,6 +612,11 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                                     sw.WriteLine($"        {line}");
                                 }
                             }
+                            
+                            if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
+                            {
+                                sw.WriteLine($"#endif");
+                            }
 
                             sw.WriteLine();
                         }
@@ -595,6 +626,11 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                             var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                                 ? swOverloads ??= CreateOverloadsFile(folder, name, true)
                                 : sw;
+                            if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
+                            {
+                                sw2u.WriteLine($"#if {overload.Base.PreprocessorConditions}");
+                            }
+
                             if (sw2u == swOverloads)
                             {
                                 overload.Signature.Parameters.Insert
@@ -630,6 +666,12 @@ sw.WriteLine("using System.Runtime.CompilerServices;");
                             }
 
                             sw2u.WriteLine("        }");
+                            
+                            if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
+                            {
+                                sw2u.WriteLine($"#endif");
+                            }
+
                             sw2u.WriteLine();
                         }
 

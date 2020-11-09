@@ -13,16 +13,16 @@ namespace Silk.NET.Windowing.Sdl.iOS
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public unsafe delegate void MainFunction(int numArgs, byte** args);
         [DllImport("__Internal", EntryPoint = "SDL_UIKitRunApp")]
-        private static extern unsafe void CoreRunApp(int numArgs, byte** args, delegate* unmanaged[Cdecl]<int, byte**> callback);
+        private static extern unsafe void CoreRunApp(int numArgs, byte** args, IntPtr callback);
             
-        public static unsafe void RunApp(int numArgs, byte** args, delegate* unmanaged[Cdecl]<int, byte**> callback)
+        public static unsafe void RunApp(int numArgs, byte** args, IntPtr callback)
         {
             BeginRun();
             CoreRunApp(numArgs, args, callback);
             EndRun();
         }
 
-        public static unsafe void RunApp(IReadOnlyList<string> args, delegate* unmanaged[Cdecl]<int, byte**> callback)
+        public static unsafe void RunApp(IReadOnlyList<string> args, IntPtr callback)
         {
             BeginRun();
             var argsPtr = SilkMarshal.MarshalStringArrayToPtr(args);
@@ -74,8 +74,8 @@ namespace Silk.NET.Windowing.Sdl.iOS
         [MonoPInvokeCallback(typeof(MainFunction))]
         private static unsafe void CallMain(int numArgs, byte** args) => CurrentMain!(numArgs, args);
         
-        private static unsafe delegate* unmanaged[Cdecl]<int, byte**> GetCallMainPtr()
-            => (delegate* unmanaged[Cdecl]<int, byte**>) Marshal.GetFunctionPointerForDelegate((MainFunction) CallMain);
+        private static unsafe IntPtr GetCallMainPtr()
+            => Marshal.GetFunctionPointerForDelegate((MainFunction) CallMain);
 
         private static void BeginRun()
         {
@@ -84,6 +84,7 @@ namespace Silk.NET.Windowing.Sdl.iOS
                 throw new InvalidOperationException("App already running.");
             }
 
+            SdlWindowing.RegisterPlatform();
             _running = true;
         }
 

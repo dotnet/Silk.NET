@@ -7296,6 +7296,7 @@ namespace Silk.NET.SDL
             thisApi.VulkanGetDrawableSize(ref window.GetPinnableReference(), ref w.GetPinnableReference(), ref h.GetPinnableReference());
         }
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         public static unsafe int RegisterApp<T0>(this Sdl thisApi, byte* name, uint style, Span<T0> hInst) where T0 : unmanaged
@@ -7303,7 +7304,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             return thisApi.RegisterApp(name, style, ref hInst.GetPinnableReference());
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         public static unsafe int RegisterApp(this Sdl thisApi, Span<byte> name, uint style, void* hInst)
@@ -7311,7 +7314,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             return thisApi.RegisterApp(ref name.GetPinnableReference(), style, hInst);
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         public static unsafe int RegisterApp<T0>(this Sdl thisApi, Span<byte> name, uint style, Span<T0> hInst) where T0 : unmanaged
@@ -7319,7 +7324,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             return thisApi.RegisterApp(ref name.GetPinnableReference(), style, ref hInst.GetPinnableReference());
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         public static unsafe int RegisterApp<T0>(this Sdl thisApi, string name, uint style, Span<T0> hInst) where T0 : unmanaged
@@ -7327,6 +7334,7 @@ namespace Silk.NET.SDL
             // SpanOverloader
             return thisApi.RegisterApp(name, style, ref hInst.GetPinnableReference());
         }
+#endif
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
@@ -15456,6 +15464,7 @@ namespace Silk.NET.SDL
             return thisApi.GetShapedWindowMode(ref window.GetPinnableReference(), ref shape_mode.GetPinnableReference());
         }
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, void* callback, Span<T0> userdata) where T0 : unmanaged
@@ -15463,7 +15472,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             thisApi.SetWindowsMessageHook(callback, ref userdata.GetPinnableReference());
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, Span<T0> callback, void* userdata) where T0 : unmanaged
@@ -15471,7 +15482,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             thisApi.SetWindowsMessageHook(ref callback.GetPinnableReference(), userdata);
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         public static unsafe void SetWindowsMessageHook<T0, T1>(this Sdl thisApi, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
@@ -15479,7 +15492,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             thisApi.SetWindowsMessageHook(ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 66, Column 43 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         public static unsafe IDirect3DDevice9* RenderGetD3D9Device(this Sdl thisApi, Span<Renderer> renderer)
@@ -15487,7 +15502,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             return thisApi.RenderGetD3D9Device(ref renderer.GetPinnableReference());
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 74, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, int* adapterIndex, Span<int> outputIndex)
@@ -15495,7 +15512,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             return thisApi.DXGIGetOutputInfo(displayIndex, adapterIndex, ref outputIndex.GetPinnableReference());
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 74, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, Span<int> adapterIndex, int* outputIndex)
@@ -15503,7 +15522,9 @@ namespace Silk.NET.SDL
             // SpanOverloader
             return thisApi.DXGIGetOutputInfo(displayIndex, ref adapterIndex.GetPinnableReference(), outputIndex);
         }
+#endif
 
+#if !__IOS__
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 74, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, Span<int> adapterIndex, Span<int> outputIndex)
@@ -15511,6 +15532,7 @@ namespace Silk.NET.SDL
             // SpanOverloader
             return thisApi.DXGIGetOutputInfo(displayIndex, ref adapterIndex.GetPinnableReference(), ref outputIndex.GetPinnableReference());
         }
+#endif
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]

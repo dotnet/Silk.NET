@@ -160,5 +160,7 @@ namespace Silk.NET.OpenGLES
         DepthStencilTextureMode = 0x90EA,
         [NativeName("Name", "GL_TEXTURE_TILING_EXT")]
         TextureTilingExt = 0x9580,
+        [NativeName("Name", "GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
+        TextureFoveatedCutoffDensityQCom = 0x96A0,
     }
 }

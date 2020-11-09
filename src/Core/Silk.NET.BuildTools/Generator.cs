@@ -158,6 +158,8 @@ namespace Silk.NET.BuildTools
 
                 profile = ProfileBakery.Bake
                     (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList());
+                
+                PreprocessorMixin.AddDirectives(profile, task.OutputOpts.ConditionalFunctions);
 
                 var tsaf = sw?.Elapsed.TotalSeconds - tsb4;
                 var tsafTxt = sw is null ? null : $", took {tsaf} second(s)";

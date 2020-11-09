@@ -11,6 +11,7 @@ namespace Silk.NET.SDL
 #if __ANDROID__
     [PInvokeOverride("libSDL2.so")]
 #endif
+    [PInvokeOverride("__Internal")]
     public partial class Sdl
     {
         public const uint InitTimer = 0x00000001;

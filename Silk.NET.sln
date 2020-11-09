@@ -36,10 +36,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Properties", "Build P
 	ProjectSection(SolutionItems) = preProject
 		build\props\bindings.props = build\props\bindings.props
 		build\props\common.props = build\props\common.props
+		build\props\common.targets = build\props\common.targets
 		build\csharp_typemap.json = build\csharp_typemap.json
 		generator.json = generator.json
 		build\gl_typemap.json = build\gl_typemap.json
-		build\props\common.targets = build\props\common.targets
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Input.Common", "src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj", "{8FFF49D6-B029-400B-8510-1A088868DFA6}"
@@ -318,7 +318,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestLib", "src\Lab\TestLib\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleIOS", "src\Lab\TriangleIOS\TriangleIOS.csproj", "{8669819B-654F-4E41-9030-1CCA56D64E88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Sdl.iOS", "src\Windowing\iOS\Silk.NET.Windowing.Sdl.iOS\Silk.NET.Windowing.Sdl.iOS.csproj", "{603F28D1-E982-47C0-98D9-3E6DA1DD37E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing.Sdl.iOS", "src\Windowing\iOS\Silk.NET.Windowing.Sdl.iOS\Silk.NET.Windowing.Sdl.iOS.csproj", "{603F28D1-E982-47C0-98D9-3E6DA1DD37E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -562,7 +562,8 @@
             },
             "exclude": [
                 "VkSurfaceKHR",
-                "VkInstance"
+                "VkInstance",
+                "SDL_main"
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
@@ -586,7 +587,21 @@
                 "mode": "Default",
                 "path": "src/Windowing",
                 "licenseFile": "build/LICENSE_HEADER.txt",
-                "props": "build/props/bindings.props"
+                "props": "build/props/bindings.props",
+                "conditional": {
+                    "!__IOS__": [
+                        "SDL_Android.*",
+                        "SDL_Direct3D9.*",
+                        "SDL_DXGI.*",
+                        "SDL_GetAndroidSDKVersion",
+                        "SDL_IsAndroidTV",
+                        "SDL_IsChromebook",
+                        "SDL_IsDeXMode",
+                        "SDL_RegisterApp",
+                        "SDL_RenderGetD3D9Device",
+                        "SDL_SetWindowsMessageHook"
+                    ]
+                }
             },
             "namespace": "Silk.NET.SDL",
             "extensionsNamespace": "Silk.NET.SDL.Extensions",

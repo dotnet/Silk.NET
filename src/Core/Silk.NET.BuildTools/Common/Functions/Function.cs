@@ -53,6 +53,12 @@ namespace Silk.NET.BuildTools.Common.Functions
         [ItemNotNull]
         [JsonIgnore]
         public List<string> Categories { get; set; } = new List<string>();
+        
+        /// <summary>
+        /// Gets or sets a string representing the preprocessor ifdef directives/conditions to be written to the output
+        /// file.
+        /// </summary>
+        public string PreprocessorConditions { get; set; }
 
         /// <summary>
         /// Gets or sets the generic type parameters of the function.

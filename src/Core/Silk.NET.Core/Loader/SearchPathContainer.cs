@@ -5,6 +5,9 @@
 
 using System;
 using System.Runtime.InteropServices;
+using Microsoft.DotNet.PlatformAbstractions;
+using SRRuntimeEnvironment = System.Runtime.InteropServices.RuntimeEnvironment;
+using PARuntimeEnvironment = Microsoft.DotNet.PlatformAbstractions.RuntimeEnvironment;
 
 namespace Silk.NET.Core.Loader
 {
@@ -61,6 +64,10 @@ namespace Silk.NET.Core.Loader
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
+                var osv = Environment.OSVersion;
+                var rifd = RuntimeInformation.FrameworkDescription;
+                var riod = RuntimeInformation.OSDescription;
+                var rerid = PARuntimeEnvironment.GetRuntimeIdentifier();
                 return RuntimeInformation.IsOSPlatform(OSPlatform.Create("IOS")) ? IOS : MacOS;
             }
 

@@ -96,6 +96,8 @@ namespace Silk.NET.BuildTools
         /// </summary>
         [JsonProperty("props")]
         public string Props { get; set; }
+        
+        [JsonProperty("conditional")] public Dictionary<string, string[]> ConditionalFunctions { get; set; }
     }
 
     public enum ConverterMode
