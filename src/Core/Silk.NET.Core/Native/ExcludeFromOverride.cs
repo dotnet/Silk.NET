@@ -7,11 +7,9 @@ using System;
 
 namespace Silk.NET.Core.Native
 {
-    [AttributeUsage(AttributeTargets.Class)]
-    public class PInvokeOverride : Attribute
+    [AttributeUsage(AttributeTargets.Method)]
+    public sealed class ExcludeFromOverrideAttribute : Attribute
     {
-        public PInvokeOverride(int id, string target)
-        {
-        }
+        public ExcludeFromOverrideAttribute(Type t, int id) { }
     }
 }
