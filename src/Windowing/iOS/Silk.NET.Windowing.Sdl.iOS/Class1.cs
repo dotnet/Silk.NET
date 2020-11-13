@@ -2,12 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using ObjCRuntime;
+using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
 namespace Silk.NET.Windowing.Sdl.iOS
 {
     public static class SilkMobile
     {
+        static SilkMobile()
+        {
+            SearchPathContainer.Platform = UnderlyingPlatform.IOS;
+        }
+        
         private static bool _running;
         private static MainFunction? CurrentMain { get; set; }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

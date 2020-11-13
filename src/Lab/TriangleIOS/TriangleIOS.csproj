@@ -130,6 +130,10 @@
       <Project>{136C6154-D300-4B82-80D3-17B637841A2B}</Project>
       <Name>Silk.NET.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Input\Silk.NET.Input.Sdl\Silk.NET.Input.Sdl.csproj">
+      <Project>{377a7d9a-2691-4683-ab81-03b1642b3a78}</Project>
+      <Name>Silk.NET.Input.Sdl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Windowing\iOS\Silk.NET.Windowing.Sdl.iOS\Silk.NET.Windowing.Sdl.iOS.csproj">
       <Project>{603f28d1-e982-47c0-98d9-3e6da1dd37e2}</Project>
       <Name>Silk.NET.Windowing.Sdl.iOS</Name>
@@ -139,6 +143,10 @@
     <ProjectReference Include="..\..\Windowing\Silk.NET.SDL\Silk.NET.SDL.csproj">
       <Project>{f16edd0f-5abe-4b25-98ee-8397e55b5cba}</Project>
       <Name>Silk.NET.SDL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj">
+      <Project>{956F722C-DFD3-435E-9D2E-A0549C4D8BC0}</Project>
+      <Name>Silk.NET.Windowing.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj">
       <Project>{ff526329-094a-4b25-abc5-750d62e48101}</Project>

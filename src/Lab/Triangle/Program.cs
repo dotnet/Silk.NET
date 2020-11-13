@@ -52,7 +52,7 @@ namespace Triangle
             _window.Load += InputTest.Program.OnLoad(_window);
             _window.Render += RenderFrame;
             _window.Update += UpdateFrame;
-            _window.Resize += Resize;
+            _window.FramebufferResize += Resize;
             _window.Closing += End;
             _window.Run();
         }
@@ -66,10 +66,14 @@ namespace Triangle
                 Console.WriteLine($"{val} = {_gl.GetStringS(val)}");
             }
             Console.WriteLine("=== END OPENGL INFORMATION");
-            
-            _gl.Enable(GLEnum.DebugOutput);
-            _gl.Enable(GLEnum.DebugOutputSynchronous);
-            _gl.DebugMessageCallback(OnDebug, null);
+
+            if (API.API == ContextAPI.OpenGL)
+            {
+                _gl.Enable(GLEnum.DebugOutput);
+                _gl.Enable(GLEnum.DebugOutputSynchronous);
+                _gl.DebugMessageCallback(OnDebug, null);
+            }
+
             _gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             _vertexBufferObject = _gl.GenBuffer();
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
@@ -86,6 +90,7 @@ namespace Triangle
             _gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), null);
             _gl.EnableVertexAttribArray(0);
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
+            _gl.Viewport(_window.FramebufferSize);
             _window.Update += WindowOnUpdate;
         }
 

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using Android.App;
 using Android.Content.PM;
 using Org.Libsdl.App;
+using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.SDL;
 
@@ -29,6 +30,7 @@ namespace Silk.NET.Windowing.Sdl.Android
 
         static SilkActivity()
         {
+            SearchPathContainer.Platform = UnderlyingPlatform.Android;
             CurrentMain = Main;
         }
 

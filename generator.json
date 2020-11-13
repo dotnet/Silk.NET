@@ -589,7 +589,7 @@
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props",
                 "conditional": {
-                    "!__IOS__": [
+                    "false": [
                         "SDL_Android.*",
                         "SDL_Direct3D9.*",
                         "SDL_DXGI.*",
@@ -599,7 +599,10 @@
                         "SDL_IsDeXMode",
                         "SDL_RegisterApp",
                         "SDL_RenderGetD3D9Device",
-                        "SDL_SetWindowsMessageHook"
+                        "SDL_SetWindowsMessageHook",
+                        "SDL_UnregisterApp",
+                        "SDL_WinRT.*",
+                        "__debugbreak"
                     ]
                 }
             },

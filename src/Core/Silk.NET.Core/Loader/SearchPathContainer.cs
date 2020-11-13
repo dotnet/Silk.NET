@@ -17,6 +17,23 @@ namespace Silk.NET.Core.Loader
     public abstract class SearchPathContainer
     {
         /// <summary>
+        /// Gets or sets the underlying platform (operating system) to use for search path resolution.
+        /// </summary>
+        public static UnderlyingPlatform Platform { get; set; } = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
+            ? RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID"))
+                ? UnderlyingPlatform.Android // NOTE: This seems to work inconsistently. Recommend setting manually.
+                : UnderlyingPlatform.Linux
+            : RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+                ? Environment.Is64BitProcess
+                    ? UnderlyingPlatform.Windows64
+                    : UnderlyingPlatform.Windows86
+            : RuntimeInformation.IsOSPlatform(OSPlatform.OSX)
+                ? RuntimeInformation.IsOSPlatform(OSPlatform.Create("IOS"))
+                    ? UnderlyingPlatform.IOS // NOTE: This seems to work inconsistently. Recommend setting manually.
+                    : UnderlyingPlatform.MacOS
+            : UnderlyingPlatform.Unknown;
+
+        /// <summary>
         /// Gets the library name to use on Windows 64-bit.
         /// </summary>
         public abstract string Windows64 { get; }
@@ -50,28 +67,21 @@ namespace Silk.NET.Core.Loader
         /// Gets the library name to use on the current platform.
         /// </summary>
         /// <returns>The library name.</returns>
-        public string GetLibraryName()
+        public string GetLibraryName() => Platform switch
         {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                return RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID")) ? Android : Linux;
-            }
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                return Environment.Is64BitProcess ? Windows64 : Windows86;
-            }
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            {
-                var osv = Environment.OSVersion;
-                var rifd = RuntimeInformation.FrameworkDescription;
-                var riod = RuntimeInformation.OSDescription;
-                var rerid = PARuntimeEnvironment.GetRuntimeIdentifier();
-                return RuntimeInformation.IsOSPlatform(OSPlatform.Create("IOS")) ? IOS : MacOS;
-            }
-
-            throw new NotSupportedException("Invalid/unsupported operating system.");
+            UnderlyingPlatform.Unknown => ThrowInvalidPlatform(),
+            UnderlyingPlatform.Windows64 => Windows64,
+            UnderlyingPlatform.Windows86 => Windows86,
+            UnderlyingPlatform.Linux => Linux,
+            UnderlyingPlatform.Android => Android,
+            UnderlyingPlatform.MacOS => MacOS,
+            UnderlyingPlatform.IOS => IOS,
+            _ => ThrowInvalidPlatform()
+        };
+        
+        private static string ThrowInvalidPlatform()
+        {
+            throw new PlatformNotSupportedException("Invalid/unsupported operating system.");
         }
     }
 }
