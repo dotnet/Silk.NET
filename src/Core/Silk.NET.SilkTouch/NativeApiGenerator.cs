@@ -47,17 +47,22 @@ namespace Silk.NET.SilkTouch
 
             if (nativeApiAttribute is null)
                 return;
-                
-            var pInvokeAttribute = context.Compilation.GetTypeByMetadataName
-                ("Silk.NET.Core.Native.PInvokeOverride");
+
+            var pInvokeAttribute = context.Compilation.GetTypeByMetadataName("Silk.NET.Core.Native.PInvokeOverride");
 
             if (pInvokeAttribute is null)
                 return;
 
-            _nativeContextAttributes[pInvokeAttribute] = array => (
-                (string) array[0].Value! /* first return is just the lib target */, new PInvokeNativeContextOverride());
-            
-            
+            var excludeFromOverrideAttribute = context.Compilation.GetTypeByMetadataName
+                ("Silk.NET.Core.Native.ExcludeFromOverrideAttribute");
+
+            if (excludeFromOverrideAttribute is null)
+                return;
+
+            _nativeContextAttributes[pInvokeAttribute] = array => ((int) array[0].Value!,
+                (string) array[1].Value! /* first return is just the lib target */, new PInvokeNativeContextOverride());
+
+
             marshalBuilder = new MarshalBuilder();
 
             marshalBuilder.Use(Middlewares.ParameterInitMiddleware);
@@ -76,7 +81,10 @@ namespace Silk.NET.SilkTouch
                 try
                 {
                     var s = ProcessClassDeclaration
-                        (receiverClassDeclaration, context, nativeApiAttribute, marshalBuilder, ref processedSymbols);
+                    (
+                        receiverClassDeclaration, context, nativeApiAttribute, marshalBuilder, ref processedSymbols,
+                        excludeFromOverrideAttribute
+                    );
 
                     if (s is null) continue;
 
@@ -102,7 +110,8 @@ namespace Silk.NET.SilkTouch
             GeneratorExecutionContext sourceContext,
             INamedTypeSymbol nativeApiAttributeSymbol,
             MarshalBuilder rootMarshalBuilder,
-            ref List<ITypeSymbol> processedSymbols
+            ref List<ITypeSymbol> processedSymbols,
+            INamedTypeSymbol excludeFromOverrideAttribute
         )
         {
             var stopwatch = Stopwatch.StartNew();
@@ -313,7 +322,7 @@ namespace Silk.NET.SilkTouch
                 );
             }
 
-            ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, classSymbol, classDeclaration);
+            ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, classSymbol, classDeclaration, sourceContext.Compilation, excludeFromOverrideAttribute);
 
             var newNamespace = namespaceDeclaration.WithMembers
                 (
@@ -410,7 +419,8 @@ namespace Silk.NET.SilkTouch
                                 x => (TypeSyntax) IdentifierName
                                     (x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
                             )
-                            .ToArray()
+                            .ToArray(),
+                        symbol
                     )
                 );
 

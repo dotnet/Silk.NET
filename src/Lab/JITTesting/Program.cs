@@ -12,10 +12,10 @@ namespace JITTesting
             var lib = new TestClass2();
 
             var a = Marshal.StringToHGlobalAnsi("Test 1");
-            var b = Marshal.StringToHGlobalAnsi("Hello from SilkToch!");
+            var b = Marshal.StringToHGlobalAnsi("Hello from SilkTouch!");
             lib.MessageBox(default, (char*) a, (char*) b, 0);
 
-            lib.MessageBox(default, "Test 2", "Hello from SilkToch!", 0);
+            lib.MessageBox(default, "Test 2", "Hello from SilkTouch!", 0);
 
             var x = stackalloc char[3];
             x[0] = 'H';
@@ -28,8 +28,8 @@ namespace JITTesting
 
             lib.MessageBox(default, "Test 5", new Span<char>((char*) b, 23), 0);
 
-            lib.MessageBox(default, "Test 6", "Hello from SilkToch!", true);
-            lib.MessageBox(default, "Test 7", "Hello from SilkToch!", false);
+            lib.MessageBox(default, "Test 6", "Hello from SilkTouch!", true);
+            lib.MessageBox(default, "Test 7", "Hello from SilkTouch!", false);
             lib.MessageBox<char>(default, "Test 8", new Span<char>((char*) b, 23), 0);
         }
     }

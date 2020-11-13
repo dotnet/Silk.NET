@@ -55,6 +55,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                 )
                             )
                         )
+#if !DEBUG
                         .WithAttributeLists
                         (
                             SingletonList
@@ -75,6 +76,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                 )
                             )
                         )
+#endif
                 );
                 
                 var dict = entrypoints.ToDictionary(x => x.Slot, x => x);
@@ -325,27 +327,34 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                 )
                             )
                             .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword)))
-                            .WithBody(Block(body))
-                            .WithAttributeLists
+                            .WithBody
                             (
-                                SingletonList
-                                (
-                                    AttributeList
+                                Block(body)
+#if !DEBUG
+                                    .WithAttributeLists
                                     (
-                                        SingletonSeparatedList
+                                        SingletonList
                                         (
-                                            Attribute
+                                            AttributeList
                                             (
-                                                QualifiedName
+                                                SingletonSeparatedList
                                                 (
-                                                    QualifiedName
-                                                        (IdentifierName("System"), IdentifierName("Diagnostics")),
-                                                    IdentifierName("DebuggerHidden")
+                                                    Attribute
+                                                    (
+                                                        QualifiedName
+                                                        (
+                                                            QualifiedName
+                                                            (
+                                                                IdentifierName("System"), IdentifierName("Diagnostics")
+                                                            ),
+                                                            IdentifierName("DebuggerHidden")
+                                                        )
+                                                    )
                                                 )
                                             )
                                         )
                                     )
-                                )
+#endif
                             )
                     );
                     return IdentifierName(name);
@@ -515,6 +524,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                             )
                             .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword)))
                             .WithBody(Block(body))
+#if !DEBUG
                             .WithAttributeLists
                             (
                                 SingletonList
@@ -536,6 +546,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                     )
                                 )
                             )
+#endif
                     );
                     return IdentifierName(name);
                 }

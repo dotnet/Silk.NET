@@ -10,7 +10,7 @@ namespace Silk.NET.Core.Native
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class PInvokeOverride : Attribute
     {
-        public PInvokeOverride(string target)
+        public PInvokeOverride(int id, string target)
         {
         }
     }
