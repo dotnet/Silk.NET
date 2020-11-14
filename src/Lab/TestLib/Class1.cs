@@ -33,7 +33,7 @@ namespace TestLib
         public unsafe partial int MessageBox(IntPtr hwnd, string text, char* caption, uint buttons);
 
         [NativeApi(EntryPoint = "MessageBoxA")]
-        [ExcludeFromOverride(typeof(PInvokeOverride), 1)]
+        [ExcludeFromOverride(1)]
         public partial int MessageBox<T>(IntPtr hwnd, string text, Span<T> caption, uint buttons) where T:unmanaged;
         
         public unsafe partial IntPtr CreateWindowExA(
