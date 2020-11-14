@@ -209,7 +209,8 @@ namespace Silk.NET.SilkTouch
                 let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
                 select (declaration, symbol, entryPoint, callingConvention))
             {
-                var slot = slotCount++;
+                var slot = slotCount++; // even though technically that somehow makes slots defined behavior, THEY ARE NOT
+                // SLOTS ARE UNDEFINED BEHAVIOR
                 ProcessMethod
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
@@ -495,7 +496,7 @@ namespace Silk.NET.SilkTouch
 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                var context = new MarshalContext(compilation, symbol, symbol.GetHashCode() ^ slot);
+                var context = new MarshalContext(compilation, symbol, slot);
 
                 marshalBuilder.Run(context);
 
