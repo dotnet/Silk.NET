@@ -25,7 +25,10 @@ namespace Silk.NET.OpenAL
 
         public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
-        public override partial bool IsExtensionPresent(string name);
+        public partial bool IsExtensionPresent(Device* device, string name);
+
+        public override unsafe bool IsExtensionPresent(string name)
+            => IsExtensionPresent(GetContextsDevice(GetCurrentContext()), name);
 
         /// <inheritdoc />
         public unsafe partial Context* CreateContext(Device* device, int* attributeList);
