@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Silk.NET.BuildTools.Common;
+using Attribute = Silk.NET.BuildTools.Common.Attribute;
 
 namespace Silk.NET.BuildTools.Baking
 {
@@ -33,6 +34,34 @@ namespace Silk.NET.BuildTools.Baking
                                 if (finishedDirectives != null)
                                 {
                                     finishedDirectives += "&& ";
+                                }
+
+                                if (directive.Key.ToLower().StartsWith("$override(") && directive.Key.EndsWith(")"))
+                                {
+                                    var number = directive.Key.Substring(10, directive.Key.Length - 11);
+                                    if (!int.TryParse(number, out var @override))
+                                    {
+                                        Console.WriteLine
+                                        (
+                                            $"Warning: Invalid override exclude: {directive.Key}. " +
+                                            $"(\"{number}\" is not a valid integer)"
+                                        );
+                                        continue;
+                                    }
+
+                                    function.Attributes.Add(new Attribute
+                                    {
+                                        Name = "ExcludeFromOverride",
+                                        Arguments = new List<string>{number}
+                                    });
+                                    
+                                    continue;
+                                }
+
+                                if (directive.Key.Contains("$"))
+                                {
+                                    Console.WriteLine($"Warning: Invalid preprocessor directive: {directive.Key}");
+                                    continue;
                                 }
 
                                 finishedDirectives += directive.Key;

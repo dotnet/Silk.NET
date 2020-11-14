@@ -54,7 +54,16 @@ namespace Silk.NET.BuildTools
                 Console.WriteLine();
                 foreach (var kvp in ConsoleWriter.Instance.Timings.Values)
                 {
-                    Console.WriteLine($"Task \"{kvp.Key}\" took {kvp.Value.TotalSeconds} second(s) to complete.");
+                    if (kvp.Value.Success)
+                    {
+                        Console.WriteLine
+                            ($"Task \"{kvp.Key}\" took {kvp.Value.Time.TotalSeconds} second(s) to complete.");
+                    }
+                    else
+                    {
+                        Console.WriteLine
+                            ($"Task \"{kvp.Key}\" failed after {kvp.Value.Time.TotalSeconds} second(s).");
+                    }
                 }
                 Console.WriteLine();
                 Console.WriteLine($"In total, this particular job took {jobSw.Elapsed.TotalSeconds} second(s) to complete.");
@@ -70,8 +79,8 @@ namespace Silk.NET.BuildTools
             internal static ConsoleWriter Instance { get; private set; }
             public readonly ThreadLocal<string> CurrentName = new ThreadLocal<string>();
 
-            public readonly ThreadLocal<KeyValuePair<string, TimeSpan>> Timings =
-                new ThreadLocal<KeyValuePair<string, TimeSpan>>(true);
+            public readonly ThreadLocal<KeyValuePair<string, (TimeSpan Time, bool Success)>> Timings =
+                new ThreadLocal<KeyValuePair<string, (TimeSpan Time, bool Success)>>(true);
 
             public readonly TextWriter Base;
 

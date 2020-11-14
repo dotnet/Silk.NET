@@ -337,7 +337,11 @@
             "cacheDir": "build/cache",
             "cacheKey": "assimp",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "BUG: The descriptor below is because MSVC is currently invalid.",
+                "     The combination of convert-windows-only and convert-macos-only means that it will never convert",
+                "     Remove this once 16.9 Preview 2 has released.",
+                "convert-macos-only"
             ],
             "converter": {},
             "prefix": "ai",
@@ -354,8 +358,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Isrc/Assimp/Include"
                 ],
                 "traverse": [
@@ -542,8 +546,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/submodules/SDL-mirror/include",
                     "-D__IPHONEOS__",
                     "-D__ANDROID__",
@@ -589,7 +593,7 @@
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props",
                 "conditional": {
-                    "false": [
+                    "$override(0)": [
                         "SDL_Android.*",
                         "SDL_Direct3D9.*",
                         "SDL_DXGI.*",
@@ -613,7 +617,7 @@
                 "win-x64": "SDL2.dll",
                 "win-x86": "SDL2.dll",
                 "osx-x64": "libSDL2-2.0.dylib",
-                "android": "libSDL2-2.0.so",
+                "android": "libSDL2.so",
                 "iOS": "__Internal",
                 "className": "SDLLibraryNameContainer"
             },

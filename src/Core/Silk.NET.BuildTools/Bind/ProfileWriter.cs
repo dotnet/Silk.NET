@@ -248,7 +248,7 @@ namespace Silk.NET.BuildTools.Bind
                         }
 
                         var count = structField.Count.IsConstant
-                            ? int.Parse
+                            ? Utilities.ParseInt
                             (
                                 profile.Projects.SelectMany(x => x.Value.Classes.SelectMany(y => y.Constants))
                                     .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?

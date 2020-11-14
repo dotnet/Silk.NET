@@ -24,6 +24,12 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         ImportTypeDmaBufArm = 0x40B4,
         [NativeName("Name", "CL_IMPORT_TYPE_PROTECTED_ARM")]
         ImportTypeProtectedArm = 0x40B5,
+        [NativeName("Name", "CL_IMPORT_TYPE_ANDROID_HARDWARE_BUFFER_ARM")]
+        ImportTypeAndroidHardwareBufferArm = 0x41E2,
+        [NativeName("Name", "CL_IMPORT_DMA_BUF_DATA_CONSISTENCY_WITH_HOST_ARM")]
+        ImportDmaBufDataConsistencyWithHostArm = 0x41E3,
+        [NativeName("Name", "CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM")]
+        ImportMemoryWholeAllocationArm = 18446744073709551615,
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]
         PrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]

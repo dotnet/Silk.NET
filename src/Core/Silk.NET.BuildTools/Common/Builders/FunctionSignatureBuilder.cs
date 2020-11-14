@@ -195,7 +195,7 @@ namespace Silk.NET.BuildTools.Common.Builders
                 ReturnType = _newReturnType,
                 Parameters = _newParameters?.ToList(),
                 GenericTypeParameters = _newGenericTypeParameters?.ToList() ?? new List<GenericTypeParameter>(),
-                Attributes = _newAttributes,
+                Attributes = _newAttributes.ToList(),
                 Doc = _newDoc,
                 Accessibility = _newAccessibility,
                 Kind = _newKind
