@@ -61,26 +61,8 @@ namespace Silk.NET.SilkTouch
                         if (!SymbolEqualityComparer.Default.Equals(x2.AttributeClass, excludeFromOverrideAttribute))
                             return true;
 
-                        var matchId = (int) x2.ConstructorArguments[1].Value!;
-                        if (matchId != attId)
-                            return true;
-                        
-                        var v = (((x2.ApplicationSyntaxReference?.GetSyntax() as AttributeSyntax)?.ArgumentList?.Arguments[0]
-                            .Expression as TypeOfExpressionSyntax)?.Type);
-                        if (v is not null)
-                        {
-                            // it's unclear to me why `model.GetDeclaredSymbol(v)` doesn't work here, but this does.
-                            // `i.CandidateReason` is None too....
-                            var model = compilation.GetSemanticModel(v.SyntaxTree);
-                            var i = model.GetSymbolInfo(v);
-                            if (i.Symbol is ITypeSymbol vs)
-                            {
-                                if (vs == attSymbol)
-                                    return false;
-                            }
-                        }
-
-                        return true;
+                        var matchId = (int) x2.ConstructorArguments[0].Value!;
+                        return matchId != attId;
                     })).ToArray()));
                 last = IfStatement
                 (

@@ -10,6 +10,6 @@ namespace Silk.NET.Core.Native
     [AttributeUsage(AttributeTargets.Method)]
     public sealed class ExcludeFromOverrideAttribute : Attribute
     {
-        public ExcludeFromOverrideAttribute(Type t, int id) { }
+        public ExcludeFromOverrideAttribute(int id) { }
     }
 }
