@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -40,7 +40,7 @@ namespace Silk.NET.Windowing.Internals
         private int _rented;
 
         // Ensure we keep SwapInterval up-to-date
-        private bool _swapIntervalChanged = true;
+        private bool _swapIntervalChanged;
 
         /// <summary>
         /// Creates a base view with the given options.
@@ -103,7 +103,7 @@ namespace Silk.NET.Windowing.Internals
             IsInitialized = true;
             IsEventDriven = _optionsCache.IsEventDriven;
             GLContext?.MakeCurrent();
-            _swapIntervalChanged = true;
+            _swapIntervalChanged = VSync; // if vsync is requested, ensure we enable it.
             Load?.Invoke();
         }
 

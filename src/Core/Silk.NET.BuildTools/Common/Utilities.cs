@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -198,6 +199,29 @@ namespace Silk.NET.BuildTools.Common
             }
             
             return field;
+        }
+
+        public static int ParseInt(ReadOnlySpan<char> chars)
+        {
+            if (chars.StartsWith("0x"))
+            {
+                return int.Parse(chars.Slice(2), NumberStyles.HexNumber);
+            }
+
+            if (!int.TryParse(chars, out var ret))
+            {
+                if (int.TryParse(chars, NumberStyles.HexNumber, null, out var hexRet))
+                {
+                    Console.WriteLine
+                    (
+                        $"Warning: Implicitly treating \"{chars.ToString()}\" as hex integer \"{hexRet}\"."
+                    );
+
+                    return hexRet;
+                }
+            }
+
+            return ret;
         }
     }
 }

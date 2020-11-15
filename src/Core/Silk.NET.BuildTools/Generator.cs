@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
@@ -60,25 +61,39 @@ namespace Silk.NET.BuildTools
 
         public static void RunTaskGuarded(BindTask task)
         {
-            try
-            {
-                RunTask(task);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Unhandled exception: {ex}");
-            }
-        }
-
-        public static void RunTask(BindTask task)
-        {
             Stopwatch sw = null;
             if (!(Program.ConsoleWriter.Instance is null))
             {
                 Program.ConsoleWriter.Instance.CurrentName.Value = task.Name;
                 sw = Stopwatch.StartNew();
             }
+            
+            try
+            {
+                RunTask(task, sw);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unhandled exception: {ex}");
+                if (sw is not null)
+                {
+                    Program.ConsoleWriter.Instance.Timings.Value =
+                        new KeyValuePair<string, (TimeSpan, bool)>(task.Name, (sw.Elapsed, false));
+                    return;
+                }
+            }
+            
+            if (sw is not null)
+            {
+                Program.ConsoleWriter.Instance.Timings.Value =
+                    new KeyValuePair<string, (TimeSpan, bool)>(task.Name, (sw.Elapsed, true));
+            }
+        }
+        
+        public static void RunTask(BindTask task) => RunTask(task, null);
 
+        private static void RunTask(BindTask task, Stopwatch? sw)
+        {
             foreach (var typeMap in task.TypeMaps)
             {
                 var toAdd = new List<KeyValuePair<string, string>>();
@@ -158,6 +173,8 @@ namespace Silk.NET.BuildTools
 
                 profile = ProfileBakery.Bake
                     (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList());
+                
+                PreprocessorMixin.AddDirectives(profile, task.OutputOpts.ConditionalFunctions);
 
                 var tsaf = sw?.Elapsed.TotalSeconds - tsb4;
                 var tsafTxt = sw is null ? null : $", took {tsaf} second(s)";
@@ -213,11 +230,6 @@ namespace Silk.NET.BuildTools
             sw?.Stop();
             var af = sw is null ? null : $" after {sw.Elapsed.TotalSeconds} second(s)";
             Console.WriteLine($"Task complete{af}.");
-            if (!(sw is null))
-            {
-                Program.ConsoleWriter.Instance.Timings.Value =
-                    new KeyValuePair<string, TimeSpan>(task.Name, sw.Elapsed);
-            }
             
             static bool ShouldConvert(string[] controls)
             {

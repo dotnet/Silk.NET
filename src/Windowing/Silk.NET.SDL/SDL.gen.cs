@@ -7254,72 +7254,73 @@ namespace Silk.NET.SDL
         public partial void VulkanGetDrawableSize(ref Window window, ref int w, ref int h);
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 121, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_main")]
-        public unsafe partial int Main(int argc, byte** argv);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 121, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_main")]
-        public unsafe partial int Main(int argc, ref byte* argv);
-
-        /// <summary>To be added.</summary>
         [NativeName("Src", "Line 131, Column 30 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [NativeApi(EntryPoint = "SDL_SetMainReady")]
         public partial void SetMainReady();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public unsafe partial int RegisterApp(byte* name, uint style, void* hInst);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public unsafe partial int RegisterApp<T0>(byte* name, uint style, ref T0 hInst) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public unsafe partial int RegisterApp(ref byte name, uint style, void* hInst);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public partial int RegisterApp<T0>(ref byte name, uint style, ref T0 hInst) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public unsafe partial int RegisterApp(string name, uint style, void* hInst);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 138, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RegisterApp")]
         public partial int RegisterApp<T0>(string name, uint style, ref T0 hInst) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 139, Column 30 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_UnregisterApp")]
         public partial void UnregisterApp();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
         public unsafe partial int WinRTRunApp(void* mainFunction, void* reserved);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
         public unsafe partial int WinRTRunApp<T0>(void* mainFunction, ref T0 reserved) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
         public unsafe partial int WinRTRunApp<T0>(ref T0 mainFunction, void* reserved) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
         public partial int WinRTRunApp<T0, T1>(ref T0 mainFunction, ref T1 reserved) where T0 : unmanaged where T1 : unmanaged;
 
@@ -7345,6 +7346,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 52, Column 25 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "__debugbreak")]
         public partial void Debugbreak();
 
@@ -15065,56 +15067,67 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
         public unsafe partial void SetWindowsMessageHook(void* callback, void* userdata);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
         public unsafe partial void SetWindowsMessageHook<T0>(void* callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
         public unsafe partial void SetWindowsMessageHook<T0>(ref T0 callback, void* userdata) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
         public partial void SetWindowsMessageHook<T0, T1>(ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 58, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_Direct3D9GetAdapterIndex")]
         public partial int Direct3D9GetAdapterIndex(int displayIndex);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 66, Column 43 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D9Device")]
         public unsafe partial IDirect3DDevice9* RenderGetD3D9Device(Renderer* renderer);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 66, Column 43 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D9Device")]
         public unsafe partial IDirect3DDevice9* RenderGetD3D9Device(ref Renderer renderer);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 74, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
         public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, int* adapterIndex, int* outputIndex);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 74, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
         public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, int* adapterIndex, ref int outputIndex);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 74, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
         public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, int* outputIndex);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 74, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
         public partial SdlBool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, ref int outputIndex);
 
@@ -15165,86 +15178,103 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 111, Column 32 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetJNIEnv")]
         public unsafe partial void* AndroidGetJNIEnv();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 121, Column 32 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetActivity")]
         public unsafe partial void* AndroidGetActivity();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 147, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_GetAndroidSDKVersion")]
         public partial int GetAndroidSDKVersion();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 152, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_IsAndroidTV")]
         public partial SdlBool IsAndroidTV();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 157, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_IsChromebook")]
         public partial SdlBool IsChromebook();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 162, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_IsDeXMode")]
         public partial SdlBool IsDeXMode();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 167, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidBackButton")]
         public partial void AndroidBackButton();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 182, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
         public unsafe partial byte* AndroidGetInternalStoragePath();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 182, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
         public partial string AndroidGetInternalStoragePathS();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 191, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetExternalStorageState")]
         public partial int AndroidGetExternalStorageState();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 199, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
         public unsafe partial byte* AndroidGetExternalStoragePath();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 199, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
         public partial string AndroidGetExternalStoragePathS();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 264, Column 41 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUNICODE")]
         public unsafe partial char* WinRTGetFSPathUNICODE(WinRTPath pathType);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 264, Column 41 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUNICODE")]
         public partial string WinRTGetFSPathUNICODES(WinRTPath pathType);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 281, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUTF8")]
         public unsafe partial byte* WinRTGetFSPathUTF8(WinRTPath pathType);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 281, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUTF8")]
         public partial string WinRTGetFSPathUTF8S(WinRTPath pathType);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 288, Column 48 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTGetDeviceFamily")]
         public partial WinRTDeviceFamily WinRTGetDeviceFamily();
 
@@ -16067,17 +16097,6 @@ namespace Silk.NET.SDL
             var pNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(pNamesSa);
             var ret = VulkanGetInstanceExtensions(ref window, ref pCount, pNames);
             SilkMarshal.CopyPtrToStringArray((IntPtr) pNames, pNamesSa);
-            return ret;
-        }
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 121, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        public unsafe int Main(int argc, string[] argvSa)
-        {
-            // StringArrayOverloader
-            var argv = (byte**) SilkMarshal.MarshalStringArrayToPtr(argvSa);
-            var ret = Main(argc, argv);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) argv, argvSa);
             return ret;
         }
 

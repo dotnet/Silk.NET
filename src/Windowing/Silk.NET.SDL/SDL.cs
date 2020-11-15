@@ -9,8 +9,9 @@ using Silk.NET.Core.Contexts;
 namespace Silk.NET.SDL
 {
 #if __ANDROID__
-    [PInvokeOverride("libSDL2.so")]
+    [PInvokeOverride(1, "libSDL2.so")]
 #endif
+    [PInvokeOverride(0, "__Internal")]
     public partial class Sdl
     {
         public const uint InitTimer = 0x00000001;

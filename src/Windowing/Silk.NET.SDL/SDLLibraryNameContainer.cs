@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
     internal class SDLLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libSDL2.so";
+        public override string Linux => "libSDL2-2.0.so";
 
         /// <inheritdoc />
         public override string MacOS => "libSDL2-2.0.dylib";

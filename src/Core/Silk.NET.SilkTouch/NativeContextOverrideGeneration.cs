@@ -6,6 +6,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
+using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -15,19 +17,21 @@ namespace Silk.NET.SilkTouch
 {
     public partial class NativeApiGenerator
     {
-        private Dictionary<INamedTypeSymbol, Func<ImmutableArray<TypedConstant>, (string, INativeContextOverride)?>>
+        private Dictionary<INamedTypeSymbol, Func<ImmutableArray<TypedConstant>, (int, string, INativeContextOverride)?>>
             _nativeContextAttributes =
-                new Dictionary<INamedTypeSymbol, Func<ImmutableArray<TypedConstant>, (string, INativeContextOverride)?>>();
+                new Dictionary<INamedTypeSymbol, Func<ImmutableArray<TypedConstant>, (int, string, INativeContextOverride)?>>();
     
         private void ProcessNativeContextOverrides
         (
             EntryPoint[] entrypoints,
             ref List<MemberDeclarationSyntax> members,
             ITypeSymbol classSymbol,
-            ClassDeclarationSyntax classDeclaration
+            ClassDeclarationSyntax classDeclaration,
+            Compilation compilation,
+            INamedTypeSymbol excludeFromOverrideAttribute
         )
         {
-            IEnumerable<(string, INativeContextOverride)> overrides = FindNativeContextOverrides(classSymbol);
+            var overrides = FindNativeContextOverrides(classSymbol);
 
             StatementSyntax last = ReturnStatement
             (
@@ -48,12 +52,18 @@ namespace Silk.NET.SilkTouch
                                     IdentifierName("n")))))
             );
 
-            int i = 0;
-            foreach (var (lib, @override) in overrides)
+            foreach (var (attSymbol, attId, lib, @override) in overrides.OrderBy(x => x.Item2))
             {
-                i++;
-                var name = $"OVERRIDE_{i}";
-                members.Add(@override.Type(name, lib, entrypoints));
+                var name = $"OVERRIDE_{attId}";
+                members.Add(@override.Type(name, lib, entrypoints.Where(x => x.SourceSymbol.GetAttributes()
+                    .All(x2 =>
+                    {
+                        if (!SymbolEqualityComparer.Default.Equals(x2.AttributeClass, excludeFromOverrideAttribute))
+                            return true;
+
+                        var matchId = (int) x2.ConstructorArguments[0].Value!;
+                        return matchId != attId;
+                    })).ToArray()));
                 last = IfStatement
                 (
                     BinaryExpression
@@ -81,7 +91,7 @@ namespace Silk.NET.SilkTouch
             );
         }
 
-        private IEnumerable<(string, INativeContextOverride)> FindNativeContextOverrides(ITypeSymbol symbol)
+        private IEnumerable<(INamedTypeSymbol, int, string, INativeContextOverride)> FindNativeContextOverrides(ITypeSymbol symbol)
         {
             var attributes = symbol.GetAttributes();
             foreach (var attribute in attributes)
@@ -92,7 +102,7 @@ namespace Silk.NET.SilkTouch
                 {
                     var v = f(attribute.ConstructorArguments);
                     if (v.HasValue)
-                        yield return v.Value;
+                        yield return (attribute.AttributeClass, v.Value.Item1, v.Value.Item2, v.Value.Item3);
                 }
             }
         }

@@ -14,12 +14,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     [NativeName("Name", "GLenum")]
     public enum KHR
     {
-        [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
-        SamplerMipFilterModeKhr = 0x1155,
-        [NativeName("Name", "CL_SAMPLER_LOD_MIN_KHR")]
-        SamplerLodMinKhr = 0x1156,
-        [NativeName("Name", "CL_SAMPLER_LOD_MAX_KHR")]
-        SamplerLodMaxKhr = 0x1157,
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int)0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]
@@ -78,10 +72,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandReleaseD3D11ObjectsKhr = 0x4021,
         [NativeName("Name", "CL_DEPTH")]
         Depth = 0x10BD,
-        [NativeName("Name", "CL_UNORM_INT16")]
-        UnormInt16 = 0x10D3,
-        [NativeName("Name", "CL_FLOAT")]
-        Float = 0x10DE,
         [NativeName("Name", "CL_UUID_SIZE_KHR")]
         UuidSizeKhr = 0x16,
         [NativeName("Name", "CL_LUID_SIZE_KHR")]
@@ -140,6 +130,28 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         InvalidEglObjectKhr = unchecked((int)0xFFFFFFFFFFFFFBBB),
         [NativeName("Name", "CL_EGL_RESOURCE_NOT_ACQUIRED_KHR")]
         EglResourceNotAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFBBC),
+        [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE_KHR")]
+        NameVersionMaxNameSizeKhr = 0x64,
+        [NativeName("Name", "CL_VERSION_MAJOR_BITS_KHR")]
+        VersionMajorBitsKhr = 0x10,
+        [NativeName("Name", "CL_VERSION_MINOR_BITS_KHR")]
+        VersionMinorBitsKhr = 0x10,
+        [NativeName("Name", "CL_VERSION_PATCH_BITS_KHR")]
+        VersionPatchBitsKhr = 0x12,
+        [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION_KHR")]
+        PlatformNumericVersionKhr = 0x906,
+        [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]
+        PlatformExtensionsWithVersionKhr = 0x907,
+        [NativeName("Name", "CL_DEVICE_NUMERIC_VERSION_KHR")]
+        DeviceNumericVersionKhr = 0x105E,
+        [NativeName("Name", "CL_DEVICE_OPENCL_C_NUMERIC_VERSION_KHR")]
+        DeviceOpenclCNumericVersionKhr = 0x105F,
+        [NativeName("Name", "CL_DEVICE_EXTENSIONS_WITH_VERSION_KHR")]
+        DeviceExtensionsWithVersionKhr = 0x1060,
+        [NativeName("Name", "CL_DEVICE_ILS_WITH_VERSION_KHR")]
+        DeviceIlsWithVersionKhr = 0x1061,
+        [NativeName("Name", "CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION_KHR")]
+        DeviceBuiltInKernelsWithVersionKhr = 0x1062,
         [NativeName("Name", "CL_DEVICE_HALF_FP_CONFIG")]
         DeviceHalfFPConfig = 0x1033,
         [NativeName("Name", "CL_DEVICE_DOUBLE_FP_CONFIG")]
@@ -148,6 +160,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DepthStencil = 0x10BE,
         [NativeName("Name", "CL_UNORM_INT24")]
         UnormInt24 = 0x10DF,
+        [NativeName("Name", "CL_FLOAT")]
+        Float = 0x10DE,
         [NativeName("Name", "CL_COMMAND_GL_FENCE_SYNC_OBJECT_KHR")]
         CommandGLFenceSyncObjectKhr = 0x200D,
         [NativeName("Name", "CL_GL_NUM_SAMPLES")]
@@ -200,8 +214,18 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DeviceILVersionKhr = 0x105B,
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
         ProgramILKhr = 0x1169,
+        [NativeName("Name", "CL_DEVICE_IMAGE_PITCH_ALIGNMENT_KHR")]
+        DeviceImagePitchAlignmentKhr = 0x104A,
+        [NativeName("Name", "CL_DEVICE_IMAGE_BASE_ADDRESS_ALIGNMENT_KHR")]
+        DeviceImageBaseAddressAlignmentKhr = 0x104B,
         [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
         ContextMemoryInitializeKhr = 0x2030,
+        [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
+        SamplerMipFilterModeKhr = 0x1155,
+        [NativeName("Name", "CL_SAMPLER_LOD_MIN_KHR")]
+        SamplerLodMinKhr = 0x1156,
+        [NativeName("Name", "CL_SAMPLER_LOD_MAX_KHR")]
+        SamplerLodMaxKhr = 0x1157,
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
         QueuePriorityKhr = 0x1096,
         [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]

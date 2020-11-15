@@ -176,6 +176,7 @@ namespace Silk.NET.SilkTouch
                             )
                         )
                     )
+#if !DEBUG
                     .WithAttributeLists
                     (
                         SingletonList
@@ -199,6 +200,7 @@ namespace Silk.NET.SilkTouch
                             )
                         )
                     )
+#endif
             );
 
             vTableMembers.Add
@@ -458,6 +460,7 @@ namespace Silk.NET.SilkTouch
                         )
                         .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword)))
                         .WithBody(Block(body))
+#if !DEBUG
                         .WithAttributeLists
                         (
                             SingletonList
@@ -478,6 +481,7 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         )
+#endif
                 );
                 return IdentifierName(name);
             }
@@ -650,6 +654,7 @@ namespace Silk.NET.SilkTouch
                         )
                         .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword)))
                         .WithBody(Block(body))
+#if !DEBUG
                         .WithAttributeLists
                         (
                             SingletonList
@@ -670,6 +675,7 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         )
+#endif
                 );
                 return IdentifierName(name);
             }

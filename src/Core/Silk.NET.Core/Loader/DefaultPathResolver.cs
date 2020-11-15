@@ -48,81 +48,90 @@ namespace Silk.NET.Core.Loader
             out string depsResolvedPath
         )
         {
-            var defaultContext = DependencyContext.Default;
-            var entAsm = Assembly.GetEntryAssembly();
-            if (defaultContext is null && !(entAsm is null))
+            try
             {
-                var json = new DependencyContextJsonReader();
-                defaultContext ??= json.Read
-                (
-                    File.OpenRead
-                    (
-                        Path.Combine
-                        (
-                            Path.GetDirectoryName(entAsm.Location),
-                            entAsm.GetName().Name + ".deps.json"
-                        )
-                    )
-                );
-                defaultContext ??=
-                    json.Read
+                var defaultContext = DependencyContext.Default;
+                var entAsm = Assembly.GetEntryAssembly();
+                if (defaultContext is null && !(entAsm is null))
+                {
+                    var json = new DependencyContextJsonReader();
+                    defaultContext ??= json.Read
                     (
                         File.OpenRead
                         (
-                            Path.Combine(AppContext.BaseDirectory, entAsm.GetName().Name + ".deps.json")
+                            Path.Combine
+                            (
+                                Path.GetDirectoryName(entAsm.Location),
+                                entAsm.GetName().Name + ".deps.json"
+                            )
                         )
                     );
-            }
+                    defaultContext ??=
+                        json.Read
+                        (
+                            File.OpenRead
+                            (
+                                Path.Combine(AppContext.BaseDirectory, entAsm.GetName().Name + ".deps.json")
+                            )
+                        );
+                }
 
-            if (defaultContext == null)
+                if (defaultContext == null)
+                {
+                    appLocalNativePath = null;
+                    depsResolvedPath = null;
+                    return false;
+                }
+
+                var currentRid = RuntimeEnvironment.GetRuntimeIdentifier();
+                var allRiDs = new List<string>();
+                allRiDs.Add(currentRid);
+                if (!AddFallbacks(allRiDs, currentRid, defaultContext.RuntimeGraph))
+                {
+                    var guessedFallbackRid = GuessFallbackRid(currentRid);
+                    if (guessedFallbackRid != null)
+                    {
+                        allRiDs.Add(guessedFallbackRid);
+                        AddFallbacks(allRiDs, guessedFallbackRid, defaultContext.RuntimeGraph);
+                    }
+                }
+
+                foreach (var rid in allRiDs)
+                    foreach (var runtimeLib in defaultContext.RuntimeLibraries)
+                        foreach (var nativeAsset in runtimeLib.GetRuntimeNativeAssets(defaultContext, rid))
+                        {
+                            if (Path.GetFileName(nativeAsset) == name || Path.GetFileNameWithoutExtension(nativeAsset) == name)
+                            {
+                                appLocalNativePath = Path.Combine
+                                (
+                                    AppContext.BaseDirectory,
+                                    nativeAsset
+                                );
+                                appLocalNativePath = Path.GetFullPath(appLocalNativePath);
+
+                                depsResolvedPath = Path.Combine
+                                (
+                                    GetNugetPackagesRootDirectory(),
+                                    runtimeLib.Name.ToLowerInvariant(),
+                                    runtimeLib.Version,
+                                    nativeAsset
+                                );
+                                depsResolvedPath = Path.GetFullPath(depsResolvedPath);
+
+                                return true;
+                            }
+                        }
+
+                appLocalNativePath = null;
+                depsResolvedPath = null;
+                return false;
+            }
+            catch (Exception ex)
             {
                 appLocalNativePath = null;
                 depsResolvedPath = null;
                 return false;
             }
-
-            var currentRid = RuntimeEnvironment.GetRuntimeIdentifier();
-            var allRiDs = new List<string>();
-            allRiDs.Add(currentRid);
-            if (!AddFallbacks(allRiDs, currentRid, defaultContext.RuntimeGraph))
-            {
-                var guessedFallbackRid = GuessFallbackRid(currentRid);
-                if (guessedFallbackRid != null)
-                {
-                    allRiDs.Add(guessedFallbackRid);
-                    AddFallbacks(allRiDs, guessedFallbackRid, defaultContext.RuntimeGraph);
-                }
-            }
-
-            foreach (var rid in allRiDs)
-            foreach (var runtimeLib in defaultContext.RuntimeLibraries)
-            foreach (var nativeAsset in runtimeLib.GetRuntimeNativeAssets(defaultContext, rid))
-            {
-                if (Path.GetFileName(nativeAsset) == name || Path.GetFileNameWithoutExtension(nativeAsset) == name)
-                {
-                    appLocalNativePath = Path.Combine
-                    (
-                        AppContext.BaseDirectory,
-                        nativeAsset
-                    );
-                    appLocalNativePath = Path.GetFullPath(appLocalNativePath);
-
-                    depsResolvedPath = Path.Combine
-                    (
-                        GetNugetPackagesRootDirectory(),
-                        runtimeLib.Name.ToLowerInvariant(),
-                        runtimeLib.Version,
-                        nativeAsset
-                    );
-                    depsResolvedPath = Path.GetFullPath(depsResolvedPath);
-
-                    return true;
-                }
-            }
-
-            appLocalNativePath = null;
-            depsResolvedPath = null;
-            return false;
         }
 
         private string GuessFallbackRid(string actualRuntimeIdentifier)
