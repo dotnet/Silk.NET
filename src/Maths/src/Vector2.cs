@@ -6,6 +6,7 @@ using Microsoft.Toolkit.Diagnostics;
 
 namespace Silk.NET.Numerics
 {
+    /// <summary>A structure encapsulating two values and provides hardware accelerated methods.</summary>
     public struct Vector2<T>
         : IEquatable<Vector2<T>>, IFormattable 
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
@@ -57,7 +58,9 @@ namespace Silk.NET.Numerics
         /// <param name="max">The maximum value.</param>
         /// <returns>The restricted vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector2<T> Clamp(Vector2<T> value1, Vector2<T> min, Vector2<T> max) => Min(Max(value1, min), max);
+        public static Vector2<T> Clamp(Vector2<T> value1, Vector2<T> min, Vector2<T> max) 
+            // We must follow HLSL behavior in the case user specified min value is bigger than max value.
+            => Min(Max(value1, min), max);
 
         /// <summary>Copies the elements of the vector to a specified array.</summary>
         /// <param name="array">The destination array.</param>
@@ -82,7 +85,6 @@ namespace Silk.NET.Numerics
         {
             if (array is null)
             {
-                // Match the JIT's exception type here. For perf, a NullReference is thrown instead of an ArgumentNull.
                 throw new NullReferenceException("Object reference not set to an instance of an object.");
             }
 
@@ -352,8 +354,12 @@ namespace Silk.NET.Numerics
             sb.Append('>');
             return sb.ToString();
         }
+        
+        // TODO: Matrix3x2
         // public static Vector2<T> Transform(Vector2<T> position, Matrix3x2<T> matrix) { throw null; }
+        // TODO: Matrix4x4
         // public static Vector2<T> Transform(Vector2<T> position, Matrix4x4<T> matrix) { throw null; }
+        // TODO: Quaternion
         // public static Vector2<T> Transform(Vector2<T> value, Quaternion<T> rotation) { throw null; }
         // public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix3x2<T> matrix) { throw null; }
         // public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix4x4<T> matrix) { throw null; }

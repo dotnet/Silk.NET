@@ -27,11 +27,11 @@ namespace Silk.NET.Numerics.Tests
         {
             return Equal(a.X, b.X) && Equal(a.Y, b.Y);
         }
-/*
-        public static bool Equal(Vector3 a, Vector3 b)
+        
+        public static bool Equal(Vector3<float> a, Vector3<float> b)
         {
             return Equal(a.X, b.X) && Equal(a.Y, b.Y) && Equal(a.Z, b.Z);
-        }*/
+        }
 /*
         public static bool Equal(Vector4 a, Vector4 b)
         {

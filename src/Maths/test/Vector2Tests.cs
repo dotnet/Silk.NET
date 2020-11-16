@@ -1,18 +1,19 @@
+using System;
 using System.Globalization;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using Silk.NET.Numerics;
 using Silk.NET.Numerics.Tests;
 using Xunit;
 
-namespace System.Numerics.Tests
+namespace Silk.NET.Numerics.Tests
 {
     public class Vector2Tests
     {
         [Fact]
-        public void Vector2MarshalSizeTest()
+        public unsafe void Vector2MarshalSizeTest()
         {
-            Assert.Equal(8, Marshal.SizeOf<Vector2>());
-            Assert.Equal(8, Marshal.SizeOf<Vector2>(new Vector2()));
+            Assert.Equal(8, sizeof(Vector2<float>));
         }
 
         [Fact]
@@ -463,6 +464,8 @@ namespace System.Numerics.Tests
             Vector2<float> actual = Vector2<float>.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
+        
+        // TODO: Matrix4x4
 /*
         // A test for Transform(Vector2f, Matrix4x4)
         [Fact]
@@ -483,6 +486,8 @@ namespace System.Numerics.Tests
             actual = Vector2<float>.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }*/
+
+        // TODO: Matrix3x2
 /*
         // A test for Transform(Vector2f, Matrix3x2)
         [Fact]
@@ -499,6 +504,8 @@ namespace System.Numerics.Tests
             actual = Vector2<float>.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }*/
+
+        // TODO: Matrix4x4
 /*
         // A test for TransformNormal (Vector2f, Matrix4x4)
         [Fact]
@@ -519,6 +526,8 @@ namespace System.Numerics.Tests
             actual = Vector2<float>.TransformNormal(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Tranform did not return the expected value.");
         }*/
+
+        // TODO: Matrix3x2
 /*
         // A test for TransformNormal (Vector2f, Matrix3x2)
         [Fact]
@@ -535,6 +544,8 @@ namespace System.Numerics.Tests
             actual = Vector2<float>.TransformNormal(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }*/
+
+        // TODO: Quaternion
 /*
         // A test for Transform (Vector2f, Quaternion)
         [Fact]
@@ -551,8 +562,8 @@ namespace System.Numerics.Tests
             Vector2<float> expected = Vector2<float>.Transform(v, m);
             Vector2<float> actual = Vector2<float>.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
-        }*/
-/*
+        }
+        
         // A test for Transform (Vector2f, Quaternion)
         // Transform Vector2f with zero quaternion
         [Fact]
@@ -564,8 +575,8 @@ namespace System.Numerics.Tests
 
             Vector2<float> actual = Vector2<float>.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
-        }*/
-/*
+        }
+        
         // A test for Transform (Vector2f, Quaternion)
         // Transform Vector2f with identity quaternion
         [Fact]
