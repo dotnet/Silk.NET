@@ -17,8 +17,8 @@ namespace Silk.NET.Windowing.Glfw
 {
     internal unsafe class GlfwWindow : WindowImplementationBase, IGLContext, IVkSurface
     {
-        private readonly GLFW.Glfw _glfw;
-        private WindowHandle* _glfwWindow;
+        internal readonly GLFW.Glfw _glfw;
+        internal WindowHandle* _glfwWindow;
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private readonly GlfwWindow? _parent;
         private readonly GlfwMonitor? _initialMonitor;

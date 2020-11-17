@@ -8,9 +8,10 @@ using Silk.NET.Core.Contexts;
 
 namespace Silk.NET.SDL
 {
-#if __ANDROID__
+    // TODO for Silk.NET 3.0:
+    // ideally we'd only use override 1 on android, but we can't really do that until it's better supported in .net 6
+    // (we'd need a preprocessor directive which is only available in xamarin)
     [PInvokeOverride(1, "libSDL2.so")]
-#endif
     [PInvokeOverride(0, "__Internal")]
     public partial class Sdl
     {
@@ -915,17 +916,7 @@ namespace Silk.NET.SDL
             return new SdlException(str);
         }
 
-        public static Sdl GetApi()
-        {
-            var libName = new SDLLibraryNameContainer().GetLibraryName();
-#if !__ANDROID__
-            var ctx = CreateDefaultContext(libName);
-#else
-            var ctx = new OVERRIDE_1();
-#endif
-            return new Sdl(ctx);
-        }
-
+        public static Sdl GetApi() => new Sdl(CreateDefaultContext(new SDLLibraryNameContainer().GetLibraryName()));
         public override bool IsExtensionPresent(string extension) => GLExtensionSupported(extension) == SdlBool.True;
     }
 }

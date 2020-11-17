@@ -16,11 +16,14 @@
         <ProjectReference Include="..\..\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <NativeLibs Include="$(MSBuildThisFileDirectory)\*.a" />
-        <None Include="@(NativeLibs)">
+        <None Include="$(MSBuildThisFileDirectory)\libSDL2.a">
             <Pack>true</Pack>
-            <PackageCopyToOutput>true</PackageCopyToOutput>
+            <PackagePath>build/$(TargetFramework)/native</PackagePath>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="Silk.NET.Windowing.Sdl.iOS.targets">
+            <Pack>true</Pack>
+            <PackagePath>build/$(TargetFramework)</PackagePath>
         </None>
     </ItemGroup>
     <Import Project="..\..\..\..\build\props\common.props" />

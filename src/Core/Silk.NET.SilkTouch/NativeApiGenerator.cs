@@ -75,6 +75,7 @@ namespace Silk.NET.SilkTouch
             marshalBuilder.Use(Middlewares.GenericPointerMarshaller);
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
+            
 
             foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
             {
@@ -91,7 +92,7 @@ namespace Silk.NET.SilkTouch
                     var name =
                         $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                     context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+                    File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
                 }
                 catch (Exception ex)
                 {

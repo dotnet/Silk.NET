@@ -24,7 +24,7 @@ namespace Silk.NET.SDL
         (
             uint? type = null,
             uint? timestamp = null,
-            SysWMmsg* msg = null
+            SysWMMsg* msg = null
         ) : this()
         {
             if (type is not null)
@@ -57,6 +57,6 @@ namespace Silk.NET.SDL
         [NativeName("Type", "SDL_SysWMmsg *")]
         [NativeName("Type.Name", "SDL_SysWMmsg *")]
         [NativeName("Name", "msg")]
-        public SysWMmsg* Msg;
+        public SysWMMsg* Msg;
     }
 }
