@@ -330,32 +330,32 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                             .WithBody
                             (
                                 Block(body)
+                            )
 #if !DEBUG
-                                    .WithAttributeLists
+                            .WithAttributeLists
+                            (
+                                SingletonList
+                                (
+                                    AttributeList
                                     (
-                                        SingletonList
+                                        SingletonSeparatedList
                                         (
-                                            AttributeList
+                                            Attribute
                                             (
-                                                SingletonSeparatedList
+                                                QualifiedName
                                                 (
-                                                    Attribute
+                                                    QualifiedName
                                                     (
-                                                        QualifiedName
-                                                        (
-                                                            QualifiedName
-                                                            (
-                                                                IdentifierName("System"), IdentifierName("Diagnostics")
-                                                            ),
-                                                            IdentifierName("DebuggerHidden")
-                                                        )
-                                                    )
+                                                        IdentifierName("System"), IdentifierName("Diagnostics")
+                                                    ),
+                                                    IdentifierName("DebuggerHidden")
                                                 )
                                             )
                                         )
                                     )
-#endif
+                                )
                             )
+#endif
                     );
                     return IdentifierName(name);
                 }
