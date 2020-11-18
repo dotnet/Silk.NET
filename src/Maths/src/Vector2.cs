@@ -354,14 +354,26 @@ namespace Silk.NET.Numerics
             sb.Append('>');
             return sb.ToString();
         }
+
+        public static Vector2<T> Transform(Vector2<T> position, Matrix4x4<T> matrix)
+        {
+            return new(
+                Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M11), Operations.Multiply(position.Y, matrix.M21)),matrix.M41),
+                Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M12), Operations.Multiply(position.Y, matrix.M22)),matrix.M42)
+            );
+        }
+
+        public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix4x4<T> matrix)
+        {
+            return new(
+                Operations.Add(Operations.Multiply(normal.X, matrix.M11), Operations.Multiply(normal.Y, matrix.M21)),
+                Operations.Add(Operations.Multiply(normal.X, matrix.M12), Operations.Multiply(normal.Y, matrix.M22)));
+        }
         
         // TODO: Matrix3x2
         // public static Vector2<T> Transform(Vector2<T> position, Matrix3x2<T> matrix) { throw null; }
-        // TODO: Matrix4x4
-        // public static Vector2<T> Transform(Vector2<T> position, Matrix4x4<T> matrix) { throw null; }
         // TODO: Quaternion
         // public static Vector2<T> Transform(Vector2<T> value, Quaternion<T> rotation) { throw null; }
         // public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix3x2<T> matrix) { throw null; }
-        // public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix4x4<T> matrix) { throw null; }
     }
 }

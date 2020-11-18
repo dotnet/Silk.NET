@@ -308,21 +308,20 @@ namespace Silk.NET.Numerics
         public static Vector3<T> Subtract(Vector3<T> left, Vector3<T> right) 
             => left - right;
         
-        // TODO: Matrix4x4
-/*
+        
         /// <summary>Transforms a vector by the given matrix.</summary>
         /// <param name="position">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3<T> Transform(Vector3<T> position, Matrix4x4<T> matrix)
+        public static Vector3<T> Transform(Vector3<T> position, Matrix4x4<T> matrix) // TODO: Matrix4x3
         {
             return new(
-                (position.X * matrix.M11) + (position.Y * matrix.M21) + (position.Z * matrix.M31) + matrix.M41,
-                (position.X * matrix.M12) + (position.Y * matrix.M22) + (position.Z * matrix.M32) + matrix.M42,
-                (position.X * matrix.M13) + (position.Y * matrix.M23) + (position.Z * matrix.M33) + matrix.M43
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M11), Operations.Multiply(position.Y, matrix.M21)), Operations.Multiply(position.Z, matrix.M31)), matrix.M41),
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M12), Operations.Multiply(position.Y, matrix.M22)), Operations.Multiply(position.Z, matrix.M32)), matrix.M42),
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M13), Operations.Multiply(position.Y, matrix.M23)), Operations.Multiply(position.Z, matrix.M33)), matrix.M43)
             );
-        }*/
+        }
 
         // TODO: Quaternion
 /*
@@ -355,22 +354,21 @@ namespace Silk.NET.Numerics
         }*/
         
 
-        // TODO: Matrix4x4
-/*
+        
         /// <summary>Transforms a vector normal by the given matrix.</summary>
         /// <param name="normal">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector3 TransformNormal(Vector3 normal, Matrix4x4 matrix)
+        public static Vector3<T> TransformNormal(Vector3<T> normal, Matrix4x4<T> matrix) // TODO: Matrix3x3
         {
-            return new Vector3(
-                (normal.X * matrix.M11) + (normal.Y * matrix.M21) + (normal.Z * matrix.M31),
-                (normal.X * matrix.M12) + (normal.Y * matrix.M22) + (normal.Z * matrix.M32),
-                (normal.X * matrix.M13) + (normal.Y * matrix.M23) + (normal.Z * matrix.M33)
+            return new(
+                Operations.Add(Operations.Add(Operations.Multiply(normal.X, matrix.M11), Operations.Multiply(normal.Y, matrix.M21)), Operations.Multiply(normal.Z, matrix.M31)),
+                Operations.Add(Operations.Add(Operations.Multiply(normal.X, matrix.M12), Operations.Multiply(normal.Y, matrix.M22)), Operations.Multiply(normal.Z, matrix.M32)),
+                Operations.Add(Operations.Add(Operations.Multiply(normal.X, matrix.M13), Operations.Multiply(normal.Y, matrix.M23)), Operations.Multiply(normal.Z, matrix.M33))
             );
         }
-*/
+        
         /// <summary>Copies the contents of the vector into the given array.</summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly void CopyTo(T[] array) 

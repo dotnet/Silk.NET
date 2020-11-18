@@ -308,8 +308,6 @@ namespace Silk.NET.Numerics
         public static Vector4<T> Subtract(Vector4<T> left, Vector4<T> right)
             => left - right;
 
-        // TODO: Matrix4x4
-        /*
         /// <summary>Transforms a vector by the given matrix.</summary>
         /// <param name="position">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
@@ -318,13 +316,13 @@ namespace Silk.NET.Numerics
         public static Vector4<T> Transform(Vector2<T> position, Matrix4x4<T> matrix)
         {
             return new(
-                (position.X * matrix.M11) + (position.Y * matrix.M21) + matrix.M41,
-                (position.X * matrix.M12) + (position.Y * matrix.M22) + matrix.M42,
-                (position.X * matrix.M13) + (position.Y * matrix.M23) + matrix.M43,
-                (position.X * matrix.M14) + (position.Y * matrix.M24) + matrix.M44
+                Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M11), Operations.Multiply(position.Y, matrix.M21)), matrix.M41),
+                Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M12), Operations.Multiply(position.Y, matrix.M22)), matrix.M42),
+                Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M13), Operations.Multiply(position.Y, matrix.M23)), matrix.M43),
+                Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M14), Operations.Multiply(position.Y, matrix.M24)), matrix.M44)
             );
         }
-*/
+
         // TODO: Quaternion
         /*
         /// <summary>Transforms a vector by the given Quaternion rotation value.</summary>
@@ -356,23 +354,21 @@ namespace Silk.NET.Numerics
             );
         }
 */
-        // TODO: Matrix4x4
-        /*
         /// <summary>Transforms a vector by the given matrix.</summary>
         /// <param name="position">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector4 Transform(Vector3 position, Matrix4x4 matrix)
+        public static Vector4<T> Transform(Vector3<T> position, Matrix4x4<T> matrix)
         {
-            return new Vector4(
-                (position.X * matrix.M11) + (position.Y * matrix.M21) + (position.Z * matrix.M31) + matrix.M41,
-                (position.X * matrix.M12) + (position.Y * matrix.M22) + (position.Z * matrix.M32) + matrix.M42,
-                (position.X * matrix.M13) + (position.Y * matrix.M23) + (position.Z * matrix.M33) + matrix.M43,
-                (position.X * matrix.M14) + (position.Y * matrix.M24) + (position.Z * matrix.M34) + matrix.M44
+            return new(
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M11), Operations.Multiply(position.Y, matrix.M21)), Operations.Multiply(position.Z, matrix.M31)), matrix.M41),
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M12), Operations.Multiply(position.Y, matrix.M22)), Operations.Multiply(position.Z, matrix.M32)), matrix.M42),
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M13), Operations.Multiply(position.Y, matrix.M23)), Operations.Multiply(position.Z, matrix.M33)), matrix.M43),
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M14), Operations.Multiply(position.Y, matrix.M24)), Operations.Multiply(position.Z, matrix.M34)), matrix.M44)
             );
         }
-*/
+        
         // TODO: Quaternion
         /*
         /// <summary>Transforms a vector by the given Quaternion rotation value.</summary>
@@ -404,23 +400,21 @@ namespace Silk.NET.Numerics
             );
         }
 */
-        // TODO: Matrix4x4
-        /*
         /// <summary>Transforms a vector by the given matrix.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector4 Transform(Vector4 vector, Matrix4x4 matrix)
+        public static Vector4<T> Transform(Vector4<T> vector, Matrix4x4<T> matrix)
         {
-            return new Vector4(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + (vector.W * matrix.M41),
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + (vector.W * matrix.M42),
-                (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33) + (vector.W * matrix.M43),
-                (vector.X * matrix.M14) + (vector.Y * matrix.M24) + (vector.Z * matrix.M34) + (vector.W * matrix.M44)
+            return new(
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(vector.X, matrix.M11), Operations.Multiply(vector.Y, matrix.M21)), Operations.Multiply(vector.Z, matrix.M31)), Operations.Multiply(vector.W, matrix.M41)),
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(vector.X, matrix.M12), Operations.Multiply(vector.Y, matrix.M22)), Operations.Multiply(vector.Z, matrix.M32)), Operations.Multiply(vector.W, matrix.M42)),
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(vector.X, matrix.M13), Operations.Multiply(vector.Y, matrix.M23)), Operations.Multiply(vector.Z, matrix.M33)), Operations.Multiply(vector.W, matrix.M43)),
+                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(vector.X, matrix.M14), Operations.Multiply(vector.Y, matrix.M24)), Operations.Multiply(vector.Z, matrix.M34)), Operations.Multiply(vector.W, matrix.M44))
             );
         }
-*/
+
         // TODO: Quaternion
 /*
         /// <summary>Transforms a vector by the given Quaternion rotation value.</summary>

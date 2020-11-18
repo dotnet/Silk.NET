@@ -489,17 +489,15 @@ namespace Silk.NET.Numerics.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector3<float>f.Reflect did not return the expected value.");
         }
         
-        // TODO: Matrix4x4
-/*
         // A test for Transform(Vector3<float>f, Matrix4x4)
         [Fact]
         public void Vector3TransformTest()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
@@ -509,7 +507,7 @@ namespace Silk.NET.Numerics.Tests
 
             actual = Vector3<float>.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector3<float>f.Transform did not return the expected value.");
-        }*/
+        }
 
         // A test for Clamp (Vector3<float>f, Vector3<float>f, Vector3<float>f)
         [Fact]
@@ -567,18 +565,16 @@ namespace Silk.NET.Numerics.Tests
             actual = Vector3<float>.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector3<float>f.Clamp did not return the expected value.");
         }
-        
-        // TODO: Matrix4x4
-/*
+
         // A test for TransformNormal (Vector3<float>f, Matrix4x4)
         [Fact]
         public void Vector3TransformNormalTest()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
@@ -591,6 +587,7 @@ namespace Silk.NET.Numerics.Tests
         }
 
         // TODO: Quaternion
+        /*
         // A test for Transform (Vector3<float>f, Quaternion)
         [Fact]
         public void Vector3TransformByQuaternionTest()
