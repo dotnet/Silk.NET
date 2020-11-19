@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using Xunit;
 
@@ -589,14 +590,12 @@ namespace Silk.NET.Numerics.Tests
             }
         }*/
 
-        // TODO: Plane
-/*
         // Simple shadow test.
         [Fact]
         public void Matrix4x4CreateShadowTest01()
         {
             Vector3<float> lightDir = Vector3<float>.UnitY;
-            Plane plane = new Plane(Vector3<float>.UnitY, 0);
+            Plane<float> plane = new Plane<float>(Vector3<float>.UnitY, 0);
 
             Matrix4x4<float> expected = Matrix4x4<float>.CreateScale(1, 0, 1);
 
@@ -609,59 +608,59 @@ namespace Silk.NET.Numerics.Tests
         public void Matrix4x4CreateShadowTest02()
         {
             // Complex cases.
-            Plane[] planes = {
-                new Plane( 0, 1, 0, 0 ),
-                new Plane( 1, 2, 3, 4 ),
-                new Plane( 5, 6, 7, 8 ),
-                new Plane(-1,-2,-3,-4 ),
-                new Plane(-5,-6,-7,-8 ),
+            Plane<float>[] planes = {
+                new( 0, 1, 0, 0 ),
+                new( 1, 2, 3, 4 ),
+                new( 5, 6, 7, 8 ),
+                new(-1,-2,-3,-4 ),
+                new(-5,-6,-7,-8 ),
             };
 
             Vector3<float>[] points = {
-                new Vector3<float>( 1, 2, 3),
-                new Vector3<float>( 5, 6, 7),
-                new Vector3<float>( 8, 9, 10),
-                new Vector3<float>(-1,-2,-3),
-                new Vector3<float>(-5,-6,-7),
-                new Vector3<float>(-8,-9,-10),
+                new( 1, 2, 3),
+                new( 5, 6, 7),
+                new( 8, 9, 10),
+                new(-1,-2,-3),
+                new(-5,-6,-7),
+                new(-8,-9,-10),
             };
 
-            foreach (Plane p in planes)
+            foreach (Plane<float> p in planes)
             {
-                Plane plane = Plane.Normalize(p);
+                Plane<float> plane = Plane<float>.Normalize(p);
 
                 // Try various direction of light directions.
                 var testDirections = new Vector3<float>[]
                 {
-                    new Vector3<float>( -1.0f, 1.0f, 1.0f ),
-                    new Vector3<float>(  0.0f, 1.0f, 1.0f ),
-                    new Vector3<float>(  1.0f, 1.0f, 1.0f ),
-                    new Vector3<float>( -1.0f, 0.0f, 1.0f ),
-                    new Vector3<float>(  0.0f, 0.0f, 1.0f ),
-                    new Vector3<float>(  1.0f, 0.0f, 1.0f ),
-                    new Vector3<float>( -1.0f,-1.0f, 1.0f ),
-                    new Vector3<float>(  0.0f,-1.0f, 1.0f ),
-                    new Vector3<float>(  1.0f,-1.0f, 1.0f ),
+                    new( -1.0f, 1.0f, 1.0f ),
+                    new(  0.0f, 1.0f, 1.0f ),
+                    new(  1.0f, 1.0f, 1.0f ),
+                    new( -1.0f, 0.0f, 1.0f ),
+                    new(  0.0f, 0.0f, 1.0f ),
+                    new(  1.0f, 0.0f, 1.0f ),
+                    new( -1.0f,-1.0f, 1.0f ),
+                    new(  0.0f,-1.0f, 1.0f ),
+                    new(  1.0f,-1.0f, 1.0f ),
 
-                    new Vector3<float>( -1.0f, 1.0f, 0.0f ),
-                    new Vector3<float>(  0.0f, 1.0f, 0.0f ),
-                    new Vector3<float>(  1.0f, 1.0f, 0.0f ),
-                    new Vector3<float>( -1.0f, 0.0f, 0.0f ),
-                    new Vector3<float>(  0.0f, 0.0f, 0.0f ),
-                    new Vector3<float>(  1.0f, 0.0f, 0.0f ),
-                    new Vector3<float>( -1.0f,-1.0f, 0.0f ),
-                    new Vector3<float>(  0.0f,-1.0f, 0.0f ),
-                    new Vector3<float>(  1.0f,-1.0f, 0.0f ),
+                    new( -1.0f, 1.0f, 0.0f ),
+                    new(  0.0f, 1.0f, 0.0f ),
+                    new(  1.0f, 1.0f, 0.0f ),
+                    new( -1.0f, 0.0f, 0.0f ),
+                    new(  0.0f, 0.0f, 0.0f ),
+                    new(  1.0f, 0.0f, 0.0f ),
+                    new( -1.0f,-1.0f, 0.0f ),
+                    new(  0.0f,-1.0f, 0.0f ),
+                    new(  1.0f,-1.0f, 0.0f ),
 
-                    new Vector3<float>( -1.0f, 1.0f,-1.0f ),
-                    new Vector3<float>(  0.0f, 1.0f,-1.0f ),
-                    new Vector3<float>(  1.0f, 1.0f,-1.0f ),
-                    new Vector3<float>( -1.0f, 0.0f,-1.0f ),
-                    new Vector3<float>(  0.0f, 0.0f,-1.0f ),
-                    new Vector3<float>(  1.0f, 0.0f,-1.0f ),
-                    new Vector3<float>( -1.0f,-1.0f,-1.0f ),
-                    new Vector3<float>(  0.0f,-1.0f,-1.0f ),
-                    new Vector3<float>(  1.0f,-1.0f,-1.0f ),
+                    new( -1.0f, 1.0f,-1.0f ),
+                    new(  0.0f, 1.0f,-1.0f ),
+                    new(  1.0f, 1.0f,-1.0f ),
+                    new( -1.0f, 0.0f,-1.0f ),
+                    new(  0.0f, 0.0f,-1.0f ),
+                    new(  1.0f, 0.0f,-1.0f ),
+                    new( -1.0f,-1.0f,-1.0f ),
+                    new(  0.0f,-1.0f,-1.0f ),
+                    new(  1.0f,-1.0f,-1.0f ),
                 };
 
                 foreach (Vector3<float> lightDirInfo in testDirections)
@@ -670,7 +669,7 @@ namespace Silk.NET.Numerics.Tests
                         continue;
                     Vector3<float> lightDir = Vector3<float>.Normalize(lightDirInfo);
 
-                    if (Plane.DotNormal(plane, lightDir) < 0.1f)
+                    if (Plane<float>.DotNormal(plane, lightDir) < 0.1f)
                         continue;
 
                     Matrix4x4<float> m = Matrix4x4<float>.CreateShadow(lightDir, plane);
@@ -679,7 +678,7 @@ namespace Silk.NET.Numerics.Tests
                     //
                     foreach (Vector3<float> point in points)
                     {
-                        Vector4<T> v4 = Vector4<T>.Transform(point, m);
+                        Vector4<float> v4 = Vector4<float>.Transform(point, m);
 
                         Vector3<float> sp = new Vector3<float>(v4.X, v4.Y, v4.Z) / v4.W;
 
@@ -699,7 +698,7 @@ namespace Silk.NET.Numerics.Tests
             }
         }
 
-        void CreateReflectionTest(Plane plane, Matrix4x4<float> expected)
+        void CreateReflectionTest(Plane<float> plane, Matrix4x4<float> expected)
         {
             Matrix4x4<float> actual = Matrix4x4<float>.CreateReflection(plane);
             Assert.True(MathHelper.Equal(actual, expected), "Matrix4x4<float>.CreateReflection did not return expected value.");
@@ -709,31 +708,31 @@ namespace Silk.NET.Numerics.Tests
         public void Matrix4x4CreateReflectionTest01()
         {
             // XY plane.
-            CreateReflectionTest(new Plane(Vector3<float>.UnitZ, 0), Matrix4x4<float>.CreateScale(1, 1, -1));
+            CreateReflectionTest(new Plane<float>(Vector3<float>.UnitZ, 0), Matrix4x4<float>.CreateScale(1, 1, -1));
             // XZ plane.
-            CreateReflectionTest(new Plane(Vector3<float>.UnitY, 0), Matrix4x4<float>.CreateScale(1, -1, 1));
+            CreateReflectionTest(new Plane<float>(Vector3<float>.UnitY, 0), Matrix4x4<float>.CreateScale(1, -1, 1));
             // YZ plane.
-            CreateReflectionTest(new Plane(Vector3<float>.UnitX, 0), Matrix4x4<float>.CreateScale(-1, 1, 1));
+            CreateReflectionTest(new Plane<float>(Vector3<float>.UnitX, 0), Matrix4x4<float>.CreateScale(-1, 1, 1));
 
             // Complex cases.
-            Plane[] planes = {
-                new Plane( 0, 1, 0, 0 ),
-                new Plane( 1, 2, 3, 4 ),
-                new Plane( 5, 6, 7, 8 ),
-                new Plane(-1,-2,-3,-4 ),
-                new Plane(-5,-6,-7,-8 ),
+            Plane<float>[] planes = {
+                new( 0, 1, 0, 0 ),
+                new( 1, 2, 3, 4 ),
+                new( 5, 6, 7, 8 ),
+                new(-1,-2,-3,-4 ),
+                new(-5,-6,-7,-8 ),
             };
 
             Vector3<float>[] points = {
-                new Vector3<float>( 1, 2, 3),
-                new Vector3<float>( 5, 6, 7),
-                new Vector3<float>(-1,-2,-3),
-                new Vector3<float>(-5,-6,-7),
+                new( 1, 2, 3),
+                new( 5, 6, 7),
+                new(-1,-2,-3),
+                new(-5,-6,-7),
             };
 
-            foreach (Plane p in planes)
+            foreach (Plane<float> p in planes)
             {
-                Plane plane = Plane.Normalize(p);
+                Plane<float> plane = Plane<float>.Normalize(p);
                 Matrix4x4<float> m = Matrix4x4<float>.CreateReflection(plane);
                 Vector3<float> pp = -plane.D * plane.Normal; // Position on the plane.
 
@@ -750,7 +749,7 @@ namespace Silk.NET.Numerics.Tests
                 }
             }
         }
-*/
+
         // A test for CreateRotationZ (float)
         [Fact]
         public void Matrix4x4CreateRotationZTest()

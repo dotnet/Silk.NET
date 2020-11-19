@@ -54,11 +54,11 @@ namespace Silk.NET.Numerics.Tests
                 Equal(a.M21, b.M21) && Equal(a.M22, b.M22) &&
                 Equal(a.M31, b.M31) && Equal(a.M32, b.M32);
         }*/
-/*
-        public static bool Equal(Plane a, Plane b)
+
+        public static bool Equal(Plane<float> a, Plane<float> b)
         {
             return Equal(a.Normal, b.Normal) && Equal(a.D, b.D);
-        }*/
+        }
 /*
         public static bool Equal(Quaternion a, Quaternion b)
         {

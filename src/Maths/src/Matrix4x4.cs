@@ -935,44 +935,42 @@ namespace Silk.NET.Numerics
             return result;
         }
 
-        // TODO: Plane
-        /*
         /// <summary>Creates a Matrix that reflects the coordinate system about a specified Plane.</summary>
         /// <param name="value">The Plane about which to create a reflection.</param>
         /// <returns>A new matrix expressing the reflection.</returns>
-        public static Matrix4x4<T> CreateReflection(Plane value)
+        public static Matrix4x4<T> CreateReflection(Plane<T> value)
         {
-            value = Plane.Normalize(value);
+            value = Plane<T>.Normalize(value);
 
             T a = value.Normal.X;
             T b = value.Normal.Y;
             T c = value.Normal.Z;
 
-            T fa = -2.0f * a;
-            T fb = -2.0f * b;
-            T fc = -2.0f * c;
+            T fa = Operations.Multiply(Constants<T>.MinusTwo, a);
+            T fb = Operations.Multiply(Constants<T>.MinusTwo, b);
+            T fc = Operations.Multiply(Constants<T>.MinusTwo, c);
 
-            Matrix4x4 result = Identity;
+            Matrix4x4<T> result = Identity;
 
-            result.M11 = fa * a + 1.0f;
-            result.M12 = fb * a;
-            result.M13 = fc * a;
+            result.M11 = Operations.Add(Operations.Multiply(fa, a), Constants<T>.One);
+            result.M12 = Operations.Multiply(fb, a);
+            result.M13 = Operations.Multiply(fc, a);
 
-            result.M21 = fa * b;
-            result.M22 = fb * b + 1.0f;
-            result.M23 = fc * b;
+            result.M21 = Operations.Multiply(fa, b);
+            result.M22 = Operations.Add(Operations.Multiply(fb, b), Constants<T>.One);
+            result.M23 = Operations.Multiply(fc, b);
 
-            result.M31 = fa * c;
-            result.M32 = fb * c;
-            result.M33 = fc * c + 1.0f;
+            result.M31 = Operations.Multiply(fa, c);
+            result.M32 = Operations.Multiply(fb, c);
+            result.M33 = Operations.Add(Operations.Multiply(fc, c), Constants<T>.One);
 
-            result.M41 = fa * value.D;
-            result.M42 = fb * value.D;
-            result.M43 = fc * value.D;
+            result.M41 = Operations.Multiply(fa, value.D);
+            result.M42 = Operations.Multiply(fb, value.D);
+            result.M43 = Operations.Multiply(fc, value.D);
 
             return result;
         }
-*/
+
         /// <summary>Creates a matrix for rotating points around the X-axis.</summary>
         /// <param name="radians">The amount, in radians, by which to rotate around the X-axis.</param>
         /// <returns>The rotation matrix.</returns>
@@ -1232,44 +1230,42 @@ namespace Silk.NET.Numerics
             return result;
         }
         
-        // TODO: Plane
-/*
         /// <summary>Creates a Matrix that flattens geometry into a specified Plane as if casting a shadow from a specified light source.</summary>
         /// <param name="lightDirection">The direction from which the light that will cast the shadow is coming.</param>
         /// <param name="plane">The Plane onto which the new matrix should flatten geometry so as to cast a shadow.</param>
         /// <returns>A new Matrix that can be used to flatten geometry onto the specified plane from the specified direction.</returns>
-        public static Matrix4x4<T> CreateShadow(Vector3<T> lightDirection, Plane plane)
+        public static Matrix4x4<T> CreateShadow(Vector3<T> lightDirection, Plane<T> plane)
         {
-            Plane p = Plane.Normalize(plane);
+            Plane<T> p = Plane<T>.Normalize(plane);
 
-            T dot = p.Normal.X * lightDirection.X + p.Normal.Y * lightDirection.Y + p.Normal.Z * lightDirection.Z;
-            T a = -p.Normal.X;
-            T b = -p.Normal.Y;
-            T c = -p.Normal.Z;
-            T d = -p.D;
+            T dot = Operations.Add(Operations.Add(Operations.Multiply(p.Normal.X, lightDirection.X),Operations.Multiply(p.Normal.Y, lightDirection.Y)), Operations.Multiply(p.Normal.Z, lightDirection.Z));
+            T a = Operations.Negate(p.Normal.X);
+            T b = Operations.Negate(p.Normal.Y);
+            T c = Operations.Negate(p.Normal.Z);
+            T d = Operations.Negate(p.D);
 
-            Matrix4x4 result = Identity;
+            Matrix4x4<T> result = Identity;
 
-            result.M11 = a * lightDirection.X + dot;
-            result.M21 = b * lightDirection.X;
-            result.M31 = c * lightDirection.X;
-            result.M41 = d * lightDirection.X;
+            result.M11 = Operations.Add(Operations.Multiply(a, lightDirection.X), dot);
+            result.M21 = Operations.Multiply(b, lightDirection.X);
+            result.M31 = Operations.Multiply(c, lightDirection.X);
+            result.M41 = Operations.Multiply(d, lightDirection.X);
 
-            result.M12 = a * lightDirection.Y;
-            result.M22 = b * lightDirection.Y + dot;
-            result.M32 = c * lightDirection.Y;
-            result.M42 = d * lightDirection.Y;
+            result.M12 = Operations.Multiply(a, lightDirection.Y);
+            result.M22 = Operations.Add(Operations.Multiply(b, lightDirection.Y), dot);
+            result.M32 = Operations.Multiply(c, lightDirection.Y);
+            result.M42 = Operations.Multiply(d, lightDirection.Y);
 
-            result.M13 = a * lightDirection.Z;
-            result.M23 = b * lightDirection.Z;
-            result.M33 = c * lightDirection.Z + dot;
-            result.M43 = d * lightDirection.Z;
+            result.M13 = Operations.Multiply(a, lightDirection.Z);
+            result.M23 = Operations.Multiply(b, lightDirection.Z);
+            result.M33 = Operations.Add(Operations.Multiply(c, lightDirection.Z), dot);
+            result.M43 = Operations.Multiply(d, lightDirection.Z);
 
             result.M44 = dot;
 
             return result;
         }
-*/
+
         /// <summary>Creates a translation matrix.</summary>
         /// <param name="position">The amount to translate in each axis.</param>
         /// <returns>The translation matrix.</returns>
