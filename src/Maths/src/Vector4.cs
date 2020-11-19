@@ -323,37 +323,35 @@ namespace Silk.NET.Numerics
             );
         }
 
-        // TODO: Quaternion
-        /*
         /// <summary>Transforms a vector by the given Quaternion rotation value.</summary>
         /// <param name="value">The source vector to be rotated.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector4 Transform(Vector2 value, Quaternion rotation)
+        public static Vector4<T> Transform(Vector2<T> value, Quaternion<T> rotation)
         {
-            float x2 = rotation.X + rotation.X;
-            float y2 = rotation.Y + rotation.Y;
-            float z2 = rotation.Z + rotation.Z;
+            T x2 = Operations.Add(rotation.X, rotation.X);
+            T y2 = Operations.Add(rotation.Y, rotation.Y);
+            T z2 = Operations.Add(rotation.Z, rotation.Z);
 
-            float wx2 = rotation.W * x2;
-            float wy2 = rotation.W * y2;
-            float wz2 = rotation.W * z2;
-            float xx2 = rotation.X * x2;
-            float xy2 = rotation.X * y2;
-            float xz2 = rotation.X * z2;
-            float yy2 = rotation.Y * y2;
-            float yz2 = rotation.Y * z2;
-            float zz2 = rotation.Z * z2;
+            T wx2 = Operations.Multiply(rotation.W, x2);
+            T wy2 = Operations.Multiply(rotation.W, y2);
+            T wz2 = Operations.Multiply(rotation.W, z2);
+            T xx2 = Operations.Multiply(rotation.X, x2);
+            T xy2 = Operations.Multiply(rotation.X, y2);
+            T xz2 = Operations.Multiply(rotation.X, z2);
+            T yy2 = Operations.Multiply(rotation.Y, y2);
+            T yz2 = Operations.Multiply(rotation.Y, z2);
+            T zz2 = Operations.Multiply(rotation.Z, z2);
 
-            return new Vector4(
-                value.X * (1.0f - yy2 - zz2) + value.Y * (xy2 - wz2),
-                value.X * (xy2 + wz2) + value.Y * (1.0f - xx2 - zz2),
-                value.X * (xz2 - wy2) + value.Y * (yz2 + wx2),
-                1.0f
+            return new(
+                Operations.Add(Operations.Multiply(value.X, Operations.Subtract(Operations.Subtract(Constants<T>.One, yy2), zz2)), Operations.Multiply(value.Y, Operations.Subtract(xy2, wz2))),
+                Operations.Add(Operations.Multiply(value.X, Operations.Add(xy2, wz2)), Operations.Multiply(value.Y, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2))),
+                Operations.Add(Operations.Multiply(value.X, Operations.Subtract(xz2, wy2)), Operations.Multiply(value.Y, Operations.Add(yz2, wx2))),
+                Constants<T>.One
             );
         }
-*/
+
         /// <summary>Transforms a vector by the given matrix.</summary>
         /// <param name="position">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
@@ -369,37 +367,35 @@ namespace Silk.NET.Numerics
             );
         }
         
-        // TODO: Quaternion
-        /*
         /// <summary>Transforms a vector by the given Quaternion rotation value.</summary>
         /// <param name="value">The source vector to be rotated.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector4 Transform(Vector3 value, Quaternion rotation)
+        public static Vector4<T> Transform(Vector3<T> value, Quaternion<T> rotation)
         {
-            float x2 = rotation.X + rotation.X;
-            float y2 = rotation.Y + rotation.Y;
-            float z2 = rotation.Z + rotation.Z;
+            T x2 = Operations.Add(rotation.X, rotation.X);
+            T y2 = Operations.Add(rotation.Y, rotation.Y);
+            T z2 = Operations.Add(rotation.Z, rotation.Z);
 
-            float wx2 = rotation.W * x2;
-            float wy2 = rotation.W * y2;
-            float wz2 = rotation.W * z2;
-            float xx2 = rotation.X * x2;
-            float xy2 = rotation.X * y2;
-            float xz2 = rotation.X * z2;
-            float yy2 = rotation.Y * y2;
-            float yz2 = rotation.Y * z2;
-            float zz2 = rotation.Z * z2;
+            T wx2 = Operations.Multiply(rotation.W, x2);
+            T wy2 = Operations.Multiply(rotation.W, y2);
+            T wz2 = Operations.Multiply(rotation.W, z2);
+            T xx2 = Operations.Multiply(rotation.X, x2);
+            T xy2 = Operations.Multiply(rotation.X, y2);
+            T xz2 = Operations.Multiply(rotation.X, z2);
+            T yy2 = Operations.Multiply(rotation.Y, y2);
+            T yz2 = Operations.Multiply(rotation.Y, z2);
+            T zz2 = Operations.Multiply(rotation.Z, z2);
 
-            return new Vector4(
-                value.X * (1.0f - yy2 - zz2) + value.Y * (xy2 - wz2) + value.Z * (xz2 + wy2),
-                value.X * (xy2 + wz2) + value.Y * (1.0f - xx2 - zz2) + value.Z * (yz2 - wx2),
-                value.X * (xz2 - wy2) + value.Y * (yz2 + wx2) + value.Z * (1.0f - xx2 - yy2),
-                1.0f
+            return new(
+                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Subtract(Operations.Subtract(Constants<T>.One, yy2), zz2)), Operations.Multiply(value.Y, Operations.Subtract(xy2, wz2))), Operations.Multiply(value.Z, Operations.Add(xz2, wy2))),
+                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Add(xy2, wz2)), Operations.Multiply(value.Y, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2))), Operations.Multiply(value.Z, Operations.Subtract(yz2, wx2))),
+                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Subtract(xz2, wy2)), Operations.Multiply(value.Y, Operations.Add(yz2, wx2))), Operations.Multiply(value.Z, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), yy2))),
+                Constants<T>.One
             );
         }
-*/
+
         /// <summary>Transforms a vector by the given matrix.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
@@ -415,35 +411,34 @@ namespace Silk.NET.Numerics
             );
         }
 
-        // TODO: Quaternion
-/*
         /// <summary>Transforms a vector by the given Quaternion rotation value.</summary>
         /// <param name="value">The source vector to be rotated.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Vector4 Transform(Vector4 value, Quaternion rotation)
+        public static Vector4<T> Transform(Vector4<T> value, Quaternion<T> rotation)
         {
-            float x2 = rotation.X + rotation.X;
-            float y2 = rotation.Y + rotation.Y;
-            float z2 = rotation.Z + rotation.Z;
+            T x2 = Operations.Add(rotation.X, rotation.X);
+            T y2 = Operations.Add(rotation.Y, rotation.Y);
+            T z2 = Operations.Add(rotation.Z, rotation.Z);
 
-            float wx2 = rotation.W * x2;
-            float wy2 = rotation.W * y2;
-            float wz2 = rotation.W * z2;
-            float xx2 = rotation.X * x2;
-            float xy2 = rotation.X * y2;
-            float xz2 = rotation.X * z2;
-            float yy2 = rotation.Y * y2;
-            float yz2 = rotation.Y * z2;
-            float zz2 = rotation.Z * z2;
+            T wx2 = Operations.Multiply(rotation.W, x2);
+            T wy2 = Operations.Multiply(rotation.W, y2);
+            T wz2 = Operations.Multiply(rotation.W, z2);
+            T xx2 = Operations.Multiply(rotation.X, x2);
+            T xy2 = Operations.Multiply(rotation.X, y2);
+            T xz2 = Operations.Multiply(rotation.X, z2);
+            T yy2 = Operations.Multiply(rotation.Y, y2);
+            T yz2 = Operations.Multiply(rotation.Y, z2);
+            T zz2 = Operations.Multiply(rotation.Z, z2);
 
-            return new Vector4(
-                value.X * (1.0f - yy2 - zz2) + value.Y * (xy2 - wz2) + value.Z * (xz2 + wy2),
-                value.X * (xy2 + wz2) + value.Y * (1.0f - xx2 - zz2) + value.Z * (yz2 - wx2),
-                value.X * (xz2 - wy2) + value.Y * (yz2 + wx2) + value.Z * (1.0f - xx2 - yy2),
-                value.W);
-        }*/
+            return new(
+                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Subtract(Operations.Subtract(Constants<T>.One, yy2), zz2)), Operations.Multiply(value.Y, Operations.Subtract(xy2, wz2))), Operations.Multiply(value.Z, Operations.Add(xz2, wy2))),
+                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Add(xy2, wz2)), Operations.Multiply(value.Y, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2))), Operations.Multiply(value.Z, Operations.Subtract(yz2, wx2))),
+                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Subtract(xz2, wy2)), Operations.Multiply(value.Y, Operations.Add(yz2, wx2))), Operations.Multiply(value.Z, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), yy2))),
+                value.W
+            );
+        }
 
         /// <summary>Copies the contents of the vector into the given array.</summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

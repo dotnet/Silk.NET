@@ -539,19 +539,17 @@ namespace Silk.NET.Numerics.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }*/
 
-        // TODO: Quaternion
-/*
         // A test for Transform (Vector2f, Quaternion)
         [Fact]
         public void Vector2TransformByQuaternionTest()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
 
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion q = Quaternion.CreateFromRotationMatrix(m);
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector2<float> expected = Vector2<float>.Transform(v, m);
             Vector2<float> actual = Vector2<float>.Transform(v, q);
@@ -564,7 +562,7 @@ namespace Silk.NET.Numerics.Tests
         public void Vector2TransformByQuaternionTest1()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Quaternion q = new Quaternion();
+            Quaternion<float> q = new Quaternion<float>();
             Vector2<float> expected = v;
 
             Vector2<float> actual = Vector2<float>.Transform(v, q);
@@ -577,12 +575,12 @@ namespace Silk.NET.Numerics.Tests
         public void Vector2TransformByQuaternionTest2()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Quaternion q = Quaternion.Identity;
+            Quaternion<float> q = Quaternion<float>.Identity;
             Vector2<float> expected = v;
 
             Vector2<float> actual = Vector2<float>.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
-        }*/
+        }
 
         // A test for Normalize (Vector2f)
         [Fact]
@@ -878,8 +876,6 @@ namespace Silk.NET.Numerics.Tests
             Assert.Equal(expected, actual);
         }
 
-        // TODO: Quaternion
-        /*
         // A test for Equals (object)
         [Fact]
         public void Vector2EqualsTest()
@@ -902,7 +898,7 @@ namespace Silk.NET.Numerics.Tests
             Assert.Equal(expected, actual);
 
             // case 3: compare between different types.
-            obj = new Quaternion();
+            obj = new Quaternion<float>();
             expected = false;
             actual = a.Equals(obj);
             Assert.Equal(expected, actual);
@@ -913,8 +909,7 @@ namespace Silk.NET.Numerics.Tests
             actual = a.Equals(obj);
             Assert.Equal(expected, actual);
         }
-*/
-        
+
         // A test for Multiply (Vector2f, float)
         [Fact]
         public void Vector2MultiplyTest()

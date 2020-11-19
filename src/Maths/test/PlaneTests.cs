@@ -48,14 +48,12 @@ namespace Silk.NET.Numerics.Tests
             actual = a.Equals(obj);
             Assert.Equal(expected, actual);
             
-            // TODO: Quaternion
-            /*
             // case 3: compare between different types.
-            obj = new Quaternion();
+            obj = new Quaternion<float>();
             expected = false;
             actual = a.Equals(obj);
             Assert.Equal(expected, actual);
-*/
+
             // case 3: compare against null.
             obj = null;
             expected = false;
@@ -258,8 +256,6 @@ namespace Silk.NET.Numerics.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.Transform did not return the expected value.");
         }
 
-        // TODO: Quaternion
-        /*
         [Fact]
         // Transform by quaternion
         public void PlaneTransformTest2()
@@ -271,7 +267,7 @@ namespace Silk.NET.Numerics.Tests
                 Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
                 Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
                 Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion q = Quaternion.CreateFromRotationMatrix(m);
+            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Plane<float> expected = new Plane<float>();
             float x = target.Normal.X, y = target.Normal.Y, z = target.Normal.Z, w = target.D;
@@ -285,8 +281,7 @@ namespace Silk.NET.Numerics.Tests
             actual = Plane<float>.Transform(target, q);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.Transform did not return the expected value.");
         }
-*/
-        
+
         // A test for Plane<float> comparison involving NaN values
         [Fact]
         public void PlaneEqualsNanTest()

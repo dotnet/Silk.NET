@@ -586,19 +586,17 @@ namespace Silk.NET.Numerics.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector3<float>f.TransformNormal did not return the expected value.");
         }
 
-        // TODO: Quaternion
-        /*
         // A test for Transform (Vector3<float>f, Quaternion)
         [Fact]
         public void Vector3TransformByQuaternionTest()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
 
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion q = Quaternion.CreateFromRotationMatrix(m);
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector3<float> expected = Vector3<float>.Transform(v, m);
             Vector3<float> actual = Vector3<float>.Transform(v, q);
@@ -611,7 +609,7 @@ namespace Silk.NET.Numerics.Tests
         public void Vector3TransformByQuaternionTest1()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            Quaternion q = new Quaternion();
+            Quaternion<float> q = new Quaternion<float>();
             Vector3<float> expected = v;
 
             Vector3<float> actual = Vector3<float>.Transform(v, q);
@@ -624,13 +622,13 @@ namespace Silk.NET.Numerics.Tests
         public void Vector3TransformByQuaternionTest2()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            Quaternion q = Quaternion.Identity;
+            Quaternion<float> q = Quaternion<float>.Identity;
             Vector3<float> expected = v;
 
             Vector3<float> actual = Vector3<float>.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector3<float>f.Transform did not return the expected value.");
         }
-*/
+
         // A test for Normalize (Vector3<float>f)
         [Fact]
         public void Vector3NormalizeTest()
@@ -949,12 +947,11 @@ namespace Silk.NET.Numerics.Tests
             actual = a.Equals(obj);
             Assert.Equal(expected, actual);
 
-            // TODO: Quaternion
             // case 3: compare between different types.
-            // obj = new Quaternion();
-            // expected = false;
-            // actual = a.Equals(obj);
-            // Assert.Equal(expected, actual);
+            obj = new Quaternion<float>();
+            expected = false;
+            actual = a.Equals(obj);
+            Assert.Equal(expected, actual);
 
             // case 3: compare against null.
             obj = null;

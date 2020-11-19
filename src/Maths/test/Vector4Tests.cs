@@ -640,20 +640,19 @@ namespace Silk.NET.Numerics.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
         
-        // TODO: Quaternion
-/*
+        
         // A test for Transform (Vector2<float>f, Quaternion)
         [Fact]
-        public void Vector4TransformVector2<float>QuaternionTest()
+        public void Vector4TransformVector2QuaternionTest3()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
 
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
 
-            Quaternion q = Quaternion.CreateFromRotationMatrix(m);
+            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector4<float> expected = Vector4<float>.Transform(v, m);
             Vector4<float> actual;
@@ -664,15 +663,15 @@ namespace Silk.NET.Numerics.Tests
 
         // A test for Transform (Vector3<float>f, Quaternion)
         [Fact]
-        public void Vector4TransformVector3<float>Quaternion()
+        public void Vector4TransformVector3Quaternion()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
 
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion q = Quaternion.CreateFromRotationMatrix(m);
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector4<float> expected = Vector4<float>.Transform(v, m);
             Vector4<float> actual;
@@ -683,15 +682,15 @@ namespace Silk.NET.Numerics.Tests
         
         // A test for Transform (Vector4<float>f, Quaternion)
         [Fact]
-        public void Vector4TransformVector4<float>QuaternionTest()
+        public void Vector4TransformVector4QuaternionTest()
         {
             Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion q = Quaternion.CreateFromRotationMatrix(m);
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector4<float> expected = Vector4<float>.Transform(v, m);
             Vector4<float> actual;
@@ -709,10 +708,10 @@ namespace Silk.NET.Numerics.Tests
         // A test for Transform (Vector4<float>f, Quaternion)
         // Transform Vector4<float> with zero quaternion
         [Fact]
-        public void Vector4TransformVector4<float>QuaternionTest1()
+        public void Vector4TransformVector4QuaternionTest1()
         {
             Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
-            Quaternion q = new Quaternion();
+            Quaternion<float> q = new Quaternion<float>();
             Vector4<float> expected = v;
 
             Vector4<float> actual = Vector4<float>.Transform(v, q);
@@ -722,10 +721,10 @@ namespace Silk.NET.Numerics.Tests
         // A test for Transform (Vector4<float>f, Quaternion)
         // Transform Vector4<float> with identity matrix
         [Fact]
-        public void Vector4TransformVector4<float>QuaternionTest2()
+        public void Vector4TransformVector4QuaternionTest2()
         {
             Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
-            Quaternion q = Quaternion.Identity;
+            Quaternion<float> q = Quaternion<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
             Vector4<float> actual = Vector4<float>.Transform(v, q);
@@ -735,15 +734,15 @@ namespace Silk.NET.Numerics.Tests
         // A test for Transform (Vector3<float>f, Quaternion)
         // Transform Vector3<float>f test
         [Fact]
-        public void Vector4TransformVector3<float>QuaternionTest()
+        public void Vector4TransformVector3QuaternionTest()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
 
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion q = Quaternion.CreateFromRotationMatrix(m);
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector4<float> expected = Vector4<float>.Transform(v, m);
             Vector4<float> actual = Vector4<float>.Transform(v, q);
@@ -753,10 +752,10 @@ namespace Silk.NET.Numerics.Tests
         // A test for Transform (Vector3<float>f, Quaternion)
         // Transform Vector3<float> with zero quaternion
         [Fact]
-        public void Vector4TransformVector3<float>QuaternionTest1()
+        public void Vector4TransformVector3QuaternionTest1()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            Quaternion q = new Quaternion();
+            Quaternion<float> q = new Quaternion<float>();
             Vector4<float> expected = new Vector4<float>(v, 1.0f);
 
             Vector4<float> actual = Vector4<float>.Transform(v, q);
@@ -766,10 +765,10 @@ namespace Silk.NET.Numerics.Tests
         // A test for Transform (Vector3<float>f, Quaternion)
         // Transform Vector3<float> with identity quaternion
         [Fact]
-        public void Vector4TransformVector3<float>QuaternionTest2()
+        public void Vector4TransformVector3QuaternionTest2()
         {
             Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            Quaternion q = Quaternion.Identity;
+            Quaternion<float> q = Quaternion<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 1.0f);
 
             Vector4<float> actual = Vector4<float>.Transform(v, q);
@@ -779,15 +778,15 @@ namespace Silk.NET.Numerics.Tests
         // A test for Transform (Vector2<float>f, Quaternion)
         // Transform Vector2<float>f by quaternion test
         [Fact]
-        public void Vector4TransformVector2<float>QuaternionTest()
+        public void Vector4TransformVector2QuaternionTest()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
 
-            Matrix4x4 m =
-                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            Quaternion q = Quaternion.CreateFromRotationMatrix(m);
+            Matrix4x4<float> m =
+                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector4<float> expected = Vector4<float>.Transform(v, m);
             Vector4<float> actual = Vector4<float>.Transform(v, q);
@@ -797,10 +796,10 @@ namespace Silk.NET.Numerics.Tests
         // A test for Transform (Vector2<float>f, Quaternion)
         // Transform Vector2<float>f with zero quaternion
         [Fact]
-        public void Vector4TransformVector2<float>QuaternionTest1()
+        public void Vector4TransformVector2QuaternionTest1()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Quaternion q = new Quaternion();
+            Quaternion<float> q = new Quaternion<float>();
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 0, 1.0f);
 
             Vector4<float> actual = Vector4<float>.Transform(v, q);
@@ -810,16 +809,16 @@ namespace Silk.NET.Numerics.Tests
         // A test for Transform (Vector2<float>f, Matrix4x4)
         // Transform Vector2<float> with identity Quaternion
         [Fact]
-        public void Vector4TransformVector2<float>QuaternionTest2()
+        public void Vector4TransformVector2QuaternionTest2()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Quaternion q = Quaternion.Identity;
+            Quaternion<float> q = Quaternion<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 0, 1.0f);
 
             Vector4<float> actual = Vector4<float>.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
-*/
+
         // A test for Normalize (Vector4<float>f)
         [Fact]
         public void Vector4NormalizeTest()
@@ -1160,12 +1159,11 @@ namespace Silk.NET.Numerics.Tests
             actual = a.Equals(obj);
             Assert.Equal(expected, actual);
 
-            // TODO: Quaternion
             // case 3: compare between different types.
-            // obj = new Quaternion();
-            // expected = false;
-            // actual = a.Equals(obj);
-            // Assert.Equal(expected, actual);
+            obj = new Quaternion<float>();
+            expected = false;
+            actual = a.Equals(obj);
+            Assert.Equal(expected, actual);
 
             // case 3: compare against null.
             obj = null;

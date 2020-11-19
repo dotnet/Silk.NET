@@ -680,50 +680,48 @@ namespace Silk.NET.Numerics
 
             result.M11 = Operations.Add(xx, Operations.Multiply(ca, Operations.Subtract(Constants<T>.One, xx)));
             result.M12 = Operations.Add(Operations.Subtract(xy, Operations.Multiply(ca, xy)), Operations.Multiply(sa, z));
-            result.M13 = Operations.Subtract(xz, Operations.Subtract(Operations.Multiply(ca, xz), Operations.Multiply(sa, y)));
+            result.M13 = Operations.Subtract(Operations.Subtract(xz, Operations.Multiply(ca, xz)), Operations.Multiply(sa, y));
 
-            result.M21 = Operations.Subtract(xy, Operations.Subtract(Operations.Multiply(ca, xy), Operations.Multiply(sa, z)));
+            result.M21 = Operations.Subtract(Operations.Subtract(xy, Operations.Multiply(ca, xy)), Operations.Multiply(sa, z));
             result.M22 = Operations.Add(yy, Operations.Multiply(ca, Operations.Subtract(Constants<T>.One, yy)));
-            result.M23 = Operations.Subtract(yz, Operations.Add(Operations.Multiply(ca, yz), Operations.Multiply(sa, x)));
+            result.M23 = Operations.Add(Operations.Subtract(yz, Operations.Multiply(ca, yz)), Operations.Multiply(sa, x));
 
-            result.M31 = Operations.Subtract(xz, Operations.Add(Operations.Multiply(ca, xz), Operations.Multiply(sa, y)));
-            result.M32 = Operations.Subtract(yz, Operations.Subtract(Operations.Multiply(ca, yz), Operations.Multiply(sa, x)));
+            result.M31 = Operations.Add(Operations.Subtract(xz, Operations.Multiply(ca, xz)), Operations.Multiply(sa, y));
+            result.M32 = Operations.Subtract(Operations.Subtract(yz, Operations.Multiply(ca, yz)), Operations.Multiply(sa, x));
             result.M33 = Operations.Add(zz, Operations.Multiply(ca, Operations.Subtract(Constants<T>.One, zz)));
 
             return result;
         }
 
-        // TODO: Quaternion
-        /*
         /// <summary>Creates a rotation matrix from the given Quaternion rotation value.</summary>
         /// <param name="quaternion">The source Quaternion.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4 CreateFromQuaternion(Quaternion quaternion)
+        public static Matrix4x4<T> CreateFromQuaternion(Quaternion<T> quaternion)
         {
-            Matrix4x4 result = Identity;
+            Matrix4x4<T> result = Identity;
 
-            T xx = quaternion.X * quaternion.X;
-            T yy = quaternion.Y * quaternion.Y;
-            T zz = quaternion.Z * quaternion.Z;
+            T xx = Operations.Multiply(quaternion.X, quaternion.X);
+            T yy = Operations.Multiply(quaternion.Y, quaternion.Y);
+            T zz = Operations.Multiply(quaternion.Z, quaternion.Z);
 
-            T xy = quaternion.X * quaternion.Y;
-            T wz = quaternion.Z * quaternion.W;
-            T xz = quaternion.Z * quaternion.X;
-            T wy = quaternion.Y * quaternion.W;
-            T yz = quaternion.Y * quaternion.Z;
-            T wx = quaternion.X * quaternion.W;
+            T xy = Operations.Multiply(quaternion.X, quaternion.Y);
+            T wz = Operations.Multiply(quaternion.Z, quaternion.W);
+            T xz = Operations.Multiply(quaternion.Z, quaternion.X);
+            T wy = Operations.Multiply(quaternion.Y, quaternion.W);
+            T yz = Operations.Multiply(quaternion.Y, quaternion.Z);
+            T wx = Operations.Multiply(quaternion.X, quaternion.W);
 
-            result.M11 = 1.0f - 2.0f * (yy + zz);
-            result.M12 = 2.0f * (xy + wz);
-            result.M13 = 2.0f * (xz - wy);
+            result.M11 = Operations.Subtract(Constants<T>.One, Operations.Multiply(Constants<T>.Two, Operations.Add(yy, zz)));
+            result.M12 = Operations.Multiply(Constants<T>.Two, Operations.Add(xy, wz));
+            result.M13 = Operations.Multiply(Constants<T>.Two, Operations.Subtract(xz, wy));
 
-            result.M21 = 2.0f * (xy - wz);
-            result.M22 = 1.0f - 2.0f * (zz + xx);
-            result.M23 = 2.0f * (yz + wx);
+            result.M21 = Operations.Multiply(Constants<T>.Two, Operations.Subtract(xy, wz));
+            result.M22 = Operations.Subtract(Constants<T>.One, Operations.Multiply(Constants<T>.Two, Operations.Add(zz, xx)));
+            result.M23 = Operations.Multiply(Constants<T>.Two, Operations.Add(yz, wx));
 
-            result.M31 = 2.0f * (xz + wy);
-            result.M32 = 2.0f * (yz - wx);
-            result.M33 = 1.0f - 2.0f * (yy + xx);
+            result.M31 = Operations.Multiply(Constants<T>.Two, Operations.Add(xz, wy));
+            result.M32 = Operations.Multiply(Constants<T>.Two, Operations.Subtract(yz, wx));
+            result.M33 = Operations.Subtract(Constants<T>.One, Operations.Multiply(Constants<T>.Two, Operations.Add(yy, xx)));
 
             return result;
         }
@@ -734,13 +732,12 @@ namespace Silk.NET.Numerics
         /// <param name="pitch">Angle of rotation, in radians, around the X-axis.</param>
         /// <param name="roll">Angle of rotation, in radians, around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4 CreateFromYawPitchRoll(T yaw, T pitch, T roll)
+        public static Matrix4x4<T> CreateFromYawPitchRoll(T yaw, T pitch, T roll)
         {
-            Quaternion q = Quaternion.CreateFromYawPitchRoll(yaw, pitch, roll);
+            Quaternion<T> q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
         }
-*/
-        
+
         /// <summary>Creates a view matrix.</summary>
         /// <param name="cameraPosition">The position of the camera.</param>
         /// <param name="cameraTarget">The target towards which the camera is pointing.</param>
@@ -1720,9 +1717,6 @@ namespace Silk.NET.Numerics
             }
         }*/
 
-        // TODO: Quaternion
-        
-        /*
         /// <summary>Attempts to extract the scale, translation, and rotation components from the given scale/rotation/translation matrix.
         /// If successful, the out parameters will contained the extracted values.</summary>
         /// <param name="matrix">The source matrix.</param>
@@ -1730,40 +1724,40 @@ namespace Silk.NET.Numerics
         /// <param name="rotation">The rotation component of the transformation matrix.</param>
         /// <param name="translation">The translation component of the transformation matrix</param>
         /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
-        public static bool Decompose(Matrix4x4<T> matrix, out Vector3<T> scale, out Quaternion rotation, out Vector3 translation)
+        public static bool Decompose(Matrix4x4<T> matrix, out Vector3<T> scale, out Quaternion<T> rotation, out Vector3<T> translation)
         {
             bool result = true;
 
             unsafe
             {
-                fixed (Vector3* scaleBase = &scale)
+                fixed (Vector3<T>* scaleBase = &scale)
                 {
                     T* pfScales = (T*)scaleBase;
                     T det;
 
                     VectorBasis vectorBasis;
-                    Vector3** pVectorBasis = (Vector3**)&vectorBasis;
+                    Vector3<T>** pVectorBasis = (Vector3<T>**)&vectorBasis;
 
-                    Matrix4x4 matTemp = Identity;
+                    Matrix4x4<T> matTemp = Identity;
                     CanonicalBasis canonicalBasis = default;
-                    Vector3* pCanonicalBasis = &canonicalBasis.Row0;
+                    Vector3<T>* pCanonicalBasis = &canonicalBasis.Row0;
 
-                    canonicalBasis.Row0 = new Vector3(1.0f, 0.0f, 0.0f);
-                    canonicalBasis.Row1 = new Vector3(0.0f, 1.0f, 0.0f);
-                    canonicalBasis.Row2 = new Vector3(0.0f, 0.0f, 1.0f);
+                    canonicalBasis.Row0 = new Vector3<T>(Constants<T>.One, Constants<T>.Zero, Constants<T>.Zero);
+                    canonicalBasis.Row1 = new Vector3<T>(Constants<T>.Zero, Constants<T>.One, Constants<T>.Zero);
+                    canonicalBasis.Row2 = new Vector3<T>(Constants<T>.Zero, Constants<T>.Zero, Constants<T>.One);
 
-                    translation = new Vector3(
+                    translation = new Vector3<T>(
                         matrix.M41,
                         matrix.M42,
                         matrix.M43);
 
-                    pVectorBasis[0] = (Vector3*)&matTemp.M11;
-                    pVectorBasis[1] = (Vector3*)&matTemp.M21;
-                    pVectorBasis[2] = (Vector3*)&matTemp.M31;
+                    pVectorBasis[0] = (Vector3<T>*)&matTemp.M11;
+                    pVectorBasis[1] = (Vector3<T>*)&matTemp.M21;
+                    pVectorBasis[2] = (Vector3<T>*)&matTemp.M31;
 
-                    *(pVectorBasis[0]) = new Vector3(matrix.M11, matrix.M12, matrix.M13);
-                    *(pVectorBasis[1]) = new Vector3(matrix.M21, matrix.M22, matrix.M23);
-                    *(pVectorBasis[2]) = new Vector3(matrix.M31, matrix.M32, matrix.M33);
+                    *(pVectorBasis[0]) = new Vector3<T>(matrix.M11, matrix.M12, matrix.M13);
+                    *(pVectorBasis[1]) = new Vector3<T>(matrix.M21, matrix.M22, matrix.M23);
+                    *(pVectorBasis[2]) = new Vector3<T>(matrix.M31, matrix.M32, matrix.M33);
 
                     scale.X = pVectorBasis[0]->Length();
                     scale.Y = pVectorBasis[1]->Length();
@@ -1772,9 +1766,9 @@ namespace Silk.NET.Numerics
                     uint a, b, c;
                     #region Ranking
                     T x = pfScales[0], y = pfScales[1], z = pfScales[2];
-                    if (x < y)
+                    if (!Operations.GreaterThanOrEqual(x, y))
                     {
-                        if (y < z)
+                        if (!Operations.GreaterThanOrEqual(y, z))
                         {
                             a = 2;
                             b = 1;
@@ -1784,7 +1778,7 @@ namespace Silk.NET.Numerics
                         {
                             a = 1;
 
-                            if (x < z)
+                            if (!Operations.GreaterThanOrEqual(x, z))
                             {
                                 b = 2;
                                 c = 0;
@@ -1798,7 +1792,7 @@ namespace Silk.NET.Numerics
                     }
                     else
                     {
-                        if (x < z)
+                        if (!Operations.GreaterThanOrEqual(x, z))
                         {
                             a = 2;
                             b = 0;
@@ -1808,7 +1802,7 @@ namespace Silk.NET.Numerics
                         {
                             a = 0;
 
-                            if (y < z)
+                            if (!Operations.GreaterThanOrEqual(y, z))
                             {
                                 b = 2;
                                 c = 1;
@@ -1822,32 +1816,32 @@ namespace Silk.NET.Numerics
                     }
                     #endregion
 
-                    if (pfScales[a] < DecomposeEpsilon)
+                    if (!Operations.GreaterThanOrEqual(pfScales[a], Operations.As<float, T>(DecomposeEpsilon)))
                     {
                         *(pVectorBasis[a]) = pCanonicalBasis[a];
                     }
 
-                    *pVectorBasis[a] = Vector3.Normalize(*pVectorBasis[a]);
+                    *pVectorBasis[a] = Vector3<T>.Normalize(*pVectorBasis[a]);
 
-                    if (pfScales[b] < DecomposeEpsilon)
+                    if (!Operations.GreaterThanOrEqual(pfScales[b], Operations.As<float, T>(DecomposeEpsilon)))
                     {
                         uint cc;
                         T fAbsX, fAbsY, fAbsZ;
 
-                        fAbsX = MathF.Abs(pVectorBasis[a]->X);
-                        fAbsY = MathF.Abs(pVectorBasis[a]->Y);
-                        fAbsZ = MathF.Abs(pVectorBasis[a]->Z);
+                        fAbsX = Operations.Abs(pVectorBasis[a]->X);
+                        fAbsY = Operations.Abs(pVectorBasis[a]->Y);
+                        fAbsZ = Operations.Abs(pVectorBasis[a]->Z);
 
                         #region Ranking
-                        if (fAbsX < fAbsY)
+                        if (!Operations.GreaterThanOrEqual(fAbsX, fAbsY))
                         {
-                            if (fAbsY < fAbsZ)
+                            if (!Operations.GreaterThanOrEqual(fAbsY, fAbsZ))
                             {
                                 cc = 0;
                             }
                             else
                             {
-                                if (fAbsX < fAbsZ)
+                                if (!Operations.GreaterThanOrEqual(fAbsX, fAbsZ))
                                 {
                                     cc = 0;
                                 }
@@ -1859,13 +1853,13 @@ namespace Silk.NET.Numerics
                         }
                         else
                         {
-                            if (fAbsX < fAbsZ)
+                            if (!Operations.GreaterThanOrEqual(fAbsX, fAbsZ))
                             {
                                 cc = 1;
                             }
                             else
                             {
-                                if (fAbsY < fAbsZ)
+                                if (!Operations.GreaterThanOrEqual(fAbsY, fAbsZ))
                                 {
                                     cc = 1;
                                 }
@@ -1877,50 +1871,50 @@ namespace Silk.NET.Numerics
                         }
                         #endregion
 
-                        *pVectorBasis[b] = Vector3.Cross(*pVectorBasis[a], *(pCanonicalBasis + cc));
+                        *pVectorBasis[b] = Vector3<T>.Cross(*pVectorBasis[a], *(pCanonicalBasis + cc));
                     }
 
-                    *pVectorBasis[b] = Vector3.Normalize(*pVectorBasis[b]);
+                    *pVectorBasis[b] = Vector3<T>.Normalize(*pVectorBasis[b]);
 
-                    if (pfScales[c] < DecomposeEpsilon)
+                    if (!Operations.GreaterThanOrEqual(pfScales[c], Operations.As<float, T>(DecomposeEpsilon)))
                     {
-                        *pVectorBasis[c] = Vector3.Cross(*pVectorBasis[a], *pVectorBasis[b]);
+                        *pVectorBasis[c] = Vector3<T>.Cross(*pVectorBasis[a], *pVectorBasis[b]);
                     }
 
-                    *pVectorBasis[c] = Vector3.Normalize(*pVectorBasis[c]);
+                    *pVectorBasis[c] = Vector3<T>.Normalize(*pVectorBasis[c]);
 
                     det = matTemp.GetDeterminant();
 
                     // use Kramer's rule to check for handedness of coordinate system
-                    if (det < 0.0f)
+                    if (!Operations.GreaterThanOrEqual(det, Constants<T>.Zero))
                     {
                         // switch coordinate system by negating the scale and inverting the basis vector on the x-axis
-                        pfScales[a] = -pfScales[a];
+                        pfScales[a] = Operations.Negate(pfScales[a]);
                         *pVectorBasis[a] = -(*pVectorBasis[a]);
 
-                        det = -det;
+                        det = Operations.Negate(det);
                     }
 
-                    det -= 1.0f;
-                    det *= det;
+                    det = Operations.Subtract(det, Constants<T>.One);
+                    det = Operations.Multiply(det, det);
 
-                    if ((DecomposeEpsilon < det))
+                    if (!Operations.GreaterThanOrEqual(Operations.As<float, T>(DecomposeEpsilon), det))
                     {
                         // Non-SRT matrix encountered
-                        rotation = Quaternion.Identity;
+                        rotation = Quaternion<T>.Identity;
                         result = false;
                     }
                     else
                     {
                         // generate the quaternion from the matrix
-                        rotation = Quaternion.CreateFromRotationMatrix(matTemp);
+                        rotation = Quaternion<T>.CreateFromRotationMatrix(matTemp);
                     }
                 }
             }
 
             return result;
         }
-*/
+
         /// <summary>Linearly interpolates between the corresponding values of two matrices.</summary>
         /// <param name="matrix1">The first source matrix.</param>
         /// <param name="matrix2">The second source matrix.</param>
@@ -1976,69 +1970,67 @@ namespace Silk.NET.Numerics
             return result;
         }
 
-        // TODO: Quaternion
-        /*
         /// <summary>Transforms the given matrix by applying the given Quaternion rotation.</summary>
         /// <param name="value">The source matrix to transform.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed matrix.</returns>
-        public static Matrix4x4 Transform(Matrix4x4 value, Quaternion rotation)
+        public static Matrix4x4<T> Transform(Matrix4x4<T> value, Quaternion<T> rotation)
         {
             // Compute rotation matrix.
-            T x2 = rotation.X + rotation.X;
-            T y2 = rotation.Y + rotation.Y;
-            T z2 = rotation.Z + rotation.Z;
+            T x2 = Operations.Add(rotation.X, rotation.X);
+            T y2 = Operations.Add(rotation.Y, rotation.Y);
+            T z2 = Operations.Add(rotation.Z, rotation.Z);
 
-            T wx2 = rotation.W * x2;
-            T wy2 = rotation.W * y2;
-            T wz2 = rotation.W * z2;
-            T xx2 = rotation.X * x2;
-            T xy2 = rotation.X * y2;
-            T xz2 = rotation.X * z2;
-            T yy2 = rotation.Y * y2;
-            T yz2 = rotation.Y * z2;
-            T zz2 = rotation.Z * z2;
+            T wx2 = Operations.Multiply(rotation.W, x2);
+            T wy2 = Operations.Multiply(rotation.W, y2);
+            T wz2 = Operations.Multiply(rotation.W, z2);
+            T xx2 = Operations.Multiply(rotation.X, x2);
+            T xy2 = Operations.Multiply(rotation.X, y2);
+            T xz2 = Operations.Multiply(rotation.X, z2);
+            T yy2 = Operations.Multiply(rotation.Y, y2);
+            T yz2 = Operations.Multiply(rotation.Y, z2);
+            T zz2 = Operations.Multiply(rotation.Z, z2);
 
-            T q11 = 1.0f - yy2 - zz2;
-            T q21 = xy2 - wz2;
-            T q31 = xz2 + wy2;
+            T q11 = Operations.Subtract(Operations.Subtract(Constants<T>.One, yy2), zz2);
+            T q21 = Operations.Subtract(xy2, wz2);
+            T q31 = Operations.Add(xz2, wy2);
 
-            T q12 = xy2 + wz2;
-            T q22 = 1.0f - xx2 - zz2;
-            T q32 = yz2 - wx2;
+            T q12 = Operations.Add(xy2, wz2);
+            T q22 = Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2);
+            T q32 = Operations.Subtract(yz2, wx2);
 
-            T q13 = xz2 - wy2;
-            T q23 = yz2 + wx2;
-            T q33 = 1.0f - xx2 - yy2;
+            T q13 = Operations.Subtract(xz2, wy2);
+            T q23 = Operations.Add(yz2, wx2);
+            T q33 = Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), yy2);
 
-            Matrix4x4 result;
+            Matrix4x4<T> result;
 
             // First row
-            result.M11 = value.M11 * q11 + value.M12 * q21 + value.M13 * q31;
-            result.M12 = value.M11 * q12 + value.M12 * q22 + value.M13 * q32;
-            result.M13 = value.M11 * q13 + value.M12 * q23 + value.M13 * q33;
+            result.M11 = Operations.Add(Operations.Add(Operations.Multiply(value.M11, q11), Operations.Multiply(value.M12, q21)), Operations.Multiply(value.M13, q31));
+            result.M12 = Operations.Add(Operations.Add(Operations.Multiply(value.M11, q12), Operations.Multiply(value.M12, q22)), Operations.Multiply(value.M13, q32));
+            result.M13 = Operations.Add(Operations.Add(Operations.Multiply(value.M11, q13), Operations.Multiply(value.M12, q23)), Operations.Multiply(value.M13, q33));
             result.M14 = value.M14;
 
             // Second row
-            result.M21 = value.M21 * q11 + value.M22 * q21 + value.M23 * q31;
-            result.M22 = value.M21 * q12 + value.M22 * q22 + value.M23 * q32;
-            result.M23 = value.M21 * q13 + value.M22 * q23 + value.M23 * q33;
+            result.M21 = Operations.Add(Operations.Add(Operations.Multiply(value.M21, q11), Operations.Multiply(value.M22, q21)), Operations.Multiply(value.M23, q31));
+            result.M22 = Operations.Add(Operations.Add(Operations.Multiply(value.M21, q12), Operations.Multiply(value.M22, q22)), Operations.Multiply(value.M23, q32));
+            result.M23 = Operations.Add(Operations.Add(Operations.Multiply(value.M21, q13), Operations.Multiply(value.M22, q23)), Operations.Multiply(value.M23, q33));
             result.M24 = value.M24;
 
             // Third row
-            result.M31 = value.M31 * q11 + value.M32 * q21 + value.M33 * q31;
-            result.M32 = value.M31 * q12 + value.M32 * q22 + value.M33 * q32;
-            result.M33 = value.M31 * q13 + value.M32 * q23 + value.M33 * q33;
+            result.M31 = Operations.Add(Operations.Add(Operations.Multiply(value.M31, q11), Operations.Multiply(value.M32, q21)), Operations.Multiply(value.M33, q31));
+            result.M32 = Operations.Add(Operations.Add(Operations.Multiply(value.M31, q12), Operations.Multiply(value.M32, q22)), Operations.Multiply(value.M33, q32));
+            result.M33 = Operations.Add(Operations.Add(Operations.Multiply(value.M31, q13), Operations.Multiply(value.M32, q23)), Operations.Multiply(value.M33, q33));
             result.M34 = value.M34;
 
             // Fourth row
-            result.M41 = value.M41 * q11 + value.M42 * q21 + value.M43 * q31;
-            result.M42 = value.M41 * q12 + value.M42 * q22 + value.M43 * q32;
-            result.M43 = value.M41 * q13 + value.M42 * q23 + value.M43 * q33;
+            result.M41 = Operations.Add(Operations.Add(Operations.Multiply(value.M41, q11), Operations.Multiply(value.M42, q21)), Operations.Multiply(value.M43, q31));
+            result.M42 = Operations.Add(Operations.Add(Operations.Multiply(value.M41, q12), Operations.Multiply(value.M42, q22)), Operations.Multiply(value.M43, q32));
+            result.M43 = Operations.Add(Operations.Add(Operations.Multiply(value.M41, q13), Operations.Multiply(value.M42, q23)), Operations.Multiply(value.M43, q33));
             result.M44 = value.M44;
 
             return result;
-        }*/
+        }
 
         /// <summary>Transposes the rows and columns of a matrix.</summary>
         /// <param name="matrix">The source matrix.</param>
@@ -2226,6 +2218,20 @@ namespace Silk.NET.Numerics
                                  M21, M22, M23, M24,
                                  M31, M32, M33, M34,
                                  M41, M42, M43, M44);
+        }
+        
+        private struct CanonicalBasis
+        {
+            public Vector3<T> Row0;
+            public Vector3<T> Row1;
+            public Vector3<T> Row2;
+        };
+
+        private struct VectorBasis
+        {
+            public unsafe Vector3<T>* Element0;
+            public unsafe Vector3<T>* Element1;
+            public unsafe Vector3<T>* Element2;
         }
     }
 }

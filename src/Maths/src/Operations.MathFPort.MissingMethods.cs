@@ -108,7 +108,7 @@ namespace Silk.NET.Numerics
         // is preserved.
         // ====================================================
 
-#if NETSTANDARD2_0
+#if NET5_0
         [MethodImpl(MaxOpt)]
         private static unsafe double Log1P(double x)
         {
@@ -389,7 +389,7 @@ namespace Silk.NET.Numerics
 
         [MethodImpl(MaxOpt)]
         private static double CoreCbrt(double x)
-#if NETSTANDARD2_0
+#if NET5_0
             => Math.Ceiling(Math.Pow(x, 1d / 3));
 #else
             => Math.Cbrt(x);

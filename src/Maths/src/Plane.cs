@@ -200,52 +200,50 @@ namespace Silk.NET.Numerics
                 Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(x, m.M41),  Operations.Multiply(y, m.M42)), Operations.Multiply(z, m.M43)), Operations.Multiply(w, m.M44)));
         }
 
-        // TODO: Quaternion
-        /*
         /// <summary> Transforms a normalized Plane by a Quaternion rotation.</summary>
         /// <param name="plane"> The normalized Plane to transform.
         /// This Plane must already be normalized, so that its Normal vector is of unit length, before this method is called.</param>
         /// <param name="rotation">The Quaternion rotation to apply to the Plane.</param>
         /// <returns>A new Plane that results from applying the rotation.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Plane Transform(Plane plane, Quaternion rotation)
+        public static Plane<T> Transform(Plane<T> plane, Quaternion<T> rotation)
         {
             // Compute rotation matrix.
-            T x2 = rotation.X + rotation.X;
-            T y2 = rotation.Y + rotation.Y;
-            T z2 = rotation.Z + rotation.Z;
+            T x2 = Operations.Add(rotation.X, rotation.X);
+            T y2 = Operations.Add(rotation.Y, rotation.Y);
+            T z2 = Operations.Add(rotation.Z, rotation.Z);
 
-            T wx2 = rotation.W * x2;
-            T wy2 = rotation.W * y2;
-            T wz2 = rotation.W * z2;
-            T xx2 = rotation.X * x2;
-            T xy2 = rotation.X * y2;
-            T xz2 = rotation.X * z2;
-            T yy2 = rotation.Y * y2;
-            T yz2 = rotation.Y * z2;
-            T zz2 = rotation.Z * z2;
+            T wx2 = Operations.Multiply(rotation.W, x2);
+            T wy2 = Operations.Multiply(rotation.W, y2);
+            T wz2 = Operations.Multiply(rotation.W, z2);
+            T xx2 = Operations.Multiply(rotation.X, x2);
+            T xy2 = Operations.Multiply(rotation.X, y2);
+            T xz2 = Operations.Multiply(rotation.X, z2);
+            T yy2 = Operations.Multiply(rotation.Y, y2);
+            T yz2 = Operations.Multiply(rotation.Y, z2);
+            T zz2 = Operations.Multiply(rotation.Z, z2);
 
-            T m11 = 1.0f - yy2 - zz2;
-            T m21 = xy2 - wz2;
-            T m31 = xz2 + wy2;
+            T m11 = Operations.Subtract(Operations.Subtract(Constants<T>.One, yy2), zz2);
+            T m21 = Operations.Subtract(xy2, wz2);
+            T m31 = Operations.Add(xz2, wy2);
 
-            T m12 = xy2 + wz2;
-            T m22 = 1.0f - xx2 - zz2;
-            T m32 = yz2 - wx2;
+            T m12 = Operations.Add(xy2, wz2);
+            T m22 = Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2);
+            T m32 = Operations.Subtract(yz2, wx2);
 
-            T m13 = xz2 - wy2;
-            T m23 = yz2 + wx2;
-            T m33 = 1.0f - xx2 - yy2;
+            T m13 = Operations.Subtract(xz2, wy2);
+            T m23 = Operations.Add(yz2, wx2);
+            T m33 = Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), yy2);
 
             T x = plane.Normal.X, y = plane.Normal.Y, z = plane.Normal.Z;
 
-            return new Plane(
-                x * m11 + y * m21 + z * m31,
-                x * m12 + y * m22 + z * m32,
-                x * m13 + y * m23 + z * m33,
+            return new(
+                Operations.Add(Operations.Add(Operations.Multiply(x, m11), Operations.Multiply(y, m21)), Operations.Multiply(z, m31)),
+                Operations.Add(Operations.Add(Operations.Multiply(x, m12), Operations.Multiply(y, m22)), Operations.Multiply(z, m32)),
+                Operations.Add(Operations.Add(Operations.Multiply(x, m13), Operations.Multiply(y, m23)), Operations.Multiply(z, m33)),
                 plane.D);
         }
-*/
+
         /// <summary>Returns a boolean indicating whether the two given Planes are equal.</summary>
         /// <param name="value1">The first Plane to compare.</param>
         /// <param name="value2">The second Plane to compare.</param>

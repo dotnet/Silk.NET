@@ -369,11 +369,27 @@ namespace Silk.NET.Numerics
                 Operations.Add(Operations.Multiply(normal.X, matrix.M11), Operations.Multiply(normal.Y, matrix.M21)),
                 Operations.Add(Operations.Multiply(normal.X, matrix.M12), Operations.Multiply(normal.Y, matrix.M22)));
         }
+
+        public static Vector2<T> Transform(Vector2<T> value, Quaternion<T> rotation)
+        {
+            T x2 = Operations.Add(rotation.X, rotation.X);
+            T y2 = Operations.Add(rotation.Y, rotation.Y);
+            T z2 = Operations.Add(rotation.Z, rotation.Z);
+            
+            T wz2 = Operations.Multiply(rotation.W, z2);
+            T xx2 = Operations.Multiply(rotation.X, x2);
+            T xy2 = Operations.Multiply(rotation.X, y2);
+            T yy2 = Operations.Multiply(rotation.Y, y2);
+            T zz2 = Operations.Multiply(rotation.Z, z2);
+
+            return new(
+                Operations.Add(Operations.Multiply(value.X, Operations.Subtract(Operations.Subtract(Constants<T>.One, yy2), zz2)), Operations.Multiply(value.Y, Operations.Subtract(xy2, wz2))),
+                Operations.Add(Operations.Multiply(value.X, Operations.Add(xy2, wz2)), Operations.Multiply(value.Y, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2)))
+            );
+        }
         
         // TODO: Matrix3x2
         // public static Vector2<T> Transform(Vector2<T> position, Matrix3x2<T> matrix) { throw null; }
-        // TODO: Quaternion
-        // public static Vector2<T> Transform(Vector2<T> value, Quaternion<T> rotation) { throw null; }
         // public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix3x2<T> matrix) { throw null; }
     }
 }

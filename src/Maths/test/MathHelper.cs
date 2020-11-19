@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Numerics;
 
 namespace Silk.NET.Numerics.Tests
 {
@@ -59,15 +58,15 @@ namespace Silk.NET.Numerics.Tests
         {
             return Equal(a.Normal, b.Normal) && Equal(a.D, b.D);
         }
-/*
-        public static bool Equal(Quaternion a, Quaternion b)
+
+        public static bool Equal(Quaternion<float> a, Quaternion<float> b)
         {
             return Equal(a.X, b.X) && Equal(a.Y, b.Y) && Equal(a.Z, b.Z) && Equal(a.W, b.W);
-        }*/
-/*
-        public static bool EqualRotation(Quaternion a, Quaternion b)
+        }
+
+        public static bool EqualRotation(Quaternion<float> a, Quaternion<float> b)
         {
             return Equal(a, b) || Equal(a, -b);
-        }*/
+        }
     }
 }

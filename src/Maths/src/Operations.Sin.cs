@@ -409,7 +409,7 @@ namespace Silk.NET.Numerics
             }
         }
 
-#if NETSTANDARD2_0
+#if NET5_0
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
         private static bool CoreIsNegative(double d) => BitConverter.DoubleToInt64Bits(d) < 0;
 
