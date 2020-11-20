@@ -387,9 +387,21 @@ namespace Silk.NET.Numerics
                 Operations.Add(Operations.Multiply(value.X, Operations.Add(xy2, wz2)), Operations.Multiply(value.Y, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2)))
             );
         }
-        
-        // TODO: Matrix3x2
-        // public static Vector2<T> Transform(Vector2<T> position, Matrix3x2<T> matrix) { throw null; }
-        // public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix3x2<T> matrix) { throw null; }
+
+        public static Vector2<T> Transform(Vector2<T> position, Matrix3x2<T> matrix)
+        {
+            return new(
+                Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M11), Operations.Multiply(position.Y, matrix.M21)), matrix.M31),
+                Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M12), Operations.Multiply(position.Y, matrix.M22)), matrix.M32)
+            );
+        }
+
+        public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix3x2<T> matrix)
+        {
+            return new(
+                Operations.Add(Operations.Multiply(normal.X, matrix.M11), Operations.Multiply(normal.Y, matrix.M21)),
+                Operations.Add(Operations.Multiply(normal.X, matrix.M12), Operations.Multiply(normal.Y, matrix.M22))
+            );
+        }
     }
 }

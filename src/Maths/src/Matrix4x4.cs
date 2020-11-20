@@ -85,32 +85,30 @@ namespace Silk.NET.Numerics
                 m31, m32, m33, m34,
                 m41, m42, m43, m44);
 
-        // TODO: Matrix3x2
-        /*
         /// <summary>Constructs a Matrix4x4 from the given Matrix3x2.</summary>
         /// <param name="value">The source Matrix3x2.</param>
-        public Matrix4x4(Matrix3x2 value)
+        public Matrix4x4(Matrix3x2<T> value)
         {
             M11 = value.M11;
             M12 = value.M12;
-            M13 = 0f;
-            M14 = 0f;
+            M13 = Constants<T>.Zero;
+            M14 = Constants<T>.Zero;
 
             M21 = value.M21;
             M22 = value.M22;
-            M23 = 0f;
-            M24 = 0f;
+            M23 = Constants<T>.Zero;
+            M24 = Constants<T>.Zero;
 
-            M31 = 0f;
-            M32 = 0f;
-            M33 = 1f;
-            M34 = 0f;
+            M31 = Constants<T>.Zero;
+            M32 = Constants<T>.Zero;
+            M33 = Constants<T>.One;
+            M34 = Constants<T>.Zero;
 
             M41 = value.M31;
             M42 = value.M32;
-            M43 = 0f;
-            M44 = 1f;
-        }*/
+            M43 = Constants<T>.Zero;
+            M44 = Constants<T>.One;
+        }
 
         /// <summary>Returns the multiplicative identity matrix.</summary>
         public static Matrix4x4<T> Identity => _identity;

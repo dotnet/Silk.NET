@@ -482,14 +482,12 @@ namespace Silk.NET.Numerics.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }
 
-        // TODO: Matrix3x2
-/*
         // A test for Transform(Vector2f, Matrix3x2)
         [Fact]
         public void Vector2Transform3x2Test()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix3x2 m = Matrix3x2.CreateRotation(MathHelper.ToRadians(30.0f));
+            Matrix3x2<float> m = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30.0f));
             m.M31 = 10.0f;
             m.M32 = 20.0f;
 
@@ -498,7 +496,7 @@ namespace Silk.NET.Numerics.Tests
 
             actual = Vector2<float>.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
-        }*/
+        }
 
         
         // A test for TransformNormal (Vector2f, Matrix4x4)
@@ -521,14 +519,12 @@ namespace Silk.NET.Numerics.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Tranform did not return the expected value.");
         }
 
-        // TODO: Matrix3x2
-/*
         // A test for TransformNormal (Vector2f, Matrix3x2)
         [Fact]
         public void Vector2TransformNormal3x2Test()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix3x2 m = Matrix3x2.CreateRotation(MathHelper.ToRadians(30.0f));
+            Matrix3x2<float> m = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30.0f));
             m.M31 = 10.0f;
             m.M32 = 20.0f;
 
@@ -537,7 +533,7 @@ namespace Silk.NET.Numerics.Tests
 
             actual = Vector2<float>.TransformNormal(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
-        }*/
+        }
 
         // A test for Transform (Vector2f, Quaternion)
         [Fact]

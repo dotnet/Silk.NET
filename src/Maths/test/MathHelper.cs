@@ -45,14 +45,14 @@ namespace Silk.NET.Numerics.Tests
                 Equal(a.M31, b.M31) && Equal(a.M32, b.M32) && Equal(a.M33, b.M33) && Equal(a.M34, b.M34) &&
                 Equal(a.M41, b.M41) && Equal(a.M42, b.M42) && Equal(a.M43, b.M43) && Equal(a.M44, b.M44);
         }
-/*
-        public static bool Equal(Matrix3x2 a, Matrix3x2 b)
+
+        public static bool Equal(Matrix3x2<float> a, Matrix3x2<float> b)
         {
             return
                 Equal(a.M11, b.M11) && Equal(a.M12, b.M12) &&
                 Equal(a.M21, b.M21) && Equal(a.M22, b.M22) &&
                 Equal(a.M31, b.M31) && Equal(a.M32, b.M32);
-        }*/
+        }
 
         public static bool Equal(Plane<float> a, Plane<float> b)
         {

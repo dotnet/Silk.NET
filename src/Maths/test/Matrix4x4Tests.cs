@@ -361,8 +361,6 @@ namespace Silk.NET.Numerics.Tests
             DecomposeScaleTest(3e-4f, 2e-4f, 1);
         }
 
-        // TODO: Matrix3x2
-        /*
         [Fact]
         public void Matrix4x4DecomposeTest04()
         {
@@ -373,8 +371,7 @@ namespace Silk.NET.Numerics.Tests
             Assert.False(Matrix4x4<float>.Decompose(GenerateIncrementalMatrixNumber(), out scales, out rotation, out translation), "decompose should have failed.");
             Assert.False(Matrix4x4<float>.Decompose(new Matrix4x4<float>(Matrix3x2<float>.CreateSkew(1, 2)), out scales, out rotation, out translation), "decompose should have failed.");
         }
-        */
-
+        
         // Transform by quaternion test
         [Fact]
         public void Matrix4x4TransformTest()
@@ -2383,13 +2380,11 @@ namespace Silk.NET.Numerics.Tests
             Assert.False(new Matrix4x4<float>(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0).IsIdentity);
         }
 
-        // TODO: Matrix3x2
-        /*
         // A test for Matrix4x4<float> (Matrix3x2)
         [Fact]
         public void Matrix4x4From3x2Test()
         {
-            Matrix3x2 source = new Matrix3x2(1, 2, 3, 4, 5, 6);
+            Matrix3x2<float> source = new Matrix3x2<float>(1, 2, 3, 4, 5, 6);
             Matrix4x4<float> result = new Matrix4x4<float>(source);
 
             Assert.Equal(source.M11, result.M11);
@@ -2411,7 +2406,7 @@ namespace Silk.NET.Numerics.Tests
             Assert.Equal(source.M32, result.M42);
             Assert.Equal(0f, result.M43);
             Assert.Equal(1f, result.M44);
-        }*/
+        }
 
         // A test for Matrix4x4<float> comparison involving NaN values
         [Fact]
