@@ -369,7 +369,7 @@ namespace Silk.NET.Numerics
         
         /// <summary>Copies the contents of the vector into the given array.</summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly void CopyTo(T[] array) 
+        public readonly void CopyTo(T[]? array) 
             => CopyTo(array, 0);
 
         /// <summary>Copies the contents of the vector into the given array, starting from index.</summary>
@@ -378,7 +378,7 @@ namespace Silk.NET.Numerics
         /// <exception cref="ArgumentOutOfRangeException">If index is greater than end of the array or index is less than zero.</exception>
         /// <exception cref="ArgumentException">If number of elements in source vector is greater than those available in destination array.</exception>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly void CopyTo(T[] array, int index)
+        public readonly void CopyTo(T[]? array, int index)
         {
             if (array is null)
             {

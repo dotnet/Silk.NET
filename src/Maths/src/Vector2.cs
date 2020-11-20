@@ -69,7 +69,7 @@ namespace Silk.NET.Numerics
         /// <exception cref="RankException"><param name="array"> is multidimensional.</param></exception>
         /// <remarks><param name="array"></param> must have at least two elements. The method copies the vector's elements starting at index 0.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly void CopyTo(T[] array) => CopyTo(array, 0);
+        public readonly void CopyTo(T[]? array) => CopyTo(array, 0);
         
         /// <summary>Copies the elements of the vector to a specified array starting at a specified index position.</summary>
         /// <param name="array">The destination array.</param>
@@ -81,7 +81,7 @@ namespace Silk.NET.Numerics
         /// <exception cref="RankException"><param name="array"> is multidimensional.</param></exception>
         /// <remarks>array must have a sufficient number of elements to accommodate the two vector elements. In other words, elements index and index + 1 must already exist in array.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly void CopyTo(T[] array, int index)
+        public readonly void CopyTo(T[]? array, int index)
         {
             if (array is null)
             {
