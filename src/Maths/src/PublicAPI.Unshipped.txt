@@ -81,6 +81,7 @@ Silk.NET.Numerics.Quaternion<T>.W -> T
 Silk.NET.Numerics.Quaternion<T>.X -> T
 Silk.NET.Numerics.Quaternion<T>.Y -> T
 Silk.NET.Numerics.Quaternion<T>.Z -> T
+Silk.NET.Numerics.SystemNumericsExtensions
 Silk.NET.Numerics.Vector2<T>
 Silk.NET.Numerics.Vector2<T>.CopyTo(T[]? array) -> void
 Silk.NET.Numerics.Vector2<T>.CopyTo(T[]? array, int index) -> void
@@ -300,6 +301,13 @@ static Silk.NET.Numerics.Quaternion<T>.operator /(Silk.NET.Numerics.Quaternion<T
 static Silk.NET.Numerics.Quaternion<T>.operator ==(Silk.NET.Numerics.Quaternion<T> value1, Silk.NET.Numerics.Quaternion<T> value2) -> bool
 static Silk.NET.Numerics.Quaternion<T>.Slerp(Silk.NET.Numerics.Quaternion<T> quaternion1, Silk.NET.Numerics.Quaternion<T> quaternion2, T amount) -> Silk.NET.Numerics.Quaternion<T>
 static Silk.NET.Numerics.Quaternion<T>.Subtract(Silk.NET.Numerics.Quaternion<T> value1, Silk.NET.Numerics.Quaternion<T> value2) -> Silk.NET.Numerics.Quaternion<T>
+static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(Silk.NET.Numerics.Vector4<float> value) -> System.Numerics.Vector4
+static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(this Silk.NET.Numerics.Matrix3x2<float> value) -> System.Numerics.Matrix3x2
+static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(this Silk.NET.Numerics.Matrix4x4<float> value) -> System.Numerics.Matrix4x4
+static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(this Silk.NET.Numerics.Plane<float> value) -> System.Numerics.Plane
+static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(this Silk.NET.Numerics.Quaternion<float> value) -> System.Numerics.Quaternion
+static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(this Silk.NET.Numerics.Vector2<float> value) -> System.Numerics.Vector2
+static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(this Silk.NET.Numerics.Vector3<float> value) -> System.Numerics.Vector3
 static Silk.NET.Numerics.Vector2<T>.Abs(Silk.NET.Numerics.Vector2<T> value) -> Silk.NET.Numerics.Vector2<T>
 static Silk.NET.Numerics.Vector2<T>.Add(Silk.NET.Numerics.Vector2<T> left, Silk.NET.Numerics.Vector2<T> right) -> Silk.NET.Numerics.Vector2<T>
 static Silk.NET.Numerics.Vector2<T>.Clamp(Silk.NET.Numerics.Vector2<T> value1, Silk.NET.Numerics.Vector2<T> min, Silk.NET.Numerics.Vector2<T> max) -> Silk.NET.Numerics.Vector2<T>
