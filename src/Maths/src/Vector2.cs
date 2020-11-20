@@ -64,21 +64,21 @@ namespace Silk.NET.Numerics
 
         /// <summary>Copies the elements of the vector to a specified array.</summary>
         /// <param name="array">The destination array.</param>
-        /// <exception cref="ArgumentNullException"><param name="array"> is <c>null</c></param></exception>
+        /// <exception cref="ArgumentNullException"><paramref name="array"> is <c>null</c></paramref></exception>
         /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
-        /// <exception cref="RankException"><param name="array"> is multidimensional.</param></exception>
-        /// <remarks><param name="array"></param> must have at least two elements. The method copies the vector's elements starting at index 0.</remarks>
+        /// <exception cref="RankException"><paramref name="array"> is multidimensional.</paramref></exception>
+        /// <remarks><paramref name="array"></paramref> must have at least two elements. The method copies the vector's elements starting at index 0.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly void CopyTo(T[]? array) => CopyTo(array, 0);
         
         /// <summary>Copies the elements of the vector to a specified array starting at a specified index position.</summary>
         /// <param name="array">The destination array.</param>
         /// <param name="index">The index at which to copy the first element of the vector.</param>
-        /// <exception cref="ArgumentNullException"><param name="array"> is <c>null</c></param></exception>
+        /// <exception cref="ArgumentNullException"><paramref name="array"> is <c>null</c></paramref></exception>
         /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><param name="index"> is less then zero.</param></exception>
-        /// <exception cref="ArgumentOutOfRangeException"><param name="index"> is greater then or equal to the array length.</param></exception>
-        /// <exception cref="RankException"><param name="array"> is multidimensional.</param></exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"> is less then zero.</paramref></exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"> is greater then or equal to the array length.</paramref></exception>
+        /// <exception cref="RankException"><paramref name="array"> is multidimensional.</paramref></exception>
         /// <remarks>array must have a sufficient number of elements to accommodate the two vector elements. In other words, elements index and index + 1 must already exist in array.</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly void CopyTo(T[]? array, int index)
@@ -355,6 +355,10 @@ namespace Silk.NET.Numerics
             return sb.ToString();
         }
 
+        /// <summary>Transforms a vector by the given matrix.</summary>
+        /// <param name="position">The source vector.</param>
+        /// <param name="matrix">The transformation matrix.</param>
+        /// <returns>The transformed vector.</returns>
         public static Vector2<T> Transform(Vector2<T> position, Matrix4x4<T> matrix)
         {
             return new(
@@ -363,6 +367,10 @@ namespace Silk.NET.Numerics
             );
         }
 
+        /// <summary>Transforms a vector normal by the given matrix.</summary>
+        /// <param name="normal">The source vector.</param>
+        /// <param name="matrix">The transformation matrix.</param>
+        /// <returns>The transformed vector.</returns>
         public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix4x4<T> matrix)
         {
             return new(
@@ -370,6 +378,10 @@ namespace Silk.NET.Numerics
                 Operations.Add(Operations.Multiply(normal.X, matrix.M12), Operations.Multiply(normal.Y, matrix.M22)));
         }
 
+        /// <summary>Transforms a vector by the given Quaternion rotation value.</summary>
+        /// <param name="value">The source vector to be rotated.</param>
+        /// <param name="rotation">The rotation to apply.</param>
+        /// <returns>The transformed vector.</returns>
         public static Vector2<T> Transform(Vector2<T> value, Quaternion<T> rotation)
         {
             T x2 = Operations.Add(rotation.X, rotation.X);
@@ -388,6 +400,10 @@ namespace Silk.NET.Numerics
             );
         }
 
+        /// <summary>Transforms a vector by the given matrix.</summary>
+        /// <param name="position">The source vector.</param>
+        /// <param name="matrix">The transformation matrix.</param>
+        /// <returns>The transformed vector.</returns>
         public static Vector2<T> Transform(Vector2<T> position, Matrix3x2<T> matrix)
         {
             return new(
@@ -396,6 +412,10 @@ namespace Silk.NET.Numerics
             );
         }
 
+        /// <summary>Transforms a vector normal by the given matrix.</summary>
+        /// <param name="normal">The source vector.</param>
+        /// <param name="matrix">The transformation matrix.</param>
+        /// <returns>The transformed vector.</returns>
         public static Vector2<T> TransformNormal(Vector2<T> normal, Matrix3x2<T> matrix)
         {
             return new(
