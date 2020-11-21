@@ -301,6 +301,13 @@ static Silk.NET.Numerics.Quaternion<T>.operator /(Silk.NET.Numerics.Quaternion<T
 static Silk.NET.Numerics.Quaternion<T>.operator ==(Silk.NET.Numerics.Quaternion<T> value1, Silk.NET.Numerics.Quaternion<T> value2) -> bool
 static Silk.NET.Numerics.Quaternion<T>.Slerp(Silk.NET.Numerics.Quaternion<T> quaternion1, Silk.NET.Numerics.Quaternion<T> quaternion2, T amount) -> Silk.NET.Numerics.Quaternion<T>
 static Silk.NET.Numerics.Quaternion<T>.Subtract(Silk.NET.Numerics.Quaternion<T> value1, Silk.NET.Numerics.Quaternion<T> value2) -> Silk.NET.Numerics.Quaternion<T>
+static Silk.NET.Numerics.SystemNumericsExtensions.ToGeneric(System.Numerics.Vector4 value) -> Silk.NET.Numerics.Vector4<float>
+static Silk.NET.Numerics.SystemNumericsExtensions.ToGeneric(this System.Numerics.Matrix3x2 value) -> Silk.NET.Numerics.Matrix3x2<float>
+static Silk.NET.Numerics.SystemNumericsExtensions.ToGeneric(this System.Numerics.Matrix4x4 value) -> Silk.NET.Numerics.Matrix4x4<float>
+static Silk.NET.Numerics.SystemNumericsExtensions.ToGeneric(this System.Numerics.Plane value) -> Silk.NET.Numerics.Plane<float>
+static Silk.NET.Numerics.SystemNumericsExtensions.ToGeneric(this System.Numerics.Quaternion value) -> Silk.NET.Numerics.Quaternion<float>
+static Silk.NET.Numerics.SystemNumericsExtensions.ToGeneric(this System.Numerics.Vector2 value) -> Silk.NET.Numerics.Vector2<float>
+static Silk.NET.Numerics.SystemNumericsExtensions.ToGeneric(this System.Numerics.Vector3 value) -> Silk.NET.Numerics.Vector3<float>
 static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(Silk.NET.Numerics.Vector4<float> value) -> System.Numerics.Vector4
 static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(this Silk.NET.Numerics.Matrix3x2<float> value) -> System.Numerics.Matrix3x2
 static Silk.NET.Numerics.SystemNumericsExtensions.ToSystem(this Silk.NET.Numerics.Matrix4x4<float> value) -> System.Numerics.Matrix4x4

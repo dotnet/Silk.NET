@@ -71,7 +71,7 @@
         /// </summary>
         /// <param name="value">The source matrix</param>
         /// <returns>The converted matrix</returns>
-        public static Matrix3x2<float> FromSystem(this System.Numerics.Matrix3x2 value)
+        public static Matrix3x2<float> ToGeneric(this System.Numerics.Matrix3x2 value)
             => new(value.M11, value.M12, value.M21, value.M22, value.M31, value.M32);
 
         /// <summary>
@@ -79,7 +79,7 @@
         /// </summary>
         /// <param name="value">The source matrix</param>
         /// <returns>The converted matrix</returns>
-        public static Matrix4x4<float> FromSystem(this System.Numerics.Matrix4x4 value)
+        public static Matrix4x4<float> ToGeneric(this System.Numerics.Matrix4x4 value)
             => new(
                 value.M11, value.M12, value.M13, value.M14,
                 value.M21, value.M22, value.M23, value.M24,
@@ -92,15 +92,15 @@
         /// </summary>
         /// <param name="value">The source plane</param>
         /// <returns>The converted plane</returns>
-        public static Plane<float> FromSystem(this System.Numerics.Plane value)
-            => new(value.Normal.FromSystem(), value.D);
+        public static Plane<float> ToGeneric(this System.Numerics.Plane value)
+            => new(value.Normal.ToGeneric(), value.D);
 
         /// <summary>
         /// Converts a <see cref="System.Numerics.Quaternion"/> into a <see cref="Quaternion{T}"/>
         /// </summary>
         /// <param name="value">The source quaternion</param>
         /// <returns>The converted quaternion</returns>
-        public static Quaternion<float> FromSystem(this System.Numerics.Quaternion value)
+        public static Quaternion<float> ToGeneric(this System.Numerics.Quaternion value)
             => new(value.X, value.Y, value.Z, value.W);
         
         /// <summary>
@@ -108,7 +108,7 @@
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>
-        public static Vector2<float> FromSystem(this System.Numerics.Vector2 value)
+        public static Vector2<float> ToGeneric(this System.Numerics.Vector2 value)
             => new(value.X, value.Y);
         
         /// <summary>
@@ -116,7 +116,7 @@
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>
-        public static Vector3<float> FromSystem(this System.Numerics.Vector3 value)
+        public static Vector3<float> ToGeneric(this System.Numerics.Vector3 value)
             => new(value.X, value.Y, value.Z);
         
         /// <summary>
@@ -124,7 +124,7 @@
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>
-        public static Vector4<float> FromSystem(System.Numerics.Vector4 value)
+        public static Vector4<float> ToGeneric(System.Numerics.Vector4 value)
             => new(value.X, value.Y, value.Z, value.W);
     }
 }
