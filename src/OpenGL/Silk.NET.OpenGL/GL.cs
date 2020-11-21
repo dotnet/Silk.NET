@@ -21,7 +21,8 @@ namespace Silk.NET.OpenGL
         [Obsolete(
             "Parameterless GetApi calls are deprecated and will be removed in a future release. Please create" + "your GL instances using a context"
         )]
-        public static GL GetApi() => LibraryLoader<GL>.Load(new GLCoreLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
+        public static GL GetApi()
+            => LibraryLoader<GL>.Load(new GLCoreLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
 
         /// <summary>
         ///     Creates a <see cref="GL" /> instance from an <see cref="IGLContextSource" />.
@@ -32,8 +33,11 @@ namespace Silk.NET.OpenGL
         /// <returns>
         ///     A <see cref="GL" /> instance.
         /// </returns>
-        public static GL GetApi(IGLContextSource contextSource) => GetApi(contextSource.GLContext ?? throw new InvalidOperationException(
-                                                                              "The given IGLContextSource is not configured with a context."));
+        public static GL GetApi(IGLContextSource contextSource) => GetApi
+        (
+             contextSource.GLContext ??
+             throw new InvalidOperationException("The given IGLContextSource is not configured with a context.")
+        );
 
         /// <summary>
         ///     Creates a <see cref="GL" /> instance from an <see cref="IGLContext" />.
@@ -54,7 +58,8 @@ namespace Silk.NET.OpenGL
         ///     Function returning a native OpenGL context.
         /// </para>
         /// <para>
-        ///     The <c>string</c> parameter of the <paramref name="getProcAddress" /> function should be the name of the native function with needs to be called.
+        ///     The <c>string</c> parameter of the <paramref name="getProcAddress" /> function should be the name
+        ///     of the native function with needs to be called.
         /// </para>
         /// </param>
         /// <returns>
@@ -122,7 +127,8 @@ namespace Silk.NET.OpenGL
         /// <param name="color">
         ///     New clear color for the OpenGL context.
         /// </param>
-        public void ClearColor(Color color) { ClearColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f); }
+        public void ClearColor(Color color)
+            => ClearColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
 
         /// <summary>
         ///     Invokes a call to <c>glBlendColor()</c>, setting the blend color of the OpenGL context.
@@ -130,7 +136,8 @@ namespace Silk.NET.OpenGL
         /// <param name="color">
         ///     New blend color for the OpenGL context.
         /// </param>
-        public void BlendColor(Color color) { BlendColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f); }
+        public void BlendColor(Color color)
+            => BlendColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
 
         /// <summary>
         ///     Specify the value of a uniform variable for the current program object.
@@ -144,7 +151,7 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void Uniform2(int location, ref Vector2 vector) { Uniform2(location, vector.X, vector.Y); }
+        public void Uniform2(int location, ref Vector2 vector) => Uniform2(location, vector.X, vector.Y);
 
         /// <summary>
         ///     Specify the value of a uniform variable for the current program object.
@@ -158,7 +165,7 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void Uniform3(int location, ref Vector3 vector) { Uniform3(location, vector.X, vector.Y, vector.Z); }
+        public void Uniform3(int location, ref Vector3 vector) => Uniform3(location, vector.X, vector.Y, vector.Z);
 
         /// <summary>
         ///     Specify the value of a uniform variable for the current program object.
@@ -172,7 +179,8 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void Uniform4(int location, ref Vector4 vector) { Uniform4(location, vector.X, vector.Y, vector.Z, vector.W); }
+        public void Uniform4(int location, ref Vector4 vector)
+            => Uniform4(location, vector.X, vector.Y, vector.Z, vector.W);
 
         /// <summary>
         ///     Specify the value of a uniform variable for the current program object.
@@ -186,7 +194,7 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void Uniform2(int location, Vector2 vector) { Uniform2(location, vector.X, vector.Y); }
+        public void Uniform2(int location, Vector2 vector) => Uniform2(location, vector.X, vector.Y);
 
         /// <summary>
         ///     Specify the value of a uniform variable for the current program object.
@@ -200,7 +208,7 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void Uniform3(int location, Vector3 vector) { Uniform3(location, vector.X, vector.Y, vector.Z); }
+        public void Uniform3(int location, Vector3 vector) => Uniform3(location, vector.X, vector.Y, vector.Z);
 
         /// <summary>
         ///     Specify the value of a uniform variable for the current program object.
@@ -214,7 +222,8 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void Uniform4(int location, Vector4 vector) { Uniform4(location, vector.X, vector.Y, vector.Z, vector.W); }
+        public void Uniform4(int location, Vector4 vector)
+            => Uniform4(location, vector.X, vector.Y, vector.Z, vector.W);
 
         /// <summary>
         ///     Specify the value of a uniform variable for the current program object.
@@ -228,7 +237,8 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void Uniform4(int location, Quaternion quaternion) { Uniform4(location, quaternion.X, quaternion.Y, quaternion.Z, quaternion.W); }
+        public void Uniform4(int location, Quaternion quaternion)
+            => Uniform4(location, quaternion.X, quaternion.Y, quaternion.Z, quaternion.W);
 
         /// <summary>
         ///     Specify the value of a uniform variable for a specified program object.
@@ -245,7 +255,8 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glProgramUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void ProgramUniform2(uint program, int location, ref Vector2 vector) { ProgramUniform2(program, location, vector.X, vector.Y); }
+        public void ProgramUniform2(uint program, int location, ref Vector2 vector)
+            => ProgramUniform2(program, location, vector.X, vector.Y);
 
         /// <summary>
         ///     Specify the value of a uniform variable for a specified program object.
@@ -262,7 +273,8 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glProgramUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void ProgramUniform3(uint program, int location, ref Vector3 vector) { ProgramUniform3(program, location, vector.X, vector.Y, vector.Z); }
+        public void ProgramUniform3(uint program, int location, ref Vector3 vector)
+            => ProgramUniform3(program, location, vector.X, vector.Y, vector.Z);
 
         /// <summary>
         ///     Specify the value of a uniform variable for a specified program object.
@@ -299,7 +311,8 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glProgramUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void ProgramUniform2(uint program, int location, Vector2 vector) { ProgramUniform2(program, location, vector.X, vector.Y); }
+        public void ProgramUniform2(uint program, int location, Vector2 vector)
+            => ProgramUniform2(program, location, vector.X, vector.Y);
 
         /// <summary>
         ///     Specify the value of a uniform variable for a specified program object.
@@ -316,7 +329,8 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glProgramUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void ProgramUniform3(uint program, int location, Vector3 vector) { ProgramUniform3(program, location, vector.X, vector.Y, vector.Z); }
+        public void ProgramUniform3(uint program, int location, Vector3 vector)
+            => ProgramUniform3(program, location, vector.X, vector.Y, vector.Z);
 
         /// <summary>
         ///     Specify the value of a uniform variable for a specified program object.
@@ -333,7 +347,8 @@ namespace Silk.NET.OpenGL
         /// <remarks>
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glProgramUniform.xhtml">OpenGL Documentation</see>
         /// </remarks>
-        public void ProgramUniform4(uint program, int location, Vector4 vector) { ProgramUniform4(program, location, vector.X, vector.Y, vector.Z, vector.W); }
+        public void ProgramUniform4(uint program, int location, Vector4 vector)
+            => ProgramUniform4(program, location, vector.X, vector.Y, vector.Z, vector.W);
 
         /// <summary>
         ///     Specify the value of a uniform variable for a specified program object.
@@ -348,7 +363,9 @@ namespace Silk.NET.OpenGL
         ///     The value to update the uniform variable with.
         /// </param>
         /// <remarks>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glProgramUniform.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">
+        ///     OpenGL Documentation
+        ///     </see>
         /// </remarks>
         public void ProgramUniform4(uint program, int location, Quaternion quaternion)
         {
@@ -531,7 +548,7 @@ namespace Silk.NET.OpenGL
         ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">OpenGL Documentation</see>
         /// </remarks>
         [CLSCompliant(false)]
-        public void VertexAttrib2(uint index, ref Vector2 v) { VertexAttrib2(index, v.X, v.Y); }
+        public void VertexAttrib2(uint index, ref Vector2 v) => VertexAttrib2(index, v.X, v.Y);
 
         /// <summary>
         ///      Specifies the value of a generic vertex attribute.
@@ -543,10 +560,12 @@ namespace Silk.NET.OpenGL
         ///     Value to be used for the generic vertex attribute.
         /// </param>
         /// <remarks>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">
+        ///     OpenGL Documentation
+        ///     </see>
         /// </remarks>
         [CLSCompliant(false)]
-        public void VertexAttrib3(uint index, ref Vector3 v) { VertexAttrib3(index, v.X, v.Y, v.Z); }
+        public void VertexAttrib3(uint index, ref Vector3 v) => VertexAttrib3(index, v.X, v.Y, v.Z);
 
         /// <summary>
         ///      Specifies the value of a generic vertex attribute.
@@ -558,10 +577,12 @@ namespace Silk.NET.OpenGL
         ///     Value to be used for the generic vertex attribute.
         /// </param>
         /// <remarks>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">
+        ///     OpenGL Documentation
+        ///     </see>
         /// </remarks>
         [CLSCompliant(false)]
-        public void VertexAttrib4(uint index, ref Vector4 v) { VertexAttrib4(index, v.X, v.Y, v.Z, v.W); }
+        public void VertexAttrib4(uint index, ref Vector4 v) => VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
 
         /// <summary>
         ///     Specifies the value of a generic vertex attribute.
@@ -573,9 +594,11 @@ namespace Silk.NET.OpenGL
         ///     Value to be used for the generic vertex attribute.
         /// </param>
         /// <remarks>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">
+        ///     OpenGL Documentation
+        ///     </see>
         /// </remarks>
-        public void VertexAttrib2(uint index, Vector2 v) { VertexAttrib2(index, v.X, v.Y); }
+        public void VertexAttrib2(uint index, Vector2 v) => VertexAttrib2(index, v.X, v.Y);
 
         /// <summary>
         ///     Specifies the value of a generic vertex attribute.
@@ -587,9 +610,11 @@ namespace Silk.NET.OpenGL
         ///     Value to be used for the generic vertex attribute.
         /// </param>
         /// <remarks>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">
+        ///     OpenGL Documentation
+        ///     </see>
         /// </remarks>
-        public void VertexAttrib3(uint index, Vector3 v) { VertexAttrib3(index, v.X, v.Y, v.Z); }
+        public void VertexAttrib3(uint index, Vector3 v) => VertexAttrib3(index, v.X, v.Y, v.Z);
 
         /// <summary>
         ///     Specifies the value of a generic vertex attribute.
@@ -601,9 +626,11 @@ namespace Silk.NET.OpenGL
         ///     Value to be used for the generic vertex attribute.
         /// </param>
         /// <remarks>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttrib.xhtml">
+        ///     OpenGL Documentation
+        ///     </see>
         /// </remarks>
-        public void VertexAttrib4(uint index, Vector4 v) { VertexAttrib4(index, v.X, v.Y, v.Z, v.W); }
+        public void VertexAttrib4(uint index, Vector4 v) => VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
 
         //public unsafe void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, uint stride, int offset)
         //{
@@ -629,7 +656,9 @@ namespace Silk.NET.OpenGL
         ///      A list of valid symbolic constants (parameter names) can be found in the documentation at the provided link.
         ///  </para>
         ///  <para>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGet.xml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGet.xml">
+        ///     OpenGL Documentation
+        ///     </see>
         ///  </para>
         /// </remarks>
         public void GetFloat(GLEnum pname, out Vector2 vector)
@@ -654,10 +683,13 @@ namespace Silk.NET.OpenGL
         /// </param>
         /// <remarks>
         ///  <para>
-        ///      A list of valid symbolic constants (parameter names) can be found in the documentation at the provided link.
+        ///      A list of valid symbolic constants (parameter names) can be found in the documentation at the
+        ///      provided link.
         ///  </para>
         ///  <para>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGet.xml">OpenGL Documentation</see>
+        ///      <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGet.xml">
+        ///      OpenGL Documentation
+        ///      </see>
         ///  </para>
         /// </remarks>
         public void GetFloat(GLEnum pname, out Vector3 vector)
@@ -682,10 +714,13 @@ namespace Silk.NET.OpenGL
         /// </param>
         /// <remarks>
         ///  <para>
-        ///      A list of valid symbolic constants (parameter names) can be found in the documentation at the provided link.
+        ///      A list of valid symbolic constants (parameter names) can be found in the documentation at the
+        ///      provided link.
         ///  </para>
         ///  <para>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGet.xml">OpenGL Documentation</see>
+        ///      <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGet.xml">
+        ///      OpenGL Documentation
+        ///      </see>
         ///  </para>
         /// </remarks>
         public void GetFloat(GLEnum pname, out Vector4 vector)
@@ -710,10 +745,13 @@ namespace Silk.NET.OpenGL
         /// </param>
         /// <remarks>
         ///  <para>
-        ///      A list of valid symbolic constants (parameter names) can be found in the documentation at the provided link.
+        ///      A list of valid symbolic constants (parameter names) can be found in the documentation at the
+        ///      provided link.
         ///  </para>
         ///  <para>
-        ///      <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGet.xml">OpenGL Documentation</see>
+        ///      <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGet.xml">
+        ///      OpenGL Documentation
+        ///      </see>
         ///  </para>
         /// </remarks>
         public void GetFloat(GLEnum pname, out Matrix4x4 matrix)
@@ -738,13 +776,16 @@ namespace Silk.NET.OpenGL
         ///     The location of the viewport will default to 0,0.
         ///  </para>
         ///  <para>
-        ///      When an OpenGL context is first attached to a window, width and height are set to the dimensions of that window.
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
         ///  </para>
         ///  <para>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
         ///  </para>
         /// </remarks>
-        public void Viewport(Size size) { Viewport(0, 0, (uint) size.Width, (uint) size.Height); }
+        public void Viewport(Size size) => Viewport(0, 0, (uint) size.Width, (uint) size.Height);
 
         /// <summary>
         ///      Set the viewport for the OpenGL context.
@@ -757,13 +798,17 @@ namespace Silk.NET.OpenGL
         /// </param>
         /// <remarks>
         ///  <para>
-        ///      When an OpenGL context is first attached to a window, width and height are set to the dimensions of that window.
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
         ///  </para>
         ///  <para>
-        ///      <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
         ///  </para>
         /// </remarks>
-        public void Viewport(Point location, Size size) { Viewport(location.X, location.Y, (uint) size.Width, (uint) size.Height); }
+        public void Viewport(Point location, Size size)
+            => Viewport(location.X, location.Y, (uint) size.Width, (uint) size.Height);
 
         /// <summary>
         ///     Set the viewport for the OpenGL context.
@@ -773,12 +818,16 @@ namespace Silk.NET.OpenGL
         /// </param>
         /// <remarks>
         ///  <para>
-        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of that window.
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
         ///  </para>
         ///  <para>
-        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">OpenGL Documentation</see>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
         ///  </para>
         /// </remarks>
-        public void Viewport(Rectangle rectangle) { Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height); }
+        public void Viewport(Rectangle rectangle)
+            => Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height);
     }
 }
