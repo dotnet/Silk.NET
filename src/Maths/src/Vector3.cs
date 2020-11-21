@@ -462,5 +462,101 @@ namespace Silk.NET.Numerics
             sb.Append('>');
             return sb.ToString();
         }
+
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="Half"/> matrix</returns>
+        public static explicit operator Vector3<Half>(Vector3<T> from)
+            => new(Operations.As<T, Half>(from.X), Operations.As<T, Half>(from.Y), Operations.As<T, Half>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="float"/> matrix</returns>
+        public static explicit operator Vector3<float>(Vector3<T> from)
+            => new(Operations.As<T, float>(from.X), Operations.As<T, float>(from.Y), Operations.As<T, float>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="double"/> matrix</returns>
+        public static explicit operator Vector3<double>(Vector3<T> from)
+            => new(Operations.As<T, double>(from.X), Operations.As<T, double>(from.Y), Operations.As<T, double>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="decimal"/> matrix</returns>
+        public static explicit operator Vector3<decimal>(Vector3<T> from)
+            => new(Operations.As<T, decimal>(from.X), Operations.As<T, decimal>(from.Y), Operations.As<T, decimal>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="sbyte"/> matrix</returns>
+        public static explicit operator Vector3<sbyte>(Vector3<T> from)
+            => new(Operations.As<T, sbyte>(from.X), Operations.As<T, sbyte>(from.Y), Operations.As<T, sbyte>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="byte"/> matrix</returns>
+        public static explicit operator Vector3<byte>(Vector3<T> from)
+            => new(Operations.As<T, byte>(from.X), Operations.As<T, byte>(from.Y), Operations.As<T, byte>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ushort"/> matrix</returns>
+        public static explicit operator Vector3<ushort>(Vector3<T> from)
+            => new(Operations.As<T, ushort>(from.X), Operations.As<T, ushort>(from.Y), Operations.As<T, ushort>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="short"/> matrix</returns>
+        public static explicit operator Vector3<short>(Vector3<T> from)
+            => new(Operations.As<T, short>(from.X), Operations.As<T, short>(from.Y), Operations.As<T, short>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="uint"/> matrix</returns>
+        public static explicit operator Vector3<uint>(Vector3<T> from)
+            => new(Operations.As<T, uint>(from.X), Operations.As<T, uint>(from.Y), Operations.As<T, uint>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="int"/> matrix</returns>
+        public static explicit operator Vector3<int>(Vector3<T> from)
+            => new(Operations.As<T, int>(from.X), Operations.As<T, int>(from.Y), Operations.As<T, int>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ulong"/> matrix</returns>
+        public static explicit operator Vector3<ulong>(Vector3<T> from)
+            => new(Operations.As<T, ulong>(from.X), Operations.As<T, ulong>(from.Y), Operations.As<T, ulong>(from.Z));
+        
+        /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="long"/> matrix</returns>
+        public static explicit operator Vector3<long>(Vector3<T> from)
+            => new(Operations.As<T, long>(from.X), Operations.As<T, long>(from.Y), Operations.As<T, long>(from.Z));
     }
 }

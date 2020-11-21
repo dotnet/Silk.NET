@@ -292,5 +292,101 @@ namespace Silk.NET.Numerics
             CultureInfo ci = CultureInfo.CurrentCulture;
             return string.Format(ci, "{{Normal:{0} D:{1}}}", Normal.ToString(), D.ToString("G", ci));
         }
+
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="Half"/> matrix</returns>
+        public static explicit operator Plane<Half>(Plane<T> from)
+            => new((Vector3<Half>) from.Normal, Operations.As<T, Half>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="float"/> matrix</returns>
+        public static explicit operator Plane<float>(Plane<T> from)
+            => new((Vector3<float>) from.Normal, Operations.As<T, float>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="double"/> matrix</returns>
+        public static explicit operator Plane<double>(Plane<T> from)
+            => new((Vector3<double>) from.Normal, Operations.As<T, double>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="decimal"/> matrix</returns>
+        public static explicit operator Plane<decimal>(Plane<T> from)
+            => new((Vector3<decimal>) from.Normal, Operations.As<T, decimal>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="sbyte"/> matrix</returns>
+        public static explicit operator Plane<sbyte>(Plane<T> from)
+            => new((Vector3<sbyte>) from.Normal, Operations.As<T, sbyte>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="byte"/> matrix</returns>
+        public static explicit operator Plane<byte>(Plane<T> from)
+            => new((Vector3<byte>) from.Normal, Operations.As<T, byte>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ushort"/> matrix</returns>
+        public static explicit operator Plane<ushort>(Plane<T> from)
+            => new((Vector3<ushort>) from.Normal, Operations.As<T, ushort>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="short"/> matrix</returns>
+        public static explicit operator Plane<short>(Plane<T> from)
+            => new((Vector3<short>) from.Normal, Operations.As<T, short>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="uint"/> matrix</returns>
+        public static explicit operator Plane<uint>(Plane<T> from)
+            => new((Vector3<uint>) from.Normal, Operations.As<T, uint>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="int"/> matrix</returns>
+        public static explicit operator Plane<int>(Plane<T> from)
+            => new((Vector3<int>) from.Normal, Operations.As<T, int>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ulong"/> matrix</returns>
+        public static explicit operator Plane<ulong>(Plane<T> from)
+            => new((Vector3<ulong>) from.Normal, Operations.As<T, ulong>(from.D));
+        
+        /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="long"/> matrix</returns>
+        public static explicit operator Plane<long>(Plane<T> from)
+            => new((Vector3<long>) from.Normal, Operations.As<T, long>(from.D));
     }
 }
