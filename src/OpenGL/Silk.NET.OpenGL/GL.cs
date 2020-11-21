@@ -20,7 +20,8 @@ namespace Silk.NET.OpenGL
     {
         [Obsolete
         (
-            "Parameterless GetApi calls are deprecated and will be removed in a future release. Please create" + "your GL instances using a context"
+            "Parameterless GetApi calls are deprecated and will be removed in a future release. Please create" +
+            "your GL instances using a context"
         )]  
         public static GL GetApi()
             => LibraryLoader<GL>.Load(new GLCoreLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
