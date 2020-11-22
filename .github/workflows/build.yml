@@ -27,4 +27,4 @@ jobs:
       run: nuke Test --skip Clean Restore Compile
     - name: Push to NuGet
       if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
-      run: nuke PushToNuGet --skip Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
+      run: nuke PushToNuGet --skip Clean Restore Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
