@@ -7,24 +7,16 @@ on:
 
 jobs:
   Publish:
-
-    runs-on: ubuntu-latest
-
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: 'true'
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.100-rc.2.20479.15
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Pack
-      run: dotnet pack --configuration Release -p:ContinuousIntegrationBuild=true
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
-    - name: Setup NuGet
-      uses: nuget/setup-nuget@v1
-      with:
-        nuget-version: '5.x'
+        dotnet-version: 5.0.100
+    - name: Setup NUKE
+      run: dotnet tool install Nuke.GlobalTool --global
     - name: Push to NuGet
-      run: nuget push "build/output_packages/Silk.NET.*.nupkg" -SkipDuplicate -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_TOKEN }}
+      run: nuke PushToNuGet --configuration Release --msbuild-properties ContinuousIntegrationBuild=true --feature-sets Android iOS --nuget-api-key ${{ secrets.NUGET_TOKEN }}

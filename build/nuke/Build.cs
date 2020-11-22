@@ -373,6 +373,7 @@ class Build : NukeBuild
     {
         const int rateLimit = 300;
         var allFiles = Directory.GetFiles(RootDirectory / "build" / "output_packages", "*.nupkg")
+            .Where(x => x.StartsWith("Silk.NET"))
             .Select((x, i) => new {Index = i, Value = x})
             .GroupBy(x => x.Index / rateLimit)
             .Select(x => x.Select(v => v.Value).ToList())
