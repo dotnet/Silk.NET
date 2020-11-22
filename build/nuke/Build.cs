@@ -246,7 +246,13 @@ class Build : NukeBuild
                     ControlFlow.Fail("The Test target can currently not run against additional feature sets.");
                 }
 
-                DotNetTest(s => s.SetProjectFile(ProcessedSolution));
+                foreach (var project in ProcessedSolution.GetProjects("*"))
+                {
+                    if (project.Name.Contains("tests", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        DotNetTest(s => s.SetProjectFile(project));
+                    }
+                }
             }
         );
 
