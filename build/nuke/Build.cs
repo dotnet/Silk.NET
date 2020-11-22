@@ -54,7 +54,7 @@ class Build : NukeBuild
                 MSBuildToolPathResolver.Resolve(); // throws if it can't find msbuild
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
@@ -79,8 +79,8 @@ class Build : NukeBuild
     [Parameter("NuGet feed")] readonly string NugetFeed = "https://api.nuget.org/v3/index.json";
     [Parameter("NuGet username")] readonly string NugetUsername;
     [Parameter("NuGet password")] readonly string NugetPassword;
-    [Parameter("Extra properties passed to MSBuild commands")] readonly string[] MsbuildProperties =
-        Array.Empty<string>(); 
+    [Parameter("Extra properties passed to MSBuild commands")]
+    readonly string[] MsbuildProperties = Array.Empty<string>(); 
 
     [Solution] readonly Solution Solution;
 
