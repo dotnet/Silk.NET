@@ -29,28 +29,7 @@ namespace Silk.NET.Numerics
         // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         // THE SOFTWARE.
-
-        private const double PiOverTwo = 1.5707963267948966;
-        private const double PiOverTwoPartOne = 1.5707963267341256;
-        private const double PiOverTwoPartOneTail = 6.077100506506192E-11;
-        private const double PiOverTwoPartTwo = 6.077100506303966E-11;
-        private const double PiOverTwoPartTwoTail = 2.0222662487959506E-21;
-        private const double PiOverFour = 0.7853981633974483;
-        private const double TwoOverPi = 0.6366197723675814;
-        private const double TwoPowNegSeven = 0.0078125;
-        private const double TwoPowNegThirteen = 0.0001220703125;
-
-        private const double C0 = -1.0 / 2.0; // 1 / 2!
-        private const double C1 = +1.0 / 24.0; // 1 / 4!
-        private const double C2 = -1.0 / 720.0; // 1 / 6!
-        private const double C3 = +1.0 / 40320.0; // 1 / 8!
-        private const double C4 = -1.0 / 3628800.0; // 1 / 10!
-
-        private const double S1 = -1.0 / 6.0; // 1 / 3!
-        private const double S2 = +1.0 / 120.0; // 1 / 5!
-        private const double S3 = -1.0 / 5040.0; // 1 / 7!
-        private const double S4 = +1.0 / 362880.0; // 1 / 9!
-
+        
         private static readonly long[] _piBits =
         {
             0,
@@ -108,6 +87,26 @@ namespace Silk.NET.Numerics
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
         internal static float Sin_Ported(float x)
         {
+            const double PiOverTwo = 1.5707963267948966;
+            const double PiOverTwoPartOne = 1.5707963267341256;
+            const double PiOverTwoPartOneTail = 6.077100506506192E-11;
+            const double PiOverTwoPartTwo = 6.077100506303966E-11;
+            const double PiOverTwoPartTwoTail = 2.0222662487959506E-21;
+            const double PiOverFour = 0.7853981633974483;
+            const double TwoOverPi = 0.6366197723675814;
+            const double TwoPowNegSeven = 0.0078125;
+            const double TwoPowNegThirteen = 0.0001220703125;
+            const double C0 = -1.0 / 2.0; // 1 / 2!
+            const double C1 = +1.0 / 24.0; // 1 / 4!
+            const double C2 = -1.0 / 720.0; // 1 / 6!
+            const double C3 = +1.0 / 40320.0; // 1 / 8!
+            const double C4 = -1.0 / 3628800.0; // 1 / 10!
+            const double S1 = -1.0 / 6.0; // 1 / 3!
+            const double S2 = +1.0 / 120.0; // 1 / 5!
+            const double S3 = -1.0 / 5040.0; // 1 / 7!
+            const double S4 = +1.0 / 362880.0; // 1 / 9!
+
+            
             if (CoreIsFinite(x))
             {
                 double ax = Math.Abs(x);

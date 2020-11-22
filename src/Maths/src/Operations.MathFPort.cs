@@ -1438,11 +1438,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
-                return (T) (object) (Half) Math.Exp((float) (Half) (object) x);
-#else
-            return (T) (object) (Half) MathF.Exp((float)(Half)(object)x);
-#endif
+                return (T) (object) (Half) CoreFastExp((float)(Half)(object)x);
             }
 
             return Float(x);
@@ -1451,11 +1447,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
-                    return (T) (object) (float) Math.Exp((float) (object) x);
-#else
-                return (T) (object) MathF.Exp((float)(object)x);
-#endif
+                    return (T) (object) CoreFastExp((float)(object)x);
                 }
 
                 return Double(x);
