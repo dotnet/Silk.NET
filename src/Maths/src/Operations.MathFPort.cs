@@ -31,7 +31,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) Math.Abs((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
@@ -44,7 +44,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) Math.Abs((float) (object) x);
 #else
                 return (T) (object) MathF.Abs((float)(object)x);
@@ -161,7 +161,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Acos((float) (Half) (object) x); // KIPLING
 #else
             return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
@@ -174,7 +174,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Acos((float) (object) x); // KIPLING
 #else
                 return (T) (object) MathF.Acos((float)(object)x);
@@ -292,11 +292,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
                 return (T) (object) (Half) (float) CoreAcosh((float) (Half) (object) x);
-#else
-            return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
-#endif
             }
 
             return Float(x);
@@ -305,11 +301,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
                     return (T) (object) CoreAcosh((float) (object) x);
-#else
-                return (T) (object) MathF.Acosh((float)(object)x);
-#endif
                 }
 
                 return Double(x);
@@ -423,7 +415,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Asin((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
@@ -436,7 +428,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Asin((float) (object) x);
 #else
                 return (T) (object) MathF.Asin((float)(object)x);
@@ -554,11 +546,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
                 return (T) (object) (Half) (float) CoreAsinh((float) (Half) (object) x);
-#else
-            return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
-#endif
             }
 
             return Float(x);
@@ -567,11 +555,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
                     return (T) (object) CoreAsinh((float) (object) x);
-#else
-                return (T) (object) MathF.Asinh((float)(object)x);
-#endif
                 }
 
                 return Double(x);
@@ -685,7 +669,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Atan((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
@@ -698,7 +682,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Atan((float) (object) x);
 #else
                 return (T) (object) MathF.Atan((float)(object)x);
@@ -816,11 +800,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
                 return (T) (object) (Half) Atanh((float) (Half) (object) x);
-#else
-            return (T) (object) (Half) MathF.Atanh((float)(Half)(object)x);
-#endif
             }
 
             return Float(x);
@@ -829,11 +809,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
                     return (T) (object) Atanh((float) (object) x);
-#else
-                return (T) (object) MathF.Atanh((float)(object)x);
-#endif
                 }
 
                 return Double(x);
@@ -947,11 +923,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
                 return (T) (object) (Half) CoreCbrt((float) (Half) (object) x);
-#else
-            return (T) (object) (Half) MathF.Cbrt((float)(Half)(object)x);
-#endif
             }
 
             return Float(x);
@@ -960,11 +932,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
                     return (T) (object) CoreCbrt((float) (object) x);
-#else
-                return (T) (object) MathF.Cbrt((float)(object)x);
-#endif
                 }
 
                 return Double(x);
@@ -1078,7 +1046,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) Math.Ceiling((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Ceiling((float)(Half)(object)x);
@@ -1091,7 +1059,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Ceiling((float) (object) x);
 #else
                 return (T) (object) MathF.Ceiling((float)(object)x);
@@ -1208,7 +1176,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) Math.Cos((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Cos((float)(Half)(object)x);
@@ -1221,7 +1189,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Cos((float) (object) x);
 #else
                 return (T) (object) MathF.Cos((float)(object)x);
@@ -1339,7 +1307,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) Math.Cosh((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Cosh((float)(Half)(object)x);
@@ -1352,7 +1320,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Cosh((float) (object) x);
 #else
                 return (T) (object) MathF.Cosh((float)(object)x);
@@ -1470,7 +1438,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) Math.Exp((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Exp((float)(Half)(object)x);
@@ -1483,7 +1451,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Exp((float) (object) x);
 #else
                 return (T) (object) MathF.Exp((float)(object)x);
@@ -1601,7 +1569,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) Math.Floor((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Floor((float)(Half)(object)x);
@@ -1614,7 +1582,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Floor((float) (object) x);
 #else
                 return (T) (object) MathF.Floor((float)(object)x);
@@ -1731,7 +1699,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Sign((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Sign((float)(Half)(object)x);
@@ -1744,7 +1712,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Sign((float) (object) x);
 #else
                 return (T) (object) MathF.Sign((float)(object)x);
@@ -1992,7 +1960,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Sinh((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Sinh((float)(Half)(object)x);
@@ -2005,7 +1973,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Sinh((float) (object) x);
 #else
                 return (T) (object) MathF.Sinh((float)(object)x);
@@ -2123,7 +2091,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Sqrt((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Sqrt((float)(Half)(object)x);
@@ -2136,7 +2104,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Sqrt((float) (object) x);
 #else
                 return (T) (object) MathF.Sqrt((float)(object)x);
@@ -2254,7 +2222,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Tan((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Tan((float)(Half)(object)x);
@@ -2267,7 +2235,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Tan((float) (object) x);
 #else
                 return (T) (object) MathF.Tan((float)(object)x);
@@ -2385,7 +2353,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Tanh((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Tanh((float)(Half)(object)x);
@@ -2398,7 +2366,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Tanh((float) (object) x);
 #else
                 return (T) (object) MathF.Tanh((float)(object)x);
@@ -2516,7 +2484,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Truncate((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Truncate((float)(Half)(object)x);
@@ -2529,7 +2497,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Truncate((float) (object) x);
 #else
                 return (T) (object) MathF.Truncate((float)(object)x);
@@ -2646,11 +2614,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
-                return (T) (object) (Half) (float) Math.Log((float) (Half) (object) x);
-#else
-            return (T) (object) (Half) MathF.Log((float)(Half)(object)x);
-#endif
+                return (T) (object) (Half) CoreFastLog((float)(Half)(object)x);
             }
 
             return Float(x);
@@ -2659,11 +2623,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
-                    return (T) (object) (float) Math.Log((float) (object) x);
-#else
-                return (T) (object) MathF.Log((float)(object)x);
-#endif
+                    return (T) (object) CoreFastLog((float)(object)x);
                 }
 
                 return Double(x);
@@ -2777,7 +2737,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Log10((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Log10((float)(Half)(object)x);
@@ -2790,7 +2750,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Log10((float) (object) x);
 #else
                 return (T) (object) MathF.Log10((float)(object)x);
@@ -2908,7 +2868,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Round((float) (Half) (object) x);
 #else
             return (T) (object) (Half) MathF.Round((float)(Half)(object)x);
@@ -2921,7 +2881,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Round((float) (object) x);
 #else
                 return (T) (object) MathF.Round((float)(object)x);
@@ -3038,7 +2998,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.IEEERemainder
                     ((float) (Half) (object) x, (float) (Half) (object) y);
 #else
@@ -3052,7 +3012,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.IEEERemainder((float) (object) x, (float) (object) y);
 #else
                 return (T)(object)MathF.IEEERemainder((float)(object)x, (float)(object)y);
@@ -3170,7 +3130,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Log((float) (Half) (object) x, (float) (Half) (object) y);
 #else
             return (T)(object)(Half)MathF.Log((float)(Half)(object)x, (float)(Half)(object)y);
@@ -3183,7 +3143,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Log((float) (object) x, (float) (object) y);
 #else
                 return (T)(object)MathF.Log((float)(object)x, (float)(object)y);
@@ -3301,7 +3261,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Max((float) (Half) (object) x, (float) (Half) (object) y);
 #else
             return (T)(object)(Half)MathF.Max((float)(Half)(object)x, (float)(Half)(object)y);
@@ -3314,7 +3274,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Max((float) (object) x, (float) (object) y);
 #else
                 return (T)(object)MathF.Max((float)(object)x, (float)(object)y);
@@ -3431,7 +3391,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Min((float) (Half) (object) x, (float) (Half) (object) y);
 #else
             return (T)(object)(Half)MathF.Min((float)(Half)(object)x, (float)(Half)(object)y);
@@ -3444,7 +3404,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Min((float) (object) x, (float) (object) y);
 #else
                 return (T)(object)MathF.Min((float)(object)x, (float)(object)y);
@@ -3561,7 +3521,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Pow((float) (Half) (object) x, (float) (Half) (object) y);
 #else
             return (T)(object)(Half)MathF.Pow((float)(Half)(object)x, (float)(Half)(object)y);
@@ -3574,7 +3534,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Pow((float) (object) x, (float) (object) y);
 #else
                 return (T)(object)MathF.Pow((float)(object)x, (float)(object)y);
@@ -3692,7 +3652,7 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if !NET5_0
                 return (T) (object) (Half) (float) Math.Atan2((float) (Half) (object) x, (float) (Half) (object) y);
 #else
             return (T)(object)(Half)MathF.Atan2((float)(Half)(object)x, (float)(Half)(object)y);
@@ -3705,7 +3665,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if !NET5_0
                     return (T) (object) (float) Math.Atan2((float) (object) x, (float) (object) y);
 #else
                 return (T)(object)MathF.Atan2((float)(object)x, (float)(object)y);

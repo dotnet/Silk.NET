@@ -34,7 +34,7 @@ namespace Silk.NET.Numerics
         [MethodImpl(MaxOpt)]
         private static double CoreAtanh(double x)
         {
-#if !NETSTANDARD2_0
+#if !NET5_0
             return Math.Atanh(x);
 #else
             // TODO test this before preview 5, no idea if this works
@@ -287,7 +287,7 @@ namespace Silk.NET.Numerics
         [MethodImpl(MaxOpt)]
         private static double CoreAcosh(double x)
         {
-#if !NETSTANDARD2_0
+#if !NET5_0
             return Math.Acosh(x);
 #else
             const double ln2 = 6.93147180559945286227e-01; // 0x3FE62E42FEFA39EF
@@ -339,7 +339,7 @@ namespace Silk.NET.Numerics
         [MethodImpl(MaxOpt)]
         private static double CoreAsinh(double x)
         {
-#if !NETSTANDARD2_0
+#if !NET5_0
             return Math.Asinh(x);
 #else
             const double ln2 = 6.93147180559945286227e-01; // 0x3FE62E42FEFA39EF
@@ -389,7 +389,7 @@ namespace Silk.NET.Numerics
 
         [MethodImpl(MaxOpt)]
         private static double CoreCbrt(double x)
-#if NET5_0
+#if !NET5_0
             => Math.Ceiling(Math.Pow(x, 1d / 3));
 #else
             => Math.Cbrt(x);
