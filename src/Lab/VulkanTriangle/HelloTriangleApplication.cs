@@ -271,16 +271,11 @@ namespace VulkanTriangle
 
             _vk.CurrentInstance = _instance;
 
-            if (!_vk.TryGetExtension(out _vkSurface))
+            if (!_vk.TryGetInstanceExtension(_instance, out _vkSurface))
             {
                 throw new NotSupportedException("KHR_surface extension not found.");
             }
-
-            if (!_vk.TryGetExtension(out _vkSwapchain))
-            {
-                throw new NotSupportedException("KHR_swapchain extension not found.");
-            }
-
+            
             Marshal.FreeHGlobal((IntPtr) appInfo.PApplicationName);
             Marshal.FreeHGlobal((IntPtr) appInfo.PEngineName);
 
@@ -410,7 +405,7 @@ namespace VulkanTriangle
                 var modes = stackalloc PresentModeKHR[(int) presentModeCount];
                 _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, modes);
 
-                for (var i = 0; i < formatCount; i++)
+                for (var i = 0; i < presentModeCount; i++)
                 {
                     details.PresentModes[i] = modes[i];
                 }
@@ -604,6 +599,11 @@ namespace VulkanTriangle
 
                 createInfo.OldSwapchain = default;
 
+                if (!_vk.TryGetDeviceExtension(_instance, _vk.CurrentDevice.Value, out _vkSwapchain))
+                {
+                    throw new NotSupportedException("KHR_swapchain extension not found.");
+                }
+                
                 fixed (SwapchainKHR* swapchain = &_swapchain)
                 {
                     if (_vkSwapchain.CreateSwapchain(_device, &createInfo, null, swapchain) != Result.Success)
