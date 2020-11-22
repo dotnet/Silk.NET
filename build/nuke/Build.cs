@@ -11,7 +11,9 @@ using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.MSBuild;
+using Nuke.Common.Tools.VSTest;
 using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
+using static Nuke.Common.Tools.VSTest.VSTestTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.IO.FileSystemTasks;
 
@@ -232,6 +234,21 @@ class Build : NukeBuild
                 );
             }
         });
+
+    Target Test => _ => _
+        .DependsOn(Compile)
+        .Executes
+        (
+            () =>
+            {
+                if (FeatureSets.Any(x => !x.Equals("core", StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    ControlFlow.Fail("The Test target can currently not run against additional feature sets.");
+                }
+
+                DotNetTest(s => s.SetProjectFile(ProcessedSolution));
+            }
+        );
 
     Target RegenerateBindings => _ => _
         .DependsOn(Clean, Restore)
