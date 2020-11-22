@@ -355,8 +355,7 @@ out/
 # release/
 
 # Gradle files
-.gradle/
-build/
+**/.gradle/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -467,6 +466,9 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 ### Gradle Patch ###
-**/build/
+src/**/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/android,java,gradle
+
+# Silk.NET Build System
+build/sln

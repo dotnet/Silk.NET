@@ -165,4 +165,5 @@
     </NativeReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Target Name="Pack" AfterTargets="Compile" />
 </Project>
