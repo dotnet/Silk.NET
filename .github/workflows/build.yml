@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 5.0.100-rc.2.20479.15
     - name: Setup NUKE
-      uses: dotnet tool install Nuke.GlobalTool --global
+      run: dotnet tool install Nuke.GlobalTool --global
     - name: Pack
       run: nuke BuildLibSilkDroid Pack --configuration Release --msbuild-properties VersionSuffix=build$GITHUB_RUN_NUMBER.0 ContinuousIntegrationBuild=true
     - name: Test
