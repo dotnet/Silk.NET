@@ -382,6 +382,8 @@ class Build : NukeBuild
         var feed = NuGetInterface.OpenNuGetFeed(NugetFeed, NugetUsername, NugetPassword);
         var uploadResource = await NuGetInterface.GetUploadResourceAsync(feed);
         var symbolsResource = await NuGetInterface.GetSymbolsUploadResourceAsync(feed);
+        var exceptions = new List<Exception>();
+        Logger.Info($"Searching for packages in \"{RootDirectory / "build" / "output_packages"}\"...");
         foreach (var files in allFiles)
         {
             if (first)
@@ -392,8 +394,6 @@ class Build : NukeBuild
             {
                 await Task.Delay(TimeSpan.FromHours(1));
             }
-
-            var exceptions = new List<Exception>();
 
             foreach (var file in files)
             {
@@ -406,11 +406,13 @@ class Build : NukeBuild
                     exceptions.Add(new Exception($"Failed to push package \"{file}\"", ex));
                 }
             }
-
-            if (exceptions.Count > 0)
-            {
-                throw new AggregateException(exceptions);
-            }
         }
+
+        if (exceptions.Count > 0)
+        {
+            throw new AggregateException(exceptions);
+        }
+
+        Logger.Success($"Successfully pushed {exceptions.Count}.");
     }
 }
