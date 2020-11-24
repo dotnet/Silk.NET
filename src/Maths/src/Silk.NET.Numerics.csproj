@@ -6,6 +6,11 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <WarningsAsErrors>true</WarningsAsErrors>
+        <PreferNoAlloc>false</PreferNoAlloc>
+    
+        <DefineConstants Condition="'$(PreferNoAlloc)' == 'true'">
+            $(DefineConstants);PREFER_NO_ALLOC
+        </DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>

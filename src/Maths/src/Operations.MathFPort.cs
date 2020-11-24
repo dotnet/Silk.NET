@@ -34,12 +34,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) Math.Abs((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -47,13 +48,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) Math.Abs((float) (object) x);
 #else
-                return (T) (object) MathF.Abs((float)(object)x);
+                    return (T) (object) MathF.Abs((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -64,16 +66,20 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (T) (object) Math.Abs((sbyte) (object) x);
+                    var px = (sbyte) (object) x;
+                    sbyte mask = (sbyte) (px >> (sizeof(sbyte) - 1));
+                    return (T)(object)(sbyte)((px + mask) ^ mask); 
                 }
 
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -84,16 +90,20 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
                 {
-                    return (T) (object) Math.Abs((int) (object) x);
+                    var px = (int) (object) x;
+                    int mask = (int) (px >> (sizeof(int) - 1));
+                    return (T)(object)(int)((px + mask) ^ mask); 
                 }
 
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -104,16 +114,20 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
                 {
-                    return (T) (object) Math.Abs((long) (object) x);
+                    var px = (long) (object) x;
+                    long mask = (long) (px >> (sizeof(long) - 1));
+                    return (T)(object)(long)((px + mask) ^ mask); 
                 }
 
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -124,16 +138,20 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
                 {
-                    return (T) (object) Math.Abs((short) (object) x);
+                    var px = (short) (object) x;
+                    short mask = (short) (px >> (sizeof(short) - 1));
+                    return (T)(object)(short)((px + mask) ^ mask); 
                 }
 
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -144,6 +162,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -164,12 +183,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Acos((float) (Half) (object) x); // KIPLING
 #else
-            return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -177,13 +197,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Acos((float) (object) x); // KIPLING
 #else
-                return (T) (object) MathF.Acos((float)(object)x);
+                    return (T) (object) MathF.Acos((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -194,6 +215,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -204,6 +226,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -214,6 +237,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -224,6 +248,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -234,6 +259,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -244,6 +270,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -254,6 +281,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -264,6 +292,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -274,6 +303,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -297,6 +327,7 @@ namespace Silk.NET.Numerics
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -307,6 +338,7 @@ namespace Silk.NET.Numerics
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -317,6 +349,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -327,6 +360,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -337,6 +371,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -347,6 +382,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -357,6 +393,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -367,6 +404,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -377,6 +415,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -387,6 +426,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -397,6 +437,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -418,12 +459,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Asin((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -431,13 +473,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Asin((float) (object) x);
 #else
-                return (T) (object) MathF.Asin((float)(object)x);
+                    return (T) (object) MathF.Asin((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -448,6 +491,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -458,6 +502,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -468,6 +513,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -478,6 +524,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -488,6 +535,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -498,6 +546,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -508,6 +557,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -518,6 +568,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -528,6 +579,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -551,6 +603,7 @@ namespace Silk.NET.Numerics
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -561,6 +614,7 @@ namespace Silk.NET.Numerics
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -571,6 +625,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -581,6 +636,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -591,6 +647,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -601,6 +658,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -611,6 +669,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -621,6 +680,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -631,6 +691,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -641,6 +702,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -651,6 +713,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -672,12 +735,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Atan((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Abs((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -685,13 +749,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Atan((float) (object) x);
 #else
-                return (T) (object) MathF.Atan((float)(object)x);
+                    return (T) (object) MathF.Atan((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -702,6 +767,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -712,6 +778,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -722,6 +789,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -732,6 +800,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -742,6 +811,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -752,6 +822,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -762,6 +833,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -772,6 +844,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -782,6 +855,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -805,6 +879,7 @@ namespace Silk.NET.Numerics
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -815,6 +890,7 @@ namespace Silk.NET.Numerics
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -825,6 +901,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -836,6 +913,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -846,6 +924,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -856,6 +935,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -866,6 +946,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -876,6 +957,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -886,6 +968,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -896,6 +979,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -906,6 +990,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -928,6 +1013,7 @@ namespace Silk.NET.Numerics
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -938,6 +1024,7 @@ namespace Silk.NET.Numerics
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -948,6 +1035,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -959,6 +1047,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -969,6 +1058,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -979,6 +1069,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -989,6 +1080,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -999,6 +1091,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -1009,6 +1102,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -1019,6 +1113,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -1029,6 +1124,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -1049,12 +1145,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) Math.Ceiling((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Ceiling((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Ceiling((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -1062,13 +1159,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Ceiling((float) (object) x);
 #else
-                return (T) (object) MathF.Ceiling((float)(object)x);
+                    return (T) (object) MathF.Ceiling((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -1079,6 +1177,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -1089,6 +1188,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -1099,6 +1199,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -1109,6 +1210,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -1119,6 +1221,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -1129,6 +1232,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -1139,6 +1243,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -1149,6 +1254,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -1159,6 +1265,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -1179,12 +1286,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) Math.Cos((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Cos((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Cos((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -1192,13 +1300,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Cos((float) (object) x);
 #else
-                return (T) (object) MathF.Cos((float)(object)x);
+                    return (T) (object) MathF.Cos((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -1209,6 +1318,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -1220,6 +1330,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -1230,6 +1341,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -1240,6 +1352,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -1250,6 +1363,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -1260,6 +1374,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -1270,6 +1385,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -1280,6 +1396,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -1290,6 +1407,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -1310,12 +1428,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) Math.Cosh((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Cosh((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Cosh((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -1323,13 +1442,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Cosh((float) (object) x);
 #else
-                return (T) (object) MathF.Cosh((float)(object)x);
+                    return (T) (object) MathF.Cosh((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -1340,6 +1460,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -1351,6 +1472,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -1361,6 +1483,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -1371,6 +1494,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -1381,6 +1505,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -1391,6 +1516,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -1401,6 +1527,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -1411,6 +1538,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -1421,6 +1549,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -1438,21 +1567,23 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) CoreFastExp((float)(Half)(object)x);
+                return (T) (object) (Half) CoreFastExp((float) (Half) (object) x);
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
                 {
-                    return (T) (object) CoreFastExp((float)(object)x);
+                    return (T) (object) CoreFastExp((float) (object) x);
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -1463,6 +1594,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -1474,6 +1606,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -1484,6 +1617,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -1494,6 +1628,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -1504,6 +1639,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -1514,6 +1650,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -1524,6 +1661,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -1534,6 +1672,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -1544,6 +1683,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -1564,12 +1704,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) Math.Floor((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Floor((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Floor((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -1577,13 +1718,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Floor((float) (object) x);
 #else
-                return (T) (object) MathF.Floor((float)(object)x);
+                    return (T) (object) MathF.Floor((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -1594,6 +1736,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -1604,6 +1747,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -1614,6 +1758,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -1624,6 +1769,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -1634,6 +1780,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -1644,6 +1791,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -1654,6 +1802,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -1664,6 +1813,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -1674,6 +1824,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -1694,12 +1845,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Sign((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Sign((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Sign((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -1707,13 +1859,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Sign((float) (object) x);
 #else
-                return (T) (object) MathF.Sign((float)(object)x);
+                    return (T) (object) MathF.Sign((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -1724,6 +1877,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -1734,6 +1888,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -1744,6 +1899,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -1754,6 +1910,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -1764,6 +1921,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -1774,6 +1932,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -1784,6 +1943,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -1794,6 +1954,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -1804,6 +1965,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -1830,6 +1992,7 @@ namespace Silk.NET.Numerics
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -1844,6 +2007,7 @@ namespace Silk.NET.Numerics
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -1854,6 +2018,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -1865,6 +2030,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -1875,6 +2041,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -1885,6 +2052,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -1895,6 +2063,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -1905,6 +2074,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -1915,6 +2085,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -1925,6 +2096,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -1935,6 +2107,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -1955,12 +2128,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Sinh((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Sinh((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Sinh((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -1968,13 +2142,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Sinh((float) (object) x);
 #else
-                return (T) (object) MathF.Sinh((float)(object)x);
+                    return (T) (object) MathF.Sinh((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -1985,6 +2160,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -1996,6 +2172,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -2006,6 +2183,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -2016,6 +2194,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -2026,6 +2205,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -2036,6 +2216,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -2046,6 +2227,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -2056,6 +2238,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -2066,6 +2249,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -2086,12 +2270,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Sqrt((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Sqrt((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Sqrt((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -2099,13 +2284,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Sqrt((float) (object) x);
 #else
-                return (T) (object) MathF.Sqrt((float)(object)x);
+                    return (T) (object) MathF.Sqrt((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -2116,6 +2302,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -2127,6 +2314,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -2137,6 +2325,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -2147,6 +2336,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -2157,6 +2347,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -2167,6 +2358,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -2177,6 +2369,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -2187,6 +2380,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -2197,6 +2391,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -2217,12 +2412,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Tan((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Tan((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Tan((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -2230,13 +2426,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Tan((float) (object) x);
 #else
-                return (T) (object) MathF.Tan((float)(object)x);
+                    return (T) (object) MathF.Tan((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -2247,6 +2444,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -2258,6 +2456,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -2268,6 +2467,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -2278,6 +2478,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -2288,6 +2489,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -2298,6 +2500,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -2308,6 +2511,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -2318,6 +2522,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -2328,6 +2533,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -2348,12 +2554,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Tanh((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Tanh((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Tanh((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -2361,13 +2568,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Tanh((float) (object) x);
 #else
-                return (T) (object) MathF.Tanh((float)(object)x);
+                    return (T) (object) MathF.Tanh((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -2378,6 +2586,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -2389,6 +2598,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -2399,6 +2609,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -2409,6 +2620,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -2419,6 +2631,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -2429,6 +2642,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -2439,6 +2653,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -2449,6 +2664,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -2459,6 +2675,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -2479,12 +2696,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Truncate((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Truncate((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Truncate((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -2492,13 +2710,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Truncate((float) (object) x);
 #else
-                return (T) (object) MathF.Truncate((float)(object)x);
+                    return (T) (object) MathF.Truncate((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -2509,6 +2728,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -2519,6 +2739,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -2529,6 +2750,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -2539,6 +2761,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -2549,6 +2772,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -2559,6 +2783,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -2569,6 +2794,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -2579,6 +2805,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -2589,6 +2816,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -2606,21 +2834,23 @@ namespace Silk.NET.Numerics
         {
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) CoreFastLog((float)(Half)(object)x);
+                return (T) (object) (Half) CoreFastLog((float) (Half) (object) x);
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
                 {
-                    return (T) (object) CoreFastLog((float)(object)x);
+                    return (T) (object) CoreFastLog((float) (object) x);
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -2631,6 +2861,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -2642,6 +2873,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -2652,6 +2884,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -2662,6 +2895,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -2672,6 +2906,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -2682,6 +2917,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -2692,6 +2928,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -2702,6 +2939,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -2712,6 +2950,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -2732,12 +2971,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Log10((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Log10((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Log10((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -2745,13 +2985,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Log10((float) (object) x);
 #else
-                return (T) (object) MathF.Log10((float)(object)x);
+                    return (T) (object) MathF.Log10((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -2762,6 +3003,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -2773,6 +3015,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -2783,6 +3026,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -2793,6 +3037,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -2803,6 +3048,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -2813,6 +3059,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -2823,6 +3070,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -2833,6 +3081,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -2843,6 +3092,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -2863,12 +3113,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Round((float) (Half) (object) x);
 #else
-            return (T) (object) (Half) MathF.Round((float)(Half)(object)x);
+                return (T) (object) (Half) MathF.Round((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x)
             {
                 if (typeof(T) == typeof(float))
@@ -2876,13 +3127,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Round((float) (object) x);
 #else
-                return (T) (object) MathF.Round((float)(object)x);
+                    return (T) (object) MathF.Round((float) (object) x);
 #endif
                 }
 
                 return Double(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x)
             {
                 if (typeof(T) == typeof(double))
@@ -2893,6 +3145,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
@@ -2903,6 +3156,7 @@ namespace Silk.NET.Numerics
                 return SByte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -2913,6 +3167,7 @@ namespace Silk.NET.Numerics
                 return Byte(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
@@ -2923,6 +3178,7 @@ namespace Silk.NET.Numerics
                 return Short(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x)
             {
                 if (typeof(T) == typeof(short))
@@ -2933,6 +3189,7 @@ namespace Silk.NET.Numerics
                 return UShort(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
@@ -2943,6 +3200,7 @@ namespace Silk.NET.Numerics
                 return Int(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x)
             {
                 if (typeof(T) == typeof(int))
@@ -2953,6 +3211,7 @@ namespace Silk.NET.Numerics
                 return UInt(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
@@ -2963,6 +3222,7 @@ namespace Silk.NET.Numerics
                 return Long(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x)
             {
                 if (typeof(T) == typeof(long))
@@ -2973,6 +3233,7 @@ namespace Silk.NET.Numerics
                 return ULong(x);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
@@ -2994,12 +3255,13 @@ namespace Silk.NET.Numerics
                 return (T) (object) (Half) (float) Math.IEEERemainder
                     ((float) (Half) (object) x, (float) (Half) (object) y);
 #else
-            return (T)(object)(Half)MathF.IEEERemainder((float)(Half)(object)x, (float)(Half)(object)y);
+                return (T) (object) (Half) MathF.IEEERemainder((float) (Half) (object) x, (float) (Half) (object) y);
 #endif
             }
 
             return Float(x, y);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x, T y)
             {
                 if (typeof(T) == typeof(float))
@@ -3007,13 +3269,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.IEEERemainder((float) (object) x, (float) (object) y);
 #else
-                return (T)(object)MathF.IEEERemainder((float)(object)x, (float)(object)y);
+                    return (T) (object) MathF.IEEERemainder((float) (object) x, (float) (object) y);
 #endif
                 }
 
                 return Double(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x, T y)
             {
                 if (typeof(T) == typeof(double))
@@ -3024,6 +3287,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x, T y)
             {
                 if (typeof(T) == typeof(decimal))
@@ -3035,6 +3299,7 @@ namespace Silk.NET.Numerics
                 return SByte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x, T y)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -3045,6 +3310,7 @@ namespace Silk.NET.Numerics
                 return Byte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x, T y)
             {
                 if (typeof(T) == typeof(byte))
@@ -3055,6 +3321,7 @@ namespace Silk.NET.Numerics
                 return Short(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x, T y)
             {
                 if (typeof(T) == typeof(short))
@@ -3065,6 +3332,7 @@ namespace Silk.NET.Numerics
                 return UShort(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x, T y)
             {
                 if (typeof(T) == typeof(ushort))
@@ -3075,6 +3343,7 @@ namespace Silk.NET.Numerics
                 return Int(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x, T y)
             {
                 if (typeof(T) == typeof(int))
@@ -3085,6 +3354,7 @@ namespace Silk.NET.Numerics
                 return UInt(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x, T y)
             {
                 if (typeof(T) == typeof(uint))
@@ -3095,6 +3365,7 @@ namespace Silk.NET.Numerics
                 return Long(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x, T y)
             {
                 if (typeof(T) == typeof(long))
@@ -3105,6 +3376,7 @@ namespace Silk.NET.Numerics
                 return ULong(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x, T y)
             {
                 if (typeof(T) == typeof(ulong))
@@ -3125,12 +3397,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Log((float) (Half) (object) x, (float) (Half) (object) y);
 #else
-            return (T)(object)(Half)MathF.Log((float)(Half)(object)x, (float)(Half)(object)y);
+                return (T) (object) (Half) MathF.Log((float) (Half) (object) x, (float) (Half) (object) y);
 #endif
             }
 
             return Float(x, y);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x, T y)
             {
                 if (typeof(T) == typeof(float))
@@ -3138,13 +3411,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Log((float) (object) x, (float) (object) y);
 #else
-                return (T)(object)MathF.Log((float)(object)x, (float)(object)y);
+                    return (T) (object) MathF.Log((float) (object) x, (float) (object) y);
 #endif
                 }
 
                 return Double(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x, T y)
             {
                 if (typeof(T) == typeof(double))
@@ -3155,6 +3429,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x, T y)
             {
                 if (typeof(T) == typeof(decimal))
@@ -3166,6 +3441,7 @@ namespace Silk.NET.Numerics
                 return SByte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x, T y)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -3176,6 +3452,7 @@ namespace Silk.NET.Numerics
                 return Byte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x, T y)
             {
                 if (typeof(T) == typeof(byte))
@@ -3186,6 +3463,7 @@ namespace Silk.NET.Numerics
                 return Short(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x, T y)
             {
                 if (typeof(T) == typeof(short))
@@ -3196,6 +3474,7 @@ namespace Silk.NET.Numerics
                 return UShort(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x, T y)
             {
                 if (typeof(T) == typeof(ushort))
@@ -3206,6 +3485,7 @@ namespace Silk.NET.Numerics
                 return Int(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x, T y)
             {
                 if (typeof(T) == typeof(int))
@@ -3216,6 +3496,7 @@ namespace Silk.NET.Numerics
                 return UInt(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x, T y)
             {
                 if (typeof(T) == typeof(uint))
@@ -3226,6 +3507,7 @@ namespace Silk.NET.Numerics
                 return Long(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x, T y)
             {
                 if (typeof(T) == typeof(long))
@@ -3236,6 +3518,7 @@ namespace Silk.NET.Numerics
                 return ULong(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x, T y)
             {
                 if (typeof(T) == typeof(ulong))
@@ -3256,12 +3539,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Max((float) (Half) (object) x, (float) (Half) (object) y);
 #else
-            return (T)(object)(Half)MathF.Max((float)(Half)(object)x, (float)(Half)(object)y);
+                return (T) (object) (Half) MathF.Max((float) (Half) (object) x, (float) (Half) (object) y);
 #endif
             }
 
             return Float(x, y);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x, T y)
             {
                 if (typeof(T) == typeof(float))
@@ -3269,13 +3553,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Max((float) (object) x, (float) (object) y);
 #else
-                return (T)(object)MathF.Max((float)(object)x, (float)(object)y);
+                    return (T) (object) MathF.Max((float) (object) x, (float) (object) y);
 #endif
                 }
 
                 return Double(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x, T y)
             {
                 if (typeof(T) == typeof(double))
@@ -3286,6 +3571,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x, T y)
             {
                 if (typeof(T) == typeof(decimal))
@@ -3296,6 +3582,7 @@ namespace Silk.NET.Numerics
                 return SByte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x, T y)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -3306,6 +3593,7 @@ namespace Silk.NET.Numerics
                 return Byte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x, T y)
             {
                 if (typeof(T) == typeof(byte))
@@ -3316,6 +3604,7 @@ namespace Silk.NET.Numerics
                 return Short(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x, T y)
             {
                 if (typeof(T) == typeof(short))
@@ -3326,6 +3615,7 @@ namespace Silk.NET.Numerics
                 return UShort(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x, T y)
             {
                 if (typeof(T) == typeof(ushort))
@@ -3336,6 +3626,7 @@ namespace Silk.NET.Numerics
                 return Int(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x, T y)
             {
                 if (typeof(T) == typeof(int))
@@ -3346,6 +3637,7 @@ namespace Silk.NET.Numerics
                 return UInt(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x, T y)
             {
                 if (typeof(T) == typeof(uint))
@@ -3356,6 +3648,7 @@ namespace Silk.NET.Numerics
                 return Long(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x, T y)
             {
                 if (typeof(T) == typeof(long))
@@ -3366,6 +3659,7 @@ namespace Silk.NET.Numerics
                 return ULong(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x, T y)
             {
                 if (typeof(T) == typeof(ulong))
@@ -3386,12 +3680,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Min((float) (Half) (object) x, (float) (Half) (object) y);
 #else
-            return (T)(object)(Half)MathF.Min((float)(Half)(object)x, (float)(Half)(object)y);
+                return (T) (object) (Half) MathF.Min((float) (Half) (object) x, (float) (Half) (object) y);
 #endif
             }
 
             return Float(x, y);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x, T y)
             {
                 if (typeof(T) == typeof(float))
@@ -3399,13 +3694,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Min((float) (object) x, (float) (object) y);
 #else
-                return (T)(object)MathF.Min((float)(object)x, (float)(object)y);
+                    return (T) (object) MathF.Min((float) (object) x, (float) (object) y);
 #endif
                 }
 
                 return Double(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x, T y)
             {
                 if (typeof(T) == typeof(double))
@@ -3416,6 +3712,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x, T y)
             {
                 if (typeof(T) == typeof(decimal))
@@ -3426,6 +3723,7 @@ namespace Silk.NET.Numerics
                 return SByte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x, T y)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -3436,6 +3734,7 @@ namespace Silk.NET.Numerics
                 return Byte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x, T y)
             {
                 if (typeof(T) == typeof(byte))
@@ -3446,6 +3745,7 @@ namespace Silk.NET.Numerics
                 return Short(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x, T y)
             {
                 if (typeof(T) == typeof(short))
@@ -3456,6 +3756,7 @@ namespace Silk.NET.Numerics
                 return UShort(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x, T y)
             {
                 if (typeof(T) == typeof(ushort))
@@ -3466,6 +3767,7 @@ namespace Silk.NET.Numerics
                 return Int(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x, T y)
             {
                 if (typeof(T) == typeof(int))
@@ -3476,6 +3778,7 @@ namespace Silk.NET.Numerics
                 return UInt(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x, T y)
             {
                 if (typeof(T) == typeof(uint))
@@ -3486,6 +3789,7 @@ namespace Silk.NET.Numerics
                 return Long(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x, T y)
             {
                 if (typeof(T) == typeof(long))
@@ -3496,6 +3800,7 @@ namespace Silk.NET.Numerics
                 return ULong(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x, T y)
             {
                 if (typeof(T) == typeof(ulong))
@@ -3506,36 +3811,29 @@ namespace Silk.NET.Numerics
                 ThrowUnsupportedType();
                 return default;
             }
-        }
-
+        } 
         [MethodImpl(MaxOpt)]
         public static T Pow<T>(T x, T y) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
-                return (T) (object) (Half) (float) Math.Pow((float) (Half) (object) x, (float) (Half) (object) y);
-#else
-            return (T)(object)(Half)MathF.Pow((float)(Half)(object)x, (float)(Half)(object)y);
-#endif
+                return (T) (object) (Half) CoreFastPow((float) (Half) (object) x, (float) (Half) (object) y);
             }
 
             return Float(x, y);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x, T y)
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
-                    return (T) (object) (float) Math.Pow((float) (object) x, (float) (object) y);
-#else
-                return (T)(object)MathF.Pow((float)(object)x, (float)(object)y);
-#endif
+                    return (T) (object) CoreFastPow((float) (object) x, (float) (object) y);
                 }
 
                 return Double(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x, T y)
             {
                 if (typeof(T) == typeof(double))
@@ -3546,6 +3844,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x, T y)
             {
                 if (typeof(T) == typeof(decimal))
@@ -3557,81 +3856,281 @@ namespace Silk.NET.Numerics
                 return SByte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x, T y)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (T) (object) (sbyte) Math.Pow((sbyte) (object) x, (sbyte) (object) y);
+                    var py = (sbyte) (object) y;
+                    var px = (sbyte) (object) x;
+                    if (py != 0)
+                    {
+                        var oabsy = Abs(py);
+                        var absy = oabsy;
+                        sbyte result = 1;
+                        while(true)
+                        {
+                            if ((absy & 1) != 0)
+                                result *= px;
+                            absy >>= 1;
+                            if (absy == 0)
+                                break;
+                            px *= px;
+                        }
+
+                        if (oabsy == py)
+                            return (T)(object)result;
+                        return (T)(object)(sbyte)(1f / result);
+                    }
+                    else
+                    {
+                        if (px != 0) return (T)(object)(sbyte)1;
+                        else return (T)(object)(sbyte)0;
+                    }
                 }
 
                 return Byte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x, T y)
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return (T) (object) (byte) Math.Pow((byte) (object) x, (byte) (object) y);
+                    var py = (byte) (object) y;
+                    var px = (byte) (object) x;
+                    if (py != 0)
+                    {
+                        var oabsy = py;
+                        var absy = oabsy;
+                        byte result = 1;
+                        while(true)
+                        {
+                            if ((absy & 1) != 0)
+                                result *= px;
+                            absy >>= 1;
+                            if (absy == 0)
+                                break;
+                            px *= px;
+                        }
+
+                        return (T)(object)result;
+                    }
+                    else
+                    {
+                        if (px != 0) return (T)(object)(byte)1;
+                        else return (T)(object)(byte)0;
+                    }
                 }
 
                 return Short(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x, T y)
             {
                 if (typeof(T) == typeof(short))
                 {
-                    return (T) (object) (short) Math.Pow((short) (object) x, (short) (object) y);
+                    var py = (short) (object) y;
+                    var px = (short) (object) x;
+                    if (py != 0)
+                    {
+                        var oabsy = Abs(py);
+                        var absy = oabsy;
+                        short result = 1;
+                        while(true)
+                        {
+                            if ((absy & 1) != 0)
+                                result *= px;
+                            absy >>= 1;
+                            if (absy == 0)
+                                break;
+                            px *= px;
+                        }
+
+                        if (oabsy == py)
+                            return (T)(object)result;
+                        return (T)(object)(short)(1f / result);
+                    }
+                    else
+                    {
+                        if (px != 0) return (T)(object)(short)1;
+                        else return (T)(object)(short)0;
+                    }
                 }
 
                 return UShort(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x, T y)
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return (T) (object) (ushort) Math.Pow((ushort) (object) x, (ushort) (object) y);
+                    var py = (ushort) (object) y;
+                    var px = (ushort) (object) x;
+                    if (py != 0)
+                    {
+                        var oabsy = py;
+                        var absy = oabsy;
+                        ushort result = 1;
+                        while(true)
+                        {
+                            if ((absy & 1) != 0)
+                                result *= px;
+                            absy >>= 1;
+                            if (absy == 0)
+                                break;
+                            px *= px;
+                        }
+
+                        return (T)(object)result;
+                    }
+                    else
+                    {
+                        if (px != 0) return (T)(object)(ushort)1;
+                        else return (T)(object)(ushort)0;
+                    }
                 }
 
                 return Int(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x, T y)
             {
                 if (typeof(T) == typeof(int))
                 {
-                    return (T) (object) (int) Math.Pow((int) (object) x, (int) (object) y);
+                    var py = (int) (object) y;
+                    var px = (int) (object) x;
+                    if (py != 0)
+                    {
+                        var oabsy = Abs(py);
+                        var absy = oabsy;
+                        int result = 1;
+                        while(true)
+                        {
+                            if ((absy & 1) != 0)
+                                result *= px;
+                            absy >>= 1;
+                            if (absy == 0)
+                                break;
+                            px *= px;
+                        }
+
+                        if (oabsy == py)
+                            return (T)(object)result;
+                        return (T)(object)(int)(1f / result);
+                    }
+                    else
+                    {
+                        if (px != 0) return (T)(object)(int)1;
+                        else return (T)(object)(int)0;
+                    }
                 }
 
                 return UInt(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x, T y)
             {
                 if (typeof(T) == typeof(uint))
                 {
-                    return (T) (object) (uint) Math.Pow((uint) (object) x, (uint) (object) y);
+                    var py = (uint) (object) y;
+                    var px = (uint) (object) x;
+                    if (py != 0)
+                    {
+                        var oabsy = py;
+                        var absy = oabsy;
+                        uint result = 1;
+                        while(true)
+                        {
+                            if ((absy & 1) != 0)
+                                result *= px;
+                            absy >>= 1;
+                            if (absy == 0)
+                                break;
+                            px *= px;
+                        }
+
+                        return (T)(object)result;
+                    }
+                    else
+                    {
+                        if (px != 0) return (T)(object)(uint)1;
+                        else return (T)(object)(uint)0;
+                    }
                 }
 
                 return Long(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x, T y)
             {
                 if (typeof(T) == typeof(long))
                 {
-                    return (T) (object) (long) Math.Pow((long) (object) x, (long) (object) y);
+                    var py = (long) (object) y;
+                    var px = (long) (object) x;
+                    if (py != 0)
+                    {
+                        var oabsy = Abs(py);
+                        var absy = oabsy;
+                        long result = 1;
+                        while(true)
+                        {
+                            if ((absy & 1) != 0)
+                                result *= px;
+                            absy >>= 1;
+                            if (absy == 0)
+                                break;
+                            px *= px;
+                        }
+
+                        if (oabsy == py)
+                            return (T)(object)result;
+                        return (T)(object)(long)(1f / result);
+                    }
+                    else
+                    {
+                        if (px != 0) return (T)(object)(long)1;
+                        else return (T)(object)(long)0;
+                    }
                 }
 
                 return ULong(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x, T y)
             {
                 if (typeof(T) == typeof(ulong))
                 {
-                    return (T) (object) (ulong) Math.Pow((ulong) (object) x, (ulong) (object) y);
+                    var py = (ulong) (object) y;
+                    var px = (ulong) (object) x;
+                    if (py != 0)
+                    {
+                        var oabsy = py;
+                        var absy = oabsy;
+                        ulong result = 1;
+                        while(true)
+                        {
+                            if ((absy & 1) != 0)
+                                result *= px;
+                            absy >>= 1;
+                            if (absy == 0)
+                                break;
+                            px *= px;
+                        }
+
+                        return (T)(object)result;
+                    }
+                    else
+                    {
+                        if (px != 0) return (T)(object)(ulong)1;
+                        else return (T)(object)(ulong)0;
+                    }
                 }
 
                 ThrowUnsupportedType();
@@ -3647,12 +4146,13 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                 return (T) (object) (Half) (float) Math.Atan2((float) (Half) (object) x, (float) (Half) (object) y);
 #else
-            return (T)(object)(Half)MathF.Atan2((float)(Half)(object)x, (float)(Half)(object)y);
+                return (T) (object) (Half) MathF.Atan2((float) (Half) (object) x, (float) (Half) (object) y);
 #endif
             }
 
             return Float(x, y);
 
+            [MethodImpl(MaxOpt)]
             static T Float(T x, T y)
             {
                 if (typeof(T) == typeof(float))
@@ -3660,13 +4160,14 @@ namespace Silk.NET.Numerics
 #if !NET5_0
                     return (T) (object) (float) Math.Atan2((float) (object) x, (float) (object) y);
 #else
-                return (T)(object)MathF.Atan2((float)(object)x, (float)(object)y);
+                    return (T) (object) MathF.Atan2((float) (object) x, (float) (object) y);
 #endif
                 }
 
                 return Double(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Double(T x, T y)
             {
                 if (typeof(T) == typeof(double))
@@ -3677,6 +4178,7 @@ namespace Silk.NET.Numerics
                 return Decimal(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Decimal(T x, T y)
             {
                 if (typeof(T) == typeof(decimal))
@@ -3688,6 +4190,7 @@ namespace Silk.NET.Numerics
                 return SByte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T SByte(T x, T y)
             {
                 if (typeof(T) == typeof(sbyte))
@@ -3698,6 +4201,7 @@ namespace Silk.NET.Numerics
                 return Byte(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Byte(T x, T y)
             {
                 if (typeof(T) == typeof(byte))
@@ -3708,6 +4212,7 @@ namespace Silk.NET.Numerics
                 return Short(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Short(T x, T y)
             {
                 if (typeof(T) == typeof(short))
@@ -3718,6 +4223,7 @@ namespace Silk.NET.Numerics
                 return UShort(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UShort(T x, T y)
             {
                 if (typeof(T) == typeof(ushort))
@@ -3728,6 +4234,7 @@ namespace Silk.NET.Numerics
                 return Int(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Int(T x, T y)
             {
                 if (typeof(T) == typeof(int))
@@ -3738,6 +4245,7 @@ namespace Silk.NET.Numerics
                 return UInt(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T UInt(T x, T y)
             {
                 if (typeof(T) == typeof(uint))
@@ -3748,6 +4256,7 @@ namespace Silk.NET.Numerics
                 return Long(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T Long(T x, T y)
             {
                 if (typeof(T) == typeof(long))
@@ -3758,6 +4267,7 @@ namespace Silk.NET.Numerics
                 return ULong(x, y);
             }
 
+            [MethodImpl(MaxOpt)]
             static T ULong(T x, T y)
             {
                 if (typeof(T) == typeof(ulong))

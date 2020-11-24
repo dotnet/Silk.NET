@@ -139,6 +139,7 @@ namespace Silk.NET.Numerics
             0x3f317000, 0x3805fdf4
         };
         
+        [MethodImpl(MaxOpt)]
         private static float CoreFastLog(float x)
         {
             var ux = (uint)BitConverter.SingleToInt32Bits(x);
@@ -233,6 +234,7 @@ namespace Silk.NET.Numerics
             }
             else
             {
+                [MethodImpl(MaxOpt)]
                 static float InlineLog1Pf(float x)
                 {
                     float r, r2, w;

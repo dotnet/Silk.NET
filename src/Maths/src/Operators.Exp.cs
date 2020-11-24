@@ -106,12 +106,18 @@ namespace Silk.NET.Numerics
 
         };
         
+        [MethodImpl(MaxOpt)]
         private static float CoreFastExp(float x)
         {
+            [MethodImpl(MaxOpt)]
             static unsafe uint top12f(float x) => *(uint*) &x >> 20;
+            [MethodImpl(MaxOpt)]
             static unsafe ulong asuint64(double x) => *(ulong*) &x;
+            [MethodImpl(MaxOpt)]
             static unsafe uint asuint32(float x) => *(uint*) &x;
+            [MethodImpl(MaxOpt)]
             static unsafe double asdouble(ulong x) => *(double*) &x;
+            [MethodImpl(MaxOpt)]
             static unsafe float asfloat(uint x) => *(float*) &x;
 
             double  q, dn, r, z;
