@@ -15,7 +15,7 @@ namespace Silk.NET.OpenCL
         }
 
         public bool TryGetExtension<T>(out T ext)
-            where T:NativeExtension<CL>
+            where T : NativeExtension<CL>
         {
             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T)Activator.CreateInstance(typeof(T), Context)
