@@ -379,6 +379,7 @@ class Build : NukeBuild
             .Select(x => x.Select(v => v.Value).ToList())
             .ToList();
         var first = true;
+        var pushed = 0;
         var feed = NuGetInterface.OpenNuGetFeed(NugetFeed, NugetUsername, NugetPassword);
         var uploadResource = await NuGetInterface.GetUploadResourceAsync(feed);
         var symbolsResource = await NuGetInterface.GetSymbolsUploadResourceAsync(feed);
@@ -400,6 +401,7 @@ class Build : NukeBuild
                 try
                 {
                     await NuGetInterface.UploadPackageAsync(uploadResource, NugetNoServiceEndpoint, file, NugetApiKey, symbolsResource);
+                    pushed++;
                 }
                 catch (Exception ex)
                 {
@@ -408,11 +410,11 @@ class Build : NukeBuild
             }
         }
 
+        Logger.Success($"Successfully pushed {pushed} packages.");
+
         if (exceptions.Count > 0)
         {
             throw new AggregateException(exceptions);
         }
-
-        Logger.Success($"Successfully pushed {exceptions.Count} packages.");
     }
 }
