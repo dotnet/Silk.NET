@@ -372,8 +372,8 @@ class Build : NukeBuild
     async Task PushPackages()
     {
         const int rateLimit = 300;
-        var allFiles = Directory.GetFiles(RootDirectory / "build" / "output_packages", "*", SearchOption.AllDirectories)
-            .Where(x => x.StartsWith("Silk.NET") && Path.GetExtension(x) == ".nupkg")
+        var allFiles = Directory.GetFiles(RootDirectory / "build" / "output_packages", "*.nupkg")
+            .Where(x => Path.GetFileName(x).StartsWith("Silk.NET"))
             .Select((x, i) => new {Index = i, Value = x})
             .GroupBy(x => x.Index / rateLimit)
             .Select(x => x.Select(v => v.Value).ToList())
