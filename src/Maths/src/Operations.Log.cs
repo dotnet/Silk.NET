@@ -41,7 +41,7 @@ namespace Silk.NET.Numerics
 {
     public static partial class Operations
     {
-        static Operations()
+        private static void InitLog()
         {
             _logTblLookup = GC.AllocateUninitializedArray<uint>(771, true);
             int i = 0;
@@ -144,7 +144,7 @@ namespace Silk.NET.Numerics
             0x3f317000; _logTblLookup[i++] = 0x3805fdf4;
         }
 
-        private static readonly uint[] _logTblLookup;
+        private static uint[] _logTblLookup;
 
         [MethodImpl(MaxOpt)]
         private static unsafe float CoreFastLog(float x)
