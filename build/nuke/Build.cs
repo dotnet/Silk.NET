@@ -413,6 +413,6 @@ class Build : NukeBuild
             throw new AggregateException(exceptions);
         }
 
-        Logger.Success($"Successfully pushed {exceptions.Count}.");
+        Logger.Success($"Successfully pushed {exceptions.Count} packages.");
     }
 }
