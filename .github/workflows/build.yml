@@ -21,11 +21,13 @@ jobs:
         dotnet-version: 5.0.100
     - name: Setup NUKE
       run: dotnet tool install Nuke.GlobalTool --global
+    - name: Test
+      # skip Clean, Restore, and Compile as this will build the affect the whole solution.
+      # dotnet test will compile the necessary projects for testing only.
+      run: nuke Test --skip Clean Restore Compile
     - name: Pack
       # TODO build native mixins such as BuildLibSilkDroid
-      run: nuke Pack --configuration Release --msbuild-properties VersionSuffix=build$GITHUB_RUN_NUMBER.0 ContinuousIntegrationBuild=true --feature-sets Android iOS
-    - name: Test
-      run: nuke Test --skip Clean Restore Compile
+      run: nuke Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true --feature-sets Android iOS
     - name: Push to NuGet
       if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
-      run: nuke PushToNuGet --skip Clean Restore Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
+      run: nuke PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az

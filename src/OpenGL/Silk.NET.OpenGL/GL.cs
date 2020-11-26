@@ -375,7 +375,7 @@ namespace Silk.NET.OpenGL
             length = (uint) lengthTmp;
 
             GetActiveAttrib
-                (program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out var str);
+                (program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out string str);
 
             return str.Substring(0, (int) length);
         }
@@ -408,7 +408,7 @@ namespace Silk.NET.OpenGL
             length = (uint) lengthTmp;
 
             GetActiveUniform
-                (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out var str);
+                (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out string str);
 
             return str.Substring(0, (int) length);
         }
