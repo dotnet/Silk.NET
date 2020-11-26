@@ -4,6 +4,10 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Numerics
 {
+    /// <summary>
+    /// Represents a plane in three-dimensional space.
+    /// </summary>
+    /// <typeparam name="T">The type used to store values.</typeparam>
     public struct Plane<T>
         : IEquatable<Plane<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {

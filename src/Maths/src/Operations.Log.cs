@@ -144,7 +144,7 @@ namespace Silk.NET.Numerics
             0x3f317000; _logTblLookup[i++] = 0x3805fdf4;
         }
 
-        private static uint[] _logTblLookup;
+        private static uint[] _logTblLookup = null!;
 
         [MethodImpl(MaxOpt)]
         private static unsafe float CoreFastLog(float x)
@@ -215,7 +215,7 @@ namespace Silk.NET.Numerics
                 float y, f, finv, r, r2, q, w;
 
                 const int MASK_MANT_ALL7 = 0b_1111111_10000000_00000000;
-                const int MASK_MANT8 = 0x00008000;
+                // const int MASK_MANT8 = 0x00008000;
                 mant = ux & MANTBITS_SP32;
                 mant1 = ux & MASK_MANT_ALL7;
                 /*This step is needed for more accuracy */

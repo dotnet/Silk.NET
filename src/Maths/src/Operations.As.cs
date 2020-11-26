@@ -9,8 +9,21 @@ using static Silk.NET.Numerics.Helper;
 
 namespace Silk.NET.Numerics
 {
+    /// <summary>
+    /// A collection of operations for working with scalar numeric values.
+    /// Includes methods like the ones found in <see cref="Math"/> and more.
+    /// Supports <see cref="Half"/>, <see cref="float"/>, <see cref="double"/>, <see cref="decimal"/>, <see cref="sbyte"/>, <see cref="byte"/>, <see cref="ushort"/>, <see cref="short"/>, <see cref="uint"/>, <see cref="int"/>, <see cref="ulong"/> and <see cref="long"/>
+    /// </summary>
+    /// <seealso cref="Constants{T}"/>
     public partial class Operations
     {
+        /// <summary>
+        /// Convert <paramref name="val"/> from <typeparamref name="TFrom"/> to <typeparamref name="TTo"/>
+        /// </summary>
+        /// <param name="val">The value to convert</param>
+        /// <typeparam name="TFrom">The type converted from</typeparam>
+        /// <typeparam name="TTo">The type converted into</typeparam>
+        /// <returns>The converted value</returns>
         [MethodImpl(MaxOpt)]
         public static TTo As<TFrom, TTo>(TFrom val) where TTo:unmanaged where TFrom:unmanaged
         {

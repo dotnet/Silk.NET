@@ -29,6 +29,12 @@ namespace Silk.NET.Numerics
         // release then feel free to PR in some of these changes as we clearly have failed.
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        /// <summary>
+        /// Returns the absolute value of a single-precision floating-point number.
+        /// </summary>
+        /// <param name="x">The value to get the absolute of</param>
+        /// <typeparam name="T">The type of <paramref name="x"/> </typeparam>
+        /// <returns>The absolute of the given value</returns>
         [MethodImpl(MaxOpt)]
         public static unsafe T Abs<T>(T x) where T : unmanaged
         {
@@ -245,12 +251,24 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the angle whose cosine is the specified number.
+        /// </summary>
+        /// <param name="x">A number representing a cosine, where <paramref name="x"/> must be greater than or equal to -1, but less than or equal to 1.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/></typeparam>
+        /// <returns>
+        ///An angle, θ, measured in radians, such that 0 ≤ θ ≤ π.
+        ///
+        /// -or-
+        ///
+        /// NaN if x &lt; -1 or x &gt; 1 or x equals NaN.
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Acos<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Acos((float) (Half) (object) x); // KIPLING
 #else
                 return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
@@ -264,7 +282,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Acos((float) (object) x); // KIPLING
 #else
                     return (T) (object) MathF.Acos((float) (object) x);
@@ -387,6 +405,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the angle whose hyperbolic cosine is the specified number.
+        /// </summary>
+        /// <param name="x">A number representing a hyperbolic cosine, where <paramref name="x"/> must be greater than or equal to 1, but less than or equal to <see cref="Constants{T}.PositiveInfinity"/>.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>
+        /// An angle, θ, measured in radians, such that 0 ≤ θ ≤ ∞.
+        /// 
+        /// -or-
+        /// 
+        /// NaN if x &lt; 1 or x equals NaN.
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Acosh<T>(T x) where T : unmanaged
         {
@@ -521,12 +551,23 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the angle whose sine is the specified number.
+        /// </summary>
+        /// <param name="x">A number representing a sine, where <paramref name="x"/> must be greater than or equal to -1, but less than or equal to 1.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/></typeparam>
+        /// <returns>An angle, θ, measured in radians, such that -π/2 ≤ θ ≤ π/2.
+        /// 
+        /// -or-
+        /// 
+        /// NaN if x &lt; -1 or x &gt; 1 or x equals NaN.
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Asin<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Asin((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
@@ -540,7 +581,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Asin((float) (object) x);
 #else
                     return (T) (object) MathF.Asin((float) (object) x);
@@ -663,6 +704,12 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the angle whose hyperbolic sine is the specified number.
+        /// </summary>
+        /// <param name="x">A number representing a hyperbolic sine, where <paramref name="x"/> must be greater than or equal to <see cref="Constants{T}.NegativeInfinity"/>, but less than or equal to <see cref="Constants{T}.PositiveInfinity"/>.</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         [MethodImpl(MaxOpt)]
         public static T Asinh<T>(T x) where T : unmanaged
         {
@@ -797,12 +844,24 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the angle whose tangent is the specified number.
+        /// </summary>
+        /// <param name="x">A number representing a tangent.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>
+        ///An angle, θ, measured in radians, such that -π/2 ≤ θ ≤ π/2.
+        /// 
+        /// -or-
+        /// 
+        /// NaN if <paramref name="x"/> equals <see cref="Constants{T}.NaN"/>, -π/2 rounded to double precision (-1.5707963267949) if <paramref name="x"/> equals <see cref="Constants{T}.NegativeInfinity"/>, or π/2 rounded to double precision (1.5707963267949) if <paramref name="x"/> equals <see cref="Constants{T}.PositiveInfinity"/>.
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Atan<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Atan((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
@@ -816,7 +875,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Atan((float) (object) x);
 #else
                     return (T) (object) MathF.Atan((float) (object) x);
@@ -939,6 +998,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the angle whose hyperbolic tangent is the specified number.
+        /// </summary>
+        /// <param name="x">A number representing a hyperbolic tangent, where <paramref name="x"/> must be greater than or equal to -1, but less than or equal to 1.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>
+        /// An angle, θ, measured in radians, such that -∞ &lt; θ &lt; -1, or 1 &lt; θ &lt; ∞.
+        /// 
+        /// -or-
+        /// 
+        /// <see cref="Constants{T}.NaN"/> if x &lt; -1 or x &gt; 1 or x equals <see cref="Constants{T}.NaN"/>.
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Atanh<T>(T x) where T : unmanaged
         {
@@ -1073,6 +1144,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the cube root of a specified number.
+        /// </summary>
+        /// <param name="x">The number whose cube root is to be found.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/></typeparam>
+        /// <returns>
+        /// The cube root of <paramref name="x"/>.
+        /// 
+        /// -or-
+        /// 
+        /// <see cref="Constants{T}.NaN"/> if <paramref name="x"/> is equals <see cref="Constants{T}.NaN"/>.
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Cbrt<T>(T x) where T : unmanaged
         {
@@ -1207,6 +1290,12 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the smallest integral value that is greater than or equal to the specified single-precision floating-point number.
+        /// </summary>
+        /// <param name="x">A number.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The smallest integral value that is greater than or equal to <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, that value is returned. Note that this method returns <typeparamref name="T"/> instead of an integral type.</returns>
         [MethodImpl(MaxOpt)]
         public static T Ceiling<T>(T x) where T : unmanaged
         {
@@ -1348,12 +1437,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the cosine of the specified angle.
+        /// </summary>
+        /// <param name="x">An angle, measured in radians.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The cosine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, this method returns <see cref="Constants{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Cos<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) Math.Cos((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Cos((float) (Half) (object) x);
@@ -1367,7 +1462,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Cos((float) (object) x);
 #else
                     return (T) (object) MathF.Cos((float) (object) x);
@@ -1490,12 +1585,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the hyperbolic cosine of the specified angle.
+        /// </summary>
+        /// <param name="x">An angle, measured in radians.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The hyperbolic cosine of <paramref name="x"/>. If <paramref name="x"/> equal to <see cref="Constants{T}.NegativeInfinity"/> or <see cref="Constants{T}.PositiveInfinity"/>, <see cref="Constants{T}.PositiveInfinity"/> is returned. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Cosh<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) Math.Cosh((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Cosh((float) (Half) (object) x);
@@ -1509,7 +1610,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Cosh((float) (object) x);
 #else
                     return (T) (object) MathF.Cosh((float) (object) x);
@@ -1632,6 +1733,12 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns <c>e</c> raised to the specified power.
+        /// </summary>
+        /// <param name="x">A number specifying a power.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The number <c>e</c> raised to the power <paramref name="x"/>. If <paramref name="x"/> equals <see cref="Constants{T}.NaN"/> or <see cref="Constants{T}.PositiveInfinity"/>, that value is returned. If <paramref name="x"/> equals <see cref="Constants{T}.NegativeInfinity"/>, 0 is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Exp<T>(T x) where T : unmanaged
         {
@@ -1766,12 +1873,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the largest integral value less than or equal to the specified single-precision floating-point number.
+        /// </summary>
+        /// <param name="x">A number.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The largest integral value less than or equal to <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, that value is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Floor<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) Math.Floor((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Floor((float) (Half) (object) x);
@@ -1785,7 +1898,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Floor((float) (object) x);
 #else
                     return (T) (object) MathF.Floor((float) (object) x);
@@ -1907,29 +2020,59 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns an integer that indicates the sign of a single-precision floating-point number.
+        /// </summary>
+        /// <param name="x">A number.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/></typeparam>
+        /// <returns>
+        /// A number that indicates the sign of <paramref name="x"/>, as shown in the following table.
+        /// <list type="table">
+        /// <listheader>
+        /// <term>Return value</term>
+        /// <description>Meaning</description>
+        /// </listheader>
+        /// <item>
+        /// <term>-1</term>
+        /// <description><paramref name="x"/> is less than zero.</description>
+        /// </item>
+        /// <item>
+        /// <term>0</term>
+        /// <description><paramref name="x"/> is equal to zero.</description>
+        /// </item>
+        /// <item>
+        /// <term>1</term>
+        /// <description><paramref name="x"/> is greater than zero.</description>
+        /// </item>
+        /// </list>
+        /// </returns>
+        /// <remarks>
+        /// For unsigned numbers this will never return -1, but will return 0 when <paramref name="x"/> is 0
+        /// </remarks>
+        /// <exception cref="ArithmeticException"><paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/></exception>
         [MethodImpl(MaxOpt)]
-        public static T Sign<T>(T x) where T : unmanaged
+        public static int Sign<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
-                return (T) (object) (Half) (float) Math.Sign((float) (Half) (object) x);
+#if NETSTANDARD2_0
+                return Math.Sign((float) (Half) (object) x);
 #else
-                return (T) (object) (Half) MathF.Sign((float) (Half) (object) x);
+                return MathF.Sign((float) (Half) (object) x);
 #endif
             }
 
             return Float(x);
 
             [MethodImpl(MaxOpt)]
-            static T Float(T x)
+            static int Float(T x)
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
-                    return (T) (object) (float) Math.Sign((float) (object) x);
+#if NETSTANDARD2_0
+                    return Math.Sign((float) (object) x);
 #else
-                    return (T) (object) MathF.Sign((float) (object) x);
+                    return MathF.Sign((float) (object) x);
 #endif
                 }
 
@@ -1937,110 +2080,110 @@ namespace Silk.NET.Numerics
             }
 
             [MethodImpl(MaxOpt)]
-            static T Double(T x)
+            static int Double(T x)
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return (T) (object) (double) Math.Sign((double) (object) x);
+                    return Math.Sign((double) (object) x);
                 }
 
                 return Decimal(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T Decimal(T x)
+            static int Decimal(T x)
             {
                 if (typeof(T) == typeof(decimal))
                 {
-                    return (T) (object) (decimal) Math.Sign((decimal) (object) x);
+                    return Math.Sign((decimal) (object) x);
                 }
 
                 return SByte(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T SByte(T x)
+            static int SByte(T x)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (T) (object) (sbyte) Math.Sign((sbyte) (object) x);
+                    return Math.Sign((sbyte) (object) x);
                 }
 
                 return Byte(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T Byte(T x)
+            static int Byte(T x)
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return Constants<T>.One;
+                    return ((byte)(object)x) > 0 ? 1 : 0;
                 }
 
                 return Short(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T Short(T x)
+            static int Short(T x)
             {
                 if (typeof(T) == typeof(short))
                 {
-                    return (T) (object) (short) Math.Sign((short) (object) x);
+                    return Math.Sign((short) (object) x);
                 }
 
                 return UShort(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T UShort(T x)
+            static int UShort(T x)
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return Constants<T>.One;
+                    return ((ushort)(object)x) > 0 ? 1 : 0;;
                 }
 
                 return Int(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T Int(T x)
+            static int Int(T x)
             {
                 if (typeof(T) == typeof(int))
                 {
-                    return (T) (object) (int) Math.Sign((int) (object) x);
+                    return Math.Sign((int) (object) x);
                 }
 
                 return UInt(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T UInt(T x)
+            static int UInt(T x)
             {
                 if (typeof(T) == typeof(uint))
                 {
-                    return Constants<T>.One;
+                    return ((uint)(object)x) > 0 ? 1 : 0;
                 }
 
                 return Long(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T Long(T x)
+            static int Long(T x)
             {
                 if (typeof(T) == typeof(long))
                 {
-                    return (T) (object) (long) Math.Sign((long) (object) x);
+                    return Math.Sign((long) (object) x);
                 }
 
                 return ULong(x);
             }
 
             [MethodImpl(MaxOpt)]
-            static T ULong(T x)
+            static int ULong(T x)
             {
                 if (typeof(T) == typeof(ulong))
                 {
-                    return Constants<T>.One;
+                    return ((ulong)(object)x) > 0 ? 1 : 0;
                 }
 
                 ThrowUnsupportedType();
@@ -2048,16 +2191,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the sine of the specified angle.
+        /// </summary>
+        /// <param name="x">An angle, measured in radians.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The sine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, this method returns <see cref="Constants{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Sin<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
                 return (T) (object) (Half) (float) Sin_Ported((float) (Half) (object) x);
-#else
-            return (T) (object) (Half) MathF.Sin((float)(Half)(object)x);
-#endif
             }
 
             return Float(x);
@@ -2067,11 +2212,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
                     return (T) (object) (float) Sin_Ported((float) (object) x);
-#else
-                return (T) (object) MathF.Sin((float)(object)x);
-#endif
                 }
 
                 return Double(x);
@@ -2190,6 +2331,12 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the hyperbolic sine of the specified angle.
+        /// </summary>
+        /// <param name="x">An angle, measured in radians.</param>
+        /// <typeparam name="T">Type of <paramref name="x"/>.</typeparam>
+        /// <returns>The hyperbolic sine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NegativeInfinity"/>, <see cref="Constants{T}.PositiveInfinity"/>, or <see cref="Constants{T}.NaN"/> this method returns <paramref name="x"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Sinh<T>(T x) where T : unmanaged
         {
@@ -2332,12 +2479,42 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the square root of a specified number.
+        /// </summary>
+        /// <param name="x">The number whose square root is to be found.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>
+        /// One of the values in the following table.
+        /// <list type="table">
+        /// <listheader>
+        /// <term><paramref name="x"/> parameter</term>
+        /// <description>Return value</description>
+        /// </listheader>
+        /// <item>
+        /// <term>Zero or positive</term>
+        /// <description>The positive square root of <paramref name="x"/>.</description>
+        /// </item>
+        /// <item>
+        /// <term>Negative</term>
+        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Equals <see cref="Constants{T}.NaN"/></term>
+        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Equals <see cref="Constants{T}.PositiveInfinity"/></term>
+        /// <description><see cref="Constants{T}.PositiveInfinity"/></description>
+        /// </item>
+        /// </list>
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Sqrt<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Sqrt((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Sqrt((float) (Half) (object) x);
@@ -2351,7 +2528,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Sqrt((float) (object) x);
 #else
                     return (T) (object) MathF.Sqrt((float) (object) x);
@@ -2474,12 +2651,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the tangent of the specified angle.
+        /// </summary>
+        /// <param name="x">An angle, measured in radians.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The tangent of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, this method returns <see cref="Constants{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Tan<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Tan((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Tan((float) (Half) (object) x);
@@ -2493,7 +2676,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Tan((float) (object) x);
 #else
                     return (T) (object) MathF.Tan((float) (object) x);
@@ -2616,12 +2799,18 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the hyperbolic tangent of the specified angle.
+        /// </summary>
+        /// <param name="x">An angle, measured in radians.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The hyperbolic tangent of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NegativeInfinity"/>, this method returns -1. If <paramref name="x"/> is equal to <see cref="Constants{T}.PositiveInfinity"/>, this method returns 1. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, this method returns <see cref="Constants{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Tanh<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Tanh((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Tanh((float) (Half) (object) x);
@@ -2635,7 +2824,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Tanh((float) (object) x);
 #else
                     return (T) (object) MathF.Tanh((float) (object) x);
@@ -2758,12 +2947,38 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Calculates the integral part of a specified single-precision floating-point number.
+        /// </summary>
+        /// <param name="x">A number to truncate.</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>
+        /// The integral part of <paramref name="x"/>; that is, the number that remains after any fractional digits have been discarded, or one of the values listed in the following table.
+        /// <list type="table">
+        /// <listheader>
+        /// <term><paramref name="x"/></term>
+        /// <description>Return value</description>
+        /// </listheader>
+        /// <item>
+        /// <term><see cref="Constants{T}.NaN"/></term>
+        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// </item>
+        /// <item>
+        /// <term><see cref="Constants{T}.NegativeInfinity"/></term>
+        /// <description><see cref="Constants{T}.NegativeInfinity"/></description>
+        /// </item>
+        /// <item>
+        /// <term><see cref="Constants{T}.PositiveInfinity"/></term>
+        /// <description><see cref="Constants{T}.PositiveInfinity"/></description>
+        /// </item>
+        /// </list>
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Truncate<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Truncate((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Truncate((float) (Half) (object) x);
@@ -2777,7 +2992,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Truncate((float) (object) x);
 #else
                     return (T) (object) MathF.Truncate((float) (object) x);
@@ -2899,6 +3114,40 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the natural (base <c>e</c>) logarithm of a specified number.
+        /// </summary>
+        /// <param name="x">The number whose logarithm is to be found.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>
+        /// One of the values in the following table.
+        /// <list type="table">
+        /// <listheader>
+        /// <term><paramref name="x"/> parameter</term>
+        /// <description>Return value</description>
+        /// </listheader>
+        /// <item>
+        /// <term>Positive</term>
+        /// <description>The natural logarithm of <paramref name="x"/>; that is, ln <paramref name="x"/>, or log e <paramref name="x"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Zero</term>
+        /// <description><see cref="Constants{T}.NegativeInfinity"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Negative</term>
+        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Equal to <see cref="Constants{T}.NaN"/></term>
+        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Equal to <see cref="Constants{T}.PositiveInfinity"/></term>
+        /// <description><see cref="Constants{T}.PositiveInfinity"/></description>
+        /// </item>
+        /// </list>
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Log<T>(T x) where T : unmanaged
         {
@@ -3033,12 +3282,46 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the base 10 logarithm of a specified number.
+        /// </summary>
+        /// <param name="x">The number whose logarithm is to be found.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>
+        /// One of the values in the following table.
+        /// <list type="table">
+        /// <listheader>
+        /// <term><paramref name="x"/> parameter</term>
+        /// <description>Return value</description>
+        /// </listheader>
+        /// <item>
+        /// <term>Positive</term>
+        /// <description>The base 10 log of <paramref name="x"/>; that is log 10 <paramref name="x"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Zero</term>
+        /// <description><see cref="Constants{T}.NegativeInfinity"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Negative</term>
+        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Equal to <see cref="Constants{T}.NaN"/></term>
+        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// </item>
+        /// <item>
+        /// <term>Equal to <see cref="Constants{T}.PositiveInfinity"/></term>
+        /// <description><see cref="Constants{T}.PositiveInfinity"/></description>
+        /// </item>
+        /// </list>
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Log10<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Log10((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Log10((float) (Half) (object) x);
@@ -3052,7 +3335,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Log10((float) (object) x);
 #else
                     return (T) (object) MathF.Log10((float) (object) x);
@@ -3175,12 +3458,23 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Rounds a single-precision floating-point value to the nearest integral value, and rounds midpoint values to the nearest even number.
+        /// </summary>
+        /// <param name="x">A number to be rounded.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>
+        /// The integer nearest <paramref name="x"/>. If the fractional component of <paramref name="x"/> is halfway between two integers, one of which is even and the other odd, then the even number is returned. Note that this method returns <typeparamref name="T"/> instead of an integral type
+        /// </returns>
+        /// <remarks>
+        /// This method uses the default rounding convention of <see cref="MidpointRounding.ToEven"/>.
+        /// </remarks>
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Round((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Round((float) (Half) (object) x);
@@ -3194,7 +3488,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Round((float) (object) x);
 #else
                     return (T) (object) MathF.Round((float) (object) x);
@@ -3316,6 +3610,19 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the remainder resulting from the division of a specified number by another specified number.
+        /// </summary>
+        /// <param name="x">A dividend.</param>
+        /// <param name="y">A divisor.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
+        /// <returns>
+        /// A number equal to <paramref name="x"/> - (<paramref name="y"/> Q), where Q is the quotient of <paramref name="x"/> / <paramref name="y"/> rounded to the nearest integer (if <paramref name="x"/> / <paramref name="y"/> falls halfway between two integers, the even integer is returned).
+        /// 
+        /// If <paramref name="x"/> - (<paramref name="y"/> Q) is zero, the value +0 is returned if <paramref name="x"/> is positive, or -0 if <paramref name="x"/> is negative.
+        /// 
+        /// If <paramref name="y"/> = 0, NaN is returned.
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T IEEERemainder<T>(T x, T y) where T : unmanaged
         {
@@ -3459,12 +3766,98 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the logarithm of a specified number in a specified base.
+        /// </summary>
+        /// <param name="x">The number whose logarithm is to be found.</param>
+        /// <param name="y">The base.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
+        /// <returns>
+        /// One of the values in the following table. (+Infinity denotes <see cref="Constants{T}.PositiveInfinity"/>, -Infinity denotes <see cref="Constants{T}.NegativeInfinity"/>, and NaN denotes <see cref="Constants{T}.NaN"/>.)
+        /// <list type="table">
+        /// <listheader>
+        /// <term><paramref name="x"/></term>
+        /// <description><c>newBase</c></description>
+        /// <description>Return value</description>
+        /// </listheader>
+        /// <item>
+        /// <term><paramref name="x"/>&gt;0</term>
+        /// <description>(0&lt;<c>newBase</c>&lt;1) -or- (<c>newBase</c>&gt;1)</description>
+        /// <description>lognewBase(a)</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/>&lt;0</term>
+        /// <description>(any value)</description>
+        /// <description>NaN</description>
+        /// </item>
+        /// <item>
+        /// <term>(any value)</term>
+        /// <description><c>newBase</c>&lt;0</description>
+        /// <description>NaN</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> != 1</term>
+        /// <description><c>newBase</c> = 0</description>
+        /// <description>NaN</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> != 1</term>
+        /// <description><c>newBase</c> = +Infinity</description>
+        /// <description>NaN</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> = NaN</term>
+        /// <description>(any value)</description>
+        /// <description>NaN</description>
+        /// </item>
+        /// <item>
+        /// <term>(any value)</term>
+        /// <description><c>newBase</c> = NaN</description>
+        /// <description>NaN</description>
+        /// </item>
+        /// <item>
+        /// <term>(any value)</term>
+        /// <description><c>newBase</c> = 1</description>
+        /// <description>NaN</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> = 0</term>
+        /// <description>0 &lt; <c>newBase</c> &lt; 1</description>
+        /// <description>+Infinity</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> = 0</term>
+        /// <description><c>newBase</c> &gt; 1</description>
+        /// <description>-Infinity</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> = +Infinity</term>
+        /// <description>0 &lt; <c>newBase</c> &lt; 1</description>
+        /// <description>-Infinity</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> = +Infinity</term>
+        /// <description><c>newBase</c> &gt; 1</description>
+        /// <description>+Infinity</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> = 1</term>
+        /// <description><c>newBase</c> = 0</description>
+        /// <description>0</description>
+        /// </item>
+        /// <item>
+        /// <term><paramref name="x"/> = 1</term>
+        /// <description><c>newBase</c> = +Infinity</description>
+        /// <description>0</description>
+        /// </item>
+        /// </list>
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Log<T>(T x, T y) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Log((float) (Half) (object) x, (float) (Half) (object) y);
 #else
                 return (T) (object) (Half) MathF.Log((float) (Half) (object) x, (float) (Half) (object) y);
@@ -3478,7 +3871,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Log((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.Log((float) (object) x, (float) (object) y);
@@ -3601,12 +3994,19 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the larger of two numbers.
+        /// </summary>
+        /// <param name="x">The first of two numbers to compare.</param>
+        /// <param name="y">The second of two numbers to compare.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
+        /// <returns>Parameter <paramref name="x"/> or <paramref name="y"/>, whichever is larger. If <paramref name="x"/>, or <paramref name="y"/>, or both <paramref name="x"/> and <paramref name="y"/> are equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Max<T>(T x, T y) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Max((float) (Half) (object) x, (float) (Half) (object) y);
 #else
                 return (T) (object) (Half) MathF.Max((float) (Half) (object) x, (float) (Half) (object) y);
@@ -3620,7 +4020,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Max((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.Max((float) (object) x, (float) (object) y);
@@ -3741,13 +4141,20 @@ namespace Silk.NET.Numerics
                 return default;
             }
         }
-
+        
+        /// <summary>
+        /// Returns the smaller of two numbers.
+        /// </summary>
+        /// <param name="x">The first of two numbers to compare.</param>
+        /// <param name="y">The second of two numbers to compare.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
+        /// <returns>Parameter <paramref name="x"/> or <paramref name="y"/>, whichever is smaller. If <paramref name="x"/>, or <paramref name="y"/>, or both <paramref name="x"/> and <paramref name="y"/> are equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Min<T>(T x, T y) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Min((float) (Half) (object) x, (float) (Half) (object) y);
 #else
                 return (T) (object) (Half) MathF.Min((float) (Half) (object) x, (float) (Half) (object) y);
@@ -3761,7 +4168,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Min((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.Min((float) (object) x, (float) (object) y);
@@ -3881,7 +4288,42 @@ namespace Silk.NET.Numerics
                 ThrowUnsupportedType();
                 return default;
             }
-        } 
+        }
+        
+        /// <summary>
+        /// Returns a specified number raised to the specified power.
+        /// </summary>
+        /// <param name="x">A number to be raised to a power.</param>
+        /// <param name="y">A number that specifies a power.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
+        /// <returns>The number <paramref name="x"/> raised to the power <paramref name="y"/>.</returns>
+///         <remarks>
+///         <format type="text/markdown"><![CDATA[  
+///   
+/// ## Remarks  
+///             The following table indicates the return value when various values or ranges of values are specified for the `x` and `y` parameters. For more information, see <xref:System.Single.PositiveInfinity?displayProperty=nameWithType>, <xref:System.Single.NegativeInfinity?displayProperty=nameWithType>, and <xref:System.Single.NaN?displayProperty=nameWithType>.  
+///   
+///             |Parameters|Return value|  
+///         |----------------|------------------|  
+///         |`x` or `y` = `NaN`.|`NaN`|  
+///         |`x` = Any value except `NaN`; `y` = 0.|1|  
+///         |`x` = `NegativeInfinity`; `y` < 0.|0|  
+///         |`x` = `NegativeInfinity`; `y` is a positive odd integer.|`NegativeInfinity`|  
+///         |`x` = `NegativeInfinity`; `y` is positive but not an odd integer.|`PositiveInfinity`|  
+///         |`x` < 0 but not `NegativeInfinity`; `y` is not an integer, `NegativeInfinity`, or `PositiveInfinity`.|`NaN`|  
+///         |`x` = -1; `y` = `NegativeInfinity` or `PositiveInfinity`.|`NaN`|  
+///         |-1 < `x` < 1; `y` = `NegativeInfinity`.|`PositiveInfinity`|  
+///         |-1 < `x` < 1; `y` = `PositiveInfinity`.|0|  
+///         |`x` < -1 or `x` > 1; `y` = `NegativeInfinity`.|0|  
+///         |`x` < -1 or `x` > 1; `y` = `PositiveInfinity`.|`PositiveInfinity`|  
+///         |`x` = 0; `y` < 0.|`PositiveInfinity`|  
+///         |`x` = 0; `y` > 0.|0|  
+///         |`x` = 1; `y` is any value except `NaN`.|1|  
+///         |`x` = `PositiveInfinity`; `y` < 0.|0|  
+///         |`x` = `PositiveInfinity`; `y` > 0.|`PositiveInfinity`|  
+///   
+///         ]]></format>
+///         </remarks>
         [MethodImpl(MaxOpt)]
         public static T Pow<T>(T x, T y) where T : unmanaged
         {
@@ -4208,12 +4650,37 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the angle whose tangent is the quotient of two specified numbers.
+        /// </summary>
+        /// <param name="y">The y coordinate of a point.</param>
+        /// <param name="x">The x coordinate of a point.</param>
+        /// <typeparam name="T">The type of <paramref name="y"/> and <paramref name="x"/>.</typeparam>
+        /// <returns>
+        /// An angle, θ, measured in radians, such that -π ≤ θ ≤ π, and tan(θ) = y / x, where (x, y) is a point in the Cartesian plane. Observe the following:
+        /// <list type="bullet">
+        /// <item><description>For (<paramref name="x"/>, <paramref name="y"/>) in quadrant 1, 0 &lt; θ &lt; π/2.</description></item>
+        /// <item><description>For (<paramref name="x"/>, <paramref name="y"/>) in quadrant 2, π/2 &lt; θ ≤ π.</description></item>
+        /// <item><description>For (<paramref name="x"/>, <paramref name="y"/>) in quadrant 3, -π &lt; θ &lt; -π/2.</description></item>
+        /// <item><description>For (<paramref name="x"/>, <paramref name="y"/>) in quadrant 4, -π/2 &lt; θ &lt; 0.</description></item>
+        /// </list>
+        /// <list type="bullet">
+        /// <item><description>If y is 0 and x is not negative, θ = 0.</description></item>
+        /// <item><description>If y is 0 and x is negative, θ = π.</description></item>
+        /// <item><description>If y is positive and x is 0, θ = π/2.</description></item>
+        /// <item><description>If y is 0 and x is 0, θ = -π/2.</description></item>
+        /// </list>
+        /// If <paramref name="x"/> or <paramref name="y"/> is <see cref="Constants{T}.NaN"/>, or if <paramref name="x"/> and <paramref name="y"/> are either <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, the method returns <see cref="Constants{T}.NaN"/>.
+        /// </returns>
+        /// <remarks>
+        /// The return value is the angle in the Cartesian plane formed by the x-axis, and a vector starting from the origin, (0,0), and terminating at the point, (x,y).
+        /// </remarks>
         [MethodImpl(MaxOpt)]
         public static T Atan2<T>(T y, T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if NETSTANDARD2_0
                 return (T) (object) (Half) (float) Math.Atan2((float) (Half) (object) x, (float) (Half) (object) y);
 #else
                 return (T) (object) (Half) MathF.Atan2((float) (Half) (object) x, (float) (Half) (object) y);
@@ -4227,7 +4694,7 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if NETSTANDARD2_0
                     return (T) (object) (float) Math.Atan2((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.Atan2((float) (object) x, (float) (object) y);
@@ -4350,22 +4817,60 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Rounds a single-precision floating-point value to a specified number of fractional digits, and rounds midpoint values to the nearest even number.
+        /// </summary>
+        /// <param name="x">A number to be rounded.</param>
+        /// <param name="digits">The number of fractional digits in the return value.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The number nearest to <paramref name="x"/> that contains a number of fractional digits equal to digits.</returns>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="digits"/> is less than 0 or greater than the maximum number of integral and fractional digits supported by the <typeparamref name="T"/> type.</exception>
+        /// <remarks>
+        /// This method uses the default rounding convention of <see cref="MidpointRounding.ToEven"/>
+        /// If the value of <paramref name="x"/> is <see cref="Constants{T}.NaN"/>, the method returns <see cref="Constants{T}.NaN"/>.
+        /// If <paramref name="x"/> is <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, the method returns <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, respectively.
+        /// </remarks>
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, int digits) where T : unmanaged
         {
-            throw null;
+            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Rounds a single-precision floating-point value to a specified number of fractional digits, and uses the specified rounding convention for midpoint values.
+        /// </summary>
+        /// <param name="x">A number to be rounded.</param>
+        /// <param name="digits">The number of fractional digits in the return value.</param>
+        /// <param name="mode">Specification for how to round <paramref name="x"/> if it is midway between two other numbers.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The number nearest to <paramref name="x"/> that contains a number of fractional digits equal to digits. If <paramref name="x"/> has fewer fractional digits than <paramref name="digits"/>, <paramref name="x"/> is returned unchanged.</returns>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="digits"/> is less than 0 or greater than the maximum number of integral and fractional digits supported by the <typeparamref name="T"/> type.</exception>
+        /// <remarks>
+        /// If the value of <paramref name="x"/> is <see cref="Constants{T}.NaN"/>, the method returns <see cref="Constants{T}.NaN"/>.
+        /// If <paramref name="x"/> is <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, the method returns <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, respectively.
+        /// </remarks>
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, int digits, System.MidpointRounding mode) where T : unmanaged
         {
-            throw null;
+            throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Rounds a single-precision floating-point value to the nearest integer, and uses the specified rounding convention for midpoint values.
+        /// </summary>
+        /// <param name="x">A single-precision floating-point number to be rounded.</param>
+        /// <param name="mode">Specification for how to round x if it is midway between two other numbers.</param>
+        /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
+        /// <returns>The integer nearest <paramref name="x"/>. If <paramref name="x"/> is halfway between two integers, one of which is even and the other odd, then mode determines which of the two is returned. Note that this method returns <typeparamref name="T"/> instead of an integral type.</returns>
+        /// <exception cref="ArgumentException"><paramref name="mode"/> is not a valid value of <see cref="MidpointRounding"/>.</exception>
+        /// <remarks>
+        /// If the value of <paramref name="x"/> is <see cref="Constants{T}.NaN"/>, the method returns <see cref="Constants{T}.NaN"/>.
+        /// If <paramref name="x"/> is <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, the method returns <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, respectively.
+        /// \</remarks>
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, System.MidpointRounding mode) where T : unmanaged
         {
-            throw null;
+            throw new NotImplementedException();
         }
     }
 }

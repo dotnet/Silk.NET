@@ -4,6 +4,10 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Numerics
 {
+    /// <summary>
+    /// Represents a vector that is used to encode three-dimensional physical rotations.
+    /// </summary>
+    /// <typeparam name="T">The type used to store values.</typeparam>
     public struct Quaternion<T>
         : IEquatable<Quaternion<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {

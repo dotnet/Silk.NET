@@ -110,7 +110,7 @@ namespace Silk.NET.Numerics
             __two_to_jby64[i++] = 0x3fefe7c1819e90d8;
         }
 
-        private static ulong[] __two_to_jby64;
+        private static ulong[] __two_to_jby64 = null!;
         
         [MethodImpl(MaxOpt)]
         private static float CoreFastExp(float x)
@@ -172,8 +172,8 @@ namespace Silk.NET.Numerics
                     return 0.0f;
 
                 const float EXPF_FARG_MAX = 3.5990256e+33f;
-                const int EXP_Y_INF = 3;
-                const int EXP_Y_ZERO = 2;
+                // const int EXP_Y_INF = 3;
+                // const int EXP_Y_ZERO = 2;
                 const float EXPF_FARG_MIN = -103.972076416f;
                 const uint PINFBITPATT_SP32 = 0x7f800000;
                 

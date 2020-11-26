@@ -26,6 +26,12 @@ namespace Silk.NET.Numerics
 
         private static void ThrowIndexOutOfRange() => throw new IndexOutOfRangeException();
 
+        /// <summary>
+        /// Determines whether the specified value is finite (zero, subnormal, or normal).
+        /// </summary>
+        /// <param name="f">A number.</param>
+        /// <typeparam name="T">The type of the specified number.</typeparam>
+        /// <returns><code>true</code> if the value is finite (zero, subnormal or normal); <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsFinite<T>(T f) where T:unmanaged
         {
@@ -52,15 +58,39 @@ namespace Silk.NET.Numerics
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return IsFinite((double) (object) f);
+                    return double.IsFinite((double) (object) f);
                 }
 
+                return Other(f);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static bool Other(T f)
+            {
+                if (typeof(T) == typeof(sbyte)
+                || typeof(T) == typeof(byte)
+                || typeof(T) == typeof(ushort)
+                || typeof(T) == typeof(short)
+                || typeof(T) == typeof(uint)
+                || typeof(T) == typeof(int)
+                || typeof(T) == typeof(ulong)
+                || typeof(T) == typeof(long)
+                || typeof(T) == typeof(decimal)
+                )
+                    return true;
+                
                 ThrowOpUnsupportedType();
                 return false;
             }
         }
 
-            [MethodImpl(MaxOpt)]
+        /// <summary>
+        /// Returns a value indicating whether the specified number evaluates to negative or positive infinity.
+        /// </summary>
+        /// <param name="f">A number</param>
+        /// <typeparam name="T">The type of the specified number.</typeparam>
+        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>; <code>false</code> otherwise.</returns>
+        [MethodImpl(MaxOpt)]
         public static bool IsInfinity<T>(T f) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
@@ -89,12 +119,36 @@ namespace Silk.NET.Numerics
                     return double.IsInfinity((double) (object) f);
                 }
 
+                return Other(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Other(T f)
+            {
+                if (typeof(T) == typeof(sbyte)
+                    || typeof(T) == typeof(byte)
+                    || typeof(T) == typeof(ushort)
+                    || typeof(T) == typeof(short)
+                    || typeof(T) == typeof(uint)
+                    || typeof(T) == typeof(int)
+                    || typeof(T) == typeof(ulong)
+                    || typeof(T) == typeof(long)
+                    || typeof(T) == typeof(decimal)
+                )
+                    return true;
+                
                 ThrowOpUnsupportedType();
                 return false;
             }
         }
 
-            [MethodImpl(MaxOpt)]
+        /// <summary>
+        /// Returns a value that indicates whether the specified value is not a number (<see cref="Constants{T}.NaN"/>).
+        /// </summary>
+        /// <param name="f">A number</param>
+        /// <typeparam name="T">The type of the specified number.</typeparam>
+        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Constants{T}.NaN"/>; <code>false</code> otherwise.</returns>
+        [MethodImpl(MaxOpt)]
         public static bool IsNaN<T>(T f) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
@@ -123,11 +177,35 @@ namespace Silk.NET.Numerics
                     return double.IsNaN((double) (object) f);
                 }
 
+                return Other(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Other(T f)
+            {
+                if (typeof(T) == typeof(sbyte)
+                    || typeof(T) == typeof(byte)
+                    || typeof(T) == typeof(ushort)
+                    || typeof(T) == typeof(short)
+                    || typeof(T) == typeof(uint)
+                    || typeof(T) == typeof(int)
+                    || typeof(T) == typeof(ulong)
+                    || typeof(T) == typeof(long)
+                    || typeof(T) == typeof(decimal)
+                )
+                    return true;
+                
                 ThrowOpUnsupportedType();
                 return false;
             }
         }
 
+        /// <summary>
+        /// Determines whether the specified value is negative.
+        /// </summary>
+        /// <param name="f">A number</param>
+        /// <typeparam name="T">The type of the specified number.</typeparam>
+        /// <returns><code>true</code> if the value is negative; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsNegative<T>(T f) where T:unmanaged
         {
@@ -190,11 +268,52 @@ namespace Silk.NET.Numerics
                     return (long) (object) f < 0;
                 }
 
+                return Decimal(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Decimal(T f)
+            {
+                if (typeof(T) == typeof(int))
+                {
+                    return (int) (object) f < 0;
+                }
+
+                return SByte(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool SByte(T f)
+            {
+                if (typeof(T) == typeof(int))
+                {
+                    return (int) (object) f < 0;
+                }
+
+                return Other(f);
+            }
+                        
+            [MethodImpl(MaxOpt)]
+            static bool Other(T f)
+            {
+                if (typeof(T) == typeof(byte)
+                    || typeof(T) == typeof(ushort)
+                    || typeof(T) == typeof(uint)
+                    || typeof(T) == typeof(ulong)
+                )
+                    return false;
+                
                 ThrowOpUnsupportedType();
                 return false;
             }
         }
-
+        
+        /// <summary>
+        /// Returns a value indicating whether the specified number evaluates to negative infinity.
+        /// </summary>
+        /// <param name="f">A number</param>
+        /// <typeparam name="T">The type of the specified number.</typeparam>
+        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Constants{T}.NegativeInfinity"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsNegativeInfinity<T>(T f) where T:unmanaged
         {
@@ -224,11 +343,35 @@ namespace Silk.NET.Numerics
                     return double.IsNegativeInfinity((double) (object) f);
                 }
 
+                return Other(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Other(T f)
+            {
+                if (typeof(T) == typeof(sbyte)
+                    || typeof(T) == typeof(byte)
+                    || typeof(T) == typeof(ushort)
+                    || typeof(T) == typeof(short)
+                    || typeof(T) == typeof(uint)
+                    || typeof(T) == typeof(int)
+                    || typeof(T) == typeof(ulong)
+                    || typeof(T) == typeof(long)
+                    || typeof(T) == typeof(decimal)
+                )
+                    return false;
+                
                 ThrowOpUnsupportedType();
                 return false;
             }
         }
 
+        /// <summary>
+        /// Determines whether the specified value is normal.
+        /// </summary>
+        /// <param name="f">A number</param>
+        /// <typeparam name="T">The type of the specified number.</typeparam>
+        /// <returns><code>true</code> if the value is normal; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsNormal<T>(T f) where T:unmanaged
         {
@@ -258,11 +401,35 @@ namespace Silk.NET.Numerics
                     return IsNormal((double) (object) f);
                 }
 
+                return Other(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Other(T f)
+            {
+                if (typeof(T) == typeof(sbyte)
+                    || typeof(T) == typeof(byte)
+                    || typeof(T) == typeof(ushort)
+                    || typeof(T) == typeof(short)
+                    || typeof(T) == typeof(uint)
+                    || typeof(T) == typeof(int)
+                    || typeof(T) == typeof(ulong)
+                    || typeof(T) == typeof(long)
+                    || typeof(T) == typeof(decimal)
+                )
+                    return true;
+                
                 ThrowOpUnsupportedType();
                 return false;
             }
         }
 
+        /// <summary>
+        /// Returns a value indicating whether the specified number evaluates to positive infinity.
+        /// </summary>
+        /// <param name="f">A number</param>
+        /// <typeparam name="T">The type of the specified number.</typeparam>
+        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Constants{T}.PositiveInfinity"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsPositiveInfinity<T>(T f) where T:unmanaged
         {
@@ -292,11 +459,36 @@ namespace Silk.NET.Numerics
                     return double.IsPositiveInfinity((double) (object) f);
                 }
 
+                return Other(f);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static bool Other(T f)
+            {
+                if (typeof(T) == typeof(sbyte)
+                    || typeof(T) == typeof(byte)
+                    || typeof(T) == typeof(ushort)
+                    || typeof(T) == typeof(short)
+                    || typeof(T) == typeof(uint)
+                    || typeof(T) == typeof(int)
+                    || typeof(T) == typeof(ulong)
+                    || typeof(T) == typeof(long)
+                    || typeof(T) == typeof(decimal)
+                )
+                    return false;
+                
                 ThrowOpUnsupportedType();
                 return false;
             }
         }
 
+        /// <summary>
+        /// Determines whether the specified value is subnormal.    
+        /// </summary>
+        /// <param name="f">A number</param>
+        /// <typeparam name="T">The type of the specified number.</typeparam>
+        /// <returns><code>true</code> if the value is subnormal; <code>false</code> otherwise.</returns>
+        /// <remarks>This function will throw for types other then <see cref="Half"/>, <see cref="float"/>, <see cref="double"/>, because subnormality cannot be determined for other types.</remarks>
         [MethodImpl(MaxOpt)]
         public static bool IsSubnormal<T>(T f) where T:unmanaged
         {
@@ -331,6 +523,13 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns a value that indicates whether two specified values are equal.
+        /// </summary>
+        /// <param name="left">The first value to compare.</param>
+        /// <param name="right">The second value to compare.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns><code>true</code> if <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
         public static bool Equal<T>(T left, T right) where T : unmanaged
         {
@@ -464,6 +663,13 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns a value that indicates whether two specified values are not equal.
+        /// </summary>
+        /// <param name="left">The first value to compare.</param>
+        /// <param name="right">The second value to compare.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns><code>true</code> if <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
         public static bool NotEqual<T>(T left, T right) where T : unmanaged
         {
@@ -597,15 +803,22 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns a value that indicates whether a specified value is greater than another specified value.
+        /// </summary>
+        /// <param name="left">The first value to compare.</param>
+        /// <param name="right">The second value to compare.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns><code>true</code> if <paramref name="left"/> is greater than <paramref name="right"/>; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool GreaterThan<T>(T leftOg, T rightOg) where T:unmanaged
+        public static bool GreaterThan<T>(T left, T right) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) leftOg > (Half) (object) rightOg;
+                return (Half) (object) left > (Half) (object) right;
             }
 
-            return Float(leftOg, rightOg);
+            return Float(left, right);
 
             [MethodImpl(MaxOpt)]
             static bool Float(T left, T right)
@@ -730,15 +943,22 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns a value that indicates whether a specified value is greater than or equal to another specified value.
+        /// </summary>
+        /// <param name="left">The first value to compare.</param>
+        /// <param name="right">The second value to compare.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns><code>true</code> if <paramref name="left"/> is greater than or equal to <paramref name="right"/>; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool GreaterThanOrEqual<T>(T leftOg, T rightOg) where T:unmanaged
+        public static bool GreaterThanOrEqual<T>(T left, T right) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) leftOg >= (Half) (object) rightOg;
+                return (Half) (object) left >= (Half) (object) right;
             }
 
-            return Float(leftOg, rightOg);
+            return Float(left, right);
 
             [MethodImpl(MaxOpt)]
             static bool Float(T left, T right)
@@ -863,15 +1083,22 @@ namespace Silk.NET.Numerics
             }
         }
 
-            [MethodImpl(MaxOpt)]
-        public static bool LessThan<T>(T leftOg, T rightOg) where T:unmanaged
+        /// <summary>
+        /// Returns a value that indicates whether a specified value is less than another specified value.
+        /// </summary>
+        /// <param name="left">The first value to compare.</param>
+        /// <param name="right">The second value to compare.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns><code>true</code> if <paramref name="left"/> is less than <paramref name="right"/>; otherwise, <code>false</code>.</returns>
+        [MethodImpl(MaxOpt)]
+        public static bool LessThan<T>(T left, T right) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) leftOg < (Half) (object) rightOg;
+                return (Half) (object) left < (Half) (object) right;
             }
 
-            return Float(leftOg, rightOg);
+            return Float(left, right);
 
             [MethodImpl(MaxOpt)]
             static bool Float(T left, T right)
@@ -996,15 +1223,22 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns a value that indicates whether a specified value is less than or equal to another specified value.
+        /// </summary>
+        /// <param name="left">The first value to compare.</param>
+        /// <param name="right">The second value to compare.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns><code>true</code> if <paramref name="left"/> is less than or equal to <paramref name="right"/>; otherwise, <code>false</code>.</returns>
         [MethodImpl(MaxOpt)]
-        public static bool LessThanOrEqual<T>(T leftOg, T rightOg) where T:unmanaged
+        public static bool LessThanOrEqual<T>(T left, T right) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) leftOg <= (Half) (object) rightOg;
+                return (Half) (object) left <= (Half) (object) right;
             }
 
-            return Float(leftOg, rightOg);
+            return Float(left, right);
 
             [MethodImpl(MaxOpt)]
             static bool Float(T left, T right)
@@ -1129,16 +1363,22 @@ namespace Silk.NET.Numerics
             }
         }
 
-        // ReSharper disable RedundantCast
+        /// <summary>
+        /// Adds two specified values.
+        /// </summary>
+        /// <param name="left">The first value to add.</param>
+        /// <param name="right">The second value to add.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns>The result of adding <paramref name="left"/> and <paramref name="right"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Add<T>(T leftOg, T rightOg) where T:unmanaged
+        public static T Add<T>(T left, T right) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) ((float) (Half) (object) leftOg + (float) (Half) (object) rightOg);
+                return (T) (object) (Half) ((float) (Half) (object) left + (float) (Half) (object) right);
             }
 
-            return Float(leftOg, rightOg);
+            return Float(left, right);
 
             [MethodImpl(MaxOpt)]
             static T Float(T left, T right)
@@ -1263,15 +1503,22 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Subtracts two specified values.
+        /// </summary>
+        /// <param name="left">The minuend.</param>
+        /// <param name="right">The subtrahend.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns>The result of subtracting <paramref name="left"/> from <paramref name="right"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Subtract<T>(T leftOg, T rightOg) where T:unmanaged
+        public static T Subtract<T>(T left, T right) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) ((float) (Half) (object) leftOg - (float) (Half) (object) rightOg);
+                return (T) (object) (Half) ((float) (Half) (object) left - (float) (Half) (object) right);
             }
 
-            return Float(leftOg, rightOg);
+            return Float(left, right);
 
             [MethodImpl(MaxOpt)]
             static T Float(T left, T right)
@@ -1396,15 +1643,22 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Multiplies two specified values.
+        /// </summary>
+        /// <param name="left">The first value to multiply.</param>
+        /// <param name="right">The second value to multiply.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns>The result of multiplying <paramref name="left"/> and <paramref name="right"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Multiply<T>(T leftOg, T rightOg) where T:unmanaged
+        public static T Multiply<T>(T left, T right) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) ((float) (Half) (object) leftOg * (float) (Half) (object) rightOg);
+                return (T) (object) (Half) ((float) (Half) (object) left * (float) (Half) (object) right);
             }
 
-            return Float(leftOg, rightOg);
+            return Float(left, right);
 
             [MethodImpl(MaxOpt)]
             static T Float(T left, T right)
@@ -1529,15 +1783,22 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Divides two specified values.
+        /// </summary>
+        /// <param name="left">The dividend.</param>
+        /// <param name="right">The divisor.</param>
+        /// <typeparam name="T">The type of both values.</typeparam>
+        /// <returns>The result of dividing <paramref name="left"/> by <paramref name="right"/>.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Divide<T>(T leftOg, T rightOg) where T:unmanaged
+        public static T Divide<T>(T left, T right) where T:unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) ((float) (Half) (object) leftOg / (float) (Half) (object) rightOg);
+                return (T) (object) (Half) ((float) (Half) (object) left / (float) (Half) (object) right);
             }
 
-            return Float(leftOg, rightOg);
+            return Float(left, right);
 
             [MethodImpl(MaxOpt)]
             static T Float(T left, T right)
@@ -1662,8 +1923,17 @@ namespace Silk.NET.Numerics
             }
         }
 
+        /// <summary>
+        /// Returns the result of multiplying the specified value by negative one.
+        /// </summary>
+        /// <param name="x">The value to negate</param>
+        /// <typeparam name="T">The type of the value</typeparam>
+        /// <returns>
+        /// A number with the value of <paramref name="x"/>, but the opposite sign.
+        /// -or-
+        /// Zero, if <paramref name="x"/> is zero.
+        /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Negate<T>(T x) where T : unmanaged => Multiply(x, Constants<T>.MinusOne);
-        // ReSharper restore RedundantCast
     }
 }
