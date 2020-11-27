@@ -74,7 +74,7 @@ namespace Silk.NET.BuildTools
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Unhandled exception: {ex}");
+                Console.Error.WriteLine($"Unhandled exception: {ex}");
                 if (sw is not null)
                 {
                     Program.ConsoleWriter.Instance.Timings.Value =
