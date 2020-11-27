@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public ConformanceVersionKHR
         (
-            byte major = default,
-            byte minor = default,
-            byte subminor = default,
-            byte patch = default
-        )
+            byte? major = null,
+            byte? minor = null,
+            byte? subminor = null,
+            byte? patch = null
+        ) : this()
         {
-            Major = major;
-            Minor = minor;
-            Subminor = subminor;
-            Patch = patch;
+            if (major is not null)
+            {
+                Major = major.Value;
+            }
+
+            if (minor is not null)
+            {
+                Minor = minor.Value;
+            }
+
+            if (subminor is not null)
+            {
+                Subminor = subminor.Value;
+            }
+
+            if (patch is not null)
+            {
+                Patch = patch.Value;
+            }
         }
 
 /// <summary></summary>

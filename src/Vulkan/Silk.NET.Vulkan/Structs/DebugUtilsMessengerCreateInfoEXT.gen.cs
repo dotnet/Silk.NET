@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Vulkan
     {
         public DebugUtilsMessengerCreateInfoEXT
         (
-            StructureType sType = StructureType.DebugUtilsMessengerCreateInfoExt,
-            void* pNext = default,
-            uint flags = default,
-            DebugUtilsMessageSeverityFlagsEXT messageSeverity = default,
-            DebugUtilsMessageTypeFlagsEXT messageType = default,
-            FuncPtr pfnUserCallback = default,
-            void* pUserData = default
-        )
+            StructureType? sType = StructureType.DebugUtilsMessengerCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null,
+            DebugUtilsMessageSeverityFlagsEXT? messageSeverity = null,
+            DebugUtilsMessageTypeFlagsEXT? messageType = null,
+            FuncPtr? pfnUserCallback = null,
+            void* pUserData = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            MessageSeverity = messageSeverity;
-            MessageType = messageType;
-            PfnUserCallback = pfnUserCallback;
-            PUserData = pUserData;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (messageSeverity is not null)
+            {
+                MessageSeverity = messageSeverity.Value;
+            }
+
+            if (messageType is not null)
+            {
+                MessageType = messageType.Value;
+            }
+
+            if (pfnUserCallback is not null)
+            {
+                PfnUserCallback = pfnUserCallback.Value;
+            }
+
+            if (pUserData is not null)
+            {
+                PUserData = pUserData;
+            }
         }
 
 /// <summary></summary>

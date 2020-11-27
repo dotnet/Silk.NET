@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.OpenXR
     {
         public CompositionLayerProjectionView
         (
-            StructureType type = StructureType.TypeCompositionLayerProjectionView,
-            void* next = default,
-            Posef pose = default,
-            Fovf fov = default,
-            SwapchainSubImage subImage = default
-        )
+            StructureType? type = StructureType.TypeCompositionLayerProjectionView,
+            void* next = null,
+            Posef? pose = null,
+            Fovf? fov = null,
+            SwapchainSubImage? subImage = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Pose = pose;
-            Fov = fov;
-            SubImage = subImage;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (fov is not null)
+            {
+                Fov = fov.Value;
+            }
+
+            if (subImage is not null)
+            {
+                SubImage = subImage.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public SystemGetInfo
         (
-            StructureType type = StructureType.TypeSystemGetInfo,
-            void* next = default,
-            FormFactor formFactor = default
-        )
+            StructureType? type = StructureType.TypeSystemGetInfo,
+            void* next = null,
+            FormFactor? formFactor = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            FormFactor = formFactor;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (formFactor is not null)
+            {
+                FormFactor = formFactor.Value;
+            }
         }
 
 /// <summary></summary>

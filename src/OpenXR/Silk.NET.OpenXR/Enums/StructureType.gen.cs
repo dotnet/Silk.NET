@@ -184,6 +184,8 @@ namespace Silk.NET.OpenXR
         TypeSessionCreateInfoOverlayExtx = 1000033000,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_MAIN_SESSION_VISIBILITY_CHANGED_EXTX")]
         TypeEventDataMainSessionVisibilityChangedExtx = 1000033003,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_COLOR_SCALE_BIAS_KHR")]
+        TypeCompositionLayerColorScaleBiasKhr = 1000034000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_CREATE_INFO_MSFT")]
         TypeSpatialAnchorCreateInfoMsft = 1000039000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_SPACE_CREATE_INFO_MSFT")]
@@ -226,11 +228,37 @@ namespace Silk.NET.OpenXR
         TypeSecondaryViewConfigurationLayerInfoMsft = 1000053004,
         [NativeName("Name", "XR_TYPE_SECONDARY_VIEW_CONFIGURATION_SWAPCHAIN_CREATE_INFO_MSFT")]
         TypeSecondaryViewConfigurationSwapchainCreateInfoMsft = 1000053005,
+        [NativeName("Name", "XR_TYPE_CONTROLLER_MODEL_KEY_STATE_MSFT")]
+        TypeControllerModelKeyStateMsft = 1000055000,
+        [NativeName("Name", "XR_TYPE_CONTROLLER_MODEL_NODE_PROPERTIES_MSFT")]
+        TypeControllerModelNodePropertiesMsft = 1000055001,
+        [NativeName("Name", "XR_TYPE_CONTROLLER_MODEL_PROPERTIES_MSFT")]
+        TypeControllerModelPropertiesMsft = 1000055002,
+        [NativeName("Name", "XR_TYPE_CONTROLLER_MODEL_NODE_STATE_MSFT")]
+        TypeControllerModelNodeStateMsft = 1000055003,
+        [NativeName("Name", "XR_TYPE_CONTROLLER_MODEL_STATE_MSFT")]
+        TypeControllerModelStateMsft = 1000055004,
         [NativeName("Name", "XR_TYPE_VIEW_CONFIGURATION_VIEW_FOV_EPIC")]
         TypeViewConfigurationViewFovEpic = 1000059000,
         [NativeName("Name", "XR_TYPE_HOLOGRAPHIC_WINDOW_ATTACHMENT_MSFT")]
         TypeHolographicWindowAttachmentMsft = 1000063000,
         [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_ANALOG_THRESHOLD_VALVE")]
         TypeInteractionProfileAnalogThresholdValve = 1000079000,
+        [NativeName("Name", "XR_TYPE_LOADER_INIT_INFO_ANDROID_KHR")]
+        TypeLoaderInitInfoAndroidKhr = 1000089000,
+        [NativeName("Name", "XR_TYPE_VULKAN_INSTANCE_CREATE_INFO_KHR")]
+        TypeVulkanInstanceCreateInfoKhr = 1000090000,
+        [NativeName("Name", "XR_TYPE_VULKAN_DEVICE_CREATE_INFO_KHR")]
+        TypeVulkanDeviceCreateInfoKhr = 1000090001,
+        [NativeName("Name", "XR_TYPE_VULKAN_GRAPHICS_DEVICE_GET_INFO_KHR")]
+        TypeVulkanGraphicsDeviceGetInfoKhr = 1000090003,
+        [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_VULKAN2_KHR")]
+        TypeGraphicsBindingVulkan2Khr = 1000090000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_VULKAN2_KHR")]
+        TypeSwapchainImageVulkan2Khr = 1000090001,
+        [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_VULKAN2_KHR")]
+        TypeGraphicsRequirementsVulkan2Khr = 1000090002,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_EQUIRECT2_KHR")]
+        TypeCompositionLayerEquirect2Khr = 1000091000,
     }
 }

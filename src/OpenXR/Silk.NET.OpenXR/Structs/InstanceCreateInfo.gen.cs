@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.OpenXR
     {
         public InstanceCreateInfo
         (
-            StructureType type = StructureType.TypeInstanceCreateInfo,
-            void* next = default,
-            InstanceCreateFlags createFlags = default,
-            ApplicationInfo applicationInfo = default,
-            uint enabledApiLayerCount = default,
-            byte** enabledApiLayerNames = default,
-            uint enabledExtensionCount = default,
-            byte** enabledExtensionNames = default
-        )
+            StructureType? type = StructureType.TypeInstanceCreateInfo,
+            void* next = null,
+            InstanceCreateFlags? createFlags = null,
+            ApplicationInfo? applicationInfo = null,
+            uint? enabledApiLayerCount = null,
+            byte** enabledApiLayerNames = null,
+            uint? enabledExtensionCount = null,
+            byte** enabledExtensionNames = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            CreateFlags = createFlags;
-            ApplicationInfo = applicationInfo;
-            EnabledApiLayerCount = enabledApiLayerCount;
-            EnabledApiLayerNames = enabledApiLayerNames;
-            EnabledExtensionCount = enabledExtensionCount;
-            EnabledExtensionNames = enabledExtensionNames;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (createFlags is not null)
+            {
+                CreateFlags = createFlags.Value;
+            }
+
+            if (applicationInfo is not null)
+            {
+                ApplicationInfo = applicationInfo.Value;
+            }
+
+            if (enabledApiLayerCount is not null)
+            {
+                EnabledApiLayerCount = enabledApiLayerCount.Value;
+            }
+
+            if (enabledApiLayerNames is not null)
+            {
+                EnabledApiLayerNames = enabledApiLayerNames;
+            }
+
+            if (enabledExtensionCount is not null)
+            {
+                EnabledExtensionCount = enabledExtensionCount.Value;
+            }
+
+            if (enabledExtensionNames is not null)
+            {
+                EnabledExtensionNames = enabledExtensionNames;
+            }
         }
 
 /// <summary></summary>

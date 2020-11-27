@@ -53,7 +53,7 @@ namespace Silk.NET.BuildTools.Baking
             profile.Projects["Core"].Classes = profile.Projects["Core"].Classes.Concat(coreFunc).ToList();
             profile.Projects["Core"].Enums.AddRange(coreEnums);
             profile.Projects["Core"].Structs.AddRange(coreStructs);
-            profile.Projects = profile.Projects.Concat(extProjects).ToDictionary();
+            profile.Projects = FuseProjects(profile.Projects.Concat(extProjects));
 
             Console.WriteLine("Profile Bakery: Stirring them until they form a nice paste...");
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
@@ -64,6 +64,28 @@ namespace Silk.NET.BuildTools.Baking
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
             Console.WriteLine($"Created profile \"{name}\".");
             return profile;
+        }
+
+        private static Dictionary<string, Project> FuseProjects(IEnumerable<KeyValuePair<string, Project>> projects)
+        {
+            var ret = new Dictionary<string, Project>();
+            foreach (var project in projects)
+            {
+                if (ret.TryGetValue(project.Key, out var val) &&
+                    val.IsRoot == project.Value.IsRoot &&
+                    val.Namespace == project.Value.Namespace)
+                {
+                    val.Classes.AddRange(project.Value.Classes);
+                    val.Enums.AddRange(project.Value.Enums);
+                    val.Structs.AddRange(project.Value.Structs);
+                }
+                else
+                {
+                    ret[project.Key] = project.Value;
+                }
+            }
+
+            return ret;
         }
 
         private static void Vary(Profile profile)

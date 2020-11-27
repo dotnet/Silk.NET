@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public SessionActionSetsAttachInfo
         (
-            StructureType type = StructureType.TypeSessionActionSetsAttachInfo,
-            void* next = default,
-            uint countActionSets = default,
-            ActionSet* actionSets = default
-        )
+            StructureType? type = StructureType.TypeSessionActionSetsAttachInfo,
+            void* next = null,
+            uint? countActionSets = null,
+            ActionSet* actionSets = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            CountActionSets = countActionSets;
-            ActionSets = actionSets;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (countActionSets is not null)
+            {
+                CountActionSets = countActionSets.Value;
+            }
+
+            if (actionSets is not null)
+            {
+                ActionSets = actionSets;
+            }
         }
 
 /// <summary></summary>

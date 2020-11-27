@@ -12,6 +12,7 @@ using UnmanagedType = Silk.NET.Core.Native.UnmanagedType;
 
 namespace TestLib
 {
+    [PInvokeOverride(1, "user32.dll")]
     public partial class TestClass2 : NativeApiContainer
     {
 
@@ -30,8 +31,9 @@ namespace TestLib
 
         [NativeApi(EntryPoint = "MessageBoxA")]
         public unsafe partial int MessageBox(IntPtr hwnd, string text, char* caption, uint buttons);
-        
+
         [NativeApi(EntryPoint = "MessageBoxA")]
+        [ExcludeFromOverride(1)]
         public partial int MessageBox<T>(IntPtr hwnd, string text, Span<T> caption, uint buttons) where T:unmanaged;
         
         public unsafe partial IntPtr CreateWindowExA(
@@ -51,6 +53,6 @@ namespace TestLib
 
         // public partial int GetWindowTextA(IntPtr hwnd, [Count(Parameter = "hwnd")] ref string str, int maxCount);
 
-        public TestClass2(INativeContext ctx) : base(ctx) { }
+        public TestClass2() : base(CreateDefaultContext("user32.dll")) { }
     }
 }

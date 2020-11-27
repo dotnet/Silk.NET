@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public ViewConfigurationViewFovEPIC
         (
-            StructureType type = StructureType.TypeViewConfigurationViewFovEpic,
-            void* next = default,
-            Fovf recommendedFov = default,
-            Fovf maxMutableFov = default
-        )
+            StructureType? type = StructureType.TypeViewConfigurationViewFovEpic,
+            void* next = null,
+            Fovf? recommendedFov = null,
+            Fovf? maxMutableFov = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            RecommendedFov = recommendedFov;
-            MaxMutableFov = maxMutableFov;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (recommendedFov is not null)
+            {
+                RecommendedFov = recommendedFov.Value;
+            }
+
+            if (maxMutableFov is not null)
+            {
+                MaxMutableFov = maxMutableFov.Value;
+            }
         }
 
 /// <summary></summary>

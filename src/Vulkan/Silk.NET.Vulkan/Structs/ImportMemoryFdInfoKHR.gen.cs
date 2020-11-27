@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public ImportMemoryFdInfoKHR
         (
-            StructureType sType = StructureType.ImportMemoryFDInfoKhr,
-            void* pNext = default,
-            ExternalMemoryHandleTypeFlags handleType = default,
-            int fd = default
-        )
+            StructureType? sType = StructureType.ImportMemoryFDInfoKhr,
+            void* pNext = null,
+            ExternalMemoryHandleTypeFlags? handleType = null,
+            int? fd = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            HandleType = handleType;
-            Fd = fd;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
+
+            if (fd is not null)
+            {
+                Fd = fd.Value;
+            }
         }
 
 /// <summary></summary>

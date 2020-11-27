@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.OpenXR
     {
         public SystemProperties
         (
-            StructureType type = StructureType.TypeSystemProperties,
-            void* next = default,
-            ulong systemId = default,
-            uint vendorId = default,
-            SystemGraphicsProperties graphicsProperties = default,
-            SystemTrackingProperties trackingProperties = default
-        )
+            StructureType? type = StructureType.TypeSystemProperties,
+            void* next = null,
+            ulong? systemId = null,
+            uint? vendorId = null,
+            SystemGraphicsProperties? graphicsProperties = null,
+            SystemTrackingProperties? trackingProperties = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            SystemId = systemId;
-            VendorId = vendorId;
-            GraphicsProperties = graphicsProperties;
-            TrackingProperties = trackingProperties;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (systemId is not null)
+            {
+                SystemId = systemId.Value;
+            }
+
+            if (vendorId is not null)
+            {
+                VendorId = vendorId.Value;
+            }
+
+            if (graphicsProperties is not null)
+            {
+                GraphicsProperties = graphicsProperties.Value;
+            }
+
+            if (trackingProperties is not null)
+            {
+                TrackingProperties = trackingProperties.Value;
+            }
         }
 
 /// <summary></summary>

@@ -66,9 +66,9 @@ namespace VulkanTriangle
         private KhrSurface _vkSurface;
         private KhrSwapchain _vkSwapchain;
         private ExtDebugUtils _debugUtils;
-        private string[] _validationLayers = {"VK_LAYER_KHRONOS_validation"};
-        private string[] _instanceExtensions = {ExtDebugUtils.ExtensionName};
-        private string[] _deviceExtensions = {KhrSwapchain.ExtensionName};
+        private string[] _validationLayers = { "VK_LAYER_KHRONOS_validation" };
+        private string[] _instanceExtensions = { ExtDebugUtils.ExtensionName };
+        private string[] _deviceExtensions = { KhrSwapchain.ExtensionName };
 
         private void InitWindow()
         {
@@ -78,7 +78,7 @@ namespace VulkanTriangle
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
-            
+
             _window.Initialize();
         }
 
@@ -122,10 +122,10 @@ namespace VulkanTriangle
 
             _imagesInFlight[imageIndex] = _inFlightFences[_currentFrame];
 
-            SubmitInfo submitInfo = new SubmitInfo {SType = StructureType.SubmitInfo};
+            SubmitInfo submitInfo = new SubmitInfo { SType = StructureType.SubmitInfo };
 
-            Semaphore[] waitSemaphores = {_imageAvailableSemaphores[_currentFrame]};
-            PipelineStageFlags[] waitStages = {PipelineStageFlags.PipelineStageColorAttachmentOutputBit};
+            Semaphore[] waitSemaphores = { _imageAvailableSemaphores[_currentFrame] };
+            PipelineStageFlags[] waitStages = { PipelineStageFlags.PipelineStageColorAttachmentOutputBit };
             submitInfo.WaitSemaphoreCount = 1;
             var signalSemaphore = _renderFinishedSemaphores[_currentFrame];
             fixed (Semaphore* waitSemaphoresPtr = waitSemaphores)
@@ -238,13 +238,13 @@ namespace VulkanTriangle
             {
                 newExtensions[i] = extensions[i];
             }
-            
+
             for (var i = 0; i < _instanceExtensions.Length; i++)
             {
                 newExtensions[extCount + i] = (byte*) SilkMarshal.MarshalStringToPtr(_instanceExtensions[i]);
             }
 
-            extCount += (uint)_instanceExtensions.Length;
+            extCount += (uint) _instanceExtensions.Length;
             createInfo.EnabledExtensionCount = extCount;
             createInfo.PpEnabledExtensionNames = newExtensions;
 
@@ -276,7 +276,7 @@ namespace VulkanTriangle
             
             Marshal.FreeHGlobal((IntPtr) appInfo.PApplicationName);
             Marshal.FreeHGlobal((IntPtr) appInfo.PEngineName);
-            
+
             if (EnableValidationLayers)
             {
                 SilkMarshal.FreeStringArrayPtr((IntPtr) createInfo.PpEnabledLayerNames, _validationLayers.Length);
@@ -334,7 +334,7 @@ namespace VulkanTriangle
         private unsafe void PickPhysicalDevice()
         {
             var deviceCount = 0u;
-            _vk.EnumeratePhysicalDevices(_instance, &deviceCount, (PhysicalDevice*)null);
+            _vk.EnumeratePhysicalDevices(_instance, &deviceCount, (PhysicalDevice*) null);
 
             if (deviceCount == 0)
             {
@@ -353,7 +353,7 @@ namespace VulkanTriangle
                     return;
                 }
             }
-            
+
             throw new Exception("No suitable device.");
         }
 
@@ -380,7 +380,7 @@ namespace VulkanTriangle
             details.Capabilities = surfaceCapabilities;
 
             var formatCount = 0u;
-            _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, (SurfaceFormatKHR*)null);
+            _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, (SurfaceFormatKHR*) null);
 
             if (formatCount != 0)
             {
@@ -395,7 +395,7 @@ namespace VulkanTriangle
             }
 
             var presentModeCount = 0u;
-            _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, (PresentModeKHR*)null);
+            _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, (PresentModeKHR*) null);
 
             if (presentModeCount != 0)
             {
@@ -403,7 +403,7 @@ namespace VulkanTriangle
                 var modes = stackalloc PresentModeKHR[(int) presentModeCount];
                 _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, modes);
 
-                for (var i = 0; i < formatCount; i++)
+                for (var i = 0; i < presentModeCount; i++)
                 {
                     details.PresentModes[i] = modes[i];
                 }
@@ -415,7 +415,7 @@ namespace VulkanTriangle
         private unsafe bool CheckDeviceExtensionSupport(PhysicalDevice device)
         {
             uint extensionCount;
-            _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, (ExtensionProperties*)null);
+            _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, (ExtensionProperties*) null);
 
             var availableExtensions = stackalloc ExtensionProperties[(int) extensionCount];
             _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, availableExtensions);
@@ -436,7 +436,7 @@ namespace VulkanTriangle
             var indices = new QueueFamilyIndices();
 
             uint queryFamilyCount = 0;
-            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, (QueueFamilyProperties*)null);
+            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, (QueueFamilyProperties*) null);
 
             var queueFamilies = stackalloc QueueFamilyProperties[(int) queryFamilyCount];
 
@@ -488,7 +488,7 @@ namespace VulkanTriangle
         private unsafe void CreateLogicalDevice()
         {
             var indices = FindQueueFamilies(_physicalDevice);
-            var uniqueQueueFamilies = new[] {indices.GraphicsFamily.Value, indices.PresentFamily.Value};
+            var uniqueQueueFamilies = new[] { indices.GraphicsFamily.Value, indices.PresentFamily.Value };
             var queueCreateInfos = stackalloc DeviceQueueCreateInfo[uniqueQueueFamilies.Length];
 
             var queuePriority = 1f;
@@ -580,7 +580,7 @@ namespace VulkanTriangle
             };
 
             var indices = FindQueueFamilies(_physicalDevice);
-            uint[] queueFamilyIndices = {indices.GraphicsFamily.Value, indices.PresentFamily.Value};
+            uint[] queueFamilyIndices = { indices.GraphicsFamily.Value, indices.PresentFamily.Value };
 
             fixed (uint* qfiPtr = queueFamilyIndices)
             {
@@ -602,6 +602,11 @@ namespace VulkanTriangle
 
                 createInfo.OldSwapchain = default;
 
+                if (!_vk.TryGetDeviceExtension(_instance, _vk.CurrentDevice.Value, out _vkSwapchain))
+                {
+                    throw new NotSupportedException("KHR_swapchain extension not found.");
+                }
+                
                 fixed (SwapchainKHR* swapchain = &_swapchain)
                 {
                     if (_vkSwapchain.CreateSwapchain(_device, &createInfo, null, swapchain) != Result.Success)
@@ -611,7 +616,7 @@ namespace VulkanTriangle
                 }
             }
 
-            _vkSwapchain.GetSwapchainImages(_device, _swapchain, &imageCount, (Image*)null);
+            _vkSwapchain.GetSwapchainImages(_device, _swapchain, &imageCount, (Image*) null);
             _swapchainImages = new Image[imageCount];
             fixed (Image* swapchainImage = _swapchainImages)
             {
@@ -630,7 +635,7 @@ namespace VulkanTriangle
             }
 
             var actualExtent = new Extent2D
-                {Height = (uint) _window.Size.Height, Width = (uint) _window.Size.Width};
+            { Height = (uint) _window.Size.Height, Width = (uint) _window.Size.Width };
             actualExtent.Width = new[]
             {
                 capabilities.MinImageExtent.Width,
@@ -819,7 +824,7 @@ namespace VulkanTriangle
                 MaxDepth = 1.0f
             };
 
-            var scissor = new Rect2D {Offset = default, Extent = _swapchainExtent};
+            var scissor = new Rect2D { Offset = default, Extent = _swapchainExtent };
 
             var viewportState = new PipelineViewportStateCreateInfo
             {
@@ -866,7 +871,7 @@ namespace VulkanTriangle
                 AttachmentCount = 1,
                 PAttachments = &colorBlendAttachment
             };
-            
+
             colorBlending.BlendConstants[0] = 0.0f;
             colorBlending.BlendConstants[1] = 0.0f;
             colorBlending.BlendConstants[2] = 0.0f;
@@ -1005,7 +1010,7 @@ namespace VulkanTriangle
 
             for (var i = 0; i < _commandBuffers.Length; i++)
             {
-                var beginInfo = new CommandBufferBeginInfo {SType = StructureType.CommandBufferBeginInfo};
+                var beginInfo = new CommandBufferBeginInfo { SType = StructureType.CommandBufferBeginInfo };
 
                 if (_vk.BeginCommandBuffer(_commandBuffers[i], &beginInfo) != Result.Success)
                 {
@@ -1017,11 +1022,11 @@ namespace VulkanTriangle
                     SType = StructureType.RenderPassBeginInfo,
                     RenderPass = _renderPass,
                     Framebuffer = _swapchainFramebuffers[i],
-                    RenderArea = {Offset = new Offset2D {X = 0, Y = 0}, Extent = _swapchainExtent}
+                    RenderArea = { Offset = new Offset2D { X = 0, Y = 0 }, Extent = _swapchainExtent }
                 };
 
                 var clearColor = new ClearValue
-                    {Color = new ClearColorValue {Float32_0 = 0, Float32_1 = 0, Float32_2 = 0, Float32_3 = 1}};
+                { Color = new ClearColorValue { Float32_0 = 0, Float32_1 = 0, Float32_2 = 0, Float32_3 = 1 } };
                 renderPassInfo.ClearValueCount = 1;
                 renderPassInfo.PClearValues = &clearColor;
 

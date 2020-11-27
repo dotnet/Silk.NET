@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceOverrideInfoINTEL
         (
-            StructureType sType = StructureType.PerformanceOverrideInfoIntel,
-            void* pNext = default,
-            PerformanceOverrideTypeINTEL type = default,
-            Bool32 enable = default,
-            ulong parameter = default
-        )
+            StructureType? sType = StructureType.PerformanceOverrideInfoIntel,
+            void* pNext = null,
+            PerformanceOverrideTypeINTEL? type = null,
+            Bool32? enable = null,
+            ulong? parameter = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
-            Enable = enable;
-            Parameter = parameter;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (parameter is not null)
+            {
+                Parameter = parameter.Value;
+            }
         }
 
 /// <summary></summary>

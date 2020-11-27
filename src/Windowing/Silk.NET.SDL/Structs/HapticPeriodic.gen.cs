@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,36 +22,91 @@ namespace Silk.NET.SDL
     {
         public HapticPeriodic
         (
-            ushort type = default,
-            HapticDirection direction = default,
-            uint length = default,
-            ushort delay = default,
-            ushort button = default,
-            ushort interval = default,
-            ushort period = default,
-            short magnitude = default,
-            short offset = default,
-            ushort phase = default,
-            ushort attackLength = default,
-            ushort attackLevel = default,
-            ushort fadeLength = default,
-            ushort fadeLevel = default
-        )
+            ushort? type = null,
+            HapticDirection? direction = null,
+            uint? length = null,
+            ushort? delay = null,
+            ushort? button = null,
+            ushort? interval = null,
+            ushort? period = null,
+            short? magnitude = null,
+            short? offset = null,
+            ushort? phase = null,
+            ushort? attackLength = null,
+            ushort? attackLevel = null,
+            ushort? fadeLength = null,
+            ushort? fadeLevel = null
+        ) : this()
         {
-            Type = type;
-            Direction = direction;
-            Length = length;
-            Delay = delay;
-            Button = button;
-            Interval = interval;
-            Period = period;
-            Magnitude = magnitude;
-            Offset = offset;
-            Phase = phase;
-            AttackLength = attackLength;
-            AttackLevel = attackLevel;
-            FadeLength = fadeLength;
-            FadeLevel = fadeLevel;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (direction is not null)
+            {
+                Direction = direction.Value;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
+
+            if (delay is not null)
+            {
+                Delay = delay.Value;
+            }
+
+            if (button is not null)
+            {
+                Button = button.Value;
+            }
+
+            if (interval is not null)
+            {
+                Interval = interval.Value;
+            }
+
+            if (period is not null)
+            {
+                Period = period.Value;
+            }
+
+            if (magnitude is not null)
+            {
+                Magnitude = magnitude.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (phase is not null)
+            {
+                Phase = phase.Value;
+            }
+
+            if (attackLength is not null)
+            {
+                AttackLength = attackLength.Value;
+            }
+
+            if (attackLevel is not null)
+            {
+                AttackLevel = attackLevel.Value;
+            }
+
+            if (fadeLength is not null)
+            {
+                FadeLength = fadeLength.Value;
+            }
+
+            if (fadeLevel is not null)
+            {
+                FadeLevel = fadeLevel.Value;
+            }
         }
 
 

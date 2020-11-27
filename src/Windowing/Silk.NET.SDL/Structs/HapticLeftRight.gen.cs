@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.SDL
     {
         public HapticLeftRight
         (
-            ushort type = default,
-            uint length = default,
-            ushort largeMagnitude = default,
-            ushort smallMagnitude = default
-        )
+            ushort? type = null,
+            uint? length = null,
+            ushort? largeMagnitude = null,
+            ushort? smallMagnitude = null
+        ) : this()
         {
-            Type = type;
-            Length = length;
-            LargeMagnitude = largeMagnitude;
-            SmallMagnitude = smallMagnitude;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (length is not null)
+            {
+                Length = length.Value;
+            }
+
+            if (largeMagnitude is not null)
+            {
+                LargeMagnitude = largeMagnitude.Value;
+            }
+
+            if (smallMagnitude is not null)
+            {
+                SmallMagnitude = smallMagnitude.Value;
+            }
         }
 
 

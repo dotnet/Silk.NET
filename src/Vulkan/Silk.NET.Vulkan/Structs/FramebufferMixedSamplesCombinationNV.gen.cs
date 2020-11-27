@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public FramebufferMixedSamplesCombinationNV
         (
-            StructureType sType = StructureType.FramebufferMixedSamplesCombinationNV,
-            void* pNext = default,
-            CoverageReductionModeNV coverageReductionMode = default,
-            SampleCountFlags rasterizationSamples = default,
-            SampleCountFlags depthStencilSamples = default,
-            SampleCountFlags colorSamples = default
-        )
+            StructureType? sType = StructureType.FramebufferMixedSamplesCombinationNV,
+            void* pNext = null,
+            CoverageReductionModeNV? coverageReductionMode = null,
+            SampleCountFlags? rasterizationSamples = null,
+            SampleCountFlags? depthStencilSamples = null,
+            SampleCountFlags? colorSamples = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            CoverageReductionMode = coverageReductionMode;
-            RasterizationSamples = rasterizationSamples;
-            DepthStencilSamples = depthStencilSamples;
-            ColorSamples = colorSamples;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (coverageReductionMode is not null)
+            {
+                CoverageReductionMode = coverageReductionMode.Value;
+            }
+
+            if (rasterizationSamples is not null)
+            {
+                RasterizationSamples = rasterizationSamples.Value;
+            }
+
+            if (depthStencilSamples is not null)
+            {
+                DepthStencilSamples = depthStencilSamples.Value;
+            }
+
+            if (colorSamples is not null)
+            {
+                ColorSamples = colorSamples.Value;
+            }
         }
 
 /// <summary></summary>

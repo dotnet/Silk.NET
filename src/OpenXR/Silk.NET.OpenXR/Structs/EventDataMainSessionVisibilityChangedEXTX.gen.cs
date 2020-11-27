@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public EventDataMainSessionVisibilityChangedEXTX
         (
-            StructureType type = StructureType.TypeEventDataMainSessionVisibilityChangedExtx,
-            void* next = default,
-            uint visible = default,
-            OverlayMainSessionFlagsEXTX flags = default
-        )
+            StructureType? type = StructureType.TypeEventDataMainSessionVisibilityChangedExtx,
+            void* next = null,
+            uint? visible = null,
+            OverlayMainSessionFlagsEXTX? flags = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Visible = visible;
-            Flags = flags;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (visible is not null)
+            {
+                Visible = visible.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 /// <summary></summary>

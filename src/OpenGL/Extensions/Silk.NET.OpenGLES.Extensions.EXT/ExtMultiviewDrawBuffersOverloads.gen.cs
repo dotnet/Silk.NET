@@ -40,6 +40,12 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             thisApi.GetInteger(target, index, out data.GetPinnableReference());
         }
 
+        public static unsafe void GetInteger(this ExtMultiviewDrawBuffers thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<int> data)
+        {
+            // SpanOverloader
+            thisApi.GetInteger(target, index, out data.GetPinnableReference());
+        }
+
     }
 }
 

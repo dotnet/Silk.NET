@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public View
         (
-            StructureType type = StructureType.TypeView,
-            void* next = default,
-            Posef pose = default,
-            Fovf fov = default
-        )
+            StructureType? type = StructureType.TypeView,
+            void* next = null,
+            Posef? pose = null,
+            Fovf? fov = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Pose = pose;
-            Fov = fov;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (fov is not null)
+            {
+                Fov = fov.Value;
+            }
         }
 
 /// <summary></summary>

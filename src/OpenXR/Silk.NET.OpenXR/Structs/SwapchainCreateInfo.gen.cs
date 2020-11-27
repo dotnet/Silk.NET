@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainCreateInfo
         (
-            StructureType type = StructureType.TypeSwapchainCreateInfo,
-            void* next = default,
-            SwapchainCreateFlags createFlags = default,
-            SwapchainUsageFlags usageFlags = default,
-            long format = default,
-            uint sampleCount = default,
-            uint width = default,
-            uint height = default,
-            uint faceCount = default,
-            uint arraySize = default,
-            uint mipCount = default
-        )
+            StructureType? type = StructureType.TypeSwapchainCreateInfo,
+            void* next = null,
+            SwapchainCreateFlags? createFlags = null,
+            SwapchainUsageFlags? usageFlags = null,
+            long? format = null,
+            uint? sampleCount = null,
+            uint? width = null,
+            uint? height = null,
+            uint? faceCount = null,
+            uint? arraySize = null,
+            uint? mipCount = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            CreateFlags = createFlags;
-            UsageFlags = usageFlags;
-            Format = format;
-            SampleCount = sampleCount;
-            Width = width;
-            Height = height;
-            FaceCount = faceCount;
-            ArraySize = arraySize;
-            MipCount = mipCount;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (createFlags is not null)
+            {
+                CreateFlags = createFlags.Value;
+            }
+
+            if (usageFlags is not null)
+            {
+                UsageFlags = usageFlags.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (sampleCount is not null)
+            {
+                SampleCount = sampleCount.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (faceCount is not null)
+            {
+                FaceCount = faceCount.Value;
+            }
+
+            if (arraySize is not null)
+            {
+                ArraySize = arraySize.Value;
+            }
+
+            if (mipCount is not null)
+            {
+                MipCount = mipCount.Value;
+            }
         }
 
 /// <summary></summary>

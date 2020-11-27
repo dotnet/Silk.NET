@@ -15,12 +15,36 @@ namespace Silk.NET.Input
     /// </summary>
     public static class InputWindowExtensions
     {
+        private static List<IInputPlatform> _platforms = new List<IInputPlatform>();
+
         /// <summary>
         /// Gets the input platforms currently registered with the input system.
         /// </summary>
-        public static IReadOnlyList<IInputPlatform> Platforms { get; } = new List<IInputPlatform>();
+        public static IReadOnlyList<IInputPlatform> Platforms
+        {
+            get
+            {
+                if (!_initializedFirstPartyPlatforms)
+                {
+                    DoLoadFirstPartyPlatformsViaReflection();
+                    _initializedFirstPartyPlatforms = true;
+                }
 
-        static InputWindowExtensions()
+                return _platforms;
+            }
+        }
+
+        private static bool _initializedFirstPartyPlatforms = false;
+
+        public static void ShouldLoadFirstPartyPlatforms(bool shouldLoad)
+        {
+            if (_initializedFirstPartyPlatforms)
+                throw new InvalidOperationException("Input Platforms already loaded, cannot change first party loading");
+
+            _initializedFirstPartyPlatforms = !shouldLoad;
+        }
+        
+        private static void DoLoadFirstPartyPlatformsViaReflection()
         {
             TryAdd("Silk.NET.Input.Glfw");
             TryAdd("Silk.NET.Input.Sdl");
@@ -52,13 +76,13 @@ namespace Silk.NET.Input
         /// Adds this input platform to the platform list. Shouldn't be used unless writing your own input backend.
         /// </summary>
         /// <param name="platform">The platform to add.</param>
-        public static void Add(IInputPlatform platform) => ((List<IInputPlatform>) Platforms).Add(platform);
+        public static void Add(IInputPlatform platform) => _platforms.Add(platform);
 
         /// <summary>
         /// Removes this input platform from the platform list. Shouldn't be used unless writing your own input backend.
         /// </summary>
         /// <param name="platform">The platform to remove.</param>
-        public static void Remove(IInputPlatform platform) => ((List<IInputPlatform>) Platforms).Remove(platform);
+        public static void Remove(IInputPlatform platform) => _platforms.Remove(platform);
 
         /// <summary>
         /// Attempts to load the given assembly by name, checks for a <see cref="IInputPlatform"/>, if one is found it

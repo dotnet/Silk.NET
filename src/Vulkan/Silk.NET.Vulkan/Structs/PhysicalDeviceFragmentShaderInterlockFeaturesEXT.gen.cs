@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFragmentShaderInterlockFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceFragmentShaderInterlockFeaturesExt,
-            void* pNext = default,
-            Bool32 fragmentShaderSampleInterlock = default,
-            Bool32 fragmentShaderPixelInterlock = default,
-            Bool32 fragmentShaderShadingRateInterlock = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceFragmentShaderInterlockFeaturesExt,
+            void* pNext = null,
+            Bool32? fragmentShaderSampleInterlock = null,
+            Bool32? fragmentShaderPixelInterlock = null,
+            Bool32? fragmentShaderShadingRateInterlock = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            FragmentShaderSampleInterlock = fragmentShaderSampleInterlock;
-            FragmentShaderPixelInterlock = fragmentShaderPixelInterlock;
-            FragmentShaderShadingRateInterlock = fragmentShaderShadingRateInterlock;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fragmentShaderSampleInterlock is not null)
+            {
+                FragmentShaderSampleInterlock = fragmentShaderSampleInterlock.Value;
+            }
+
+            if (fragmentShaderPixelInterlock is not null)
+            {
+                FragmentShaderPixelInterlock = fragmentShaderPixelInterlock.Value;
+            }
+
+            if (fragmentShaderShadingRateInterlock is not null)
+            {
+                FragmentShaderShadingRateInterlock = fragmentShaderShadingRateInterlock.Value;
+            }
         }
 
 /// <summary></summary>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
@@ -114,7 +114,7 @@ namespace SampleBase
         public unsafe void SetMatrix4(string name, Matrix4x4 data)
         {
             _gl.UseProgram(Handle);
-            _gl.UniformMatrix4(_uniformLocations[name], Handle, true, (float*)&data);
+            _gl.UniformMatrix4(_uniformLocations[name], Handle, true, (float*) &data);
         }
 
         public void SetVector3(string name, Vector3 data)

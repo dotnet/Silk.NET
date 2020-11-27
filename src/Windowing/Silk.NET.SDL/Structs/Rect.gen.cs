@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.SDL
     {
         public Rect
         (
-            int x = default,
-            int y = default,
-            int w = default,
-            int h = default
-        )
+            int? x = null,
+            int? y = null,
+            int? w = null,
+            int? h = null
+        ) : this()
         {
-            X = x;
-            Y = y;
-            W = w;
-            H = h;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
+
+            if (h is not null)
+            {
+                H = h.Value;
+            }
         }
 
 

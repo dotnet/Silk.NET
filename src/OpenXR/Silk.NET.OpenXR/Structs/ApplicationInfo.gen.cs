@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public ApplicationInfo
         (
-            uint applicationVersion = default,
-            uint engineVersion = default,
-            ulong apiVersion = default
-        )
+            uint? applicationVersion = null,
+            uint? engineVersion = null,
+            ulong? apiVersion = null
+        ) : this()
         {
-            ApplicationVersion = applicationVersion;
-            EngineVersion = engineVersion;
-            ApiVersion = apiVersion;
+            if (applicationVersion is not null)
+            {
+                ApplicationVersion = applicationVersion.Value;
+            }
+
+            if (engineVersion is not null)
+            {
+                EngineVersion = engineVersion.Value;
+            }
+
+            if (apiVersion is not null)
+            {
+                ApiVersion = apiVersion.Value;
+            }
         }
 
         /// <summary></summary>

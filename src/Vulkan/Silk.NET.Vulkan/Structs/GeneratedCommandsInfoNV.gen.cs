@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,38 +22,97 @@ namespace Silk.NET.Vulkan
     {
         public GeneratedCommandsInfoNV
         (
-            StructureType sType = StructureType.GeneratedCommandsInfoNV,
-            void* pNext = default,
-            PipelineBindPoint pipelineBindPoint = default,
-            Pipeline pipeline = default,
-            IndirectCommandsLayoutNV indirectCommandsLayout = default,
-            uint streamCount = default,
-            IndirectCommandsStreamNV* pStreams = default,
-            uint sequencesCount = default,
-            Buffer preprocessBuffer = default,
-            ulong preprocessOffset = default,
-            ulong preprocessSize = default,
-            Buffer sequencesCountBuffer = default,
-            ulong sequencesCountOffset = default,
-            Buffer sequencesIndexBuffer = default,
-            ulong sequencesIndexOffset = default
-        )
+            StructureType? sType = StructureType.GeneratedCommandsInfoNV,
+            void* pNext = null,
+            PipelineBindPoint? pipelineBindPoint = null,
+            Pipeline? pipeline = null,
+            IndirectCommandsLayoutNV? indirectCommandsLayout = null,
+            uint? streamCount = null,
+            IndirectCommandsStreamNV* pStreams = null,
+            uint? sequencesCount = null,
+            Buffer? preprocessBuffer = null,
+            ulong? preprocessOffset = null,
+            ulong? preprocessSize = null,
+            Buffer? sequencesCountBuffer = null,
+            ulong? sequencesCountOffset = null,
+            Buffer? sequencesIndexBuffer = null,
+            ulong? sequencesIndexOffset = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PipelineBindPoint = pipelineBindPoint;
-            Pipeline = pipeline;
-            IndirectCommandsLayout = indirectCommandsLayout;
-            StreamCount = streamCount;
-            PStreams = pStreams;
-            SequencesCount = sequencesCount;
-            PreprocessBuffer = preprocessBuffer;
-            PreprocessOffset = preprocessOffset;
-            PreprocessSize = preprocessSize;
-            SequencesCountBuffer = sequencesCountBuffer;
-            SequencesCountOffset = sequencesCountOffset;
-            SequencesIndexBuffer = sequencesIndexBuffer;
-            SequencesIndexOffset = sequencesIndexOffset;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pipelineBindPoint is not null)
+            {
+                PipelineBindPoint = pipelineBindPoint.Value;
+            }
+
+            if (pipeline is not null)
+            {
+                Pipeline = pipeline.Value;
+            }
+
+            if (indirectCommandsLayout is not null)
+            {
+                IndirectCommandsLayout = indirectCommandsLayout.Value;
+            }
+
+            if (streamCount is not null)
+            {
+                StreamCount = streamCount.Value;
+            }
+
+            if (pStreams is not null)
+            {
+                PStreams = pStreams;
+            }
+
+            if (sequencesCount is not null)
+            {
+                SequencesCount = sequencesCount.Value;
+            }
+
+            if (preprocessBuffer is not null)
+            {
+                PreprocessBuffer = preprocessBuffer.Value;
+            }
+
+            if (preprocessOffset is not null)
+            {
+                PreprocessOffset = preprocessOffset.Value;
+            }
+
+            if (preprocessSize is not null)
+            {
+                PreprocessSize = preprocessSize.Value;
+            }
+
+            if (sequencesCountBuffer is not null)
+            {
+                SequencesCountBuffer = sequencesCountBuffer.Value;
+            }
+
+            if (sequencesCountOffset is not null)
+            {
+                SequencesCountOffset = sequencesCountOffset.Value;
+            }
+
+            if (sequencesIndexBuffer is not null)
+            {
+                SequencesIndexBuffer = sequencesIndexBuffer.Value;
+            }
+
+            if (sequencesIndexOffset is not null)
+            {
+                SequencesIndexOffset = sequencesIndexOffset.Value;
+            }
         }
 
 /// <summary></summary>

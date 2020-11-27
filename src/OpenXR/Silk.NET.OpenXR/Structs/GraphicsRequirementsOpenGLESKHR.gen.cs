@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public GraphicsRequirementsOpenGLESKHR
         (
-            StructureType type = StructureType.TypeGraphicsRequirementsOpenglESKhr,
-            void* next = default,
-            ulong minApiVersionSupported = default,
-            ulong maxApiVersionSupported = default
-        )
+            StructureType? type = StructureType.TypeGraphicsRequirementsOpenglESKhr,
+            void* next = null,
+            ulong? minApiVersionSupported = null,
+            ulong? maxApiVersionSupported = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            MinApiVersionSupported = minApiVersionSupported;
-            MaxApiVersionSupported = maxApiVersionSupported;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (minApiVersionSupported is not null)
+            {
+                MinApiVersionSupported = minApiVersionSupported.Value;
+            }
+
+            if (maxApiVersionSupported is not null)
+            {
+                MaxApiVersionSupported = maxApiVersionSupported.Value;
+            }
         }
 
 /// <summary></summary>

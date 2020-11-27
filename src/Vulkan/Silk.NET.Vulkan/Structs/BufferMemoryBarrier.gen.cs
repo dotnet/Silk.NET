@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Vulkan
     {
         public BufferMemoryBarrier
         (
-            StructureType sType = StructureType.BufferMemoryBarrier,
-            void* pNext = default,
-            AccessFlags srcAccessMask = default,
-            AccessFlags dstAccessMask = default,
-            uint srcQueueFamilyIndex = default,
-            uint dstQueueFamilyIndex = default,
-            Buffer buffer = default,
-            ulong offset = default,
-            ulong size = default
-        )
+            StructureType? sType = StructureType.BufferMemoryBarrier,
+            void* pNext = null,
+            AccessFlags? srcAccessMask = null,
+            AccessFlags? dstAccessMask = null,
+            uint? srcQueueFamilyIndex = null,
+            uint? dstQueueFamilyIndex = null,
+            Buffer? buffer = null,
+            ulong? offset = null,
+            ulong? size = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SrcAccessMask = srcAccessMask;
-            DstAccessMask = dstAccessMask;
-            SrcQueueFamilyIndex = srcQueueFamilyIndex;
-            DstQueueFamilyIndex = dstQueueFamilyIndex;
-            Buffer = buffer;
-            Offset = offset;
-            Size = size;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (srcAccessMask is not null)
+            {
+                SrcAccessMask = srcAccessMask.Value;
+            }
+
+            if (dstAccessMask is not null)
+            {
+                DstAccessMask = dstAccessMask.Value;
+            }
+
+            if (srcQueueFamilyIndex is not null)
+            {
+                SrcQueueFamilyIndex = srcQueueFamilyIndex.Value;
+            }
+
+            if (dstQueueFamilyIndex is not null)
+            {
+                DstQueueFamilyIndex = dstQueueFamilyIndex.Value;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 /// <summary></summary>

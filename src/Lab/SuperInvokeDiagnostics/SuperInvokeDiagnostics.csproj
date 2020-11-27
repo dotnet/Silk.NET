@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
@@ -10,6 +10,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Ultz.SuperInvoke.AOT" Version="1.0.2" />
+        <PackageReference Include="Ultz.SuperInvoke.AOT" Version="1.1.0" />
     </ItemGroup>
 </Project>

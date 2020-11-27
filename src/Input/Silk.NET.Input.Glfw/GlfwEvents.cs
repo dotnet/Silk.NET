@@ -36,6 +36,7 @@ namespace Silk.NET.Input.Glfw
             GlfwProvider.GLFW.Value.SetMouseButtonCallback(Handle, null);
             GlfwProvider.GLFW.Value.SetCursorEnterCallback(Handle, null);
             GlfwProvider.GLFW.Value.SetCursorPosCallback(Handle, null);
+            GlfwProvider.GLFW.Value.SetScrollCallback(Handle, null);
         }
     }
 }

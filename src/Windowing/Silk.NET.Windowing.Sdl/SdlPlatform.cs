@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.SDL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl;
@@ -18,6 +19,17 @@ namespace Silk.NET.Windowing.Sdl
     {
         private SdlView? _view;
 
+        public static SdlPlatform GetOrRegister()
+        {
+            var val = Window.GetOrDefault<SdlPlatform>();
+            if (val is null)
+            {
+                Window.Add(val = new SdlPlatform());
+            }
+
+            return val;
+        }
+
         private Lazy<bool> _isApplicable = new Lazy<bool>
         (
             () =>
@@ -26,8 +38,11 @@ namespace Silk.NET.Windowing.Sdl
                 {
                     SDL.Sdl.GetApi();
                 }
-                catch
+                catch (Exception ex)
                 {
+#if DEBUG
+                    Console.WriteLine($"Can't load SDL: {ex}");
+#endif
                     return false;
                 }
 
@@ -92,5 +107,8 @@ namespace Silk.NET.Windowing.Sdl
 
         public IMonitor GetMainMonitor() => new SdlMonitor(0);
         public bool IsSourceOfView(IView view) => view is SdlView;
+
+        public unsafe SdlView From(void* handle, IGLContext? ctx)
+            => IsViewOnly ? new SdlView(handle, ctx) : new SdlWindow(handle, ctx);
     }
 }

@@ -8,6 +8,11 @@ using Silk.NET.Core.Contexts;
 
 namespace Silk.NET.SDL
 {
+    // TODO for Silk.NET 3.0:
+    // ideally we'd only use override 1 on android, but we can't really do that until it's better supported in .net 6
+    // (we'd need a preprocessor directive which is only available in xamarin)
+    [PInvokeOverride(1, "libSDL2.so")]
+    [PInvokeOverride(0, "__Internal")]
     public partial class Sdl
     {
         public const uint InitTimer = 0x00000001;
@@ -906,16 +911,12 @@ namespace Silk.NET.SDL
             {
                 return null;
             }
-            
+
             ClearError();
             return new SdlException(str);
         }
 
-        public static Sdl GetApi()
-        {
-            return new Sdl(new DefaultNativeContext(new SDLLibraryNameContainer().GetLibraryName()));
-        }
-
+        public static Sdl GetApi() => new Sdl(CreateDefaultContext(new SDLLibraryNameContainer().GetLibraryName()));
         public override bool IsExtensionPresent(string extension) => GLExtensionSupported(extension) == SdlBool.True;
     }
 }

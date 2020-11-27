@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewUsageCreateInfo
         (
-            StructureType sType = StructureType.ImageViewUsageCreateInfo,
-            void* pNext = default,
-            ImageUsageFlags usage = default
-        )
+            StructureType? sType = StructureType.ImageViewUsageCreateInfo,
+            void* pNext = null,
+            ImageUsageFlags? usage = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Usage = usage;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
         }
 
 /// <summary></summary>

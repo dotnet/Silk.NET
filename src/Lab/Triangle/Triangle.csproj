@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3</TargetFramework>
+        <TargetFrameworks>netcoreapp3.1;netstandard2.0</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>preview</LangVersion>
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifiers>
@@ -12,6 +12,7 @@
       <ProjectReference Include="..\..\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
       <ProjectReference Include="..\..\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
       <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+      <ProjectReference Include="..\InputTest\InputTest.csproj" />
       <ProjectReference Include="..\SampleBase\SampleBase.csproj" />
     </ItemGroup>
     

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public VertexInputAttributeDescription
         (
-            uint location = default,
-            uint binding = default,
-            Format format = default,
-            uint offset = default
-        )
+            uint? location = null,
+            uint? binding = null,
+            Format? format = null,
+            uint? offset = null
+        ) : this()
         {
-            Location = location;
-            Binding = binding;
-            Format = format;
-            Offset = offset;
+            if (location is not null)
+            {
+                Location = location.Value;
+            }
+
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
         }
 
 /// <summary></summary>

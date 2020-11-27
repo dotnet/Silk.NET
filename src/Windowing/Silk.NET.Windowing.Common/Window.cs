@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Reflection;
 using Silk.NET.Windowing.Internals;
@@ -20,20 +21,46 @@ namespace Silk.NET.Windowing
         private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
         private const string GlfwBackendName = "GlfwPlatform";
         private const string SdlBackendName = "SdlPlatform";
-        public static IReadOnlyList<IWindowPlatform> Platforms { get; } = new List<IWindowPlatform>();
 
-        internal static Exception NoPlatformException => new PlatformNotSupportedException
-        (
-            "Couldn't find a suitable window platform. " +
-            "https://docs.ultz.co.uk/Silk.NET/windowing/troubleshooting.html"
-        );
+        private static List<Type> _platformsKeys = new List<Type>();
+        private static List<IWindowPlatform> _platformsValues = new List<IWindowPlatform>();
 
-        static Window()
+        private static bool _initializedFirstPartyPlatforms = false;
+        
+        public static IReadOnlyCollection<IWindowPlatform> Platforms
+        {
+            get
+            {
+                if (!_initializedFirstPartyPlatforms)
+                {
+                    DoLoadFirstPartyPlatformsViaReflection();
+                    _initializedFirstPartyPlatforms = true;
+                }
+
+                return _platformsValues;
+            }
+        }
+
+        public static void ShouldLoadFirstPartyPlatforms(bool shouldLoad)
+        {
+            if (_initializedFirstPartyPlatforms)
+                throw new InvalidOperationException("Window Platforms already loaded, cannot change first party loading");
+
+            _initializedFirstPartyPlatforms = !shouldLoad;
+        }
+        
+        private static void DoLoadFirstPartyPlatformsViaReflection()
         {
             // Try add the first-party backends
             TryAdd(GlfwBackendNamespace);
             TryAdd(SdlBackendNamespace);
         }
+
+        internal static Exception NoPlatformException => new PlatformNotSupportedException
+        (
+            "Couldn't find a suitable window platform. " +
+            "https://docs.ultz.co.uk/silk.net/windowing/troubleshooting.html"
+        );
 
         /// <summary>
         /// Gets the first platform registered that is applicable and isn't view-only.
@@ -147,8 +174,9 @@ namespace Silk.NET.Windowing
         /// </summary>
         public static void Prioritize(IWindowPlatform platform)
         {
-            ((List<IWindowPlatform>) Platforms).Remove(platform);
-            ((List<IWindowPlatform>) Platforms).Insert(0, platform);
+            Remove(platform);
+            _platformsKeys.Insert(0, platform.GetType());
+            _platformsValues.Insert(0, platform);
         }
 
         /// <summary>
@@ -189,9 +217,10 @@ namespace Silk.NET.Windowing
         /// <param name="platform">The platform to add.</param>
         public static void Add(IWindowPlatform platform)
         {
-            if (!((List<IWindowPlatform>) Platforms).Contains(platform))
+            if (!_platformsKeys.Contains(platform.GetType()))
             {
-                ((List<IWindowPlatform>) Platforms).Add(platform);
+                _platformsKeys.Add(platform.GetType());
+                _platformsValues.Add(platform);
             }
         }
 
@@ -199,7 +228,15 @@ namespace Silk.NET.Windowing
         /// Removes this window platform from the platform list. Shouldn't be used unless writing your own windowing backend.
         /// </summary>
         /// <param name="platform">The platform to remove.</param>
-        public static void Remove(IWindowPlatform platform) => ((List<IWindowPlatform>) Platforms).Remove(platform);
+        public static void Remove(IWindowPlatform platform)
+        {
+            var index = _platformsKeys.IndexOf(platform.GetType());
+            if (index != -1)
+            {
+                _platformsKeys.RemoveAt(index);
+                _platformsValues.RemoveAt(index);
+            }
+        }
 
         /// <summary>
         /// Attempts to load the given assembly by name, checks for a <see cref="IWindowPlatform"/>, if one is found it
@@ -231,5 +268,14 @@ namespace Silk.NET.Windowing
                 return false;
             }
         }
+
+        /// <summary>
+        /// Gets the instance of the given window platform type if added, or <c>default</c> if the window platform is
+        /// not registered with <see cref="Platforms"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of the window platform to get.</typeparam>
+        /// <returns>The instance of the window platform type or <c>default</c></returns>
+        public static T? GetOrDefault<T>() where T : class, IWindowPlatform
+            => _platformsKeys.Contains(typeof(T)) ? (T)_platformsValues[_platformsKeys.IndexOf(typeof(T))] : default;
     }
 }

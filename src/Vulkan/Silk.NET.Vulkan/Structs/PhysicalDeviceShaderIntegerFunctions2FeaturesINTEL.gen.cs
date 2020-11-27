@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderIntegerFunctions2FeaturesIntel,
-            void* pNext = default,
-            Bool32 shaderIntegerFunctions2 = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShaderIntegerFunctions2FeaturesIntel,
+            void* pNext = null,
+            Bool32? shaderIntegerFunctions2 = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderIntegerFunctions2 = shaderIntegerFunctions2;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderIntegerFunctions2 is not null)
+            {
+                ShaderIntegerFunctions2 = shaderIntegerFunctions2.Value;
+            }
         }
 
 /// <summary></summary>

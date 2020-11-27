@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Assimp
     {
         public Bone
         (
-            AssimpString mName = default,
-            uint mNumWeights = default,
-            VertexWeight* mWeights = default,
-            System.Numerics.Matrix4x4 mOffsetMatrix = default
-        )
+            AssimpString? mName = null,
+            uint? mNumWeights = null,
+            VertexWeight* mWeights = null,
+            System.Numerics.Matrix4x4? mOffsetMatrix = null
+        ) : this()
         {
-            MName = mName;
-            MNumWeights = mNumWeights;
-            MWeights = mWeights;
-            MOffsetMatrix = mOffsetMatrix;
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mNumWeights is not null)
+            {
+                MNumWeights = mNumWeights.Value;
+            }
+
+            if (mWeights is not null)
+            {
+                MWeights = mWeights;
+            }
+
+            if (mOffsetMatrix is not null)
+            {
+                MOffsetMatrix = mOffsetMatrix.Value;
+            }
         }
 
 

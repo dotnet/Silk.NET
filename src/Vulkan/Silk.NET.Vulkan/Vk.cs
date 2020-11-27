@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
         public static Vk GetApi()
         {
             var ctx = new MultiNativeContext
-                (new DefaultNativeContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
             var ret = new Vk(ctx);
             ctx.Contexts[1] = new LamdaNativeContext
             (
@@ -55,7 +55,7 @@ namespace Silk.NET.Vulkan
         public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
         {
             var ctx = new MultiNativeContext
-                (new DefaultNativeContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
             var ret = new Vk(ctx);
             ctx.Contexts[1] = new LamdaNativeContext
             (
@@ -92,7 +92,7 @@ namespace Silk.NET.Vulkan
         public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
         {
             var ctx = new MultiNativeContext
-                (new DefaultNativeContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
             var ret = new Vk(ctx);
             ctx.Contexts[1] = new LamdaNativeContext
             (
@@ -131,7 +131,7 @@ namespace Silk.NET.Vulkan
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
-        public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T:NativeExtension<Vk> =>
+        public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T)Activator.CreateInstance
                 (typeof(T), new LamdaNativeContext(x => GetInstanceProcAddr(instance, x)))

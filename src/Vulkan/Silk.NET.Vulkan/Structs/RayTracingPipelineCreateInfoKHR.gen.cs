@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,34 +22,85 @@ namespace Silk.NET.Vulkan
     {
         public RayTracingPipelineCreateInfoKHR
         (
-            StructureType sType = StructureType.RayTracingPipelineCreateInfoKhr,
-            void* pNext = default,
-            PipelineCreateFlags flags = default,
-            uint stageCount = default,
-            PipelineShaderStageCreateInfo* pStages = default,
-            uint groupCount = default,
-            RayTracingShaderGroupCreateInfoKHR* pGroups = default,
-            uint maxRecursionDepth = default,
-            PipelineLibraryCreateInfoKHR libraries = default,
-            RayTracingPipelineInterfaceCreateInfoKHR* pLibraryInterface = default,
-            PipelineLayout layout = default,
-            Pipeline basePipelineHandle = default,
-            int basePipelineIndex = default
-        )
+            StructureType? sType = StructureType.RayTracingPipelineCreateInfoKhr,
+            void* pNext = null,
+            PipelineCreateFlags? flags = null,
+            uint? stageCount = null,
+            PipelineShaderStageCreateInfo* pStages = null,
+            uint? groupCount = null,
+            RayTracingShaderGroupCreateInfoKHR* pGroups = null,
+            uint? maxRecursionDepth = null,
+            PipelineLibraryCreateInfoKHR? libraries = null,
+            RayTracingPipelineInterfaceCreateInfoKHR* pLibraryInterface = null,
+            PipelineLayout? layout = null,
+            Pipeline? basePipelineHandle = null,
+            int? basePipelineIndex = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            StageCount = stageCount;
-            PStages = pStages;
-            GroupCount = groupCount;
-            PGroups = pGroups;
-            MaxRecursionDepth = maxRecursionDepth;
-            Libraries = libraries;
-            PLibraryInterface = pLibraryInterface;
-            Layout = layout;
-            BasePipelineHandle = basePipelineHandle;
-            BasePipelineIndex = basePipelineIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (stageCount is not null)
+            {
+                StageCount = stageCount.Value;
+            }
+
+            if (pStages is not null)
+            {
+                PStages = pStages;
+            }
+
+            if (groupCount is not null)
+            {
+                GroupCount = groupCount.Value;
+            }
+
+            if (pGroups is not null)
+            {
+                PGroups = pGroups;
+            }
+
+            if (maxRecursionDepth is not null)
+            {
+                MaxRecursionDepth = maxRecursionDepth.Value;
+            }
+
+            if (libraries is not null)
+            {
+                Libraries = libraries.Value;
+            }
+
+            if (pLibraryInterface is not null)
+            {
+                PLibraryInterface = pLibraryInterface;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (basePipelineHandle is not null)
+            {
+                BasePipelineHandle = basePipelineHandle.Value;
+            }
+
+            if (basePipelineIndex is not null)
+            {
+                BasePipelineIndex = basePipelineIndex.Value;
+            }
         }
 
 /// <summary></summary>

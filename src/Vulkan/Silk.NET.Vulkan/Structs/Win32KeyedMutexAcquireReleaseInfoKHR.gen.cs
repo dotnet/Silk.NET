@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Vulkan
     {
         public Win32KeyedMutexAcquireReleaseInfoKHR
         (
-            StructureType sType = StructureType.Win32KeyedMutexAcquireReleaseInfoKhr,
-            void* pNext = default,
-            uint acquireCount = default,
-            DeviceMemory* pAcquireSyncs = default,
-            ulong* pAcquireKeys = default,
-            uint* pAcquireTimeouts = default,
-            uint releaseCount = default,
-            DeviceMemory* pReleaseSyncs = default,
-            ulong* pReleaseKeys = default
-        )
+            StructureType? sType = StructureType.Win32KeyedMutexAcquireReleaseInfoKhr,
+            void* pNext = null,
+            uint? acquireCount = null,
+            DeviceMemory* pAcquireSyncs = null,
+            ulong* pAcquireKeys = null,
+            uint* pAcquireTimeouts = null,
+            uint? releaseCount = null,
+            DeviceMemory* pReleaseSyncs = null,
+            ulong* pReleaseKeys = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AcquireCount = acquireCount;
-            PAcquireSyncs = pAcquireSyncs;
-            PAcquireKeys = pAcquireKeys;
-            PAcquireTimeouts = pAcquireTimeouts;
-            ReleaseCount = releaseCount;
-            PReleaseSyncs = pReleaseSyncs;
-            PReleaseKeys = pReleaseKeys;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (acquireCount is not null)
+            {
+                AcquireCount = acquireCount.Value;
+            }
+
+            if (pAcquireSyncs is not null)
+            {
+                PAcquireSyncs = pAcquireSyncs;
+            }
+
+            if (pAcquireKeys is not null)
+            {
+                PAcquireKeys = pAcquireKeys;
+            }
+
+            if (pAcquireTimeouts is not null)
+            {
+                PAcquireTimeouts = pAcquireTimeouts;
+            }
+
+            if (releaseCount is not null)
+            {
+                ReleaseCount = releaseCount.Value;
+            }
+
+            if (pReleaseSyncs is not null)
+            {
+                PReleaseSyncs = pReleaseSyncs;
+            }
+
+            if (pReleaseKeys is not null)
+            {
+                PReleaseKeys = pReleaseKeys;
+            }
         }
 
 /// <summary></summary>

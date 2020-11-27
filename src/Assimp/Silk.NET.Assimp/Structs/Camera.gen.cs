@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Assimp
     {
         public Camera
         (
-            AssimpString mName = default,
-            System.Numerics.Vector3 mPosition = default,
-            System.Numerics.Vector3 mUp = default,
-            System.Numerics.Vector3 mLookAt = default,
-            float mHorizontalFOV = default,
-            float mClipPlaneNear = default,
-            float mClipPlaneFar = default,
-            float mAspect = default
-        )
+            AssimpString? mName = null,
+            System.Numerics.Vector3? mPosition = null,
+            System.Numerics.Vector3? mUp = null,
+            System.Numerics.Vector3? mLookAt = null,
+            float? mHorizontalFOV = null,
+            float? mClipPlaneNear = null,
+            float? mClipPlaneFar = null,
+            float? mAspect = null
+        ) : this()
         {
-            MName = mName;
-            MPosition = mPosition;
-            MUp = mUp;
-            MLookAt = mLookAt;
-            MHorizontalFOV = mHorizontalFOV;
-            MClipPlaneNear = mClipPlaneNear;
-            MClipPlaneFar = mClipPlaneFar;
-            MAspect = mAspect;
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mPosition is not null)
+            {
+                MPosition = mPosition.Value;
+            }
+
+            if (mUp is not null)
+            {
+                MUp = mUp.Value;
+            }
+
+            if (mLookAt is not null)
+            {
+                MLookAt = mLookAt.Value;
+            }
+
+            if (mHorizontalFOV is not null)
+            {
+                MHorizontalFOV = mHorizontalFOV.Value;
+            }
+
+            if (mClipPlaneNear is not null)
+            {
+                MClipPlaneNear = mClipPlaneNear.Value;
+            }
+
+            if (mClipPlaneFar is not null)
+            {
+                MClipPlaneFar = mClipPlaneFar.Value;
+            }
+
+            if (mAspect is not null)
+            {
+                MAspect = mAspect.Value;
+            }
         }
 
 

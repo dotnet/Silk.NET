@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public AttachmentDescriptionStencilLayoutKHR
         (
-            StructureType sType = StructureType.AttachmentDescriptionStencilLayout,
-            void* pNext = default,
-            ImageLayout stencilInitialLayout = default,
-            ImageLayout stencilFinalLayout = default
-        )
+            StructureType? sType = StructureType.AttachmentDescriptionStencilLayout,
+            void* pNext = null,
+            ImageLayout? stencilInitialLayout = null,
+            ImageLayout? stencilFinalLayout = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            StencilInitialLayout = stencilInitialLayout;
-            StencilFinalLayout = stencilFinalLayout;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stencilInitialLayout is not null)
+            {
+                StencilInitialLayout = stencilInitialLayout.Value;
+            }
+
+            if (stencilFinalLayout is not null)
+            {
+                StencilFinalLayout = stencilFinalLayout.Value;
+            }
         }
 
 /// <summary></summary>

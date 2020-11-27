@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public SessionBeginInfo
         (
-            StructureType type = StructureType.TypeSessionBeginInfo,
-            void* next = default,
-            ViewConfigurationType primaryViewConfigurationType = default
-        )
+            StructureType? type = StructureType.TypeSessionBeginInfo,
+            void* next = null,
+            ViewConfigurationType? primaryViewConfigurationType = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            PrimaryViewConfigurationType = primaryViewConfigurationType;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (primaryViewConfigurationType is not null)
+            {
+                PrimaryViewConfigurationType = primaryViewConfigurationType.Value;
+            }
         }
 
 /// <summary></summary>

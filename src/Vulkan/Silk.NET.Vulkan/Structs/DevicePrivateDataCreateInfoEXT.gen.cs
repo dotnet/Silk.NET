@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DevicePrivateDataCreateInfoEXT
         (
-            StructureType sType = StructureType.DevicePrivateDataCreateInfoExt,
-            void* pNext = default,
-            uint privateDataSlotRequestCount = default
-        )
+            StructureType? sType = StructureType.DevicePrivateDataCreateInfoExt,
+            void* pNext = null,
+            uint? privateDataSlotRequestCount = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PrivateDataSlotRequestCount = privateDataSlotRequestCount;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (privateDataSlotRequestCount is not null)
+            {
+                PrivateDataSlotRequestCount = privateDataSlotRequestCount.Value;
+            }
         }
 
 /// <summary></summary>

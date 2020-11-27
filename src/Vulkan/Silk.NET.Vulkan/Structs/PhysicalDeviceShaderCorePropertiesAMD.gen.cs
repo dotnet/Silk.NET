@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,40 +22,103 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceShaderCorePropertiesAMD
         (
-            StructureType sType = StructureType.PhysicalDeviceShaderCorePropertiesAmd,
-            void* pNext = default,
-            uint shaderEngineCount = default,
-            uint shaderArraysPerEngineCount = default,
-            uint computeUnitsPerShaderArray = default,
-            uint simdPerComputeUnit = default,
-            uint wavefrontsPerSimd = default,
-            uint wavefrontSize = default,
-            uint sgprsPerSimd = default,
-            uint minSgprAllocation = default,
-            uint maxSgprAllocation = default,
-            uint sgprAllocationGranularity = default,
-            uint vgprsPerSimd = default,
-            uint minVgprAllocation = default,
-            uint maxVgprAllocation = default,
-            uint vgprAllocationGranularity = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceShaderCorePropertiesAmd,
+            void* pNext = null,
+            uint? shaderEngineCount = null,
+            uint? shaderArraysPerEngineCount = null,
+            uint? computeUnitsPerShaderArray = null,
+            uint? simdPerComputeUnit = null,
+            uint? wavefrontsPerSimd = null,
+            uint? wavefrontSize = null,
+            uint? sgprsPerSimd = null,
+            uint? minSgprAllocation = null,
+            uint? maxSgprAllocation = null,
+            uint? sgprAllocationGranularity = null,
+            uint? vgprsPerSimd = null,
+            uint? minVgprAllocation = null,
+            uint? maxVgprAllocation = null,
+            uint? vgprAllocationGranularity = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderEngineCount = shaderEngineCount;
-            ShaderArraysPerEngineCount = shaderArraysPerEngineCount;
-            ComputeUnitsPerShaderArray = computeUnitsPerShaderArray;
-            SimdPerComputeUnit = simdPerComputeUnit;
-            WavefrontsPerSimd = wavefrontsPerSimd;
-            WavefrontSize = wavefrontSize;
-            SgprsPerSimd = sgprsPerSimd;
-            MinSgprAllocation = minSgprAllocation;
-            MaxSgprAllocation = maxSgprAllocation;
-            SgprAllocationGranularity = sgprAllocationGranularity;
-            VgprsPerSimd = vgprsPerSimd;
-            MinVgprAllocation = minVgprAllocation;
-            MaxVgprAllocation = maxVgprAllocation;
-            VgprAllocationGranularity = vgprAllocationGranularity;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderEngineCount is not null)
+            {
+                ShaderEngineCount = shaderEngineCount.Value;
+            }
+
+            if (shaderArraysPerEngineCount is not null)
+            {
+                ShaderArraysPerEngineCount = shaderArraysPerEngineCount.Value;
+            }
+
+            if (computeUnitsPerShaderArray is not null)
+            {
+                ComputeUnitsPerShaderArray = computeUnitsPerShaderArray.Value;
+            }
+
+            if (simdPerComputeUnit is not null)
+            {
+                SimdPerComputeUnit = simdPerComputeUnit.Value;
+            }
+
+            if (wavefrontsPerSimd is not null)
+            {
+                WavefrontsPerSimd = wavefrontsPerSimd.Value;
+            }
+
+            if (wavefrontSize is not null)
+            {
+                WavefrontSize = wavefrontSize.Value;
+            }
+
+            if (sgprsPerSimd is not null)
+            {
+                SgprsPerSimd = sgprsPerSimd.Value;
+            }
+
+            if (minSgprAllocation is not null)
+            {
+                MinSgprAllocation = minSgprAllocation.Value;
+            }
+
+            if (maxSgprAllocation is not null)
+            {
+                MaxSgprAllocation = maxSgprAllocation.Value;
+            }
+
+            if (sgprAllocationGranularity is not null)
+            {
+                SgprAllocationGranularity = sgprAllocationGranularity.Value;
+            }
+
+            if (vgprsPerSimd is not null)
+            {
+                VgprsPerSimd = vgprsPerSimd.Value;
+            }
+
+            if (minVgprAllocation is not null)
+            {
+                MinVgprAllocation = minVgprAllocation.Value;
+            }
+
+            if (maxVgprAllocation is not null)
+            {
+                MaxVgprAllocation = maxVgprAllocation.Value;
+            }
+
+            if (vgprAllocationGranularity is not null)
+            {
+                VgprAllocationGranularity = vgprAllocationGranularity.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewASTCDecodeModeEXT
         (
-            StructureType sType = StructureType.ImageViewAstcDecodeModeExt,
-            void* pNext = default,
-            Format decodeMode = default
-        )
+            StructureType? sType = StructureType.ImageViewAstcDecodeModeExt,
+            void* pNext = null,
+            Format? decodeMode = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DecodeMode = decodeMode;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (decodeMode is not null)
+            {
+                DecodeMode = decodeMode.Value;
+            }
         }
 
 /// <summary></summary>

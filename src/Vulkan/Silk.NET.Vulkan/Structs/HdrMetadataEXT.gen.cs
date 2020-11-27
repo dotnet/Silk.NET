@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Vulkan
     {
         public HdrMetadataEXT
         (
-            StructureType sType = StructureType.HdrMetadataExt,
-            void* pNext = default,
-            XYColorEXT displayPrimaryRed = default,
-            XYColorEXT displayPrimaryGreen = default,
-            XYColorEXT displayPrimaryBlue = default,
-            XYColorEXT whitePoint = default,
-            float maxLuminance = default,
-            float minLuminance = default,
-            float maxContentLightLevel = default,
-            float maxFrameAverageLightLevel = default
-        )
+            StructureType? sType = StructureType.HdrMetadataExt,
+            void* pNext = null,
+            XYColorEXT? displayPrimaryRed = null,
+            XYColorEXT? displayPrimaryGreen = null,
+            XYColorEXT? displayPrimaryBlue = null,
+            XYColorEXT? whitePoint = null,
+            float? maxLuminance = null,
+            float? minLuminance = null,
+            float? maxContentLightLevel = null,
+            float? maxFrameAverageLightLevel = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DisplayPrimaryRed = displayPrimaryRed;
-            DisplayPrimaryGreen = displayPrimaryGreen;
-            DisplayPrimaryBlue = displayPrimaryBlue;
-            WhitePoint = whitePoint;
-            MaxLuminance = maxLuminance;
-            MinLuminance = minLuminance;
-            MaxContentLightLevel = maxContentLightLevel;
-            MaxFrameAverageLightLevel = maxFrameAverageLightLevel;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (displayPrimaryRed is not null)
+            {
+                DisplayPrimaryRed = displayPrimaryRed.Value;
+            }
+
+            if (displayPrimaryGreen is not null)
+            {
+                DisplayPrimaryGreen = displayPrimaryGreen.Value;
+            }
+
+            if (displayPrimaryBlue is not null)
+            {
+                DisplayPrimaryBlue = displayPrimaryBlue.Value;
+            }
+
+            if (whitePoint is not null)
+            {
+                WhitePoint = whitePoint.Value;
+            }
+
+            if (maxLuminance is not null)
+            {
+                MaxLuminance = maxLuminance.Value;
+            }
+
+            if (minLuminance is not null)
+            {
+                MinLuminance = minLuminance.Value;
+            }
+
+            if (maxContentLightLevel is not null)
+            {
+                MaxContentLightLevel = maxContentLightLevel.Value;
+            }
+
+            if (maxFrameAverageLightLevel is not null)
+            {
+                MaxFrameAverageLightLevel = maxFrameAverageLightLevel.Value;
+            }
         }
 
 /// <summary></summary>

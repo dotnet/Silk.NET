@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ClearAttachment
         (
-            ImageAspectFlags aspectMask = default,
-            uint colorAttachment = default,
-            ClearValue clearValue = default
-        )
+            ImageAspectFlags? aspectMask = null,
+            uint? colorAttachment = null,
+            ClearValue? clearValue = null
+        ) : this()
         {
-            AspectMask = aspectMask;
-            ColorAttachment = colorAttachment;
-            ClearValue = clearValue;
+            if (aspectMask is not null)
+            {
+                AspectMask = aspectMask.Value;
+            }
+
+            if (colorAttachment is not null)
+            {
+                ColorAttachment = colorAttachment.Value;
+            }
+
+            if (clearValue is not null)
+            {
+                ClearValue = clearValue.Value;
+            }
         }
 
 /// <summary></summary>

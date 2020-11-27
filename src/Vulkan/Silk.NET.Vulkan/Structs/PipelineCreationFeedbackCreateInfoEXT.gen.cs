@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCreationFeedbackCreateInfoEXT
         (
-            StructureType sType = StructureType.PipelineCreationFeedbackCreateInfoExt,
-            void* pNext = default,
-            PipelineCreationFeedbackEXT* pPipelineCreationFeedback = default,
-            uint pipelineStageCreationFeedbackCount = default,
-            PipelineCreationFeedbackEXT* pPipelineStageCreationFeedbacks = default
-        )
+            StructureType? sType = StructureType.PipelineCreationFeedbackCreateInfoExt,
+            void* pNext = null,
+            PipelineCreationFeedbackEXT* pPipelineCreationFeedback = null,
+            uint? pipelineStageCreationFeedbackCount = null,
+            PipelineCreationFeedbackEXT* pPipelineStageCreationFeedbacks = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PPipelineCreationFeedback = pPipelineCreationFeedback;
-            PipelineStageCreationFeedbackCount = pipelineStageCreationFeedbackCount;
-            PPipelineStageCreationFeedbacks = pPipelineStageCreationFeedbacks;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pPipelineCreationFeedback is not null)
+            {
+                PPipelineCreationFeedback = pPipelineCreationFeedback;
+            }
+
+            if (pipelineStageCreationFeedbackCount is not null)
+            {
+                PipelineStageCreationFeedbackCount = pipelineStageCreationFeedbackCount.Value;
+            }
+
+            if (pPipelineStageCreationFeedbacks is not null)
+            {
+                PPipelineStageCreationFeedbacks = pPipelineStageCreationFeedbacks;
+            }
         }
 
 /// <summary></summary>

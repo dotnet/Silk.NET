@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DebugUtilsLabelEXT
         (
-            StructureType sType = StructureType.DebugUtilsLabelExt,
-            void* pNext = default,
-            byte* pLabelName = default
-        )
+            StructureType? sType = StructureType.DebugUtilsLabelExt,
+            void* pNext = null,
+            byte* pLabelName = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PLabelName = pLabelName;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pLabelName is not null)
+            {
+                PLabelName = pLabelName;
+            }
         }
 
 /// <summary></summary>

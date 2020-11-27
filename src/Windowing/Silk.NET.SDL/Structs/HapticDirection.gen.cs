@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.SDL
     {
         public HapticDirection
         (
-            byte type = default
-        )
+            byte? type = null
+        ) : this()
         {
-            Type = type;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
         }
 
 

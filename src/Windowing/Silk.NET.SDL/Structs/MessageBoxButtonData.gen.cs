@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.SDL
     {
         public MessageBoxButtonData
         (
-            uint flags = default,
-            int buttonid = default,
-            byte* text = default
-        )
+            uint? flags = null,
+            int? buttonid = null,
+            byte* text = null
+        ) : this()
         {
-            Flags = flags;
-            Buttonid = buttonid;
-            Text = text;
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (buttonid is not null)
+            {
+                Buttonid = buttonid.Value;
+            }
+
+            if (text is not null)
+            {
+                Text = text;
+            }
         }
 
 

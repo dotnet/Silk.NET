@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public SurfaceFormat2KHR
         (
-            StructureType sType = StructureType.SurfaceFormat2Khr,
-            void* pNext = default,
-            SurfaceFormatKHR surfaceFormat = default
-        )
+            StructureType? sType = StructureType.SurfaceFormat2Khr,
+            void* pNext = null,
+            SurfaceFormatKHR? surfaceFormat = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SurfaceFormat = surfaceFormat;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (surfaceFormat is not null)
+            {
+                SurfaceFormat = surfaceFormat.Value;
+            }
         }
 
 /// <summary></summary>

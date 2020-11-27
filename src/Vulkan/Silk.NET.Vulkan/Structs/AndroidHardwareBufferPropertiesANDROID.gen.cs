@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public AndroidHardwareBufferPropertiesANDROID
         (
-            StructureType sType = StructureType.AndroidHardwareBufferPropertiesAndroid,
-            void* pNext = default,
-            ulong allocationSize = default,
-            uint memoryTypeBits = default
-        )
+            StructureType? sType = StructureType.AndroidHardwareBufferPropertiesAndroid,
+            void* pNext = null,
+            ulong? allocationSize = null,
+            uint? memoryTypeBits = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AllocationSize = allocationSize;
-            MemoryTypeBits = memoryTypeBits;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (allocationSize is not null)
+            {
+                AllocationSize = allocationSize.Value;
+            }
+
+            if (memoryTypeBits is not null)
+            {
+                MemoryTypeBits = memoryTypeBits.Value;
+            }
         }
 
 /// <summary></summary>

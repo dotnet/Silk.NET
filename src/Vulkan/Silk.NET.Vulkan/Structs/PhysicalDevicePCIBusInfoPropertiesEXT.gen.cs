@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDevicePCIBusInfoPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDevicePciBusInfoPropertiesExt,
-            void* pNext = default,
-            uint pciDomain = default,
-            uint pciBus = default,
-            uint pciDevice = default,
-            uint pciFunction = default
-        )
+            StructureType? sType = StructureType.PhysicalDevicePciBusInfoPropertiesExt,
+            void* pNext = null,
+            uint? pciDomain = null,
+            uint? pciBus = null,
+            uint? pciDevice = null,
+            uint? pciFunction = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PciDomain = pciDomain;
-            PciBus = pciBus;
-            PciDevice = pciDevice;
-            PciFunction = pciFunction;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pciDomain is not null)
+            {
+                PciDomain = pciDomain.Value;
+            }
+
+            if (pciBus is not null)
+            {
+                PciBus = pciBus.Value;
+            }
+
+            if (pciDevice is not null)
+            {
+                PciDevice = pciDevice.Value;
+            }
+
+            if (pciFunction is not null)
+            {
+                PciFunction = pciFunction.Value;
+            }
         }
 
 /// <summary></summary>

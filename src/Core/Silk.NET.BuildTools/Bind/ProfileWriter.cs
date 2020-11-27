@@ -107,6 +107,7 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             sw.WriteLine("using System.Runtime.InteropServices;");
+            sw.WriteLine("using System.Runtime.CompilerServices;");
             sw.WriteLine("using System.Text;");
             sw.WriteLine("using Silk.NET.Core.Native;");
             sw.WriteLine("using Silk.NET.Core.Attributes;");
@@ -169,43 +170,35 @@ namespace Silk.NET.BuildTools.Bind
                         first = false;
                     }
 
-                    sw.Write($"            {field.Type} {argName} = {field.DefaultAssignment ?? "default"}");
+                    var nullable = field.Type.ToString().Contains('*') ? null : "?";
+                    sw.Write($"            {field.Type}{nullable} {argName} = {field.DefaultAssignment ?? "null"}");
                 }
 
                 sw.WriteLine();
-                sw.WriteLine("        )");
+                sw.WriteLine("        ) : this()");
                 sw.WriteLine("        {");
+                first = true;
                 foreach (var field in @struct.Fields)
                 {
                     if (!(field.Count is null))
-                    {
-                        if (!Field.FixedCapableTypes.Contains(field.Type.Name))
-                        {
-                            var count = field.Count.IsConstant
-                                ? int.Parse
-                                (
-                                    profile.Projects.SelectMany(x => x.Value.Classes.SelectMany(y => y.Constants))
-                                        .FirstOrDefault(x => x.NativeName == field.Count.ConstantName)
-                                        ?.Value ?? throw new InvalidDataException("Couldn't find constant referenced")
-                                )
-                                : field.Count.IsStatic
-                                    ? field.Count.StaticCount
-                                    : 1;
-                            for (var i = 0; i < count; i++)
-                            {
-                                sw.WriteLine
-                                (
-                                    $"           {field.Name}_{i} = default;"
-                                );
-                            }
-                        }
-
-                        continue;
-                    }
-
+                        continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
                     argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
-                    sw.WriteLine($"            {field.Name} = {argName};");
+                    if (!first)
+                    {
+                        sw.WriteLine();
+                    }
+                    else
+                    {
+                        first = false;
+                    }
+
+                    sw.WriteLine($"            if ({argName} is not null)");
+                    sw.WriteLine("            {");
+
+                    var value = field.Type.ToString().Contains('*') ? null : ".Value";
+                    sw.WriteLine($"                {field.Name} = {argName}{value};");
+                    sw.WriteLine("            }");
                 }
 
                 sw.WriteLine("        }");
@@ -231,22 +224,50 @@ namespace Silk.NET.BuildTools.Bind
                                 : 1;
                         var typeFixup09072020 = new TypeSignatureBuilder(structField.Type).WithIndirectionLevel
                             (structField.Type.IndirectionLevels - 1).Build();
+                        sw.WriteLine($"        {structField.Doc}");
+                        foreach (var attr in structField.Attributes)
+                        {
+                            sw.WriteLine($"        {attr}");
+                        }
+
+                        sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
+                        sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
+                        sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
+                        sw.WriteLine($"        public {structField.Name}Buffer {structField.Name};");
+                        sw.WriteLine();
+                        sw.WriteLine($"        public struct {structField.Name}Buffer");
+                        sw.WriteLine("        {");
                         for (var i = 0; i < count; i++)
                         {
-                            sw.WriteLine($"        {structField.Doc}");
-                            foreach (var attr in structField.Attributes)
-                            {
-                                sw.WriteLine($"        {attr}");
-                            }
-
-                            sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
-                            sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
-                            sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
-                            sw.WriteLine
-                            (
-                                $"        public {typeFixup09072020} {structField.Name}_{i};"
-                            );
+                            sw.WriteLine($"            public {typeFixup09072020} Element{i};");
                         }
+                        
+                        sw.WriteLine($"            public ref {typeFixup09072020} this[int index]");
+                        sw.WriteLine("            {");
+                        sw.WriteLine("                get");
+                        sw.WriteLine("                {");
+                        sw.WriteLine($"                    if (index > {count - 1} || index < 0)");
+                        sw.WriteLine("                    {");
+                        sw.WriteLine("                        throw new ArgumentOutOfRangeException(nameof(index));");
+                        sw.WriteLine("                    }");
+                        sw.WriteLine();
+                        sw.WriteLine($"                    fixed ({typeFixup09072020}* ptr = &Element0)");
+                        sw.WriteLine("                    {");
+                        sw.WriteLine("                        return ref ptr[index];");
+                        sw.WriteLine("                    }");
+                        sw.WriteLine("                }");
+                        sw.WriteLine("            }");
+                        if (!typeFixup09072020.IsPointer)
+                        {
+                            sw.WriteLine();
+                            sw.WriteLine("#if NETSTANDARD2_1");
+                            sw.WriteLine($"            public Span<{typeFixup09072020}> AsSpan()");
+                            sw.WriteLine($"                => MemoryMarshal.CreateSpan(ref Element0, {count});");
+                            sw.WriteLine("#endif");
+                        }
+
+                        sw.WriteLine("        }");
+                        sw.WriteLine();
                     }
                     else
                     {
@@ -256,12 +277,14 @@ namespace Silk.NET.BuildTools.Bind
                         }
 
                         var count = structField.Count.IsConstant
-                            ? int.Parse
+                            ? Utilities.ParseInt
                             (
                                 profile.Projects.SelectMany(x => x.Value.Classes.SelectMany(y => y.Constants))
-                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
-                                    ?
-                                    .Value?? throw new InvalidDataException("Couldn't find constant referenced")
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .Value ??
+                                profile.Projects.SelectMany(x => x.Value.Enums.SelectMany(y => y.Tokens))
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .Value ?? throw new InvalidDataException("Couldn't find constant referenced")
                             )
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount
@@ -413,6 +436,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.Write(task.LicenseText());
                     sw.WriteLine("using System;");
                     sw.WriteLine("using System.Runtime.InteropServices;");
+                    sw.WriteLine("using System.Runtime.CompilerServices;");
                     sw.WriteLine("using System.Text;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine("using Silk.NET.Core.Attributes;");
@@ -441,6 +465,11 @@ namespace Silk.NET.BuildTools.Bind
                         .ToArray();
                     foreach (var function in allFunctions)
                     {
+                        if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
+                        {
+                            sw.WriteLine($"#if {function.PreprocessorConditions}");
+                        }
+
                         using (var sr = new StringReader(function.Doc))
                         {
                             string line;
@@ -465,6 +494,11 @@ namespace Silk.NET.BuildTools.Bind
                             }
                         }
 
+                        if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
+                        {
+                            sw.WriteLine("#endif");
+                        }
+
                         sw.WriteLine();
                     }
 
@@ -473,6 +507,11 @@ namespace Silk.NET.BuildTools.Bind
                         var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                             ? swOverloads ??= CreateOverloadsFile(folder, @class.ClassName, false)
                             : sw;
+                        if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
+                        {
+                            sw2u.WriteLine($"#if {overload.Base.PreprocessorConditions}");
+                        }
+
                         if (sw2u == swOverloads)
                         {
                             overload.Signature.Parameters.Insert
@@ -508,6 +547,12 @@ namespace Silk.NET.BuildTools.Bind
                         }
 
                         sw2u.WriteLine("        }");
+                        
+                        if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
+                        {
+                            sw2u.WriteLine($"#endif");
+                        }
+                        
                         sw2u.WriteLine();
                     }
 
@@ -590,12 +635,14 @@ namespace Silk.NET.BuildTools.Bind
                         sw.Write(task.LicenseText());
                         sw.WriteLine("using System;");
                         sw.WriteLine("using System.Runtime.InteropServices;");
+                        sw.WriteLine("using System.Runtime.CompilerServices;");
                         sw.WriteLine("using System.Text;");
                         sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(task)};");
                         sw.WriteLine("using Silk.NET.Core.Native;");
                         sw.WriteLine("using Silk.NET.Core.Attributes;");
                         sw.WriteLine("using Silk.NET.Core.Contexts;");
                         sw.WriteLine("using Silk.NET.Core.Loader;");
+                        sw.WriteLine("using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
                         sw.WriteLine();
@@ -610,6 +657,11 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
                         foreach (var function in i.Functions)
                         {
+                            if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
+                            {
+                                sw.WriteLine($"#if {function.PreprocessorConditions}");
+                            }
+
                             using (var sr = new StringReader(function.Doc))
                             {
                                 string line;
@@ -633,6 +685,11 @@ namespace Silk.NET.BuildTools.Bind
                                     sw.WriteLine($"        {line}");
                                 }
                             }
+                            
+                            if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
+                            {
+                                sw.WriteLine($"#endif");
+                            }
 
                             sw.WriteLine();
                         }
@@ -642,6 +699,11 @@ namespace Silk.NET.BuildTools.Bind
                             var sw2u = overload.Signature.Kind == SignatureKind.PotentiallyConflictingOverload
                                 ? swOverloads ??= CreateOverloadsFile(folder, name, true)
                                 : sw;
+                            if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
+                            {
+                                sw2u.WriteLine($"#if {overload.Base.PreprocessorConditions}");
+                            }
+
                             if (sw2u == swOverloads)
                             {
                                 overload.Signature.Parameters.Insert
@@ -677,6 +739,12 @@ namespace Silk.NET.BuildTools.Bind
                             }
 
                             sw2u.WriteLine("        }");
+                            
+                            if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
+                            {
+                                sw2u.WriteLine($"#endif");
+                            }
+
                             sw2u.WriteLine();
                         }
 
@@ -784,7 +852,7 @@ namespace Silk.NET.BuildTools.Bind
             csproj.WriteLine("<Project Sdk=\"Microsoft.NET.Sdk\">");
             csproj.WriteLine();
             csproj.WriteLine("  <PropertyGroup>");
-            csproj.WriteLine("    <TargetFramework>netstandard2.0</TargetFramework>");
+            csproj.WriteLine("    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>");
             csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
             csproj.WriteLine("    <LangVersion>preview</LangVersion>");
             csproj.WriteLine("  </PropertyGroup>");

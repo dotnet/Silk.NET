@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceRayTracingPropertiesKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceRayTracingPropertiesKhr,
-            void* pNext = default,
-            uint shaderGroupHandleSize = default,
-            uint maxRecursionDepth = default,
-            uint maxShaderGroupStride = default,
-            uint shaderGroupBaseAlignment = default,
-            ulong maxGeometryCount = default,
-            ulong maxInstanceCount = default,
-            ulong maxPrimitiveCount = default,
-            uint maxDescriptorSetAccelerationStructures = default,
-            uint shaderGroupHandleCaptureReplaySize = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceRayTracingPropertiesKhr,
+            void* pNext = null,
+            uint? shaderGroupHandleSize = null,
+            uint? maxRecursionDepth = null,
+            uint? maxShaderGroupStride = null,
+            uint? shaderGroupBaseAlignment = null,
+            ulong? maxGeometryCount = null,
+            ulong? maxInstanceCount = null,
+            ulong? maxPrimitiveCount = null,
+            uint? maxDescriptorSetAccelerationStructures = null,
+            uint? shaderGroupHandleCaptureReplaySize = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShaderGroupHandleSize = shaderGroupHandleSize;
-            MaxRecursionDepth = maxRecursionDepth;
-            MaxShaderGroupStride = maxShaderGroupStride;
-            ShaderGroupBaseAlignment = shaderGroupBaseAlignment;
-            MaxGeometryCount = maxGeometryCount;
-            MaxInstanceCount = maxInstanceCount;
-            MaxPrimitiveCount = maxPrimitiveCount;
-            MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures;
-            ShaderGroupHandleCaptureReplaySize = shaderGroupHandleCaptureReplaySize;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shaderGroupHandleSize is not null)
+            {
+                ShaderGroupHandleSize = shaderGroupHandleSize.Value;
+            }
+
+            if (maxRecursionDepth is not null)
+            {
+                MaxRecursionDepth = maxRecursionDepth.Value;
+            }
+
+            if (maxShaderGroupStride is not null)
+            {
+                MaxShaderGroupStride = maxShaderGroupStride.Value;
+            }
+
+            if (shaderGroupBaseAlignment is not null)
+            {
+                ShaderGroupBaseAlignment = shaderGroupBaseAlignment.Value;
+            }
+
+            if (maxGeometryCount is not null)
+            {
+                MaxGeometryCount = maxGeometryCount.Value;
+            }
+
+            if (maxInstanceCount is not null)
+            {
+                MaxInstanceCount = maxInstanceCount.Value;
+            }
+
+            if (maxPrimitiveCount is not null)
+            {
+                MaxPrimitiveCount = maxPrimitiveCount.Value;
+            }
+
+            if (maxDescriptorSetAccelerationStructures is not null)
+            {
+                MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures.Value;
+            }
+
+            if (shaderGroupHandleCaptureReplaySize is not null)
+            {
+                ShaderGroupHandleCaptureReplaySize = shaderGroupHandleCaptureReplaySize.Value;
+            }
         }
 
 /// <summary></summary>

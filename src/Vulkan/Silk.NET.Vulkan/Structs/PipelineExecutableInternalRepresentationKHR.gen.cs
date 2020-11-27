@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PipelineExecutableInternalRepresentationKHR
         (
-            StructureType sType = StructureType.PipelineExecutableInternalRepresentationKhr,
-            void* pNext = default,
-            Bool32 isText = default,
-            UIntPtr dataSize = default,
-            void* pData = default
-        )
+            StructureType? sType = StructureType.PipelineExecutableInternalRepresentationKhr,
+            void* pNext = null,
+            Bool32? isText = null,
+            UIntPtr? dataSize = null,
+            void* pData = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            IsText = isText;
-            DataSize = dataSize;
-            PData = pData;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (isText is not null)
+            {
+                IsText = isText.Value;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (pData is not null)
+            {
+                PData = pData;
+            }
         }
 
 /// <summary></summary>

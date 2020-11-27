@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,34 +22,85 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMeshShaderPropertiesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceMeshShaderPropertiesNV,
-            void* pNext = default,
-            uint maxDrawMeshTasksCount = default,
-            uint maxTaskWorkGroupInvocations = default,
-            uint maxTaskTotalMemorySize = default,
-            uint maxTaskOutputCount = default,
-            uint maxMeshWorkGroupInvocations = default,
-            uint maxMeshTotalMemorySize = default,
-            uint maxMeshOutputVertices = default,
-            uint maxMeshOutputPrimitives = default,
-            uint maxMeshMultiviewViewCount = default,
-            uint meshOutputPerVertexGranularity = default,
-            uint meshOutputPerPrimitiveGranularity = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceMeshShaderPropertiesNV,
+            void* pNext = null,
+            uint? maxDrawMeshTasksCount = null,
+            uint? maxTaskWorkGroupInvocations = null,
+            uint? maxTaskTotalMemorySize = null,
+            uint? maxTaskOutputCount = null,
+            uint? maxMeshWorkGroupInvocations = null,
+            uint? maxMeshTotalMemorySize = null,
+            uint? maxMeshOutputVertices = null,
+            uint? maxMeshOutputPrimitives = null,
+            uint? maxMeshMultiviewViewCount = null,
+            uint? meshOutputPerVertexGranularity = null,
+            uint? meshOutputPerPrimitiveGranularity = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MaxDrawMeshTasksCount = maxDrawMeshTasksCount;
-            MaxTaskWorkGroupInvocations = maxTaskWorkGroupInvocations;
-            MaxTaskTotalMemorySize = maxTaskTotalMemorySize;
-            MaxTaskOutputCount = maxTaskOutputCount;
-            MaxMeshWorkGroupInvocations = maxMeshWorkGroupInvocations;
-            MaxMeshTotalMemorySize = maxMeshTotalMemorySize;
-            MaxMeshOutputVertices = maxMeshOutputVertices;
-            MaxMeshOutputPrimitives = maxMeshOutputPrimitives;
-            MaxMeshMultiviewViewCount = maxMeshMultiviewViewCount;
-            MeshOutputPerVertexGranularity = meshOutputPerVertexGranularity;
-            MeshOutputPerPrimitiveGranularity = meshOutputPerPrimitiveGranularity;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxDrawMeshTasksCount is not null)
+            {
+                MaxDrawMeshTasksCount = maxDrawMeshTasksCount.Value;
+            }
+
+            if (maxTaskWorkGroupInvocations is not null)
+            {
+                MaxTaskWorkGroupInvocations = maxTaskWorkGroupInvocations.Value;
+            }
+
+            if (maxTaskTotalMemorySize is not null)
+            {
+                MaxTaskTotalMemorySize = maxTaskTotalMemorySize.Value;
+            }
+
+            if (maxTaskOutputCount is not null)
+            {
+                MaxTaskOutputCount = maxTaskOutputCount.Value;
+            }
+
+            if (maxMeshWorkGroupInvocations is not null)
+            {
+                MaxMeshWorkGroupInvocations = maxMeshWorkGroupInvocations.Value;
+            }
+
+            if (maxMeshTotalMemorySize is not null)
+            {
+                MaxMeshTotalMemorySize = maxMeshTotalMemorySize.Value;
+            }
+
+            if (maxMeshOutputVertices is not null)
+            {
+                MaxMeshOutputVertices = maxMeshOutputVertices.Value;
+            }
+
+            if (maxMeshOutputPrimitives is not null)
+            {
+                MaxMeshOutputPrimitives = maxMeshOutputPrimitives.Value;
+            }
+
+            if (maxMeshMultiviewViewCount is not null)
+            {
+                MaxMeshMultiviewViewCount = maxMeshMultiviewViewCount.Value;
+            }
+
+            if (meshOutputPerVertexGranularity is not null)
+            {
+                MeshOutputPerVertexGranularity = meshOutputPerVertexGranularity.Value;
+            }
+
+            if (meshOutputPerPrimitiveGranularity is not null)
+            {
+                MeshOutputPerPrimitiveGranularity = meshOutputPerPrimitiveGranularity.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.SDL
     {
         public GameControllerButtonBind
         (
-            GameControllerBindType bindType = default,
-            GameControllerBindValue value = default
-        )
+            GameControllerBindType? bindType = null,
+            GameControllerBindValue? value = null
+        ) : this()
         {
-            BindType = bindType;
-            Value = value;
+            if (bindType is not null)
+            {
+                BindType = bindType.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
 

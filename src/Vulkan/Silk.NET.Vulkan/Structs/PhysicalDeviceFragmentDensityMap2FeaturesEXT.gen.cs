@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceFragmentDensityMap2FeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceFragmentDensityMap2FeaturesExt,
-            void* pNext = default,
-            Bool32 fragmentDensityMapDeferred = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMap2FeaturesExt,
+            void* pNext = null,
+            Bool32? fragmentDensityMapDeferred = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            FragmentDensityMapDeferred = fragmentDensityMapDeferred;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (fragmentDensityMapDeferred is not null)
+            {
+                FragmentDensityMapDeferred = fragmentDensityMapDeferred.Value;
+            }
         }
 
 /// <summary></summary>

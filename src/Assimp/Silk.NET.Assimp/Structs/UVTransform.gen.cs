@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Assimp
     {
         public UVTransform
         (
-            System.Numerics.Vector2 mTranslation = default,
-            System.Numerics.Vector2 mScaling = default,
-            float mRotation = default
-        )
+            System.Numerics.Vector2? mTranslation = null,
+            System.Numerics.Vector2? mScaling = null,
+            float? mRotation = null
+        ) : this()
         {
-            MTranslation = mTranslation;
-            MScaling = mScaling;
-            MRotation = mRotation;
+            if (mTranslation is not null)
+            {
+                MTranslation = mTranslation.Value;
+            }
+
+            if (mScaling is not null)
+            {
+                MScaling = mScaling.Value;
+            }
+
+            if (mRotation is not null)
+            {
+                MRotation = mRotation.Value;
+            }
         }
 
 

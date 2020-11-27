@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.SDL
     {
         public DisplayEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            uint display = default,
-            byte @event = default,
-            byte padding1 = default,
-            byte padding2 = default,
-            byte padding3 = default,
-            int data1 = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            uint? display = null,
+            byte? @event = null,
+            byte? padding1 = null,
+            byte? padding2 = null,
+            byte? padding3 = null,
+            int? data1 = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            Display = display;
-            Event = @event;
-            Padding1 = padding1;
-            Padding2 = padding2;
-            Padding3 = padding3;
-            Data1 = data1;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (display is not null)
+            {
+                Display = display.Value;
+            }
+
+            if (@event is not null)
+            {
+                Event = @event.Value;
+            }
+
+            if (padding1 is not null)
+            {
+                Padding1 = padding1.Value;
+            }
+
+            if (padding2 is not null)
+            {
+                Padding2 = padding2.Value;
+            }
+
+            if (padding3 is not null)
+            {
+                Padding3 = padding3.Value;
+            }
+
+            if (data1 is not null)
+            {
+                Data1 = data1.Value;
+            }
         }
 
 

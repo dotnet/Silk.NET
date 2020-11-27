@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceConfigurationAcquireInfoINTEL
         (
-            StructureType sType = StructureType.PerformanceConfigurationAcquireInfoIntel,
-            void* pNext = default,
-            PerformanceConfigurationTypeINTEL type = default
-        )
+            StructureType? sType = StructureType.PerformanceConfigurationAcquireInfoIntel,
+            void* pNext = null,
+            PerformanceConfigurationTypeINTEL? type = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Type = type;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
         }
 
 /// <summary></summary>

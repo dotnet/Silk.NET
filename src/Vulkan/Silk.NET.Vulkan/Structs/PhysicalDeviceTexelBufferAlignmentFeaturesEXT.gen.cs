@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceTexelBufferAlignmentFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceTexelBufferAlignmentFeaturesExt,
-            void* pNext = default,
-            Bool32 texelBufferAlignment = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceTexelBufferAlignmentFeaturesExt,
+            void* pNext = null,
+            Bool32? texelBufferAlignment = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            TexelBufferAlignment = texelBufferAlignment;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (texelBufferAlignment is not null)
+            {
+                TexelBufferAlignment = texelBufferAlignment.Value;
+            }
         }
 
 /// <summary></summary>

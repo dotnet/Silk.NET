@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Vulkan
     {
         public NativeBufferUsage2ANDROID
         (
-            ulong consumer = default,
-            ulong producer = default
-        )
+            ulong? consumer = null,
+            ulong? producer = null
+        ) : this()
         {
-            Consumer = consumer;
-            Producer = producer;
+            if (consumer is not null)
+            {
+                Consumer = consumer.Value;
+            }
+
+            if (producer is not null)
+            {
+                Producer = producer.Value;
+            }
         }
 
 /// <summary></summary>

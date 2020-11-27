@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Vulkan
     {
         public SetStateFlagsIndirectCommandNV
         (
-            uint data = default
-        )
+            uint? data = null
+        ) : this()
         {
-            Data = data;
+            if (data is not null)
+            {
+                Data = data.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PipelineCacheCreateInfo
         (
-            StructureType sType = StructureType.PipelineCacheCreateInfo,
-            void* pNext = default,
-            PipelineCacheCreateFlags flags = default,
-            UIntPtr initialDataSize = default,
-            void* pInitialData = default
-        )
+            StructureType? sType = StructureType.PipelineCacheCreateInfo,
+            void* pNext = null,
+            PipelineCacheCreateFlags? flags = null,
+            UIntPtr? initialDataSize = null,
+            void* pInitialData = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            InitialDataSize = initialDataSize;
-            PInitialData = pInitialData;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (initialDataSize is not null)
+            {
+                InitialDataSize = initialDataSize.Value;
+            }
+
+            if (pInitialData is not null)
+            {
+                PInitialData = pInitialData;
+            }
         }
 
 /// <summary></summary>

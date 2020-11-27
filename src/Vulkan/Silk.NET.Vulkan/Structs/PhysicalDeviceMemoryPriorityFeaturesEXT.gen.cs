@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceMemoryPriorityFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceMemoryPriorityFeaturesExt,
-            void* pNext = default,
-            Bool32 memoryPriority = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceMemoryPriorityFeaturesExt,
+            void* pNext = null,
+            Bool32? memoryPriority = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MemoryPriority = memoryPriority;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memoryPriority is not null)
+            {
+                MemoryPriority = memoryPriority.Value;
+            }
         }
 
 /// <summary></summary>

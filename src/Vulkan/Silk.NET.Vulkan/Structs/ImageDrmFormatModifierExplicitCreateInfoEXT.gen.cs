@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ImageDrmFormatModifierExplicitCreateInfoEXT
         (
-            StructureType sType = StructureType.ImageDrmFormatModifierExplicitCreateInfoExt,
-            void* pNext = default,
-            ulong drmFormatModifier = default,
-            uint drmFormatModifierPlaneCount = default,
-            SubresourceLayout* pPlaneLayouts = default
-        )
+            StructureType? sType = StructureType.ImageDrmFormatModifierExplicitCreateInfoExt,
+            void* pNext = null,
+            ulong? drmFormatModifier = null,
+            uint? drmFormatModifierPlaneCount = null,
+            SubresourceLayout* pPlaneLayouts = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DrmFormatModifier = drmFormatModifier;
-            DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount;
-            PPlaneLayouts = pPlaneLayouts;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (drmFormatModifier is not null)
+            {
+                DrmFormatModifier = drmFormatModifier.Value;
+            }
+
+            if (drmFormatModifierPlaneCount is not null)
+            {
+                DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount.Value;
+            }
+
+            if (pPlaneLayouts is not null)
+            {
+                PPlaneLayouts = pPlaneLayouts;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public GraphicsPipelineShaderGroupsCreateInfoNV
         (
-            StructureType sType = StructureType.GraphicsPipelineShaderGroupsCreateInfoNV,
-            void* pNext = default,
-            uint groupCount = default,
-            GraphicsShaderGroupCreateInfoNV* pGroups = default,
-            uint pipelineCount = default,
-            Pipeline* pPipelines = default
-        )
+            StructureType? sType = StructureType.GraphicsPipelineShaderGroupsCreateInfoNV,
+            void* pNext = null,
+            uint? groupCount = null,
+            GraphicsShaderGroupCreateInfoNV* pGroups = null,
+            uint? pipelineCount = null,
+            Pipeline* pPipelines = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            GroupCount = groupCount;
-            PGroups = pGroups;
-            PipelineCount = pipelineCount;
-            PPipelines = pPipelines;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (groupCount is not null)
+            {
+                GroupCount = groupCount.Value;
+            }
+
+            if (pGroups is not null)
+            {
+                PGroups = pGroups;
+            }
+
+            if (pipelineCount is not null)
+            {
+                PipelineCount = pipelineCount.Value;
+            }
+
+            if (pPipelines is not null)
+            {
+                PPipelines = pPipelines;
+            }
         }
 
 /// <summary></summary>

@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -9,6 +9,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using Silk.NET.Core;
+using Silk.NET.Core.Contexts;
 using Silk.NET.SDL;
 using Point = System.Drawing.Point;
 using RawImage = Silk.NET.Core.RawImage;
@@ -25,6 +26,10 @@ namespace Silk.NET.Windowing.Sdl
             : base(new ViewOptions(opts), parent, monitor)
         {
             _extendedOptionsCache = opts;
+        }
+
+        public SdlWindow(void* nativeHandle, IGLContext? ctx) : base(nativeHandle, ctx)
+        {
         }
 
         public bool IsVisible
@@ -190,6 +195,16 @@ namespace Silk.NET.Windowing.Sdl
                         throw new ArgumentOutOfRangeException(nameof(value), value, null);
                     }
                 }
+            }
+        }
+
+        public unsafe Rectangle BorderSize
+        {
+            get
+            {
+                int l = 0, t = 0, r = 0, b = 0;
+                Sdl.GetWindowBordersSize(SdlWindow, ref t, ref l, ref b, ref r);
+                return Rectangle.FromLTRB(l, t, r, b);
             }
         }
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.OpenXR
     {
         public VisibilityMaskKHR
         (
-            StructureType type = StructureType.TypeVisibilityMaskKhr,
-            void* next = default,
-            uint vertexCapacityInput = default,
-            uint vertexCountOutput = default,
-            Vector2f* vertices = default,
-            uint indexCapacityInput = default,
-            uint indexCountOutput = default,
-            uint* indices = default
-        )
+            StructureType? type = StructureType.TypeVisibilityMaskKhr,
+            void* next = null,
+            uint? vertexCapacityInput = null,
+            uint? vertexCountOutput = null,
+            Vector2f* vertices = null,
+            uint? indexCapacityInput = null,
+            uint? indexCountOutput = null,
+            uint* indices = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            VertexCapacityInput = vertexCapacityInput;
-            VertexCountOutput = vertexCountOutput;
-            Vertices = vertices;
-            IndexCapacityInput = indexCapacityInput;
-            IndexCountOutput = indexCountOutput;
-            Indices = indices;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (vertexCapacityInput is not null)
+            {
+                VertexCapacityInput = vertexCapacityInput.Value;
+            }
+
+            if (vertexCountOutput is not null)
+            {
+                VertexCountOutput = vertexCountOutput.Value;
+            }
+
+            if (vertices is not null)
+            {
+                Vertices = vertices;
+            }
+
+            if (indexCapacityInput is not null)
+            {
+                IndexCapacityInput = indexCapacityInput.Value;
+            }
+
+            if (indexCountOutput is not null)
+            {
+                IndexCountOutput = indexCountOutput.Value;
+            }
+
+            if (indices is not null)
+            {
+                Indices = indices;
+            }
         }
 
 /// <summary></summary>

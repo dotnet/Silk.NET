@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.OpenCL
     {
         public ImageDesc
         (
-            uint imageType = default,
-            UIntPtr imageWidth = default,
-            UIntPtr imageHeight = default,
-            UIntPtr imageDepth = default,
-            UIntPtr imageArraySize = default,
-            UIntPtr imageRowPitch = default,
-            UIntPtr imageSlicePitch = default,
-            uint numMipLevels = default,
-            uint numSamples = default
-        )
+            uint? imageType = null,
+            UIntPtr? imageWidth = null,
+            UIntPtr? imageHeight = null,
+            UIntPtr? imageDepth = null,
+            UIntPtr? imageArraySize = null,
+            UIntPtr? imageRowPitch = null,
+            UIntPtr? imageSlicePitch = null,
+            uint? numMipLevels = null,
+            uint? numSamples = null
+        ) : this()
         {
-            ImageType = imageType;
-            ImageWidth = imageWidth;
-            ImageHeight = imageHeight;
-            ImageDepth = imageDepth;
-            ImageArraySize = imageArraySize;
-            ImageRowPitch = imageRowPitch;
-            ImageSlicePitch = imageSlicePitch;
-            NumMipLevels = numMipLevels;
-            NumSamples = numSamples;
+            if (imageType is not null)
+            {
+                ImageType = imageType.Value;
+            }
+
+            if (imageWidth is not null)
+            {
+                ImageWidth = imageWidth.Value;
+            }
+
+            if (imageHeight is not null)
+            {
+                ImageHeight = imageHeight.Value;
+            }
+
+            if (imageDepth is not null)
+            {
+                ImageDepth = imageDepth.Value;
+            }
+
+            if (imageArraySize is not null)
+            {
+                ImageArraySize = imageArraySize.Value;
+            }
+
+            if (imageRowPitch is not null)
+            {
+                ImageRowPitch = imageRowPitch.Value;
+            }
+
+            if (imageSlicePitch is not null)
+            {
+                ImageSlicePitch = imageSlicePitch.Value;
+            }
+
+            if (numMipLevels is not null)
+            {
+                NumMipLevels = numMipLevels.Value;
+            }
+
+            if (numSamples is not null)
+            {
+                NumSamples = numSamples.Value;
+            }
         }
 
 /// <summary></summary>

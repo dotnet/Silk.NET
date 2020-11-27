@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.SDL
     {
         public FRect
         (
-            float x = default,
-            float y = default,
-            float w = default,
-            float h = default
-        )
+            float? x = null,
+            float? y = null,
+            float? w = null,
+            float? h = null
+        ) : this()
         {
-            X = x;
-            Y = y;
-            W = w;
-            H = h;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
+
+            if (h is not null)
+            {
+                H = h.Value;
+            }
         }
 
 

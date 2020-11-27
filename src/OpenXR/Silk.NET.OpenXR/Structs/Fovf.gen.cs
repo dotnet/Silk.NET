@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public Fovf
         (
-            float angleLeft = default,
-            float angleRight = default,
-            float angleUp = default,
-            float angleDown = default
-        )
+            float? angleLeft = null,
+            float? angleRight = null,
+            float? angleUp = null,
+            float? angleDown = null
+        ) : this()
         {
-            AngleLeft = angleLeft;
-            AngleRight = angleRight;
-            AngleUp = angleUp;
-            AngleDown = angleDown;
+            if (angleLeft is not null)
+            {
+                AngleLeft = angleLeft.Value;
+            }
+
+            if (angleRight is not null)
+            {
+                AngleRight = angleRight.Value;
+            }
+
+            if (angleUp is not null)
+            {
+                AngleUp = angleUp.Value;
+            }
+
+            if (angleDown is not null)
+            {
+                AngleDown = angleDown.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DeviceMemoryOverallocationCreateInfoAMD
         (
-            StructureType sType = StructureType.DeviceMemoryOverallocationCreateInfoAmd,
-            void* pNext = default,
-            MemoryOverallocationBehaviorAMD overallocationBehavior = default
-        )
+            StructureType? sType = StructureType.DeviceMemoryOverallocationCreateInfoAmd,
+            void* pNext = null,
+            MemoryOverallocationBehaviorAMD? overallocationBehavior = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            OverallocationBehavior = overallocationBehavior;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (overallocationBehavior is not null)
+            {
+                OverallocationBehavior = overallocationBehavior.Value;
+            }
         }
 
 /// <summary></summary>

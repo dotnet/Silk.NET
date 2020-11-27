@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceIDProperties
         (
-            StructureType sType = StructureType.PhysicalDeviceIDProperties,
-            void* pNext = default,
-            uint deviceNodeMask = default,
-            Bool32 deviceLuidvalid = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceIDProperties,
+            void* pNext = null,
+            uint? deviceNodeMask = null,
+            Bool32? deviceLuidvalid = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceNodeMask = deviceNodeMask;
-            DeviceLuidvalid = deviceLuidvalid;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceNodeMask is not null)
+            {
+                DeviceNodeMask = deviceNodeMask.Value;
+            }
+
+            if (deviceLuidvalid is not null)
+            {
+                DeviceLuidvalid = deviceLuidvalid.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public HandJointsLocateInfoEXT
         (
-            StructureType type = StructureType.TypeHandJointsLocateInfoExt,
-            void* next = default,
-            Space baseSpace = default,
-            long time = default
-        )
+            StructureType? type = StructureType.TypeHandJointsLocateInfoExt,
+            void* next = null,
+            Space? baseSpace = null,
+            long? time = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            BaseSpace = baseSpace;
-            Time = time;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (baseSpace is not null)
+            {
+                BaseSpace = baseSpace.Value;
+            }
+
+            if (time is not null)
+            {
+                Time = time.Value;
+            }
         }
 
 /// <summary></summary>

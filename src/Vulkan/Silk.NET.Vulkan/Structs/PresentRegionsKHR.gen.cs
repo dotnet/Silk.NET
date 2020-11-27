@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PresentRegionsKHR
         (
-            StructureType sType = StructureType.PresentRegionsKhr,
-            void* pNext = default,
-            uint swapchainCount = default,
-            PresentRegionKHR* pRegions = default
-        )
+            StructureType? sType = StructureType.PresentRegionsKhr,
+            void* pNext = null,
+            uint? swapchainCount = null,
+            PresentRegionKHR* pRegions = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            SwapchainCount = swapchainCount;
-            PRegions = pRegions;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchainCount is not null)
+            {
+                SwapchainCount = swapchainCount.Value;
+            }
+
+            if (pRegions is not null)
+            {
+                PRegions = pRegions;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.OpenCL
     {
         public MemAndroidNativeBufferHostPtr
         (
-            MemExtHostPtr extHostPtr = default,
-            void* anbPtr = default
-        )
+            MemExtHostPtr? extHostPtr = null,
+            void* anbPtr = null
+        ) : this()
         {
-            ExtHostPtr = extHostPtr;
-            AnbPtr = anbPtr;
+            if (extHostPtr is not null)
+            {
+                ExtHostPtr = extHostPtr.Value;
+            }
+
+            if (anbPtr is not null)
+            {
+                AnbPtr = anbPtr;
+            }
         }
 
 /// <summary></summary>

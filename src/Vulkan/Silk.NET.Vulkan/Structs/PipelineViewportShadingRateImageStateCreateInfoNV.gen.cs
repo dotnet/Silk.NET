@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PipelineViewportShadingRateImageStateCreateInfoNV
         (
-            StructureType sType = StructureType.PipelineViewportShadingRateImageStateCreateInfoNV,
-            void* pNext = default,
-            Bool32 shadingRateImageEnable = default,
-            uint viewportCount = default,
-            ShadingRatePaletteNV* pShadingRatePalettes = default
-        )
+            StructureType? sType = StructureType.PipelineViewportShadingRateImageStateCreateInfoNV,
+            void* pNext = null,
+            Bool32? shadingRateImageEnable = null,
+            uint? viewportCount = null,
+            ShadingRatePaletteNV* pShadingRatePalettes = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ShadingRateImageEnable = shadingRateImageEnable;
-            ViewportCount = viewportCount;
-            PShadingRatePalettes = pShadingRatePalettes;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (shadingRateImageEnable is not null)
+            {
+                ShadingRateImageEnable = shadingRateImageEnable.Value;
+            }
+
+            if (viewportCount is not null)
+            {
+                ViewportCount = viewportCount.Value;
+            }
+
+            if (pShadingRatePalettes is not null)
+            {
+                PShadingRatePalettes = pShadingRatePalettes;
+            }
         }
 
 /// <summary></summary>

@@ -2,12 +2,12 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-rc0003" />
+      <PackageReference Include="SixLabors.ImageSharp" Version="1.0.1" />
     </ItemGroup>
 
     <ItemGroup>

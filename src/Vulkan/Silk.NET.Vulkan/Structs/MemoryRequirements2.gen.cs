@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public MemoryRequirements2
         (
-            StructureType sType = StructureType.MemoryRequirements2,
-            void* pNext = default,
-            MemoryRequirements memoryRequirements = default
-        )
+            StructureType? sType = StructureType.MemoryRequirements2,
+            void* pNext = null,
+            MemoryRequirements? memoryRequirements = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MemoryRequirements = memoryRequirements;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (memoryRequirements is not null)
+            {
+                MemoryRequirements = memoryRequirements.Value;
+            }
         }
 
 /// <summary></summary>

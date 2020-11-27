@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Assimp
     {
         public Animation
         (
-            AssimpString mName = default,
-            double mDuration = default,
-            double mTicksPerSecond = default,
-            uint mNumChannels = default,
-            NodeAnim** mChannels = default,
-            uint mNumMeshChannels = default,
-            MeshAnim** mMeshChannels = default,
-            uint mNumMorphMeshChannels = default,
-            MeshMorphAnim** mMorphMeshChannels = default
-        )
+            AssimpString? mName = null,
+            double? mDuration = null,
+            double? mTicksPerSecond = null,
+            uint? mNumChannels = null,
+            NodeAnim** mChannels = null,
+            uint? mNumMeshChannels = null,
+            MeshAnim** mMeshChannels = null,
+            uint? mNumMorphMeshChannels = null,
+            MeshMorphAnim** mMorphMeshChannels = null
+        ) : this()
         {
-            MName = mName;
-            MDuration = mDuration;
-            MTicksPerSecond = mTicksPerSecond;
-            MNumChannels = mNumChannels;
-            MChannels = mChannels;
-            MNumMeshChannels = mNumMeshChannels;
-            MMeshChannels = mMeshChannels;
-            MNumMorphMeshChannels = mNumMorphMeshChannels;
-            MMorphMeshChannels = mMorphMeshChannels;
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mDuration is not null)
+            {
+                MDuration = mDuration.Value;
+            }
+
+            if (mTicksPerSecond is not null)
+            {
+                MTicksPerSecond = mTicksPerSecond.Value;
+            }
+
+            if (mNumChannels is not null)
+            {
+                MNumChannels = mNumChannels.Value;
+            }
+
+            if (mChannels is not null)
+            {
+                MChannels = mChannels;
+            }
+
+            if (mNumMeshChannels is not null)
+            {
+                MNumMeshChannels = mNumMeshChannels.Value;
+            }
+
+            if (mMeshChannels is not null)
+            {
+                MMeshChannels = mMeshChannels;
+            }
+
+            if (mNumMorphMeshChannels is not null)
+            {
+                MNumMorphMeshChannels = mNumMorphMeshChannels.Value;
+            }
+
+            if (mMorphMeshChannels is not null)
+            {
+                MMorphMeshChannels = mMorphMeshChannels;
+            }
         }
 
 

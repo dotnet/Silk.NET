@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Assimp
     {
         public MetadataEntry
         (
-            MetadataType mType = default,
-            void* mData = default
-        )
+            MetadataType? mType = null,
+            void* mData = null
+        ) : this()
         {
-            MType = mType;
-            MData = mData;
+            if (mType is not null)
+            {
+                MType = mType.Value;
+            }
+
+            if (mData is not null)
+            {
+                MData = mData;
+            }
         }
 
 

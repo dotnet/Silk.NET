@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Vulkan
     {
         public CooperativeMatrixPropertiesNV
         (
-            StructureType sType = StructureType.CooperativeMatrixPropertiesNV,
-            void* pNext = default,
-            uint mSize = default,
-            uint nSize = default,
-            uint kSize = default,
-            ComponentTypeNV aType = default,
-            ComponentTypeNV bType = default,
-            ComponentTypeNV cType = default,
-            ComponentTypeNV dType = default,
-            ScopeNV scope = default
-        )
+            StructureType? sType = StructureType.CooperativeMatrixPropertiesNV,
+            void* pNext = null,
+            uint? mSize = null,
+            uint? nSize = null,
+            uint? kSize = null,
+            ComponentTypeNV? aType = null,
+            ComponentTypeNV? bType = null,
+            ComponentTypeNV? cType = null,
+            ComponentTypeNV? dType = null,
+            ScopeNV? scope = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            MSize = mSize;
-            NSize = nSize;
-            KSize = kSize;
-            AType = aType;
-            BType = bType;
-            CType = cType;
-            DType = dType;
-            Scope = scope;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (mSize is not null)
+            {
+                MSize = mSize.Value;
+            }
+
+            if (nSize is not null)
+            {
+                NSize = nSize.Value;
+            }
+
+            if (kSize is not null)
+            {
+                KSize = kSize.Value;
+            }
+
+            if (aType is not null)
+            {
+                AType = aType.Value;
+            }
+
+            if (bType is not null)
+            {
+                BType = bType.Value;
+            }
+
+            if (cType is not null)
+            {
+                CType = cType.Value;
+            }
+
+            if (dType is not null)
+            {
+                DType = dType.Value;
+            }
+
+            if (scope is not null)
+            {
+                Scope = scope.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public ExportMemoryWin32HandleInfoKHR
         (
-            StructureType sType = StructureType.ExportMemoryWin32HandleInfoKhr,
-            void* pNext = default,
-            IntPtr* pAttributes = default,
-            int dwAccess = default,
-            IntPtr name = default
-        )
+            StructureType? sType = StructureType.ExportMemoryWin32HandleInfoKhr,
+            void* pNext = null,
+            IntPtr* pAttributes = null,
+            int? dwAccess = null,
+            IntPtr? name = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            PAttributes = pAttributes;
-            DwAccess = dwAccess;
-            Name = name;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pAttributes is not null)
+            {
+                PAttributes = pAttributes;
+            }
+
+            if (dwAccess is not null)
+            {
+                DwAccess = dwAccess.Value;
+            }
+
+            if (name is not null)
+            {
+                Name = name.Value;
+            }
         }
 
 /// <summary></summary>

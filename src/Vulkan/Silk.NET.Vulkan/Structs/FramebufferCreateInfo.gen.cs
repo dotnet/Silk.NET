@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Vulkan
     {
         public FramebufferCreateInfo
         (
-            StructureType sType = StructureType.FramebufferCreateInfo,
-            void* pNext = default,
-            FramebufferCreateFlags flags = default,
-            RenderPass renderPass = default,
-            uint attachmentCount = default,
-            ImageView* pAttachments = default,
-            uint width = default,
-            uint height = default,
-            uint layers = default
-        )
+            StructureType? sType = StructureType.FramebufferCreateInfo,
+            void* pNext = null,
+            FramebufferCreateFlags? flags = null,
+            RenderPass? renderPass = null,
+            uint? attachmentCount = null,
+            ImageView* pAttachments = null,
+            uint? width = null,
+            uint? height = null,
+            uint? layers = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            RenderPass = renderPass;
-            AttachmentCount = attachmentCount;
-            PAttachments = pAttachments;
-            Width = width;
-            Height = height;
-            Layers = layers;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (renderPass is not null)
+            {
+                RenderPass = renderPass.Value;
+            }
+
+            if (attachmentCount is not null)
+            {
+                AttachmentCount = attachmentCount.Value;
+            }
+
+            if (pAttachments is not null)
+            {
+                PAttachments = pAttachments;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (layers is not null)
+            {
+                Layers = layers.Value;
+            }
         }
 
 /// <summary></summary>

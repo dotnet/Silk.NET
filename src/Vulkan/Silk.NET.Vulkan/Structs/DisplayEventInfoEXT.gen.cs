@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DisplayEventInfoEXT
         (
-            StructureType sType = StructureType.DisplayEventInfoExt,
-            void* pNext = default,
-            DisplayEventTypeEXT displayEvent = default
-        )
+            StructureType? sType = StructureType.DisplayEventInfoExt,
+            void* pNext = null,
+            DisplayEventTypeEXT? displayEvent = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DisplayEvent = displayEvent;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (displayEvent is not null)
+            {
+                DisplayEvent = displayEvent.Value;
+            }
         }
 
 /// <summary></summary>

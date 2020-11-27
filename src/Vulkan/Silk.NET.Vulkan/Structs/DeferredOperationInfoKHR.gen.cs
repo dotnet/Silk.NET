@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DeferredOperationInfoKHR
         (
-            StructureType sType = StructureType.DeferredOperationInfoKhr,
-            void* pNext = default,
-            DeferredOperationKHR operationHandle = default
-        )
+            StructureType? sType = StructureType.DeferredOperationInfoKhr,
+            void* pNext = null,
+            DeferredOperationKHR? operationHandle = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            OperationHandle = operationHandle;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (operationHandle is not null)
+            {
+                OperationHandle = operationHandle.Value;
+            }
         }
 
 /// <summary></summary>

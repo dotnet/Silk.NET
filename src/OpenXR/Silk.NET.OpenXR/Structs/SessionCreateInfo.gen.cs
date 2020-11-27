@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public SessionCreateInfo
         (
-            StructureType type = StructureType.TypeSessionCreateInfo,
-            void* next = default,
-            SessionCreateFlags createFlags = default,
-            ulong systemId = default
-        )
+            StructureType? type = StructureType.TypeSessionCreateInfo,
+            void* next = null,
+            SessionCreateFlags? createFlags = null,
+            ulong? systemId = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            CreateFlags = createFlags;
-            SystemId = systemId;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (createFlags is not null)
+            {
+                CreateFlags = createFlags.Value;
+            }
+
+            if (systemId is not null)
+            {
+                SystemId = systemId.Value;
+            }
         }
 
 /// <summary></summary>

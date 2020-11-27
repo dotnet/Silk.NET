@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.SDL
     {
         public DollarGestureEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            long touchId = default,
-            long gestureId = default,
-            uint numFingers = default,
-            float error = default,
-            float x = default,
-            float y = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            long? touchId = null,
+            long? gestureId = null,
+            uint? numFingers = null,
+            float? error = null,
+            float? x = null,
+            float? y = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            TouchId = touchId;
-            GestureId = gestureId;
-            NumFingers = numFingers;
-            Error = error;
-            X = x;
-            Y = y;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (touchId is not null)
+            {
+                TouchId = touchId.Value;
+            }
+
+            if (gestureId is not null)
+            {
+                GestureId = gestureId.Value;
+            }
+
+            if (numFingers is not null)
+            {
+                NumFingers = numFingers.Value;
+            }
+
+            if (error is not null)
+            {
+                Error = error.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
 

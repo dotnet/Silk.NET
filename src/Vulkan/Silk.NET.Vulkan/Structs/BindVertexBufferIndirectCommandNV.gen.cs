@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public BindVertexBufferIndirectCommandNV
         (
-            ulong bufferAddress = default,
-            uint size = default,
-            uint stride = default
-        )
+            ulong? bufferAddress = null,
+            uint? size = null,
+            uint? stride = null
+        ) : this()
         {
-            BufferAddress = bufferAddress;
-            Size = size;
-            Stride = stride;
+            if (bufferAddress is not null)
+            {
+                BufferAddress = bufferAddress.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Vulkan
     {
         public ValidationFeaturesEXT
         (
-            StructureType sType = StructureType.ValidationFeaturesExt,
-            void* pNext = default,
-            uint enabledValidationFeatureCount = default,
-            ValidationFeatureEnableEXT* pEnabledValidationFeatures = default,
-            uint disabledValidationFeatureCount = default,
-            ValidationFeatureDisableEXT* pDisabledValidationFeatures = default
-        )
+            StructureType? sType = StructureType.ValidationFeaturesExt,
+            void* pNext = null,
+            uint? enabledValidationFeatureCount = null,
+            ValidationFeatureEnableEXT* pEnabledValidationFeatures = null,
+            uint? disabledValidationFeatureCount = null,
+            ValidationFeatureDisableEXT* pDisabledValidationFeatures = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            EnabledValidationFeatureCount = enabledValidationFeatureCount;
-            PEnabledValidationFeatures = pEnabledValidationFeatures;
-            DisabledValidationFeatureCount = disabledValidationFeatureCount;
-            PDisabledValidationFeatures = pDisabledValidationFeatures;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (enabledValidationFeatureCount is not null)
+            {
+                EnabledValidationFeatureCount = enabledValidationFeatureCount.Value;
+            }
+
+            if (pEnabledValidationFeatures is not null)
+            {
+                PEnabledValidationFeatures = pEnabledValidationFeatures;
+            }
+
+            if (disabledValidationFeatureCount is not null)
+            {
+                DisabledValidationFeatureCount = disabledValidationFeatureCount.Value;
+            }
+
+            if (pDisabledValidationFeatures is not null)
+            {
+                PDisabledValidationFeatures = pDisabledValidationFeatures;
+            }
         }
 
 /// <summary></summary>

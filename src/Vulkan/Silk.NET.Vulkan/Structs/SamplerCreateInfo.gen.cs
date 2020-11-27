@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,44 +22,115 @@ namespace Silk.NET.Vulkan
     {
         public SamplerCreateInfo
         (
-            StructureType sType = StructureType.SamplerCreateInfo,
-            void* pNext = default,
-            SamplerCreateFlags flags = default,
-            Filter magFilter = default,
-            Filter minFilter = default,
-            SamplerMipmapMode mipmapMode = default,
-            SamplerAddressMode addressModeU = default,
-            SamplerAddressMode addressModeV = default,
-            SamplerAddressMode addressModeW = default,
-            float mipLodBias = default,
-            Bool32 anisotropyEnable = default,
-            float maxAnisotropy = default,
-            Bool32 compareEnable = default,
-            CompareOp compareOp = default,
-            float minLod = default,
-            float maxLod = default,
-            BorderColor borderColor = default,
-            Bool32 unnormalizedCoordinates = default
-        )
+            StructureType? sType = StructureType.SamplerCreateInfo,
+            void* pNext = null,
+            SamplerCreateFlags? flags = null,
+            Filter? magFilter = null,
+            Filter? minFilter = null,
+            SamplerMipmapMode? mipmapMode = null,
+            SamplerAddressMode? addressModeU = null,
+            SamplerAddressMode? addressModeV = null,
+            SamplerAddressMode? addressModeW = null,
+            float? mipLodBias = null,
+            Bool32? anisotropyEnable = null,
+            float? maxAnisotropy = null,
+            Bool32? compareEnable = null,
+            CompareOp? compareOp = null,
+            float? minLod = null,
+            float? maxLod = null,
+            BorderColor? borderColor = null,
+            Bool32? unnormalizedCoordinates = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            MagFilter = magFilter;
-            MinFilter = minFilter;
-            MipmapMode = mipmapMode;
-            AddressModeU = addressModeU;
-            AddressModeV = addressModeV;
-            AddressModeW = addressModeW;
-            MipLodBias = mipLodBias;
-            AnisotropyEnable = anisotropyEnable;
-            MaxAnisotropy = maxAnisotropy;
-            CompareEnable = compareEnable;
-            CompareOp = compareOp;
-            MinLod = minLod;
-            MaxLod = maxLod;
-            BorderColor = borderColor;
-            UnnormalizedCoordinates = unnormalizedCoordinates;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (magFilter is not null)
+            {
+                MagFilter = magFilter.Value;
+            }
+
+            if (minFilter is not null)
+            {
+                MinFilter = minFilter.Value;
+            }
+
+            if (mipmapMode is not null)
+            {
+                MipmapMode = mipmapMode.Value;
+            }
+
+            if (addressModeU is not null)
+            {
+                AddressModeU = addressModeU.Value;
+            }
+
+            if (addressModeV is not null)
+            {
+                AddressModeV = addressModeV.Value;
+            }
+
+            if (addressModeW is not null)
+            {
+                AddressModeW = addressModeW.Value;
+            }
+
+            if (mipLodBias is not null)
+            {
+                MipLodBias = mipLodBias.Value;
+            }
+
+            if (anisotropyEnable is not null)
+            {
+                AnisotropyEnable = anisotropyEnable.Value;
+            }
+
+            if (maxAnisotropy is not null)
+            {
+                MaxAnisotropy = maxAnisotropy.Value;
+            }
+
+            if (compareEnable is not null)
+            {
+                CompareEnable = compareEnable.Value;
+            }
+
+            if (compareOp is not null)
+            {
+                CompareOp = compareOp.Value;
+            }
+
+            if (minLod is not null)
+            {
+                MinLod = minLod.Value;
+            }
+
+            if (maxLod is not null)
+            {
+                MaxLod = maxLod.Value;
+            }
+
+            if (borderColor is not null)
+            {
+                BorderColor = borderColor.Value;
+            }
+
+            if (unnormalizedCoordinates is not null)
+            {
+                UnnormalizedCoordinates = unnormalizedCoordinates.Value;
+            }
         }
 
 /// <summary></summary>

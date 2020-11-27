@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.SDL
     {
         public AssertData
         (
-            int alwaysIgnore = default,
-            uint triggerCount = default,
-            byte* condition = default,
-            byte* filename = default,
-            int linenum = default,
-            byte* function = default,
-            AssertData* next = default
-        )
+            int? alwaysIgnore = null,
+            uint? triggerCount = null,
+            byte* condition = null,
+            byte* filename = null,
+            int? linenum = null,
+            byte* function = null,
+            AssertData* next = null
+        ) : this()
         {
-            AlwaysIgnore = alwaysIgnore;
-            TriggerCount = triggerCount;
-            Condition = condition;
-            Filename = filename;
-            Linenum = linenum;
-            Function = function;
-            Next = next;
+            if (alwaysIgnore is not null)
+            {
+                AlwaysIgnore = alwaysIgnore.Value;
+            }
+
+            if (triggerCount is not null)
+            {
+                TriggerCount = triggerCount.Value;
+            }
+
+            if (condition is not null)
+            {
+                Condition = condition;
+            }
+
+            if (filename is not null)
+            {
+                Filename = filename;
+            }
+
+            if (linenum is not null)
+            {
+                Linenum = linenum.Value;
+            }
+
+            if (function is not null)
+            {
+                Function = function;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
         }
 
 

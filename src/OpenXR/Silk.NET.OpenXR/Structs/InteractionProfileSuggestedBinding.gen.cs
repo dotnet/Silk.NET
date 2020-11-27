@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.OpenXR
     {
         public InteractionProfileSuggestedBinding
         (
-            StructureType type = StructureType.TypeInteractionProfileSuggestedBinding,
-            void* next = default,
-            ulong interactionProfile = default,
-            uint countSuggestedBindings = default,
-            ActionSuggestedBinding* suggestedBindings = default
-        )
+            StructureType? type = StructureType.TypeInteractionProfileSuggestedBinding,
+            void* next = null,
+            ulong? interactionProfile = null,
+            uint? countSuggestedBindings = null,
+            ActionSuggestedBinding* suggestedBindings = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            InteractionProfile = interactionProfile;
-            CountSuggestedBindings = countSuggestedBindings;
-            SuggestedBindings = suggestedBindings;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (interactionProfile is not null)
+            {
+                InteractionProfile = interactionProfile.Value;
+            }
+
+            if (countSuggestedBindings is not null)
+            {
+                CountSuggestedBindings = countSuggestedBindings.Value;
+            }
+
+            if (suggestedBindings is not null)
+            {
+                SuggestedBindings = suggestedBindings;
+            }
         }
 
 /// <summary></summary>

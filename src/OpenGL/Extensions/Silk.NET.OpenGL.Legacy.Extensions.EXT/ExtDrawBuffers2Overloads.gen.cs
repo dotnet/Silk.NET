@@ -46,6 +46,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetIntegerIndexed(target, index, out data.GetPinnableReference());
         }
 
+        public static unsafe void GetIntegerIndexed(this ExtDrawBuffers2 thisApi, [Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] Span<int> data)
+        {
+            // SpanOverloader
+            thisApi.GetIntegerIndexed(target, index, out data.GetPinnableReference());
+        }
+
     }
 }
 

@@ -23,7 +23,8 @@ namespace Silk.NET.OpenAL.Attributes
             get => _size;
             set
             {
-                if (value <= 0) {
+                if (value <= 0)
+                {
                     throw new ArgumentOutOfRangeException(nameof(value), "The size must be a nonzero positive value.");
                 }
 

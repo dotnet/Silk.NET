@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Assimp
     {
         public MaterialProperty
         (
-            AssimpString mKey = default,
-            uint mSemantic = default,
-            uint mIndex = default,
-            uint mDataLength = default,
-            PropertyTypeInfo mType = default,
-            byte* mData = default
-        )
+            AssimpString? mKey = null,
+            uint? mSemantic = null,
+            uint? mIndex = null,
+            uint? mDataLength = null,
+            PropertyTypeInfo? mType = null,
+            byte* mData = null
+        ) : this()
         {
-            MKey = mKey;
-            MSemantic = mSemantic;
-            MIndex = mIndex;
-            MDataLength = mDataLength;
-            MType = mType;
-            MData = mData;
+            if (mKey is not null)
+            {
+                MKey = mKey.Value;
+            }
+
+            if (mSemantic is not null)
+            {
+                MSemantic = mSemantic.Value;
+            }
+
+            if (mIndex is not null)
+            {
+                MIndex = mIndex.Value;
+            }
+
+            if (mDataLength is not null)
+            {
+                MDataLength = mDataLength.Value;
+            }
+
+            if (mType is not null)
+            {
+                MType = mType.Value;
+            }
+
+            if (mData is not null)
+            {
+                MData = mData;
+            }
         }
 
 

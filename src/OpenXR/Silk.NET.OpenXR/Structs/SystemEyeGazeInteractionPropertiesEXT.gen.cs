@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public SystemEyeGazeInteractionPropertiesEXT
         (
-            StructureType type = StructureType.TypeSystemEyeGazeInteractionPropertiesExt,
-            void* next = default,
-            uint supportsEyeGazeInteraction = default
-        )
+            StructureType? type = StructureType.TypeSystemEyeGazeInteractionPropertiesExt,
+            void* next = null,
+            uint? supportsEyeGazeInteraction = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            SupportsEyeGazeInteraction = supportsEyeGazeInteraction;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (supportsEyeGazeInteraction is not null)
+            {
+                SupportsEyeGazeInteraction = supportsEyeGazeInteraction.Value;
+            }
         }
 
 /// <summary></summary>

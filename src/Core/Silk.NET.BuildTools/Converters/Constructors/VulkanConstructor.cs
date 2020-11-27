@@ -164,10 +164,45 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         /// <inheritdoc />
         public void WriteConstants(Profile profile, IEnumerable<Constant> constants, BindTask task)
         {
-            profile.Projects["Core"]
-                .Classes[0]
-                .Constants.AddRange
-                    (constants.Where(x => profile.Projects["Core"].Classes[0].Constants.All(y => y.Name != x.Name)));
+            foreach (var constant in constants)
+            {
+                var category = constant.ExtensionName == "Core" ? "Core" : FormatCategory(constant.ExtensionName);
+                
+                // check that the root project exists
+                if (!profile.Projects.ContainsKey("Core"))
+                {
+                    profile.Projects.Add
+                    (
+                        "Core",
+                        new Project
+                        {IsRoot = true,
+                            Namespace = string.Empty,
+                            Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
+                        }
+                    );
+                }
+
+                // check that the extension project exists, if applicable
+                if (constant.ExtensionName != "Core" && !profile.Projects.ContainsKey(category))
+                {
+                    profile.Projects.Add
+                    (
+                        category,
+                        new Project
+                        {
+                            IsRoot = false,
+                            Namespace = $".{category.CheckMemberName(task.FunctionPrefix)}",
+                            Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
+                        }
+                    );
+                }
+                
+                var constantCollection = profile.Projects[category].Classes[0].Constants;
+                if (constantCollection.All(x => x.Name != constant.Name))
+                {
+                    constantCollection.Add(constant);
+                }
+            }
         }
 
         /// <summary>

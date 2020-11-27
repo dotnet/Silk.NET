@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Vulkan
     {
         public ImageViewCreateInfo
         (
-            StructureType sType = StructureType.ImageViewCreateInfo,
-            void* pNext = default,
-            ImageViewCreateFlags flags = default,
-            Image image = default,
-            ImageViewType viewType = default,
-            Format format = default,
-            ComponentMapping components = default,
-            ImageSubresourceRange subresourceRange = default
-        )
+            StructureType? sType = StructureType.ImageViewCreateInfo,
+            void* pNext = null,
+            ImageViewCreateFlags? flags = null,
+            Image? image = null,
+            ImageViewType? viewType = null,
+            Format? format = null,
+            ComponentMapping? components = null,
+            ImageSubresourceRange? subresourceRange = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Image = image;
-            ViewType = viewType;
-            Format = format;
-            Components = components;
-            SubresourceRange = subresourceRange;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
+
+            if (viewType is not null)
+            {
+                ViewType = viewType.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (components is not null)
+            {
+                Components = components.Value;
+            }
+
+            if (subresourceRange is not null)
+            {
+                SubresourceRange = subresourceRange.Value;
+            }
         }
 
 /// <summary></summary>

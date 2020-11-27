@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public EyeGazeSampleTimeEXT
         (
-            StructureType type = StructureType.TypeEyeGazeSampleTimeExt,
-            void* next = default,
-            long time = default
-        )
+            StructureType? type = StructureType.TypeEyeGazeSampleTimeExt,
+            void* next = null,
+            long? time = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Time = time;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (time is not null)
+            {
+                Time = time.Value;
+            }
         }
 
 /// <summary></summary>

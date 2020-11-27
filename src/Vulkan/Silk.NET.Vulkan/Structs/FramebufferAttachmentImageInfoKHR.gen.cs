@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Vulkan
     {
         public FramebufferAttachmentImageInfoKHR
         (
-            StructureType sType = StructureType.FramebufferAttachmentImageInfo,
-            void* pNext = default,
-            ImageCreateFlags flags = default,
-            ImageUsageFlags usage = default,
-            uint width = default,
-            uint height = default,
-            uint layerCount = default,
-            uint viewFormatCount = default,
-            Format* pViewFormats = default
-        )
+            StructureType? sType = StructureType.FramebufferAttachmentImageInfo,
+            void* pNext = null,
+            ImageCreateFlags? flags = null,
+            ImageUsageFlags? usage = null,
+            uint? width = null,
+            uint? height = null,
+            uint? layerCount = null,
+            uint? viewFormatCount = null,
+            Format* pViewFormats = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Flags = flags;
-            Usage = usage;
-            Width = width;
-            Height = height;
-            LayerCount = layerCount;
-            ViewFormatCount = viewFormatCount;
-            PViewFormats = pViewFormats;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (layerCount is not null)
+            {
+                LayerCount = layerCount.Value;
+            }
+
+            if (viewFormatCount is not null)
+            {
+                ViewFormatCount = viewFormatCount.Value;
+            }
+
+            if (pViewFormats is not null)
+            {
+                PViewFormats = pViewFormats;
+            }
         }
 
 /// <summary></summary>

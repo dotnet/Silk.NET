@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public HandJointLocationEXT
         (
-            SpaceLocationFlags locationFlags = default,
-            Posef pose = default,
-            float radius = default
-        )
+            SpaceLocationFlags? locationFlags = null,
+            Posef? pose = null,
+            float? radius = null
+        ) : this()
         {
-            LocationFlags = locationFlags;
-            Pose = pose;
-            Radius = radius;
+            if (locationFlags is not null)
+            {
+                LocationFlags = locationFlags.Value;
+            }
+
+            if (pose is not null)
+            {
+                Pose = pose.Value;
+            }
+
+            if (radius is not null)
+            {
+                Radius = radius.Value;
+            }
         }
 
 /// <summary></summary>

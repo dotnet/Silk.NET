@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public ExternalImageFormatPropertiesNV
         (
-            ImageFormatProperties imageFormatProperties = default,
-            ExternalMemoryFeatureFlagsNV externalMemoryFeatures = default,
-            ExternalMemoryHandleTypeFlagsNV exportFromImportedHandleTypes = default,
-            ExternalMemoryHandleTypeFlagsNV compatibleHandleTypes = default
-        )
+            ImageFormatProperties? imageFormatProperties = null,
+            ExternalMemoryFeatureFlagsNV? externalMemoryFeatures = null,
+            ExternalMemoryHandleTypeFlagsNV? exportFromImportedHandleTypes = null,
+            ExternalMemoryHandleTypeFlagsNV? compatibleHandleTypes = null
+        ) : this()
         {
-            ImageFormatProperties = imageFormatProperties;
-            ExternalMemoryFeatures = externalMemoryFeatures;
-            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-            CompatibleHandleTypes = compatibleHandleTypes;
+            if (imageFormatProperties is not null)
+            {
+                ImageFormatProperties = imageFormatProperties.Value;
+            }
+
+            if (externalMemoryFeatures is not null)
+            {
+                ExternalMemoryFeatures = externalMemoryFeatures.Value;
+            }
+
+            if (exportFromImportedHandleTypes is not null)
+            {
+                ExportFromImportedHandleTypes = exportFromImportedHandleTypes.Value;
+            }
+
+            if (compatibleHandleTypes is not null)
+            {
+                CompatibleHandleTypes = compatibleHandleTypes.Value;
+            }
         }
 
 /// <summary></summary>

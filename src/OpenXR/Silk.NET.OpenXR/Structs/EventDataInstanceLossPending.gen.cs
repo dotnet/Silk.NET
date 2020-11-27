@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public EventDataInstanceLossPending
         (
-            StructureType type = StructureType.TypeEventDataInstanceLossPending,
-            void* next = default,
-            long lossTime = default
-        )
+            StructureType? type = StructureType.TypeEventDataInstanceLossPending,
+            void* next = null,
+            long? lossTime = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            LossTime = lossTime;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (lossTime is not null)
+            {
+                LossTime = lossTime.Value;
+            }
         }
 
 /// <summary></summary>

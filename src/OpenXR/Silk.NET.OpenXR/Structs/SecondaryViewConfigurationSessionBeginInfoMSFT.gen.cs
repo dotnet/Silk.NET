@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.OpenXR
     {
         public SecondaryViewConfigurationSessionBeginInfoMSFT
         (
-            StructureType type = StructureType.TypeSecondaryViewConfigurationSessionBeginInfoMsft,
-            void* next = default,
-            uint viewConfigurationCount = default,
-            ViewConfigurationType* enabledViewConfigurationTypes = default
-        )
+            StructureType? type = StructureType.TypeSecondaryViewConfigurationSessionBeginInfoMsft,
+            void* next = null,
+            uint? viewConfigurationCount = null,
+            ViewConfigurationType* enabledViewConfigurationTypes = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            ViewConfigurationCount = viewConfigurationCount;
-            EnabledViewConfigurationTypes = enabledViewConfigurationTypes;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (viewConfigurationCount is not null)
+            {
+                ViewConfigurationCount = viewConfigurationCount.Value;
+            }
+
+            if (enabledViewConfigurationTypes is not null)
+            {
+                EnabledViewConfigurationTypes = enabledViewConfigurationTypes;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public VertexInputBindingDescription
         (
-            uint binding = default,
-            uint stride = default,
-            VertexInputRate inputRate = default
-        )
+            uint? binding = null,
+            uint? stride = null,
+            VertexInputRate? inputRate = null
+        ) : this()
         {
-            Binding = binding;
-            Stride = stride;
-            InputRate = inputRate;
+            if (binding is not null)
+            {
+                Binding = binding.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
+
+            if (inputRate is not null)
+            {
+                InputRate = inputRate.Value;
+            }
         }
 
 /// <summary></summary>

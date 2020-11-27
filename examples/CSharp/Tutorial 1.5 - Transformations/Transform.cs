@@ -7,7 +7,7 @@ namespace Tutorial
         //A transform abstraction.
         //For a transform we need to have a position a scale and a rotation,
         //depending on what application you are creating the type for these may vary.
-        
+
         //Here we have chosen a vec3 for position, float for scale and quaternion for rotation,
         //as that is the most normal to go with.
         //Another example could have been vec3, vec3, vec4, so the rotation is an axis angle instead of a quaternion

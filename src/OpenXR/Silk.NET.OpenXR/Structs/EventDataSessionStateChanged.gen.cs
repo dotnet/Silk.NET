@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.OpenXR
     {
         public EventDataSessionStateChanged
         (
-            StructureType type = StructureType.TypeEventDataSessionStateChanged,
-            void* next = default,
-            Session session = default,
-            SessionState state = default,
-            long time = default
-        )
+            StructureType? type = StructureType.TypeEventDataSessionStateChanged,
+            void* next = null,
+            Session? session = null,
+            SessionState? state = null,
+            long? time = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Session = session;
-            State = state;
-            Time = time;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (session is not null)
+            {
+                Session = session.Value;
+            }
+
+            if (state is not null)
+            {
+                State = state.Value;
+            }
+
+            if (time is not null)
+            {
+                Time = time.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.SDL
     {
         public TouchFingerEvent
         (
-            uint type = default,
-            uint timestamp = default,
-            long touchId = default,
-            long fingerId = default,
-            float x = default,
-            float y = default,
-            float dx = default,
-            float dy = default,
-            float pressure = default,
-            uint windowID = default
-        )
+            uint? type = null,
+            uint? timestamp = null,
+            long? touchId = null,
+            long? fingerId = null,
+            float? x = null,
+            float? y = null,
+            float? dx = null,
+            float? dy = null,
+            float? pressure = null,
+            uint? windowID = null
+        ) : this()
         {
-            Type = type;
-            Timestamp = timestamp;
-            TouchId = touchId;
-            FingerId = fingerId;
-            X = x;
-            Y = y;
-            Dx = dx;
-            Dy = dy;
-            Pressure = pressure;
-            WindowID = windowID;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (timestamp is not null)
+            {
+                Timestamp = timestamp.Value;
+            }
+
+            if (touchId is not null)
+            {
+                TouchId = touchId.Value;
+            }
+
+            if (fingerId is not null)
+            {
+                FingerId = fingerId.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (dx is not null)
+            {
+                Dx = dx.Value;
+            }
+
+            if (dy is not null)
+            {
+                Dy = dy.Value;
+            }
+
+            if (pressure is not null)
+            {
+                Pressure = pressure.Value;
+            }
+
+            if (windowID is not null)
+            {
+                WindowID = windowID.Value;
+            }
         }
 
 

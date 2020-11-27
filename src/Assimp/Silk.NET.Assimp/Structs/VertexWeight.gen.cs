@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Assimp
     {
         public VertexWeight
         (
-            uint mVertexId = default,
-            float mWeight = default
-        )
+            uint? mVertexId = null,
+            float? mWeight = null
+        ) : this()
         {
-            MVertexId = mVertexId;
-            MWeight = mWeight;
+            if (mVertexId is not null)
+            {
+                MVertexId = mVertexId.Value;
+            }
+
+            if (mWeight is not null)
+            {
+                MWeight = mWeight.Value;
+            }
         }
 
 

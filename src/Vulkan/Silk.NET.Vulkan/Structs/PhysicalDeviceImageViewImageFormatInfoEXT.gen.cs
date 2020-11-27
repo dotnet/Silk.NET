@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceImageViewImageFormatInfoEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceImageViewImageFormatInfoExt,
-            void* pNext = default,
-            ImageViewType imageViewType = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceImageViewImageFormatInfoExt,
+            void* pNext = null,
+            ImageViewType? imageViewType = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ImageViewType = imageViewType;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (imageViewType is not null)
+            {
+                ImageViewType = imageViewType.Value;
+            }
         }
 
 /// <summary></summary>

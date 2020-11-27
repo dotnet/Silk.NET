@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public SystemGraphicsProperties
         (
-            uint maxSwapchainImageHeight = default,
-            uint maxSwapchainImageWidth = default,
-            uint maxLayerCount = default
-        )
+            uint? maxSwapchainImageHeight = null,
+            uint? maxSwapchainImageWidth = null,
+            uint? maxLayerCount = null
+        ) : this()
         {
-            MaxSwapchainImageHeight = maxSwapchainImageHeight;
-            MaxSwapchainImageWidth = maxSwapchainImageWidth;
-            MaxLayerCount = maxLayerCount;
+            if (maxSwapchainImageHeight is not null)
+            {
+                MaxSwapchainImageHeight = maxSwapchainImageHeight.Value;
+            }
+
+            if (maxSwapchainImageWidth is not null)
+            {
+                MaxSwapchainImageWidth = maxSwapchainImageWidth.Value;
+            }
+
+            if (maxLayerCount is not null)
+            {
+                MaxLayerCount = maxLayerCount.Value;
+            }
         }
 
 /// <summary></summary>

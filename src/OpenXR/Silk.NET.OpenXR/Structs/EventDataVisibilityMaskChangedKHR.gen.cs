@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.OpenXR
     {
         public EventDataVisibilityMaskChangedKHR
         (
-            StructureType type = StructureType.TypeEventDataVisibilityMaskChangedKhr,
-            void* next = default,
-            Session session = default,
-            ViewConfigurationType viewConfigurationType = default,
-            uint viewIndex = default
-        )
+            StructureType? type = StructureType.TypeEventDataVisibilityMaskChangedKhr,
+            void* next = null,
+            Session? session = null,
+            ViewConfigurationType? viewConfigurationType = null,
+            uint? viewIndex = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Session = session;
-            ViewConfigurationType = viewConfigurationType;
-            ViewIndex = viewIndex;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (session is not null)
+            {
+                Session = session.Value;
+            }
+
+            if (viewConfigurationType is not null)
+            {
+                ViewConfigurationType = viewConfigurationType.Value;
+            }
+
+            if (viewIndex is not null)
+            {
+                ViewIndex = viewIndex.Value;
+            }
         }
 
 /// <summary></summary>

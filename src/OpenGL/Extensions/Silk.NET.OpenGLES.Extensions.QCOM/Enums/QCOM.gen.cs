@@ -88,6 +88,8 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         TextureFoveatedNumFocalPointsQueryQCom = 0x8BFE,
         [NativeName("Name", "GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM")]
         FramebufferIncompleteFoveationQCom = 0x8BFF,
+        [NativeName("Name", "GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
+        TextureFoveatedCutoffDensityQCom = 0x96A0,
         [NativeName("Name", "GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM")]
         FoveationSubsampledLayoutMethodBitQCom = 0x4,
         [NativeName("Name", "GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM")]

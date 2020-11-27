@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +10,7 @@ namespace Silk.NET.Windowing.Extensions
     public class WindowManager : IDisposable
     {
         private object _syncRoot = new object();
-    
+
         /// <summary>
         /// The windows managed by this instance.
         /// </summary>
@@ -94,7 +94,7 @@ namespace Silk.NET.Windowing.Extensions
                         window.DoUpdate();
                         window.DoRender();
                     }
-                    
+
                     foreach (var window in removals)
                     {
                         Windows.Remove(window);

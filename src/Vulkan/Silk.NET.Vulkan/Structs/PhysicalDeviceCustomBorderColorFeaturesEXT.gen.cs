@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public PhysicalDeviceCustomBorderColorFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceCustomBorderColorFeaturesExt,
-            void* pNext = default,
-            Bool32 customBorderColors = default,
-            Bool32 customBorderColorWithoutFormat = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceCustomBorderColorFeaturesExt,
+            void* pNext = null,
+            Bool32? customBorderColors = null,
+            Bool32? customBorderColorWithoutFormat = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            CustomBorderColors = customBorderColors;
-            CustomBorderColorWithoutFormat = customBorderColorWithoutFormat;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (customBorderColors is not null)
+            {
+                CustomBorderColors = customBorderColors.Value;
+            }
+
+            if (customBorderColorWithoutFormat is not null)
+            {
+                CustomBorderColorWithoutFormat = customBorderColorWithoutFormat.Value;
+            }
         }
 
 /// <summary></summary>

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.SDL
     {
         public WindowShapeMode
         (
-            WindowShapeModeVal mode = default,
-            WindowShapeParams parameters = default
-        )
+            WindowShapeModeVal? mode = null,
+            WindowShapeParams? parameters = null
+        ) : this()
         {
-            Mode = mode;
-            Parameters = parameters;
+            if (mode is not null)
+            {
+                Mode = mode.Value;
+            }
+
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
         }
 
 

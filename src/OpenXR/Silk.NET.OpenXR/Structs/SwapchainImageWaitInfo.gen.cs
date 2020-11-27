@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.OpenXR
     {
         public SwapchainImageWaitInfo
         (
-            StructureType type = StructureType.TypeSwapchainImageWaitInfo,
-            void* next = default,
-            long timeout = default
-        )
+            StructureType? type = StructureType.TypeSwapchainImageWaitInfo,
+            void* next = null,
+            long? timeout = null
+        ) : this()
         {
-            Type = type;
-            Next = next;
-            Timeout = timeout;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (timeout is not null)
+            {
+                Timeout = timeout.Value;
+            }
         }
 
 /// <summary></summary>

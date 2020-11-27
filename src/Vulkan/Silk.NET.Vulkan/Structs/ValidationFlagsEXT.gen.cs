@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public ValidationFlagsEXT
         (
-            StructureType sType = StructureType.ValidationFlagsExt,
-            void* pNext = default,
-            uint disabledValidationCheckCount = default,
-            ValidationCheckEXT* pDisabledValidationChecks = default
-        )
+            StructureType? sType = StructureType.ValidationFlagsExt,
+            void* pNext = null,
+            uint? disabledValidationCheckCount = null,
+            ValidationCheckEXT* pDisabledValidationChecks = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DisabledValidationCheckCount = disabledValidationCheckCount;
-            PDisabledValidationChecks = pDisabledValidationChecks;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (disabledValidationCheckCount is not null)
+            {
+                DisabledValidationCheckCount = disabledValidationCheckCount.Value;
+            }
+
+            if (pDisabledValidationChecks is not null)
+            {
+                PDisabledValidationChecks = pDisabledValidationChecks;
+            }
         }
 
 /// <summary></summary>

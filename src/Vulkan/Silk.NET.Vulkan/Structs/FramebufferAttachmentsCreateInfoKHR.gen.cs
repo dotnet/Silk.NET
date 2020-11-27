@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Vulkan
     {
         public FramebufferAttachmentsCreateInfoKHR
         (
-            StructureType sType = StructureType.FramebufferAttachmentsCreateInfo,
-            void* pNext = default,
-            uint attachmentImageInfoCount = default,
-            FramebufferAttachmentImageInfo* pAttachmentImageInfos = default
-        )
+            StructureType? sType = StructureType.FramebufferAttachmentsCreateInfo,
+            void* pNext = null,
+            uint? attachmentImageInfoCount = null,
+            FramebufferAttachmentImageInfo* pAttachmentImageInfos = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            AttachmentImageInfoCount = attachmentImageInfoCount;
-            PAttachmentImageInfos = pAttachmentImageInfos;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (attachmentImageInfoCount is not null)
+            {
+                AttachmentImageInfoCount = attachmentImageInfoCount.Value;
+            }
+
+            if (pAttachmentImageInfos is not null)
+            {
+                PAttachmentImageInfos = pAttachmentImageInfos;
+            }
         }
 
 /// <summary></summary>

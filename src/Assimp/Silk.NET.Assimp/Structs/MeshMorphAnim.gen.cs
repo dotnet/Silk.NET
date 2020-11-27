@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Assimp
     {
         public MeshMorphAnim
         (
-            AssimpString mName = default,
-            uint mNumKeys = default,
-            MeshMorphKey* mKeys = default
-        )
+            AssimpString? mName = null,
+            uint? mNumKeys = null,
+            MeshMorphKey* mKeys = null
+        ) : this()
         {
-            MName = mName;
-            MNumKeys = mNumKeys;
-            MKeys = mKeys;
+            if (mName is not null)
+            {
+                MName = mName.Value;
+            }
+
+            if (mNumKeys is not null)
+            {
+                MNumKeys = mNumKeys.Value;
+            }
+
+            if (mKeys is not null)
+            {
+                MKeys = mKeys;
+            }
         }
 
 

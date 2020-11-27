@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public DeviceEventInfoEXT
         (
-            StructureType sType = StructureType.DeviceEventInfoExt,
-            void* pNext = default,
-            DeviceEventTypeEXT deviceEvent = default
-        )
+            StructureType? sType = StructureType.DeviceEventInfoExt,
+            void* pNext = null,
+            DeviceEventTypeEXT? deviceEvent = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            DeviceEvent = deviceEvent;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (deviceEvent is not null)
+            {
+                DeviceEvent = deviceEvent.Value;
+            }
         }
 
 /// <summary></summary>

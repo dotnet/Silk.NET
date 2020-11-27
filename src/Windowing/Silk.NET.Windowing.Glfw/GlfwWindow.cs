@@ -17,8 +17,8 @@ namespace Silk.NET.Windowing.Glfw
 {
     internal unsafe class GlfwWindow : WindowImplementationBase, IGLContext, IVkSurface
     {
-        private readonly GLFW.Glfw _glfw;
-        private WindowHandle* _glfwWindow;
+        internal readonly GLFW.Glfw _glfw;
+        internal WindowHandle* _glfwWindow;
         private string _localTitleCache; // glfw doesn't let us get the window title.
         private readonly GlfwWindow? _parent;
         private readonly GlfwMonitor? _initialMonitor;
@@ -49,6 +49,15 @@ namespace Silk.NET.Windowing.Glfw
             {
                 _glfw.GetWindowSize(_glfwWindow, out var width, out var height);
                 return new Size(width, height);
+            }
+        }
+        
+        protected override unsafe Rectangle CoreBorderSize
+        {
+            get
+            {
+                _glfw.GetWindowFrameSize(_glfwWindow, out var l, out var t, out var r, out var b);
+                return Rectangle.FromLTRB(l, t, r, b);
             }
         }
 
@@ -497,7 +506,7 @@ namespace Silk.NET.Windowing.Glfw
             GC.SuppressFinalize(this);
         }
 
-        public IntPtr GetProcAddress(string proc) => _glfw.GetProcAddress(proc);
+        public IntPtr GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
 
         public override void Close()
         {

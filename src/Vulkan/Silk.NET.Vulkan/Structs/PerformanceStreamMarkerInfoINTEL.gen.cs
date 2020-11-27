@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceStreamMarkerInfoINTEL
         (
-            StructureType sType = StructureType.PerformanceStreamMarkerInfoIntel,
-            void* pNext = default,
-            uint marker = default
-        )
+            StructureType? sType = StructureType.PerformanceStreamMarkerInfoIntel,
+            void* pNext = null,
+            uint? marker = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Marker = marker;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (marker is not null)
+            {
+                Marker = marker.Value;
+            }
         }
 
 /// <summary></summary>

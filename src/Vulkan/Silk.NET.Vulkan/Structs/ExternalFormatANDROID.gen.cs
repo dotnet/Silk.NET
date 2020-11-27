@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Vulkan
     {
         public ExternalFormatANDROID
         (
-            StructureType sType = StructureType.ExternalFormatAndroid,
-            void* pNext = default,
-            ulong externalFormat = default
-        )
+            StructureType? sType = StructureType.ExternalFormatAndroid,
+            void* pNext = null,
+            ulong? externalFormat = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            ExternalFormat = externalFormat;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (externalFormat is not null)
+            {
+                ExternalFormat = externalFormat.Value;
+            }
         }
 
 /// <summary></summary>

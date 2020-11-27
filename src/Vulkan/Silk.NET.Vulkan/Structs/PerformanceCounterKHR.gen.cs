@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Vulkan
     {
         public PerformanceCounterKHR
         (
-            StructureType sType = StructureType.PerformanceCounterKhr,
-            void* pNext = default,
-            PerformanceCounterUnitKHR unit = default,
-            PerformanceCounterScopeKHR scope = default,
-            PerformanceCounterStorageKHR storage = default
-        )
+            StructureType? sType = StructureType.PerformanceCounterKhr,
+            void* pNext = null,
+            PerformanceCounterUnitKHR? unit = null,
+            PerformanceCounterScopeKHR? scope = null,
+            PerformanceCounterStorageKHR? storage = null
+        ) : this()
         {
-            SType = sType;
-            PNext = pNext;
-            Unit = unit;
-            Scope = scope;
-            Storage = storage;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (unit is not null)
+            {
+                Unit = unit.Value;
+            }
+
+            if (scope is not null)
+            {
+                Scope = scope.Value;
+            }
+
+            if (storage is not null)
+            {
+                Storage = storage.Value;
+            }
         }
 
 /// <summary></summary>

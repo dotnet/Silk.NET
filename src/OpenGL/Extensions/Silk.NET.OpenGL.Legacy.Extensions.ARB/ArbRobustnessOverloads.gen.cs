@@ -172,25 +172,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
+        public static unsafe void GetnMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
         {
             // SpanOverloader
             thisApi.GetnMap(target, query, bufSize, out v.GetPinnableReference());
         }
 
-        public static unsafe void GetnMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
+        public static unsafe void GetnMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
         {
             // SpanOverloader
             thisApi.GetnMap(target, query, bufSize, out v.GetPinnableReference());
         }
 
-        public static unsafe void GetnMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
+        public static unsafe void GetnMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
         {
             // SpanOverloader
             thisApi.GetnMap(target, query, bufSize, out v.GetPinnableReference());
         }
 
-        public static unsafe void GetnMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
+        public static unsafe void GetnMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
         {
             // SpanOverloader
             thisApi.GetnMap(target, query, bufSize, out v.GetPinnableReference());
@@ -292,13 +292,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnPixelMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB map, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
+        public static unsafe void GetnPixelMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] ARB map, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
         {
             // SpanOverloader
             thisApi.GetnPixelMap(map, bufSize, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetnPixelMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
+        public static unsafe void GetnPixelMap(this ArbRobustness thisApi, [Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Count(Computed = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
         {
             // SpanOverloader
             thisApi.GetnPixelMap(map, bufSize, out values.GetPinnableReference());
