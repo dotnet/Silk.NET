@@ -37,8 +37,8 @@ namespace Silk.NET.Numerics
 
         /// <summary>Constructs a Matrix3x2 from the given components.</summary>
         public Matrix3x2(T m11, T m12,
-                         T m21, T m22,
-                         T m31, T m32)
+            T m21, T m22,
+            T m31, T m32)
         {
             M11 = m11;
             M12 = m12;
@@ -48,6 +48,20 @@ namespace Silk.NET.Numerics
 
             M31 = m31;
             M32 = m32;
+        }
+        
+        /// <summary>Constructs a Matrix3x2 from the given Matrix4x3.</summary>
+        /// <param name="value">The source Matrix4x3.</param>
+        public Matrix3x2(Matrix4x3<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+
+            M21 = value.M21;
+            M22 = value.M22;
+
+            M31 = value.M31;
+            M32 = value.M32;
         }
 
         /// <summary>Returns the multiplicative identity matrix.</summary>
