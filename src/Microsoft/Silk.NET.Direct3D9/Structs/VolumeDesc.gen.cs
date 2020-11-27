@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D9
     {
         public VolumeDesc
         (
-            Format format = default,
-            Resourcetype type = default,
-            uint usage = default,
-            Pool pool = default,
-            uint width = default,
-            uint height = default,
-            uint depth = default
-        )
+            Format? format = null,
+            Resourcetype? type = null,
+            uint? usage = null,
+            Pool? pool = null,
+            uint? width = null,
+            uint? height = null,
+            uint? depth = null
+        ) : this()
         {
-            Format = format;
-            Type = type;
-            Usage = usage;
-            Pool = pool;
-            Width = width;
-            Height = height;
-            Depth = depth;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (pool is not null)
+            {
+                Pool = pool.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
         }
 
 

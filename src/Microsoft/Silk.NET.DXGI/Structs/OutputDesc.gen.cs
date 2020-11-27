@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.DXGI
     {
         public OutputDesc
         (
-            Silk.NET.Core.Native.TagRect desktopCoordinates = default,
-            int attachedToDesktop = default,
-            ModeRotation rotation = default,
-            IntPtr monitor = default
-        )
+            Silk.NET.Core.Native.TagRect? desktopCoordinates = null,
+            int? attachedToDesktop = null,
+            ModeRotation? rotation = null,
+            IntPtr? monitor = null
+        ) : this()
         {
-            DesktopCoordinates = desktopCoordinates;
-            AttachedToDesktop = attachedToDesktop;
-            Rotation = rotation;
-            Monitor = monitor;
+            if (desktopCoordinates is not null)
+            {
+                DesktopCoordinates = desktopCoordinates.Value;
+            }
+
+            if (attachedToDesktop is not null)
+            {
+                AttachedToDesktop = attachedToDesktop.Value;
+            }
+
+            if (rotation is not null)
+            {
+                Rotation = rotation.Value;
+            }
+
+            if (monitor is not null)
+            {
+                Monitor = monitor.Value;
+            }
         }
 
         [NativeName("Type", "WCHAR [32]")]

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.Direct3D11
     {
         public QueryDataPipelineStatistics
         (
-            ulong iAVertices = default,
-            ulong iAPrimitives = default,
-            ulong vSInvocations = default,
-            ulong gSInvocations = default,
-            ulong gSPrimitives = default,
-            ulong cInvocations = default,
-            ulong cPrimitives = default,
-            ulong pSInvocations = default,
-            ulong hSInvocations = default,
-            ulong dSInvocations = default,
-            ulong cSInvocations = default
-        )
+            ulong? iAVertices = null,
+            ulong? iAPrimitives = null,
+            ulong? vSInvocations = null,
+            ulong? gSInvocations = null,
+            ulong? gSPrimitives = null,
+            ulong? cInvocations = null,
+            ulong? cPrimitives = null,
+            ulong? pSInvocations = null,
+            ulong? hSInvocations = null,
+            ulong? dSInvocations = null,
+            ulong? cSInvocations = null
+        ) : this()
         {
-            IAVertices = iAVertices;
-            IAPrimitives = iAPrimitives;
-            VSInvocations = vSInvocations;
-            GSInvocations = gSInvocations;
-            GSPrimitives = gSPrimitives;
-            CInvocations = cInvocations;
-            CPrimitives = cPrimitives;
-            PSInvocations = pSInvocations;
-            HSInvocations = hSInvocations;
-            DSInvocations = dSInvocations;
-            CSInvocations = cSInvocations;
+            if (iAVertices is not null)
+            {
+                IAVertices = iAVertices.Value;
+            }
+
+            if (iAPrimitives is not null)
+            {
+                IAPrimitives = iAPrimitives.Value;
+            }
+
+            if (vSInvocations is not null)
+            {
+                VSInvocations = vSInvocations.Value;
+            }
+
+            if (gSInvocations is not null)
+            {
+                GSInvocations = gSInvocations.Value;
+            }
+
+            if (gSPrimitives is not null)
+            {
+                GSPrimitives = gSPrimitives.Value;
+            }
+
+            if (cInvocations is not null)
+            {
+                CInvocations = cInvocations.Value;
+            }
+
+            if (cPrimitives is not null)
+            {
+                CPrimitives = cPrimitives.Value;
+            }
+
+            if (pSInvocations is not null)
+            {
+                PSInvocations = pSInvocations.Value;
+            }
+
+            if (hSInvocations is not null)
+            {
+                HSInvocations = hSInvocations.Value;
+            }
+
+            if (dSInvocations is not null)
+            {
+                DSInvocations = dSInvocations.Value;
+            }
+
+            if (cSInvocations is not null)
+            {
+                CSInvocations = cSInvocations.Value;
+            }
         }
 
 

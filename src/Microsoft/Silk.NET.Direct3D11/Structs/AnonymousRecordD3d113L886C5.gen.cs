@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,30 +23,73 @@ namespace Silk.NET.Direct3D11
     {
         public AnonymousRecordD3d113L886C5
         (
-            BufferSrv buffer = default,
-            Tex1DSrv texture1D = default,
-            Tex1DArraySrv texture1DArray = default,
-            Tex2DSrv1 texture2D = default,
-            Tex2DArraySrv1 texture2DArray = default,
-            Tex2DmsSrv texture2DMS = default,
-            Tex2DmsArraySrv texture2DMSArray = default,
-            Tex3DSrv texture3D = default,
-            TexcubeSrv textureCube = default,
-            TexcubeArraySrv textureCubeArray = default,
-            BufferexSrv bufferEx = default
-        )
+            BufferSrv? buffer = null,
+            Tex1DSrv? texture1D = null,
+            Tex1DArraySrv? texture1DArray = null,
+            Tex2DSrv1? texture2D = null,
+            Tex2DArraySrv1? texture2DArray = null,
+            Tex2DmsSrv? texture2DMS = null,
+            Tex2DmsArraySrv? texture2DMSArray = null,
+            Tex3DSrv? texture3D = null,
+            TexcubeSrv? textureCube = null,
+            TexcubeArraySrv? textureCubeArray = null,
+            BufferexSrv? bufferEx = null
+        ) : this()
         {
-            Buffer = buffer;
-            Texture1D = texture1D;
-            Texture1DArray = texture1DArray;
-            Texture2D = texture2D;
-            Texture2DArray = texture2DArray;
-            Texture2DMS = texture2DMS;
-            Texture2DMSArray = texture2DMSArray;
-            Texture3D = texture3D;
-            TextureCube = textureCube;
-            TextureCubeArray = textureCubeArray;
-            BufferEx = bufferEx;
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (texture1D is not null)
+            {
+                Texture1D = texture1D.Value;
+            }
+
+            if (texture1DArray is not null)
+            {
+                Texture1DArray = texture1DArray.Value;
+            }
+
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
+
+            if (texture2DArray is not null)
+            {
+                Texture2DArray = texture2DArray.Value;
+            }
+
+            if (texture2DMS is not null)
+            {
+                Texture2DMS = texture2DMS.Value;
+            }
+
+            if (texture2DMSArray is not null)
+            {
+                Texture2DMSArray = texture2DMSArray.Value;
+            }
+
+            if (texture3D is not null)
+            {
+                Texture3D = texture3D.Value;
+            }
+
+            if (textureCube is not null)
+            {
+                TextureCube = textureCube.Value;
+            }
+
+            if (textureCubeArray is not null)
+            {
+                TextureCubeArray = textureCubeArray.Value;
+            }
+
+            if (bufferEx is not null)
+            {
+                BufferEx = bufferEx.Value;
+            }
         }
 
 

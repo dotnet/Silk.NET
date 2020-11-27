@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public HitGroupDesc
         (
-            char* hitGroupExport = default,
-            HitGroupType type = default,
-            char* anyHitShaderImport = default,
-            char* closestHitShaderImport = default,
-            char* intersectionShaderImport = default
-        )
+            char* hitGroupExport = null,
+            HitGroupType? type = null,
+            char* anyHitShaderImport = null,
+            char* closestHitShaderImport = null,
+            char* intersectionShaderImport = null
+        ) : this()
         {
-            HitGroupExport = hitGroupExport;
-            Type = type;
-            AnyHitShaderImport = anyHitShaderImport;
-            ClosestHitShaderImport = closestHitShaderImport;
-            IntersectionShaderImport = intersectionShaderImport;
+            if (hitGroupExport is not null)
+            {
+                HitGroupExport = hitGroupExport;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (anyHitShaderImport is not null)
+            {
+                AnyHitShaderImport = anyHitShaderImport;
+            }
+
+            if (closestHitShaderImport is not null)
+            {
+                ClosestHitShaderImport = closestHitShaderImport;
+            }
+
+            if (intersectionShaderImport is not null)
+            {
+                IntersectionShaderImport = intersectionShaderImport;
+            }
         }
 
 

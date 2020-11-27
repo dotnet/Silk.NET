@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,12 +23,19 @@ namespace Silk.NET.Direct3D11
     {
         public AnonymousRecordD3d11L3750C5
         (
-            uint numElements = default,
-            uint elementWidth = default
-        )
+            uint? numElements = null,
+            uint? elementWidth = null
+        ) : this()
         {
-            NumElements = numElements;
-            ElementWidth = elementWidth;
+            if (numElements is not null)
+            {
+                NumElements = numElements.Value;
+            }
+
+            if (elementWidth is not null)
+            {
+                ElementWidth = elementWidth.Value;
+            }
         }
 
 

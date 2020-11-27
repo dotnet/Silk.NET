@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -33,10 +34,13 @@ namespace Silk.NET.Direct3D.Compilers
 
         public IDxcOptimizer
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -45,403 +49,351 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<IDxcOptimizer*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizer*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizer*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetAvailablePassCount(uint* pCount)
+        public readonly unsafe int GetAvailablePassCount(uint* pCount)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizer*, uint*, int>)LpVtbl[3])(@this, pCount);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, uint*, int>)LpVtbl[3])(@this, pCount);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetAvailablePassCount(ref uint pCount)
+        public readonly int GetAvailablePassCount(ref uint pCount)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (uint* pCountPtr = &pCount)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizer*, uint*, int>)LpVtbl[3])(@this, pCountPtr);
-                }
-                return ret;
+            fixed (uint* pCountPtr = &pCount)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, uint*, int>)LpVtbl[3])(@this, pCountPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetAvailablePass(uint index, IDxcOptimizerPass** ppResult)
+        public readonly unsafe int GetAvailablePass(uint index, IDxcOptimizerPass** ppResult)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)LpVtbl[4])(@this, index, ppResult);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)LpVtbl[4])(@this, index, ppResult);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetAvailablePass(uint index, ref IDxcOptimizerPass* ppResult)
+        public readonly unsafe int GetAvailablePass(uint index, ref IDxcOptimizerPass* ppResult)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (IDxcOptimizerPass** ppResultPtr = &ppResult)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)LpVtbl[4])(@this, index, ppResultPtr);
-                }
-                return ret;
+            fixed (IDxcOptimizerPass** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, uint, IDxcOptimizerPass**, int>)LpVtbl[4])(@this, index, ppResultPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(IDxcBlob* pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputText);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(IDxcBlob* pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputTextPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModulePtr, ppOutputText);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
+            {
                 fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                 {
-                    ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModule, ppOutputTextPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModulePtr, ppOutputTextPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (char** ppOptionsPtr = &ppOptions)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModule, ppOutputText);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (char** ppOptionsPtr = &ppOptions)
+            {
+                fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModule, ppOutputTextPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (char** ppOptionsPtr = &ppOptions)
+            {
                 fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
                 {
-                    ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModulePtr, ppOutputText);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputText);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(IDxcBlob* pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (char** ppOptionsPtr = &ppOptions)
+            {
                 fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
                 {
                     fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                     {
-                        ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptions, optionCount, pOutputModulePtr, ppOutputTextPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputTextPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (IDxcBlob* pBlobPtr = &pBlob)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModule, ppOutputText);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDxcBlob* pBlobPtr = &pBlob)
+            {
+                fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModule, ppOutputTextPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDxcBlob* pBlobPtr = &pBlob)
+            {
+                fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModulePtr, ppOutputText);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDxcBlob* pBlobPtr = &pBlob)
+            {
+                fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
+                {
+                    fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModulePtr, ppOutputTextPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDxcBlob* pBlobPtr = &pBlob)
+            {
                 fixed (char** ppOptionsPtr = &ppOptions)
                 {
-                    ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModule, ppOutputText);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModule, ppOutputText);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (IDxcBlob* pBlobPtr = &pBlob)
+            {
                 fixed (char** ppOptionsPtr = &ppOptions)
                 {
                     fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                     {
-                        ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModule, ppOutputTextPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModule, ppOutputTextPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (IDxcBlob* pBlobPtr = &pBlob)
+            {
                 fixed (char** ppOptionsPtr = &ppOptions)
                 {
                     fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
                     {
-                        ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputText);
+                        ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputText);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(IDxcBlob* pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
         {
-            fixed (IDxcOptimizer* @this = &this)
-            {
+            var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (IDxcBlob* pBlobPtr = &pBlob)
+            {
                 fixed (char** ppOptionsPtr = &ppOptions)
                 {
                     fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
                     {
                         fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
                         {
-                            ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlob, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputTextPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputTextPtr);
                         }
                     }
                 }
-                return ret;
             }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (IDxcBlob* pBlobPtr = &pBlob)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModule, ppOutputText);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (IDxcBlob* pBlobPtr = &pBlob)
-                {
-                    fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
-                    {
-                        ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModule, ppOutputTextPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (IDxcBlob* pBlobPtr = &pBlob)
-                {
-                    fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
-                    {
-                        ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModulePtr, ppOutputText);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(ref IDxcBlob pBlob, char** ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (IDxcBlob* pBlobPtr = &pBlob)
-                {
-                    fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
-                    {
-                        fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
-                        {
-                            ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptions, optionCount, pOutputModulePtr, ppOutputTextPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (IDxcBlob* pBlobPtr = &pBlob)
-                {
-                    fixed (char** ppOptionsPtr = &ppOptions)
-                    {
-                        ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModule, ppOutputText);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (IDxcBlob* pBlobPtr = &pBlob)
-                {
-                    fixed (char** ppOptionsPtr = &ppOptions)
-                    {
-                        fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
-                        {
-                            ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModule, ppOutputTextPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (IDxcBlob* pBlobPtr = &pBlob)
-                {
-                    fixed (char** ppOptionsPtr = &ppOptions)
-                    {
-                        fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
-                        {
-                            ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputText);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RunOptimizer(ref IDxcBlob pBlob, ref char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
-        {
-            fixed (IDxcOptimizer* @this = &this)
-            {
-                int ret = default;
-                fixed (IDxcBlob* pBlobPtr = &pBlob)
-                {
-                    fixed (char** ppOptionsPtr = &ppOptions)
-                    {
-                        fixed (IDxcBlob** pOutputModulePtr = &pOutputModule)
-                        {
-                            fixed (IDxcBlobEncoding** ppOutputTextPtr = &ppOutputText)
-                            {
-                                ret = ((delegate* cdecl<IDxcOptimizer*, IDxcBlob*, char**, uint, IDxcBlob**, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pBlobPtr, ppOptionsPtr, optionCount, pOutputModulePtr, ppOutputTextPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
+            return ret;
         }
 
     }

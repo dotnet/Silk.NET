@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.DXGI
     {
         public SampleDesc
         (
-            uint count = default,
-            uint quality = default
-        )
+            uint? count = null,
+            uint? quality = null
+        ) : this()
         {
-            Count = count;
-            Quality = quality;
+            if (count is not null)
+            {
+                Count = count.Value;
+            }
+
+            if (quality is not null)
+            {
+                Quality = quality.Value;
+            }
         }
 
 

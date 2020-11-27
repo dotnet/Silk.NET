@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeFrameArgument
         (
-            VideoDecodeArgumentType type = default,
-            uint size = default,
-            void* pData = default
-        )
+            VideoDecodeArgumentType? type = null,
+            uint? size = null,
+            void* pData = null
+        ) : this()
         {
-            Type = type;
-            Size = size;
-            PData = pData;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (pData is not null)
+            {
+                PData = pData;
+            }
         }
 
 

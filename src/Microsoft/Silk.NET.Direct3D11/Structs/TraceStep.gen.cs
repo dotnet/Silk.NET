@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D11
     {
         public TraceStep
         (
-            uint iD = default,
-            int instructionActive = default,
-            byte numRegistersWritten = default,
-            byte numRegistersRead = default,
-            ushort miscOperations = default,
-            uint opcodeType = default,
-            ulong currentGlobalCycle = default
-        )
+            uint? iD = null,
+            int? instructionActive = null,
+            byte? numRegistersWritten = null,
+            byte? numRegistersRead = null,
+            ushort? miscOperations = null,
+            uint? opcodeType = null,
+            ulong? currentGlobalCycle = null
+        ) : this()
         {
-            ID = iD;
-            InstructionActive = instructionActive;
-            NumRegistersWritten = numRegistersWritten;
-            NumRegistersRead = numRegistersRead;
-            MiscOperations = miscOperations;
-            OpcodeType = opcodeType;
-            CurrentGlobalCycle = currentGlobalCycle;
+            if (iD is not null)
+            {
+                ID = iD.Value;
+            }
+
+            if (instructionActive is not null)
+            {
+                InstructionActive = instructionActive.Value;
+            }
+
+            if (numRegistersWritten is not null)
+            {
+                NumRegistersWritten = numRegistersWritten.Value;
+            }
+
+            if (numRegistersRead is not null)
+            {
+                NumRegistersRead = numRegistersRead.Value;
+            }
+
+            if (miscOperations is not null)
+            {
+                MiscOperations = miscOperations.Value;
+            }
+
+            if (opcodeType is not null)
+            {
+                OpcodeType = opcodeType.Value;
+            }
+
+            if (currentGlobalCycle is not null)
+            {
+                CurrentGlobalCycle = currentGlobalCycle.Value;
+            }
         }
 
 

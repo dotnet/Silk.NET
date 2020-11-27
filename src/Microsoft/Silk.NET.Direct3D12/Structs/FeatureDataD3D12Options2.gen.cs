@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options2
         (
-            int depthBoundsTestSupported = default,
-            ProgrammableSamplePositionsTier programmableSamplePositionsTier = default
-        )
+            int? depthBoundsTestSupported = null,
+            ProgrammableSamplePositionsTier? programmableSamplePositionsTier = null
+        ) : this()
         {
-            DepthBoundsTestSupported = depthBoundsTestSupported;
-            ProgrammableSamplePositionsTier = programmableSamplePositionsTier;
+            if (depthBoundsTestSupported is not null)
+            {
+                DepthBoundsTestSupported = depthBoundsTestSupported.Value;
+            }
+
+            if (programmableSamplePositionsTier is not null)
+            {
+                ProgrammableSamplePositionsTier = programmableSamplePositionsTier.Value;
+            }
         }
 
 

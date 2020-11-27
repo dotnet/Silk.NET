@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public RaytracingPipelineConfig1
         (
-            uint maxTraceRecursionDepth = default,
-            RaytracingPipelineFlags flags = default
-        )
+            uint? maxTraceRecursionDepth = null,
+            RaytracingPipelineFlags? flags = null
+        ) : this()
         {
-            MaxTraceRecursionDepth = maxTraceRecursionDepth;
-            Flags = flags;
+            if (maxTraceRecursionDepth is not null)
+            {
+                MaxTraceRecursionDepth = maxTraceRecursionDepth.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoExtensionCommandSupport
         (
-            uint nodeIndex = default,
-            Guid commandId = default,
-            void* pInputData = default,
-            uint inputDataSizeInBytes = default,
-            void* pOutputData = default,
-            uint outputDataSizeInBytes = default
-        )
+            uint? nodeIndex = null,
+            Guid? commandId = null,
+            void* pInputData = null,
+            uint? inputDataSizeInBytes = null,
+            void* pOutputData = null,
+            uint? outputDataSizeInBytes = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            CommandId = commandId;
-            PInputData = pInputData;
-            InputDataSizeInBytes = inputDataSizeInBytes;
-            POutputData = pOutputData;
-            OutputDataSizeInBytes = outputDataSizeInBytes;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (commandId is not null)
+            {
+                CommandId = commandId.Value;
+            }
+
+            if (pInputData is not null)
+            {
+                PInputData = pInputData;
+            }
+
+            if (inputDataSizeInBytes is not null)
+            {
+                InputDataSizeInBytes = inputDataSizeInBytes.Value;
+            }
+
+            if (pOutputData is not null)
+            {
+                POutputData = pOutputData;
+            }
+
+            if (outputDataSizeInBytes is not null)
+            {
+                OutputDataSizeInBytes = outputDataSizeInBytes.Value;
+            }
         }
 
 

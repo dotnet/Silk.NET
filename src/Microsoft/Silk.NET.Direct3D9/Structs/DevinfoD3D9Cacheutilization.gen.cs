@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public DevinfoD3D9Cacheutilization
         (
-            float textureCacheHitRate = default,
-            float postTransformVertexCacheHitRate = default
-        )
+            float? textureCacheHitRate = null,
+            float? postTransformVertexCacheHitRate = null
+        ) : this()
         {
-            TextureCacheHitRate = textureCacheHitRate;
-            PostTransformVertexCacheHitRate = postTransformVertexCacheHitRate;
+            if (textureCacheHitRate is not null)
+            {
+                TextureCacheHitRate = textureCacheHitRate.Value;
+            }
+
+            if (postTransformVertexCacheHitRate is not null)
+            {
+                PostTransformVertexCacheHitRate = postTransformVertexCacheHitRate.Value;
+            }
         }
 
 

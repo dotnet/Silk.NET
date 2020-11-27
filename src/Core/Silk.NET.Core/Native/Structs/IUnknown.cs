@@ -10,6 +10,7 @@
 
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
@@ -25,69 +26,60 @@ namespace Silk.NET.Core.Native
     {
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (IUnknown* @this = &this)
+            var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            return ((delegate* unmanaged[Cdecl]<IUnknown*, Guid*, void**, int>) LpVtbl[0])(@this, riid, ppvObject);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int QueryInterface(Guid* riid, ref void* ppvObject)
+        {
+            var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (void** ppvObjectPtr = &ppvObject)
             {
-                return ((delegate* cdecl<IUnknown*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+                return ((delegate* unmanaged[Cdecl]<IUnknown*, Guid*, void**, int>) LpVtbl[0])
+                    (@this, riid, ppvObjectPtr);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly int QueryInterface(ref Guid riid, void** ppvObject)
         {
-            fixed (IUnknown* @this = &this)
+            var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Guid* riidPtr = &riid)
+            {
+                return ((delegate* unmanaged[Cdecl]<IUnknown*, Guid*, void**, int>) LpVtbl[0])
+                    (@this, riidPtr, ppvObject);
+            }
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    return ((delegate* cdecl<IUnknown*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    return ((delegate* unmanaged[Cdecl]<IUnknown*, Guid*, void**, int>) LpVtbl[0])
+                        (@this, riidPtr, ppvObjectPtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (IUnknown* @this = &this)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    return ((delegate* cdecl<IUnknown*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            }
+            var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            return ((delegate* unmanaged[Cdecl]<IUnknown*, uint>) LpVtbl[1])(@this);
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        public readonly uint Release()
         {
-            fixed (IUnknown* @this = &this)
-            {
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        return ((delegate* cdecl<IUnknown*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (IUnknown* @this = &this)
-            {
-                return ((delegate* cdecl<IUnknown*, uint>)LpVtbl[1])(@this);
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint Release()
-        {
-            fixed (IUnknown* @this = &this)
-            {
-                return ((delegate* cdecl<IUnknown*, uint>)LpVtbl[2])(@this);
-            }
+            var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            return ((delegate* unmanaged[Cdecl]<IUnknown*, uint>) LpVtbl[2])(@this);
         }
     }
 }

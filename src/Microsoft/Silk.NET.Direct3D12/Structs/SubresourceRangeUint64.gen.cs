@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public SubresourceRangeUint64
         (
-            uint subresource = default,
-            RangeUint64 range = default
-        )
+            uint? subresource = null,
+            RangeUint64? range = null
+        ) : this()
         {
-            Subresource = subresource;
-            Range = range;
+            if (subresource is not null)
+            {
+                Subresource = subresource.Value;
+            }
+
+            if (range is not null)
+            {
+                Range = range.Value;
+            }
         }
 
 

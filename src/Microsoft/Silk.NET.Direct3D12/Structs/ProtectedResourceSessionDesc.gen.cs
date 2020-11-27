@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public ProtectedResourceSessionDesc
         (
-            uint nodeMask = default,
-            ProtectedResourceSessionFlags flags = default
-        )
+            uint? nodeMask = null,
+            ProtectedResourceSessionFlags? flags = null
+        ) : this()
         {
-            NodeMask = nodeMask;
-            Flags = flags;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

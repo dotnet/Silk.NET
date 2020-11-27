@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public ComputePipelineStateDesc
         (
-            ID3D12RootSignature* pRootSignature = default,
-            ShaderBytecode cS = default,
-            uint nodeMask = default,
-            CachedPipelineState cachedPSO = default,
-            PipelineStateFlags flags = default
-        )
+            ID3D12RootSignature* pRootSignature = null,
+            ShaderBytecode? cS = null,
+            uint? nodeMask = null,
+            CachedPipelineState? cachedPSO = null,
+            PipelineStateFlags? flags = null
+        ) : this()
         {
-            PRootSignature = pRootSignature;
-            CS = cS;
-            NodeMask = nodeMask;
-            CachedPSO = cachedPSO;
-            Flags = flags;
+            if (pRootSignature is not null)
+            {
+                PRootSignature = pRootSignature;
+            }
+
+            if (cS is not null)
+            {
+                CS = cS.Value;
+            }
+
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (cachedPSO is not null)
+            {
+                CachedPSO = cachedPSO.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

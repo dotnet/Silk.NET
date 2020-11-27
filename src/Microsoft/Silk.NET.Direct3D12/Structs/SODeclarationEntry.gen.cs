@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public SODeclarationEntry
         (
-            uint stream = default,
-            byte* semanticName = default,
-            uint semanticIndex = default,
-            byte startComponent = default,
-            byte componentCount = default,
-            byte outputSlot = default
-        )
+            uint? stream = null,
+            byte* semanticName = null,
+            uint? semanticIndex = null,
+            byte? startComponent = null,
+            byte? componentCount = null,
+            byte? outputSlot = null
+        ) : this()
         {
-            Stream = stream;
-            SemanticName = semanticName;
-            SemanticIndex = semanticIndex;
-            StartComponent = startComponent;
-            ComponentCount = componentCount;
-            OutputSlot = outputSlot;
+            if (stream is not null)
+            {
+                Stream = stream.Value;
+            }
+
+            if (semanticName is not null)
+            {
+                SemanticName = semanticName;
+            }
+
+            if (semanticIndex is not null)
+            {
+                SemanticIndex = semanticIndex.Value;
+            }
+
+            if (startComponent is not null)
+            {
+                StartComponent = startComponent.Value;
+            }
+
+            if (componentCount is not null)
+            {
+                ComponentCount = componentCount.Value;
+            }
+
+            if (outputSlot is not null)
+            {
+                OutputSlot = outputSlot.Value;
+            }
         }
 
 

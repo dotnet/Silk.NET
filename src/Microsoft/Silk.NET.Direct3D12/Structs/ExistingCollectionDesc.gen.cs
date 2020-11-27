@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public ExistingCollectionDesc
         (
-            ID3D12StateObject* pExistingCollection = default,
-            uint numExports = default,
-            ExportDesc* pExports = default
-        )
+            ID3D12StateObject* pExistingCollection = null,
+            uint? numExports = null,
+            ExportDesc* pExports = null
+        ) : this()
         {
-            PExistingCollection = pExistingCollection;
-            NumExports = numExports;
-            PExports = pExports;
+            if (pExistingCollection is not null)
+            {
+                PExistingCollection = pExistingCollection;
+            }
+
+            if (numExports is not null)
+            {
+                NumExports = numExports.Value;
+            }
+
+            if (pExports is not null)
+            {
+                PExports = pExports;
+            }
         }
 
 

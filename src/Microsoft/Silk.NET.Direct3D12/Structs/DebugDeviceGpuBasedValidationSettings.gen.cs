@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public DebugDeviceGpuBasedValidationSettings
         (
-            uint maxMessagesPerCommandList = default,
-            GpuBasedValidationShaderPatchMode defaultShaderPatchMode = default,
-            GpuBasedValidationPipelineStateCreateFlags pipelineStateCreateFlags = default
-        )
+            uint? maxMessagesPerCommandList = null,
+            GpuBasedValidationShaderPatchMode? defaultShaderPatchMode = null,
+            GpuBasedValidationPipelineStateCreateFlags? pipelineStateCreateFlags = null
+        ) : this()
         {
-            MaxMessagesPerCommandList = maxMessagesPerCommandList;
-            DefaultShaderPatchMode = defaultShaderPatchMode;
-            PipelineStateCreateFlags = pipelineStateCreateFlags;
+            if (maxMessagesPerCommandList is not null)
+            {
+                MaxMessagesPerCommandList = maxMessagesPerCommandList.Value;
+            }
+
+            if (defaultShaderPatchMode is not null)
+            {
+                DefaultShaderPatchMode = defaultShaderPatchMode.Value;
+            }
+
+            if (pipelineStateCreateFlags is not null)
+            {
+                PipelineStateCreateFlags = pipelineStateCreateFlags.Value;
+            }
         }
 
 

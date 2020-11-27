@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,79 @@ namespace Silk.NET.Direct3D11
     {
         public CD3D11RasterizerDesc2
         (
-            FillMode fillMode = default,
-            CullMode cullMode = default,
-            int frontCounterClockwise = default,
-            int depthBias = default,
-            float depthBiasClamp = default,
-            float slopeScaledDepthBias = default,
-            int depthClipEnable = default,
-            int scissorEnable = default,
-            int multisampleEnable = default,
-            int antialiasedLineEnable = default,
-            uint forcedSampleCount = default,
-            ConservativeRasterizationMode conservativeRaster = default
-        )
+            FillMode? fillMode = null,
+            CullMode? cullMode = null,
+            int? frontCounterClockwise = null,
+            int? depthBias = null,
+            float? depthBiasClamp = null,
+            float? slopeScaledDepthBias = null,
+            int? depthClipEnable = null,
+            int? scissorEnable = null,
+            int? multisampleEnable = null,
+            int? antialiasedLineEnable = null,
+            uint? forcedSampleCount = null,
+            ConservativeRasterizationMode? conservativeRaster = null
+        ) : this()
         {
-            FillMode = fillMode;
-            CullMode = cullMode;
-            FrontCounterClockwise = frontCounterClockwise;
-            DepthBias = depthBias;
-            DepthBiasClamp = depthBiasClamp;
-            SlopeScaledDepthBias = slopeScaledDepthBias;
-            DepthClipEnable = depthClipEnable;
-            ScissorEnable = scissorEnable;
-            MultisampleEnable = multisampleEnable;
-            AntialiasedLineEnable = antialiasedLineEnable;
-            ForcedSampleCount = forcedSampleCount;
-            ConservativeRaster = conservativeRaster;
+            if (fillMode is not null)
+            {
+                FillMode = fillMode.Value;
+            }
+
+            if (cullMode is not null)
+            {
+                CullMode = cullMode.Value;
+            }
+
+            if (frontCounterClockwise is not null)
+            {
+                FrontCounterClockwise = frontCounterClockwise.Value;
+            }
+
+            if (depthBias is not null)
+            {
+                DepthBias = depthBias.Value;
+            }
+
+            if (depthBiasClamp is not null)
+            {
+                DepthBiasClamp = depthBiasClamp.Value;
+            }
+
+            if (slopeScaledDepthBias is not null)
+            {
+                SlopeScaledDepthBias = slopeScaledDepthBias.Value;
+            }
+
+            if (depthClipEnable is not null)
+            {
+                DepthClipEnable = depthClipEnable.Value;
+            }
+
+            if (scissorEnable is not null)
+            {
+                ScissorEnable = scissorEnable.Value;
+            }
+
+            if (multisampleEnable is not null)
+            {
+                MultisampleEnable = multisampleEnable.Value;
+            }
+
+            if (antialiasedLineEnable is not null)
+            {
+                AntialiasedLineEnable = antialiasedLineEnable.Value;
+            }
+
+            if (forcedSampleCount is not null)
+            {
+                ForcedSampleCount = forcedSampleCount.Value;
+            }
+
+            if (conservativeRaster is not null)
+            {
+                ConservativeRaster = conservativeRaster.Value;
+            }
         }
 
 

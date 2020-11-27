@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options7
         (
-            MeshShaderTier meshShaderTier = default,
-            SamplerFeedbackTier samplerFeedbackTier = default
-        )
+            MeshShaderTier? meshShaderTier = null,
+            SamplerFeedbackTier? samplerFeedbackTier = null
+        ) : this()
         {
-            MeshShaderTier = meshShaderTier;
-            SamplerFeedbackTier = samplerFeedbackTier;
+            if (meshShaderTier is not null)
+            {
+                MeshShaderTier = meshShaderTier.Value;
+            }
+
+            if (samplerFeedbackTier is not null)
+            {
+                SamplerFeedbackTier = samplerFeedbackTier.Value;
+            }
         }
 
 

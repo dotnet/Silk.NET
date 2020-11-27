@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataThreading
         (
-            int driverConcurrentCreates = default,
-            int driverCommandLists = default
-        )
+            int? driverConcurrentCreates = null,
+            int? driverCommandLists = null
+        ) : this()
         {
-            DriverConcurrentCreates = driverConcurrentCreates;
-            DriverCommandLists = driverCommandLists;
+            if (driverConcurrentCreates is not null)
+            {
+                DriverConcurrentCreates = driverConcurrentCreates.Value;
+            }
+
+            if (driverCommandLists is not null)
+            {
+                DriverCommandLists = driverCommandLists.Value;
+            }
         }
 
 

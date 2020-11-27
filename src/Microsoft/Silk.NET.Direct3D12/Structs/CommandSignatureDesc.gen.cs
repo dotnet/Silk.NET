@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public CommandSignatureDesc
         (
-            uint byteStride = default,
-            uint numArgumentDescs = default,
-            IndirectArgumentDesc* pArgumentDescs = default,
-            uint nodeMask = default
-        )
+            uint? byteStride = null,
+            uint? numArgumentDescs = null,
+            IndirectArgumentDesc* pArgumentDescs = null,
+            uint? nodeMask = null
+        ) : this()
         {
-            ByteStride = byteStride;
-            NumArgumentDescs = numArgumentDescs;
-            PArgumentDescs = pArgumentDescs;
-            NodeMask = nodeMask;
+            if (byteStride is not null)
+            {
+                ByteStride = byteStride.Value;
+            }
+
+            if (numArgumentDescs is not null)
+            {
+                NumArgumentDescs = numArgumentDescs.Value;
+            }
+
+            if (pArgumentDescs is not null)
+            {
+                PArgumentDescs = pArgumentDescs;
+            }
+
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
         }
 
 

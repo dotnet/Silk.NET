@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -66,10 +67,13 @@ namespace Silk.NET.DXGI
 
         public IDXGISurface1
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -78,540 +82,462 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (IDXGISurface1* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (T0* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (T0* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
-                    }
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
-                return ret;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
+        public readonly unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
-                    {
-                        ret = ((delegate* cdecl<IDXGISurface1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
-                    }
-                }
-                return ret;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
+        public readonly unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
-                return ret;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
                 fixed (T0* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
+        public readonly unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                fixed (T0* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
+        {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
                     fixed (T0* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
+        public readonly unsafe int GetParent(Guid* riid, void** ppParent)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetParent(Guid* riid, ref void* ppParent)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (T0* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
-                    }
-                }
-                return ret;
+            fixed (void** ppParentPtr = &ppParent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
+        public readonly unsafe int GetParent(ref Guid riid, void** ppParent)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
-                    }
-                }
-                return ret;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetParent(ref Guid riid, ref void* ppParent)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        fixed (T0* pDataPtr = &pData)
-                        {
-                            ret = ((delegate* cdecl<IDXGISurface1*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetParent(Guid* riid, void** ppParent)
-        {
-            fixed (IDXGISurface1* @this = &this)
+            fixed (Guid* riidPtr = &riid)
             {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetParent(Guid* riid, ref void* ppParent)
-        {
-            fixed (IDXGISurface1* @this = &this)
-            {
-                int ret = default;
                 fixed (void** ppParentPtr = &ppParent)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetParent(ref Guid riid, void** ppParent)
+        public readonly unsafe int GetDevice(Guid* riid, void** ppDevice)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevice);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetParent(ref Guid riid, ref void* ppParent)
+        public readonly unsafe int GetDevice(Guid* riid, ref void* ppDevice)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppParentPtr = &ppParent)
-                    {
-                        ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
-                    }
-                }
-                return ret;
+            fixed (void** ppDevicePtr = &ppDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevicePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDevice(Guid* riid, void** ppDevice)
+        public readonly unsafe int GetDevice(ref Guid riid, void** ppDevice)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevice);
-                return ret;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevice);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDevice(Guid* riid, ref void* ppDevice)
+        public readonly unsafe int GetDevice(ref Guid riid, ref void* ppDevice)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppDevicePtr = &ppDevice)
                 {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevicePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDevice(ref Guid riid, void** ppDevice)
+        public readonly unsafe int GetDesc(SurfaceDesc* pDesc)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevice);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDevice(ref Guid riid, ref void* ppDevice)
+        public readonly int GetDesc(ref SurfaceDesc pDesc)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppDevicePtr = &ppDevice)
-                    {
-                        ret = ((delegate* cdecl<IDXGISurface1*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
-                    }
-                }
-                return ret;
+            fixed (SurfaceDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDesc(SurfaceDesc* pDesc)
+        public readonly unsafe int Map(MappedRect* pLockedRect, uint MapFlags)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRect, MapFlags);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDesc(ref SurfaceDesc pDesc)
+        public readonly int Map(ref MappedRect pLockedRect, uint MapFlags)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (SurfaceDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDescPtr);
-                }
-                return ret;
+            fixed (MappedRect* pLockedRectPtr = &pLockedRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRectPtr, MapFlags);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int Map(MappedRect* pLockedRect, uint MapFlags)
+        public readonly int Unmap()
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRect, MapFlags);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, int>)LpVtbl[10])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int Map(ref MappedRect pLockedRect, uint MapFlags)
+        public readonly unsafe int GetDC(int Discard, IntPtr* phdc)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (MappedRect* pLockedRectPtr = &pLockedRect)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRectPtr, MapFlags);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, int, IntPtr*, int>)LpVtbl[11])(@this, Discard, phdc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int Unmap()
+        public readonly int GetDC(int Discard, ref IntPtr phdc)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, int>)LpVtbl[10])(@this);
-                return ret;
+            fixed (IntPtr* phdcPtr = &phdc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, int, IntPtr*, int>)LpVtbl[11])(@this, Discard, phdcPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDC(int Discard, IntPtr* phdc)
+        public readonly unsafe int ReleaseDC(Silk.NET.Core.Native.TagRect* pDirtyRect)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, int, IntPtr*, int>)LpVtbl[11])(@this, Discard, phdc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[12])(@this, pDirtyRect);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDC(int Discard, ref IntPtr phdc)
+        public readonly int ReleaseDC(ref Silk.NET.Core.Native.TagRect pDirtyRect)
         {
-            fixed (IDXGISurface1* @this = &this)
-            {
+            var @this = (IDXGISurface1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (IntPtr* phdcPtr = &phdc)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, int, IntPtr*, int>)LpVtbl[11])(@this, Discard, phdcPtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int ReleaseDC(Silk.NET.Core.Native.TagRect* pDirtyRect)
-        {
-            fixed (IDXGISurface1* @this = &this)
+            fixed (Silk.NET.Core.Native.TagRect* pDirtyRectPtr = &pDirtyRect)
             {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGISurface1*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[12])(@this, pDirtyRect);
-                return ret;
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface1*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
             }
-        }
-
-        /// <summary>To be added.</summary>
-        public int ReleaseDC(ref Silk.NET.Core.Native.TagRect pDirtyRect)
-        {
-            fixed (IDXGISurface1* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.TagRect* pDirtyRectPtr = &pDirtyRect)
-                {
-                    ret = ((delegate* cdecl<IDXGISurface1*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
-                }
-                return ret;
-            }
+            return ret;
         }
 
     }

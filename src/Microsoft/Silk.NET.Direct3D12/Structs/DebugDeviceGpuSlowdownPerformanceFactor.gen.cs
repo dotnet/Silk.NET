@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D12
     {
         public DebugDeviceGpuSlowdownPerformanceFactor
         (
-            float slowdownFactor = default
-        )
+            float? slowdownFactor = null
+        ) : this()
         {
-            SlowdownFactor = slowdownFactor;
+            if (slowdownFactor is not null)
+            {
+                SlowdownFactor = slowdownFactor.Value;
+            }
         }
 
 

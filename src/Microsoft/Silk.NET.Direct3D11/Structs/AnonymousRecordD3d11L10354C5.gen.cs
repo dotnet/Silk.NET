@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,12 +23,19 @@ namespace Silk.NET.Direct3D11
     {
         public AnonymousRecordD3d11L10354C5
         (
-            VIDEOCOLORYCbCrA yCbCr = default,
-            VideoColorRgba rGBA = default
-        )
+            VIDEOCOLORYCbCrA? yCbCr = null,
+            VideoColorRgba? rGBA = null
+        ) : this()
         {
-            YCbCr = yCbCr;
-            RGBA = rGBA;
+            if (yCbCr is not null)
+            {
+                YCbCr = yCbCr.Value;
+            }
+
+            if (rGBA is not null)
+            {
+                RGBA = rGBA.Value;
+            }
         }
 
 

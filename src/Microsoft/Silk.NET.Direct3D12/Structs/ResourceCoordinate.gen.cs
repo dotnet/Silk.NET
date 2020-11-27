@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public ResourceCoordinate
         (
-            ulong x = default,
-            uint y = default,
-            uint z = default,
-            uint subresourceIndex = default
-        )
+            ulong? x = null,
+            uint? y = null,
+            uint? z = null,
+            uint? subresourceIndex = null
+        ) : this()
         {
-            X = x;
-            Y = y;
-            Z = z;
-            SubresourceIndex = subresourceIndex;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
+
+            if (subresourceIndex is not null)
+            {
+                SubresourceIndex = subresourceIndex.Value;
+            }
         }
 
 

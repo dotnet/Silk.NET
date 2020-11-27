@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D11
     {
         public Tex2DmsDsv
         (
-            uint unusedFieldNothingToDefine = default
-        )
+            uint? unusedFieldNothingToDefine = null
+        ) : this()
         {
-            UnusedFieldNothingToDefine = unusedFieldNothingToDefine;
+            if (unusedFieldNothingToDefine is not null)
+            {
+                UnusedFieldNothingToDefine = unusedFieldNothingToDefine.Value;
+            }
         }
 
 

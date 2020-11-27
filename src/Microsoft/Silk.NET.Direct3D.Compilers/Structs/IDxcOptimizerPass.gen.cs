@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -33,10 +34,13 @@ namespace Silk.NET.Direct3D.Compilers
 
         public IDxcOptimizerPass
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -45,206 +49,174 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizerPass*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizerPass*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetOptionName(char** ppResult)
+        public readonly unsafe int GetOptionName(char** ppResult)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResult);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResult);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetOptionName(ref char* ppResult)
+        public readonly unsafe int GetOptionName(ref char* ppResult)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (char** ppResultPtr = &ppResult)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResultPtr);
-                }
-                return ret;
+            fixed (char** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResultPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDescription(char** ppResult)
+        public readonly unsafe int GetDescription(char** ppResult)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResult);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResult);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDescription(ref char* ppResult)
+        public readonly unsafe int GetDescription(ref char* ppResult)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (char** ppResultPtr = &ppResult)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResultPtr);
-                }
-                return ret;
+            fixed (char** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResultPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetOptionArgCount(uint* pCount)
+        public readonly unsafe int GetOptionArgCount(uint* pCount)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCount);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCount);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetOptionArgCount(ref uint pCount)
+        public readonly int GetOptionArgCount(ref uint pCount)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (uint* pCountPtr = &pCount)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCountPtr);
-                }
-                return ret;
+            fixed (uint* pCountPtr = &pCount)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCountPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetOptionArgName(uint argIndex, char** ppResult)
+        public readonly unsafe int GetOptionArgName(uint argIndex, char** ppResult)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResult);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResult);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetOptionArgName(uint argIndex, ref char* ppResult)
+        public readonly unsafe int GetOptionArgName(uint argIndex, ref char* ppResult)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (char** ppResultPtr = &ppResult)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResultPtr);
-                }
-                return ret;
+            fixed (char** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResultPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetOptionArgDescription(uint argIndex, char** ppResult)
+        public readonly unsafe int GetOptionArgDescription(uint argIndex, char** ppResult)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResult);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResult);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetOptionArgDescription(uint argIndex, ref char* ppResult)
+        public readonly unsafe int GetOptionArgDescription(uint argIndex, ref char* ppResult)
         {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
+            var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (char** ppResultPtr = &ppResult)
-                {
-                    ret = ((delegate* cdecl<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResultPtr);
-                }
-                return ret;
+            fixed (char** ppResultPtr = &ppResult)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResultPtr);
             }
+            return ret;
         }
 
     }

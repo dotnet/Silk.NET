@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VertexBufferView
         (
-            ulong bufferLocation = default,
-            uint sizeInBytes = default,
-            uint strideInBytes = default
-        )
+            ulong? bufferLocation = null,
+            uint? sizeInBytes = null,
+            uint? strideInBytes = null
+        ) : this()
         {
-            BufferLocation = bufferLocation;
-            SizeInBytes = sizeInBytes;
-            StrideInBytes = strideInBytes;
+            if (bufferLocation is not null)
+            {
+                BufferLocation = bufferLocation.Value;
+            }
+
+            if (sizeInBytes is not null)
+            {
+                SizeInBytes = sizeInBytes.Value;
+            }
+
+            if (strideInBytes is not null)
+            {
+                StrideInBytes = strideInBytes.Value;
+            }
         }
 
 

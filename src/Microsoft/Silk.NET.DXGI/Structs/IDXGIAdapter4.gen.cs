@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -88,10 +89,13 @@ namespace Silk.NET.DXGI
 
         public IDXGIAdapter4
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -100,720 +104,614 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (T0* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (T0* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
-                    }
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
-                return ret;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
+        public readonly unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
-                    }
-                }
-                return ret;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
+        public readonly unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
-                return ret;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
                 fixed (T0* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
+        public readonly unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                fixed (T0* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
+        {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
                     fixed (T0* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
+        public readonly unsafe int GetParent(Guid* riid, void** ppParent)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetParent(Guid* riid, ref void* ppParent)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (T0* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
-                    }
-                }
-                return ret;
+            fixed (void** ppParentPtr = &ppParent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
+        public readonly unsafe int GetParent(ref Guid riid, void** ppParent)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
-                    }
-                }
-                return ret;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetParent(ref Guid riid, ref void* ppParent)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        fixed (T0* pDataPtr = &pData)
-                        {
-                            ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetParent(Guid* riid, void** ppParent)
-        {
-            fixed (IDXGIAdapter4* @this = &this)
+            fixed (Guid* riidPtr = &riid)
             {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetParent(Guid* riid, ref void* ppParent)
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                int ret = default;
                 fixed (void** ppParentPtr = &ppParent)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetParent(ref Guid riid, void** ppParent)
+        public readonly unsafe int EnumOutputs(uint Output, IDXGIOutput** ppOutput)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint, IDXGIOutput**, int>)LpVtbl[7])(@this, Output, ppOutput);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetParent(ref Guid riid, ref void* ppParent)
+        public readonly unsafe int EnumOutputs(uint Output, ref IDXGIOutput* ppOutput)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppParentPtr = &ppParent)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
-                    }
-                }
-                return ret;
+            fixed (IDXGIOutput** ppOutputPtr = &ppOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint, IDXGIOutput**, int>)LpVtbl[7])(@this, Output, ppOutputPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumOutputs(uint Output, IDXGIOutput** ppOutput)
+        public readonly unsafe int GetDesc(AdapterDesc* pDesc)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, uint, IDXGIOutput**, int>)LpVtbl[7])(@this, Output, ppOutput);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, AdapterDesc*, int>)LpVtbl[8])(@this, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumOutputs(uint Output, ref IDXGIOutput* ppOutput)
+        public readonly int GetDesc(ref AdapterDesc pDesc)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (IDXGIOutput** ppOutputPtr = &ppOutput)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, uint, IDXGIOutput**, int>)LpVtbl[7])(@this, Output, ppOutputPtr);
-                }
-                return ret;
+            fixed (AdapterDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, AdapterDesc*, int>)LpVtbl[8])(@this, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDesc(AdapterDesc* pDesc)
+        public readonly unsafe int CheckInterfaceSupport(Guid* InterfaceName, long* pUMDVersion)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, AdapterDesc*, int>)LpVtbl[8])(@this, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceName, pUMDVersion);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDesc(ref AdapterDesc pDesc)
+        public readonly unsafe int CheckInterfaceSupport(Guid* InterfaceName, ref long pUMDVersion)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (AdapterDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, AdapterDesc*, int>)LpVtbl[8])(@this, pDescPtr);
-                }
-                return ret;
+            fixed (long* pUMDVersionPtr = &pUMDVersion)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceName, pUMDVersionPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckInterfaceSupport(Guid* InterfaceName, long* pUMDVersion)
+        public readonly unsafe int CheckInterfaceSupport(ref Guid InterfaceName, long* pUMDVersion)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceName, pUMDVersion);
-                return ret;
+            fixed (Guid* InterfaceNamePtr = &InterfaceName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceNamePtr, pUMDVersion);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckInterfaceSupport(Guid* InterfaceName, ref long pUMDVersion)
+        public readonly int CheckInterfaceSupport(ref Guid InterfaceName, ref long pUMDVersion)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* InterfaceNamePtr = &InterfaceName)
+            {
                 fixed (long* pUMDVersionPtr = &pUMDVersion)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceName, pUMDVersionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceNamePtr, pUMDVersionPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckInterfaceSupport(ref Guid InterfaceName, long* pUMDVersion)
+        public readonly unsafe int GetDesc1(AdapterDesc1* pDesc)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* InterfaceNamePtr = &InterfaceName)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceNamePtr, pUMDVersion);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, AdapterDesc1*, int>)LpVtbl[10])(@this, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int CheckInterfaceSupport(ref Guid InterfaceName, ref long pUMDVersion)
+        public readonly int GetDesc1(ref AdapterDesc1 pDesc)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* InterfaceNamePtr = &InterfaceName)
-                {
-                    fixed (long* pUMDVersionPtr = &pUMDVersion)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceNamePtr, pUMDVersionPtr);
-                    }
-                }
-                return ret;
+            fixed (AdapterDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, AdapterDesc1*, int>)LpVtbl[10])(@this, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDesc1(AdapterDesc1* pDesc)
+        public readonly unsafe int GetDesc2(AdapterDesc2* pDesc)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, AdapterDesc1*, int>)LpVtbl[10])(@this, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, AdapterDesc2*, int>)LpVtbl[11])(@this, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDesc1(ref AdapterDesc1 pDesc)
+        public readonly int GetDesc2(ref AdapterDesc2 pDesc)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (AdapterDesc1* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, AdapterDesc1*, int>)LpVtbl[10])(@this, pDescPtr);
-                }
-                return ret;
+            fixed (AdapterDesc2* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, AdapterDesc2*, int>)LpVtbl[11])(@this, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDesc2(AdapterDesc2* pDesc)
+        public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(void* hEvent, uint* pdwCookie)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, AdapterDesc2*, int>)LpVtbl[11])(@this, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, void*, uint*, int>)LpVtbl[12])(@this, hEvent, pdwCookie);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDesc2(ref AdapterDesc2 pDesc)
+        public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(void* hEvent, ref uint pdwCookie)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (AdapterDesc2* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, AdapterDesc2*, int>)LpVtbl[11])(@this, pDescPtr);
-                }
-                return ret;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, void*, uint*, int>)LpVtbl[12])(@this, hEvent, pdwCookiePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(void* hEvent, uint* pdwCookie)
+        public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, void*, uint*, int>)LpVtbl[12])(@this, hEvent, pdwCookie);
-                return ret;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, T0*, uint*, int>)LpVtbl[12])(@this, hEventPtr, pdwCookie);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(void* hEvent, ref uint pdwCookie)
+        public readonly int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
                 fixed (uint* pdwCookiePtr = &pdwCookie)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, void*, uint*, int>)LpVtbl[12])(@this, hEvent, pdwCookiePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, T0*, uint*, int>)LpVtbl[12])(@this, hEventPtr, pdwCookiePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        public readonly void UnregisterHardwareContentProtectionTeardownStatus(uint dwCookie)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint, void>)LpVtbl[13])(@this, dwCookie);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryVideoMemoryInfo(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, QueryVideoMemoryInfo* pVideoMemoryInfo)
+        {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* hEventPtr = &hEvent)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, T0*, uint*, int>)LpVtbl[12])(@this, hEventPtr, pdwCookie);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint, MemorySegmentGroup, QueryVideoMemoryInfo*, int>)LpVtbl[14])(@this, NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        public readonly int QueryVideoMemoryInfo(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, ref QueryVideoMemoryInfo pVideoMemoryInfo)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* hEventPtr = &hEvent)
-                {
-                    fixed (uint* pdwCookiePtr = &pdwCookie)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, T0*, uint*, int>)LpVtbl[12])(@this, hEventPtr, pdwCookiePtr);
-                    }
-                }
-                return ret;
+            fixed (QueryVideoMemoryInfo* pVideoMemoryInfoPtr = &pVideoMemoryInfo)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint, MemorySegmentGroup, QueryVideoMemoryInfo*, int>)LpVtbl[14])(@this, NodeIndex, MemorySegmentGroup, pVideoMemoryInfoPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public void UnregisterHardwareContentProtectionTeardownStatus(uint dwCookie)
+        public readonly int SetVideoMemoryReservation(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, ulong Reservation)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                ((delegate* cdecl<IDXGIAdapter4*, uint, void>)LpVtbl[13])(@this, dwCookie);
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryVideoMemoryInfo(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, QueryVideoMemoryInfo* pVideoMemoryInfo)
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, uint, MemorySegmentGroup, QueryVideoMemoryInfo*, int>)LpVtbl[14])(@this, NodeIndex, MemorySegmentGroup, pVideoMemoryInfo);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint, MemorySegmentGroup, ulong, int>)LpVtbl[15])(@this, NodeIndex, MemorySegmentGroup, Reservation);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int QueryVideoMemoryInfo(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, ref QueryVideoMemoryInfo pVideoMemoryInfo)
+        public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(void* hEvent, uint* pdwCookie)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (QueryVideoMemoryInfo* pVideoMemoryInfoPtr = &pVideoMemoryInfo)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, uint, MemorySegmentGroup, QueryVideoMemoryInfo*, int>)LpVtbl[14])(@this, NodeIndex, MemorySegmentGroup, pVideoMemoryInfoPtr);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, void*, uint*, int>)LpVtbl[16])(@this, hEvent, pdwCookie);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetVideoMemoryReservation(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, ulong Reservation)
+        public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(void* hEvent, ref uint pdwCookie)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, uint, MemorySegmentGroup, ulong, int>)LpVtbl[15])(@this, NodeIndex, MemorySegmentGroup, Reservation);
-                return ret;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, void*, uint*, int>)LpVtbl[16])(@this, hEvent, pdwCookiePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(void* hEvent, uint* pdwCookie)
+        public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, void*, uint*, int>)LpVtbl[16])(@this, hEvent, pdwCookie);
-                return ret;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, T0*, uint*, int>)LpVtbl[16])(@this, hEventPtr, pdwCookie);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(void* hEvent, ref uint pdwCookie)
+        public readonly int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
                 fixed (uint* pdwCookiePtr = &pdwCookie)
                 {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, void*, uint*, int>)LpVtbl[16])(@this, hEvent, pdwCookiePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, T0*, uint*, int>)LpVtbl[16])(@this, hEventPtr, pdwCookiePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        public readonly void UnregisterVideoMemoryBudgetChangeNotification(uint dwCookie)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, uint, void>)LpVtbl[17])(@this, dwCookie);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetDesc3(AdapterDesc3* pDesc)
+        {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* hEventPtr = &hEvent)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, T0*, uint*, int>)LpVtbl[16])(@this, hEventPtr, pdwCookie);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, AdapterDesc3*, int>)LpVtbl[18])(@this, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        public readonly int GetDesc3(ref AdapterDesc3 pDesc)
         {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
+            var @this = (IDXGIAdapter4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* hEventPtr = &hEvent)
-                {
-                    fixed (uint* pdwCookiePtr = &pdwCookie)
-                    {
-                        ret = ((delegate* cdecl<IDXGIAdapter4*, T0*, uint*, int>)LpVtbl[16])(@this, hEventPtr, pdwCookiePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public void UnregisterVideoMemoryBudgetChangeNotification(uint dwCookie)
-        {
-            fixed (IDXGIAdapter4* @this = &this)
+            fixed (AdapterDesc3* pDescPtr = &pDesc)
             {
-                ((delegate* cdecl<IDXGIAdapter4*, uint, void>)LpVtbl[17])(@this, dwCookie);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter4*, AdapterDesc3*, int>)LpVtbl[18])(@this, pDescPtr);
             }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetDesc3(AdapterDesc3* pDesc)
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIAdapter4*, AdapterDesc3*, int>)LpVtbl[18])(@this, pDesc);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int GetDesc3(ref AdapterDesc3 pDesc)
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                int ret = default;
-                fixed (AdapterDesc3* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<IDXGIAdapter4*, AdapterDesc3*, int>)LpVtbl[18])(@this, pDescPtr);
-                }
-                return ret;
-            }
+            return ret;
         }
 
     }

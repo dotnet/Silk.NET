@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D9
     {
         public DevinfoD3D9Bandwidthtimings
         (
-            float maxBandwidthUtilized = default,
-            float frontEndUploadMemoryUtilizedPercent = default,
-            float vertexRateUtilizedPercent = default,
-            float triangleSetupRateUtilizedPercent = default,
-            float fillRateUtilizedPercent = default
-        )
+            float? maxBandwidthUtilized = null,
+            float? frontEndUploadMemoryUtilizedPercent = null,
+            float? vertexRateUtilizedPercent = null,
+            float? triangleSetupRateUtilizedPercent = null,
+            float? fillRateUtilizedPercent = null
+        ) : this()
         {
-            MaxBandwidthUtilized = maxBandwidthUtilized;
-            FrontEndUploadMemoryUtilizedPercent = frontEndUploadMemoryUtilizedPercent;
-            VertexRateUtilizedPercent = vertexRateUtilizedPercent;
-            TriangleSetupRateUtilizedPercent = triangleSetupRateUtilizedPercent;
-            FillRateUtilizedPercent = fillRateUtilizedPercent;
+            if (maxBandwidthUtilized is not null)
+            {
+                MaxBandwidthUtilized = maxBandwidthUtilized.Value;
+            }
+
+            if (frontEndUploadMemoryUtilizedPercent is not null)
+            {
+                FrontEndUploadMemoryUtilizedPercent = frontEndUploadMemoryUtilizedPercent.Value;
+            }
+
+            if (vertexRateUtilizedPercent is not null)
+            {
+                VertexRateUtilizedPercent = vertexRateUtilizedPercent.Value;
+            }
+
+            if (triangleSetupRateUtilizedPercent is not null)
+            {
+                TriangleSetupRateUtilizedPercent = triangleSetupRateUtilizedPercent.Value;
+            }
+
+            if (fillRateUtilizedPercent is not null)
+            {
+                FillRateUtilizedPercent = fillRateUtilizedPercent.Value;
+            }
         }
 
 

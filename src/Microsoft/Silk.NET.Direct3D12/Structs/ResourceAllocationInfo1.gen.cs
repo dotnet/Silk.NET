@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public ResourceAllocationInfo1
         (
-            ulong offset = default,
-            ulong alignment = default,
-            ulong sizeInBytes = default
-        )
+            ulong? offset = null,
+            ulong? alignment = null,
+            ulong? sizeInBytes = null
+        ) : this()
         {
-            Offset = offset;
-            Alignment = alignment;
-            SizeInBytes = sizeInBytes;
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (alignment is not null)
+            {
+                Alignment = alignment.Value;
+            }
+
+            if (sizeInBytes is not null)
+            {
+                SizeInBytes = sizeInBytes.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D9
     {
         public AdapterIdentifier9
         (
-            long driverVersion = default,
-            uint vendorId = default,
-            uint deviceId = default,
-            uint subSysId = default,
-            uint revision = default,
-            Guid deviceIdentifier = default,
-            uint wHQLLevel = default
-        )
+            long? driverVersion = null,
+            uint? vendorId = null,
+            uint? deviceId = null,
+            uint? subSysId = null,
+            uint? revision = null,
+            Guid? deviceIdentifier = null,
+            uint? wHQLLevel = null
+        ) : this()
         {
-            DriverVersion = driverVersion;
-            VendorId = vendorId;
-            DeviceId = deviceId;
-            SubSysId = subSysId;
-            Revision = revision;
-            DeviceIdentifier = deviceIdentifier;
-            WHQLLevel = wHQLLevel;
+            if (driverVersion is not null)
+            {
+                DriverVersion = driverVersion.Value;
+            }
+
+            if (vendorId is not null)
+            {
+                VendorId = vendorId.Value;
+            }
+
+            if (deviceId is not null)
+            {
+                DeviceId = deviceId.Value;
+            }
+
+            if (subSysId is not null)
+            {
+                SubSysId = subSysId.Value;
+            }
+
+            if (revision is not null)
+            {
+                Revision = revision.Value;
+            }
+
+            if (deviceIdentifier is not null)
+            {
+                DeviceIdentifier = deviceIdentifier.Value;
+            }
+
+            if (wHQLLevel is not null)
+            {
+                WHQLLevel = wHQLLevel.Value;
+            }
         }
 
         [NativeName("Type", "char [512]")]

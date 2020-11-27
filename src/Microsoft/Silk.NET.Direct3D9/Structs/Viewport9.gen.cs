@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D9
     {
         public Viewport9
         (
-            uint x = default,
-            uint y = default,
-            uint width = default,
-            uint height = default,
-            float minZ = default,
-            float maxZ = default
-        )
+            uint? x = null,
+            uint? y = null,
+            uint? width = null,
+            uint? height = null,
+            float? minZ = null,
+            float? maxZ = null
+        ) : this()
         {
-            X = x;
-            Y = y;
-            Width = width;
-            Height = height;
-            MinZ = minZ;
-            MaxZ = maxZ;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (minZ is not null)
+            {
+                MinZ = minZ.Value;
+            }
+
+            if (maxZ is not null)
+            {
+                MaxZ = maxZ.Value;
+            }
         }
 
 

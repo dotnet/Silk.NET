@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public SubresourceFootprint
         (
-            Silk.NET.DXGI.Format format = default,
-            uint width = default,
-            uint height = default,
-            uint depth = default,
-            uint rowPitch = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            uint? width = null,
+            uint? height = null,
+            uint? depth = null,
+            uint? rowPitch = null
+        ) : this()
         {
-            Format = format;
-            Width = width;
-            Height = height;
-            Depth = depth;
-            RowPitch = rowPitch;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
+
+            if (rowPitch is not null)
+            {
+                RowPitch = rowPitch.Value;
+            }
         }
 
 

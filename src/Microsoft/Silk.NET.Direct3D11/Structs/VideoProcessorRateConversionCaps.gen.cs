@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorRateConversionCaps
         (
-            uint pastFrames = default,
-            uint futureFrames = default,
-            uint processorCaps = default,
-            uint iTelecineCaps = default,
-            uint customRateCount = default
-        )
+            uint? pastFrames = null,
+            uint? futureFrames = null,
+            uint? processorCaps = null,
+            uint? iTelecineCaps = null,
+            uint? customRateCount = null
+        ) : this()
         {
-            PastFrames = pastFrames;
-            FutureFrames = futureFrames;
-            ProcessorCaps = processorCaps;
-            ITelecineCaps = iTelecineCaps;
-            CustomRateCount = customRateCount;
+            if (pastFrames is not null)
+            {
+                PastFrames = pastFrames.Value;
+            }
+
+            if (futureFrames is not null)
+            {
+                FutureFrames = futureFrames.Value;
+            }
+
+            if (processorCaps is not null)
+            {
+                ProcessorCaps = processorCaps.Value;
+            }
+
+            if (iTelecineCaps is not null)
+            {
+                ITelecineCaps = iTelecineCaps.Value;
+            }
+
+            if (customRateCount is not null)
+            {
+                CustomRateCount = customRateCount.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public DevinfoD3Dvertexstats
         (
-            uint numRenderedTriangles = default,
-            uint numExtraClippingTriangles = default
-        )
+            uint? numRenderedTriangles = null,
+            uint? numExtraClippingTriangles = null
+        ) : this()
         {
-            NumRenderedTriangles = numRenderedTriangles;
-            NumExtraClippingTriangles = numExtraClippingTriangles;
+            if (numRenderedTriangles is not null)
+            {
+                NumRenderedTriangles = numRenderedTriangles.Value;
+            }
+
+            if (numExtraClippingTriangles is not null)
+            {
+                NumExtraClippingTriangles = numExtraClippingTriangles.Value;
+            }
         }
 
 

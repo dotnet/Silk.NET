@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelConfigureprotection
         (
-            AuthenticatedchannelConfigureInput parameters = default,
-            AuthenticatedchannelProtectionFlags protections = default
-        )
+            AuthenticatedchannelConfigureInput? parameters = null,
+            AuthenticatedchannelProtectionFlags? protections = null
+        ) : this()
         {
-            Parameters = parameters;
-            Protections = protections;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (protections is not null)
+            {
+                Protections = protections.Value;
+            }
         }
 
 

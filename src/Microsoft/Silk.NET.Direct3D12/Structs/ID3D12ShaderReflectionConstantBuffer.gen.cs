@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D12
     {
         public ID3D12ShaderReflectionConstantBuffer
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -33,77 +37,65 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int GetDesc(ShaderBufferDesc* pDesc)
+        public readonly unsafe int GetDesc(ShaderBufferDesc* pDesc)
         {
-            fixed (ID3D12ShaderReflectionConstantBuffer* @this = &this)
-            {
+            var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDesc(ref ShaderBufferDesc pDesc)
+        public readonly int GetDesc(ref ShaderBufferDesc pDesc)
         {
-            fixed (ID3D12ShaderReflectionConstantBuffer* @this = &this)
-            {
+            var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ShaderBufferDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDescPtr);
-                }
-                return ret;
+            fixed (ShaderBufferDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionVariable* GetVariableByIndex(uint Index)
+        public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByIndex(uint Index)
         {
-            fixed (ID3D12ShaderReflectionConstantBuffer* @this = &this)
-            {
+            var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D12ShaderReflectionVariable* ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflectionConstantBuffer*, uint, ID3D12ShaderReflectionVariable*>)LpVtbl[1])(@this, Index);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, uint, ID3D12ShaderReflectionVariable*>)LpVtbl[1])(@this, Index);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionVariable* GetVariableByName(byte* Name)
+        public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(byte* Name)
         {
-            fixed (ID3D12ShaderReflectionConstantBuffer* @this = &this)
-            {
+            var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D12ShaderReflectionVariable* ret = default;
-                ret = ((delegate* cdecl<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, Name);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, Name);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionVariable* GetVariableByName(ref byte Name)
+        public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(ref byte Name)
         {
-            fixed (ID3D12ShaderReflectionConstantBuffer* @this = &this)
-            {
+            var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D12ShaderReflectionVariable* ret = default;
-                fixed (byte* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
-                }
-                return ret;
+            fixed (byte* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D12ShaderReflectionVariable* GetVariableByName(string Name)
+        public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(string Name)
         {
-            fixed (ID3D12ShaderReflectionConstantBuffer* @this = &this)
-            {
+            var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D12ShaderReflectionVariable* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                ret = ((delegate* cdecl<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
-                return ret;
-            }
+            return ret;
         }
 
     }

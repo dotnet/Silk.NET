@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryOutputIDOutput
         (
-            AuthenticatedQueryOutput output = default,
-            void* deviceHandle = default,
-            void* cryptoSessionHandle = default,
-            uint outputIDIndex = default,
-            ulong outputID = default
-        )
+            AuthenticatedQueryOutput? output = null,
+            void* deviceHandle = null,
+            void* cryptoSessionHandle = null,
+            uint? outputIDIndex = null,
+            ulong? outputID = null
+        ) : this()
         {
-            Output = output;
-            DeviceHandle = deviceHandle;
-            CryptoSessionHandle = cryptoSessionHandle;
-            OutputIDIndex = outputIDIndex;
-            OutputID = outputID;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (deviceHandle is not null)
+            {
+                DeviceHandle = deviceHandle;
+            }
+
+            if (cryptoSessionHandle is not null)
+            {
+                CryptoSessionHandle = cryptoSessionHandle;
+            }
+
+            if (outputIDIndex is not null)
+            {
+                OutputIDIndex = outputIDIndex.Value;
+            }
+
+            if (outputID is not null)
+            {
+                OutputID = outputID.Value;
+            }
         }
 
 

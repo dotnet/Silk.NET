@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.DXGI
     {
         public OutduplFrameInfo
         (
-            long lastPresentTime = default,
-            long lastMouseUpdateTime = default,
-            uint accumulatedFrames = default,
-            int rectsCoalesced = default,
-            int protectedContentMaskedOut = default,
-            OutduplPointerPosition pointerPosition = default,
-            uint totalMetadataBufferSize = default,
-            uint pointerShapeBufferSize = default
-        )
+            long? lastPresentTime = null,
+            long? lastMouseUpdateTime = null,
+            uint? accumulatedFrames = null,
+            int? rectsCoalesced = null,
+            int? protectedContentMaskedOut = null,
+            OutduplPointerPosition? pointerPosition = null,
+            uint? totalMetadataBufferSize = null,
+            uint? pointerShapeBufferSize = null
+        ) : this()
         {
-            LastPresentTime = lastPresentTime;
-            LastMouseUpdateTime = lastMouseUpdateTime;
-            AccumulatedFrames = accumulatedFrames;
-            RectsCoalesced = rectsCoalesced;
-            ProtectedContentMaskedOut = protectedContentMaskedOut;
-            PointerPosition = pointerPosition;
-            TotalMetadataBufferSize = totalMetadataBufferSize;
-            PointerShapeBufferSize = pointerShapeBufferSize;
+            if (lastPresentTime is not null)
+            {
+                LastPresentTime = lastPresentTime.Value;
+            }
+
+            if (lastMouseUpdateTime is not null)
+            {
+                LastMouseUpdateTime = lastMouseUpdateTime.Value;
+            }
+
+            if (accumulatedFrames is not null)
+            {
+                AccumulatedFrames = accumulatedFrames.Value;
+            }
+
+            if (rectsCoalesced is not null)
+            {
+                RectsCoalesced = rectsCoalesced.Value;
+            }
+
+            if (protectedContentMaskedOut is not null)
+            {
+                ProtectedContentMaskedOut = protectedContentMaskedOut.Value;
+            }
+
+            if (pointerPosition is not null)
+            {
+                PointerPosition = pointerPosition.Value;
+            }
+
+            if (totalMetadataBufferSize is not null)
+            {
+                TotalMetadataBufferSize = totalMetadataBufferSize.Value;
+            }
+
+            if (pointerShapeBufferSize is not null)
+            {
+                PointerShapeBufferSize = pointerShapeBufferSize.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelQuerycryptosessionInput
         (
-            AuthenticatedchannelQueryInput input = default,
-            void* dXVA2DecodeHandle = default
-        )
+            AuthenticatedchannelQueryInput? input = null,
+            void* dXVA2DecodeHandle = null
+        ) : this()
         {
-            Input = input;
-            DXVA2DecodeHandle = dXVA2DecodeHandle;
+            if (input is not null)
+            {
+                Input = input.Value;
+            }
+
+            if (dXVA2DecodeHandle is not null)
+            {
+                DXVA2DecodeHandle = dXVA2DecodeHandle;
+            }
         }
 
 

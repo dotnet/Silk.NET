@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoDecodeProfileCount
         (
-            uint nodeIndex = default,
-            uint profileCount = default
-        )
+            uint? nodeIndex = null,
+            uint? profileCount = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            ProfileCount = profileCount;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (profileCount is not null)
+            {
+                ProfileCount = profileCount.Value;
+            }
         }
 
 

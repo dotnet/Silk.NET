@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoExtensionCommandParameterInfo
         (
-            char* name = default,
-            VideoExtensionCommandParameterType type = default,
-            VideoExtensionCommandParameterFlags flags = default
-        )
+            char* name = null,
+            VideoExtensionCommandParameterType? type = null,
+            VideoExtensionCommandParameterFlags? flags = null
+        ) : this()
         {
-            Name = name;
-            Type = type;
-            Flags = flags;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

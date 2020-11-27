@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public QueryDataVideoDecodeStatistics
         (
-            ulong status = default,
-            ulong numMacroblocksAffected = default,
-            Silk.NET.DXGI.Rational frameRate = default,
-            uint bitRate = default
-        )
+            ulong? status = null,
+            ulong? numMacroblocksAffected = null,
+            Silk.NET.DXGI.Rational? frameRate = null,
+            uint? bitRate = null
+        ) : this()
         {
-            Status = status;
-            NumMacroblocksAffected = numMacroblocksAffected;
-            FrameRate = frameRate;
-            BitRate = bitRate;
+            if (status is not null)
+            {
+                Status = status.Value;
+            }
+
+            if (numMacroblocksAffected is not null)
+            {
+                NumMacroblocksAffected = numMacroblocksAffected.Value;
+            }
+
+            if (frameRate is not null)
+            {
+                FrameRate = frameRate.Value;
+            }
+
+            if (bitRate is not null)
+            {
+                BitRate = bitRate.Value;
+            }
         }
 
 

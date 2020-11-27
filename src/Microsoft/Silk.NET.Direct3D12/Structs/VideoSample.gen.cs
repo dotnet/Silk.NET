@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoSample
         (
-            uint width = default,
-            uint height = default,
-            VideoFormat format = default
-        )
+            uint? width = null,
+            uint? height = null,
+            VideoFormat? format = null
+        ) : this()
         {
-            Width = width;
-            Height = height;
-            Format = format;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
         }
 
 

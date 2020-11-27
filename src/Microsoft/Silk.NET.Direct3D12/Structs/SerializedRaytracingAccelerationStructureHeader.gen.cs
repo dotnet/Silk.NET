@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public SerializedRaytracingAccelerationStructureHeader
         (
-            SerializedDataDriverMatchingIdentifier driverMatchingIdentifier = default,
-            ulong serializedSizeInBytesIncludingHeader = default,
-            ulong deserializedSizeInBytes = default,
-            ulong numBottomLevelAccelerationStructurePointersAfterHeader = default
-        )
+            SerializedDataDriverMatchingIdentifier? driverMatchingIdentifier = null,
+            ulong? serializedSizeInBytesIncludingHeader = null,
+            ulong? deserializedSizeInBytes = null,
+            ulong? numBottomLevelAccelerationStructurePointersAfterHeader = null
+        ) : this()
         {
-            DriverMatchingIdentifier = driverMatchingIdentifier;
-            SerializedSizeInBytesIncludingHeader = serializedSizeInBytesIncludingHeader;
-            DeserializedSizeInBytes = deserializedSizeInBytes;
-            NumBottomLevelAccelerationStructurePointersAfterHeader = numBottomLevelAccelerationStructurePointersAfterHeader;
+            if (driverMatchingIdentifier is not null)
+            {
+                DriverMatchingIdentifier = driverMatchingIdentifier.Value;
+            }
+
+            if (serializedSizeInBytesIncludingHeader is not null)
+            {
+                SerializedSizeInBytesIncludingHeader = serializedSizeInBytesIncludingHeader.Value;
+            }
+
+            if (deserializedSizeInBytes is not null)
+            {
+                DeserializedSizeInBytes = deserializedSizeInBytes.Value;
+            }
+
+            if (numBottomLevelAccelerationStructurePointersAfterHeader is not null)
+            {
+                NumBottomLevelAccelerationStructurePointersAfterHeader = numBottomLevelAccelerationStructurePointersAfterHeader.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,12 +23,19 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L3580C5
         (
-            RootSignatureDesc desc10 = default,
-            RootSignatureDesc1 desc11 = default
-        )
+            RootSignatureDesc? desc10 = null,
+            RootSignatureDesc1? desc11 = null
+        ) : this()
         {
-            Desc10 = desc10;
-            Desc11 = desc11;
+            if (desc10 is not null)
+            {
+                Desc10 = desc10.Value;
+            }
+
+            if (desc11 is not null)
+            {
+                Desc11 = desc11.Value;
+            }
         }
 
 

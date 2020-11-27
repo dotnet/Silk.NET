@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public QueryHeapDesc
         (
-            QueryHeapType type = default,
-            uint count = default,
-            uint nodeMask = default
-        )
+            QueryHeapType? type = null,
+            uint? count = null,
+            uint? nodeMask = null
+        ) : this()
         {
-            Type = type;
-            Count = count;
-            NodeMask = nodeMask;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (count is not null)
+            {
+                Count = count.Value;
+            }
+
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
         }
 
 

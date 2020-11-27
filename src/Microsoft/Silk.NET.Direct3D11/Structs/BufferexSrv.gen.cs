@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D11
     {
         public BufferexSrv
         (
-            uint firstElement = default,
-            uint numElements = default,
-            uint flags = default
-        )
+            uint? firstElement = null,
+            uint? numElements = null,
+            uint? flags = null
+        ) : this()
         {
-            FirstElement = firstElement;
-            NumElements = numElements;
-            Flags = flags;
+            if (firstElement is not null)
+            {
+                FirstElement = firstElement.Value;
+            }
+
+            if (numElements is not null)
+            {
+                NumElements = numElements.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

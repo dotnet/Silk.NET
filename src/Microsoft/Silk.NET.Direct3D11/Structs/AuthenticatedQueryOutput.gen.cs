@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryOutput
         (
-            OMAC omac = default,
-            Guid queryType = default,
-            void* hChannel = default,
-            uint sequenceNumber = default,
-            int returnCode = default
-        )
+            OMAC? omac = null,
+            Guid? queryType = null,
+            void* hChannel = null,
+            uint? sequenceNumber = null,
+            int? returnCode = null
+        ) : this()
         {
-            Omac = omac;
-            QueryType = queryType;
-            HChannel = hChannel;
-            SequenceNumber = sequenceNumber;
-            ReturnCode = returnCode;
+            if (omac is not null)
+            {
+                Omac = omac.Value;
+            }
+
+            if (queryType is not null)
+            {
+                QueryType = queryType.Value;
+            }
+
+            if (hChannel is not null)
+            {
+                HChannel = hChannel;
+            }
+
+            if (sequenceNumber is not null)
+            {
+                SequenceNumber = sequenceNumber.Value;
+            }
+
+            if (returnCode is not null)
+            {
+                ReturnCode = returnCode.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D10XHardwareOptions
         (
-            int computeShadersPlusRawAndStructuredBuffersViaShader4X = default
-        )
+            int? computeShadersPlusRawAndStructuredBuffersViaShader4X = null
+        ) : this()
         {
-            ComputeShadersPlusRawAndStructuredBuffersViaShader4X = computeShadersPlusRawAndStructuredBuffersViaShader4X;
+            if (computeShadersPlusRawAndStructuredBuffersViaShader4X is not null)
+            {
+                ComputeShadersPlusRawAndStructuredBuffersViaShader4X = computeShadersPlusRawAndStructuredBuffersViaShader4X.Value;
+            }
         }
 
 

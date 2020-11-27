@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessReferenceSet
         (
-            uint numPastFrames = default,
-            ID3D12Resource** ppPastFrames = default,
-            uint* pPastSubresources = default,
-            uint numFutureFrames = default,
-            ID3D12Resource** ppFutureFrames = default,
-            uint* pFutureSubresources = default
-        )
+            uint? numPastFrames = null,
+            ID3D12Resource** ppPastFrames = null,
+            uint* pPastSubresources = null,
+            uint? numFutureFrames = null,
+            ID3D12Resource** ppFutureFrames = null,
+            uint* pFutureSubresources = null
+        ) : this()
         {
-            NumPastFrames = numPastFrames;
-            PpPastFrames = ppPastFrames;
-            PPastSubresources = pPastSubresources;
-            NumFutureFrames = numFutureFrames;
-            PpFutureFrames = ppFutureFrames;
-            PFutureSubresources = pFutureSubresources;
+            if (numPastFrames is not null)
+            {
+                NumPastFrames = numPastFrames.Value;
+            }
+
+            if (ppPastFrames is not null)
+            {
+                PpPastFrames = ppPastFrames;
+            }
+
+            if (pPastSubresources is not null)
+            {
+                PPastSubresources = pPastSubresources;
+            }
+
+            if (numFutureFrames is not null)
+            {
+                NumFutureFrames = numFutureFrames.Value;
+            }
+
+            if (ppFutureFrames is not null)
+            {
+                PpFutureFrames = ppFutureFrames;
+            }
+
+            if (pFutureSubresources is not null)
+            {
+                PFutureSubresources = pFutureSubresources;
+            }
         }
 
 

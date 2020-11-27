@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public ConstantBufferViewDesc
         (
-            ulong bufferLocation = default,
-            uint sizeInBytes = default
-        )
+            ulong? bufferLocation = null,
+            uint? sizeInBytes = null
+        ) : this()
         {
-            BufferLocation = bufferLocation;
-            SizeInBytes = sizeInBytes;
+            if (bufferLocation is not null)
+            {
+                BufferLocation = bufferLocation.Value;
+            }
+
+            if (sizeInBytes is not null)
+            {
+                SizeInBytes = sizeInBytes.Value;
+            }
         }
 
 

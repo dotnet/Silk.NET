@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataProtectedResourceSessionTypeCount
         (
-            uint nodeIndex = default,
-            uint count = default
-        )
+            uint? nodeIndex = null,
+            uint? count = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            Count = count;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (count is not null)
+            {
+                Count = count.Value;
+            }
         }
 
 

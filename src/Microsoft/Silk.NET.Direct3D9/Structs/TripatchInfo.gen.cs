@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public TripatchInfo
         (
-            uint startVertexOffset = default,
-            uint numVertices = default,
-            Basistype basis = default,
-            Degreetype degree = default
-        )
+            uint? startVertexOffset = null,
+            uint? numVertices = null,
+            Basistype? basis = null,
+            Degreetype? degree = null
+        ) : this()
         {
-            StartVertexOffset = startVertexOffset;
-            NumVertices = numVertices;
-            Basis = basis;
-            Degree = degree;
+            if (startVertexOffset is not null)
+            {
+                StartVertexOffset = startVertexOffset.Value;
+            }
+
+            if (numVertices is not null)
+            {
+                NumVertices = numVertices.Value;
+            }
+
+            if (basis is not null)
+            {
+                Basis = basis.Value;
+            }
+
+            if (degree is not null)
+            {
+                Degree = degree.Value;
+            }
         }
 
 

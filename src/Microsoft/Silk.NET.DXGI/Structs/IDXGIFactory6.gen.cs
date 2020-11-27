@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -110,10 +111,13 @@ namespace Silk.NET.DXGI
 
         public IDXGIFactory6
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -122,1479 +126,1581 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (T0* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (T0* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
-                    }
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
+        public readonly unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
-                return ret;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
+        public readonly unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
-                    }
-                }
-                return ret;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
+        public readonly unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
-                return ret;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
                 fixed (T0* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
+        public readonly unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
+                fixed (T0* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* NamePtr = &Name)
+            {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
                     fixed (T0* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
+        public readonly unsafe int GetParent(Guid* riid, void** ppParent)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetParent(Guid* riid, ref void* ppParent)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (T0* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
-                    }
-                }
-                return ret;
+            fixed (void** ppParentPtr = &ppParent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
+        public readonly unsafe int GetParent(ref Guid riid, void** ppParent)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
-                    }
-                }
-                return ret;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetParent(ref Guid riid, ref void* ppParent)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* NamePtr = &Name)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        fixed (T0* pDataPtr = &pData)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetParent(Guid* riid, void** ppParent)
-        {
-            fixed (IDXGIFactory6* @this = &this)
+            fixed (Guid* riidPtr = &riid)
             {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetParent(Guid* riid, ref void* ppParent)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
                 fixed (void** ppParentPtr = &ppParent)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetParent(ref Guid riid, void** ppParent)
+        public readonly unsafe int EnumAdapters(uint Adapter, Silk.NET.DXGI.IDXGIAdapter** ppAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, Adapter, ppAdapter);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetParent(ref Guid riid, ref void* ppParent)
+        public readonly unsafe int EnumAdapters(uint Adapter, ref Silk.NET.DXGI.IDXGIAdapter* ppAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppParentPtr = &ppParent)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
-                    }
-                }
-                return ret;
+            fixed (Silk.NET.DXGI.IDXGIAdapter** ppAdapterPtr = &ppAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, Adapter, ppAdapterPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapters(uint Adapter, Silk.NET.DXGI.IDXGIAdapter** ppAdapter)
+        public readonly int MakeWindowAssociation(IntPtr WindowHandle, uint Flags)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, uint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, Adapter, ppAdapter);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr, uint, int>)LpVtbl[8])(@this, WindowHandle, Flags);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapters(uint Adapter, ref Silk.NET.DXGI.IDXGIAdapter* ppAdapter)
+        public readonly unsafe int GetWindowAssociation(IntPtr* pWindowHandle)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.DXGI.IDXGIAdapter** ppAdapterPtr = &ppAdapter)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, uint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[7])(@this, Adapter, ppAdapterPtr);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr*, int>)LpVtbl[9])(@this, pWindowHandle);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int MakeWindowAssociation(IntPtr WindowHandle, uint Flags)
+        public readonly int GetWindowAssociation(ref IntPtr pWindowHandle)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr, uint, int>)LpVtbl[8])(@this, WindowHandle, Flags);
-                return ret;
+            fixed (IntPtr* pWindowHandlePtr = &pWindowHandle)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr*, int>)LpVtbl[9])(@this, pWindowHandlePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetWindowAssociation(IntPtr* pWindowHandle)
+        public readonly unsafe int CreateSwapChain(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc* pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr*, int>)LpVtbl[9])(@this, pWindowHandle);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDesc, ppSwapChain);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetWindowAssociation(ref IntPtr pWindowHandle)
+        public readonly unsafe int CreateSwapChain(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc* pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (IntPtr* pWindowHandlePtr = &pWindowHandle)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr*, int>)LpVtbl[9])(@this, pWindowHandlePtr);
-                }
-                return ret;
+            fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDesc, ppSwapChainPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc* pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
+        public readonly unsafe int CreateSwapChain(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDesc, ppSwapChain);
-                return ret;
+            fixed (SwapChainDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDescPtr, ppSwapChain);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc* pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
+        public readonly unsafe int CreateSwapChain(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (SwapChainDesc* pDescPtr = &pDesc)
+            {
                 fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDesc, ppSwapChainPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDescPtr, ppSwapChainPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
+        public readonly unsafe int CreateSwapChain(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc* pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDesc, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChain(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc* pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDesc, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChain(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDescPtr, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDescPtr, ppSwapChain);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
+        public readonly unsafe int CreateSwapChain(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc* pDescPtr = &pDesc)
                 {
                     fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevice, pDescPtr, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDescPtr, ppSwapChainPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc* pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
+        public readonly unsafe int CreateSoftwareAdapter(IntPtr Module, Silk.NET.DXGI.IDXGIAdapter** ppAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDesc, ppSwapChain);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapter);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc* pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
+        public readonly unsafe int CreateSoftwareAdapter(IntPtr Module, ref Silk.NET.DXGI.IDXGIAdapter* ppAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDesc, ppSwapChainPtr);
-                    }
-                }
-                return ret;
+            fixed (Silk.NET.DXGI.IDXGIAdapter** ppAdapterPtr = &ppAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapterPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc pDesc, Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
+        public readonly unsafe int EnumAdapters1(uint Adapter, IDXGIAdapter1** ppAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc* pDescPtr = &pDesc)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDescPtr, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, IDXGIAdapter1**, int>)LpVtbl[12])(@this, Adapter, ppAdapter);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChain(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc pDesc, ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
+        public readonly unsafe int EnumAdapters1(uint Adapter, ref IDXGIAdapter1* ppAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc* pDescPtr = &pDesc)
-                    {
-                        fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[10])(@this, pDevicePtr, pDescPtr, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
+            fixed (IDXGIAdapter1** ppAdapterPtr = &ppAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, IDXGIAdapter1**, int>)LpVtbl[12])(@this, Adapter, ppAdapterPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSoftwareAdapter(IntPtr Module, Silk.NET.DXGI.IDXGIAdapter** ppAdapter)
+        public readonly int IsCurrent()
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapter);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, int>)LpVtbl[13])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSoftwareAdapter(IntPtr Module, ref Silk.NET.DXGI.IDXGIAdapter* ppAdapter)
+        public readonly int IsWindowedStereoEnabled()
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.DXGI.IDXGIAdapter** ppAdapterPtr = &ppAdapter)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapterPtr);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, int>)LpVtbl[14])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapters1(uint Adapter, IDXGIAdapter1** ppAdapter)
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, uint, IDXGIAdapter1**, int>)LpVtbl[12])(@this, Adapter, ppAdapter);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapters1(uint Adapter, ref IDXGIAdapter1* ppAdapter)
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (IDXGIAdapter1** ppAdapterPtr = &ppAdapter)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, uint, IDXGIAdapter1**, int>)LpVtbl[12])(@this, Adapter, ppAdapterPtr);
-                }
-                return ret;
+            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChainPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int IsCurrent()
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, int>)LpVtbl[13])(@this);
-                return ret;
+            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChain);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int IsWindowedStereoEnabled()
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, int>)LpVtbl[14])(@this);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
+            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
             {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChainPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChain);
-                }
-                return ret;
+            fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutput, ppSwapChain);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                {
-                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChainPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
+            fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
             {
-                int ret = default;
-                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutput, ppSwapChain);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                {
-                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutput, ppSwapChainPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                {
-                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutput, ppSwapChainPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                {
-                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutput, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                {
-                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutput, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                {
-                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChain);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                {
-                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChainPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutput, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutput, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChain);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutput, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChain);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChainPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutput, ppSwapChain);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                        {
-                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutput, ppSwapChainPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                        {
-                            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChain);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
-                        {
-                            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                            {
-                                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                                {
-                                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
-                                }
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDesc, pRestrictToOutput, ppSwapChain);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutput, ppSwapChainPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+            {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChain);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+            {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutput, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutput, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                {
+                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(Silk.NET.Core.Native.IUnknown* pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                {
+                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                    {
+                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevice, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutput, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                {
+                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, SwapChainDesc1* pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                {
+                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                    {
+                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDesc, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDescPtr, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, SwapChainFullscreenDesc* pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutput, ppSwapChain);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                    {
+                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                    {
+                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForHwnd(ref Silk.NET.Core.Native.IUnknown pDevice, IntPtr hWnd, ref SwapChainDesc1 pDesc, ref SwapChainFullscreenDesc pFullscreenDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (SwapChainFullscreenDesc* pFullscreenDescPtr = &pFullscreenDesc)
+                    {
+                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                        {
+                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                            {
+                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, IntPtr, SwapChainDesc1*, SwapChainFullscreenDesc*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[15])(@this, pDevicePtr, hWnd, pDescPtr, pFullscreenDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                            }
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDesc, pRestrictToOutput, ppSwapChain);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDesc, pRestrictToOutput, ppSwapChainPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDesc, pRestrictToOutputPtr, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+            {
+                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDescPtr, pRestrictToOutput, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindow, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDesc, pRestrictToOutput, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
+            {
+                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDescPtr, pRestrictToOutput, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                    {
+                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDesc, pRestrictToOutput, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDescPtr, pRestrictToOutput, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (SwapChainDesc1* pDescPtr = &pDesc)
+                {
+                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                    {
+                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                        {
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                        }
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDesc, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDesc, pRestrictToOutput, ppSwapChain);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDescPtr, pRestrictToOutput, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDescPtr, pRestrictToOutput, ppSwapChain);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
                         }
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
                     {
                         fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                         }
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(Silk.NET.Core.Native.IUnknown* pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
                 {
                     fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -1603,1045 +1709,627 @@ namespace Silk.NET.DXGI
                         {
                             fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                             {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevice, pWindowPtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                             }
                         }
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ValueTuple<ulong, long>* pLuid)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDesc, pRestrictToOutput, ppSwapChain);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, void*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResource, pLuid);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ref ValueTuple<ulong, long> pLuid)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDesc, pRestrictToOutput, ppSwapChainPtr);
-                    }
-                }
-                return ret;
+            fixed (ValueTuple<ulong, long>* pLuidPtr = &pLuid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, void*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResource, pLuidPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ValueTuple<ulong, long>* pLuid) where T0 : unmanaged
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDesc, pRestrictToOutputPtr, ppSwapChain);
-                    }
-                }
-                return ret;
+            fixed (T0* hResourcePtr = &hResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, T0*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResourcePtr, pLuid);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ref ValueTuple<ulong, long> pLuid) where T0 : unmanaged
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
+            fixed (T0* hResourcePtr = &hResource)
             {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDescPtr, pRestrictToOutput, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Native.IUnknown* pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindow, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDesc, pRestrictToOutput, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
-                    {
-                        fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDescPtr, pRestrictToOutput, ppSwapChain);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
-                    {
-                        fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                        {
-                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
-                    {
-                        fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                        {
-                            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForCoreWindow(ref Silk.NET.Core.Native.IUnknown pDevice, ref Silk.NET.Core.Native.IUnknown pWindow, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pWindowPtr = &pWindow)
-                    {
-                        fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                        {
-                            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                            {
-                                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                                {
-                                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[16])(@this, pDevicePtr, pWindowPtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
-                                }
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetSharedResourceAdapterLuid(void* hResource, ValueTuple<ulong, long>* pLuid)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, void*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResource, pLuid);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetSharedResourceAdapterLuid(void* hResource, ref ValueTuple<ulong, long> pLuid)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
                 fixed (ValueTuple<ulong, long>* pLuidPtr = &pLuid)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, void*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResource, pLuidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, T0*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ValueTuple<ulong, long>* pLuid) where T0 : unmanaged
+        public readonly unsafe int RegisterStereoStatusWindow(IntPtr WindowHandle, uint wMsg, uint* pdwCookie)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* hResourcePtr = &hResource)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, T0*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResourcePtr, pLuid);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr, uint, uint*, int>)LpVtbl[18])(@this, WindowHandle, wMsg, pdwCookie);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ref ValueTuple<ulong, long> pLuid) where T0 : unmanaged
+        public readonly int RegisterStereoStatusWindow(IntPtr WindowHandle, uint wMsg, ref uint pdwCookie)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* hResourcePtr = &hResource)
-                {
-                    fixed (ValueTuple<ulong, long>* pLuidPtr = &pLuid)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, T0*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
-                    }
-                }
-                return ret;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr, uint, uint*, int>)LpVtbl[18])(@this, WindowHandle, wMsg, pdwCookiePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterStereoStatusWindow(IntPtr WindowHandle, uint wMsg, uint* pdwCookie)
+        public readonly unsafe int RegisterStereoStatusEvent(void* hEvent, uint* pdwCookie)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr, uint, uint*, int>)LpVtbl[18])(@this, WindowHandle, wMsg, pdwCookie);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, void*, uint*, int>)LpVtbl[19])(@this, hEvent, pdwCookie);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int RegisterStereoStatusWindow(IntPtr WindowHandle, uint wMsg, ref uint pdwCookie)
+        public readonly unsafe int RegisterStereoStatusEvent(void* hEvent, ref uint pdwCookie)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, void*, uint*, int>)LpVtbl[19])(@this, hEvent, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RegisterStereoStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, T0*, uint*, int>)LpVtbl[19])(@this, hEventPtr, pdwCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int RegisterStereoStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
                 fixed (uint* pdwCookiePtr = &pdwCookie)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr, uint, uint*, int>)LpVtbl[18])(@this, WindowHandle, wMsg, pdwCookiePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, T0*, uint*, int>)LpVtbl[19])(@this, hEventPtr, pdwCookiePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterStereoStatusEvent(void* hEvent, uint* pdwCookie)
+        public readonly void UnregisterStereoStatus(uint dwCookie)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, void*, uint*, int>)LpVtbl[19])(@this, hEvent, pdwCookie);
-                return ret;
-            }
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, void>)LpVtbl[20])(@this, dwCookie);
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterStereoStatusEvent(void* hEvent, ref uint pdwCookie)
+        public readonly unsafe int RegisterOcclusionStatusWindow(IntPtr WindowHandle, uint wMsg, uint* pdwCookie)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr, uint, uint*, int>)LpVtbl[21])(@this, WindowHandle, wMsg, pdwCookie);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int RegisterOcclusionStatusWindow(IntPtr WindowHandle, uint wMsg, ref uint pdwCookie)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, IntPtr, uint, uint*, int>)LpVtbl[21])(@this, WindowHandle, wMsg, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RegisterOcclusionStatusEvent(void* hEvent, uint* pdwCookie)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, void*, uint*, int>)LpVtbl[22])(@this, hEvent, pdwCookie);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RegisterOcclusionStatusEvent(void* hEvent, ref uint pdwCookie)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (uint* pdwCookiePtr = &pdwCookie)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, void*, uint*, int>)LpVtbl[22])(@this, hEvent, pdwCookiePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int RegisterOcclusionStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, T0*, uint*, int>)LpVtbl[22])(@this, hEventPtr, pdwCookie);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int RegisterOcclusionStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (T0* hEventPtr = &hEvent)
+            {
                 fixed (uint* pdwCookiePtr = &pdwCookie)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, void*, uint*, int>)LpVtbl[19])(@this, hEvent, pdwCookiePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, T0*, uint*, int>)LpVtbl[22])(@this, hEventPtr, pdwCookiePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int RegisterStereoStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+        public readonly void UnregisterOcclusionStatus(uint dwCookie)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, void>)LpVtbl[23])(@this, dwCookie);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* hEventPtr = &hEvent)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, T0*, uint*, int>)LpVtbl[19])(@this, hEventPtr, pdwCookie);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDesc, pRestrictToOutput, ppSwapChain);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int RegisterStereoStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+        public readonly unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* hEventPtr = &hEvent)
-                {
-                    fixed (uint* pdwCookiePtr = &pdwCookie)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, T0*, uint*, int>)LpVtbl[19])(@this, hEventPtr, pdwCookiePtr);
-                    }
-                }
-                return ret;
+            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDesc, pRestrictToOutput, ppSwapChainPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public void UnregisterStereoStatus(uint dwCookie)
+        public readonly unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                ((delegate* cdecl<IDXGIFactory6*, uint, void>)LpVtbl[20])(@this, dwCookie);
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RegisterOcclusionStatusWindow(IntPtr WindowHandle, uint wMsg, uint* pdwCookie)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr, uint, uint*, int>)LpVtbl[21])(@this, WindowHandle, wMsg, pdwCookie);
-                return ret;
+            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDesc, pRestrictToOutputPtr, ppSwapChain);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int RegisterOcclusionStatusWindow(IntPtr WindowHandle, uint wMsg, ref uint pdwCookie)
+        public readonly unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (uint* pdwCookiePtr = &pdwCookie)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, IntPtr, uint, uint*, int>)LpVtbl[21])(@this, WindowHandle, wMsg, pdwCookiePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RegisterOcclusionStatusEvent(void* hEvent, uint* pdwCookie)
-        {
-            fixed (IDXGIFactory6* @this = &this)
+            fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
             {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, void*, uint*, int>)LpVtbl[22])(@this, hEvent, pdwCookie);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RegisterOcclusionStatusEvent(void* hEvent, ref uint pdwCookie)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (uint* pdwCookiePtr = &pdwCookie)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, void*, uint*, int>)LpVtbl[22])(@this, hEvent, pdwCookiePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int RegisterOcclusionStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (T0* hEventPtr = &hEvent)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, T0*, uint*, int>)LpVtbl[22])(@this, hEventPtr, pdwCookie);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int RegisterOcclusionStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (T0* hEventPtr = &hEvent)
-                {
-                    fixed (uint* pdwCookiePtr = &pdwCookie)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, T0*, uint*, int>)LpVtbl[22])(@this, hEventPtr, pdwCookiePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public void UnregisterOcclusionStatus(uint dwCookie)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                ((delegate* cdecl<IDXGIFactory6*, uint, void>)LpVtbl[23])(@this, dwCookie);
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDesc, pRestrictToOutput, ppSwapChain);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDescPtr, pRestrictToOutput, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
+                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (SwapChainDesc1* pDescPtr = &pDesc)
+            {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDesc, pRestrictToOutput, ppSwapChain);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
+                fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
+                {
+                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDescPtr, pRestrictToOutput, ppSwapChain);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
                     fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
+                        ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(Silk.NET.Core.Native.IUnknown* pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
+        public readonly unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
+            {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
                 {
                     fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
                     {
                         fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
                         {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevice, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
                         }
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
+        public readonly uint GetCreationFlags()
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDesc, pRestrictToOutput, ppSwapChain);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDesc, pRestrictToOutput, ppSwapChainPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDesc, pRestrictToOutputPtr, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDesc, pRestrictToOutputPtr, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDescPtr, pRestrictToOutput, ppSwapChain);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDescPtr, pRestrictToOutput, ppSwapChainPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChain);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CreateSwapChainForComposition(ref Silk.NET.Core.Native.IUnknown pDevice, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
-                {
-                    fixed (SwapChainDesc1* pDescPtr = &pDesc)
-                    {
-                        fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
-                        {
-                            fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
-                            {
-                                ret = ((delegate* cdecl<IDXGIFactory6*, Silk.NET.Core.Native.IUnknown*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[24])(@this, pDevicePtr, pDescPtr, pRestrictToOutputPtr, ppSwapChainPtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint GetCreationFlags()
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, uint>)LpVtbl[25])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint>)LpVtbl[25])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, Guid* riid, void** ppvAdapter)
+        public readonly unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, Guid* riid, void** ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapter);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapter);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, Guid* riid, ref void* ppvAdapter)
+        public readonly unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, Guid* riid, ref void* ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvAdapterPtr = &ppvAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapterPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, ref Guid riid, void** ppvAdapter)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapter);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, ref Guid riid, ref void* ppvAdapter)
+        {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvAdapterPtr = &ppvAdapter)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapterPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapterPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, ref Guid riid, void** ppvAdapter)
+        public readonly unsafe int EnumWarpAdapter(Guid* riid, void** ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapter);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[27])(@this, riid, ppvAdapter);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, ref Guid riid, ref void* ppvAdapter)
+        public readonly unsafe int EnumWarpAdapter(Guid* riid, ref void* ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvAdapterPtr = &ppvAdapter)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapterPtr);
-                    }
-                }
-                return ret;
+            fixed (void** ppvAdapterPtr = &ppvAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[27])(@this, riid, ppvAdapterPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumWarpAdapter(Guid* riid, void** ppvAdapter)
+        public readonly unsafe int EnumWarpAdapter(ref Guid riid, void** ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[27])(@this, riid, ppvAdapter);
-                return ret;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[27])(@this, riidPtr, ppvAdapter);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumWarpAdapter(Guid* riid, ref void* ppvAdapter)
+        public readonly unsafe int EnumWarpAdapter(ref Guid riid, ref void* ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvAdapterPtr = &ppvAdapter)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[27])(@this, riid, ppvAdapterPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[27])(@this, riidPtr, ppvAdapterPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumWarpAdapter(ref Guid riid, void** ppvAdapter)
+        public readonly unsafe int CheckFeatureSupport(Feature Feature, void* pFeatureSupportData, uint FeatureSupportDataSize)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[27])(@this, riidPtr, ppvAdapter);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Feature, void*, uint, int>)LpVtbl[28])(@this, Feature, pFeatureSupportData, FeatureSupportDataSize);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumWarpAdapter(ref Guid riid, ref void* ppvAdapter)
+        public readonly int CheckFeatureSupport<T0>(Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvAdapterPtr = &ppvAdapter)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, Guid*, void**, int>)LpVtbl[27])(@this, riidPtr, ppvAdapterPtr);
-                    }
-                }
-                return ret;
+            fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, Feature, T0*, uint, int>)LpVtbl[28])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CheckFeatureSupport(Feature Feature, void* pFeatureSupportData, uint FeatureSupportDataSize)
+        public readonly unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, Guid* riid, void** ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, Feature, void*, uint, int>)LpVtbl[28])(@this, Feature, pFeatureSupportData, FeatureSupportDataSize);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riid, ppvAdapter);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int CheckFeatureSupport<T0>(Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
+        public readonly unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, Guid* riid, ref void* ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, Feature, T0*, uint, int>)LpVtbl[28])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
-                }
-                return ret;
+            fixed (void** ppvAdapterPtr = &ppvAdapter)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riid, ppvAdapterPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, Guid* riid, void** ppvAdapter)
+        public readonly unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, ref Guid riid, void** ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riid, ppvAdapter);
-                return ret;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riidPtr, ppvAdapter);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, Guid* riid, ref void* ppvAdapter)
+        public readonly unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, ref Guid riid, ref void* ppvAdapter)
         {
-            fixed (IDXGIFactory6* @this = &this)
-            {
+            var @this = (IDXGIFactory6*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvAdapterPtr = &ppvAdapter)
                 {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riid, ppvAdapterPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riidPtr, ppvAdapterPtr);
                 }
-                return ret;
             }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, ref Guid riid, void** ppvAdapter)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riidPtr, ppvAdapter);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int EnumAdapterByGpuPreference(uint Adapter, GpuPreference GpuPreference, ref Guid riid, ref void* ppvAdapter)
-        {
-            fixed (IDXGIFactory6* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvAdapterPtr = &ppvAdapter)
-                    {
-                        ret = ((delegate* cdecl<IDXGIFactory6*, uint, GpuPreference, Guid*, void**, int>)LpVtbl[29])(@this, Adapter, GpuPreference, riidPtr, ppvAdapterPtr);
-                    }
-                }
-                return ret;
-            }
+            return ret;
         }
 
     }

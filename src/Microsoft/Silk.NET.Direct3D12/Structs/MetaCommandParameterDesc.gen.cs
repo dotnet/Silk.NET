@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public MetaCommandParameterDesc
         (
-            char* name = default,
-            MetaCommandParameterType type = default,
-            MetaCommandParameterFlags flags = default,
-            ResourceStates requiredResourceState = default,
-            uint structureOffset = default
-        )
+            char* name = null,
+            MetaCommandParameterType? type = null,
+            MetaCommandParameterFlags? flags = null,
+            ResourceStates? requiredResourceState = null,
+            uint? structureOffset = null
+        ) : this()
         {
-            Name = name;
-            Type = type;
-            Flags = flags;
-            RequiredResourceState = requiredResourceState;
-            StructureOffset = structureOffset;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (requiredResourceState is not null)
+            {
+                RequiredResourceState = requiredResourceState.Value;
+            }
+
+            if (structureOffset is not null)
+            {
+                StructureOffset = structureOffset.Value;
+            }
         }
 
 

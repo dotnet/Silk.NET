@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D9
     {
         public Pshadercaps20
         (
-            uint caps = default,
-            int dynamicFlowControlDepth = default,
-            int numTemps = default,
-            int staticFlowControlDepth = default,
-            int numInstructionSlots = default
-        )
+            uint? caps = null,
+            int? dynamicFlowControlDepth = null,
+            int? numTemps = null,
+            int? staticFlowControlDepth = null,
+            int? numInstructionSlots = null
+        ) : this()
         {
-            Caps = caps;
-            DynamicFlowControlDepth = dynamicFlowControlDepth;
-            NumTemps = numTemps;
-            StaticFlowControlDepth = staticFlowControlDepth;
-            NumInstructionSlots = numInstructionSlots;
+            if (caps is not null)
+            {
+                Caps = caps.Value;
+            }
+
+            if (dynamicFlowControlDepth is not null)
+            {
+                DynamicFlowControlDepth = dynamicFlowControlDepth.Value;
+            }
+
+            if (numTemps is not null)
+            {
+                NumTemps = numTemps.Value;
+            }
+
+            if (staticFlowControlDepth is not null)
+            {
+                StaticFlowControlDepth = staticFlowControlDepth.Value;
+            }
+
+            if (numInstructionSlots is not null)
+            {
+                NumInstructionSlots = numInstructionSlots.Value;
+            }
         }
 
 

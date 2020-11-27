@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Direct3D12
     {
         public ResourceDesc
         (
-            ResourceDimension dimension = default,
-            ulong alignment = default,
-            ulong width = default,
-            uint height = default,
-            ushort depthOrArraySize = default,
-            ushort mipLevels = default,
-            Silk.NET.DXGI.Format format = default,
-            Silk.NET.DXGI.SampleDesc sampleDesc = default,
-            TextureLayout layout = default,
-            ResourceFlags flags = default
-        )
+            ResourceDimension? dimension = null,
+            ulong? alignment = null,
+            ulong? width = null,
+            uint? height = null,
+            ushort? depthOrArraySize = null,
+            ushort? mipLevels = null,
+            Silk.NET.DXGI.Format? format = null,
+            Silk.NET.DXGI.SampleDesc? sampleDesc = null,
+            TextureLayout? layout = null,
+            ResourceFlags? flags = null
+        ) : this()
         {
-            Dimension = dimension;
-            Alignment = alignment;
-            Width = width;
-            Height = height;
-            DepthOrArraySize = depthOrArraySize;
-            MipLevels = mipLevels;
-            Format = format;
-            SampleDesc = sampleDesc;
-            Layout = layout;
-            Flags = flags;
+            if (dimension is not null)
+            {
+                Dimension = dimension.Value;
+            }
+
+            if (alignment is not null)
+            {
+                Alignment = alignment.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depthOrArraySize is not null)
+            {
+                DepthOrArraySize = depthOrArraySize.Value;
+            }
+
+            if (mipLevels is not null)
+            {
+                MipLevels = mipLevels.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (sampleDesc is not null)
+            {
+                SampleDesc = sampleDesc.Value;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

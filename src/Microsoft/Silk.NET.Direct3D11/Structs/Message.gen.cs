@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D11
     {
         public Message
         (
-            MessageCategory category = default,
-            MessageSeverity severity = default,
-            MessageID iD = default,
-            byte* pDescription = default,
-            uint descriptionByteLength = default
-        )
+            MessageCategory? category = null,
+            MessageSeverity? severity = null,
+            MessageID? iD = null,
+            byte* pDescription = null,
+            uint? descriptionByteLength = null
+        ) : this()
         {
-            Category = category;
-            Severity = severity;
-            ID = iD;
-            PDescription = pDescription;
-            DescriptionByteLength = descriptionByteLength;
+            if (category is not null)
+            {
+                Category = category.Value;
+            }
+
+            if (severity is not null)
+            {
+                Severity = severity.Value;
+            }
+
+            if (iD is not null)
+            {
+                ID = iD.Value;
+            }
+
+            if (pDescription is not null)
+            {
+                PDescription = pDescription;
+            }
+
+            if (descriptionByteLength is not null)
+            {
+                DescriptionByteLength = descriptionByteLength.Value;
+            }
         }
 
 

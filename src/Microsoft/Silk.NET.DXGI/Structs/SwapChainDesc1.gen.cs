@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.DXGI
     {
         public SwapChainDesc1
         (
-            uint width = default,
-            uint height = default,
-            Silk.NET.DXGI.Format format = default,
-            int stereo = default,
-            SampleDesc sampleDesc = default,
-            uint bufferUsage = default,
-            uint bufferCount = default,
-            Scaling scaling = default,
-            SwapEffect swapEffect = default,
-            AlphaMode alphaMode = default,
-            uint flags = default
-        )
+            uint? width = null,
+            uint? height = null,
+            Silk.NET.DXGI.Format? format = null,
+            int? stereo = null,
+            SampleDesc? sampleDesc = null,
+            uint? bufferUsage = null,
+            uint? bufferCount = null,
+            Scaling? scaling = null,
+            SwapEffect? swapEffect = null,
+            AlphaMode? alphaMode = null,
+            uint? flags = null
+        ) : this()
         {
-            Width = width;
-            Height = height;
-            Format = format;
-            Stereo = stereo;
-            SampleDesc = sampleDesc;
-            BufferUsage = bufferUsage;
-            BufferCount = bufferCount;
-            Scaling = scaling;
-            SwapEffect = swapEffect;
-            AlphaMode = alphaMode;
-            Flags = flags;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (stereo is not null)
+            {
+                Stereo = stereo.Value;
+            }
+
+            if (sampleDesc is not null)
+            {
+                SampleDesc = sampleDesc.Value;
+            }
+
+            if (bufferUsage is not null)
+            {
+                BufferUsage = bufferUsage.Value;
+            }
+
+            if (bufferCount is not null)
+            {
+                BufferCount = bufferCount.Value;
+            }
+
+            if (scaling is not null)
+            {
+                Scaling = scaling.Value;
+            }
+
+            if (swapEffect is not null)
+            {
+                SwapEffect = swapEffect.Value;
+            }
+
+            if (alphaMode is not null)
+            {
+                AlphaMode = alphaMode.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

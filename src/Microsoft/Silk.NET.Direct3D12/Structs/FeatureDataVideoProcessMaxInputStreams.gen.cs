@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoProcessMaxInputStreams
         (
-            uint nodeIndex = default,
-            uint maxInputStreams = default
-        )
+            uint? nodeIndex = null,
+            uint? maxInputStreams = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            MaxInputStreams = maxInputStreams;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (maxInputStreams is not null)
+            {
+                MaxInputStreams = maxInputStreams.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,12 +23,19 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L12484C5
         (
-            RaytracingGeometryTrianglesDesc triangles = default,
-            RaytracingGeometryAabbsDesc aABBs = default
-        )
+            RaytracingGeometryTrianglesDesc? triangles = null,
+            RaytracingGeometryAabbsDesc? aABBs = null
+        ) : this()
         {
-            Triangles = triangles;
-            AABBs = aABBs;
+            if (triangles is not null)
+            {
+                Triangles = triangles.Value;
+            }
+
+            if (aABBs is not null)
+            {
+                AABBs = aABBs.Value;
+            }
         }
 
 

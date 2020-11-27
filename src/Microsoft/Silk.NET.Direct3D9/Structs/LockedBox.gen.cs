@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D9
     {
         public LockedBox
         (
-            int rowPitch = default,
-            int slicePitch = default,
-            void* pBits = default
-        )
+            int? rowPitch = null,
+            int? slicePitch = null,
+            void* pBits = null
+        ) : this()
         {
-            RowPitch = rowPitch;
-            SlicePitch = slicePitch;
-            PBits = pBits;
+            if (rowPitch is not null)
+            {
+                RowPitch = rowPitch.Value;
+            }
+
+            if (slicePitch is not null)
+            {
+                SlicePitch = slicePitch.Value;
+            }
+
+            if (pBits is not null)
+            {
+                PBits = pBits;
+            }
         }
 
 

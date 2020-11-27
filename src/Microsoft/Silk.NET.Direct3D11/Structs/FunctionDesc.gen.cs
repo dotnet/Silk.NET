@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,74 +22,205 @@ namespace Silk.NET.Direct3D11
     {
         public FunctionDesc
         (
-            uint version = default,
-            byte* creator = default,
-            uint flags = default,
-            uint constantBuffers = default,
-            uint boundResources = default,
-            uint instructionCount = default,
-            uint tempRegisterCount = default,
-            uint tempArrayCount = default,
-            uint defCount = default,
-            uint dclCount = default,
-            uint textureNormalInstructions = default,
-            uint textureLoadInstructions = default,
-            uint textureCompInstructions = default,
-            uint textureBiasInstructions = default,
-            uint textureGradientInstructions = default,
-            uint floatInstructionCount = default,
-            uint intInstructionCount = default,
-            uint uintInstructionCount = default,
-            uint staticFlowControlCount = default,
-            uint dynamicFlowControlCount = default,
-            uint macroInstructionCount = default,
-            uint arrayInstructionCount = default,
-            uint movInstructionCount = default,
-            uint movcInstructionCount = default,
-            uint conversionInstructionCount = default,
-            uint bitwiseInstructionCount = default,
-            Silk.NET.Core.Native.D3DFeatureLevel minFeatureLevel = default,
-            ulong requiredFeatureFlags = default,
-            byte* name = default,
-            int functionParameterCount = default,
-            int hasReturn = default,
-            int has10Level9VertexShader = default,
-            int has10Level9PixelShader = default
-        )
+            uint? version = null,
+            byte* creator = null,
+            uint? flags = null,
+            uint? constantBuffers = null,
+            uint? boundResources = null,
+            uint? instructionCount = null,
+            uint? tempRegisterCount = null,
+            uint? tempArrayCount = null,
+            uint? defCount = null,
+            uint? dclCount = null,
+            uint? textureNormalInstructions = null,
+            uint? textureLoadInstructions = null,
+            uint? textureCompInstructions = null,
+            uint? textureBiasInstructions = null,
+            uint? textureGradientInstructions = null,
+            uint? floatInstructionCount = null,
+            uint? intInstructionCount = null,
+            uint? uintInstructionCount = null,
+            uint? staticFlowControlCount = null,
+            uint? dynamicFlowControlCount = null,
+            uint? macroInstructionCount = null,
+            uint? arrayInstructionCount = null,
+            uint? movInstructionCount = null,
+            uint? movcInstructionCount = null,
+            uint? conversionInstructionCount = null,
+            uint? bitwiseInstructionCount = null,
+            Silk.NET.Core.Native.D3DFeatureLevel? minFeatureLevel = null,
+            ulong? requiredFeatureFlags = null,
+            byte* name = null,
+            int? functionParameterCount = null,
+            int? hasReturn = null,
+            int? has10Level9VertexShader = null,
+            int? has10Level9PixelShader = null
+        ) : this()
         {
-            Version = version;
-            Creator = creator;
-            Flags = flags;
-            ConstantBuffers = constantBuffers;
-            BoundResources = boundResources;
-            InstructionCount = instructionCount;
-            TempRegisterCount = tempRegisterCount;
-            TempArrayCount = tempArrayCount;
-            DefCount = defCount;
-            DclCount = dclCount;
-            TextureNormalInstructions = textureNormalInstructions;
-            TextureLoadInstructions = textureLoadInstructions;
-            TextureCompInstructions = textureCompInstructions;
-            TextureBiasInstructions = textureBiasInstructions;
-            TextureGradientInstructions = textureGradientInstructions;
-            FloatInstructionCount = floatInstructionCount;
-            IntInstructionCount = intInstructionCount;
-            UintInstructionCount = uintInstructionCount;
-            StaticFlowControlCount = staticFlowControlCount;
-            DynamicFlowControlCount = dynamicFlowControlCount;
-            MacroInstructionCount = macroInstructionCount;
-            ArrayInstructionCount = arrayInstructionCount;
-            MovInstructionCount = movInstructionCount;
-            MovcInstructionCount = movcInstructionCount;
-            ConversionInstructionCount = conversionInstructionCount;
-            BitwiseInstructionCount = bitwiseInstructionCount;
-            MinFeatureLevel = minFeatureLevel;
-            RequiredFeatureFlags = requiredFeatureFlags;
-            Name = name;
-            FunctionParameterCount = functionParameterCount;
-            HasReturn = hasReturn;
-            Has10Level9VertexShader = has10Level9VertexShader;
-            Has10Level9PixelShader = has10Level9PixelShader;
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
+
+            if (creator is not null)
+            {
+                Creator = creator;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (constantBuffers is not null)
+            {
+                ConstantBuffers = constantBuffers.Value;
+            }
+
+            if (boundResources is not null)
+            {
+                BoundResources = boundResources.Value;
+            }
+
+            if (instructionCount is not null)
+            {
+                InstructionCount = instructionCount.Value;
+            }
+
+            if (tempRegisterCount is not null)
+            {
+                TempRegisterCount = tempRegisterCount.Value;
+            }
+
+            if (tempArrayCount is not null)
+            {
+                TempArrayCount = tempArrayCount.Value;
+            }
+
+            if (defCount is not null)
+            {
+                DefCount = defCount.Value;
+            }
+
+            if (dclCount is not null)
+            {
+                DclCount = dclCount.Value;
+            }
+
+            if (textureNormalInstructions is not null)
+            {
+                TextureNormalInstructions = textureNormalInstructions.Value;
+            }
+
+            if (textureLoadInstructions is not null)
+            {
+                TextureLoadInstructions = textureLoadInstructions.Value;
+            }
+
+            if (textureCompInstructions is not null)
+            {
+                TextureCompInstructions = textureCompInstructions.Value;
+            }
+
+            if (textureBiasInstructions is not null)
+            {
+                TextureBiasInstructions = textureBiasInstructions.Value;
+            }
+
+            if (textureGradientInstructions is not null)
+            {
+                TextureGradientInstructions = textureGradientInstructions.Value;
+            }
+
+            if (floatInstructionCount is not null)
+            {
+                FloatInstructionCount = floatInstructionCount.Value;
+            }
+
+            if (intInstructionCount is not null)
+            {
+                IntInstructionCount = intInstructionCount.Value;
+            }
+
+            if (uintInstructionCount is not null)
+            {
+                UintInstructionCount = uintInstructionCount.Value;
+            }
+
+            if (staticFlowControlCount is not null)
+            {
+                StaticFlowControlCount = staticFlowControlCount.Value;
+            }
+
+            if (dynamicFlowControlCount is not null)
+            {
+                DynamicFlowControlCount = dynamicFlowControlCount.Value;
+            }
+
+            if (macroInstructionCount is not null)
+            {
+                MacroInstructionCount = macroInstructionCount.Value;
+            }
+
+            if (arrayInstructionCount is not null)
+            {
+                ArrayInstructionCount = arrayInstructionCount.Value;
+            }
+
+            if (movInstructionCount is not null)
+            {
+                MovInstructionCount = movInstructionCount.Value;
+            }
+
+            if (movcInstructionCount is not null)
+            {
+                MovcInstructionCount = movcInstructionCount.Value;
+            }
+
+            if (conversionInstructionCount is not null)
+            {
+                ConversionInstructionCount = conversionInstructionCount.Value;
+            }
+
+            if (bitwiseInstructionCount is not null)
+            {
+                BitwiseInstructionCount = bitwiseInstructionCount.Value;
+            }
+
+            if (minFeatureLevel is not null)
+            {
+                MinFeatureLevel = minFeatureLevel.Value;
+            }
+
+            if (requiredFeatureFlags is not null)
+            {
+                RequiredFeatureFlags = requiredFeatureFlags.Value;
+            }
+
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (functionParameterCount is not null)
+            {
+                FunctionParameterCount = functionParameterCount.Value;
+            }
+
+            if (hasReturn is not null)
+            {
+                HasReturn = hasReturn.Value;
+            }
+
+            if (has10Level9VertexShader is not null)
+            {
+                Has10Level9VertexShader = has10Level9VertexShader.Value;
+            }
+
+            if (has10Level9PixelShader is not null)
+            {
+                Has10Level9PixelShader = has10Level9PixelShader.Value;
+            }
         }
 
 

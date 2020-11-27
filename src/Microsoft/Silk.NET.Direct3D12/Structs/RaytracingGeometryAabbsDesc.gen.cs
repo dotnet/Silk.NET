@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public RaytracingGeometryAabbsDesc
         (
-            ulong aABBCount = default,
-            GpuVirtualAddressAndStride aABBs = default
-        )
+            ulong? aABBCount = null,
+            GpuVirtualAddressAndStride? aABBs = null
+        ) : this()
         {
-            AABBCount = aABBCount;
-            AABBs = aABBs;
+            if (aABBCount is not null)
+            {
+                AABBCount = aABBCount.Value;
+            }
+
+            if (aABBs is not null)
+            {
+                AABBs = aABBs.Value;
+            }
         }
 
 

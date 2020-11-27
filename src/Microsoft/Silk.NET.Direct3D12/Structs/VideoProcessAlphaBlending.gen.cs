@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessAlphaBlending
         (
-            int enable = default,
-            float alpha = default
-        )
+            int? enable = null,
+            float? alpha = null
+        ) : this()
         {
-            Enable = enable;
-            Alpha = alpha;
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (alpha is not null)
+            {
+                Alpha = alpha.Value;
+            }
         }
 
 

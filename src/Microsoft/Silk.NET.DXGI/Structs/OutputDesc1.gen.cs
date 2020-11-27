@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.DXGI
     {
         public OutputDesc1
         (
-            Silk.NET.Core.Native.TagRect desktopCoordinates = default,
-            int attachedToDesktop = default,
-            ModeRotation rotation = default,
-            IntPtr monitor = default,
-            uint bitsPerColor = default,
-            ColorSpaceType colorSpace = default,
-            float minLuminance = default,
-            float maxLuminance = default,
-            float maxFullFrameLuminance = default
-        )
+            Silk.NET.Core.Native.TagRect? desktopCoordinates = null,
+            int? attachedToDesktop = null,
+            ModeRotation? rotation = null,
+            IntPtr? monitor = null,
+            uint? bitsPerColor = null,
+            ColorSpaceType? colorSpace = null,
+            float? minLuminance = null,
+            float? maxLuminance = null,
+            float? maxFullFrameLuminance = null
+        ) : this()
         {
-            DesktopCoordinates = desktopCoordinates;
-            AttachedToDesktop = attachedToDesktop;
-            Rotation = rotation;
-            Monitor = monitor;
-            BitsPerColor = bitsPerColor;
-            ColorSpace = colorSpace;
-            MinLuminance = minLuminance;
-            MaxLuminance = maxLuminance;
-            MaxFullFrameLuminance = maxFullFrameLuminance;
+            if (desktopCoordinates is not null)
+            {
+                DesktopCoordinates = desktopCoordinates.Value;
+            }
+
+            if (attachedToDesktop is not null)
+            {
+                AttachedToDesktop = attachedToDesktop.Value;
+            }
+
+            if (rotation is not null)
+            {
+                Rotation = rotation.Value;
+            }
+
+            if (monitor is not null)
+            {
+                Monitor = monitor.Value;
+            }
+
+            if (bitsPerColor is not null)
+            {
+                BitsPerColor = bitsPerColor.Value;
+            }
+
+            if (colorSpace is not null)
+            {
+                ColorSpace = colorSpace.Value;
+            }
+
+            if (minLuminance is not null)
+            {
+                MinLuminance = minLuminance.Value;
+            }
+
+            if (maxLuminance is not null)
+            {
+                MaxLuminance = maxLuminance.Value;
+            }
+
+            if (maxFullFrameLuminance is not null)
+            {
+                MaxFullFrameLuminance = maxFullFrameLuminance.Value;
+            }
         }
 
         [NativeName("Type", "WCHAR [32]")]

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public StateSubobject
         (
-            StateSubobjectType type = default,
-            void* pDesc = default
-        )
+            StateSubobjectType? type = null,
+            void* pDesc = null
+        ) : this()
         {
-            Type = type;
-            PDesc = pDesc;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (pDesc is not null)
+            {
+                PDesc = pDesc;
+            }
         }
 
 

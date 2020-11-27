@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public CD3D11Rect
         (
-            int left = default,
-            int top = default,
-            int right = default,
-            int bottom = default
-        )
+            int? left = null,
+            int? top = null,
+            int? right = null,
+            int? bottom = null
+        ) : this()
         {
-            Left = left;
-            Top = top;
-            Right = right;
-            Bottom = bottom;
+            if (left is not null)
+            {
+                Left = left.Value;
+            }
+
+            if (top is not null)
+            {
+                Top = top.Value;
+            }
+
+            if (right is not null)
+            {
+                Right = right.Value;
+            }
+
+            if (bottom is not null)
+            {
+                Bottom = bottom.Value;
+            }
         }
 
 

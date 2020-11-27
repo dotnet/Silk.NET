@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorStream
         (
-            int enable = default,
-            uint outputIndex = default,
-            uint inputFrameOrField = default,
-            uint pastFrames = default,
-            uint futureFrames = default,
-            ID3D11VideoProcessorInputView** ppPastSurfaces = default,
-            ID3D11VideoProcessorInputView* pInputSurface = default,
-            ID3D11VideoProcessorInputView** ppFutureSurfaces = default,
-            ID3D11VideoProcessorInputView** ppPastSurfacesRight = default,
-            ID3D11VideoProcessorInputView* pInputSurfaceRight = default,
-            ID3D11VideoProcessorInputView** ppFutureSurfacesRight = default
-        )
+            int? enable = null,
+            uint? outputIndex = null,
+            uint? inputFrameOrField = null,
+            uint? pastFrames = null,
+            uint? futureFrames = null,
+            ID3D11VideoProcessorInputView** ppPastSurfaces = null,
+            ID3D11VideoProcessorInputView* pInputSurface = null,
+            ID3D11VideoProcessorInputView** ppFutureSurfaces = null,
+            ID3D11VideoProcessorInputView** ppPastSurfacesRight = null,
+            ID3D11VideoProcessorInputView* pInputSurfaceRight = null,
+            ID3D11VideoProcessorInputView** ppFutureSurfacesRight = null
+        ) : this()
         {
-            Enable = enable;
-            OutputIndex = outputIndex;
-            InputFrameOrField = inputFrameOrField;
-            PastFrames = pastFrames;
-            FutureFrames = futureFrames;
-            PpPastSurfaces = ppPastSurfaces;
-            PInputSurface = pInputSurface;
-            PpFutureSurfaces = ppFutureSurfaces;
-            PpPastSurfacesRight = ppPastSurfacesRight;
-            PInputSurfaceRight = pInputSurfaceRight;
-            PpFutureSurfacesRight = ppFutureSurfacesRight;
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (outputIndex is not null)
+            {
+                OutputIndex = outputIndex.Value;
+            }
+
+            if (inputFrameOrField is not null)
+            {
+                InputFrameOrField = inputFrameOrField.Value;
+            }
+
+            if (pastFrames is not null)
+            {
+                PastFrames = pastFrames.Value;
+            }
+
+            if (futureFrames is not null)
+            {
+                FutureFrames = futureFrames.Value;
+            }
+
+            if (ppPastSurfaces is not null)
+            {
+                PpPastSurfaces = ppPastSurfaces;
+            }
+
+            if (pInputSurface is not null)
+            {
+                PInputSurface = pInputSurface;
+            }
+
+            if (ppFutureSurfaces is not null)
+            {
+                PpFutureSurfaces = ppFutureSurfaces;
+            }
+
+            if (ppPastSurfacesRight is not null)
+            {
+                PpPastSurfacesRight = ppPastSurfacesRight;
+            }
+
+            if (pInputSurfaceRight is not null)
+            {
+                PInputSurfaceRight = pInputSurfaceRight;
+            }
+
+            if (ppFutureSurfacesRight is not null)
+            {
+                PpFutureSurfacesRight = ppFutureSurfacesRight;
+            }
         }
 
 

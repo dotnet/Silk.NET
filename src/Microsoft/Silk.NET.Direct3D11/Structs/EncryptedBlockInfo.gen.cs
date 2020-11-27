@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D11
     {
         public EncryptedBlockInfo
         (
-            uint numEncryptedBytesAtBeginning = default,
-            uint numBytesInSkipPattern = default,
-            uint numBytesInEncryptPattern = default
-        )
+            uint? numEncryptedBytesAtBeginning = null,
+            uint? numBytesInSkipPattern = null,
+            uint? numBytesInEncryptPattern = null
+        ) : this()
         {
-            NumEncryptedBytesAtBeginning = numEncryptedBytesAtBeginning;
-            NumBytesInSkipPattern = numBytesInSkipPattern;
-            NumBytesInEncryptPattern = numBytesInEncryptPattern;
+            if (numEncryptedBytesAtBeginning is not null)
+            {
+                NumEncryptedBytesAtBeginning = numEncryptedBytesAtBeginning.Value;
+            }
+
+            if (numBytesInSkipPattern is not null)
+            {
+                NumBytesInSkipPattern = numBytesInSkipPattern.Value;
+            }
+
+            if (numBytesInEncryptPattern is not null)
+            {
+                NumBytesInEncryptPattern = numBytesInEncryptPattern.Value;
+            }
         }
 
 

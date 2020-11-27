@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public StreamOutputBufferView
         (
-            ulong bufferLocation = default,
-            ulong sizeInBytes = default,
-            ulong bufferFilledSizeLocation = default
-        )
+            ulong? bufferLocation = null,
+            ulong? sizeInBytes = null,
+            ulong? bufferFilledSizeLocation = null
+        ) : this()
         {
-            BufferLocation = bufferLocation;
-            SizeInBytes = sizeInBytes;
-            BufferFilledSizeLocation = bufferFilledSizeLocation;
+            if (bufferLocation is not null)
+            {
+                BufferLocation = bufferLocation.Value;
+            }
+
+            if (sizeInBytes is not null)
+            {
+                SizeInBytes = sizeInBytes.Value;
+            }
+
+            if (bufferFilledSizeLocation is not null)
+            {
+                BufferFilledSizeLocation = bufferFilledSizeLocation.Value;
+            }
         }
 
 

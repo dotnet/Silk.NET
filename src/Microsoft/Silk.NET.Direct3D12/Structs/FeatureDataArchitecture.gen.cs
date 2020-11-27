@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataArchitecture
         (
-            uint nodeIndex = default,
-            int tileBasedRenderer = default,
-            int uMA = default,
-            int cacheCoherentUMA = default
-        )
+            uint? nodeIndex = null,
+            int? tileBasedRenderer = null,
+            int? uMA = null,
+            int? cacheCoherentUMA = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            TileBasedRenderer = tileBasedRenderer;
-            UMA = uMA;
-            CacheCoherentUMA = cacheCoherentUMA;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (tileBasedRenderer is not null)
+            {
+                TileBasedRenderer = tileBasedRenderer.Value;
+            }
+
+            if (uMA is not null)
+            {
+                UMA = uMA.Value;
+            }
+
+            if (cacheCoherentUMA is not null)
+            {
+                CacheCoherentUMA = cacheCoherentUMA.Value;
+            }
         }
 
 

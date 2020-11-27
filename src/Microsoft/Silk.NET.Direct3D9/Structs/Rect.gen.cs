@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public Rect
         (
-            int x1 = default,
-            int y1 = default,
-            int x2 = default,
-            int y2 = default
-        )
+            int? x1 = null,
+            int? y1 = null,
+            int? x2 = null,
+            int? y2 = null
+        ) : this()
         {
-            X1 = x1;
-            Y1 = y1;
-            X2 = x2;
-            Y2 = y2;
+            if (x1 is not null)
+            {
+                X1 = x1.Value;
+            }
+
+            if (y1 is not null)
+            {
+                Y1 = y1.Value;
+            }
+
+            if (x2 is not null)
+            {
+                X2 = x2.Value;
+            }
+
+            if (y2 is not null)
+            {
+                Y2 = y2.Value;
+            }
         }
 
 

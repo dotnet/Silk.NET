@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeOutputStreamArguments
         (
-            ID3D12Resource* pOutputTexture2D = default,
-            uint outputSubresource = default,
-            VideoDecodeConversionArguments conversionArguments = default
-        )
+            ID3D12Resource* pOutputTexture2D = null,
+            uint? outputSubresource = null,
+            VideoDecodeConversionArguments? conversionArguments = null
+        ) : this()
         {
-            POutputTexture2D = pOutputTexture2D;
-            OutputSubresource = outputSubresource;
-            ConversionArguments = conversionArguments;
+            if (pOutputTexture2D is not null)
+            {
+                POutputTexture2D = pOutputTexture2D;
+            }
+
+            if (outputSubresource is not null)
+            {
+                OutputSubresource = outputSubresource.Value;
+            }
+
+            if (conversionArguments is not null)
+            {
+                ConversionArguments = conversionArguments.Value;
+            }
         }
 
 

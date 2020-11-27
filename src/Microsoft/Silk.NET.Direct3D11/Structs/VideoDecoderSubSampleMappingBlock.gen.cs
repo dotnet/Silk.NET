@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderSubSampleMappingBlock
         (
-            uint clearSize = default,
-            uint encryptedSize = default
-        )
+            uint? clearSize = null,
+            uint? encryptedSize = null
+        ) : this()
         {
-            ClearSize = clearSize;
-            EncryptedSize = encryptedSize;
+            if (clearSize is not null)
+            {
+                ClearSize = clearSize.Value;
+            }
+
+            if (encryptedSize is not null)
+            {
+                EncryptedSize = encryptedSize.Value;
+            }
         }
 
 

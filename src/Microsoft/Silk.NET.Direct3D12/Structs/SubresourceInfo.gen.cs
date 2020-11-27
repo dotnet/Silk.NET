@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public SubresourceInfo
         (
-            ulong offset = default,
-            uint rowPitch = default,
-            uint depthPitch = default
-        )
+            ulong? offset = null,
+            uint? rowPitch = null,
+            uint? depthPitch = null
+        ) : this()
         {
-            Offset = offset;
-            RowPitch = rowPitch;
-            DepthPitch = depthPitch;
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (rowPitch is not null)
+            {
+                RowPitch = rowPitch.Value;
+            }
+
+            if (depthPitch is not null)
+            {
+                DepthPitch = depthPitch.Value;
+            }
         }
 
 

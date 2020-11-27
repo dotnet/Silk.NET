@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D9
     {
         public Contentprotectioncaps
         (
-            uint caps = default,
-            Guid keyExchangeType = default,
-            uint bufferAlignmentStart = default,
-            uint blockAlignmentSize = default,
-            ulong protectedMemorySize = default
-        )
+            uint? caps = null,
+            Guid? keyExchangeType = null,
+            uint? bufferAlignmentStart = null,
+            uint? blockAlignmentSize = null,
+            ulong? protectedMemorySize = null
+        ) : this()
         {
-            Caps = caps;
-            KeyExchangeType = keyExchangeType;
-            BufferAlignmentStart = bufferAlignmentStart;
-            BlockAlignmentSize = blockAlignmentSize;
-            ProtectedMemorySize = protectedMemorySize;
+            if (caps is not null)
+            {
+                Caps = caps.Value;
+            }
+
+            if (keyExchangeType is not null)
+            {
+                KeyExchangeType = keyExchangeType.Value;
+            }
+
+            if (bufferAlignmentStart is not null)
+            {
+                BufferAlignmentStart = bufferAlignmentStart.Value;
+            }
+
+            if (blockAlignmentSize is not null)
+            {
+                BlockAlignmentSize = blockAlignmentSize.Value;
+            }
+
+            if (protectedMemorySize is not null)
+            {
+                ProtectedMemorySize = protectedMemorySize.Value;
+            }
         }
 
 

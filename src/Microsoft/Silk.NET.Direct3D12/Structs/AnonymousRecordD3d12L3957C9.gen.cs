@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L3957C9
         (
-            uint rootParameterIndex = default,
-            uint destOffsetIn32BitValues = default,
-            uint num32BitValuesToSet = default
-        )
+            uint? rootParameterIndex = null,
+            uint? destOffsetIn32BitValues = null,
+            uint? num32BitValuesToSet = null
+        ) : this()
         {
-            RootParameterIndex = rootParameterIndex;
-            DestOffsetIn32BitValues = destOffsetIn32BitValues;
-            Num32BitValuesToSet = num32BitValuesToSet;
+            if (rootParameterIndex is not null)
+            {
+                RootParameterIndex = rootParameterIndex.Value;
+            }
+
+            if (destOffsetIn32BitValues is not null)
+            {
+                DestOffsetIn32BitValues = destOffsetIn32BitValues.Value;
+            }
+
+            if (num32BitValuesToSet is not null)
+            {
+                Num32BitValuesToSet = num32BitValuesToSet.Value;
+            }
         }
 
 

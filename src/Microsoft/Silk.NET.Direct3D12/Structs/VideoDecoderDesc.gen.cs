@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecoderDesc
         (
-            uint nodeMask = default,
-            VideoDecodeConfiguration configuration = default
-        )
+            uint? nodeMask = null,
+            VideoDecodeConfiguration? configuration = null
+        ) : this()
         {
-            NodeMask = nodeMask;
-            Configuration = configuration;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (configuration is not null)
+            {
+                Configuration = configuration.Value;
+            }
         }
 
 

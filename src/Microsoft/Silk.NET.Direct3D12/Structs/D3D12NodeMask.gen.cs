@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D12
     {
         public D3D12NodeMask
         (
-            uint nodeMask = default
-        )
+            uint? nodeMask = null
+        ) : this()
         {
-            NodeMask = nodeMask;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
         }
 
 

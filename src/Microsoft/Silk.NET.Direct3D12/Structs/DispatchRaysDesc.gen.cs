@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D12
     {
         public DispatchRaysDesc
         (
-            GpuVirtualAddressRange rayGenerationShaderRecord = default,
-            GpuVirtualAddressRangeAndStride missShaderTable = default,
-            GpuVirtualAddressRangeAndStride hitGroupTable = default,
-            GpuVirtualAddressRangeAndStride callableShaderTable = default,
-            uint width = default,
-            uint height = default,
-            uint depth = default
-        )
+            GpuVirtualAddressRange? rayGenerationShaderRecord = null,
+            GpuVirtualAddressRangeAndStride? missShaderTable = null,
+            GpuVirtualAddressRangeAndStride? hitGroupTable = null,
+            GpuVirtualAddressRangeAndStride? callableShaderTable = null,
+            uint? width = null,
+            uint? height = null,
+            uint? depth = null
+        ) : this()
         {
-            RayGenerationShaderRecord = rayGenerationShaderRecord;
-            MissShaderTable = missShaderTable;
-            HitGroupTable = hitGroupTable;
-            CallableShaderTable = callableShaderTable;
-            Width = width;
-            Height = height;
-            Depth = depth;
+            if (rayGenerationShaderRecord is not null)
+            {
+                RayGenerationShaderRecord = rayGenerationShaderRecord.Value;
+            }
+
+            if (missShaderTable is not null)
+            {
+                MissShaderTable = missShaderTable.Value;
+            }
+
+            if (hitGroupTable is not null)
+            {
+                HitGroupTable = hitGroupTable.Value;
+            }
+
+            if (callableShaderTable is not null)
+            {
+                CallableShaderTable = callableShaderTable.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
         }
 
 

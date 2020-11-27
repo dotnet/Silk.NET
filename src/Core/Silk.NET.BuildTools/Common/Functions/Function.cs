@@ -102,6 +102,12 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// The index of this function in the LpVtbl field.
         /// </summary>
         public int VtblIndex { get; set; }
+        
+        /// <summary>
+        /// Whether this method is readonly. That is, it's contained within a struct and does not modify any of its
+        /// members.
+        /// </summary>
+        public bool IsReadOnly { get; set; }
 
         /// <inheritdoc />
         public override string ToString()
@@ -182,6 +188,11 @@ namespace Silk.NET.BuildTools.Common.Functions
             if (@static)
             {
                 sb.Append("static ");
+            }
+
+            if (IsReadOnly)
+            {
+                sb.Append("readonly ");
             }
             
             if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)

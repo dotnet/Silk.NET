@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.DXGI
     {
         public OutduplPointerShapeInfo
         (
-            uint type = default,
-            uint width = default,
-            uint height = default,
-            uint pitch = default,
-            Silk.NET.Core.Native.TagPoint hotSpot = default
-        )
+            uint? type = null,
+            uint? width = null,
+            uint? height = null,
+            uint? pitch = null,
+            Silk.NET.Core.Native.TagPoint? hotSpot = null
+        ) : this()
         {
-            Type = type;
-            Width = width;
-            Height = height;
-            Pitch = pitch;
-            HotSpot = hotSpot;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (pitch is not null)
+            {
+                Pitch = pitch.Value;
+            }
+
+            if (hotSpot is not null)
+            {
+                HotSpot = hotSpot.Value;
+            }
         }
 
 

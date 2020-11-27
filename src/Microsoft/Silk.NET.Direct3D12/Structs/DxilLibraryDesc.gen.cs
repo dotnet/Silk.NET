@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public DxilLibraryDesc
         (
-            ShaderBytecode dXILLibrary = default,
-            uint numExports = default,
-            ExportDesc* pExports = default
-        )
+            ShaderBytecode? dXILLibrary = null,
+            uint? numExports = null,
+            ExportDesc* pExports = null
+        ) : this()
         {
-            DXILLibrary = dXILLibrary;
-            NumExports = numExports;
-            PExports = pExports;
+            if (dXILLibrary is not null)
+            {
+                DXILLibrary = dXILLibrary.Value;
+            }
+
+            if (numExports is not null)
+            {
+                NumExports = numExports.Value;
+            }
+
+            if (pExports is not null)
+            {
+                PExports = pExports;
+            }
         }
 
 

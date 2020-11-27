@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryRestrictedSharedResourceProcessOutput
         (
-            AuthenticatedQueryOutput output = default,
-            uint processIndex = default,
-            AuthenticatedProcessIdentifierType processIdentifier = default,
-            void* processHandle = default
-        )
+            AuthenticatedQueryOutput? output = null,
+            uint? processIndex = null,
+            AuthenticatedProcessIdentifierType? processIdentifier = null,
+            void* processHandle = null
+        ) : this()
         {
-            Output = output;
-            ProcessIndex = processIndex;
-            ProcessIdentifier = processIdentifier;
-            ProcessHandle = processHandle;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (processIndex is not null)
+            {
+                ProcessIndex = processIndex.Value;
+            }
+
+            if (processIdentifier is not null)
+            {
+                ProcessIdentifier = processIdentifier.Value;
+            }
+
+            if (processHandle is not null)
+            {
+                ProcessHandle = processHandle;
+            }
         }
 
 

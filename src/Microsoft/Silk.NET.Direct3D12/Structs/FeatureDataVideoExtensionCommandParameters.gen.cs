@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoExtensionCommandParameters
         (
-            Guid commandId = default,
-            VideoExtensionCommandParameterStage stage = default,
-            uint parameterCount = default,
-            VideoExtensionCommandParameterInfo* pParameterInfos = default
-        )
+            Guid? commandId = null,
+            VideoExtensionCommandParameterStage? stage = null,
+            uint? parameterCount = null,
+            VideoExtensionCommandParameterInfo* pParameterInfos = null
+        ) : this()
         {
-            CommandId = commandId;
-            Stage = stage;
-            ParameterCount = parameterCount;
-            PParameterInfos = pParameterInfos;
+            if (commandId is not null)
+            {
+                CommandId = commandId.Value;
+            }
+
+            if (stage is not null)
+            {
+                Stage = stage.Value;
+            }
+
+            if (parameterCount is not null)
+            {
+                ParameterCount = parameterCount.Value;
+            }
+
+            if (pParameterInfos is not null)
+            {
+                PParameterInfos = pParameterInfos;
+            }
         }
 
 

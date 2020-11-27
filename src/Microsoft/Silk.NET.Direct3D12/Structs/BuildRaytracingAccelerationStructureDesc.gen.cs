@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public BuildRaytracingAccelerationStructureDesc
         (
-            ulong destAccelerationStructureData = default,
-            BuildRaytracingAccelerationStructureInputs inputs = default,
-            ulong sourceAccelerationStructureData = default,
-            ulong scratchAccelerationStructureData = default
-        )
+            ulong? destAccelerationStructureData = null,
+            BuildRaytracingAccelerationStructureInputs? inputs = null,
+            ulong? sourceAccelerationStructureData = null,
+            ulong? scratchAccelerationStructureData = null
+        ) : this()
         {
-            DestAccelerationStructureData = destAccelerationStructureData;
-            Inputs = inputs;
-            SourceAccelerationStructureData = sourceAccelerationStructureData;
-            ScratchAccelerationStructureData = scratchAccelerationStructureData;
+            if (destAccelerationStructureData is not null)
+            {
+                DestAccelerationStructureData = destAccelerationStructureData.Value;
+            }
+
+            if (inputs is not null)
+            {
+                Inputs = inputs.Value;
+            }
+
+            if (sourceAccelerationStructureData is not null)
+            {
+                SourceAccelerationStructureData = sourceAccelerationStructureData.Value;
+            }
+
+            if (scratchAccelerationStructureData is not null)
+            {
+                ScratchAccelerationStructureData = scratchAccelerationStructureData.Value;
+            }
         }
 
 

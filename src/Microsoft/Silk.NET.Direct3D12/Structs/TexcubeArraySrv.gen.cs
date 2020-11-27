@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public TexcubeArraySrv
         (
-            uint mostDetailedMip = default,
-            uint mipLevels = default,
-            uint first2DArrayFace = default,
-            uint numCubes = default,
-            float resourceMinLODClamp = default
-        )
+            uint? mostDetailedMip = null,
+            uint? mipLevels = null,
+            uint? first2DArrayFace = null,
+            uint? numCubes = null,
+            float? resourceMinLODClamp = null
+        ) : this()
         {
-            MostDetailedMip = mostDetailedMip;
-            MipLevels = mipLevels;
-            First2DArrayFace = first2DArrayFace;
-            NumCubes = numCubes;
-            ResourceMinLODClamp = resourceMinLODClamp;
+            if (mostDetailedMip is not null)
+            {
+                MostDetailedMip = mostDetailedMip.Value;
+            }
+
+            if (mipLevels is not null)
+            {
+                MipLevels = mipLevels.Value;
+            }
+
+            if (first2DArrayFace is not null)
+            {
+                First2DArrayFace = first2DArrayFace.Value;
+            }
+
+            if (numCubes is not null)
+            {
+                NumCubes = numCubes.Value;
+            }
+
+            if (resourceMinLODClamp is not null)
+            {
+                ResourceMinLODClamp = resourceMinLODClamp.Value;
+            }
         }
 
 

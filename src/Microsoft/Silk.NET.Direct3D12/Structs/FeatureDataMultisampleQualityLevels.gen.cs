@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataMultisampleQualityLevels
         (
-            Silk.NET.DXGI.Format format = default,
-            uint sampleCount = default,
-            MultisampleQualityLevelFlags flags = default,
-            uint numQualityLevels = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            uint? sampleCount = null,
+            MultisampleQualityLevelFlags? flags = null,
+            uint? numQualityLevels = null
+        ) : this()
         {
-            Format = format;
-            SampleCount = sampleCount;
-            Flags = flags;
-            NumQualityLevels = numQualityLevels;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (sampleCount is not null)
+            {
+                SampleCount = sampleCount.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (numQualityLevels is not null)
+            {
+                NumQualityLevels = numQualityLevels.Value;
+            }
         }
 
 

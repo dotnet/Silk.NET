@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -33,10 +34,13 @@ namespace Silk.NET.Direct3D12
 
         public ID3D12SharingContract
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -45,164 +49,136 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<ID3D12SharingContract*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12SharingContract*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12SharingContract*, uint>)LpVtbl[2])(@this);
-                return ret;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe void Present(ID3D12Resource* pResource, uint Subresource, IntPtr window)
+        {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Resource*, uint, IntPtr, void>)LpVtbl[3])(@this, pResource, Subresource, window);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly void Present(ref ID3D12Resource pResource, uint Subresource, IntPtr window)
+        {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Resource* pResourcePtr = &pResource)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Resource*, uint, IntPtr, void>)LpVtbl[3])(@this, pResourcePtr, Subresource, window);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void Present(ID3D12Resource* pResource, uint Subresource, IntPtr window)
+        public readonly unsafe void SharedFenceSignal(ID3D12Fence* pFence, ulong FenceValue)
         {
-            fixed (ID3D12SharingContract* @this = &this)
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFence, FenceValue);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly void SharedFenceSignal(ref ID3D12Fence pFence, ulong FenceValue)
+        {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D12Fence* pFencePtr = &pFence)
             {
-                ((delegate* cdecl<ID3D12SharingContract*, ID3D12Resource*, uint, IntPtr, void>)LpVtbl[3])(@this, pResource, Subresource, window);
+                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFencePtr, FenceValue);
             }
         }
 
         /// <summary>To be added.</summary>
-        public void Present(ref ID3D12Resource pResource, uint Subresource, IntPtr window)
+        public readonly unsafe void BeginCapturableWork(Guid* guid)
         {
-            fixed (ID3D12SharingContract* @this = &this)
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guid);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly void BeginCapturableWork(ref Guid guid)
+        {
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Guid* guidPtr = &guid)
             {
-                fixed (ID3D12Resource* pResourcePtr = &pResource)
-                {
-                    ((delegate* cdecl<ID3D12SharingContract*, ID3D12Resource*, uint, IntPtr, void>)LpVtbl[3])(@this, pResourcePtr, Subresource, window);
-                }
+                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guidPtr);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void SharedFenceSignal(ID3D12Fence* pFence, ulong FenceValue)
+        public readonly unsafe void EndCapturableWork(Guid* guid)
         {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
-                ((delegate* cdecl<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFence, FenceValue);
-            }
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guid);
         }
 
         /// <summary>To be added.</summary>
-        public void SharedFenceSignal(ref ID3D12Fence pFence, ulong FenceValue)
+        public readonly void EndCapturableWork(ref Guid guid)
         {
-            fixed (ID3D12SharingContract* @this = &this)
+            var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (Guid* guidPtr = &guid)
             {
-                fixed (ID3D12Fence* pFencePtr = &pFence)
-                {
-                    ((delegate* cdecl<ID3D12SharingContract*, ID3D12Fence*, ulong, void>)LpVtbl[4])(@this, pFencePtr, FenceValue);
-                }
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe void BeginCapturableWork(Guid* guid)
-        {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
-                ((delegate* cdecl<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guid);
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public void BeginCapturableWork(ref Guid guid)
-        {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
-                fixed (Guid* guidPtr = &guid)
-                {
-                    ((delegate* cdecl<ID3D12SharingContract*, Guid*, void>)LpVtbl[5])(@this, guidPtr);
-                }
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe void EndCapturableWork(Guid* guid)
-        {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
-                ((delegate* cdecl<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guid);
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public void EndCapturableWork(ref Guid guid)
-        {
-            fixed (ID3D12SharingContract* @this = &this)
-            {
-                fixed (Guid* guidPtr = &guid)
-                {
-                    ((delegate* cdecl<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guidPtr);
-                }
+                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, Guid*, void>)LpVtbl[6])(@this, guidPtr);
             }
         }
 

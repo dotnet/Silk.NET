@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.DXGI
     {
         public OutduplDesc
         (
-            ModeDesc modeDesc = default,
-            ModeRotation rotation = default,
-            int desktopImageInSystemMemory = default
-        )
+            ModeDesc? modeDesc = null,
+            ModeRotation? rotation = null,
+            int? desktopImageInSystemMemory = null
+        ) : this()
         {
-            ModeDesc = modeDesc;
-            Rotation = rotation;
-            DesktopImageInSystemMemory = desktopImageInSystemMemory;
+            if (modeDesc is not null)
+            {
+                ModeDesc = modeDesc.Value;
+            }
+
+            if (rotation is not null)
+            {
+                Rotation = rotation.Value;
+            }
+
+            if (desktopImageInSystemMemory is not null)
+            {
+                DesktopImageInSystemMemory = desktopImageInSystemMemory.Value;
+            }
         }
 
 

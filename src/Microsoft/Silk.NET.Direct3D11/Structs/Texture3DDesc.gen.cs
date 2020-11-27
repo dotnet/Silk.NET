@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Direct3D11
     {
         public Texture3DDesc
         (
-            uint width = default,
-            uint height = default,
-            uint depth = default,
-            uint mipLevels = default,
-            Silk.NET.DXGI.Format format = default,
-            Usage usage = default,
-            uint bindFlags = default,
-            uint cPUAccessFlags = default,
-            uint miscFlags = default
-        )
+            uint? width = null,
+            uint? height = null,
+            uint? depth = null,
+            uint? mipLevels = null,
+            Silk.NET.DXGI.Format? format = null,
+            Usage? usage = null,
+            uint? bindFlags = null,
+            uint? cPUAccessFlags = null,
+            uint? miscFlags = null
+        ) : this()
         {
-            Width = width;
-            Height = height;
-            Depth = depth;
-            MipLevels = mipLevels;
-            Format = format;
-            Usage = usage;
-            BindFlags = bindFlags;
-            CPUAccessFlags = cPUAccessFlags;
-            MiscFlags = miscFlags;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
+
+            if (mipLevels is not null)
+            {
+                MipLevels = mipLevels.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (bindFlags is not null)
+            {
+                BindFlags = bindFlags.Value;
+            }
+
+            if (cPUAccessFlags is not null)
+            {
+                CPUAccessFlags = cPUAccessFlags.Value;
+            }
+
+            if (miscFlags is not null)
+            {
+                MiscFlags = miscFlags.Value;
+            }
         }
 
 

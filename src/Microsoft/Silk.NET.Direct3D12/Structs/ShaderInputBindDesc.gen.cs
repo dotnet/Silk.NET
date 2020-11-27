@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Direct3D12
     {
         public ShaderInputBindDesc
         (
-            byte* name = default,
-            Silk.NET.Core.Native.D3DShaderInputType type = default,
-            uint bindPoint = default,
-            uint bindCount = default,
-            uint uFlags = default,
-            Silk.NET.Core.Native.D3DResourceReturnType returnType = default,
-            Silk.NET.Core.Native.D3DSrvDimension dimension = default,
-            uint numSamples = default,
-            uint space = default,
-            uint uID = default
-        )
+            byte* name = null,
+            Silk.NET.Core.Native.D3DShaderInputType? type = null,
+            uint? bindPoint = null,
+            uint? bindCount = null,
+            uint? uFlags = null,
+            Silk.NET.Core.Native.D3DResourceReturnType? returnType = null,
+            Silk.NET.Core.Native.D3DSrvDimension? dimension = null,
+            uint? numSamples = null,
+            uint? space = null,
+            uint? uID = null
+        ) : this()
         {
-            Name = name;
-            Type = type;
-            BindPoint = bindPoint;
-            BindCount = bindCount;
-            UFlags = uFlags;
-            ReturnType = returnType;
-            Dimension = dimension;
-            NumSamples = numSamples;
-            Space = space;
-            UID = uID;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (bindPoint is not null)
+            {
+                BindPoint = bindPoint.Value;
+            }
+
+            if (bindCount is not null)
+            {
+                BindCount = bindCount.Value;
+            }
+
+            if (uFlags is not null)
+            {
+                UFlags = uFlags.Value;
+            }
+
+            if (returnType is not null)
+            {
+                ReturnType = returnType.Value;
+            }
+
+            if (dimension is not null)
+            {
+                Dimension = dimension.Value;
+            }
+
+            if (numSamples is not null)
+            {
+                NumSamples = numSamples.Value;
+            }
+
+            if (space is not null)
+            {
+                Space = space.Value;
+            }
+
+            if (uID is not null)
+            {
+                UID = uID.Value;
+            }
         }
 
 

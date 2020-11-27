@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public DiscardRegion
         (
-            uint numRects = default,
-            Silk.NET.Core.Native.TagRect* pRects = default,
-            uint firstSubresource = default,
-            uint numSubresources = default
-        )
+            uint? numRects = null,
+            Silk.NET.Core.Native.TagRect* pRects = null,
+            uint? firstSubresource = null,
+            uint? numSubresources = null
+        ) : this()
         {
-            NumRects = numRects;
-            PRects = pRects;
-            FirstSubresource = firstSubresource;
-            NumSubresources = numSubresources;
+            if (numRects is not null)
+            {
+                NumRects = numRects.Value;
+            }
+
+            if (pRects is not null)
+            {
+                PRects = pRects;
+            }
+
+            if (firstSubresource is not null)
+            {
+                FirstSubresource = firstSubresource.Value;
+            }
+
+            if (numSubresources is not null)
+            {
+                NumSubresources = numSubresources.Value;
+            }
         }
 
 

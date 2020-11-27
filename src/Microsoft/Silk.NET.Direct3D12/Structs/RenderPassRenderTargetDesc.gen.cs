@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public RenderPassRenderTargetDesc
         (
-            CpuDescriptorHandle cpuDescriptor = default,
-            RenderPassBeginningAccess beginningAccess = default,
-            RenderPassEndingAccess endingAccess = default
-        )
+            CpuDescriptorHandle? cpuDescriptor = null,
+            RenderPassBeginningAccess? beginningAccess = null,
+            RenderPassEndingAccess? endingAccess = null
+        ) : this()
         {
-            CpuDescriptor = cpuDescriptor;
-            BeginningAccess = beginningAccess;
-            EndingAccess = endingAccess;
+            if (cpuDescriptor is not null)
+            {
+                CpuDescriptor = cpuDescriptor.Value;
+            }
+
+            if (beginningAccess is not null)
+            {
+                BeginningAccess = beginningAccess.Value;
+            }
+
+            if (endingAccess is not null)
+            {
+                EndingAccess = endingAccess.Value;
+            }
         }
 
 

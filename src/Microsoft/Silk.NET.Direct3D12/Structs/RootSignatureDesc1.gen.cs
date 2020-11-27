@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public RootSignatureDesc1
         (
-            uint numParameters = default,
-            RootParameter1* pParameters = default,
-            uint numStaticSamplers = default,
-            StaticSamplerDesc* pStaticSamplers = default,
-            RootSignatureFlags flags = default
-        )
+            uint? numParameters = null,
+            RootParameter1* pParameters = null,
+            uint? numStaticSamplers = null,
+            StaticSamplerDesc* pStaticSamplers = null,
+            RootSignatureFlags? flags = null
+        ) : this()
         {
-            NumParameters = numParameters;
-            PParameters = pParameters;
-            NumStaticSamplers = numStaticSamplers;
-            PStaticSamplers = pStaticSamplers;
-            Flags = flags;
+            if (numParameters is not null)
+            {
+                NumParameters = numParameters.Value;
+            }
+
+            if (pParameters is not null)
+            {
+                PParameters = pParameters;
+            }
+
+            if (numStaticSamplers is not null)
+            {
+                NumStaticSamplers = numStaticSamplers.Value;
+            }
+
+            if (pStaticSamplers is not null)
+            {
+                PStaticSamplers = pStaticSamplers;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

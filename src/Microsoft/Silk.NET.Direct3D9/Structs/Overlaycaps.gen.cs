@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D9
     {
         public Overlaycaps
         (
-            uint caps = default,
-            uint maxOverlayDisplayWidth = default,
-            uint maxOverlayDisplayHeight = default
-        )
+            uint? caps = null,
+            uint? maxOverlayDisplayWidth = null,
+            uint? maxOverlayDisplayHeight = null
+        ) : this()
         {
-            Caps = caps;
-            MaxOverlayDisplayWidth = maxOverlayDisplayWidth;
-            MaxOverlayDisplayHeight = maxOverlayDisplayHeight;
+            if (caps is not null)
+            {
+                Caps = caps.Value;
+            }
+
+            if (maxOverlayDisplayWidth is not null)
+            {
+                MaxOverlayDisplayWidth = maxOverlayDisplayWidth.Value;
+            }
+
+            if (maxOverlayDisplayHeight is not null)
+            {
+                MaxOverlayDisplayHeight = maxOverlayDisplayHeight.Value;
+            }
         }
 
 

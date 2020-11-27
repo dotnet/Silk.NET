@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataFormatInfo
         (
-            Silk.NET.DXGI.Format format = default,
-            byte planeCount = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            byte? planeCount = null
+        ) : this()
         {
-            Format = format;
-            PlaneCount = planeCount;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (planeCount is not null)
+            {
+                PlaneCount = planeCount.Value;
+            }
         }
 
 

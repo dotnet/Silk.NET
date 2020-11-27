@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryInput
         (
-            Guid queryType = default,
-            void* hChannel = default,
-            uint sequenceNumber = default
-        )
+            Guid? queryType = null,
+            void* hChannel = null,
+            uint? sequenceNumber = null
+        ) : this()
         {
-            QueryType = queryType;
-            HChannel = hChannel;
-            SequenceNumber = sequenceNumber;
+            if (queryType is not null)
+            {
+                QueryType = queryType.Value;
+            }
+
+            if (hChannel is not null)
+            {
+                HChannel = hChannel;
+            }
+
+            if (sequenceNumber is not null)
+            {
+                SequenceNumber = sequenceNumber.Value;
+            }
         }
 
 

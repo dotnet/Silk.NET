@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoExtensionCommands
         (
-            uint nodeIndex = default,
-            uint commandCount = default,
-            VideoExtensionCommandInfo* pCommandInfos = default
-        )
+            uint? nodeIndex = null,
+            uint? commandCount = null,
+            VideoExtensionCommandInfo* pCommandInfos = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            CommandCount = commandCount;
-            PCommandInfos = pCommandInfos;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (commandCount is not null)
+            {
+                CommandCount = commandCount.Value;
+            }
+
+            if (pCommandInfos is not null)
+            {
+                PCommandInfos = pCommandInfos;
+            }
         }
 
 

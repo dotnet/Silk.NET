@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessInputStreamRate
         (
-            uint outputIndex = default,
-            uint inputFrameOrField = default
-        )
+            uint? outputIndex = null,
+            uint? inputFrameOrField = null
+        ) : this()
         {
-            OutputIndex = outputIndex;
-            InputFrameOrField = inputFrameOrField;
+            if (outputIndex is not null)
+            {
+                OutputIndex = outputIndex.Value;
+            }
+
+            if (inputFrameOrField is not null)
+            {
+                InputFrameOrField = inputFrameOrField.Value;
+            }
         }
 
 

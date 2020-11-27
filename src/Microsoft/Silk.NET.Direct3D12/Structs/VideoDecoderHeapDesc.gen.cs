@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecoderHeapDesc
         (
-            uint nodeMask = default,
-            VideoDecodeConfiguration configuration = default,
-            uint decodeWidth = default,
-            uint decodeHeight = default,
-            Silk.NET.DXGI.Format format = default,
-            Silk.NET.DXGI.Rational frameRate = default,
-            uint bitRate = default,
-            uint maxDecodePictureBufferCount = default
-        )
+            uint? nodeMask = null,
+            VideoDecodeConfiguration? configuration = null,
+            uint? decodeWidth = null,
+            uint? decodeHeight = null,
+            Silk.NET.DXGI.Format? format = null,
+            Silk.NET.DXGI.Rational? frameRate = null,
+            uint? bitRate = null,
+            uint? maxDecodePictureBufferCount = null
+        ) : this()
         {
-            NodeMask = nodeMask;
-            Configuration = configuration;
-            DecodeWidth = decodeWidth;
-            DecodeHeight = decodeHeight;
-            Format = format;
-            FrameRate = frameRate;
-            BitRate = bitRate;
-            MaxDecodePictureBufferCount = maxDecodePictureBufferCount;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (configuration is not null)
+            {
+                Configuration = configuration.Value;
+            }
+
+            if (decodeWidth is not null)
+            {
+                DecodeWidth = decodeWidth.Value;
+            }
+
+            if (decodeHeight is not null)
+            {
+                DecodeHeight = decodeHeight.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (frameRate is not null)
+            {
+                FrameRate = frameRate.Value;
+            }
+
+            if (bitRate is not null)
+            {
+                BitRate = bitRate.Value;
+            }
+
+            if (maxDecodePictureBufferCount is not null)
+            {
+                MaxDecodePictureBufferCount = maxDecodePictureBufferCount.Value;
+            }
         }
 
 

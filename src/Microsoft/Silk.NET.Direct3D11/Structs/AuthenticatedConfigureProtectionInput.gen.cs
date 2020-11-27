@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedConfigureProtectionInput
         (
-            AuthenticatedConfigureInput parameters = default,
-            AuthenticatedProtectionFlags protections = default
-        )
+            AuthenticatedConfigureInput? parameters = null,
+            AuthenticatedProtectionFlags? protections = null
+        ) : this()
         {
-            Parameters = parameters;
-            Protections = protections;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (protections is not null)
+            {
+                Protections = protections.Value;
+            }
         }
 
 

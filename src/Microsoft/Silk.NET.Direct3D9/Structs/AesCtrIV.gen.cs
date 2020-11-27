@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public AesCtrIV
         (
-            ulong iV = default,
-            ulong count = default
-        )
+            ulong? iV = null,
+            ulong? count = null
+        ) : this()
         {
-            IV = iV;
-            Count = count;
+            if (iV is not null)
+            {
+                IV = iV.Value;
+            }
+
+            if (count is not null)
+            {
+                Count = count.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.DXGI
     {
         public InfoQueueMessage
         (
-            Guid producer = default,
-            InfoQueueMessageCategory category = default,
-            InfoQueueMessageSeverity severity = default,
-            int iD = default,
-            byte* pDescription = default,
-            uint descriptionByteLength = default
-        )
+            Guid? producer = null,
+            InfoQueueMessageCategory? category = null,
+            InfoQueueMessageSeverity? severity = null,
+            int? iD = null,
+            byte* pDescription = null,
+            uint? descriptionByteLength = null
+        ) : this()
         {
-            Producer = producer;
-            Category = category;
-            Severity = severity;
-            ID = iD;
-            PDescription = pDescription;
-            DescriptionByteLength = descriptionByteLength;
+            if (producer is not null)
+            {
+                Producer = producer.Value;
+            }
+
+            if (category is not null)
+            {
+                Category = category.Value;
+            }
+
+            if (severity is not null)
+            {
+                Severity = severity.Value;
+            }
+
+            if (iD is not null)
+            {
+                ID = iD.Value;
+            }
+
+            if (pDescription is not null)
+            {
+                PDescription = pDescription;
+            }
+
+            if (descriptionByteLength is not null)
+            {
+                DescriptionByteLength = descriptionByteLength.Value;
+            }
         }
 
 

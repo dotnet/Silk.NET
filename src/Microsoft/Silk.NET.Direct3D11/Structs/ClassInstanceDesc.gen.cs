@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Direct3D11
     {
         public ClassInstanceDesc
         (
-            uint instanceId = default,
-            uint instanceIndex = default,
-            uint typeId = default,
-            uint constantBuffer = default,
-            uint baseConstantBufferOffset = default,
-            uint baseTexture = default,
-            uint baseSampler = default,
-            int created = default
-        )
+            uint? instanceId = null,
+            uint? instanceIndex = null,
+            uint? typeId = null,
+            uint? constantBuffer = null,
+            uint? baseConstantBufferOffset = null,
+            uint? baseTexture = null,
+            uint? baseSampler = null,
+            int? created = null
+        ) : this()
         {
-            InstanceId = instanceId;
-            InstanceIndex = instanceIndex;
-            TypeId = typeId;
-            ConstantBuffer = constantBuffer;
-            BaseConstantBufferOffset = baseConstantBufferOffset;
-            BaseTexture = baseTexture;
-            BaseSampler = baseSampler;
-            Created = created;
+            if (instanceId is not null)
+            {
+                InstanceId = instanceId.Value;
+            }
+
+            if (instanceIndex is not null)
+            {
+                InstanceIndex = instanceIndex.Value;
+            }
+
+            if (typeId is not null)
+            {
+                TypeId = typeId.Value;
+            }
+
+            if (constantBuffer is not null)
+            {
+                ConstantBuffer = constantBuffer.Value;
+            }
+
+            if (baseConstantBufferOffset is not null)
+            {
+                BaseConstantBufferOffset = baseConstantBufferOffset.Value;
+            }
+
+            if (baseTexture is not null)
+            {
+                BaseTexture = baseTexture.Value;
+            }
+
+            if (baseSampler is not null)
+            {
+                BaseSampler = baseSampler.Value;
+            }
+
+            if (created is not null)
+            {
+                Created = created.Value;
+            }
         }
 
 

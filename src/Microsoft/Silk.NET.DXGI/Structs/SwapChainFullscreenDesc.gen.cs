@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.DXGI
     {
         public SwapChainFullscreenDesc
         (
-            Rational refreshRate = default,
-            ModeScanlineOrder scanlineOrdering = default,
-            ModeScaling scaling = default,
-            int windowed = default
-        )
+            Rational? refreshRate = null,
+            ModeScanlineOrder? scanlineOrdering = null,
+            ModeScaling? scaling = null,
+            int? windowed = null
+        ) : this()
         {
-            RefreshRate = refreshRate;
-            ScanlineOrdering = scanlineOrdering;
-            Scaling = scaling;
-            Windowed = windowed;
+            if (refreshRate is not null)
+            {
+                RefreshRate = refreshRate.Value;
+            }
+
+            if (scanlineOrdering is not null)
+            {
+                ScanlineOrdering = scanlineOrdering.Value;
+            }
+
+            if (scaling is not null)
+            {
+                Scaling = scaling.Value;
+            }
+
+            if (windowed is not null)
+            {
+                Windowed = windowed.Value;
+            }
         }
 
 

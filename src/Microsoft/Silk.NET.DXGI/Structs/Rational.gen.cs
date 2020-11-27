@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.DXGI
     {
         public Rational
         (
-            uint numerator = default,
-            uint denominator = default
-        )
+            uint? numerator = null,
+            uint? denominator = null
+        ) : this()
         {
-            Numerator = numerator;
-            Denominator = denominator;
+            if (numerator is not null)
+            {
+                Numerator = numerator.Value;
+            }
+
+            if (denominator is not null)
+            {
+                Denominator = denominator.Value;
+            }
         }
 
 

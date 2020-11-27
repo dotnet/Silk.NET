@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L3971C9
         (
-            uint rootParameterIndex = default
-        )
+            uint? rootParameterIndex = null
+        ) : this()
         {
-            RootParameterIndex = rootParameterIndex;
+            if (rootParameterIndex is not null)
+            {
+                RootParameterIndex = rootParameterIndex.Value;
+            }
         }
 
 

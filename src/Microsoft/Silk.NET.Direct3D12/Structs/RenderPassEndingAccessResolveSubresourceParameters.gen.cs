@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public RenderPassEndingAccessResolveSubresourceParameters
         (
-            uint srcSubresource = default,
-            uint dstSubresource = default,
-            uint dstX = default,
-            uint dstY = default,
-            Silk.NET.Core.Native.TagRect srcRect = default
-        )
+            uint? srcSubresource = null,
+            uint? dstSubresource = null,
+            uint? dstX = null,
+            uint? dstY = null,
+            Silk.NET.Core.Native.TagRect? srcRect = null
+        ) : this()
         {
-            SrcSubresource = srcSubresource;
-            DstSubresource = dstSubresource;
-            DstX = dstX;
-            DstY = dstY;
-            SrcRect = srcRect;
+            if (srcSubresource is not null)
+            {
+                SrcSubresource = srcSubresource.Value;
+            }
+
+            if (dstSubresource is not null)
+            {
+                DstSubresource = dstSubresource.Value;
+            }
+
+            if (dstX is not null)
+            {
+                DstX = dstX.Value;
+            }
+
+            if (dstY is not null)
+            {
+                DstY = dstY.Value;
+            }
+
+            if (srcRect is not null)
+            {
+                SrcRect = srcRect.Value;
+            }
         }
 
 

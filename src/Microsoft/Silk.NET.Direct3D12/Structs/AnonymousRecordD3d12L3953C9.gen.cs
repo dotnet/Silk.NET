@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L3953C9
         (
-            uint slot = default
-        )
+            uint? slot = null
+        ) : this()
         {
-            Slot = slot;
+            if (slot is not null)
+            {
+                Slot = slot.Value;
+            }
         }
 
 

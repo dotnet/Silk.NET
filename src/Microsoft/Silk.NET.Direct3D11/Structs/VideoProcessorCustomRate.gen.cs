@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorCustomRate
         (
-            Silk.NET.DXGI.Rational customRate = default,
-            uint outputFrames = default,
-            int inputInterlaced = default,
-            uint inputFramesOrFields = default
-        )
+            Silk.NET.DXGI.Rational? customRate = null,
+            uint? outputFrames = null,
+            int? inputInterlaced = null,
+            uint? inputFramesOrFields = null
+        ) : this()
         {
-            CustomRate = customRate;
-            OutputFrames = outputFrames;
-            InputInterlaced = inputInterlaced;
-            InputFramesOrFields = inputFramesOrFields;
+            if (customRate is not null)
+            {
+                CustomRate = customRate.Value;
+            }
+
+            if (outputFrames is not null)
+            {
+                OutputFrames = outputFrames.Value;
+            }
+
+            if (inputInterlaced is not null)
+            {
+                InputInterlaced = inputInterlaced.Value;
+            }
+
+            if (inputFramesOrFields is not null)
+            {
+                InputFramesOrFields = inputFramesOrFields.Value;
+            }
         }
 
 

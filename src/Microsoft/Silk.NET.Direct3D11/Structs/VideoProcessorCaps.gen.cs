@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorCaps
         (
-            uint deviceCaps = default,
-            uint featureCaps = default,
-            uint filterCaps = default,
-            uint inputFormatCaps = default,
-            uint autoStreamCaps = default,
-            uint stereoCaps = default,
-            uint rateConversionCapsCount = default,
-            uint maxInputStreams = default,
-            uint maxStreamStates = default
-        )
+            uint? deviceCaps = null,
+            uint? featureCaps = null,
+            uint? filterCaps = null,
+            uint? inputFormatCaps = null,
+            uint? autoStreamCaps = null,
+            uint? stereoCaps = null,
+            uint? rateConversionCapsCount = null,
+            uint? maxInputStreams = null,
+            uint? maxStreamStates = null
+        ) : this()
         {
-            DeviceCaps = deviceCaps;
-            FeatureCaps = featureCaps;
-            FilterCaps = filterCaps;
-            InputFormatCaps = inputFormatCaps;
-            AutoStreamCaps = autoStreamCaps;
-            StereoCaps = stereoCaps;
-            RateConversionCapsCount = rateConversionCapsCount;
-            MaxInputStreams = maxInputStreams;
-            MaxStreamStates = maxStreamStates;
+            if (deviceCaps is not null)
+            {
+                DeviceCaps = deviceCaps.Value;
+            }
+
+            if (featureCaps is not null)
+            {
+                FeatureCaps = featureCaps.Value;
+            }
+
+            if (filterCaps is not null)
+            {
+                FilterCaps = filterCaps.Value;
+            }
+
+            if (inputFormatCaps is not null)
+            {
+                InputFormatCaps = inputFormatCaps.Value;
+            }
+
+            if (autoStreamCaps is not null)
+            {
+                AutoStreamCaps = autoStreamCaps.Value;
+            }
+
+            if (stereoCaps is not null)
+            {
+                StereoCaps = stereoCaps.Value;
+            }
+
+            if (rateConversionCapsCount is not null)
+            {
+                RateConversionCapsCount = rateConversionCapsCount.Value;
+            }
+
+            if (maxInputStreams is not null)
+            {
+                MaxInputStreams = maxInputStreams.Value;
+            }
+
+            if (maxStreamStates is not null)
+            {
+                MaxStreamStates = maxStreamStates.Value;
+            }
         }
 
 

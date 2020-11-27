@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public DredAllocationNode
         (
-            byte* objectNameA = default,
-            char* objectNameW = default,
-            DredAllocationType allocationType = default,
-            DredAllocationNode* pNext = default
-        )
+            byte* objectNameA = null,
+            char* objectNameW = null,
+            DredAllocationType? allocationType = null,
+            DredAllocationNode* pNext = null
+        ) : this()
         {
-            ObjectNameA = objectNameA;
-            ObjectNameW = objectNameW;
-            AllocationType = allocationType;
-            PNext = pNext;
+            if (objectNameA is not null)
+            {
+                ObjectNameA = objectNameA;
+            }
+
+            if (objectNameW is not null)
+            {
+                ObjectNameW = objectNameW;
+            }
+
+            if (allocationType is not null)
+            {
+                AllocationType = allocationType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
         }
 
 

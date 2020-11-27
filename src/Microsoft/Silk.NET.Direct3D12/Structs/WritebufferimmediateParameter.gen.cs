@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public WritebufferimmediateParameter
         (
-            ulong dest = default,
-            uint value = default
-        )
+            ulong? dest = null,
+            uint? value = null
+        ) : this()
         {
-            Dest = dest;
-            Value = value;
+            if (dest is not null)
+            {
+                Dest = dest.Value;
+            }
+
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
 

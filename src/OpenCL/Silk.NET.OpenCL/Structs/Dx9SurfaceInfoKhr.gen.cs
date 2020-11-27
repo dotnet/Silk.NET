@@ -22,13 +22,13 @@ namespace Silk.NET.OpenCL
     {
         public Dx9SurfaceInfoKhr
         (
-            IntPtr? resource = null,
+            void* resource = null,
             IntPtr? sharedHandle = null
         ) : this()
         {
             if (resource is not null)
             {
-                Resource = resource.Value;
+                Resource = resource;
             }
 
             if (sharedHandle is not null)

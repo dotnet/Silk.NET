@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedConfigureCryptoSessionInput
         (
-            AuthenticatedConfigureInput parameters = default,
-            void* decoderHandle = default,
-            void* cryptoSessionHandle = default,
-            void* deviceHandle = default
-        )
+            AuthenticatedConfigureInput? parameters = null,
+            void* decoderHandle = null,
+            void* cryptoSessionHandle = null,
+            void* deviceHandle = null
+        ) : this()
         {
-            Parameters = parameters;
-            DecoderHandle = decoderHandle;
-            CryptoSessionHandle = cryptoSessionHandle;
-            DeviceHandle = deviceHandle;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (decoderHandle is not null)
+            {
+                DecoderHandle = decoderHandle;
+            }
+
+            if (cryptoSessionHandle is not null)
+            {
+                CryptoSessionHandle = cryptoSessionHandle;
+            }
+
+            if (deviceHandle is not null)
+            {
+                DeviceHandle = deviceHandle;
+            }
         }
 
 

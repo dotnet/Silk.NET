@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,36 +22,91 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options
         (
-            int outputMergerLogicOp = default,
-            int uAVOnlyRenderingForcedSampleCount = default,
-            int discardAPIsSeenByDriver = default,
-            int flagsForUpdateAndCopySeenByDriver = default,
-            int clearView = default,
-            int copyWithOverlap = default,
-            int constantBufferPartialUpdate = default,
-            int constantBufferOffsetting = default,
-            int mapNoOverwriteOnDynamicConstantBuffer = default,
-            int mapNoOverwriteOnDynamicBufferSRV = default,
-            int multisampleRTVWithForcedSampleCountOne = default,
-            int sAD4ShaderInstructions = default,
-            int extendedDoublesShaderInstructions = default,
-            int extendedResourceSharing = default
-        )
+            int? outputMergerLogicOp = null,
+            int? uAVOnlyRenderingForcedSampleCount = null,
+            int? discardAPIsSeenByDriver = null,
+            int? flagsForUpdateAndCopySeenByDriver = null,
+            int? clearView = null,
+            int? copyWithOverlap = null,
+            int? constantBufferPartialUpdate = null,
+            int? constantBufferOffsetting = null,
+            int? mapNoOverwriteOnDynamicConstantBuffer = null,
+            int? mapNoOverwriteOnDynamicBufferSRV = null,
+            int? multisampleRTVWithForcedSampleCountOne = null,
+            int? sAD4ShaderInstructions = null,
+            int? extendedDoublesShaderInstructions = null,
+            int? extendedResourceSharing = null
+        ) : this()
         {
-            OutputMergerLogicOp = outputMergerLogicOp;
-            UAVOnlyRenderingForcedSampleCount = uAVOnlyRenderingForcedSampleCount;
-            DiscardAPIsSeenByDriver = discardAPIsSeenByDriver;
-            FlagsForUpdateAndCopySeenByDriver = flagsForUpdateAndCopySeenByDriver;
-            ClearView = clearView;
-            CopyWithOverlap = copyWithOverlap;
-            ConstantBufferPartialUpdate = constantBufferPartialUpdate;
-            ConstantBufferOffsetting = constantBufferOffsetting;
-            MapNoOverwriteOnDynamicConstantBuffer = mapNoOverwriteOnDynamicConstantBuffer;
-            MapNoOverwriteOnDynamicBufferSRV = mapNoOverwriteOnDynamicBufferSRV;
-            MultisampleRTVWithForcedSampleCountOne = multisampleRTVWithForcedSampleCountOne;
-            SAD4ShaderInstructions = sAD4ShaderInstructions;
-            ExtendedDoublesShaderInstructions = extendedDoublesShaderInstructions;
-            ExtendedResourceSharing = extendedResourceSharing;
+            if (outputMergerLogicOp is not null)
+            {
+                OutputMergerLogicOp = outputMergerLogicOp.Value;
+            }
+
+            if (uAVOnlyRenderingForcedSampleCount is not null)
+            {
+                UAVOnlyRenderingForcedSampleCount = uAVOnlyRenderingForcedSampleCount.Value;
+            }
+
+            if (discardAPIsSeenByDriver is not null)
+            {
+                DiscardAPIsSeenByDriver = discardAPIsSeenByDriver.Value;
+            }
+
+            if (flagsForUpdateAndCopySeenByDriver is not null)
+            {
+                FlagsForUpdateAndCopySeenByDriver = flagsForUpdateAndCopySeenByDriver.Value;
+            }
+
+            if (clearView is not null)
+            {
+                ClearView = clearView.Value;
+            }
+
+            if (copyWithOverlap is not null)
+            {
+                CopyWithOverlap = copyWithOverlap.Value;
+            }
+
+            if (constantBufferPartialUpdate is not null)
+            {
+                ConstantBufferPartialUpdate = constantBufferPartialUpdate.Value;
+            }
+
+            if (constantBufferOffsetting is not null)
+            {
+                ConstantBufferOffsetting = constantBufferOffsetting.Value;
+            }
+
+            if (mapNoOverwriteOnDynamicConstantBuffer is not null)
+            {
+                MapNoOverwriteOnDynamicConstantBuffer = mapNoOverwriteOnDynamicConstantBuffer.Value;
+            }
+
+            if (mapNoOverwriteOnDynamicBufferSRV is not null)
+            {
+                MapNoOverwriteOnDynamicBufferSRV = mapNoOverwriteOnDynamicBufferSRV.Value;
+            }
+
+            if (multisampleRTVWithForcedSampleCountOne is not null)
+            {
+                MultisampleRTVWithForcedSampleCountOne = multisampleRTVWithForcedSampleCountOne.Value;
+            }
+
+            if (sAD4ShaderInstructions is not null)
+            {
+                SAD4ShaderInstructions = sAD4ShaderInstructions.Value;
+            }
+
+            if (extendedDoublesShaderInstructions is not null)
+            {
+                ExtendedDoublesShaderInstructions = extendedDoublesShaderInstructions.Value;
+            }
+
+            if (extendedResourceSharing is not null)
+            {
+                ExtendedResourceSharing = extendedResourceSharing.Value;
+            }
         }
 
 

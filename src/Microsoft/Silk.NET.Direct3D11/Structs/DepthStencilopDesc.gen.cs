@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public DepthStencilopDesc
         (
-            StencilOp stencilFailOp = default,
-            StencilOp stencilDepthFailOp = default,
-            StencilOp stencilPassOp = default,
-            ComparisonFunc stencilFunc = default
-        )
+            StencilOp? stencilFailOp = null,
+            StencilOp? stencilDepthFailOp = null,
+            StencilOp? stencilPassOp = null,
+            ComparisonFunc? stencilFunc = null
+        ) : this()
         {
-            StencilFailOp = stencilFailOp;
-            StencilDepthFailOp = stencilDepthFailOp;
-            StencilPassOp = stencilPassOp;
-            StencilFunc = stencilFunc;
+            if (stencilFailOp is not null)
+            {
+                StencilFailOp = stencilFailOp.Value;
+            }
+
+            if (stencilDepthFailOp is not null)
+            {
+                StencilDepthFailOp = stencilDepthFailOp.Value;
+            }
+
+            if (stencilPassOp is not null)
+            {
+                StencilPassOp = stencilPassOp.Value;
+            }
+
+            if (stencilFunc is not null)
+            {
+                StencilFunc = stencilFunc.Value;
+            }
         }
 
 

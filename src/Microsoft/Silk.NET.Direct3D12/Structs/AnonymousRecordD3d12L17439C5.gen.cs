@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,10 +23,13 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L17439C5
         (
-            RenderPassBeginningAccessClearParameters clear = default
-        )
+            RenderPassBeginningAccessClearParameters? clear = null
+        ) : this()
         {
-            Clear = clear;
+            if (clear is not null)
+            {
+                Clear = clear.Value;
+            }
         }
 
 

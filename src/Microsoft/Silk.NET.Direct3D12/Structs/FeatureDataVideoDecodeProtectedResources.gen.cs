@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoDecodeProtectedResources
         (
-            uint nodeIndex = default,
-            VideoDecodeConfiguration configuration = default,
-            VideoProtectedResourceSupportFlags supportFlags = default
-        )
+            uint? nodeIndex = null,
+            VideoDecodeConfiguration? configuration = null,
+            VideoProtectedResourceSupportFlags? supportFlags = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            Configuration = configuration;
-            SupportFlags = supportFlags;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (configuration is not null)
+            {
+                Configuration = configuration.Value;
+            }
+
+            if (supportFlags is not null)
+            {
+                SupportFlags = supportFlags.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D9
     {
         public VertexbufferDesc
         (
-            Format format = default,
-            Resourcetype type = default,
-            uint usage = default,
-            Pool pool = default,
-            uint size = default,
-            uint fVF = default
-        )
+            Format? format = null,
+            Resourcetype? type = null,
+            uint? usage = null,
+            Pool? pool = null,
+            uint? size = null,
+            uint? fVF = null
+        ) : this()
         {
-            Format = format;
-            Type = type;
-            Usage = usage;
-            Pool = pool;
-            Size = size;
-            FVF = fVF;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (pool is not null)
+            {
+                Pool = pool.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (fVF is not null)
+            {
+                FVF = fVF.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public Composerectdesc
         (
-            ushort x = default,
-            ushort y = default,
-            ushort width = default,
-            ushort height = default
-        )
+            ushort? x = null,
+            ushort? y = null,
+            ushort? width = null,
+            ushort? height = null
+        ) : this()
         {
-            X = x;
-            Y = y;
-            Width = width;
-            Height = height;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorStreamBehaviorHint
         (
-            int enable = default,
-            uint width = default,
-            uint height = default,
-            Silk.NET.DXGI.Format format = default
-        )
+            int? enable = null,
+            uint? width = null,
+            uint? height = null,
+            Silk.NET.DXGI.Format? format = null
+        ) : this()
         {
-            Enable = enable;
-            Width = width;
-            Height = height;
-            Format = format;
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
         }
 
 

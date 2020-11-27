@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.DXGI
     {
         public SwapChainDesc
         (
-            ModeDesc bufferDesc = default,
-            SampleDesc sampleDesc = default,
-            uint bufferUsage = default,
-            uint bufferCount = default,
-            IntPtr outputWindow = default,
-            int windowed = default,
-            SwapEffect swapEffect = default,
-            uint flags = default
-        )
+            ModeDesc? bufferDesc = null,
+            SampleDesc? sampleDesc = null,
+            uint? bufferUsage = null,
+            uint? bufferCount = null,
+            IntPtr? outputWindow = null,
+            int? windowed = null,
+            SwapEffect? swapEffect = null,
+            uint? flags = null
+        ) : this()
         {
-            BufferDesc = bufferDesc;
-            SampleDesc = sampleDesc;
-            BufferUsage = bufferUsage;
-            BufferCount = bufferCount;
-            OutputWindow = outputWindow;
-            Windowed = windowed;
-            SwapEffect = swapEffect;
-            Flags = flags;
+            if (bufferDesc is not null)
+            {
+                BufferDesc = bufferDesc.Value;
+            }
+
+            if (sampleDesc is not null)
+            {
+                SampleDesc = sampleDesc.Value;
+            }
+
+            if (bufferUsage is not null)
+            {
+                BufferUsage = bufferUsage.Value;
+            }
+
+            if (bufferCount is not null)
+            {
+                BufferCount = bufferCount.Value;
+            }
+
+            if (outputWindow is not null)
+            {
+                OutputWindow = outputWindow.Value;
+            }
+
+            if (windowed is not null)
+            {
+                Windowed = windowed.Value;
+            }
+
+            if (swapEffect is not null)
+            {
+                SwapEffect = swapEffect.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

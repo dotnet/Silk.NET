@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D11
     {
         public DepthStencilViewDesc
         (
-            Silk.NET.DXGI.Format format = default,
-            DsvDimension viewDimension = default,
-            uint flags = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            DsvDimension? viewDimension = null,
+            uint? flags = null
+        ) : this()
         {
-            Format = format;
-            ViewDimension = viewDimension;
-            Flags = flags;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (viewDimension is not null)
+            {
+                ViewDimension = viewDimension.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,42 +22,109 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessInputStreamDesc
         (
-            Silk.NET.DXGI.Format format = default,
-            Silk.NET.DXGI.ColorSpaceType colorSpace = default,
-            Silk.NET.DXGI.Rational sourceAspectRatio = default,
-            Silk.NET.DXGI.Rational destinationAspectRatio = default,
-            Silk.NET.DXGI.Rational frameRate = default,
-            VideoSizeRange sourceSizeRange = default,
-            VideoSizeRange destinationSizeRange = default,
-            int enableOrientation = default,
-            VideoProcessFilterFlags filterFlags = default,
-            VideoFrameStereoFormat stereoFormat = default,
-            VideoFieldType fieldType = default,
-            VideoProcessDeinterlaceFlags deinterlaceMode = default,
-            int enableAlphaBlending = default,
-            VideoProcessLumaKey lumaKey = default,
-            uint numPastFrames = default,
-            uint numFutureFrames = default,
-            int enableAutoProcessing = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            Silk.NET.DXGI.ColorSpaceType? colorSpace = null,
+            Silk.NET.DXGI.Rational? sourceAspectRatio = null,
+            Silk.NET.DXGI.Rational? destinationAspectRatio = null,
+            Silk.NET.DXGI.Rational? frameRate = null,
+            VideoSizeRange? sourceSizeRange = null,
+            VideoSizeRange? destinationSizeRange = null,
+            int? enableOrientation = null,
+            VideoProcessFilterFlags? filterFlags = null,
+            VideoFrameStereoFormat? stereoFormat = null,
+            VideoFieldType? fieldType = null,
+            VideoProcessDeinterlaceFlags? deinterlaceMode = null,
+            int? enableAlphaBlending = null,
+            VideoProcessLumaKey? lumaKey = null,
+            uint? numPastFrames = null,
+            uint? numFutureFrames = null,
+            int? enableAutoProcessing = null
+        ) : this()
         {
-            Format = format;
-            ColorSpace = colorSpace;
-            SourceAspectRatio = sourceAspectRatio;
-            DestinationAspectRatio = destinationAspectRatio;
-            FrameRate = frameRate;
-            SourceSizeRange = sourceSizeRange;
-            DestinationSizeRange = destinationSizeRange;
-            EnableOrientation = enableOrientation;
-            FilterFlags = filterFlags;
-            StereoFormat = stereoFormat;
-            FieldType = fieldType;
-            DeinterlaceMode = deinterlaceMode;
-            EnableAlphaBlending = enableAlphaBlending;
-            LumaKey = lumaKey;
-            NumPastFrames = numPastFrames;
-            NumFutureFrames = numFutureFrames;
-            EnableAutoProcessing = enableAutoProcessing;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (colorSpace is not null)
+            {
+                ColorSpace = colorSpace.Value;
+            }
+
+            if (sourceAspectRatio is not null)
+            {
+                SourceAspectRatio = sourceAspectRatio.Value;
+            }
+
+            if (destinationAspectRatio is not null)
+            {
+                DestinationAspectRatio = destinationAspectRatio.Value;
+            }
+
+            if (frameRate is not null)
+            {
+                FrameRate = frameRate.Value;
+            }
+
+            if (sourceSizeRange is not null)
+            {
+                SourceSizeRange = sourceSizeRange.Value;
+            }
+
+            if (destinationSizeRange is not null)
+            {
+                DestinationSizeRange = destinationSizeRange.Value;
+            }
+
+            if (enableOrientation is not null)
+            {
+                EnableOrientation = enableOrientation.Value;
+            }
+
+            if (filterFlags is not null)
+            {
+                FilterFlags = filterFlags.Value;
+            }
+
+            if (stereoFormat is not null)
+            {
+                StereoFormat = stereoFormat.Value;
+            }
+
+            if (fieldType is not null)
+            {
+                FieldType = fieldType.Value;
+            }
+
+            if (deinterlaceMode is not null)
+            {
+                DeinterlaceMode = deinterlaceMode.Value;
+            }
+
+            if (enableAlphaBlending is not null)
+            {
+                EnableAlphaBlending = enableAlphaBlending.Value;
+            }
+
+            if (lumaKey is not null)
+            {
+                LumaKey = lumaKey.Value;
+            }
+
+            if (numPastFrames is not null)
+            {
+                NumPastFrames = numPastFrames.Value;
+            }
+
+            if (numFutureFrames is not null)
+            {
+                NumFutureFrames = numFutureFrames.Value;
+            }
+
+            if (enableAutoProcessing is not null)
+            {
+                EnableAutoProcessing = enableAutoProcessing.Value;
+            }
         }
 
 

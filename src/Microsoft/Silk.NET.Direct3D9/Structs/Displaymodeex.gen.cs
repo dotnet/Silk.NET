@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D9
     {
         public Displaymodeex
         (
-            uint size = default,
-            uint width = default,
-            uint height = default,
-            uint refreshRate = default,
-            Format format = default,
-            Scanlineordering scanLineOrdering = default
-        )
+            uint? size = null,
+            uint? width = null,
+            uint? height = null,
+            uint? refreshRate = null,
+            Format? format = null,
+            Scanlineordering? scanLineOrdering = null
+        ) : this()
         {
-            Size = size;
-            Width = width;
-            Height = height;
-            RefreshRate = refreshRate;
-            Format = format;
-            ScanLineOrdering = scanLineOrdering;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (refreshRate is not null)
+            {
+                RefreshRate = refreshRate.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (scanLineOrdering is not null)
+            {
+                ScanLineOrdering = scanLineOrdering.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,40 +22,103 @@ namespace Silk.NET.Direct3D9
     {
         public AnonymousRecordD3d9typesL93C9
         (
-            float d3D11 = default,
-            float d3D12 = default,
-            float d3D13 = default,
-            float d3D14 = default,
-            float d3D21 = default,
-            float d3D22 = default,
-            float d3D23 = default,
-            float d3D24 = default,
-            float d3D31 = default,
-            float d3D32 = default,
-            float d3D33 = default,
-            float d3D34 = default,
-            float d3D41 = default,
-            float d3D42 = default,
-            float d3D43 = default,
-            float d3D44 = default
-        )
+            float? d3D11 = null,
+            float? d3D12 = null,
+            float? d3D13 = null,
+            float? d3D14 = null,
+            float? d3D21 = null,
+            float? d3D22 = null,
+            float? d3D23 = null,
+            float? d3D24 = null,
+            float? d3D31 = null,
+            float? d3D32 = null,
+            float? d3D33 = null,
+            float? d3D34 = null,
+            float? d3D41 = null,
+            float? d3D42 = null,
+            float? d3D43 = null,
+            float? d3D44 = null
+        ) : this()
         {
-            D3D11 = d3D11;
-            D3D12 = d3D12;
-            D3D13 = d3D13;
-            D3D14 = d3D14;
-            D3D21 = d3D21;
-            D3D22 = d3D22;
-            D3D23 = d3D23;
-            D3D24 = d3D24;
-            D3D31 = d3D31;
-            D3D32 = d3D32;
-            D3D33 = d3D33;
-            D3D34 = d3D34;
-            D3D41 = d3D41;
-            D3D42 = d3D42;
-            D3D43 = d3D43;
-            D3D44 = d3D44;
+            if (d3D11 is not null)
+            {
+                D3D11 = d3D11.Value;
+            }
+
+            if (d3D12 is not null)
+            {
+                D3D12 = d3D12.Value;
+            }
+
+            if (d3D13 is not null)
+            {
+                D3D13 = d3D13.Value;
+            }
+
+            if (d3D14 is not null)
+            {
+                D3D14 = d3D14.Value;
+            }
+
+            if (d3D21 is not null)
+            {
+                D3D21 = d3D21.Value;
+            }
+
+            if (d3D22 is not null)
+            {
+                D3D22 = d3D22.Value;
+            }
+
+            if (d3D23 is not null)
+            {
+                D3D23 = d3D23.Value;
+            }
+
+            if (d3D24 is not null)
+            {
+                D3D24 = d3D24.Value;
+            }
+
+            if (d3D31 is not null)
+            {
+                D3D31 = d3D31.Value;
+            }
+
+            if (d3D32 is not null)
+            {
+                D3D32 = d3D32.Value;
+            }
+
+            if (d3D33 is not null)
+            {
+                D3D33 = d3D33.Value;
+            }
+
+            if (d3D34 is not null)
+            {
+                D3D34 = d3D34.Value;
+            }
+
+            if (d3D41 is not null)
+            {
+                D3D41 = d3D41.Value;
+            }
+
+            if (d3D42 is not null)
+            {
+                D3D42 = d3D42.Value;
+            }
+
+            if (d3D43 is not null)
+            {
+                D3D43 = d3D43.Value;
+            }
+
+            if (d3D44 is not null)
+            {
+                D3D44 = d3D44.Value;
+            }
         }
 
 

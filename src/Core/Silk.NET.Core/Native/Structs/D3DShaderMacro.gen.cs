@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Core.Native
     {
         public D3DShaderMacro
         (
-            byte* name = default,
-            byte* definition = default
-        )
+            byte* name = null,
+            byte* definition = null
+        ) : this()
         {
-            Name = name;
-            Definition = definition;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (definition is not null)
+            {
+                Definition = definition;
+            }
         }
 
 

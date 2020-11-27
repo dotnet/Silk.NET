@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Direct3D11
     {
         public SamplerDesc
         (
-            Filter filter = default,
-            TextureAddressMode addressU = default,
-            TextureAddressMode addressV = default,
-            TextureAddressMode addressW = default,
-            float mipLODBias = default,
-            uint maxAnisotropy = default,
-            ComparisonFunc comparisonFunc = default,
-            float minLOD = default,
-            float maxLOD = default
-        )
+            Filter? filter = null,
+            TextureAddressMode? addressU = null,
+            TextureAddressMode? addressV = null,
+            TextureAddressMode? addressW = null,
+            float? mipLODBias = null,
+            uint? maxAnisotropy = null,
+            ComparisonFunc? comparisonFunc = null,
+            float? minLOD = null,
+            float? maxLOD = null
+        ) : this()
         {
-            Filter = filter;
-            AddressU = addressU;
-            AddressV = addressV;
-            AddressW = addressW;
-            MipLODBias = mipLODBias;
-            MaxAnisotropy = maxAnisotropy;
-            ComparisonFunc = comparisonFunc;
-            MinLOD = minLOD;
-            MaxLOD = maxLOD;
+            if (filter is not null)
+            {
+                Filter = filter.Value;
+            }
+
+            if (addressU is not null)
+            {
+                AddressU = addressU.Value;
+            }
+
+            if (addressV is not null)
+            {
+                AddressV = addressV.Value;
+            }
+
+            if (addressW is not null)
+            {
+                AddressW = addressW.Value;
+            }
+
+            if (mipLODBias is not null)
+            {
+                MipLODBias = mipLODBias.Value;
+            }
+
+            if (maxAnisotropy is not null)
+            {
+                MaxAnisotropy = maxAnisotropy.Value;
+            }
+
+            if (comparisonFunc is not null)
+            {
+                ComparisonFunc = comparisonFunc.Value;
+            }
+
+            if (minLOD is not null)
+            {
+                MinLOD = minLOD.Value;
+            }
+
+            if (maxLOD is not null)
+            {
+                MaxLOD = maxLOD.Value;
+            }
         }
 
 

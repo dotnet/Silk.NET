@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataVideoDecoderHistogram
         (
-            VideoDecoderDesc decoderDesc = default,
-            VideoDecoderHistogramComponentFlags components = default,
-            uint binCount = default,
-            uint counterBitDepth = default
-        )
+            VideoDecoderDesc? decoderDesc = null,
+            VideoDecoderHistogramComponentFlags? components = null,
+            uint? binCount = null,
+            uint? counterBitDepth = null
+        ) : this()
         {
-            DecoderDesc = decoderDesc;
-            Components = components;
-            BinCount = binCount;
-            CounterBitDepth = counterBitDepth;
+            if (decoderDesc is not null)
+            {
+                DecoderDesc = decoderDesc.Value;
+            }
+
+            if (components is not null)
+            {
+                Components = components.Value;
+            }
+
+            if (binCount is not null)
+            {
+                BinCount = binCount.Value;
+            }
+
+            if (counterBitDepth is not null)
+            {
+                CounterBitDepth = counterBitDepth.Value;
+            }
         }
 
 

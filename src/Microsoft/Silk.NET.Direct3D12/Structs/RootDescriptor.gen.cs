@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public RootDescriptor
         (
-            uint shaderRegister = default,
-            uint registerSpace = default
-        )
+            uint? shaderRegister = null,
+            uint? registerSpace = null
+        ) : this()
         {
-            ShaderRegister = shaderRegister;
-            RegisterSpace = registerSpace;
+            if (shaderRegister is not null)
+            {
+                ShaderRegister = shaderRegister.Value;
+            }
+
+            if (registerSpace is not null)
+            {
+                RegisterSpace = registerSpace.Value;
+            }
         }
 
 

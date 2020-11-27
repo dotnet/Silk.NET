@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D11
     {
         public KeyExchangeHWProtectionOutputData
         (
-            uint privateDataSize = default,
-            uint maxHWProtectionDataSize = default,
-            uint hWProtectionDataSize = default,
-            ulong transportTime = default,
-            ulong executionTime = default
-        )
+            uint? privateDataSize = null,
+            uint? maxHWProtectionDataSize = null,
+            uint? hWProtectionDataSize = null,
+            ulong? transportTime = null,
+            ulong? executionTime = null
+        ) : this()
         {
-            PrivateDataSize = privateDataSize;
-            MaxHWProtectionDataSize = maxHWProtectionDataSize;
-            HWProtectionDataSize = hWProtectionDataSize;
-            TransportTime = transportTime;
-            ExecutionTime = executionTime;
+            if (privateDataSize is not null)
+            {
+                PrivateDataSize = privateDataSize.Value;
+            }
+
+            if (maxHWProtectionDataSize is not null)
+            {
+                MaxHWProtectionDataSize = maxHWProtectionDataSize.Value;
+            }
+
+            if (hWProtectionDataSize is not null)
+            {
+                HWProtectionDataSize = hWProtectionDataSize.Value;
+            }
+
+            if (transportTime is not null)
+            {
+                TransportTime = transportTime.Value;
+            }
+
+            if (executionTime is not null)
+            {
+                ExecutionTime = executionTime.Value;
+            }
         }
 
 

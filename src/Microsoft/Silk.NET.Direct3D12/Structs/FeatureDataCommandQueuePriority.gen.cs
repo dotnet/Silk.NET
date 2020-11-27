@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataCommandQueuePriority
         (
-            CommandListType commandListType = default,
-            uint priority = default,
-            int priorityForTypeIsSupported = default
-        )
+            CommandListType? commandListType = null,
+            uint? priority = null,
+            int? priorityForTypeIsSupported = null
+        ) : this()
         {
-            CommandListType = commandListType;
-            Priority = priority;
-            PriorityForTypeIsSupported = priorityForTypeIsSupported;
+            if (commandListType is not null)
+            {
+                CommandListType = commandListType.Value;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
+
+            if (priorityForTypeIsSupported is not null)
+            {
+                PriorityForTypeIsSupported = priorityForTypeIsSupported.Value;
+            }
         }
 
 

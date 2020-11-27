@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D9
     {
         public DevinfoD3D9interfacetimings
         (
-            float waitingForGPUToUseApplicationResourceTimePercent = default,
-            float waitingForGPUToAcceptMoreCommandsTimePercent = default,
-            float waitingForGPUToStayWithinLatencyTimePercent = default,
-            float waitingForGPUExclusiveResourceTimePercent = default,
-            float waitingForGPUOtherTimePercent = default
-        )
+            float? waitingForGPUToUseApplicationResourceTimePercent = null,
+            float? waitingForGPUToAcceptMoreCommandsTimePercent = null,
+            float? waitingForGPUToStayWithinLatencyTimePercent = null,
+            float? waitingForGPUExclusiveResourceTimePercent = null,
+            float? waitingForGPUOtherTimePercent = null
+        ) : this()
         {
-            WaitingForGPUToUseApplicationResourceTimePercent = waitingForGPUToUseApplicationResourceTimePercent;
-            WaitingForGPUToAcceptMoreCommandsTimePercent = waitingForGPUToAcceptMoreCommandsTimePercent;
-            WaitingForGPUToStayWithinLatencyTimePercent = waitingForGPUToStayWithinLatencyTimePercent;
-            WaitingForGPUExclusiveResourceTimePercent = waitingForGPUExclusiveResourceTimePercent;
-            WaitingForGPUOtherTimePercent = waitingForGPUOtherTimePercent;
+            if (waitingForGPUToUseApplicationResourceTimePercent is not null)
+            {
+                WaitingForGPUToUseApplicationResourceTimePercent = waitingForGPUToUseApplicationResourceTimePercent.Value;
+            }
+
+            if (waitingForGPUToAcceptMoreCommandsTimePercent is not null)
+            {
+                WaitingForGPUToAcceptMoreCommandsTimePercent = waitingForGPUToAcceptMoreCommandsTimePercent.Value;
+            }
+
+            if (waitingForGPUToStayWithinLatencyTimePercent is not null)
+            {
+                WaitingForGPUToStayWithinLatencyTimePercent = waitingForGPUToStayWithinLatencyTimePercent.Value;
+            }
+
+            if (waitingForGPUExclusiveResourceTimePercent is not null)
+            {
+                WaitingForGPUExclusiveResourceTimePercent = waitingForGPUExclusiveResourceTimePercent.Value;
+            }
+
+            if (waitingForGPUOtherTimePercent is not null)
+            {
+                WaitingForGPUOtherTimePercent = waitingForGPUOtherTimePercent.Value;
+            }
         }
 
 

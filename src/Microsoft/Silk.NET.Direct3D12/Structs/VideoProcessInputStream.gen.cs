@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessInputStream
         (
-            ID3D12Resource* pTexture2D = default,
-            uint subresource = default,
-            VideoProcessReferenceSet referenceSet = default
-        )
+            ID3D12Resource* pTexture2D = null,
+            uint? subresource = null,
+            VideoProcessReferenceSet? referenceSet = null
+        ) : this()
         {
-            PTexture2D = pTexture2D;
-            Subresource = subresource;
-            ReferenceSet = referenceSet;
+            if (pTexture2D is not null)
+            {
+                PTexture2D = pTexture2D;
+            }
+
+            if (subresource is not null)
+            {
+                Subresource = subresource.Value;
+            }
+
+            if (referenceSet is not null)
+            {
+                ReferenceSet = referenceSet.Value;
+            }
         }
 
 

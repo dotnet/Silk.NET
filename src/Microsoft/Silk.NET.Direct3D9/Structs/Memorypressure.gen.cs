@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D9
     {
         public Memorypressure
         (
-            ulong bytesEvictedFromProcess = default,
-            ulong sizeOfInefficientAllocation = default,
-            uint levelOfEfficiency = default
-        )
+            ulong? bytesEvictedFromProcess = null,
+            ulong? sizeOfInefficientAllocation = null,
+            uint? levelOfEfficiency = null
+        ) : this()
         {
-            BytesEvictedFromProcess = bytesEvictedFromProcess;
-            SizeOfInefficientAllocation = sizeOfInefficientAllocation;
-            LevelOfEfficiency = levelOfEfficiency;
+            if (bytesEvictedFromProcess is not null)
+            {
+                BytesEvictedFromProcess = bytesEvictedFromProcess.Value;
+            }
+
+            if (sizeOfInefficientAllocation is not null)
+            {
+                SizeOfInefficientAllocation = sizeOfInefficientAllocation.Value;
+            }
+
+            if (levelOfEfficiency is not null)
+            {
+                LevelOfEfficiency = levelOfEfficiency.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public DescriptorRange1
         (
-            DescriptorRangeType rangeType = default,
-            uint numDescriptors = default,
-            uint baseShaderRegister = default,
-            uint registerSpace = default,
-            DescriptorRangeFlags flags = default,
-            uint offsetInDescriptorsFromTableStart = default
-        )
+            DescriptorRangeType? rangeType = null,
+            uint? numDescriptors = null,
+            uint? baseShaderRegister = null,
+            uint? registerSpace = null,
+            DescriptorRangeFlags? flags = null,
+            uint? offsetInDescriptorsFromTableStart = null
+        ) : this()
         {
-            RangeType = rangeType;
-            NumDescriptors = numDescriptors;
-            BaseShaderRegister = baseShaderRegister;
-            RegisterSpace = registerSpace;
-            Flags = flags;
-            OffsetInDescriptorsFromTableStart = offsetInDescriptorsFromTableStart;
+            if (rangeType is not null)
+            {
+                RangeType = rangeType.Value;
+            }
+
+            if (numDescriptors is not null)
+            {
+                NumDescriptors = numDescriptors.Value;
+            }
+
+            if (baseShaderRegister is not null)
+            {
+                BaseShaderRegister = baseShaderRegister.Value;
+            }
+
+            if (registerSpace is not null)
+            {
+                RegisterSpace = registerSpace.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (offsetInDescriptorsFromTableStart is not null)
+            {
+                OffsetInDescriptorsFromTableStart = offsetInDescriptorsFromTableStart.Value;
+            }
         }
 
 

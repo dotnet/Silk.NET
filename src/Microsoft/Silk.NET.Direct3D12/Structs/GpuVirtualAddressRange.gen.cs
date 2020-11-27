@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public GpuVirtualAddressRange
         (
-            ulong startAddress = default,
-            ulong sizeInBytes = default
-        )
+            ulong? startAddress = null,
+            ulong? sizeInBytes = null
+        ) : this()
         {
-            StartAddress = startAddress;
-            SizeInBytes = sizeInBytes;
+            if (startAddress is not null)
+            {
+                StartAddress = startAddress.Value;
+            }
+
+            if (sizeInBytes is not null)
+            {
+                SizeInBytes = sizeInBytes.Value;
+            }
         }
 
 

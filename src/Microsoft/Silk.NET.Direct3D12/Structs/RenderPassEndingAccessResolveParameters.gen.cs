@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D12
     {
         public RenderPassEndingAccessResolveParameters
         (
-            ID3D12Resource* pSrcResource = default,
-            ID3D12Resource* pDstResource = default,
-            uint subresourceCount = default,
-            RenderPassEndingAccessResolveSubresourceParameters* pSubresourceParameters = default,
-            Silk.NET.DXGI.Format format = default,
-            ResolveMode resolveMode = default,
-            int preserveResolveSource = default
-        )
+            ID3D12Resource* pSrcResource = null,
+            ID3D12Resource* pDstResource = null,
+            uint? subresourceCount = null,
+            RenderPassEndingAccessResolveSubresourceParameters* pSubresourceParameters = null,
+            Silk.NET.DXGI.Format? format = null,
+            ResolveMode? resolveMode = null,
+            int? preserveResolveSource = null
+        ) : this()
         {
-            PSrcResource = pSrcResource;
-            PDstResource = pDstResource;
-            SubresourceCount = subresourceCount;
-            PSubresourceParameters = pSubresourceParameters;
-            Format = format;
-            ResolveMode = resolveMode;
-            PreserveResolveSource = preserveResolveSource;
+            if (pSrcResource is not null)
+            {
+                PSrcResource = pSrcResource;
+            }
+
+            if (pDstResource is not null)
+            {
+                PDstResource = pDstResource;
+            }
+
+            if (subresourceCount is not null)
+            {
+                SubresourceCount = subresourceCount.Value;
+            }
+
+            if (pSubresourceParameters is not null)
+            {
+                PSubresourceParameters = pSubresourceParameters;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (resolveMode is not null)
+            {
+                ResolveMode = resolveMode.Value;
+            }
+
+            if (preserveResolveSource is not null)
+            {
+                PreserveResolveSource = preserveResolveSource.Value;
+            }
         }
 
 

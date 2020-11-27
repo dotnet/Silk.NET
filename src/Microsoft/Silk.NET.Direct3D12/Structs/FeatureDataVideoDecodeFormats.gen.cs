@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoDecodeFormats
         (
-            uint nodeIndex = default,
-            VideoDecodeConfiguration configuration = default,
-            uint formatCount = default,
-            Silk.NET.DXGI.Format* pOutputFormats = default
-        )
+            uint? nodeIndex = null,
+            VideoDecodeConfiguration? configuration = null,
+            uint? formatCount = null,
+            Silk.NET.DXGI.Format* pOutputFormats = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            Configuration = configuration;
-            FormatCount = formatCount;
-            POutputFormats = pOutputFormats;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (configuration is not null)
+            {
+                Configuration = configuration.Value;
+            }
+
+            if (formatCount is not null)
+            {
+                FormatCount = formatCount.Value;
+            }
+
+            if (pOutputFormats is not null)
+            {
+                POutputFormats = pOutputFormats;
+            }
         }
 
 

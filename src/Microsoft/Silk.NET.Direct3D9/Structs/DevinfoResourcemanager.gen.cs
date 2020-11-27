@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -23,41 +24,39 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "D3DRESOURCESTATS [8]")]
         [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
         [NativeName("Name", "stats")]
-        public Resourcestats Stats_0;
-        
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
-        [NativeName("Name", "stats")]
-        public Resourcestats Stats_1;
-        
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
-        [NativeName("Name", "stats")]
-        public Resourcestats Stats_2;
-        
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
-        [NativeName("Name", "stats")]
-        public Resourcestats Stats_3;
-        
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
-        [NativeName("Name", "stats")]
-        public Resourcestats Stats_4;
-        
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
-        [NativeName("Name", "stats")]
-        public Resourcestats Stats_5;
-        
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
-        [NativeName("Name", "stats")]
-        public Resourcestats Stats_6;
-        
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
-        [NativeName("Name", "stats")]
-        public Resourcestats Stats_7;
+        public StatsBuffer Stats;
+
+        public struct StatsBuffer
+        {
+            public Resourcestats Element0;
+            public Resourcestats Element1;
+            public Resourcestats Element2;
+            public Resourcestats Element3;
+            public Resourcestats Element4;
+            public Resourcestats Element5;
+            public Resourcestats Element6;
+            public Resourcestats Element7;
+            public ref Resourcestats this[int index]
+            {
+                get
+                {
+                    if (index > 7 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (Resourcestats* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<Resourcestats> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 8);
+#endif
+        }
+
     }
 }

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeOutputHistogram
         (
-            ulong offset = default,
-            ID3D12Resource* pBuffer = default
-        )
+            ulong? offset = null,
+            ID3D12Resource* pBuffer = null
+        ) : this()
         {
-            Offset = offset;
-            PBuffer = pBuffer;
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (pBuffer is not null)
+            {
+                PBuffer = pBuffer;
+            }
         }
 
 

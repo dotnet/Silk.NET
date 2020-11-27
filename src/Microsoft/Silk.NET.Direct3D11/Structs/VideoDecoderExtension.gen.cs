@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderExtension
         (
-            uint function = default,
-            void* pPrivateInputData = default,
-            uint privateInputDataSize = default,
-            void* pPrivateOutputData = default,
-            uint privateOutputDataSize = default,
-            uint resourceCount = default,
-            ID3D11Resource** ppResourceList = default
-        )
+            uint? function = null,
+            void* pPrivateInputData = null,
+            uint? privateInputDataSize = null,
+            void* pPrivateOutputData = null,
+            uint? privateOutputDataSize = null,
+            uint? resourceCount = null,
+            ID3D11Resource** ppResourceList = null
+        ) : this()
         {
-            Function = function;
-            PPrivateInputData = pPrivateInputData;
-            PrivateInputDataSize = privateInputDataSize;
-            PPrivateOutputData = pPrivateOutputData;
-            PrivateOutputDataSize = privateOutputDataSize;
-            ResourceCount = resourceCount;
-            PpResourceList = ppResourceList;
+            if (function is not null)
+            {
+                Function = function.Value;
+            }
+
+            if (pPrivateInputData is not null)
+            {
+                PPrivateInputData = pPrivateInputData;
+            }
+
+            if (privateInputDataSize is not null)
+            {
+                PrivateInputDataSize = privateInputDataSize.Value;
+            }
+
+            if (pPrivateOutputData is not null)
+            {
+                PPrivateOutputData = pPrivateOutputData;
+            }
+
+            if (privateOutputDataSize is not null)
+            {
+                PrivateOutputDataSize = privateOutputDataSize.Value;
+            }
+
+            if (resourceCount is not null)
+            {
+                ResourceCount = resourceCount.Value;
+            }
+
+            if (ppResourceList is not null)
+            {
+                PpResourceList = ppResourceList;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public HeapDesc
         (
-            ulong sizeInBytes = default,
-            HeapProperties properties = default,
-            ulong alignment = default,
-            HeapFlags flags = default
-        )
+            ulong? sizeInBytes = null,
+            HeapProperties? properties = null,
+            ulong? alignment = null,
+            HeapFlags? flags = null
+        ) : this()
         {
-            SizeInBytes = sizeInBytes;
-            Properties = properties;
-            Alignment = alignment;
-            Flags = flags;
+            if (sizeInBytes is not null)
+            {
+                SizeInBytes = sizeInBytes.Value;
+            }
+
+            if (properties is not null)
+            {
+                Properties = properties.Value;
+            }
+
+            if (alignment is not null)
+            {
+                Alignment = alignment.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

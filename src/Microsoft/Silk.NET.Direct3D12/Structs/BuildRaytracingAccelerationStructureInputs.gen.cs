@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public BuildRaytracingAccelerationStructureInputs
         (
-            RaytracingAccelerationStructureType type = default,
-            RaytracingAccelerationStructureBuildFlags flags = default,
-            uint numDescs = default,
-            ElementsLayout descsLayout = default
-        )
+            RaytracingAccelerationStructureType? type = null,
+            RaytracingAccelerationStructureBuildFlags? flags = null,
+            uint? numDescs = null,
+            ElementsLayout? descsLayout = null
+        ) : this()
         {
-            Type = type;
-            Flags = flags;
-            NumDescs = numDescs;
-            DescsLayout = descsLayout;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (numDescs is not null)
+            {
+                NumDescs = numDescs.Value;
+            }
+
+            if (descsLayout is not null)
+            {
+                DescsLayout = descsLayout.Value;
+            }
         }
 
 

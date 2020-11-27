@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public DeviceCreationParameters
         (
-            uint adapterOrdinal = default,
-            Devtype deviceType = default,
-            IntPtr hFocusWindow = default,
-            uint behaviorFlags = default
-        )
+            uint? adapterOrdinal = null,
+            Devtype? deviceType = null,
+            IntPtr? hFocusWindow = null,
+            uint? behaviorFlags = null
+        ) : this()
         {
-            AdapterOrdinal = adapterOrdinal;
-            DeviceType = deviceType;
-            HFocusWindow = hFocusWindow;
-            BehaviorFlags = behaviorFlags;
+            if (adapterOrdinal is not null)
+            {
+                AdapterOrdinal = adapterOrdinal.Value;
+            }
+
+            if (deviceType is not null)
+            {
+                DeviceType = deviceType.Value;
+            }
+
+            if (hFocusWindow is not null)
+            {
+                HFocusWindow = hFocusWindow.Value;
+            }
+
+            if (behaviorFlags is not null)
+            {
+                BehaviorFlags = behaviorFlags.Value;
+            }
         }
 
 

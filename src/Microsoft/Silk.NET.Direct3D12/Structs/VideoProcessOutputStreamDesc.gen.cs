@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessOutputStreamDesc
         (
-            Silk.NET.DXGI.Format format = default,
-            Silk.NET.DXGI.ColorSpaceType colorSpace = default,
-            VideoProcessAlphaFillMode alphaFillMode = default,
-            uint alphaFillModeSourceStreamIndex = default,
-            Silk.NET.DXGI.Rational frameRate = default,
-            int enableStereo = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            Silk.NET.DXGI.ColorSpaceType? colorSpace = null,
+            VideoProcessAlphaFillMode? alphaFillMode = null,
+            uint? alphaFillModeSourceStreamIndex = null,
+            Silk.NET.DXGI.Rational? frameRate = null,
+            int? enableStereo = null
+        ) : this()
         {
-            Format = format;
-            ColorSpace = colorSpace;
-            AlphaFillMode = alphaFillMode;
-            AlphaFillModeSourceStreamIndex = alphaFillModeSourceStreamIndex;
-            FrameRate = frameRate;
-            EnableStereo = enableStereo;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (colorSpace is not null)
+            {
+                ColorSpace = colorSpace.Value;
+            }
+
+            if (alphaFillMode is not null)
+            {
+                AlphaFillMode = alphaFillMode.Value;
+            }
+
+            if (alphaFillModeSourceStreamIndex is not null)
+            {
+                AlphaFillModeSourceStreamIndex = alphaFillModeSourceStreamIndex.Value;
+            }
+
+            if (frameRate is not null)
+            {
+                FrameRate = frameRate.Value;
+            }
+
+            if (enableStereo is not null)
+            {
+                EnableStereo = enableStereo.Value;
+            }
         }
 
 

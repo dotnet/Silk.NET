@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,36 +22,91 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderBufferDesc
         (
-            VideoDecoderBufferType bufferType = default,
-            uint bufferIndex = default,
-            uint dataOffset = default,
-            uint dataSize = default,
-            uint firstMBaddress = default,
-            uint numMBsInBuffer = default,
-            uint width = default,
-            uint height = default,
-            uint stride = default,
-            uint reservedBits = default,
-            void* pIV = default,
-            uint iVSize = default,
-            int partialEncryption = default,
-            EncryptedBlockInfo encryptedBlockInfo = default
-        )
+            VideoDecoderBufferType? bufferType = null,
+            uint? bufferIndex = null,
+            uint? dataOffset = null,
+            uint? dataSize = null,
+            uint? firstMBaddress = null,
+            uint? numMBsInBuffer = null,
+            uint? width = null,
+            uint? height = null,
+            uint? stride = null,
+            uint? reservedBits = null,
+            void* pIV = null,
+            uint? iVSize = null,
+            int? partialEncryption = null,
+            EncryptedBlockInfo? encryptedBlockInfo = null
+        ) : this()
         {
-            BufferType = bufferType;
-            BufferIndex = bufferIndex;
-            DataOffset = dataOffset;
-            DataSize = dataSize;
-            FirstMBaddress = firstMBaddress;
-            NumMBsInBuffer = numMBsInBuffer;
-            Width = width;
-            Height = height;
-            Stride = stride;
-            ReservedBits = reservedBits;
-            PIV = pIV;
-            IVSize = iVSize;
-            PartialEncryption = partialEncryption;
-            EncryptedBlockInfo = encryptedBlockInfo;
+            if (bufferType is not null)
+            {
+                BufferType = bufferType.Value;
+            }
+
+            if (bufferIndex is not null)
+            {
+                BufferIndex = bufferIndex.Value;
+            }
+
+            if (dataOffset is not null)
+            {
+                DataOffset = dataOffset.Value;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (firstMBaddress is not null)
+            {
+                FirstMBaddress = firstMBaddress.Value;
+            }
+
+            if (numMBsInBuffer is not null)
+            {
+                NumMBsInBuffer = numMBsInBuffer.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
+
+            if (reservedBits is not null)
+            {
+                ReservedBits = reservedBits.Value;
+            }
+
+            if (pIV is not null)
+            {
+                PIV = pIV;
+            }
+
+            if (iVSize is not null)
+            {
+                IVSize = iVSize.Value;
+            }
+
+            if (partialEncryption is not null)
+            {
+                PartialEncryption = partialEncryption.Value;
+            }
+
+            if (encryptedBlockInfo is not null)
+            {
+                EncryptedBlockInfo = encryptedBlockInfo.Value;
+            }
         }
 
 

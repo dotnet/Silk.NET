@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelConfiguresharedresource
         (
-            AuthenticatedchannelConfigureInput parameters = default,
-            AuthenticatedchannelProcessidentifiertype processIdentiferType = default,
-            void* processHandle = default,
-            int allowAccess = default
-        )
+            AuthenticatedchannelConfigureInput? parameters = null,
+            AuthenticatedchannelProcessidentifiertype? processIdentiferType = null,
+            void* processHandle = null,
+            int? allowAccess = null
+        ) : this()
         {
-            Parameters = parameters;
-            ProcessIdentiferType = processIdentiferType;
-            ProcessHandle = processHandle;
-            AllowAccess = allowAccess;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (processIdentiferType is not null)
+            {
+                ProcessIdentiferType = processIdentiferType.Value;
+            }
+
+            if (processHandle is not null)
+            {
+                ProcessHandle = processHandle;
+            }
+
+            if (allowAccess is not null)
+            {
+                AllowAccess = allowAccess.Value;
+            }
         }
 
 

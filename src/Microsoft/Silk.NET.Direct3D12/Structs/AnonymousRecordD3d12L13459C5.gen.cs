@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,14 +23,25 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L13459C5
         (
-            DeviceRemovedExtendedData dred10 = default,
-            DeviceRemovedExtendedData1 dred11 = default,
-            DeviceRemovedExtendedData2 dred12 = default
-        )
+            DeviceRemovedExtendedData? dred10 = null,
+            DeviceRemovedExtendedData1? dred11 = null,
+            DeviceRemovedExtendedData2? dred12 = null
+        ) : this()
         {
-            Dred10 = dred10;
-            Dred11 = dred11;
-            Dred12 = dred12;
+            if (dred10 is not null)
+            {
+                Dred10 = dred10.Value;
+            }
+
+            if (dred11 is not null)
+            {
+                Dred11 = dred11.Value;
+            }
+
+            if (dred12 is not null)
+            {
+                Dred12 = dred12.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.DXGI
     {
         public OutduplMoveRect
         (
-            Silk.NET.Core.Native.TagPoint sourcePoint = default,
-            Silk.NET.Core.Native.TagRect destinationRect = default
-        )
+            Silk.NET.Core.Native.TagPoint? sourcePoint = null,
+            Silk.NET.Core.Native.TagRect? destinationRect = null
+        ) : this()
         {
-            SourcePoint = sourcePoint;
-            DestinationRect = destinationRect;
+            if (sourcePoint is not null)
+            {
+                SourcePoint = sourcePoint.Value;
+            }
+
+            if (destinationRect is not null)
+            {
+                DestinationRect = destinationRect.Value;
+            }
         }
 
 

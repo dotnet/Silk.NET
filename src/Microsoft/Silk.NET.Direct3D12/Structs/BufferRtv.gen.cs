@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public BufferRtv
         (
-            ulong firstElement = default,
-            uint numElements = default
-        )
+            ulong? firstElement = null,
+            uint? numElements = null
+        ) : this()
         {
-            FirstElement = firstElement;
-            NumElements = numElements;
+            if (firstElement is not null)
+            {
+                FirstElement = firstElement.Value;
+            }
+
+            if (numElements is not null)
+            {
+                NumElements = numElements.Value;
+            }
         }
 
 

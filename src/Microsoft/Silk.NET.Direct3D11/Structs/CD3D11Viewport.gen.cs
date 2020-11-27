@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D11
     {
         public CD3D11Viewport
         (
-            float topLeftX = default,
-            float topLeftY = default,
-            float width = default,
-            float height = default,
-            float minDepth = default,
-            float maxDepth = default
-        )
+            float? topLeftX = null,
+            float? topLeftY = null,
+            float? width = null,
+            float? height = null,
+            float? minDepth = null,
+            float? maxDepth = null
+        ) : this()
         {
-            TopLeftX = topLeftX;
-            TopLeftY = topLeftY;
-            Width = width;
-            Height = height;
-            MinDepth = minDepth;
-            MaxDepth = maxDepth;
+            if (topLeftX is not null)
+            {
+                TopLeftX = topLeftX.Value;
+            }
+
+            if (topLeftY is not null)
+            {
+                TopLeftY = topLeftY.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (minDepth is not null)
+            {
+                MinDepth = minDepth.Value;
+            }
+
+            if (maxDepth is not null)
+            {
+                MaxDepth = maxDepth.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,42 +22,109 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderConfig
         (
-            Guid guidConfigBitstreamEncryption = default,
-            Guid guidConfigMBcontrolEncryption = default,
-            Guid guidConfigResidDiffEncryption = default,
-            uint configBitstreamRaw = default,
-            uint configMBcontrolRasterOrder = default,
-            uint configResidDiffHost = default,
-            uint configSpatialResid8 = default,
-            uint configResid8Subtraction = default,
-            uint configSpatialHost8or9Clipping = default,
-            uint configSpatialResidInterleaved = default,
-            uint configIntraResidUnsigned = default,
-            uint configResidDiffAccelerator = default,
-            uint configHostInverseScan = default,
-            uint configSpecificIDCT = default,
-            uint config4GroupedCoefs = default,
-            ushort configMinRenderTargetBuffCount = default,
-            ushort configDecoderSpecific = default
-        )
+            Guid? guidConfigBitstreamEncryption = null,
+            Guid? guidConfigMBcontrolEncryption = null,
+            Guid? guidConfigResidDiffEncryption = null,
+            uint? configBitstreamRaw = null,
+            uint? configMBcontrolRasterOrder = null,
+            uint? configResidDiffHost = null,
+            uint? configSpatialResid8 = null,
+            uint? configResid8Subtraction = null,
+            uint? configSpatialHost8or9Clipping = null,
+            uint? configSpatialResidInterleaved = null,
+            uint? configIntraResidUnsigned = null,
+            uint? configResidDiffAccelerator = null,
+            uint? configHostInverseScan = null,
+            uint? configSpecificIDCT = null,
+            uint? config4GroupedCoefs = null,
+            ushort? configMinRenderTargetBuffCount = null,
+            ushort? configDecoderSpecific = null
+        ) : this()
         {
-            GuidConfigBitstreamEncryption = guidConfigBitstreamEncryption;
-            GuidConfigMBcontrolEncryption = guidConfigMBcontrolEncryption;
-            GuidConfigResidDiffEncryption = guidConfigResidDiffEncryption;
-            ConfigBitstreamRaw = configBitstreamRaw;
-            ConfigMBcontrolRasterOrder = configMBcontrolRasterOrder;
-            ConfigResidDiffHost = configResidDiffHost;
-            ConfigSpatialResid8 = configSpatialResid8;
-            ConfigResid8Subtraction = configResid8Subtraction;
-            ConfigSpatialHost8or9Clipping = configSpatialHost8or9Clipping;
-            ConfigSpatialResidInterleaved = configSpatialResidInterleaved;
-            ConfigIntraResidUnsigned = configIntraResidUnsigned;
-            ConfigResidDiffAccelerator = configResidDiffAccelerator;
-            ConfigHostInverseScan = configHostInverseScan;
-            ConfigSpecificIDCT = configSpecificIDCT;
-            Config4GroupedCoefs = config4GroupedCoefs;
-            ConfigMinRenderTargetBuffCount = configMinRenderTargetBuffCount;
-            ConfigDecoderSpecific = configDecoderSpecific;
+            if (guidConfigBitstreamEncryption is not null)
+            {
+                GuidConfigBitstreamEncryption = guidConfigBitstreamEncryption.Value;
+            }
+
+            if (guidConfigMBcontrolEncryption is not null)
+            {
+                GuidConfigMBcontrolEncryption = guidConfigMBcontrolEncryption.Value;
+            }
+
+            if (guidConfigResidDiffEncryption is not null)
+            {
+                GuidConfigResidDiffEncryption = guidConfigResidDiffEncryption.Value;
+            }
+
+            if (configBitstreamRaw is not null)
+            {
+                ConfigBitstreamRaw = configBitstreamRaw.Value;
+            }
+
+            if (configMBcontrolRasterOrder is not null)
+            {
+                ConfigMBcontrolRasterOrder = configMBcontrolRasterOrder.Value;
+            }
+
+            if (configResidDiffHost is not null)
+            {
+                ConfigResidDiffHost = configResidDiffHost.Value;
+            }
+
+            if (configSpatialResid8 is not null)
+            {
+                ConfigSpatialResid8 = configSpatialResid8.Value;
+            }
+
+            if (configResid8Subtraction is not null)
+            {
+                ConfigResid8Subtraction = configResid8Subtraction.Value;
+            }
+
+            if (configSpatialHost8or9Clipping is not null)
+            {
+                ConfigSpatialHost8or9Clipping = configSpatialHost8or9Clipping.Value;
+            }
+
+            if (configSpatialResidInterleaved is not null)
+            {
+                ConfigSpatialResidInterleaved = configSpatialResidInterleaved.Value;
+            }
+
+            if (configIntraResidUnsigned is not null)
+            {
+                ConfigIntraResidUnsigned = configIntraResidUnsigned.Value;
+            }
+
+            if (configResidDiffAccelerator is not null)
+            {
+                ConfigResidDiffAccelerator = configResidDiffAccelerator.Value;
+            }
+
+            if (configHostInverseScan is not null)
+            {
+                ConfigHostInverseScan = configHostInverseScan.Value;
+            }
+
+            if (configSpecificIDCT is not null)
+            {
+                ConfigSpecificIDCT = configSpecificIDCT.Value;
+            }
+
+            if (config4GroupedCoefs is not null)
+            {
+                Config4GroupedCoefs = config4GroupedCoefs.Value;
+            }
+
+            if (configMinRenderTargetBuffCount is not null)
+            {
+                ConfigMinRenderTargetBuffCount = configMinRenderTargetBuffCount.Value;
+            }
+
+            if (configDecoderSpecific is not null)
+            {
+                ConfigDecoderSpecific = configDecoderSpecific.Value;
+            }
         }
 
 

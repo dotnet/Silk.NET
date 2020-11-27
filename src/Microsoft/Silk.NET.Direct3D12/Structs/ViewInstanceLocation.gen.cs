@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public ViewInstanceLocation
         (
-            uint viewportArrayIndex = default,
-            uint renderTargetArrayIndex = default
-        )
+            uint? viewportArrayIndex = null,
+            uint? renderTargetArrayIndex = null
+        ) : this()
         {
-            ViewportArrayIndex = viewportArrayIndex;
-            RenderTargetArrayIndex = renderTargetArrayIndex;
+            if (viewportArrayIndex is not null)
+            {
+                ViewportArrayIndex = viewportArrayIndex.Value;
+            }
+
+            if (renderTargetArrayIndex is not null)
+            {
+                RenderTargetArrayIndex = renderTargetArrayIndex.Value;
+            }
         }
 
 

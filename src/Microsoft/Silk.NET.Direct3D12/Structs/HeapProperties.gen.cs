@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public HeapProperties
         (
-            HeapType type = default,
-            CpuPageProperty cPUPageProperty = default,
-            MemoryPool memoryPoolPreference = default,
-            uint creationNodeMask = default,
-            uint visibleNodeMask = default
-        )
+            HeapType? type = null,
+            CpuPageProperty? cPUPageProperty = null,
+            MemoryPool? memoryPoolPreference = null,
+            uint? creationNodeMask = null,
+            uint? visibleNodeMask = null
+        ) : this()
         {
-            Type = type;
-            CPUPageProperty = cPUPageProperty;
-            MemoryPoolPreference = memoryPoolPreference;
-            CreationNodeMask = creationNodeMask;
-            VisibleNodeMask = visibleNodeMask;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (cPUPageProperty is not null)
+            {
+                CPUPageProperty = cPUPageProperty.Value;
+            }
+
+            if (memoryPoolPreference is not null)
+            {
+                MemoryPoolPreference = memoryPoolPreference.Value;
+            }
+
+            if (creationNodeMask is not null)
+            {
+                CreationNodeMask = creationNodeMask.Value;
+            }
+
+            if (visibleNodeMask is not null)
+            {
+                VisibleNodeMask = visibleNodeMask.Value;
+            }
         }
 
 

@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -33,10 +34,13 @@ namespace Silk.NET.Direct3D.Compilers
 
         public IDxcVersionInfo
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -45,162 +49,138 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcVersionInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<IDxcVersionInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDxcVersionInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<IDxcVersionInfo*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDxcVersionInfo*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDxcVersionInfo*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetVersion(uint* pMajor, uint* pMinor)
+        public readonly unsafe int GetVersion(uint* pMajor, uint* pMinor)
         {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDxcVersionInfo*, uint*, uint*, int>)LpVtbl[3])(@this, pMajor, pMinor);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, uint*, uint*, int>)LpVtbl[3])(@this, pMajor, pMinor);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetVersion(uint* pMajor, ref uint pMinor)
+        public readonly unsafe int GetVersion(uint* pMajor, ref uint pMinor)
         {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (uint* pMinorPtr = &pMinor)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, uint*, uint*, int>)LpVtbl[3])(@this, pMajor, pMinorPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetVersion(ref uint pMajor, uint* pMinor)
+        {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (uint* pMajorPtr = &pMajor)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, uint*, uint*, int>)LpVtbl[3])(@this, pMajorPtr, pMinor);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int GetVersion(ref uint pMajor, ref uint pMinor)
+        {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (uint* pMajorPtr = &pMajor)
+            {
                 fixed (uint* pMinorPtr = &pMinor)
                 {
-                    ret = ((delegate* cdecl<IDxcVersionInfo*, uint*, uint*, int>)LpVtbl[3])(@this, pMajor, pMinorPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, uint*, uint*, int>)LpVtbl[3])(@this, pMajorPtr, pMinorPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetVersion(ref uint pMajor, uint* pMinor)
+        public readonly unsafe int GetFlags(uint* pFlags)
         {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (uint* pMajorPtr = &pMajor)
-                {
-                    ret = ((delegate* cdecl<IDxcVersionInfo*, uint*, uint*, int>)LpVtbl[3])(@this, pMajorPtr, pMinor);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, uint*, int>)LpVtbl[4])(@this, pFlags);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetVersion(ref uint pMajor, ref uint pMinor)
+        public readonly int GetFlags(ref uint pFlags)
         {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
+            var @this = (IDxcVersionInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (uint* pMajorPtr = &pMajor)
-                {
-                    fixed (uint* pMinorPtr = &pMinor)
-                    {
-                        ret = ((delegate* cdecl<IDxcVersionInfo*, uint*, uint*, int>)LpVtbl[3])(@this, pMajorPtr, pMinorPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetFlags(uint* pFlags)
-        {
-            fixed (IDxcVersionInfo* @this = &this)
+            fixed (uint* pFlagsPtr = &pFlags)
             {
-                int ret = default;
-                ret = ((delegate* cdecl<IDxcVersionInfo*, uint*, int>)LpVtbl[4])(@this, pFlags);
-                return ret;
+                ret = ((delegate* unmanaged[Cdecl]<IDxcVersionInfo*, uint*, int>)LpVtbl[4])(@this, pFlagsPtr);
             }
-        }
-
-        /// <summary>To be added.</summary>
-        public int GetFlags(ref uint pFlags)
-        {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
-                int ret = default;
-                fixed (uint* pFlagsPtr = &pFlags)
-                {
-                    ret = ((delegate* cdecl<IDxcVersionInfo*, uint*, int>)LpVtbl[4])(@this, pFlagsPtr);
-                }
-                return ret;
-            }
+            return ret;
         }
 
     }

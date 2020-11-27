@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D9
     {
         public Presentstats
         (
-            uint presentCount = default,
-            uint presentRefreshCount = default,
-            uint syncRefreshCount = default,
-            long syncQPCTime = default,
-            long syncGPUTime = default
-        )
+            uint? presentCount = null,
+            uint? presentRefreshCount = null,
+            uint? syncRefreshCount = null,
+            long? syncQPCTime = null,
+            long? syncGPUTime = null
+        ) : this()
         {
-            PresentCount = presentCount;
-            PresentRefreshCount = presentRefreshCount;
-            SyncRefreshCount = syncRefreshCount;
-            SyncQPCTime = syncQPCTime;
-            SyncGPUTime = syncGPUTime;
+            if (presentCount is not null)
+            {
+                PresentCount = presentCount.Value;
+            }
+
+            if (presentRefreshCount is not null)
+            {
+                PresentRefreshCount = presentRefreshCount.Value;
+            }
+
+            if (syncRefreshCount is not null)
+            {
+                SyncRefreshCount = syncRefreshCount.Value;
+            }
+
+            if (syncQPCTime is not null)
+            {
+                SyncQPCTime = syncQPCTime.Value;
+            }
+
+            if (syncGPUTime is not null)
+            {
+                SyncGPUTime = syncGPUTime.Value;
+            }
         }
 
 

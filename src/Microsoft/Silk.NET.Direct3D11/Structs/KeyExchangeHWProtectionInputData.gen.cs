@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public KeyExchangeHWProtectionInputData
         (
-            uint privateDataSize = default,
-            uint hWProtectionDataSize = default
-        )
+            uint? privateDataSize = null,
+            uint? hWProtectionDataSize = null
+        ) : this()
         {
-            PrivateDataSize = privateDataSize;
-            HWProtectionDataSize = hWProtectionDataSize;
+            if (privateDataSize is not null)
+            {
+                PrivateDataSize = privateDataSize.Value;
+            }
+
+            if (hWProtectionDataSize is not null)
+            {
+                HWProtectionDataSize = hWProtectionDataSize.Value;
+            }
         }
 
 

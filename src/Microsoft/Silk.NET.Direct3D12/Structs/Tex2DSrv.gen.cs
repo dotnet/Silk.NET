@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public Tex2DSrv
         (
-            uint mostDetailedMip = default,
-            uint mipLevels = default,
-            uint planeSlice = default,
-            float resourceMinLODClamp = default
-        )
+            uint? mostDetailedMip = null,
+            uint? mipLevels = null,
+            uint? planeSlice = null,
+            float? resourceMinLODClamp = null
+        ) : this()
         {
-            MostDetailedMip = mostDetailedMip;
-            MipLevels = mipLevels;
-            PlaneSlice = planeSlice;
-            ResourceMinLODClamp = resourceMinLODClamp;
+            if (mostDetailedMip is not null)
+            {
+                MostDetailedMip = mostDetailedMip.Value;
+            }
+
+            if (mipLevels is not null)
+            {
+                MipLevels = mipLevels.Value;
+            }
+
+            if (planeSlice is not null)
+            {
+                PlaneSlice = planeSlice.Value;
+            }
+
+            if (resourceMinLODClamp is not null)
+            {
+                ResourceMinLODClamp = resourceMinLODClamp.Value;
+            }
         }
 
 

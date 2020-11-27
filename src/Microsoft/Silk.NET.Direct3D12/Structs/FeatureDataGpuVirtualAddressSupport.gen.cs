@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataGpuVirtualAddressSupport
         (
-            uint maxGPUVirtualAddressBitsPerResource = default,
-            uint maxGPUVirtualAddressBitsPerProcess = default
-        )
+            uint? maxGPUVirtualAddressBitsPerResource = null,
+            uint? maxGPUVirtualAddressBitsPerProcess = null
+        ) : this()
         {
-            MaxGPUVirtualAddressBitsPerResource = maxGPUVirtualAddressBitsPerResource;
-            MaxGPUVirtualAddressBitsPerProcess = maxGPUVirtualAddressBitsPerProcess;
+            if (maxGPUVirtualAddressBitsPerResource is not null)
+            {
+                MaxGPUVirtualAddressBitsPerResource = maxGPUVirtualAddressBitsPerResource.Value;
+            }
+
+            if (maxGPUVirtualAddressBitsPerProcess is not null)
+            {
+                MaxGPUVirtualAddressBitsPerProcess = maxGPUVirtualAddressBitsPerProcess.Value;
+            }
         }
 
 

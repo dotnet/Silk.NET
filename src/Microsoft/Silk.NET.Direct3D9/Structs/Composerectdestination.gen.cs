@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public Composerectdestination
         (
-            ushort srcRectIndex = default,
-            ushort reserved = default,
-            short x = default,
-            short y = default
-        )
+            ushort? srcRectIndex = null,
+            ushort? reserved = null,
+            short? x = null,
+            short? y = null
+        ) : this()
         {
-            SrcRectIndex = srcRectIndex;
-            Reserved = reserved;
-            X = x;
-            Y = y;
+            if (srcRectIndex is not null)
+            {
+                SrcRectIndex = srcRectIndex.Value;
+            }
+
+            if (reserved is not null)
+            {
+                Reserved = reserved.Value;
+            }
+
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
         }
 
 

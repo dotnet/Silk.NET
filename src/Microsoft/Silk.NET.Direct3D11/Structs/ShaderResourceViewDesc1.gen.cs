@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public ShaderResourceViewDesc1
         (
-            Silk.NET.DXGI.Format format = default,
-            Silk.NET.Core.Native.D3DSrvDimension viewDimension = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            Silk.NET.Core.Native.D3DSrvDimension? viewDimension = null
+        ) : this()
         {
-            Format = format;
-            ViewDimension = viewDimension;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (viewDimension is not null)
+            {
+                ViewDimension = viewDimension.Value;
+            }
         }
 
 

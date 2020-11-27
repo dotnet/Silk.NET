@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderDesc
         (
-            Guid guid = default,
-            uint sampleWidth = default,
-            uint sampleHeight = default,
-            Silk.NET.DXGI.Format outputFormat = default
-        )
+            Guid? guid = null,
+            uint? sampleWidth = null,
+            uint? sampleHeight = null,
+            Silk.NET.DXGI.Format? outputFormat = null
+        ) : this()
         {
-            Guid = guid;
-            SampleWidth = sampleWidth;
-            SampleHeight = sampleHeight;
-            OutputFormat = outputFormat;
+            if (guid is not null)
+            {
+                Guid = guid.Value;
+            }
+
+            if (sampleWidth is not null)
+            {
+                SampleWidth = sampleWidth.Value;
+            }
+
+            if (sampleHeight is not null)
+            {
+                SampleHeight = sampleHeight.Value;
+            }
+
+            if (outputFormat is not null)
+            {
+                OutputFormat = outputFormat.Value;
+            }
         }
 
 

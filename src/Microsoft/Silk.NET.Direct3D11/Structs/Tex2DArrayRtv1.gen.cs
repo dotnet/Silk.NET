@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public Tex2DArrayRtv1
         (
-            uint mipSlice = default,
-            uint firstArraySlice = default,
-            uint arraySize = default,
-            uint planeSlice = default
-        )
+            uint? mipSlice = null,
+            uint? firstArraySlice = null,
+            uint? arraySize = null,
+            uint? planeSlice = null
+        ) : this()
         {
-            MipSlice = mipSlice;
-            FirstArraySlice = firstArraySlice;
-            ArraySize = arraySize;
-            PlaneSlice = planeSlice;
+            if (mipSlice is not null)
+            {
+                MipSlice = mipSlice.Value;
+            }
+
+            if (firstArraySlice is not null)
+            {
+                FirstArraySlice = firstArraySlice.Value;
+            }
+
+            if (arraySize is not null)
+            {
+                ArraySize = arraySize.Value;
+            }
+
+            if (planeSlice is not null)
+            {
+                PlaneSlice = planeSlice.Value;
+            }
         }
 
 

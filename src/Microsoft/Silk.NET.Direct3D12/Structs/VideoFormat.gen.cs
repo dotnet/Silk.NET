@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public VideoFormat
         (
-            Silk.NET.DXGI.Format format = default,
-            Silk.NET.DXGI.ColorSpaceType colorSpace = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            Silk.NET.DXGI.ColorSpaceType? colorSpace = null
+        ) : this()
         {
-            Format = format;
-            ColorSpace = colorSpace;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (colorSpace is not null)
+            {
+                ColorSpace = colorSpace.Value;
+            }
         }
 
 

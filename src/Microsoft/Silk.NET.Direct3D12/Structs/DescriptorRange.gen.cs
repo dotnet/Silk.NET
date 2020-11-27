@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public DescriptorRange
         (
-            DescriptorRangeType rangeType = default,
-            uint numDescriptors = default,
-            uint baseShaderRegister = default,
-            uint registerSpace = default,
-            uint offsetInDescriptorsFromTableStart = default
-        )
+            DescriptorRangeType? rangeType = null,
+            uint? numDescriptors = null,
+            uint? baseShaderRegister = null,
+            uint? registerSpace = null,
+            uint? offsetInDescriptorsFromTableStart = null
+        ) : this()
         {
-            RangeType = rangeType;
-            NumDescriptors = numDescriptors;
-            BaseShaderRegister = baseShaderRegister;
-            RegisterSpace = registerSpace;
-            OffsetInDescriptorsFromTableStart = offsetInDescriptorsFromTableStart;
+            if (rangeType is not null)
+            {
+                RangeType = rangeType.Value;
+            }
+
+            if (numDescriptors is not null)
+            {
+                NumDescriptors = numDescriptors.Value;
+            }
+
+            if (baseShaderRegister is not null)
+            {
+                BaseShaderRegister = baseShaderRegister.Value;
+            }
+
+            if (registerSpace is not null)
+            {
+                RegisterSpace = registerSpace.Value;
+            }
+
+            if (offsetInDescriptorsFromTableStart is not null)
+            {
+                OffsetInDescriptorsFromTableStart = offsetInDescriptorsFromTableStart.Value;
+            }
         }
 
 

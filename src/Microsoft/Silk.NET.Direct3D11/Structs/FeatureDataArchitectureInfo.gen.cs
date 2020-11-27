@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataArchitectureInfo
         (
-            int tileBasedDeferredRenderer = default
-        )
+            int? tileBasedDeferredRenderer = null
+        ) : this()
         {
-            TileBasedDeferredRenderer = tileBasedDeferredRenderer;
+            if (tileBasedDeferredRenderer is not null)
+            {
+                TileBasedDeferredRenderer = tileBasedDeferredRenderer.Value;
+            }
         }
 
 

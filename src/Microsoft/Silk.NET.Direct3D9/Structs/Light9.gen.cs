@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,34 +22,85 @@ namespace Silk.NET.Direct3D9
     {
         public Light9
         (
-            Lighttype type = default,
-            Colorvalue diffuse = default,
-            Colorvalue specular = default,
-            Colorvalue ambient = default,
-            Vector position = default,
-            Vector direction = default,
-            float range = default,
-            float falloff = default,
-            float attenuation0 = default,
-            float attenuation1 = default,
-            float attenuation2 = default,
-            float theta = default,
-            float phi = default
-        )
+            Lighttype? type = null,
+            Colorvalue? diffuse = null,
+            Colorvalue? specular = null,
+            Colorvalue? ambient = null,
+            Vector? position = null,
+            Vector? direction = null,
+            float? range = null,
+            float? falloff = null,
+            float? attenuation0 = null,
+            float? attenuation1 = null,
+            float? attenuation2 = null,
+            float? theta = null,
+            float? phi = null
+        ) : this()
         {
-            Type = type;
-            Diffuse = diffuse;
-            Specular = specular;
-            Ambient = ambient;
-            Position = position;
-            Direction = direction;
-            Range = range;
-            Falloff = falloff;
-            Attenuation0 = attenuation0;
-            Attenuation1 = attenuation1;
-            Attenuation2 = attenuation2;
-            Theta = theta;
-            Phi = phi;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (diffuse is not null)
+            {
+                Diffuse = diffuse.Value;
+            }
+
+            if (specular is not null)
+            {
+                Specular = specular.Value;
+            }
+
+            if (ambient is not null)
+            {
+                Ambient = ambient.Value;
+            }
+
+            if (position is not null)
+            {
+                Position = position.Value;
+            }
+
+            if (direction is not null)
+            {
+                Direction = direction.Value;
+            }
+
+            if (range is not null)
+            {
+                Range = range.Value;
+            }
+
+            if (falloff is not null)
+            {
+                Falloff = falloff.Value;
+            }
+
+            if (attenuation0 is not null)
+            {
+                Attenuation0 = attenuation0.Value;
+            }
+
+            if (attenuation1 is not null)
+            {
+                Attenuation1 = attenuation1.Value;
+            }
+
+            if (attenuation2 is not null)
+            {
+                Attenuation2 = attenuation2.Value;
+            }
+
+            if (theta is not null)
+            {
+                Theta = theta.Value;
+            }
+
+            if (phi is not null)
+            {
+                Phi = phi.Value;
+            }
         }
 
 

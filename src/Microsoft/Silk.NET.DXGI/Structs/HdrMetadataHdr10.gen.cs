@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.DXGI
     {
         public HdrMetadataHdr10
         (
-            uint maxMasteringLuminance = default,
-            uint minMasteringLuminance = default,
-            ushort maxContentLightLevel = default,
-            ushort maxFrameAverageLightLevel = default
-        )
+            uint? maxMasteringLuminance = null,
+            uint? minMasteringLuminance = null,
+            ushort? maxContentLightLevel = null,
+            ushort? maxFrameAverageLightLevel = null
+        ) : this()
         {
-            MaxMasteringLuminance = maxMasteringLuminance;
-            MinMasteringLuminance = minMasteringLuminance;
-            MaxContentLightLevel = maxContentLightLevel;
-            MaxFrameAverageLightLevel = maxFrameAverageLightLevel;
+            if (maxMasteringLuminance is not null)
+            {
+                MaxMasteringLuminance = maxMasteringLuminance.Value;
+            }
+
+            if (minMasteringLuminance is not null)
+            {
+                MinMasteringLuminance = minMasteringLuminance.Value;
+            }
+
+            if (maxContentLightLevel is not null)
+            {
+                MaxContentLightLevel = maxContentLightLevel.Value;
+            }
+
+            if (maxFrameAverageLightLevel is not null)
+            {
+                MaxFrameAverageLightLevel = maxFrameAverageLightLevel.Value;
+            }
         }
 
         [NativeName("Type", "UINT16 [2]")]

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoDecoderHeapSize
         (
-            VideoDecoderHeapDesc videoDecoderHeapDesc = default,
-            ulong memoryPoolL0Size = default,
-            ulong memoryPoolL1Size = default
-        )
+            VideoDecoderHeapDesc? videoDecoderHeapDesc = null,
+            ulong? memoryPoolL0Size = null,
+            ulong? memoryPoolL1Size = null
+        ) : this()
         {
-            VideoDecoderHeapDesc = videoDecoderHeapDesc;
-            MemoryPoolL0Size = memoryPoolL0Size;
-            MemoryPoolL1Size = memoryPoolL1Size;
+            if (videoDecoderHeapDesc is not null)
+            {
+                VideoDecoderHeapDesc = videoDecoderHeapDesc.Value;
+            }
+
+            if (memoryPoolL0Size is not null)
+            {
+                MemoryPoolL0Size = memoryPoolL0Size.Value;
+            }
+
+            if (memoryPoolL1Size is not null)
+            {
+                MemoryPoolL1Size = memoryPoolL1Size.Value;
+            }
         }
 
 

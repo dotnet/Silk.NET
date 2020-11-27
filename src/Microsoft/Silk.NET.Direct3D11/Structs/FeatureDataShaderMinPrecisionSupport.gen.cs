@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataShaderMinPrecisionSupport
         (
-            uint pixelShaderMinPrecision = default,
-            uint allOtherShaderStagesMinPrecision = default
-        )
+            uint? pixelShaderMinPrecision = null,
+            uint? allOtherShaderStagesMinPrecision = null
+        ) : this()
         {
-            PixelShaderMinPrecision = pixelShaderMinPrecision;
-            AllOtherShaderStagesMinPrecision = allOtherShaderStagesMinPrecision;
+            if (pixelShaderMinPrecision is not null)
+            {
+                PixelShaderMinPrecision = pixelShaderMinPrecision.Value;
+            }
+
+            if (allOtherShaderStagesMinPrecision is not null)
+            {
+                AllOtherShaderStagesMinPrecision = allOtherShaderStagesMinPrecision.Value;
+            }
         }
 
 

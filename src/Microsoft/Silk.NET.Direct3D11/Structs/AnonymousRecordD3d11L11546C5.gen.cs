@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,12 +23,19 @@ namespace Silk.NET.Direct3D11
     {
         public AnonymousRecordD3d11L11546C5
         (
-            Tex2DVpov texture2D = default,
-            Tex2DArrayVpov texture2DArray = default
-        )
+            Tex2DVpov? texture2D = null,
+            Tex2DArrayVpov? texture2DArray = null
+        ) : this()
         {
-            Texture2D = texture2D;
-            Texture2DArray = texture2DArray;
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
+
+            if (texture2DArray is not null)
+            {
+                Texture2DArray = texture2DArray.Value;
+            }
         }
 
 

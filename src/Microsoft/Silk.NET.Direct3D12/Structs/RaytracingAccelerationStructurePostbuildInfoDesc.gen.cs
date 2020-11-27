@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public RaytracingAccelerationStructurePostbuildInfoDesc
         (
-            ulong destBuffer = default,
-            RaytracingAccelerationStructurePostbuildInfoType infoType = default
-        )
+            ulong? destBuffer = null,
+            RaytracingAccelerationStructurePostbuildInfoType? infoType = null
+        ) : this()
         {
-            DestBuffer = destBuffer;
-            InfoType = infoType;
+            if (destBuffer is not null)
+            {
+                DestBuffer = destBuffer.Value;
+            }
+
+            if (infoType is not null)
+            {
+                InfoType = infoType.Value;
+            }
         }
 
 

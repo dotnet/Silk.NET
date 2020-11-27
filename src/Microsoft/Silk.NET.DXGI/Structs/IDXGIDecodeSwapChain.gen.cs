@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -33,10 +34,13 @@ namespace Silk.NET.DXGI
 
         public IDXGIDecodeSwapChain
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -45,281 +49,237 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int PresentBuffer(uint BufferToPresent, uint SyncInterval, uint Flags)
+        public readonly int PresentBuffer(uint BufferToPresent, uint SyncInterval, uint Flags)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, uint, uint, uint, int>)LpVtbl[3])(@this, BufferToPresent, SyncInterval, Flags);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint, uint, uint, int>)LpVtbl[3])(@this, BufferToPresent, SyncInterval, Flags);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetSourceRect(Silk.NET.Core.Native.TagRect* pRect)
+        public readonly unsafe int SetSourceRect(Silk.NET.Core.Native.TagRect* pRect)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[4])(@this, pRect);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[4])(@this, pRect);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetSourceRect(ref Silk.NET.Core.Native.TagRect pRect)
+        public readonly int SetSourceRect(ref Silk.NET.Core.Native.TagRect pRect)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
-                {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[4])(@this, pRectPtr);
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[4])(@this, pRectPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetTargetRect(Silk.NET.Core.Native.TagRect* pRect)
+        public readonly unsafe int SetTargetRect(Silk.NET.Core.Native.TagRect* pRect)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[5])(@this, pRect);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[5])(@this, pRect);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetTargetRect(ref Silk.NET.Core.Native.TagRect pRect)
+        public readonly int SetTargetRect(ref Silk.NET.Core.Native.TagRect pRect)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
-                {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[5])(@this, pRectPtr);
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[5])(@this, pRectPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetDestSize(uint Width, uint Height)
+        public readonly int SetDestSize(uint Width, uint Height)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, uint, uint, int>)LpVtbl[6])(@this, Width, Height);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint, uint, int>)LpVtbl[6])(@this, Width, Height);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetSourceRect(Silk.NET.Core.Native.TagRect* pRect)
+        public readonly unsafe int GetSourceRect(Silk.NET.Core.Native.TagRect* pRect)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[7])(@this, pRect);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[7])(@this, pRect);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetSourceRect(ref Silk.NET.Core.Native.TagRect pRect)
+        public readonly int GetSourceRect(ref Silk.NET.Core.Native.TagRect pRect)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
-                {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[7])(@this, pRectPtr);
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[7])(@this, pRectPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetTargetRect(Silk.NET.Core.Native.TagRect* pRect)
+        public readonly unsafe int GetTargetRect(Silk.NET.Core.Native.TagRect* pRect)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[8])(@this, pRect);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[8])(@this, pRect);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetTargetRect(ref Silk.NET.Core.Native.TagRect pRect)
+        public readonly int GetTargetRect(ref Silk.NET.Core.Native.TagRect pRect)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
-                {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[8])(@this, pRectPtr);
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[8])(@this, pRectPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDestSize(uint* pWidth, uint* pHeight)
+        public readonly unsafe int GetDestSize(uint* pWidth, uint* pHeight)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeight);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeight);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDestSize(uint* pWidth, ref uint pHeight)
+        public readonly unsafe int GetDestSize(uint* pWidth, ref uint pHeight)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (uint* pHeightPtr = &pHeight)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeightPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetDestSize(ref uint pWidth, uint* pHeight)
+        {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (uint* pWidthPtr = &pWidth)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeight);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int GetDestSize(ref uint pWidth, ref uint pHeight)
+        {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (uint* pWidthPtr = &pWidth)
+            {
                 fixed (uint* pHeightPtr = &pHeight)
                 {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidth, pHeightPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeightPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDestSize(ref uint pWidth, uint* pHeight)
+        public readonly int SetColorSpace(MULTIPLANEOVERLAYYCbCrFLAGS ColorSpace)
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (uint* pWidthPtr = &pWidth)
-                {
-                    ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeight);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS, int>)LpVtbl[10])(@this, ColorSpace);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDestSize(ref uint pWidth, ref uint pHeight)
+        public readonly MULTIPLANEOVERLAYYCbCrFLAGS GetColorSpace()
         {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
-                int ret = default;
-                fixed (uint* pWidthPtr = &pWidth)
-                {
-                    fixed (uint* pHeightPtr = &pHeight)
-                    {
-                        ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, uint*, uint*, int>)LpVtbl[9])(@this, pWidthPtr, pHeightPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int SetColorSpace(MULTIPLANEOVERLAYYCbCrFLAGS ColorSpace)
-        {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS, int>)LpVtbl[10])(@this, ColorSpace);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public MULTIPLANEOVERLAYYCbCrFLAGS GetColorSpace()
-        {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
+            var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 MULTIPLANEOVERLAYYCbCrFLAGS ret = default;
-                ret = ((delegate* cdecl<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS>)LpVtbl[11])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS>)LpVtbl[11])(@this);
+            return ret;
         }
 
     }

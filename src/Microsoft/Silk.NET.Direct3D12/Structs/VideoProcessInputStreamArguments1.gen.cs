@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,71 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessInputStreamArguments1
         (
-            VideoProcessTransform transform = default,
-            VideoProcessInputStreamFlags flags = default,
-            VideoProcessInputStreamRate rateInfo = default,
-            VideoProcessAlphaBlending alphaBlending = default,
-            VideoFieldType fieldType = default
-        )
+            VideoProcessTransform? transform = null,
+            VideoProcessInputStreamFlags? flags = null,
+            VideoProcessInputStreamRate? rateInfo = null,
+            VideoProcessAlphaBlending? alphaBlending = null,
+            VideoFieldType? fieldType = null
+        ) : this()
         {
-           InputStream_0 = default;
-           InputStream_1 = default;
-            Transform = transform;
-            Flags = flags;
-            RateInfo = rateInfo;
-            AlphaBlending = alphaBlending;
-            FieldType = fieldType;
+            if (transform is not null)
+            {
+                Transform = transform.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (rateInfo is not null)
+            {
+                RateInfo = rateInfo.Value;
+            }
+
+            if (alphaBlending is not null)
+            {
+                AlphaBlending = alphaBlending.Value;
+            }
+
+            if (fieldType is not null)
+            {
+                FieldType = fieldType.Value;
+            }
         }
 
         
         [NativeName("Type", "D3D12_VIDEO_PROCESS_INPUT_STREAM [2]")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM [2]")]
         [NativeName("Name", "InputStream")]
-        public VideoProcessInputStream InputStream_0;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_INPUT_STREAM [2]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM [2]")]
-        [NativeName("Name", "InputStream")]
-        public VideoProcessInputStream InputStream_1;
+        public InputStreamBuffer InputStream;
+
+        public struct InputStreamBuffer
+        {
+            public VideoProcessInputStream Element0;
+            public VideoProcessInputStream Element1;
+            public ref VideoProcessInputStream this[int index]
+            {
+                get
+                {
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (VideoProcessInputStream* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<VideoProcessInputStream> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
+#endif
+        }
+
 
         [NativeName("Type", "D3D12_VIDEO_PROCESS_TRANSFORM")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_TRANSFORM")]

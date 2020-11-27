@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryAccessibilityEncryptionGuidInput
         (
-            AuthenticatedQueryInput input = default,
-            uint encryptionGuidIndex = default
-        )
+            AuthenticatedQueryInput? input = null,
+            uint? encryptionGuidIndex = null
+        ) : this()
         {
-            Input = input;
-            EncryptionGuidIndex = encryptionGuidIndex;
+            if (input is not null)
+            {
+                Input = input.Value;
+            }
+
+            if (encryptionGuidIndex is not null)
+            {
+                EncryptionGuidIndex = encryptionGuidIndex.Value;
+            }
         }
 
 

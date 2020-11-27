@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public DredPageFaultOutput1
         (
-            ulong pageFaultVA = default,
-            DredAllocationNode1* pHeadExistingAllocationNode = default,
-            DredAllocationNode1* pHeadRecentFreedAllocationNode = default
-        )
+            ulong? pageFaultVA = null,
+            DredAllocationNode1* pHeadExistingAllocationNode = null,
+            DredAllocationNode1* pHeadRecentFreedAllocationNode = null
+        ) : this()
         {
-            PageFaultVA = pageFaultVA;
-            PHeadExistingAllocationNode = pHeadExistingAllocationNode;
-            PHeadRecentFreedAllocationNode = pHeadRecentFreedAllocationNode;
+            if (pageFaultVA is not null)
+            {
+                PageFaultVA = pageFaultVA.Value;
+            }
+
+            if (pHeadExistingAllocationNode is not null)
+            {
+                PHeadExistingAllocationNode = pHeadExistingAllocationNode;
+            }
+
+            if (pHeadRecentFreedAllocationNode is not null)
+            {
+                PHeadRecentFreedAllocationNode = pHeadRecentFreedAllocationNode;
+            }
         }
 
 

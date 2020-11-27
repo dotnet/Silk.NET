@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelQuerychanneltypeOutput
         (
-            AuthenticatedchannelQueryOutput output = default,
-            Authenticatedchanneltype channelType = default
-        )
+            AuthenticatedchannelQueryOutput? output = null,
+            Authenticatedchanneltype? channelType = null
+        ) : this()
         {
-            Output = output;
-            ChannelType = channelType;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (channelType is not null)
+            {
+                ChannelType = channelType.Value;
+            }
         }
 
 

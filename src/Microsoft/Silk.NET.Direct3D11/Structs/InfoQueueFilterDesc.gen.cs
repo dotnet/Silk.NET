@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D11
     {
         public InfoQueueFilterDesc
         (
-            uint numCategories = default,
-            MessageCategory* pCategoryList = default,
-            uint numSeverities = default,
-            MessageSeverity* pSeverityList = default,
-            uint numIDs = default,
-            MessageID* pIDList = default
-        )
+            uint? numCategories = null,
+            MessageCategory* pCategoryList = null,
+            uint? numSeverities = null,
+            MessageSeverity* pSeverityList = null,
+            uint? numIDs = null,
+            MessageID* pIDList = null
+        ) : this()
         {
-            NumCategories = numCategories;
-            PCategoryList = pCategoryList;
-            NumSeverities = numSeverities;
-            PSeverityList = pSeverityList;
-            NumIDs = numIDs;
-            PIDList = pIDList;
+            if (numCategories is not null)
+            {
+                NumCategories = numCategories.Value;
+            }
+
+            if (pCategoryList is not null)
+            {
+                PCategoryList = pCategoryList;
+            }
+
+            if (numSeverities is not null)
+            {
+                NumSeverities = numSeverities.Value;
+            }
+
+            if (pSeverityList is not null)
+            {
+                PSeverityList = pSeverityList;
+            }
+
+            if (numIDs is not null)
+            {
+                NumIDs = numIDs.Value;
+            }
+
+            if (pIDList is not null)
+            {
+                PIDList = pIDList;
+            }
         }
 
 

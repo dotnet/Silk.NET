@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D9
     {
         public Vertexelement9
         (
-            ushort stream = default,
-            ushort offset = default,
-            byte type = default,
-            byte method = default,
-            byte usage = default,
-            byte usageIndex = default
-        )
+            ushort? stream = null,
+            ushort? offset = null,
+            byte? type = null,
+            byte? method = null,
+            byte? usage = null,
+            byte? usageIndex = null
+        ) : this()
         {
-            Stream = stream;
-            Offset = offset;
-            Type = type;
-            Method = method;
-            Usage = usage;
-            UsageIndex = usageIndex;
+            if (stream is not null)
+            {
+                Stream = stream.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (method is not null)
+            {
+                Method = method.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (usageIndex is not null)
+            {
+                UsageIndex = usageIndex.Value;
+            }
         }
 
 

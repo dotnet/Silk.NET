@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorContentDesc
         (
-            VideoFrameFormat inputFrameFormat = default,
-            Silk.NET.DXGI.Rational inputFrameRate = default,
-            uint inputWidth = default,
-            uint inputHeight = default,
-            Silk.NET.DXGI.Rational outputFrameRate = default,
-            uint outputWidth = default,
-            uint outputHeight = default,
-            VideoUsage usage = default
-        )
+            VideoFrameFormat? inputFrameFormat = null,
+            Silk.NET.DXGI.Rational? inputFrameRate = null,
+            uint? inputWidth = null,
+            uint? inputHeight = null,
+            Silk.NET.DXGI.Rational? outputFrameRate = null,
+            uint? outputWidth = null,
+            uint? outputHeight = null,
+            VideoUsage? usage = null
+        ) : this()
         {
-            InputFrameFormat = inputFrameFormat;
-            InputFrameRate = inputFrameRate;
-            InputWidth = inputWidth;
-            InputHeight = inputHeight;
-            OutputFrameRate = outputFrameRate;
-            OutputWidth = outputWidth;
-            OutputHeight = outputHeight;
-            Usage = usage;
+            if (inputFrameFormat is not null)
+            {
+                InputFrameFormat = inputFrameFormat.Value;
+            }
+
+            if (inputFrameRate is not null)
+            {
+                InputFrameRate = inputFrameRate.Value;
+            }
+
+            if (inputWidth is not null)
+            {
+                InputWidth = inputWidth.Value;
+            }
+
+            if (inputHeight is not null)
+            {
+                InputHeight = inputHeight.Value;
+            }
+
+            if (outputFrameRate is not null)
+            {
+                OutputFrameRate = outputFrameRate.Value;
+            }
+
+            if (outputWidth is not null)
+            {
+                OutputWidth = outputWidth.Value;
+            }
+
+            if (outputHeight is not null)
+            {
+                OutputHeight = outputHeight.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
         }
 
 

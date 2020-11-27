@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D9Options1
         (
-            int fullNonPow2TextureSupported = default,
-            int depthAsTextureWithLessEqualComparisonFilterSupported = default,
-            int simpleInstancingSupported = default,
-            int textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = default
-        )
+            int? fullNonPow2TextureSupported = null,
+            int? depthAsTextureWithLessEqualComparisonFilterSupported = null,
+            int? simpleInstancingSupported = null,
+            int? textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = null
+        ) : this()
         {
-            FullNonPow2TextureSupported = fullNonPow2TextureSupported;
-            DepthAsTextureWithLessEqualComparisonFilterSupported = depthAsTextureWithLessEqualComparisonFilterSupported;
-            SimpleInstancingSupported = simpleInstancingSupported;
-            TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
+            if (fullNonPow2TextureSupported is not null)
+            {
+                FullNonPow2TextureSupported = fullNonPow2TextureSupported.Value;
+            }
+
+            if (depthAsTextureWithLessEqualComparisonFilterSupported is not null)
+            {
+                DepthAsTextureWithLessEqualComparisonFilterSupported = depthAsTextureWithLessEqualComparisonFilterSupported.Value;
+            }
+
+            if (simpleInstancingSupported is not null)
+            {
+                SimpleInstancingSupported = simpleInstancingSupported.Value;
+            }
+
+            if (textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported is not null)
+            {
+                TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported.Value;
+            }
         }
 
 

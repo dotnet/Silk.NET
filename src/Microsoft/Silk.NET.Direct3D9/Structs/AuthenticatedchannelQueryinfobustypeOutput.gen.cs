@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelQueryinfobustypeOutput
         (
-            AuthenticatedchannelQueryOutput output = default,
-            Bustype busType = default,
-            int bAccessibleInContiguousBlocks = default,
-            int bAccessibleInNonContiguousBlocks = default
-        )
+            AuthenticatedchannelQueryOutput? output = null,
+            Bustype? busType = null,
+            int? bAccessibleInContiguousBlocks = null,
+            int? bAccessibleInNonContiguousBlocks = null
+        ) : this()
         {
-            Output = output;
-            BusType = busType;
-            BAccessibleInContiguousBlocks = bAccessibleInContiguousBlocks;
-            BAccessibleInNonContiguousBlocks = bAccessibleInNonContiguousBlocks;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (busType is not null)
+            {
+                BusType = busType.Value;
+            }
+
+            if (bAccessibleInContiguousBlocks is not null)
+            {
+                BAccessibleInContiguousBlocks = bAccessibleInContiguousBlocks.Value;
+            }
+
+            if (bAccessibleInNonContiguousBlocks is not null)
+            {
+                BAccessibleInNonContiguousBlocks = bAccessibleInNonContiguousBlocks.Value;
+            }
         }
 
 

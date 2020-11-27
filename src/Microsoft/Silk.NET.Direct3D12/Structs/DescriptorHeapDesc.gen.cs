@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public DescriptorHeapDesc
         (
-            DescriptorHeapType type = default,
-            uint numDescriptors = default,
-            DescriptorHeapFlags flags = default,
-            uint nodeMask = default
-        )
+            DescriptorHeapType? type = null,
+            uint? numDescriptors = null,
+            DescriptorHeapFlags? flags = null,
+            uint? nodeMask = null
+        ) : this()
         {
-            Type = type;
-            NumDescriptors = numDescriptors;
-            Flags = flags;
-            NodeMask = nodeMask;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (numDescriptors is not null)
+            {
+                NumDescriptors = numDescriptors.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
         }
 
 

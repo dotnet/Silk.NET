@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public VIDEOCOLORYCbCrA
         (
-            float y = default,
-            float cb = default,
-            float cr = default,
-            float a = default
-        )
+            float? y = null,
+            float? cb = null,
+            float? cr = null,
+            float? a = null
+        ) : this()
         {
-            Y = y;
-            Cb = cb;
-            Cr = cr;
-            A = a;
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (cb is not null)
+            {
+                Cb = cb.Value;
+            }
+
+            if (cr is not null)
+            {
+                Cr = cr.Value;
+            }
+
+            if (a is not null)
+            {
+                A = a.Value;
+            }
         }
 
 

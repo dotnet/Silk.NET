@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,38 +22,97 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options
         (
-            int doublePrecisionFloatShaderOps = default,
-            int outputMergerLogicOp = default,
-            ShaderMinPrecisionSupport minPrecisionSupport = default,
-            TiledResourcesTier tiledResourcesTier = default,
-            ResourceBindingTier resourceBindingTier = default,
-            int pSSpecifiedStencilRefSupported = default,
-            int typedUAVLoadAdditionalFormats = default,
-            int rOVsSupported = default,
-            ConservativeRasterizationTier conservativeRasterizationTier = default,
-            uint maxGPUVirtualAddressBitsPerResource = default,
-            int standardSwizzle64KBSupported = default,
-            CrossNodeSharingTier crossNodeSharingTier = default,
-            int crossAdapterRowMajorTextureSupported = default,
-            int vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = default,
-            ResourceHeapTier resourceHeapTier = default
-        )
+            int? doublePrecisionFloatShaderOps = null,
+            int? outputMergerLogicOp = null,
+            ShaderMinPrecisionSupport? minPrecisionSupport = null,
+            TiledResourcesTier? tiledResourcesTier = null,
+            ResourceBindingTier? resourceBindingTier = null,
+            int? pSSpecifiedStencilRefSupported = null,
+            int? typedUAVLoadAdditionalFormats = null,
+            int? rOVsSupported = null,
+            ConservativeRasterizationTier? conservativeRasterizationTier = null,
+            uint? maxGPUVirtualAddressBitsPerResource = null,
+            int? standardSwizzle64KBSupported = null,
+            CrossNodeSharingTier? crossNodeSharingTier = null,
+            int? crossAdapterRowMajorTextureSupported = null,
+            int? vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = null,
+            ResourceHeapTier? resourceHeapTier = null
+        ) : this()
         {
-            DoublePrecisionFloatShaderOps = doublePrecisionFloatShaderOps;
-            OutputMergerLogicOp = outputMergerLogicOp;
-            MinPrecisionSupport = minPrecisionSupport;
-            TiledResourcesTier = tiledResourcesTier;
-            ResourceBindingTier = resourceBindingTier;
-            PSSpecifiedStencilRefSupported = pSSpecifiedStencilRefSupported;
-            TypedUAVLoadAdditionalFormats = typedUAVLoadAdditionalFormats;
-            ROVsSupported = rOVsSupported;
-            ConservativeRasterizationTier = conservativeRasterizationTier;
-            MaxGPUVirtualAddressBitsPerResource = maxGPUVirtualAddressBitsPerResource;
-            StandardSwizzle64KBSupported = standardSwizzle64KBSupported;
-            CrossNodeSharingTier = crossNodeSharingTier;
-            CrossAdapterRowMajorTextureSupported = crossAdapterRowMajorTextureSupported;
-            VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
-            ResourceHeapTier = resourceHeapTier;
+            if (doublePrecisionFloatShaderOps is not null)
+            {
+                DoublePrecisionFloatShaderOps = doublePrecisionFloatShaderOps.Value;
+            }
+
+            if (outputMergerLogicOp is not null)
+            {
+                OutputMergerLogicOp = outputMergerLogicOp.Value;
+            }
+
+            if (minPrecisionSupport is not null)
+            {
+                MinPrecisionSupport = minPrecisionSupport.Value;
+            }
+
+            if (tiledResourcesTier is not null)
+            {
+                TiledResourcesTier = tiledResourcesTier.Value;
+            }
+
+            if (resourceBindingTier is not null)
+            {
+                ResourceBindingTier = resourceBindingTier.Value;
+            }
+
+            if (pSSpecifiedStencilRefSupported is not null)
+            {
+                PSSpecifiedStencilRefSupported = pSSpecifiedStencilRefSupported.Value;
+            }
+
+            if (typedUAVLoadAdditionalFormats is not null)
+            {
+                TypedUAVLoadAdditionalFormats = typedUAVLoadAdditionalFormats.Value;
+            }
+
+            if (rOVsSupported is not null)
+            {
+                ROVsSupported = rOVsSupported.Value;
+            }
+
+            if (conservativeRasterizationTier is not null)
+            {
+                ConservativeRasterizationTier = conservativeRasterizationTier.Value;
+            }
+
+            if (maxGPUVirtualAddressBitsPerResource is not null)
+            {
+                MaxGPUVirtualAddressBitsPerResource = maxGPUVirtualAddressBitsPerResource.Value;
+            }
+
+            if (standardSwizzle64KBSupported is not null)
+            {
+                StandardSwizzle64KBSupported = standardSwizzle64KBSupported.Value;
+            }
+
+            if (crossNodeSharingTier is not null)
+            {
+                CrossNodeSharingTier = crossNodeSharingTier.Value;
+            }
+
+            if (crossAdapterRowMajorTextureSupported is not null)
+            {
+                CrossAdapterRowMajorTextureSupported = crossAdapterRowMajorTextureSupported.Value;
+            }
+
+            if (vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation is not null)
+            {
+                VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation.Value;
+            }
+
+            if (resourceHeapTier is not null)
+            {
+                ResourceHeapTier = resourceHeapTier.Value;
+            }
         }
 
 

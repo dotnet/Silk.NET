@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public DredBreadcrumbContext
         (
-            uint breadcrumbIndex = default,
-            char* pContextString = default
-        )
+            uint? breadcrumbIndex = null,
+            char* pContextString = null
+        ) : this()
         {
-            BreadcrumbIndex = breadcrumbIndex;
-            PContextString = pContextString;
+            if (breadcrumbIndex is not null)
+            {
+                BreadcrumbIndex = breadcrumbIndex.Value;
+            }
+
+            if (pContextString is not null)
+            {
+                PContextString = pContextString;
+            }
         }
 
 

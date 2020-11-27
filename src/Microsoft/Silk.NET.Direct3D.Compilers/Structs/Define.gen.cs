@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D.Compilers
     {
         public Define
         (
-            char* name = default,
-            char* value = default
-        )
+            char* name = null,
+            char* value = null
+        ) : this()
         {
-            Name = name;
-            Value = value;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (value is not null)
+            {
+                Value = value;
+            }
         }
 
 

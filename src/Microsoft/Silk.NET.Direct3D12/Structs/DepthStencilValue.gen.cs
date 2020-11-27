@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public DepthStencilValue
         (
-            float depth = default,
-            byte stencil = default
-        )
+            float? depth = null,
+            byte? stencil = null
+        ) : this()
         {
-            Depth = depth;
-            Stencil = stencil;
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
+
+            if (stencil is not null)
+            {
+                Stencil = stencil.Value;
+            }
         }
 
 

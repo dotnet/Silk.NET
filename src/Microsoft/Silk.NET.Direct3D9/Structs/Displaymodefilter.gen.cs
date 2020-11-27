@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D9
     {
         public Displaymodefilter
         (
-            uint size = default,
-            Format format = default,
-            Scanlineordering scanLineOrdering = default
-        )
+            uint? size = null,
+            Format? format = null,
+            Scanlineordering? scanLineOrdering = null
+        ) : this()
         {
-            Size = size;
-            Format = format;
-            ScanLineOrdering = scanLineOrdering;
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (scanLineOrdering is not null)
+            {
+                ScanLineOrdering = scanLineOrdering.Value;
+            }
         }
 
 

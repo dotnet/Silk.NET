@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataCrossNode
         (
-            CrossNodeSharingTier sharingTier = default,
-            int atomicShaderInstructions = default
-        )
+            CrossNodeSharingTier? sharingTier = null,
+            int? atomicShaderInstructions = null
+        ) : this()
         {
-            SharingTier = sharingTier;
-            AtomicShaderInstructions = atomicShaderInstructions;
+            if (sharingTier is not null)
+            {
+                SharingTier = sharingTier.Value;
+            }
+
+            if (atomicShaderInstructions is not null)
+            {
+                AtomicShaderInstructions = atomicShaderInstructions.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options5
         (
-            SharedResourceTier sharedResourceTier = default
-        )
+            SharedResourceTier? sharedResourceTier = null
+        ) : this()
         {
-            SharedResourceTier = sharedResourceTier;
+            if (sharedResourceTier is not null)
+            {
+                SharedResourceTier = sharedResourceTier.Value;
+            }
         }
 
 

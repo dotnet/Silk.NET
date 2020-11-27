@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.DXGI
     {
         public DecodeSwapChainDesc
         (
-            uint flags = default
-        )
+            uint? flags = null
+        ) : this()
         {
-            Flags = flags;
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

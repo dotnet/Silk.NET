@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public PlacedSubresourceFootprint
         (
-            ulong offset = default,
-            SubresourceFootprint footprint = default
-        )
+            ulong? offset = null,
+            SubresourceFootprint? footprint = null
+        ) : this()
         {
-            Offset = offset;
-            Footprint = footprint;
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (footprint is not null)
+            {
+                Footprint = footprint.Value;
+            }
         }
 
 

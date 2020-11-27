@@ -25,6 +25,7 @@ namespace Silk.NET.BuildTools.Cpp
             {
                 sb.Clear();
                 Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex);
+                vtblFunction.New.IsReadOnly = true;
                 yield return new ImplementedFunction(vtblFunction.New, sb, vtblFunction.Original);
             }
         }
@@ -74,9 +75,8 @@ namespace Silk.NET.BuildTools.Cpp
 
         public static void Implement(StringBuilder sb, Function function, Struct parent, int index)
         {
-            var ind = "    ";
-            sb.AppendLine($"fixed ({parent.Name}* @this = &this)");
-            sb.AppendLine("{");
+            var ind = "";
+            sb.AppendLine($"var @this = ({parent.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");
 
             var epilogue = new List<Action>();
             var parameterInvocations = new List<(Type Type, string Parameter)>
@@ -181,11 +181,11 @@ namespace Silk.NET.BuildTools.Cpp
             var conv = function.Convention switch
             {
                 CallingConvention.Winapi => throw new NotImplementedException(),
-                CallingConvention.Cdecl => "cdecl",
-                CallingConvention.StdCall => "stdcall",
-                CallingConvention.ThisCall => "thiscall",
-                CallingConvention.FastCall => "fastcall",
-                _ => "cdecl"
+                CallingConvention.Cdecl => "Cdecl",
+                CallingConvention.StdCall => "Stdcall",
+                CallingConvention.ThisCall => "Thiscall",
+                CallingConvention.FastCall => "Fastcall",
+                _ => "Cdecl"
             };
 
             var fnPtrSig = string.Join(", ", parameterInvocations.Select(x => x.Type.ToString()));
@@ -195,7 +195,7 @@ namespace Silk.NET.BuildTools.Cpp
             }
 
             fnPtrSig += function.ReturnType;
-            sb.Append($"((delegate* {conv}<{fnPtrSig}>)");
+            sb.Append($"((delegate* unmanaged[{conv}]<{fnPtrSig}>)");
             sb.Append($"LpVtbl[{index}])");
             sb.AppendLine("(" + string.Join(", ", parameterInvocations.Select(x => x.Parameter)) + ");");
 
@@ -206,10 +206,8 @@ namespace Silk.NET.BuildTools.Cpp
 
             if (function.ReturnType.ToString() != "void")
             {
-                sb.AppendLine("    return ret;");
+                sb.AppendLine("return ret;");
             }
-
-            sb.AppendLine("}");
         }
     }
 }

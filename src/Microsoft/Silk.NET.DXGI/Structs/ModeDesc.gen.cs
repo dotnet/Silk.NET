@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.DXGI
     {
         public ModeDesc
         (
-            uint width = default,
-            uint height = default,
-            Rational refreshRate = default,
-            Silk.NET.DXGI.Format format = default,
-            ModeScanlineOrder scanlineOrdering = default,
-            ModeScaling scaling = default
-        )
+            uint? width = null,
+            uint? height = null,
+            Rational? refreshRate = null,
+            Silk.NET.DXGI.Format? format = null,
+            ModeScanlineOrder? scanlineOrdering = null,
+            ModeScaling? scaling = null
+        ) : this()
         {
-            Width = width;
-            Height = height;
-            RefreshRate = refreshRate;
-            Format = format;
-            ScanlineOrdering = scanlineOrdering;
-            Scaling = scaling;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (refreshRate is not null)
+            {
+                RefreshRate = refreshRate.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (scanlineOrdering is not null)
+            {
+                ScanlineOrdering = scanlineOrdering.Value;
+            }
+
+            if (scaling is not null)
+            {
+                Scaling = scaling.Value;
+            }
         }
 
 

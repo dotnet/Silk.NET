@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessFilterRange
         (
-            int minimum = default,
-            int maximum = default,
-            int @default = default,
-            float multiplier = default
-        )
+            int? minimum = null,
+            int? maximum = null,
+            int? @default = null,
+            float? multiplier = null
+        ) : this()
         {
-            Minimum = minimum;
-            Maximum = maximum;
-            Default = @default;
-            Multiplier = multiplier;
+            if (minimum is not null)
+            {
+                Minimum = minimum.Value;
+            }
+
+            if (maximum is not null)
+            {
+                Maximum = maximum.Value;
+            }
+
+            if (@default is not null)
+            {
+                Default = @default.Value;
+            }
+
+            if (multiplier is not null)
+            {
+                Multiplier = multiplier.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D12
     {
         public ID3D12FunctionParameterReflection
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -33,28 +37,24 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int GetDesc(ParameterDesc* pDesc)
+        public readonly unsafe int GetDesc(ParameterDesc* pDesc)
         {
-            fixed (ID3D12FunctionParameterReflection* @this = &this)
-            {
+            var @this = (ID3D12FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDesc(ref ParameterDesc pDesc)
+        public readonly int GetDesc(ref ParameterDesc pDesc)
         {
-            fixed (ID3D12FunctionParameterReflection* @this = &this)
-            {
+            var @this = (ID3D12FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ParameterDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDescPtr);
-                }
-                return ret;
+            fixed (ParameterDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDescPtr);
             }
+            return ret;
         }
 
     }

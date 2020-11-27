@@ -669,8 +669,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -738,8 +738,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -830,8 +830,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -920,8 +920,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -996,8 +996,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -1074,8 +1074,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -1146,8 +1146,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/include"
                 ],
                 "traverse": [
@@ -1225,8 +1225,8 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.27.29110/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.27.29110/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
                     "-Ibuild/include"
                 ],
                 "traverse": [

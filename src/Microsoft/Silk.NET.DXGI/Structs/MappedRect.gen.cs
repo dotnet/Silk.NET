@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.DXGI
     {
         public MappedRect
         (
-            int pitch = default,
-            byte* pBits = default
-        )
+            int? pitch = null,
+            byte* pBits = null
+        ) : this()
         {
-            Pitch = pitch;
-            PBits = pBits;
+            if (pitch is not null)
+            {
+                Pitch = pitch.Value;
+            }
+
+            if (pBits is not null)
+            {
+                PBits = pBits;
+            }
         }
 
 

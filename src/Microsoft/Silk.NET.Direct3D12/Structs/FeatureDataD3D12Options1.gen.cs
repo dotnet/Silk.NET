@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options1
         (
-            int waveOps = default,
-            uint waveLaneCountMin = default,
-            uint waveLaneCountMax = default,
-            uint totalLaneCount = default,
-            int expandedComputeResourceStates = default,
-            int int64ShaderOps = default
-        )
+            int? waveOps = null,
+            uint? waveLaneCountMin = null,
+            uint? waveLaneCountMax = null,
+            uint? totalLaneCount = null,
+            int? expandedComputeResourceStates = null,
+            int? int64ShaderOps = null
+        ) : this()
         {
-            WaveOps = waveOps;
-            WaveLaneCountMin = waveLaneCountMin;
-            WaveLaneCountMax = waveLaneCountMax;
-            TotalLaneCount = totalLaneCount;
-            ExpandedComputeResourceStates = expandedComputeResourceStates;
-            Int64ShaderOps = int64ShaderOps;
+            if (waveOps is not null)
+            {
+                WaveOps = waveOps.Value;
+            }
+
+            if (waveLaneCountMin is not null)
+            {
+                WaveLaneCountMin = waveLaneCountMin.Value;
+            }
+
+            if (waveLaneCountMax is not null)
+            {
+                WaveLaneCountMax = waveLaneCountMax.Value;
+            }
+
+            if (totalLaneCount is not null)
+            {
+                TotalLaneCount = totalLaneCount.Value;
+            }
+
+            if (expandedComputeResourceStates is not null)
+            {
+                ExpandedComputeResourceStates = expandedComputeResourceStates.Value;
+            }
+
+            if (int64ShaderOps is not null)
+            {
+                Int64ShaderOps = int64ShaderOps.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public RenderPassDepthStencilDesc
         (
-            CpuDescriptorHandle cpuDescriptor = default,
-            RenderPassBeginningAccess depthBeginningAccess = default,
-            RenderPassBeginningAccess stencilBeginningAccess = default,
-            RenderPassEndingAccess depthEndingAccess = default,
-            RenderPassEndingAccess stencilEndingAccess = default
-        )
+            CpuDescriptorHandle? cpuDescriptor = null,
+            RenderPassBeginningAccess? depthBeginningAccess = null,
+            RenderPassBeginningAccess? stencilBeginningAccess = null,
+            RenderPassEndingAccess? depthEndingAccess = null,
+            RenderPassEndingAccess? stencilEndingAccess = null
+        ) : this()
         {
-            CpuDescriptor = cpuDescriptor;
-            DepthBeginningAccess = depthBeginningAccess;
-            StencilBeginningAccess = stencilBeginningAccess;
-            DepthEndingAccess = depthEndingAccess;
-            StencilEndingAccess = stencilEndingAccess;
+            if (cpuDescriptor is not null)
+            {
+                CpuDescriptor = cpuDescriptor.Value;
+            }
+
+            if (depthBeginningAccess is not null)
+            {
+                DepthBeginningAccess = depthBeginningAccess.Value;
+            }
+
+            if (stencilBeginningAccess is not null)
+            {
+                StencilBeginningAccess = stencilBeginningAccess.Value;
+            }
+
+            if (depthEndingAccess is not null)
+            {
+                DepthEndingAccess = depthEndingAccess.Value;
+            }
+
+            if (stencilEndingAccess is not null)
+            {
+                StencilEndingAccess = stencilEndingAccess.Value;
+            }
         }
 
 

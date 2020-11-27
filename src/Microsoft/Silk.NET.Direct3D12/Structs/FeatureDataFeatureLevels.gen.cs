@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataFeatureLevels
         (
-            uint numFeatureLevels = default,
-            Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsRequested = default,
-            Silk.NET.Core.Native.D3DFeatureLevel maxSupportedFeatureLevel = default
-        )
+            uint? numFeatureLevels = null,
+            Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevelsRequested = null,
+            Silk.NET.Core.Native.D3DFeatureLevel? maxSupportedFeatureLevel = null
+        ) : this()
         {
-            NumFeatureLevels = numFeatureLevels;
-            PFeatureLevelsRequested = pFeatureLevelsRequested;
-            MaxSupportedFeatureLevel = maxSupportedFeatureLevel;
+            if (numFeatureLevels is not null)
+            {
+                NumFeatureLevels = numFeatureLevels.Value;
+            }
+
+            if (pFeatureLevelsRequested is not null)
+            {
+                PFeatureLevelsRequested = pFeatureLevelsRequested;
+            }
+
+            if (maxSupportedFeatureLevel is not null)
+            {
+                MaxSupportedFeatureLevel = maxSupportedFeatureLevel.Value;
+            }
         }
 
 

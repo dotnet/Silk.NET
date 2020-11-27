@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public Tex2DVpiv
         (
-            uint mipSlice = default,
-            uint arraySlice = default
-        )
+            uint? mipSlice = null,
+            uint? arraySlice = null
+        ) : this()
         {
-            MipSlice = mipSlice;
-            ArraySlice = arraySlice;
+            if (mipSlice is not null)
+            {
+                MipSlice = mipSlice.Value;
+            }
+
+            if (arraySlice is not null)
+            {
+                ArraySlice = arraySlice.Value;
+            }
         }
 
 

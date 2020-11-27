@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public MetaCommandDesc
         (
-            Guid id = default,
-            char* name = default,
-            GraphicsStates initializationDirtyState = default,
-            GraphicsStates executionDirtyState = default
-        )
+            Guid? id = null,
+            char* name = null,
+            GraphicsStates? initializationDirtyState = null,
+            GraphicsStates? executionDirtyState = null
+        ) : this()
         {
-            Id = id;
-            Name = name;
-            InitializationDirtyState = initializationDirtyState;
-            ExecutionDirtyState = executionDirtyState;
+            if (id is not null)
+            {
+                Id = id.Value;
+            }
+
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (initializationDirtyState is not null)
+            {
+                InitializationDirtyState = initializationDirtyState.Value;
+            }
+
+            if (executionDirtyState is not null)
+            {
+                ExecutionDirtyState = executionDirtyState.Value;
+            }
         }
 
 

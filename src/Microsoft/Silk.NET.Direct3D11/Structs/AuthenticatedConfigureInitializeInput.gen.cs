@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedConfigureInitializeInput
         (
-            AuthenticatedConfigureInput parameters = default,
-            uint startSequenceQuery = default,
-            uint startSequenceConfigure = default
-        )
+            AuthenticatedConfigureInput? parameters = null,
+            uint? startSequenceQuery = null,
+            uint? startSequenceConfigure = null
+        ) : this()
         {
-            Parameters = parameters;
-            StartSequenceQuery = startSequenceQuery;
-            StartSequenceConfigure = startSequenceConfigure;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (startSequenceQuery is not null)
+            {
+                StartSequenceQuery = startSequenceQuery.Value;
+            }
+
+            if (startSequenceConfigure is not null)
+            {
+                StartSequenceConfigure = startSequenceConfigure.Value;
+            }
         }
 
 

@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -44,10 +45,13 @@ namespace Silk.NET.Direct3D12
 
         public ID3D12DeviceRemovedExtendedData1
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -56,181 +60,153 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetAutoBreadcrumbsOutput(DredAutoBreadcrumbsOutput* pOutput)
+        public readonly unsafe int GetAutoBreadcrumbsOutput(DredAutoBreadcrumbsOutput* pOutput)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput*, int>)LpVtbl[3])(@this, pOutput);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput*, int>)LpVtbl[3])(@this, pOutput);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetAutoBreadcrumbsOutput(ref DredAutoBreadcrumbsOutput pOutput)
+        public readonly int GetAutoBreadcrumbsOutput(ref DredAutoBreadcrumbsOutput pOutput)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (DredAutoBreadcrumbsOutput* pOutputPtr = &pOutput)
-                {
-                    ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput*, int>)LpVtbl[3])(@this, pOutputPtr);
-                }
-                return ret;
+            fixed (DredAutoBreadcrumbsOutput* pOutputPtr = &pOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput*, int>)LpVtbl[3])(@this, pOutputPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPageFaultAllocationOutput(DredPageFaultOutput* pOutput)
+        public readonly unsafe int GetPageFaultAllocationOutput(DredPageFaultOutput* pOutput)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput*, int>)LpVtbl[4])(@this, pOutput);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput*, int>)LpVtbl[4])(@this, pOutput);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetPageFaultAllocationOutput(ref DredPageFaultOutput pOutput)
+        public readonly int GetPageFaultAllocationOutput(ref DredPageFaultOutput pOutput)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (DredPageFaultOutput* pOutputPtr = &pOutput)
-                {
-                    ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput*, int>)LpVtbl[4])(@this, pOutputPtr);
-                }
-                return ret;
+            fixed (DredPageFaultOutput* pOutputPtr = &pOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput*, int>)LpVtbl[4])(@this, pOutputPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetAutoBreadcrumbsOutput1(DredAutoBreadcrumbsOutput1* pOutput)
+        public readonly unsafe int GetAutoBreadcrumbsOutput1(DredAutoBreadcrumbsOutput1* pOutput)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput1*, int>)LpVtbl[5])(@this, pOutput);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput1*, int>)LpVtbl[5])(@this, pOutput);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetAutoBreadcrumbsOutput1(ref DredAutoBreadcrumbsOutput1 pOutput)
+        public readonly int GetAutoBreadcrumbsOutput1(ref DredAutoBreadcrumbsOutput1 pOutput)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (DredAutoBreadcrumbsOutput1* pOutputPtr = &pOutput)
-                {
-                    ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput1*, int>)LpVtbl[5])(@this, pOutputPtr);
-                }
-                return ret;
+            fixed (DredAutoBreadcrumbsOutput1* pOutputPtr = &pOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredAutoBreadcrumbsOutput1*, int>)LpVtbl[5])(@this, pOutputPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPageFaultAllocationOutput1(DredPageFaultOutput1* pOutput)
+        public readonly unsafe int GetPageFaultAllocationOutput1(DredPageFaultOutput1* pOutput)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput1*, int>)LpVtbl[6])(@this, pOutput);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput1*, int>)LpVtbl[6])(@this, pOutput);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetPageFaultAllocationOutput1(ref DredPageFaultOutput1 pOutput)
+        public readonly int GetPageFaultAllocationOutput1(ref DredPageFaultOutput1 pOutput)
         {
-            fixed (ID3D12DeviceRemovedExtendedData1* @this = &this)
-            {
+            var @this = (ID3D12DeviceRemovedExtendedData1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (DredPageFaultOutput1* pOutputPtr = &pOutput)
-                {
-                    ret = ((delegate* cdecl<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput1*, int>)LpVtbl[6])(@this, pOutputPtr);
-                }
-                return ret;
+            fixed (DredPageFaultOutput1* pOutputPtr = &pOutput)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedData1*, DredPageFaultOutput1*, int>)LpVtbl[6])(@this, pOutputPtr);
             }
+            return ret;
         }
 
     }

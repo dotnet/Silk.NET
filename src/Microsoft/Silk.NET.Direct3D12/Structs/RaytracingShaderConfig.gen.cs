@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public RaytracingShaderConfig
         (
-            uint maxPayloadSizeInBytes = default,
-            uint maxAttributeSizeInBytes = default
-        )
+            uint? maxPayloadSizeInBytes = null,
+            uint? maxAttributeSizeInBytes = null
+        ) : this()
         {
-            MaxPayloadSizeInBytes = maxPayloadSizeInBytes;
-            MaxAttributeSizeInBytes = maxAttributeSizeInBytes;
+            if (maxPayloadSizeInBytes is not null)
+            {
+                MaxPayloadSizeInBytes = maxPayloadSizeInBytes.Value;
+            }
+
+            if (maxAttributeSizeInBytes is not null)
+            {
+                MaxAttributeSizeInBytes = maxAttributeSizeInBytes.Value;
+            }
         }
 
 

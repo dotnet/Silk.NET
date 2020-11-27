@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoDecodeConversionSupport
         (
-            uint nodeIndex = default,
-            VideoDecodeConfiguration configuration = default,
-            VideoSample decodeSample = default,
-            VideoFormat outputFormat = default,
-            Silk.NET.DXGI.Rational frameRate = default,
-            uint bitRate = default,
-            VideoDecodeConversionSupportFlags supportFlags = default,
-            VideoScaleSupport scaleSupport = default
-        )
+            uint? nodeIndex = null,
+            VideoDecodeConfiguration? configuration = null,
+            VideoSample? decodeSample = null,
+            VideoFormat? outputFormat = null,
+            Silk.NET.DXGI.Rational? frameRate = null,
+            uint? bitRate = null,
+            VideoDecodeConversionSupportFlags? supportFlags = null,
+            VideoScaleSupport? scaleSupport = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            Configuration = configuration;
-            DecodeSample = decodeSample;
-            OutputFormat = outputFormat;
-            FrameRate = frameRate;
-            BitRate = bitRate;
-            SupportFlags = supportFlags;
-            ScaleSupport = scaleSupport;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (configuration is not null)
+            {
+                Configuration = configuration.Value;
+            }
+
+            if (decodeSample is not null)
+            {
+                DecodeSample = decodeSample.Value;
+            }
+
+            if (outputFormat is not null)
+            {
+                OutputFormat = outputFormat.Value;
+            }
+
+            if (frameRate is not null)
+            {
+                FrameRate = frameRate.Value;
+            }
+
+            if (bitRate is not null)
+            {
+                BitRate = bitRate.Value;
+            }
+
+            if (supportFlags is not null)
+            {
+                SupportFlags = supportFlags.Value;
+            }
+
+            if (scaleSupport is not null)
+            {
+                ScaleSupport = scaleSupport.Value;
+            }
         }
 
 

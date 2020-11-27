@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D11
     {
         public TileRegionSize
         (
-            uint numTiles = default,
-            int bUseBox = default,
-            uint width = default,
-            ushort height = default,
-            ushort depth = default
-        )
+            uint? numTiles = null,
+            int? bUseBox = null,
+            uint? width = null,
+            ushort? height = null,
+            ushort? depth = null
+        ) : this()
         {
-            NumTiles = numTiles;
-            BUseBox = bUseBox;
-            Width = width;
-            Height = height;
-            Depth = depth;
+            if (numTiles is not null)
+            {
+                NumTiles = numTiles.Value;
+            }
+
+            if (bUseBox is not null)
+            {
+                BUseBox = bUseBox.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
         }
 
 

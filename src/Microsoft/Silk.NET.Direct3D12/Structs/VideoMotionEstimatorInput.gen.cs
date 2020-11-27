@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public VideoMotionEstimatorInput
         (
-            ID3D12Resource* pInputTexture2D = default,
-            uint inputSubresourceIndex = default,
-            ID3D12Resource* pReferenceTexture2D = default,
-            uint referenceSubresourceIndex = default,
-            ID3D12VideoMotionVectorHeap* pHintMotionVectorHeap = default
-        )
+            ID3D12Resource* pInputTexture2D = null,
+            uint? inputSubresourceIndex = null,
+            ID3D12Resource* pReferenceTexture2D = null,
+            uint? referenceSubresourceIndex = null,
+            ID3D12VideoMotionVectorHeap* pHintMotionVectorHeap = null
+        ) : this()
         {
-            PInputTexture2D = pInputTexture2D;
-            InputSubresourceIndex = inputSubresourceIndex;
-            PReferenceTexture2D = pReferenceTexture2D;
-            ReferenceSubresourceIndex = referenceSubresourceIndex;
-            PHintMotionVectorHeap = pHintMotionVectorHeap;
+            if (pInputTexture2D is not null)
+            {
+                PInputTexture2D = pInputTexture2D;
+            }
+
+            if (inputSubresourceIndex is not null)
+            {
+                InputSubresourceIndex = inputSubresourceIndex.Value;
+            }
+
+            if (pReferenceTexture2D is not null)
+            {
+                PReferenceTexture2D = pReferenceTexture2D;
+            }
+
+            if (referenceSubresourceIndex is not null)
+            {
+                ReferenceSubresourceIndex = referenceSubresourceIndex.Value;
+            }
+
+            if (pHintMotionVectorHeap is not null)
+            {
+                PHintMotionVectorHeap = pHintMotionVectorHeap;
+            }
         }
 
 

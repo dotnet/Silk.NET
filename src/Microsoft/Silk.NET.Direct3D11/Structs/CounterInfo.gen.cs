@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D11
     {
         public CounterInfo
         (
-            Counter lastDeviceDependentCounter = default,
-            uint numSimultaneousCounters = default,
-            byte numDetectableParallelUnits = default
-        )
+            Counter? lastDeviceDependentCounter = null,
+            uint? numSimultaneousCounters = null,
+            byte? numDetectableParallelUnits = null
+        ) : this()
         {
-            LastDeviceDependentCounter = lastDeviceDependentCounter;
-            NumSimultaneousCounters = numSimultaneousCounters;
-            NumDetectableParallelUnits = numDetectableParallelUnits;
+            if (lastDeviceDependentCounter is not null)
+            {
+                LastDeviceDependentCounter = lastDeviceDependentCounter.Value;
+            }
+
+            if (numSimultaneousCounters is not null)
+            {
+                NumSimultaneousCounters = numSimultaneousCounters.Value;
+            }
+
+            if (numDetectableParallelUnits is not null)
+            {
+                NumDetectableParallelUnits = numDetectableParallelUnits.Value;
+            }
         }
 
 

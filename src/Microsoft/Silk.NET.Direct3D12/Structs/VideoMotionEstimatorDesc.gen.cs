@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public VideoMotionEstimatorDesc
         (
-            uint nodeMask = default,
-            Silk.NET.DXGI.Format inputFormat = default,
-            VideoMotionEstimatorSearchBlockSize blockSize = default,
-            VideoMotionEstimatorVectorPrecision precision = default,
-            VideoSizeRange sizeRange = default
-        )
+            uint? nodeMask = null,
+            Silk.NET.DXGI.Format? inputFormat = null,
+            VideoMotionEstimatorSearchBlockSize? blockSize = null,
+            VideoMotionEstimatorVectorPrecision? precision = null,
+            VideoSizeRange? sizeRange = null
+        ) : this()
         {
-            NodeMask = nodeMask;
-            InputFormat = inputFormat;
-            BlockSize = blockSize;
-            Precision = precision;
-            SizeRange = sizeRange;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (inputFormat is not null)
+            {
+                InputFormat = inputFormat.Value;
+            }
+
+            if (blockSize is not null)
+            {
+                BlockSize = blockSize.Value;
+            }
+
+            if (precision is not null)
+            {
+                Precision = precision.Value;
+            }
+
+            if (sizeRange is not null)
+            {
+                SizeRange = sizeRange.Value;
+            }
         }
 
 

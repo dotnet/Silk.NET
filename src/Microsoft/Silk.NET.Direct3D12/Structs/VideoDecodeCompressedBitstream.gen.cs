@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeCompressedBitstream
         (
-            ID3D12Resource* pBuffer = default,
-            ulong offset = default,
-            ulong size = default
-        )
+            ID3D12Resource* pBuffer = null,
+            ulong? offset = null,
+            ulong? size = null
+        ) : this()
         {
-            PBuffer = pBuffer;
-            Offset = offset;
-            Size = size;
+            if (pBuffer is not null)
+            {
+                PBuffer = pBuffer;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
         }
 
 

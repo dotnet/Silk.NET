@@ -24,8 +24,8 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingD3D12Khr,
             void* next = null,
-            IntPtr? device = null,
-            IntPtr? queue = null
+            void* device = null,
+            void* queue = null
         ) : this()
         {
             if (type is not null)
@@ -40,12 +40,12 @@ namespace Silk.NET.OpenXR
 
             if (device is not null)
             {
-                Device = device.Value;
+                Device = device;
             }
 
             if (queue is not null)
             {
-                Queue = queue.Value;
+                Queue = queue;
             }
         }
 

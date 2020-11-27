@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public ResolveVideoMotionVectorHeapOutput
         (
-            ID3D12Resource* pMotionVectorTexture2D = default,
-            ResourceCoordinate motionVectorCoordinate = default
-        )
+            ID3D12Resource* pMotionVectorTexture2D = null,
+            ResourceCoordinate? motionVectorCoordinate = null
+        ) : this()
         {
-            PMotionVectorTexture2D = pMotionVectorTexture2D;
-            MotionVectorCoordinate = motionVectorCoordinate;
+            if (pMotionVectorTexture2D is not null)
+            {
+                PMotionVectorTexture2D = pMotionVectorTexture2D;
+            }
+
+            if (motionVectorCoordinate is not null)
+            {
+                MotionVectorCoordinate = motionVectorCoordinate.Value;
+            }
         }
 
 

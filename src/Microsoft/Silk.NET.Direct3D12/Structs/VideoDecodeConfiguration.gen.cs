@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeConfiguration
         (
-            Guid decodeProfile = default,
-            BitstreamEncryptionType bitstreamEncryption = default,
-            VideoFrameCodedInterlaceType interlaceType = default
-        )
+            Guid? decodeProfile = null,
+            BitstreamEncryptionType? bitstreamEncryption = null,
+            VideoFrameCodedInterlaceType? interlaceType = null
+        ) : this()
         {
-            DecodeProfile = decodeProfile;
-            BitstreamEncryption = bitstreamEncryption;
-            InterlaceType = interlaceType;
+            if (decodeProfile is not null)
+            {
+                DecodeProfile = decodeProfile.Value;
+            }
+
+            if (bitstreamEncryption is not null)
+            {
+                BitstreamEncryption = bitstreamEncryption.Value;
+            }
+
+            if (interlaceType is not null)
+            {
+                InterlaceType = interlaceType.Value;
+            }
         }
 
 

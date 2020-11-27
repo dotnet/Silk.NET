@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public DrawIndexedArguments
         (
-            uint indexCountPerInstance = default,
-            uint instanceCount = default,
-            uint startIndexLocation = default,
-            int baseVertexLocation = default,
-            uint startInstanceLocation = default
-        )
+            uint? indexCountPerInstance = null,
+            uint? instanceCount = null,
+            uint? startIndexLocation = null,
+            int? baseVertexLocation = null,
+            uint? startInstanceLocation = null
+        ) : this()
         {
-            IndexCountPerInstance = indexCountPerInstance;
-            InstanceCount = instanceCount;
-            StartIndexLocation = startIndexLocation;
-            BaseVertexLocation = baseVertexLocation;
-            StartInstanceLocation = startInstanceLocation;
+            if (indexCountPerInstance is not null)
+            {
+                IndexCountPerInstance = indexCountPerInstance.Value;
+            }
+
+            if (instanceCount is not null)
+            {
+                InstanceCount = instanceCount.Value;
+            }
+
+            if (startIndexLocation is not null)
+            {
+                StartIndexLocation = startIndexLocation.Value;
+            }
+
+            if (baseVertexLocation is not null)
+            {
+                BaseVertexLocation = baseVertexLocation.Value;
+            }
+
+            if (startInstanceLocation is not null)
+            {
+                StartInstanceLocation = startInstanceLocation.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public RootDescriptorTable1
         (
-            uint numDescriptorRanges = default,
-            DescriptorRange1* pDescriptorRanges = default
-        )
+            uint? numDescriptorRanges = null,
+            DescriptorRange1* pDescriptorRanges = null
+        ) : this()
         {
-            NumDescriptorRanges = numDescriptorRanges;
-            PDescriptorRanges = pDescriptorRanges;
+            if (numDescriptorRanges is not null)
+            {
+                NumDescriptorRanges = numDescriptorRanges.Value;
+            }
+
+            if (pDescriptorRanges is not null)
+            {
+                PDescriptorRanges = pDescriptorRanges;
+            }
         }
 
 

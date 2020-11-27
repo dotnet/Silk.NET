@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public RootParameter
         (
-            RootParameterType parameterType = default,
-            ShaderVisibility shaderVisibility = default
-        )
+            RootParameterType? parameterType = null,
+            ShaderVisibility? shaderVisibility = null
+        ) : this()
         {
-            ParameterType = parameterType;
-            ShaderVisibility = shaderVisibility;
+            if (parameterType is not null)
+            {
+                ParameterType = parameterType.Value;
+            }
+
+            if (shaderVisibility is not null)
+            {
+                ShaderVisibility = shaderVisibility.Value;
+            }
         }
 
 

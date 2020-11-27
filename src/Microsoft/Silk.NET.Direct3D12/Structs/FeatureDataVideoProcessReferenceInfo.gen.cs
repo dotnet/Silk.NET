@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoProcessReferenceInfo
         (
-            uint nodeIndex = default,
-            VideoProcessDeinterlaceFlags deinterlaceMode = default,
-            VideoProcessFilterFlags filters = default,
-            VideoProcessFeatureFlags featureSupport = default,
-            Silk.NET.DXGI.Rational inputFrameRate = default,
-            Silk.NET.DXGI.Rational outputFrameRate = default,
-            int enableAutoProcessing = default,
-            uint pastFrames = default,
-            uint futureFrames = default
-        )
+            uint? nodeIndex = null,
+            VideoProcessDeinterlaceFlags? deinterlaceMode = null,
+            VideoProcessFilterFlags? filters = null,
+            VideoProcessFeatureFlags? featureSupport = null,
+            Silk.NET.DXGI.Rational? inputFrameRate = null,
+            Silk.NET.DXGI.Rational? outputFrameRate = null,
+            int? enableAutoProcessing = null,
+            uint? pastFrames = null,
+            uint? futureFrames = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            DeinterlaceMode = deinterlaceMode;
-            Filters = filters;
-            FeatureSupport = featureSupport;
-            InputFrameRate = inputFrameRate;
-            OutputFrameRate = outputFrameRate;
-            EnableAutoProcessing = enableAutoProcessing;
-            PastFrames = pastFrames;
-            FutureFrames = futureFrames;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (deinterlaceMode is not null)
+            {
+                DeinterlaceMode = deinterlaceMode.Value;
+            }
+
+            if (filters is not null)
+            {
+                Filters = filters.Value;
+            }
+
+            if (featureSupport is not null)
+            {
+                FeatureSupport = featureSupport.Value;
+            }
+
+            if (inputFrameRate is not null)
+            {
+                InputFrameRate = inputFrameRate.Value;
+            }
+
+            if (outputFrameRate is not null)
+            {
+                OutputFrameRate = outputFrameRate.Value;
+            }
+
+            if (enableAutoProcessing is not null)
+            {
+                EnableAutoProcessing = enableAutoProcessing.Value;
+            }
+
+            if (pastFrames is not null)
+            {
+                PastFrames = pastFrames.Value;
+            }
+
+            if (futureFrames is not null)
+            {
+                FutureFrames = futureFrames.Value;
+            }
         }
 
 

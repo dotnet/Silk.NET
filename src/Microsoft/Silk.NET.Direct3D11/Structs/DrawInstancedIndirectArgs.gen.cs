@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public DrawInstancedIndirectArgs
         (
-            uint vertexCountPerInstance = default,
-            uint instanceCount = default,
-            uint startVertexLocation = default,
-            uint startInstanceLocation = default
-        )
+            uint? vertexCountPerInstance = null,
+            uint? instanceCount = null,
+            uint? startVertexLocation = null,
+            uint? startInstanceLocation = null
+        ) : this()
         {
-            VertexCountPerInstance = vertexCountPerInstance;
-            InstanceCount = instanceCount;
-            StartVertexLocation = startVertexLocation;
-            StartInstanceLocation = startInstanceLocation;
+            if (vertexCountPerInstance is not null)
+            {
+                VertexCountPerInstance = vertexCountPerInstance.Value;
+            }
+
+            if (instanceCount is not null)
+            {
+                InstanceCount = instanceCount.Value;
+            }
+
+            if (startVertexLocation is not null)
+            {
+                StartVertexLocation = startVertexLocation.Value;
+            }
+
+            if (startInstanceLocation is not null)
+            {
+                StartInstanceLocation = startInstanceLocation.Value;
+            }
         }
 
 

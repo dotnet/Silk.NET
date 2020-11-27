@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options6
         (
-            int additionalShadingRatesSupported = default,
-            int perPrimitiveShadingRateSupportedWithViewportIndexing = default,
-            VariableShadingRateTier variableShadingRateTier = default,
-            uint shadingRateImageTileSize = default,
-            int backgroundProcessingSupported = default
-        )
+            int? additionalShadingRatesSupported = null,
+            int? perPrimitiveShadingRateSupportedWithViewportIndexing = null,
+            VariableShadingRateTier? variableShadingRateTier = null,
+            uint? shadingRateImageTileSize = null,
+            int? backgroundProcessingSupported = null
+        ) : this()
         {
-            AdditionalShadingRatesSupported = additionalShadingRatesSupported;
-            PerPrimitiveShadingRateSupportedWithViewportIndexing = perPrimitiveShadingRateSupportedWithViewportIndexing;
-            VariableShadingRateTier = variableShadingRateTier;
-            ShadingRateImageTileSize = shadingRateImageTileSize;
-            BackgroundProcessingSupported = backgroundProcessingSupported;
+            if (additionalShadingRatesSupported is not null)
+            {
+                AdditionalShadingRatesSupported = additionalShadingRatesSupported.Value;
+            }
+
+            if (perPrimitiveShadingRateSupportedWithViewportIndexing is not null)
+            {
+                PerPrimitiveShadingRateSupportedWithViewportIndexing = perPrimitiveShadingRateSupportedWithViewportIndexing.Value;
+            }
+
+            if (variableShadingRateTier is not null)
+            {
+                VariableShadingRateTier = variableShadingRateTier.Value;
+            }
+
+            if (shadingRateImageTileSize is not null)
+            {
+                ShadingRateImageTileSize = shadingRateImageTileSize.Value;
+            }
+
+            if (backgroundProcessingSupported is not null)
+            {
+                BackgroundProcessingSupported = backgroundProcessingSupported.Value;
+            }
         }
 
 

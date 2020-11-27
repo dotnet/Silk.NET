@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoExtensionCommandSize
         (
-            uint nodeIndex = default,
-            Guid commandId = default,
-            void* pCreationParameters = default,
-            uint creationParametersSizeInBytes = default,
-            ulong memoryPoolL0Size = default,
-            ulong memoryPoolL1Size = default
-        )
+            uint? nodeIndex = null,
+            Guid? commandId = null,
+            void* pCreationParameters = null,
+            uint? creationParametersSizeInBytes = null,
+            ulong? memoryPoolL0Size = null,
+            ulong? memoryPoolL1Size = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            CommandId = commandId;
-            PCreationParameters = pCreationParameters;
-            CreationParametersSizeInBytes = creationParametersSizeInBytes;
-            MemoryPoolL0Size = memoryPoolL0Size;
-            MemoryPoolL1Size = memoryPoolL1Size;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (commandId is not null)
+            {
+                CommandId = commandId.Value;
+            }
+
+            if (pCreationParameters is not null)
+            {
+                PCreationParameters = pCreationParameters;
+            }
+
+            if (creationParametersSizeInBytes is not null)
+            {
+                CreationParametersSizeInBytes = creationParametersSizeInBytes.Value;
+            }
+
+            if (memoryPoolL0Size is not null)
+            {
+                MemoryPoolL0Size = memoryPoolL0Size.Value;
+            }
+
+            if (memoryPoolL1Size is not null)
+            {
+                MemoryPoolL1Size = memoryPoolL1Size.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D12
     {
         public RaytracingGeometryTrianglesDesc
         (
-            ulong transform3x4 = default,
-            Silk.NET.DXGI.Format indexFormat = default,
-            Silk.NET.DXGI.Format vertexFormat = default,
-            uint indexCount = default,
-            uint vertexCount = default,
-            ulong indexBuffer = default,
-            GpuVirtualAddressAndStride vertexBuffer = default
-        )
+            ulong? transform3x4 = null,
+            Silk.NET.DXGI.Format? indexFormat = null,
+            Silk.NET.DXGI.Format? vertexFormat = null,
+            uint? indexCount = null,
+            uint? vertexCount = null,
+            ulong? indexBuffer = null,
+            GpuVirtualAddressAndStride? vertexBuffer = null
+        ) : this()
         {
-            Transform3x4 = transform3x4;
-            IndexFormat = indexFormat;
-            VertexFormat = vertexFormat;
-            IndexCount = indexCount;
-            VertexCount = vertexCount;
-            IndexBuffer = indexBuffer;
-            VertexBuffer = vertexBuffer;
+            if (transform3x4 is not null)
+            {
+                Transform3x4 = transform3x4.Value;
+            }
+
+            if (indexFormat is not null)
+            {
+                IndexFormat = indexFormat.Value;
+            }
+
+            if (vertexFormat is not null)
+            {
+                VertexFormat = vertexFormat.Value;
+            }
+
+            if (indexCount is not null)
+            {
+                IndexCount = indexCount.Value;
+            }
+
+            if (vertexCount is not null)
+            {
+                VertexCount = vertexCount.Value;
+            }
+
+            if (indexBuffer is not null)
+            {
+                IndexBuffer = indexBuffer.Value;
+            }
+
+            if (vertexBuffer is not null)
+            {
+                VertexBuffer = vertexBuffer.Value;
+            }
         }
 
 

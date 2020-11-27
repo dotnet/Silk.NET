@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorOutputViewDesc
         (
-            VpovDimension viewDimension = default
-        )
+            VpovDimension? viewDimension = null
+        ) : this()
         {
-            ViewDimension = viewDimension;
+            if (viewDimension is not null)
+            {
+                ViewDimension = viewDimension.Value;
+            }
         }
 
 

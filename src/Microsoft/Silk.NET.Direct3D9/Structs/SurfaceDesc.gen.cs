@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Direct3D9
     {
         public SurfaceDesc
         (
-            Format format = default,
-            Resourcetype type = default,
-            uint usage = default,
-            Pool pool = default,
-            MultisampleType multiSampleType = default,
-            uint multiSampleQuality = default,
-            uint width = default,
-            uint height = default
-        )
+            Format? format = null,
+            Resourcetype? type = null,
+            uint? usage = null,
+            Pool? pool = null,
+            MultisampleType? multiSampleType = null,
+            uint? multiSampleQuality = null,
+            uint? width = null,
+            uint? height = null
+        ) : this()
         {
-            Format = format;
-            Type = type;
-            Usage = usage;
-            Pool = pool;
-            MultiSampleType = multiSampleType;
-            MultiSampleQuality = multiSampleQuality;
-            Width = width;
-            Height = height;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (pool is not null)
+            {
+                Pool = pool.Value;
+            }
+
+            if (multiSampleType is not null)
+            {
+                MultiSampleType = multiSampleType.Value;
+            }
+
+            if (multiSampleQuality is not null)
+            {
+                MultiSampleQuality = multiSampleQuality.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
         }
 
 

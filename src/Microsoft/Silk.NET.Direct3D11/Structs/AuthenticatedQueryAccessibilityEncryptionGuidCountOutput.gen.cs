@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryAccessibilityEncryptionGuidCountOutput
         (
-            AuthenticatedQueryOutput output = default,
-            uint encryptionGuidCount = default
-        )
+            AuthenticatedQueryOutput? output = null,
+            uint? encryptionGuidCount = null
+        ) : this()
         {
-            Output = output;
-            EncryptionGuidCount = encryptionGuidCount;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (encryptionGuidCount is not null)
+            {
+                EncryptionGuidCount = encryptionGuidCount.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public CommandQueueDesc
         (
-            CommandListType type = default,
-            int priority = default,
-            CommandQueueFlags flags = default,
-            uint nodeMask = default
-        )
+            CommandListType? type = null,
+            int? priority = null,
+            CommandQueueFlags? flags = null,
+            uint? nodeMask = null
+        ) : this()
         {
-            Type = type;
-            Priority = priority;
-            Flags = flags;
-            NodeMask = nodeMask;
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
         }
 
 

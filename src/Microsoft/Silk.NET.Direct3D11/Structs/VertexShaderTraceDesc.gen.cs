@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D11
     {
         public VertexShaderTraceDesc
         (
-            ulong invocation = default
-        )
+            ulong? invocation = null
+        ) : this()
         {
-            Invocation = invocation;
+            if (invocation is not null)
+            {
+                Invocation = invocation.Value;
+            }
         }
 
 

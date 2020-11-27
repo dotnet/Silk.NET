@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public SubresourceTiling
         (
-            uint widthInTiles = default,
-            ushort heightInTiles = default,
-            ushort depthInTiles = default,
-            uint startTileIndexInOverallResource = default
-        )
+            uint? widthInTiles = null,
+            ushort? heightInTiles = null,
+            ushort? depthInTiles = null,
+            uint? startTileIndexInOverallResource = null
+        ) : this()
         {
-            WidthInTiles = widthInTiles;
-            HeightInTiles = heightInTiles;
-            DepthInTiles = depthInTiles;
-            StartTileIndexInOverallResource = startTileIndexInOverallResource;
+            if (widthInTiles is not null)
+            {
+                WidthInTiles = widthInTiles.Value;
+            }
+
+            if (heightInTiles is not null)
+            {
+                HeightInTiles = heightInTiles.Value;
+            }
+
+            if (depthInTiles is not null)
+            {
+                DepthInTiles = depthInTiles.Value;
+            }
+
+            if (startTileIndexInOverallResource is not null)
+            {
+                StartTileIndexInOverallResource = startTileIndexInOverallResource.Value;
+            }
         }
 
 

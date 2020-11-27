@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.DXGI
     {
         public Rgb
         (
-            float red = default,
-            float green = default,
-            float blue = default
-        )
+            float? red = null,
+            float? green = null,
+            float? blue = null
+        ) : this()
         {
-            Red = red;
-            Green = green;
-            Blue = blue;
+            if (red is not null)
+            {
+                Red = red.Value;
+            }
+
+            if (green is not null)
+            {
+                Green = green.Value;
+            }
+
+            if (blue is not null)
+            {
+                Blue = blue.Value;
+            }
         }
 
 

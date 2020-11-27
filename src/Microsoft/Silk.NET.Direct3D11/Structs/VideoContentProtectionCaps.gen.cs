@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public VideoContentProtectionCaps
         (
-            uint caps = default,
-            uint keyExchangeTypeCount = default,
-            uint blockAlignmentSize = default,
-            ulong protectedMemorySize = default
-        )
+            uint? caps = null,
+            uint? keyExchangeTypeCount = null,
+            uint? blockAlignmentSize = null,
+            ulong? protectedMemorySize = null
+        ) : this()
         {
-            Caps = caps;
-            KeyExchangeTypeCount = keyExchangeTypeCount;
-            BlockAlignmentSize = blockAlignmentSize;
-            ProtectedMemorySize = protectedMemorySize;
+            if (caps is not null)
+            {
+                Caps = caps.Value;
+            }
+
+            if (keyExchangeTypeCount is not null)
+            {
+                KeyExchangeTypeCount = keyExchangeTypeCount.Value;
+            }
+
+            if (blockAlignmentSize is not null)
+            {
+                BlockAlignmentSize = blockAlignmentSize.Value;
+            }
+
+            if (protectedMemorySize is not null)
+            {
+                ProtectedMemorySize = protectedMemorySize.Value;
+            }
         }
 
 

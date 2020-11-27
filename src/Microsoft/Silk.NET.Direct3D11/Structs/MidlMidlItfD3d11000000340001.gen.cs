@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D11
     {
         public MIDLMIDLItfD3d11000000340001
         (
-            uint protectionEnabled = default,
-            uint overlayOrFullscreenRequired = default,
-            uint reserved = default
-        )
+            uint? protectionEnabled = null,
+            uint? overlayOrFullscreenRequired = null,
+            uint? reserved = null
+        ) : this()
         {
-            ProtectionEnabled = protectionEnabled;
-            OverlayOrFullscreenRequired = overlayOrFullscreenRequired;
-            Reserved = reserved;
+            if (protectionEnabled is not null)
+            {
+                ProtectionEnabled = protectionEnabled.Value;
+            }
+
+            if (overlayOrFullscreenRequired is not null)
+            {
+                OverlayOrFullscreenRequired = overlayOrFullscreenRequired.Value;
+            }
+
+            if (reserved is not null)
+            {
+                Reserved = reserved.Value;
+            }
         }
 
 

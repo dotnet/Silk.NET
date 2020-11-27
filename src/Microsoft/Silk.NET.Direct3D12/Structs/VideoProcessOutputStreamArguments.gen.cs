@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,47 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessOutputStreamArguments
         (
-            Silk.NET.Core.Native.TagRect targetRectangle = default
-        )
+            Silk.NET.Core.Native.TagRect? targetRectangle = null
+        ) : this()
         {
-           OutputStream_0 = default;
-           OutputStream_1 = default;
-            TargetRectangle = targetRectangle;
+            if (targetRectangle is not null)
+            {
+                TargetRectangle = targetRectangle.Value;
+            }
         }
 
         
         [NativeName("Type", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
         [NativeName("Name", "OutputStream")]
-        public VideoProcessOutputStream OutputStream_0;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
-        [NativeName("Name", "OutputStream")]
-        public VideoProcessOutputStream OutputStream_1;
+        public OutputStreamBuffer OutputStream;
+
+        public struct OutputStreamBuffer
+        {
+            public VideoProcessOutputStream Element0;
+            public VideoProcessOutputStream Element1;
+            public ref VideoProcessOutputStream this[int index]
+            {
+                get
+                {
+                    if (index > 1 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (VideoProcessOutputStream* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<VideoProcessOutputStream> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 2);
+#endif
+        }
+
 
         [NativeName("Type", "D3D12_RECT")]
         [NativeName("Type.Name", "D3D12_RECT")]

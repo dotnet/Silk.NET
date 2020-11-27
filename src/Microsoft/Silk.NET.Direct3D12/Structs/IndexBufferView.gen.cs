@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public IndexBufferView
         (
-            ulong bufferLocation = default,
-            uint sizeInBytes = default,
-            Silk.NET.DXGI.Format format = default
-        )
+            ulong? bufferLocation = null,
+            uint? sizeInBytes = null,
+            Silk.NET.DXGI.Format? format = null
+        ) : this()
         {
-            BufferLocation = bufferLocation;
-            SizeInBytes = sizeInBytes;
-            Format = format;
+            if (bufferLocation is not null)
+            {
+                BufferLocation = bufferLocation.Value;
+            }
+
+            if (sizeInBytes is not null)
+            {
+                SizeInBytes = sizeInBytes.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
         }
 
 

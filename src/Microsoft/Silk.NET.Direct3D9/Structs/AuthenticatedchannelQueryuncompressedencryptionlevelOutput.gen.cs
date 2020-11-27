@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelQueryuncompressedencryptionlevelOutput
         (
-            AuthenticatedchannelQueryOutput output = default,
-            Guid encryptionGuid = default
-        )
+            AuthenticatedchannelQueryOutput? output = null,
+            Guid? encryptionGuid = null
+        ) : this()
         {
-            Output = output;
-            EncryptionGuid = encryptionGuid;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (encryptionGuid is not null)
+            {
+                EncryptionGuid = encryptionGuid.Value;
+            }
         }
 
 

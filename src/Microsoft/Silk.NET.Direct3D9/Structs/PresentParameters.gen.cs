@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,36 +22,91 @@ namespace Silk.NET.Direct3D9
     {
         public PresentParameters
         (
-            uint backBufferWidth = default,
-            uint backBufferHeight = default,
-            Format backBufferFormat = default,
-            uint backBufferCount = default,
-            MultisampleType multiSampleType = default,
-            uint multiSampleQuality = default,
-            Swapeffect swapEffect = default,
-            IntPtr hDeviceWindow = default,
-            int windowed = default,
-            int enableAutoDepthStencil = default,
-            Format autoDepthStencilFormat = default,
-            uint flags = default,
-            uint fullScreenRefreshRateInHz = default,
-            uint presentationInterval = default
-        )
+            uint? backBufferWidth = null,
+            uint? backBufferHeight = null,
+            Format? backBufferFormat = null,
+            uint? backBufferCount = null,
+            MultisampleType? multiSampleType = null,
+            uint? multiSampleQuality = null,
+            Swapeffect? swapEffect = null,
+            IntPtr? hDeviceWindow = null,
+            int? windowed = null,
+            int? enableAutoDepthStencil = null,
+            Format? autoDepthStencilFormat = null,
+            uint? flags = null,
+            uint? fullScreenRefreshRateInHz = null,
+            uint? presentationInterval = null
+        ) : this()
         {
-            BackBufferWidth = backBufferWidth;
-            BackBufferHeight = backBufferHeight;
-            BackBufferFormat = backBufferFormat;
-            BackBufferCount = backBufferCount;
-            MultiSampleType = multiSampleType;
-            MultiSampleQuality = multiSampleQuality;
-            SwapEffect = swapEffect;
-            HDeviceWindow = hDeviceWindow;
-            Windowed = windowed;
-            EnableAutoDepthStencil = enableAutoDepthStencil;
-            AutoDepthStencilFormat = autoDepthStencilFormat;
-            Flags = flags;
-            FullScreenRefreshRateInHz = fullScreenRefreshRateInHz;
-            PresentationInterval = presentationInterval;
+            if (backBufferWidth is not null)
+            {
+                BackBufferWidth = backBufferWidth.Value;
+            }
+
+            if (backBufferHeight is not null)
+            {
+                BackBufferHeight = backBufferHeight.Value;
+            }
+
+            if (backBufferFormat is not null)
+            {
+                BackBufferFormat = backBufferFormat.Value;
+            }
+
+            if (backBufferCount is not null)
+            {
+                BackBufferCount = backBufferCount.Value;
+            }
+
+            if (multiSampleType is not null)
+            {
+                MultiSampleType = multiSampleType.Value;
+            }
+
+            if (multiSampleQuality is not null)
+            {
+                MultiSampleQuality = multiSampleQuality.Value;
+            }
+
+            if (swapEffect is not null)
+            {
+                SwapEffect = swapEffect.Value;
+            }
+
+            if (hDeviceWindow is not null)
+            {
+                HDeviceWindow = hDeviceWindow.Value;
+            }
+
+            if (windowed is not null)
+            {
+                Windowed = windowed.Value;
+            }
+
+            if (enableAutoDepthStencil is not null)
+            {
+                EnableAutoDepthStencil = enableAutoDepthStencil.Value;
+            }
+
+            if (autoDepthStencilFormat is not null)
+            {
+                AutoDepthStencilFormat = autoDepthStencilFormat.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (fullScreenRefreshRateInHz is not null)
+            {
+                FullScreenRefreshRateInHz = fullScreenRefreshRateInHz.Value;
+            }
+
+            if (presentationInterval is not null)
+            {
+                PresentationInterval = presentationInterval.Value;
+            }
         }
 
 

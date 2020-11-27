@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public ViewInstancingDesc
         (
-            uint viewInstanceCount = default,
-            ViewInstanceLocation* pViewInstanceLocations = default,
-            ViewInstancingFlags flags = default
-        )
+            uint? viewInstanceCount = null,
+            ViewInstanceLocation* pViewInstanceLocations = null,
+            ViewInstancingFlags? flags = null
+        ) : this()
         {
-            ViewInstanceCount = viewInstanceCount;
-            PViewInstanceLocations = pViewInstanceLocations;
-            Flags = flags;
+            if (viewInstanceCount is not null)
+            {
+                ViewInstanceCount = viewInstanceCount.Value;
+            }
+
+            if (pViewInstanceLocations is not null)
+            {
+                PViewInstanceLocations = pViewInstanceLocations;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

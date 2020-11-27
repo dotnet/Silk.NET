@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,146 +22,421 @@ namespace Silk.NET.Direct3D9
     {
         public Caps9
         (
-            Devtype deviceType = default,
-            uint adapterOrdinal = default,
-            uint caps = default,
-            uint caps2 = default,
-            uint caps3 = default,
-            uint presentationIntervals = default,
-            uint cursorCaps = default,
-            uint devCaps = default,
-            uint primitiveMiscCaps = default,
-            uint rasterCaps = default,
-            uint zCmpCaps = default,
-            uint srcBlendCaps = default,
-            uint destBlendCaps = default,
-            uint alphaCmpCaps = default,
-            uint shadeCaps = default,
-            uint textureCaps = default,
-            uint textureFilterCaps = default,
-            uint cubeTextureFilterCaps = default,
-            uint volumeTextureFilterCaps = default,
-            uint textureAddressCaps = default,
-            uint volumeTextureAddressCaps = default,
-            uint lineCaps = default,
-            uint maxTextureWidth = default,
-            uint maxTextureHeight = default,
-            uint maxVolumeExtent = default,
-            uint maxTextureRepeat = default,
-            uint maxTextureAspectRatio = default,
-            uint maxAnisotropy = default,
-            float maxVertexW = default,
-            float guardBandLeft = default,
-            float guardBandTop = default,
-            float guardBandRight = default,
-            float guardBandBottom = default,
-            float extentsAdjust = default,
-            uint stencilCaps = default,
-            uint fVFCaps = default,
-            uint textureOpCaps = default,
-            uint maxTextureBlendStages = default,
-            uint maxSimultaneousTextures = default,
-            uint vertexProcessingCaps = default,
-            uint maxActiveLights = default,
-            uint maxUserClipPlanes = default,
-            uint maxVertexBlendMatrices = default,
-            uint maxVertexBlendMatrixIndex = default,
-            float maxPointSize = default,
-            uint maxPrimitiveCount = default,
-            uint maxVertexIndex = default,
-            uint maxStreams = default,
-            uint maxStreamStride = default,
-            uint vertexShaderVersion = default,
-            uint maxVertexShaderConst = default,
-            uint pixelShaderVersion = default,
-            float pixelShader1xMaxValue = default,
-            uint devCaps2 = default,
-            float maxNpatchTessellationLevel = default,
-            uint reserved5 = default,
-            uint masterAdapterOrdinal = default,
-            uint adapterOrdinalInGroup = default,
-            uint numberOfAdaptersInGroup = default,
-            uint declTypes = default,
-            uint numSimultaneousRTs = default,
-            uint stretchRectFilterCaps = default,
-            Vshadercaps20 vS20Caps = default,
-            Pshadercaps20 pS20Caps = default,
-            uint vertexTextureFilterCaps = default,
-            uint maxVShaderInstructionsExecuted = default,
-            uint maxPShaderInstructionsExecuted = default,
-            uint maxVertexShader30InstructionSlots = default,
-            uint maxPixelShader30InstructionSlots = default
-        )
+            Devtype? deviceType = null,
+            uint? adapterOrdinal = null,
+            uint? caps = null,
+            uint? caps2 = null,
+            uint? caps3 = null,
+            uint? presentationIntervals = null,
+            uint? cursorCaps = null,
+            uint? devCaps = null,
+            uint? primitiveMiscCaps = null,
+            uint? rasterCaps = null,
+            uint? zCmpCaps = null,
+            uint? srcBlendCaps = null,
+            uint? destBlendCaps = null,
+            uint? alphaCmpCaps = null,
+            uint? shadeCaps = null,
+            uint? textureCaps = null,
+            uint? textureFilterCaps = null,
+            uint? cubeTextureFilterCaps = null,
+            uint? volumeTextureFilterCaps = null,
+            uint? textureAddressCaps = null,
+            uint? volumeTextureAddressCaps = null,
+            uint? lineCaps = null,
+            uint? maxTextureWidth = null,
+            uint? maxTextureHeight = null,
+            uint? maxVolumeExtent = null,
+            uint? maxTextureRepeat = null,
+            uint? maxTextureAspectRatio = null,
+            uint? maxAnisotropy = null,
+            float? maxVertexW = null,
+            float? guardBandLeft = null,
+            float? guardBandTop = null,
+            float? guardBandRight = null,
+            float? guardBandBottom = null,
+            float? extentsAdjust = null,
+            uint? stencilCaps = null,
+            uint? fVFCaps = null,
+            uint? textureOpCaps = null,
+            uint? maxTextureBlendStages = null,
+            uint? maxSimultaneousTextures = null,
+            uint? vertexProcessingCaps = null,
+            uint? maxActiveLights = null,
+            uint? maxUserClipPlanes = null,
+            uint? maxVertexBlendMatrices = null,
+            uint? maxVertexBlendMatrixIndex = null,
+            float? maxPointSize = null,
+            uint? maxPrimitiveCount = null,
+            uint? maxVertexIndex = null,
+            uint? maxStreams = null,
+            uint? maxStreamStride = null,
+            uint? vertexShaderVersion = null,
+            uint? maxVertexShaderConst = null,
+            uint? pixelShaderVersion = null,
+            float? pixelShader1xMaxValue = null,
+            uint? devCaps2 = null,
+            float? maxNpatchTessellationLevel = null,
+            uint? reserved5 = null,
+            uint? masterAdapterOrdinal = null,
+            uint? adapterOrdinalInGroup = null,
+            uint? numberOfAdaptersInGroup = null,
+            uint? declTypes = null,
+            uint? numSimultaneousRTs = null,
+            uint? stretchRectFilterCaps = null,
+            Vshadercaps20? vS20Caps = null,
+            Pshadercaps20? pS20Caps = null,
+            uint? vertexTextureFilterCaps = null,
+            uint? maxVShaderInstructionsExecuted = null,
+            uint? maxPShaderInstructionsExecuted = null,
+            uint? maxVertexShader30InstructionSlots = null,
+            uint? maxPixelShader30InstructionSlots = null
+        ) : this()
         {
-            DeviceType = deviceType;
-            AdapterOrdinal = adapterOrdinal;
-            Caps = caps;
-            Caps2 = caps2;
-            Caps3 = caps3;
-            PresentationIntervals = presentationIntervals;
-            CursorCaps = cursorCaps;
-            DevCaps = devCaps;
-            PrimitiveMiscCaps = primitiveMiscCaps;
-            RasterCaps = rasterCaps;
-            ZCmpCaps = zCmpCaps;
-            SrcBlendCaps = srcBlendCaps;
-            DestBlendCaps = destBlendCaps;
-            AlphaCmpCaps = alphaCmpCaps;
-            ShadeCaps = shadeCaps;
-            TextureCaps = textureCaps;
-            TextureFilterCaps = textureFilterCaps;
-            CubeTextureFilterCaps = cubeTextureFilterCaps;
-            VolumeTextureFilterCaps = volumeTextureFilterCaps;
-            TextureAddressCaps = textureAddressCaps;
-            VolumeTextureAddressCaps = volumeTextureAddressCaps;
-            LineCaps = lineCaps;
-            MaxTextureWidth = maxTextureWidth;
-            MaxTextureHeight = maxTextureHeight;
-            MaxVolumeExtent = maxVolumeExtent;
-            MaxTextureRepeat = maxTextureRepeat;
-            MaxTextureAspectRatio = maxTextureAspectRatio;
-            MaxAnisotropy = maxAnisotropy;
-            MaxVertexW = maxVertexW;
-            GuardBandLeft = guardBandLeft;
-            GuardBandTop = guardBandTop;
-            GuardBandRight = guardBandRight;
-            GuardBandBottom = guardBandBottom;
-            ExtentsAdjust = extentsAdjust;
-            StencilCaps = stencilCaps;
-            FVFCaps = fVFCaps;
-            TextureOpCaps = textureOpCaps;
-            MaxTextureBlendStages = maxTextureBlendStages;
-            MaxSimultaneousTextures = maxSimultaneousTextures;
-            VertexProcessingCaps = vertexProcessingCaps;
-            MaxActiveLights = maxActiveLights;
-            MaxUserClipPlanes = maxUserClipPlanes;
-            MaxVertexBlendMatrices = maxVertexBlendMatrices;
-            MaxVertexBlendMatrixIndex = maxVertexBlendMatrixIndex;
-            MaxPointSize = maxPointSize;
-            MaxPrimitiveCount = maxPrimitiveCount;
-            MaxVertexIndex = maxVertexIndex;
-            MaxStreams = maxStreams;
-            MaxStreamStride = maxStreamStride;
-            VertexShaderVersion = vertexShaderVersion;
-            MaxVertexShaderConst = maxVertexShaderConst;
-            PixelShaderVersion = pixelShaderVersion;
-            PixelShader1xMaxValue = pixelShader1xMaxValue;
-            DevCaps2 = devCaps2;
-            MaxNpatchTessellationLevel = maxNpatchTessellationLevel;
-            Reserved5 = reserved5;
-            MasterAdapterOrdinal = masterAdapterOrdinal;
-            AdapterOrdinalInGroup = adapterOrdinalInGroup;
-            NumberOfAdaptersInGroup = numberOfAdaptersInGroup;
-            DeclTypes = declTypes;
-            NumSimultaneousRTs = numSimultaneousRTs;
-            StretchRectFilterCaps = stretchRectFilterCaps;
-            VS20Caps = vS20Caps;
-            PS20Caps = pS20Caps;
-            VertexTextureFilterCaps = vertexTextureFilterCaps;
-            MaxVShaderInstructionsExecuted = maxVShaderInstructionsExecuted;
-            MaxPShaderInstructionsExecuted = maxPShaderInstructionsExecuted;
-            MaxVertexShader30InstructionSlots = maxVertexShader30InstructionSlots;
-            MaxPixelShader30InstructionSlots = maxPixelShader30InstructionSlots;
+            if (deviceType is not null)
+            {
+                DeviceType = deviceType.Value;
+            }
+
+            if (adapterOrdinal is not null)
+            {
+                AdapterOrdinal = adapterOrdinal.Value;
+            }
+
+            if (caps is not null)
+            {
+                Caps = caps.Value;
+            }
+
+            if (caps2 is not null)
+            {
+                Caps2 = caps2.Value;
+            }
+
+            if (caps3 is not null)
+            {
+                Caps3 = caps3.Value;
+            }
+
+            if (presentationIntervals is not null)
+            {
+                PresentationIntervals = presentationIntervals.Value;
+            }
+
+            if (cursorCaps is not null)
+            {
+                CursorCaps = cursorCaps.Value;
+            }
+
+            if (devCaps is not null)
+            {
+                DevCaps = devCaps.Value;
+            }
+
+            if (primitiveMiscCaps is not null)
+            {
+                PrimitiveMiscCaps = primitiveMiscCaps.Value;
+            }
+
+            if (rasterCaps is not null)
+            {
+                RasterCaps = rasterCaps.Value;
+            }
+
+            if (zCmpCaps is not null)
+            {
+                ZCmpCaps = zCmpCaps.Value;
+            }
+
+            if (srcBlendCaps is not null)
+            {
+                SrcBlendCaps = srcBlendCaps.Value;
+            }
+
+            if (destBlendCaps is not null)
+            {
+                DestBlendCaps = destBlendCaps.Value;
+            }
+
+            if (alphaCmpCaps is not null)
+            {
+                AlphaCmpCaps = alphaCmpCaps.Value;
+            }
+
+            if (shadeCaps is not null)
+            {
+                ShadeCaps = shadeCaps.Value;
+            }
+
+            if (textureCaps is not null)
+            {
+                TextureCaps = textureCaps.Value;
+            }
+
+            if (textureFilterCaps is not null)
+            {
+                TextureFilterCaps = textureFilterCaps.Value;
+            }
+
+            if (cubeTextureFilterCaps is not null)
+            {
+                CubeTextureFilterCaps = cubeTextureFilterCaps.Value;
+            }
+
+            if (volumeTextureFilterCaps is not null)
+            {
+                VolumeTextureFilterCaps = volumeTextureFilterCaps.Value;
+            }
+
+            if (textureAddressCaps is not null)
+            {
+                TextureAddressCaps = textureAddressCaps.Value;
+            }
+
+            if (volumeTextureAddressCaps is not null)
+            {
+                VolumeTextureAddressCaps = volumeTextureAddressCaps.Value;
+            }
+
+            if (lineCaps is not null)
+            {
+                LineCaps = lineCaps.Value;
+            }
+
+            if (maxTextureWidth is not null)
+            {
+                MaxTextureWidth = maxTextureWidth.Value;
+            }
+
+            if (maxTextureHeight is not null)
+            {
+                MaxTextureHeight = maxTextureHeight.Value;
+            }
+
+            if (maxVolumeExtent is not null)
+            {
+                MaxVolumeExtent = maxVolumeExtent.Value;
+            }
+
+            if (maxTextureRepeat is not null)
+            {
+                MaxTextureRepeat = maxTextureRepeat.Value;
+            }
+
+            if (maxTextureAspectRatio is not null)
+            {
+                MaxTextureAspectRatio = maxTextureAspectRatio.Value;
+            }
+
+            if (maxAnisotropy is not null)
+            {
+                MaxAnisotropy = maxAnisotropy.Value;
+            }
+
+            if (maxVertexW is not null)
+            {
+                MaxVertexW = maxVertexW.Value;
+            }
+
+            if (guardBandLeft is not null)
+            {
+                GuardBandLeft = guardBandLeft.Value;
+            }
+
+            if (guardBandTop is not null)
+            {
+                GuardBandTop = guardBandTop.Value;
+            }
+
+            if (guardBandRight is not null)
+            {
+                GuardBandRight = guardBandRight.Value;
+            }
+
+            if (guardBandBottom is not null)
+            {
+                GuardBandBottom = guardBandBottom.Value;
+            }
+
+            if (extentsAdjust is not null)
+            {
+                ExtentsAdjust = extentsAdjust.Value;
+            }
+
+            if (stencilCaps is not null)
+            {
+                StencilCaps = stencilCaps.Value;
+            }
+
+            if (fVFCaps is not null)
+            {
+                FVFCaps = fVFCaps.Value;
+            }
+
+            if (textureOpCaps is not null)
+            {
+                TextureOpCaps = textureOpCaps.Value;
+            }
+
+            if (maxTextureBlendStages is not null)
+            {
+                MaxTextureBlendStages = maxTextureBlendStages.Value;
+            }
+
+            if (maxSimultaneousTextures is not null)
+            {
+                MaxSimultaneousTextures = maxSimultaneousTextures.Value;
+            }
+
+            if (vertexProcessingCaps is not null)
+            {
+                VertexProcessingCaps = vertexProcessingCaps.Value;
+            }
+
+            if (maxActiveLights is not null)
+            {
+                MaxActiveLights = maxActiveLights.Value;
+            }
+
+            if (maxUserClipPlanes is not null)
+            {
+                MaxUserClipPlanes = maxUserClipPlanes.Value;
+            }
+
+            if (maxVertexBlendMatrices is not null)
+            {
+                MaxVertexBlendMatrices = maxVertexBlendMatrices.Value;
+            }
+
+            if (maxVertexBlendMatrixIndex is not null)
+            {
+                MaxVertexBlendMatrixIndex = maxVertexBlendMatrixIndex.Value;
+            }
+
+            if (maxPointSize is not null)
+            {
+                MaxPointSize = maxPointSize.Value;
+            }
+
+            if (maxPrimitiveCount is not null)
+            {
+                MaxPrimitiveCount = maxPrimitiveCount.Value;
+            }
+
+            if (maxVertexIndex is not null)
+            {
+                MaxVertexIndex = maxVertexIndex.Value;
+            }
+
+            if (maxStreams is not null)
+            {
+                MaxStreams = maxStreams.Value;
+            }
+
+            if (maxStreamStride is not null)
+            {
+                MaxStreamStride = maxStreamStride.Value;
+            }
+
+            if (vertexShaderVersion is not null)
+            {
+                VertexShaderVersion = vertexShaderVersion.Value;
+            }
+
+            if (maxVertexShaderConst is not null)
+            {
+                MaxVertexShaderConst = maxVertexShaderConst.Value;
+            }
+
+            if (pixelShaderVersion is not null)
+            {
+                PixelShaderVersion = pixelShaderVersion.Value;
+            }
+
+            if (pixelShader1xMaxValue is not null)
+            {
+                PixelShader1xMaxValue = pixelShader1xMaxValue.Value;
+            }
+
+            if (devCaps2 is not null)
+            {
+                DevCaps2 = devCaps2.Value;
+            }
+
+            if (maxNpatchTessellationLevel is not null)
+            {
+                MaxNpatchTessellationLevel = maxNpatchTessellationLevel.Value;
+            }
+
+            if (reserved5 is not null)
+            {
+                Reserved5 = reserved5.Value;
+            }
+
+            if (masterAdapterOrdinal is not null)
+            {
+                MasterAdapterOrdinal = masterAdapterOrdinal.Value;
+            }
+
+            if (adapterOrdinalInGroup is not null)
+            {
+                AdapterOrdinalInGroup = adapterOrdinalInGroup.Value;
+            }
+
+            if (numberOfAdaptersInGroup is not null)
+            {
+                NumberOfAdaptersInGroup = numberOfAdaptersInGroup.Value;
+            }
+
+            if (declTypes is not null)
+            {
+                DeclTypes = declTypes.Value;
+            }
+
+            if (numSimultaneousRTs is not null)
+            {
+                NumSimultaneousRTs = numSimultaneousRTs.Value;
+            }
+
+            if (stretchRectFilterCaps is not null)
+            {
+                StretchRectFilterCaps = stretchRectFilterCaps.Value;
+            }
+
+            if (vS20Caps is not null)
+            {
+                VS20Caps = vS20Caps.Value;
+            }
+
+            if (pS20Caps is not null)
+            {
+                PS20Caps = pS20Caps.Value;
+            }
+
+            if (vertexTextureFilterCaps is not null)
+            {
+                VertexTextureFilterCaps = vertexTextureFilterCaps.Value;
+            }
+
+            if (maxVShaderInstructionsExecuted is not null)
+            {
+                MaxVShaderInstructionsExecuted = maxVShaderInstructionsExecuted.Value;
+            }
+
+            if (maxPShaderInstructionsExecuted is not null)
+            {
+                MaxPShaderInstructionsExecuted = maxPShaderInstructionsExecuted.Value;
+            }
+
+            if (maxVertexShader30InstructionSlots is not null)
+            {
+                MaxVertexShader30InstructionSlots = maxVertexShader30InstructionSlots.Value;
+            }
+
+            if (maxPixelShader30InstructionSlots is not null)
+            {
+                MaxPixelShader30InstructionSlots = maxPixelShader30InstructionSlots.Value;
+            }
         }
 
 

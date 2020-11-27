@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,79 @@ namespace Silk.NET.Direct3D12
     {
         public AutoBreadcrumbNode1
         (
-            byte* pCommandListDebugNameA = default,
-            char* pCommandListDebugNameW = default,
-            byte* pCommandQueueDebugNameA = default,
-            char* pCommandQueueDebugNameW = default,
-            ID3D12GraphicsCommandList* pCommandList = default,
-            ID3D12CommandQueue* pCommandQueue = default,
-            uint breadcrumbCount = default,
-            uint* pLastBreadcrumbValue = default,
-            AutoBreadcrumbOp* pCommandHistory = default,
-            AutoBreadcrumbNode1* pNext = default,
-            uint breadcrumbContextsCount = default,
-            DredBreadcrumbContext* pBreadcrumbContexts = default
-        )
+            byte* pCommandListDebugNameA = null,
+            char* pCommandListDebugNameW = null,
+            byte* pCommandQueueDebugNameA = null,
+            char* pCommandQueueDebugNameW = null,
+            ID3D12GraphicsCommandList* pCommandList = null,
+            ID3D12CommandQueue* pCommandQueue = null,
+            uint? breadcrumbCount = null,
+            uint* pLastBreadcrumbValue = null,
+            AutoBreadcrumbOp* pCommandHistory = null,
+            AutoBreadcrumbNode1* pNext = null,
+            uint? breadcrumbContextsCount = null,
+            DredBreadcrumbContext* pBreadcrumbContexts = null
+        ) : this()
         {
-            PCommandListDebugNameA = pCommandListDebugNameA;
-            PCommandListDebugNameW = pCommandListDebugNameW;
-            PCommandQueueDebugNameA = pCommandQueueDebugNameA;
-            PCommandQueueDebugNameW = pCommandQueueDebugNameW;
-            PCommandList = pCommandList;
-            PCommandQueue = pCommandQueue;
-            BreadcrumbCount = breadcrumbCount;
-            PLastBreadcrumbValue = pLastBreadcrumbValue;
-            PCommandHistory = pCommandHistory;
-            PNext = pNext;
-            BreadcrumbContextsCount = breadcrumbContextsCount;
-            PBreadcrumbContexts = pBreadcrumbContexts;
+            if (pCommandListDebugNameA is not null)
+            {
+                PCommandListDebugNameA = pCommandListDebugNameA;
+            }
+
+            if (pCommandListDebugNameW is not null)
+            {
+                PCommandListDebugNameW = pCommandListDebugNameW;
+            }
+
+            if (pCommandQueueDebugNameA is not null)
+            {
+                PCommandQueueDebugNameA = pCommandQueueDebugNameA;
+            }
+
+            if (pCommandQueueDebugNameW is not null)
+            {
+                PCommandQueueDebugNameW = pCommandQueueDebugNameW;
+            }
+
+            if (pCommandList is not null)
+            {
+                PCommandList = pCommandList;
+            }
+
+            if (pCommandQueue is not null)
+            {
+                PCommandQueue = pCommandQueue;
+            }
+
+            if (breadcrumbCount is not null)
+            {
+                BreadcrumbCount = breadcrumbCount.Value;
+            }
+
+            if (pLastBreadcrumbValue is not null)
+            {
+                PLastBreadcrumbValue = pLastBreadcrumbValue;
+            }
+
+            if (pCommandHistory is not null)
+            {
+                PCommandHistory = pCommandHistory;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (breadcrumbContextsCount is not null)
+            {
+                BreadcrumbContextsCount = breadcrumbContextsCount.Value;
+            }
+
+            if (pBreadcrumbContexts is not null)
+            {
+                PBreadcrumbContexts = pBreadcrumbContexts;
+            }
         }
 
 

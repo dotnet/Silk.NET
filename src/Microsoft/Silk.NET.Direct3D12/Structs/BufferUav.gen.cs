@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public BufferUav
         (
-            ulong firstElement = default,
-            uint numElements = default,
-            uint structureByteStride = default,
-            ulong counterOffsetInBytes = default,
-            BufferUavFlags flags = default
-        )
+            ulong? firstElement = null,
+            uint? numElements = null,
+            uint? structureByteStride = null,
+            ulong? counterOffsetInBytes = null,
+            BufferUavFlags? flags = null
+        ) : this()
         {
-            FirstElement = firstElement;
-            NumElements = numElements;
-            StructureByteStride = structureByteStride;
-            CounterOffsetInBytes = counterOffsetInBytes;
-            Flags = flags;
+            if (firstElement is not null)
+            {
+                FirstElement = firstElement.Value;
+            }
+
+            if (numElements is not null)
+            {
+                NumElements = numElements.Value;
+            }
+
+            if (structureByteStride is not null)
+            {
+                StructureByteStride = structureByteStride.Value;
+            }
+
+            if (counterOffsetInBytes is not null)
+            {
+                CounterOffsetInBytes = counterOffsetInBytes.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

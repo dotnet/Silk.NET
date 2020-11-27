@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoMotionEstimator
         (
-            uint nodeIndex = default,
-            Silk.NET.DXGI.Format inputFormat = default,
-            VideoMotionEstimatorSearchBlockSizeFlags blockSizeFlags = default,
-            VideoMotionEstimatorVectorPrecisionFlags precisionFlags = default,
-            VideoSizeRange sizeRange = default
-        )
+            uint? nodeIndex = null,
+            Silk.NET.DXGI.Format? inputFormat = null,
+            VideoMotionEstimatorSearchBlockSizeFlags? blockSizeFlags = null,
+            VideoMotionEstimatorVectorPrecisionFlags? precisionFlags = null,
+            VideoSizeRange? sizeRange = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            InputFormat = inputFormat;
-            BlockSizeFlags = blockSizeFlags;
-            PrecisionFlags = precisionFlags;
-            SizeRange = sizeRange;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (inputFormat is not null)
+            {
+                InputFormat = inputFormat.Value;
+            }
+
+            if (blockSizeFlags is not null)
+            {
+                BlockSizeFlags = blockSizeFlags.Value;
+            }
+
+            if (precisionFlags is not null)
+            {
+                PrecisionFlags = precisionFlags.Value;
+            }
+
+            if (sizeRange is not null)
+            {
+                SizeRange = sizeRange.Value;
+            }
         }
 
 

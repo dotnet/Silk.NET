@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessLumaKey
         (
-            int enable = default,
-            float lower = default,
-            float upper = default
-        )
+            int? enable = null,
+            float? lower = null,
+            float? upper = null
+        ) : this()
         {
-            Enable = enable;
-            Lower = lower;
-            Upper = upper;
+            if (enable is not null)
+            {
+                Enable = enable.Value;
+            }
+
+            if (lower is not null)
+            {
+                Lower = lower.Value;
+            }
+
+            if (upper is not null)
+            {
+                Upper = upper.Value;
+            }
         }
 
 

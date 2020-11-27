@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options4
         (
-            int mSAA64KBAlignedTextureSupported = default,
-            SharedResourceCompatibilityTier sharedResourceCompatibilityTier = default,
-            int native16BitShaderOpsSupported = default
-        )
+            int? mSAA64KBAlignedTextureSupported = null,
+            SharedResourceCompatibilityTier? sharedResourceCompatibilityTier = null,
+            int? native16BitShaderOpsSupported = null
+        ) : this()
         {
-            MSAA64KBAlignedTextureSupported = mSAA64KBAlignedTextureSupported;
-            SharedResourceCompatibilityTier = sharedResourceCompatibilityTier;
-            Native16BitShaderOpsSupported = native16BitShaderOpsSupported;
+            if (mSAA64KBAlignedTextureSupported is not null)
+            {
+                MSAA64KBAlignedTextureSupported = mSAA64KBAlignedTextureSupported.Value;
+            }
+
+            if (sharedResourceCompatibilityTier is not null)
+            {
+                SharedResourceCompatibilityTier = sharedResourceCompatibilityTier.Value;
+            }
+
+            if (native16BitShaderOpsSupported is not null)
+            {
+                Native16BitShaderOpsSupported = native16BitShaderOpsSupported.Value;
+            }
         }
 
 

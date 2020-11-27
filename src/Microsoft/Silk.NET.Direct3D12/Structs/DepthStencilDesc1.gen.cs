@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Direct3D12
     {
         public DepthStencilDesc1
         (
-            int depthEnable = default,
-            DepthWriteMask depthWriteMask = default,
-            ComparisonFunc depthFunc = default,
-            int stencilEnable = default,
-            byte stencilReadMask = default,
-            byte stencilWriteMask = default,
-            DepthStencilopDesc frontFace = default,
-            DepthStencilopDesc backFace = default,
-            int depthBoundsTestEnable = default
-        )
+            int? depthEnable = null,
+            DepthWriteMask? depthWriteMask = null,
+            ComparisonFunc? depthFunc = null,
+            int? stencilEnable = null,
+            byte? stencilReadMask = null,
+            byte? stencilWriteMask = null,
+            DepthStencilopDesc? frontFace = null,
+            DepthStencilopDesc? backFace = null,
+            int? depthBoundsTestEnable = null
+        ) : this()
         {
-            DepthEnable = depthEnable;
-            DepthWriteMask = depthWriteMask;
-            DepthFunc = depthFunc;
-            StencilEnable = stencilEnable;
-            StencilReadMask = stencilReadMask;
-            StencilWriteMask = stencilWriteMask;
-            FrontFace = frontFace;
-            BackFace = backFace;
-            DepthBoundsTestEnable = depthBoundsTestEnable;
+            if (depthEnable is not null)
+            {
+                DepthEnable = depthEnable.Value;
+            }
+
+            if (depthWriteMask is not null)
+            {
+                DepthWriteMask = depthWriteMask.Value;
+            }
+
+            if (depthFunc is not null)
+            {
+                DepthFunc = depthFunc.Value;
+            }
+
+            if (stencilEnable is not null)
+            {
+                StencilEnable = stencilEnable.Value;
+            }
+
+            if (stencilReadMask is not null)
+            {
+                StencilReadMask = stencilReadMask.Value;
+            }
+
+            if (stencilWriteMask is not null)
+            {
+                StencilWriteMask = stencilWriteMask.Value;
+            }
+
+            if (frontFace is not null)
+            {
+                FrontFace = frontFace.Value;
+            }
+
+            if (backFace is not null)
+            {
+                BackFace = backFace.Value;
+            }
+
+            if (depthBoundsTestEnable is not null)
+            {
+                DepthBoundsTestEnable = depthBoundsTestEnable.Value;
+            }
         }
 
 

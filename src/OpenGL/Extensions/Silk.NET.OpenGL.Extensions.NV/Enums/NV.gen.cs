@@ -742,6 +742,10 @@ namespace Silk.NET.OpenGL.Extensions.NV
         FragmentInputNV = 0x936D,
         [NativeName("Name", "GL_SHARED_EDGE_NV")]
         SharedEdgeNV = 0xC0,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
+        ShadingRateImagePerPrimitiveNV = 0x95B1,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PALETTE_COUNT_NV")]
+        ShadingRateImagePaletteCountNV = 0x95B2,
         [NativeName("Name", "GL_REPRESENTATIVE_FRAGMENT_TEST_NV")]
         RepresentativeFragmentTestNV = 0x937F,
         [NativeName("Name", "GL_SAMPLE_LOCATION_SUBPIXEL_BITS_NV")]

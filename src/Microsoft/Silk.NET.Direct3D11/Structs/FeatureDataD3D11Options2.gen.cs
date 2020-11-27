@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options2
         (
-            int pSSpecifiedStencilRefSupported = default,
-            int typedUAVLoadAdditionalFormats = default,
-            int rOVsSupported = default,
-            ConservativeRasterizationTier conservativeRasterizationTier = default,
-            TiledResourcesTier tiledResourcesTier = default,
-            int mapOnDefaultTextures = default,
-            int standardSwizzle = default,
-            int unifiedMemoryArchitecture = default
-        )
+            int? pSSpecifiedStencilRefSupported = null,
+            int? typedUAVLoadAdditionalFormats = null,
+            int? rOVsSupported = null,
+            ConservativeRasterizationTier? conservativeRasterizationTier = null,
+            TiledResourcesTier? tiledResourcesTier = null,
+            int? mapOnDefaultTextures = null,
+            int? standardSwizzle = null,
+            int? unifiedMemoryArchitecture = null
+        ) : this()
         {
-            PSSpecifiedStencilRefSupported = pSSpecifiedStencilRefSupported;
-            TypedUAVLoadAdditionalFormats = typedUAVLoadAdditionalFormats;
-            ROVsSupported = rOVsSupported;
-            ConservativeRasterizationTier = conservativeRasterizationTier;
-            TiledResourcesTier = tiledResourcesTier;
-            MapOnDefaultTextures = mapOnDefaultTextures;
-            StandardSwizzle = standardSwizzle;
-            UnifiedMemoryArchitecture = unifiedMemoryArchitecture;
+            if (pSSpecifiedStencilRefSupported is not null)
+            {
+                PSSpecifiedStencilRefSupported = pSSpecifiedStencilRefSupported.Value;
+            }
+
+            if (typedUAVLoadAdditionalFormats is not null)
+            {
+                TypedUAVLoadAdditionalFormats = typedUAVLoadAdditionalFormats.Value;
+            }
+
+            if (rOVsSupported is not null)
+            {
+                ROVsSupported = rOVsSupported.Value;
+            }
+
+            if (conservativeRasterizationTier is not null)
+            {
+                ConservativeRasterizationTier = conservativeRasterizationTier.Value;
+            }
+
+            if (tiledResourcesTier is not null)
+            {
+                TiledResourcesTier = tiledResourcesTier.Value;
+            }
+
+            if (mapOnDefaultTextures is not null)
+            {
+                MapOnDefaultTextures = mapOnDefaultTextures.Value;
+            }
+
+            if (standardSwizzle is not null)
+            {
+                StandardSwizzle = standardSwizzle.Value;
+            }
+
+            if (unifiedMemoryArchitecture is not null)
+            {
+                UnifiedMemoryArchitecture = unifiedMemoryArchitecture.Value;
+            }
         }
 
 

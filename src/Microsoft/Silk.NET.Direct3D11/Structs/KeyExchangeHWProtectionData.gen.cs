@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public KeyExchangeHWProtectionData
         (
-            uint hWProtectionFunctionID = default,
-            KeyExchangeHWProtectionInputData* pInputData = default,
-            KeyExchangeHWProtectionOutputData* pOutputData = default,
-            int status = default
-        )
+            uint? hWProtectionFunctionID = null,
+            KeyExchangeHWProtectionInputData* pInputData = null,
+            KeyExchangeHWProtectionOutputData* pOutputData = null,
+            int? status = null
+        ) : this()
         {
-            HWProtectionFunctionID = hWProtectionFunctionID;
-            PInputData = pInputData;
-            POutputData = pOutputData;
-            Status = status;
+            if (hWProtectionFunctionID is not null)
+            {
+                HWProtectionFunctionID = hWProtectionFunctionID.Value;
+            }
+
+            if (pInputData is not null)
+            {
+                PInputData = pInputData;
+            }
+
+            if (pOutputData is not null)
+            {
+                POutputData = pOutputData;
+            }
+
+            if (status is not null)
+            {
+                Status = status.Value;
+            }
         }
 
 

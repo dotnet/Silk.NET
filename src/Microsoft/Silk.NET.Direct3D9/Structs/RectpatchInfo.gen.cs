@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D9
     {
         public RectpatchInfo
         (
-            uint startVertexOffsetWidth = default,
-            uint startVertexOffsetHeight = default,
-            uint width = default,
-            uint height = default,
-            uint stride = default,
-            Basistype basis = default,
-            Degreetype degree = default
-        )
+            uint? startVertexOffsetWidth = null,
+            uint? startVertexOffsetHeight = null,
+            uint? width = null,
+            uint? height = null,
+            uint? stride = null,
+            Basistype? basis = null,
+            Degreetype? degree = null
+        ) : this()
         {
-            StartVertexOffsetWidth = startVertexOffsetWidth;
-            StartVertexOffsetHeight = startVertexOffsetHeight;
-            Width = width;
-            Height = height;
-            Stride = stride;
-            Basis = basis;
-            Degree = degree;
+            if (startVertexOffsetWidth is not null)
+            {
+                StartVertexOffsetWidth = startVertexOffsetWidth.Value;
+            }
+
+            if (startVertexOffsetHeight is not null)
+            {
+                StartVertexOffsetHeight = startVertexOffsetHeight.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (stride is not null)
+            {
+                Stride = stride.Value;
+            }
+
+            if (basis is not null)
+            {
+                Basis = basis.Value;
+            }
+
+            if (degree is not null)
+            {
+                Degree = degree.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,14 +23,25 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L3451C5
         (
-            RootDescriptorTable descriptorTable = default,
-            RootConstants constants = default,
-            RootDescriptor descriptor = default
-        )
+            RootDescriptorTable? descriptorTable = null,
+            RootConstants? constants = null,
+            RootDescriptor? descriptor = null
+        ) : this()
         {
-            DescriptorTable = descriptorTable;
-            Constants = constants;
-            Descriptor = descriptor;
+            if (descriptorTable is not null)
+            {
+                DescriptorTable = descriptorTable.Value;
+            }
+
+            if (constants is not null)
+            {
+                Constants = constants.Value;
+            }
+
+            if (descriptor is not null)
+            {
+                Descriptor = descriptor.Value;
+            }
         }
 
 

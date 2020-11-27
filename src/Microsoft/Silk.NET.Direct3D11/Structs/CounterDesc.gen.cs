@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public CounterDesc
         (
-            Counter counter = default,
-            uint miscFlags = default
-        )
+            Counter? counter = null,
+            uint? miscFlags = null
+        ) : this()
         {
-            Counter = counter;
-            MiscFlags = miscFlags;
+            if (counter is not null)
+            {
+                Counter = counter.Value;
+            }
+
+            if (miscFlags is not null)
+            {
+                MiscFlags = miscFlags.Value;
+            }
         }
 
 

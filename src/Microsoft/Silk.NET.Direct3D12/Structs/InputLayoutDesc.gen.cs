@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public InputLayoutDesc
         (
-            InputElementDesc* pInputElementDescs = default,
-            uint numElements = default
-        )
+            InputElementDesc* pInputElementDescs = null,
+            uint? numElements = null
+        ) : this()
         {
-            PInputElementDescs = pInputElementDescs;
-            NumElements = numElements;
+            if (pInputElementDescs is not null)
+            {
+                PInputElementDescs = pInputElementDescs;
+            }
+
+            if (numElements is not null)
+            {
+                NumElements = numElements.Value;
+            }
         }
 
 

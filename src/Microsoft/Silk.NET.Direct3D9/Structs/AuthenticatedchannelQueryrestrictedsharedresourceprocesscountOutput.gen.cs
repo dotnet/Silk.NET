@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelQueryrestrictedsharedresourceprocesscountOutput
         (
-            AuthenticatedchannelQueryOutput output = default,
-            uint numRestrictedSharedResourceProcesses = default
-        )
+            AuthenticatedchannelQueryOutput? output = null,
+            uint? numRestrictedSharedResourceProcesses = null
+        ) : this()
         {
-            Output = output;
-            NumRestrictedSharedResourceProcesses = numRestrictedSharedResourceProcesses;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (numRestrictedSharedResourceProcesses is not null)
+            {
+                NumRestrictedSharedResourceProcesses = numRestrictedSharedResourceProcesses.Value;
+            }
         }
 
 

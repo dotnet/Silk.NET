@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public VideoExtensionCommandDesc
         (
-            uint nodeMask = default,
-            Guid commandId = default
-        )
+            uint? nodeMask = null,
+            Guid? commandId = null
+        ) : this()
         {
-            NodeMask = nodeMask;
-            CommandId = commandId;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (commandId is not null)
+            {
+                CommandId = commandId.Value;
+            }
         }
 
 

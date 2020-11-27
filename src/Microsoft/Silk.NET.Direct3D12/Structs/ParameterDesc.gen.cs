@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,32 +22,79 @@ namespace Silk.NET.Direct3D12
     {
         public ParameterDesc
         (
-            byte* name = default,
-            byte* semanticName = default,
-            Silk.NET.Core.Native.D3DShaderVariableType type = default,
-            Silk.NET.Core.Native.D3DShaderVariableClass @class = default,
-            uint rows = default,
-            uint columns = default,
-            Silk.NET.Core.Native.D3DInterpolationMode interpolationMode = default,
-            Silk.NET.Core.Native.D3DParameterFlags flags = default,
-            uint firstInRegister = default,
-            uint firstInComponent = default,
-            uint firstOutRegister = default,
-            uint firstOutComponent = default
-        )
+            byte* name = null,
+            byte* semanticName = null,
+            Silk.NET.Core.Native.D3DShaderVariableType? type = null,
+            Silk.NET.Core.Native.D3DShaderVariableClass? @class = null,
+            uint? rows = null,
+            uint? columns = null,
+            Silk.NET.Core.Native.D3DInterpolationMode? interpolationMode = null,
+            Silk.NET.Core.Native.D3DParameterFlags? flags = null,
+            uint? firstInRegister = null,
+            uint? firstInComponent = null,
+            uint? firstOutRegister = null,
+            uint? firstOutComponent = null
+        ) : this()
         {
-            Name = name;
-            SemanticName = semanticName;
-            Type = type;
-            Class = @class;
-            Rows = rows;
-            Columns = columns;
-            InterpolationMode = interpolationMode;
-            Flags = flags;
-            FirstInRegister = firstInRegister;
-            FirstInComponent = firstInComponent;
-            FirstOutRegister = firstOutRegister;
-            FirstOutComponent = firstOutComponent;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (semanticName is not null)
+            {
+                SemanticName = semanticName;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (@class is not null)
+            {
+                Class = @class.Value;
+            }
+
+            if (rows is not null)
+            {
+                Rows = rows.Value;
+            }
+
+            if (columns is not null)
+            {
+                Columns = columns.Value;
+            }
+
+            if (interpolationMode is not null)
+            {
+                InterpolationMode = interpolationMode.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (firstInRegister is not null)
+            {
+                FirstInRegister = firstInRegister.Value;
+            }
+
+            if (firstInComponent is not null)
+            {
+                FirstInComponent = firstInComponent.Value;
+            }
+
+            if (firstOutRegister is not null)
+            {
+                FirstOutRegister = firstOutRegister.Value;
+            }
+
+            if (firstOutComponent is not null)
+            {
+                FirstOutComponent = firstOutComponent.Value;
+            }
         }
 
 

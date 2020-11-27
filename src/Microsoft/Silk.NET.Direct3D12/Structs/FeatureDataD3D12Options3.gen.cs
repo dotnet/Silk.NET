@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options3
         (
-            int copyQueueTimestampQueriesSupported = default,
-            int castingFullyTypedFormatSupported = default,
-            CommandListSupportFlags writeBufferImmediateSupportFlags = default,
-            ViewInstancingTier viewInstancingTier = default,
-            int barycentricsSupported = default
-        )
+            int? copyQueueTimestampQueriesSupported = null,
+            int? castingFullyTypedFormatSupported = null,
+            CommandListSupportFlags? writeBufferImmediateSupportFlags = null,
+            ViewInstancingTier? viewInstancingTier = null,
+            int? barycentricsSupported = null
+        ) : this()
         {
-            CopyQueueTimestampQueriesSupported = copyQueueTimestampQueriesSupported;
-            CastingFullyTypedFormatSupported = castingFullyTypedFormatSupported;
-            WriteBufferImmediateSupportFlags = writeBufferImmediateSupportFlags;
-            ViewInstancingTier = viewInstancingTier;
-            BarycentricsSupported = barycentricsSupported;
+            if (copyQueueTimestampQueriesSupported is not null)
+            {
+                CopyQueueTimestampQueriesSupported = copyQueueTimestampQueriesSupported.Value;
+            }
+
+            if (castingFullyTypedFormatSupported is not null)
+            {
+                CastingFullyTypedFormatSupported = castingFullyTypedFormatSupported.Value;
+            }
+
+            if (writeBufferImmediateSupportFlags is not null)
+            {
+                WriteBufferImmediateSupportFlags = writeBufferImmediateSupportFlags.Value;
+            }
+
+            if (viewInstancingTier is not null)
+            {
+                ViewInstancingTier = viewInstancingTier.Value;
+            }
+
+            if (barycentricsSupported is not null)
+            {
+                BarycentricsSupported = barycentricsSupported.Value;
+            }
         }
 
 

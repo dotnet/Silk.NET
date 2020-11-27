@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Direct3D11
     {
         public ShaderVariableDesc
         (
-            byte* name = default,
-            uint startOffset = default,
-            uint size = default,
-            uint uFlags = default,
-            void* defaultValue = default,
-            uint startTexture = default,
-            uint textureSize = default,
-            uint startSampler = default,
-            uint samplerSize = default
-        )
+            byte* name = null,
+            uint? startOffset = null,
+            uint? size = null,
+            uint? uFlags = null,
+            void* defaultValue = null,
+            uint? startTexture = null,
+            uint? textureSize = null,
+            uint? startSampler = null,
+            uint? samplerSize = null
+        ) : this()
         {
-            Name = name;
-            StartOffset = startOffset;
-            Size = size;
-            UFlags = uFlags;
-            DefaultValue = defaultValue;
-            StartTexture = startTexture;
-            TextureSize = textureSize;
-            StartSampler = startSampler;
-            SamplerSize = samplerSize;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (startOffset is not null)
+            {
+                StartOffset = startOffset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (uFlags is not null)
+            {
+                UFlags = uFlags.Value;
+            }
+
+            if (defaultValue is not null)
+            {
+                DefaultValue = defaultValue;
+            }
+
+            if (startTexture is not null)
+            {
+                StartTexture = startTexture.Value;
+            }
+
+            if (textureSize is not null)
+            {
+                TextureSize = textureSize.Value;
+            }
+
+            if (startSampler is not null)
+            {
+                StartSampler = startSampler.Value;
+            }
+
+            if (samplerSize is not null)
+            {
+                SamplerSize = samplerSize.Value;
+            }
         }
 
 

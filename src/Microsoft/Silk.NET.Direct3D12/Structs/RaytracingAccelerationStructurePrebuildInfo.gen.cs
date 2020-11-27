@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public RaytracingAccelerationStructurePrebuildInfo
         (
-            ulong resultDataMaxSizeInBytes = default,
-            ulong scratchDataSizeInBytes = default,
-            ulong updateScratchDataSizeInBytes = default
-        )
+            ulong? resultDataMaxSizeInBytes = null,
+            ulong? scratchDataSizeInBytes = null,
+            ulong? updateScratchDataSizeInBytes = null
+        ) : this()
         {
-            ResultDataMaxSizeInBytes = resultDataMaxSizeInBytes;
-            ScratchDataSizeInBytes = scratchDataSizeInBytes;
-            UpdateScratchDataSizeInBytes = updateScratchDataSizeInBytes;
+            if (resultDataMaxSizeInBytes is not null)
+            {
+                ResultDataMaxSizeInBytes = resultDataMaxSizeInBytes.Value;
+            }
+
+            if (scratchDataSizeInBytes is not null)
+            {
+                ScratchDataSizeInBytes = scratchDataSizeInBytes.Value;
+            }
+
+            if (updateScratchDataSizeInBytes is not null)
+            {
+                UpdateScratchDataSizeInBytes = updateScratchDataSizeInBytes.Value;
+            }
         }
 
 

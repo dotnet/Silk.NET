@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Direct3D12
     {
         public ShaderTypeDesc
         (
-            Silk.NET.Core.Native.D3DShaderVariableClass @class = default,
-            Silk.NET.Core.Native.D3DShaderVariableType type = default,
-            uint rows = default,
-            uint columns = default,
-            uint elements = default,
-            uint members = default,
-            uint offset = default,
-            byte* name = default
-        )
+            Silk.NET.Core.Native.D3DShaderVariableClass? @class = null,
+            Silk.NET.Core.Native.D3DShaderVariableType? type = null,
+            uint? rows = null,
+            uint? columns = null,
+            uint? elements = null,
+            uint? members = null,
+            uint? offset = null,
+            byte* name = null
+        ) : this()
         {
-            Class = @class;
-            Type = type;
-            Rows = rows;
-            Columns = columns;
-            Elements = elements;
-            Members = members;
-            Offset = offset;
-            Name = name;
+            if (@class is not null)
+            {
+                Class = @class.Value;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (rows is not null)
+            {
+                Rows = rows.Value;
+            }
+
+            if (columns is not null)
+            {
+                Columns = columns.Value;
+            }
+
+            if (elements is not null)
+            {
+                Elements = elements.Value;
+            }
+
+            if (members is not null)
+            {
+                Members = members.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (name is not null)
+            {
+                Name = name;
+            }
         }
 
 

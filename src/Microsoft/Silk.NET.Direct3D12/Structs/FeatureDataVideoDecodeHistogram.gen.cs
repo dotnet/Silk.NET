@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,24 +22,55 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoDecodeHistogram
         (
-            uint nodeIndex = default,
-            Guid decodeProfile = default,
-            uint width = default,
-            uint height = default,
-            Silk.NET.DXGI.Format decodeFormat = default,
-            VideoDecodeHistogramComponentFlags components = default,
-            uint binCount = default,
-            uint counterBitDepth = default
-        )
+            uint? nodeIndex = null,
+            Guid? decodeProfile = null,
+            uint? width = null,
+            uint? height = null,
+            Silk.NET.DXGI.Format? decodeFormat = null,
+            VideoDecodeHistogramComponentFlags? components = null,
+            uint? binCount = null,
+            uint? counterBitDepth = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            DecodeProfile = decodeProfile;
-            Width = width;
-            Height = height;
-            DecodeFormat = decodeFormat;
-            Components = components;
-            BinCount = binCount;
-            CounterBitDepth = counterBitDepth;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (decodeProfile is not null)
+            {
+                DecodeProfile = decodeProfile.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (decodeFormat is not null)
+            {
+                DecodeFormat = decodeFormat.Value;
+            }
+
+            if (components is not null)
+            {
+                Components = components.Value;
+            }
+
+            if (binCount is not null)
+            {
+                BinCount = binCount.Value;
+            }
+
+            if (counterBitDepth is not null)
+            {
+                CounterBitDepth = counterBitDepth.Value;
+            }
         }
 
 

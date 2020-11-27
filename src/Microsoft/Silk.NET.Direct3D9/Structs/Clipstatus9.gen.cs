@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public Clipstatus9
         (
-            uint clipUnion = default,
-            uint clipIntersection = default
-        )
+            uint? clipUnion = null,
+            uint? clipIntersection = null
+        ) : this()
         {
-            ClipUnion = clipUnion;
-            ClipIntersection = clipIntersection;
+            if (clipUnion is not null)
+            {
+                ClipUnion = clipUnion.Value;
+            }
+
+            if (clipIntersection is not null)
+            {
+                ClipIntersection = clipIntersection.Value;
+            }
         }
 
 

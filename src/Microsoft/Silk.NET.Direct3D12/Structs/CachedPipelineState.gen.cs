@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public CachedPipelineState
         (
-            void* pCachedBlob = default,
-            uint cachedBlobSizeInBytes = default
-        )
+            void* pCachedBlob = null,
+            uint? cachedBlobSizeInBytes = null
+        ) : this()
         {
-            PCachedBlob = pCachedBlob;
-            CachedBlobSizeInBytes = cachedBlobSizeInBytes;
+            if (pCachedBlob is not null)
+            {
+                PCachedBlob = pCachedBlob;
+            }
+
+            if (cachedBlobSizeInBytes is not null)
+            {
+                CachedBlobSizeInBytes = cachedBlobSizeInBytes.Value;
+            }
         }
 
 

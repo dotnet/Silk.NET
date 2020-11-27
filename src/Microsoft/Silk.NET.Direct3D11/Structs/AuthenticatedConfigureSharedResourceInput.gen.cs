@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedConfigureSharedResourceInput
         (
-            AuthenticatedConfigureInput parameters = default,
-            AuthenticatedProcessIdentifierType processType = default,
-            void* processHandle = default,
-            int allowAccess = default
-        )
+            AuthenticatedConfigureInput? parameters = null,
+            AuthenticatedProcessIdentifierType? processType = null,
+            void* processHandle = null,
+            int? allowAccess = null
+        ) : this()
         {
-            Parameters = parameters;
-            ProcessType = processType;
-            ProcessHandle = processHandle;
-            AllowAccess = allowAccess;
+            if (parameters is not null)
+            {
+                Parameters = parameters.Value;
+            }
+
+            if (processType is not null)
+            {
+                ProcessType = processType.Value;
+            }
+
+            if (processHandle is not null)
+            {
+                ProcessHandle = processHandle;
+            }
+
+            if (allowAccess is not null)
+            {
+                AllowAccess = allowAccess.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelQueryevictionencryptionguidcountOutput
         (
-            AuthenticatedchannelQueryOutput output = default,
-            uint numEncryptionGuids = default
-        )
+            AuthenticatedchannelQueryOutput? output = null,
+            uint? numEncryptionGuids = null
+        ) : this()
         {
-            Output = output;
-            NumEncryptionGuids = numEncryptionGuids;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (numEncryptionGuids is not null)
+            {
+                NumEncryptionGuids = numEncryptionGuids.Value;
+            }
         }
 
 

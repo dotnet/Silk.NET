@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Direct3D11
     {
         public RenderTargetBlendDesc1
         (
-            int blendEnable = default,
-            int logicOpEnable = default,
-            Blend srcBlend = default,
-            Blend destBlend = default,
-            BlendOp blendOp = default,
-            Blend srcBlendAlpha = default,
-            Blend destBlendAlpha = default,
-            BlendOp blendOpAlpha = default,
-            LogicOp logicOp = default,
-            byte renderTargetWriteMask = default
-        )
+            int? blendEnable = null,
+            int? logicOpEnable = null,
+            Blend? srcBlend = null,
+            Blend? destBlend = null,
+            BlendOp? blendOp = null,
+            Blend? srcBlendAlpha = null,
+            Blend? destBlendAlpha = null,
+            BlendOp? blendOpAlpha = null,
+            LogicOp? logicOp = null,
+            byte? renderTargetWriteMask = null
+        ) : this()
         {
-            BlendEnable = blendEnable;
-            LogicOpEnable = logicOpEnable;
-            SrcBlend = srcBlend;
-            DestBlend = destBlend;
-            BlendOp = blendOp;
-            SrcBlendAlpha = srcBlendAlpha;
-            DestBlendAlpha = destBlendAlpha;
-            BlendOpAlpha = blendOpAlpha;
-            LogicOp = logicOp;
-            RenderTargetWriteMask = renderTargetWriteMask;
+            if (blendEnable is not null)
+            {
+                BlendEnable = blendEnable.Value;
+            }
+
+            if (logicOpEnable is not null)
+            {
+                LogicOpEnable = logicOpEnable.Value;
+            }
+
+            if (srcBlend is not null)
+            {
+                SrcBlend = srcBlend.Value;
+            }
+
+            if (destBlend is not null)
+            {
+                DestBlend = destBlend.Value;
+            }
+
+            if (blendOp is not null)
+            {
+                BlendOp = blendOp.Value;
+            }
+
+            if (srcBlendAlpha is not null)
+            {
+                SrcBlendAlpha = srcBlendAlpha.Value;
+            }
+
+            if (destBlendAlpha is not null)
+            {
+                DestBlendAlpha = destBlendAlpha.Value;
+            }
+
+            if (blendOpAlpha is not null)
+            {
+                BlendOpAlpha = blendOpAlpha.Value;
+            }
+
+            if (logicOp is not null)
+            {
+                LogicOp = logicOp.Value;
+            }
+
+            if (renderTargetWriteMask is not null)
+            {
+                RenderTargetWriteMask = renderTargetWriteMask.Value;
+            }
         }
 
 

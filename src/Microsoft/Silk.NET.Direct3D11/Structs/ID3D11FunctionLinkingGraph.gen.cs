@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -33,10 +34,13 @@ namespace Silk.NET.Direct3D11
 
         public ID3D11FunctionLinkingGraph
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -45,1603 +49,1407 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateModuleInstance(ID3D11ModuleInstance** ppModuleInstance, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int CreateModuleInstance(ID3D11ModuleInstance** ppModuleInstance, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBuffer);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBuffer);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateModuleInstance(ID3D11ModuleInstance** ppModuleInstance, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int CreateModuleInstance(ID3D11ModuleInstance** ppModuleInstance, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBufferPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateModuleInstance(ref ID3D11ModuleInstance* ppModuleInstance, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBuffer);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CreateModuleInstance(ref ID3D11ModuleInstance* ppModuleInstance, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
+            {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstance, ppErrorBufferPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBufferPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateModuleInstance(ref ID3D11ModuleInstance* ppModuleInstance, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
+        public readonly unsafe int SetInputSignature(ParameterDesc* pInputParameters, uint cInputParameters, ID3D11LinkingNode** ppInputNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBuffer);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNode);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CreateModuleInstance(ref ID3D11ModuleInstance* ppModuleInstance, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
+        public readonly unsafe int SetInputSignature(ParameterDesc* pInputParameters, uint cInputParameters, ref ID3D11LinkingNode* ppInputNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
-                {
-                    fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11ModuleInstance**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, ppModuleInstancePtr, ppErrorBufferPtr);
-                    }
-                }
-                return ret;
+            fixed (ID3D11LinkingNode** ppInputNodePtr = &ppInputNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNodePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetInputSignature(ParameterDesc* pInputParameters, uint cInputParameters, ID3D11LinkingNode** ppInputNode)
+        public readonly unsafe int SetInputSignature(ref ParameterDesc pInputParameters, uint cInputParameters, ID3D11LinkingNode** ppInputNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNode);
-                return ret;
+            fixed (ParameterDesc* pInputParametersPtr = &pInputParameters)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNode);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetInputSignature(ParameterDesc* pInputParameters, uint cInputParameters, ref ID3D11LinkingNode* ppInputNode)
+        public readonly unsafe int SetInputSignature(ref ParameterDesc pInputParameters, uint cInputParameters, ref ID3D11LinkingNode* ppInputNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ParameterDesc* pInputParametersPtr = &pInputParameters)
+            {
                 fixed (ID3D11LinkingNode** ppInputNodePtr = &ppInputNode)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParameters, cInputParameters, ppInputNodePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNodePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetInputSignature(ref ParameterDesc pInputParameters, uint cInputParameters, ID3D11LinkingNode** ppInputNode)
+        public readonly unsafe int SetOutputSignature(ParameterDesc* pOutputParameters, uint cOutputParameters, ID3D11LinkingNode** ppOutputNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ParameterDesc* pInputParametersPtr = &pInputParameters)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNode);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNode);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetInputSignature(ref ParameterDesc pInputParameters, uint cInputParameters, ref ID3D11LinkingNode* ppInputNode)
+        public readonly unsafe int SetOutputSignature(ParameterDesc* pOutputParameters, uint cOutputParameters, ref ID3D11LinkingNode* ppOutputNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ParameterDesc* pInputParametersPtr = &pInputParameters)
-                {
-                    fixed (ID3D11LinkingNode** ppInputNodePtr = &ppInputNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[4])(@this, pInputParametersPtr, cInputParameters, ppInputNodePtr);
-                    }
-                }
-                return ret;
+            fixed (ID3D11LinkingNode** ppOutputNodePtr = &ppOutputNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNodePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetOutputSignature(ParameterDesc* pOutputParameters, uint cOutputParameters, ID3D11LinkingNode** ppOutputNode)
+        public readonly unsafe int SetOutputSignature(ref ParameterDesc pOutputParameters, uint cOutputParameters, ID3D11LinkingNode** ppOutputNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNode);
-                return ret;
+            fixed (ParameterDesc* pOutputParametersPtr = &pOutputParameters)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNode);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetOutputSignature(ParameterDesc* pOutputParameters, uint cOutputParameters, ref ID3D11LinkingNode* ppOutputNode)
+        public readonly unsafe int SetOutputSignature(ref ParameterDesc pOutputParameters, uint cOutputParameters, ref ID3D11LinkingNode* ppOutputNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ParameterDesc* pOutputParametersPtr = &pOutputParameters)
+            {
                 fixed (ID3D11LinkingNode** ppOutputNodePtr = &ppOutputNode)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParameters, cOutputParameters, ppOutputNodePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNodePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetOutputSignature(ref ParameterDesc pOutputParameters, uint cOutputParameters, ID3D11LinkingNode** ppOutputNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ParameterDesc* pOutputParametersPtr = &pOutputParameters)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNode);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetOutputSignature(ref ParameterDesc pOutputParameters, uint cOutputParameters, ref ID3D11LinkingNode* ppOutputNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ParameterDesc* pOutputParametersPtr = &pOutputParameters)
-                {
-                    fixed (ID3D11LinkingNode** ppOutputNodePtr = &ppOutputNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ParameterDesc*, uint, ID3D11LinkingNode**, int>)LpVtbl[5])(@this, pOutputParametersPtr, cOutputParameters, ppOutputNodePtr);
-                    }
-                }
-                return ret;
+            fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
-                return ret;
+            fixed (byte* pFunctionNamePtr = &pFunctionName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (byte* pFunctionNamePtr = &pFunctionName)
+            {
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pFunctionNamePtr = &pFunctionName)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pFunctionNamePtr = &pFunctionName)
-                {
-                    fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
             Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-                return ret;
-            }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+            fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            }
+            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
             {
-                int ret = default;
-                fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                {
-                    fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                {
-                    fixed (byte* pFunctionNamePtr = &pFunctionName)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                {
-                    fixed (byte* pFunctionNamePtr = &pFunctionName)
-                    {
-                        fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                    fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
-                    }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (byte* pFunctionNamePtr = &pFunctionName)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (byte* pFunctionNamePtr = &pFunctionName)
-                    {
-                        fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                    fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
-                    }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                    {
-                        fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                    {
-                        fixed (byte* pFunctionNamePtr = &pFunctionName)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                    {
-                        fixed (byte* pFunctionNamePtr = &pFunctionName)
-                        {
-                            fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                            {
-                                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                    {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
-                {
-                    fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
-                    {
-            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                        fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
-                        }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
-                fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
-                }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
                 fixed (byte* pFunctionNamePtr = &pFunctionName)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
                 }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
                 fixed (byte* pFunctionNamePtr = &pFunctionName)
                 {
                     fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                     {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
             Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(byte* pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
                 fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
                 }
             Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
+                fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
+                fixed (byte* pFunctionNamePtr = &pFunctionName)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
+                fixed (byte* pFunctionNamePtr = &pFunctionName)
+                {
+                    fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
+            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
+            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+                fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                }
+            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
                 }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
                     fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                     {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
                     fixed (byte* pFunctionNamePtr = &pFunctionName)
                     {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
                     fixed (byte* pFunctionNamePtr = &pFunctionName)
                     {
                         fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                         {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
             Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        public readonly unsafe int CallFunction(ref byte pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (byte* pModuleInstanceNamespacePtr = &pModuleInstanceNamespace)
+            {
                 fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
                 {
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
                     fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
                     {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
                     }
             Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
                 }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
             Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
-                return ret;
-            }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValue(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ID3D11LinkingNode* pDstNode, int DstParameterIndex)
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNode, DstParameterIndex);
-                return ret;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
             }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValue(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int DstParameterIndex)
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (byte* pFunctionNamePtr = &pFunctionName)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (byte* pFunctionNamePtr = &pFunctionName)
+            {
+                fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+                }
+            }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
+            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ID3D11Module* pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+            fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
+            }
+            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
+            }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, byte* pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
+                fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
+                }
+            }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
+                fixed (byte* pFunctionNamePtr = &pFunctionName)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+                }
+            }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, ref byte pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
+                fixed (byte* pFunctionNamePtr = &pFunctionName)
+                {
+                    fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                    }
+                }
+            }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ID3D11LinkingNode** ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
+            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
+            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int CallFunction(string pModuleInstanceNamespace, ref ID3D11Module pModuleWithFunctionPrototype, string pFunctionName, ref ID3D11LinkingNode* ppCallNode)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
+            fixed (ID3D11Module* pModuleWithFunctionPrototypePtr = &pModuleWithFunctionPrototype)
+            {
+            var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
+                fixed (ID3D11LinkingNode** ppCallNodePtr = &ppCallNode)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
+                }
+            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            }
+            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValue(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ID3D11LinkingNode* pDstNode, int DstParameterIndex)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNode, DstParameterIndex);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValue(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int DstParameterIndex)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValue(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ID3D11LinkingNode* pDstNode, int DstParameterIndex)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNode, DstParameterIndex);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int PassValue(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int DstParameterIndex)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNode, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValue(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ID3D11LinkingNode* pDstNode, int DstParameterIndex)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNode, DstParameterIndex);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int PassValue(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref ID3D11LinkingNode pDstNode, int DstParameterIndex)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, ID3D11LinkingNode*, int, int>)LpVtbl[7])(@this, pSrcNodePtr, SrcParameterIndex, pDstNodePtr, DstParameterIndex);
-                    }
-                }
-                return ret;
+            fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
-                return ret;
-            }
+            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+            {
                 fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+            {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
             Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
+            {
+                fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
+            {
+            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
+            {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
+            {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
                     fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                     {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
+            {
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
             Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            }
+            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+            }
+            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+            {
+                fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                }
+            }
+            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
+            fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+            {
+            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            }
+            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
+                fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
+            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
+                fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
+                fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+                {
+                    fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
+                    {
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    }
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
+                fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
+                {
+            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
                 fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
                 fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
                 {
                     fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                     {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
                 fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
                 {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
             Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
                 fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
                 {
                     fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                     {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
                 fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
                 {
                     fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                     {
                         fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                         {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
                         }
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
                 fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
                 {
                     fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                     {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
             Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
             Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
                 fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
                 }
             Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
             Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
             Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
                 }
             Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
                     fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
                     {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
                     }
                 }
             Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ID3D11LinkingNode* pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
+            {
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
                 fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
                 {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
             Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
                 }
             Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int GetLastError(Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzle);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBuffer);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
+        public readonly unsafe int GetLastError(ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-                    }
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBufferPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
+        public readonly unsafe int GenerateHlsl(uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppBuffer)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-                }
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBuffer);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
+        public readonly unsafe int GenerateHlsl(uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppBuffer)
         {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
+            var @this = (ID3D11FunctionLinkingGraph*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzle);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
+            fixed (Silk.NET.Core.Native.ID3D10Blob** ppBufferPtr = &ppBuffer)
             {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                    {
-                        fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-                        }
-                    }
-                }
-                return ret;
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBufferPtr);
             }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, byte* pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                    {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
-                    {
-                        fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
-                    {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
-                    {
-                        fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
-                    {
-                        fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                        {
-                            fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
-                            {
-                                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-                            }
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, ref byte pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-                    fixed (byte* pSrcSwizzlePtr = &pSrcSwizzle)
-                    {
-                        fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                        {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, byte* pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-                    fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-                    }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ID3D11LinkingNode* pDstNode, int DstParameterIndex, string pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, byte* pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-                    fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                    {
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
-                    }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, ref byte pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-                    fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                    {
-                        fixed (byte* pDstSwizzlePtr = &pDstSwizzle)
-                        {
-                            ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-                        }
-                    }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int PassValueWithSwizzle(ref ID3D11LinkingNode pSrcNode, int SrcParameterIndex, string pSrcSwizzle, ref ID3D11LinkingNode pDstNode, int DstParameterIndex, string pDstSwizzle)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (ID3D11LinkingNode* pSrcNodePtr = &pSrcNode)
-                {
-            var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
-                    fixed (ID3D11LinkingNode* pDstNodePtr = &pDstNode)
-                    {
-            var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
-                        ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-                    }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetLastError(Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBuffer);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetLastError(ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[9])(@this, ppErrorBufferPtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GenerateHlsl(uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppBuffer)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBuffer);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GenerateHlsl(uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppBuffer)
-        {
-            fixed (ID3D11FunctionLinkingGraph* @this = &this)
-            {
-                int ret = default;
-                fixed (Silk.NET.Core.Native.ID3D10Blob** ppBufferPtr = &ppBuffer)
-                {
-                    ret = ((delegate* cdecl<ID3D11FunctionLinkingGraph*, uint, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[10])(@this, uFlags, ppBufferPtr);
-                }
-                return ret;
-            }
+            return ret;
         }
 
     }

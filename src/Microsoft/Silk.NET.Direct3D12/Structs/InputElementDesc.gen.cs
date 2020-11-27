@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,22 +22,49 @@ namespace Silk.NET.Direct3D12
     {
         public InputElementDesc
         (
-            byte* semanticName = default,
-            uint semanticIndex = default,
-            Silk.NET.DXGI.Format format = default,
-            uint inputSlot = default,
-            uint alignedByteOffset = default,
-            InputClassification inputSlotClass = default,
-            uint instanceDataStepRate = default
-        )
+            byte* semanticName = null,
+            uint? semanticIndex = null,
+            Silk.NET.DXGI.Format? format = null,
+            uint? inputSlot = null,
+            uint? alignedByteOffset = null,
+            InputClassification? inputSlotClass = null,
+            uint? instanceDataStepRate = null
+        ) : this()
         {
-            SemanticName = semanticName;
-            SemanticIndex = semanticIndex;
-            Format = format;
-            InputSlot = inputSlot;
-            AlignedByteOffset = alignedByteOffset;
-            InputSlotClass = inputSlotClass;
-            InstanceDataStepRate = instanceDataStepRate;
+            if (semanticName is not null)
+            {
+                SemanticName = semanticName;
+            }
+
+            if (semanticIndex is not null)
+            {
+                SemanticIndex = semanticIndex.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (inputSlot is not null)
+            {
+                InputSlot = inputSlot.Value;
+            }
+
+            if (alignedByteOffset is not null)
+            {
+                AlignedByteOffset = alignedByteOffset.Value;
+            }
+
+            if (inputSlotClass is not null)
+            {
+                InputSlotClass = inputSlotClass.Value;
+            }
+
+            if (instanceDataStepRate is not null)
+            {
+                InstanceDataStepRate = instanceDataStepRate.Value;
+            }
         }
 
 

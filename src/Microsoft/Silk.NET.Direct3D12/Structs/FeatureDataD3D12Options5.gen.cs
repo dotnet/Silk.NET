@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options5
         (
-            int sRVOnlyTiledResourceTier3 = default,
-            RenderPassTier renderPassesTier = default,
-            RaytracingTier raytracingTier = default
-        )
+            int? sRVOnlyTiledResourceTier3 = null,
+            RenderPassTier? renderPassesTier = null,
+            RaytracingTier? raytracingTier = null
+        ) : this()
         {
-            SRVOnlyTiledResourceTier3 = sRVOnlyTiledResourceTier3;
-            RenderPassesTier = renderPassesTier;
-            RaytracingTier = raytracingTier;
+            if (sRVOnlyTiledResourceTier3 is not null)
+            {
+                SRVOnlyTiledResourceTier3 = sRVOnlyTiledResourceTier3.Value;
+            }
+
+            if (renderPassesTier is not null)
+            {
+                RenderPassesTier = renderPassesTier.Value;
+            }
+
+            if (raytracingTier is not null)
+            {
+                RaytracingTier = raytracingTier.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,68 +22,91 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoProcessSupport
         (
-            uint nodeIndex = default,
-            VideoSample inputSample = default,
-            VideoFieldType inputFieldType = default,
-            VideoFrameStereoFormat inputStereoFormat = default,
-            Silk.NET.DXGI.Rational inputFrameRate = default,
-            VideoFormat outputFormat = default,
-            VideoFrameStereoFormat outputStereoFormat = default,
-            Silk.NET.DXGI.Rational outputFrameRate = default,
-            VideoProcessSupportFlags supportFlags = default,
-            VideoScaleSupport scaleSupport = default,
-            VideoProcessFeatureFlags featureSupport = default,
-            VideoProcessDeinterlaceFlags deinterlaceSupport = default,
-            VideoProcessAutoProcessingFlags autoProcessingSupport = default,
-            VideoProcessFilterFlags filterSupport = default
-        )
+            uint? nodeIndex = null,
+            VideoSample? inputSample = null,
+            VideoFieldType? inputFieldType = null,
+            VideoFrameStereoFormat? inputStereoFormat = null,
+            Silk.NET.DXGI.Rational? inputFrameRate = null,
+            VideoFormat? outputFormat = null,
+            VideoFrameStereoFormat? outputStereoFormat = null,
+            Silk.NET.DXGI.Rational? outputFrameRate = null,
+            VideoProcessSupportFlags? supportFlags = null,
+            VideoScaleSupport? scaleSupport = null,
+            VideoProcessFeatureFlags? featureSupport = null,
+            VideoProcessDeinterlaceFlags? deinterlaceSupport = null,
+            VideoProcessAutoProcessingFlags? autoProcessingSupport = null,
+            VideoProcessFilterFlags? filterSupport = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            InputSample = inputSample;
-            InputFieldType = inputFieldType;
-            InputStereoFormat = inputStereoFormat;
-            InputFrameRate = inputFrameRate;
-            OutputFormat = outputFormat;
-            OutputStereoFormat = outputStereoFormat;
-            OutputFrameRate = outputFrameRate;
-            SupportFlags = supportFlags;
-            ScaleSupport = scaleSupport;
-            FeatureSupport = featureSupport;
-            DeinterlaceSupport = deinterlaceSupport;
-            AutoProcessingSupport = autoProcessingSupport;
-            FilterSupport = filterSupport;
-           FilterRangeSupport_0 = default;
-           FilterRangeSupport_1 = default;
-           FilterRangeSupport_2 = default;
-           FilterRangeSupport_3 = default;
-           FilterRangeSupport_4 = default;
-           FilterRangeSupport_5 = default;
-           FilterRangeSupport_6 = default;
-           FilterRangeSupport_7 = default;
-           FilterRangeSupport_8 = default;
-           FilterRangeSupport_9 = default;
-           FilterRangeSupport_10 = default;
-           FilterRangeSupport_11 = default;
-           FilterRangeSupport_12 = default;
-           FilterRangeSupport_13 = default;
-           FilterRangeSupport_14 = default;
-           FilterRangeSupport_15 = default;
-           FilterRangeSupport_16 = default;
-           FilterRangeSupport_17 = default;
-           FilterRangeSupport_18 = default;
-           FilterRangeSupport_19 = default;
-           FilterRangeSupport_20 = default;
-           FilterRangeSupport_21 = default;
-           FilterRangeSupport_22 = default;
-           FilterRangeSupport_23 = default;
-           FilterRangeSupport_24 = default;
-           FilterRangeSupport_25 = default;
-           FilterRangeSupport_26 = default;
-           FilterRangeSupport_27 = default;
-           FilterRangeSupport_28 = default;
-           FilterRangeSupport_29 = default;
-           FilterRangeSupport_30 = default;
-           FilterRangeSupport_31 = default;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (inputSample is not null)
+            {
+                InputSample = inputSample.Value;
+            }
+
+            if (inputFieldType is not null)
+            {
+                InputFieldType = inputFieldType.Value;
+            }
+
+            if (inputStereoFormat is not null)
+            {
+                InputStereoFormat = inputStereoFormat.Value;
+            }
+
+            if (inputFrameRate is not null)
+            {
+                InputFrameRate = inputFrameRate.Value;
+            }
+
+            if (outputFormat is not null)
+            {
+                OutputFormat = outputFormat.Value;
+            }
+
+            if (outputStereoFormat is not null)
+            {
+                OutputStereoFormat = outputStereoFormat.Value;
+            }
+
+            if (outputFrameRate is not null)
+            {
+                OutputFrameRate = outputFrameRate.Value;
+            }
+
+            if (supportFlags is not null)
+            {
+                SupportFlags = supportFlags.Value;
+            }
+
+            if (scaleSupport is not null)
+            {
+                ScaleSupport = scaleSupport.Value;
+            }
+
+            if (featureSupport is not null)
+            {
+                FeatureSupport = featureSupport.Value;
+            }
+
+            if (deinterlaceSupport is not null)
+            {
+                DeinterlaceSupport = deinterlaceSupport.Value;
+            }
+
+            if (autoProcessingSupport is not null)
+            {
+                AutoProcessingSupport = autoProcessingSupport.Value;
+            }
+
+            if (filterSupport is not null)
+            {
+                FilterSupport = filterSupport.Value;
+            }
         }
 
 
@@ -159,161 +183,63 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
         [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_0;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_1;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_2;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_3;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_4;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_5;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_6;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_7;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_8;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_9;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_10;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_11;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_12;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_13;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_14;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_15;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_16;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_17;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_18;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_19;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_20;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_21;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_22;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_23;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_24;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_25;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_26;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_27;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_28;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_29;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_30;
-        
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Name", "FilterRangeSupport")]
-        public VideoProcessFilterRange FilterRangeSupport_31;
+        public FilterRangeSupportBuffer FilterRangeSupport;
+
+        public struct FilterRangeSupportBuffer
+        {
+            public VideoProcessFilterRange Element0;
+            public VideoProcessFilterRange Element1;
+            public VideoProcessFilterRange Element2;
+            public VideoProcessFilterRange Element3;
+            public VideoProcessFilterRange Element4;
+            public VideoProcessFilterRange Element5;
+            public VideoProcessFilterRange Element6;
+            public VideoProcessFilterRange Element7;
+            public VideoProcessFilterRange Element8;
+            public VideoProcessFilterRange Element9;
+            public VideoProcessFilterRange Element10;
+            public VideoProcessFilterRange Element11;
+            public VideoProcessFilterRange Element12;
+            public VideoProcessFilterRange Element13;
+            public VideoProcessFilterRange Element14;
+            public VideoProcessFilterRange Element15;
+            public VideoProcessFilterRange Element16;
+            public VideoProcessFilterRange Element17;
+            public VideoProcessFilterRange Element18;
+            public VideoProcessFilterRange Element19;
+            public VideoProcessFilterRange Element20;
+            public VideoProcessFilterRange Element21;
+            public VideoProcessFilterRange Element22;
+            public VideoProcessFilterRange Element23;
+            public VideoProcessFilterRange Element24;
+            public VideoProcessFilterRange Element25;
+            public VideoProcessFilterRange Element26;
+            public VideoProcessFilterRange Element27;
+            public VideoProcessFilterRange Element28;
+            public VideoProcessFilterRange Element29;
+            public VideoProcessFilterRange Element30;
+            public VideoProcessFilterRange Element31;
+            public ref VideoProcessFilterRange this[int index]
+            {
+                get
+                {
+                    if (index > 31 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (VideoProcessFilterRange* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<VideoProcessFilterRange> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 32);
+#endif
+        }
+
     }
 }

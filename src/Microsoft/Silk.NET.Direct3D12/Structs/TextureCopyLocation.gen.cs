@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public TextureCopyLocation
         (
-            ID3D12Resource* pResource = default,
-            TextureCopyType type = default
-        )
+            ID3D12Resource* pResource = null,
+            TextureCopyType? type = null
+        ) : this()
         {
-            PResource = pResource;
-            Type = type;
+            if (pResource is not null)
+            {
+                PResource = pResource;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
         }
 
 

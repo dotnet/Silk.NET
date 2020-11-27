@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options1
         (
-            TiledResourcesTier tiledResourcesTier = default,
-            int minMaxFiltering = default,
-            int clearViewAlsoSupportsDepthOnlyFormats = default,
-            int mapOnDefaultBuffers = default
-        )
+            TiledResourcesTier? tiledResourcesTier = null,
+            int? minMaxFiltering = null,
+            int? clearViewAlsoSupportsDepthOnlyFormats = null,
+            int? mapOnDefaultBuffers = null
+        ) : this()
         {
-            TiledResourcesTier = tiledResourcesTier;
-            MinMaxFiltering = minMaxFiltering;
-            ClearViewAlsoSupportsDepthOnlyFormats = clearViewAlsoSupportsDepthOnlyFormats;
-            MapOnDefaultBuffers = mapOnDefaultBuffers;
+            if (tiledResourcesTier is not null)
+            {
+                TiledResourcesTier = tiledResourcesTier.Value;
+            }
+
+            if (minMaxFiltering is not null)
+            {
+                MinMaxFiltering = minMaxFiltering.Value;
+            }
+
+            if (clearViewAlsoSupportsDepthOnlyFormats is not null)
+            {
+                ClearViewAlsoSupportsDepthOnlyFormats = clearViewAlsoSupportsDepthOnlyFormats.Value;
+            }
+
+            if (mapOnDefaultBuffers is not null)
+            {
+                MapOnDefaultBuffers = mapOnDefaultBuffers.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataFormatSupport
         (
-            Silk.NET.DXGI.Format format = default,
-            FormatSupport1 support1 = default,
-            FormatSupport2 support2 = default
-        )
+            Silk.NET.DXGI.Format? format = null,
+            FormatSupport1? support1 = null,
+            FormatSupport2? support2 = null
+        ) : this()
         {
-            Format = format;
-            Support1 = support1;
-            Support2 = support2;
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
+
+            if (support1 is not null)
+            {
+                Support1 = support1.Value;
+            }
+
+            if (support2 is not null)
+            {
+                Support2 = support2.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataQueryMetaCommand
         (
-            Guid commandId = default,
-            uint nodeMask = default,
-            void* pQueryInputData = default,
-            uint queryInputDataSizeInBytes = default,
-            void* pQueryOutputData = default,
-            uint queryOutputDataSizeInBytes = default
-        )
+            Guid? commandId = null,
+            uint? nodeMask = null,
+            void* pQueryInputData = null,
+            uint? queryInputDataSizeInBytes = null,
+            void* pQueryOutputData = null,
+            uint? queryOutputDataSizeInBytes = null
+        ) : this()
         {
-            CommandId = commandId;
-            NodeMask = nodeMask;
-            PQueryInputData = pQueryInputData;
-            QueryInputDataSizeInBytes = queryInputDataSizeInBytes;
-            PQueryOutputData = pQueryOutputData;
-            QueryOutputDataSizeInBytes = queryOutputDataSizeInBytes;
+            if (commandId is not null)
+            {
+                CommandId = commandId.Value;
+            }
+
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (pQueryInputData is not null)
+            {
+                PQueryInputData = pQueryInputData;
+            }
+
+            if (queryInputDataSizeInBytes is not null)
+            {
+                QueryInputDataSizeInBytes = queryInputDataSizeInBytes.Value;
+            }
+
+            if (pQueryOutputData is not null)
+            {
+                PQueryOutputData = pQueryOutputData;
+            }
+
+            if (queryOutputDataSizeInBytes is not null)
+            {
+                QueryOutputDataSizeInBytes = queryOutputDataSizeInBytes.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,20 +23,43 @@ namespace Silk.NET.Direct3D11
     {
         public AnonymousRecordD3d11L4308C5
         (
-            Tex1DDsv texture1D = default,
-            Tex1DArrayDsv texture1DArray = default,
-            Tex2DDsv texture2D = default,
-            Tex2DArrayDsv texture2DArray = default,
-            Tex2DmsDsv texture2DMS = default,
-            Tex2DmsArrayDsv texture2DMSArray = default
-        )
+            Tex1DDsv? texture1D = null,
+            Tex1DArrayDsv? texture1DArray = null,
+            Tex2DDsv? texture2D = null,
+            Tex2DArrayDsv? texture2DArray = null,
+            Tex2DmsDsv? texture2DMS = null,
+            Tex2DmsArrayDsv? texture2DMSArray = null
+        ) : this()
         {
-            Texture1D = texture1D;
-            Texture1DArray = texture1DArray;
-            Texture2D = texture2D;
-            Texture2DArray = texture2DArray;
-            Texture2DMS = texture2DMS;
-            Texture2DMSArray = texture2DMSArray;
+            if (texture1D is not null)
+            {
+                Texture1D = texture1D.Value;
+            }
+
+            if (texture1DArray is not null)
+            {
+                Texture1DArray = texture1DArray.Value;
+            }
+
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
+
+            if (texture2DArray is not null)
+            {
+                Texture2DArray = texture2DArray.Value;
+            }
+
+            if (texture2DMS is not null)
+            {
+                Texture2DMS = texture2DMS.Value;
+            }
+
+            if (texture2DMSArray is not null)
+            {
+                Texture2DMSArray = texture2DMSArray.Value;
+            }
         }
 
 

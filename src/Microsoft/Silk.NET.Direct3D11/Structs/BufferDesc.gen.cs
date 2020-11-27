@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D11
     {
         public BufferDesc
         (
-            uint byteWidth = default,
-            Usage usage = default,
-            uint bindFlags = default,
-            uint cPUAccessFlags = default,
-            uint miscFlags = default,
-            uint structureByteStride = default
-        )
+            uint? byteWidth = null,
+            Usage? usage = null,
+            uint? bindFlags = null,
+            uint? cPUAccessFlags = null,
+            uint? miscFlags = null,
+            uint? structureByteStride = null
+        ) : this()
         {
-            ByteWidth = byteWidth;
-            Usage = usage;
-            BindFlags = bindFlags;
-            CPUAccessFlags = cPUAccessFlags;
-            MiscFlags = miscFlags;
-            StructureByteStride = structureByteStride;
+            if (byteWidth is not null)
+            {
+                ByteWidth = byteWidth.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (bindFlags is not null)
+            {
+                BindFlags = bindFlags.Value;
+            }
+
+            if (cPUAccessFlags is not null)
+            {
+                CPUAccessFlags = cPUAccessFlags.Value;
+            }
+
+            if (miscFlags is not null)
+            {
+                MiscFlags = miscFlags.Value;
+            }
+
+            if (structureByteStride is not null)
+            {
+                StructureByteStride = structureByteStride.Value;
+            }
         }
 
 

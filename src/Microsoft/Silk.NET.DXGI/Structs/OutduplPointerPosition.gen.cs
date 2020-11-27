@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.DXGI
     {
         public OutduplPointerPosition
         (
-            Silk.NET.Core.Native.TagPoint position = default,
-            int visible = default
-        )
+            Silk.NET.Core.Native.TagPoint? position = null,
+            int? visible = null
+        ) : this()
         {
-            Position = position;
-            Visible = visible;
+            if (position is not null)
+            {
+                Position = position.Value;
+            }
+
+            if (visible is not null)
+            {
+                Visible = visible.Value;
+            }
         }
 
 

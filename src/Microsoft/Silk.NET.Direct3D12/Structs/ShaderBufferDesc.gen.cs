@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public ShaderBufferDesc
         (
-            byte* name = default,
-            Silk.NET.Core.Native.D3DCBufferType type = default,
-            uint variables = default,
-            uint size = default,
-            uint uFlags = default
-        )
+            byte* name = null,
+            Silk.NET.Core.Native.D3DCBufferType? type = null,
+            uint? variables = null,
+            uint? size = null,
+            uint? uFlags = null
+        ) : this()
         {
-            Name = name;
-            Type = type;
-            Variables = variables;
-            Size = size;
-            UFlags = uFlags;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (variables is not null)
+            {
+                Variables = variables.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
+            }
+
+            if (uFlags is not null)
+            {
+                UFlags = uFlags.Value;
+            }
         }
 
 

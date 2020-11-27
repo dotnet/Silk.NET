@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataSerialization
         (
-            uint nodeIndex = default,
-            HeapSerializationTier heapSerializationTier = default
-        )
+            uint? nodeIndex = null,
+            HeapSerializationTier? heapSerializationTier = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            HeapSerializationTier = heapSerializationTier;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (heapSerializationTier is not null)
+            {
+                HeapSerializationTier = heapSerializationTier.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D12
     {
         public CpuDescriptorHandle
         (
-            uint ptr = default
-        )
+            uint? ptr = null
+        ) : this()
         {
-            Ptr = ptr;
+            if (ptr is not null)
+            {
+                Ptr = ptr.Value;
+            }
         }
 
 

@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -33,10 +34,13 @@ namespace Silk.NET.Direct3D11
 
         public ID3D11ShaderReflection
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -45,615 +49,521 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetDesc(ShaderDesc* pDesc)
+        public readonly unsafe int GetDesc(ShaderDesc* pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, ShaderDesc*, int>)LpVtbl[3])(@this, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, ShaderDesc*, int>)LpVtbl[3])(@this, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetDesc(ref ShaderDesc pDesc)
+        public readonly int GetDesc(ref ShaderDesc pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ShaderDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, ShaderDesc*, int>)LpVtbl[3])(@this, pDescPtr);
-                }
-                return ret;
+            fixed (ShaderDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, ShaderDesc*, int>)LpVtbl[3])(@this, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index)
+        public readonly unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByIndex(uint Index)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D11ShaderReflectionConstantBuffer* ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[4])(@this, Index);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[4])(@this, Index);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(byte* Name)
+        public readonly unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(byte* Name)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D11ShaderReflectionConstantBuffer* ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, Name);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, Name);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(ref byte Name)
+        public readonly unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(ref byte Name)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D11ShaderReflectionConstantBuffer* ret = default;
-                fixed (byte* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
-                }
-                return ret;
+            fixed (byte* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(string Name)
+        public readonly unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(string Name)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D11ShaderReflectionConstantBuffer* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
-                return ret;
-            }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetResourceBindingDesc(uint ResourceIndex, ShaderInputBindDesc* pDesc)
+        public readonly unsafe int GetResourceBindingDesc(uint ResourceIndex, ShaderInputBindDesc* pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, ShaderInputBindDesc*, int>)LpVtbl[6])(@this, ResourceIndex, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, ShaderInputBindDesc*, int>)LpVtbl[6])(@this, ResourceIndex, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetResourceBindingDesc(uint ResourceIndex, ref ShaderInputBindDesc pDesc)
+        public readonly int GetResourceBindingDesc(uint ResourceIndex, ref ShaderInputBindDesc pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, ShaderInputBindDesc*, int>)LpVtbl[6])(@this, ResourceIndex, pDescPtr);
-                }
-                return ret;
+            fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, ShaderInputBindDesc*, int>)LpVtbl[6])(@this, ResourceIndex, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetInputParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
+        public readonly unsafe int GetInputParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[7])(@this, ParameterIndex, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[7])(@this, ParameterIndex, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetInputParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
+        public readonly int GetInputParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (SignatureParameterDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[7])(@this, ParameterIndex, pDescPtr);
-                }
-                return ret;
+            fixed (SignatureParameterDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[7])(@this, ParameterIndex, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetOutputParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
+        public readonly unsafe int GetOutputParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[8])(@this, ParameterIndex, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[8])(@this, ParameterIndex, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetOutputParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
+        public readonly int GetOutputParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (SignatureParameterDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[8])(@this, ParameterIndex, pDescPtr);
-                }
-                return ret;
+            fixed (SignatureParameterDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[8])(@this, ParameterIndex, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPatchConstantParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
+        public readonly unsafe int GetPatchConstantParameterDesc(uint ParameterIndex, SignatureParameterDesc* pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[9])(@this, ParameterIndex, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[9])(@this, ParameterIndex, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetPatchConstantParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
+        public readonly int GetPatchConstantParameterDesc(uint ParameterIndex, ref SignatureParameterDesc pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (SignatureParameterDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[9])(@this, ParameterIndex, pDescPtr);
-                }
-                return ret;
+            fixed (SignatureParameterDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint, SignatureParameterDesc*, int>)LpVtbl[9])(@this, ParameterIndex, pDescPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D11ShaderReflectionVariable* GetVariableByName(byte* Name)
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName(byte* Name)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D11ShaderReflectionVariable* ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, Name);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, Name);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D11ShaderReflectionVariable* GetVariableByName(ref byte Name)
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName(ref byte Name)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D11ShaderReflectionVariable* ret = default;
-                fixed (byte* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
-                }
-                return ret;
+            fixed (byte* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe ID3D11ShaderReflectionVariable* GetVariableByName(string Name)
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName(string Name)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ID3D11ShaderReflectionVariable* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
-                return ret;
-            }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetResourceBindingDescByName(byte* Name, ShaderInputBindDesc* pDesc)
+        public readonly unsafe int GetResourceBindingDescByName(byte* Name, ShaderInputBindDesc* pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, Name, pDesc);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, Name, pDesc);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetResourceBindingDescByName(byte* Name, ref ShaderInputBindDesc pDesc)
+        public readonly unsafe int GetResourceBindingDescByName(byte* Name, ref ShaderInputBindDesc pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, Name, pDescPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetResourceBindingDescByName(ref byte Name, ShaderInputBindDesc* pDesc)
+        {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* NamePtr = &Name)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int GetResourceBindingDescByName(ref byte Name, ref ShaderInputBindDesc pDesc)
+        {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (byte* NamePtr = &Name)
+            {
                 fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
                 {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, Name, pDescPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetResourceBindingDescByName(ref byte Name, ShaderInputBindDesc* pDesc)
+        public readonly unsafe int GetResourceBindingDescByName(string Name, ShaderInputBindDesc* pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* NamePtr = &Name)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int GetResourceBindingDescByName(ref byte Name, ref ShaderInputBindDesc pDesc)
-        {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
-                int ret = default;
-                fixed (byte* NamePtr = &Name)
-                {
-                    fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
-                    {
-                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetResourceBindingDescByName(string Name, ShaderInputBindDesc* pDesc)
-        {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
             Marshal.FreeHGlobal((IntPtr)NamePtr);
-                return ret;
-            }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetResourceBindingDescByName(string Name, ref ShaderInputBindDesc pDesc)
+        public readonly int GetResourceBindingDescByName(string Name, ref ShaderInputBindDesc pDesc)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
-                fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
-                }
+            fixed (ShaderInputBindDesc* pDescPtr = &pDesc)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
+            }
             Marshal.FreeHGlobal((IntPtr)NamePtr);
-                return ret;
-            }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint GetMovInstructionCount()
+        public readonly uint GetMovInstructionCount()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[12])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint>)LpVtbl[12])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint GetMovcInstructionCount()
+        public readonly uint GetMovcInstructionCount()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[13])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint>)LpVtbl[13])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint GetConversionInstructionCount()
+        public readonly uint GetConversionInstructionCount()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[14])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint>)LpVtbl[14])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint GetBitwiseInstructionCount()
+        public readonly uint GetBitwiseInstructionCount()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[15])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint>)LpVtbl[15])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public Silk.NET.Core.Native.D3DPrimitive GetGSInputPrimitive()
+        public readonly Silk.NET.Core.Native.D3DPrimitive GetGSInputPrimitive()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 Silk.NET.Core.Native.D3DPrimitive ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DPrimitive>)LpVtbl[16])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DPrimitive>)LpVtbl[16])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int IsSampleFrequencyShader()
+        public readonly int IsSampleFrequencyShader()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, int>)LpVtbl[17])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, int>)LpVtbl[17])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint GetNumInterfaceSlots()
+        public readonly uint GetNumInterfaceSlots()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint>)LpVtbl[18])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint>)LpVtbl[18])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetMinFeatureLevel(Silk.NET.Core.Native.D3DFeatureLevel* pLevel)
+        public readonly unsafe int GetMinFeatureLevel(Silk.NET.Core.Native.D3DFeatureLevel* pLevel)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DFeatureLevel*, int>)LpVtbl[19])(@this, pLevel);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DFeatureLevel*, int>)LpVtbl[19])(@this, pLevel);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int GetMinFeatureLevel(ref Silk.NET.Core.Native.D3DFeatureLevel pLevel)
+        public readonly int GetMinFeatureLevel(ref Silk.NET.Core.Native.D3DFeatureLevel pLevel)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Silk.NET.Core.Native.D3DFeatureLevel* pLevelPtr = &pLevel)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DFeatureLevel*, int>)LpVtbl[19])(@this, pLevelPtr);
-                }
-                return ret;
+            fixed (Silk.NET.Core.Native.D3DFeatureLevel* pLevelPtr = &pLevel)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, Silk.NET.Core.Native.D3DFeatureLevel*, int>)LpVtbl[19])(@this, pLevelPtr);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe uint GetThreadGroupSize(uint* pSizeX, uint* pSizeY, uint* pSizeZ)
+        public readonly unsafe uint GetThreadGroupSize(uint* pSizeX, uint* pSizeY, uint* pSizeZ)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeY, pSizeZ);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeY, pSizeZ);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe uint GetThreadGroupSize(uint* pSizeX, uint* pSizeY, ref uint pSizeZ)
+        public readonly unsafe uint GetThreadGroupSize(uint* pSizeX, uint* pSizeY, ref uint pSizeZ)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
+            fixed (uint* pSizeZPtr = &pSizeZ)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeY, pSizeZPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe uint GetThreadGroupSize(uint* pSizeX, ref uint pSizeY, uint* pSizeZ)
+        {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                uint ret = default;
+            fixed (uint* pSizeYPtr = &pSizeY)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeYPtr, pSizeZ);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe uint GetThreadGroupSize(uint* pSizeX, ref uint pSizeY, ref uint pSizeZ)
+        {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                uint ret = default;
+            fixed (uint* pSizeYPtr = &pSizeY)
+            {
                 fixed (uint* pSizeZPtr = &pSizeZ)
                 {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeY, pSizeZPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeYPtr, pSizeZPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe uint GetThreadGroupSize(uint* pSizeX, ref uint pSizeY, uint* pSizeZ)
+        public readonly unsafe uint GetThreadGroupSize(ref uint pSizeX, uint* pSizeY, uint* pSizeZ)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
+            fixed (uint* pSizeXPtr = &pSizeX)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeY, pSizeZ);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe uint GetThreadGroupSize(ref uint pSizeX, uint* pSizeY, ref uint pSizeZ)
+        {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                uint ret = default;
+            fixed (uint* pSizeXPtr = &pSizeX)
+            {
+                fixed (uint* pSizeZPtr = &pSizeZ)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeY, pSizeZPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe uint GetThreadGroupSize(ref uint pSizeX, ref uint pSizeY, uint* pSizeZ)
+        {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                uint ret = default;
+            fixed (uint* pSizeXPtr = &pSizeX)
+            {
                 fixed (uint* pSizeYPtr = &pSizeY)
                 {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeYPtr, pSizeZ);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeYPtr, pSizeZ);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe uint GetThreadGroupSize(uint* pSizeX, ref uint pSizeY, ref uint pSizeZ)
+        public readonly uint GetThreadGroupSize(ref uint pSizeX, ref uint pSizeY, ref uint pSizeZ)
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
+            fixed (uint* pSizeXPtr = &pSizeX)
+            {
                 fixed (uint* pSizeYPtr = &pSizeY)
                 {
                     fixed (uint* pSizeZPtr = &pSizeZ)
                     {
-                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeX, pSizeYPtr, pSizeZPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeYPtr, pSizeZPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe uint GetThreadGroupSize(ref uint pSizeX, uint* pSizeY, uint* pSizeZ)
+        public readonly ulong GetRequiresFlags()
         {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
-                uint ret = default;
-                fixed (uint* pSizeXPtr = &pSizeX)
-                {
-                    ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeY, pSizeZ);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe uint GetThreadGroupSize(ref uint pSizeX, uint* pSizeY, ref uint pSizeZ)
-        {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
-                uint ret = default;
-                fixed (uint* pSizeXPtr = &pSizeX)
-                {
-                    fixed (uint* pSizeZPtr = &pSizeZ)
-                    {
-                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeY, pSizeZPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe uint GetThreadGroupSize(ref uint pSizeX, ref uint pSizeY, uint* pSizeZ)
-        {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
-                uint ret = default;
-                fixed (uint* pSizeXPtr = &pSizeX)
-                {
-                    fixed (uint* pSizeYPtr = &pSizeY)
-                    {
-                        ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeYPtr, pSizeZ);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint GetThreadGroupSize(ref uint pSizeX, ref uint pSizeY, ref uint pSizeZ)
-        {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
-                uint ret = default;
-                fixed (uint* pSizeXPtr = &pSizeX)
-                {
-                    fixed (uint* pSizeYPtr = &pSizeY)
-                    {
-                        fixed (uint* pSizeZPtr = &pSizeZ)
-                        {
-                            ret = ((delegate* cdecl<ID3D11ShaderReflection*, uint*, uint*, uint*, uint>)LpVtbl[20])(@this, pSizeXPtr, pSizeYPtr, pSizeZPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public ulong GetRequiresFlags()
-        {
-            fixed (ID3D11ShaderReflection* @this = &this)
-            {
+            var @this = (ID3D11ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 ulong ret = default;
-                ret = ((delegate* cdecl<ID3D11ShaderReflection*, ulong>)LpVtbl[21])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflection*, ulong>)LpVtbl[21])(@this);
+            return ret;
         }
 
     }

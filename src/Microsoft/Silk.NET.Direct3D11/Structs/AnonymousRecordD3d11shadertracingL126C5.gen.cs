@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,20 +23,43 @@ namespace Silk.NET.Direct3D11
     {
         public AnonymousRecordD3d11shadertracingL126C5
         (
-            VertexShaderTraceDesc vertexShaderTraceDesc = default,
-            HullShaderTraceDesc hullShaderTraceDesc = default,
-            DomainShaderTraceDesc domainShaderTraceDesc = default,
-            GeometryShaderTraceDesc geometryShaderTraceDesc = default,
-            PixelShaderTraceDesc pixelShaderTraceDesc = default,
-            ComputeShaderTraceDesc computeShaderTraceDesc = default
-        )
+            VertexShaderTraceDesc? vertexShaderTraceDesc = null,
+            HullShaderTraceDesc? hullShaderTraceDesc = null,
+            DomainShaderTraceDesc? domainShaderTraceDesc = null,
+            GeometryShaderTraceDesc? geometryShaderTraceDesc = null,
+            PixelShaderTraceDesc? pixelShaderTraceDesc = null,
+            ComputeShaderTraceDesc? computeShaderTraceDesc = null
+        ) : this()
         {
-            VertexShaderTraceDesc = vertexShaderTraceDesc;
-            HullShaderTraceDesc = hullShaderTraceDesc;
-            DomainShaderTraceDesc = domainShaderTraceDesc;
-            GeometryShaderTraceDesc = geometryShaderTraceDesc;
-            PixelShaderTraceDesc = pixelShaderTraceDesc;
-            ComputeShaderTraceDesc = computeShaderTraceDesc;
+            if (vertexShaderTraceDesc is not null)
+            {
+                VertexShaderTraceDesc = vertexShaderTraceDesc.Value;
+            }
+
+            if (hullShaderTraceDesc is not null)
+            {
+                HullShaderTraceDesc = hullShaderTraceDesc.Value;
+            }
+
+            if (domainShaderTraceDesc is not null)
+            {
+                DomainShaderTraceDesc = domainShaderTraceDesc.Value;
+            }
+
+            if (geometryShaderTraceDesc is not null)
+            {
+                GeometryShaderTraceDesc = geometryShaderTraceDesc.Value;
+            }
+
+            if (pixelShaderTraceDesc is not null)
+            {
+                PixelShaderTraceDesc = pixelShaderTraceDesc.Value;
+            }
+
+            if (computeShaderTraceDesc is not null)
+            {
+                ComputeShaderTraceDesc = computeShaderTraceDesc.Value;
+            }
         }
 
 

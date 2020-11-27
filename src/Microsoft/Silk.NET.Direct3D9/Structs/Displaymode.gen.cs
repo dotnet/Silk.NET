@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public Displaymode
         (
-            uint width = default,
-            uint height = default,
-            uint refreshRate = default,
-            Format format = default
-        )
+            uint? width = null,
+            uint? height = null,
+            uint? refreshRate = null,
+            Format? format = null
+        ) : this()
         {
-            Width = width;
-            Height = height;
-            RefreshRate = refreshRate;
-            Format = format;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (refreshRate is not null)
+            {
+                RefreshRate = refreshRate.Value;
+            }
+
+            if (format is not null)
+            {
+                Format = format.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D.Compilers
     {
         public ShaderData
         (
-            void* pBytecode = default,
-            uint bytecodeLength = default
-        )
+            void* pBytecode = null,
+            uint? bytecodeLength = null
+        ) : this()
         {
-            PBytecode = pBytecode;
-            BytecodeLength = bytecodeLength;
+            if (pBytecode is not null)
+            {
+                PBytecode = pBytecode;
+            }
+
+            if (bytecodeLength is not null)
+            {
+                BytecodeLength = bytecodeLength.Value;
+            }
         }
 
 

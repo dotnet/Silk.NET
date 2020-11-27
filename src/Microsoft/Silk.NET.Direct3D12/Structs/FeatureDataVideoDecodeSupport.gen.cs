@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoDecodeSupport
         (
-            uint nodeIndex = default,
-            VideoDecodeConfiguration configuration = default,
-            uint width = default,
-            uint height = default,
-            Silk.NET.DXGI.Format decodeFormat = default,
-            Silk.NET.DXGI.Rational frameRate = default,
-            uint bitRate = default,
-            VideoDecodeSupportFlags supportFlags = default,
-            VideoDecodeConfigurationFlags configurationFlags = default,
-            VideoDecodeTier decodeTier = default
-        )
+            uint? nodeIndex = null,
+            VideoDecodeConfiguration? configuration = null,
+            uint? width = null,
+            uint? height = null,
+            Silk.NET.DXGI.Format? decodeFormat = null,
+            Silk.NET.DXGI.Rational? frameRate = null,
+            uint? bitRate = null,
+            VideoDecodeSupportFlags? supportFlags = null,
+            VideoDecodeConfigurationFlags? configurationFlags = null,
+            VideoDecodeTier? decodeTier = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            Configuration = configuration;
-            Width = width;
-            Height = height;
-            DecodeFormat = decodeFormat;
-            FrameRate = frameRate;
-            BitRate = bitRate;
-            SupportFlags = supportFlags;
-            ConfigurationFlags = configurationFlags;
-            DecodeTier = decodeTier;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (configuration is not null)
+            {
+                Configuration = configuration.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (decodeFormat is not null)
+            {
+                DecodeFormat = decodeFormat.Value;
+            }
+
+            if (frameRate is not null)
+            {
+                FrameRate = frameRate.Value;
+            }
+
+            if (bitRate is not null)
+            {
+                BitRate = bitRate.Value;
+            }
+
+            if (supportFlags is not null)
+            {
+                SupportFlags = supportFlags.Value;
+            }
+
+            if (configurationFlags is not null)
+            {
+                ConfigurationFlags = configurationFlags.Value;
+            }
+
+            if (decodeTier is not null)
+            {
+                DecodeTier = decodeTier.Value;
+            }
         }
 
 

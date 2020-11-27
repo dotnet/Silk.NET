@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public SubobjectToExportsAssociation
         (
-            StateSubobject* pSubobjectToAssociate = default,
-            uint numExports = default,
-            char** pExports = default
-        )
+            StateSubobject* pSubobjectToAssociate = null,
+            uint? numExports = null,
+            char** pExports = null
+        ) : this()
         {
-            PSubobjectToAssociate = pSubobjectToAssociate;
-            NumExports = numExports;
-            PExports = pExports;
+            if (pSubobjectToAssociate is not null)
+            {
+                PSubobjectToAssociate = pSubobjectToAssociate;
+            }
+
+            if (numExports is not null)
+            {
+                NumExports = numExports.Value;
+            }
+
+            if (pExports is not null)
+            {
+                PExports = pExports;
+            }
         }
 
 

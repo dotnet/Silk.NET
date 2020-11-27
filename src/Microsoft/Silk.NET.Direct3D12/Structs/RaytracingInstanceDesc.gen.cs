@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public RaytracingInstanceDesc
         (
-            uint instanceID = default,
-            uint instanceMask = default,
-            uint instanceContributionToHitGroupIndex = default,
-            uint flags = default,
-            ulong accelerationStructure = default
-        )
+            uint? instanceID = null,
+            uint? instanceMask = null,
+            uint? instanceContributionToHitGroupIndex = null,
+            uint? flags = null,
+            ulong? accelerationStructure = null
+        ) : this()
         {
-            InstanceID = instanceID;
-            InstanceMask = instanceMask;
-            InstanceContributionToHitGroupIndex = instanceContributionToHitGroupIndex;
-            Flags = flags;
-            AccelerationStructure = accelerationStructure;
+            if (instanceID is not null)
+            {
+                InstanceID = instanceID.Value;
+            }
+
+            if (instanceMask is not null)
+            {
+                InstanceMask = instanceMask.Value;
+            }
+
+            if (instanceContributionToHitGroupIndex is not null)
+            {
+                InstanceContributionToHitGroupIndex = instanceContributionToHitGroupIndex.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (accelerationStructure is not null)
+            {
+                AccelerationStructure = accelerationStructure.Value;
+            }
         }
 
         [NativeName("Type", "FLOAT [3][4]")]

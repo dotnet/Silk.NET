@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public DeviceRemovedExtendedData
         (
-            DredFlags flags = default,
-            AutoBreadcrumbNode* pHeadAutoBreadcrumbNode = default
-        )
+            DredFlags? flags = null,
+            AutoBreadcrumbNode* pHeadAutoBreadcrumbNode = null
+        ) : this()
         {
-            Flags = flags;
-            PHeadAutoBreadcrumbNode = pHeadAutoBreadcrumbNode;
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pHeadAutoBreadcrumbNode is not null)
+            {
+                PHeadAutoBreadcrumbNode = pHeadAutoBreadcrumbNode;
+            }
         }
 
 

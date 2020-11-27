@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,84 +22,235 @@ namespace Silk.NET.Direct3D12
     {
         public ShaderDesc
         (
-            uint version = default,
-            byte* creator = default,
-            uint flags = default,
-            uint constantBuffers = default,
-            uint boundResources = default,
-            uint inputParameters = default,
-            uint outputParameters = default,
-            uint instructionCount = default,
-            uint tempRegisterCount = default,
-            uint tempArrayCount = default,
-            uint defCount = default,
-            uint dclCount = default,
-            uint textureNormalInstructions = default,
-            uint textureLoadInstructions = default,
-            uint textureCompInstructions = default,
-            uint textureBiasInstructions = default,
-            uint textureGradientInstructions = default,
-            uint floatInstructionCount = default,
-            uint intInstructionCount = default,
-            uint uintInstructionCount = default,
-            uint staticFlowControlCount = default,
-            uint dynamicFlowControlCount = default,
-            uint macroInstructionCount = default,
-            uint arrayInstructionCount = default,
-            uint cutInstructionCount = default,
-            uint emitInstructionCount = default,
-            Silk.NET.Core.Native.D3DPrimitiveTopology gSOutputTopology = default,
-            uint gSMaxOutputVertexCount = default,
-            Silk.NET.Core.Native.D3DPrimitive inputPrimitive = default,
-            uint patchConstantParameters = default,
-            uint cGSInstanceCount = default,
-            uint cControlPoints = default,
-            Silk.NET.Core.Native.D3DTessellatorOutputPrimitive hSOutputPrimitive = default,
-            Silk.NET.Core.Native.D3DTessellatorPartitioning hSPartitioning = default,
-            Silk.NET.Core.Native.D3DTessellatorDomain tessellatorDomain = default,
-            uint cBarrierInstructions = default,
-            uint cInterlockedInstructions = default,
-            uint cTextureStoreInstructions = default
-        )
+            uint? version = null,
+            byte* creator = null,
+            uint? flags = null,
+            uint? constantBuffers = null,
+            uint? boundResources = null,
+            uint? inputParameters = null,
+            uint? outputParameters = null,
+            uint? instructionCount = null,
+            uint? tempRegisterCount = null,
+            uint? tempArrayCount = null,
+            uint? defCount = null,
+            uint? dclCount = null,
+            uint? textureNormalInstructions = null,
+            uint? textureLoadInstructions = null,
+            uint? textureCompInstructions = null,
+            uint? textureBiasInstructions = null,
+            uint? textureGradientInstructions = null,
+            uint? floatInstructionCount = null,
+            uint? intInstructionCount = null,
+            uint? uintInstructionCount = null,
+            uint? staticFlowControlCount = null,
+            uint? dynamicFlowControlCount = null,
+            uint? macroInstructionCount = null,
+            uint? arrayInstructionCount = null,
+            uint? cutInstructionCount = null,
+            uint? emitInstructionCount = null,
+            Silk.NET.Core.Native.D3DPrimitiveTopology? gSOutputTopology = null,
+            uint? gSMaxOutputVertexCount = null,
+            Silk.NET.Core.Native.D3DPrimitive? inputPrimitive = null,
+            uint? patchConstantParameters = null,
+            uint? cGSInstanceCount = null,
+            uint? cControlPoints = null,
+            Silk.NET.Core.Native.D3DTessellatorOutputPrimitive? hSOutputPrimitive = null,
+            Silk.NET.Core.Native.D3DTessellatorPartitioning? hSPartitioning = null,
+            Silk.NET.Core.Native.D3DTessellatorDomain? tessellatorDomain = null,
+            uint? cBarrierInstructions = null,
+            uint? cInterlockedInstructions = null,
+            uint? cTextureStoreInstructions = null
+        ) : this()
         {
-            Version = version;
-            Creator = creator;
-            Flags = flags;
-            ConstantBuffers = constantBuffers;
-            BoundResources = boundResources;
-            InputParameters = inputParameters;
-            OutputParameters = outputParameters;
-            InstructionCount = instructionCount;
-            TempRegisterCount = tempRegisterCount;
-            TempArrayCount = tempArrayCount;
-            DefCount = defCount;
-            DclCount = dclCount;
-            TextureNormalInstructions = textureNormalInstructions;
-            TextureLoadInstructions = textureLoadInstructions;
-            TextureCompInstructions = textureCompInstructions;
-            TextureBiasInstructions = textureBiasInstructions;
-            TextureGradientInstructions = textureGradientInstructions;
-            FloatInstructionCount = floatInstructionCount;
-            IntInstructionCount = intInstructionCount;
-            UintInstructionCount = uintInstructionCount;
-            StaticFlowControlCount = staticFlowControlCount;
-            DynamicFlowControlCount = dynamicFlowControlCount;
-            MacroInstructionCount = macroInstructionCount;
-            ArrayInstructionCount = arrayInstructionCount;
-            CutInstructionCount = cutInstructionCount;
-            EmitInstructionCount = emitInstructionCount;
-            GSOutputTopology = gSOutputTopology;
-            GSMaxOutputVertexCount = gSMaxOutputVertexCount;
-            InputPrimitive = inputPrimitive;
-            PatchConstantParameters = patchConstantParameters;
-            CGSInstanceCount = cGSInstanceCount;
-            CControlPoints = cControlPoints;
-            HSOutputPrimitive = hSOutputPrimitive;
-            HSPartitioning = hSPartitioning;
-            TessellatorDomain = tessellatorDomain;
-            CBarrierInstructions = cBarrierInstructions;
-            CInterlockedInstructions = cInterlockedInstructions;
-            CTextureStoreInstructions = cTextureStoreInstructions;
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
+
+            if (creator is not null)
+            {
+                Creator = creator;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (constantBuffers is not null)
+            {
+                ConstantBuffers = constantBuffers.Value;
+            }
+
+            if (boundResources is not null)
+            {
+                BoundResources = boundResources.Value;
+            }
+
+            if (inputParameters is not null)
+            {
+                InputParameters = inputParameters.Value;
+            }
+
+            if (outputParameters is not null)
+            {
+                OutputParameters = outputParameters.Value;
+            }
+
+            if (instructionCount is not null)
+            {
+                InstructionCount = instructionCount.Value;
+            }
+
+            if (tempRegisterCount is not null)
+            {
+                TempRegisterCount = tempRegisterCount.Value;
+            }
+
+            if (tempArrayCount is not null)
+            {
+                TempArrayCount = tempArrayCount.Value;
+            }
+
+            if (defCount is not null)
+            {
+                DefCount = defCount.Value;
+            }
+
+            if (dclCount is not null)
+            {
+                DclCount = dclCount.Value;
+            }
+
+            if (textureNormalInstructions is not null)
+            {
+                TextureNormalInstructions = textureNormalInstructions.Value;
+            }
+
+            if (textureLoadInstructions is not null)
+            {
+                TextureLoadInstructions = textureLoadInstructions.Value;
+            }
+
+            if (textureCompInstructions is not null)
+            {
+                TextureCompInstructions = textureCompInstructions.Value;
+            }
+
+            if (textureBiasInstructions is not null)
+            {
+                TextureBiasInstructions = textureBiasInstructions.Value;
+            }
+
+            if (textureGradientInstructions is not null)
+            {
+                TextureGradientInstructions = textureGradientInstructions.Value;
+            }
+
+            if (floatInstructionCount is not null)
+            {
+                FloatInstructionCount = floatInstructionCount.Value;
+            }
+
+            if (intInstructionCount is not null)
+            {
+                IntInstructionCount = intInstructionCount.Value;
+            }
+
+            if (uintInstructionCount is not null)
+            {
+                UintInstructionCount = uintInstructionCount.Value;
+            }
+
+            if (staticFlowControlCount is not null)
+            {
+                StaticFlowControlCount = staticFlowControlCount.Value;
+            }
+
+            if (dynamicFlowControlCount is not null)
+            {
+                DynamicFlowControlCount = dynamicFlowControlCount.Value;
+            }
+
+            if (macroInstructionCount is not null)
+            {
+                MacroInstructionCount = macroInstructionCount.Value;
+            }
+
+            if (arrayInstructionCount is not null)
+            {
+                ArrayInstructionCount = arrayInstructionCount.Value;
+            }
+
+            if (cutInstructionCount is not null)
+            {
+                CutInstructionCount = cutInstructionCount.Value;
+            }
+
+            if (emitInstructionCount is not null)
+            {
+                EmitInstructionCount = emitInstructionCount.Value;
+            }
+
+            if (gSOutputTopology is not null)
+            {
+                GSOutputTopology = gSOutputTopology.Value;
+            }
+
+            if (gSMaxOutputVertexCount is not null)
+            {
+                GSMaxOutputVertexCount = gSMaxOutputVertexCount.Value;
+            }
+
+            if (inputPrimitive is not null)
+            {
+                InputPrimitive = inputPrimitive.Value;
+            }
+
+            if (patchConstantParameters is not null)
+            {
+                PatchConstantParameters = patchConstantParameters.Value;
+            }
+
+            if (cGSInstanceCount is not null)
+            {
+                CGSInstanceCount = cGSInstanceCount.Value;
+            }
+
+            if (cControlPoints is not null)
+            {
+                CControlPoints = cControlPoints.Value;
+            }
+
+            if (hSOutputPrimitive is not null)
+            {
+                HSOutputPrimitive = hSOutputPrimitive.Value;
+            }
+
+            if (hSPartitioning is not null)
+            {
+                HSPartitioning = hSPartitioning.Value;
+            }
+
+            if (tessellatorDomain is not null)
+            {
+                TessellatorDomain = tessellatorDomain.Value;
+            }
+
+            if (cBarrierInstructions is not null)
+            {
+                CBarrierInstructions = cBarrierInstructions.Value;
+            }
+
+            if (cInterlockedInstructions is not null)
+            {
+                CInterlockedInstructions = cInterlockedInstructions.Value;
+            }
+
+            if (cTextureStoreInstructions is not null)
+            {
+                CTextureStoreInstructions = cTextureStoreInstructions.Value;
+            }
         }
 
 

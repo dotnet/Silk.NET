@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public InfoQueueFilter
         (
-            InfoQueueFilterDesc allowList = default,
-            InfoQueueFilterDesc denyList = default
-        )
+            InfoQueueFilterDesc? allowList = null,
+            InfoQueueFilterDesc? denyList = null
+        ) : this()
         {
-            AllowList = allowList;
-            DenyList = denyList;
+            if (allowList is not null)
+            {
+                AllowList = allowList.Value;
+            }
+
+            if (denyList is not null)
+            {
+                DenyList = denyList.Value;
+            }
         }
 
 

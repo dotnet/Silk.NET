@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,12 +23,19 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L2788C5
         (
-            PlacedSubresourceFootprint placedFootprint = default,
-            uint subresourceIndex = default
-        )
+            PlacedSubresourceFootprint? placedFootprint = null,
+            uint? subresourceIndex = null
+        ) : this()
         {
-            PlacedFootprint = placedFootprint;
-            SubresourceIndex = subresourceIndex;
+            if (placedFootprint is not null)
+            {
+                PlacedFootprint = placedFootprint.Value;
+            }
+
+            if (subresourceIndex is not null)
+            {
+                SubresourceIndex = subresourceIndex.Value;
+            }
         }
 
 

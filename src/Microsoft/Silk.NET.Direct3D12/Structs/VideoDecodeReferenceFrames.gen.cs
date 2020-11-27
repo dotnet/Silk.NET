@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeReferenceFrames
         (
-            uint numTexture2Ds = default,
-            ID3D12Resource** ppTexture2Ds = default,
-            uint* pSubresources = default,
-            ID3D12VideoDecoderHeap** ppHeaps = default
-        )
+            uint? numTexture2Ds = null,
+            ID3D12Resource** ppTexture2Ds = null,
+            uint* pSubresources = null,
+            ID3D12VideoDecoderHeap** ppHeaps = null
+        ) : this()
         {
-            NumTexture2Ds = numTexture2Ds;
-            PpTexture2Ds = ppTexture2Ds;
-            PSubresources = pSubresources;
-            PpHeaps = ppHeaps;
+            if (numTexture2Ds is not null)
+            {
+                NumTexture2Ds = numTexture2Ds.Value;
+            }
+
+            if (ppTexture2Ds is not null)
+            {
+                PpTexture2Ds = ppTexture2Ds;
+            }
+
+            if (pSubresources is not null)
+            {
+                PSubresources = pSubresources;
+            }
+
+            if (ppHeaps is not null)
+            {
+                PpHeaps = ppHeaps;
+            }
         }
 
 

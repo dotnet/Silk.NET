@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorColorSpace
         (
-            uint usage = default,
-            uint rGBRange = default,
-            uint yCbCrMatrix = default,
-            uint yCbCrXvYCC = default,
-            uint nominalRange = default,
-            uint reserved = default
-        )
+            uint? usage = null,
+            uint? rGBRange = null,
+            uint? yCbCrMatrix = null,
+            uint? yCbCrXvYCC = null,
+            uint? nominalRange = null,
+            uint? reserved = null
+        ) : this()
         {
-            Usage = usage;
-            RGBRange = rGBRange;
-            YCbCrMatrix = yCbCrMatrix;
-            YCbCrXvYCC = yCbCrXvYCC;
-            NominalRange = nominalRange;
-            Reserved = reserved;
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (rGBRange is not null)
+            {
+                RGBRange = rGBRange.Value;
+            }
+
+            if (yCbCrMatrix is not null)
+            {
+                YCbCrMatrix = yCbCrMatrix.Value;
+            }
+
+            if (yCbCrXvYCC is not null)
+            {
+                YCbCrXvYCC = yCbCrXvYCC.Value;
+            }
+
+            if (nominalRange is not null)
+            {
+                NominalRange = nominalRange.Value;
+            }
+
+            if (reserved is not null)
+            {
+                Reserved = reserved.Value;
+            }
         }
 
 

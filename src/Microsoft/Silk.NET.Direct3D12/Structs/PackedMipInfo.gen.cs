@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public PackedMipInfo
         (
-            byte numStandardMips = default,
-            byte numPackedMips = default,
-            uint numTilesForPackedMips = default,
-            uint startTileIndexInOverallResource = default
-        )
+            byte? numStandardMips = null,
+            byte? numPackedMips = null,
+            uint? numTilesForPackedMips = null,
+            uint? startTileIndexInOverallResource = null
+        ) : this()
         {
-            NumStandardMips = numStandardMips;
-            NumPackedMips = numPackedMips;
-            NumTilesForPackedMips = numTilesForPackedMips;
-            StartTileIndexInOverallResource = startTileIndexInOverallResource;
+            if (numStandardMips is not null)
+            {
+                NumStandardMips = numStandardMips.Value;
+            }
+
+            if (numPackedMips is not null)
+            {
+                NumPackedMips = numPackedMips.Value;
+            }
+
+            if (numTilesForPackedMips is not null)
+            {
+                NumTilesForPackedMips = numTilesForPackedMips.Value;
+            }
+
+            if (startTileIndexInOverallResource is not null)
+            {
+                StartTileIndexInOverallResource = startTileIndexInOverallResource.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.Direct3D11
     {
         public SignatureParameterDesc
         (
-            byte* semanticName = default,
-            uint semanticIndex = default,
-            uint register = default,
-            Silk.NET.Core.Native.D3DName systemValueType = default,
-            Silk.NET.Core.Native.D3DRegisterComponentType componentType = default,
-            byte mask = default,
-            byte readWriteMask = default,
-            uint stream = default,
-            Silk.NET.Core.Native.D3DMinPrecision minPrecision = default
-        )
+            byte* semanticName = null,
+            uint? semanticIndex = null,
+            uint? register = null,
+            Silk.NET.Core.Native.D3DName? systemValueType = null,
+            Silk.NET.Core.Native.D3DRegisterComponentType? componentType = null,
+            byte? mask = null,
+            byte? readWriteMask = null,
+            uint? stream = null,
+            Silk.NET.Core.Native.D3DMinPrecision? minPrecision = null
+        ) : this()
         {
-            SemanticName = semanticName;
-            SemanticIndex = semanticIndex;
-            Register = register;
-            SystemValueType = systemValueType;
-            ComponentType = componentType;
-            Mask = mask;
-            ReadWriteMask = readWriteMask;
-            Stream = stream;
-            MinPrecision = minPrecision;
+            if (semanticName is not null)
+            {
+                SemanticName = semanticName;
+            }
+
+            if (semanticIndex is not null)
+            {
+                SemanticIndex = semanticIndex.Value;
+            }
+
+            if (register is not null)
+            {
+                Register = register.Value;
+            }
+
+            if (systemValueType is not null)
+            {
+                SystemValueType = systemValueType.Value;
+            }
+
+            if (componentType is not null)
+            {
+                ComponentType = componentType.Value;
+            }
+
+            if (mask is not null)
+            {
+                Mask = mask.Value;
+            }
+
+            if (readWriteMask is not null)
+            {
+                ReadWriteMask = readWriteMask.Value;
+            }
+
+            if (stream is not null)
+            {
+                Stream = stream.Value;
+            }
+
+            if (minPrecision is not null)
+            {
+                MinPrecision = minPrecision.Value;
+            }
         }
 
 

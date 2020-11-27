@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelQueryrestrictedsharedresourceprocessInput
         (
-            AuthenticatedchannelQueryInput input = default,
-            uint processIndex = default
-        )
+            AuthenticatedchannelQueryInput? input = null,
+            uint? processIndex = null
+        ) : this()
         {
-            Input = input;
-            ProcessIndex = processIndex;
+            if (input is not null)
+            {
+                Input = input.Value;
+            }
+
+            if (processIndex is not null)
+            {
+                ProcessIndex = processIndex.Value;
+            }
         }
 
 

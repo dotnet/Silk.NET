@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public TileShape
         (
-            uint widthInTexels = default,
-            uint heightInTexels = default,
-            uint depthInTexels = default
-        )
+            uint? widthInTexels = null,
+            uint? heightInTexels = null,
+            uint? depthInTexels = null
+        ) : this()
         {
-            WidthInTexels = widthInTexels;
-            HeightInTexels = heightInTexels;
-            DepthInTexels = depthInTexels;
+            if (widthInTexels is not null)
+            {
+                WidthInTexels = widthInTexels.Value;
+            }
+
+            if (heightInTexels is not null)
+            {
+                HeightInTexels = heightInTexels.Value;
+            }
+
+            if (depthInTexels is not null)
+            {
+                DepthInTexels = depthInTexels.Value;
+            }
         }
 
 

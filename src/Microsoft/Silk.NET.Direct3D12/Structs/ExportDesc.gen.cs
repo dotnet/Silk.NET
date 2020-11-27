@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public ExportDesc
         (
-            char* name = default,
-            char* exportToRename = default,
-            ExportFlags flags = default
-        )
+            char* name = null,
+            char* exportToRename = null,
+            ExportFlags? flags = null
+        ) : this()
         {
-            Name = name;
-            ExportToRename = exportToRename;
-            Flags = flags;
+            if (name is not null)
+            {
+                Name = name;
+            }
+
+            if (exportToRename is not null)
+            {
+                ExportToRename = exportToRename;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,10 +23,13 @@ namespace Silk.NET.Direct3D9
     {
         public AnonymousRecordD3d9typesL2100C5
         (
-            uint value = default
-        )
+            uint? value = null
+        ) : this()
         {
-            Value = value;
+            if (value is not null)
+            {
+                Value = value.Value;
+            }
         }
 
 

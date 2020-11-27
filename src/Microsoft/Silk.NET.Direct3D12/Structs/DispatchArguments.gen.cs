@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public DispatchArguments
         (
-            uint threadGroupCountX = default,
-            uint threadGroupCountY = default,
-            uint threadGroupCountZ = default
-        )
+            uint? threadGroupCountX = null,
+            uint? threadGroupCountY = null,
+            uint? threadGroupCountZ = null
+        ) : this()
         {
-            ThreadGroupCountX = threadGroupCountX;
-            ThreadGroupCountY = threadGroupCountY;
-            ThreadGroupCountZ = threadGroupCountZ;
+            if (threadGroupCountX is not null)
+            {
+                ThreadGroupCountX = threadGroupCountX.Value;
+            }
+
+            if (threadGroupCountY is not null)
+            {
+                ThreadGroupCountY = threadGroupCountY.Value;
+            }
+
+            if (threadGroupCountZ is not null)
+            {
+                ThreadGroupCountZ = threadGroupCountZ.Value;
+            }
         }
 
 

@@ -37,7 +37,7 @@ namespace Silk.NET.Assimp
             uint? mNumAnimMeshes = null,
             AnimMesh** mAnimMeshes = null,
             uint? mMethod = null,
-            AABB? mAABB = null
+            Aabb? mAABB = null
         ) : this()
         {
             if (mPrimitiveTypes is not null)

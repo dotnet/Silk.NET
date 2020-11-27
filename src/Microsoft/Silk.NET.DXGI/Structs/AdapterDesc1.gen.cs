@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,61 @@ namespace Silk.NET.DXGI
     {
         public AdapterDesc1
         (
-            uint vendorId = default,
-            uint deviceId = default,
-            uint subSysId = default,
-            uint revision = default,
-            uint dedicatedVideoMemory = default,
-            uint dedicatedSystemMemory = default,
-            uint sharedSystemMemory = default,
-            ValueTuple<ulong,long> adapterLuid = default,
-            uint flags = default
-        )
+            uint? vendorId = null,
+            uint? deviceId = null,
+            uint? subSysId = null,
+            uint? revision = null,
+            uint? dedicatedVideoMemory = null,
+            uint? dedicatedSystemMemory = null,
+            uint? sharedSystemMemory = null,
+            ValueTuple<ulong,long>? adapterLuid = null,
+            uint? flags = null
+        ) : this()
         {
-            VendorId = vendorId;
-            DeviceId = deviceId;
-            SubSysId = subSysId;
-            Revision = revision;
-            DedicatedVideoMemory = dedicatedVideoMemory;
-            DedicatedSystemMemory = dedicatedSystemMemory;
-            SharedSystemMemory = sharedSystemMemory;
-            AdapterLuid = adapterLuid;
-            Flags = flags;
+            if (vendorId is not null)
+            {
+                VendorId = vendorId.Value;
+            }
+
+            if (deviceId is not null)
+            {
+                DeviceId = deviceId.Value;
+            }
+
+            if (subSysId is not null)
+            {
+                SubSysId = subSysId.Value;
+            }
+
+            if (revision is not null)
+            {
+                Revision = revision.Value;
+            }
+
+            if (dedicatedVideoMemory is not null)
+            {
+                DedicatedVideoMemory = dedicatedVideoMemory.Value;
+            }
+
+            if (dedicatedSystemMemory is not null)
+            {
+                DedicatedSystemMemory = dedicatedSystemMemory.Value;
+            }
+
+            if (sharedSystemMemory is not null)
+            {
+                SharedSystemMemory = sharedSystemMemory.Value;
+            }
+
+            if (adapterLuid is not null)
+            {
+                AdapterLuid = adapterLuid.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
         [NativeName("Type", "WCHAR [128]")]

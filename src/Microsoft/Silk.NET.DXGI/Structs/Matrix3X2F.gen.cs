@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.DXGI
     {
         public Matrix3X2F
         (
-            float dXGI11 = default,
-            float dXGI12 = default,
-            float dXGI21 = default,
-            float dXGI22 = default,
-            float dXGI31 = default,
-            float dXGI32 = default
-        )
+            float? dXGI11 = null,
+            float? dXGI12 = null,
+            float? dXGI21 = null,
+            float? dXGI22 = null,
+            float? dXGI31 = null,
+            float? dXGI32 = null
+        ) : this()
         {
-            DXGI11 = dXGI11;
-            DXGI12 = dXGI12;
-            DXGI21 = dXGI21;
-            DXGI22 = dXGI22;
-            DXGI31 = dXGI31;
-            DXGI32 = dXGI32;
+            if (dXGI11 is not null)
+            {
+                DXGI11 = dXGI11.Value;
+            }
+
+            if (dXGI12 is not null)
+            {
+                DXGI12 = dXGI12.Value;
+            }
+
+            if (dXGI21 is not null)
+            {
+                DXGI21 = dXGI21.Value;
+            }
+
+            if (dXGI22 is not null)
+            {
+                DXGI22 = dXGI22.Value;
+            }
+
+            if (dXGI31 is not null)
+            {
+                DXGI31 = dXGI31.Value;
+            }
+
+            if (dXGI32 is not null)
+            {
+                DXGI32 = dXGI32.Value;
+            }
         }
 
 

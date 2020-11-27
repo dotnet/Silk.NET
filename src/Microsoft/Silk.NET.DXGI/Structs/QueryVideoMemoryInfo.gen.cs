@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.DXGI
     {
         public QueryVideoMemoryInfo
         (
-            ulong budget = default,
-            ulong currentUsage = default,
-            ulong availableForReservation = default,
-            ulong currentReservation = default
-        )
+            ulong? budget = null,
+            ulong? currentUsage = null,
+            ulong? availableForReservation = null,
+            ulong? currentReservation = null
+        ) : this()
         {
-            Budget = budget;
-            CurrentUsage = currentUsage;
-            AvailableForReservation = availableForReservation;
-            CurrentReservation = currentReservation;
+            if (budget is not null)
+            {
+                Budget = budget.Value;
+            }
+
+            if (currentUsage is not null)
+            {
+                CurrentUsage = currentUsage.Value;
+            }
+
+            if (availableForReservation is not null)
+            {
+                AvailableForReservation = availableForReservation.Value;
+            }
+
+            if (currentReservation is not null)
+            {
+                CurrentReservation = currentReservation.Value;
+            }
         }
 
 

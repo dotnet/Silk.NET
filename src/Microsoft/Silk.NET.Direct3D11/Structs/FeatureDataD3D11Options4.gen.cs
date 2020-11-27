@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,10 +22,13 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options4
         (
-            int extendedNV12SharedTextureSupported = default
-        )
+            int? extendedNV12SharedTextureSupported = null
+        ) : this()
         {
-            ExtendedNV12SharedTextureSupported = extendedNV12SharedTextureSupported;
+            if (extendedNV12SharedTextureSupported is not null)
+            {
+                ExtendedNV12SharedTextureSupported = extendedNV12SharedTextureSupported.Value;
+            }
         }
 
 

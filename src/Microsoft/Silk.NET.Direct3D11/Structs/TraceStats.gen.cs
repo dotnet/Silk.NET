@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,30 +22,73 @@ namespace Silk.NET.Direct3D11
     {
         public TraceStats
         (
-            ShaderTraceDesc traceDesc = default,
-            byte numInvocationsInStamp = default,
-            byte targetStampIndex = default,
-            uint numTraceSteps = default,
-            ushort numTemps = default,
-            ushort maxIndexableTempIndex = default,
-            ushort immediateConstantBufferSize = default,
-            int pSOutputsDepth = default,
-            int pSOutputsMask = default,
-            TraceGSInputPrimitive gSInputPrimitive = default,
-            int gSInputsPrimitiveID = default
-        )
+            ShaderTraceDesc? traceDesc = null,
+            byte? numInvocationsInStamp = null,
+            byte? targetStampIndex = null,
+            uint? numTraceSteps = null,
+            ushort? numTemps = null,
+            ushort? maxIndexableTempIndex = null,
+            ushort? immediateConstantBufferSize = null,
+            int? pSOutputsDepth = null,
+            int? pSOutputsMask = null,
+            TraceGSInputPrimitive? gSInputPrimitive = null,
+            int? gSInputsPrimitiveID = null
+        ) : this()
         {
-            TraceDesc = traceDesc;
-            NumInvocationsInStamp = numInvocationsInStamp;
-            TargetStampIndex = targetStampIndex;
-            NumTraceSteps = numTraceSteps;
-            NumTemps = numTemps;
-            MaxIndexableTempIndex = maxIndexableTempIndex;
-            ImmediateConstantBufferSize = immediateConstantBufferSize;
-            PSOutputsDepth = pSOutputsDepth;
-            PSOutputsMask = pSOutputsMask;
-            GSInputPrimitive = gSInputPrimitive;
-            GSInputsPrimitiveID = gSInputsPrimitiveID;
+            if (traceDesc is not null)
+            {
+                TraceDesc = traceDesc.Value;
+            }
+
+            if (numInvocationsInStamp is not null)
+            {
+                NumInvocationsInStamp = numInvocationsInStamp.Value;
+            }
+
+            if (targetStampIndex is not null)
+            {
+                TargetStampIndex = targetStampIndex.Value;
+            }
+
+            if (numTraceSteps is not null)
+            {
+                NumTraceSteps = numTraceSteps.Value;
+            }
+
+            if (numTemps is not null)
+            {
+                NumTemps = numTemps.Value;
+            }
+
+            if (maxIndexableTempIndex is not null)
+            {
+                MaxIndexableTempIndex = maxIndexableTempIndex.Value;
+            }
+
+            if (immediateConstantBufferSize is not null)
+            {
+                ImmediateConstantBufferSize = immediateConstantBufferSize.Value;
+            }
+
+            if (pSOutputsDepth is not null)
+            {
+                PSOutputsDepth = pSOutputsDepth.Value;
+            }
+
+            if (pSOutputsMask is not null)
+            {
+                PSOutputsMask = pSOutputsMask.Value;
+            }
+
+            if (gSInputPrimitive is not null)
+            {
+                GSInputPrimitive = gSInputPrimitive.Value;
+            }
+
+            if (gSInputsPrimitiveID is not null)
+            {
+                GSInputsPrimitiveID = gSInputsPrimitiveID.Value;
+            }
         }
 
 

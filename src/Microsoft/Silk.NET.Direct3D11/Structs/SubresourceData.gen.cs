@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D11
     {
         public SubresourceData
         (
-            void* pSysMem = default,
-            uint sysMemPitch = default,
-            uint sysMemSlicePitch = default
-        )
+            void* pSysMem = null,
+            uint? sysMemPitch = null,
+            uint? sysMemSlicePitch = null
+        ) : this()
         {
-            PSysMem = pSysMem;
-            SysMemPitch = sysMemPitch;
-            SysMemSlicePitch = sysMemSlicePitch;
+            if (pSysMem is not null)
+            {
+                PSysMem = pSysMem;
+            }
+
+            if (sysMemPitch is not null)
+            {
+                SysMemPitch = sysMemPitch.Value;
+            }
+
+            if (sysMemSlicePitch is not null)
+            {
+                SysMemSlicePitch = sysMemSlicePitch.Value;
+            }
         }
 
 

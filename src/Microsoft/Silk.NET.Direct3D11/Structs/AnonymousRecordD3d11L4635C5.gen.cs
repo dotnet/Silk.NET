@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,20 +23,43 @@ namespace Silk.NET.Direct3D11
     {
         public AnonymousRecordD3d11L4635C5
         (
-            BufferUav buffer = default,
-            Tex1DUav texture1D = default,
-            Tex1DArrayUav texture1DArray = default,
-            Tex2DUav texture2D = default,
-            Tex2DArrayUav texture2DArray = default,
-            Tex3DUav texture3D = default
-        )
+            BufferUav? buffer = null,
+            Tex1DUav? texture1D = null,
+            Tex1DArrayUav? texture1DArray = null,
+            Tex2DUav? texture2D = null,
+            Tex2DArrayUav? texture2DArray = null,
+            Tex3DUav? texture3D = null
+        ) : this()
         {
-            Buffer = buffer;
-            Texture1D = texture1D;
-            Texture1DArray = texture1DArray;
-            Texture2D = texture2D;
-            Texture2DArray = texture2DArray;
-            Texture3D = texture3D;
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (texture1D is not null)
+            {
+                Texture1D = texture1D.Value;
+            }
+
+            if (texture1DArray is not null)
+            {
+                Texture1DArray = texture1DArray.Value;
+            }
+
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
+
+            if (texture2DArray is not null)
+            {
+                Texture2DArray = texture2DArray.Value;
+            }
+
+            if (texture3D is not null)
+            {
+                Texture3D = texture3D.Value;
+            }
         }
 
 

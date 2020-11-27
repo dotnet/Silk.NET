@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,28 +22,67 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoMotionEstimatorSize
         (
-            uint nodeIndex = default,
-            Silk.NET.DXGI.Format inputFormat = default,
-            VideoMotionEstimatorSearchBlockSize blockSize = default,
-            VideoMotionEstimatorVectorPrecision precision = default,
-            VideoSizeRange sizeRange = default,
-            int @protected = default,
-            ulong motionVectorHeapMemoryPoolL0Size = default,
-            ulong motionVectorHeapMemoryPoolL1Size = default,
-            ulong motionEstimatorMemoryPoolL0Size = default,
-            ulong motionEstimatorMemoryPoolL1Size = default
-        )
+            uint? nodeIndex = null,
+            Silk.NET.DXGI.Format? inputFormat = null,
+            VideoMotionEstimatorSearchBlockSize? blockSize = null,
+            VideoMotionEstimatorVectorPrecision? precision = null,
+            VideoSizeRange? sizeRange = null,
+            int? @protected = null,
+            ulong? motionVectorHeapMemoryPoolL0Size = null,
+            ulong? motionVectorHeapMemoryPoolL1Size = null,
+            ulong? motionEstimatorMemoryPoolL0Size = null,
+            ulong? motionEstimatorMemoryPoolL1Size = null
+        ) : this()
         {
-            NodeIndex = nodeIndex;
-            InputFormat = inputFormat;
-            BlockSize = blockSize;
-            Precision = precision;
-            SizeRange = sizeRange;
-            Protected = @protected;
-            MotionVectorHeapMemoryPoolL0Size = motionVectorHeapMemoryPoolL0Size;
-            MotionVectorHeapMemoryPoolL1Size = motionVectorHeapMemoryPoolL1Size;
-            MotionEstimatorMemoryPoolL0Size = motionEstimatorMemoryPoolL0Size;
-            MotionEstimatorMemoryPoolL1Size = motionEstimatorMemoryPoolL1Size;
+            if (nodeIndex is not null)
+            {
+                NodeIndex = nodeIndex.Value;
+            }
+
+            if (inputFormat is not null)
+            {
+                InputFormat = inputFormat.Value;
+            }
+
+            if (blockSize is not null)
+            {
+                BlockSize = blockSize.Value;
+            }
+
+            if (precision is not null)
+            {
+                Precision = precision.Value;
+            }
+
+            if (sizeRange is not null)
+            {
+                SizeRange = sizeRange.Value;
+            }
+
+            if (@protected is not null)
+            {
+                Protected = @protected.Value;
+            }
+
+            if (motionVectorHeapMemoryPoolL0Size is not null)
+            {
+                MotionVectorHeapMemoryPoolL0Size = motionVectorHeapMemoryPoolL0Size.Value;
+            }
+
+            if (motionVectorHeapMemoryPoolL1Size is not null)
+            {
+                MotionVectorHeapMemoryPoolL1Size = motionVectorHeapMemoryPoolL1Size.Value;
+            }
+
+            if (motionEstimatorMemoryPoolL0Size is not null)
+            {
+                MotionEstimatorMemoryPoolL0Size = motionEstimatorMemoryPoolL0Size.Value;
+            }
+
+            if (motionEstimatorMemoryPoolL1Size is not null)
+            {
+                MotionEstimatorMemoryPoolL1Size = motionEstimatorMemoryPoolL1Size.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorInputViewDesc
         (
-            uint fourCC = default,
-            VpivDimension viewDimension = default
-        )
+            uint? fourCC = null,
+            VpivDimension? viewDimension = null
+        ) : this()
         {
-            FourCC = fourCC;
-            ViewDimension = viewDimension;
+            if (fourCC is not null)
+            {
+                FourCC = fourCC.Value;
+            }
+
+            if (viewDimension is not null)
+            {
+                ViewDimension = viewDimension.Value;
+            }
         }
 
 

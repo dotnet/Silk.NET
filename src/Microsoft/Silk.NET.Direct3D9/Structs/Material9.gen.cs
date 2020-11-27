@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D9
     {
         public Material9
         (
-            Colorvalue diffuse = default,
-            Colorvalue ambient = default,
-            Colorvalue specular = default,
-            Colorvalue emissive = default,
-            float power = default
-        )
+            Colorvalue? diffuse = null,
+            Colorvalue? ambient = null,
+            Colorvalue? specular = null,
+            Colorvalue? emissive = null,
+            float? power = null
+        ) : this()
         {
-            Diffuse = diffuse;
-            Ambient = ambient;
-            Specular = specular;
-            Emissive = emissive;
-            Power = power;
+            if (diffuse is not null)
+            {
+                Diffuse = diffuse.Value;
+            }
+
+            if (ambient is not null)
+            {
+                Ambient = ambient.Value;
+            }
+
+            if (specular is not null)
+            {
+                Specular = specular.Value;
+            }
+
+            if (emissive is not null)
+            {
+                Emissive = emissive.Value;
+            }
+
+            if (power is not null)
+            {
+                Power = power.Value;
+            }
         }
 
 

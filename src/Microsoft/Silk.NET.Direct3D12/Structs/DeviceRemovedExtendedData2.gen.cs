@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public DeviceRemovedExtendedData2
         (
-            int deviceRemovedReason = default,
-            DredAutoBreadcrumbsOutput1 autoBreadcrumbsOutput = default,
-            DredPageFaultOutput1 pageFaultOutput = default
-        )
+            int? deviceRemovedReason = null,
+            DredAutoBreadcrumbsOutput1? autoBreadcrumbsOutput = null,
+            DredPageFaultOutput1? pageFaultOutput = null
+        ) : this()
         {
-            DeviceRemovedReason = deviceRemovedReason;
-            AutoBreadcrumbsOutput = autoBreadcrumbsOutput;
-            PageFaultOutput = pageFaultOutput;
+            if (deviceRemovedReason is not null)
+            {
+                DeviceRemovedReason = deviceRemovedReason.Value;
+            }
+
+            if (autoBreadcrumbsOutput is not null)
+            {
+                AutoBreadcrumbsOutput = autoBreadcrumbsOutput.Value;
+            }
+
+            if (pageFaultOutput is not null)
+            {
+                PageFaultOutput = pageFaultOutput.Value;
+            }
         }
 
 

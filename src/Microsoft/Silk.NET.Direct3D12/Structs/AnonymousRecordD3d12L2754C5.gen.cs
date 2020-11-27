@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,14 +23,25 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L2754C5
         (
-            ResourceTransitionBarrier transition = default,
-            ResourceAliasingBarrier aliasing = default,
-            ResourceUavBarrier uAV = default
-        )
+            ResourceTransitionBarrier? transition = null,
+            ResourceAliasingBarrier? aliasing = null,
+            ResourceUavBarrier? uAV = null
+        ) : this()
         {
-            Transition = transition;
-            Aliasing = aliasing;
-            UAV = uAV;
+            if (transition is not null)
+            {
+                Transition = transition.Value;
+            }
+
+            if (aliasing is not null)
+            {
+                Aliasing = aliasing.Value;
+            }
+
+            if (uAV is not null)
+            {
+                UAV = uAV.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public RangeUint64
         (
-            ulong begin = default,
-            ulong end = default
-        )
+            ulong? begin = null,
+            ulong? end = null
+        ) : this()
         {
-            Begin = begin;
-            End = end;
+            if (begin is not null)
+            {
+                Begin = begin.Value;
+            }
+
+            if (end is not null)
+            {
+                End = end.Value;
+            }
         }
 
 

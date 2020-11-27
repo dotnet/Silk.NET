@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,60 +22,53 @@ namespace Silk.NET.Direct3D12
     {
         public RTFormatArray
         (
-            uint numRenderTargets = default
-        )
+            uint? numRenderTargets = null
+        ) : this()
         {
-           RTFormats_0 = default;
-           RTFormats_1 = default;
-           RTFormats_2 = default;
-           RTFormats_3 = default;
-           RTFormats_4 = default;
-           RTFormats_5 = default;
-           RTFormats_6 = default;
-           RTFormats_7 = default;
-            NumRenderTargets = numRenderTargets;
+            if (numRenderTargets is not null)
+            {
+                NumRenderTargets = numRenderTargets.Value;
+            }
         }
 
         
         [NativeName("Type", "DXGI_FORMAT [8]")]
         [NativeName("Type.Name", "DXGI_FORMAT [8]")]
         [NativeName("Name", "RTFormats")]
-        public Silk.NET.DXGI.Format RTFormats_0;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTFormats")]
-        public Silk.NET.DXGI.Format RTFormats_1;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTFormats")]
-        public Silk.NET.DXGI.Format RTFormats_2;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTFormats")]
-        public Silk.NET.DXGI.Format RTFormats_3;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTFormats")]
-        public Silk.NET.DXGI.Format RTFormats_4;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTFormats")]
-        public Silk.NET.DXGI.Format RTFormats_5;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTFormats")]
-        public Silk.NET.DXGI.Format RTFormats_6;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTFormats")]
-        public Silk.NET.DXGI.Format RTFormats_7;
+        public RTFormatsBuffer RTFormats;
+
+        public struct RTFormatsBuffer
+        {
+            public Silk.NET.DXGI.Format Element0;
+            public Silk.NET.DXGI.Format Element1;
+            public Silk.NET.DXGI.Format Element2;
+            public Silk.NET.DXGI.Format Element3;
+            public Silk.NET.DXGI.Format Element4;
+            public Silk.NET.DXGI.Format Element5;
+            public Silk.NET.DXGI.Format Element6;
+            public Silk.NET.DXGI.Format Element7;
+            public ref Silk.NET.DXGI.Format this[int index]
+            {
+                get
+                {
+                    if (index > 7 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (Silk.NET.DXGI.Format* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<Silk.NET.DXGI.Format> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 8);
+#endif
+        }
+
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

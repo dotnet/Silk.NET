@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,14 +23,25 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L12497C5
         (
-            ulong instanceDescs = default,
-            RaytracingGeometryDesc* pGeometryDescs = default,
-            RaytracingGeometryDesc** ppGeometryDescs = default
-        )
+            ulong? instanceDescs = null,
+            RaytracingGeometryDesc* pGeometryDescs = null,
+            RaytracingGeometryDesc** ppGeometryDescs = null
+        ) : this()
         {
-            InstanceDescs = instanceDescs;
-            PGeometryDescs = pGeometryDescs;
-            PpGeometryDescs = ppGeometryDescs;
+            if (instanceDescs is not null)
+            {
+                InstanceDescs = instanceDescs.Value;
+            }
+
+            if (pGeometryDescs is not null)
+            {
+                PGeometryDescs = pGeometryDescs;
+            }
+
+            if (ppGeometryDescs is not null)
+            {
+                PpGeometryDescs = ppGeometryDescs;
+            }
         }
 
 

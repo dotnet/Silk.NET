@@ -828,6 +828,10 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         LineNV = 0x1B01,
         [NativeName("Name", "GL_FILL_NV")]
         FillNV = 0x1B02,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
+        ShadingRateImagePerPrimitiveNV = 0x95B1,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PALETTE_COUNT_NV")]
+        ShadingRateImagePaletteCountNV = 0x95B2,
         [NativeName("Name", "GL_READ_BUFFER_NV")]
         ReadBufferNV = 0xC02,
         [NativeName("Name", "GL_REPRESENTATIVE_FRAGMENT_TEST_NV")]

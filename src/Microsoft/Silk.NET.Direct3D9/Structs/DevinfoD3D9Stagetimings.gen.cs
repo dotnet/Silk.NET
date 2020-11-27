@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D9
     {
         public DevinfoD3D9Stagetimings
         (
-            float memoryProcessingPercent = default,
-            float computationProcessingPercent = default
-        )
+            float? memoryProcessingPercent = null,
+            float? computationProcessingPercent = null
+        ) : this()
         {
-            MemoryProcessingPercent = memoryProcessingPercent;
-            ComputationProcessingPercent = computationProcessingPercent;
+            if (memoryProcessingPercent is not null)
+            {
+                MemoryProcessingPercent = memoryProcessingPercent.Value;
+            }
+
+            if (computationProcessingPercent is not null)
+            {
+                ComputationProcessingPercent = computationProcessingPercent.Value;
+            }
         }
 
 

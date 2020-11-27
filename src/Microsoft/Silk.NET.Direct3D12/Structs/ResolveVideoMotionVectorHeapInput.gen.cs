@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public ResolveVideoMotionVectorHeapInput
         (
-            ID3D12VideoMotionVectorHeap* pMotionVectorHeap = default,
-            uint pixelWidth = default,
-            uint pixelHeight = default
-        )
+            ID3D12VideoMotionVectorHeap* pMotionVectorHeap = null,
+            uint? pixelWidth = null,
+            uint? pixelHeight = null
+        ) : this()
         {
-            PMotionVectorHeap = pMotionVectorHeap;
-            PixelWidth = pixelWidth;
-            PixelHeight = pixelHeight;
+            if (pMotionVectorHeap is not null)
+            {
+                PMotionVectorHeap = pMotionVectorHeap;
+            }
+
+            if (pixelWidth is not null)
+            {
+                PixelWidth = pixelWidth.Value;
+            }
+
+            if (pixelHeight is not null)
+            {
+                PixelHeight = pixelHeight.Value;
+            }
         }
 
 

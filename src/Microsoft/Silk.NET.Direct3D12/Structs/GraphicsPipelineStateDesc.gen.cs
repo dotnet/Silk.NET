@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,56 +22,127 @@ namespace Silk.NET.Direct3D12
     {
         public GraphicsPipelineStateDesc
         (
-            ID3D12RootSignature* pRootSignature = default,
-            ShaderBytecode vS = default,
-            ShaderBytecode pS = default,
-            ShaderBytecode dS = default,
-            ShaderBytecode hS = default,
-            ShaderBytecode gS = default,
-            StreamOutputDesc streamOutput = default,
-            BlendDesc blendState = default,
-            uint sampleMask = default,
-            RasterizerDesc rasterizerState = default,
-            DepthStencilDesc depthStencilState = default,
-            InputLayoutDesc inputLayout = default,
-            IndexBufferStripCutValue iBStripCutValue = default,
-            PrimitiveTopologyType primitiveTopologyType = default,
-            uint numRenderTargets = default,
-            Silk.NET.DXGI.Format dSVFormat = default,
-            Silk.NET.DXGI.SampleDesc sampleDesc = default,
-            uint nodeMask = default,
-            CachedPipelineState cachedPSO = default,
-            PipelineStateFlags flags = default
-        )
+            ID3D12RootSignature* pRootSignature = null,
+            ShaderBytecode? vS = null,
+            ShaderBytecode? pS = null,
+            ShaderBytecode? dS = null,
+            ShaderBytecode? hS = null,
+            ShaderBytecode? gS = null,
+            StreamOutputDesc? streamOutput = null,
+            BlendDesc? blendState = null,
+            uint? sampleMask = null,
+            RasterizerDesc? rasterizerState = null,
+            DepthStencilDesc? depthStencilState = null,
+            InputLayoutDesc? inputLayout = null,
+            IndexBufferStripCutValue? iBStripCutValue = null,
+            PrimitiveTopologyType? primitiveTopologyType = null,
+            uint? numRenderTargets = null,
+            Silk.NET.DXGI.Format? dSVFormat = null,
+            Silk.NET.DXGI.SampleDesc? sampleDesc = null,
+            uint? nodeMask = null,
+            CachedPipelineState? cachedPSO = null,
+            PipelineStateFlags? flags = null
+        ) : this()
         {
-            PRootSignature = pRootSignature;
-            VS = vS;
-            PS = pS;
-            DS = dS;
-            HS = hS;
-            GS = gS;
-            StreamOutput = streamOutput;
-            BlendState = blendState;
-            SampleMask = sampleMask;
-            RasterizerState = rasterizerState;
-            DepthStencilState = depthStencilState;
-            InputLayout = inputLayout;
-            IBStripCutValue = iBStripCutValue;
-            PrimitiveTopologyType = primitiveTopologyType;
-            NumRenderTargets = numRenderTargets;
-           RTVFormats_0 = default;
-           RTVFormats_1 = default;
-           RTVFormats_2 = default;
-           RTVFormats_3 = default;
-           RTVFormats_4 = default;
-           RTVFormats_5 = default;
-           RTVFormats_6 = default;
-           RTVFormats_7 = default;
-            DSVFormat = dSVFormat;
-            SampleDesc = sampleDesc;
-            NodeMask = nodeMask;
-            CachedPSO = cachedPSO;
-            Flags = flags;
+            if (pRootSignature is not null)
+            {
+                PRootSignature = pRootSignature;
+            }
+
+            if (vS is not null)
+            {
+                VS = vS.Value;
+            }
+
+            if (pS is not null)
+            {
+                PS = pS.Value;
+            }
+
+            if (dS is not null)
+            {
+                DS = dS.Value;
+            }
+
+            if (hS is not null)
+            {
+                HS = hS.Value;
+            }
+
+            if (gS is not null)
+            {
+                GS = gS.Value;
+            }
+
+            if (streamOutput is not null)
+            {
+                StreamOutput = streamOutput.Value;
+            }
+
+            if (blendState is not null)
+            {
+                BlendState = blendState.Value;
+            }
+
+            if (sampleMask is not null)
+            {
+                SampleMask = sampleMask.Value;
+            }
+
+            if (rasterizerState is not null)
+            {
+                RasterizerState = rasterizerState.Value;
+            }
+
+            if (depthStencilState is not null)
+            {
+                DepthStencilState = depthStencilState.Value;
+            }
+
+            if (inputLayout is not null)
+            {
+                InputLayout = inputLayout.Value;
+            }
+
+            if (iBStripCutValue is not null)
+            {
+                IBStripCutValue = iBStripCutValue.Value;
+            }
+
+            if (primitiveTopologyType is not null)
+            {
+                PrimitiveTopologyType = primitiveTopologyType.Value;
+            }
+
+            if (numRenderTargets is not null)
+            {
+                NumRenderTargets = numRenderTargets.Value;
+            }
+
+            if (dSVFormat is not null)
+            {
+                DSVFormat = dSVFormat.Value;
+            }
+
+            if (sampleDesc is not null)
+            {
+                SampleDesc = sampleDesc.Value;
+            }
+
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (cachedPSO is not null)
+            {
+                CachedPSO = cachedPSO.Value;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
         }
 
 
@@ -152,42 +224,40 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "DXGI_FORMAT [8]")]
         [NativeName("Type.Name", "DXGI_FORMAT [8]")]
         [NativeName("Name", "RTVFormats")]
-        public Silk.NET.DXGI.Format RTVFormats_0;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTVFormats")]
-        public Silk.NET.DXGI.Format RTVFormats_1;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTVFormats")]
-        public Silk.NET.DXGI.Format RTVFormats_2;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTVFormats")]
-        public Silk.NET.DXGI.Format RTVFormats_3;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTVFormats")]
-        public Silk.NET.DXGI.Format RTVFormats_4;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTVFormats")]
-        public Silk.NET.DXGI.Format RTVFormats_5;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTVFormats")]
-        public Silk.NET.DXGI.Format RTVFormats_6;
-        
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTVFormats")]
-        public Silk.NET.DXGI.Format RTVFormats_7;
+        public RTVFormatsBuffer RTVFormats;
+
+        public struct RTVFormatsBuffer
+        {
+            public Silk.NET.DXGI.Format Element0;
+            public Silk.NET.DXGI.Format Element1;
+            public Silk.NET.DXGI.Format Element2;
+            public Silk.NET.DXGI.Format Element3;
+            public Silk.NET.DXGI.Format Element4;
+            public Silk.NET.DXGI.Format Element5;
+            public Silk.NET.DXGI.Format Element6;
+            public Silk.NET.DXGI.Format Element7;
+            public ref Silk.NET.DXGI.Format this[int index]
+            {
+                get
+                {
+                    if (index > 7 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (Silk.NET.DXGI.Format* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<Silk.NET.DXGI.Format> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 8);
+#endif
+        }
+
 
         [NativeName("Type", "DXGI_FORMAT")]
         [NativeName("Type.Name", "DXGI_FORMAT")]

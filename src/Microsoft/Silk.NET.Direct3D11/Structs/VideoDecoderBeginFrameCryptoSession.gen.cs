@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D11
     {
         public VideoDecoderBeginFrameCryptoSession
         (
-            ID3D11CryptoSession* pCryptoSession = default,
-            uint blobSize = default,
-            void* pBlob = default,
-            Guid* pKeyInfoId = default,
-            uint privateDataSize = default,
-            void* pPrivateData = default
-        )
+            ID3D11CryptoSession* pCryptoSession = null,
+            uint? blobSize = null,
+            void* pBlob = null,
+            Guid* pKeyInfoId = null,
+            uint? privateDataSize = null,
+            void* pPrivateData = null
+        ) : this()
         {
-            PCryptoSession = pCryptoSession;
-            BlobSize = blobSize;
-            PBlob = pBlob;
-            PKeyInfoId = pKeyInfoId;
-            PrivateDataSize = privateDataSize;
-            PPrivateData = pPrivateData;
+            if (pCryptoSession is not null)
+            {
+                PCryptoSession = pCryptoSession;
+            }
+
+            if (blobSize is not null)
+            {
+                BlobSize = blobSize.Value;
+            }
+
+            if (pBlob is not null)
+            {
+                PBlob = pBlob;
+            }
+
+            if (pKeyInfoId is not null)
+            {
+                PKeyInfoId = pKeyInfoId;
+            }
+
+            if (privateDataSize is not null)
+            {
+                PrivateDataSize = privateDataSize.Value;
+            }
+
+            if (pPrivateData is not null)
+            {
+                PPrivateData = pPrivateData;
+            }
         }
 
 

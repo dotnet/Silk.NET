@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -22,18 +23,37 @@ namespace Silk.NET.Direct3D12
     {
         public AnonymousRecordD3d12L3951C5
         (
-            AnonymousRecordD3d12L3953C9 vertexBuffer = default,
-            AnonymousRecordD3d12L3957C9 constant = default,
-            AnonymousRecordD3d12L3963C9 constantBufferView = default,
-            AnonymousRecordD3d12L3967C9 shaderResourceView = default,
-            AnonymousRecordD3d12L3971C9 unorderedAccessView = default
-        )
+            AnonymousRecordD3d12L3953C9? vertexBuffer = null,
+            AnonymousRecordD3d12L3957C9? constant = null,
+            AnonymousRecordD3d12L3963C9? constantBufferView = null,
+            AnonymousRecordD3d12L3967C9? shaderResourceView = null,
+            AnonymousRecordD3d12L3971C9? unorderedAccessView = null
+        ) : this()
         {
-            VertexBuffer = vertexBuffer;
-            Constant = constant;
-            ConstantBufferView = constantBufferView;
-            ShaderResourceView = shaderResourceView;
-            UnorderedAccessView = unorderedAccessView;
+            if (vertexBuffer is not null)
+            {
+                VertexBuffer = vertexBuffer.Value;
+            }
+
+            if (constant is not null)
+            {
+                Constant = constant.Value;
+            }
+
+            if (constantBufferView is not null)
+            {
+                ConstantBufferView = constantBufferView.Value;
+            }
+
+            if (shaderResourceView is not null)
+            {
+                ShaderResourceView = shaderResourceView.Value;
+            }
+
+            if (unorderedAccessView is not null)
+            {
+                UnorderedAccessView = unorderedAccessView.Value;
+            }
         }
 
 

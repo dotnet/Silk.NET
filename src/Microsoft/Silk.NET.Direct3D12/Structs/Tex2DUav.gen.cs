@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public Tex2DUav
         (
-            uint mipSlice = default,
-            uint planeSlice = default
-        )
+            uint? mipSlice = null,
+            uint? planeSlice = null
+        ) : this()
         {
-            MipSlice = mipSlice;
-            PlaneSlice = planeSlice;
+            if (mipSlice is not null)
+            {
+                MipSlice = mipSlice.Value;
+            }
+
+            if (planeSlice is not null)
+            {
+                PlaneSlice = planeSlice.Value;
+            }
         }
 
 

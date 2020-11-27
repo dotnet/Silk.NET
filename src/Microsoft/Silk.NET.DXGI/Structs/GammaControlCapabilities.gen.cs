@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.DXGI
     {
         public GammaControlCapabilities
         (
-            int scaleAndOffsetSupported = default,
-            float maxConvertedValue = default,
-            float minConvertedValue = default,
-            uint numGammaControlPoints = default
-        )
+            int? scaleAndOffsetSupported = null,
+            float? maxConvertedValue = null,
+            float? minConvertedValue = null,
+            uint? numGammaControlPoints = null
+        ) : this()
         {
-            ScaleAndOffsetSupported = scaleAndOffsetSupported;
-            MaxConvertedValue = maxConvertedValue;
-            MinConvertedValue = minConvertedValue;
-            NumGammaControlPoints = numGammaControlPoints;
+            if (scaleAndOffsetSupported is not null)
+            {
+                ScaleAndOffsetSupported = scaleAndOffsetSupported.Value;
+            }
+
+            if (maxConvertedValue is not null)
+            {
+                MaxConvertedValue = maxConvertedValue.Value;
+            }
+
+            if (minConvertedValue is not null)
+            {
+                MinConvertedValue = minConvertedValue.Value;
+            }
+
+            if (numGammaControlPoints is not null)
+            {
+                NumGammaControlPoints = numGammaControlPoints.Value;
+            }
         }
 
 

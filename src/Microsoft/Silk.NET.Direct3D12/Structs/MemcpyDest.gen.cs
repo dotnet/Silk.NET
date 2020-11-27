@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public MemcpyDest
         (
-            void* pData = default,
-            uint rowPitch = default,
-            uint slicePitch = default
-        )
+            void* pData = null,
+            uint? rowPitch = null,
+            uint? slicePitch = null
+        ) : this()
         {
-            PData = pData;
-            RowPitch = rowPitch;
-            SlicePitch = slicePitch;
+            if (pData is not null)
+            {
+                PData = pData;
+            }
+
+            if (rowPitch is not null)
+            {
+                RowPitch = rowPitch.Value;
+            }
+
+            if (slicePitch is not null)
+            {
+                SlicePitch = slicePitch.Value;
+            }
         }
 
 

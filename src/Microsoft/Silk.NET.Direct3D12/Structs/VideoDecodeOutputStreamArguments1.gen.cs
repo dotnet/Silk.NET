@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeOutputStreamArguments1
         (
-            ID3D12Resource* pOutputTexture2D = default,
-            uint outputSubresource = default,
-            VideoDecodeConversionArguments1 conversionArguments = default
-        )
+            ID3D12Resource* pOutputTexture2D = null,
+            uint? outputSubresource = null,
+            VideoDecodeConversionArguments1? conversionArguments = null
+        ) : this()
         {
-            POutputTexture2D = pOutputTexture2D;
-            OutputSubresource = outputSubresource;
-            ConversionArguments = conversionArguments;
-           Histograms_0 = default;
-           Histograms_1 = default;
-           Histograms_2 = default;
-           Histograms_3 = default;
+            if (pOutputTexture2D is not null)
+            {
+                POutputTexture2D = pOutputTexture2D;
+            }
+
+            if (outputSubresource is not null)
+            {
+                OutputSubresource = outputSubresource.Value;
+            }
+
+            if (conversionArguments is not null)
+            {
+                ConversionArguments = conversionArguments.Value;
+            }
         }
 
 
@@ -54,21 +62,35 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
         [NativeName("Type.Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
         [NativeName("Name", "Histograms")]
-        public VideoDecodeOutputHistogram Histograms_0;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
-        [NativeName("Name", "Histograms")]
-        public VideoDecodeOutputHistogram Histograms_1;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
-        [NativeName("Name", "Histograms")]
-        public VideoDecodeOutputHistogram Histograms_2;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
-        [NativeName("Name", "Histograms")]
-        public VideoDecodeOutputHistogram Histograms_3;
+        public HistogramsBuffer Histograms;
+
+        public struct HistogramsBuffer
+        {
+            public VideoDecodeOutputHistogram Element0;
+            public VideoDecodeOutputHistogram Element1;
+            public VideoDecodeOutputHistogram Element2;
+            public VideoDecodeOutputHistogram Element3;
+            public ref VideoDecodeOutputHistogram this[int index]
+            {
+                get
+                {
+                    if (index > 3 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (VideoDecodeOutputHistogram* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<VideoDecodeOutputHistogram> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 4);
+#endif
+        }
+
     }
 }

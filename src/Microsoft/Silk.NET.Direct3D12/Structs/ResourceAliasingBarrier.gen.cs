@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public ResourceAliasingBarrier
         (
-            ID3D12Resource* pResourceBefore = default,
-            ID3D12Resource* pResourceAfter = default
-        )
+            ID3D12Resource* pResourceBefore = null,
+            ID3D12Resource* pResourceAfter = null
+        ) : this()
         {
-            PResourceBefore = pResourceBefore;
-            PResourceAfter = pResourceAfter;
+            if (pResourceBefore is not null)
+            {
+                PResourceBefore = pResourceBefore;
+            }
+
+            if (pResourceAfter is not null)
+            {
+                PResourceAfter = pResourceAfter;
+            }
         }
 
 

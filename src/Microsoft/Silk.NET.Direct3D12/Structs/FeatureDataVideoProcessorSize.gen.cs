@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,20 +22,43 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoProcessorSize
         (
-            uint nodeMask = default,
-            VideoProcessOutputStreamDesc* pOutputStreamDesc = default,
-            uint numInputStreamDescs = default,
-            VideoProcessInputStreamDesc* pInputStreamDescs = default,
-            ulong memoryPoolL0Size = default,
-            ulong memoryPoolL1Size = default
-        )
+            uint? nodeMask = null,
+            VideoProcessOutputStreamDesc* pOutputStreamDesc = null,
+            uint? numInputStreamDescs = null,
+            VideoProcessInputStreamDesc* pInputStreamDescs = null,
+            ulong? memoryPoolL0Size = null,
+            ulong? memoryPoolL1Size = null
+        ) : this()
         {
-            NodeMask = nodeMask;
-            POutputStreamDesc = pOutputStreamDesc;
-            NumInputStreamDescs = numInputStreamDescs;
-            PInputStreamDescs = pInputStreamDescs;
-            MemoryPoolL0Size = memoryPoolL0Size;
-            MemoryPoolL1Size = memoryPoolL1Size;
+            if (nodeMask is not null)
+            {
+                NodeMask = nodeMask.Value;
+            }
+
+            if (pOutputStreamDesc is not null)
+            {
+                POutputStreamDesc = pOutputStreamDesc;
+            }
+
+            if (numInputStreamDescs is not null)
+            {
+                NumInputStreamDescs = numInputStreamDescs.Value;
+            }
+
+            if (pInputStreamDescs is not null)
+            {
+                PInputStreamDescs = pInputStreamDescs;
+            }
+
+            if (memoryPoolL0Size is not null)
+            {
+                MemoryPoolL0Size = memoryPoolL0Size.Value;
+            }
+
+            if (memoryPoolL1Size is not null)
+            {
+                MemoryPoolL1Size = memoryPoolL1Size.Value;
+            }
         }
 
 

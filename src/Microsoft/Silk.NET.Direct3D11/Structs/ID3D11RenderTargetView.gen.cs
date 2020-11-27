@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -55,10 +56,13 @@ namespace Silk.NET.Direct3D11
 
         public ID3D11RenderTargetView
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -67,379 +71,323 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11RenderTargetView*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D11RenderTargetView*, uint>)LpVtbl[2])(@this);
-                return ret;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, uint>)LpVtbl[2])(@this);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe void GetDevice(ID3D11Device** ppDevice)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe void GetDevice(ref ID3D11Device* ppDevice)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Device** ppDevicePtr = &ppDevice)
+            {
+                ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
             }
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void GetDevice(ID3D11Device** ppDevice)
+        public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                ((delegate* cdecl<ID3D11RenderTargetView*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe void GetDevice(ref ID3D11Device* ppDevice)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                fixed (ID3D11Device** ppDevicePtr = &ppDevice)
-                {
-                    ((delegate* cdecl<ID3D11RenderTargetView*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevicePtr);
-                }
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (uint* pDataSizePtr = &pDataSize)
+            {
                 fixed (T0* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
+        public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
-                }
-                return ret;
+            fixed (Guid* guidPtr = &guid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (uint* pDataSizePtr = &pDataSize)
-                {
-                    fixed (T0* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pDataPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
+            fixed (Guid* guidPtr = &guid)
             {
-                int ret = default;
-                fixed (Guid* guidPtr = &guid)
-                {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* guidPtr = &guid)
-                {
-                    fixed (T0* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* guidPtr = &guid)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* guidPtr = &guid)
-                {
-                    fixed (uint* pDataSizePtr = &pDataSize)
-                    {
-                        fixed (T0* pDataPtr = &pData)
-                        {
-                            ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
-                        }
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
-                ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
                 fixed (T0* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pDataPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
+        public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* guidPtr = &guid)
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (uint* pDataSizePtr = &pDataSize)
                 {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pData);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (Guid* guidPtr = &guid)
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (uint* pDataSizePtr = &pDataSize)
                 {
                     fixed (T0* pDataPtr = &pData)
                     {
-                        ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (T0* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                fixed (T0* pDataPtr = &pData)
+                {
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pDataPtr);
+                }
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* guidPtr = &guid)
+            {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* guidPtr = &guid)
-                {
-                    ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* guidPtr = &guid)
-                {
-                    fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
-                    {
-                        ret = ((delegate* cdecl<ID3D11RenderTargetView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe void GetResource(ID3D11Resource** ppResource)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                ((delegate* cdecl<ID3D11RenderTargetView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResource);
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe void GetResource(ref ID3D11Resource* ppResource)
-        {
-            fixed (ID3D11RenderTargetView* @this = &this)
-            {
-                fixed (ID3D11Resource** ppResourcePtr = &ppResource)
-                {
-                    ((delegate* cdecl<ID3D11RenderTargetView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResourcePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pDataPtr);
                 }
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe void GetDesc(RenderTargetViewDesc* pDesc)
+        public readonly unsafe void GetResource(ID3D11Resource** ppResource)
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResource);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe void GetResource(ref ID3D11Resource* ppResource)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (ID3D11Resource** ppResourcePtr = &ppResource)
             {
-                ((delegate* cdecl<ID3D11RenderTargetView*, RenderTargetViewDesc*, void>)LpVtbl[8])(@this, pDesc);
+                ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, ID3D11Resource**, void>)LpVtbl[7])(@this, ppResourcePtr);
             }
         }
 
         /// <summary>To be added.</summary>
-        public void GetDesc(ref RenderTargetViewDesc pDesc)
+        public readonly unsafe void GetDesc(RenderTargetViewDesc* pDesc)
         {
-            fixed (ID3D11RenderTargetView* @this = &this)
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, RenderTargetViewDesc*, void>)LpVtbl[8])(@this, pDesc);
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly void GetDesc(ref RenderTargetViewDesc pDesc)
+        {
+            var @this = (ID3D11RenderTargetView*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            fixed (RenderTargetViewDesc* pDescPtr = &pDesc)
             {
-                fixed (RenderTargetViewDesc* pDescPtr = &pDesc)
-                {
-                    ((delegate* cdecl<ID3D11RenderTargetView*, RenderTargetViewDesc*, void>)LpVtbl[8])(@this, pDescPtr);
-                }
+                ((delegate* unmanaged[Cdecl]<ID3D11RenderTargetView*, RenderTargetViewDesc*, void>)LpVtbl[8])(@this, pDescPtr);
             }
         }
 

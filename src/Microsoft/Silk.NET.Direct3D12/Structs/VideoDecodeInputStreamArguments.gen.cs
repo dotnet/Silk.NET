@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,26 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public VideoDecodeInputStreamArguments
         (
-            uint numFrameArguments = default,
-            VideoDecodeReferenceFrames referenceFrames = default,
-            VideoDecodeCompressedBitstream compressedBitstream = default,
-            ID3D12VideoDecoderHeap* pHeap = default
-        )
+            uint? numFrameArguments = null,
+            VideoDecodeReferenceFrames? referenceFrames = null,
+            VideoDecodeCompressedBitstream? compressedBitstream = null,
+            ID3D12VideoDecoderHeap* pHeap = null
+        ) : this()
         {
-            NumFrameArguments = numFrameArguments;
-           FrameArguments_0 = default;
-           FrameArguments_1 = default;
-           FrameArguments_2 = default;
-           FrameArguments_3 = default;
-           FrameArguments_4 = default;
-           FrameArguments_5 = default;
-           FrameArguments_6 = default;
-           FrameArguments_7 = default;
-           FrameArguments_8 = default;
-           FrameArguments_9 = default;
-            ReferenceFrames = referenceFrames;
-            CompressedBitstream = compressedBitstream;
-            PHeap = pHeap;
+            if (numFrameArguments is not null)
+            {
+                NumFrameArguments = numFrameArguments.Value;
+            }
+
+            if (referenceFrames is not null)
+            {
+                ReferenceFrames = referenceFrames.Value;
+            }
+
+            if (compressedBitstream is not null)
+            {
+                CompressedBitstream = compressedBitstream.Value;
+            }
+
+            if (pHeap is not null)
+            {
+                PHeap = pHeap;
+            }
         }
 
 
@@ -52,52 +58,42 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
         [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
         [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_0;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_1;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_2;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_3;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_4;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_5;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_6;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_7;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_8;
-        
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Name", "FrameArguments")]
-        public VideoDecodeFrameArgument FrameArguments_9;
+        public FrameArgumentsBuffer FrameArguments;
+
+        public struct FrameArgumentsBuffer
+        {
+            public VideoDecodeFrameArgument Element0;
+            public VideoDecodeFrameArgument Element1;
+            public VideoDecodeFrameArgument Element2;
+            public VideoDecodeFrameArgument Element3;
+            public VideoDecodeFrameArgument Element4;
+            public VideoDecodeFrameArgument Element5;
+            public VideoDecodeFrameArgument Element6;
+            public VideoDecodeFrameArgument Element7;
+            public VideoDecodeFrameArgument Element8;
+            public VideoDecodeFrameArgument Element9;
+            public ref VideoDecodeFrameArgument this[int index]
+            {
+                get
+                {
+                    if (index > 9 || index < 0)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(index));
+                    }
+
+                    fixed (VideoDecodeFrameArgument* ptr = &Element0)
+                    {
+                        return ref ptr[index];
+                    }
+                }
+            }
+
+#if NETSTANDARD2_1
+            public Span<VideoDecodeFrameArgument> AsSpan()
+                => MemoryMarshal.CreateSpan(ref Element0, 10);
+#endif
+        }
+
 
         [NativeName("Type", "D3D12_VIDEO_DECODE_REFERENCE_FRAMES")]
         [NativeName("Type.Name", "D3D12_VIDEO_DECODE_REFERENCE_FRAMES")]

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public DevinfoVcache
         (
-            uint pattern = default,
-            uint optMethod = default,
-            uint cacheSize = default,
-            uint magicNumber = default
-        )
+            uint? pattern = null,
+            uint? optMethod = null,
+            uint? cacheSize = null,
+            uint? magicNumber = null
+        ) : this()
         {
-            Pattern = pattern;
-            OptMethod = optMethod;
-            CacheSize = cacheSize;
-            MagicNumber = magicNumber;
+            if (pattern is not null)
+            {
+                Pattern = pattern.Value;
+            }
+
+            if (optMethod is not null)
+            {
+                OptMethod = optMethod.Value;
+            }
+
+            if (cacheSize is not null)
+            {
+                CacheSize = cacheSize.Value;
+            }
+
+            if (magicNumber is not null)
+            {
+                MagicNumber = magicNumber.Value;
+            }
         }
 
 

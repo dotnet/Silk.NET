@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.DXGI
     {
         public PresentParameters
         (
-            uint dirtyRectsCount = default,
-            Silk.NET.Core.Native.TagRect* pDirtyRects = default,
-            Silk.NET.Core.Native.TagRect* pScrollRect = default,
-            Silk.NET.Core.Native.TagPoint* pScrollOffset = default
-        )
+            uint? dirtyRectsCount = null,
+            Silk.NET.Core.Native.TagRect* pDirtyRects = null,
+            Silk.NET.Core.Native.TagRect* pScrollRect = null,
+            Silk.NET.Core.Native.TagPoint* pScrollOffset = null
+        ) : this()
         {
-            DirtyRectsCount = dirtyRectsCount;
-            PDirtyRects = pDirtyRects;
-            PScrollRect = pScrollRect;
-            PScrollOffset = pScrollOffset;
+            if (dirtyRectsCount is not null)
+            {
+                DirtyRectsCount = dirtyRectsCount.Value;
+            }
+
+            if (pDirtyRects is not null)
+            {
+                PDirtyRects = pDirtyRects;
+            }
+
+            if (pScrollRect is not null)
+            {
+                PScrollRect = pScrollRect;
+            }
+
+            if (pScrollOffset is not null)
+            {
+                PScrollOffset = pScrollOffset;
+            }
         }
 
 

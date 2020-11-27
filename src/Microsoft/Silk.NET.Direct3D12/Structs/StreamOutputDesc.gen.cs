@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,18 +22,37 @@ namespace Silk.NET.Direct3D12
     {
         public StreamOutputDesc
         (
-            SODeclarationEntry* pSODeclaration = default,
-            uint numEntries = default,
-            uint* pBufferStrides = default,
-            uint numStrides = default,
-            uint rasterizedStream = default
-        )
+            SODeclarationEntry* pSODeclaration = null,
+            uint? numEntries = null,
+            uint* pBufferStrides = null,
+            uint? numStrides = null,
+            uint? rasterizedStream = null
+        ) : this()
         {
-            PSODeclaration = pSODeclaration;
-            NumEntries = numEntries;
-            PBufferStrides = pBufferStrides;
-            NumStrides = numStrides;
-            RasterizedStream = rasterizedStream;
+            if (pSODeclaration is not null)
+            {
+                PSODeclaration = pSODeclaration;
+            }
+
+            if (numEntries is not null)
+            {
+                NumEntries = numEntries.Value;
+            }
+
+            if (pBufferStrides is not null)
+            {
+                PBufferStrides = pBufferStrides;
+            }
+
+            if (numStrides is not null)
+            {
+                NumStrides = numStrides.Value;
+            }
+
+            if (rasterizedStream is not null)
+            {
+                RasterizedStream = rasterizedStream.Value;
+            }
         }
 
 

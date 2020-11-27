@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D9
     {
         public AuthenticatedchannelQueryoutputidcountOutput
         (
-            AuthenticatedchannelQueryOutput output = default,
-            void* deviceHandle = default,
-            void* cryptoSessionHandle = default,
-            uint numOutputIDs = default
-        )
+            AuthenticatedchannelQueryOutput? output = null,
+            void* deviceHandle = null,
+            void* cryptoSessionHandle = null,
+            uint? numOutputIDs = null
+        ) : this()
         {
-            Output = output;
-            DeviceHandle = deviceHandle;
-            CryptoSessionHandle = cryptoSessionHandle;
-            NumOutputIDs = numOutputIDs;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (deviceHandle is not null)
+            {
+                DeviceHandle = deviceHandle;
+            }
+
+            if (cryptoSessionHandle is not null)
+            {
+                CryptoSessionHandle = cryptoSessionHandle;
+            }
+
+            if (numOutputIDs is not null)
+            {
+                NumOutputIDs = numOutputIDs.Value;
+            }
         }
 
 

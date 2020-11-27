@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -33,10 +34,13 @@ namespace Silk.NET.Direct3D12
 
         public ID3D12DebugCommandList
         (
-            void** lpVtbl = default
-        )
+            void** lpVtbl = null
+        ) : this()
         {
-            LpVtbl = lpVtbl;
+            if (lpVtbl is not null)
+            {
+                LpVtbl = lpVtbl;
+            }
         }
 
 
@@ -45,128 +49,108 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, void** ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12DebugCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
+            fixed (void** ppvObjectPtr = &ppvObject)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+            }
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+        {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+                int ret = default;
+            fixed (Guid* riidPtr = &riid)
+            {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* cdecl<ID3D12DebugCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
-                return ret;
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+        public readonly uint AddRef()
         {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    ret = ((delegate* cdecl<ID3D12DebugCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
-                int ret = default;
-                fixed (Guid* riidPtr = &riid)
-                {
-                    fixed (void** ppvObjectPtr = &ppvObject)
-                    {
-                        ret = ((delegate* cdecl<ID3D12DebugCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                }
-                return ret;
-            }
-        }
-
-        /// <summary>To be added.</summary>
-        public uint AddRef()
-        {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12DebugCommandList*, uint>)LpVtbl[1])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, uint>)LpVtbl[1])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public uint Release()
+        public readonly uint Release()
         {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 uint ret = default;
-                ret = ((delegate* cdecl<ID3D12DebugCommandList*, uint>)LpVtbl[2])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, uint>)LpVtbl[2])(@this);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public unsafe int AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
+        public readonly unsafe int AssertResourceState(ID3D12Resource* pResource, uint Subresource, uint State)
         {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12DebugCommandList*, ID3D12Resource*, uint, uint, int>)LpVtbl[3])(@this, pResource, Subresource, State);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, ID3D12Resource*, uint, uint, int>)LpVtbl[3])(@this, pResource, Subresource, State);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int AssertResourceState(ref ID3D12Resource pResource, uint Subresource, uint State)
+        public readonly int AssertResourceState(ref ID3D12Resource pResource, uint Subresource, uint State)
         {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                fixed (ID3D12Resource* pResourcePtr = &pResource)
-                {
-                    ret = ((delegate* cdecl<ID3D12DebugCommandList*, ID3D12Resource*, uint, uint, int>)LpVtbl[3])(@this, pResourcePtr, Subresource, State);
-                }
-                return ret;
+            fixed (ID3D12Resource* pResourcePtr = &pResource)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, ID3D12Resource*, uint, uint, int>)LpVtbl[3])(@this, pResourcePtr, Subresource, State);
             }
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public int SetFeatureMask(DebugFeature Mask)
+        public readonly int SetFeatureMask(DebugFeature Mask)
         {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-                ret = ((delegate* cdecl<ID3D12DebugCommandList*, DebugFeature, int>)LpVtbl[4])(@this, Mask);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, DebugFeature, int>)LpVtbl[4])(@this, Mask);
+            return ret;
         }
 
         /// <summary>To be added.</summary>
-        public DebugFeature GetFeatureMask()
+        public readonly DebugFeature GetFeatureMask()
         {
-            fixed (ID3D12DebugCommandList* @this = &this)
-            {
+            var @this = (ID3D12DebugCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 DebugFeature ret = default;
-                ret = ((delegate* cdecl<ID3D12DebugCommandList*, DebugFeature>)LpVtbl[5])(@this);
-                return ret;
-            }
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugCommandList*, DebugFeature>)LpVtbl[5])(@this);
+            return ret;
         }
 
     }

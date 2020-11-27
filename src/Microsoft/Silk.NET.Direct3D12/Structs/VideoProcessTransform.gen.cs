@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,14 +22,25 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessTransform
         (
-            Silk.NET.Core.Native.TagRect sourceRectangle = default,
-            Silk.NET.Core.Native.TagRect destinationRectangle = default,
-            VideoProcessOrientation orientation = default
-        )
+            Silk.NET.Core.Native.TagRect? sourceRectangle = null,
+            Silk.NET.Core.Native.TagRect? destinationRectangle = null,
+            VideoProcessOrientation? orientation = null
+        ) : this()
         {
-            SourceRectangle = sourceRectangle;
-            DestinationRectangle = destinationRectangle;
-            Orientation = orientation;
+            if (sourceRectangle is not null)
+            {
+                SourceRectangle = sourceRectangle.Value;
+            }
+
+            if (destinationRectangle is not null)
+            {
+                DestinationRectangle = destinationRectangle.Value;
+            }
+
+            if (orientation is not null)
+            {
+                Orientation = orientation.Value;
+            }
         }
 
 

@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D12
     {
         public VideoSizeRange
         (
-            uint maxWidth = default,
-            uint maxHeight = default,
-            uint minWidth = default,
-            uint minHeight = default
-        )
+            uint? maxWidth = null,
+            uint? maxHeight = null,
+            uint? minWidth = null,
+            uint? minHeight = null
+        ) : this()
         {
-            MaxWidth = maxWidth;
-            MaxHeight = maxHeight;
-            MinWidth = minWidth;
-            MinHeight = minHeight;
+            if (maxWidth is not null)
+            {
+                MaxWidth = maxWidth.Value;
+            }
+
+            if (maxHeight is not null)
+            {
+                MaxHeight = maxHeight.Value;
+            }
+
+            if (minWidth is not null)
+            {
+                MinWidth = minWidth.Value;
+            }
+
+            if (minHeight is not null)
+            {
+                MinHeight = minHeight.Value;
+            }
         }
 
 

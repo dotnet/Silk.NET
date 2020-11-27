@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,16 +22,31 @@ namespace Silk.NET.Direct3D11
     {
         public AuthenticatedQueryAcessibilityOutput
         (
-            AuthenticatedQueryOutput output = default,
-            BusType busType = default,
-            int accessibleInContiguousBlocks = default,
-            int accessibleInNonContiguousBlocks = default
-        )
+            AuthenticatedQueryOutput? output = null,
+            BusType? busType = null,
+            int? accessibleInContiguousBlocks = null,
+            int? accessibleInNonContiguousBlocks = null
+        ) : this()
         {
-            Output = output;
-            BusType = busType;
-            AccessibleInContiguousBlocks = accessibleInContiguousBlocks;
-            AccessibleInNonContiguousBlocks = accessibleInNonContiguousBlocks;
+            if (output is not null)
+            {
+                Output = output.Value;
+            }
+
+            if (busType is not null)
+            {
+                BusType = busType.Value;
+            }
+
+            if (accessibleInContiguousBlocks is not null)
+            {
+                AccessibleInContiguousBlocks = accessibleInContiguousBlocks.Value;
+            }
+
+            if (accessibleInNonContiguousBlocks is not null)
+            {
+                AccessibleInNonContiguousBlocks = accessibleInNonContiguousBlocks.Value;
+            }
         }
 
 

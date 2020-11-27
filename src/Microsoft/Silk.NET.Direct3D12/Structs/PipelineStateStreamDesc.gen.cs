@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
@@ -21,12 +22,19 @@ namespace Silk.NET.Direct3D12
     {
         public PipelineStateStreamDesc
         (
-            uint sizeInBytes = default,
-            void* pPipelineStateSubobjectStream = default
-        )
+            uint? sizeInBytes = null,
+            void* pPipelineStateSubobjectStream = null
+        ) : this()
         {
-            SizeInBytes = sizeInBytes;
-            PPipelineStateSubobjectStream = pPipelineStateSubobjectStream;
+            if (sizeInBytes is not null)
+            {
+                SizeInBytes = sizeInBytes.Value;
+            }
+
+            if (pPipelineStateSubobjectStream is not null)
+            {
+                PPipelineStateSubobjectStream = pPipelineStateSubobjectStream;
+            }
         }
 
 
