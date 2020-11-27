@@ -129,9 +129,32 @@ namespace Silk.NET.Numerics
             M33 = value.M33;
             M34 = Constants<T>.Zero;
 
-            M41 = value.M31;
-            M42 = value.M32;
+            M41 = value.M41;
+            M42 = value.M42;
             M43 = value.M43;
+            M44 = Constants<T>.One;
+        }
+
+        public Matrix4x4(Matrix3x4<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = value.M13;
+            M14 = value.M14;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = value.M23;
+            M24 = value.M24;
+
+            M31 = value.M31;
+            M32 = value.M32;
+            M33 = value.M33;
+            M34 = value.M34;
+
+            M41 = Constants<T>.Zero;
+            M42 = Constants<T>.Zero;
+            M43 = Constants<T>.Zero;
             M44 = Constants<T>.One;
         }
 
