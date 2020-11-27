@@ -135,6 +135,8 @@ namespace Silk.NET.Numerics
             M44 = Constants<T>.One;
         }
 
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
         public Matrix4x4(Matrix3x4<T> value)
         {
             M11 = value.M11;
@@ -156,6 +158,31 @@ namespace Silk.NET.Numerics
             M42 = Constants<T>.Zero;
             M43 = Constants<T>.Zero;
             M44 = Constants<T>.One;
+        }
+
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x3.</summary>
+        /// <param name="value">The source Matrix3x3.</param>
+        public Matrix4x4(Matrix3x3<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = value.M13;
+            M14 = Constants<T>.Zero;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = value.M23;
+            M24 = Constants<T>.Zero;
+
+            M31 = value.M31;
+            M32 = value.M32;
+            M33 = value.M33;
+            M34 = Constants<T>.Zero;
+
+            M41 = Constants<T>.Zero;
+            M42 = Constants<T>.Zero;
+            M43 = Constants<T>.Zero;
+            M44 = Constants<T>.Zero;
         }
 
         /// <summary>Returns the multiplicative identity matrix.</summary>

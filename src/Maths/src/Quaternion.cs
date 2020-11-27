@@ -345,6 +345,58 @@ namespace Silk.NET.Numerics
 
             return q;
         }
+        
+        /// <summary>Creates a Quaternion from the given rotation matrix.</summary>
+        /// <param name="matrix">The rotation matrix.</param>
+        /// <returns>The created Quaternion.</returns>
+        public static Quaternion<T> CreateFromRotationMatrix(Matrix3x3<T> matrix)
+        {
+            T trace = Operations.Add(Operations.Add(matrix.M11, matrix.M22), matrix.M33);
+
+            Quaternion<T> q = default;
+
+            if (Operations.GreaterThan(trace, Constants<T>.Zero))
+            {
+                T s = Operations.Sqrt(Operations.Add(trace, Constants<T>.One));
+                q.W = Operations.Divide(s, Constants<T>.Two);
+                s = Operations.Divide(Constants<T>.One, Operations.Multiply(Constants<T>.Two, s));
+                q.X = Operations.Multiply(Operations.Subtract(matrix.M23, matrix.M32), s);
+                q.Y = Operations.Multiply(Operations.Subtract(matrix.M31, matrix.M13), s);
+                q.Z = Operations.Multiply(Operations.Subtract(matrix.M12, matrix.M21), s);
+            }
+            else
+            {
+                if (Operations.GreaterThanOrEqual(matrix.M11, matrix.M22) && Operations.GreaterThanOrEqual(matrix.M11, matrix.M33))
+                {
+                    T s = Operations.Sqrt(Operations.Subtract(Operations.Subtract(Operations.Add(Constants<T>.One, matrix.M11), matrix.M22), matrix.M33));
+                    T invS = Operations.Divide(Constants<T>.One, Operations.Multiply(Constants<T>.Two, s));
+                    q.X = Operations.Divide(s, Constants<T>.Two);
+                    q.Y = Operations.Multiply(Operations.Add(matrix.M12, matrix.M21), invS);
+                    q.Z = Operations.Multiply(Operations.Add(matrix.M13, matrix.M31), invS);
+                    q.W = Operations.Multiply(Operations.Subtract(matrix.M23, matrix.M32), invS);
+                }
+                else if (Operations.GreaterThan(matrix.M22, matrix.M33))
+                {
+                    T s = Operations.Sqrt(Operations.Subtract(Operations.Subtract(Operations.Add(Constants<T>.One, matrix.M22), matrix.M11), matrix.M33));
+                    T invS = Operations.Divide(Constants<T>.One, Operations.Multiply(Constants<T>.Two, s));
+                    q.X = Operations.Multiply(Operations.Add(matrix.M21, matrix.M12), invS);
+                    q.Y = Operations.Divide(s, Constants<T>.Two);
+                    q.Z = Operations.Multiply(Operations.Add(matrix.M32, matrix.M23), invS);
+                    q.W = Operations.Multiply(Operations.Subtract(matrix.M31, matrix.M13), invS);
+                }
+                else
+                {
+                    T s = Operations.Sqrt(Operations.Subtract(Operations.Subtract(Operations.Add(Constants<T>.One, matrix.M33), matrix.M11), matrix.M22));
+                    T invS = Operations.Divide(Constants<T>.One, Operations.Multiply(Constants<T>.Two, s));
+                    q.X = Operations.Multiply(Operations.Add(matrix.M31, matrix.M13), invS);
+                    q.Y = Operations.Multiply(Operations.Add(matrix.M32, matrix.M23), invS);
+                    q.Z = Operations.Divide(s, Constants<T>.Two);
+                    q.W = Operations.Multiply(Operations.Subtract(matrix.M12, matrix.M21), invS);
+                }
+            }
+
+            return q;
+        }
 
         /// <summary>Creates a new Quaternion from the given yaw, pitch, and roll, in radians.</summary>
         /// <param name="yaw">The yaw angle, in radians, around the Y-axis.</param>

@@ -63,6 +63,34 @@ namespace Silk.NET.Numerics
             M31 = value.M31;
             M32 = value.M32;
         }
+        
+        /// <summary>Constructs a Matrix3x2 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix3x2(Matrix3x4<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+
+            M21 = value.M21;
+            M22 = value.M22;
+
+            M31 = value.M31;
+            M32 = value.M32;
+        }
+        
+        /// <summary>Constructs a Matrix3x2 from the given Matrix3x3.</summary>
+        /// <param name="value">The source Matrix3x3.</param>
+        public Matrix3x2(Matrix3x3<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+
+            M21 = value.M21;
+            M22 = value.M22;
+
+            M31 = value.M31;
+            M32 = value.M32;
+        }
 
         /// <summary>Returns the multiplicative identity matrix.</summary>
         public static Matrix3x2<T> Identity => _identity;
