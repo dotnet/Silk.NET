@@ -27,41 +27,39 @@ namespace Silk.NET.BuildTools
 {
     public static class Generator
     {
-        public static void Run(Config config, IReadOnlyList<string> args)
+        public const bool TestMode = false;
+        public static void Run(Config config)
         {
             var tasks = new Task[config.Tasks.Length];
             var dirsToCheckThrough = config.Tasks.Select(x => x.OutputOpts.Folder).Distinct();
-            if (!args.Contains("no-clear"))
+            foreach (var s in dirsToCheckThrough)
             {
-                foreach (var s in dirsToCheckThrough)
+                foreach (var file in Directory.GetFiles(s, "*.gen.cs", SearchOption.AllDirectories))
                 {
-                    foreach (var file in Directory.GetFiles(s, "*.gen.cs", SearchOption.AllDirectories))
-                    {
-                        File.Delete(file);
-                    }
+                    File.Delete(file);
                 }
             }
 
             for (var i = 0; i < config.Tasks.Length; i++)
             {
                 var i1 = i;
-                if (args.Contains("no-parallel"))
+                if (TestMode)
                 {
-                    RunTask(config.Tasks[i1], args);
+                    RunTask(config.Tasks[i1]);
                 }
                 else
                 {
-                    tasks[i] = Task.Run(() => RunTaskGuarded(config.Tasks[i1], args));
+                    tasks[i] = Task.Run(() => RunTaskGuarded(config.Tasks[i1]));
                 }
             }
 
-            if (!args.Contains("no-parallel"))
+            if (!TestMode)
             {
                 Task.WaitAll(tasks);
             }
         }
 
-        public static void RunTaskGuarded(BindTask task, IReadOnlyCollection<string> args)
+        public static void RunTaskGuarded(BindTask task)
         {
             Stopwatch sw = null;
             if (!(Program.ConsoleWriter.Instance is null))
@@ -119,147 +117,112 @@ namespace Silk.NET.BuildTools
                 }
             }
             
-            Profile profile = null;
-            var cacheHit = !ShouldConvert(task.Controls, args);
-            if (!cacheHit)
+            Profile profile;
+            if (ShouldConvert(task.Controls))
             {
-                try
+                Console.WriteLine("Profile conversion started!");
+                var tsb4 = sw?.Elapsed.TotalSeconds;
+                var profiles = new List<Profile>();
+                if (task.Mode == ConverterMode.ConvertConstruct)
                 {
-                    Console.WriteLine("Profile conversion started!");
-                    var tsb4 = sw?.Elapsed.TotalSeconds;
-                    var profiles = new List<Profile>();
-                    if (task.Mode == ConverterMode.ConvertConstruct)
+                    foreach (var src in task.Sources)
                     {
-                        foreach (var src in task.Sources)
-                        {
-                            var rawProfiles = ProfileConverter.ReadProfiles
-                                (
-                                    task.ConverterOpts.Reader.ToLower() switch
-                                    {
-                                        "gl" => new OpenGLReader(),
-                                        "cl" => new OpenCLReader(),
-                                        "vk" => new VulkanReader(),
-                                        _ => throw new ArgumentException("Couldn't find a reader with that name")
-                                    }, task.ConverterOpts.Constructor.ToLower() switch
-                                    {
-                                        "gl" => new OpenGLConstructor(),
-                                        "cl" => new OpenCLConstructor(),
-                                        "vk" => new VulkanConstructor(),
-                                        _ => throw new ArgumentException("Couldn't find a reader with that name")
-                                    },
-                                    OpenPath(src),
-                                    task
-                                )
-                                .ToList();
+                        var rawProfiles = ProfileConverter.ReadProfiles
+                        (
+                            task.ConverterOpts.Reader.ToLower() switch
+                            {
+                                "gl" => new OpenGLReader(),
+                                "cl" => new OpenCLReader(),
+                                "vk" => new VulkanReader(),
+                                _ => throw new ArgumentException("Couldn't find a reader with that name")
+                            }, task.ConverterOpts.Constructor.ToLower() switch
+                            {
+                                "gl" => new OpenGLConstructor(),
+                                "cl" => new OpenCLConstructor(),
+                                "vk" => new VulkanConstructor(),
+                                _ => throw new ArgumentException("Couldn't find a reader with that name")
+                            },
+                            OpenPath(src),
+                            task
+                        ).ToList();
 
-                            Console.WriteLine("Raw profile parsing complete, cloning in memory prior to baking...");
-                            profiles.AddRange
+                        Console.WriteLine("Raw profile parsing complete, cloning in memory prior to baking...");
+                        profiles.AddRange
+                        (
+                            // BUG this is an awful fix for a weird bug, but if we don't do this everything falls apart.
+                            // feel free to remove the serialize-deserialize and try for yourself would welcome a fix ;)
+                            JsonConvert.DeserializeObject<Profile[]>
                             (
-                                // BUG this is an awful fix for a weird bug, but if we don't do this everything falls apart.
-                                // feel free to remove the serialize-deserialize and try for yourself would welcome a fix ;)
-                                JsonConvert.DeserializeObject<Profile[]>
+                                JsonConvert.SerializeObject
                                 (
-                                    JsonConvert.SerializeObject
-                                    (
-                                        rawProfiles
-                                    )
+                                    rawProfiles
                                 )
-                            );
-
-                            Console.WriteLine("Profiles are ready.");
-                        }
+                            )
+                        );
+                        
+                        Console.WriteLine("Profiles are ready.");
                     }
-                    else if (task.Mode == ConverterMode.Clang)
+                }
+                else if (task.Mode == ConverterMode.Clang)
+                {
+                    foreach (var src in task.Sources)
                     {
-                        foreach (var src in task.Sources)
-                        {
-                            profiles.Add(Clang.GenerateProfile(Path.GetFileName(src), OpenPath(src), task));
-                        }
+                        profiles.Add(Clang.GenerateProfile(Path.GetFileName(src), OpenPath(src), task));
                     }
+                }
 
                 profile = ProfileBakery.Bake
                     (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList());
                 
                 PreprocessorMixin.AddDirectives(profile, task.OutputOpts.ConditionalFunctions);
 
-                    var tsaf = sw?.Elapsed.TotalSeconds - tsb4;
-                    var tsafTxt = sw is null ? null : $", took {tsaf} second(s)";
-                    Console.WriteLine($"Conversion complete{tsafTxt}.");
+                var tsaf = sw?.Elapsed.TotalSeconds - tsb4;
+                var tsafTxt = sw is null ? null : $", took {tsaf} second(s)";
+                Console.WriteLine($"Conversion complete{tsafTxt}.");
 
-                    try
-                    {
-                        if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
-                        {
-                            if (!Directory.Exists(task.CacheFolder))
-                            {
-                                Directory.CreateDirectory(task.CacheFolder);
-                            }
-
-                            using var fileStream = File.OpenWrite
-                                (Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz"));
-                            using var gzStream = new GZipStream(fileStream, CompressionLevel.Optimal);
-                            gzStream.Write(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(profile)));
-                            gzStream.Flush();
-                            fileStream.Flush();
-                            Console.WriteLine("Written to cache for future use.");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Couldn't write to cache, next cache hit may be outdated.");
-                        Console.WriteLine(ex);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Profile conversion failed.");
-                    Console.WriteLine(ex);
-                    Console.WriteLine("Attempting to continue with a cache hit...");
-                    cacheHit = true;
-                }
-            }
-
-            if (cacheHit)
-            {
                 if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
                 {
-                    Console.WriteLine("Cache hit!");
-                    var tsb4 = sw?.Elapsed.TotalSeconds;
-                    var file = Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz");
-                    if (!File.Exists(file))
+                    if (!Directory.Exists(task.CacheFolder))
                     {
-                        throw new InvalidOperationException
-                        (
-                            "Couldn't find a cached profile to fallback on" +
-                            "(conversion was skipped as per the control variables)"
-                        );
+                        Directory.CreateDirectory(task.CacheFolder);
                     }
-
-                    using var memoryStream = new MemoryStream();
-                    using var fileStream = File.OpenRead(file);
-                    using var gzStream = new GZipStream(fileStream, CompressionMode.Decompress);
-                    gzStream.CopyTo(memoryStream);
-                    profile = JsonConvert.DeserializeObject<Profile>(Encoding.UTF8.GetString(memoryStream.ToArray()));
-                    var tsaf = tsb4 - sw?.Elapsed.TotalSeconds;
-                    var tsafTxt = sw is null ? null : $", took {tsaf} second(s)";
-                    Console.WriteLine($"Cached profile loaded{tsafTxt}.");
+                
+                    using var fileStream = File.OpenWrite(Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz"));
+                    using var gzStream = new GZipStream(fileStream, CompressionLevel.Optimal);
+                    gzStream.Write(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(profile)));
+                    gzStream.Flush();
+                    fileStream.Flush();
+                    Console.WriteLine("Written to cache for future use.");
                 }
-                else
+            }
+            else if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
+            {
+                Console.WriteLine("Cache hit!");
+                var tsb4 = sw?.Elapsed.TotalSeconds;
+                var file = Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz");
+                if (!File.Exists(file))
                 {
                     throw new InvalidOperationException
                     (
-                        "Couldn't find a cached profile to fallback on " +
-                        "(conversion was skipped per the control variables)"
+                        "Couldn't find a cached profile to fallback on" +
+                        "(conversion was skipped as per the control variables)"
                     );
                 }
+                using var memoryStream = new MemoryStream();
+                using var fileStream = File.OpenRead(file);
+                using var gzStream = new GZipStream(fileStream, CompressionMode.Decompress);
+                gzStream.CopyTo(memoryStream);
+                profile = JsonConvert.DeserializeObject<Profile>(Encoding.UTF8.GetString(memoryStream.ToArray()));
+                var tsaf = tsb4 - sw?.Elapsed.TotalSeconds;
+                var tsafTxt = sw is null ? null : $", took {tsaf} second(s)";
+                Console.WriteLine($"Cached profile loaded{tsafTxt}.");
             }
-
-            if (profile is null)
+            else
             {
-                throw new NullReferenceException
+                throw new InvalidOperationException
                 (
-                    "Profile is null. This shouldn't be possible, and indicates a fatal error in both converting " +
-                    "and cache hitting."
+                    "Couldn't find a cached profile to fallback on" +
+                    "(conversion was skipped as per the control variables)"
                 );
             }
 
@@ -272,18 +235,8 @@ namespace Silk.NET.BuildTools
             var af = sw is null ? null : $" after {sw.Elapsed.TotalSeconds} second(s)";
             Console.WriteLine($"Task complete{af}.");
             
-            static bool ShouldConvert(string[] controls, IReadOnlyCollection<string> args)
+            static bool ShouldConvert(string[] controls)
             {
-                if (args.Contains("no-cache-hit"))
-                {
-                    return true;
-                }
-
-                if (args.Contains("always-cache-hit"))
-                {
-                    return false;
-                }
-                
                 if (controls.Any
                     (y => y.ToLower() == "convert-windows-only") && !RuntimeInformation.IsOSPlatform
                     (OSPlatform.Windows))
