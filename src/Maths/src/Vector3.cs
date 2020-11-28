@@ -38,16 +38,16 @@ namespace Silk.NET.Numerics
         public static Vector3<T> Zero => default;
 
         /// <summary>Returns the vector (1,1,1).</summary>
-        public static Vector3<T> One => new(Constants<T>.One);
+        public static Vector3<T> One => new(Scalar<T>.One);
 
         /// <summary>Returns the vector (1,0,0).</summary>
-        public static Vector3<T> UnitX => new(Constants<T>.One, Constants<T>.Zero, Constants<T>.Zero);
+        public static Vector3<T> UnitX => new(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero);
 
         /// <summary>Returns the vector (0,1,0).</summary>
-        public static Vector3<T> UnitY => new(Constants<T>.Zero, Constants<T>.One, Constants<T>.Zero);
+        public static Vector3<T> UnitY => new(Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero);
 
         /// <summary>Returns the vector (0,0,1).</summary>
-        public static Vector3<T> UnitZ => new(Constants<T>.Zero, Constants<T>.Zero, Constants<T>.One);
+        public static Vector3<T> UnitZ => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
@@ -55,7 +55,7 @@ namespace Silk.NET.Numerics
         /// <returns>The summed vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> operator +(Vector3<T> left, Vector3<T> right)
-            => new(Operations.Add(left.X, right.X), Operations.Add(left.Y, right.Y), Operations.Add(left.Z, right.Z));
+            => new(Scalar.Add(left.X, right.X), Scalar.Add(left.Y, right.Y), Scalar.Add(left.Z, right.Z));
 
         /// <summary>Divides the first vector by the second.</summary>
         /// <param name="left">The first source vector.</param>
@@ -63,8 +63,8 @@ namespace Silk.NET.Numerics
         /// <returns>The vector resulting from the division.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> operator /(Vector3<T> left, Vector3<T> right)
-            => new(Operations.Divide(left.X, right.X), Operations.Divide(left.Y, right.Y),
-                Operations.Divide(left.Z, right.Z));
+            => new(Scalar.Divide(left.X, right.X), Scalar.Divide(left.Y, right.Y),
+                Scalar.Divide(left.Z, right.Z));
 
         /// <summary>Divides the vector by the given scalar.</summary>
         /// <param name="value1">The source vector.</param>
@@ -72,8 +72,8 @@ namespace Silk.NET.Numerics
         /// <returns>The result of the division.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> operator /(Vector3<T> value1, T value2)
-            => new(Operations.Divide(value1.X, value2), Operations.Divide(value1.Y, value2),
-                Operations.Divide(value1.Z, value2));
+            => new(Scalar.Divide(value1.X, value2), Scalar.Divide(value1.Y, value2),
+                Scalar.Divide(value1.Z, value2));
 
         /// <summary>Returns a boolean indicating whether the two given vectors are equal.</summary>
         /// <param name="left">The first vector to compare.</param>
@@ -81,9 +81,9 @@ namespace Silk.NET.Numerics
         /// <returns>True if the vectors are equal; False otherwise.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator ==(Vector3<T> left, Vector3<T> right)
-            => Operations.Equal(left.X, right.X) 
-            && Operations.Equal(left.Y, right.Y) 
-            && Operations.Equal(left.Z, right.Z);
+            => Scalar.Equal(left.X, right.X) 
+            && Scalar.Equal(left.Y, right.Y) 
+            && Scalar.Equal(left.Z, right.Z);
 
         /// <summary>Returns a boolean indicating whether the two given vectors are not equal.</summary>
         /// <param name="left">The first vector to compare.</param>
@@ -98,8 +98,8 @@ namespace Silk.NET.Numerics
         /// <returns>The product vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> operator *(Vector3<T> left, Vector3<T> right)
-            => new(Operations.Multiply(left.X, right.X), Operations.Multiply(left.Y, right.Y),
-                Operations.Multiply(left.Z, right.Z));
+            => new(Scalar.Multiply(left.X, right.X), Scalar.Multiply(left.Y, right.Y),
+                Scalar.Multiply(left.Z, right.Z));
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="left">The source vector.</param>
@@ -107,8 +107,8 @@ namespace Silk.NET.Numerics
         /// <returns>The scaled vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> operator *(Vector3<T> left, T right)
-            => new(Operations.Multiply(left.X, right), Operations.Multiply(left.Y, right),
-                Operations.Multiply(left.Z, right));
+            => new(Scalar.Multiply(left.X, right), Scalar.Multiply(left.Y, right),
+                Scalar.Multiply(left.Z, right));
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="left">The scalar value.</param>
@@ -124,8 +124,8 @@ namespace Silk.NET.Numerics
         /// <returns>The difference vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> operator -(Vector3<T> left, Vector3<T> right)
-            => new(Operations.Subtract(left.X, right.X), Operations.Subtract(left.Y, right.Y),
-                Operations.Subtract(left.Z, right.Z));
+            => new(Scalar.Subtract(left.X, right.X), Scalar.Subtract(left.Y, right.Y),
+                Scalar.Subtract(left.Z, right.Z));
 
         /// <summary>Negates a given vector.</summary>
         /// <param name="value">The source vector.</param>
@@ -139,7 +139,7 @@ namespace Silk.NET.Numerics
         /// <returns>The absolute value vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> Abs(Vector3<T> value) 
-            => new(Operations.Abs(value.X), Operations.Abs(value.Y), Operations.Abs(value.Z));
+            => new(Scalar.Abs(value.X), Scalar.Abs(value.Y), Scalar.Abs(value.Z));
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
@@ -166,12 +166,12 @@ namespace Silk.NET.Numerics
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> Cross(Vector3<T> vector1, Vector3<T> vector2)
             => new(
-                Operations.Subtract(Operations.Multiply(vector1.Y, vector2.Z),
-                    Operations.Multiply(vector1.Z, vector2.Y)),
-                Operations.Subtract(Operations.Multiply(vector1.Z, vector2.X),
-                    Operations.Multiply(vector1.X, vector2.Z)),
-                Operations.Subtract(Operations.Multiply(vector1.X, vector2.Y),
-                    Operations.Multiply(vector1.Y, vector2.X)));
+                Scalar.Subtract(Scalar.Multiply(vector1.Y, vector2.Z),
+                    Scalar.Multiply(vector1.Z, vector2.Y)),
+                Scalar.Subtract(Scalar.Multiply(vector1.Z, vector2.X),
+                    Scalar.Multiply(vector1.X, vector2.Z)),
+                Scalar.Subtract(Scalar.Multiply(vector1.X, vector2.Y),
+                    Scalar.Multiply(vector1.Y, vector2.X)));
 
         /// <summary>Returns the Euclidean distance between the two given points.</summary>
         /// <param name="value1">The first point.</param>
@@ -179,7 +179,7 @@ namespace Silk.NET.Numerics
         /// <returns>The distance.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Distance(Vector3<T> value1, Vector3<T> value2)
-            => Operations.Sqrt(DistanceSquared(value1, value2));
+            => Scalar.Sqrt(DistanceSquared(value1, value2));
 
         /// <summary>Returns the Euclidean distance squared between the two given points.</summary>
         /// <param name="value1">The first point.</param>
@@ -214,10 +214,10 @@ namespace Silk.NET.Numerics
         /// <returns>The dot product.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Dot(Vector3<T> vector1, Vector3<T> vector2)
-            => Operations.Add(
-                Operations.Add(Operations.Multiply(vector1.X, vector2.X),
-                    Operations.Multiply(vector1.Y, vector2.Y)),
-                Operations.Multiply(vector1.Z, vector2.Z));
+            => Scalar.Add(
+                Scalar.Add(Scalar.Multiply(vector1.X, vector2.X),
+                    Scalar.Multiply(vector1.Y, vector2.Y)),
+                Scalar.Multiply(vector1.Z, vector2.Z));
 
         /// <summary>Linearly interpolates between two vectors based on the given weighting.</summary>
         /// <param name="value1">The first source vector.</param>
@@ -227,7 +227,7 @@ namespace Silk.NET.Numerics
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> Lerp(Vector3<T> value1, Vector3<T> value2, T amount)
         {
-            return (value1 * Operations.Subtract(Constants<T>.One, amount) + (value2 * amount));
+            return (value1 * Scalar.Subtract(Scalar<T>.One, amount) + (value2 * amount));
         }
 
         /// <summary>Returns a vector whose elements are the maximum of each of the pairs of elements in the two source vectors.</summary>
@@ -236,16 +236,16 @@ namespace Silk.NET.Numerics
         /// <returns>The maximized vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> Max(Vector3<T> value1, Vector3<T> value2)
-            => new(Operations.Max(value1.X, value2.X), Operations.Max(value1.Y, value2.Y),
-                Operations.Max(value1.Z, value2.Z));
+            => new(Scalar.Max(value1.X, value2.X), Scalar.Max(value1.Y, value2.Y),
+                Scalar.Max(value1.Z, value2.Z));
 
         /// <summary>Returns a vector whose elements are the minimum of each of the pairs of elements in the two source vectors.</summary>
         /// <param name="value1">The first source vector.</param>
         /// <param name="value2">The second source vector.</param>
         /// <returns>The minimized vector.</returns>
         public static Vector3<T> Min(Vector3<T> value1, Vector3<T> value2)
-            => new(Operations.Min(value1.X, value2.X), Operations.Min(value1.Y, value2.Y),
-                Operations.Min(value1.Z, value2.Z));
+            => new(Scalar.Min(value1.X, value2.X), Scalar.Min(value1.Y, value2.Y),
+                Scalar.Min(value1.Z, value2.Z));
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
@@ -291,14 +291,14 @@ namespace Silk.NET.Numerics
         /// <returns>The reflected vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> Reflect(Vector3<T> vector, Vector3<T> normal) 
-            => vector - (Operations.Multiply(Constants<T>.Two, Dot(vector, normal)) * normal);
+            => vector - (Scalar.Multiply(Scalar<T>.Two, Dot(vector, normal)) * normal);
 
         /// <summary>Returns a vector whose elements are the square root of each of the source vector's elements.</summary>
         /// <param name="value">The source vector.</param>
         /// <returns>The square root vector.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> SquareRoot(Vector3<T> value)
-            => new(Operations.Sqrt(value.X), Operations.Sqrt(value.Y), Operations.Sqrt(value.Z));
+            => new(Scalar.Sqrt(value.X), Scalar.Sqrt(value.Y), Scalar.Sqrt(value.Z));
 
         /// <summary>Subtracts the second vector from the first.</summary>
         /// <param name="left">The first source vector.</param>
@@ -317,9 +317,9 @@ namespace Silk.NET.Numerics
         public static Vector3<T> Transform(Vector3<T> position, Matrix4x4<T> matrix) // TODO: Matrix4x3
         {
             return new(
-                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M11), Operations.Multiply(position.Y, matrix.M21)), Operations.Multiply(position.Z, matrix.M31)), matrix.M41),
-                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M12), Operations.Multiply(position.Y, matrix.M22)), Operations.Multiply(position.Z, matrix.M32)), matrix.M42),
-                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(position.X, matrix.M13), Operations.Multiply(position.Y, matrix.M23)), Operations.Multiply(position.Z, matrix.M33)), matrix.M43)
+                Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(position.X, matrix.M11), Scalar.Multiply(position.Y, matrix.M21)), Scalar.Multiply(position.Z, matrix.M31)), matrix.M41),
+                Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(position.X, matrix.M12), Scalar.Multiply(position.Y, matrix.M22)), Scalar.Multiply(position.Z, matrix.M32)), matrix.M42),
+                Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(position.X, matrix.M13), Scalar.Multiply(position.Y, matrix.M23)), Scalar.Multiply(position.Z, matrix.M33)), matrix.M43)
             );
         }
 
@@ -330,24 +330,24 @@ namespace Silk.NET.Numerics
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3<T> Transform(Vector3<T> value, Quaternion<T> rotation)
         {
-            T x2 = Operations.Add(rotation.X, rotation.X);
-            T y2 = Operations.Add(rotation.Y, rotation.Y);
-            T z2 = Operations.Add(rotation.Z, rotation.Z);
+            T x2 = Scalar.Add(rotation.X, rotation.X);
+            T y2 = Scalar.Add(rotation.Y, rotation.Y);
+            T z2 = Scalar.Add(rotation.Z, rotation.Z);
 
-            T wx2 = Operations.Multiply(rotation.W, x2);
-            T wy2 = Operations.Multiply(rotation.W, y2);
-            T wz2 = Operations.Multiply(rotation.W, z2);
-            T xx2 = Operations.Multiply(rotation.X, x2);
-            T xy2 = Operations.Multiply(rotation.X, y2);
-            T xz2 = Operations.Multiply(rotation.X, z2);
-            T yy2 = Operations.Multiply(rotation.Y, y2);
-            T yz2 = Operations.Multiply(rotation.Y, z2);
-            T zz2 = Operations.Multiply(rotation.Z, z2);
+            T wx2 = Scalar.Multiply(rotation.W, x2);
+            T wy2 = Scalar.Multiply(rotation.W, y2);
+            T wz2 = Scalar.Multiply(rotation.W, z2);
+            T xx2 = Scalar.Multiply(rotation.X, x2);
+            T xy2 = Scalar.Multiply(rotation.X, y2);
+            T xz2 = Scalar.Multiply(rotation.X, z2);
+            T yy2 = Scalar.Multiply(rotation.Y, y2);
+            T yz2 = Scalar.Multiply(rotation.Y, z2);
+            T zz2 = Scalar.Multiply(rotation.Z, z2);
 
             return new(
-                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Subtract(Operations.Subtract(Constants<T>.One, yy2), zz2)), Operations.Multiply(value.Y, Operations.Subtract(xy2, wz2))), Operations.Multiply(value.Z, Operations.Add(xz2, wy2))),
-                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Add(xy2, wz2)), Operations.Multiply(value.Y, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2))), Operations.Multiply(value.Z, Operations.Subtract(yz2, wx2))),
-                Operations.Add(Operations.Add(Operations.Multiply(value.X, Operations.Subtract(xz2, wy2)), Operations.Multiply(value.Y, Operations.Add(yz2, wx2))), Operations.Multiply(value.Z, Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), yy2)))
+                Scalar.Add(Scalar.Add(Scalar.Multiply(value.X, Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, yy2), zz2)), Scalar.Multiply(value.Y, Scalar.Subtract(xy2, wz2))), Scalar.Multiply(value.Z, Scalar.Add(xz2, wy2))),
+                Scalar.Add(Scalar.Add(Scalar.Multiply(value.X, Scalar.Add(xy2, wz2)), Scalar.Multiply(value.Y, Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), zz2))), Scalar.Multiply(value.Z, Scalar.Subtract(yz2, wx2))),
+                Scalar.Add(Scalar.Add(Scalar.Multiply(value.X, Scalar.Subtract(xz2, wy2)), Scalar.Multiply(value.Y, Scalar.Add(yz2, wx2))), Scalar.Multiply(value.Z, Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), yy2)))
             );
         }
         
@@ -361,9 +361,9 @@ namespace Silk.NET.Numerics
         public static Vector3<T> TransformNormal(Vector3<T> normal, Matrix4x4<T> matrix) // TODO: Matrix3x3
         {
             return new(
-                Operations.Add(Operations.Add(Operations.Multiply(normal.X, matrix.M11), Operations.Multiply(normal.Y, matrix.M21)), Operations.Multiply(normal.Z, matrix.M31)),
-                Operations.Add(Operations.Add(Operations.Multiply(normal.X, matrix.M12), Operations.Multiply(normal.Y, matrix.M22)), Operations.Multiply(normal.Z, matrix.M32)),
-                Operations.Add(Operations.Add(Operations.Multiply(normal.X, matrix.M13), Operations.Multiply(normal.Y, matrix.M23)), Operations.Multiply(normal.Z, matrix.M33))
+                Scalar.Add(Scalar.Add(Scalar.Multiply(normal.X, matrix.M11), Scalar.Multiply(normal.Y, matrix.M21)), Scalar.Multiply(normal.Z, matrix.M31)),
+                Scalar.Add(Scalar.Add(Scalar.Multiply(normal.X, matrix.M12), Scalar.Multiply(normal.Y, matrix.M22)), Scalar.Multiply(normal.Z, matrix.M32)),
+                Scalar.Add(Scalar.Add(Scalar.Multiply(normal.X, matrix.M13), Scalar.Multiply(normal.Y, matrix.M23)), Scalar.Multiply(normal.Z, matrix.M33))
             );
         }
         
@@ -427,7 +427,7 @@ namespace Silk.NET.Numerics
         /// <summary>Returns the length of the vector.</summary>
         /// <returns>The vector's length.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly T Length() => Operations.Sqrt(LengthSquared());
+        public readonly T Length() => Scalar.Sqrt(LengthSquared());
 
         /// <summary>Returns the length of the vector squared. This operation is cheaper than Length().</summary>
         /// <returns>The vector's length squared.</returns>
@@ -469,7 +469,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="Half"/> matrix</returns>
         public static explicit operator Vector3<Half>(Vector3<T> from)
-            => new(Operations.As<T, Half>(from.X), Operations.As<T, Half>(from.Y), Operations.As<T, Half>(from.Z));
+            => new(Scalar.As<T, Half>(from.X), Scalar.As<T, Half>(from.Y), Scalar.As<T, Half>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
@@ -477,7 +477,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="float"/> matrix</returns>
         public static explicit operator Vector3<float>(Vector3<T> from)
-            => new(Operations.As<T, float>(from.X), Operations.As<T, float>(from.Y), Operations.As<T, float>(from.Z));
+            => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
@@ -485,7 +485,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="double"/> matrix</returns>
         public static explicit operator Vector3<double>(Vector3<T> from)
-            => new(Operations.As<T, double>(from.X), Operations.As<T, double>(from.Y), Operations.As<T, double>(from.Z));
+            => new(Scalar.As<T, double>(from.X), Scalar.As<T, double>(from.Y), Scalar.As<T, double>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
@@ -493,7 +493,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="decimal"/> matrix</returns>
         public static explicit operator Vector3<decimal>(Vector3<T> from)
-            => new(Operations.As<T, decimal>(from.X), Operations.As<T, decimal>(from.Y), Operations.As<T, decimal>(from.Z));
+            => new(Scalar.As<T, decimal>(from.X), Scalar.As<T, decimal>(from.Y), Scalar.As<T, decimal>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
@@ -501,7 +501,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="sbyte"/> matrix</returns>
         public static explicit operator Vector3<sbyte>(Vector3<T> from)
-            => new(Operations.As<T, sbyte>(from.X), Operations.As<T, sbyte>(from.Y), Operations.As<T, sbyte>(from.Z));
+            => new(Scalar.As<T, sbyte>(from.X), Scalar.As<T, sbyte>(from.Y), Scalar.As<T, sbyte>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
@@ -509,7 +509,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="byte"/> matrix</returns>
         public static explicit operator Vector3<byte>(Vector3<T> from)
-            => new(Operations.As<T, byte>(from.X), Operations.As<T, byte>(from.Y), Operations.As<T, byte>(from.Z));
+            => new(Scalar.As<T, byte>(from.X), Scalar.As<T, byte>(from.Y), Scalar.As<T, byte>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
@@ -517,7 +517,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ushort"/> matrix</returns>
         public static explicit operator Vector3<ushort>(Vector3<T> from)
-            => new(Operations.As<T, ushort>(from.X), Operations.As<T, ushort>(from.Y), Operations.As<T, ushort>(from.Z));
+            => new(Scalar.As<T, ushort>(from.X), Scalar.As<T, ushort>(from.Y), Scalar.As<T, ushort>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
@@ -525,7 +525,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="short"/> matrix</returns>
         public static explicit operator Vector3<short>(Vector3<T> from)
-            => new(Operations.As<T, short>(from.X), Operations.As<T, short>(from.Y), Operations.As<T, short>(from.Z));
+            => new(Scalar.As<T, short>(from.X), Scalar.As<T, short>(from.Y), Scalar.As<T, short>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
@@ -533,7 +533,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="uint"/> matrix</returns>
         public static explicit operator Vector3<uint>(Vector3<T> from)
-            => new(Operations.As<T, uint>(from.X), Operations.As<T, uint>(from.Y), Operations.As<T, uint>(from.Z));
+            => new(Scalar.As<T, uint>(from.X), Scalar.As<T, uint>(from.Y), Scalar.As<T, uint>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
@@ -541,7 +541,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="int"/> matrix</returns>
         public static explicit operator Vector3<int>(Vector3<T> from)
-            => new(Operations.As<T, int>(from.X), Operations.As<T, int>(from.Y), Operations.As<T, int>(from.Z));
+            => new(Scalar.As<T, int>(from.X), Scalar.As<T, int>(from.Y), Scalar.As<T, int>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
@@ -549,7 +549,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ulong"/> matrix</returns>
         public static explicit operator Vector3<ulong>(Vector3<T> from)
-            => new(Operations.As<T, ulong>(from.X), Operations.As<T, ulong>(from.Y), Operations.As<T, ulong>(from.Z));
+            => new(Scalar.As<T, ulong>(from.X), Scalar.As<T, ulong>(from.Y), Scalar.As<T, ulong>(from.Z));
         
         /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
@@ -557,6 +557,6 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="long"/> matrix</returns>
         public static explicit operator Vector3<long>(Vector3<T> from)
-            => new(Operations.As<T, long>(from.X), Operations.As<T, long>(from.Y), Operations.As<T, long>(from.Z));
+            => new(Scalar.As<T, long>(from.X), Scalar.As<T, long>(from.Y), Scalar.As<T, long>(from.Z));
     }
 }

@@ -14,8 +14,8 @@ namespace Silk.NET.Numerics
     /// Includes methods like the ones found in <see cref="Math"/> and more.
     /// Supports <see cref="Half"/>, <see cref="float"/>, <see cref="double"/>, <see cref="decimal"/>, <see cref="sbyte"/>, <see cref="byte"/>, <see cref="ushort"/>, <see cref="short"/>, <see cref="uint"/>, <see cref="int"/>, <see cref="ulong"/> and <see cref="long"/>
     /// </summary>
-    /// <seealso cref="Constants{T}"/>
-    public partial class Operations
+    /// <seealso cref="Scalar{T}"/>
+    public partial class Scalar
     {
         /// <summary>
         /// Convert <paramref name="val"/> from <typeparamref name="TFrom"/> to <typeparamref name="TTo"/>

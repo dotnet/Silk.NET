@@ -17,7 +17,7 @@ namespace Silk.NET.Numerics.Benchmark
         [Benchmark]
         public float Silk()
         {
-            return Operations.Sin(X);
+            return Scalar.Sin(X);
         }
 
         private const int NumbersTested = 1;

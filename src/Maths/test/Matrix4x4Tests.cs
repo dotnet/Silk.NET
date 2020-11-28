@@ -2397,13 +2397,13 @@ namespace Silk.NET.Numerics.Tests
             Assert.Equal(0f, result.M23);
             Assert.Equal(0f, result.M24);
 
-            Assert.Equal(source.M31, result.M31);
-            Assert.Equal(source.M32, result.M32);
+            Assert.Equal(0f, result.M31);
+            Assert.Equal(0f, result.M32);
             Assert.Equal(1f, result.M33);
             Assert.Equal(0f, result.M34);
 
-            Assert.Equal(0f, result.M41);
-            Assert.Equal(0f, result.M42);
+            Assert.Equal(source.M31, result.M41);
+            Assert.Equal(source.M32, result.M42);
             Assert.Equal(0f, result.M43);
             Assert.Equal(1f, result.M44);
         }

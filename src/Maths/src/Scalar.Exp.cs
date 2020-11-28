@@ -38,7 +38,7 @@ using static Silk.NET.Numerics.Helper;
 
 namespace Silk.NET.Numerics
 {
-    public static partial class Operations
+    public static partial class Scalar
     {
         private static void InitExp()
         {

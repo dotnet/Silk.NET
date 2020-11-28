@@ -65,9 +65,9 @@ namespace Silk.NET.Numerics
             var cross = Vector3<T>.Cross(ab, ac);
             Plane<T> p;
             p.Normal = cross;
-            p.D = Operations.Negate(Operations.Add(
-                Operations.Add(Operations.Multiply(p.Normal.X, a.X), Operations.Multiply(p.Normal.Y, a.Y)),
-                Operations.Multiply(p.Normal.Z, a.Z)));
+            p.D = Scalar.Negate(Scalar.Add(
+                Scalar.Add(Scalar.Multiply(p.Normal.X, a.X), Scalar.Multiply(p.Normal.Y, a.Y)),
+                Scalar.Multiply(p.Normal.Z, a.Z)));
 
             return p;
 
@@ -81,38 +81,38 @@ namespace Silk.NET.Numerics
                 Vector3<T> normal = Vector3<T>.Normalize(n);
 
                 // D = - Dot(N, point1)
-                T d = Operations.Negate(Vector3<T>.Dot(normal, point1));
+                T d = Scalar.Negate(Vector3<T>.Dot(normal, point1));
 
                 return new Plane<T>(normal, d);
             }
             else
             {
-                T ax = Operations.Subtract(point2.X, point1.X);
-                T ay = Operations.Subtract(point2.Y, point1.Y);
-                T az = Operations.Subtract(point2.Z, point1.Z);
+                T ax = Scalar.Subtract(point2.X, point1.X);
+                T ay = Scalar.Subtract(point2.Y, point1.Y);
+                T az = Scalar.Subtract(point2.Z, point1.Z);
 
-                T bx = Operations.Subtract(point3.X, point1.X);
-                T by = Operations.Subtract(point3.Y, point1.Y);
-                T bz = Operations.Subtract(point3.Z, point1.Z);
+                T bx = Scalar.Subtract(point3.X, point1.X);
+                T by = Scalar.Subtract(point3.Y, point1.Y);
+                T bz = Scalar.Subtract(point3.Z, point1.Z);
 
                 // N=Cross(a,b)
-                T nx = Operations.Subtract(Operations.Multiply(ay, bz), Operations.Multiply(az, by));
-                T ny = Operations.Subtract(Operations.Multiply(az, bx), Operations.Multiply(ax, bz));
-                T nz = Operations.Subtract(Operations.Multiply(ax, by), Operations.Multiply(ay, bx));
+                T nx = Scalar.Subtract(Scalar.Multiply(ay, bz), Scalar.Multiply(az, by));
+                T ny = Scalar.Subtract(Scalar.Multiply(az, bx), Scalar.Multiply(ax, bz));
+                T nz = Scalar.Subtract(Scalar.Multiply(ax, by), Scalar.Multiply(ay, bx));
 
                 // Normalize(N)
-                T ls = Operations.Add(Operations.Add(Operations.Multiply(nx, nx), Operations.Multiply(ny, ny)), Operations.Multiply(nz, nz));
-                T invNorm = Operations.Divide(Constants<T>.One, Operations.Sqrt(ls));
+                T ls = Scalar.Add(Scalar.Add(Scalar.Multiply(nx, nx), Scalar.Multiply(ny, ny)), Scalar.Multiply(nz, nz));
+                T invNorm = Scalar.Divide(Scalar<T>.One, Scalar.Sqrt(ls));
 
                 Vector3<T> normal = new Vector3<T>(
-                    Operations.Multiply(nx, invNorm),
-                    Operations.Multiply(ny, invNorm),
-                    Operations.Multiply(nz, invNorm));
+                    Scalar.Multiply(nx, invNorm),
+                    Scalar.Multiply(ny, invNorm),
+                    Scalar.Multiply(nz, invNorm));
 
                 return new(normal,
-                    Operations.Negate(Operations.Add(
-                        Operations.Add(Operations.Multiply(normal.X, point1.X),
-                            Operations.Multiply(normal.Y, point1.Y)), Operations.Multiply(normal.Z, point1.Z))));
+                    Scalar.Negate(Scalar.Add(
+                        Scalar.Add(Scalar.Multiply(normal.X, point1.X),
+                            Scalar.Multiply(normal.Y, point1.Y)), Scalar.Multiply(normal.Z, point1.Z))));
             }*/
         }
 
@@ -122,11 +122,11 @@ namespace Silk.NET.Numerics
         /// <returns>The dot product.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Dot(Plane<T> plane, Vector4<T> value)
-            => Operations.Add(
-                Operations.Add(
-                    Operations.Add(Operations.Multiply(plane.Normal.X, value.X),
-                        Operations.Multiply(plane.Normal.Y, value.Y)), Operations.Multiply(plane.Normal.Z, value.Z)),
-                Operations.Multiply(plane.D, value.W));
+            => Scalar.Add(
+                Scalar.Add(
+                    Scalar.Add(Scalar.Multiply(plane.Normal.X, value.X),
+                        Scalar.Multiply(plane.Normal.Y, value.Y)), Scalar.Multiply(plane.Normal.Z, value.Z)),
+                Scalar.Multiply(plane.D, value.W));
 
         /// <summary>Returns the dot product of a specified Vector3 and the normal vector of this Plane plus the distance (D) value of the Plane.</summary>
         /// <param name="plane">The plane.</param>
@@ -134,7 +134,7 @@ namespace Silk.NET.Numerics
         /// <returns>The resulting value.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T DotCoordinate(Plane<T> plane, Vector3<T> value)
-            => Operations.Add(Vector3<T>.Dot(plane.Normal, value), plane.D);
+            => Scalar.Add(Vector3<T>.Dot(plane.Normal, value), plane.D);
 
         /// <summary>Returns the dot product of a specified Vector3 and the Normal vector of this Plane.</summary>
         /// <param name="plane">The plane.</param>
@@ -165,23 +165,23 @@ namespace Silk.NET.Numerics
             }
             else*/
             {
-                T f = Operations.Add(
-                    Operations.Add(Operations.Multiply(value.Normal.X, value.Normal.X),
-                        Operations.Multiply(value.Normal.Y, value.Normal.Y)),
-                    Operations.Multiply(value.Normal.Z, value.Normal.Z));
+                T f = Scalar.Add(
+                    Scalar.Add(Scalar.Multiply(value.Normal.X, value.Normal.X),
+                        Scalar.Multiply(value.Normal.Y, value.Normal.Y)),
+                    Scalar.Multiply(value.Normal.Z, value.Normal.Z));
 
-                if (!Operations.GreaterThanOrEqual(Operations.Abs(Operations.Subtract(f, Constants<T>.One)), Operations.As<float, T>(NormalizeEpsilon)))
+                if (!Scalar.GreaterThanOrEqual(Scalar.Abs(Scalar.Subtract(f, Scalar<T>.One)), Scalar.As<float, T>(NormalizeEpsilon)))
                 {
                     return value; // It already normalized, so we don't need to further process.
                 }
 
-                T fInv = Operations.Divide(Constants<T>.One, Operations.Sqrt(f));
+                T fInv = Scalar.Divide(Scalar<T>.One, Scalar.Sqrt(f));
 
                 return new(
-                    Operations.Multiply(value.Normal.X, fInv),
-                    Operations.Multiply(value.Normal.Y, fInv),
-                    Operations.Multiply(value.Normal.Z, fInv),
-                    Operations.Multiply(value.D, fInv));
+                    Scalar.Multiply(value.Normal.X, fInv),
+                    Scalar.Multiply(value.Normal.Y, fInv),
+                    Scalar.Multiply(value.Normal.Z, fInv),
+                    Scalar.Multiply(value.D, fInv));
             }
         }
 
@@ -198,10 +198,10 @@ namespace Silk.NET.Numerics
             T x = plane.Normal.X, y = plane.Normal.Y, z = plane.Normal.Z, w = plane.D;
 
             return new(
-                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(x, m.M11),  Operations.Multiply(y, m.M12)), Operations.Multiply(z, m.M13)), Operations.Multiply(w, m.M14)),
-                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(x, m.M21),  Operations.Multiply(y, m.M22)), Operations.Multiply(z, m.M23)), Operations.Multiply(w, m.M24)),
-                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(x, m.M31),  Operations.Multiply(y, m.M32)), Operations.Multiply(z, m.M33)), Operations.Multiply(w, m.M34)),
-                Operations.Add(Operations.Add(Operations.Add(Operations.Multiply(x, m.M41),  Operations.Multiply(y, m.M42)), Operations.Multiply(z, m.M43)), Operations.Multiply(w, m.M44)));
+                Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(x, m.M11),  Scalar.Multiply(y, m.M12)), Scalar.Multiply(z, m.M13)), Scalar.Multiply(w, m.M14)),
+                Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(x, m.M21),  Scalar.Multiply(y, m.M22)), Scalar.Multiply(z, m.M23)), Scalar.Multiply(w, m.M24)),
+                Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(x, m.M31),  Scalar.Multiply(y, m.M32)), Scalar.Multiply(z, m.M33)), Scalar.Multiply(w, m.M34)),
+                Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(x, m.M41),  Scalar.Multiply(y, m.M42)), Scalar.Multiply(z, m.M43)), Scalar.Multiply(w, m.M44)));
         }
 
         /// <summary> Transforms a normalized Plane by a Quaternion rotation.</summary>
@@ -213,38 +213,38 @@ namespace Silk.NET.Numerics
         public static Plane<T> Transform(Plane<T> plane, Quaternion<T> rotation)
         {
             // Compute rotation matrix.
-            T x2 = Operations.Add(rotation.X, rotation.X);
-            T y2 = Operations.Add(rotation.Y, rotation.Y);
-            T z2 = Operations.Add(rotation.Z, rotation.Z);
+            T x2 = Scalar.Add(rotation.X, rotation.X);
+            T y2 = Scalar.Add(rotation.Y, rotation.Y);
+            T z2 = Scalar.Add(rotation.Z, rotation.Z);
 
-            T wx2 = Operations.Multiply(rotation.W, x2);
-            T wy2 = Operations.Multiply(rotation.W, y2);
-            T wz2 = Operations.Multiply(rotation.W, z2);
-            T xx2 = Operations.Multiply(rotation.X, x2);
-            T xy2 = Operations.Multiply(rotation.X, y2);
-            T xz2 = Operations.Multiply(rotation.X, z2);
-            T yy2 = Operations.Multiply(rotation.Y, y2);
-            T yz2 = Operations.Multiply(rotation.Y, z2);
-            T zz2 = Operations.Multiply(rotation.Z, z2);
+            T wx2 = Scalar.Multiply(rotation.W, x2);
+            T wy2 = Scalar.Multiply(rotation.W, y2);
+            T wz2 = Scalar.Multiply(rotation.W, z2);
+            T xx2 = Scalar.Multiply(rotation.X, x2);
+            T xy2 = Scalar.Multiply(rotation.X, y2);
+            T xz2 = Scalar.Multiply(rotation.X, z2);
+            T yy2 = Scalar.Multiply(rotation.Y, y2);
+            T yz2 = Scalar.Multiply(rotation.Y, z2);
+            T zz2 = Scalar.Multiply(rotation.Z, z2);
 
-            T m11 = Operations.Subtract(Operations.Subtract(Constants<T>.One, yy2), zz2);
-            T m21 = Operations.Subtract(xy2, wz2);
-            T m31 = Operations.Add(xz2, wy2);
+            T m11 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, yy2), zz2);
+            T m21 = Scalar.Subtract(xy2, wz2);
+            T m31 = Scalar.Add(xz2, wy2);
 
-            T m12 = Operations.Add(xy2, wz2);
-            T m22 = Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), zz2);
-            T m32 = Operations.Subtract(yz2, wx2);
+            T m12 = Scalar.Add(xy2, wz2);
+            T m22 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), zz2);
+            T m32 = Scalar.Subtract(yz2, wx2);
 
-            T m13 = Operations.Subtract(xz2, wy2);
-            T m23 = Operations.Add(yz2, wx2);
-            T m33 = Operations.Subtract(Operations.Subtract(Constants<T>.One, xx2), yy2);
+            T m13 = Scalar.Subtract(xz2, wy2);
+            T m23 = Scalar.Add(yz2, wx2);
+            T m33 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), yy2);
 
             T x = plane.Normal.X, y = plane.Normal.Y, z = plane.Normal.Z;
 
             return new(
-                Operations.Add(Operations.Add(Operations.Multiply(x, m11), Operations.Multiply(y, m21)), Operations.Multiply(z, m31)),
-                Operations.Add(Operations.Add(Operations.Multiply(x, m12), Operations.Multiply(y, m22)), Operations.Multiply(z, m32)),
-                Operations.Add(Operations.Add(Operations.Multiply(x, m13), Operations.Multiply(y, m23)), Operations.Multiply(z, m33)),
+                Scalar.Add(Scalar.Add(Scalar.Multiply(x, m11), Scalar.Multiply(y, m21)), Scalar.Multiply(z, m31)),
+                Scalar.Add(Scalar.Add(Scalar.Multiply(x, m12), Scalar.Multiply(y, m22)), Scalar.Multiply(z, m32)),
+                Scalar.Add(Scalar.Add(Scalar.Multiply(x, m13), Scalar.Multiply(y, m23)), Scalar.Multiply(z, m33)),
                 plane.D);
         }
 
@@ -254,7 +254,7 @@ namespace Silk.NET.Numerics
         /// <returns>True if the Planes are equal; False otherwise.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator ==(Plane<T> value1, Plane<T> value2) 
-            => value1.Normal == value2.Normal && Operations.Equal(value1.D, value2.D);
+            => value1.Normal == value2.Normal && Scalar.Equal(value1.D, value2.D);
 
         /// <summary>Returns a boolean indicating whether the two given Planes are not equal.</summary>
         /// <param name="value1">The first Plane to compare.</param>
@@ -279,7 +279,7 @@ namespace Silk.NET.Numerics
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly bool Equals(Plane<T> other)
         {
-            return Normal.Equals(other.Normal) && Operations.Equal(D, other.D);
+            return Normal.Equals(other.Normal) && Scalar.Equal(D, other.D);
         }
 
         /// <summary>Returns the hash code for this instance.</summary>
@@ -303,7 +303,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="Half"/> matrix</returns>
         public static explicit operator Plane<Half>(Plane<T> from)
-            => new((Vector3<Half>) from.Normal, Operations.As<T, Half>(from.D));
+            => new((Vector3<Half>) from.Normal, Scalar.As<T, Half>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
@@ -311,7 +311,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="float"/> matrix</returns>
         public static explicit operator Plane<float>(Plane<T> from)
-            => new((Vector3<float>) from.Normal, Operations.As<T, float>(from.D));
+            => new((Vector3<float>) from.Normal, Scalar.As<T, float>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
@@ -319,7 +319,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="double"/> matrix</returns>
         public static explicit operator Plane<double>(Plane<T> from)
-            => new((Vector3<double>) from.Normal, Operations.As<T, double>(from.D));
+            => new((Vector3<double>) from.Normal, Scalar.As<T, double>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
@@ -327,7 +327,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="decimal"/> matrix</returns>
         public static explicit operator Plane<decimal>(Plane<T> from)
-            => new((Vector3<decimal>) from.Normal, Operations.As<T, decimal>(from.D));
+            => new((Vector3<decimal>) from.Normal, Scalar.As<T, decimal>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
@@ -335,7 +335,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="sbyte"/> matrix</returns>
         public static explicit operator Plane<sbyte>(Plane<T> from)
-            => new((Vector3<sbyte>) from.Normal, Operations.As<T, sbyte>(from.D));
+            => new((Vector3<sbyte>) from.Normal, Scalar.As<T, sbyte>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
@@ -343,7 +343,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="byte"/> matrix</returns>
         public static explicit operator Plane<byte>(Plane<T> from)
-            => new((Vector3<byte>) from.Normal, Operations.As<T, byte>(from.D));
+            => new((Vector3<byte>) from.Normal, Scalar.As<T, byte>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
@@ -351,7 +351,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ushort"/> matrix</returns>
         public static explicit operator Plane<ushort>(Plane<T> from)
-            => new((Vector3<ushort>) from.Normal, Operations.As<T, ushort>(from.D));
+            => new((Vector3<ushort>) from.Normal, Scalar.As<T, ushort>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
@@ -359,7 +359,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="short"/> matrix</returns>
         public static explicit operator Plane<short>(Plane<T> from)
-            => new((Vector3<short>) from.Normal, Operations.As<T, short>(from.D));
+            => new((Vector3<short>) from.Normal, Scalar.As<T, short>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
@@ -367,7 +367,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="uint"/> matrix</returns>
         public static explicit operator Plane<uint>(Plane<T> from)
-            => new((Vector3<uint>) from.Normal, Operations.As<T, uint>(from.D));
+            => new((Vector3<uint>) from.Normal, Scalar.As<T, uint>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
@@ -375,7 +375,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="int"/> matrix</returns>
         public static explicit operator Plane<int>(Plane<T> from)
-            => new((Vector3<int>) from.Normal, Operations.As<T, int>(from.D));
+            => new((Vector3<int>) from.Normal, Scalar.As<T, int>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
@@ -383,7 +383,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ulong"/> matrix</returns>
         public static explicit operator Plane<ulong>(Plane<T> from)
-            => new((Vector3<ulong>) from.Normal, Operations.As<T, ulong>(from.D));
+            => new((Vector3<ulong>) from.Normal, Scalar.As<T, ulong>(from.D));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
@@ -391,6 +391,6 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="long"/> matrix</returns>
         public static explicit operator Plane<long>(Plane<T> from)
-            => new((Vector3<long>) from.Normal, Operations.As<T, long>(from.D));
+            => new((Vector3<long>) from.Normal, Scalar.As<T, long>(from.D));
     }
 }

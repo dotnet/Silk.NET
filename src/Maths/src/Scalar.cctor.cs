@@ -1,8 +1,8 @@
 ﻿namespace Silk.NET.Numerics
 {
-    public static partial class Operations
+    public static partial class Scalar
     {
-        static Operations()
+        static Scalar()
         {
             InitLog();
             InitExp();

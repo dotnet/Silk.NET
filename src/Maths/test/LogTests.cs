@@ -7,19 +7,19 @@ namespace Silk.NET.Numerics.Tests
         [Fact]
         public void Log0()
         {
-            Assert.StrictEqual(float.NegativeInfinity, Operations.Log(0f));
+            Assert.StrictEqual(float.NegativeInfinity, Scalar.Log(0f));
         }
         
         [Fact]
         public void Log1()
         {
-            Assert.StrictEqual(0f, Operations.Log(1f));
+            Assert.StrictEqual(0f, Scalar.Log(1f));
         }
         
         [Fact]
         public void LogSmall1()
         {
-            Assert.Equal(-2.0955709236097195567919657540932, Operations.Log(.123f), 6);
+            Assert.Equal(-2.0955709236097195567919657540932, Scalar.Log(.123f), 6);
             // MathF is also inaccurate :)
             Assert.Equal(-2.0955709236097195567919657540932, System.MathF.Log(.123f), 6);
         }
@@ -27,25 +27,25 @@ namespace Silk.NET.Numerics.Tests
         [Fact]
         public void Log2()
         {
-            Assert.Equal(0.69314718055994530941723212145818f, Operations.Log(2f));
+            Assert.Equal(0.69314718055994530941723212145818f, Scalar.Log(2f));
         }
         
         [Fact]
         public void Log5()
         {
-            Assert.Equal(1.6094379124341003746007593332262f, Operations.Log(5f));
+            Assert.Equal(1.6094379124341003746007593332262f, Scalar.Log(5f));
         }
 
         [Fact]
         public void Log100()
         {
-            Assert.Equal(4.6051701859880913680359829093687f, Operations.Log(100f));
+            Assert.Equal(4.6051701859880913680359829093687f, Scalar.Log(100f));
         }
 
         [Fact]
         public void Log123()
         {
-            Assert.Equal(4.8121843553724174952620086099599f, Operations.Log(123f));
+            Assert.Equal(4.8121843553724174952620086099599f, Scalar.Log(123f));
         }
     }
 }

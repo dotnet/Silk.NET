@@ -9,7 +9,7 @@ using static Silk.NET.Numerics.Helper;
 
 namespace Silk.NET.Numerics
 {
-    public static partial class Operations
+    public static partial class Scalar
     {
         [MethodImpl(MaxOpt)]
         private static float CoreFastPow(float x, float y)

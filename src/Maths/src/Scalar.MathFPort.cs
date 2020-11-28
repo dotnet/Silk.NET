@@ -12,7 +12,7 @@ using static Silk.NET.Numerics.Helper;
 
 namespace Silk.NET.Numerics
 {
-    public static partial class Operations
+    public static partial class Scalar
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // This partial contains the helper methods which forward to MathF or Math, used a lot within Silk.NET.Maths
@@ -408,7 +408,7 @@ namespace Silk.NET.Numerics
         /// <summary>
         /// Returns the angle whose hyperbolic cosine is the specified number.
         /// </summary>
-        /// <param name="x">A number representing a hyperbolic cosine, where <paramref name="x"/> must be greater than or equal to 1, but less than or equal to <see cref="Constants{T}.PositiveInfinity"/>.</param>
+        /// <param name="x">A number representing a hyperbolic cosine, where <paramref name="x"/> must be greater than or equal to 1, but less than or equal to <see cref="Scalar{T}.PositiveInfinity"/>.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>
         /// An angle, θ, measured in radians, such that 0 ≤ θ ≤ ∞.
@@ -707,7 +707,7 @@ namespace Silk.NET.Numerics
         /// <summary>
         /// Returns the angle whose hyperbolic sine is the specified number.
         /// </summary>
-        /// <param name="x">A number representing a hyperbolic sine, where <paramref name="x"/> must be greater than or equal to <see cref="Constants{T}.NegativeInfinity"/>, but less than or equal to <see cref="Constants{T}.PositiveInfinity"/>.</param>
+        /// <param name="x">A number representing a hyperbolic sine, where <paramref name="x"/> must be greater than or equal to <see cref="Scalar{T}.NegativeInfinity"/>, but less than or equal to <see cref="Scalar{T}.PositiveInfinity"/>.</param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         [MethodImpl(MaxOpt)]
@@ -854,7 +854,7 @@ namespace Silk.NET.Numerics
         /// 
         /// -or-
         /// 
-        /// NaN if <paramref name="x"/> equals <see cref="Constants{T}.NaN"/>, -π/2 rounded to double precision (-1.5707963267949) if <paramref name="x"/> equals <see cref="Constants{T}.NegativeInfinity"/>, or π/2 rounded to double precision (1.5707963267949) if <paramref name="x"/> equals <see cref="Constants{T}.PositiveInfinity"/>.
+        /// NaN if <paramref name="x"/> equals <see cref="Scalar{T}.NaN"/>, -π/2 rounded to double precision (-1.5707963267949) if <paramref name="x"/> equals <see cref="Scalar{T}.NegativeInfinity"/>, or π/2 rounded to double precision (1.5707963267949) if <paramref name="x"/> equals <see cref="Scalar{T}.PositiveInfinity"/>.
         /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Atan<T>(T x) where T : unmanaged
@@ -1008,7 +1008,7 @@ namespace Silk.NET.Numerics
         /// 
         /// -or-
         /// 
-        /// <see cref="Constants{T}.NaN"/> if x &lt; -1 or x &gt; 1 or x equals <see cref="Constants{T}.NaN"/>.
+        /// <see cref="Scalar{T}.NaN"/> if x &lt; -1 or x &gt; 1 or x equals <see cref="Scalar{T}.NaN"/>.
         /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Atanh<T>(T x) where T : unmanaged
@@ -1154,7 +1154,7 @@ namespace Silk.NET.Numerics
         /// 
         /// -or-
         /// 
-        /// <see cref="Constants{T}.NaN"/> if <paramref name="x"/> is equals <see cref="Constants{T}.NaN"/>.
+        /// <see cref="Scalar{T}.NaN"/> if <paramref name="x"/> is equals <see cref="Scalar{T}.NaN"/>.
         /// </returns>
         [MethodImpl(MaxOpt)]
         public static T Cbrt<T>(T x) where T : unmanaged
@@ -1295,7 +1295,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">A number.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The smallest integral value that is greater than or equal to <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, that value is returned. Note that this method returns <typeparamref name="T"/> instead of an integral type.</returns>
+        /// <returns>The smallest integral value that is greater than or equal to <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, that value is returned. Note that this method returns <typeparamref name="T"/> instead of an integral type.</returns>
         [MethodImpl(MaxOpt)]
         public static T Ceiling<T>(T x) where T : unmanaged
         {
@@ -1442,7 +1442,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">An angle, measured in radians.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The cosine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, this method returns <see cref="Constants{T}.NaN"/>.</returns>
+        /// <returns>The cosine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, this method returns <see cref="Scalar{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Cos<T>(T x) where T : unmanaged
         {
@@ -1590,7 +1590,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">An angle, measured in radians.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The hyperbolic cosine of <paramref name="x"/>. If <paramref name="x"/> equal to <see cref="Constants{T}.NegativeInfinity"/> or <see cref="Constants{T}.PositiveInfinity"/>, <see cref="Constants{T}.PositiveInfinity"/> is returned. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NaN"/> is returned.</returns>
+        /// <returns>The hyperbolic cosine of <paramref name="x"/>. If <paramref name="x"/> equal to <see cref="Scalar{T}.NegativeInfinity"/> or <see cref="Scalar{T}.PositiveInfinity"/>, <see cref="Scalar{T}.PositiveInfinity"/> is returned. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Cosh<T>(T x) where T : unmanaged
         {
@@ -1738,7 +1738,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">A number specifying a power.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The number <c>e</c> raised to the power <paramref name="x"/>. If <paramref name="x"/> equals <see cref="Constants{T}.NaN"/> or <see cref="Constants{T}.PositiveInfinity"/>, that value is returned. If <paramref name="x"/> equals <see cref="Constants{T}.NegativeInfinity"/>, 0 is returned.</returns>
+        /// <returns>The number <c>e</c> raised to the power <paramref name="x"/>. If <paramref name="x"/> equals <see cref="Scalar{T}.NaN"/> or <see cref="Scalar{T}.PositiveInfinity"/>, that value is returned. If <paramref name="x"/> equals <see cref="Scalar{T}.NegativeInfinity"/>, 0 is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Exp<T>(T x) where T : unmanaged
         {
@@ -1878,7 +1878,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">A number.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The largest integral value less than or equal to <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, that value is returned.</returns>
+        /// <returns>The largest integral value less than or equal to <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, that value is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Floor<T>(T x) where T : unmanaged
         {
@@ -2049,7 +2049,7 @@ namespace Silk.NET.Numerics
         /// <remarks>
         /// For unsigned numbers this will never return -1, but will return 0 when <paramref name="x"/> is 0
         /// </remarks>
-        /// <exception cref="ArithmeticException"><paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/></exception>
+        /// <exception cref="ArithmeticException"><paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/></exception>
         [MethodImpl(MaxOpt)]
         public static int Sign<T>(T x) where T : unmanaged
         {
@@ -2196,7 +2196,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">An angle, measured in radians.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The sine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, this method returns <see cref="Constants{T}.NaN"/>.</returns>
+        /// <returns>The sine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, this method returns <see cref="Scalar{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Sin<T>(T x) where T : unmanaged
         {
@@ -2336,7 +2336,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">An angle, measured in radians.</param>
         /// <typeparam name="T">Type of <paramref name="x"/>.</typeparam>
-        /// <returns>The hyperbolic sine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NegativeInfinity"/>, <see cref="Constants{T}.PositiveInfinity"/>, or <see cref="Constants{T}.NaN"/> this method returns <paramref name="x"/>.</returns>
+        /// <returns>The hyperbolic sine of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NegativeInfinity"/>, <see cref="Scalar{T}.PositiveInfinity"/>, or <see cref="Scalar{T}.NaN"/> this method returns <paramref name="x"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Sinh<T>(T x) where T : unmanaged
         {
@@ -2497,15 +2497,15 @@ namespace Silk.NET.Numerics
         /// </item>
         /// <item>
         /// <term>Negative</term>
-        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// <description><see cref="Scalar{T}.NaN"/></description>
         /// </item>
         /// <item>
-        /// <term>Equals <see cref="Constants{T}.NaN"/></term>
-        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// <term>Equals <see cref="Scalar{T}.NaN"/></term>
+        /// <description><see cref="Scalar{T}.NaN"/></description>
         /// </item>
         /// <item>
-        /// <term>Equals <see cref="Constants{T}.PositiveInfinity"/></term>
-        /// <description><see cref="Constants{T}.PositiveInfinity"/></description>
+        /// <term>Equals <see cref="Scalar{T}.PositiveInfinity"/></term>
+        /// <description><see cref="Scalar{T}.PositiveInfinity"/></description>
         /// </item>
         /// </list>
         /// </returns>
@@ -2656,7 +2656,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">An angle, measured in radians.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The tangent of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NegativeInfinity"/>, or <see cref="Constants{T}.PositiveInfinity"/>, this method returns <see cref="Constants{T}.NaN"/>.</returns>
+        /// <returns>The tangent of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NegativeInfinity"/>, or <see cref="Scalar{T}.PositiveInfinity"/>, this method returns <see cref="Scalar{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Tan<T>(T x) where T : unmanaged
         {
@@ -2804,7 +2804,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="x">An angle, measured in radians.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The hyperbolic tangent of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Constants{T}.NegativeInfinity"/>, this method returns -1. If <paramref name="x"/> is equal to <see cref="Constants{T}.PositiveInfinity"/>, this method returns 1. If <paramref name="x"/> is equal to <see cref="Constants{T}.NaN"/>, this method returns <see cref="Constants{T}.NaN"/>.</returns>
+        /// <returns>The hyperbolic tangent of <paramref name="x"/>. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NegativeInfinity"/>, this method returns -1. If <paramref name="x"/> is equal to <see cref="Scalar{T}.PositiveInfinity"/>, this method returns 1. If <paramref name="x"/> is equal to <see cref="Scalar{T}.NaN"/>, this method returns <see cref="Scalar{T}.NaN"/>.</returns>
         [MethodImpl(MaxOpt)]
         public static T Tanh<T>(T x) where T : unmanaged
         {
@@ -2960,16 +2960,16 @@ namespace Silk.NET.Numerics
         /// <description>Return value</description>
         /// </listheader>
         /// <item>
-        /// <term><see cref="Constants{T}.NaN"/></term>
-        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// <term><see cref="Scalar{T}.NaN"/></term>
+        /// <description><see cref="Scalar{T}.NaN"/></description>
         /// </item>
         /// <item>
-        /// <term><see cref="Constants{T}.NegativeInfinity"/></term>
-        /// <description><see cref="Constants{T}.NegativeInfinity"/></description>
+        /// <term><see cref="Scalar{T}.NegativeInfinity"/></term>
+        /// <description><see cref="Scalar{T}.NegativeInfinity"/></description>
         /// </item>
         /// <item>
-        /// <term><see cref="Constants{T}.PositiveInfinity"/></term>
-        /// <description><see cref="Constants{T}.PositiveInfinity"/></description>
+        /// <term><see cref="Scalar{T}.PositiveInfinity"/></term>
+        /// <description><see cref="Scalar{T}.PositiveInfinity"/></description>
         /// </item>
         /// </list>
         /// </returns>
@@ -3132,19 +3132,19 @@ namespace Silk.NET.Numerics
         /// </item>
         /// <item>
         /// <term>Zero</term>
-        /// <description><see cref="Constants{T}.NegativeInfinity"/></description>
+        /// <description><see cref="Scalar{T}.NegativeInfinity"/></description>
         /// </item>
         /// <item>
         /// <term>Negative</term>
-        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// <description><see cref="Scalar{T}.NaN"/></description>
         /// </item>
         /// <item>
-        /// <term>Equal to <see cref="Constants{T}.NaN"/></term>
-        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// <term>Equal to <see cref="Scalar{T}.NaN"/></term>
+        /// <description><see cref="Scalar{T}.NaN"/></description>
         /// </item>
         /// <item>
-        /// <term>Equal to <see cref="Constants{T}.PositiveInfinity"/></term>
-        /// <description><see cref="Constants{T}.PositiveInfinity"/></description>
+        /// <term>Equal to <see cref="Scalar{T}.PositiveInfinity"/></term>
+        /// <description><see cref="Scalar{T}.PositiveInfinity"/></description>
         /// </item>
         /// </list>
         /// </returns>
@@ -3300,19 +3300,19 @@ namespace Silk.NET.Numerics
         /// </item>
         /// <item>
         /// <term>Zero</term>
-        /// <description><see cref="Constants{T}.NegativeInfinity"/></description>
+        /// <description><see cref="Scalar{T}.NegativeInfinity"/></description>
         /// </item>
         /// <item>
         /// <term>Negative</term>
-        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// <description><see cref="Scalar{T}.NaN"/></description>
         /// </item>
         /// <item>
-        /// <term>Equal to <see cref="Constants{T}.NaN"/></term>
-        /// <description><see cref="Constants{T}.NaN"/></description>
+        /// <term>Equal to <see cref="Scalar{T}.NaN"/></term>
+        /// <description><see cref="Scalar{T}.NaN"/></description>
         /// </item>
         /// <item>
-        /// <term>Equal to <see cref="Constants{T}.PositiveInfinity"/></term>
-        /// <description><see cref="Constants{T}.PositiveInfinity"/></description>
+        /// <term>Equal to <see cref="Scalar{T}.PositiveInfinity"/></term>
+        /// <description><see cref="Scalar{T}.PositiveInfinity"/></description>
         /// </item>
         /// </list>
         /// </returns>
@@ -3773,7 +3773,7 @@ namespace Silk.NET.Numerics
         /// <param name="y">The base.</param>
         /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
         /// <returns>
-        /// One of the values in the following table. (+Infinity denotes <see cref="Constants{T}.PositiveInfinity"/>, -Infinity denotes <see cref="Constants{T}.NegativeInfinity"/>, and NaN denotes <see cref="Constants{T}.NaN"/>.)
+        /// One of the values in the following table. (+Infinity denotes <see cref="Scalar{T}.PositiveInfinity"/>, -Infinity denotes <see cref="Scalar{T}.NegativeInfinity"/>, and NaN denotes <see cref="Scalar{T}.NaN"/>.)
         /// <list type="table">
         /// <listheader>
         /// <term><paramref name="x"/></term>
@@ -4000,7 +4000,7 @@ namespace Silk.NET.Numerics
         /// <param name="x">The first of two numbers to compare.</param>
         /// <param name="y">The second of two numbers to compare.</param>
         /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
-        /// <returns>Parameter <paramref name="x"/> or <paramref name="y"/>, whichever is larger. If <paramref name="x"/>, or <paramref name="y"/>, or both <paramref name="x"/> and <paramref name="y"/> are equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NaN"/> is returned.</returns>
+        /// <returns>Parameter <paramref name="x"/> or <paramref name="y"/>, whichever is larger. If <paramref name="x"/>, or <paramref name="y"/>, or both <paramref name="x"/> and <paramref name="y"/> are equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Max<T>(T x, T y) where T : unmanaged
         {
@@ -4148,7 +4148,7 @@ namespace Silk.NET.Numerics
         /// <param name="x">The first of two numbers to compare.</param>
         /// <param name="y">The second of two numbers to compare.</param>
         /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
-        /// <returns>Parameter <paramref name="x"/> or <paramref name="y"/>, whichever is smaller. If <paramref name="x"/>, or <paramref name="y"/>, or both <paramref name="x"/> and <paramref name="y"/> are equal to <see cref="Constants{T}.NaN"/>, <see cref="Constants{T}.NaN"/> is returned.</returns>
+        /// <returns>Parameter <paramref name="x"/> or <paramref name="y"/>, whichever is smaller. If <paramref name="x"/>, or <paramref name="y"/>, or both <paramref name="x"/> and <paramref name="y"/> are equal to <see cref="Scalar{T}.NaN"/>, <see cref="Scalar{T}.NaN"/> is returned.</returns>
         [MethodImpl(MaxOpt)]
         public static T Min<T>(T x, T y) where T : unmanaged
         {
@@ -4670,7 +4670,7 @@ namespace Silk.NET.Numerics
         /// <item><description>If y is positive and x is 0, θ = π/2.</description></item>
         /// <item><description>If y is 0 and x is 0, θ = -π/2.</description></item>
         /// </list>
-        /// If <paramref name="x"/> or <paramref name="y"/> is <see cref="Constants{T}.NaN"/>, or if <paramref name="x"/> and <paramref name="y"/> are either <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, the method returns <see cref="Constants{T}.NaN"/>.
+        /// If <paramref name="x"/> or <paramref name="y"/> is <see cref="Scalar{T}.NaN"/>, or if <paramref name="x"/> and <paramref name="y"/> are either <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, the method returns <see cref="Scalar{T}.NaN"/>.
         /// </returns>
         /// <remarks>
         /// The return value is the angle in the Cartesian plane formed by the x-axis, and a vector starting from the origin, (0,0), and terminating at the point, (x,y).
@@ -4827,8 +4827,8 @@ namespace Silk.NET.Numerics
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="digits"/> is less than 0 or greater than the maximum number of integral and fractional digits supported by the <typeparamref name="T"/> type.</exception>
         /// <remarks>
         /// This method uses the default rounding convention of <see cref="MidpointRounding.ToEven"/>
-        /// If the value of <paramref name="x"/> is <see cref="Constants{T}.NaN"/>, the method returns <see cref="Constants{T}.NaN"/>.
-        /// If <paramref name="x"/> is <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, the method returns <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, respectively.
+        /// If the value of <paramref name="x"/> is <see cref="Scalar{T}.NaN"/>, the method returns <see cref="Scalar{T}.NaN"/>.
+        /// If <paramref name="x"/> is <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, the method returns <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, respectively.
         /// </remarks>
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, int digits) where T : unmanaged
@@ -4846,8 +4846,8 @@ namespace Silk.NET.Numerics
         /// <returns>The number nearest to <paramref name="x"/> that contains a number of fractional digits equal to digits. If <paramref name="x"/> has fewer fractional digits than <paramref name="digits"/>, <paramref name="x"/> is returned unchanged.</returns>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="digits"/> is less than 0 or greater than the maximum number of integral and fractional digits supported by the <typeparamref name="T"/> type.</exception>
         /// <remarks>
-        /// If the value of <paramref name="x"/> is <see cref="Constants{T}.NaN"/>, the method returns <see cref="Constants{T}.NaN"/>.
-        /// If <paramref name="x"/> is <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, the method returns <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, respectively.
+        /// If the value of <paramref name="x"/> is <see cref="Scalar{T}.NaN"/>, the method returns <see cref="Scalar{T}.NaN"/>.
+        /// If <paramref name="x"/> is <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, the method returns <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, respectively.
         /// </remarks>
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, int digits, System.MidpointRounding mode) where T : unmanaged
@@ -4864,8 +4864,8 @@ namespace Silk.NET.Numerics
         /// <returns>The integer nearest <paramref name="x"/>. If <paramref name="x"/> is halfway between two integers, one of which is even and the other odd, then mode determines which of the two is returned. Note that this method returns <typeparamref name="T"/> instead of an integral type.</returns>
         /// <exception cref="ArgumentException"><paramref name="mode"/> is not a valid value of <see cref="MidpointRounding"/>.</exception>
         /// <remarks>
-        /// If the value of <paramref name="x"/> is <see cref="Constants{T}.NaN"/>, the method returns <see cref="Constants{T}.NaN"/>.
-        /// If <paramref name="x"/> is <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, the method returns <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>, respectively.
+        /// If the value of <paramref name="x"/> is <see cref="Scalar{T}.NaN"/>, the method returns <see cref="Scalar{T}.NaN"/>.
+        /// If <paramref name="x"/> is <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, the method returns <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>, respectively.
         /// \</remarks>
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, System.MidpointRounding mode) where T : unmanaged

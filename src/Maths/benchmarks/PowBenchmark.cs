@@ -21,7 +21,7 @@ namespace Silk.NET.Numerics.Benchmark
         [Benchmark]
         public float Silk()
         {
-            return Operations.Pow(X, Y);
+            return Scalar.Pow(X, Y);
         }
 
         private const int NumbersTested = 1;
@@ -50,7 +50,7 @@ namespace Silk.NET.Numerics.Benchmark
         [Benchmark]
         public float Silk()
         {
-            return Operations.Pow(X, Y);
+            return Scalar.Pow(X, Y);
         }
 
         private const int NumbersTested = 1;
@@ -79,13 +79,13 @@ namespace Silk.NET.Numerics.Benchmark
         [Benchmark]
         public float SilkFloat()
         {
-            return Operations.Pow<float>(X, Y);
+            return Scalar.Pow<float>(X, Y);
         }
         
         [Benchmark]
         public float SilkInt()
         {
-            return Operations.Pow<int>(X, Y);
+            return Scalar.Pow<int>(X, Y);
         }
 
         private const int NumbersTested = 1;

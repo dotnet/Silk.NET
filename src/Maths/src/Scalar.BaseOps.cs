@@ -9,7 +9,7 @@ using static Silk.NET.Numerics.Helper;
 
 namespace Silk.NET.Numerics
 {
-    public static partial class Operations
+    public static partial class Scalar
     {
         internal static void ThrowUnsupportedType()
             => throw new NotSupportedException("The given type is unsupported for generic maths.");
@@ -89,7 +89,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="f">A number</param>
         /// <typeparam name="T">The type of the specified number.</typeparam>
-        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Constants{T}.PositiveInfinity"/> or <see cref="Constants{T}.NegativeInfinity"/>; <code>false</code> otherwise.</returns>
+        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Scalar{T}.PositiveInfinity"/> or <see cref="Scalar{T}.NegativeInfinity"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsInfinity<T>(T f) where T:unmanaged
         {
@@ -143,11 +143,11 @@ namespace Silk.NET.Numerics
         }
 
         /// <summary>
-        /// Returns a value that indicates whether the specified value is not a number (<see cref="Constants{T}.NaN"/>).
+        /// Returns a value that indicates whether the specified value is not a number (<see cref="Scalar{T}.NaN"/>).
         /// </summary>
         /// <param name="f">A number</param>
         /// <typeparam name="T">The type of the specified number.</typeparam>
-        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Constants{T}.NaN"/>; <code>false</code> otherwise.</returns>
+        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Scalar{T}.NaN"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsNaN<T>(T f) where T:unmanaged
         {
@@ -313,7 +313,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="f">A number</param>
         /// <typeparam name="T">The type of the specified number.</typeparam>
-        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Constants{T}.NegativeInfinity"/>; <code>false</code> otherwise.</returns>
+        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Scalar{T}.NegativeInfinity"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsNegativeInfinity<T>(T f) where T:unmanaged
         {
@@ -429,7 +429,7 @@ namespace Silk.NET.Numerics
         /// </summary>
         /// <param name="f">A number</param>
         /// <typeparam name="T">The type of the specified number.</typeparam>
-        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Constants{T}.PositiveInfinity"/>; <code>false</code> otherwise.</returns>
+        /// <returns><code>true</code> if <paramref name="f"/> evaluates to <see cref="Scalar{T}.PositiveInfinity"/>; <code>false</code> otherwise.</returns>
         [MethodImpl(MaxOpt)]
         public static bool IsPositiveInfinity<T>(T f) where T:unmanaged
         {
@@ -1934,6 +1934,6 @@ namespace Silk.NET.Numerics
         /// Zero, if <paramref name="x"/> is zero.
         /// </returns>
         [MethodImpl(MaxOpt)]
-        public static T Negate<T>(T x) where T : unmanaged => Multiply(x, Constants<T>.MinusOne);
+        public static T Negate<T>(T x) where T : unmanaged => Multiply(x, Scalar<T>.MinusOne);
     }
 }

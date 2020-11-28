@@ -20,7 +20,7 @@ namespace Silk.NET.Numerics.Benchmark
         [Benchmark]
         public float Silk()
         {
-            return Operations.Exp(X);
+            return Scalar.Exp(X);
         }
 
         private const int NumbersTested = 1;
@@ -48,7 +48,7 @@ namespace Silk.NET.Numerics.Benchmark
         [Benchmark]
         public float Silk()
         {
-            return Operations.Exp(X);
+            return Scalar.Exp(X);
         }
 
         private const int NumbersTested = 1;

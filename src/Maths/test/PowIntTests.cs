@@ -10,7 +10,7 @@ namespace Silk.NET.Numerics.Tests
             var a = 100;
             var b = 0;
             var expected = 1;
-            Assert.Equal(expected, Operations.Pow(a, b));
+            Assert.Equal(expected, Scalar.Pow(a, b));
         }
         
         [Fact]
@@ -19,7 +19,7 @@ namespace Silk.NET.Numerics.Tests
             var a = 0;
             var b = 0;
             var expected = 0;
-            Assert.Equal(expected, Operations.Pow(a, b));
+            Assert.Equal(expected, Scalar.Pow(a, b));
         }
         
         [Fact]
@@ -28,7 +28,7 @@ namespace Silk.NET.Numerics.Tests
             var a = 1;
             var b = 2;
             var expected = 1;
-            Assert.Equal(expected, Operations.Pow(a, b));
+            Assert.Equal(expected, Scalar.Pow(a, b));
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace Silk.NET.Numerics.Tests
             var a = 2;
             var b = 4;
             var expected = 2 << 3;
-            Assert.Equal(expected, Operations.Pow(a, b));
+            Assert.Equal(expected, Scalar.Pow(a, b));
         }
         
         [Fact]
@@ -46,7 +46,7 @@ namespace Silk.NET.Numerics.Tests
             var a = 2;
             var b = -4;
             var expected = (int)(1f / (2 << 3));
-            Assert.Equal(expected, Operations.Pow(a, b));
+            Assert.Equal(expected, Scalar.Pow(a, b));
         }
     }
 }

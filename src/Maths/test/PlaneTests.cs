@@ -144,7 +144,7 @@ namespace Silk.NET.Numerics.Tests
             Vector3<float> point3 = new Vector3<float>(1.0f, 1.0f, 0.0f);
 
             Plane<float> target = Plane<float>.CreateFromVertices(point1, point2, point3);
-            var invRoot2 = 1.0f / Operations.Sqrt(2);
+            var invRoot2 = 1.0f / Scalar.Sqrt(2);
 
             Plane<float> expected = new Plane<float>(new Vector3<float>(invRoot2, 0, invRoot2), -invRoot2);
             Assert.True(MathHelper.Equal(target, expected), "Plane<float>.cstor did not return the expected value.");
@@ -214,7 +214,7 @@ namespace Silk.NET.Numerics.Tests
             Plane<float> target = new Plane<float>(1, 2, 3, 4);
 
             float f = target.Normal.LengthSquared();
-            float invF = 1.0f / (float)Operations.Sqrt(f);
+            float invF = 1.0f / (float)Scalar.Sqrt(f);
             Plane<float> expected = new Plane<float>(target.Normal * invF, target.D * invF);
 
             Plane<float> actual = Plane<float>.Normalize(target);

@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Numerics
 {
-    static partial class Operations
+    static partial class Scalar
     {
         //
         // See https://gist.github.com/tannergooding/103be726d48dc3d0b09e890bad0b892f

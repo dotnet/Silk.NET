@@ -15,8 +15,8 @@ namespace Silk.NET.Numerics
         private const float BillboardMinAngle = 1.0f - (0.1f * (MathF.PI / 180.0f)); // 0.1 degrees
         private const float DecomposeEpsilon = 0.0001f;
 
-        private static readonly Matrix2x2<T> _identity = new(Constants<T>.One, Constants<T>.Zero, Constants<T>.Zero,
-            Constants<T>.One);
+        private static readonly Matrix2x2<T> _identity = new(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero,
+            Scalar<T>.One);
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
         public T M11;
@@ -93,9 +93,9 @@ namespace Silk.NET.Numerics
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
         public readonly bool IsIdentity
-            => Operations.Equal(M11, Constants<T>.One) &&
-               Operations.Equal(M22, Constants<T>.One) && // Check diagonal element first for early out.
-               Operations.Equal(M12, Constants<T>.Zero) && Operations.Equal(M21, Constants<T>.Zero);
+            => Scalar.Equal(M11, Scalar<T>.One) &&
+               Scalar.Equal(M22, Scalar<T>.One) && // Check diagonal element first for early out.
+               Scalar.Equal(M12, Scalar<T>.Zero) && Scalar.Equal(M21, Scalar<T>.Zero);
 
         /// <summary>Adds two matrices together.</summary>
         /// <param name="value1">The first source matrix.</param>
@@ -105,10 +105,10 @@ namespace Silk.NET.Numerics
         {
             Matrix2x2<T> m;
 
-            m.M11 = Operations.Add(value1.M11, value2.M11);
-            m.M12 = Operations.Add(value1.M12, value2.M12);
-            m.M21 = Operations.Add(value1.M21, value2.M21);
-            m.M22 = Operations.Add(value1.M22, value2.M22);
+            m.M11 = Scalar.Add(value1.M11, value2.M11);
+            m.M12 = Scalar.Add(value1.M12, value2.M12);
+            m.M21 = Scalar.Add(value1.M21, value2.M21);
+            m.M22 = Scalar.Add(value1.M22, value2.M22);
 
             return m;
         }
@@ -119,9 +119,9 @@ namespace Silk.NET.Numerics
         /// <returns>True if the given matrices are equal; False otherwise.</returns>
         public static unsafe bool operator ==(Matrix2x2<T> value1, Matrix2x2<T> value2)
         {
-            return Operations.Equal(value1.M11, value2.M11) && Operations.Equal(value1.M22, value2.M22) &&
+            return Scalar.Equal(value1.M11, value2.M11) && Scalar.Equal(value1.M22, value2.M22) &&
                    // Check diagonal elements first for early out.
-                   Operations.Equal(value1.M12, value2.M12) && Operations.Equal(value1.M21, value2.M21);
+                   Scalar.Equal(value1.M12, value2.M12) && Scalar.Equal(value1.M21, value2.M21);
         }
 
         /// <summary>Returns a boolean indicating whether the given two matrices are not equal.</summary>
@@ -130,9 +130,9 @@ namespace Silk.NET.Numerics
         /// <returns>True if the given matrices are not equal; False if they are equal.</returns>
         public static unsafe bool operator !=(Matrix2x2<T> value1, Matrix2x2<T> value2)
         {
-            return Operations.NotEqual(value1.M11, value2.M11) ||
-                   Operations.NotEqual(value1.M22, value2.M22) || // Check diagonal elements first for early out.
-                   Operations.NotEqual(value1.M12, value2.M12) || Operations.NotEqual(value1.M21, value2.M21);
+            return Scalar.NotEqual(value1.M11, value2.M11) ||
+                   Scalar.NotEqual(value1.M22, value2.M22) || // Check diagonal elements first for early out.
+                   Scalar.NotEqual(value1.M12, value2.M12) || Scalar.NotEqual(value1.M21, value2.M21);
         }
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -144,12 +144,12 @@ namespace Silk.NET.Numerics
             Matrix2x2<T> m;
 
             // First row
-            m.M11 = Operations.Add(Operations.Multiply(value1.M11, value2.M11), Operations.Multiply(value1.M12, value2.M21));
-            m.M12 = Operations.Add(Operations.Multiply(value1.M11, value2.M12), Operations.Multiply(value1.M12, value2.M22));
+            m.M11 = Scalar.Add(Scalar.Multiply(value1.M11, value2.M11), Scalar.Multiply(value1.M12, value2.M21));
+            m.M12 = Scalar.Add(Scalar.Multiply(value1.M11, value2.M12), Scalar.Multiply(value1.M12, value2.M22));
 
             // Second row
-            m.M21 = Operations.Add(Operations.Multiply(value1.M21, value2.M11), Operations.Multiply(value1.M22, value2.M21));
-            m.M22 = Operations.Add(Operations.Multiply(value1.M21, value2.M12), Operations.Multiply(value1.M22, value2.M22));
+            m.M21 = Scalar.Add(Scalar.Multiply(value1.M21, value2.M11), Scalar.Multiply(value1.M22, value2.M21));
+            m.M22 = Scalar.Add(Scalar.Multiply(value1.M21, value2.M12), Scalar.Multiply(value1.M22, value2.M22));
 
             return m;
         }
@@ -162,10 +162,10 @@ namespace Silk.NET.Numerics
         {
             Matrix2x2<T> m;
 
-            m.M11 = Operations.Multiply(value1.M11, value2);
-            m.M12 = Operations.Multiply(value1.M12, value2);
-            m.M21 = Operations.Multiply(value1.M21, value2);
-            m.M22 = Operations.Multiply(value1.M22, value2);
+            m.M11 = Scalar.Multiply(value1.M11, value2);
+            m.M12 = Scalar.Multiply(value1.M12, value2);
+            m.M21 = Scalar.Multiply(value1.M21, value2);
+            m.M22 = Scalar.Multiply(value1.M22, value2);
 
             return m;
         }
@@ -178,10 +178,10 @@ namespace Silk.NET.Numerics
         {
             Matrix2x2<T> m;
 
-            m.M11 = Operations.Subtract(value1.M11, value2.M11);
-            m.M12 = Operations.Subtract(value1.M12, value2.M12);
-            m.M21 = Operations.Subtract(value1.M21, value2.M21);
-            m.M22 = Operations.Subtract(value1.M22, value2.M22);
+            m.M11 = Scalar.Subtract(value1.M11, value2.M11);
+            m.M12 = Scalar.Subtract(value1.M12, value2.M12);
+            m.M21 = Scalar.Subtract(value1.M21, value2.M21);
+            m.M22 = Scalar.Subtract(value1.M22, value2.M22);
 
             return m;
         }
@@ -193,10 +193,10 @@ namespace Silk.NET.Numerics
         {
             Matrix2x2<T> m;
 
-            m.M11 = Operations.Negate(value.M11);
-            m.M12 = Operations.Negate(value.M12);
-            m.M21 = Operations.Negate(value.M21);
-            m.M22 = Operations.Negate(value.M22);
+            m.M11 = Scalar.Negate(value.M11);
+            m.M12 = Scalar.Negate(value.M12);
+            m.M21 = Scalar.Negate(value.M21);
+            m.M22 = Scalar.Negate(value.M22);
 
             return m;
         }
@@ -263,16 +263,16 @@ namespace Silk.NET.Numerics
             Matrix2x2<T> result;
 
             // First row
-            result.M11 = Operations.Add(matrix1.M11,
-                Operations.Multiply(Operations.Subtract(matrix2.M11, matrix1.M11), amount));
-            result.M12 = Operations.Add(matrix1.M12,
-                Operations.Multiply(Operations.Subtract(matrix2.M12, matrix1.M12), amount));
+            result.M11 = Scalar.Add(matrix1.M11,
+                Scalar.Multiply(Scalar.Subtract(matrix2.M11, matrix1.M11), amount));
+            result.M12 = Scalar.Add(matrix1.M12,
+                Scalar.Multiply(Scalar.Subtract(matrix2.M12, matrix1.M12), amount));
 
             // Second row
-            result.M21 = Operations.Add(matrix1.M21,
-                Operations.Multiply(Operations.Subtract(matrix2.M21, matrix1.M21), amount));
-            result.M22 = Operations.Add(matrix1.M22,
-                Operations.Multiply(Operations.Subtract(matrix2.M22, matrix1.M22), amount));
+            result.M21 = Scalar.Add(matrix1.M21,
+                Scalar.Multiply(Scalar.Subtract(matrix2.M21, matrix1.M21), amount));
+            result.M22 = Scalar.Add(matrix1.M22,
+                Scalar.Multiply(Scalar.Subtract(matrix2.M22, matrix1.M22), amount));
 
             return result;
         }
@@ -287,7 +287,7 @@ namespace Silk.NET.Numerics
             T a = M11, b = M12;
             T d = M21, c = M22;
 
-            return Operations.Subtract(Operations.Multiply(a, d), Operations.Multiply(b, c));
+            return Scalar.Subtract(Scalar.Multiply(a, d), Scalar.Multiply(b, c));
         }
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
@@ -330,8 +330,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="Half"/> matrix</returns>
         public static explicit operator Matrix2x2<Half>(Matrix2x2<T> from)
-            => new(Operations.As<T, Half>(from.M11), Operations.As<T, Half>(from.M12), Operations.As<T, Half>(from.M21),
-                Operations.As<T, Half>(from.M22));
+            => new(Scalar.As<T, Half>(from.M11), Scalar.As<T, Half>(from.M12), Scalar.As<T, Half>(from.M21),
+                Scalar.As<T, Half>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
@@ -339,8 +339,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="float"/> matrix</returns>
         public static explicit operator Matrix2x2<float>(Matrix2x2<T> from)
-            => new(Operations.As<T, float>(from.M11), Operations.As<T, float>(from.M12),
-                Operations.As<T, float>(from.M21), Operations.As<T, float>(from.M22));
+            => new(Scalar.As<T, float>(from.M11), Scalar.As<T, float>(from.M12),
+                Scalar.As<T, float>(from.M21), Scalar.As<T, float>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
@@ -348,8 +348,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="double"/> matrix</returns>
         public static explicit operator Matrix2x2<double>(Matrix2x2<T> from)
-            => new(Operations.As<T, double>(from.M11), Operations.As<T, double>(from.M12),
-                Operations.As<T, double>(from.M21), Operations.As<T, double>(from.M22));
+            => new(Scalar.As<T, double>(from.M11), Scalar.As<T, double>(from.M12),
+                Scalar.As<T, double>(from.M21), Scalar.As<T, double>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
@@ -357,8 +357,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="decimal"/> matrix</returns>
         public static explicit operator Matrix2x2<decimal>(Matrix2x2<T> from)
-            => new(Operations.As<T, decimal>(from.M11), Operations.As<T, decimal>(from.M12),
-                Operations.As<T, decimal>(from.M21), Operations.As<T, decimal>(from.M22));
+            => new(Scalar.As<T, decimal>(from.M11), Scalar.As<T, decimal>(from.M12),
+                Scalar.As<T, decimal>(from.M21), Scalar.As<T, decimal>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
@@ -366,8 +366,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="sbyte"/> matrix</returns>
         public static explicit operator Matrix2x2<sbyte>(Matrix2x2<T> from)
-            => new(Operations.As<T, sbyte>(from.M11), Operations.As<T, sbyte>(from.M12),
-                Operations.As<T, sbyte>(from.M21), Operations.As<T, sbyte>(from.M22));
+            => new(Scalar.As<T, sbyte>(from.M11), Scalar.As<T, sbyte>(from.M12),
+                Scalar.As<T, sbyte>(from.M21), Scalar.As<T, sbyte>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
@@ -375,8 +375,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="byte"/> matrix</returns>
         public static explicit operator Matrix2x2<byte>(Matrix2x2<T> from)
-            => new(Operations.As<T, byte>(from.M11), Operations.As<T, byte>(from.M12), Operations.As<T, byte>(from.M21),
-                Operations.As<T, byte>(from.M22));
+            => new(Scalar.As<T, byte>(from.M11), Scalar.As<T, byte>(from.M12), Scalar.As<T, byte>(from.M21),
+                Scalar.As<T, byte>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
@@ -384,8 +384,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ushort"/> matrix</returns>
         public static explicit operator Matrix2x2<ushort>(Matrix2x2<T> from)
-            => new(Operations.As<T, ushort>(from.M11), Operations.As<T, ushort>(from.M12),
-                Operations.As<T, ushort>(from.M21), Operations.As<T, ushort>(from.M22));
+            => new(Scalar.As<T, ushort>(from.M11), Scalar.As<T, ushort>(from.M12),
+                Scalar.As<T, ushort>(from.M21), Scalar.As<T, ushort>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
@@ -393,8 +393,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="short"/> matrix</returns>
         public static explicit operator Matrix2x2<short>(Matrix2x2<T> from)
-            => new(Operations.As<T, short>(from.M11), Operations.As<T, short>(from.M12),
-                Operations.As<T, short>(from.M21), Operations.As<T, short>(from.M22));
+            => new(Scalar.As<T, short>(from.M11), Scalar.As<T, short>(from.M12),
+                Scalar.As<T, short>(from.M21), Scalar.As<T, short>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
@@ -402,8 +402,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="uint"/> matrix</returns>
         public static explicit operator Matrix2x2<uint>(Matrix2x2<T> from)
-            => new(Operations.As<T, uint>(from.M11), Operations.As<T, uint>(from.M12), Operations.As<T, uint>(from.M21),
-                Operations.As<T, uint>(from.M22));
+            => new(Scalar.As<T, uint>(from.M11), Scalar.As<T, uint>(from.M12), Scalar.As<T, uint>(from.M21),
+                Scalar.As<T, uint>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
@@ -411,8 +411,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="int"/> matrix</returns>
         public static explicit operator Matrix2x2<int>(Matrix2x2<T> from)
-            => new(Operations.As<T, int>(from.M11), Operations.As<T, int>(from.M12), Operations.As<T, int>(from.M21),
-                Operations.As<T, int>(from.M22));
+            => new(Scalar.As<T, int>(from.M11), Scalar.As<T, int>(from.M12), Scalar.As<T, int>(from.M21),
+                Scalar.As<T, int>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
@@ -420,8 +420,8 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ulong"/> matrix</returns>
         public static explicit operator Matrix2x2<ulong>(Matrix2x2<T> from)
-            => new(Operations.As<T, ulong>(from.M11), Operations.As<T, ulong>(from.M12),
-                Operations.As<T, ulong>(from.M21), Operations.As<T, ulong>(from.M22));
+            => new(Scalar.As<T, ulong>(from.M11), Scalar.As<T, ulong>(from.M12),
+                Scalar.As<T, ulong>(from.M21), Scalar.As<T, ulong>(from.M22));
 
         /// <summary>
         /// Converts a <see cref="Matrix2x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
@@ -429,7 +429,7 @@ namespace Silk.NET.Numerics
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="long"/> matrix</returns>
         public static explicit operator Matrix2x2<long>(Matrix2x2<T> from)
-            => new(Operations.As<T, long>(from.M11), Operations.As<T, long>(from.M12), Operations.As<T, long>(from.M21),
-                Operations.As<T, long>(from.M22));
+            => new(Scalar.As<T, long>(from.M11), Scalar.As<T, long>(from.M12), Scalar.As<T, long>(from.M21),
+                Scalar.As<T, long>(from.M22));
     }
 }

@@ -17,9 +17,9 @@ namespace Silk.NET.Numerics
 
         private static readonly Matrix3x4<T> _identity = new
         (
-            Constants<T>.One, Constants<T>.Zero, Constants<T>.Zero, Constants<T>.Zero,
-            Constants<T>.Zero, Constants<T>.One, Constants<T>.Zero, Constants<T>.Zero,
-            Constants<T>.Zero, Constants<T>.Zero, Constants<T>.One, Constants<T>.Zero
+            Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero,
+            Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero,
+            Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero
         );
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
@@ -75,18 +75,18 @@ namespace Silk.NET.Numerics
         {
             M11 = value.M11;
             M12 = value.M12;
-            M13 = Constants<T>.Zero;
-            M14 = Constants<T>.Zero;
+            M13 = Scalar<T>.Zero;
+            M14 = Scalar<T>.Zero;
 
             M21 = value.M21;
             M22 = value.M22;
-            M23 = Constants<T>.Zero;
-            M24 = Constants<T>.Zero;
+            M23 = Scalar<T>.Zero;
+            M24 = Scalar<T>.Zero;
 
-            M31 = Constants<T>.Zero;
-            M32 = Constants<T>.Zero;
-            M33 = Constants<T>.One;
-            M34 = Constants<T>.Zero;
+            M31 = Scalar<T>.Zero;
+            M32 = Scalar<T>.Zero;
+            M33 = Scalar<T>.One;
+            M34 = Scalar<T>.Zero;
         }
 
         /// <summary>Constructs a Matrix3x4 from the given Matrix4x3.</summary>
@@ -96,40 +96,60 @@ namespace Silk.NET.Numerics
             M11 = value.M11;
             M12 = value.M12;
             M13 = value.M13;
-            M14 = Constants<T>.Zero;
+            M14 = Scalar<T>.Zero;
 
             M21 = value.M21;
             M22 = value.M22;
             M23 = value.M23;
-            M24 = Constants<T>.Zero;
+            M24 = Scalar<T>.Zero;
 
             M31 = value.M31;
             M32 = value.M32;
             M33 = value.M33;
-            M34 = Constants<T>.Zero;
+            M34 = Scalar<T>.Zero;
         }
-        
-        /// <summary>Constructs a Matrix3x4 from the given Matrix3x3.</summary>
+
+        /// <summary>Constructs a Matrix3x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix3x4(Matrix3x4<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = value.M13;
+            M14 = value.M14;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = value.M23;
+            M24 = value.M24;
+
+            M31 = value.M31;
+            M32 = value.M32;
+            M33 = value.M33;
+            M34 = value.M34;
+        }
+
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x3.</summary>
         /// <param name="value">The source Matrix3x3.</param>
         public Matrix3x4(Matrix3x3<T> value)
         {
             M11 = value.M11;
             M12 = value.M12;
             M13 = value.M13;
-            M14 = Constants<T>.Zero;
+            M14 = Scalar<T>.Zero;
 
             M21 = value.M21;
             M22 = value.M22;
             M23 = value.M23;
-            M24 = Constants<T>.Zero;
+            M24 = Scalar<T>.Zero;
 
-            M31 = value.M31;
-            M32 = value.M32;
-            M33 = value.M33;
-            M34 = Constants<T>.Zero;
+            M31 = Scalar<T>.Zero;
+            M32 = Scalar<T>.Zero;
+            M33 = Scalar<T>.One;
+            M34 = Scalar<T>.Zero;
         }
 
-        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <summary>Constructs a Matrix4x4 from the given Matrix2x4.</summary>
         /// <param name="value">The source Matrix3x4.</param>
         public Matrix3x4(Matrix2x4<T> value)
         {
@@ -143,30 +163,30 @@ namespace Silk.NET.Numerics
             M23 = value.M23;
             M24 = value.M24;
 
-            M31 = Constants<T>.Zero;
-            M32 = Constants<T>.Zero;
-            M33 = Constants<T>.One;
-            M34 = Constants<T>.Zero;
+            M31 = Scalar<T>.Zero;
+            M32 = Scalar<T>.Zero;
+            M33 = Scalar<T>.One;
+            M34 = Scalar<T>.Zero;
         }
         
-        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <summary>Constructs a Matrix4x4 from the given Matrix4x2.</summary>
         /// <param name="value">The source Matrix3x4.</param>
         public Matrix3x4(Matrix4x2<T> value)
         {
             M11 = value.M11;
             M12 = value.M12;
-            M13 = Constants<T>.Zero;
-            M14 = Constants<T>.Zero;
+            M13 = Scalar<T>.Zero;
+            M14 = Scalar<T>.Zero;
 
             M21 = value.M21;
             M22 = value.M22;
-            M23 = Constants<T>.Zero;
-            M24 = Constants<T>.Zero;
+            M23 = Scalar<T>.Zero;
+            M24 = Scalar<T>.Zero;
 
             M31 = value.M31;
             M32 = value.M32;
-            M33 = Constants<T>.One;
-            M34 = Constants<T>.Zero;
+            M33 = Scalar<T>.One;
+            M34 = Scalar<T>.Zero;
         }
         
         /// <summary>Returns the multiplicative identity matrix.</summary>
@@ -174,13 +194,13 @@ namespace Silk.NET.Numerics
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
         public readonly bool IsIdentity
-            => Operations.Equal(M11, Constants<T>.One) && Operations.Equal(M22, Constants<T>.One) &&
-               Operations.Equal(M33, Constants<T>.One) && // Check diagonal element first for early out.
-               Operations.Equal(M12, Constants<T>.Zero) && Operations.Equal(M13, Constants<T>.Zero) &&
-               Operations.Equal(M14, Constants<T>.Zero) && Operations.Equal(M21, Constants<T>.Zero) &&
-               Operations.Equal(M23, Constants<T>.Zero) && Operations.Equal(M24, Constants<T>.Zero) &&
-               Operations.Equal(M31, Constants<T>.Zero) && Operations.Equal(M32, Constants<T>.Zero) &&
-               Operations.Equal(M34, Constants<T>.Zero);
+            => Scalar.Equal(M11, Scalar<T>.One) && Scalar.Equal(M22, Scalar<T>.One) &&
+               Scalar.Equal(M33, Scalar<T>.One) && // Check diagonal element first for early out.
+               Scalar.Equal(M12, Scalar<T>.Zero) && Scalar.Equal(M13, Scalar<T>.Zero) &&
+               Scalar.Equal(M14, Scalar<T>.Zero) && Scalar.Equal(M21, Scalar<T>.Zero) &&
+               Scalar.Equal(M23, Scalar<T>.Zero) && Scalar.Equal(M24, Scalar<T>.Zero) &&
+               Scalar.Equal(M31, Scalar<T>.Zero) && Scalar.Equal(M32, Scalar<T>.Zero) &&
+               Scalar.Equal(M34, Scalar<T>.Zero);
 
         /// <summary>Adds two matrices together.</summary>
         /// <param name="value1">The first source matrix.</param>
@@ -207,18 +227,18 @@ namespace Silk.NET.Numerics
 
             Matrix3x4<T> m;
 
-            m.M11 = Operations.Add(value1.M11, value2.M11);
-            m.M12 = Operations.Add(value1.M12, value2.M12);
-            m.M13 = Operations.Add(value1.M13, value2.M13);
-            m.M14 = Operations.Add(value1.M14, value2.M14);
-            m.M21 = Operations.Add(value1.M21, value2.M21);
-            m.M22 = Operations.Add(value1.M22, value2.M22);
-            m.M23 = Operations.Add(value1.M23, value2.M23);
-            m.M24 = Operations.Add(value1.M24, value2.M24);
-            m.M31 = Operations.Add(value1.M31, value2.M31);
-            m.M32 = Operations.Add(value1.M32, value2.M32);
-            m.M33 = Operations.Add(value1.M33, value2.M33);
-            m.M34 = Operations.Add(value1.M34, value2.M34);
+            m.M11 = Scalar.Add(value1.M11, value2.M11);
+            m.M12 = Scalar.Add(value1.M12, value2.M12);
+            m.M13 = Scalar.Add(value1.M13, value2.M13);
+            m.M14 = Scalar.Add(value1.M14, value2.M14);
+            m.M21 = Scalar.Add(value1.M21, value2.M21);
+            m.M22 = Scalar.Add(value1.M22, value2.M22);
+            m.M23 = Scalar.Add(value1.M23, value2.M23);
+            m.M24 = Scalar.Add(value1.M24, value2.M24);
+            m.M31 = Scalar.Add(value1.M31, value2.M31);
+            m.M32 = Scalar.Add(value1.M32, value2.M32);
+            m.M33 = Scalar.Add(value1.M33, value2.M33);
+            m.M34 = Scalar.Add(value1.M34, value2.M34);
             
             return m;
         }
@@ -229,13 +249,13 @@ namespace Silk.NET.Numerics
         /// <returns>True if the given matrices are equal; False otherwise.</returns>
         public static unsafe bool operator ==(Matrix3x4<T> value1, Matrix3x4<T> value2)
         {
-            return Operations.Equal(value1.M11, value2.M11) && Operations.Equal(value1.M22, value2.M22) &&
-                   Operations.Equal(value1.M33, value2.M33) && // Check diagonal elements first for early out.
-                   Operations.Equal(value1.M12, value2.M12) && Operations.Equal(value1.M13, value2.M13) &&
-                   Operations.Equal(value1.M14, value2.M14) && Operations.Equal(value1.M21, value2.M21) &&
-                   Operations.Equal(value1.M23, value2.M23) && Operations.Equal(value1.M24, value2.M24) &&
-                   Operations.Equal(value1.M31, value2.M31) && Operations.Equal(value1.M32, value2.M32) &&
-                   Operations.Equal(value1.M34, value2.M34);
+            return Scalar.Equal(value1.M11, value2.M11) && Scalar.Equal(value1.M22, value2.M22) &&
+                   Scalar.Equal(value1.M33, value2.M33) && // Check diagonal elements first for early out.
+                   Scalar.Equal(value1.M12, value2.M12) && Scalar.Equal(value1.M13, value2.M13) &&
+                   Scalar.Equal(value1.M14, value2.M14) && Scalar.Equal(value1.M21, value2.M21) &&
+                   Scalar.Equal(value1.M23, value2.M23) && Scalar.Equal(value1.M24, value2.M24) &&
+                   Scalar.Equal(value1.M31, value2.M31) && Scalar.Equal(value1.M32, value2.M32) &&
+                   Scalar.Equal(value1.M34, value2.M34);
         }
 
         /// <summary>Returns a boolean indicating whether the given two matrices are not equal.</summary>
@@ -244,13 +264,13 @@ namespace Silk.NET.Numerics
         /// <returns>True if the given matrices are not equal; False if they are equal.</returns>
         public static unsafe bool operator !=(Matrix3x4<T> value1, Matrix3x4<T> value2)
         {
-            return Operations.NotEqual(value1.M11, value2.M11) || Operations.NotEqual(value1.M22, value2.M22) ||
-                   Operations.NotEqual(value1.M33, value2.M33) || // Check diagonal elements first for early out.
-                   Operations.NotEqual(value1.M12, value2.M12) || Operations.NotEqual(value1.M13, value2.M13) ||
-                   Operations.NotEqual(value1.M14, value2.M14) || Operations.NotEqual(value1.M21, value2.M21) ||
-                   Operations.NotEqual(value1.M23, value2.M23) || Operations.NotEqual(value1.M24, value2.M24) ||
-                   Operations.NotEqual(value1.M31, value2.M31) || Operations.NotEqual(value1.M32, value2.M32) ||
-                   Operations.NotEqual(value1.M34, value2.M34);
+            return Scalar.NotEqual(value1.M11, value2.M11) || Scalar.NotEqual(value1.M22, value2.M22) ||
+                   Scalar.NotEqual(value1.M33, value2.M33) || // Check diagonal elements first for early out.
+                   Scalar.NotEqual(value1.M12, value2.M12) || Scalar.NotEqual(value1.M13, value2.M13) ||
+                   Scalar.NotEqual(value1.M14, value2.M14) || Scalar.NotEqual(value1.M21, value2.M21) ||
+                   Scalar.NotEqual(value1.M23, value2.M23) || Scalar.NotEqual(value1.M24, value2.M24) ||
+                   Scalar.NotEqual(value1.M31, value2.M31) || Scalar.NotEqual(value1.M32, value2.M32) ||
+                   Scalar.NotEqual(value1.M34, value2.M34);
         }
 
         /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -262,19 +282,19 @@ namespace Silk.NET.Numerics
             Matrix3x3<T> m;
 
             // First row
-            m.M11 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M11), Operations.Multiply(value1.M12, value2.M21)), Operations.Add(Operations.Multiply(value1.M13, value2.M31), Operations.Multiply(value1.M14, value2.M41)));
-            m.M12 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M12), Operations.Multiply(value1.M12, value2.M22)), Operations.Add(Operations.Multiply(value1.M13, value2.M32), Operations.Multiply(value1.M14, value2.M42)));
-            m.M13 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M13), Operations.Multiply(value1.M12, value2.M23)), Operations.Add(Operations.Multiply(value1.M13, value2.M33), Operations.Multiply(value1.M14, value2.M43)));
+            m.M11 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M11), Scalar.Multiply(value1.M12, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M31), Scalar.Multiply(value1.M14, value2.M41)));
+            m.M12 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M12), Scalar.Multiply(value1.M12, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M32), Scalar.Multiply(value1.M14, value2.M42)));
+            m.M13 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M13), Scalar.Multiply(value1.M12, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M33), Scalar.Multiply(value1.M14, value2.M43)));
 
             // Second row
-            m.M21 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M11), Operations.Multiply(value1.M22, value2.M21)), Operations.Add(Operations.Multiply(value1.M23, value2.M31), Operations.Multiply(value1.M24, value2.M41)));
-            m.M22 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M12), Operations.Multiply(value1.M22, value2.M22)), Operations.Add(Operations.Multiply(value1.M23, value2.M32), Operations.Multiply(value1.M24, value2.M42)));
-            m.M23 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M13), Operations.Multiply(value1.M22, value2.M23)), Operations.Add(Operations.Multiply(value1.M23, value2.M33), Operations.Multiply(value1.M24, value2.M43)));
+            m.M21 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M11), Scalar.Multiply(value1.M22, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M31), Scalar.Multiply(value1.M24, value2.M41)));
+            m.M22 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M12), Scalar.Multiply(value1.M22, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M32), Scalar.Multiply(value1.M24, value2.M42)));
+            m.M23 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M13), Scalar.Multiply(value1.M22, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M33), Scalar.Multiply(value1.M24, value2.M43)));
 
             // Third row
-            m.M31 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M11), Operations.Multiply(value1.M32, value2.M21)), Operations.Add(Operations.Multiply(value1.M33, value2.M31), Operations.Multiply(value1.M34, value2.M41)));
-            m.M32 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M12), Operations.Multiply(value1.M32, value2.M22)), Operations.Add(Operations.Multiply(value1.M33, value2.M32), Operations.Multiply(value1.M34, value2.M42)));
-            m.M33 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M13), Operations.Multiply(value1.M32, value2.M23)), Operations.Add(Operations.Multiply(value1.M33, value2.M33), Operations.Multiply(value1.M34, value2.M43)));
+            m.M31 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M11), Scalar.Multiply(value1.M32, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M31), Scalar.Multiply(value1.M34, value2.M41)));
+            m.M32 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M12), Scalar.Multiply(value1.M32, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M32), Scalar.Multiply(value1.M34, value2.M42)));
+            m.M33 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M13), Scalar.Multiply(value1.M32, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M33), Scalar.Multiply(value1.M34, value2.M43)));
 
            return m;
         }
@@ -288,22 +308,22 @@ namespace Silk.NET.Numerics
             Matrix3x4<T> m;
 
             // First row
-            m.M11 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M11), Operations.Multiply(value1.M12, value2.M21)), Operations.Multiply(value1.M13, value2.M31));
-            m.M12 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M12), Operations.Multiply(value1.M12, value2.M22)), Operations.Multiply(value1.M13, value2.M32));
-            m.M13 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M13), Operations.Multiply(value1.M12, value2.M23)), Operations.Multiply(value1.M13, value2.M33));
-            m.M14 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M14), Operations.Multiply(value1.M12, value2.M24)), Operations.Multiply(value1.M13, value2.M34));
+            m.M11 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M11), Scalar.Multiply(value1.M12, value2.M21)), Scalar.Multiply(value1.M13, value2.M31));
+            m.M12 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M12), Scalar.Multiply(value1.M12, value2.M22)), Scalar.Multiply(value1.M13, value2.M32));
+            m.M13 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M13), Scalar.Multiply(value1.M12, value2.M23)), Scalar.Multiply(value1.M13, value2.M33));
+            m.M14 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M14), Scalar.Multiply(value1.M12, value2.M24)), Scalar.Multiply(value1.M13, value2.M34));
 
             // Second row
-            m.M21 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M11), Operations.Multiply(value1.M22, value2.M21)), Operations.Multiply(value1.M23, value2.M31));
-            m.M22 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M12), Operations.Multiply(value1.M22, value2.M22)), Operations.Multiply(value1.M23, value2.M32));
-            m.M23 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M13), Operations.Multiply(value1.M22, value2.M23)), Operations.Multiply(value1.M23, value2.M33));
-            m.M24 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M14), Operations.Multiply(value1.M22, value2.M24)), Operations.Multiply(value1.M23, value2.M34));
+            m.M21 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M11), Scalar.Multiply(value1.M22, value2.M21)), Scalar.Multiply(value1.M23, value2.M31));
+            m.M22 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M12), Scalar.Multiply(value1.M22, value2.M22)), Scalar.Multiply(value1.M23, value2.M32));
+            m.M23 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M13), Scalar.Multiply(value1.M22, value2.M23)), Scalar.Multiply(value1.M23, value2.M33));
+            m.M24 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M14), Scalar.Multiply(value1.M22, value2.M24)), Scalar.Multiply(value1.M23, value2.M34));
 
             // Third row
-            m.M31 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M11), Operations.Multiply(value1.M32, value2.M21)), Operations.Multiply(value1.M33, value2.M31));
-            m.M32 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M12), Operations.Multiply(value1.M32, value2.M22)), Operations.Multiply(value1.M33, value2.M32));
-            m.M33 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M13), Operations.Multiply(value1.M32, value2.M23)), Operations.Multiply(value1.M33, value2.M33));
-            m.M34 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M14), Operations.Multiply(value1.M32, value2.M24)), Operations.Multiply(value1.M33, value2.M34));
+            m.M31 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M11), Scalar.Multiply(value1.M32, value2.M21)), Scalar.Multiply(value1.M33, value2.M31));
+            m.M32 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M12), Scalar.Multiply(value1.M32, value2.M22)), Scalar.Multiply(value1.M33, value2.M32));
+            m.M33 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M13), Scalar.Multiply(value1.M32, value2.M23)), Scalar.Multiply(value1.M33, value2.M33));
+            m.M34 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M14), Scalar.Multiply(value1.M32, value2.M24)), Scalar.Multiply(value1.M33, value2.M34));
 
             return m;
         }
@@ -316,18 +336,18 @@ namespace Silk.NET.Numerics
         {
             Matrix3x4<T> m;
 
-            m.M11 = Operations.Multiply(value1.M11, value2);
-            m.M12 = Operations.Multiply(value1.M12, value2);
-            m.M13 = Operations.Multiply(value1.M13, value2);
-            m.M14 = Operations.Multiply(value1.M14, value2);
-            m.M21 = Operations.Multiply(value1.M21, value2);
-            m.M22 = Operations.Multiply(value1.M22, value2);
-            m.M23 = Operations.Multiply(value1.M23, value2);
-            m.M24 = Operations.Multiply(value1.M24, value2);
-            m.M31 = Operations.Multiply(value1.M31, value2);
-            m.M32 = Operations.Multiply(value1.M32, value2);
-            m.M33 = Operations.Multiply(value1.M33, value2);
-            m.M34 = Operations.Multiply(value1.M34, value2);
+            m.M11 = Scalar.Multiply(value1.M11, value2);
+            m.M12 = Scalar.Multiply(value1.M12, value2);
+            m.M13 = Scalar.Multiply(value1.M13, value2);
+            m.M14 = Scalar.Multiply(value1.M14, value2);
+            m.M21 = Scalar.Multiply(value1.M21, value2);
+            m.M22 = Scalar.Multiply(value1.M22, value2);
+            m.M23 = Scalar.Multiply(value1.M23, value2);
+            m.M24 = Scalar.Multiply(value1.M24, value2);
+            m.M31 = Scalar.Multiply(value1.M31, value2);
+            m.M32 = Scalar.Multiply(value1.M32, value2);
+            m.M33 = Scalar.Multiply(value1.M33, value2);
+            m.M34 = Scalar.Multiply(value1.M34, value2);
             
 
             return m;
@@ -341,18 +361,18 @@ namespace Silk.NET.Numerics
         {
             Matrix3x4<T> m;
 
-            m.M11 = Operations.Subtract(value1.M11, value2.M11);
-            m.M12 = Operations.Subtract(value1.M12, value2.M12);
-            m.M13 = Operations.Subtract(value1.M13, value2.M13);
-            m.M14 = Operations.Subtract(value1.M14, value2.M14);
-            m.M21 = Operations.Subtract(value1.M21, value2.M21);
-            m.M22 = Operations.Subtract(value1.M22, value2.M22);
-            m.M23 = Operations.Subtract(value1.M23, value2.M23);
-            m.M24 = Operations.Subtract(value1.M24, value2.M24);
-            m.M31 = Operations.Subtract(value1.M31, value2.M31);
-            m.M32 = Operations.Subtract(value1.M32, value2.M32);
-            m.M33 = Operations.Subtract(value1.M33, value2.M33);
-            m.M34 = Operations.Subtract(value1.M34, value2.M34);
+            m.M11 = Scalar.Subtract(value1.M11, value2.M11);
+            m.M12 = Scalar.Subtract(value1.M12, value2.M12);
+            m.M13 = Scalar.Subtract(value1.M13, value2.M13);
+            m.M14 = Scalar.Subtract(value1.M14, value2.M14);
+            m.M21 = Scalar.Subtract(value1.M21, value2.M21);
+            m.M22 = Scalar.Subtract(value1.M22, value2.M22);
+            m.M23 = Scalar.Subtract(value1.M23, value2.M23);
+            m.M24 = Scalar.Subtract(value1.M24, value2.M24);
+            m.M31 = Scalar.Subtract(value1.M31, value2.M31);
+            m.M32 = Scalar.Subtract(value1.M32, value2.M32);
+            m.M33 = Scalar.Subtract(value1.M33, value2.M33);
+            m.M34 = Scalar.Subtract(value1.M34, value2.M34);
             
             return m;
         }
@@ -364,18 +384,18 @@ namespace Silk.NET.Numerics
         {
             Matrix3x4<T> m;
 
-            m.M11 = Operations.Negate(value.M11);
-            m.M12 = Operations.Negate(value.M12);
-            m.M13 = Operations.Negate(value.M13);
-            m.M14 = Operations.Negate(value.M14);
-            m.M21 = Operations.Negate(value.M21);
-            m.M22 = Operations.Negate(value.M22);
-            m.M23 = Operations.Negate(value.M23);
-            m.M24 = Operations.Negate(value.M24);
-            m.M31 = Operations.Negate(value.M31);
-            m.M32 = Operations.Negate(value.M32);
-            m.M33 = Operations.Negate(value.M33);
-            m.M34 = Operations.Negate(value.M34);
+            m.M11 = Scalar.Negate(value.M11);
+            m.M12 = Scalar.Negate(value.M12);
+            m.M13 = Scalar.Negate(value.M13);
+            m.M14 = Scalar.Negate(value.M14);
+            m.M21 = Scalar.Negate(value.M21);
+            m.M22 = Scalar.Negate(value.M22);
+            m.M23 = Scalar.Negate(value.M23);
+            m.M24 = Scalar.Negate(value.M24);
+            m.M31 = Scalar.Negate(value.M31);
+            m.M32 = Scalar.Negate(value.M32);
+            m.M33 = Scalar.Negate(value.M33);
+            m.M34 = Scalar.Negate(value.M34);
             
             return m;
         }
@@ -475,22 +495,22 @@ namespace Silk.NET.Numerics
             Matrix3x4<T> result;
 
             // First row
-            result.M11 = Operations.Add(matrix1.M11, Operations.Multiply(Operations.Subtract(matrix2.M11, matrix1.M11), amount));
-            result.M12 = Operations.Add(matrix1.M12, Operations.Multiply(Operations.Subtract(matrix2.M12, matrix1.M12), amount));
-            result.M13 = Operations.Add(matrix1.M13, Operations.Multiply(Operations.Subtract(matrix2.M13, matrix1.M13), amount));
-            result.M14 = Operations.Add(matrix1.M14, Operations.Multiply(Operations.Subtract(matrix2.M14, matrix1.M14), amount));
+            result.M11 = Scalar.Add(matrix1.M11, Scalar.Multiply(Scalar.Subtract(matrix2.M11, matrix1.M11), amount));
+            result.M12 = Scalar.Add(matrix1.M12, Scalar.Multiply(Scalar.Subtract(matrix2.M12, matrix1.M12), amount));
+            result.M13 = Scalar.Add(matrix1.M13, Scalar.Multiply(Scalar.Subtract(matrix2.M13, matrix1.M13), amount));
+            result.M14 = Scalar.Add(matrix1.M14, Scalar.Multiply(Scalar.Subtract(matrix2.M14, matrix1.M14), amount));
 
             // Second row
-            result.M21 = Operations.Add(matrix1.M21, Operations.Multiply(Operations.Subtract(matrix2.M21, matrix1.M21), amount));
-            result.M22 = Operations.Add(matrix1.M22, Operations.Multiply(Operations.Subtract(matrix2.M22, matrix1.M22), amount));
-            result.M23 = Operations.Add(matrix1.M23, Operations.Multiply(Operations.Subtract(matrix2.M23, matrix1.M23), amount));
-            result.M24 = Operations.Add(matrix1.M24, Operations.Multiply(Operations.Subtract(matrix2.M24, matrix1.M24), amount));
+            result.M21 = Scalar.Add(matrix1.M21, Scalar.Multiply(Scalar.Subtract(matrix2.M21, matrix1.M21), amount));
+            result.M22 = Scalar.Add(matrix1.M22, Scalar.Multiply(Scalar.Subtract(matrix2.M22, matrix1.M22), amount));
+            result.M23 = Scalar.Add(matrix1.M23, Scalar.Multiply(Scalar.Subtract(matrix2.M23, matrix1.M23), amount));
+            result.M24 = Scalar.Add(matrix1.M24, Scalar.Multiply(Scalar.Subtract(matrix2.M24, matrix1.M24), amount));
 
             // Third row
-            result.M31 = Operations.Add(matrix1.M31, Operations.Multiply(Operations.Subtract(matrix2.M31, matrix1.M31), amount));
-            result.M32 = Operations.Add(matrix1.M32, Operations.Multiply(Operations.Subtract(matrix2.M32, matrix1.M32), amount));
-            result.M33 = Operations.Add(matrix1.M33, Operations.Multiply(Operations.Subtract(matrix2.M33, matrix1.M33), amount));
-            result.M34 = Operations.Add(matrix1.M34, Operations.Multiply(Operations.Subtract(matrix2.M34, matrix1.M34), amount));
+            result.M31 = Scalar.Add(matrix1.M31, Scalar.Multiply(Scalar.Subtract(matrix2.M31, matrix1.M31), amount));
+            result.M32 = Scalar.Add(matrix1.M32, Scalar.Multiply(Scalar.Subtract(matrix2.M32, matrix1.M32), amount));
+            result.M33 = Scalar.Add(matrix1.M33, Scalar.Multiply(Scalar.Subtract(matrix2.M33, matrix1.M33), amount));
+            result.M34 = Scalar.Add(matrix1.M34, Scalar.Multiply(Scalar.Subtract(matrix2.M34, matrix1.M34), amount));
 
             return result;
         }
@@ -550,12 +570,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<Half>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, Half>(from.M11),Operations.As<T, Half>(from.M12),
-                Operations.As<T, Half>(from.M13),Operations.As<T, Half>(from.M14),
-                Operations.As<T, Half>(from.M21),Operations.As<T, Half>(from.M22),
-                Operations.As<T, Half>(from.M23),Operations.As<T, Half>(from.M24),
-                Operations.As<T, Half>(from.M31),Operations.As<T, Half>(from.M32),
-                Operations.As<T, Half>(from.M33),Operations.As<T, Half>(from.M34)
+                Scalar.As<T, Half>(from.M11),Scalar.As<T, Half>(from.M12),
+                Scalar.As<T, Half>(from.M13),Scalar.As<T, Half>(from.M14),
+                Scalar.As<T, Half>(from.M21),Scalar.As<T, Half>(from.M22),
+                Scalar.As<T, Half>(from.M23),Scalar.As<T, Half>(from.M24),
+                Scalar.As<T, Half>(from.M31),Scalar.As<T, Half>(from.M32),
+                Scalar.As<T, Half>(from.M33),Scalar.As<T, Half>(from.M34)
             );
         
         /// <summary>
@@ -566,12 +586,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<float>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, float>(from.M11),Operations.As<T, float>(from.M12),
-                Operations.As<T, float>(from.M13),Operations.As<T, float>(from.M14),
-                Operations.As<T, float>(from.M21),Operations.As<T, float>(from.M22),
-                Operations.As<T, float>(from.M23),Operations.As<T, float>(from.M24),
-                Operations.As<T, float>(from.M31),Operations.As<T, float>(from.M32),
-                Operations.As<T, float>(from.M33),Operations.As<T, float>(from.M34)
+                Scalar.As<T, float>(from.M11),Scalar.As<T, float>(from.M12),
+                Scalar.As<T, float>(from.M13),Scalar.As<T, float>(from.M14),
+                Scalar.As<T, float>(from.M21),Scalar.As<T, float>(from.M22),
+                Scalar.As<T, float>(from.M23),Scalar.As<T, float>(from.M24),
+                Scalar.As<T, float>(from.M31),Scalar.As<T, float>(from.M32),
+                Scalar.As<T, float>(from.M33),Scalar.As<T, float>(from.M34)
             );
         
         /// <summary>
@@ -582,12 +602,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<double>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, double>(from.M11),Operations.As<T, double>(from.M12),
-                Operations.As<T, double>(from.M13),Operations.As<T, double>(from.M14),
-                Operations.As<T, double>(from.M21),Operations.As<T, double>(from.M22),
-                Operations.As<T, double>(from.M23),Operations.As<T, double>(from.M24),
-                Operations.As<T, double>(from.M31),Operations.As<T, double>(from.M32),
-                Operations.As<T, double>(from.M33),Operations.As<T, double>(from.M34)
+                Scalar.As<T, double>(from.M11),Scalar.As<T, double>(from.M12),
+                Scalar.As<T, double>(from.M13),Scalar.As<T, double>(from.M14),
+                Scalar.As<T, double>(from.M21),Scalar.As<T, double>(from.M22),
+                Scalar.As<T, double>(from.M23),Scalar.As<T, double>(from.M24),
+                Scalar.As<T, double>(from.M31),Scalar.As<T, double>(from.M32),
+                Scalar.As<T, double>(from.M33),Scalar.As<T, double>(from.M34)
             );
         
         /// <summary>
@@ -598,12 +618,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<decimal>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, decimal>(from.M11),Operations.As<T, decimal>(from.M12),
-                Operations.As<T, decimal>(from.M13),Operations.As<T, decimal>(from.M14),
-                Operations.As<T, decimal>(from.M21),Operations.As<T, decimal>(from.M22),
-                Operations.As<T, decimal>(from.M23),Operations.As<T, decimal>(from.M24),
-                Operations.As<T, decimal>(from.M31),Operations.As<T, decimal>(from.M32),
-                Operations.As<T, decimal>(from.M33),Operations.As<T, decimal>(from.M34)
+                Scalar.As<T, decimal>(from.M11),Scalar.As<T, decimal>(from.M12),
+                Scalar.As<T, decimal>(from.M13),Scalar.As<T, decimal>(from.M14),
+                Scalar.As<T, decimal>(from.M21),Scalar.As<T, decimal>(from.M22),
+                Scalar.As<T, decimal>(from.M23),Scalar.As<T, decimal>(from.M24),
+                Scalar.As<T, decimal>(from.M31),Scalar.As<T, decimal>(from.M32),
+                Scalar.As<T, decimal>(from.M33),Scalar.As<T, decimal>(from.M34)
             );
         
         /// <summary>
@@ -614,12 +634,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<sbyte>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, sbyte>(from.M11),Operations.As<T, sbyte>(from.M12),
-                Operations.As<T, sbyte>(from.M13),Operations.As<T, sbyte>(from.M14),
-                Operations.As<T, sbyte>(from.M21),Operations.As<T, sbyte>(from.M22),
-                Operations.As<T, sbyte>(from.M23),Operations.As<T, sbyte>(from.M24),
-                Operations.As<T, sbyte>(from.M31),Operations.As<T, sbyte>(from.M32),
-                Operations.As<T, sbyte>(from.M33),Operations.As<T, sbyte>(from.M34)
+                Scalar.As<T, sbyte>(from.M11),Scalar.As<T, sbyte>(from.M12),
+                Scalar.As<T, sbyte>(from.M13),Scalar.As<T, sbyte>(from.M14),
+                Scalar.As<T, sbyte>(from.M21),Scalar.As<T, sbyte>(from.M22),
+                Scalar.As<T, sbyte>(from.M23),Scalar.As<T, sbyte>(from.M24),
+                Scalar.As<T, sbyte>(from.M31),Scalar.As<T, sbyte>(from.M32),
+                Scalar.As<T, sbyte>(from.M33),Scalar.As<T, sbyte>(from.M34)
             );
         
         /// <summary>
@@ -630,12 +650,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<byte>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, byte>(from.M11),Operations.As<T, byte>(from.M12),
-                Operations.As<T, byte>(from.M13),Operations.As<T, byte>(from.M14),
-                Operations.As<T, byte>(from.M21),Operations.As<T, byte>(from.M22),
-                Operations.As<T, byte>(from.M23),Operations.As<T, byte>(from.M24),
-                Operations.As<T, byte>(from.M31),Operations.As<T, byte>(from.M32),
-                Operations.As<T, byte>(from.M33),Operations.As<T, byte>(from.M34)
+                Scalar.As<T, byte>(from.M11),Scalar.As<T, byte>(from.M12),
+                Scalar.As<T, byte>(from.M13),Scalar.As<T, byte>(from.M14),
+                Scalar.As<T, byte>(from.M21),Scalar.As<T, byte>(from.M22),
+                Scalar.As<T, byte>(from.M23),Scalar.As<T, byte>(from.M24),
+                Scalar.As<T, byte>(from.M31),Scalar.As<T, byte>(from.M32),
+                Scalar.As<T, byte>(from.M33),Scalar.As<T, byte>(from.M34)
             );
         
         /// <summary>
@@ -646,12 +666,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<ushort>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, ushort>(from.M11),Operations.As<T, ushort>(from.M12),
-                Operations.As<T, ushort>(from.M13),Operations.As<T, ushort>(from.M14),
-                Operations.As<T, ushort>(from.M21),Operations.As<T, ushort>(from.M22),
-                Operations.As<T, ushort>(from.M23),Operations.As<T, ushort>(from.M24),
-                Operations.As<T, ushort>(from.M31),Operations.As<T, ushort>(from.M32),
-                Operations.As<T, ushort>(from.M33),Operations.As<T, ushort>(from.M34)
+                Scalar.As<T, ushort>(from.M11),Scalar.As<T, ushort>(from.M12),
+                Scalar.As<T, ushort>(from.M13),Scalar.As<T, ushort>(from.M14),
+                Scalar.As<T, ushort>(from.M21),Scalar.As<T, ushort>(from.M22),
+                Scalar.As<T, ushort>(from.M23),Scalar.As<T, ushort>(from.M24),
+                Scalar.As<T, ushort>(from.M31),Scalar.As<T, ushort>(from.M32),
+                Scalar.As<T, ushort>(from.M33),Scalar.As<T, ushort>(from.M34)
             );
         
         /// <summary>
@@ -662,12 +682,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<short>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, short>(from.M11),Operations.As<T, short>(from.M12),
-                Operations.As<T, short>(from.M13),Operations.As<T, short>(from.M14),
-                Operations.As<T, short>(from.M21),Operations.As<T, short>(from.M22),
-                Operations.As<T, short>(from.M23),Operations.As<T, short>(from.M24),
-                Operations.As<T, short>(from.M31),Operations.As<T, short>(from.M32),
-                Operations.As<T, short>(from.M33),Operations.As<T, short>(from.M34)
+                Scalar.As<T, short>(from.M11),Scalar.As<T, short>(from.M12),
+                Scalar.As<T, short>(from.M13),Scalar.As<T, short>(from.M14),
+                Scalar.As<T, short>(from.M21),Scalar.As<T, short>(from.M22),
+                Scalar.As<T, short>(from.M23),Scalar.As<T, short>(from.M24),
+                Scalar.As<T, short>(from.M31),Scalar.As<T, short>(from.M32),
+                Scalar.As<T, short>(from.M33),Scalar.As<T, short>(from.M34)
             );
         
         /// <summary>
@@ -678,12 +698,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<uint>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, uint>(from.M11),Operations.As<T, uint>(from.M12),
-                Operations.As<T, uint>(from.M13),Operations.As<T, uint>(from.M14),
-                Operations.As<T, uint>(from.M21),Operations.As<T, uint>(from.M22),
-                Operations.As<T, uint>(from.M23),Operations.As<T, uint>(from.M24),
-                Operations.As<T, uint>(from.M31),Operations.As<T, uint>(from.M32),
-                Operations.As<T, uint>(from.M33),Operations.As<T, uint>(from.M34)
+                Scalar.As<T, uint>(from.M11),Scalar.As<T, uint>(from.M12),
+                Scalar.As<T, uint>(from.M13),Scalar.As<T, uint>(from.M14),
+                Scalar.As<T, uint>(from.M21),Scalar.As<T, uint>(from.M22),
+                Scalar.As<T, uint>(from.M23),Scalar.As<T, uint>(from.M24),
+                Scalar.As<T, uint>(from.M31),Scalar.As<T, uint>(from.M32),
+                Scalar.As<T, uint>(from.M33),Scalar.As<T, uint>(from.M34)
             );
         
         /// <summary>
@@ -694,12 +714,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<int>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, int>(from.M11),Operations.As<T, int>(from.M12),
-                Operations.As<T, int>(from.M13),Operations.As<T, int>(from.M14),
-                Operations.As<T, int>(from.M21),Operations.As<T, int>(from.M22),
-                Operations.As<T, int>(from.M23),Operations.As<T, int>(from.M24),
-                Operations.As<T, int>(from.M31),Operations.As<T, int>(from.M32),
-                Operations.As<T, int>(from.M33),Operations.As<T, int>(from.M34)
+                Scalar.As<T, int>(from.M11),Scalar.As<T, int>(from.M12),
+                Scalar.As<T, int>(from.M13),Scalar.As<T, int>(from.M14),
+                Scalar.As<T, int>(from.M21),Scalar.As<T, int>(from.M22),
+                Scalar.As<T, int>(from.M23),Scalar.As<T, int>(from.M24),
+                Scalar.As<T, int>(from.M31),Scalar.As<T, int>(from.M32),
+                Scalar.As<T, int>(from.M33),Scalar.As<T, int>(from.M34)
             );
         
         /// <summary>
@@ -710,12 +730,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<ulong>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, ulong>(from.M11),Operations.As<T, ulong>(from.M12),
-                Operations.As<T, ulong>(from.M13),Operations.As<T, ulong>(from.M14),
-                Operations.As<T, ulong>(from.M21),Operations.As<T, ulong>(from.M22),
-                Operations.As<T, ulong>(from.M23),Operations.As<T, ulong>(from.M24),
-                Operations.As<T, ulong>(from.M31),Operations.As<T, ulong>(from.M32),
-                Operations.As<T, ulong>(from.M33),Operations.As<T, ulong>(from.M34)
+                Scalar.As<T, ulong>(from.M11),Scalar.As<T, ulong>(from.M12),
+                Scalar.As<T, ulong>(from.M13),Scalar.As<T, ulong>(from.M14),
+                Scalar.As<T, ulong>(from.M21),Scalar.As<T, ulong>(from.M22),
+                Scalar.As<T, ulong>(from.M23),Scalar.As<T, ulong>(from.M24),
+                Scalar.As<T, ulong>(from.M31),Scalar.As<T, ulong>(from.M32),
+                Scalar.As<T, ulong>(from.M33),Scalar.As<T, ulong>(from.M34)
             );
         
         /// <summary>
@@ -726,12 +746,12 @@ namespace Silk.NET.Numerics
         public static explicit operator Matrix3x4<long>(Matrix3x4<T> from)
             => new
             (
-                Operations.As<T, long>(from.M11),Operations.As<T, long>(from.M12),
-                Operations.As<T, long>(from.M13),Operations.As<T, long>(from.M14),
-                Operations.As<T, long>(from.M21),Operations.As<T, long>(from.M22),
-                Operations.As<T, long>(from.M23),Operations.As<T, long>(from.M24),
-                Operations.As<T, long>(from.M31),Operations.As<T, long>(from.M32),
-                Operations.As<T, long>(from.M33),Operations.As<T, long>(from.M34)
+                Scalar.As<T, long>(from.M11),Scalar.As<T, long>(from.M12),
+                Scalar.As<T, long>(from.M13),Scalar.As<T, long>(from.M14),
+                Scalar.As<T, long>(from.M21),Scalar.As<T, long>(from.M22),
+                Scalar.As<T, long>(from.M23),Scalar.As<T, long>(from.M24),
+                Scalar.As<T, long>(from.M31),Scalar.As<T, long>(from.M32),
+                Scalar.As<T, long>(from.M33),Scalar.As<T, long>(from.M34)
             );
     }
 }

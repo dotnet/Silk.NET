@@ -13,7 +13,7 @@ namespace Silk.NET.Numerics
     /// To be added.
     /// </summary>
     /// <typeparam name="T">To be added.</typeparam>
-    public static partial class Constants<T> where T : unmanaged
+    public static partial class Scalar<T> where T : unmanaged
     {
         /// <summary>
         /// Represents the smallest positive value that is greater than zero. Zero for non-floating point numbers.
@@ -106,7 +106,7 @@ namespace Silk.NET.Numerics
         private const float FloatTau = 6.283185307f;
 
         [MethodImpl(MaxOpt)]
-        static Constants()
+        static Scalar()
         {
             // This won't inline as nicely on platforms that aren't .NET 5, however there's no other way to yield the
             // constant folding benefits that come with the fields being static readonly.
@@ -181,7 +181,7 @@ namespace Silk.NET.Numerics
                 MinusTwo = (T) (object) (decimal) -2;
                 E = (T) (object) (decimal) Math.E;
                 Pi = (T) (object) (decimal) Math.PI;
-                Tau = Operations.Multiply(Pi, Two);
+                Tau = Scalar.Multiply(Pi, Two);
             }
             else if (typeof(T) == typeof(short))
             {
@@ -310,7 +310,7 @@ namespace Silk.NET.Numerics
                 Tau = (T) (object) (ulong) FloatTau;
             }
 
-            PiOver2 = Operations.Divide(Pi, Two);
+            PiOver2 = Scalar.Divide(Pi, Two);
         }
     }
 }

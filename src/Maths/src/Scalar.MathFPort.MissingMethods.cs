@@ -9,7 +9,7 @@ using static Silk.NET.Numerics.Helper;
 
 namespace Silk.NET.Numerics
 {
-    partial class Operations
+    partial class Scalar
     {
         ///////////////////////////////////////////////// BEGIN GO CODE ///////////////////////////////////////////////
 
