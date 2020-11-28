@@ -227,7 +227,7 @@ namespace Silk.NET.Numerics
 
             return m;
         }
-
+        
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>
@@ -570,7 +570,42 @@ namespace Silk.NET.Numerics
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Matrix3x3<T> Multiply(Matrix3x3<T> value1, Matrix3x3<T> value2)
             => value1 * value2;
-
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix2x3<T> Multiply(Matrix2x3<T> value1, Matrix3x3<T> value2)
+            => value1 * value2;
+        
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix3x2<T> Multiply(Matrix3x3<T> value1, Matrix3x2<T> value2)
+            => value1 * value2;
+        
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix4x3<T> Multiply(Matrix4x3<T> value1, Matrix3x3<T> value2)
+            => value1 * value2;
+        
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix3x4<T> Multiply(Matrix3x3<T> value1, Matrix3x4<T> value2)
+            => value1 * value2;
+        
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>

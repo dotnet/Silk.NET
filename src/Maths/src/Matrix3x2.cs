@@ -152,11 +152,37 @@ namespace Silk.NET.Numerics
         public static bool operator !=(Matrix3x2<T> value1, Matrix3x2<T> value2)
             => !(value1 == value2);
 
-        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
+        /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
-        /// <returns>The product matrix.</returns>
-        public static Matrix3x2<T> operator *(Matrix3x2<T> value1, Matrix3x2<T> value2)
+        /// <returns>The result of the multiplication.</returns>
+        public static unsafe Matrix3x3<T> operator *(Matrix3x2<T> value1, Matrix2x3<T> value2)
+        {
+            Matrix3x3<T> m;
+
+            // First row
+            m.M11 = Operations.Add(Operations.Multiply(value1.M11, value2.M11), Operations.Multiply(value1.M12, value2.M21));
+            m.M12 = Operations.Add(Operations.Multiply(value1.M11, value2.M12), Operations.Multiply(value1.M12, value2.M22));
+            m.M13 = Operations.Add(Operations.Multiply(value1.M11, value2.M13), Operations.Multiply(value1.M12, value2.M23));
+
+            // Second row
+            m.M21 = Operations.Add(Operations.Multiply(value1.M21, value2.M11), Operations.Multiply(value1.M22, value2.M21));
+            m.M22 = Operations.Add(Operations.Multiply(value1.M21, value2.M12), Operations.Multiply(value1.M22, value2.M22));
+            m.M23 = Operations.Add(Operations.Multiply(value1.M21, value2.M13), Operations.Multiply(value1.M22, value2.M23));
+
+            // Third row
+            m.M31 = Operations.Add(Operations.Multiply(value1.M31, value2.M11), Operations.Multiply(value1.M32, value2.M21));
+            m.M32 = Operations.Add(Operations.Multiply(value1.M31, value2.M12), Operations.Multiply(value1.M32, value2.M22));
+            m.M33 = Operations.Add(Operations.Multiply(value1.M31, value2.M13), Operations.Multiply(value1.M32, value2.M23));
+
+            return m;
+        }
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static unsafe Matrix3x2<T> operator *(Matrix3x2<T> value1, Matrix2x2<T> value2)
         {
             Matrix3x2<T> m;
 
@@ -169,8 +195,31 @@ namespace Silk.NET.Numerics
             m.M22 = Operations.Add(Operations.Multiply(value1.M21, value2.M12), Operations.Multiply(value1.M22, value2.M22));
 
             // Third row
-            m.M31 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M11), Operations.Multiply(value1.M32, value2.M21)), value2.M31);
-            m.M32 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M12), Operations.Multiply(value1.M32, value2.M22)), value2.M32);
+            m.M31 = Operations.Add(Operations.Multiply(value1.M31, value2.M11), Operations.Multiply(value1.M32, value2.M21));
+            m.M32 = Operations.Add(Operations.Multiply(value1.M31, value2.M12), Operations.Multiply(value1.M32, value2.M22));
+
+            return m;
+        }
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static unsafe Matrix3x2<T> operator *(Matrix3x3<T> value1, Matrix3x2<T> value2)
+        {
+            Matrix3x2<T> m;
+
+            // First row
+            m.M11 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M11), Operations.Multiply(value1.M12, value2.M21)), Operations.Multiply(value1.M13, value2.M31));
+            m.M12 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M12), Operations.Multiply(value1.M12, value2.M22)), Operations.Multiply(value1.M13, value2.M32));
+
+            // Second row
+            m.M21 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M11), Operations.Multiply(value1.M22, value2.M21)), Operations.Multiply(value1.M23, value2.M31));
+            m.M22 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M12), Operations.Multiply(value1.M22, value2.M22)), Operations.Multiply(value1.M23, value2.M32));
+
+            // Third row
+            m.M31 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M11), Operations.Multiply(value1.M32, value2.M21)), Operations.Multiply(value1.M33, value2.M31));
+            m.M32 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M12), Operations.Multiply(value1.M32, value2.M22)), Operations.Multiply(value1.M33, value2.M32));
 
             return m;
         }
@@ -577,7 +626,31 @@ namespace Silk.NET.Numerics
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Matrix3x2<T> Multiply(Matrix3x2<T> value1, Matrix3x2<T> value2)
+        public static Matrix3x2<T> Multiply(Matrix3x2<T> value1, Matrix2x2<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The product matrix.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix3x3<T> Multiply(Matrix3x2<T> value1, Matrix2x3<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The product matrix.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix2x2<T> Multiply(Matrix2x3<T> value1, Matrix3x2<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The product matrix.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix2x3<T> Multiply(Matrix2x3<T> value1, Matrix3x3<T> value2)
             => value1 * value2;
 
         /// <summary>Scales all elements in a matrix by the given scalar factor.</summary>

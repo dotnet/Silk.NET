@@ -329,87 +329,6 @@ namespace Silk.NET.Numerics
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Matrix4x4<T> operator *(Matrix4x4<T> value1, Matrix4x4<T> value2)
         {
-            /*if (AdvSimd.Arm64.IsSupported)
-            {
-                Unsafe.SkipInit(out Matrix4x4 result);
-
-                // Perform the operation on the first row
-
-                Vector128<T> M11 = AdvSimd.LoadVector128(&value1.M11);
-
-                Vector128<T> vX = AdvSimd.MultiplyBySelectedScalar(AdvSimd.LoadVector128(&value2.M11), M11, 0);
-                Vector128<T> vY = AdvSimd.MultiplyBySelectedScalar(AdvSimd.LoadVector128(&value2.M21), M11, 1);
-                Vector128<T> vZ = AdvSimd.Arm64.FusedMultiplyAddBySelectedScalar(vX, AdvSimd.LoadVector128(&value2.M31), M11, 2);
-                Vector128<T> vW = AdvSimd.Arm64.FusedMultiplyAddBySelectedScalar(vY, AdvSimd.LoadVector128(&value2.M41), M11, 3);
-
-                AdvSimd.Store(&result.M11, AdvSimd.Add(vZ, vW));
-
-                // Repeat for the other 3 rows
-
-                Vector128<T> M21 = AdvSimd.LoadVector128(&value1.M21);
-
-                vX = AdvSimd.MultiplyBySelectedScalar(AdvSimd.LoadVector128(&value2.M11), M21, 0);
-                vY = AdvSimd.MultiplyBySelectedScalar(AdvSimd.LoadVector128(&value2.M21), M21, 1);
-                vZ = AdvSimd.Arm64.FusedMultiplyAddBySelectedScalar(vX, AdvSimd.LoadVector128(&value2.M31), M21, 2);
-                vW = AdvSimd.Arm64.FusedMultiplyAddBySelectedScalar(vY, AdvSimd.LoadVector128(&value2.M41), M21, 3);
-
-                AdvSimd.Store(&result.M21, AdvSimd.Add(vZ, vW));
-
-                Vector128<T> M31 = AdvSimd.LoadVector128(&value1.M31);
-
-                vX = AdvSimd.MultiplyBySelectedScalar(AdvSimd.LoadVector128(&value2.M11), M31, 0);
-                vY = AdvSimd.MultiplyBySelectedScalar(AdvSimd.LoadVector128(&value2.M21), M31, 1);
-                vZ = AdvSimd.Arm64.FusedMultiplyAddBySelectedScalar(vX, AdvSimd.LoadVector128(&value2.M31), M31, 2);
-                vW = AdvSimd.Arm64.FusedMultiplyAddBySelectedScalar(vY, AdvSimd.LoadVector128(&value2.M41), M31, 3);
-
-                AdvSimd.Store(&result.M31, AdvSimd.Add(vZ, vW));
-
-                Vector128<T> M41 = AdvSimd.LoadVector128(&value1.M41);
-
-                vX = AdvSimd.MultiplyBySelectedScalar(AdvSimd.LoadVector128(&value2.M11), M41, 0);
-                vY = AdvSimd.MultiplyBySelectedScalar(AdvSimd.LoadVector128(&value2.M21), M41, 1);
-                vZ = AdvSimd.Arm64.FusedMultiplyAddBySelectedScalar(vX, AdvSimd.LoadVector128(&value2.M31), M41, 2);
-                vW = AdvSimd.Arm64.FusedMultiplyAddBySelectedScalar(vY, AdvSimd.LoadVector128(&value2.M41), M41, 3);
-
-                AdvSimd.Store(&result.M41, AdvSimd.Add(vZ, vW));
-
-                return result;
-            }
-            else if (Sse.IsSupported)
-            {
-                Vector128<T> row = Sse.LoadVector128(&value1.M11);
-                Sse.Store(&value1.M11,
-                    Sse.Add(Sse.Add(Sse.Multiply(Sse.Shuffle(row, row, 0x00), Sse.LoadVector128(&value2.M11)),
-                                    Sse.Multiply(Sse.Shuffle(row, row, 0x55), Sse.LoadVector128(&value2.M21))),
-                            Sse.Add(Sse.Multiply(Sse.Shuffle(row, row, 0xAA), Sse.LoadVector128(&value2.M31)),
-                                    Sse.Multiply(Sse.Shuffle(row, row, 0xFF), Sse.LoadVector128(&value2.M41)))));
-
-                // 0x00 is _MM_SHUFFLE(0,0,0,0), 0x55 is _MM_SHUFFLE(1,1,1,1), etc.
-                // TODO: Replace with a method once it's added to the API.
-
-                row = Sse.LoadVector128(&value1.M21);
-                Sse.Store(&value1.M21,
-                    Sse.Add(Sse.Add(Sse.Multiply(Sse.Shuffle(row, row, 0x00), Sse.LoadVector128(&value2.M11)),
-                                    Sse.Multiply(Sse.Shuffle(row, row, 0x55), Sse.LoadVector128(&value2.M21))),
-                            Sse.Add(Sse.Multiply(Sse.Shuffle(row, row, 0xAA), Sse.LoadVector128(&value2.M31)),
-                                    Sse.Multiply(Sse.Shuffle(row, row, 0xFF), Sse.LoadVector128(&value2.M41)))));
-
-                row = Sse.LoadVector128(&value1.M31);
-                Sse.Store(&value1.M31,
-                    Sse.Add(Sse.Add(Sse.Multiply(Sse.Shuffle(row, row, 0x00), Sse.LoadVector128(&value2.M11)),
-                                    Sse.Multiply(Sse.Shuffle(row, row, 0x55), Sse.LoadVector128(&value2.M21))),
-                            Sse.Add(Sse.Multiply(Sse.Shuffle(row, row, 0xAA), Sse.LoadVector128(&value2.M31)),
-                                    Sse.Multiply(Sse.Shuffle(row, row, 0xFF), Sse.LoadVector128(&value2.M41)))));
-
-                row = Sse.LoadVector128(&value1.M41);
-                Sse.Store(&value1.M41,
-                    Sse.Add(Sse.Add(Sse.Multiply(Sse.Shuffle(row, row, 0x00), Sse.LoadVector128(&value2.M11)),
-                                    Sse.Multiply(Sse.Shuffle(row, row, 0x55), Sse.LoadVector128(&value2.M21))),
-                            Sse.Add(Sse.Multiply(Sse.Shuffle(row, row, 0xAA), Sse.LoadVector128(&value2.M31)),
-                                    Sse.Multiply(Sse.Shuffle(row, row, 0xFF), Sse.LoadVector128(&value2.M41)))));
-                return value1;
-            }*/
-
             Matrix4x4<T> m;
 
             // First row
@@ -435,6 +354,66 @@ namespace Silk.NET.Numerics
             m.M42 = Operations.Add(Operations.Add(Operations.Multiply(value1.M41, value2.M12), Operations.Multiply(value1.M42, value2.M22)), Operations.Add(Operations.Multiply(value1.M43, value2.M32), Operations.Multiply(value1.M44, value2.M42)));
             m.M43 = Operations.Add(Operations.Add(Operations.Multiply(value1.M41, value2.M13), Operations.Multiply(value1.M42, value2.M23)), Operations.Add(Operations.Multiply(value1.M43, value2.M33), Operations.Multiply(value1.M44, value2.M43)));
             m.M44 = Operations.Add(Operations.Add(Operations.Multiply(value1.M41, value2.M14), Operations.Multiply(value1.M42, value2.M24)), Operations.Add(Operations.Multiply(value1.M43, value2.M34), Operations.Multiply(value1.M44, value2.M44)));
+
+            return m;
+        }
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static unsafe Matrix3x4<T> operator *(Matrix3x4<T> value1, Matrix4x4<T> value2)
+        {
+            Matrix3x4<T> m;
+
+            // First row
+            m.M11 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M11), Operations.Multiply(value1.M12, value2.M21)), Operations.Add(Operations.Multiply(value1.M13, value2.M31), Operations.Multiply(value1.M14, value2.M41)));
+            m.M12 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M12), Operations.Multiply(value1.M12, value2.M22)), Operations.Add(Operations.Multiply(value1.M13, value2.M32), Operations.Multiply(value1.M14, value2.M42)));
+            m.M13 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M13), Operations.Multiply(value1.M12, value2.M23)), Operations.Add(Operations.Multiply(value1.M13, value2.M33), Operations.Multiply(value1.M14, value2.M43)));
+            m.M14 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M14), Operations.Multiply(value1.M12, value2.M24)), Operations.Add(Operations.Multiply(value1.M13, value2.M34), Operations.Multiply(value1.M14, value2.M44)));
+
+            // Second row
+            m.M21 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M11), Operations.Multiply(value1.M22, value2.M21)), Operations.Add(Operations.Multiply(value1.M23, value2.M31), Operations.Multiply(value1.M24, value2.M41)));
+            m.M22 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M12), Operations.Multiply(value1.M22, value2.M22)), Operations.Add(Operations.Multiply(value1.M23, value2.M32), Operations.Multiply(value1.M24, value2.M42)));
+            m.M23 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M13), Operations.Multiply(value1.M22, value2.M23)), Operations.Add(Operations.Multiply(value1.M23, value2.M33), Operations.Multiply(value1.M24, value2.M43)));
+            m.M24 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M14), Operations.Multiply(value1.M22, value2.M24)), Operations.Add(Operations.Multiply(value1.M23, value2.M34), Operations.Multiply(value1.M24, value2.M44)));
+
+            // Third row
+            m.M31 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M11), Operations.Multiply(value1.M32, value2.M21)), Operations.Add(Operations.Multiply(value1.M33, value2.M31), Operations.Multiply(value1.M34, value2.M41)));
+            m.M32 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M12), Operations.Multiply(value1.M32, value2.M22)), Operations.Add(Operations.Multiply(value1.M33, value2.M32), Operations.Multiply(value1.M34, value2.M42)));
+            m.M33 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M13), Operations.Multiply(value1.M32, value2.M23)), Operations.Add(Operations.Multiply(value1.M33, value2.M33), Operations.Multiply(value1.M34, value2.M43)));
+            m.M34 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M14), Operations.Multiply(value1.M32, value2.M24)), Operations.Add(Operations.Multiply(value1.M33, value2.M34), Operations.Multiply(value1.M34, value2.M44)));
+
+            return m;
+        }
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static unsafe Matrix4x3<T> operator *(Matrix4x4<T> value1, Matrix4x3<T> value2)
+        {
+            Matrix4x3<T> m;
+
+            // First row
+            m.M11 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M11), Operations.Multiply(value1.M12, value2.M21)), Operations.Add(Operations.Multiply(value1.M13, value2.M31), Operations.Multiply(value1.M14, value2.M41)));
+            m.M12 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M12), Operations.Multiply(value1.M12, value2.M22)), Operations.Add(Operations.Multiply(value1.M13, value2.M32), Operations.Multiply(value1.M14, value2.M42)));
+            m.M13 = Operations.Add(Operations.Add(Operations.Multiply(value1.M11, value2.M13), Operations.Multiply(value1.M12, value2.M23)), Operations.Add(Operations.Multiply(value1.M13, value2.M33), Operations.Multiply(value1.M14, value2.M43)));
+
+            // Second row
+            m.M21 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M11), Operations.Multiply(value1.M22, value2.M21)), Operations.Add(Operations.Multiply(value1.M23, value2.M31), Operations.Multiply(value1.M24, value2.M41)));
+            m.M22 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M12), Operations.Multiply(value1.M22, value2.M22)), Operations.Add(Operations.Multiply(value1.M23, value2.M32), Operations.Multiply(value1.M24, value2.M42)));
+            m.M23 = Operations.Add(Operations.Add(Operations.Multiply(value1.M21, value2.M13), Operations.Multiply(value1.M22, value2.M23)), Operations.Add(Operations.Multiply(value1.M23, value2.M33), Operations.Multiply(value1.M24, value2.M43)));
+
+            // Third row
+            m.M31 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M11), Operations.Multiply(value1.M32, value2.M21)), Operations.Add(Operations.Multiply(value1.M33, value2.M31), Operations.Multiply(value1.M34, value2.M41)));
+            m.M32 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M12), Operations.Multiply(value1.M32, value2.M22)), Operations.Add(Operations.Multiply(value1.M33, value2.M32), Operations.Multiply(value1.M34, value2.M42)));
+            m.M33 = Operations.Add(Operations.Add(Operations.Multiply(value1.M31, value2.M13), Operations.Multiply(value1.M32, value2.M23)), Operations.Add(Operations.Multiply(value1.M33, value2.M33), Operations.Multiply(value1.M34, value2.M43)));
+
+            // Fourth row
+            m.M41 = Operations.Add(Operations.Add(Operations.Multiply(value1.M41, value2.M11), Operations.Multiply(value1.M42, value2.M21)), Operations.Add(Operations.Multiply(value1.M43, value2.M31), Operations.Multiply(value1.M44, value2.M41)));
+            m.M42 = Operations.Add(Operations.Add(Operations.Multiply(value1.M41, value2.M12), Operations.Multiply(value1.M42, value2.M22)), Operations.Add(Operations.Multiply(value1.M43, value2.M32), Operations.Multiply(value1.M44, value2.M42)));
+            m.M43 = Operations.Add(Operations.Add(Operations.Multiply(value1.M41, value2.M13), Operations.Multiply(value1.M42, value2.M23)), Operations.Add(Operations.Multiply(value1.M43, value2.M33), Operations.Multiply(value1.M44, value2.M43)));
 
             return m;
         }
