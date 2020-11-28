@@ -111,6 +111,40 @@ namespace Silk.NET.Numerics
             M33 = value.M33;
         }
 
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix3x3(Matrix2x4<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = value.M13;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = value.M23;
+
+            M31 = Constants<T>.Zero;
+            M32 = Constants<T>.Zero;
+            M33 = Constants<T>.One;
+        }
+        
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix3x3(Matrix4x2<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = Constants<T>.Zero;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = Constants<T>.Zero;
+
+            M31 = value.M31;
+            M32 = value.M32;
+            M33 = Constants<T>.One;
+        }
+        
         /// <summary>Returns the multiplicative identity matrix.</summary>
         public static Matrix3x3<T> Identity => _identity;
 
@@ -208,6 +242,8 @@ namespace Silk.NET.Numerics
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Matrix3x3<T> operator *(Matrix3x3<T> value1, Matrix3x3<T> value2)
         {
+            // change Matrix3x2<T> operator *(Matrix3x2<T> value1, Matrix3x2<T> value2) when changing this, it's the same.
+            
             Matrix3x3<T> m;
 
             // First row
@@ -634,7 +670,6 @@ namespace Silk.NET.Numerics
         /// <param name="matrix">The source matrix.</param>
         /// <param name="scale">The scaling component of the transformation matrix.</param>
         /// <param name="rotation">The rotation component of the transformation matrix.</param>
-        /// <param name="translation">The translation component of the transformation matrix</param>
         /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
         public static bool Decompose(Matrix3x3<T> matrix, out Vector3<T> scale, out Quaternion<T> rotation)
         {

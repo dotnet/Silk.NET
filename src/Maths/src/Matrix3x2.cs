@@ -91,6 +91,34 @@ namespace Silk.NET.Numerics
             M31 = value.M31;
             M32 = value.M32;
         }
+        
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix3x2(Matrix2x4<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+
+            M21 = value.M21;
+            M22 = value.M22;
+
+            M31 = Constants<T>.Zero;
+            M32 = Constants<T>.Zero;
+        }
+        
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix3x2(Matrix4x2<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+
+            M21 = value.M21;
+            M22 = value.M22;
+
+            M31 = value.M31;
+            M32 = value.M32;
+        }
 
         /// <summary>Returns the multiplicative identity matrix.</summary>
         public static Matrix3x2<T> Identity => _identity;
@@ -151,7 +179,7 @@ namespace Silk.NET.Numerics
         /// <returns>True if the matrices are not equal; False if they are equal.</returns>
         public static bool operator !=(Matrix3x2<T> value1, Matrix3x2<T> value2)
             => !(value1 == value2);
-
+        
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>

@@ -85,6 +85,32 @@ namespace Silk.NET.Numerics
             M22 = value.M22;
             M23 = value.M23;
         }
+        
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix2x3(Matrix2x4<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = value.M13;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = value.M23;
+        }
+        
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix2x3(Matrix4x2<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = Constants<T>.Zero;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = Constants<T>.Zero;
+        }
 
         /// <summary>Returns the multiplicative identity matrix.</summary>
         public static Matrix2x3<T> Identity => _identity;

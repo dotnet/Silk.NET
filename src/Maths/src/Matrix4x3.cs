@@ -114,6 +114,48 @@ namespace Silk.NET.Numerics
             M42 = value.M32;
             M43 = value.M43;
         }
+        
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix4x3(Matrix2x4<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = value.M13;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = value.M23;
+
+            M31 = Constants<T>.Zero;
+            M32 = Constants<T>.Zero;
+            M33 = Constants<T>.One;
+
+            M41 = Constants<T>.Zero;
+            M42 = Constants<T>.Zero;
+            M43 = Constants<T>.Zero;
+        }
+        
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix4x3(Matrix4x2<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = Constants<T>.Zero;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = Constants<T>.Zero;
+
+            M31 = value.M31;
+            M32 = value.M32;
+            M33 = Constants<T>.One;
+
+            M41 = value.M41;
+            M42 = value.M42;
+            M43 = Constants<T>.Zero;
+        }
 
         /// <summary>Constructs a Matrix4x3 from the given Matrix3x4.</summary>
         /// <param name="value">The source Matrix3x4.</param>

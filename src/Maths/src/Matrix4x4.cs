@@ -99,13 +99,13 @@ namespace Silk.NET.Numerics
             M23 = Constants<T>.Zero;
             M24 = Constants<T>.Zero;
 
-            M31 = Constants<T>.Zero;
-            M32 = Constants<T>.Zero;
+            M31 = value.M31;
+            M32 = value.M32;
             M33 = Constants<T>.One;
             M34 = Constants<T>.Zero;
 
-            M41 = value.M31;
-            M42 = value.M32;
+            M41 = Constants<T>.Zero;
+            M42 = Constants<T>.Zero;
             M43 = Constants<T>.Zero;
             M44 = Constants<T>.One;
         }
@@ -183,6 +183,56 @@ namespace Silk.NET.Numerics
             M42 = Constants<T>.Zero;
             M43 = Constants<T>.Zero;
             M44 = Constants<T>.Zero;
+        }
+
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix4x4(Matrix2x4<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = value.M13;
+            M14 = value.M14;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = value.M23;
+            M24 = value.M24;
+
+            M31 = Constants<T>.Zero;
+            M32 = Constants<T>.Zero;
+            M33 = Constants<T>.One;
+            M34 = Constants<T>.Zero;
+
+            M41 = Constants<T>.Zero;
+            M42 = Constants<T>.Zero;
+            M43 = Constants<T>.Zero;
+            M44 = Constants<T>.One;
+        }
+        
+        /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
+        /// <param name="value">The source Matrix3x4.</param>
+        public Matrix4x4(Matrix4x2<T> value)
+        {
+            M11 = value.M11;
+            M12 = value.M12;
+            M13 = Constants<T>.Zero;
+            M14 = Constants<T>.Zero;
+
+            M21 = value.M21;
+            M22 = value.M22;
+            M23 = Constants<T>.Zero;
+            M24 = Constants<T>.Zero;
+
+            M31 = value.M31;
+            M32 = value.M32;
+            M33 = Constants<T>.One;
+            M34 = Constants<T>.Zero;
+
+            M41 = value.M41;
+            M42 = value.M42;
+            M43 = Constants<T>.Zero;
+            M44 = Constants<T>.One;
         }
 
         /// <summary>Returns the multiplicative identity matrix.</summary>
@@ -1726,6 +1776,22 @@ namespace Silk.NET.Numerics
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Matrix4x4<T> Multiply(Matrix4x4<T> value1, Matrix4x4<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix2x4<T> Multiply(Matrix2x4<T> value1, Matrix4x4<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix4x2<T> Multiply(Matrix4x4<T> value1, Matrix4x2<T> value2)
             => value1 * value2;
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>
