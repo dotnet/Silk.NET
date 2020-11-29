@@ -454,40 +454,6 @@ namespace Silk.NET.Core.Native
             => GlobalMemory.FromHGlobal(ptr, length);
 
         /// <summary>
-        /// Zero-initializes between 1-8 bytes from the given pointer, depending on the length.
-        /// </summary>
-        /// <remarks>
-        /// This is useful to guard against uninitialized and unmodified memory being interpreted a string, and failing
-        /// because the runtime detects a mangled string.
-        /// </remarks>
-        /// <param name="memory">The memory to zero-initialize the start of.</param>
-        /// <param name="memoryLength">The length of the memory.</param>
-        [Obsolete("Random method added in the 2.0 preview cycle, to be removed any day now.")]
-        public static unsafe void ZeroStart(byte* memory, int memoryLength)
-        {
-            if (memoryLength >= 8)
-            {
-                *(ulong*) memory = default;
-            }
-            else if (memoryLength >= 4)
-            {
-                *(uint*) memory = default;
-            }
-            else if (memoryLength >= 2)
-            {
-                *(ushort*) memory = default;
-            }
-            else if (memoryLength >= 1)
-            {
-                *memory = default;
-            }
-            else
-            {
-                // no memory to initialize
-            }
-        }
-
-        /// <summary>
         /// Gets a function pointer for the given delegate.
         /// </summary>
         /// <param name="delegate">The delegate to get a function pointer to.</param>
