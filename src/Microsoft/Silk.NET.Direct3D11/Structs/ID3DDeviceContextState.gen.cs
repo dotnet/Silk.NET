@@ -24,24 +24,8 @@ namespace Silk.NET.Direct3D11
         public static implicit operator ID3D11DeviceChild(ID3DDeviceContextState val)
             => Unsafe.As<ID3DDeviceContextState, ID3D11DeviceChild>(ref val);
 
-        public readonly ref ID3D11DeviceChild AsDeviceChild()
-        {
-            fixed (ID3DDeviceContextState* @this = &this)
-            {
-                return ref *(ID3D11DeviceChild*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3DDeviceContextState val)
             => Unsafe.As<ID3DDeviceContextState, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3DDeviceContextState* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public ID3DDeviceContextState
         (

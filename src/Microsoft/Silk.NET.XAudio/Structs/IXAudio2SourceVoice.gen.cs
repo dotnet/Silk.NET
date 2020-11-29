@@ -24,14 +24,6 @@ namespace Silk.NET.XAudio
         public static implicit operator IXAudio2Voice(IXAudio2SourceVoice val)
             => Unsafe.As<IXAudio2SourceVoice, IXAudio2Voice>(ref val);
 
-        public readonly ref IXAudio2Voice AsVoice()
-        {
-            fixed (IXAudio2SourceVoice* @this = &this)
-            {
-                return ref *(IXAudio2Voice*)@this;
-            }
-        }
-
         public IXAudio2SourceVoice
         (
             void** lpVtbl = null

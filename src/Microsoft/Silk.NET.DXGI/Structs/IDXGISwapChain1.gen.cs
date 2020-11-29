@@ -24,46 +24,14 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.DXGI.IDXGISwapChain(IDXGISwapChain1 val)
             => Unsafe.As<IDXGISwapChain1, Silk.NET.DXGI.IDXGISwapChain>(ref val);
 
-        public readonly ref Silk.NET.DXGI.IDXGISwapChain AsSwapChain()
-        {
-            fixed (IDXGISwapChain1* @this = &this)
-            {
-                return ref *(Silk.NET.DXGI.IDXGISwapChain*)@this;
-            }
-        }
-
         public static implicit operator IDXGIDeviceSubObject(IDXGISwapChain1 val)
             => Unsafe.As<IDXGISwapChain1, IDXGIDeviceSubObject>(ref val);
-
-        public readonly ref IDXGIDeviceSubObject AsDeviceSubObject()
-        {
-            fixed (IDXGISwapChain1* @this = &this)
-            {
-                return ref *(IDXGIDeviceSubObject*)@this;
-            }
-        }
 
         public static implicit operator IDXGIObject(IDXGISwapChain1 val)
             => Unsafe.As<IDXGISwapChain1, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGISwapChain1* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChain1 val)
             => Unsafe.As<IDXGISwapChain1, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGISwapChain1* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGISwapChain1
         (

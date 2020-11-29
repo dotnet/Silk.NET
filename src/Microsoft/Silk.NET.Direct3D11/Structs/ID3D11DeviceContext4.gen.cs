@@ -24,68 +24,20 @@ namespace Silk.NET.Direct3D11
         public static implicit operator ID3D11DeviceContext3(ID3D11DeviceContext4 val)
             => Unsafe.As<ID3D11DeviceContext4, ID3D11DeviceContext3>(ref val);
 
-        public readonly ref ID3D11DeviceContext3 AsDeviceContext3()
-        {
-            fixed (ID3D11DeviceContext4* @this = &this)
-            {
-                return ref *(ID3D11DeviceContext3*)@this;
-            }
-        }
-
         public static implicit operator ID3D11DeviceContext2(ID3D11DeviceContext4 val)
             => Unsafe.As<ID3D11DeviceContext4, ID3D11DeviceContext2>(ref val);
-
-        public readonly ref ID3D11DeviceContext2 AsDeviceContext2()
-        {
-            fixed (ID3D11DeviceContext4* @this = &this)
-            {
-                return ref *(ID3D11DeviceContext2*)@this;
-            }
-        }
 
         public static implicit operator ID3D11DeviceContext1(ID3D11DeviceContext4 val)
             => Unsafe.As<ID3D11DeviceContext4, ID3D11DeviceContext1>(ref val);
 
-        public readonly ref ID3D11DeviceContext1 AsDeviceContext1()
-        {
-            fixed (ID3D11DeviceContext4* @this = &this)
-            {
-                return ref *(ID3D11DeviceContext1*)@this;
-            }
-        }
-
         public static implicit operator ID3D11DeviceContext(ID3D11DeviceContext4 val)
             => Unsafe.As<ID3D11DeviceContext4, ID3D11DeviceContext>(ref val);
-
-        public readonly ref ID3D11DeviceContext AsDeviceContext()
-        {
-            fixed (ID3D11DeviceContext4* @this = &this)
-            {
-                return ref *(ID3D11DeviceContext*)@this;
-            }
-        }
 
         public static implicit operator ID3D11DeviceChild(ID3D11DeviceContext4 val)
             => Unsafe.As<ID3D11DeviceContext4, ID3D11DeviceChild>(ref val);
 
-        public readonly ref ID3D11DeviceChild AsDeviceChild()
-        {
-            fixed (ID3D11DeviceContext4* @this = &this)
-            {
-                return ref *(ID3D11DeviceChild*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11DeviceContext4 val)
             => Unsafe.As<ID3D11DeviceContext4, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3D11DeviceContext4* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public ID3D11DeviceContext4
         (

@@ -24,14 +24,6 @@ namespace Silk.NET.XAudio
         public static implicit operator Silk.NET.Core.Native.IUnknown(IXAudio2Extension val)
             => Unsafe.As<IXAudio2Extension, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IXAudio2Extension* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IXAudio2Extension
         (
             void** lpVtbl = null

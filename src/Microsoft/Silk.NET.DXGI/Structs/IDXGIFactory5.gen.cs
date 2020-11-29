@@ -24,79 +24,23 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIFactory4(IDXGIFactory5 val)
             => Unsafe.As<IDXGIFactory5, IDXGIFactory4>(ref val);
 
-        public readonly ref IDXGIFactory4 AsFactory4()
-        {
-            fixed (IDXGIFactory5* @this = &this)
-            {
-                return ref *(IDXGIFactory4*)@this;
-            }
-        }
-
         public static implicit operator IDXGIFactory3(IDXGIFactory5 val)
             => Unsafe.As<IDXGIFactory5, IDXGIFactory3>(ref val);
-
-        public readonly ref IDXGIFactory3 AsFactory3()
-        {
-            fixed (IDXGIFactory5* @this = &this)
-            {
-                return ref *(IDXGIFactory3*)@this;
-            }
-        }
 
         public static implicit operator IDXGIFactory2(IDXGIFactory5 val)
             => Unsafe.As<IDXGIFactory5, IDXGIFactory2>(ref val);
 
-        public readonly ref IDXGIFactory2 AsFactory2()
-        {
-            fixed (IDXGIFactory5* @this = &this)
-            {
-                return ref *(IDXGIFactory2*)@this;
-            }
-        }
-
         public static implicit operator IDXGIFactory1(IDXGIFactory5 val)
             => Unsafe.As<IDXGIFactory5, IDXGIFactory1>(ref val);
-
-        public readonly ref IDXGIFactory1 AsFactory1()
-        {
-            fixed (IDXGIFactory5* @this = &this)
-            {
-                return ref *(IDXGIFactory1*)@this;
-            }
-        }
 
         public static implicit operator IDXGIFactory(IDXGIFactory5 val)
             => Unsafe.As<IDXGIFactory5, IDXGIFactory>(ref val);
 
-        public readonly ref IDXGIFactory AsFactory()
-        {
-            fixed (IDXGIFactory5* @this = &this)
-            {
-                return ref *(IDXGIFactory*)@this;
-            }
-        }
-
         public static implicit operator IDXGIObject(IDXGIFactory5 val)
             => Unsafe.As<IDXGIFactory5, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGIFactory5* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIFactory5 val)
             => Unsafe.As<IDXGIFactory5, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIFactory5* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGIFactory5
         (

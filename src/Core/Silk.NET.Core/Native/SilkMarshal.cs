@@ -669,6 +669,48 @@ namespace Silk.NET.Core.Native
             return (delegate* unmanaged[Thiscall]<void>) DelegateToPtr(@delegate, kind, pinned);
         }
 
+        [MethodImpl((MethodImplOptions)768)] public static unsafe ref Guid GuidOf<T>() => ref *TypeGuid<T>.Riid;
+        [MethodImpl((MethodImplOptions)768)] public static unsafe Guid* GuidPtrOf<T>() => TypeGuid<T>.Riid;
+        
+        // Begin adapted TerraFX code
+        // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT).
+        // See License.md in the repository root for more information.
+        // Ported from shared/uuids.h in the Windows SDK for Windows 10.0.19041.0
+        // Original source is Copyright © Microsoft. All rights reserved.
+
+        private static unsafe class TypeGuid<T>
+        {
+            public static readonly Guid* Riid = CreateRiid();
+            private static Guid* CreateRiid()
+            {
+                #if NET5_0
+                var p = (Guid*) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(T), sizeof(Guid));
+                #else
+                var p = (Guid*) Allocate(sizeof(Guid));
+                #endif
+
+                *p = typeof(T).GUID;
+
+                return p;
+            }
+        }
+        
+        // End adapted TerraFX code
+
+        /// <summary>
+        /// Converts the specified HRESULT error code to a corresponding <see cref="T:System.Exception"></see> object
+        /// and throws if a match was found.
+        /// </summary>
+        /// <param name="hResult">The HRESULT to be converted.</param>
+        public static void ThrowHResult(int hResult)
+        {
+            var ex = Marshal.GetExceptionForHR(hResult);
+            if (ex is not null)
+            {
+                throw ex;
+            }
+        }
+
         // TODO !!!!!!!!!!!!!!! LEGACY METHODS START HERE, DELETE THEM ONCE SILK HAS STOPPED USING THEM !!!!!!!!!!!!!!!
 
         /// <summary>

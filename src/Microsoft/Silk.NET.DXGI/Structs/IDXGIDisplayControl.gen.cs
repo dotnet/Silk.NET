@@ -24,14 +24,6 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDisplayControl val)
             => Unsafe.As<IDXGIDisplayControl, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIDisplayControl* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDXGIDisplayControl
         (
             void** lpVtbl = null

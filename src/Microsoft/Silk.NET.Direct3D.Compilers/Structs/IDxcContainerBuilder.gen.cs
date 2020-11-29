@@ -24,14 +24,6 @@ namespace Silk.NET.Direct3D.Compilers
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcContainerBuilder val)
             => Unsafe.As<IDxcContainerBuilder, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDxcContainerBuilder* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDxcContainerBuilder
         (
             void** lpVtbl = null

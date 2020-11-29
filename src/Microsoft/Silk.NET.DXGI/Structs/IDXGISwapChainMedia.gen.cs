@@ -24,14 +24,6 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChainMedia val)
             => Unsafe.As<IDXGISwapChainMedia, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGISwapChainMedia* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDXGISwapChainMedia
         (
             void** lpVtbl = null

@@ -24,79 +24,23 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIOutput4(IDXGIOutput5 val)
             => Unsafe.As<IDXGIOutput5, IDXGIOutput4>(ref val);
 
-        public readonly ref IDXGIOutput4 AsOutput4()
-        {
-            fixed (IDXGIOutput5* @this = &this)
-            {
-                return ref *(IDXGIOutput4*)@this;
-            }
-        }
-
         public static implicit operator IDXGIOutput3(IDXGIOutput5 val)
             => Unsafe.As<IDXGIOutput5, IDXGIOutput3>(ref val);
-
-        public readonly ref IDXGIOutput3 AsOutput3()
-        {
-            fixed (IDXGIOutput5* @this = &this)
-            {
-                return ref *(IDXGIOutput3*)@this;
-            }
-        }
 
         public static implicit operator IDXGIOutput2(IDXGIOutput5 val)
             => Unsafe.As<IDXGIOutput5, IDXGIOutput2>(ref val);
 
-        public readonly ref IDXGIOutput2 AsOutput2()
-        {
-            fixed (IDXGIOutput5* @this = &this)
-            {
-                return ref *(IDXGIOutput2*)@this;
-            }
-        }
-
         public static implicit operator IDXGIOutput1(IDXGIOutput5 val)
             => Unsafe.As<IDXGIOutput5, IDXGIOutput1>(ref val);
-
-        public readonly ref IDXGIOutput1 AsOutput1()
-        {
-            fixed (IDXGIOutput5* @this = &this)
-            {
-                return ref *(IDXGIOutput1*)@this;
-            }
-        }
 
         public static implicit operator IDXGIOutput(IDXGIOutput5 val)
             => Unsafe.As<IDXGIOutput5, IDXGIOutput>(ref val);
 
-        public readonly ref IDXGIOutput AsOutput()
-        {
-            fixed (IDXGIOutput5* @this = &this)
-            {
-                return ref *(IDXGIOutput*)@this;
-            }
-        }
-
         public static implicit operator IDXGIObject(IDXGIOutput5 val)
             => Unsafe.As<IDXGIOutput5, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGIOutput5* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIOutput5 val)
             => Unsafe.As<IDXGIOutput5, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIOutput5* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGIOutput5
         (

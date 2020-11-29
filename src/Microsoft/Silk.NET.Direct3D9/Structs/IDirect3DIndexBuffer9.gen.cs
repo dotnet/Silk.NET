@@ -24,24 +24,8 @@ namespace Silk.NET.Direct3D9
         public static implicit operator IDirect3DResource9(IDirect3DIndexBuffer9 val)
             => Unsafe.As<IDirect3DIndexBuffer9, IDirect3DResource9>(ref val);
 
-        public readonly ref IDirect3DResource9 AsDirect3DResource9()
-        {
-            fixed (IDirect3DIndexBuffer9* @this = &this)
-            {
-                return ref *(IDirect3DResource9*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DIndexBuffer9 val)
             => Unsafe.As<IDirect3DIndexBuffer9, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDirect3DIndexBuffer9* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDirect3DIndexBuffer9
         (

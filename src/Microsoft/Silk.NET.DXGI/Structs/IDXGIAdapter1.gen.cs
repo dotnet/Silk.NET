@@ -24,35 +24,11 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.DXGI.IDXGIAdapter(IDXGIAdapter1 val)
             => Unsafe.As<IDXGIAdapter1, Silk.NET.DXGI.IDXGIAdapter>(ref val);
 
-        public readonly ref Silk.NET.DXGI.IDXGIAdapter AsAdapter()
-        {
-            fixed (IDXGIAdapter1* @this = &this)
-            {
-                return ref *(Silk.NET.DXGI.IDXGIAdapter*)@this;
-            }
-        }
-
         public static implicit operator IDXGIObject(IDXGIAdapter1 val)
             => Unsafe.As<IDXGIAdapter1, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGIAdapter1* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIAdapter1 val)
             => Unsafe.As<IDXGIAdapter1, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIAdapter1* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGIAdapter1
         (

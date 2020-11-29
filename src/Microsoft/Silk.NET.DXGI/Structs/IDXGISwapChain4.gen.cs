@@ -24,79 +24,23 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGISwapChain3(IDXGISwapChain4 val)
             => Unsafe.As<IDXGISwapChain4, IDXGISwapChain3>(ref val);
 
-        public readonly ref IDXGISwapChain3 AsSwapChain3()
-        {
-            fixed (IDXGISwapChain4* @this = &this)
-            {
-                return ref *(IDXGISwapChain3*)@this;
-            }
-        }
-
         public static implicit operator IDXGISwapChain2(IDXGISwapChain4 val)
             => Unsafe.As<IDXGISwapChain4, IDXGISwapChain2>(ref val);
-
-        public readonly ref IDXGISwapChain2 AsSwapChain2()
-        {
-            fixed (IDXGISwapChain4* @this = &this)
-            {
-                return ref *(IDXGISwapChain2*)@this;
-            }
-        }
 
         public static implicit operator IDXGISwapChain1(IDXGISwapChain4 val)
             => Unsafe.As<IDXGISwapChain4, IDXGISwapChain1>(ref val);
 
-        public readonly ref IDXGISwapChain1 AsSwapChain1()
-        {
-            fixed (IDXGISwapChain4* @this = &this)
-            {
-                return ref *(IDXGISwapChain1*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.DXGI.IDXGISwapChain(IDXGISwapChain4 val)
             => Unsafe.As<IDXGISwapChain4, Silk.NET.DXGI.IDXGISwapChain>(ref val);
-
-        public readonly ref Silk.NET.DXGI.IDXGISwapChain AsSwapChain()
-        {
-            fixed (IDXGISwapChain4* @this = &this)
-            {
-                return ref *(Silk.NET.DXGI.IDXGISwapChain*)@this;
-            }
-        }
 
         public static implicit operator IDXGIDeviceSubObject(IDXGISwapChain4 val)
             => Unsafe.As<IDXGISwapChain4, IDXGIDeviceSubObject>(ref val);
 
-        public readonly ref IDXGIDeviceSubObject AsDeviceSubObject()
-        {
-            fixed (IDXGISwapChain4* @this = &this)
-            {
-                return ref *(IDXGIDeviceSubObject*)@this;
-            }
-        }
-
         public static implicit operator IDXGIObject(IDXGISwapChain4 val)
             => Unsafe.As<IDXGISwapChain4, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGISwapChain4* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChain4 val)
             => Unsafe.As<IDXGISwapChain4, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGISwapChain4* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGISwapChain4
         (

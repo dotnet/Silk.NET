@@ -24,35 +24,11 @@ namespace Silk.NET.Direct3D9
         public static implicit operator IDirect3DBaseTexture9(IDirect3DTexture9 val)
             => Unsafe.As<IDirect3DTexture9, IDirect3DBaseTexture9>(ref val);
 
-        public readonly ref IDirect3DBaseTexture9 AsDirect3DBaseTexture9()
-        {
-            fixed (IDirect3DTexture9* @this = &this)
-            {
-                return ref *(IDirect3DBaseTexture9*)@this;
-            }
-        }
-
         public static implicit operator IDirect3DResource9(IDirect3DTexture9 val)
             => Unsafe.As<IDirect3DTexture9, IDirect3DResource9>(ref val);
 
-        public readonly ref IDirect3DResource9 AsDirect3DResource9()
-        {
-            fixed (IDirect3DTexture9* @this = &this)
-            {
-                return ref *(IDirect3DResource9*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DTexture9 val)
             => Unsafe.As<IDirect3DTexture9, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDirect3DTexture9* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDirect3DTexture9
         (

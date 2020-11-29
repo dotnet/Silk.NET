@@ -24,14 +24,6 @@ namespace Silk.NET.Direct3D.Compilers
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcOptimizerPass val)
             => Unsafe.As<IDxcOptimizerPass, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDxcOptimizerPass* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDxcOptimizerPass
         (
             void** lpVtbl = null

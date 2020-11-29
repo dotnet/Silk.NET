@@ -24,14 +24,6 @@ namespace Silk.NET.Direct3D.Compilers
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcVersionInfo val)
             => Unsafe.As<IDxcVersionInfo, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDxcVersionInfo* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDxcVersionInfo
         (
             void** lpVtbl = null

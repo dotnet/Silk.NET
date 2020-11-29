@@ -24,24 +24,8 @@ namespace Silk.NET.Direct3D11
         public static implicit operator ID3D11DeviceChild(ID3D11RasterizerState val)
             => Unsafe.As<ID3D11RasterizerState, ID3D11DeviceChild>(ref val);
 
-        public readonly ref ID3D11DeviceChild AsDeviceChild()
-        {
-            fixed (ID3D11RasterizerState* @this = &this)
-            {
-                return ref *(ID3D11DeviceChild*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11RasterizerState val)
             => Unsafe.As<ID3D11RasterizerState, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3D11RasterizerState* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public ID3D11RasterizerState
         (

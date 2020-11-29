@@ -24,14 +24,6 @@ namespace Silk.NET.Direct3D11
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11ShaderTraceFactory val)
             => Unsafe.As<ID3D11ShaderTraceFactory, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3D11ShaderTraceFactory* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public ID3D11ShaderTraceFactory
         (
             void** lpVtbl = null

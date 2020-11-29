@@ -24,14 +24,6 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIFactoryMedia val)
             => Unsafe.As<IDXGIFactoryMedia, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIFactoryMedia* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDXGIFactoryMedia
         (
             void** lpVtbl = null

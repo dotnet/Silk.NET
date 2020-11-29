@@ -24,14 +24,6 @@ namespace Silk.NET.Direct3D9
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DPixelShader9 val)
             => Unsafe.As<IDirect3DPixelShader9, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDirect3DPixelShader9* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDirect3DPixelShader9
         (
             uint? version = null,

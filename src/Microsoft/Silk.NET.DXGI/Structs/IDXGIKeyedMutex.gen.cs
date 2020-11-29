@@ -24,35 +24,11 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIDeviceSubObject(IDXGIKeyedMutex val)
             => Unsafe.As<IDXGIKeyedMutex, IDXGIDeviceSubObject>(ref val);
 
-        public readonly ref IDXGIDeviceSubObject AsDeviceSubObject()
-        {
-            fixed (IDXGIKeyedMutex* @this = &this)
-            {
-                return ref *(IDXGIDeviceSubObject*)@this;
-            }
-        }
-
         public static implicit operator IDXGIObject(IDXGIKeyedMutex val)
             => Unsafe.As<IDXGIKeyedMutex, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGIKeyedMutex* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIKeyedMutex val)
             => Unsafe.As<IDXGIKeyedMutex, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIKeyedMutex* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGIKeyedMutex
         (

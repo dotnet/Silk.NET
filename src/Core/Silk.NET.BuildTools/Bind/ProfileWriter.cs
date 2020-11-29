@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
@@ -129,25 +130,64 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("    {");
             foreach (var comBase in @struct.ComBases)
             {
+                var asSuffix = comBase.Split('.').Last();
+                asSuffix = (asSuffix.StartsWith('I') ? asSuffix.Substring(1) : comBase);
+                asSuffix = asSuffix.StartsWith(task.FunctionPrefix)
+                    ? asSuffix.Substring(task.FunctionPrefix.Length)
+                    : asSuffix;
+                var fromSuffix = @struct.Name.Split('.').Last();
+                fromSuffix = (fromSuffix.StartsWith('I') ? fromSuffix.Substring(1) : comBase);
+                fromSuffix = fromSuffix.StartsWith(task.FunctionPrefix)
+                    ? fromSuffix.Substring(task.FunctionPrefix.Length)
+                    : fromSuffix;
                 sw.WriteLine($"        public static implicit operator {comBase}({@struct.Name} val)");
                 sw.WriteLine($"            => Unsafe.As<{@struct.Name}, {comBase}>(ref val);");
                 sw.WriteLine();
-                var asMethodSuffix = comBase.Split('.').Last();
-                asMethodSuffix = (asMethodSuffix.StartsWith('I') ? asMethodSuffix.Substring(1) : comBase);
-                asMethodSuffix = asMethodSuffix.StartsWith(task.FunctionPrefix)
-                    ? asMethodSuffix.Substring(task.FunctionPrefix.Length)
-                    : asMethodSuffix;
-                sw.WriteLine($"        public readonly ref {comBase} As{asMethodSuffix}()");
-                sw.WriteLine("        {");
-                sw.WriteLine($"            fixed ({@struct.Name}* @this = &this)");
-                sw.WriteLine("            {");
-                // yes i know this is unsafe and that there's a good reason why struct members can't return themselves
-                // by reference, but this should work well enough.
-                sw.WriteLine($"                return ref *({comBase}*)@this;");
-                sw.WriteLine("            }");
-                sw.WriteLine("        }");
-                sw.WriteLine();
-                // TODO add an explicit cast which calls QueryInterface
+                if (@struct.Functions.Any(x => x.Signature.Name.Equals("QueryInterface")))
+                {
+                    sw.WriteLine($"        public static explicit operator {@struct.Name}({comBase} val)");
+                    sw.WriteLine($"            => From{fromSuffix}(in val);");
+                    sw.WriteLine();
+                    sw.WriteLine($"        public readonly ref {comBase} As{asSuffix}()");
+                    sw.WriteLine("        {");
+                    // yes i know this is unsafe and that there's a good reason why struct members can't return themselves
+                    // by reference, but this should work well enough.
+                    sw.WriteLine("#if NETSTANDARD2_1 || NET5_0 || NETCOREAPP3_1");
+                    sw.WriteLine($"            return ref Unsafe.As<{@struct.Name}, {comBase}>");
+                    sw.WriteLine($"            (");
+                    sw.WriteLine($"                ref MemoryMarshal.GetReference");
+                    sw.WriteLine($"                (");
+                    sw.WriteLine($"                    MemoryMarshal.CreateSpan");
+                    sw.WriteLine($"                    (");
+                    sw.WriteLine($"                        ref Unsafe.AsRef(in this),");
+                    sw.WriteLine($"                        1");
+                    sw.WriteLine($"                    )");
+                    sw.WriteLine($"                )");
+                    sw.WriteLine($"            );");
+                    sw.WriteLine("#else");
+                    sw.WriteLine($"            fixed ({@struct.Name}* @this = &this)");
+                    sw.WriteLine($"            {{");
+                    sw.WriteLine($"                return ref *({comBase}*) @this;");
+                    sw.WriteLine($"            }}");
+                    sw.WriteLine("#endif");
+                    sw.WriteLine("        }");
+                    sw.WriteLine();
+                    sw.WriteLine($"        public static ref {@struct.Name} From{fromSuffix}(in {comBase} @this)");
+                    sw.WriteLine("        {");
+                    sw.WriteLine($"            {@struct.Name}* ret = default;");
+                    sw.WriteLine($"            SilkMarshal.ThrowHResult");
+                    sw.WriteLine($"            (");
+                    sw.WriteLine($"                @this.QueryInterface");
+                    sw.WriteLine($"                (");
+                    sw.WriteLine($"                    ref SilkMarshal.GuidOf<{@struct.Name}>(),");
+                    sw.WriteLine($"                    (void**) &ret");
+                    sw.WriteLine($"                )");
+                    sw.WriteLine($"            );");
+                    sw.WriteLine();
+                    sw.WriteLine($"            return ref *ret;");
+                    sw.WriteLine("        }");
+                    sw.WriteLine();
+                }
             }
             
             if (@struct.Fields.Any(x => x.Count is null))

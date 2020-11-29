@@ -24,57 +24,17 @@ namespace Silk.NET.Direct3D11
         public static implicit operator ID3D11VideoContext2(ID3D11VideoContext3 val)
             => Unsafe.As<ID3D11VideoContext3, ID3D11VideoContext2>(ref val);
 
-        public readonly ref ID3D11VideoContext2 AsVideoContext2()
-        {
-            fixed (ID3D11VideoContext3* @this = &this)
-            {
-                return ref *(ID3D11VideoContext2*)@this;
-            }
-        }
-
         public static implicit operator ID3D11VideoContext1(ID3D11VideoContext3 val)
             => Unsafe.As<ID3D11VideoContext3, ID3D11VideoContext1>(ref val);
-
-        public readonly ref ID3D11VideoContext1 AsVideoContext1()
-        {
-            fixed (ID3D11VideoContext3* @this = &this)
-            {
-                return ref *(ID3D11VideoContext1*)@this;
-            }
-        }
 
         public static implicit operator ID3D11VideoContext(ID3D11VideoContext3 val)
             => Unsafe.As<ID3D11VideoContext3, ID3D11VideoContext>(ref val);
 
-        public readonly ref ID3D11VideoContext AsVideoContext()
-        {
-            fixed (ID3D11VideoContext3* @this = &this)
-            {
-                return ref *(ID3D11VideoContext*)@this;
-            }
-        }
-
         public static implicit operator ID3D11DeviceChild(ID3D11VideoContext3 val)
             => Unsafe.As<ID3D11VideoContext3, ID3D11DeviceChild>(ref val);
 
-        public readonly ref ID3D11DeviceChild AsDeviceChild()
-        {
-            fixed (ID3D11VideoContext3* @this = &this)
-            {
-                return ref *(ID3D11DeviceChild*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11VideoContext3 val)
             => Unsafe.As<ID3D11VideoContext3, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3D11VideoContext3* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public ID3D11VideoContext3
         (

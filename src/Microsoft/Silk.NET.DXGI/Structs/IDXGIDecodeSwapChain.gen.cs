@@ -24,14 +24,6 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDecodeSwapChain val)
             => Unsafe.As<IDXGIDecodeSwapChain, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIDecodeSwapChain* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDXGIDecodeSwapChain
         (
             void** lpVtbl = null

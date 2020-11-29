@@ -24,24 +24,8 @@ namespace Silk.NET.Direct3D.Compilers
         public static implicit operator IDxcBlob(IDxcBlobEncoding val)
             => Unsafe.As<IDxcBlobEncoding, IDxcBlob>(ref val);
 
-        public readonly ref IDxcBlob AsBlob()
-        {
-            fixed (IDxcBlobEncoding* @this = &this)
-            {
-                return ref *(IDxcBlob*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcBlobEncoding val)
             => Unsafe.As<IDxcBlobEncoding, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDxcBlobEncoding* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDxcBlobEncoding
         (

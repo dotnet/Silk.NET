@@ -24,14 +24,6 @@ namespace Silk.NET.Direct3D9
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DDevice9 val)
             => Unsafe.As<IDirect3DDevice9, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDirect3DDevice9* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public IDirect3DDevice9
         (
             DeviceCreationParameters? creationParameters = null,

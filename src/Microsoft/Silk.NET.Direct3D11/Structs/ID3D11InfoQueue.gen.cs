@@ -24,14 +24,6 @@ namespace Silk.NET.Direct3D11
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11InfoQueue val)
             => Unsafe.As<ID3D11InfoQueue, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3D11InfoQueue* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
-
         public ID3D11InfoQueue
         (
             void** lpVtbl = null

@@ -24,112 +24,32 @@ namespace Silk.NET.Direct3D12
         public static implicit operator ID3D12GraphicsCommandList5(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12GraphicsCommandList5>(ref val);
 
-        public readonly ref ID3D12GraphicsCommandList5 AsGraphicsCommandList5()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12GraphicsCommandList5*)@this;
-            }
-        }
-
         public static implicit operator ID3D12GraphicsCommandList4(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12GraphicsCommandList4>(ref val);
-
-        public readonly ref ID3D12GraphicsCommandList4 AsGraphicsCommandList4()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12GraphicsCommandList4*)@this;
-            }
-        }
 
         public static implicit operator ID3D12GraphicsCommandList3(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12GraphicsCommandList3>(ref val);
 
-        public readonly ref ID3D12GraphicsCommandList3 AsGraphicsCommandList3()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12GraphicsCommandList3*)@this;
-            }
-        }
-
         public static implicit operator ID3D12GraphicsCommandList2(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12GraphicsCommandList2>(ref val);
-
-        public readonly ref ID3D12GraphicsCommandList2 AsGraphicsCommandList2()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12GraphicsCommandList2*)@this;
-            }
-        }
 
         public static implicit operator ID3D12GraphicsCommandList1(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12GraphicsCommandList1>(ref val);
 
-        public readonly ref ID3D12GraphicsCommandList1 AsGraphicsCommandList1()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12GraphicsCommandList1*)@this;
-            }
-        }
-
         public static implicit operator ID3D12GraphicsCommandList(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12GraphicsCommandList>(ref val);
-
-        public readonly ref ID3D12GraphicsCommandList AsGraphicsCommandList()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12GraphicsCommandList*)@this;
-            }
-        }
 
         public static implicit operator ID3D12CommandList(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12CommandList>(ref val);
 
-        public readonly ref ID3D12CommandList AsCommandList()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12CommandList*)@this;
-            }
-        }
-
         public static implicit operator ID3D12DeviceChild(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12DeviceChild>(ref val);
-
-        public readonly ref ID3D12DeviceChild AsDeviceChild()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12DeviceChild*)@this;
-            }
-        }
 
         public static implicit operator ID3D12Object(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, ID3D12Object>(ref val);
 
-        public readonly ref ID3D12Object AsObject()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(ID3D12Object*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12GraphicsCommandList6 val)
             => Unsafe.As<ID3D12GraphicsCommandList6, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3D12GraphicsCommandList6* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public ID3D12GraphicsCommandList6
         (

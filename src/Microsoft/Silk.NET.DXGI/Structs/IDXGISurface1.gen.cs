@@ -24,46 +24,14 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGISurface(IDXGISurface1 val)
             => Unsafe.As<IDXGISurface1, IDXGISurface>(ref val);
 
-        public readonly ref IDXGISurface AsSurface()
-        {
-            fixed (IDXGISurface1* @this = &this)
-            {
-                return ref *(IDXGISurface*)@this;
-            }
-        }
-
         public static implicit operator IDXGIDeviceSubObject(IDXGISurface1 val)
             => Unsafe.As<IDXGISurface1, IDXGIDeviceSubObject>(ref val);
-
-        public readonly ref IDXGIDeviceSubObject AsDeviceSubObject()
-        {
-            fixed (IDXGISurface1* @this = &this)
-            {
-                return ref *(IDXGIDeviceSubObject*)@this;
-            }
-        }
 
         public static implicit operator IDXGIObject(IDXGISurface1 val)
             => Unsafe.As<IDXGISurface1, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGISurface1* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISurface1 val)
             => Unsafe.As<IDXGISurface1, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGISurface1* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGISurface1
         (

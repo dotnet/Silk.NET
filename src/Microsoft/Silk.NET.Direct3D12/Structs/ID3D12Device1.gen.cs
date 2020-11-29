@@ -24,35 +24,11 @@ namespace Silk.NET.Direct3D12
         public static implicit operator ID3D12Device(ID3D12Device1 val)
             => Unsafe.As<ID3D12Device1, ID3D12Device>(ref val);
 
-        public readonly ref ID3D12Device AsDevice()
-        {
-            fixed (ID3D12Device1* @this = &this)
-            {
-                return ref *(ID3D12Device*)@this;
-            }
-        }
-
         public static implicit operator ID3D12Object(ID3D12Device1 val)
             => Unsafe.As<ID3D12Device1, ID3D12Object>(ref val);
 
-        public readonly ref ID3D12Object AsObject()
-        {
-            fixed (ID3D12Device1* @this = &this)
-            {
-                return ref *(ID3D12Object*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Device1 val)
             => Unsafe.As<ID3D12Device1, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3D12Device1* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public ID3D12Device1
         (

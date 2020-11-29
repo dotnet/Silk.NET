@@ -24,68 +24,20 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIDevice3(IDXGIDevice4 val)
             => Unsafe.As<IDXGIDevice4, IDXGIDevice3>(ref val);
 
-        public readonly ref IDXGIDevice3 AsDevice3()
-        {
-            fixed (IDXGIDevice4* @this = &this)
-            {
-                return ref *(IDXGIDevice3*)@this;
-            }
-        }
-
         public static implicit operator IDXGIDevice2(IDXGIDevice4 val)
             => Unsafe.As<IDXGIDevice4, IDXGIDevice2>(ref val);
-
-        public readonly ref IDXGIDevice2 AsDevice2()
-        {
-            fixed (IDXGIDevice4* @this = &this)
-            {
-                return ref *(IDXGIDevice2*)@this;
-            }
-        }
 
         public static implicit operator IDXGIDevice1(IDXGIDevice4 val)
             => Unsafe.As<IDXGIDevice4, IDXGIDevice1>(ref val);
 
-        public readonly ref IDXGIDevice1 AsDevice1()
-        {
-            fixed (IDXGIDevice4* @this = &this)
-            {
-                return ref *(IDXGIDevice1*)@this;
-            }
-        }
-
         public static implicit operator IDXGIDevice(IDXGIDevice4 val)
             => Unsafe.As<IDXGIDevice4, IDXGIDevice>(ref val);
-
-        public readonly ref IDXGIDevice AsDevice()
-        {
-            fixed (IDXGIDevice4* @this = &this)
-            {
-                return ref *(IDXGIDevice*)@this;
-            }
-        }
 
         public static implicit operator IDXGIObject(IDXGIDevice4 val)
             => Unsafe.As<IDXGIDevice4, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGIDevice4* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDevice4 val)
             => Unsafe.As<IDXGIDevice4, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIDevice4* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGIDevice4
         (

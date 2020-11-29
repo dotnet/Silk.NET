@@ -24,68 +24,20 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIAdapter3(IDXGIAdapter4 val)
             => Unsafe.As<IDXGIAdapter4, IDXGIAdapter3>(ref val);
 
-        public readonly ref IDXGIAdapter3 AsAdapter3()
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                return ref *(IDXGIAdapter3*)@this;
-            }
-        }
-
         public static implicit operator IDXGIAdapter2(IDXGIAdapter4 val)
             => Unsafe.As<IDXGIAdapter4, IDXGIAdapter2>(ref val);
-
-        public readonly ref IDXGIAdapter2 AsAdapter2()
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                return ref *(IDXGIAdapter2*)@this;
-            }
-        }
 
         public static implicit operator IDXGIAdapter1(IDXGIAdapter4 val)
             => Unsafe.As<IDXGIAdapter4, IDXGIAdapter1>(ref val);
 
-        public readonly ref IDXGIAdapter1 AsAdapter1()
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                return ref *(IDXGIAdapter1*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.DXGI.IDXGIAdapter(IDXGIAdapter4 val)
             => Unsafe.As<IDXGIAdapter4, Silk.NET.DXGI.IDXGIAdapter>(ref val);
-
-        public readonly ref Silk.NET.DXGI.IDXGIAdapter AsAdapter()
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                return ref *(Silk.NET.DXGI.IDXGIAdapter*)@this;
-            }
-        }
 
         public static implicit operator IDXGIObject(IDXGIAdapter4 val)
             => Unsafe.As<IDXGIAdapter4, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIAdapter4 val)
             => Unsafe.As<IDXGIAdapter4, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIAdapter4* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGIAdapter4
         (

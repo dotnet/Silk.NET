@@ -24,46 +24,14 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIAdapter1(IDXGIAdapter2 val)
             => Unsafe.As<IDXGIAdapter2, IDXGIAdapter1>(ref val);
 
-        public readonly ref IDXGIAdapter1 AsAdapter1()
-        {
-            fixed (IDXGIAdapter2* @this = &this)
-            {
-                return ref *(IDXGIAdapter1*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.DXGI.IDXGIAdapter(IDXGIAdapter2 val)
             => Unsafe.As<IDXGIAdapter2, Silk.NET.DXGI.IDXGIAdapter>(ref val);
-
-        public readonly ref Silk.NET.DXGI.IDXGIAdapter AsAdapter()
-        {
-            fixed (IDXGIAdapter2* @this = &this)
-            {
-                return ref *(Silk.NET.DXGI.IDXGIAdapter*)@this;
-            }
-        }
 
         public static implicit operator IDXGIObject(IDXGIAdapter2 val)
             => Unsafe.As<IDXGIAdapter2, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGIAdapter2* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIAdapter2 val)
             => Unsafe.As<IDXGIAdapter2, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIAdapter2* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGIAdapter2
         (

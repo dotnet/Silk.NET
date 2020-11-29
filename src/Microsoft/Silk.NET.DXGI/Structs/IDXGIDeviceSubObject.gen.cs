@@ -24,24 +24,8 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIObject(IDXGIDeviceSubObject val)
             => Unsafe.As<IDXGIDeviceSubObject, IDXGIObject>(ref val);
 
-        public readonly ref IDXGIObject AsObject()
-        {
-            fixed (IDXGIDeviceSubObject* @this = &this)
-            {
-                return ref *(IDXGIObject*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDeviceSubObject val)
             => Unsafe.As<IDXGIDeviceSubObject, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (IDXGIDeviceSubObject* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public IDXGIDeviceSubObject
         (

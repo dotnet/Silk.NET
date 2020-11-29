@@ -24,46 +24,14 @@ namespace Silk.NET.Direct3D11
         public static implicit operator ID3D11Texture2D(ID3D11Texture2D1 val)
             => Unsafe.As<ID3D11Texture2D1, ID3D11Texture2D>(ref val);
 
-        public readonly ref ID3D11Texture2D AsTexture2D()
-        {
-            fixed (ID3D11Texture2D1* @this = &this)
-            {
-                return ref *(ID3D11Texture2D*)@this;
-            }
-        }
-
         public static implicit operator ID3D11Resource(ID3D11Texture2D1 val)
             => Unsafe.As<ID3D11Texture2D1, ID3D11Resource>(ref val);
-
-        public readonly ref ID3D11Resource AsResource()
-        {
-            fixed (ID3D11Texture2D1* @this = &this)
-            {
-                return ref *(ID3D11Resource*)@this;
-            }
-        }
 
         public static implicit operator ID3D11DeviceChild(ID3D11Texture2D1 val)
             => Unsafe.As<ID3D11Texture2D1, ID3D11DeviceChild>(ref val);
 
-        public readonly ref ID3D11DeviceChild AsDeviceChild()
-        {
-            fixed (ID3D11Texture2D1* @this = &this)
-            {
-                return ref *(ID3D11DeviceChild*)@this;
-            }
-        }
-
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11Texture2D1 val)
             => Unsafe.As<ID3D11Texture2D1, Silk.NET.Core.Native.IUnknown>(ref val);
-
-        public readonly ref Silk.NET.Core.Native.IUnknown AsUnknown()
-        {
-            fixed (ID3D11Texture2D1* @this = &this)
-            {
-                return ref *(Silk.NET.Core.Native.IUnknown*)@this;
-            }
-        }
 
         public ID3D11Texture2D1
         (
