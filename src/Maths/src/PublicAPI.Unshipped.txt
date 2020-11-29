@@ -40,8 +40,8 @@ override Silk.NET.Maths.Ray2<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Ray2<T>.GetHashCode() -> int
 override Silk.NET.Maths.Ray3<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Ray3<T>.GetHashCode() -> int
-override Silk.NET.Maths.Rect<T>.Equals(object? obj) -> bool
-override Silk.NET.Maths.Rect<T>.GetHashCode() -> int
+override Silk.NET.Maths.Rectangle<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Rectangle<T>.GetHashCode() -> int
 override Silk.NET.Maths.Sphere<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Sphere<T>.GetHashCode() -> int
 override Silk.NET.Maths.Vector2<T>.Equals(object? obj) -> bool
@@ -287,12 +287,12 @@ Silk.NET.Maths.Ray3<T>.GetPoint(T distance) -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Ray3<T>.Origin -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Ray3<T>.Ray3() -> void
 Silk.NET.Maths.Ray3<T>.Ray3(Silk.NET.Maths.Vector3<T> origin, Silk.NET.Maths.Vector3<T> direction) -> void
-Silk.NET.Maths.Rect<T>
-Silk.NET.Maths.Rect<T>.Equals(Silk.NET.Maths.Rect<T> other) -> bool
-Silk.NET.Maths.Rect<T>.Origin -> Silk.NET.Maths.Vector2<T>
-Silk.NET.Maths.Rect<T>.Rect() -> void
-Silk.NET.Maths.Rect<T>.Rect(Silk.NET.Maths.Vector2<T> origin, Silk.NET.Maths.Vector2<T> size) -> void
-Silk.NET.Maths.Rect<T>.Size -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Rectangle<T>
+Silk.NET.Maths.Rectangle<T>.Equals(Silk.NET.Maths.Rectangle<T> other) -> bool
+Silk.NET.Maths.Rectangle<T>.Origin -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Rectangle<T>.Rectangle() -> void
+Silk.NET.Maths.Rectangle<T>.Rectangle(Silk.NET.Maths.Vector2<T> origin, Silk.NET.Maths.Vector2<T> size) -> void
+Silk.NET.Maths.Rectangle<T>.Size -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Scalar<T>
 Silk.NET.Maths.Sphere<T>
 Silk.NET.Maths.Sphere<T>.Center -> Silk.NET.Maths.Vector3<T>
@@ -837,8 +837,8 @@ static Silk.NET.Maths.Ray2<T>.operator !=(Silk.NET.Maths.Ray2<T> value1, Silk.NE
 static Silk.NET.Maths.Ray2<T>.operator ==(Silk.NET.Maths.Ray2<T> value1, Silk.NET.Maths.Ray2<T> value2) -> bool
 static Silk.NET.Maths.Ray3<T>.operator !=(Silk.NET.Maths.Ray3<T> value1, Silk.NET.Maths.Ray3<T> value2) -> bool
 static Silk.NET.Maths.Ray3<T>.operator ==(Silk.NET.Maths.Ray3<T> value1, Silk.NET.Maths.Ray3<T> value2) -> bool
-static Silk.NET.Maths.Rect<T>.operator !=(Silk.NET.Maths.Rect<T> value1, Silk.NET.Maths.Rect<T> value2) -> bool
-static Silk.NET.Maths.Rect<T>.operator ==(Silk.NET.Maths.Rect<T> value1, Silk.NET.Maths.Rect<T> value2) -> bool
+static Silk.NET.Maths.Rectangle<T>.operator !=(Silk.NET.Maths.Rectangle<T> value1, Silk.NET.Maths.Rectangle<T> value2) -> bool
+static Silk.NET.Maths.Rectangle<T>.operator ==(Silk.NET.Maths.Rectangle<T> value1, Silk.NET.Maths.Rectangle<T> value2) -> bool
 static Silk.NET.Maths.Sphere<T>.operator !=(Silk.NET.Maths.Sphere<T> value1, Silk.NET.Maths.Sphere<T> value2) -> bool
 static Silk.NET.Maths.Sphere<T>.operator ==(Silk.NET.Maths.Sphere<T> value1, Silk.NET.Maths.Sphere<T> value2) -> bool
 static Silk.NET.Maths.SystemNumericsExtensions.ToGeneric(System.Numerics.Vector4 value) -> Silk.NET.Maths.Vector4<float>
