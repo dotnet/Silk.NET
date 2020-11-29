@@ -22,7 +22,7 @@ namespace Silk.NET.OpenCL
     {
         public NameVersionKhr
         (
-            cl_version_khr? version = null
+            uint? version = null
         ) : this()
         {
             if (version is not null)
@@ -35,7 +35,7 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "cl_version_khr")]
         [NativeName("Type.Name", "cl_version_khr")]
         [NativeName("Name", "version")]
-        public cl_version_khr Version;
+        public uint Version;
         /// <summary></summary>
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]

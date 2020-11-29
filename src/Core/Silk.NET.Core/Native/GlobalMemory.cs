@@ -111,6 +111,11 @@ namespace Silk.NET.Core.Native
                     Marshal.FreeBSTR(bStr.Handle);
                     break;
                 }
+                case GCHandleByteArray byteArray:
+                {
+                    byteArray.GCHandle.Free();
+                    break;
+                }
             }
         }
 
@@ -134,7 +139,7 @@ namespace Silk.NET.Core.Native
         /// <returns>A block of global memory.</returns>
         public static GlobalMemory Allocate(int length) =>
 #if !NET5_0
-            new GlobalMemory(new HGlobal(length), length);
+            new GlobalMemory(new GCHandleByteArray(length), length);
 #else
             new GlobalMemory(GC.AllocateUninitializedArray<byte>(length, true), length);
 #endif
@@ -143,6 +148,13 @@ namespace Silk.NET.Core.Native
         private interface IGlobalMemory
         {
             IntPtr Handle { get; }
+        }
+        
+        private struct GCHandleByteArray : IGlobalMemory
+        {
+            public GCHandleByteArray(int length) => GCHandle = GCHandle.Alloc(new byte[length], GCHandleType.Pinned);
+            public GCHandle GCHandle { get; }
+            public IntPtr Handle => GCHandle.AddrOfPinnedObject();
         }
 
         private struct HGlobal : IGlobalMemory

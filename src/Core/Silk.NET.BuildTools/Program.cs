@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -37,14 +38,22 @@ namespace Silk.NET.BuildTools
             }
 
             var sw = Stopwatch.StartNew();
+            var extraCtrls = new List<string>();
             foreach (var arg in args)
             {
-                Console.SetOut(new ConsoleWriter(Console.Out));
+                if (arg.StartsWith("--"))
+                {
+                    Console.WriteLine($"Control descriptor \"{arg}\" will be applied to every job herein.");
+                    extraCtrls.Add(arg[2..]);
+                    continue;
+                }
+                
+                Console.SetOut(ConsoleWriter.GetOrCreate(Console.Out));
                 var jobSw = Stopwatch.StartNew();
                 var abs = Path.GetFullPath(arg);
                 Environment.CurrentDirectory = Path.GetDirectoryName
                     (abs) ?? throw new NullReferenceException("Dir path null.");
-                Generator.Run(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)));
+                Generator.Run(AddDescriptors(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)), extraCtrls));
             
                 jobSw.Stop();
                 Console.SetOut(ConsoleWriter.Instance.Base);
@@ -68,18 +77,29 @@ namespace Silk.NET.BuildTools
                 Console.WriteLine();
                 Console.WriteLine($"In total, this particular job took {jobSw.Elapsed.TotalSeconds} second(s) to complete.");
                 Console.WriteLine();
+                ConsoleWriter.Instance.Reset();
             }
 
             sw.Stop();
             Console.WriteLine($"Complete bind took {sw.Elapsed.TotalSeconds} second(s).");
+
+            static Config AddDescriptors(Config config, IReadOnlyList<string> descriptors)
+            {
+                for (var i = 0; i < config.Tasks.Length; i++)
+                {
+                    var task = config.Tasks[i];
+                    config.Tasks[i].Controls = task.Controls.Concat(descriptors).ToArray();
+                }
+
+                return config;
+            }
         }
 
         internal class ConsoleWriter : TextWriter
         {
             internal static ConsoleWriter Instance { get; private set; }
-            public readonly ThreadLocal<string> CurrentName = new ThreadLocal<string>();
-
-            public readonly ThreadLocal<KeyValuePair<string, (TimeSpan Time, bool Success)>> Timings =
+            public ThreadLocal<string> CurrentName { get; private set; } = new ThreadLocal<string>();
+            public ThreadLocal<KeyValuePair<string, (TimeSpan Time, bool Success)>> Timings { get; private set; } =
                 new ThreadLocal<KeyValuePair<string, (TimeSpan Time, bool Success)>>(true);
 
             public readonly TextWriter Base;
@@ -90,7 +110,15 @@ namespace Silk.NET.BuildTools
                 Encoding = Base.Encoding;
                 Instance = this;
             }
+            
             public override Encoding Encoding { get; }
+            public static ConsoleWriter GetOrCreate(TextWriter @base) => Instance ??= new ConsoleWriter(@base);
+
+            public void Reset()
+            {
+                CurrentName = new ThreadLocal<string>();
+                Timings = new ThreadLocal<KeyValuePair<string, (TimeSpan Time, bool Success)>>(true);
+            }
             public override void WriteLine(string? value)
             {
                 Base.WriteLine($"[{DateTime.Now:T}] [{CurrentName.Value}] {Task.CurrentId}> " + value);

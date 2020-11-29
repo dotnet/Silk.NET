@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 15.0.26124.0
@@ -322,6 +322,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing.Sdl.iOS"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{488775D1-32CC-46D7-8DD7-BB331EC659B9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.NUKE", "build\nuke\Silk.NET.NUKE.csproj", "{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.NUKE.SshAgent", "src\Core\Silk.NET.NUKE.SshAgent\Silk.NET.NUKE.SshAgent.csproj", "{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -332,6 +336,9 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -1959,6 +1966,18 @@ Global
 		{603F28D1-E982-47C0-98D9-3E6DA1DD37E2}.Release|x64.Build.0 = Release|Any CPU
 		{603F28D1-E982-47C0-98D9-3E6DA1DD37E2}.Release|x86.ActiveCfg = Release|Any CPU
 		{603F28D1-E982-47C0-98D9-3E6DA1DD37E2}.Release|x86.Build.0 = Release|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|x64.Build.0 = Debug|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|x86.Build.0 = Debug|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Release|x64.ActiveCfg = Release|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Release|x64.Build.0 = Release|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Release|x86.ActiveCfg = Release|Any CPU
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2108,6 +2127,8 @@ Global
 		{8669819B-654F-4E41-9030-1CCA56D64E88} = {DFA0E841-33E5-4533-AF00-964E21A141B8}
 		{603F28D1-E982-47C0-98D9-3E6DA1DD37E2} = {488775D1-32CC-46D7-8DD7-BB331EC659B9}
 		{488775D1-32CC-46D7-8DD7-BB331EC659B9} = {23324041-2076-477C-A4BF-B385B8066C6C}
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74} = {0651C5EF-50AA-4598-8D9C-8F210ADD8490}
+		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9} = {0651C5EF-50AA-4598-8D9C-8F210ADD8490}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}

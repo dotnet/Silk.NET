@@ -29,7 +29,7 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeName("Name", "CL_IMPORT_DMA_BUF_DATA_CONSISTENCY_WITH_HOST_ARM")]
         ImportDmaBufDataConsistencyWithHostArm = 0x41E3,
         [NativeName("Name", "CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM")]
-        ImportMemoryWholeAllocationArm = 18446744073709551615,
+        ImportMemoryWholeAllocationArm = -1,
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]
         PrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]

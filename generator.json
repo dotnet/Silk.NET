@@ -567,7 +567,8 @@
             "exclude": [
                 "VkSurfaceKHR",
                 "VkInstance",
-                "SDL_main"
+                "SDL_main",
+                "SDL_SysWMmsg"
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
@@ -628,7 +629,8 @@
                     "SDL_bool": "SdlBool",
                     "SDL_RWops": "RWops",
                     "VkInstance": "Silk.NET.Core.Native.VkHandle",
-                    "VkSurfaceKHR": "Silk.NET.Core.Native.VkNonDispatchableHandle"
+                    "VkSurfaceKHR": "Silk.NET.Core.Native.VkNonDispatchableHandle",
+                    "SDL_SysWMmsg": "SysWMMsg"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

@@ -75,6 +75,7 @@ namespace Silk.NET.SilkTouch
             marshalBuilder.Use(Middlewares.GenericPointerMarshaller);
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
+            
 
             foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
             {

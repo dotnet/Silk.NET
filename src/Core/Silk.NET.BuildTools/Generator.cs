@@ -226,7 +226,11 @@ namespace Silk.NET.BuildTools
                 );
             }
 
-            profile.Flush(task);
+            if (task.Controls.All(x => x.ToLower() != "no-bind"))
+            {
+                profile.Flush(task);
+            }
+
             sw?.Stop();
             var af = sw is null ? null : $" after {sw.Elapsed.TotalSeconds} second(s)";
             Console.WriteLine($"Task complete{af}.");
@@ -254,7 +258,7 @@ namespace Silk.NET.BuildTools
                     return false;
                 }
 
-                return true;
+                return controls.All(y => y.ToLower() != "no-convert");
             }
         }
 

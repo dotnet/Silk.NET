@@ -986,7 +986,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 case null:
                     return null;
                 case "SIZE_MAX":
-                    return "18446744073709551615";
+                    // TODO stop treating OpenCL constants as enums
+                    return unchecked((int)18446744073709551615).ToString();
                 case "CL_TRUE":
                     return 1.ToString();
                 case "CL_FALSE":
