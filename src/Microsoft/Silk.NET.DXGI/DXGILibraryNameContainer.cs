@@ -22,7 +22,7 @@ namespace Silk.NET.DXGI
         public override string Android => "libDXGI.so";
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
+        public override string IOS => "__Internal"; // __Internal relies on a SilkTouch override.
 
         /// <inheritdoc />
         public override string Windows64 => "DXGI.dll";
