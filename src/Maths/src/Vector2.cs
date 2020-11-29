@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Microsoft.Toolkit.Diagnostics;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating two values and provides hardware accelerated methods.</summary>
     public struct Vector2<T>

@@ -5,7 +5,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating a 4x4 matrix.</summary>
     public struct Matrix4x2<T> : IEquatable<Matrix4x2<T>>

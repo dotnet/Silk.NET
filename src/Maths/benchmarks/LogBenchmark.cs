@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 
-namespace Silk.NET.Numerics.Benchmark
+namespace Silk.NET.Maths.Benchmark
 {
     [MemoryDiagnoser]
     [SimpleJob(RunStrategy.Throughput)]

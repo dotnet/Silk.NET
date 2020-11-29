@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     /// <summary>
     /// A structure encapsulating a ray consisting of an <see cref="Origin"/> and a <see cref="Direction"/>.

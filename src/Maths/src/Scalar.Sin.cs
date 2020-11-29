@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     static partial class Scalar
     {

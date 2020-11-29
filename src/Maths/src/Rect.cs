@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     /// <summary>
     /// A structure representing a Rectangle with an <see cref="Origin"/> and <see cref="Size"/>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
 
-namespace Silk.NET.Numerics.Benchmark
+namespace Silk.NET.Maths.Benchmark
 {
     public class SinBenchmark
     {

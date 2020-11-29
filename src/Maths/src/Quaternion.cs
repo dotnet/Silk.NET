@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     /// <summary>
     /// Represents a vector that is used to encode three-dimensional physical rotations.

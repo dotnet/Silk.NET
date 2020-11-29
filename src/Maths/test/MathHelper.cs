@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Silk.NET.Numerics.Tests
+namespace Silk.NET.Maths.Tests
 {
     static class MathHelper
     {

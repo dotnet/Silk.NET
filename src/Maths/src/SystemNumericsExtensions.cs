@@ -1,4 +1,4 @@
-﻿namespace Silk.NET.Numerics
+﻿namespace Silk.NET.Maths
 {
     /// <summary>
     /// A collection of extension methods to convert the float versions of the generic types into System.Numerics types.

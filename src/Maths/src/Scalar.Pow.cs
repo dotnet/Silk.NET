@@ -5,9 +5,9 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using static Silk.NET.Numerics.Helper;
+using static Silk.NET.Maths.Helper;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     public static partial class Scalar
     {

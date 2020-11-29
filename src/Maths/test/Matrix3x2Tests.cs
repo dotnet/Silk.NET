@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using Xunit;
 
-namespace Silk.NET.Numerics.Tests
+namespace Silk.NET.Maths.Tests
 {
     public class Matrix3x2Tests
     {

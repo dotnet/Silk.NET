@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating four single precision floating point values and provides hardware accelerated methods.</summary>
     public struct Vector4<T>

@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using Xunit;
 
-namespace Silk.NET.Numerics.Tests
+namespace Silk.NET.Maths.Tests
 {
     public class QuaternionTests
     {

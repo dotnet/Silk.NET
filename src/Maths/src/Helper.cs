@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     internal static class Helper
     {

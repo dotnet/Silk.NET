@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     /// <summary>
     /// A structure representing a sphere using a <see cref="Center"/> and a <see cref="Radius"/>.

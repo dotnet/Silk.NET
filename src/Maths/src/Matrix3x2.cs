@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating a 3x2 matrix.</summary>
     public struct Matrix3x2<T>

@@ -1,4 +1,4 @@
-﻿namespace Silk.NET.Numerics
+﻿namespace Silk.NET.Maths
 {
     public static partial class Scalar
     {

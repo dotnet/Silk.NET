@@ -35,9 +35,9 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
-using static Silk.NET.Numerics.Helper;
+using static Silk.NET.Maths.Helper;
 
-namespace Silk.NET.Numerics
+namespace Silk.NET.Maths
 {
     public static partial class Scalar
     {

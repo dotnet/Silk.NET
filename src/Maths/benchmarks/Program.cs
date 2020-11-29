@@ -1,7 +1,7 @@
 using System.Reflection;
 using BenchmarkDotNet.Running;
 
-namespace Silk.NET.Numerics.Benchmark
+namespace Silk.NET.Maths.Benchmark
 {
     public class Program
     {

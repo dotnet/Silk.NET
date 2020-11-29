@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Silk.NET.Numerics.Tests
+namespace Silk.NET.Maths.Tests
 {
     public class PowIntTests
     {
