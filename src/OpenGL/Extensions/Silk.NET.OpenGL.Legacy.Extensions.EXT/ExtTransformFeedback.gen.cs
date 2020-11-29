@@ -201,9 +201,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] EXT bufferMode)
         {
             // StringArrayOverloader
-            var varyings = (byte**) SilkMarshal.MarshalStringArrayToPtr(varyingsSa);
+            var varyings = (byte**) SilkMarshal.StringArrayToPtr(varyingsSa);
             TransformFeedbackVaryings(program, count, varyings, bufferMode);
             SilkMarshal.CopyPtrToStringArray((IntPtr) varyings, varyingsSa);
+            SilkMarshal.Free((IntPtr) varyings);
         }
 
         public ExtTransformFeedback(INativeContext ctx)

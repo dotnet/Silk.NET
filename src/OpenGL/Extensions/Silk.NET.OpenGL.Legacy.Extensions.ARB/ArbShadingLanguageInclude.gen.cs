@@ -153,17 +153,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
         {
             // StringArrayOverloader
-            var path = (byte**) SilkMarshal.MarshalStringArrayToPtr(pathSa);
+            var path = (byte**) SilkMarshal.StringArrayToPtr(pathSa);
             CompileShaderInclude(shader, count, path, length);
             SilkMarshal.CopyPtrToStringArray((IntPtr) path, pathSa);
+            SilkMarshal.Free((IntPtr) path);
         }
 
         public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length)
         {
             // StringArrayOverloader
-            var path = (byte**) SilkMarshal.MarshalStringArrayToPtr(pathSa);
+            var path = (byte**) SilkMarshal.StringArrayToPtr(pathSa);
             CompileShaderInclude(shader, count, path, in length);
             SilkMarshal.CopyPtrToStringArray((IntPtr) path, pathSa);
+            SilkMarshal.Free((IntPtr) path);
         }
 
         public unsafe void DeleteNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte name)

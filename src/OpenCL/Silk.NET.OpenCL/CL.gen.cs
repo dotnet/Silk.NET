@@ -3591,396 +3591,440 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, in options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, in options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, in options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, in options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, in options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, in options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, in options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, in options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
+            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
+            SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, device_list, lengths, binaries, binary_status, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, device_list, lengths, binaries, binary_status, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, device_list, lengths, binaries, out binary_status, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, device_list, lengths, binaries, out binary_status, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, device_list, in lengths, binaries, binary_status, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, device_list, in lengths, binaries, binary_status, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, device_list, in lengths, binaries, out binary_status, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, device_list, in lengths, binaries, out binary_status, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, in device_list, lengths, binaries, binary_status, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, in device_list, lengths, binaries, binary_status, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, in device_list, lengths, binaries, out binary_status, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, in device_list, lengths, binaries, out binary_status, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, in device_list, in lengths, binaries, binary_status, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, in device_list, in lengths, binaries, binary_status, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, in device_list, in lengths, binaries, out binary_status, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] string[] binariesSa, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var binaries = (byte**) SilkMarshal.MarshalStringArrayToPtr(binariesSa);
+            var binaries = (byte**) SilkMarshal.StringArrayToPtr(binariesSa);
             var ret = CreateProgramWithBinary(context, num_devices, in device_list, in lengths, binaries, out binary_status, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) binaries, binariesSa);
+            SilkMarshal.Free((IntPtr) binaries);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string[] stringsSa, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (char**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateProgramWithSource(context, count, strings, lengths, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string[] stringsSa, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (char**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateProgramWithSource(context, count, strings, lengths, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string[] stringsSa, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (char**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateProgramWithSource(context, count, strings, in lengths, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 
         public unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string[] stringsSa, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (char**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateProgramWithSource(context, count, strings, in lengths, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 

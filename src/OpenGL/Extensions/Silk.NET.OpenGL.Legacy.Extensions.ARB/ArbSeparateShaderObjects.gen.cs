@@ -351,18 +351,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
-            var strings = (byte**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
-            var strings = (byte**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 

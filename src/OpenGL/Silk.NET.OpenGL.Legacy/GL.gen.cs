@@ -14016,18 +14016,20 @@ namespace Silk.NET.OpenGL.Legacy
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
-            var strings = (byte**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
-            var strings = (byte**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 
@@ -14087,17 +14089,19 @@ namespace Silk.NET.OpenGL.Legacy
         public unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] string[] uniformNamesSa, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] uint* uniformIndices)
         {
             // StringArrayOverloader
-            var uniformNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(uniformNamesSa);
+            var uniformNames = (byte**) SilkMarshal.StringArrayToPtr(uniformNamesSa);
             GetUniformIndices(program, uniformCount, uniformNames, uniformIndices);
             SilkMarshal.CopyPtrToStringArray((IntPtr) uniformNames, uniformNamesSa);
+            SilkMarshal.Free((IntPtr) uniformNames);
         }
 
         public unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] string[] uniformNamesSa, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] out uint uniformIndices)
         {
             // StringArrayOverloader
-            var uniformNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(uniformNamesSa);
+            var uniformNames = (byte**) SilkMarshal.StringArrayToPtr(uniformNamesSa);
             GetUniformIndices(program, uniformCount, uniformNames, out uniformIndices);
             SilkMarshal.CopyPtrToStringArray((IntPtr) uniformNames, uniformNamesSa);
+            SilkMarshal.Free((IntPtr) uniformNames);
         }
 
         public unsafe void DeleteFramebuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint framebuffers)
@@ -14148,33 +14152,37 @@ namespace Silk.NET.OpenGL.Legacy
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] GLEnum bufferMode)
         {
             // StringArrayOverloader
-            var varyings = (byte**) SilkMarshal.MarshalStringArrayToPtr(varyingsSa);
+            var varyings = (byte**) SilkMarshal.StringArrayToPtr(varyingsSa);
             TransformFeedbackVaryings(program, count, varyings, bufferMode);
             SilkMarshal.CopyPtrToStringArray((IntPtr) varyings, varyingsSa);
+            SilkMarshal.Free((IntPtr) varyings);
         }
 
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
         {
             // StringArrayOverloader
-            var varyings = (byte**) SilkMarshal.MarshalStringArrayToPtr(varyingsSa);
+            var varyings = (byte**) SilkMarshal.StringArrayToPtr(varyingsSa);
             TransformFeedbackVaryings(program, count, varyings, bufferMode);
             SilkMarshal.CopyPtrToStringArray((IntPtr) varyings, varyingsSa);
+            SilkMarshal.Free((IntPtr) varyings);
         }
 
         public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
         {
             // StringArrayOverloader
-            var @string = (byte**) SilkMarshal.MarshalStringArrayToPtr(@stringSa);
+            var @string = (byte**) SilkMarshal.StringArrayToPtr(@stringSa);
             ShaderSource(shader, count, @string, length);
             SilkMarshal.CopyPtrToStringArray((IntPtr) @string, @stringSa);
+            SilkMarshal.Free((IntPtr) @string);
         }
 
         public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length)
         {
             // StringArrayOverloader
-            var @string = (byte**) SilkMarshal.MarshalStringArrayToPtr(@stringSa);
+            var @string = (byte**) SilkMarshal.StringArrayToPtr(@stringSa);
             ShaderSource(shader, count, @string, in length);
             SilkMarshal.CopyPtrToStringArray((IntPtr) @string, @stringSa);
+            SilkMarshal.Free((IntPtr) @string);
         }
 
         public unsafe void DeleteBuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint buffers)

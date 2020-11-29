@@ -15439,9 +15439,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(byte* s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15450,9 +15451,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(byte* s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15461,9 +15463,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(byte* s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(s1, ref s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15472,9 +15475,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(byte* s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(s1, ref s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15483,9 +15487,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(byte* s1, string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15494,9 +15499,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(byte* s1, string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15505,9 +15511,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(ref byte s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(ref s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15516,9 +15523,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(ref byte s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(ref s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15527,9 +15535,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(ref byte s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(ref s1, ref s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15538,9 +15547,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(ref byte s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(ref s1, ref s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15549,9 +15559,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(ref byte s1, string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(ref s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15560,9 +15571,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(ref byte s1, string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(ref s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15571,9 +15583,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(string s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15582,9 +15595,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(string s1, byte* s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15593,9 +15607,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(string s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(s1, ref s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15604,9 +15619,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(string s1, ref byte s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(s1, ref s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15615,9 +15631,10 @@ namespace Silk.NET.SDL
         public unsafe byte* Strtokr(string s1, string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = Strtokr(s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15626,9 +15643,10 @@ namespace Silk.NET.SDL
         public unsafe string StrtokrS(string s1, string s2, string[] saveptrSa)
         {
             // StringArrayOverloader
-            var saveptr = (byte**) SilkMarshal.MarshalStringArrayToPtr(saveptrSa);
+            var saveptr = (byte**) SilkMarshal.StringArrayToPtr(saveptrSa);
             var ret = StrtokrS(s1, s2, saveptr);
             SilkMarshal.CopyPtrToStringArray((IntPtr) saveptr, saveptrSa);
+            SilkMarshal.Free((IntPtr) saveptr);
             return ret;
         }
 
@@ -15637,9 +15655,10 @@ namespace Silk.NET.SDL
         public unsafe int Strtol(byte* str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtol(str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15648,9 +15667,10 @@ namespace Silk.NET.SDL
         public unsafe int Strtol(ref byte str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtol(ref str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15659,9 +15679,10 @@ namespace Silk.NET.SDL
         public unsafe int Strtol(string str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtol(str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15670,9 +15691,10 @@ namespace Silk.NET.SDL
         public unsafe uint Strtoul(byte* str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoul(str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15681,9 +15703,10 @@ namespace Silk.NET.SDL
         public unsafe uint Strtoul(ref byte str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoul(ref str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15692,9 +15715,10 @@ namespace Silk.NET.SDL
         public unsafe uint Strtoul(string str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoul(str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15703,9 +15727,10 @@ namespace Silk.NET.SDL
         public unsafe long Strtoll(byte* str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoll(str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15714,9 +15739,10 @@ namespace Silk.NET.SDL
         public unsafe long Strtoll(ref byte str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoll(ref str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15725,9 +15751,10 @@ namespace Silk.NET.SDL
         public unsafe long Strtoll(string str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoll(str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15736,9 +15763,10 @@ namespace Silk.NET.SDL
         public unsafe ulong Strtoull(byte* str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoull(str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15747,9 +15775,10 @@ namespace Silk.NET.SDL
         public unsafe ulong Strtoull(ref byte str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoull(ref str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15758,9 +15787,10 @@ namespace Silk.NET.SDL
         public unsafe ulong Strtoull(string str, string[] endpSa, int @base)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtoull(str, endp, @base);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15769,9 +15799,10 @@ namespace Silk.NET.SDL
         public unsafe double Strtod(byte* str, string[] endpSa)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtod(str, endp);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15780,9 +15811,10 @@ namespace Silk.NET.SDL
         public unsafe double Strtod(ref byte str, string[] endpSa)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtod(ref str, endp);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15791,9 +15823,10 @@ namespace Silk.NET.SDL
         public unsafe double Strtod(string str, string[] endpSa)
         {
             // StringArrayOverloader
-            var endp = (byte**) SilkMarshal.MarshalStringArrayToPtr(endpSa);
+            var endp = (byte**) SilkMarshal.StringArrayToPtr(endpSa);
             var ret = Strtod(str, endp);
             SilkMarshal.CopyPtrToStringArray((IntPtr) endp, endpSa);
+            SilkMarshal.Free((IntPtr) endp);
             return ret;
         }
 
@@ -15802,11 +15835,13 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, uint* inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(cd, inbuf, inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15815,11 +15850,13 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, uint* inbytesleft, string[] outbufSa, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(cd, inbuf, inbytesleft, outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15828,9 +15865,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, uint* inbytesleft, ref byte* outbuf, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
             var ret = Iconv(cd, inbuf, inbytesleft, ref outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             return ret;
         }
 
@@ -15839,9 +15877,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, uint* inbytesleft, ref byte* outbuf, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
             var ret = Iconv(cd, inbuf, inbytesleft, ref outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             return ret;
         }
 
@@ -15850,11 +15889,13 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, ref uint inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(cd, inbuf, ref inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15863,11 +15904,13 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, ref uint inbytesleft, string[] outbufSa, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(cd, inbuf, ref inbytesleft, outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15876,9 +15919,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, ref uint inbytesleft, ref byte* outbuf, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
             var ret = Iconv(cd, inbuf, ref inbytesleft, ref outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             return ret;
         }
 
@@ -15887,9 +15931,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, string[] inbufSa, ref uint inbytesleft, ref byte* outbuf, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
             var ret = Iconv(cd, inbuf, ref inbytesleft, ref outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             return ret;
         }
 
@@ -15898,9 +15943,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, ref byte* inbuf, uint* inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(cd, ref inbuf, inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15909,9 +15955,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, ref byte* inbuf, uint* inbytesleft, string[] outbufSa, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(cd, ref inbuf, inbytesleft, outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15920,9 +15967,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, ref byte* inbuf, ref uint inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(cd, ref inbuf, ref inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15931,9 +15979,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(Icon* cd, ref byte* inbuf, ref uint inbytesleft, string[] outbufSa, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(cd, ref inbuf, ref inbytesleft, outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15942,11 +15991,13 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, string[] inbufSa, uint* inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(ref cd, inbuf, inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15955,11 +16006,13 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, string[] inbufSa, uint* inbytesleft, string[] outbufSa, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(ref cd, inbuf, inbytesleft, outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -15968,9 +16021,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, string[] inbufSa, uint* inbytesleft, ref byte* outbuf, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
             var ret = Iconv(ref cd, inbuf, inbytesleft, ref outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             return ret;
         }
 
@@ -15979,9 +16033,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, string[] inbufSa, uint* inbytesleft, ref byte* outbuf, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
             var ret = Iconv(ref cd, inbuf, inbytesleft, ref outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             return ret;
         }
 
@@ -15990,11 +16045,13 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, string[] inbufSa, ref uint inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(ref cd, inbuf, ref inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -16003,11 +16060,13 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, string[] inbufSa, ref uint inbytesleft, string[] outbufSa, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(ref cd, inbuf, ref inbytesleft, outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -16016,9 +16075,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, string[] inbufSa, ref uint inbytesleft, ref byte* outbuf, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
             var ret = Iconv(ref cd, inbuf, ref inbytesleft, ref outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             return ret;
         }
 
@@ -16027,9 +16087,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, string[] inbufSa, ref uint inbytesleft, ref byte* outbuf, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
+            var inbuf = (byte**) SilkMarshal.StringArrayToPtr(inbufSa);
             var ret = Iconv(ref cd, inbuf, ref inbytesleft, ref outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) inbuf, inbufSa);
+            SilkMarshal.Free((IntPtr) inbuf);
             return ret;
         }
 
@@ -16038,9 +16099,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, ref byte* inbuf, uint* inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(ref cd, ref inbuf, inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -16049,9 +16111,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, ref byte* inbuf, uint* inbytesleft, string[] outbufSa, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(ref cd, ref inbuf, inbytesleft, outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -16060,9 +16123,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, ref byte* inbuf, ref uint inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(ref cd, ref inbuf, ref inbytesleft, outbuf, outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -16071,9 +16135,10 @@ namespace Silk.NET.SDL
         public unsafe uint Iconv(ref Icon cd, ref byte* inbuf, ref uint inbytesleft, string[] outbufSa, ref uint outbytesleft)
         {
             // StringArrayOverloader
-            var outbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(outbufSa);
+            var outbuf = (byte**) SilkMarshal.StringArrayToPtr(outbufSa);
             var ret = Iconv(ref cd, ref inbuf, ref inbytesleft, outbuf, ref outbytesleft);
             SilkMarshal.CopyPtrToStringArray((IntPtr) outbuf, outbufSa);
+            SilkMarshal.Free((IntPtr) outbuf);
             return ret;
         }
 
@@ -16082,9 +16147,10 @@ namespace Silk.NET.SDL
         public unsafe SdlBool VulkanGetInstanceExtensions(Window* window, uint* pCount, string[] pNamesSa)
         {
             // StringArrayOverloader
-            var pNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(pNamesSa);
+            var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
             var ret = VulkanGetInstanceExtensions(window, pCount, pNames);
             SilkMarshal.CopyPtrToStringArray((IntPtr) pNames, pNamesSa);
+            SilkMarshal.Free((IntPtr) pNames);
             return ret;
         }
 
@@ -16093,9 +16159,10 @@ namespace Silk.NET.SDL
         public unsafe SdlBool VulkanGetInstanceExtensions(Window* window, ref uint pCount, string[] pNamesSa)
         {
             // StringArrayOverloader
-            var pNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(pNamesSa);
+            var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
             var ret = VulkanGetInstanceExtensions(window, ref pCount, pNames);
             SilkMarshal.CopyPtrToStringArray((IntPtr) pNames, pNamesSa);
+            SilkMarshal.Free((IntPtr) pNames);
             return ret;
         }
 
@@ -16104,9 +16171,10 @@ namespace Silk.NET.SDL
         public unsafe SdlBool VulkanGetInstanceExtensions(ref Window window, uint* pCount, string[] pNamesSa)
         {
             // StringArrayOverloader
-            var pNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(pNamesSa);
+            var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
             var ret = VulkanGetInstanceExtensions(ref window, pCount, pNames);
             SilkMarshal.CopyPtrToStringArray((IntPtr) pNames, pNamesSa);
+            SilkMarshal.Free((IntPtr) pNames);
             return ret;
         }
 
@@ -16115,9 +16183,10 @@ namespace Silk.NET.SDL
         public unsafe SdlBool VulkanGetInstanceExtensions(ref Window window, ref uint pCount, string[] pNamesSa)
         {
             // StringArrayOverloader
-            var pNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(pNamesSa);
+            var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
             var ret = VulkanGetInstanceExtensions(ref window, ref pCount, pNames);
             SilkMarshal.CopyPtrToStringArray((IntPtr) pNames, pNamesSa);
+            SilkMarshal.Free((IntPtr) pNames);
             return ret;
         }
 
@@ -16126,9 +16195,10 @@ namespace Silk.NET.SDL
         public unsafe int UIKitRunApp(int argc, string[] argvSa, void* mainFunction)
         {
             // StringArrayOverloader
-            var argv = (byte**) SilkMarshal.MarshalStringArrayToPtr(argvSa);
+            var argv = (byte**) SilkMarshal.StringArrayToPtr(argvSa);
             var ret = UIKitRunApp(argc, argv, mainFunction);
             SilkMarshal.CopyPtrToStringArray((IntPtr) argv, argvSa);
+            SilkMarshal.Free((IntPtr) argv);
             return ret;
         }
 
@@ -16137,9 +16207,10 @@ namespace Silk.NET.SDL
         public unsafe int UIKitRunApp<T0>(int argc, string[] argvSa, ref T0 mainFunction) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var argv = (byte**) SilkMarshal.MarshalStringArrayToPtr(argvSa);
+            var argv = (byte**) SilkMarshal.StringArrayToPtr(argvSa);
             var ret = UIKitRunApp(argc, argv, ref mainFunction);
             SilkMarshal.CopyPtrToStringArray((IntPtr) argv, argvSa);
+            SilkMarshal.Free((IntPtr) argv);
             return ret;
         }
 
@@ -16148,9 +16219,10 @@ namespace Silk.NET.SDL
         public unsafe AudioSpec* LoadWAVRW(RWops* src, int freesrc, AudioSpec* spec, string[] audio_bufSa, uint* audio_len)
         {
             // StringArrayOverloader
-            var audio_buf = (byte**) SilkMarshal.MarshalStringArrayToPtr(audio_bufSa);
+            var audio_buf = (byte**) SilkMarshal.StringArrayToPtr(audio_bufSa);
             var ret = LoadWAVRW(src, freesrc, spec, audio_buf, audio_len);
             SilkMarshal.CopyPtrToStringArray((IntPtr) audio_buf, audio_bufSa);
+            SilkMarshal.Free((IntPtr) audio_buf);
             return ret;
         }
 
@@ -16159,9 +16231,10 @@ namespace Silk.NET.SDL
         public unsafe AudioSpec* LoadWAVRW(RWops* src, int freesrc, AudioSpec* spec, string[] audio_bufSa, ref uint audio_len)
         {
             // StringArrayOverloader
-            var audio_buf = (byte**) SilkMarshal.MarshalStringArrayToPtr(audio_bufSa);
+            var audio_buf = (byte**) SilkMarshal.StringArrayToPtr(audio_bufSa);
             var ret = LoadWAVRW(src, freesrc, spec, audio_buf, ref audio_len);
             SilkMarshal.CopyPtrToStringArray((IntPtr) audio_buf, audio_bufSa);
+            SilkMarshal.Free((IntPtr) audio_buf);
             return ret;
         }
 
@@ -16170,9 +16243,10 @@ namespace Silk.NET.SDL
         public unsafe AudioSpec* LoadWAVRW(RWops* src, int freesrc, ref AudioSpec spec, string[] audio_bufSa, uint* audio_len)
         {
             // StringArrayOverloader
-            var audio_buf = (byte**) SilkMarshal.MarshalStringArrayToPtr(audio_bufSa);
+            var audio_buf = (byte**) SilkMarshal.StringArrayToPtr(audio_bufSa);
             var ret = LoadWAVRW(src, freesrc, ref spec, audio_buf, audio_len);
             SilkMarshal.CopyPtrToStringArray((IntPtr) audio_buf, audio_bufSa);
+            SilkMarshal.Free((IntPtr) audio_buf);
             return ret;
         }
 
@@ -16181,9 +16255,10 @@ namespace Silk.NET.SDL
         public unsafe AudioSpec* LoadWAVRW(RWops* src, int freesrc, ref AudioSpec spec, string[] audio_bufSa, ref uint audio_len)
         {
             // StringArrayOverloader
-            var audio_buf = (byte**) SilkMarshal.MarshalStringArrayToPtr(audio_bufSa);
+            var audio_buf = (byte**) SilkMarshal.StringArrayToPtr(audio_bufSa);
             var ret = LoadWAVRW(src, freesrc, ref spec, audio_buf, ref audio_len);
             SilkMarshal.CopyPtrToStringArray((IntPtr) audio_buf, audio_bufSa);
+            SilkMarshal.Free((IntPtr) audio_buf);
             return ret;
         }
 
@@ -16192,9 +16267,10 @@ namespace Silk.NET.SDL
         public unsafe AudioSpec* LoadWAVRW(ref RWops src, int freesrc, AudioSpec* spec, string[] audio_bufSa, uint* audio_len)
         {
             // StringArrayOverloader
-            var audio_buf = (byte**) SilkMarshal.MarshalStringArrayToPtr(audio_bufSa);
+            var audio_buf = (byte**) SilkMarshal.StringArrayToPtr(audio_bufSa);
             var ret = LoadWAVRW(ref src, freesrc, spec, audio_buf, audio_len);
             SilkMarshal.CopyPtrToStringArray((IntPtr) audio_buf, audio_bufSa);
+            SilkMarshal.Free((IntPtr) audio_buf);
             return ret;
         }
 
@@ -16203,9 +16279,10 @@ namespace Silk.NET.SDL
         public unsafe AudioSpec* LoadWAVRW(ref RWops src, int freesrc, AudioSpec* spec, string[] audio_bufSa, ref uint audio_len)
         {
             // StringArrayOverloader
-            var audio_buf = (byte**) SilkMarshal.MarshalStringArrayToPtr(audio_bufSa);
+            var audio_buf = (byte**) SilkMarshal.StringArrayToPtr(audio_bufSa);
             var ret = LoadWAVRW(ref src, freesrc, spec, audio_buf, ref audio_len);
             SilkMarshal.CopyPtrToStringArray((IntPtr) audio_buf, audio_bufSa);
+            SilkMarshal.Free((IntPtr) audio_buf);
             return ret;
         }
 
@@ -16214,9 +16291,10 @@ namespace Silk.NET.SDL
         public unsafe AudioSpec* LoadWAVRW(ref RWops src, int freesrc, ref AudioSpec spec, string[] audio_bufSa, uint* audio_len)
         {
             // StringArrayOverloader
-            var audio_buf = (byte**) SilkMarshal.MarshalStringArrayToPtr(audio_bufSa);
+            var audio_buf = (byte**) SilkMarshal.StringArrayToPtr(audio_bufSa);
             var ret = LoadWAVRW(ref src, freesrc, ref spec, audio_buf, audio_len);
             SilkMarshal.CopyPtrToStringArray((IntPtr) audio_buf, audio_bufSa);
+            SilkMarshal.Free((IntPtr) audio_buf);
             return ret;
         }
 
@@ -16225,9 +16303,10 @@ namespace Silk.NET.SDL
         public unsafe AudioSpec* LoadWAVRW(ref RWops src, int freesrc, ref AudioSpec spec, string[] audio_bufSa, ref uint audio_len)
         {
             // StringArrayOverloader
-            var audio_buf = (byte**) SilkMarshal.MarshalStringArrayToPtr(audio_bufSa);
+            var audio_buf = (byte**) SilkMarshal.StringArrayToPtr(audio_bufSa);
             var ret = LoadWAVRW(ref src, freesrc, ref spec, audio_buf, ref audio_len);
             SilkMarshal.CopyPtrToStringArray((IntPtr) audio_buf, audio_bufSa);
+            SilkMarshal.Free((IntPtr) audio_buf);
             return ret;
         }
 
