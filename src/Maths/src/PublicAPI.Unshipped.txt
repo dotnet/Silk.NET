@@ -249,7 +249,7 @@ Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Matrix4x3<T> value) -> void
 Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34, T m41, T m42, T m43, T m44) -> void
 Silk.NET.Maths.Matrix4x4<T>.Translation.get -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Matrix4x4<T>.Translation.set -> void
-Silk.NET.Maths.Operations
+Silk.NET.Maths.Scalar
 Silk.NET.Maths.Plane<T>
 Silk.NET.Maths.Plane<T>.D -> T
 Silk.NET.Maths.Plane<T>.Equals(Silk.NET.Maths.Plane<T> other) -> bool
@@ -699,58 +699,58 @@ static Silk.NET.Maths.Matrix4x4<T>.operator ==(Silk.NET.Maths.Matrix4x4<T> value
 static Silk.NET.Maths.Matrix4x4<T>.Subtract(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x4<T>.Transform(Silk.NET.Maths.Matrix4x4<T> value, Silk.NET.Maths.Quaternion<T> rotation) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x4<T>.Transpose(Silk.NET.Maths.Matrix4x4<T> matrix) -> Silk.NET.Maths.Matrix4x4<T>
-static Silk.NET.Maths.Operations.Abs<T>(T x) -> T
-static Silk.NET.Maths.Operations.Acos<T>(T x) -> T
-static Silk.NET.Maths.Operations.Acosh<T>(T x) -> T
-static Silk.NET.Maths.Operations.Add<T>(T left, T right) -> T
-static Silk.NET.Maths.Operations.As<TFrom, TTo>(TFrom val) -> TTo
-static Silk.NET.Maths.Operations.Asin<T>(T x) -> T
-static Silk.NET.Maths.Operations.Asinh<T>(T x) -> T
-static Silk.NET.Maths.Operations.Atan2<T>(T y, T x) -> T
-static Silk.NET.Maths.Operations.Atan<T>(T x) -> T
-static Silk.NET.Maths.Operations.Atanh<T>(T x) -> T
-static Silk.NET.Maths.Operations.Cbrt<T>(T x) -> T
-static Silk.NET.Maths.Operations.Ceiling<T>(T x) -> T
-static Silk.NET.Maths.Operations.Cos<T>(T x) -> T
-static Silk.NET.Maths.Operations.Cosh<T>(T x) -> T
-static Silk.NET.Maths.Operations.Divide<T>(T left, T right) -> T
-static Silk.NET.Maths.Operations.Equal<T>(T left, T right) -> bool
-static Silk.NET.Maths.Operations.Exp<T>(T x) -> T
-static Silk.NET.Maths.Operations.Floor<T>(T x) -> T
-static Silk.NET.Maths.Operations.GreaterThan<T>(T left, T right) -> bool
-static Silk.NET.Maths.Operations.GreaterThanOrEqual<T>(T left, T right) -> bool
-static Silk.NET.Maths.Operations.IEEERemainder<T>(T x, T y) -> T
-static Silk.NET.Maths.Operations.IsFinite<T>(T f) -> bool
-static Silk.NET.Maths.Operations.IsInfinity<T>(T f) -> bool
-static Silk.NET.Maths.Operations.IsNaN<T>(T f) -> bool
-static Silk.NET.Maths.Operations.IsNegative<T>(T f) -> bool
-static Silk.NET.Maths.Operations.IsNegativeInfinity<T>(T f) -> bool
-static Silk.NET.Maths.Operations.IsNormal<T>(T f) -> bool
-static Silk.NET.Maths.Operations.IsPositiveInfinity<T>(T f) -> bool
-static Silk.NET.Maths.Operations.IsSubnormal<T>(T f) -> bool
-static Silk.NET.Maths.Operations.LessThan<T>(T left, T right) -> bool
-static Silk.NET.Maths.Operations.LessThanOrEqual<T>(T left, T right) -> bool
-static Silk.NET.Maths.Operations.Log10<T>(T x) -> T
-static Silk.NET.Maths.Operations.Log<T>(T x) -> T
-static Silk.NET.Maths.Operations.Log<T>(T x, T y) -> T
-static Silk.NET.Maths.Operations.Max<T>(T x, T y) -> T
-static Silk.NET.Maths.Operations.Min<T>(T x, T y) -> T
-static Silk.NET.Maths.Operations.Multiply<T>(T left, T right) -> T
-static Silk.NET.Maths.Operations.Negate<T>(T x) -> T
-static Silk.NET.Maths.Operations.NotEqual<T>(T left, T right) -> bool
-static Silk.NET.Maths.Operations.Pow<T>(T x, T y) -> T
-static Silk.NET.Maths.Operations.Round<T>(T x) -> T
-static Silk.NET.Maths.Operations.Round<T>(T x, int digits) -> T
-static Silk.NET.Maths.Operations.Round<T>(T x, int digits, System.MidpointRounding mode) -> T
-static Silk.NET.Maths.Operations.Round<T>(T x, System.MidpointRounding mode) -> T
-static Silk.NET.Maths.Operations.Sign<T>(T x) -> int
-static Silk.NET.Maths.Operations.Sin<T>(T x) -> T
-static Silk.NET.Maths.Operations.Sinh<T>(T x) -> T
-static Silk.NET.Maths.Operations.Sqrt<T>(T x) -> T
-static Silk.NET.Maths.Operations.Subtract<T>(T left, T right) -> T
-static Silk.NET.Maths.Operations.Tan<T>(T x) -> T
-static Silk.NET.Maths.Operations.Tanh<T>(T x) -> T
-static Silk.NET.Maths.Operations.Truncate<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Abs<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Acos<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Acosh<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Add<T>(T left, T right) -> T
+static Silk.NET.Maths.Scalar.As<TFrom, TTo>(TFrom val) -> TTo
+static Silk.NET.Maths.Scalar.Asin<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Asinh<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Atan2<T>(T y, T x) -> T
+static Silk.NET.Maths.Scalar.Atan<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Atanh<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Cbrt<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Ceiling<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Cos<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Cosh<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Divide<T>(T left, T right) -> T
+static Silk.NET.Maths.Scalar.Equal<T>(T left, T right) -> bool
+static Silk.NET.Maths.Scalar.Exp<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Floor<T>(T x) -> T
+static Silk.NET.Maths.Scalar.GreaterThan<T>(T left, T right) -> bool
+static Silk.NET.Maths.Scalar.GreaterThanOrEqual<T>(T left, T right) -> bool
+static Silk.NET.Maths.Scalar.IEEERemainder<T>(T x, T y) -> T
+static Silk.NET.Maths.Scalar.IsFinite<T>(T f) -> bool
+static Silk.NET.Maths.Scalar.IsInfinity<T>(T f) -> bool
+static Silk.NET.Maths.Scalar.IsNaN<T>(T f) -> bool
+static Silk.NET.Maths.Scalar.IsNegative<T>(T f) -> bool
+static Silk.NET.Maths.Scalar.IsNegativeInfinity<T>(T f) -> bool
+static Silk.NET.Maths.Scalar.IsNormal<T>(T f) -> bool
+static Silk.NET.Maths.Scalar.IsPositiveInfinity<T>(T f) -> bool
+static Silk.NET.Maths.Scalar.IsSubnormal<T>(T f) -> bool
+static Silk.NET.Maths.Scalar.LessThan<T>(T left, T right) -> bool
+static Silk.NET.Maths.Scalar.LessThanOrEqual<T>(T left, T right) -> bool
+static Silk.NET.Maths.Scalar.Log10<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Log<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Log<T>(T x, T y) -> T
+static Silk.NET.Maths.Scalar.Max<T>(T x, T y) -> T
+static Silk.NET.Maths.Scalar.Min<T>(T x, T y) -> T
+static Silk.NET.Maths.Scalar.Multiply<T>(T left, T right) -> T
+static Silk.NET.Maths.Scalar.Negate<T>(T x) -> T
+static Silk.NET.Maths.Scalar.NotEqual<T>(T left, T right) -> bool
+static Silk.NET.Maths.Scalar.Pow<T>(T x, T y) -> T
+static Silk.NET.Maths.Scalar.Round<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Round<T>(T x, int digits) -> T
+static Silk.NET.Maths.Scalar.Round<T>(T x, int digits, System.MidpointRounding mode) -> T
+static Silk.NET.Maths.Scalar.Round<T>(T x, System.MidpointRounding mode) -> T
+static Silk.NET.Maths.Scalar.Sign<T>(T x) -> int
+static Silk.NET.Maths.Scalar.Sin<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Sinh<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Sqrt<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Subtract<T>(T left, T right) -> T
+static Silk.NET.Maths.Scalar.Tan<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Tanh<T>(T x) -> T
+static Silk.NET.Maths.Scalar.Truncate<T>(T x) -> T
 static Silk.NET.Maths.Plane<T>.CreateFromVertices(Silk.NET.Maths.Vector3<T> point1, Silk.NET.Maths.Vector3<T> point2, Silk.NET.Maths.Vector3<T> point3) -> Silk.NET.Maths.Plane<T>
 static Silk.NET.Maths.Plane<T>.Dot(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Vector4<T> value) -> T
 static Silk.NET.Maths.Plane<T>.DotCoordinate(Silk.NET.Maths.Plane<T> plane, Silk.NET.Maths.Vector3<T> value) -> T
