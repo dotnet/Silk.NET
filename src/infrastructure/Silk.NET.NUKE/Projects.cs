@@ -26,16 +26,18 @@ public static class Projects
     {
         foreach (var featureSet in FeatureSets!)
         {
+            var featureSetUsed = featureSets.Any
+                (x => x.Equals(featureSet.Name, StringComparison.OrdinalIgnoreCase));
+            if (featureSetUsed && !hasDesktopMsBuild && featureSet.RequiresDesktopMsBuild)
+            {
+                throw new NotSupportedException("Desktop MSBuild is not available.");
+            }
+            
             foreach (var proj in originalSolution.GetProjects("*"))
             {
-                if (!featureSets.Any(x => x.Equals(featureSet.Name, StringComparison.OrdinalIgnoreCase)) &&
+                if (!featureSetUsed &&
                     featureSet.Projects.Any(x => x.Equals(proj.Name, StringComparison.OrdinalIgnoreCase)))
                 {
-                    if (featureSet.RequiresDesktopMsBuild && !hasDesktopMsBuild)
-                    {
-                        throw new NotSupportedException("Desktop MSBuild is not available.");
-                    }
-                    
                     Logger.Trace($"\"{proj.Name}\" will not be built as its feature set \"{featureSet.Name}\" has " +
                                  "not been enabled. To build this project, specify the feature set name when " +
                                  "invoking NUKE.");
