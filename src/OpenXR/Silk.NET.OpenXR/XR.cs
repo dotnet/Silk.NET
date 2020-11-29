@@ -71,9 +71,9 @@ namespace Silk.NET.OpenXR
             }
             else
             {
-                var layerName = SilkMarshal.MarshalStringToPtr(layer);
+                var layerName = SilkMarshal.StringToPtr(layer);
                 Add(l, (byte*) layerName);
-                SilkMarshal.FreeStringPtr(layerName);
+                SilkMarshal.Free(layerName);
             }
 
             _cachedInstanceExtensions[layer] = l;

@@ -241,7 +241,7 @@ namespace VulkanTriangle
 
             for (var i = 0; i < _instanceExtensions.Length; i++)
             {
-                newExtensions[extCount + i] = (byte*) SilkMarshal.MarshalStringToPtr(_instanceExtensions[i]);
+                newExtensions[extCount + i] = (byte*) SilkMarshal.StringToPtr(_instanceExtensions[i]);
             }
 
             extCount += (uint) _instanceExtensions.Length;
@@ -251,7 +251,7 @@ namespace VulkanTriangle
             if (EnableValidationLayers)
             {
                 createInfo.EnabledLayerCount = (uint) _validationLayers.Length;
-                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
+                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.StringArrayToPtr(_validationLayers);
             }
             else
             {
@@ -279,7 +279,7 @@ namespace VulkanTriangle
 
             if (EnableValidationLayers)
             {
-                SilkMarshal.FreeStringArrayPtr((IntPtr) createInfo.PpEnabledLayerNames, _validationLayers.Length);
+                SilkMarshal.Free((IntPtr) createInfo.PpEnabledLayerNames);
             }
         }
 
@@ -513,13 +513,13 @@ namespace VulkanTriangle
             createInfo.PEnabledFeatures = &deviceFeatures;
             createInfo.EnabledExtensionCount = (uint) _deviceExtensions.Length;
 
-            var enabledExtensionNames = SilkMarshal.MarshalStringArrayToPtr(_deviceExtensions);
+            var enabledExtensionNames = SilkMarshal.StringArrayToPtr(_deviceExtensions);
             createInfo.PpEnabledExtensionNames = (byte**) enabledExtensionNames;
 
             if (EnableValidationLayers)
             {
                 createInfo.EnabledLayerCount = (uint) _validationLayers.Length;
-                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
+                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.StringArrayToPtr(_validationLayers);
             }
             else
             {
@@ -785,7 +785,7 @@ namespace VulkanTriangle
                 SType = StructureType.PipelineShaderStageCreateInfo,
                 Stage = ShaderStageFlags.ShaderStageVertexBit,
                 Module = vertShaderModule,
-                PName = (byte*) SilkMarshal.MarshalStringToPtr("main")
+                PName = (byte*) SilkMarshal.StringToPtr("main")
             };
 
             var fragShaderStageInfo = new PipelineShaderStageCreateInfo
@@ -793,7 +793,7 @@ namespace VulkanTriangle
                 SType = StructureType.PipelineShaderStageCreateInfo,
                 Stage = ShaderStageFlags.ShaderStageFragmentBit,
                 Module = fragShaderModule,
-                PName = (byte*) SilkMarshal.MarshalStringToPtr("main")
+                PName = (byte*) SilkMarshal.StringToPtr("main")
             };
 
             var shaderStages = stackalloc PipelineShaderStageCreateInfo[2];
