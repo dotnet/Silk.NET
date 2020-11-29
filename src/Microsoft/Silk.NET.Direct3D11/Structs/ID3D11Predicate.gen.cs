@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("9eb576dd-9f77-4d86-81aa-8bab5fe490e2")]
     [NativeName("Name", "ID3D11Predicate")]
     public unsafe partial struct ID3D11Predicate
     {

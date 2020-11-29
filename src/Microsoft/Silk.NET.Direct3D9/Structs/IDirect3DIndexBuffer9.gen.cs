@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D9
 {
+    [Guid("7c9dd65e-d3f7-4529-acee-785830acde35")]
     [NativeName("Name", "IDirect3DIndexBuffer9")]
     public unsafe partial struct IDirect3DIndexBuffer9
     {

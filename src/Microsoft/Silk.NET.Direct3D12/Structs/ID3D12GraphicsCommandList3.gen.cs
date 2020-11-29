@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("6fda83a7-b84c-4e38-9ac8-c7bd22016b3d")]
     [NativeName("Name", "ID3D12GraphicsCommandList3")]
     public unsafe partial struct ID3D12GraphicsCommandList3
     {

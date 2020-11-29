@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("b2daad8b-03d4-4dbf-95eb-32ab4b63d0ab")]
     [NativeName("Name", "ID3DUserDefinedAnnotation")]
     public unsafe partial struct ID3DUserDefinedAnnotation
     {

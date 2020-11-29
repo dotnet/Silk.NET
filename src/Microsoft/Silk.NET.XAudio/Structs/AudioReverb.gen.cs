@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.XAudio
 {
+    [Guid("c2633b16-471b-4498-b8c5-4f0959e2ec09")]
     [NativeName("Name", "AudioReverb")]
     public unsafe partial struct AudioReverb
     {

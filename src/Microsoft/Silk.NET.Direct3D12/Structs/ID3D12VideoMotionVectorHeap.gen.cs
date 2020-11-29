@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("5be17987-743a-4061-834b-23d22daea505")]
     [NativeName("Name", "ID3D12VideoMotionVectorHeap")]
     public unsafe partial struct ID3D12VideoMotionVectorHeap
     {

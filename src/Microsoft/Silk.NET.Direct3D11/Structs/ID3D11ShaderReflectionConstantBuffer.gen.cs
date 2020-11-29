@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("eb62d63d-93dd-4318-8ae8-c6f83ad371b8")]
     [NativeName("Name", "ID3D11ShaderReflectionConstantBuffer")]
     public unsafe partial struct ID3D11ShaderReflectionConstantBuffer
     {

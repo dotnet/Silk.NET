@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
+    [Guid("8ba5fb08-5195-40e2-ac58-0d989c3a0102")]
     [NativeName("Name", "ID3D10Blob")]
     public unsafe partial struct ID3D10Blob
     {

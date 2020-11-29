@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("3fd03d36-4eb1-424a-a582-494ecb8ba813")]
     [NativeName("Name", "ID3D12LifetimeTracker")]
     public unsafe partial struct ID3D12LifetimeTracker
     {

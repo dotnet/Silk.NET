@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("9fdac92a-1876-48c3-afad-25b94f84a9b6")]
     [NativeName("Name", "ID3D11DepthStencilView")]
     public unsafe partial struct ID3D11DepthStencilView
     {

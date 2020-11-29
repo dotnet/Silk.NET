@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D9
 {
+    [Guid("85c31227-3de5-4f00-9b3a-f11ac38c18b5")]
     [NativeName("Name", "IDirect3DTexture9")]
     public unsafe partial struct IDirect3DTexture9
     {

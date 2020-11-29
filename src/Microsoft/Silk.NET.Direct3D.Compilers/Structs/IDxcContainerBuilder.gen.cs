@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D.Compilers
 {
+    [Guid("334b1f50-2292-4b35-99a1-25588d8c17fe")]
     [NativeName("Name", "IDxcContainerBuilder")]
     public unsafe partial struct IDxcContainerBuilder
     {

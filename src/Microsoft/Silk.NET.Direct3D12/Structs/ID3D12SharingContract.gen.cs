@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [Guid("0adf7d52-929c-4e61-addb-ffed30de66ef")]
     [NativeName("Name", "ID3D12SharingContract")]
     public unsafe partial struct ID3D12SharingContract
     {

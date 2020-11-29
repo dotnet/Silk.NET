@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("cafcb56c-6ac3-4889-bf47-9e23bbd260ec")]
     [NativeName("Name", "IDXGISurface")]
     public unsafe partial struct IDXGISurface
     {

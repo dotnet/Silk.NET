@@ -22,6 +22,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
+    [Guid("00000000-0000-0000-c000-000000000046")]
     public unsafe partial struct IUnknown
     {
         public void** LpVtbl;

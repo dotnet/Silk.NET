@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("9b7e4e00-342c-4106-a19f-4f2704f689f0")]
     [NativeName("Name", "ID3D11Multithread")]
     public unsafe partial struct ID3D11Multithread
     {

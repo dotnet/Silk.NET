@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
+    [Guid("a06eb39a-50da-425b-8c31-4eecd6c270f3")]
     [NativeName("Name", "ID3DDestructionNotifier")]
     public unsafe partial struct ID3DDestructionNotifier
     {

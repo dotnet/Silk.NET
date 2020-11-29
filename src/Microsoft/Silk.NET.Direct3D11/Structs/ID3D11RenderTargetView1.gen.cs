@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D11
 {
+    [Guid("ffbe2e23-f011-418a-ac56-5ceed7c5b94b")]
     [NativeName("Name", "ID3D11RenderTargetView1")]
     public unsafe partial struct ID3D11RenderTargetView1
     {

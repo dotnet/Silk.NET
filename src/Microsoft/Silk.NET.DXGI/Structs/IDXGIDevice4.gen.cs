@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("95b4f95f-d8da-4ca4-9ee6-3b76d5968a10")]
     [NativeName("Name", "IDXGIDevice4")]
     public unsafe partial struct IDXGIDevice4
     {

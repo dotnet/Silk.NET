@@ -236,6 +236,61 @@ namespace Silk.NET.BuildTools.Cpp
                 var fileName = Path.GetFileNameWithoutExtension(file.Name.ToString());
                 return $"__Anonymous{kind}_{fileName}_L{line}_C{column}";
             }
+            
+            string GetSourceRangeContents(CXTranslationUnit translationUnit, CXSourceRange sourceRange)
+            {
+                sourceRange.Start.GetFileLocation(out var startFile, out var startLine, out var startColumn, out var startOffset);
+                sourceRange.End.GetFileLocation(out var endFile, out var endLine, out var endColumn, out var endOffset);
+
+                if (startFile != endFile)
+                {
+                    return string.Empty;
+                }
+
+                var fileContents = translationUnit.GetFileContents(startFile, out var fileSize);
+                fileContents = fileContents.Slice(unchecked((int)startOffset), unchecked((int)(endOffset - startOffset)));
+
+#if NETCOREAPP
+                return Encoding.UTF8.GetString(fileContents);
+#else
+                return Encoding.UTF8.GetString(fileContents.ToArray());
+#endif
+            }
+            
+            bool TryGetUuid(RecordDecl recordDecl, out Guid uuid)
+            {
+                var uuidAttrs = recordDecl.Attrs.Where((attr) => attr.Kind == CX_AttrKind.CX_AttrKind_Uuid).ToArray();
+
+                if (!uuidAttrs.Any())
+                {
+                    uuid = Guid.Empty;
+                    return false;
+                }
+
+                if (uuidAttrs.Count() != 1)
+                {
+                    Console.WriteLine
+                    (
+                        $"Warning: Multiply uuid attributes for {recordDecl.Name}. " +
+                        $"Falling back to first attribute. ({recordDecl.Location})"
+                    );
+                }
+
+                var uuidAttr = uuidAttrs.First();
+                var uuidAttrText = GetSourceRangeContents(recordDecl.TranslationUnit.Handle, uuidAttr.Extent);
+                var uuidText = uuidAttrText.Split(new char[] { '"' }, StringSplitOptions.RemoveEmptyEntries)[1];
+
+                if (!Guid.TryParse(uuidText, out uuid))
+                {
+                    Console.WriteLine
+                    (
+                        $"Warning: Failed to parse uuid attr text '{uuidAttrText}'. " +
+                        $"Extracted portion: '{uuidText}'. ({recordDecl.Location})"
+                    );
+                    return false;
+                }
+                return true;
+            }
 
             void VisitTypedefDecl(TypedefDecl tdDecl)
             {
@@ -791,6 +846,23 @@ namespace Silk.NET.BuildTools.Cpp
                         string name = null;
                         task.RenamedNativeNames.TryGetValue(nativeName, out name);
 
+                        var attrs = new List<Attribute>();
+                        if (recordDecl.IsUnion)
+                        {
+                            attrs.Add
+                            (
+                                new Attribute
+                                {
+                                    Name = "StructLayout", Arguments = new List<string> {"LayoutKind.Explicit"}
+                                }
+                            );
+                        }
+
+                        if (TryGetUuid(recordDecl, out var uuid))
+                        {
+                            attrs.Add(new Attribute{Name = "Guid", Arguments = new List<string>{$"\"{uuid}\""}});
+                        }
+
                         Struct @struct;
                         structs.Add
                         (
@@ -801,15 +873,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 NativeName = nativeName,
                                 ClangMetadata = new[] {recordDecl.Location.ToString()},
                                 Fields = ConvertAll(recordDecl).ToList(),
-                                Attributes = recordDecl.IsUnion
-                                    ? new List<Attribute>
-                                    {
-                                        new Attribute
-                                        {
-                                            Name = "StructLayout", Arguments = new List<string> {"LayoutKind.Explicit"}
-                                        }
-                                    }
-                                    : new List<Attribute>()
+                                Attributes = attrs
                             }
                         );
 

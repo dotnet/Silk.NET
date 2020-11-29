@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.XAudio
 {
+    [Guid("84ac29bb-d619-44d2-b197-e4acf7df3ed6")]
     [NativeName("Name", "IXAudio2Extension")]
     public unsafe partial struct IXAudio2Extension
     {

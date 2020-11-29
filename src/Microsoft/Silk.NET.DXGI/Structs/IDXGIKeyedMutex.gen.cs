@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [Guid("9d8e1289-d7b3-465f-8126-250e349af85d")]
     [NativeName("Name", "IDXGIKeyedMutex")]
     public unsafe partial struct IDXGIKeyedMutex
     {

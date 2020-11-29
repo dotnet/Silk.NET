@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D.Compilers
 {
+    [Guid("00000002-0000-0000-c000-000000000046")]
     [NativeName("Name", "IMalloc")]
     public unsafe partial struct IMalloc
     {
