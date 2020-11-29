@@ -32,8 +32,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
+#if SSE
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
+#endif
 using static Silk.NET.Maths.Helper;
 
 namespace Silk.NET.Maths
@@ -42,7 +44,11 @@ namespace Silk.NET.Maths
     {
         private static void InitExp()
         {
+#if POH
             __two_to_jby64 = GC.AllocateUninitializedArray<ulong>(64, true);
+#else
+            __two_to_jby64 = new ulong[64];
+#endif
             int i = 0;
             __two_to_jby64[i++] = 0x3ff0000000000000;
             __two_to_jby64[i++] = 0x3fefec9a3e778061;
@@ -121,36 +127,44 @@ namespace Silk.NET.Maths
             [MethodImpl(MaxOpt)]
             static unsafe uint asuint32(float x)
             {
+#if SSE
                 if (Sse.IsSupported)
                     return Vector128.CreateScalarUnsafe(x).AsUInt32().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
+#endif
                     return *(uint*)&x; // this produces bad codegen on < net5
             }
 
             [MethodImpl(MaxOpt)]
             static unsafe float asfloat(uint x)
             {
+#if SSE
                 if (Sse.IsSupported)
                     return Vector128.CreateScalarUnsafe(x).AsSingle().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
+#endif
                     return *(float*)&x; // this produces bad codegen on < net5
             }
             
             [MethodImpl(MaxOpt)]
             static unsafe ulong asuint64(double x)
             {
+#if SSE
                 if (Sse.IsSupported)
                     return Vector128.CreateScalarUnsafe(x).AsUInt64().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
+#endif
                     return *(ulong*)&x; // this produces bad codegen on < net5
             }
 
             [MethodImpl(MaxOpt)]
             static unsafe double asdouble(ulong x)
             {
+#if SSE
                 if (Sse.IsSupported)
                     return Vector128.CreateScalarUnsafe(x).AsDouble().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
+#endif
                     return *(double*)&x; // this produces bad codegen on < net5
             }
 

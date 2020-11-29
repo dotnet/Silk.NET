@@ -3,7 +3,6 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using System.Runtime.CompilerServices;
 using static Silk.NET.Maths.Helper;
 

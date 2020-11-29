@@ -5,9 +5,15 @@
 
 using System;
 using System.Runtime.CompilerServices;
+#if SSE || AdvSIMD
 using System.Runtime.Intrinsics;
-using System.Runtime.Intrinsics.Arm;
+#endif
+#if SSE
 using System.Runtime.Intrinsics.X86;
+#endif
+#if AdvSIMD
+using System.Runtime.Intrinsics.Arm;
+#endif
 using static Silk.NET.Maths.Helper;
 
 namespace Silk.NET.Maths
@@ -40,7 +46,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0
+#if NET5_0 && INTRINSICS
                 if (Sse2.IsSupported)
                 {
                     return (T)(object)(Half)Sse.And(Vector128.CreateScalarUnsafe((float) (Half) (object) x), Vector128.Create(-0.0f)).ToScalar();
@@ -50,14 +56,10 @@ namespace Silk.NET.Maths
                     return (T)(object)(Half)AdvSimd.And(Vector128.CreateScalarUnsafe((float) (Half) (object) x), Vector128.Create(-0.0f)).ToScalar();
                 }
                 else
-#elif NETCOREAPP3_1
-                    if (Sse2.IsSupported)
+#elif NETCOREAPP3_1 && INTRINSICS
+                    if (Sse.IsSupported)
                     {
-                        return (T)(object)(Half)Sse2.And(Vector128.CreateScalarUnsafe((float) (Half) (object) x), Vector128.CreateScalarUnsafe(-0.0f)).ToScalar();
-                    } 
-                    else if (AdvSimd.IsSupported)
-                    {
-                        return (T)(object)(Half)AdvSimd.And(Vector128.CreateScalarUnsafe((float) (Half) (object) x), Vector128.CreateScalarUnsafe(-0.0f)).ToScalar();
+                        return (T)(object)(Half)Sse.And(Vector128.CreateScalarUnsafe((float) (Half) (object) x), Vector128.CreateScalarUnsafe(-0.0f)).ToScalar();
                     }
                     else
 #endif
@@ -75,7 +77,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0
+#if NET5_0 && INTRINSICS
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(float)Sse.And(Vector128.CreateScalarUnsafe((float)(object)x), Vector128.Create((uint)0x7FFF_FFFF).AsSingle()).ToScalar();
@@ -85,14 +87,10 @@ namespace Silk.NET.Maths
                         return (T) (object) (float)AdvSimd.AbsScalar(Vector64.CreateScalarUnsafe((float) (object) x)).ToScalar();
                     }
                     else
-#elif NETCOREAPP3_1
+#elif NETCOREAPP3_1 && INTRINSICS
                     if (Sse.IsSupported)
                     {
-                        return (float)(object)Sse.And(Vector128.CreateScalarUnsafe((float)(object)x), Vector128.CreateScalarUnsafe((uint)0x7FFF_FFFF).AsSingle()).ToScalar();
-                    }
-                    else if (AdvSimd.IsSupported)
-                    {
-                        return (float)(object)AdvSimd.And(Vector128.CreateScalarUnsafe((float)(object)x), Vector128.CreateScalarUnsafe((uint)0x7FFF_FFFF).AsSingle()).ToScalar();
+                        return (T)(object)(float)Sse.And(Vector128.CreateScalarUnsafe((float)(object)x), Vector128.CreateScalarUnsafe((uint)0x7FFF_FFFF).AsSingle()).ToScalar();
                     }
                     else
 #endif
@@ -111,7 +109,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-#if NET5_0
+#if NET5_0 && INTRINSICS
                     if (Sse2.IsSupported)
                     {
                         return (T)(object)(double)Sse2.And(Vector128.CreateScalarUnsafe((double)(object)x), Vector128.Create((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).ToScalar();
@@ -121,14 +119,10 @@ namespace Silk.NET.Maths
                         return (T) (object) (double)AdvSimd.AbsScalar(Vector64.CreateScalar((double) (object) x)).ToScalar();
                     }
                     else
-#elif NETCOREAPP3_1
+#elif NETCOREAPP3_1 && INTRINSICS
                     if (Sse2.IsSupported)
                     {
                         return (T)(object)(double)Sse2.And(Vector128.CreateScalarUnsafe((double)(object)x), Vector128.CreateScalarUnsafe((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).ToScalar();
-                    }
-                    else if (AdvSimd.IsSupported)
-                    {
-                        return (T) (object) (double)AdvSimd.AbsScalar(Vector64.CreateScalar((double) (object) x)).ToScalar();
                     }
                     else
 #endif
@@ -147,16 +141,18 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
+#if SSE
                     if (Ssse3.IsSupported)
                     {
                         return (T)(object)(sbyte)Ssse3.Abs(Vector128.CreateScalar((sbyte) (object) x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T) (object) (sbyte)AdvSimd.Abs(Vector64.CreateScalar((sbyte) (object) x)).ToScalar();
                     }
-                    
+#endif
                     var px = (sbyte) (object) x;
                     sbyte mask = (sbyte) (px >> (sizeof(sbyte) - 1));
                     return (T)(object)(sbyte)((px + mask) ^ mask); 
@@ -181,16 +177,18 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(int))
                 {
+#if SSE
                     if (Ssse3.IsSupported)
                     {
                         return (T)(object)(int)Ssse3.Abs(Vector128.CreateScalar((int) (object) x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T) (object)(int) AdvSimd.Abs(Vector64.CreateScalar((int) (object) x)).ToScalar();
                     }
-                    
+#endif
                     var px = (int) (object) x;
                     int mask = (int) (px >> (sizeof(int) - 1));
                     return (T)(object)(int)((px + mask) ^ mask); 
@@ -239,16 +237,18 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(short))
                 {
+#if SSE
                     if (Ssse3.IsSupported)
                     {
                         return (T)(object)(short)Ssse3.Abs(Vector128.CreateScalar((short) (object) x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T) (object)(short)AdvSimd.Abs(Vector64.CreateScalar((short) (object) x)).ToScalar();
                     }
-                    
+#endif
                     var px = (short) (object) x;
                     short mask = (short) (px >> (sizeof(short) - 1));
                     return (T)(object)(short)((px + mask) ^ mask); 
@@ -298,7 +298,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Acos((float) (Half) (object) x); // KIPLING
 #else
                 return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
@@ -312,7 +312,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Acos((float) (object) x); // KIPLING
 #else
                     return (T) (object) MathF.Acos((float) (object) x);
@@ -597,7 +597,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Asin((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
@@ -611,7 +611,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Asin((float) (object) x);
 #else
                     return (T) (object) MathF.Asin((float) (object) x);
@@ -891,7 +891,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Atan((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Abs((float) (Half) (object) x);
@@ -905,7 +905,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Atan((float) (object) x);
 #else
                     return (T) (object) MathF.Atan((float) (object) x);
@@ -1331,7 +1331,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if !MATHF
                 return (T) (object) (Half) Math.Ceiling((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Ceiling((float) (Half) (object) x);
@@ -1345,7 +1345,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if !MATHF
                     return (T) (object) (float) Math.Ceiling((float) (object) x);
 #else
                     return (T) (object) MathF.Ceiling((float) (object) x);
@@ -1478,7 +1478,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) Math.Cos((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Cos((float) (Half) (object) x);
@@ -1492,7 +1492,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Cos((float) (object) x);
 #else
                     return (T) (object) MathF.Cos((float) (object) x);
@@ -1626,7 +1626,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) Math.Cosh((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Cosh((float) (Half) (object) x);
@@ -1640,7 +1640,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Cosh((float) (object) x);
 #else
                     return (T) (object) MathF.Cosh((float) (object) x);
@@ -1914,17 +1914,19 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
+#if SSE
                 if (Sse41.IsSupported)
                 {
                     return (T)(object)(Half)Sse41.FloorScalar(Vector128.CreateScalarUnsafe((float) (Half) (object) x)).ToScalar();
                 }
-
+#endif
+#if AdvSIMD
                 if (AdvSimd.IsSupported)
                 {
                     return (T)(object)(Half)AdvSimd.FloorScalar(Vector64.CreateScalarUnsafe((float) (Half) (object) x)).ToScalar();
                 }
-                
-#if NETSTANDARD2_0
+#endif  
+#if !MATHF
                 return (T) (object) (Half) Math.Floor((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Floor((float) (Half) (object) x);
@@ -1938,17 +1940,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
+#if SSE
                     if (Sse41.IsSupported)
                     {
                         return (T)(object)Sse41.FloorScalar(Vector128.CreateScalarUnsafe((float) (object) x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)AdvSimd.FloorScalar(Vector64.CreateScalarUnsafe((float) (object) x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (float) Math.Floor((float) (object) x);
 #else
                     return (T) (object) MathF.Floor((float) (object) x);
@@ -1963,15 +1967,18 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
+#if SSE
                     if (Sse41.IsSupported)
                     {
                         return (T)(object)Sse41.FloorScalar(Vector128.CreateScalarUnsafe((double) (object) x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)AdvSimd.FloorScalar(Vector64.CreateScalar((double) (object) x)).ToScalar();
                     }
+#endif
                     return (T) (object) Math.Floor((double) (object) x);
                 }
 
@@ -1983,16 +1990,18 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(decimal))
                 {
+#if SSE
                     if (Sse41.IsSupported)
                     {
                         return (T)(object)(decimal)Sse41.FloorScalar(Vector128.CreateScalarUnsafe((double)(decimal) (object) x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(decimal)AdvSimd.FloorScalar(Vector64.CreateScalar((double)(decimal) (object) x)).ToScalar();
                     }
-                    
+#endif      
                     return (T) (object) Math.Floor((decimal) (object) x);
                 }
 
@@ -2124,7 +2133,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return Math.Sign((float) (Half) (object) x);
 #else
                 return MathF.Sign((float) (Half) (object) x);
@@ -2138,7 +2147,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return Math.Sign((float) (object) x);
 #else
                     return MathF.Sign((float) (object) x);
@@ -2411,7 +2420,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Sinh((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Sinh((float) (Half) (object) x);
@@ -2425,7 +2434,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if !MATHF
                     return (T) (object) (float) Math.Sinh((float) (object) x);
 #else
                     return (T) (object) MathF.Sinh((float) (object) x);
@@ -2583,17 +2592,19 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
+#if SSE
                 if (Sse42.IsSupported)
                 {
                     return (T)(object)(Half)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(Half)(object)x)).ToScalar();
                 }
-
+#endif
+#if AdvSIMD
                 if (AdvSimd.IsSupported)
                 {
                     return (T)(object)(Half)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(Half)(object)x)).ToScalar();
                 }
-                
-#if NETSTANDARD2_0
+#endif  
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Sqrt((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Sqrt((float) (Half) (object) x);
@@ -2607,17 +2618,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (float) Math.Sqrt((float) (object) x);
 #else
                     return (T) (object) MathF.Sqrt((float) (object) x);
@@ -2632,16 +2645,18 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
+#if SSE
                     if (Sse2.IsSupported)
                     {
                         return (T)(object)(double)Sse2.SqrtScalar(Vector128.CreateScalarUnsafe((double)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(double)AdvSimd.SqrtScalar(Vector64.CreateScalar((double)(object)x)).ToScalar();
                     }
-                    
+#endif      
                     return (T) (object) (double) Math.Sqrt((double) (object) x);
                 }
 
@@ -2665,17 +2680,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(sbyte)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(sbyte)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(sbyte)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(sbyte)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (sbyte)(float) Math.Sqrt((float) (sbyte)(object) x);
 #else
                     return (T) (object) (sbyte)(float)MathF.Sqrt((float) (sbyte)(object) x);
@@ -2690,17 +2707,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(byte)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(byte)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(byte)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(byte)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (byte)(float) Math.Sqrt((float) (byte)(object) x);
 #else
                     return (T) (object) (byte)(float)MathF.Sqrt((float) (byte)(object) x);
@@ -2715,17 +2734,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(short))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(short)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(short)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(short)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(short)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (short)(float) Math.Sqrt((float) (short)(object) x);
 #else
                     return (T) (object) (short)(float)MathF.Sqrt((float) (short)(object) x);
@@ -2740,17 +2761,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(ushort)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(ushort)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(ushort)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(ushort)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (ushort)(float) Math.Sqrt((float) (ushort)(object) x);
 #else
                     return (T) (object) (ushort)(float)MathF.Sqrt((float) (ushort)(object) x);
@@ -2765,17 +2788,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(int))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(int)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(int)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(int)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(int)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (int)(float) Math.Sqrt((float) (int)(object) x);
 #else
                     return (T) (object) (int)(float)MathF.Sqrt((float) (int)(object) x);
@@ -2790,17 +2815,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(uint))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(uint)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(uint)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(uint)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(uint)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (uint)(float) Math.Sqrt((float) (uint)(object) x);
 #else
                     return (T) (object) (uint)(float)MathF.Sqrt((float) (uint)(object) x);
@@ -2815,17 +2842,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(long))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(long)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(long)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(long)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(long)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (long)(float) Math.Sqrt((float) (long)(object) x);
 #else
                     return (T) (object) (long)(float)MathF.Sqrt((float) (long)(object) x);
@@ -2840,17 +2869,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ulong))
                 {
+#if SSE
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(ulong)(float)Sse.SqrtScalar(Vector128.CreateScalarUnsafe((float)(ulong)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(ulong)(float)AdvSimd.SqrtScalar(Vector64.CreateScalarUnsafe((float)(ulong)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (ulong)(float) Math.Sqrt((float) (ulong)(object) x);
 #else
                     return (T) (object) (ulong)(float)MathF.Sqrt((float) (ulong)(object) x);
@@ -2873,7 +2904,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Tan((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Tan((float) (Half) (object) x);
@@ -2887,7 +2918,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Tan((float) (object) x);
 #else
                     return (T) (object) MathF.Tan((float) (object) x);
@@ -3021,7 +3052,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Tanh((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Tanh((float) (Half) (object) x);
@@ -3035,7 +3066,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Tanh((float) (object) x);
 #else
                     return (T) (object) MathF.Tanh((float) (object) x);
@@ -3189,7 +3220,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Truncate((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Truncate((float) (Half) (object) x);
@@ -3203,7 +3234,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Truncate((float) (object) x);
 #else
                     return (T) (object) MathF.Truncate((float) (object) x);
@@ -3532,7 +3563,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Log10((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Log10((float) (Half) (object) x);
@@ -3546,7 +3577,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Log10((float) (object) x);
 #else
                     return (T) (object) MathF.Log10((float) (object) x);
@@ -3685,7 +3716,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Round((float) (Half) (object) x);
 #else
                 return (T) (object) (Half) MathF.Round((float) (Half) (object) x);
@@ -3699,17 +3730,19 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
+#if SSE
                     if (Sse42.IsSupported)
                     {
                         return (T)(object)(float)Sse41.RoundToNearestIntegerScalar(Vector128.CreateScalarUnsafe((float)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(float)AdvSimd.RoundToNearestScalar(Vector64.CreateScalar((float)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif      
+#if !MATHF
                     return (T) (object) (float) Math.Round((float) (object) x);
 #else
                     return (T) (object) MathF.Round((float) (object) x);
@@ -3724,16 +3757,18 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
+#if SSE
                     if (Sse42.IsSupported)
                     {
                         return (T)(object)(double)Sse41.RoundToNearestIntegerScalar(Vector128.CreateScalarUnsafe((double)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         return (T)(object)(double)AdvSimd.RoundToNearestScalar(Vector64.CreateScalar((double)(object)x)).ToScalar();
                     }
-                    
+#endif      
                     return (T) (object) (double) Math.Round((double) (object) x);
                 }
 
@@ -3859,7 +3894,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if !NET5_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.IEEERemainder
                     ((float) (Half) (object) x, (float) (Half) (object) y);
 #else
@@ -3874,7 +3909,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if !NET5_0
+#if !MATHF
                     return (T) (object) (float) Math.IEEERemainder((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.IEEERemainder((float) (object) x, (float) (object) y);
@@ -4088,7 +4123,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Log((float) (Half) (object) x, (float) (Half) (object) y);
 #else
                 return (T) (object) (Half) MathF.Log((float) (Half) (object) x, (float) (Half) (object) y);
@@ -4102,7 +4137,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Log((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.Log((float) (object) x, (float) (object) y);
@@ -4237,7 +4272,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Max((float) (Half) (object) x, (float) (Half) (object) y);
 #else
                 return (T) (object) (Half) MathF.Max((float) (Half) (object) x, (float) (Half) (object) y);
@@ -4251,7 +4286,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Max((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.Max((float) (object) x, (float) (object) y);
@@ -4385,7 +4420,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Min((float) (Half) (object) x, (float) (Half) (object) y);
 #else
                 return (T) (object) (Half) MathF.Min((float) (Half) (object) x, (float) (Half) (object) y);
@@ -4399,7 +4434,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Min((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.Min((float) (object) x, (float) (object) y);
@@ -4911,7 +4946,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Atan2((float) (Half) (object) x, (float) (Half) (object) y);
 #else
                 return (T) (object) (Half) MathF.Atan2((float) (Half) (object) x, (float) (Half) (object) y);
@@ -4925,7 +4960,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NETSTANDARD2_0
+#if !MATHF
                     return (T) (object) (float) Math.Atan2((float) (object) x, (float) (object) y);
 #else
                     return (T) (object) MathF.Atan2((float) (object) x, (float) (object) y);
@@ -5103,7 +5138,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NETSTANDARD2_0
+#if !MATHF
                 return (T) (object) (Half) (float) Math.Round((float) (Half) (object) x, mode);
 #else
                 return (T) (object) (Half) MathF.Round((float) (Half) (object) x, mode);
@@ -5117,6 +5152,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
+#if SSE
                     if (Sse42.IsSupported)
                     {
                         if (mode == MidpointRounding.ToZero)
@@ -5131,7 +5167,8 @@ namespace Silk.NET.Maths
                         if (mode == MidpointRounding.ToEven)
                             return (T)(object)(float)Sse41.RoundToNearestIntegerScalar(Vector128.CreateScalarUnsafe((float)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         if (mode == MidpointRounding.ToZero)
@@ -5146,8 +5183,8 @@ namespace Silk.NET.Maths
                         if (mode == MidpointRounding.ToEven)
                             return (T)(object)(float)AdvSimd.RoundToNearestScalar(Vector64.CreateScalarUnsafe((float)(object)x)).ToScalar();
                     }
-                    
-#if NETSTANDARD2_0
+#endif
+#if !MATHF
                     return (T) (object) (float) Math.Round((float) (object) x, mode);
 #else
                     return (T) (object) MathF.Round((float) (object) x, mode);
@@ -5162,6 +5199,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
+#if SSE
                     if (Sse42.IsSupported)
                     {
                         if (mode == MidpointRounding.ToZero)
@@ -5176,7 +5214,8 @@ namespace Silk.NET.Maths
                         if (mode == MidpointRounding.ToEven)
                             return (T)(object)(double)Sse41.RoundToNearestIntegerScalar(Vector128.CreateScalarUnsafe((double)(object)x)).ToScalar();
                     }
-
+#endif
+#if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
                         if (mode == MidpointRounding.ToZero)
@@ -5191,7 +5230,7 @@ namespace Silk.NET.Maths
                         if (mode == MidpointRounding.ToEven)
                             return (T)(object)(double)AdvSimd.RoundToNearestScalar(Vector64.CreateScalar((double)(object)x)).ToScalar();
                     }
-                    
+#endif
                     return (T) (object) (double) Math.Round((double) (object) x, mode);
                 }
 

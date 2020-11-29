@@ -58,7 +58,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return double.IsFinite((double) (object) f);
+                    // double.IsFinite doesn't exist on netstandard2.0
+                    long bits = BitConverter.DoubleToInt64Bits((double)(object)f);
+                    return (bits & 0x7FFFFFFFFFFFFFFF) < 0x7FF0000000000000;
                 }
 
                 return Other(f);

@@ -32,9 +32,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
+#if SSE
 using System.Runtime.Intrinsics;
-using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
+#endif
 using static Silk.NET.Maths.Helper;
 
 namespace Silk.NET.Maths
@@ -43,7 +44,11 @@ namespace Silk.NET.Maths
     {
         private static void InitLog()
         {
+#if POH
             _logTblLookup = GC.AllocateUninitializedArray<uint>(771, true);
+#else
+            _logTblLookup = new uint[771];
+#endif
             int i = 0;
             _logTblLookup[i++] = 0x40000000; _logTblLookup[i++] =  0x0; _logTblLookup[i++] =  0x0; _logTblLookup[i++] =  0x3fff00ff; _logTblLookup[i++] =  0x3b7f8000; _logTblLookup[i++] =  0x32aa2b11; _logTblLookup[i++] =  0x3ffe03f8; _logTblLookup[i++] =  0x3bff0000; _logTblLookup[i++] =  0x3429ac42; _logTblLookup[i++] = 
             0x3ffd08e5; _logTblLookup[i++] =  0x3c3ee000; _logTblLookup[i++] =  0x350ebf02; _logTblLookup[i++] =  0x3ffc0fc1; _logTblLookup[i++] =  0x3c7e0000; _logTblLookup[i++] =  0x35a8b0fc; _logTblLookup[i++] =  0x3ffb1885; _logTblLookup[i++] =  0x3c9e7000; _logTblLookup[i++] = 
@@ -152,18 +157,22 @@ namespace Silk.NET.Maths
             [MethodImpl(MaxOpt)]
             static unsafe uint asuint(float x)
             {
+#if SSE
                 if (Sse.IsSupported)
                     return Vector128.CreateScalarUnsafe(x).AsUInt32().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
+#endif
                     return *(uint*)&x; // this produces bad codegen on < net5
             }
 
             [MethodImpl(MaxOpt)]
             static unsafe float asfloat(uint x)
             {
+#if SSE
                 if (Sse.IsSupported)
                     return Vector128.CreateScalarUnsafe(x).AsSingle().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
+#endif
                     return *(float*)&x; // this produces bad codegen on < net5
             }
 
@@ -228,10 +237,22 @@ namespace Silk.NET.Maths
                 y = asfloat(mant | HALFEXPBITS_SP32);
                 f = asfloat(mant1 | HALFEXPBITS_SP32);
 
+                float f_128_head;
+                float f_128_tail;
+                #if POH
                 var tbl = ((uint*)Unsafe.AsPointer(ref _logTblLookup[0])) + (idx * 3);
                 finv = asfloat(tbl[0]);
-                var f_128_head = asfloat(tbl[1]);
-                var f_128_tail = asfloat(tbl[2]);
+                f_128_head = asfloat(tbl[1]);
+                f_128_tail = asfloat(tbl[2]);
+                #else
+                fixed (uint* tbl = _logTblLookup)
+                {
+                    var p = tbl + (idx * 3);
+                    finv = asfloat(p[0]);
+                    f_128_head = asfloat(p[1]);
+                    f_128_tail = asfloat(p[2]);
+                }
+                #endif
 
                 r = (f - y) * finv;
                 const float C1 = .5f;

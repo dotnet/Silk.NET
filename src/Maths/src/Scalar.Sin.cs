@@ -435,19 +435,48 @@ namespace Silk.NET.Maths
         }
 #else
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
-        private static bool CoreIsNegative(double d) => double.IsNegative(d);
+        private static bool CoreIsNegative(double d) => BitConverter.DoubleToInt64Bits(d) < 0;
+
+        // ripped straight from BitConverter on > NetStandard2.1.
+        // in fact, everything below is ripped from methods on NetStandard2.1, but which aren't available on NetStandard2.0
+        private static unsafe int SingleToInt(float f)
+        {
+#if SSE
+            // Workaround for https://github.com/dotnet/runtime/issues/11413
+            if (Sse2.IsSupported)
+            {
+                Vector128<int> vec = Vector128.CreateScalarUnsafe(f).AsInt32();
+                return Sse2.ConvertToInt32(vec);
+            }
+#endif
+
+            return *((int*)&f);
+        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
+        private static bool CoreIsNegative(float f)
+        {
+            // FUCK I HATE NETSTANDARD
+            return SingleToInt(f) < 0;
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
-        private static bool CoreIsNegative(float f) => float.IsNegative(f);
+        private static bool CoreIsFinite(float f) => ((SingleToInt(f)) & 0x7FFFFFFF) < 0x7F800000;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
-        private static bool CoreIsFinite(float f) => float.IsFinite(f);
+        private static bool CoreIsSubnormal(float f)
+        {
+            var bits = SingleToInt(f);
+            bits &= 0x7FFFFFFF;
+            return (bits < 0x7F800000) && (bits != 0) && ((bits & 0x7F800000) == 0);
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
-        private static bool CoreIsSubnormal(float f) => float.IsSubnormal(f);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
-        private static bool CoreIsSubnormal(double f) => double.IsSubnormal(f);
+        private static bool CoreIsSubnormal(double f)
+        {
+            long bits = BitConverter.DoubleToInt64Bits(f);
+            bits &= 0x7FFFFFFFFFFFFFFF;
+            return (bits < 0x7FF0000000000000) && (bits != 0) && ((bits & 0x7FF0000000000000) == 0);
+        }
 #endif
     }
 }

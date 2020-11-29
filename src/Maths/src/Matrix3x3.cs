@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
-using System.Runtime.Intrinsics;
-using System.Runtime.Intrinsics.Arm;
-using System.Runtime.Intrinsics.X86;
 
 namespace Silk.NET.Maths
 {
@@ -12,7 +9,6 @@ namespace Silk.NET.Maths
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         private const float BillboardEpsilon = 1e-4f;
-        private const float BillboardMinAngle = 1.0f - (0.1f * (MathF.PI / 180.0f)); // 0.1 degrees
         private const float DecomposeEpsilon = 0.0001f;
 
         private static readonly Matrix3x3<T> _identity = new

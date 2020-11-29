@@ -21,7 +21,9 @@ namespace Silk.NET.Maths.Tests
         {
             Assert.Equal(-2.0955709236097195567919657540932, Scalar.Log(.123f), 6);
             // MathF is also inaccurate :)
+#if !NET48
             Assert.Equal(-2.0955709236097195567919657540932, System.MathF.Log(.123f), 6);
+#endif
         }
 
         [Fact]

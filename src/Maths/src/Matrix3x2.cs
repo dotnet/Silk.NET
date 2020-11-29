@@ -9,8 +9,11 @@ namespace Silk.NET.Maths
         : IEquatable<Matrix3x2<T>>
         where T : unmanaged, IFormattable, IComparable<T>, IEquatable<T>
     {
+#if MATHF
         private const float RotationEpsilon = 0.001f * MathF.PI / 180f;     // 0.1% of a degree
-
+#else
+        private const float RotationEpsilon = 0.001f * ((float)Math.PI) / 180f;     // 0.1% of a degree
+#endif
         private static readonly Matrix3x2<T> _identity = new(
             Scalar<T>.One, Scalar<T>.Zero,
             Scalar<T>.Zero, Scalar<T>.One,
@@ -348,19 +351,55 @@ namespace Silk.NET.Maths
                 c = Scalar<T>.One;
                 s = Scalar<T>.Zero;
             }
-            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(MathF.PI / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(MathF.PI / 2 + RotationEpsilon)))
+            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                / 2 + RotationEpsilon)))
             {
                 // Exact case for 90 degree rotation.
                 c = Scalar<T>.Zero;
                 s = Scalar<T>.One;
             }
-            else if (!Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-MathF.PI + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(MathF.PI - RotationEpsilon)))
+            else if (!Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                - RotationEpsilon)))
             {
                 // Exact case for 180 degree rotation.
                 c = Scalar<T>.MinusOne;
                 s = Scalar<T>.Zero;
             }
-            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(-MathF.PI / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-MathF.PI / 2 + RotationEpsilon)))
+            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(-
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                / 2 + RotationEpsilon)))
             {
                 // Exact case for 270 degree rotation.
                 c = Scalar<T>.Zero;
@@ -394,7 +433,7 @@ namespace Silk.NET.Maths
         {
             Matrix3x2<T> result;
 
-            radians = Scalar.IEEERemainder(radians, Scalar.As<float, T>(MathF.PI * 2));
+            radians = Scalar.IEEERemainder(radians, Scalar<T>.Tau);
 
             T c, s;
 
@@ -404,19 +443,55 @@ namespace Silk.NET.Maths
                 c = Scalar<T>.One;
                 s = Scalar<T>.Zero;
             }
-            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(MathF.PI / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(MathF.PI / 2 + RotationEpsilon)))
+            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                / 2 + RotationEpsilon)))
             {
                 // Exact case for 90 degree rotation.
                 c = Scalar<T>.Zero;
                 s = Scalar<T>.One;
             }
-            else if (!Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-MathF.PI + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(MathF.PI - RotationEpsilon)))
+            else if (!Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif    
+                - RotationEpsilon)))
             {
                 // Exact case for 180 degree rotation.
                 c = Scalar<T>.MinusOne;
                 s = Scalar<T>.Zero;
             }
-            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(-MathF.PI / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-MathF.PI / 2 + RotationEpsilon)))
+            else if (Scalar.GreaterThan(radians, Scalar.As<float, T>(-
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
+#if MATHF
+                MathF.PI
+#else
+                ((float)Math.PI)
+#endif
+                / 2 + RotationEpsilon)))
             {
                 // Exact case for 270 degree rotation.
                 c = Scalar<T>.Zero;

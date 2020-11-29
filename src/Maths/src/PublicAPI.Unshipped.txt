@@ -59,7 +59,6 @@ Silk.NET.Maths.Circle<T>.Circle() -> void
 Silk.NET.Maths.Circle<T>.Circle(Silk.NET.Maths.Vector2<T> center, T radius) -> void
 Silk.NET.Maths.Circle<T>.Equals(Silk.NET.Maths.Circle<T> other) -> bool
 Silk.NET.Maths.Circle<T>.Radius -> T
-Silk.NET.Maths.Constants<T>
 Silk.NET.Maths.Cube<T>
 Silk.NET.Maths.Cube<T>.Cube() -> void
 Silk.NET.Maths.Cube<T>.Cube(Silk.NET.Maths.Vector3<T> origin, Silk.NET.Maths.Vector3<T> size) -> void
@@ -150,9 +149,11 @@ Silk.NET.Maths.Matrix3x3<T>.M33 -> T
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3() -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix3x2<T> value) -> void
+Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix3x3<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix4x3<T> value) -> void
+Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix4x4<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33) -> void
 Silk.NET.Maths.Matrix3x4<T>
 Silk.NET.Maths.Matrix3x4<T>.Equals(Silk.NET.Maths.Matrix3x4<T> other) -> bool
@@ -173,6 +174,7 @@ Silk.NET.Maths.Matrix3x4<T>.Matrix3x4() -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix3x2<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix3x3<T> value) -> void
+Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix4x3<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34) -> void
@@ -215,6 +217,7 @@ Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix3x2<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix3x3<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix4x2<T> value) -> void
+Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix4x3<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix4x4<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33, T m41, T m42, T m43) -> void
 Silk.NET.Maths.Matrix4x3<T>.Translation.get -> Silk.NET.Maths.Vector3<T>
@@ -290,6 +293,7 @@ Silk.NET.Maths.Rect<T>.Origin -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Rect<T>.Rect() -> void
 Silk.NET.Maths.Rect<T>.Rect(Silk.NET.Maths.Vector2<T> origin, Silk.NET.Maths.Vector2<T> size) -> void
 Silk.NET.Maths.Rect<T>.Size -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Scalar<T>
 Silk.NET.Maths.Sphere<T>
 Silk.NET.Maths.Sphere<T>.Center -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Sphere<T>.Equals(Silk.NET.Maths.Sphere<T> other) -> bool
@@ -342,21 +346,21 @@ Silk.NET.Maths.Vector4<T>.W -> T
 Silk.NET.Maths.Vector4<T>.X -> T
 Silk.NET.Maths.Vector4<T>.Y -> T
 Silk.NET.Maths.Vector4<T>.Z -> T
-static readonly Silk.NET.Maths.Constants<T>.E -> T
-static readonly Silk.NET.Maths.Constants<T>.Epsilon -> T
-static readonly Silk.NET.Maths.Constants<T>.MaxValue -> T
-static readonly Silk.NET.Maths.Constants<T>.MinusOne -> T
-static readonly Silk.NET.Maths.Constants<T>.MinusTwo -> T
-static readonly Silk.NET.Maths.Constants<T>.MinValue -> T
-static readonly Silk.NET.Maths.Constants<T>.NaN -> T
-static readonly Silk.NET.Maths.Constants<T>.NegativeInfinity -> T
-static readonly Silk.NET.Maths.Constants<T>.One -> T
-static readonly Silk.NET.Maths.Constants<T>.Pi -> T
-static readonly Silk.NET.Maths.Constants<T>.PiOver2 -> T
-static readonly Silk.NET.Maths.Constants<T>.PositiveInfinity -> T
-static readonly Silk.NET.Maths.Constants<T>.Tau -> T
-static readonly Silk.NET.Maths.Constants<T>.Two -> T
-static readonly Silk.NET.Maths.Constants<T>.Zero -> T
+static readonly Silk.NET.Maths.Scalar<T>.E -> T
+static readonly Silk.NET.Maths.Scalar<T>.Epsilon -> T
+static readonly Silk.NET.Maths.Scalar<T>.MaxValue -> T
+static readonly Silk.NET.Maths.Scalar<T>.MinusOne -> T
+static readonly Silk.NET.Maths.Scalar<T>.MinusTwo -> T
+static readonly Silk.NET.Maths.Scalar<T>.MinValue -> T
+static readonly Silk.NET.Maths.Scalar<T>.NaN -> T
+static readonly Silk.NET.Maths.Scalar<T>.NegativeInfinity -> T
+static readonly Silk.NET.Maths.Scalar<T>.One -> T
+static readonly Silk.NET.Maths.Scalar<T>.Pi -> T
+static readonly Silk.NET.Maths.Scalar<T>.PiOver2 -> T
+static readonly Silk.NET.Maths.Scalar<T>.PositiveInfinity -> T
+static readonly Silk.NET.Maths.Scalar<T>.Tau -> T
+static readonly Silk.NET.Maths.Scalar<T>.Two -> T
+static readonly Silk.NET.Maths.Scalar<T>.Zero -> T
 static Silk.NET.Maths.Circle<T>.operator !=(Silk.NET.Maths.Circle<T> value1, Silk.NET.Maths.Circle<T> value2) -> bool
 static Silk.NET.Maths.Circle<T>.operator ==(Silk.NET.Maths.Circle<T> value1, Silk.NET.Maths.Circle<T> value2) -> bool
 static Silk.NET.Maths.Cube<T>.operator !=(Silk.NET.Maths.Cube<T> value1, Silk.NET.Maths.Cube<T> value2) -> bool
@@ -380,10 +384,12 @@ static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Matrix2x2<T> value1, 
 static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Matrix2x2<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Matrix2x3<T>
 static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Matrix2x2<T> value1, T value2) -> Silk.NET.Maths.Matrix2x2<T>
 static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Matrix2x2<T>.Negate(Silk.NET.Maths.Matrix2x2<T> value) -> Silk.NET.Maths.Matrix2x2<T>
 static Silk.NET.Maths.Matrix2x2<T>.operator !=(Silk.NET.Maths.Matrix2x2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> bool
 static Silk.NET.Maths.Matrix2x2<T>.operator *(Silk.NET.Maths.Matrix2x2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Matrix2x2<T>
 static Silk.NET.Maths.Matrix2x2<T>.operator *(Silk.NET.Maths.Matrix2x2<T> value1, T value2) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator *(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Matrix2x2<T>.operator +(Silk.NET.Maths.Matrix2x2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Matrix2x2<T>
 static Silk.NET.Maths.Matrix2x2<T>.operator -(Silk.NET.Maths.Matrix2x2<T> value) -> Silk.NET.Maths.Matrix2x2<T>
 static Silk.NET.Maths.Matrix2x2<T>.operator -(Silk.NET.Maths.Matrix2x2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Matrix2x2<T>
@@ -412,12 +418,14 @@ static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Matrix2x2<T> value1, 
 static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Matrix2x3<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> Silk.NET.Maths.Matrix2x2<T>
 static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Matrix2x3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Matrix2x3<T>
 static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Matrix2x3<T> value1, T value2) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Matrix2x3<T>.Negate(Silk.NET.Maths.Matrix2x3<T> value) -> Silk.NET.Maths.Matrix2x3<T>
 static Silk.NET.Maths.Matrix2x3<T>.operator !=(Silk.NET.Maths.Matrix2x3<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> bool
 static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Matrix2x2<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Matrix2x3<T>
 static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Matrix2x3<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> Silk.NET.Maths.Matrix2x2<T>
 static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Matrix2x3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Matrix2x3<T>
 static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Matrix2x3<T> value1, T value2) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Matrix2x3<T>.operator +(Silk.NET.Maths.Matrix2x3<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Matrix2x3<T>
 static Silk.NET.Maths.Matrix2x3<T>.operator -(Silk.NET.Maths.Matrix2x3<T> value) -> Silk.NET.Maths.Matrix2x3<T>
 static Silk.NET.Maths.Matrix2x3<T>.operator -(Silk.NET.Maths.Matrix2x3<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Matrix2x3<T>
@@ -445,12 +453,14 @@ static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Matrix2x4<T> value1, 
 static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Matrix2x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix2x4<T>
 static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Matrix4x2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Matrix2x4<T>.operator !=(Silk.NET.Maths.Matrix2x4<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> bool
 static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix2x2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Matrix2x4<T>
 static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix2x4<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Matrix2x3<T>
 static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix2x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix2x4<T>
 static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix2x4<T> value1, T value2) -> Silk.NET.Maths.Matrix2x4<T>
 static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Matrix2x4<T>.operator +(Silk.NET.Maths.Matrix2x4<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Matrix2x4<T>
 static Silk.NET.Maths.Matrix2x4<T>.operator -(Silk.NET.Maths.Matrix2x4<T> value) -> Silk.NET.Maths.Matrix2x4<T>
 static Silk.NET.Maths.Matrix2x4<T>.operator -(Silk.NET.Maths.Matrix2x4<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Matrix2x4<T>
@@ -488,12 +498,14 @@ static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Matrix2x3<T> value1, 
 static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Matrix3x2<T>
 static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Matrix3x3<T>
 static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> value1, T value2) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Matrix3x2<T>.Negate(Silk.NET.Maths.Matrix3x2<T> value) -> Silk.NET.Maths.Matrix3x2<T>
 static Silk.NET.Maths.Matrix3x2<T>.operator !=(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> bool
 static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Matrix3x2<T>
 static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Matrix3x3<T>
 static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Matrix3x2<T> value1, T value2) -> Silk.NET.Maths.Matrix3x2<T>
 static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Matrix3x3<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Matrix3x2<T>.operator +(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> Silk.NET.Maths.Matrix3x2<T>
 static Silk.NET.Maths.Matrix3x2<T>.operator -(Silk.NET.Maths.Matrix3x2<T> value) -> Silk.NET.Maths.Matrix3x2<T>
 static Silk.NET.Maths.Matrix3x2<T>.operator -(Silk.NET.Maths.Matrix3x2<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> Silk.NET.Maths.Matrix3x2<T>
@@ -531,10 +543,12 @@ static Silk.NET.Maths.Matrix3x3<T>.Multiply(Silk.NET.Maths.Matrix3x3<T> value1, 
 static Silk.NET.Maths.Matrix3x3<T>.Multiply(Silk.NET.Maths.Matrix3x3<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix3x3<T>.Multiply(Silk.NET.Maths.Matrix3x3<T> value1, T value2) -> Silk.NET.Maths.Matrix3x3<T>
 static Silk.NET.Maths.Matrix3x3<T>.Multiply(Silk.NET.Maths.Matrix4x3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.Multiply(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Matrix3x3<T>.Negate(Silk.NET.Maths.Matrix3x3<T> value) -> Silk.NET.Maths.Matrix3x3<T>
 static Silk.NET.Maths.Matrix3x3<T>.operator !=(Silk.NET.Maths.Matrix3x3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> bool
 static Silk.NET.Maths.Matrix3x3<T>.operator *(Silk.NET.Maths.Matrix3x3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Matrix3x3<T>
 static Silk.NET.Maths.Matrix3x3<T>.operator *(Silk.NET.Maths.Matrix3x3<T> value1, T value2) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.operator *(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Matrix3x3<T>.operator +(Silk.NET.Maths.Matrix3x3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Matrix3x3<T>
 static Silk.NET.Maths.Matrix3x3<T>.operator -(Silk.NET.Maths.Matrix3x3<T> value) -> Silk.NET.Maths.Matrix3x3<T>
 static Silk.NET.Maths.Matrix3x3<T>.operator -(Silk.NET.Maths.Matrix3x3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Matrix3x3<T>
@@ -562,11 +576,13 @@ static Silk.NET.Maths.Matrix3x4<T>.Multiply(Silk.NET.Maths.Matrix3x4<T> value1, 
 static Silk.NET.Maths.Matrix3x4<T>.Multiply(Silk.NET.Maths.Matrix3x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix3x4<T>.Multiply(Silk.NET.Maths.Matrix3x4<T> value1, T value2) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix3x4<T>.Multiply(Silk.NET.Maths.Matrix4x3<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.Multiply(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Matrix3x4<T>.Negate(Silk.NET.Maths.Matrix3x4<T> value) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix3x4<T>.operator !=(Silk.NET.Maths.Matrix3x4<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> bool
 static Silk.NET.Maths.Matrix3x4<T>.operator *(Silk.NET.Maths.Matrix3x3<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix3x4<T>.operator *(Silk.NET.Maths.Matrix3x4<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Matrix3x3<T>
 static Silk.NET.Maths.Matrix3x4<T>.operator *(Silk.NET.Maths.Matrix3x4<T> value1, T value2) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.operator *(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Matrix3x4<T>.operator +(Silk.NET.Maths.Matrix3x4<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix3x4<T>.operator -(Silk.NET.Maths.Matrix3x4<T> value) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix3x4<T>.operator -(Silk.NET.Maths.Matrix3x4<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Matrix3x4<T>
@@ -593,6 +609,7 @@ static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Matrix4x2<T> value1, 
 static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Matrix4x2<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Matrix4x3<T>
 static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Matrix4x2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Matrix4x2<T>.Negate(Silk.NET.Maths.Matrix4x2<T> value) -> Silk.NET.Maths.Matrix4x2<T>
 static Silk.NET.Maths.Matrix4x2<T>.operator !=(Silk.NET.Maths.Matrix4x2<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> bool
 static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix2x4<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Matrix2x2<T>
@@ -602,6 +619,7 @@ static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix4x2<T> value1
 static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix4x2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix4x2<T> value1, T value2) -> Silk.NET.Maths.Matrix4x2<T>
 static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Matrix4x2<T>.operator +(Silk.NET.Maths.Matrix4x2<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Matrix4x2<T>
 static Silk.NET.Maths.Matrix4x2<T>.operator -(Silk.NET.Maths.Matrix4x2<T> value) -> Silk.NET.Maths.Matrix4x2<T>
 static Silk.NET.Maths.Matrix4x2<T>.operator -(Silk.NET.Maths.Matrix4x2<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Matrix4x2<T>
@@ -627,11 +645,13 @@ static Silk.NET.Maths.Matrix4x3<T>.Multiply(Silk.NET.Maths.Matrix4x3<T> value1, 
 static Silk.NET.Maths.Matrix4x3<T>.Multiply(Silk.NET.Maths.Matrix4x3<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x3<T>.Multiply(Silk.NET.Maths.Matrix4x3<T> value1, T value2) -> Silk.NET.Maths.Matrix4x3<T>
 static Silk.NET.Maths.Matrix4x3<T>.Multiply(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.Multiply(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Matrix4x3<T>.Negate(Silk.NET.Maths.Matrix4x3<T> value) -> Silk.NET.Maths.Matrix4x3<T>
 static Silk.NET.Maths.Matrix4x3<T>.operator !=(Silk.NET.Maths.Matrix4x3<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> bool
 static Silk.NET.Maths.Matrix4x3<T>.operator *(Silk.NET.Maths.Matrix4x3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Matrix4x3<T>
 static Silk.NET.Maths.Matrix4x3<T>.operator *(Silk.NET.Maths.Matrix4x3<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x3<T>.operator *(Silk.NET.Maths.Matrix4x3<T> value1, T value2) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.operator *(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Matrix4x3<T>.operator +(Silk.NET.Maths.Matrix4x3<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Matrix4x3<T>
 static Silk.NET.Maths.Matrix4x3<T>.operator -(Silk.NET.Maths.Matrix4x3<T> value) -> Silk.NET.Maths.Matrix4x3<T>
 static Silk.NET.Maths.Matrix4x3<T>.operator -(Silk.NET.Maths.Matrix4x3<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Matrix4x3<T>
@@ -686,12 +706,14 @@ static Silk.NET.Maths.Matrix4x4<T>.Multiply(Silk.NET.Maths.Matrix2x4<T> value1, 
 static Silk.NET.Maths.Matrix4x4<T>.Multiply(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Matrix4x2<T>
 static Silk.NET.Maths.Matrix4x4<T>.Multiply(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x4<T>.Multiply(Silk.NET.Maths.Matrix4x4<T> value1, T value2) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Multiply(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Matrix4x4<T>.Negate(Silk.NET.Maths.Matrix4x4<T> value) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x4<T>.operator !=(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> bool
 static Silk.NET.Maths.Matrix4x4<T>.operator *(Silk.NET.Maths.Matrix3x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix3x4<T>
 static Silk.NET.Maths.Matrix4x4<T>.operator *(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Matrix4x3<T>
 static Silk.NET.Maths.Matrix4x4<T>.operator *(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x4<T>.operator *(Silk.NET.Maths.Matrix4x4<T> value1, T value2) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.operator *(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Matrix4x4<T>.operator +(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x4<T>.operator -(Silk.NET.Maths.Matrix4x4<T> value) -> Silk.NET.Maths.Matrix4x4<T>
 static Silk.NET.Maths.Matrix4x4<T>.operator -(Silk.NET.Maths.Matrix4x4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Matrix4x4<T>
@@ -720,6 +742,7 @@ static Silk.NET.Maths.Scalar.Floor<T>(T x) -> T
 static Silk.NET.Maths.Scalar.GreaterThan<T>(T left, T right) -> bool
 static Silk.NET.Maths.Scalar.GreaterThanOrEqual<T>(T left, T right) -> bool
 static Silk.NET.Maths.Scalar.IEEERemainder<T>(T x, T y) -> T
+static Silk.NET.Maths.Scalar.Inverse<T>(T x) -> T
 static Silk.NET.Maths.Scalar.IsFinite<T>(T f) -> bool
 static Silk.NET.Maths.Scalar.IsInfinity<T>(T f) -> bool
 static Silk.NET.Maths.Scalar.IsNaN<T>(T f) -> bool
@@ -857,6 +880,9 @@ static Silk.NET.Maths.Vector2<T>.Max(Silk.NET.Maths.Vector2<T> value1, Silk.NET.
 static Silk.NET.Maths.Vector2<T>.Min(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Vector2<T> value2) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Vector2<T>.Multiply(Silk.NET.Maths.Vector2<T> left, Silk.NET.Maths.Vector2<T> right) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Vector2<T>.Multiply(Silk.NET.Maths.Vector2<T> left, T right) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Multiply(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x2<T> value2) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Multiply(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x3<T> value2) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector2<T>.Multiply(Silk.NET.Maths.Vector2<T> value1, Silk.NET.Maths.Matrix2x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector2<T>.Multiply(T left, Silk.NET.Maths.Vector2<T> right) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Vector2<T>.Negate(Silk.NET.Maths.Vector2<T> value) -> Silk.NET.Maths.Vector2<T>
 static Silk.NET.Maths.Vector2<T>.Normalize(Silk.NET.Maths.Vector2<T> value) -> Silk.NET.Maths.Vector2<T>
@@ -908,6 +934,9 @@ static Silk.NET.Maths.Vector3<T>.Max(Silk.NET.Maths.Vector3<T> value1, Silk.NET.
 static Silk.NET.Maths.Vector3<T>.Min(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Vector3<T> value2) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Vector3<T>.Multiply(Silk.NET.Maths.Vector3<T> left, Silk.NET.Maths.Vector3<T> right) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Vector3<T>.Multiply(Silk.NET.Maths.Vector3<T> left, T right) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Multiply(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x2<T> value2) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector3<T>.Multiply(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x3<T> value2) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Multiply(Silk.NET.Maths.Vector3<T> value1, Silk.NET.Maths.Matrix3x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector3<T>.Multiply(T left, Silk.NET.Maths.Vector3<T> right) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Vector3<T>.Negate(Silk.NET.Maths.Vector3<T> value) -> Silk.NET.Maths.Vector3<T>
 static Silk.NET.Maths.Vector3<T>.Normalize(Silk.NET.Maths.Vector3<T> value) -> Silk.NET.Maths.Vector3<T>
@@ -957,6 +986,9 @@ static Silk.NET.Maths.Vector4<T>.Max(Silk.NET.Maths.Vector4<T> value1, Silk.NET.
 static Silk.NET.Maths.Vector4<T>.Min(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Vector4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector4<T>.Multiply(Silk.NET.Maths.Vector4<T> left, Silk.NET.Maths.Vector4<T> right) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector4<T>.Multiply(Silk.NET.Maths.Vector4<T> left, T right) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Multiply(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x2<T> value2) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector4<T>.Multiply(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x3<T> value2) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector4<T>.Multiply(Silk.NET.Maths.Vector4<T> value1, Silk.NET.Maths.Matrix4x4<T> value2) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector4<T>.Multiply(T left, Silk.NET.Maths.Vector4<T> right) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector4<T>.Negate(Silk.NET.Maths.Vector4<T> value) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector4<T>.Normalize(Silk.NET.Maths.Vector4<T> vector) -> Silk.NET.Maths.Vector4<T>

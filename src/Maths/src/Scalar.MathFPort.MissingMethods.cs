@@ -34,10 +34,6 @@ namespace Silk.NET.Maths
         [MethodImpl(MaxOpt)]
         private static double CoreAtanh(double x)
         {
-#if !NET5_0
-            return Math.Atanh(x);
-#else
-            // TODO test this before preview 5, no idea if this works
             const double nearZero = 1.0 / (1 << 28); // 2**-28
             // special cases
             if (x < -1 || x > 1 || double.IsNaN(x))
@@ -85,8 +81,6 @@ namespace Silk.NET.Maths
             }
 
             return temp;
-
-#endif
         }
 
         // Adapted from: https://golang.org/src/math/log1p.go
@@ -108,7 +102,6 @@ namespace Silk.NET.Maths
         // is preserved.
         // ====================================================
 
-#if NET5_0
         [MethodImpl(MaxOpt)]
         private static unsafe double Log1P(double x)
         {
@@ -264,7 +257,6 @@ namespace Silk.NET.Maths
 
             return k * ln2Hi - (hfsq - (s * (hfsq + r) + (k * ln2Lo + c)) - f);
         }
-#endif
 
         // Adapted from: https://golang.org/src/math/acosh.go
         // ====================================================
@@ -287,9 +279,6 @@ namespace Silk.NET.Maths
         [MethodImpl(MaxOpt)]
         private static double CoreAcosh(double x)
         {
-#if !NET5_0
-            return Math.Acosh(x);
-#else
             const double ln2 = 6.93147180559945286227e-01; // 0x3FE62E42FEFA39EF
             const double large = 1 << 28; // 2**28
             // first case is special case
@@ -315,7 +304,6 @@ namespace Silk.NET.Maths
 
             var t = x - 1;
             return Log1P(t + Sqrt(2 * t + t * t)); // 2 >= x > 1
-#endif
         }
 
         // Adapted from: https://golang.org/src/math/asinh.go
@@ -339,9 +327,6 @@ namespace Silk.NET.Maths
         [MethodImpl(MaxOpt)]
         private static double CoreAsinh(double x)
         {
-#if !NET5_0
-            return Math.Asinh(x);
-#else
             const double ln2 = 6.93147180559945286227e-01; // 0x3FE62E42FEFA39EF
             const double nearZero = 1.0 / (1 << 28); // 2**-28
             const double large = 1 << 28; // 2**28
@@ -382,14 +367,13 @@ namespace Silk.NET.Maths
             }
 
             return temp;
-#endif
         }
 
         ////////////////////////////////////////////////// END GO CODE ////////////////////////////////////////////////
 
         [MethodImpl(MaxOpt)]
         private static double CoreCbrt(double x)
-#if !NET5_0
+#if NETSTANDARD2_0
             => Math.Ceiling(Math.Pow(x, 1d / 3));
 #else
             => Math.Cbrt(x);

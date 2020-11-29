@@ -1,4 +1,5 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 15.0.26124.0
@@ -324,15 +325,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{488775D1-32C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.NUKE", "build\nuke\Silk.NET.NUKE.csproj", "{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.NUKE.SshAgent", "src\Core\Silk.NET.NUKE.SshAgent\Silk.NET.NUKE.SshAgent.csproj", "{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.NUKE.SshAgent", "src\Core\Silk.NET.NUKE.SshAgent\Silk.NET.NUKE.SshAgent.csproj", "{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maths", "Maths", "{41EEBDB3-75C4-4A60-B4D5-673FBCA791E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "src\Maths\src\Silk.NET.Maths.csproj", "{623D0452-14FB-477D-9888-C4B337CFDEBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths", "src\Maths\src\Silk.NET.Maths.csproj", "{623D0452-14FB-477D-9888-C4B337CFDEBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Tests", "src\Maths\test\Silk.NET.Maths.Tests.csproj", "{3A51658B-7677-4CF9-9304-B9E8B67F7166}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths.Tests", "src\Maths\test\Silk.NET.Maths.Tests.csproj", "{3A51658B-7677-4CF9-9304-B9E8B67F7166}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Benchmark", "src\Maths\benchmarks\Silk.NET.Maths.Benchmark.csproj", "{66303FAA-B517-4BC3-A3FA-064BEF9B96A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Maths.Benchmark", "src\Maths\benchmarks\Silk.NET.Maths.Benchmark.csproj", "{66303FAA-B517-4BC3-A3FA-064BEF9B96A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -344,9 +345,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -1974,6 +1972,17 @@ Global
 		{603F28D1-E982-47C0-98D9-3E6DA1DD37E2}.Release|x64.Build.0 = Release|Any CPU
 		{603F28D1-E982-47C0-98D9-3E6DA1DD37E2}.Release|x86.ActiveCfg = Release|Any CPU
 		{603F28D1-E982-47C0-98D9-3E6DA1DD37E2}.Release|x86.Build.0 = Release|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|x64.Build.0 = Debug|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Debug|x86.Build.0 = Debug|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|x64.ActiveCfg = Release|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|x64.Build.0 = Release|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|x86.ActiveCfg = Release|Any CPU
+		{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}.Release|x86.Build.0 = Release|Any CPU
 		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D2BCEBE-A163-47E2-9B56-2151D4EC30B9}.Debug|x64.ActiveCfg = Debug|Any CPU
