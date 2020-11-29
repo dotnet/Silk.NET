@@ -185,52 +185,6 @@ namespace Silk.NET.SilkTouch
                         ctx.DeclareExtraRef(ctx.ParameterVariables[index]); // ptrToString
                         ctx.DeclareExtraRef(id); // free
                         
-                        var alloced = ctx.ResolveVariable(id);
-                        ctx.AddSideEffect
-                        (
-                            ctx => ExpressionStatement
-                            (
-                                InvocationExpression
-                                (
-                                    MemberAccessExpression
-                                    (
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        MemberAccessExpression
-                                        (
-                                            SyntaxKind.SimpleMemberAccessExpression,
-                                            MemberAccessExpression
-                                            (
-                                                SyntaxKind.SimpleMemberAccessExpression,
-                                                MemberAccessExpression
-                                                (
-                                                    SyntaxKind.SimpleMemberAccessExpression,
-                                                    MemberAccessExpression
-                                                    (
-                                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
-                                                        IdentifierName("NET")
-                                                    ), IdentifierName("Core")
-                                                ), IdentifierName("Native")
-                                            ), IdentifierName("SilkMarshal")
-                                        ), IdentifierName("ZeroStart")
-                                    ),
-                                    ArgumentList
-                                    (
-                                        SeparatedList
-                                        (
-                                            new[]
-                                            {
-                                                Argument(alloced.Value),
-                                                Argument
-                                                (
-                                                    CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count)
-                                                )
-                                            }
-                                        )
-                                    )
-                                )
-                            )
-                        );
-                        
                         ctx.ShouldPinParameter[index] = false;
                         break;
                     }
