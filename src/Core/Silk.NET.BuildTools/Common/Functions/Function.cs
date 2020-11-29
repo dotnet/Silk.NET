@@ -98,6 +98,17 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public SignatureKind Kind { get; set; }
 
+        /// <summary>
+        /// The index of this function in the LpVtbl field.
+        /// </summary>
+        public int VtblIndex { get; set; }
+        
+        /// <summary>
+        /// Whether this method is readonly. That is, it's contained within a struct and does not modify any of its
+        /// members.
+        /// </summary>
+        public bool IsReadOnly { get; set; }
+
         /// <inheritdoc />
         public override string ToString()
         {
@@ -105,7 +116,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         /// <inheritdoc cref="ToString()" />
-        public string ToString(bool? @unsafe, bool partial = false, bool accessibility = false, bool @static = false)
+        public string ToString(bool? @unsafe, bool partial = false, bool accessibility = false, bool @static = false, bool semicolon = true)
         {
             var sb = new StringBuilder();
 
@@ -147,7 +158,11 @@ namespace Silk.NET.BuildTools.Common.Functions
                 }
             }
 
-            sb.Append(";");
+            if (semicolon)
+            {
+                sb.Append(";");
+            }
+
             return sb.ToString();
         }
 
@@ -173,6 +188,11 @@ namespace Silk.NET.BuildTools.Common.Functions
             if (@static)
             {
                 sb.Append("static ");
+            }
+
+            if (IsReadOnly)
+            {
+                sb.Append("readonly ");
             }
             
             if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)

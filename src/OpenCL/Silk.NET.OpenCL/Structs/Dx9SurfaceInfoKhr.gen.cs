@@ -22,13 +22,13 @@ namespace Silk.NET.OpenCL
     {
         public Dx9SurfaceInfoKhr
         (
-            IntPtr? resource = null,
+            void* resource = null,
             IntPtr? sharedHandle = null
         ) : this()
         {
             if (resource is not null)
             {
-                Resource = resource.Value;
+                Resource = resource;
             }
 
             if (sharedHandle is not null)
@@ -41,7 +41,7 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "IDirect3DSurface9*")]
         [NativeName("Type.Name", "IDirect3DSurface9")]
         [NativeName("Name", "resource")]
-        public IntPtr Resource;
+        public void* Resource;
 /// <summary></summary>
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]

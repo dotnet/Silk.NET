@@ -15,9 +15,9 @@ namespace Silk.NET.OpenGLES.Extensions.AMD
     public enum AMD
     {
         [NativeName("Name", "GL_3DC_X_AMD")]
-        C3DCXAmd = 0x87F9,
+        Gl3DCXAmd = 0x87F9,
         [NativeName("Name", "GL_3DC_XY_AMD")]
-        C3DCXYAmd = 0x87FA,
+        Gl3DCXYAmd = 0x87FA,
         [NativeName("Name", "GL_ATC_RGB_AMD")]
         AtcRgbAmd = 0x8C92,
         [NativeName("Name", "GL_ATC_RGBA_EXPLICIT_ALPHA_AMD")]

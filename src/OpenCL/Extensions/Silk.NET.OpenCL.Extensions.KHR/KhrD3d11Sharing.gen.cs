@@ -22,22 +22,40 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_d3d11_sharing";
         [NativeApi(EntryPoint = "clCreateFromD3D11BufferKHR")]
-        public unsafe partial IntPtr CreateFromD3D11Buffer([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateFromD3D11Buffer([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromD3D11BufferKHR")]
-        public partial IntPtr CreateFromD3D11Buffer([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateFromD3D11Buffer([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+        [NativeApi(EntryPoint = "clCreateFromD3D11BufferKHR")]
+        public unsafe partial IntPtr CreateFromD3D11Buffer<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] out T0 resource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateFromD3D11BufferKHR")]
+        public partial IntPtr CreateFromD3D11Buffer<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] out T0 resource, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateFromD3D11Texture2DKHR")]
-        public unsafe partial IntPtr CreateFromD3D11Texture2D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateFromD3D11Texture2D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromD3D11Texture2DKHR")]
-        public partial IntPtr CreateFromD3D11Texture2D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateFromD3D11Texture2D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+        [NativeApi(EntryPoint = "clCreateFromD3D11Texture2DKHR")]
+        public unsafe partial IntPtr CreateFromD3D11Texture2D<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] out T0 resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateFromD3D11Texture2DKHR")]
+        public partial IntPtr CreateFromD3D11Texture2D<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] out T0 resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateFromD3D11Texture3DKHR")]
-        public unsafe partial IntPtr CreateFromD3D11Texture3D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateFromD3D11Texture3D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromD3D11Texture3DKHR")]
-        public partial IntPtr CreateFromD3D11Texture3D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateFromD3D11Texture3D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+        [NativeApi(EntryPoint = "clCreateFromD3D11Texture3DKHR")]
+        public unsafe partial IntPtr CreateFromD3D11Texture3D<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] out T0 resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateFromD3D11Texture3DKHR")]
+        public partial IntPtr CreateFromD3D11Texture3D<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] KHR flags, [Flow(FlowDirection.Out)] out T0 resource, [Flow(FlowDirection.In)] uint subresource, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueAcquireD3D11ObjectsKHR")]
         public unsafe partial int EnqueueAcquireD3D11Objects([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_objects, [Flow(FlowDirection.In)] IntPtr* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);

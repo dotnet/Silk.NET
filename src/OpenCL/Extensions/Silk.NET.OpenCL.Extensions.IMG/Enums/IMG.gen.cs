@@ -24,6 +24,10 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         MipmapFilterBoxImg = 0x1,
         [NativeName("Name", "CL_COMMAND_GENERATE_MIPMAP_IMG")]
         CommandGenerateMipmapImg = 0x40D6,
+        [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
+        MemAllocFlagsImg = 0x40D7,
+        [NativeName("Name", "CL_MEM_ALLOC_RELAX_REQUIREMENTS_IMG")]
+        MemAllocRelaxRequirementsImg = 0x1,
         [NativeName("Name", "CL_GRALLOC_RESOURCE_NOT_ACQUIRED_IMG")]
         GrallocResourceNotAcquiredImg = 0x40D4,
         [NativeName("Name", "CL_INVALID_GRALLOC_OBJECT_IMG")]

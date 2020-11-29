@@ -22,10 +22,16 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     {
         public const string ExtensionName = "INTEL_dx9_media_sharing";
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceINTEL")]
-        public unsafe partial IntPtr CreateFromDX9MediaSurface([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateFromDX9MediaSurface([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceINTEL")]
-        public partial IntPtr CreateFromDX9MediaSurface([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateFromDX9MediaSurface([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+        [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceINTEL")]
+        public unsafe partial IntPtr CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] out T0 resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "clCreateFromDX9MediaSurfaceINTEL")]
+        public partial IntPtr CreateFromDX9MediaSurface<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] out T0 resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueAcquireDX9ObjectsINTEL")]
         public unsafe partial int EnqueueAcquireDX9Objects([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_objects, [Flow(FlowDirection.In)] IntPtr* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);

@@ -260,5 +260,11 @@ namespace Silk.NET.OpenXR
         TypeGraphicsRequirementsVulkan2Khr = 1000090002,
         [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_EQUIRECT2_KHR")]
         TypeCompositionLayerEquirect2Khr = 1000091000,
+        [NativeName("Name", "XR_TYPE_EVENT_DATA_DISPLAY_REFRESH_RATE_CHANGED_FB")]
+        TypeEventDataDisplayRefreshRateChangedFB = 1000101000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_COLOR_SPACE_PROPERTIES_FB")]
+        TypeSystemColorSpacePropertiesFB = 1000108000,
+        [NativeName("Name", "XR_TYPE_BINDING_MODIFICATIONS_KHR")]
+        TypeBindingModificationsKhr = 1000120000,
     }
 }

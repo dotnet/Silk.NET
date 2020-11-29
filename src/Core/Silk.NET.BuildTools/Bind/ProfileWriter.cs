@@ -7,11 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
+using Silk.NET.BuildTools.Cpp;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
@@ -100,6 +102,11 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine(task.LicenseText());
             sw.WriteLine();
             sw.WriteLine("using System;");
+            if (@struct.ComBases.Count > 0)
+            {
+                sw.WriteLine("using System.Runtime.CompilerServices;");
+            }
+
             sw.WriteLine("using System.Runtime.InteropServices;");
             sw.WriteLine("using System.Runtime.CompilerServices;");
             sw.WriteLine("using System.Text;");
@@ -121,6 +128,68 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
             sw.WriteLine($"    public unsafe partial struct {@struct.Name}");
             sw.WriteLine("    {");
+            foreach (var comBase in @struct.ComBases)
+            {
+                var asSuffix = comBase.Split('.').Last();
+                asSuffix = (asSuffix.StartsWith('I') ? asSuffix.Substring(1) : comBase);
+                asSuffix = asSuffix.StartsWith(task.FunctionPrefix)
+                    ? asSuffix.Substring(task.FunctionPrefix.Length)
+                    : asSuffix;
+                var fromSuffix = @struct.Name.Split('.').Last();
+                fromSuffix = (fromSuffix.StartsWith('I') ? fromSuffix.Substring(1) : comBase);
+                fromSuffix = fromSuffix.StartsWith(task.FunctionPrefix)
+                    ? fromSuffix.Substring(task.FunctionPrefix.Length)
+                    : fromSuffix;
+                sw.WriteLine($"        public static implicit operator {comBase}({@struct.Name} val)");
+                sw.WriteLine($"            => Unsafe.As<{@struct.Name}, {comBase}>(ref val);");
+                sw.WriteLine();
+                if (@struct.Functions.Any(x => x.Signature.Name.Equals("QueryInterface")))
+                {
+                    sw.WriteLine($"        public static explicit operator {@struct.Name}({comBase} val)");
+                    sw.WriteLine($"            => From{fromSuffix}(in val);");
+                    sw.WriteLine();
+                    sw.WriteLine($"        public readonly ref {comBase} As{asSuffix}()");
+                    sw.WriteLine("        {");
+                    // yes i know this is unsafe and that there's a good reason why struct members can't return themselves
+                    // by reference, but this should work well enough.
+                    sw.WriteLine("#if NETSTANDARD2_1 || NET5_0 || NETCOREAPP3_1");
+                    sw.WriteLine($"            return ref Unsafe.As<{@struct.Name}, {comBase}>");
+                    sw.WriteLine($"            (");
+                    sw.WriteLine($"                ref MemoryMarshal.GetReference");
+                    sw.WriteLine($"                (");
+                    sw.WriteLine($"                    MemoryMarshal.CreateSpan");
+                    sw.WriteLine($"                    (");
+                    sw.WriteLine($"                        ref Unsafe.AsRef(in this),");
+                    sw.WriteLine($"                        1");
+                    sw.WriteLine($"                    )");
+                    sw.WriteLine($"                )");
+                    sw.WriteLine($"            );");
+                    sw.WriteLine("#else");
+                    sw.WriteLine($"            fixed ({@struct.Name}* @this = &this)");
+                    sw.WriteLine($"            {{");
+                    sw.WriteLine($"                return ref *({comBase}*) @this;");
+                    sw.WriteLine($"            }}");
+                    sw.WriteLine("#endif");
+                    sw.WriteLine("        }");
+                    sw.WriteLine();
+                    sw.WriteLine($"        public static ref {@struct.Name} From{fromSuffix}(in {comBase} @this)");
+                    sw.WriteLine("        {");
+                    sw.WriteLine($"            {@struct.Name}* ret = default;");
+                    sw.WriteLine($"            SilkMarshal.ThrowHResult");
+                    sw.WriteLine($"            (");
+                    sw.WriteLine($"                @this.QueryInterface");
+                    sw.WriteLine($"                (");
+                    sw.WriteLine($"                    ref SilkMarshal.GuidOf<{@struct.Name}>(),");
+                    sw.WriteLine($"                    (void**) &ret");
+                    sw.WriteLine($"                )");
+                    sw.WriteLine($"            );");
+                    sw.WriteLine();
+                    sw.WriteLine($"            return ref *ret;");
+                    sw.WriteLine("        }");
+                    sw.WriteLine();
+                }
+            }
+            
             if (@struct.Fields.Any(x => x.Count is null))
             {
                 sw.WriteLine($"        public {@struct.Name}");
@@ -261,7 +330,8 @@ namespace Silk.NET.BuildTools.Bind
                                 ? structField.Count.StaticCount
                                 : 1;
                         var typeFixup09072020 = new TypeSignatureBuilder(structField.Type).WithIndirectionLevel
-                            (structField.Type.IndirectionLevels - 1).Build();
+                            //(structField.Type.IndirectionLevels - 1).Build();
+                            (0).Build();
 
                         foreach (var attr in structField.Attributes)
                         {
@@ -292,6 +362,42 @@ namespace Silk.NET.BuildTools.Bind
                 }
             }
 
+            foreach (var function in @struct.Functions.Concat
+                (ComVtblProcessor.GetHelperFunctions(@struct, profile.Projects["Core"])))
+            {
+                using (var sr = new StringReader(function.Signature.Doc))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        sw.WriteLine($"        {line}");
+                    }
+                }
+
+                foreach (var attr in function.Signature.Attributes)
+                {
+                    sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                }
+
+                using (var sr = new StringReader(function.Signature.ToString(null, accessibility: true, semicolon: false)))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        sw.WriteLine($"        {line}");
+                    }
+                }
+
+                sw.WriteLine("        {");
+                foreach (var line in function.Body)
+                {
+                    sw.WriteLine($"            {line}");
+                }
+
+                sw.WriteLine("        }");
+                sw.WriteLine();
+            }
+
             sw.WriteLine("    }");
             sw.WriteLine("}");
             sw.Flush();
@@ -306,7 +412,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write the class to.</param>
         public static void WriteNameContainer(this Project project, Profile profile, string file, BindTask task)
         {
-            if (File.Exists(file))
+            if (File.Exists(file) || task.Controls.Contains("no-name-container"))
             {
                 return;
             }
@@ -357,6 +463,12 @@ namespace Silk.NET.BuildTools.Bind
             // }
             foreach (var @class in project.Classes)
             {
+                if ((@class.NativeApis.Values.Sum(x => x.Functions.Count) + @class.Functions.Count) == 0)
+                {
+                    Console.WriteLine($"Warning: No functions, writing of class \"{@class.ClassName}\" skipped...");
+                    continue;
+                }
+            
                 if (project.IsRoot)
                 {
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs"));
@@ -501,6 +613,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("using System;");
                         sw.WriteLine("using Silk.NET.Core.Loader;");
                         sw.WriteLine("using Silk.NET.Core.Native;");
+                        sw.WriteLine("using Silk.NET.Core.Contexts;");
                         sw.WriteLine("using Silk.NET.Core.Attributes;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
@@ -515,8 +628,8 @@ namespace Silk.NET.BuildTools.Bind
                         {
                             sw.WriteLine
                             (
-                                $"             return new {@class.ClassName}(new DefaultNativeContext" +
-                                $"(new {task.NameContainer.ClassName}().GetName()));"
+                                $"             return new {@class.ClassName}(CreateDefaultContext" +
+                                $"(new {task.NameContainer.ClassName}().GetLibraryName()));"
                             );
                         }
                         else
@@ -530,9 +643,9 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("        {");
                         sw.WriteLine("             ext = IsExtensionPresent(" +
                                      "ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)");
-                        sw.WriteLine("                 ? Activator.CreateInstance<T>(Context)");
+                        sw.WriteLine("                 ? (T) Activator.CreateInstance(typeof(T), Context)");
                         sw.WriteLine("                 : null;");
-                        sw.WriteLine("             return !(ext is null);");
+                        sw.WriteLine("             return ext is not null;");
                         sw.WriteLine("        }");
                         sw.WriteLine();
                         sw.WriteLine("        public override bool IsExtensionPresent(string extension)");
@@ -769,7 +882,8 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="prof">The parent profile.</param>
         private static void WriteProjectFile(this Project project, string folder, Profile prof, BindTask task)
         {
-            if (File.Exists(Path.Combine(folder, $"{project.GetProjectName(task)}.csproj")))
+            if (File.Exists(Path.Combine(folder, $"{project.GetProjectName(task)}.csproj")) ||
+                task.Controls.Contains("no-csproj"))
             {
                 return;
             }
@@ -830,9 +944,13 @@ namespace Silk.NET.BuildTools.Bind
                 x =>
                     x.Value.Write
                     (
+                        !task.Controls.Contains("no-extra-dir") ?
                         x.Key == "Core"
                             ? Path.Combine(rootFolder, x.Value.GetProjectName(task))
-                            : Path.Combine(rootFolder, "Extensions", x.Value.GetProjectName(task)),
+                            : Path.Combine(rootFolder, "Extensions", x.Value.GetProjectName(task)) :
+                        x.Key == "Core"
+                            ? Path.Combine(rootFolder)
+                            : Path.Combine(rootFolder, "Extensions"),
                         profile,
                         task
                     )

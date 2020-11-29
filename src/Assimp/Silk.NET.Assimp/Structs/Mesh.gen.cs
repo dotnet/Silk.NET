@@ -37,7 +37,7 @@ namespace Silk.NET.Assimp
             uint? mNumAnimMeshes = null,
             AnimMesh** mAnimMeshes = null,
             uint? mMethod = null,
-            AABB? mAABB = null
+            Aabb? mAABB = null
         ) : this()
         {
             if (mPrimitiveTypes is not null)
@@ -270,6 +270,6 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiAABB")]
         [NativeName("Type.Name", "aiAABB")]
         [NativeName("Name", "mAABB")]
-        public AABB MAABB;
+        public Aabb MAABB;
     }
 }

@@ -174,6 +174,8 @@ namespace Silk.NET.OpenGL
         PrimitiveRestart = 0x8F9D,
         [NativeName("Name", "GL_DEBUG_OUTPUT")]
         DebugOutput = 0x92E0,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
+        ShadingRateImagePerPrimitiveNV = 0x95B1,
         [NativeName("Name", "GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
         ShadingRatePreserveAspectRatioQCom = 0x96A5,
     }

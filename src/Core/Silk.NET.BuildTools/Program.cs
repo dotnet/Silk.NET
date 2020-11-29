@@ -18,7 +18,7 @@ namespace Silk.NET.BuildTools
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static int Main(string[] args)
         {
             Console.WriteLine("Silk.NET Build Tools");
             Console.WriteLine("Copyright (C) Ultz Limited");
@@ -34,11 +34,23 @@ namespace Silk.NET.BuildTools
                     )
                 );
 
-                return;
+                return 0;
+            }
+
+            if (args.Length == 0)
+            {
+                Console.WriteLine
+                (
+                    "This is an internal tool not meant for general consumption. If you are working on " +
+                    "Silk.NET (or a Silk-based project), please let us know in our Discord server and we'll do our " +
+                    "best to help you navigate BuildTools."
+                );
+                return 1;
             }
 
             var sw = Stopwatch.StartNew();
             var extraCtrls = new List<string>();
+            var failedJobs = 0;
             foreach (var arg in args)
             {
                 if (arg.StartsWith("--"))
@@ -72,6 +84,7 @@ namespace Silk.NET.BuildTools
                     {
                         Console.WriteLine
                             ($"Task \"{kvp.Key}\" failed after {kvp.Value.Time.TotalSeconds} second(s).");
+                        failedJobs++;
                     }
                 }
                 Console.WriteLine();
@@ -93,6 +106,13 @@ namespace Silk.NET.BuildTools
 
                 return config;
             }
+
+            if (failedJobs > 0)
+            {
+                return -2000000000 - failedJobs;
+            }
+
+            return 0;
         }
 
         internal class ConsoleWriter : TextWriter

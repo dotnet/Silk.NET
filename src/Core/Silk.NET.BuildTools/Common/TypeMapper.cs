@@ -28,32 +28,7 @@ namespace Silk.NET.BuildTools.Common
         {
             foreach (var function in functions)
             {
-                if (map.ContainsKey(function.ReturnType.ToString()))
-                {
-                    function.ReturnType = ParseTypeSignature
-                    (
-                        map[function.ReturnType.ToString()], function.ReturnType.OriginalName
-                    );
-                }
-                else if (map.ContainsKey(function.ReturnType.Name))
-                {
-                    function.ReturnType.Name = map[function.ReturnType.Name];
-                }
-
-                foreach (var parameter in function.Parameters)
-                {
-                    if (map.ContainsKey(parameter.Type.ToString()))
-                    {
-                        parameter.Type = ParseTypeSignature
-                        (
-                            map[parameter.Type.ToString()], parameter.Type.OriginalName
-                        );
-                    }
-                    else if (map.ContainsKey(parameter.Type.Name))
-                    {
-                        parameter.Type.Name = map[parameter.Type.Name];
-                    }
-                }
+                Map(map, function);
             }
         }
 
@@ -106,6 +81,54 @@ namespace Silk.NET.BuildTools.Common
                     {
                         field.Type.Name = map[field.Type.Name];
                     }
+                }
+
+                for (var i = 0; i < @struct.ComBases.Count; i++)
+                {
+                    if (map.TryGetValue(@struct.ComBases[i], out var val))
+                    {
+                        @struct.ComBases[i] = val;
+                    }
+                }
+
+                foreach (var function in @struct.Vtbl)
+                {
+                    Map(map, function);
+                }
+
+                foreach (var function in @struct.Functions)
+                {
+                    Map(map, function.Signature);
+                }
+            }
+        }
+        
+        public static void Map(Dictionary<string, string> map, Function function)
+        {
+            if (map.ContainsKey(function.ReturnType.ToString()))
+            {
+                function.ReturnType = ParseTypeSignature
+                (
+                    map[function.ReturnType.ToString()], function.ReturnType.OriginalName
+                );
+            }
+            else if (map.ContainsKey(function.ReturnType.Name))
+            {
+                function.ReturnType.Name = map[function.ReturnType.Name];
+            }
+
+            foreach (var parameter in function.Parameters)
+            {
+                if (map.ContainsKey(parameter.Type.ToString()))
+                {
+                    parameter.Type = ParseTypeSignature
+                    (
+                        map[parameter.Type.ToString()], parameter.Type.OriginalName
+                    );
+                }
+                else if (map.ContainsKey(parameter.Type.Name))
+                {
+                    parameter.Type.Name = map[parameter.Type.Name];
                 }
             }
         }

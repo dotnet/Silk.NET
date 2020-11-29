@@ -132,5 +132,9 @@ namespace Silk.NET.OpenXR
         ErrorSecondaryViewConfigurationTypeNotEnabledMsft = -1000053000,
         [NativeName("Name", "XR_ERROR_CONTROLLER_MODEL_KEY_INVALID_MSFT")]
         ErrorControllerModelKeyInvalidMsft = -1000055000,
+        [NativeName("Name", "XR_ERROR_DISPLAY_REFRESH_RATE_UNSUPPORTED_FB")]
+        ErrorDisplayRefreshRateUnsupportedFB = -1000101000,
+        [NativeName("Name", "XR_ERROR_COLOR_SPACE_UNSUPPORTED_FB")]
+        ErrorColorSpaceUnsupportedFB = -1000108000,
     }
 }

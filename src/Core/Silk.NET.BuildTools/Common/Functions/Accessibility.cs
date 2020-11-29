@@ -8,6 +8,8 @@ namespace Silk.NET.BuildTools.Common.Functions
     public enum Accessibility
     {
         Public,
-        Protected
+        Protected,
+        Internal,
+        Private
     }
 }

@@ -16,10 +16,22 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     public static class IntelDx9MediaSharingOverloads
     {
-        public static unsafe IntPtr CreateFromDX9MediaSurface(this IntelDx9MediaSharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] IntPtr resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateFromDX9MediaSurface(this IntelDx9MediaSharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] void* resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateFromDX9MediaSurface(context, flags, resource, sharedHandle, plane, out errcode_ret.GetPinnableReference());
+        }
+
+        public static unsafe IntPtr CreateFromDX9MediaSurface<T0>(this IntelDx9MediaSharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromDX9MediaSurface(context, flags, out resource.GetPinnableReference(), sharedHandle, plane, errcode_ret);
+        }
+
+        public static unsafe IntPtr CreateFromDX9MediaSurface<T0>(this IntelDx9MediaSharing thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.Out)] Span<T0> resource, [Flow(FlowDirection.In)] IntPtr sharedHandle, [Flow(FlowDirection.In)] uint plane, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateFromDX9MediaSurface(context, flags, out resource.GetPinnableReference(), sharedHandle, plane, out errcode_ret.GetPinnableReference());
         }
 
         public static unsafe int EnqueueAcquireDX9Objects(this IntelDx9MediaSharing thisApi, [Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_objects, [Flow(FlowDirection.In)] IntPtr* mem_objects, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event)
