@@ -1884,6 +1884,16 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
+                if (Sse41.IsSupported)
+                {
+                    return (T)(object)(Half)Sse41.FloorScalar(Vector128.CreateScalar((float) (Half) (object) x)).ToScalar();
+                }
+
+                if (AdvSimd.IsSupported)
+                {
+                    return (T)(object)(Half)AdvSimd.FloorScalar(Vector64.CreateScalar((float) (Half) (object) x)).ToScalar();
+                }
+                
 #if NETSTANDARD2_0
                 return (T) (object) (Half) Math.Floor((float) (Half) (object) x);
 #else
@@ -1898,6 +1908,16 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
+                    if (Sse41.IsSupported)
+                    {
+                        return (T)(object)Sse41.FloorScalar(Vector128.CreateScalar((float) (object) x)).ToScalar();
+                    }
+
+                    if (AdvSimd.IsSupported)
+                    {
+                        return (T)(object)AdvSimd.FloorScalar(Vector64.CreateScalar((float) (object) x)).ToScalar();
+                    }
+                    
 #if NETSTANDARD2_0
                     return (T) (object) (float) Math.Floor((float) (object) x);
 #else
@@ -1913,6 +1933,15 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
+                    if (Sse41.IsSupported)
+                    {
+                        return (T)(object)Sse41.FloorScalar(Vector128.CreateScalar((double) (object) x)).ToScalar();
+                    }
+
+                    if (AdvSimd.IsSupported)
+                    {
+                        return (T)(object)AdvSimd.FloorScalar(Vector64.CreateScalar((double) (object) x)).ToScalar();
+                    }
                     return (T) (object) Math.Floor((double) (object) x);
                 }
 
