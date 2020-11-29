@@ -408,6 +408,23 @@ namespace Silk.NET.Maths
             return m;
         }
         
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static unsafe Vector4<T> operator *(Vector4<T> value1, Matrix4x4<T> value2)
+        {
+            Vector4<T> m;
+
+            // First row
+            m.X = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M11), Scalar.Multiply(value1.Y, value2.M21)), Scalar.Add(Scalar.Multiply(value1.Z, value2.M31), Scalar.Multiply(value1.W, value2.M41)));
+            m.Y = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M12), Scalar.Multiply(value1.Y, value2.M22)), Scalar.Add(Scalar.Multiply(value1.Z, value2.M32), Scalar.Multiply(value1.W, value2.M42)));
+            m.Z = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M13), Scalar.Multiply(value1.Y, value2.M23)), Scalar.Add(Scalar.Multiply(value1.Z, value2.M33), Scalar.Multiply(value1.W, value2.M43)));
+            m.W = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M14), Scalar.Multiply(value1.Y, value2.M24)), Scalar.Add(Scalar.Multiply(value1.Z, value2.M34), Scalar.Multiply(value1.W, value2.M44)));
+
+            return m;
+        }
+        
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
@@ -1776,6 +1793,14 @@ namespace Silk.NET.Maths
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Matrix4x4<T> Multiply(Matrix4x4<T> value1, Matrix4x4<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector4<T> Multiply(Vector4<T> value1, Matrix4x4<T> value2)
             => value1 * value2;
         
         /// <summary>Multiplies a matrix by another matrix.</summary>

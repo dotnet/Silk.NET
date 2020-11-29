@@ -184,6 +184,22 @@ namespace Silk.NET.Maths
             return m;
         }
         
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static unsafe Vector3<T> operator *(Vector2<T> value1, Matrix2x3<T> value2)
+        {
+            Vector3<T> m;
+
+            // First row
+            m.X = Scalar.Add(Scalar.Multiply(value1.X, value2.M11), Scalar.Multiply(value1.Y, value2.M21));
+            m.Y = Scalar.Add(Scalar.Multiply(value1.X, value2.M12), Scalar.Multiply(value1.Y, value2.M22));
+            m.Z = Scalar.Add(Scalar.Multiply(value1.X, value2.M13), Scalar.Multiply(value1.Y, value2.M23));
+
+            return m;
+        }
+        
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
@@ -444,6 +460,14 @@ namespace Silk.NET.Maths
         /// <returns>The scaled matrix.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Matrix2x3<T> Multiply(Matrix2x3<T> value1, T value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3<T> Multiply(Vector2<T> value1, Matrix2x3<T> value2)
             => value1 * value2;
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>

@@ -298,6 +298,24 @@ namespace Silk.NET.Maths
             return m;
         }
         
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        public static unsafe Vector3<T> operator *(Vector3<T> value1, Matrix3x3<T> value2)
+        {
+            // change Matrix3x2<T> operator *(Matrix3x2<T> value1, Matrix3x2<T> value2) when changing this, it's the same.
+            
+            Vector3<T> m;
+
+            // First row
+            m.X = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M11), Scalar.Multiply(value1.Y, value2.M21)), Scalar.Multiply(value1.Z, value2.M31));
+            m.Y = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M12), Scalar.Multiply(value1.Y, value2.M22)), Scalar.Multiply(value1.Z, value2.M32));
+            m.Z = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M13), Scalar.Multiply(value1.Y, value2.M23)), Scalar.Multiply(value1.Z, value2.M33));
+
+            return m;
+        }
+        
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>
@@ -682,6 +700,14 @@ namespace Silk.NET.Maths
         /// <returns>The scaled matrix.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Matrix3x3<T> Multiply(Matrix3x3<T> value1, T value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3<T> Multiply(Vector3<T> value1, Matrix3x3<T> value2)
             => value1 * value2;
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>

@@ -259,6 +259,30 @@ namespace Silk.NET.Maths
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector4<T> Multiply(Vector4<T> left, Vector4<T> right) 
             => left * right;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector4<T> Multiply(Vector4<T> value1, Matrix4x4<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3<T> Multiply(Vector4<T> value1, Matrix4x3<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2<T> Multiply(Vector4<T> value1, Matrix4x2<T> value2)
+            => value1 * value2;
 
         /// <summary>Multiplies a vector by the given scalar.</summary>
         /// <param name="left">The source vector.</param>

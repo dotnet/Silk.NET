@@ -424,6 +424,29 @@ namespace Silk.NET.Maths
             );
         }
         
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector4<T> Multiply(Vector2<T> value1, Matrix2x4<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3<T> Multiply(Vector2<T> value1, Matrix2x3<T> value2)
+            => value1 * value2;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2<T> Multiply(Vector2<T> value1, Matrix2x2<T> value2)
+            => value1 * value2;
                         
         /// <summary>
         /// Converts a <see cref="Vector2{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
