@@ -102,7 +102,7 @@ namespace Silk.NET.Maths
 
                 // Normalize(N)
                 T ls = Scalar.Add(Scalar.Add(Scalar.Multiply(nx, nx), Scalar.Multiply(ny, ny)), Scalar.Multiply(nz, nz));
-                T invNorm = Scalar.Divide(Scalar<T>.One, Scalar.Sqrt(ls));
+                T invNorm = Scalar.Inverse(Scalar.Sqrt(ls));
 
                 Vector3<T> normal = new Vector3<T>(
                     Scalar.Multiply(nx, invNorm),
@@ -175,7 +175,7 @@ namespace Silk.NET.Maths
                     return value; // It already normalized, so we don't need to further process.
                 }
 
-                T fInv = Scalar.Divide(Scalar<T>.One, Scalar.Sqrt(f));
+                T fInv = Scalar.Inverse(Scalar.Sqrt(f));
 
                 return new(
                     Scalar.Multiply(value.Normal.X, fInv),

@@ -625,7 +625,7 @@ namespace Silk.NET.Maths
                 return false;
             }
 
-            T invDet = Scalar.Divide(Scalar<T>.One, det);
+            T invDet = Scalar.Inverse(det);
 
             result.M11 = Scalar.Multiply(matrix.M22, invDet);
             result.M12 = Scalar.Negate(Scalar.Multiply(matrix.M12, invDet));

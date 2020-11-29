@@ -650,7 +650,7 @@ namespace Silk.NET.Maths
             }
             else
             {
-                zaxis = Vector3<T>.Multiply(zaxis, Scalar.Divide(Scalar<T>.One, Scalar.Sqrt(norm)));
+                zaxis = Vector3<T>.Multiply(zaxis, Scalar.Inverse(Scalar.Sqrt(norm)));
             }
 
             Vector3<T> xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(cameraUpVector, zaxis));
@@ -700,7 +700,7 @@ namespace Silk.NET.Maths
             }
             else
             {
-                faceDir = Vector3<T>.Multiply(faceDir, Scalar.Divide(Scalar<T>.One, Scalar.Sqrt(norm)));
+                faceDir = Vector3<T>.Multiply(faceDir, Scalar.Inverse(Scalar.Sqrt(norm)));
             }
 
             Vector3<T> yaxis = rotateAxis;
@@ -901,7 +901,7 @@ namespace Silk.NET.Maths
 
             result.M11 = Scalar.Divide(Scalar<T>.Two, width);
             result.M22 = Scalar.Divide(Scalar<T>.Two, height);
-            result.M33 = Scalar.Divide(Scalar<T>.One, Scalar.Subtract(zNearPlane, zFarPlane));
+            result.M33 = Scalar.Inverse(Scalar.Subtract(zNearPlane, zFarPlane));
             result.M43 = Scalar.Divide(zNearPlane, Scalar.Subtract(zNearPlane, zFarPlane));
 
             return result;
@@ -923,7 +923,7 @@ namespace Silk.NET.Maths
 
             result.M22 = Scalar.Divide(Scalar<T>.Two, Scalar.Subtract(top, bottom));
 
-            result.M33 = Scalar.Divide(Scalar<T>.One, Scalar.Subtract(zNearPlane, zFarPlane));
+            result.M33 = Scalar.Inverse(Scalar.Subtract(zNearPlane, zFarPlane));
 
             result.M41 = Scalar.Divide(Scalar.Add(left, right), Scalar.Subtract(left, right));
             result.M42 = Scalar.Divide(Scalar.Add(top, bottom), Scalar.Subtract(bottom, top));
@@ -990,7 +990,7 @@ namespace Silk.NET.Maths
             if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
-            T yScale = Scalar.Divide(Scalar<T>.One, Scalar.Tan(Scalar.Divide(fieldOfView, Scalar<T>.Two)));
+            T yScale = Scalar.Inverse(Scalar.Tan(Scalar.Divide(fieldOfView, Scalar<T>.Two)));
             T xScale = Scalar.Divide(yScale, aspectRatio);
 
             Matrix4x4<T> result;
@@ -1747,7 +1747,7 @@ namespace Silk.NET.Maths
                     return false;
                 }
 
-                T invDet = Scalar.Divide(Scalar<T>.One, det);
+                T invDet = Scalar.Inverse(det);
 
                 result.M11 = Scalar.Multiply(a11, invDet);
                 result.M21 = Scalar.Multiply(a12, invDet);
