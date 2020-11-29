@@ -3557,6 +3557,16 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
+                    if (Sse42.IsSupported)
+                    {
+                        return (T)(object)(float)Sse41.RoundToNearestIntegerScalar(Vector128.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                    }
+
+                    if (AdvSimd.IsSupported)
+                    {
+                        return (T)(object)(float)AdvSimd.RoundToNearestScalar(Vector64.CreateScalar((float)(object)x)).ToScalar();
+                    }
+                    
 #if NETSTANDARD2_0
                     return (T) (object) (float) Math.Round((float) (object) x);
 #else
@@ -3572,6 +3582,16 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
+                    if (Sse42.IsSupported)
+                    {
+                        return (T)(object)(double)Sse41.RoundToNearestIntegerScalar(Vector128.CreateScalarUnsafe((double)(object)x)).ToScalar();
+                    }
+
+                    if (AdvSimd.IsSupported)
+                    {
+                        return (T)(object)(double)AdvSimd.RoundToNearestScalar(Vector64.CreateScalar((double)(object)x)).ToScalar();
+                    }
+                    
                     return (T) (object) (double) Math.Round((double) (object) x);
                 }
 
@@ -4939,7 +4959,202 @@ namespace Silk.NET.Maths
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, System.MidpointRounding mode) where T : unmanaged
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(Half))
+            {
+#if NETSTANDARD2_0
+                return (T) (object) (Half) (float) Math.Round((float) (Half) (object) x, mode);
+#else
+                return (T) (object) (Half) MathF.Round((float) (Half) (object) x, mode);
+#endif
+            }
+
+            return Float(x, mode);
+
+            [MethodImpl(MaxOpt)]
+            static T Float(T x, MidpointRounding mode)
+            {
+                if (typeof(T) == typeof(float))
+                {
+                    if (Sse42.IsSupported)
+                    {
+                        if (mode == MidpointRounding.ToZero)
+                            return (T)(object)(float)Sse41.RoundToZeroScalar(Vector128.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                        
+                        if (mode == MidpointRounding.ToPositiveInfinity)
+                            return (T)(object)(float)Sse41.RoundToPositiveInfinityScalar(Vector128.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                            
+                        if (mode == MidpointRounding.ToNegativeInfinity)
+                            return (T)(object)(float)Sse41.RoundToNegativeInfinityScalar(Vector128.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                        
+                        if (mode == MidpointRounding.ToEven)
+                            return (T)(object)(float)Sse41.RoundToNearestIntegerScalar(Vector128.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                    }
+
+                    if (AdvSimd.IsSupported)
+                    {
+                        if (mode == MidpointRounding.ToZero)
+                            return (T)(object)(float)AdvSimd.RoundToZeroScalar(Vector64.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                        
+                        if (mode == MidpointRounding.ToPositiveInfinity)
+                            return (T)(object)(float)AdvSimd.RoundToPositiveInfinityScalar(Vector64.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                            
+                        if (mode == MidpointRounding.ToNegativeInfinity)
+                            return (T)(object)(float)AdvSimd.RoundToNegativeInfinityScalar(Vector64.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                        
+                        if (mode == MidpointRounding.ToEven)
+                            return (T)(object)(float)AdvSimd.RoundToNearestScalar(Vector64.CreateScalarUnsafe((float)(object)x)).ToScalar();
+                    }
+                    
+#if NETSTANDARD2_0
+                    return (T) (object) (float) Math.Round((float) (object) x, mode);
+#else
+                    return (T) (object) MathF.Round((float) (object) x, mode);
+#endif
+                }
+
+                return Double(x, mode);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Double(T x, MidpointRounding mode)
+            {
+                if (typeof(T) == typeof(double))
+                {
+                    if (Sse42.IsSupported)
+                    {
+                        if (mode == MidpointRounding.ToZero)
+                            return (T)(object)(double)Sse41.RoundToZeroScalar(Vector128.CreateScalarUnsafe((double)(object)x)).ToScalar();
+                        
+                        if (mode == MidpointRounding.ToPositiveInfinity)
+                            return (T)(object)(double)Sse41.RoundToPositiveInfinityScalar(Vector128.CreateScalarUnsafe((double)(object)x)).ToScalar();
+                            
+                        if (mode == MidpointRounding.ToNegativeInfinity)
+                            return (T)(object)(double)Sse41.RoundToNegativeInfinityScalar(Vector128.CreateScalarUnsafe((double)(object)x)).ToScalar();
+                        
+                        if (mode == MidpointRounding.ToEven)
+                            return (T)(object)(double)Sse41.RoundToNearestIntegerScalar(Vector128.CreateScalarUnsafe((double)(object)x)).ToScalar();
+                    }
+
+                    if (AdvSimd.IsSupported)
+                    {
+                        if (mode == MidpointRounding.ToZero)
+                            return (T)(object)(double)AdvSimd.RoundToZeroScalar(Vector64.CreateScalar((double)(object)x)).ToScalar();
+                        
+                        if (mode == MidpointRounding.ToPositiveInfinity)
+                            return (T)(object)(double)AdvSimd.RoundToPositiveInfinityScalar(Vector64.CreateScalar((double)(object)x)).ToScalar();
+                            
+                        if (mode == MidpointRounding.ToNegativeInfinity)
+                            return (T)(object)(double)AdvSimd.RoundToNegativeInfinityScalar(Vector64.CreateScalar((double)(object)x)).ToScalar();
+                        
+                        if (mode == MidpointRounding.ToEven)
+                            return (T)(object)(double)AdvSimd.RoundToNearestScalar(Vector64.CreateScalar((double)(object)x)).ToScalar();
+                    }
+                    
+                    return (T) (object) (double) Math.Round((double) (object) x, mode);
+                }
+
+                return Decimal(x, mode);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Decimal(T x, MidpointRounding mode)
+            {
+                if (typeof(T) == typeof(decimal))
+                {
+                    return (T) (object) (decimal) Math.Round((decimal) (object) x, mode);
+                }
+
+                return SByte(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T SByte(T x)
+            {
+                if (typeof(T) == typeof(sbyte))
+                {
+                    return x;
+                }
+
+                return Byte(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Byte(T x)
+            {
+                if (typeof(T) == typeof(byte))
+                {
+                    return x;
+                }
+
+                return Short(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Short(T x)
+            {
+                if (typeof(T) == typeof(short))
+                {
+                    return x;
+                }
+
+                return UShort(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T UShort(T x)
+            {
+                if (typeof(T) == typeof(ushort))
+                {
+                    return x;
+                }
+
+                return Int(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Int(T x)
+            {
+                if (typeof(T) == typeof(int))
+                {
+                    return x;
+                }
+
+                return UInt(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T UInt(T x)
+            {
+                if (typeof(T) == typeof(uint))
+                {
+                    return x;
+                }
+
+                return Long(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Long(T x)
+            {
+                if (typeof(T) == typeof(long))
+                {
+                    return x;
+                }
+
+                return ULong(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T ULong(T x)
+            {
+                if (typeof(T) == typeof(ulong))
+                {
+                    return x;
+                }
+
+                ThrowUnsupportedType();
+                return default;
+            }
         }
     }
 }
