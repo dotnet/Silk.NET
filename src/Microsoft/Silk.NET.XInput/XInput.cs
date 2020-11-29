@@ -6,22 +6,22 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.XInput
 {
-    public partial class D3D12
+    public partial class XInput
     {
-        public static D3D12 GetApi()
+        public static XInput GetApi()
         {
-             return new D3D12(CreateDefaultContext(new D3D12LibraryNameContainer().GetLibraryName()));
+             throw new NotImplementedException();
         }
 
         public bool TryGetExtension<T>(out T ext)
-            where T:NativeExtension<D3D12>
+            where T:NativeExtension<XInput>
         {
              ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                  ? (T) Activator.CreateInstance(typeof(T), Context)
                  : null;
-             return !(ext is null);
+             return ext is not null;
         }
 
         public override bool IsExtensionPresent(string extension)

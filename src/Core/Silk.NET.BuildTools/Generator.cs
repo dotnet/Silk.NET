@@ -195,6 +195,11 @@ namespace Silk.NET.BuildTools
                     Console.WriteLine("Written to cache for future use.");
                 }
             }
+            else if (task.Controls.Any(x => x.Equals("no-bind", StringComparison.InvariantCultureIgnoreCase)))
+            {
+                // skip
+                profile = null;
+            }
             else if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
             {
                 Console.WriteLine("Cache hit!");

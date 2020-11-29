@@ -12,7 +12,7 @@ namespace Silk.NET.Direct3D.Compilers
     {
         public static DXC GetApi()
         {
-             return new DXC(new DefaultNativeContext(new DXCLibraryNameContainer().GetLibraryName()));
+             return new DXC(CreateDefaultContext(new DXCLibraryNameContainer().GetLibraryName()));
         }
 
         public bool TryGetExtension<T>(out T ext)

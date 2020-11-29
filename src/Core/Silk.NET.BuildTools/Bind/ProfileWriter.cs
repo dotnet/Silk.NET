@@ -588,7 +588,7 @@ namespace Silk.NET.BuildTools.Bind
                         {
                             sw.WriteLine
                             (
-                                $"             return new {@class.ClassName}(new DefaultNativeContext" +
+                                $"             return new {@class.ClassName}(CreateDefaultContext" +
                                 $"(new {task.NameContainer.ClassName}().GetLibraryName()));"
                             );
                         }
@@ -605,7 +605,7 @@ namespace Silk.NET.BuildTools.Bind
                                      "ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)");
                         sw.WriteLine("                 ? (T) Activator.CreateInstance(typeof(T), Context)");
                         sw.WriteLine("                 : null;");
-                        sw.WriteLine("             return !(ext is null);");
+                        sw.WriteLine("             return ext is not null;");
                         sw.WriteLine("        }");
                         sw.WriteLine();
                         sw.WriteLine("        public override bool IsExtensionPresent(string extension)");
