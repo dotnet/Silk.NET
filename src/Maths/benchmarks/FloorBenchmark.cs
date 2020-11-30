@@ -20,7 +20,11 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark(Baseline = true)]
         public float Sys()
         {
+#if MATHF
             return MathF.Floor(X);
+#else
+            return (float)Math.Floor(X);
+#endif
         }
 
         [Benchmark]

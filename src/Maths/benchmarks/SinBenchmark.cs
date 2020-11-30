@@ -11,7 +11,11 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark(Baseline = true)]
         public float Sys()
         {
+#if MATHF
             return MathF.Sin(X);
+#else
+            return (float)Math.Sin(X);
+#endif
         }
 
         [Benchmark]

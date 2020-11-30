@@ -14,7 +14,11 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark(Baseline = true)]
         public float Sys()
         {
+#if MATHF
             return MathF.Log(X);
+#else
+            return (float)Math.Log(X);
+#endif
         }
 
         [Benchmark]
@@ -42,7 +46,11 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark(Baseline = true)]
         public float Sys()
         {
+#if MATHF
             return MathF.Log(X);
+#else
+            return (float)Math.Log(X);
+#endif
         }
 
         [Benchmark]

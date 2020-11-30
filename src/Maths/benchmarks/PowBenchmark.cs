@@ -15,7 +15,11 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark(Baseline = true)]
         public float Sys()
         {
+#if MATHF
             return MathF.Pow(X, Y);
+#else
+            return (float)Math.Pow(X, Y);
+#endif
         }
 
         [Benchmark]
@@ -44,7 +48,11 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark(Baseline = true)]
         public float Sys()
         {
+#if MATHF
             return MathF.Pow(X, Y);
+#else
+            return (float)Math.Pow(X, Y);
+#endif
         }
 
         [Benchmark]
@@ -73,7 +81,11 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark(Baseline = true)]
         public float Sys()
         {
+#if MATHF
             return MathF.Pow(X, Y);
+#else
+            return (float)Math.Pow(X, Y);
+#endif
         }
 
         [Benchmark]

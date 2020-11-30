@@ -20,7 +20,11 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark(Baseline = true)]
         public float Sys()
         {
+#if MATHF
             return MathF.Abs(X);
+#else
+            return (float)Math.Abs(X);
+#endif
         }
 
         [Benchmark]
