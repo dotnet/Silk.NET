@@ -654,6 +654,8 @@ namespace Silk.NET.Core.Native
             return (delegate* unmanaged[Thiscall]<void>) DelegateToPtr(@delegate, kind, pinned);
         }
 
+        public static T PtrToDelegate<T>(IntPtr p) where T : Delegate => Marshal.GetDelegateForFunctionPointer<T>(p);
+
         [MethodImpl((MethodImplOptions)768)] public static unsafe ref Guid GuidOf<T>() => ref *TypeGuid<T>.Riid;
         [MethodImpl((MethodImplOptions)768)] public static unsafe Guid* GuidPtrOf<T>() => TypeGuid<T>.Riid;
         

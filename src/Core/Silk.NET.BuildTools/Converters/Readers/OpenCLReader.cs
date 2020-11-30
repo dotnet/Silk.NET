@@ -611,7 +611,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Name = "user_func",
                                 Count = null,
                                 Flow = FlowDirection.In,
-                                Type = new Type {Name = "FuncPtr", OriginalName = "CL_CALLBACK"}
+                                Type = new Type {Name = "PfnVoidFunction", OriginalName = "CL_CALLBACK"}
                             }
                         );
                         continue;

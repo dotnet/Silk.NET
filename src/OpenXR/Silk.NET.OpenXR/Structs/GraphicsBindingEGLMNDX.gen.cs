@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -24,7 +25,7 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingEglMndx,
             void* next = null,
-            FuncPtr? getProcAddress = null,
+            PfnVoidFunction? getProcAddress = null,
             IntPtr? display = null,
             IntPtr? config = null,
             IntPtr? context = null
@@ -75,7 +76,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "PFNEGLGETPROCADDRESSPROC")]
         [NativeName("Type.Name", "PFNEGLGETPROCADDRESSPROC")]
         [NativeName("Name", "getProcAddress")]
-        public FuncPtr GetProcAddress;
+        public PfnVoidFunction GetProcAddress;
 /// <summary></summary>
         [NativeName("Type", "EGLDisplay")]
         [NativeName("Type.Name", "EGLDisplay")]

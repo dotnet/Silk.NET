@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
@@ -291,12 +292,12 @@ namespace Silk.NET.Vulkan
 
         private unsafe void Add(ICollection<string> l, ExtensionProperties* props)
         {
-            var result = Result.Incomplete;
-            while (result == Result.Incomplete)
+            var result = Vulkan.Result.Incomplete;
+            while (result == Vulkan.Result.Incomplete)
             {
                 var instanceExtPropertiesCount = 128u;
                 result = EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, props);
-                if (result == Result.Success || result == Result.Incomplete)
+                if (result == Vulkan.Result.Success || result == Vulkan.Result.Incomplete)
                 {
                     for (var i = 0; i < instanceExtPropertiesCount; i++)
                     {
@@ -308,13 +309,13 @@ namespace Silk.NET.Vulkan
 
         private unsafe List<string> Add(PhysicalDevice physicalDevice, List<string> l, ExtensionProperties* props)
         {
-            var result = Result.Incomplete;
-            while (result == Result.Incomplete)
+            var result = Vulkan.Result.Incomplete;
+            while (result == Vulkan.Result.Incomplete)
             {
                 var deviceExtPropertiesCount = 128u;
                 result = EnumerateDeviceExtensionProperties
                     (physicalDevice, (byte*) 0, &deviceExtPropertiesCount, props);
-                if (result == Result.Success || result == Result.Incomplete)
+                if (result == Vulkan.Result.Success || result == Vulkan.Result.Incomplete)
                 {
                     for (var j = 0; j < deviceExtPropertiesCount; j++)
                     {

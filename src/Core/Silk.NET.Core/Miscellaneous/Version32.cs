@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Core
 {
     /// <summary>
     /// A 32-bit version structure.

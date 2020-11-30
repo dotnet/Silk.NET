@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -25,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DebugReportCallbackCreateInfoExt,
             void* pNext = null,
             DebugReportFlagsEXT? flags = null,
-            FuncPtr? pfnCallback = null,
+            PfnDebugReportCallbackEXT? pfnCallback = null,
             void* pUserData = null
         ) : this()
         {
@@ -74,7 +75,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "PFN_vkDebugReportCallbackEXT")]
         [NativeName("Type.Name", "PFN_vkDebugReportCallbackEXT")]
         [NativeName("Name", "pfnCallback")]
-        public FuncPtr PfnCallback;
+        public PfnDebugReportCallbackEXT PfnCallback;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

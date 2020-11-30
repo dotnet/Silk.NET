@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -27,7 +28,7 @@ namespace Silk.NET.Vulkan
             uint? flags = null,
             DebugUtilsMessageSeverityFlagsEXT? messageSeverity = null,
             DebugUtilsMessageTypeFlagsEXT? messageType = null,
-            FuncPtr? pfnUserCallback = null,
+            PfnDebugUtilsMessengerCallbackEXT? pfnUserCallback = null,
             void* pUserData = null
         ) : this()
         {
@@ -96,7 +97,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "PFN_vkDebugUtilsMessengerCallbackEXT")]
         [NativeName("Type.Name", "PFN_vkDebugUtilsMessengerCallbackEXT")]
         [NativeName("Name", "pfnUserCallback")]
-        public FuncPtr PfnUserCallback;
+        public PfnDebugUtilsMessengerCallbackEXT PfnUserCallback;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

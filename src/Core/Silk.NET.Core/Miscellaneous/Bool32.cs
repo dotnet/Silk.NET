@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Core
 {
     /// <summary>
     /// A 32-bit boolean.

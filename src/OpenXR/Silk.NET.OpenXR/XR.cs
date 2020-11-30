@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 using ExtensionAttribute = Silk.NET.Core.Attributes.ExtensionAttribute;
@@ -40,14 +41,14 @@ namespace Silk.NET.OpenXR
                     (typeof(T), new LamdaNativeContext(
                     x =>
                     {
-                        FuncPtr ptr = default;
+                        PfnVoidFunction ptr = default;
                         var result = GetInstanceProcAddr(instance, x, ref ptr);
                         if (result != Result.Success)
                         {
                             throw new InvalidOperationException($"Symbol loading failed with XrResult {result}");
                         }
 
-                        return ptr.Value;
+                        return ptr;
                     }))
                 : null) is null);
 

@@ -39,6 +39,19 @@ namespace Silk.NET.BuildTools.Bind
         /// </summary>
         public static Dictionary<string,string> CachedLicenseTexts { get; } = new Dictionary<string,string>();
 
+        public static void WriteCoreUsings(this StreamWriter sw)
+        {
+            sw.WriteLine("using System;");
+            sw.WriteLine("using System.Runtime.InteropServices;");
+            sw.WriteLine("using System.Runtime.CompilerServices;");
+            sw.WriteLine("using System.Text;");
+            sw.WriteLine("using Silk.NET.Core;");
+            sw.WriteLine("using Silk.NET.Core.Native;");
+            sw.WriteLine("using Silk.NET.Core.Attributes;");
+            sw.WriteLine("using Silk.NET.Core.Contexts;");
+            sw.WriteLine("using Silk.NET.Core.Loader;");
+        }
+
         public static string LicenseText(this BindTask task) => CachedLicenseTexts.TryGetValue
             (task.OutputOpts.License, out var val)
             ? val
@@ -101,19 +114,7 @@ namespace Silk.NET.BuildTools.Bind
             var sw = new StreamWriter(file);
             sw.WriteLine(task.LicenseText());
             sw.WriteLine();
-            sw.WriteLine("using System;");
-            if (@struct.ComBases.Count > 0)
-            {
-                sw.WriteLine("using System.Runtime.CompilerServices;");
-            }
-
-            sw.WriteLine("using System.Runtime.InteropServices;");
-            sw.WriteLine("using System.Runtime.CompilerServices;");
-            sw.WriteLine("using System.Text;");
-            sw.WriteLine("using Silk.NET.Core.Native;");
-            sw.WriteLine("using Silk.NET.Core.Attributes;");
-            sw.WriteLine("using Silk.NET.Core.Contexts;");
-            sw.WriteLine("using Silk.NET.Core.Loader;");
+            sw.WriteCoreUsings();
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
@@ -474,14 +475,7 @@ namespace Silk.NET.BuildTools.Bind
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs"));
                     StreamWriter? swOverloads = null;
                     sw.Write(task.LicenseText());
-                    sw.WriteLine("using System;");
-                    sw.WriteLine("using System.Runtime.InteropServices;");
-                    sw.WriteLine("using System.Runtime.CompilerServices;");
-                    sw.WriteLine("using System.Text;");
-                    sw.WriteLine("using Silk.NET.Core.Native;");
-                    sw.WriteLine("using Silk.NET.Core.Attributes;");
-                    sw.WriteLine("using Silk.NET.Core.Contexts;");
-                    sw.WriteLine("using Silk.NET.Core.Loader;");
+                    sw.WriteCoreUsings();
                     sw.WriteLine();
                     sw.WriteLine("#pragma warning disable 1591");
                     sw.WriteLine();
@@ -610,11 +604,7 @@ namespace Silk.NET.BuildTools.Bind
                     if (!File.Exists(Path.Combine(folder, $"{@class.ClassName}.cs")))
                     {
                         sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.cs"));
-                        sw.WriteLine("using System;");
-                        sw.WriteLine("using Silk.NET.Core.Loader;");
-                        sw.WriteLine("using Silk.NET.Core.Native;");
-                        sw.WriteLine("using Silk.NET.Core.Contexts;");
-                        sw.WriteLine("using Silk.NET.Core.Attributes;");
+                        sw.WriteCoreUsings();
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
                         sw.WriteLine();
@@ -673,15 +663,8 @@ namespace Silk.NET.BuildTools.Bind
                         var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs"));
                         StreamWriter? swOverloads = null;
                         sw.Write(task.LicenseText());
-                        sw.WriteLine("using System;");
-                        sw.WriteLine("using System.Runtime.InteropServices;");
-                        sw.WriteLine("using System.Runtime.CompilerServices;");
-                        sw.WriteLine("using System.Text;");
+                        sw.WriteCoreUsings();
                         sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(task)};");
-                        sw.WriteLine("using Silk.NET.Core.Native;");
-                        sw.WriteLine("using Silk.NET.Core.Attributes;");
-                        sw.WriteLine("using Silk.NET.Core.Contexts;");
-                        sw.WriteLine("using Silk.NET.Core.Loader;");
                         sw.WriteLine("using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
@@ -806,13 +789,7 @@ namespace Silk.NET.BuildTools.Bind
                 var ns = isExtension ? task.ExtensionsNamespace : task.Namespace;
                 var swOverloads = new StreamWriter(Path.Combine(folder, $"{@class}Overloads.gen.cs"));
                 swOverloads.Write(task.LicenseText());
-                swOverloads.WriteLine("using System;");
-                swOverloads.WriteLine("using System.Runtime.InteropServices;");
-                swOverloads.WriteLine("using System.Text;");
-                swOverloads.WriteLine("using Silk.NET.Core.Native;");
-                swOverloads.WriteLine("using Silk.NET.Core.Attributes;");
-                swOverloads.WriteLine("using Silk.NET.Core.Contexts;");
-                swOverloads.WriteLine("using Silk.NET.Core.Loader;");
+                swOverloads.WriteCoreUsings();
                 swOverloads.WriteLine();
                 swOverloads.WriteLine("#pragma warning disable 1591");
                 swOverloads.WriteLine();

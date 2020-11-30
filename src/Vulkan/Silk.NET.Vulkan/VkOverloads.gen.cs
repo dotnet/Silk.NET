@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -2495,7 +2497,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be added.</summary>
-        public static unsafe FuncPtr GetDeviceProcAddr(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pName)
+        public static unsafe PfnVoidFunction GetDeviceProcAddr(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pName)
         {
             // SpanOverloader
             return thisApi.GetDeviceProcAddr(device, in pName.GetPinnableReference());
@@ -2558,7 +2560,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be added.</summary>
-        public static unsafe FuncPtr GetInstanceProcAddr(this Vk thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pName)
+        public static unsafe PfnVoidFunction GetInstanceProcAddr(this Vk thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> pName)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, in pName.GetPinnableReference());
