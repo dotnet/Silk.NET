@@ -67,7 +67,7 @@ namespace CLMultiplication
             AssertZero(err);
             program = cl.CreateProgramWithSource(ctx, (uint) kernelCode.Length, kernelCode, null, &err);
             AssertZero(err);
-            err = cl.BuildProgram(program, 0, null, (char*) null, null, null);
+            err = cl.BuildProgram(program, 0, null, (byte*) null, null, null);
             try
             {
                 AssertZero(err);
