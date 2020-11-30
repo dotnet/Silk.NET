@@ -1,4 +1,4 @@
-// This file is part of Silk.NET.
+﻿// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -47,7 +47,7 @@ namespace Silk.NET.Maths
 #if POH
             var two_to_jby64 = GC.AllocateUninitializedArray<ulong>(64, true);
 #else
-            var __two_to_jby64 = new ulong[64];
+            var two_to_jby64 = new ulong[64];
 #endif
             int i = 0;
             two_to_jby64[i++] = 0x3ff0000000000000;

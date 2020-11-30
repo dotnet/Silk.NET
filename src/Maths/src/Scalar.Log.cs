@@ -1,4 +1,4 @@
-// This file is part of Silk.NET.
+﻿// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -47,7 +47,7 @@ namespace Silk.NET.Maths
 #if POH
             var logTblLookup = GC.AllocateUninitializedArray<uint>(771, true);
 #else
-            var _logTblLookup = new uint[771];
+            var logTblLookup = new uint[771];
 #endif
             int i = 0;
             logTblLookup[i++] = 0x40000000; logTblLookup[i++] =  0x0; logTblLookup[i++] =  0x0; logTblLookup[i++] =  0x3fff00ff; logTblLookup[i++] =  0x3b7f8000; logTblLookup[i++] =  0x32aa2b11; logTblLookup[i++] =  0x3ffe03f8; logTblLookup[i++] =  0x3bff0000; logTblLookup[i++] =  0x3429ac42; logTblLookup[i++] = 
