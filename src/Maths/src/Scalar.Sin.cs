@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
@@ -441,15 +441,6 @@ namespace Silk.NET.Maths
         // in fact, everything below is ripped from methods on NetStandard2.1, but which aren't available on NetStandard2.0
         private static unsafe int SingleToInt(float f)
         {
-#if SSE
-            // Workaround for https://github.com/dotnet/runtime/issues/11413
-            if (Sse2.IsSupported)
-            {
-                Vector128<int> vec = Vector128.CreateScalarUnsafe(f).AsInt32();
-                return Sse2.ConvertToInt32(vec);
-            }
-#endif
-
             return *((int*)&f);
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
