@@ -1,4 +1,4 @@
-// This file is part of Silk.NET.
+﻿// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -5099,7 +5099,69 @@ namespace Silk.NET.Maths
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, int digits) where T : unmanaged
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(Half))
+            {
+#if MATHF
+                return (T) (object) (Half) (float) MathF.Round((float)(Half) (object) x, digits);
+#else
+                return (T) (object) (Half) (float) Math.Round((float)(Half) (object) x, digits);
+#endif
+            }
+
+            return Float(x, digits);
+
+            [MethodImpl(MaxOpt)]
+            static T Float(T x, int digits)
+            {
+                if (typeof(T) == typeof(float))
+                {
+#if MATHF
+                    return (T) (object) (float) MathF.Round((float)(object) x, digits);
+#else
+                    return (T) (object) (float) Math.Round((float)(object) x, digits);
+#endif
+                }
+
+                return Double(x, digits);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static T Double(T x, int digits)
+            {
+                if (typeof(T) == typeof(double))
+                {
+                    return (T) (object) (double) Math.Round((double)(object) x, digits);
+                }
+
+                return Decimal(x, digits);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Decimal(T x, int digits)
+            {
+                if (typeof(T) == typeof(decimal))
+                    ThrowOpUnsupportedPrecision();
+
+                return Other(x, digits);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Other(T x, int digits)
+            {
+                if (typeof(T) == typeof(sbyte)
+                ||  typeof(T) == typeof(byte)
+                ||  typeof(T) == typeof(ushort)
+                ||  typeof(T) == typeof(short)
+                ||  typeof(T) == typeof(uint)
+                ||  typeof(T) == typeof(int)
+                ||  typeof(T) == typeof(ulong)
+                ||  typeof(T) == typeof(long)
+                )
+                    return x;
+                    
+                ThrowUnsupportedType();
+                return default;
+            }
         }
 
         /// <summary>
@@ -5118,7 +5180,70 @@ namespace Silk.NET.Maths
         [MethodImpl(MaxOpt)]
         public static T Round<T>(T x, int digits, System.MidpointRounding mode) where T : unmanaged
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(Half))
+            {
+#if MATHF
+                return (T) (object) (Half) (float) MathF.Round((float)(Half) (object) x, digits, mode);
+#else
+                return (T) (object) (Half) (float) Math.Round((float)(Half) (object) x, digits, mode);
+#endif
+            }
+
+            return Float(x, digits, mode);
+
+            [MethodImpl(MaxOpt)]
+            static T Float(T x, int digits, MidpointRounding mode)
+            {
+                if (typeof(T) == typeof(float))
+                {
+#if MATHF
+                    return (T) (object) (float) MathF.Round((float)(object) x, digits, mode);
+#else
+                    return (T) (object) (float) Math.Round((float)(object) x, digits, mode);
+#endif
+                }
+
+                return Double(x, digits, mode);
+            }
+            
+            [MethodImpl(MaxOpt)]
+            static T Double(T x, int digits, MidpointRounding mode)
+            {
+                if (typeof(T) == typeof(double))
+                {
+                    return (T) (object) (double) Math.Round((double)(object) x, digits, mode);
+                }
+
+                return Decimal(x, digits, mode);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Decimal(T x, int digits, MidpointRounding mode)
+            {
+                if (typeof(T) == typeof(decimal))
+                    ThrowOpUnsupportedPrecision();
+
+                return Other(x, digits, mode);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Other(T x, int digits, MidpointRounding mode)
+            {
+                if (typeof(T) == typeof(sbyte)
+                ||  typeof(T) == typeof(byte)
+                ||  typeof(T) == typeof(ushort)
+                ||  typeof(T) == typeof(short)
+                ||  typeof(T) == typeof(uint)
+                ||  typeof(T) == typeof(int)
+                ||  typeof(T) == typeof(ulong)
+                ||  typeof(T) == typeof(long)
+                
+                )
+                    return x;
+                    
+                ThrowUnsupportedType();
+                return default;
+            }
         }
 
         /// <summary>
