@@ -785,148 +785,148 @@ namespace Silk.NET.OpenCL
         public partial void Svmfree<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] out T0 svm_pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateImage")]
         public unsafe partial IntPtr CreateImage([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -977,16 +977,16 @@ namespace Silk.NET.OpenCL
         public partial IntPtr CreateImage<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in uint image_format, [Flow(FlowDirection.In)] in ImageDesc image_desc, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
         public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -995,16 +995,16 @@ namespace Silk.NET.OpenCL
         public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte kernel_names, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
         public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -1205,10 +1205,10 @@ namespace Silk.NET.OpenCL
         public partial int EnqueueMigrateMemObjects([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] in IntPtr mem_objects, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in IntPtr event_wait_list, [Flow(FlowDirection.Out)] out IntPtr @event);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
-        public unsafe partial void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] char* func_name);
+        public unsafe partial void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] byte* func_name);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
-        public unsafe partial void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] in char func_name);
+        public unsafe partial void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] in byte func_name);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
         public unsafe partial void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] string func_name);
@@ -1226,52 +1226,52 @@ namespace Silk.NET.OpenCL
         public partial int GetKernelArgInfo<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out UIntPtr param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
         public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -1298,52 +1298,52 @@ namespace Silk.NET.OpenCL
         public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] in IntPtr input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
         public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -1892,16 +1892,16 @@ namespace Silk.NET.OpenCL
         public partial int SetUserEventStatus([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int execution_status);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public unsafe partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public unsafe partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clBuildProgram")]
         public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
@@ -1910,16 +1910,16 @@ namespace Silk.NET.OpenCL
         public unsafe partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public unsafe partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public unsafe partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        public partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clBuildProgram")]
         public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
@@ -2066,16 +2066,16 @@ namespace Silk.NET.OpenCL
         public partial IntPtr CreateImage3D<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] in uint image_format, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] UIntPtr image_depth, [Flow(FlowDirection.In)] UIntPtr image_row_pitch, [Flow(FlowDirection.In)] UIntPtr image_slice_pitch, [Flow(FlowDirection.Out)] out T0 host_ptr, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateKernel")]
-        public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] char* kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] byte* kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateKernel")]
-        public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] char* kernel_name, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] byte* kernel_name, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateKernel")]
-        public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] in char kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] in byte kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateKernel")]
-        public partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] in char kernel_name, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] in byte kernel_name, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateKernel")]
         public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] string kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -2192,28 +2192,28 @@ namespace Silk.NET.OpenCL
         public unsafe partial IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.In)] in byte* binaries, [Flow(FlowDirection.Out)] out int binary_status, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] byte** strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] byte** strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] byte** strings, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] byte** strings, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in char* strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in byte* strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in char* strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in byte* strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in char* strings, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in byte* strings, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in char* strings, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in byte* strings, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateSampler")]
         public unsafe partial IntPtr CreateSampler([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] bool normalized_coords, [Flow(FlowDirection.In)] uint addressing_mode, [Flow(FlowDirection.In)] uint filter_mode, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -3395,10 +3395,10 @@ namespace Silk.NET.OpenCL
         public partial int GetEventProfilingInfo<T0>([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out UIntPtr param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddress")]
-        public unsafe partial void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] char* func_name);
+        public unsafe partial void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] byte* func_name);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddress")]
-        public unsafe partial void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] in char func_name);
+        public unsafe partial void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] in byte func_name);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddress")]
         public unsafe partial void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] string func_name);
@@ -3589,80 +3589,80 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clWaitForEvents")]
         public partial int WaitForEvents([Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] in IntPtr event_list);
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, in options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, in options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, in options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, in options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3672,7 +3672,7 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3682,7 +3682,7 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3692,7 +3692,7 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3702,87 +3702,87 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, in options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, in options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, in options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in char options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] in byte options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, in options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3792,7 +3792,7 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3802,7 +3802,7 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3812,7 +3812,7 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3822,7 +3822,7 @@ namespace Silk.NET.OpenCL
         public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] in IntPtr device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] in IntPtr input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
-            var header_include_names = (char**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
+            var header_include_names = (byte**) SilkMarshal.StringArrayToPtr(header_include_namesSa);
             var ret = CompileProgram(program, num_devices, in device_list, options, num_input_headers, in input_headers, header_include_names, pfn_notify, out user_data);
             SilkMarshal.CopyPtrToStringArray((IntPtr) header_include_names, header_include_namesSa);
             SilkMarshal.Free((IntPtr) header_include_names);
@@ -3992,7 +3992,7 @@ namespace Silk.NET.OpenCL
         public unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string[] stringsSa, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.StringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateProgramWithSource(context, count, strings, lengths, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
             SilkMarshal.Free((IntPtr) strings);
@@ -4002,7 +4002,7 @@ namespace Silk.NET.OpenCL
         public unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string[] stringsSa, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.StringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateProgramWithSource(context, count, strings, lengths, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
             SilkMarshal.Free((IntPtr) strings);
@@ -4012,7 +4012,7 @@ namespace Silk.NET.OpenCL
         public unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string[] stringsSa, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.StringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateProgramWithSource(context, count, strings, in lengths, errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
             SilkMarshal.Free((IntPtr) strings);
@@ -4022,7 +4022,7 @@ namespace Silk.NET.OpenCL
         public unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string[] stringsSa, [Flow(FlowDirection.In)] in UIntPtr lengths, [Flow(FlowDirection.Out)] out int errcode_ret)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.StringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateProgramWithSource(context, count, strings, in lengths, out errcode_ret);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
             SilkMarshal.Free((IntPtr) strings);

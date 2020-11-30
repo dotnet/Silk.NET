@@ -29,7 +29,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public unsafe partial string GetString(Device* device, GetEnumerateAllContextString param);
 
         /// <inheritdoc />
-        public unsafe partial char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
+        public unsafe partial byte* GetStringList(Device* device, GetEnumerateAllContextStringList param);
 
         /// <inheritdoc cref="GetStringList(Device*, GetEnumerateAllContextStringList)" />
         public IEnumerable<string> GetStringList(GetEnumerateAllContextStringList param)
@@ -37,7 +37,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
             unsafe
             {
                 var result = GetStringList(null, param);
-                if (result == (char*) 0)
+                if (result == (byte*) 0)
                 {
                     return new List<string>();
                 }

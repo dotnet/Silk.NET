@@ -154,6 +154,7 @@
             },
             "typeMaps": [
                 {
+                    "char": "byte",
                     "ID3D10Buffer*": "void*",
                     "ID3D10Texture2D*": "void*",
                     "ID3D10Texture3D*": "void*",

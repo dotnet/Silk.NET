@@ -195,11 +195,6 @@ namespace Silk.NET.OpenAL
         public unsafe partial void SetSourceProperty(uint source, SourceVector3 param, float* value);
 
         /// <inheritdoc />
-        [Obsolete("Kept in for backwards compatibility. Please use the signature that takes a bool instead of an int.")]
-        [NativeApi(EntryPoint = "Sourcei")]
-        public partial void SetSourceProperty(uint source, SourceBoolean param, int value);
-
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
         public partial void SetSourceProperty(uint source, SourceBoolean param, [UnmanagedType(UnmanagedType.I4)] bool value);
         

@@ -136,7 +136,7 @@ namespace CLMultiplication
             }
         }
 
-        private static unsafe void NotifyFunc(char* errinfo, void* privateinfo, UIntPtr cb, void* userdata)
+        private static unsafe void NotifyFunc(byte* errinfo, void* privateinfo, UIntPtr cb, void* userdata)
         {
             Console.WriteLine($"Notification: {Marshal.PtrToStringAnsi((IntPtr) errinfo)}");
         }

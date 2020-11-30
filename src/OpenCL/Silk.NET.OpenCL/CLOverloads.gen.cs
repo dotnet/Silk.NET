@@ -882,265 +882,265 @@ namespace Silk.NET.OpenCL
             thisApi.Svmfree(context, out svm_pointer.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, device_list, options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, input_headers, in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, input_headers, in header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] byte** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), header_include_names, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int CompileProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, user_data);
         }
 
-        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in char* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int CompileProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_headers, [Flow(FlowDirection.In)] in byte* header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CompileProgram(program, num_devices, in device_list.GetPinnableReference(), options, num_input_headers, in input_headers.GetPinnableReference(), in header_include_names, pfn_notify, out user_data.GetPinnableReference());
@@ -1236,19 +1236,19 @@ namespace Silk.NET.OpenCL
             return thisApi.CreateImage(context, flags, in image_format.GetPinnableReference(), in image_desc.GetPinnableReference(), out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithBuiltInKernel(context, num_devices, device_list, kernel_names, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithBuiltInKernel(context, num_devices, device_list, in kernel_names.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithBuiltInKernel(context, num_devices, device_list, in kernel_names.GetPinnableReference(), out errcode_ret.GetPinnableReference());
@@ -1260,25 +1260,25 @@ namespace Silk.NET.OpenCL
             return thisApi.CreateProgramWithBuiltInKernel(context, num_devices, device_list, kernel_names, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithBuiltInKernel(context, num_devices, in device_list.GetPinnableReference(), kernel_names, errcode_ret);
         }
 
-        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithBuiltInKernel(context, num_devices, in device_list.GetPinnableReference(), kernel_names, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithBuiltInKernel(context, num_devices, in device_list.GetPinnableReference(), in kernel_names.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateProgramWithBuiltInKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithBuiltInKernel(context, num_devices, in device_list.GetPinnableReference(), in kernel_names.GetPinnableReference(), out errcode_ret.GetPinnableReference());
@@ -1644,7 +1644,7 @@ namespace Silk.NET.OpenCL
             return thisApi.EnqueueMigrateMemObjects(command_queue, num_mem_objects, in mem_objects.GetPinnableReference(), flags, num_events_in_wait_list, in event_wait_list.GetPinnableReference(), out @event.GetPinnableReference());
         }
 
-        public static unsafe void* GetExtensionFunctionAddressForPlatform(this CL thisApi, [Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] ReadOnlySpan<char> func_name)
+        public static unsafe void* GetExtensionFunctionAddressForPlatform(this CL thisApi, [Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] ReadOnlySpan<byte> func_name)
         {
             // SpanOverloader
             return thisApi.GetExtensionFunctionAddressForPlatform(platform, in func_name.GetPinnableReference());
@@ -1668,91 +1668,91 @@ namespace Silk.NET.OpenCL
             return thisApi.GetKernelArgInfo(kernel, arg_index, param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_data, errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, device_list, in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
@@ -1800,97 +1800,97 @@ namespace Silk.NET.OpenCL
             return thisApi.LinkProgram(context, num_devices, device_list, options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, input_programs, pfn_notify, user_data, errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, input_programs, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), options, num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_data, errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, input_programs, pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr LinkProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, user_data, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public static unsafe IntPtr LinkProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.LinkProgram(context, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), num_input_programs, in input_programs.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference(), out errcode_ret.GetPinnableReference());
@@ -2922,19 +2922,19 @@ namespace Silk.NET.OpenCL
             return thisApi.SetMemObjectDestructorCallback(memobj, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int BuildProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int BuildProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.BuildProgram(program, num_devices, device_list, options, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int BuildProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int BuildProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.BuildProgram(program, num_devices, device_list, in options.GetPinnableReference(), pfn_notify, user_data);
         }
 
-        public static unsafe int BuildProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int BuildProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.BuildProgram(program, num_devices, device_list, in options.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference());
@@ -2946,25 +2946,25 @@ namespace Silk.NET.OpenCL
             return thisApi.BuildProgram(program, num_devices, device_list, options, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int BuildProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int BuildProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.BuildProgram(program, num_devices, in device_list.GetPinnableReference(), options, pfn_notify, user_data);
         }
 
-        public static unsafe int BuildProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int BuildProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] byte* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.BuildProgram(program, num_devices, in device_list.GetPinnableReference(), options, pfn_notify, out user_data.GetPinnableReference());
         }
 
-        public static unsafe int BuildProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public static unsafe int BuildProgram(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // SpanOverloader
             return thisApi.BuildProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), pfn_notify, user_data);
         }
 
-        public static unsafe int BuildProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<char> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public static unsafe int BuildProgram<T0>(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> device_list, [Flow(FlowDirection.In)] ReadOnlySpan<byte> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.BuildProgram(program, num_devices, in device_list.GetPinnableReference(), in options.GetPinnableReference(), pfn_notify, out user_data.GetPinnableReference());
@@ -3222,19 +3222,19 @@ namespace Silk.NET.OpenCL
             return thisApi.CreateImage3D(context, flags, in image_format.GetPinnableReference(), image_width, image_height, image_depth, image_row_pitch, image_slice_pitch, out host_ptr.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] char* kernel_name, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] byte* kernel_name, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateKernel(program, kernel_name, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] ReadOnlySpan<char> kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr CreateKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] ReadOnlySpan<byte> kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateKernel(program, in kernel_name.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr CreateKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] ReadOnlySpan<char> kernel_name, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateKernel(this CL thisApi, [Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] ReadOnlySpan<byte> kernel_name, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateKernel(program, in kernel_name.GetPinnableReference(), out errcode_ret.GetPinnableReference());
@@ -3444,37 +3444,37 @@ namespace Silk.NET.OpenCL
             return thisApi.CreateProgramWithBinary(context, num_devices, in device_list.GetPinnableReference(), in lengths.GetPinnableReference(), in binaries, out binary_status.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] byte** strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithSource(context, count, strings, lengths, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> lengths, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] byte** strings, [Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> lengths, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithSource(context, count, strings, in lengths.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] byte** strings, [Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithSource(context, count, strings, in lengths.GetPinnableReference(), out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in char* strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in byte* strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithSource(context, count, in strings, lengths, out errcode_ret.GetPinnableReference());
         }
 
-        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in char* strings, [Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> lengths, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in byte* strings, [Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> lengths, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithSource(context, count, in strings, in lengths.GetPinnableReference(), errcode_ret);
         }
 
-        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in char* strings, [Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+        public static unsafe IntPtr CreateProgramWithSource(this CL thisApi, [Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in byte* strings, [Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
         {
             // SpanOverloader
             return thisApi.CreateProgramWithSource(context, count, in strings, in lengths.GetPinnableReference(), out errcode_ret.GetPinnableReference());
@@ -5676,7 +5676,7 @@ namespace Silk.NET.OpenCL
             return thisApi.GetEventProfilingInfo(@event, param_name, param_value_size, out param_value.GetPinnableReference(), out param_value_size_ret.GetPinnableReference());
         }
 
-        public static unsafe void* GetExtensionFunctionAddress(this CL thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<char> func_name)
+        public static unsafe void* GetExtensionFunctionAddress(this CL thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> func_name)
         {
             // SpanOverloader
             return thisApi.GetExtensionFunctionAddress(in func_name.GetPinnableReference());

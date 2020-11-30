@@ -18,7 +18,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbShaderObjectsOverloads
     {
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, type, out name.GetPinnableReference());
@@ -30,13 +30,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -48,13 +48,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
@@ -66,13 +66,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -84,13 +84,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, type, name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
@@ -102,13 +102,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -120,13 +120,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
@@ -138,13 +138,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -156,7 +156,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, type, out name.GetPinnableReference());
@@ -168,13 +168,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -186,13 +186,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
@@ -204,13 +204,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -222,13 +222,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, type, name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
@@ -240,13 +240,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -258,13 +258,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
@@ -276,13 +276,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveUniform(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<UniformType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveUniform(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -312,7 +312,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetAttachedObjects(containerObj, maxCount, out count.GetPinnableReference(), out obj.GetPinnableReference());
         }
 
-        public static unsafe void GetInfoLog(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> infoLog)
+        public static unsafe void GetInfoLog(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> infoLog)
         {
             // SpanOverloader
             thisApi.GetInfoLog(obj, maxLength, length, out infoLog.GetPinnableReference());
@@ -324,13 +324,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetInfoLog(obj, maxLength, length, out infoLog.GetPinnableReference());
         }
 
-        public static unsafe void GetInfoLog(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* infoLog)
+        public static unsafe void GetInfoLog(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* infoLog)
         {
             // SpanOverloader
             thisApi.GetInfoLog(obj, maxLength, out length.GetPinnableReference(), infoLog);
         }
 
-        public static unsafe void GetInfoLog(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> infoLog)
+        public static unsafe void GetInfoLog(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> infoLog)
         {
             // SpanOverloader
             thisApi.GetInfoLog(obj, maxLength, out length.GetPinnableReference(), out infoLog.GetPinnableReference());
@@ -354,7 +354,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetObjectParameter(obj, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> source)
+        public static unsafe void GetShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> source)
         {
             // SpanOverloader
             thisApi.GetShaderSource(obj, maxLength, length, out source.GetPinnableReference());
@@ -366,13 +366,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetShaderSource(obj, maxLength, length, out source.GetPinnableReference());
         }
 
-        public static unsafe void GetShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* source)
+        public static unsafe void GetShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* source)
         {
             // SpanOverloader
             thisApi.GetShaderSource(obj, maxLength, out length.GetPinnableReference(), source);
         }
 
-        public static unsafe void GetShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> source)
+        public static unsafe void GetShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint obj, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> source)
         {
             // SpanOverloader
             thisApi.GetShaderSource(obj, maxLength, out length.GetPinnableReference(), out source.GetPinnableReference());
@@ -396,19 +396,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetUniform(programObj, location, out @params.GetPinnableReference());
         }
 
-        public static unsafe int GetUniformLocation(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] ReadOnlySpan<char> name)
+        public static unsafe int GetUniformLocation(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
             return thisApi.GetUniformLocation(programObj, in name.GetPinnableReference());
         }
 
-        public static unsafe void ShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> length)
+        public static unsafe void ShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> length)
         {
             // SpanOverloader
             thisApi.ShaderSource(shaderObj, count, @string, in length.GetPinnableReference());
         }
 
-        public static unsafe void ShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in char* @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> length)
+        public static unsafe void ShaderSource(this ArbShaderObjects thisApi, [Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> length)
         {
             // SpanOverloader
             thisApi.ShaderSource(shaderObj, count, in @string, in length.GetPinnableReference());

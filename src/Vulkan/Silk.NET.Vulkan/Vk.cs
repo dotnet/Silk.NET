@@ -158,18 +158,8 @@ namespace Silk.NET.Vulkan
                 : null) is null);
 
         /// <inheritdoc />
-        [Obsolete
-        (
-            "This method has been deprecated in favour of the more explicit IsInstanceExtensionPresent and " +
-            "IsDeviceExtensionPresent methods. This is because this method currently depends on the CurrentInstance " +
-            "and CurrentDevice property, which are now both obsolete and pending removal along with this method."
-        )]
-        public override bool IsExtensionPresent(string extension)
-        {
-            return (!_extensions.ContainsKey(CurrentDevice?.Handle ?? IntPtr.Zero)
-                ? _extensions[CurrentDevice?.Handle ?? IntPtr.Zero] = GetExtensions(CurrentInstance, null)
-                : _extensions[CurrentDevice?.Handle ?? IntPtr.Zero]).Contains(extension);
-        }
+        [Obsolete("Use IsInstanceExtensionPresent instead.", true)]
+        public override bool IsExtensionPresent(string extension) => IsInstanceExtensionPresent(extension);
 
         private List<string> _cachedInstanceExtensions = new List<string>();
         private Dictionary<IntPtr, List<string>> _cachedDeviceExtensions = new Dictionary<IntPtr, List<string>>();
