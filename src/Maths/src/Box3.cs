@@ -29,6 +29,100 @@ namespace Silk.NET.Maths
             Max = max;
         }
 
+        /// <summary>
+        /// The center of this box.
+        /// </summary>
+        public Vector3<T> Center
+        {
+            get => Min + Max / Scalar<T>.Two;
+        }
+
+        /// <summary>
+        /// The size of this box.
+        /// When setting the box is scaled about it's center.
+        /// </summary>
+        public Vector3<T> Size
+        {
+            get => Max - Min;
+            set
+            {
+                var center = Center;
+                var hvalue = value / Scalar<T>.Two;
+                Min = center - hvalue;
+                Max = center + hvalue;
+            }
+        }
+
+        /// <summary>
+        /// Calculates whether this box contains a point.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>True if this box contains the point; False otherwise.</returns>
+        /// <remarks>This does consider a point on the edge contained.</remarks>
+        public bool Contains(Vector3<T> point)
+            => Scalar.GreaterThanOrEqual(point.X, Min.X) && Scalar.GreaterThanOrEqual(point.Y, Min.Y) 
+            && Scalar.GreaterThanOrEqual(point.Z, Min.Z)
+            && Scalar.LessThanOrEqual(point.X, Max.X) && Scalar.LessThanOrEqual(point.Y, Max.Y)
+            && Scalar.LessThanOrEqual(point.Z, Max.Z);
+
+        /// <summary>
+        /// Calculates whether this box contains another box
+        /// </summary>
+        /// <param name="other">The box.</param>
+        /// <returns>True if this box contains the given box; False otherwise.</returns>
+        /// <remarks>This does consider a box that touches the edge contained.</remarks>
+        public bool Contains(Box3<T> other)
+            => Scalar.GreaterThanOrEqual(other.Min.X, this.Min.X) && Scalar.GreaterThanOrEqual(other.Min.Y, this.Min.Y)
+            && Scalar.GreaterThanOrEqual(other.Min.Z, this.Min.Z)
+            && Scalar.LessThanOrEqual(other.Max.X, this.Max.X) && Scalar.LessThanOrEqual(other.Max.Y, this.Max.Y)
+            && Scalar.LessThanOrEqual(other.Max.Z, this.Max.Z);
+
+        /// <summary>
+        /// Calculates the distance to the nearest edge from the point.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance.</returns>
+        public T GetDistanceToNearestEdge(Vector3<T> point)
+        {
+            var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, Max.X));
+            var dy = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.Y, point.Y), Scalar<T>.Zero), Scalar.Subtract(point.Y, Max.Y));
+            var dz = Scalar.Max(Scalar.Max(Scalar.Subtract(Min.Z, point.Z), Scalar<T>.Zero), Scalar.Subtract(point.Z, Max.Z));
+            return Scalar.Sqrt(Scalar.Add(Scalar.Add(Scalar.Multiply(dx, dx), Scalar.Multiply(dy, dy)), Scalar.Multiply(dz, dz)));
+        }
+
+        /// <summary>
+        /// Calculates this box translated by a given distance.
+        /// </summary>
+        /// <param name="distance">The distance.</param>
+        /// <returns>The calculated box.</returns>
+        public Box3<T> GetTranslated(Vector3<T> distance)
+        {
+            return new(Min + distance, Max + distance);
+        }
+
+        /// <summary>
+        /// Calculates a new box scaled by the given scale around the given anchor.
+        /// </summary>
+        /// <param name="scale">The scale.</param>
+        /// <param name="anchor">The anchor.</param>
+        /// <returns>The calculated box.</returns>
+        public Box3<T> GetScaled(Vector3<T> scale, Vector3<T> anchor)
+        {
+            var min = (scale * (Min - anchor)) + Min;
+            var max = (scale * (Max - anchor)) + Max;
+            return new(min, max);
+        }
+
+        /// <summary>
+        /// Calculates a box inflated to contain the given point.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>The calculated box.</returns>
+        public Box3<T> GetInflated(Vector3<T> point)
+        {
+            return new(Vector3<T>.Min(Min, point), Vector3<T>.Max(Max, point));
+        }
+        
         /// <summary>Returns a boolean indicating whether the given Box3 is equal to this Box3 instance.</summary>
         /// <param name="other">The Box3 to compare this instance to.</param>
         /// <returns>True if the other Box3 is equal to this instance; False otherwise.</returns>
