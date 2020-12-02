@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating a 4x4 matrix.</summary>
+    [Serializable]
+    [DataContract]
     public struct Matrix2x2<T> : IEquatable<Matrix2x2<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
@@ -12,15 +15,19 @@ namespace Silk.NET.Maths
             Scalar<T>.One);
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
+        [DataMember]
         public T M11;
 
         /// <summary>Value at row 1, column 2 of the matrix.</summary>
+        [DataMember]
         public T M12;
 
         /// <summary>Value at row 2, column 1 of the matrix.</summary>
+        [DataMember]
         public T M21;
 
         /// <summary>Value at row 2, column 2 of the matrix.</summary>
+        [DataMember]
         public T M22;
 
         /// <summary>Constructs a Matrix2x2 from the given components.</summary>

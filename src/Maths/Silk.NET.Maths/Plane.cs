@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
@@ -8,15 +9,19 @@ namespace Silk.NET.Maths
     /// Represents a plane in three-dimensional space.
     /// </summary>
     /// <typeparam name="T">The type used to store values.</typeparam>
+    [Serializable]
+    [DataContract]
     public struct Plane<T>
         : IEquatable<Plane<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         private const float NormalizeEpsilon = 1.192092896e-07f; // smallest such that 1.0+NormalizeEpsilon != 1.0
 
         /// <summary>The normal vector of the Plane.</summary>
+        [DataMember]
         public Vector3<T> Normal;
 
         /// <summary>The distance of the Plane along its normal from the origin.</summary>
+        [DataMember]
         public T D;
 
         /// <summary>Constructs a Plane from the X, Y, and Z components of its normal, and its distance from the origin on that normal.</summary>

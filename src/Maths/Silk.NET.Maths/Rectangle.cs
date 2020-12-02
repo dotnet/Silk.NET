@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
     /// <summary>
     /// A structure representing a Rectangle with an <see cref="Origin"/> and <see cref="Size"/>
     /// </summary>
+    [Serializable]
+    [DataContract]
     public struct Rectangle<T>
         : IEquatable<Rectangle<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
@@ -12,10 +15,12 @@ namespace Silk.NET.Maths
         /// <summary>
         /// The origin.
         /// </summary>
+        [DataMember]
         public Vector2<T> Origin;
         /// <summary>
         /// The size.
         /// </summary>
+        [DataMember]
         public Vector2<T> Size;
         
         /// <summary>
@@ -32,19 +37,19 @@ namespace Silk.NET.Maths
         /// <summary>
         /// The center of this rectangle.
         /// </summary>
-        public Vector2<T> Center
-        {
-            get => Origin + HalfSize;
-        }
+        [IgnoreDataMember]
+        public Vector2<T> Center => Origin + HalfSize;
 
         /// <summary>
         /// The Maximum point of this Rectangle.
         /// </summary>
+        [IgnoreDataMember]
         public Vector2<T> Max => Origin + Size;
 
         /// <summary>
         /// Half the size of this rectangle.
         /// </summary>
+        [IgnoreDataMember]
         public Vector2<T> HalfSize => Size / Scalar<T>.Two;
 
         /// <summary>

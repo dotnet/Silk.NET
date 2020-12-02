@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating a 3x2 matrix.</summary>
+    [Serializable]
+    [DataContract]
     public struct Matrix3x2<T>
         : IEquatable<Matrix3x2<T>>
         where T : unmanaged, IFormattable, IComparable<T>, IEquatable<T>
@@ -21,21 +24,27 @@ namespace Silk.NET.Maths
         );
 
         /// <summary>The first element of the first row</summary>
+        [DataMember]
         public T M11;
 
         /// <summary>The second element of the first row</summary>
+        [DataMember]
         public T M12;
 
         /// <summary>The first element of the second row</summary>
+        [DataMember]
         public T M21;
 
         /// <summary>The second element of the second row</summary>
+        [DataMember]
         public T M22;
 
         /// <summary>The first element of the third row</summary>
+        [DataMember]
         public T M31;
 
         /// <summary>The second element of the third row</summary>
+        [DataMember]
         public T M32;
 
         /// <summary>Constructs a Matrix3x2 from the given components.</summary>
@@ -127,19 +136,8 @@ namespace Silk.NET.Maths
         public static Matrix3x2<T> Identity => _identity;
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
+        [IgnoreDataMember]
         public readonly bool IsIdentity => this == Identity;
-
-        /// <summary>Gets or sets the translation component of this matrix.</summary>
-        public Vector2<T> Translation
-        {
-            readonly get => new(M31, M32);
-
-            set
-            {
-                M31 = value.X;
-                M32 = value.Y;
-            }
-        }
 
         /// <summary>Adds each matrix element in value1 with its corresponding element in value2.</summary>
         /// <param name="value1">The first source matrix.</param>

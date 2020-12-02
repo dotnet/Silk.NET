@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
@@ -8,21 +9,27 @@ namespace Silk.NET.Maths
     /// Represents a vector that is used to encode three-dimensional physical rotations.
     /// </summary>
     /// <typeparam name="T">The type used to store values.</typeparam>
+    [Serializable]
+    [DataContract]
     public struct Quaternion<T>
         : IEquatable<Quaternion<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         private const float SlerpEpsilon = 1e-6f;
 
         /// <summary>Specifies the X-value of the vector component of the Quaternion.</summary>
+        [DataMember]
         public T X;
 
         /// <summary>Specifies the Y-value of the vector component of the Quaternion.</summary>
+        [DataMember]
         public T Y;
 
         /// <summary>Specifies the Z-value of the vector component of the Quaternion.</summary>
+        [DataMember]
         public T Z;
 
         /// <summary>Specifies the rotation component of the Quaternion.</summary>
+        [DataMember]
         public T W;
 
         /// <summary>Constructs a Quaternion from the given components.</summary>
@@ -53,6 +60,7 @@ namespace Silk.NET.Maths
         public static Quaternion<T> Identity => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
 
         /// <summary>Returns whether the Quaternion is the identity Quaternion.</summary>
+        [IgnoreDataMember]
         public readonly bool IsIdentity => this == Identity;
 
         /// <summary>Adds two Quaternions element-by-element.</summary>

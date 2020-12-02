@@ -1,20 +1,25 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
     /// <summary>
     /// A structure representing a circle using a <see cref="Center"/> and a <see cref="Radius"/>.
     /// </summary>
+    [Serializable]
+    [DataContract]
     public struct Circle<T>
         : IEquatable<Circle<T>> where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         /// <summary>
         /// The center.
         /// </summary>
+        [DataMember]
         public Vector2<T> Center;
         /// <summary>
         /// The radius.
         /// </summary>
+        [DataMember]
         public T Radius;
 
         /// <summary>

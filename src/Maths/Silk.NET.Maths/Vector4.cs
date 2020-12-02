@@ -1,25 +1,32 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating four single precision floating point values and provides hardware accelerated methods.</summary>
+    [Serializable]
+    [DataContract]
     public struct Vector4<T>
         : IEquatable<Vector4<T>>, IFormattable
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         /// <summary>The X component of the vector.</summary>
+        [DataMember]
         public T X;
 
         /// <summary>The Y component of the vector.</summary>
+        [DataMember]
         public T Y;
 
         /// <summary>The Z component of the vector.</summary>
+        [DataMember]
         public T Z;
 
         /// <summary>The W component of the vector.</summary>
+        [DataMember]
         public T W;
 
         /// <summary>Constructs a vector whose elements are all the single specified value.</summary>

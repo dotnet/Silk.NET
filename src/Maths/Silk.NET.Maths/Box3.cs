@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
     /// <summary>
     /// A structure representing a Box3 with a <see cref="Min"/> and a` <see cref="Max"/>
     /// </summary>
+    [Serializable]
+    [DataContract]
     public struct Box3<T>
         : IEquatable<Box3<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
@@ -12,10 +16,12 @@ namespace Silk.NET.Maths
         /// <summary>
         /// The min.
         /// </summary>
+        [DataMember]
         public Vector3<T> Min;
         /// <summary>
         /// The max.
         /// </summary>
+        [DataMember]
         public Vector3<T> Max;
         
         /// <summary>
@@ -32,26 +38,15 @@ namespace Silk.NET.Maths
         /// <summary>
         /// The center of this box.
         /// </summary>
-        public Vector3<T> Center
-        {
-            get => Min + Max / Scalar<T>.Two;
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3<T> GetCenter() => Min + Max / Scalar<T>.Two;
 
         /// <summary>
         /// The size of this box.
         /// When setting the box is scaled about it's center.
         /// </summary>
-        public Vector3<T> Size
-        {
-            get => Max - Min;
-            set
-            {
-                var center = Center;
-                var hvalue = value / Scalar<T>.Two;
-                Min = center - hvalue;
-                Max = center + hvalue;
-            }
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3<T> GetSize() => Max - Min;
 
         /// <summary>
         /// Calculates whether this box contains a point.

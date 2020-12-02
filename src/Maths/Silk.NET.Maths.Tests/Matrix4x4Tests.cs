@@ -35,7 +35,10 @@ namespace Silk.NET.Maths.Tests
                 Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
                 Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
                 Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
-            m.Translation = new Vector3<float>(111.0f, 222.0f, 333.0f);
+
+            m.M41 = 111.0f;
+            m.M42 = 222.0f;
+            m.M43 = 333.0f;
             return m;
         }
 
@@ -840,7 +843,9 @@ namespace Silk.NET.Maths.Tests
             Matrix4x4<float> actual = Matrix4x4<float>.CreateWorld(objectPosition, objectForwardDirection, objectUpVector);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix4x4<float>.CreateWorld did not return the expected value.");
 
-            Assert.Equal(objectPosition, actual.Translation);
+            Assert.Equal(objectPosition.X, actual.M41);
+            Assert.Equal(objectPosition.Y, actual.M42);
+            Assert.Equal(objectPosition.Z, actual.M43);
             Assert.True(Vector3<float>.Dot(Vector3<float>.Normalize(objectUpVector), new Vector3<float>(actual.M21, actual.M22, actual.M23)) > 0);
             Assert.True(Vector3<float>.Dot(Vector3<float>.Normalize(objectForwardDirection), new Vector3<float>(-actual.M31, -actual.M32, -actual.M33)) > 0.999f);
         }
@@ -2311,30 +2316,6 @@ namespace Silk.NET.Maths.Tests
 
             Matrix4x4<float> actual = Matrix4x4<float>.CreateTranslation(xPosition, yPosition, zPosition);
             Assert.Equal(expected, actual);
-        }
-
-        // A test for Translation
-        [Fact]
-        public void Matrix4x4TranslationTest()
-        {
-            Matrix4x4<float> a = GenerateTestMatrix();
-            Matrix4x4<float> b = a;
-
-            // Transformed vector that has same semantics of property must be same.
-            Vector3<float> val = new Vector3<float>(a.M41, a.M42, a.M43);
-            Assert.Equal(val, a.Translation);
-
-            // Set value and get value must be same.
-            val = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            a.Translation = val;
-            Assert.Equal(val, a.Translation);
-
-            // Make sure it only modifies expected value of matrix.
-            Assert.True(
-                a.M11 == b.M11 && a.M12 == b.M12 && a.M13 == b.M13 && a.M14 == b.M14 &&
-                a.M21 == b.M21 && a.M22 == b.M22 && a.M23 == b.M23 && a.M24 == b.M24 &&
-                a.M31 == b.M31 && a.M32 == b.M32 && a.M33 == b.M33 && a.M34 == b.M34 &&
-                a.M41 != b.M41 && a.M42 != b.M42 && a.M43 != b.M43 && a.M44 == b.M44);
         }
 
         // A test for Equals (Matrix4x4<float>)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
@@ -6,6 +7,8 @@ namespace Silk.NET.Maths
     /// A structure encapsulating a ray consisting of an <see cref="Origin"/> and a <see cref="Direction"/>.
     /// </summary>
     /// <typeparam name="T">The type used to store numeric values.</typeparam>
+    [Serializable]
+    [DataContract]
     public struct Ray3<T>
         : IEquatable<Ray3<T>> 
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
@@ -13,11 +16,13 @@ namespace Silk.NET.Maths
         /// <summary>
         /// The origin of this Ray.
         /// </summary>
+        [DataMember]
         public Vector3<T> Origin;
         
         /// <summary>
         /// The direction of this Ray.
         /// </summary>
+        [DataMember]
         public Vector3<T> Direction;
 
         /// <summary>

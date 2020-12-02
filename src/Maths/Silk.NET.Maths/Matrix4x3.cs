@@ -1,10 +1,13 @@
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating a 4x4 matrix.</summary>
+    [Serializable]
+    [DataContract]
     public struct Matrix4x3<T> : IEquatable<Matrix4x3<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
@@ -17,39 +20,51 @@ namespace Silk.NET.Maths
         );
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
+        [DataMember]
         public T M11;
 
         /// <summary>Value at row 1, column 2 of the matrix.</summary>
+        [DataMember]
         public T M12;
 
         /// <summary>Value at row 1, column 3 of the matrix.</summary>
+        [DataMember]
         public T M13;
 
         /// <summary>Value at row 2, column 1 of the matrix.</summary>
+        [DataMember]
         public T M21;
 
         /// <summary>Value at row 2, column 2 of the matrix.</summary>
+        [DataMember]
         public T M22;
 
         /// <summary>Value at row 2, column 3 of the matrix.</summary>
+        [DataMember]
         public T M23;
 
         /// <summary>Value at row 3, column 1 of the matrix.</summary>
+        [DataMember]
         public T M31;
 
         /// <summary>Value at row 3, column 2 of the matrix.</summary>
+        [DataMember]
         public T M32;
 
         /// <summary>Value at row 3, column 3 of the matrix.</summary>
+        [DataMember]
         public T M33;
 
         /// <summary>Value at row 4, column 1 of the matrix.</summary>
+        [DataMember]
         public T M41;
 
         /// <summary>Value at row 4, column 2 of the matrix.</summary>
+        [DataMember]
         public T M42;
 
         /// <summary>Value at row 4, column 3 of the matrix.</summary>
+        [DataMember]
         public T M43;
 
         /// <summary>Constructs a Matrix4x3 from the given components.</summary>
@@ -213,12 +228,11 @@ namespace Silk.NET.Maths
             M43 = value.M43;
         }
         
-        
-
         /// <summary>Returns the multiplicative identity matrix.</summary>
         public static Matrix4x3<T> Identity => _identity;
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
+        [IgnoreDataMember]
         public readonly bool IsIdentity
             => Scalar.Equal(M11, Scalar<T>.One) && Scalar.Equal(M22, Scalar<T>.One) &&
                Scalar.Equal(M33, Scalar<T>.One) && // Check diagonal element first for early out.
@@ -227,19 +241,6 @@ namespace Silk.NET.Maths
                Scalar.Equal(M31, Scalar<T>.Zero) && Scalar.Equal(M32, Scalar<T>.Zero) &&
                Scalar.Equal(M41, Scalar<T>.Zero) && Scalar.Equal(M42, Scalar<T>.Zero) &&
                Scalar.Equal(M43, Scalar<T>.Zero);
-
-        /// <summary>Gets or sets the translation component of this matrix.</summary>
-        public Vector3<T> Translation
-        {
-            readonly get => new(M41, M42, M43);
-
-            set
-            {
-                M41 = value.X;
-                M42 = value.Y;
-                M43 = value.Z;
-            }
-        }
 
         /// <summary>Adds two matrices together.</summary>
         /// <param name="value1">The first source matrix.</param>

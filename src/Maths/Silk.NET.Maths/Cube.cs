@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
     /// <summary>
     /// A structure representing a Cube with an <see cref="Origin"/> and <see cref="Size"/>
     /// </summary>
+    [Serializable]
+    [DataContract]
     public struct Cube<T>
         : IEquatable<Cube<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
@@ -12,10 +16,12 @@ namespace Silk.NET.Maths
         /// <summary>
         /// The origin.
         /// </summary>
+        [DataMember]
         public Vector3<T> Origin;
         /// <summary>
         /// The size.
         /// </summary>
+        [DataMember]
         public Vector3<T> Size;
 
         /// <summary>
@@ -28,24 +34,24 @@ namespace Silk.NET.Maths
             Origin = origin;
             Size = size;
         }
-        
+
         /// <summary>
         /// The center of this cube.
         /// </summary>
-        public Vector3<T> Center
-        {
-            get => Origin + HalfSize;
-        }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3<T> GetCenter() => Origin + GetHalfSize();
 
         /// <summary>
         /// The Maximum point of this cube.
         /// </summary>
-        public Vector3<T> Max => Origin + Size;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3<T> GetMax() => Origin + Size;
 
         /// <summary>
         /// Half the size of this cube.
         /// </summary>
-        public Vector3<T> HalfSize => Size / Scalar<T>.Two;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public Vector3<T> GetHalfSize() => Size / Scalar<T>.Two;
 
         /// <summary>
         /// Calculates whether this cube contains a point.
@@ -55,7 +61,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector3<T> point)
         {
-            var max = Max;
+            var max = GetMax();
             return Scalar.GreaterThanOrEqual(point.X, Origin.X) && Scalar.GreaterThanOrEqual
                 (point.Y, Origin.Y) && Scalar.GreaterThanOrEqual(point.Z, Origin.Z) && Scalar.LessThanOrEqual
                 (point.X, max.X) && Scalar.LessThanOrEqual(point.Y, max.Y) && Scalar.LessThanOrEqual(point.Z, max.Z);
@@ -69,8 +75,8 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a cube that touches the edge contained.</remarks>
         public bool Contains(Cube<T> other)
         {
-            var tMax = this.Max;
-            var oMax = other.Max;
+            var tMax = this.GetMax();
+            var oMax = other.GetMax();
             return Scalar.GreaterThanOrEqual(other.Origin.X, this.Origin.X) && Scalar.GreaterThanOrEqual
                 (other.Origin.Y, this.Origin.Y) && Scalar.GreaterThanOrEqual
                 (other.Origin.Z, this.Origin.Z) && Scalar.LessThanOrEqual(oMax.X, tMax.X) && Scalar.LessThanOrEqual
@@ -84,7 +90,7 @@ namespace Silk.NET.Maths
         /// <returns>The distance.</returns>
         public T GetDistanceToNearestEdge(Vector3<T> point)
         {
-            var max = Max;
+            var max = GetMax();
             var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, max.X));
             var dy = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.Y, point.Y), Scalar<T>.Zero), Scalar.Subtract(point.Y, max.Y));
             var dz = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.Z, point.Z), Scalar<T>.Zero), Scalar.Subtract(point.Z, max.Z));
@@ -109,7 +115,7 @@ namespace Silk.NET.Maths
         /// <returns>The calculated cube.</returns>
         public Cube<T> GetScaled(Vector3<T> scale, Vector3<T> anchor)
         {
-            var origMax = Max;
+            var origMax = GetMax();
             var min = (scale * (Origin - anchor)) + Origin;
             var max = (scale * (origMax - anchor)) + origMax;
             return new(min, max - min);
@@ -123,7 +129,7 @@ namespace Silk.NET.Maths
         public Cube<T> GetInflated(Vector3<T> point)
         {
             var min = Vector3<T>.Min(Origin, point);
-            var max = Vector3<T>.Max(Max, point);
+            var max = Vector3<T>.Max(GetMax(), point);
             return new(min, max - min);
         }
 

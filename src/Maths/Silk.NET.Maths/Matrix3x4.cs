@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating a 4x4 matrix.</summary>
+    [Serializable]
+    [DataContract]
     public struct Matrix3x4<T> : IEquatable<Matrix3x4<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
@@ -16,39 +19,51 @@ namespace Silk.NET.Maths
         );
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
+        [DataMember]
         public T M11;
 
         /// <summary>Value at row 1, column 2 of the matrix.</summary>
+        [DataMember]
         public T M12;
 
         /// <summary>Value at row 1, column 3 of the matrix.</summary>
+        [DataMember]
         public T M13;
 
         /// <summary>Value at row 1, column 4 of the matrix.</summary>
+        [DataMember]
         public T M14;
 
         /// <summary>Value at row 2, column 1 of the matrix.</summary>
+        [DataMember]
         public T M21;
 
         /// <summary>Value at row 2, column 2 of the matrix.</summary>
+        [DataMember]
         public T M22;
 
         /// <summary>Value at row 2, column 3 of the matrix.</summary>
+        [DataMember]
         public T M23;
 
         /// <summary>Value at row 2, column 4 of the matrix.</summary>
+        [DataMember]
         public T M24;
 
         /// <summary>Value at row 3, column 1 of the matrix.</summary>
+        [DataMember]
         public T M31;
 
         /// <summary>Value at row 3, column 2 of the matrix.</summary>
+        [DataMember]
         public T M32;
 
         /// <summary>Value at row 3, column 3 of the matrix.</summary>
+        [DataMember]
         public T M33;
 
         /// <summary>Value at row 3, column 4 of the matrix.</summary>
+        [DataMember]
         public T M34;
 
         /// <summary>Constructs a Matrix3x4 from the given components.</summary>
@@ -186,6 +201,7 @@ namespace Silk.NET.Maths
         public static Matrix3x4<T> Identity => _identity;
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
+        [IgnoreDataMember]
         public readonly bool IsIdentity
             => Scalar.Equal(M11, Scalar<T>.One) && Scalar.Equal(M22, Scalar<T>.One) &&
                Scalar.Equal(M33, Scalar<T>.One) && // Check diagonal element first for early out.

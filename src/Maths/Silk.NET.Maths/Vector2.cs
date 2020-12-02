@@ -1,19 +1,24 @@
 ﻿using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Silk.NET.Maths
 {
     /// <summary>A structure encapsulating two values and provides hardware accelerated methods.</summary>
+    [Serializable]
+    [DataContract]
     public struct Vector2<T>
         : IEquatable<Vector2<T>>, IFormattable 
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         /// <summary>The X component of the vector.</summary>
+        [DataMember]
         public T X;
         
         /// <summary>The Y component of the vector.</summary>
+        [DataMember]
         public T Y;
         
         /// <summary>Creates a new <see cref="Vector2{T}"/> object whose two elements have the same value.</summary>
