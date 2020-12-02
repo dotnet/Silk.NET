@@ -38,15 +38,15 @@ namespace Silk.NET.Maths
         /// <summary>
         /// The center of this box.
         /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Vector2<T> GetCenter() => Min + Max / Scalar<T>.Two;
+        [IgnoreDataMember]
+        public Vector2<T> Center => Min + Max / Scalar<T>.Two;
 
         /// <summary>
         /// The size of this box.
         /// When setting the box is scaled about it's center.
         /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public Vector2<T> GetSize() => Max - Min;
+        [IgnoreDataMember]
+        public Vector2<T> Size => Max - Min;
 
         /// <summary>
         /// Calculates whether this box contains a point.
