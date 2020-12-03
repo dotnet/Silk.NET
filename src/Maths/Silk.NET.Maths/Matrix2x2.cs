@@ -42,7 +42,7 @@ namespace Silk.NET.Maths
         [DataMember]
         public T M11
         {
-            get => Row1.X;
+            readonly get => Row1.X;
             set => Row1.X = value;
         }
 
@@ -50,7 +50,7 @@ namespace Silk.NET.Maths
         [DataMember]
         public T M12
         {
-            get => Row1.Y;
+            readonly get => Row1.Y;
             set => Row1.Y = value;
         }
 
@@ -58,7 +58,7 @@ namespace Silk.NET.Maths
         [DataMember]
         public T M21
         {
-            get => Row2.X;
+            readonly get => Row2.X;
             set => Row2.X = value;
         }
 
@@ -66,7 +66,7 @@ namespace Silk.NET.Maths
         [DataMember]
         public T M22
         {
-            get => Row2.Y;
+            readonly get => Row2.Y;
             set => Row2.Y = value;
         }
 
