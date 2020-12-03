@@ -483,7 +483,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             }
             else
             {
-                zaxis = Vector3<T>.Multiply(zaxis, Scalar.Inverse(Scalar.Sqrt(norm)));
+                zaxis = Vector3<T>.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
             }
 
             Vector3<T> xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(cameraUpVector, zaxis));
@@ -515,7 +515,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             }
             else
             {
-                faceDir = Vector3<T>.Multiply(faceDir, Scalar.Inverse(Scalar.Sqrt(norm)));
+                faceDir = Vector3<T>.Multiply(faceDir, Scalar.Reciprocal(Scalar.Sqrt(norm)));
             }
 
             Vector3<T> yaxis = rotateAxis;
@@ -698,7 +698,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
 
             result.M11 = Scalar.Divide(Scalar<T>.Two, width);
             result.M22 = Scalar.Divide(Scalar<T>.Two, height);
-            result.M33 = Scalar.Inverse(Scalar.Subtract(zNearPlane, zFarPlane));
+            result.M33 = Scalar.Reciprocal(Scalar.Subtract(zNearPlane, zFarPlane));
             result.M43 = Scalar.Divide(zNearPlane, Scalar.Subtract(zNearPlane, zFarPlane));
 
             return result;
@@ -720,7 +720,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
 
             result.M22 = Scalar.Divide(Scalar<T>.Two, Scalar.Subtract(top, bottom));
 
-            result.M33 = Scalar.Inverse(Scalar.Subtract(zNearPlane, zFarPlane));
+            result.M33 = Scalar.Reciprocal(Scalar.Subtract(zNearPlane, zFarPlane));
 
             result.M41 = Scalar.Divide(Scalar.Add(left, right), Scalar.Subtract(left, right));
             result.M42 = Scalar.Divide(Scalar.Add(top, bottom), Scalar.Subtract(bottom, top));
@@ -787,7 +787,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
-            T yScale = Scalar.Inverse(Scalar.Tan(Scalar.Divide(fieldOfView, Scalar<T>.Two)));
+            T yScale = Scalar.Reciprocal(Scalar.Tan(Scalar.Divide(fieldOfView, Scalar<T>.Two)));
             T xScale = Scalar.Divide(yScale, aspectRatio);
 
             Matrix4x4<T> result = default;
@@ -1544,7 +1544,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                     return false;
                 }
 
-                T invDet = Scalar.Inverse(det);
+                T invDet = Scalar.Reciprocal(det);
 
                 // TODO: Vectorize
                 result = default;

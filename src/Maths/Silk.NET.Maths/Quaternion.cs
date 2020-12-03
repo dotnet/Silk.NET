@@ -98,7 +98,7 @@ namespace Silk.NET.Maths
                 Scalar.Add(
                     Scalar.Add(Scalar.Multiply(value2.X, value2.X), Scalar.Multiply(value2.Y, value2.Y)),
                     Scalar.Multiply(value2.Z, value2.Z)), Scalar.Multiply(value2.W, value2.W));
-            T invNorm = Scalar.Inverse(ls);
+            T invNorm = Scalar.Reciprocal(ls);
 
             T q2x = Scalar.Negate(Scalar.Multiply(value2.X, invNorm));
             T q2y = Scalar.Negate(Scalar.Multiply(value2.Y, invNorm));
@@ -315,7 +315,7 @@ namespace Silk.NET.Maths
             {
                 T s = Scalar.Sqrt(Scalar.Add(trace, Scalar<T>.One));
                 q.W = Scalar.Divide(s, Scalar<T>.Two);
-                s = Scalar.Inverse(Scalar.Multiply(Scalar<T>.Two, s));
+                s = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                 q.X = Scalar.Multiply(Scalar.Subtract(matrix.M23, matrix.M32), s);
                 q.Y = Scalar.Multiply(Scalar.Subtract(matrix.M31, matrix.M13), s);
                 q.Z = Scalar.Multiply(Scalar.Subtract(matrix.M12, matrix.M21), s);
@@ -325,7 +325,7 @@ namespace Silk.NET.Maths
                 if (Scalar.GreaterThanOrEqual(matrix.M11, matrix.M22) && Scalar.GreaterThanOrEqual(matrix.M11, matrix.M33))
                 {
                     T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M11), matrix.M22), matrix.M33));
-                    T invS = Scalar.Inverse(Scalar.Multiply(Scalar<T>.Two, s));
+                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Divide(s, Scalar<T>.Two);
                     q.Y = Scalar.Multiply(Scalar.Add(matrix.M12, matrix.M21), invS);
                     q.Z = Scalar.Multiply(Scalar.Add(matrix.M13, matrix.M31), invS);
@@ -334,7 +334,7 @@ namespace Silk.NET.Maths
                 else if (Scalar.GreaterThan(matrix.M22, matrix.M33))
                 {
                     T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M22), matrix.M11), matrix.M33));
-                    T invS = Scalar.Inverse(Scalar.Multiply(Scalar<T>.Two, s));
+                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Multiply(Scalar.Add(matrix.M21, matrix.M12), invS);
                     q.Y = Scalar.Divide(s, Scalar<T>.Two);
                     q.Z = Scalar.Multiply(Scalar.Add(matrix.M32, matrix.M23), invS);
@@ -343,7 +343,7 @@ namespace Silk.NET.Maths
                 else
                 {
                     T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M33), matrix.M11), matrix.M22));
-                    T invS = Scalar.Inverse(Scalar.Multiply(Scalar<T>.Two, s));
+                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Multiply(Scalar.Add(matrix.M31, matrix.M13), invS);
                     q.Y = Scalar.Multiply(Scalar.Add(matrix.M32, matrix.M23), invS);
                     q.Z = Scalar.Divide(s, Scalar<T>.Two);
@@ -367,7 +367,7 @@ namespace Silk.NET.Maths
             {
                 T s = Scalar.Sqrt(Scalar.Add(trace, Scalar<T>.One));
                 q.W = Scalar.Divide(s, Scalar<T>.Two);
-                s = Scalar.Inverse(Scalar.Multiply(Scalar<T>.Two, s));
+                s = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                 q.X = Scalar.Multiply(Scalar.Subtract(matrix.M23, matrix.M32), s);
                 q.Y = Scalar.Multiply(Scalar.Subtract(matrix.M31, matrix.M13), s);
                 q.Z = Scalar.Multiply(Scalar.Subtract(matrix.M12, matrix.M21), s);
@@ -377,7 +377,7 @@ namespace Silk.NET.Maths
                 if (Scalar.GreaterThanOrEqual(matrix.M11, matrix.M22) && Scalar.GreaterThanOrEqual(matrix.M11, matrix.M33))
                 {
                     T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M11), matrix.M22), matrix.M33));
-                    T invS = Scalar.Inverse(Scalar.Multiply(Scalar<T>.Two, s));
+                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Divide(s, Scalar<T>.Two);
                     q.Y = Scalar.Multiply(Scalar.Add(matrix.M12, matrix.M21), invS);
                     q.Z = Scalar.Multiply(Scalar.Add(matrix.M13, matrix.M31), invS);
@@ -386,7 +386,7 @@ namespace Silk.NET.Maths
                 else if (Scalar.GreaterThan(matrix.M22, matrix.M33))
                 {
                     T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M22), matrix.M11), matrix.M33));
-                    T invS = Scalar.Inverse(Scalar.Multiply(Scalar<T>.Two, s));
+                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Multiply(Scalar.Add(matrix.M21, matrix.M12), invS);
                     q.Y = Scalar.Divide(s, Scalar<T>.Two);
                     q.Z = Scalar.Multiply(Scalar.Add(matrix.M32, matrix.M23), invS);
@@ -395,7 +395,7 @@ namespace Silk.NET.Maths
                 else
                 {
                     T s = Scalar.Sqrt(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar<T>.One, matrix.M33), matrix.M11), matrix.M22));
-                    T invS = Scalar.Inverse(Scalar.Multiply(Scalar<T>.Two, s));
+                    T invS = Scalar.Reciprocal(Scalar.Multiply(Scalar<T>.Two, s));
                     q.X = Scalar.Multiply(Scalar.Add(matrix.M31, matrix.M13), invS);
                     q.Y = Scalar.Multiply(Scalar.Add(matrix.M32, matrix.M23), invS);
                     q.Z = Scalar.Divide(s, Scalar<T>.Two);
@@ -471,7 +471,7 @@ namespace Silk.NET.Maths
             Quaternion<T> ans;
 
             T ls = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(value.X, value.X), Scalar.Multiply(value.Y, value.Y)), Scalar.Multiply(value.Z, value.Z)), Scalar.Multiply(value.W, value.W));
-            T invNorm = Scalar.Inverse(ls);
+            T invNorm = Scalar.Reciprocal(ls);
 
             ans.X = Scalar.Negate(Scalar.Multiply(value.X, invNorm));
             ans.Y = Scalar.Negate(Scalar.Multiply(value.Y, invNorm));
@@ -517,7 +517,7 @@ namespace Silk.NET.Maths
 
             // Normalize it.
             T ls = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(r.X, r.X), Scalar.Multiply(r.Y, r.Y)), Scalar.Multiply(r.Z, r.Z)), Scalar.Multiply(r.W, r.W));
-            T invNorm = Scalar.Inverse(Scalar.Sqrt(ls));
+            T invNorm = Scalar.Reciprocal(Scalar.Sqrt(ls));
 
             r.X = Scalar.Multiply(r.X, invNorm);
             r.Y = Scalar.Multiply(r.Y, invNorm);
@@ -558,7 +558,7 @@ namespace Silk.NET.Maths
             Quaternion<T> ans;
 
             T ls = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(value.X, value.X), Scalar.Multiply(value.Y, value.Y)), Scalar.Multiply(value.Z, value.Z)), Scalar.Multiply(value.W, value.W));
-            T invNorm = Scalar.Inverse(Scalar.Sqrt(ls));
+            T invNorm = Scalar.Reciprocal(Scalar.Sqrt(ls));
 
             ans.X = Scalar.Multiply(value.X, invNorm);
             ans.Y = Scalar.Multiply(value.Y, invNorm);
@@ -598,7 +598,7 @@ namespace Silk.NET.Maths
             else
             {
                 T omega = Scalar.Acos(cosOmega);
-                T invSinOmega = Scalar.Inverse(Scalar.Sin(omega));
+                T invSinOmega = Scalar.Reciprocal(Scalar.Sin(omega));
 
                 s1 = Scalar.Multiply(Scalar.Sin(Scalar.Multiply(Scalar.Subtract(Scalar<T>.One, t), omega)), invSinOmega);
                 s2 = (flip)

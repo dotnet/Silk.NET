@@ -650,7 +650,7 @@ namespace Silk.NET.Maths
                 return false;
             }
 
-            T invDet = Scalar.Inverse(det);
+            T invDet = Scalar.Reciprocal(det);
 
             result = default;
             

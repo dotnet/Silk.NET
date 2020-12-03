@@ -180,7 +180,7 @@ namespace Silk.NET.Maths
                     return value; // It already normalized, so we don't need to further process.
                 }
 
-                T fInv = Scalar.Inverse(Scalar.Sqrt(f));
+                T fInv = Scalar.Reciprocal(Scalar.Sqrt(f));
 
                 return new(
                     Scalar.Multiply(value.Normal.X, fInv),

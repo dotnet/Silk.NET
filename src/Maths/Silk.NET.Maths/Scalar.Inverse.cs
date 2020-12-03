@@ -11,13 +11,13 @@ namespace Silk.NET.Maths
     public static partial class Scalar
     {
         /// <summary>
-        /// Calculates the inverse of a number.
+        /// Calculates the reciprocal of a number.
         /// </summary>
         /// <param name="x">The number.</param>
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
-        /// <returns>The inverse of the given number.</returns>
+        /// <returns>The reciprocal of the given number.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Inverse<T>(T x) where T : unmanaged
+        public static T Reciprocal<T>(T x) where T : unmanaged
         {
             if (typeof(T) == typeof(Half))
             {
