@@ -41,7 +41,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance along the ray.</param>
         /// <returns>A point at a distance along the ray.</returns>
-        public Vector3<T> GetPoint(T distance)
+        public readonly Vector3<T> GetPoint(T distance)
         {
             return Origin + (Direction * distance);
         }
