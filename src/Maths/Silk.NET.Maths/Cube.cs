@@ -68,9 +68,9 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Calculates whether this cube contains another rectangle
+        /// Calculates whether this cube contains another cube
         /// </summary>
-        /// <param name="other">The rectangle.</param>
+        /// <param name="other">The cube.</param>
         /// <returns>True if this cube contains the given cube; False otherwise.</returns>
         /// <remarks>This does consider a cube that touches the edge contained.</remarks>
         public bool Contains(Cube<T> other)
@@ -125,7 +125,7 @@ namespace Silk.NET.Maths
         /// Calculates a cube inflated to contain the given point.
         /// </summary>
         /// <param name="point">The point.</param>
-        /// <returns>The cube rectangle.</returns>
+        /// <returns>The cube.</returns>
         public Cube<T> GetInflated(Vector3<T> point)
         {
             var min = Vector3<T>.Min(Origin, point);

@@ -33,6 +33,80 @@ namespace Silk.NET.Maths
             Radius = radius;
         }
 
+        /// <summary>
+        /// The diameter.
+        /// </summary>
+        [IgnoreDataMember]
+        public T Diameter => Scalar.Divide(Radius, Scalar<T>.Two);
+
+        /// <summary>
+        /// The radius squared.
+        /// </summary>
+        [IgnoreDataMember]
+        public T SquaredRadius => Scalar.Multiply(Radius, Radius);
+        
+        
+        /// <summary>
+        /// Calculates whether this sphere contains a point.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>True if this sphere contains the point; False otherwise.</returns>
+        /// <remarks>This does consider a point on the edge contained.</remarks>
+        public bool Contains(Vector3<T> point)
+        {
+            return Scalar.LessThanOrEqual(Vector3<T>.DistanceSquared(point, Center), Radius);
+        }
+
+        /// <summary>
+        /// Calculates whether this sphere contains another sphere
+        /// </summary>
+        /// <param name="other">The sphere.</param>
+        /// <returns>True if this sphere contains the given sphere; False otherwise.</returns>
+        /// <remarks>This does consider a sphere that touches the edge contained.</remarks>
+        public bool Contains(Sphere<T> other)
+        {
+            var distanceSquared = Vector3<T>.DistanceSquared(Center, other.Center);
+            var radiusDiff = Scalar.Subtract(Radius, other.Radius);
+            return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
+        }
+
+        /// <summary>
+        /// Calculates the squared distance to the nearest edge from the point.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance squared.</returns>
+        public T GetDistanceToNearestEdgeSquared(Vector3<T> point)
+        {
+            return Scalar.Subtract(Vector3<T>.DistanceSquared(Center, point), SquaredRadius);
+        }
+
+        /// <summary>
+        /// Calculates the distance to the nearest edge from the point.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>The distance.</returns>
+        public T GetDistanceToNearestEdge(Vector3<T> point) => Scalar.Sqrt(GetDistanceToNearestEdgeSquared(point));
+
+        /// <summary>
+        /// Calculates a new sphere translated by a given distance.
+        /// </summary>
+        /// <param name="distance">The distance.</param>
+        /// <returns>The calculated sphere.</returns>
+        public Sphere<T> GetTranslated(Vector3<T> distance)
+        {
+            return new(Center + distance, Radius);
+        }
+
+        /// <summary>
+        /// Calculates a sphere inflated to contain the given point.
+        /// </summary>
+        /// <param name="point">The point.</param>
+        /// <returns>The sphere.</returns>
+        public Sphere<T> GetInflated(Vector3<T> point)
+        {
+            return new(Center, Scalar.Max(Radius, Vector3<T>.Distance(Center, point)));
+        }
+        
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>
         /// <param name="other">The Sphere to compare this instance to.</param>
         /// <returns>True if the other Sphere is equal to this instance; False otherwise.</returns>
