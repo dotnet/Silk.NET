@@ -3,6 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+// ported / adopted from https://github.com/amd/aocl-libm-ose/tree/master/src/optmized
+
 /*
  * Copyright (C) 2008-2020 Advanced Micro Devices, Inc. All rights reserved.
  *
