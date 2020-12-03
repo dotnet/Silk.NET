@@ -2534,30 +2534,18 @@ namespace Silk.NET.Maths.Tests
         {
             Matrix4x4<float> mat = new Matrix4x4<float>();
 
-            float* basePtr = &mat.M11; // Take address of first element
+            float* basePtr = &mat.Row1.X; // Take address of first element
             Matrix4x4<float>* matPtr = &mat; // Take address of whole matrix
 
             Assert.Equal(new IntPtr(basePtr), new IntPtr(matPtr));
 
-            Assert.Equal(new IntPtr(basePtr + 0), new IntPtr(&mat.M11));
-            Assert.Equal(new IntPtr(basePtr + 1), new IntPtr(&mat.M12));
-            Assert.Equal(new IntPtr(basePtr + 2), new IntPtr(&mat.M13));
-            Assert.Equal(new IntPtr(basePtr + 3), new IntPtr(&mat.M14));
+            Assert.Equal(new IntPtr(basePtr + 0), new IntPtr(&mat.Row1));
 
-            Assert.Equal(new IntPtr(basePtr + 4), new IntPtr(&mat.M21));
-            Assert.Equal(new IntPtr(basePtr + 5), new IntPtr(&mat.M22));
-            Assert.Equal(new IntPtr(basePtr + 6), new IntPtr(&mat.M23));
-            Assert.Equal(new IntPtr(basePtr + 7), new IntPtr(&mat.M24));
+            Assert.Equal(new IntPtr(basePtr + 4), new IntPtr(&mat.Row2));
 
-            Assert.Equal(new IntPtr(basePtr + 8), new IntPtr(&mat.M31));
-            Assert.Equal(new IntPtr(basePtr + 9), new IntPtr(&mat.M32));
-            Assert.Equal(new IntPtr(basePtr + 10), new IntPtr(&mat.M33));
-            Assert.Equal(new IntPtr(basePtr + 11), new IntPtr(&mat.M34));
+            Assert.Equal(new IntPtr(basePtr + 8), new IntPtr(&mat.Row3));
 
-            Assert.Equal(new IntPtr(basePtr + 12), new IntPtr(&mat.M41));
-            Assert.Equal(new IntPtr(basePtr + 13), new IntPtr(&mat.M42));
-            Assert.Equal(new IntPtr(basePtr + 14), new IntPtr(&mat.M43));
-            Assert.Equal(new IntPtr(basePtr + 15), new IntPtr(&mat.M44));
+            Assert.Equal(new IntPtr(basePtr + 12), new IntPtr(&mat.Row4));
         }
 
         [Fact]

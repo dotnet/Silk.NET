@@ -27,232 +27,278 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One
         );
 
+        /// <summary>
+        /// Row 1 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Row1;
+        
+        /// <summary>
+        /// Row 2 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Row2;
+        
+        /// <summary>
+        /// Row 3 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Row3;
+        
+        /// <summary>
+        /// Row 4 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Row4;
+
+        /// <summary>
+        /// Column 1 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Column1 => new(Row1.X, Row2.X, Row3.X, Row4.X);
+        
+        /// <summary>
+        /// Column 2 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y, Row4.Y);
+        
+        /// <summary>
+        /// Column 3 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Column3 => new(Row1.Z, Row2.Z, Row3.Z, Row4.Z);
+        
+        /// <summary>
+        /// Column 4 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Column4 => new(Row1.W, Row2.W, Row3.W, Row4.W);
+
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
         [DataMember]
-        public T M11;
+        public T M11
+        {
+            get => Row1.X;
+            set => Row1.X = value;
+        }
 
         /// <summary>Value at row 1, column 2 of the matrix.</summary>
         [DataMember]
-        public T M12;
+        public T M12
+        {
+            get => Row1.Y;
+            set => Row1.Y = value;
+        }
 
         /// <summary>Value at row 1, column 3 of the matrix.</summary>
         [DataMember]
-        public T M13;
+        public T M13
+        {
+            get => Row1.Z;
+            set => Row1.Z = value;
+        }
 
         /// <summary>Value at row 1, column 4 of the matrix.</summary>
         [DataMember]
-        public T M14;
+        public T M14
+        {
+            get => Row1.W;
+            set => Row1.W = value;
+        }
 
         /// <summary>Value at row 2, column 1 of the matrix.</summary>
         [DataMember]
-        public T M21;
+        public T M21
+        {
+            get => Row2.X;
+            set => Row2.X = value;
+        }
 
         /// <summary>Value at row 2, column 2 of the matrix.</summary>
         [DataMember]
-        public T M22;
+        public T M22
+        {
+            get => Row2.Y;
+            set => Row2.Y = value;
+        }
 
         /// <summary>Value at row 2, column 3 of the matrix.</summary>
         [DataMember]
-        public T M23;
+        public T M23
+        {
+            get => Row2.Z;
+            set => Row2.Z = value;
+        }
 
         /// <summary>Value at row 2, column 4 of the matrix.</summary>
         [DataMember]
-        public T M24;
+        public T M24
+        {
+            get => Row2.W;
+            set => Row2.W = value;
+        }
 
         /// <summary>Value at row 3, column 1 of the matrix.</summary>
         [DataMember]
-        public T M31;
+        public T M31
+        {
+            get => Row3.X;
+            set => Row3.X = value;
+        }
 
         /// <summary>Value at row 3, column 2 of the matrix.</summary>
         [DataMember]
-        public T M32;
+        public T M32
+        {
+            get => Row3.Y;
+            set => Row3.Y = value;
+        }
 
         /// <summary>Value at row 3, column 3 of the matrix.</summary>
         [DataMember]
-        public T M33;
+        public T M33
+        {
+            get => Row3.Z;
+            set => Row3.Z = value;
+        }
 
         /// <summary>Value at row 3, column 4 of the matrix.</summary>
         [DataMember]
-        public T M34;
-
+        public T M34
+        {
+            get => Row3.W;
+            set => Row3.W = value;
+        }
+        
         /// <summary>Value at row 4, column 1 of the matrix.</summary>
         [DataMember]
-        public T M41;
-
+        public T M41
+        {
+            get => Row4.X;
+            set => Row4.X = value;
+        }
+        
         /// <summary>Value at row 4, column 2 of the matrix.</summary>
         [DataMember]
-        public T M42;
+        public T M42
+        {
+            get => Row4.Y;
+            set => Row4.Y = value;
+        }
 
         /// <summary>Value at row 4, column 3 of the matrix.</summary>
         [DataMember]
-        public T M43;
+        public T M43
+        {
+            get => Row4.Z;
+            set => Row4.Z = value;
+        }
 
         /// <summary>Value at row 4, column 4 of the matrix.</summary>
         [DataMember]
-        public T M44;
+        public T M44
+        {
+            get => Row4.W;
+            set => Row4.W = value;
+        }
+
+        /// <summary>
+        /// Constructs a Matrix4x4 from the given rows
+        /// </summary>
+        public Matrix4x4(Vector4<T> row1, Vector4<T> row2, Vector4<T> row3, Vector4<T> row4)
+        {
+            Row1 = row1;
+            Row2 = row2;
+            Row3 = row3;
+            Row4 = row4;
+        }
 
         /// <summary>Constructs a Matrix4x4 from the given components.</summary>
-        public Matrix4x4(T m11, T m12, T m13, T m14,
-                         T m21, T m22, T m23, T m24,
-                         T m31, T m32, T m33, T m34,
-                         T m41, T m42, T m43, T m44)
-            => (M11, M12, M13, M14,
-                M21, M22, M23, M24,
-                M31, M32, M33, M34,
-                M41, M42, M43, M44)
-            =  (m11, m12, m13, m14,
-                m21, m22, m23, m24,
-                m31, m32, m33, m34,
-                m41, m42, m43, m44);
+        public Matrix4x4
+        (
+            T m11,
+            T m12,
+            T m13,
+            T m14,
+            T m21,
+            T m22,
+            T m23,
+            T m24,
+            T m31,
+            T m32,
+            T m33,
+            T m34,
+            T m41,
+            T m42,
+            T m43,
+            T m44
+        )
+        {
+            Row1 = new(m11, m12, m13, m14);
+            Row2 = new(m21, m22, m23, m24);
+            Row3 = new(m31, m32, m33, m34);
+            Row4 = new(m41, m42, m43, m44);
+        }
 
         /// <summary>Constructs a Matrix4x4 from the given Matrix3x2.</summary>
         /// <param name="value">The source Matrix3x2.</param>
         public Matrix4x4(Matrix3x2<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = Scalar<T>.Zero;
-            M14 = Scalar<T>.Zero;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = Scalar<T>.Zero;
-            M24 = Scalar<T>.Zero;
-
-            M31 = Scalar<T>.Zero;
-            M32 = Scalar<T>.Zero;
-            M33 = Scalar<T>.One;
-            M34 = Scalar<T>.Zero;
-
-            M41 = value.M31;
-            M42 = value.M32;
-            M43 = Scalar<T>.Zero;
-            M44 = Scalar<T>.One;
+            Row1 = new(value.M11, value.M12, default, default);
+            Row2 = new(value.M21, value.M22, default, default);
+            Row4 = new(value.M31, value.M32, default, Scalar<T>.One);
+            Row3 = new(default, default, Scalar<T>.One, default);
         }
 
         /// <summary>Constructs a Matrix4x4 from the given Matrix4x3.</summary>
         /// <param name="value">The source Matrix4x3.</param>
         public Matrix4x4(Matrix4x3<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = value.M13;
-            M14 = Scalar<T>.Zero;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = value.M23;
-            M24 = Scalar<T>.Zero;
-
-            M31 = value.M31;
-            M32 = value.M32;
-            M33 = value.M33;
-            M34 = Scalar<T>.Zero;
-
-            M41 = value.M41;
-            M42 = value.M42;
-            M43 = value.M43;
-            M44 = Scalar<T>.One;
+            Row1 = new(value.M11, value.M12, value.M13, default);
+            Row2 = new(value.M21, value.M22, value.M23, default);
+            Row3 = new(value.M31, value.M32, value.M33, default);
+            Row4 = new(value.M41, value.M42, value.M43, Scalar<T>.One);
         }
 
         /// <summary>Constructs a Matrix4x4 from the given Matrix3x4.</summary>
         /// <param name="value">The source Matrix3x4.</param>
         public Matrix4x4(Matrix3x4<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = value.M13;
-            M14 = value.M14;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = value.M23;
-            M24 = value.M24;
-
-            M31 = value.M31;
-            M32 = value.M32;
-            M33 = value.M33;
-            M34 = value.M34;
-
-            M41 = Scalar<T>.Zero;
-            M42 = Scalar<T>.Zero;
-            M43 = Scalar<T>.Zero;
-            M44 = Scalar<T>.One;
+            Row1 = new(value.M11, value.M12, value.M13, value.M14);
+            Row2 = new(value.M21, value.M22, value.M23, value.M24);
+            Row3 = new(value.M31, value.M32, value.M33, value.M34);
+            Row4 = default;
         }
 
         /// <summary>Constructs a Matrix4x4 from the given Matrix3x3.</summary>
         /// <param name="value">The source Matrix3x3.</param>
         public Matrix4x4(Matrix3x3<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = value.M13;
-            M14 = Scalar<T>.Zero;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = value.M23;
-            M24 = Scalar<T>.Zero;
-
-            M31 = Scalar<T>.Zero;
-            M32 = Scalar<T>.Zero;
-            M33 = Scalar<T>.One;
-            M34 = Scalar<T>.Zero;
-
-            M41 = value.M31;
-            M42 = value.M32;
-            M43 = value.M33;
-            M44 = Scalar<T>.Zero;
+            Row1 = new(value.M11, value.M12, value.M13, default);
+            Row2 = new(value.M21, value.M22, value.M23, default);
+            Row4 = new(value.M31, value.M32, value.M33, Scalar<T>.One);
+            Row3 = new(default, default, Scalar<T>.One, default);
         }
 
         /// <summary>Constructs a Matrix4x4 from the given Matrix2x4.</summary>
         /// <param name="value">The source Matrix3x4.</param>
         public Matrix4x4(Matrix2x4<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = value.M13;
-            M14 = value.M14;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = value.M23;
-            M24 = value.M24;
-
-            M31 = Scalar<T>.Zero;
-            M32 = Scalar<T>.Zero;
-            M33 = Scalar<T>.One;
-            M34 = Scalar<T>.Zero;
-
-            M41 = Scalar<T>.Zero;
-            M42 = Scalar<T>.Zero;
-            M43 = Scalar<T>.Zero;
-            M44 = Scalar<T>.One;
+            Row1 = new(value.M11, value.M12, value.M13, value.M14);
+            Row2 = new(value.M21, value.M22, value.M23, value.M24);
+            Row3 = Vector4<T>.UnitZ;
+            Row4 = Vector4<T>.UnitW;
         }
         
         /// <summary>Constructs a Matrix4x4 from the given Matrix4x2.</summary>
         /// <param name="value">The source Matrix3x4.</param>
         public Matrix4x4(Matrix4x2<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = Scalar<T>.Zero;
-            M14 = Scalar<T>.Zero;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = Scalar<T>.Zero;
-            M24 = Scalar<T>.Zero;
-
-            M31 = value.M31;
-            M32 = value.M32;
-            M33 = Scalar<T>.One;
-            M34 = Scalar<T>.Zero;
-
-            M41 = value.M41;
-            M42 = value.M42;
-            M43 = Scalar<T>.Zero;
-            M44 = Scalar<T>.One;
+            Row1 = new(value.M11, value.M12, default, default);
+            Row2 = new(value.M21, value.M22, default, default);
+            Row3 = new(value.M31, value.M32, Scalar<T>.One, default);
+            Row4 = new(value.M41, value.M42, default, Scalar<T>.One);
         }
 
         /// <summary>Returns the multiplicative identity matrix.</summary>
@@ -277,43 +323,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The resulting matrix.</returns>
         public static unsafe Matrix4x4<T> operator +(Matrix4x4<T> value1, Matrix4x4<T> value2)
         {
-            /*if (AdvSimd.IsSupported)
-            {
-                AdvSimd.Store(&value1.M11, AdvSimd.Add(AdvSimd.LoadVector128(&value1.M11), AdvSimd.LoadVector128(&value2.M11)));
-                AdvSimd.Store(&value1.M21, AdvSimd.Add(AdvSimd.LoadVector128(&value1.M21), AdvSimd.LoadVector128(&value2.M21)));
-                AdvSimd.Store(&value1.M31, AdvSimd.Add(AdvSimd.LoadVector128(&value1.M31), AdvSimd.LoadVector128(&value2.M31)));
-                AdvSimd.Store(&value1.M41, AdvSimd.Add(AdvSimd.LoadVector128(&value1.M41), AdvSimd.LoadVector128(&value2.M41)));
-                return value1;
-            }
-            else if (Sse.IsSupported)
-            {
-                Sse.Store(&value1.M11, Sse.Add(Sse.LoadVector128(&value1.M11), Sse.LoadVector128(&value2.M11)));
-                Sse.Store(&value1.M21, Sse.Add(Sse.LoadVector128(&value1.M21), Sse.LoadVector128(&value2.M21)));
-                Sse.Store(&value1.M31, Sse.Add(Sse.LoadVector128(&value1.M31), Sse.LoadVector128(&value2.M31)));
-                Sse.Store(&value1.M41, Sse.Add(Sse.LoadVector128(&value1.M41), Sse.LoadVector128(&value2.M41)));
-                return value1;
-            }*/
-
-            Matrix4x4<T> m;
-
-            m.M11 = Scalar.Add(value1.M11, value2.M11);
-            m.M12 = Scalar.Add(value1.M12, value2.M12);
-            m.M13 = Scalar.Add(value1.M13, value2.M13);
-            m.M14 = Scalar.Add(value1.M14, value2.M14);
-            m.M21 = Scalar.Add(value1.M21, value2.M21);
-            m.M22 = Scalar.Add(value1.M22, value2.M22);
-            m.M23 = Scalar.Add(value1.M23, value2.M23);
-            m.M24 = Scalar.Add(value1.M24, value2.M24);
-            m.M31 = Scalar.Add(value1.M31, value2.M31);
-            m.M32 = Scalar.Add(value1.M32, value2.M32);
-            m.M33 = Scalar.Add(value1.M33, value2.M33);
-            m.M34 = Scalar.Add(value1.M34, value2.M34);
-            m.M41 = Scalar.Add(value1.M41, value2.M41);
-            m.M42 = Scalar.Add(value1.M42, value2.M42);
-            m.M43 = Scalar.Add(value1.M43, value2.M43);
-            m.M44 = Scalar.Add(value1.M44, value2.M44);
-            
-            return m;
+            return new
+            (
+                value1.Row1 + value2.Row1, value1.Row2 + value2.Row2, value1.Row3 + value2.Row3,
+                value1.Row4 + value2.Row4
+            );
         }
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
@@ -322,21 +336,6 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>True if the given matrices are equal; False otherwise.</returns>
         public static unsafe bool operator ==(Matrix4x4<T> value1, Matrix4x4<T> value2)
         {
-            /*if (AdvSimd.Arm64.IsSupported)
-            {
-                return VectorMath.Equal(AdvSimd.LoadVector128(&value1.M11), AdvSimd.LoadVector128(&value2.M11)) &&
-                       VectorMath.Equal(AdvSimd.LoadVector128(&value1.M21), AdvSimd.LoadVector128(&value2.M21)) &&
-                       VectorMath.Equal(AdvSimd.LoadVector128(&value1.M31), AdvSimd.LoadVector128(&value2.M31)) &&
-                       VectorMath.Equal(AdvSimd.LoadVector128(&value1.M41), AdvSimd.LoadVector128(&value2.M41));
-            }
-            else if (Sse.IsSupported)
-            {
-                return VectorMath.Equal(Sse.LoadVector128(&value1.M11), Sse.LoadVector128(&value2.M11)) &&
-                       VectorMath.Equal(Sse.LoadVector128(&value1.M21), Sse.LoadVector128(&value2.M21)) &&
-                       VectorMath.Equal(Sse.LoadVector128(&value1.M31), Sse.LoadVector128(&value2.M31)) &&
-                       VectorMath.Equal(Sse.LoadVector128(&value1.M41), Sse.LoadVector128(&value2.M41));
-            }*/
-
             return Scalar.Equal(value1.M11, value2.M11) && Scalar.Equal(value1.M22, value2.M22) &&
                    Scalar.Equal(value1.M33, value2.M33) &&
                    Scalar.Equal(value1.M44, value2.M44) && // Check diagonal elements first for early out.
@@ -354,22 +353,6 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>True if the given matrices are not equal; False if they are equal.</returns>
         public static unsafe bool operator !=(Matrix4x4<T> value1, Matrix4x4<T> value2)
         {
-            /*if (AdvSimd.Arm64.IsSupported)
-            {
-                return VectorMath.NotEqual(AdvSimd.LoadVector128(&value1.M11), AdvSimd.LoadVector128(&value2.M11)) ||
-                       VectorMath.NotEqual(AdvSimd.LoadVector128(&value1.M21), AdvSimd.LoadVector128(&value2.M21)) ||
-                       VectorMath.NotEqual(AdvSimd.LoadVector128(&value1.M31), AdvSimd.LoadVector128(&value2.M31)) ||
-                       VectorMath.NotEqual(AdvSimd.LoadVector128(&value1.M41), AdvSimd.LoadVector128(&value2.M41));
-            }
-            else if (Sse.IsSupported)
-            {
-                return
-                    VectorMath.NotEqual(Sse.LoadVector128(&value1.M11), Sse.LoadVector128(&value2.M11)) ||
-                    VectorMath.NotEqual(Sse.LoadVector128(&value1.M21), Sse.LoadVector128(&value2.M21)) ||
-                    VectorMath.NotEqual(Sse.LoadVector128(&value1.M31), Sse.LoadVector128(&value2.M31)) ||
-                    VectorMath.NotEqual(Sse.LoadVector128(&value1.M41), Sse.LoadVector128(&value2.M41));
-            }*/
-
             return Scalar.NotEqual(value1.M11, value2.M11) || Scalar.NotEqual(value1.M22, value2.M22) ||
                    Scalar.NotEqual(value1.M33, value2.M33) ||
                    Scalar.NotEqual(value1.M44, value2.M44) || // Check diagonal elements first for early out.
@@ -387,33 +370,12 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Matrix4x4<T> operator *(Matrix4x4<T> value1, Matrix4x4<T> value2)
         {
-            Matrix4x4<T> m;
-
-            // First row
-            m.M11 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M11), Scalar.Multiply(value1.M12, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M31), Scalar.Multiply(value1.M14, value2.M41)));
-            m.M12 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M12), Scalar.Multiply(value1.M12, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M32), Scalar.Multiply(value1.M14, value2.M42)));
-            m.M13 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M13), Scalar.Multiply(value1.M12, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M33), Scalar.Multiply(value1.M14, value2.M43)));
-            m.M14 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M14), Scalar.Multiply(value1.M12, value2.M24)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M34), Scalar.Multiply(value1.M14, value2.M44)));
-
-            // Second row
-            m.M21 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M11), Scalar.Multiply(value1.M22, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M31), Scalar.Multiply(value1.M24, value2.M41)));
-            m.M22 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M12), Scalar.Multiply(value1.M22, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M32), Scalar.Multiply(value1.M24, value2.M42)));
-            m.M23 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M13), Scalar.Multiply(value1.M22, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M33), Scalar.Multiply(value1.M24, value2.M43)));
-            m.M24 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M14), Scalar.Multiply(value1.M22, value2.M24)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M34), Scalar.Multiply(value1.M24, value2.M44)));
-
-            // Third row
-            m.M31 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M11), Scalar.Multiply(value1.M32, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M31), Scalar.Multiply(value1.M34, value2.M41)));
-            m.M32 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M12), Scalar.Multiply(value1.M32, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M32), Scalar.Multiply(value1.M34, value2.M42)));
-            m.M33 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M13), Scalar.Multiply(value1.M32, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M33), Scalar.Multiply(value1.M34, value2.M43)));
-            m.M34 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M14), Scalar.Multiply(value1.M32, value2.M24)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M34), Scalar.Multiply(value1.M34, value2.M44)));
-
-            // Fourth row
-            m.M41 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M41, value2.M11), Scalar.Multiply(value1.M42, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M43, value2.M31), Scalar.Multiply(value1.M44, value2.M41)));
-            m.M42 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M41, value2.M12), Scalar.Multiply(value1.M42, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M43, value2.M32), Scalar.Multiply(value1.M44, value2.M42)));
-            m.M43 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M41, value2.M13), Scalar.Multiply(value1.M42, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M43, value2.M33), Scalar.Multiply(value1.M44, value2.M43)));
-            m.M44 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M41, value2.M14), Scalar.Multiply(value1.M42, value2.M24)), Scalar.Add(Scalar.Multiply(value1.M43, value2.M34), Scalar.Multiply(value1.M44, value2.M44)));
-
-            return m;
+            return new(
+                    value1.M11 * value2.Row1 + value1.M12 * value2.Row2 + value1.M13 * value2.Row3 + value1.M14 * value2.Row4,
+                    value1.M21 * value2.Row1 + value1.M22 * value2.Row2 + value1.M23 * value2.Row3 + value1.M24 * value2.Row4,
+                    value1.M31 * value2.Row1 + value1.M32 * value2.Row2 + value1.M33 * value2.Row3 + value1.M34 * value2.Row4,
+                    value1.M41 * value2.Row1 + value1.M42 * value2.Row2 + value1.M43 * value2.Row3 + value1.M44 * value2.Row4
+                );
         }
         
         /// <summary>Multiplies a vector by a matrix.</summary>
@@ -422,15 +384,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Vector4<T> operator *(Vector4<T> value1, Matrix4x4<T> value2)
         {
-            Vector4<T> m;
-
-            // First row
-            m.X = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M11), Scalar.Multiply(value1.Y, value2.M21)), Scalar.Add(Scalar.Multiply(value1.Z, value2.M31), Scalar.Multiply(value1.W, value2.M41)));
-            m.Y = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M12), Scalar.Multiply(value1.Y, value2.M22)), Scalar.Add(Scalar.Multiply(value1.Z, value2.M32), Scalar.Multiply(value1.W, value2.M42)));
-            m.Z = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M13), Scalar.Multiply(value1.Y, value2.M23)), Scalar.Add(Scalar.Multiply(value1.Z, value2.M33), Scalar.Multiply(value1.W, value2.M43)));
-            m.W = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M14), Scalar.Multiply(value1.Y, value2.M24)), Scalar.Add(Scalar.Multiply(value1.Z, value2.M34), Scalar.Multiply(value1.W, value2.M44)));
-
-            return m;
+            return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3 +
+                   value1.W * value2.Row4;
         }
         
         /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -439,27 +394,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Matrix3x4<T> operator *(Matrix3x4<T> value1, Matrix4x4<T> value2)
         {
-            Matrix3x4<T> m;
-
-            // First row
-            m.M11 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M11), Scalar.Multiply(value1.M12, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M31), Scalar.Multiply(value1.M14, value2.M41)));
-            m.M12 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M12), Scalar.Multiply(value1.M12, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M32), Scalar.Multiply(value1.M14, value2.M42)));
-            m.M13 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M13), Scalar.Multiply(value1.M12, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M33), Scalar.Multiply(value1.M14, value2.M43)));
-            m.M14 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M14), Scalar.Multiply(value1.M12, value2.M24)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M34), Scalar.Multiply(value1.M14, value2.M44)));
-
-            // Second row
-            m.M21 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M11), Scalar.Multiply(value1.M22, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M31), Scalar.Multiply(value1.M24, value2.M41)));
-            m.M22 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M12), Scalar.Multiply(value1.M22, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M32), Scalar.Multiply(value1.M24, value2.M42)));
-            m.M23 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M13), Scalar.Multiply(value1.M22, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M33), Scalar.Multiply(value1.M24, value2.M43)));
-            m.M24 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M14), Scalar.Multiply(value1.M22, value2.M24)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M34), Scalar.Multiply(value1.M24, value2.M44)));
-
-            // Third row
-            m.M31 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M11), Scalar.Multiply(value1.M32, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M31), Scalar.Multiply(value1.M34, value2.M41)));
-            m.M32 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M12), Scalar.Multiply(value1.M32, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M32), Scalar.Multiply(value1.M34, value2.M42)));
-            m.M33 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M13), Scalar.Multiply(value1.M32, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M33), Scalar.Multiply(value1.M34, value2.M43)));
-            m.M34 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M14), Scalar.Multiply(value1.M32, value2.M24)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M34), Scalar.Multiply(value1.M34, value2.M44)));
-
-            return m;
+            return new(
+                value1.M11 * value2.Row1 + value1.M12 * value2.Row2 + value1.M13 * value2.Row3 + value1.M14 * value2.Row4,
+                value1.M21 * value2.Row1 + value1.M22 * value2.Row2 + value1.M23 * value2.Row3 + value1.M24 * value2.Row4,
+                value1.M31 * value2.Row1 + value1.M32 * value2.Row2 + value1.M33 * value2.Row3 + value1.M34 * value2.Row4
+            );
         }
         
         /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -468,29 +407,12 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Matrix4x3<T> operator *(Matrix4x4<T> value1, Matrix4x3<T> value2)
         {
-            Matrix4x3<T> m;
-
-            // First row
-            m.M11 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M11), Scalar.Multiply(value1.M12, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M31), Scalar.Multiply(value1.M14, value2.M41)));
-            m.M12 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M12), Scalar.Multiply(value1.M12, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M32), Scalar.Multiply(value1.M14, value2.M42)));
-            m.M13 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M13), Scalar.Multiply(value1.M12, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M33), Scalar.Multiply(value1.M14, value2.M43)));
-
-            // Second row
-            m.M21 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M11), Scalar.Multiply(value1.M22, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M31), Scalar.Multiply(value1.M24, value2.M41)));
-            m.M22 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M12), Scalar.Multiply(value1.M22, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M32), Scalar.Multiply(value1.M24, value2.M42)));
-            m.M23 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M13), Scalar.Multiply(value1.M22, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M33), Scalar.Multiply(value1.M24, value2.M43)));
-
-            // Third row
-            m.M31 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M11), Scalar.Multiply(value1.M32, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M31), Scalar.Multiply(value1.M34, value2.M41)));
-            m.M32 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M12), Scalar.Multiply(value1.M32, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M32), Scalar.Multiply(value1.M34, value2.M42)));
-            m.M33 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M13), Scalar.Multiply(value1.M32, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M33), Scalar.Multiply(value1.M34, value2.M43)));
-
-            // Fourth row
-            m.M41 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M41, value2.M11), Scalar.Multiply(value1.M42, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M43, value2.M31), Scalar.Multiply(value1.M44, value2.M41)));
-            m.M42 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M41, value2.M12), Scalar.Multiply(value1.M42, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M43, value2.M32), Scalar.Multiply(value1.M44, value2.M42)));
-            m.M43 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M41, value2.M13), Scalar.Multiply(value1.M42, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M43, value2.M33), Scalar.Multiply(value1.M44, value2.M43)));
-
-            return m;
+            return new(
+                value1.M11 * value2.Row1 + value1.M12 * value2.Row2 + value1.M13 * value2.Row3 + value1.M14 * value2.Row4,
+                value1.M21 * value2.Row1 + value1.M22 * value2.Row2 + value1.M23 * value2.Row3 + value1.M24 * value2.Row4,
+                value1.M31 * value2.Row1 + value1.M32 * value2.Row2 + value1.M33 * value2.Row3 + value1.M34 * value2.Row4,
+                value1.M41 * value2.Row1 + value1.M42 * value2.Row2 + value1.M43 * value2.Row3 + value1.M44 * value2.Row4
+            );
         }
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>
@@ -499,46 +421,12 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The scaled matrix.</returns>
         public static unsafe Matrix4x4<T> operator *(Matrix4x4<T> value1, T value2)
         {
-            /*if (AdvSimd.IsSupported)
-            {
-                Vector128<T> value2Vec = Vector128.Create(value2);
-                AdvSimd.Store(&value1.M11, AdvSimd.Multiply(AdvSimd.LoadVector128(&value1.M11), value2Vec));
-                AdvSimd.Store(&value1.M21, AdvSimd.Multiply(AdvSimd.LoadVector128(&value1.M21), value2Vec));
-                AdvSimd.Store(&value1.M31, AdvSimd.Multiply(AdvSimd.LoadVector128(&value1.M31), value2Vec));
-                AdvSimd.Store(&value1.M41, AdvSimd.Multiply(AdvSimd.LoadVector128(&value1.M41), value2Vec));
-                return value1;
-            }
-            else if (Sse.IsSupported)
-            {
-                Vector128<T> value2Vec = Vector128.Create(value2);
-                Sse.Store(&value1.M11, Sse.Multiply(Sse.LoadVector128(&value1.M11), value2Vec));
-                Sse.Store(&value1.M21, Sse.Multiply(Sse.LoadVector128(&value1.M21), value2Vec));
-                Sse.Store(&value1.M31, Sse.Multiply(Sse.LoadVector128(&value1.M31), value2Vec));
-                Sse.Store(&value1.M41, Sse.Multiply(Sse.LoadVector128(&value1.M41), value2Vec));
-                return value1;
-            }*/
-
-            Matrix4x4<T> m;
-
-            m.M11 = Scalar.Multiply(value1.M11, value2);
-            m.M12 = Scalar.Multiply(value1.M12, value2);
-            m.M13 = Scalar.Multiply(value1.M13, value2);
-            m.M14 = Scalar.Multiply(value1.M14, value2);
-            m.M21 = Scalar.Multiply(value1.M21, value2);
-            m.M22 = Scalar.Multiply(value1.M22, value2);
-            m.M23 = Scalar.Multiply(value1.M23, value2);
-            m.M24 = Scalar.Multiply(value1.M24, value2);
-            m.M31 = Scalar.Multiply(value1.M31, value2);
-            m.M32 = Scalar.Multiply(value1.M32, value2);
-            m.M33 = Scalar.Multiply(value1.M33, value2);
-            m.M34 = Scalar.Multiply(value1.M34, value2);
-            m.M41 = Scalar.Multiply(value1.M41, value2);
-            m.M42 = Scalar.Multiply(value1.M42, value2);
-            m.M43 = Scalar.Multiply(value1.M43, value2);
-            m.M44 = Scalar.Multiply(value1.M44, value2);
-            
-
-            return m;
+            return new(
+                value1.Row1 * value2,
+                value1.Row2 * value2,
+                value1.Row3 * value2,
+                value1.Row4 * value2
+                );
         }
 
         /// <summary>Subtracts the second matrix from the first.</summary>
@@ -547,43 +435,12 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The result of the subtraction.</returns>
         public static unsafe Matrix4x4<T> operator -(Matrix4x4<T> value1, Matrix4x4<T> value2)
         {
-            /*if (AdvSimd.IsSupported)
-            {
-                AdvSimd.Store(&value1.M11, AdvSimd.Subtract(AdvSimd.LoadVector128(&value1.M11), AdvSimd.LoadVector128(&value2.M11)));
-                AdvSimd.Store(&value1.M21, AdvSimd.Subtract(AdvSimd.LoadVector128(&value1.M21), AdvSimd.LoadVector128(&value2.M21)));
-                AdvSimd.Store(&value1.M31, AdvSimd.Subtract(AdvSimd.LoadVector128(&value1.M31), AdvSimd.LoadVector128(&value2.M31)));
-                AdvSimd.Store(&value1.M41, AdvSimd.Subtract(AdvSimd.LoadVector128(&value1.M41), AdvSimd.LoadVector128(&value2.M41)));
-                return value1;
-            }
-            else if (Sse.IsSupported)
-            {
-                Sse.Store(&value1.M11, Sse.Subtract(Sse.LoadVector128(&value1.M11), Sse.LoadVector128(&value2.M11)));
-                Sse.Store(&value1.M21, Sse.Subtract(Sse.LoadVector128(&value1.M21), Sse.LoadVector128(&value2.M21)));
-                Sse.Store(&value1.M31, Sse.Subtract(Sse.LoadVector128(&value1.M31), Sse.LoadVector128(&value2.M31)));
-                Sse.Store(&value1.M41, Sse.Subtract(Sse.LoadVector128(&value1.M41), Sse.LoadVector128(&value2.M41)));
-                return value1;
-            }*/
-
-            Matrix4x4<T> m;
-
-            m.M11 = Scalar.Subtract(value1.M11, value2.M11);
-            m.M12 = Scalar.Subtract(value1.M12, value2.M12);
-            m.M13 = Scalar.Subtract(value1.M13, value2.M13);
-            m.M14 = Scalar.Subtract(value1.M14, value2.M14);
-            m.M21 = Scalar.Subtract(value1.M21, value2.M21);
-            m.M22 = Scalar.Subtract(value1.M22, value2.M22);
-            m.M23 = Scalar.Subtract(value1.M23, value2.M23);
-            m.M24 = Scalar.Subtract(value1.M24, value2.M24);
-            m.M31 = Scalar.Subtract(value1.M31, value2.M31);
-            m.M32 = Scalar.Subtract(value1.M32, value2.M32);
-            m.M33 = Scalar.Subtract(value1.M33, value2.M33);
-            m.M34 = Scalar.Subtract(value1.M34, value2.M34);
-            m.M41 = Scalar.Subtract(value1.M41, value2.M41);
-            m.M42 = Scalar.Subtract(value1.M42, value2.M42);
-            m.M43 = Scalar.Subtract(value1.M43, value2.M43);
-            m.M44 = Scalar.Subtract(value1.M44, value2.M44);
-            
-            return m;
+            return new(
+                    value1.Row1 - value2.Row1,
+                    value1.Row2 - value2.Row2,
+                    value1.Row3 - value2.Row3,
+                    value1.Row4 - value2.Row4
+                );
         }
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
@@ -591,44 +448,12 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The negated matrix.</returns>
         public static unsafe Matrix4x4<T> operator -(Matrix4x4<T> value)
         {
-            /*if (AdvSimd.IsSupported)
-            {
-                AdvSimd.Store(&value.M11, AdvSimd.Negate(AdvSimd.LoadVector128(&value.M11)));
-                AdvSimd.Store(&value.M21, AdvSimd.Negate(AdvSimd.LoadVector128(&value.M21)));
-                AdvSimd.Store(&value.M31, AdvSimd.Negate(AdvSimd.LoadVector128(&value.M31)));
-                AdvSimd.Store(&value.M41, AdvSimd.Negate(AdvSimd.LoadVector128(&value.M41)));
-                return value;
-            }
-            else if (Sse.IsSupported)
-            {
-                Vector128<T> zero = Vector128<T>.Zero;
-                Sse.Store(&value.M11, Sse.Subtract(zero, Sse.LoadVector128(&value.M11)));
-                Sse.Store(&value.M21, Sse.Subtract(zero, Sse.LoadVector128(&value.M21)));
-                Sse.Store(&value.M31, Sse.Subtract(zero, Sse.LoadVector128(&value.M31)));
-                Sse.Store(&value.M41, Sse.Subtract(zero, Sse.LoadVector128(&value.M41)));
-                return value;
-            }*/
-
-            Matrix4x4<T> m;
-
-            m.M11 = Scalar.Negate(value.M11);
-            m.M12 = Scalar.Negate(value.M12);
-            m.M13 = Scalar.Negate(value.M13);
-            m.M14 = Scalar.Negate(value.M14);
-            m.M21 = Scalar.Negate(value.M21);
-            m.M22 = Scalar.Negate(value.M22);
-            m.M23 = Scalar.Negate(value.M23);
-            m.M24 = Scalar.Negate(value.M24);
-            m.M31 = Scalar.Negate(value.M31);
-            m.M32 = Scalar.Negate(value.M32);
-            m.M33 = Scalar.Negate(value.M33);
-            m.M34 = Scalar.Negate(value.M34);
-            m.M41 = Scalar.Negate(value.M41);
-            m.M42 = Scalar.Negate(value.M42);
-            m.M43 = Scalar.Negate(value.M43);
-            m.M44 = Scalar.Negate(value.M44);
-            
-            return m;
+            return new(
+                -value.Row1,
+                -value.Row2,
+                -value.Row3,
+                -value.Row4
+            );
         }
 
         /// <summary>Adds two matrices together.</summary>
@@ -664,29 +489,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             Vector3<T> xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(cameraUpVector, zaxis));
             Vector3<T> yaxis = Vector3<T>.Cross(zaxis, xaxis);
 
-            Matrix4x4<T> result;
-
-            result.M11 = xaxis.X;
-            result.M12 = xaxis.Y;
-            result.M13 = xaxis.Z;
-            result.M14 = Scalar<T>.Zero;
-
-            result.M21 = yaxis.X;
-            result.M22 = yaxis.Y;
-            result.M23 = yaxis.Z;
-            result.M24 = Scalar<T>.Zero;
-
-            result.M31 = zaxis.X;
-            result.M32 = zaxis.Y;
-            result.M33 = zaxis.Z;
-            result.M34 = Scalar<T>.Zero;
-
-            result.M41 = objectPosition.X;
-            result.M42 = objectPosition.Y;
-            result.M43 = objectPosition.Z;
-            result.M44 = Scalar<T>.One;
-
-            return result;
+            return new(
+                new(xaxis, default),
+                new(yaxis, default),
+                new(zaxis, default),
+                new(objectPosition, Scalar<T>.One));
         }
 
         /// <summary>Creates a cylindrical billboard that rotates around a specified axis.</summary>
@@ -742,29 +549,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                 zaxis = Vector3<T>.Normalize(Vector3<T>.Cross(xaxis, yaxis));
             }
 
-            Matrix4x4<T> result;
-
-            result.M11 = xaxis.X;
-            result.M12 = xaxis.Y;
-            result.M13 = xaxis.Z;
-            result.M14 = Scalar<T>.Zero;
-
-            result.M21 = yaxis.X;
-            result.M22 = yaxis.Y;
-            result.M23 = yaxis.Z;
-            result.M24 = Scalar<T>.Zero;
-
-            result.M31 = zaxis.X;
-            result.M32 = zaxis.Y;
-            result.M33 = zaxis.Z;
-            result.M34 = Scalar<T>.Zero;
-
-            result.M41 = objectPosition.X;
-            result.M42 = objectPosition.Y;
-            result.M43 = objectPosition.Z;
-            result.M44 = Scalar<T>.One;
-
-            return result;
+            return new(
+                new(xaxis, default),
+                new(yaxis, default),
+                new(zaxis, default),
+                new(objectPosition, Scalar<T>.One));
         }
 
         /// <summary>Creates a matrix that rotates around an arbitrary vector.</summary>
@@ -957,7 +746,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
-            Matrix4x4<T> result;
+            Matrix4x4<T> result = default;
 
             result.M11 = Scalar.Divide(Scalar.Multiply(Scalar<T>.Two, nearPlaneDistance), width);
             result.M12 = result.M13 = result.M14 = Scalar<T>.Zero;
@@ -1001,7 +790,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T yScale = Scalar.Inverse(Scalar.Tan(Scalar.Divide(fieldOfView, Scalar<T>.Two)));
             T xScale = Scalar.Divide(yScale, aspectRatio);
 
-            Matrix4x4<T> result;
+            Matrix4x4<T> result = default;
 
             result.M11 = xScale;
             result.M12 = result.M13 = result.M14 = Scalar<T>.Zero;
@@ -1039,7 +828,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
-            Matrix4x4<T> result;
+            Matrix4x4<T> result = default;
 
             result.M11 = Scalar.Divide(Scalar.Multiply(Scalar<T>.Two, nearPlaneDistance), Scalar.Subtract(right, left));
             result.M12 = result.M13 = result.M14 = Scalar<T>.Zero;
@@ -1757,6 +1546,9 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
 
                 T invDet = Scalar.Inverse(det);
 
+                // TODO: Vectorize
+                result = default;
+                
                 result.M11 = Scalar.Multiply(a11, invDet);
                 result.M21 = Scalar.Multiply(a12, invDet);
                 result.M31 = Scalar.Multiply(a13, invDet);
@@ -1902,9 +1694,9 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                         matrix.M42,
                         matrix.M43);
 
-                    pVectorBasis[0] = (Vector3<T>*)&matTemp.M11;
-                    pVectorBasis[1] = (Vector3<T>*)&matTemp.M21;
-                    pVectorBasis[2] = (Vector3<T>*)&matTemp.M31;
+                    pVectorBasis[0] = (Vector3<T>*)&matTemp.Row1;
+                    pVectorBasis[1] = (Vector3<T>*)&matTemp.Row2;
+                    pVectorBasis[2] = (Vector3<T>*)&matTemp.Row3;
 
                     *(pVectorBasis[0]) = new Vector3<T>(matrix.M11, matrix.M12, matrix.M13);
                     *(pVectorBasis[1]) = new Vector3<T>(matrix.M21, matrix.M22, matrix.M23);
@@ -2073,52 +1865,12 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The interpolated matrix.</returns>
         public static unsafe Matrix4x4<T> Lerp(Matrix4x4<T> matrix1, Matrix4x4<T> matrix2, T amount)
         {
-            /*if (AdvSimd.IsSupported)
-            {
-                Vector128<T> amountVec = Vector128.Create(amount);
-                AdvSimd.Store(&matrix1.M11, VectorMath.Lerp(AdvSimd.LoadVector128(&matrix1.M11), AdvSimd.LoadVector128(&matrix2.M11), amountVec));
-                AdvSimd.Store(&matrix1.M21, VectorMath.Lerp(AdvSimd.LoadVector128(&matrix1.M21), AdvSimd.LoadVector128(&matrix2.M21), amountVec));
-                AdvSimd.Store(&matrix1.M31, VectorMath.Lerp(AdvSimd.LoadVector128(&matrix1.M31), AdvSimd.LoadVector128(&matrix2.M31), amountVec));
-                AdvSimd.Store(&matrix1.M41, VectorMath.Lerp(AdvSimd.LoadVector128(&matrix1.M41), AdvSimd.LoadVector128(&matrix2.M41), amountVec));
-                return matrix1;
-            }
-            else if (Sse.IsSupported)
-            {
-                Vector128<T> amountVec = Vector128.Create(amount);
-                Sse.Store(&matrix1.M11, VectorMath.Lerp(Sse.LoadVector128(&matrix1.M11), Sse.LoadVector128(&matrix2.M11), amountVec));
-                Sse.Store(&matrix1.M21, VectorMath.Lerp(Sse.LoadVector128(&matrix1.M21), Sse.LoadVector128(&matrix2.M21), amountVec));
-                Sse.Store(&matrix1.M31, VectorMath.Lerp(Sse.LoadVector128(&matrix1.M31), Sse.LoadVector128(&matrix2.M31), amountVec));
-                Sse.Store(&matrix1.M41, VectorMath.Lerp(Sse.LoadVector128(&matrix1.M41), Sse.LoadVector128(&matrix2.M41), amountVec));
-                return matrix1;
-            }*/
-
-            Matrix4x4<T> result;
-
-            // First row
-            result.M11 = Scalar.Add(matrix1.M11, Scalar.Multiply(Scalar.Subtract(matrix2.M11, matrix1.M11), amount));
-            result.M12 = Scalar.Add(matrix1.M12, Scalar.Multiply(Scalar.Subtract(matrix2.M12, matrix1.M12), amount));
-            result.M13 = Scalar.Add(matrix1.M13, Scalar.Multiply(Scalar.Subtract(matrix2.M13, matrix1.M13), amount));
-            result.M14 = Scalar.Add(matrix1.M14, Scalar.Multiply(Scalar.Subtract(matrix2.M14, matrix1.M14), amount));
-
-            // Second row
-            result.M21 = Scalar.Add(matrix1.M21, Scalar.Multiply(Scalar.Subtract(matrix2.M21, matrix1.M21), amount));
-            result.M22 = Scalar.Add(matrix1.M22, Scalar.Multiply(Scalar.Subtract(matrix2.M22, matrix1.M22), amount));
-            result.M23 = Scalar.Add(matrix1.M23, Scalar.Multiply(Scalar.Subtract(matrix2.M23, matrix1.M23), amount));
-            result.M24 = Scalar.Add(matrix1.M24, Scalar.Multiply(Scalar.Subtract(matrix2.M24, matrix1.M24), amount));
-
-            // Third row
-            result.M31 = Scalar.Add(matrix1.M31, Scalar.Multiply(Scalar.Subtract(matrix2.M31, matrix1.M31), amount));
-            result.M32 = Scalar.Add(matrix1.M32, Scalar.Multiply(Scalar.Subtract(matrix2.M32, matrix1.M32), amount));
-            result.M33 = Scalar.Add(matrix1.M33, Scalar.Multiply(Scalar.Subtract(matrix2.M33, matrix1.M33), amount));
-            result.M34 = Scalar.Add(matrix1.M34, Scalar.Multiply(Scalar.Subtract(matrix2.M34, matrix1.M34), amount));
-
-            // Fourth row
-            result.M41 = Scalar.Add(matrix1.M41, Scalar.Multiply(Scalar.Subtract(matrix2.M41, matrix1.M41), amount));
-            result.M42 = Scalar.Add(matrix1.M42, Scalar.Multiply(Scalar.Subtract(matrix2.M42, matrix1.M42), amount));
-            result.M43 = Scalar.Add(matrix1.M43, Scalar.Multiply(Scalar.Subtract(matrix2.M43, matrix1.M43), amount));
-            result.M44 = Scalar.Add(matrix1.M44, Scalar.Multiply(Scalar.Subtract(matrix2.M44, matrix1.M44), amount));
-
-            return result;
+            return new(
+                    Vector4<T>.Lerp(matrix1.Row1, matrix2.Row1, amount),
+                    Vector4<T>.Lerp(matrix1.Row2, matrix2.Row2, amount),
+                    Vector4<T>.Lerp(matrix1.Row3, matrix2.Row3, amount),
+                    Vector4<T>.Lerp(matrix1.Row4, matrix2.Row4, amount)
+                );
         }
 
         /// <summary>Transforms the given matrix by applying the given Quaternion rotation.</summary>
@@ -2154,33 +1906,16 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T q23 = Scalar.Add(yz2, wx2);
             T q33 = Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), yy2);
 
-            Matrix4x4<T> result;
+            var q1 = new Vector3<T>(q11, q12, q13);
+            var q2 = new Vector3<T>(q21, q22, q23);
+            var q3 = new Vector3<T>(q31, q32, q33);
 
-            // First row
-            result.M11 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M11, q11), Scalar.Multiply(value.M12, q21)), Scalar.Multiply(value.M13, q31));
-            result.M12 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M11, q12), Scalar.Multiply(value.M12, q22)), Scalar.Multiply(value.M13, q32));
-            result.M13 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M11, q13), Scalar.Multiply(value.M12, q23)), Scalar.Multiply(value.M13, q33));
-            result.M14 = value.M14;
-
-            // Second row
-            result.M21 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M21, q11), Scalar.Multiply(value.M22, q21)), Scalar.Multiply(value.M23, q31));
-            result.M22 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M21, q12), Scalar.Multiply(value.M22, q22)), Scalar.Multiply(value.M23, q32));
-            result.M23 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M21, q13), Scalar.Multiply(value.M22, q23)), Scalar.Multiply(value.M23, q33));
-            result.M24 = value.M24;
-
-            // Third row
-            result.M31 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M31, q11), Scalar.Multiply(value.M32, q21)), Scalar.Multiply(value.M33, q31));
-            result.M32 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M31, q12), Scalar.Multiply(value.M32, q22)), Scalar.Multiply(value.M33, q32));
-            result.M33 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M31, q13), Scalar.Multiply(value.M32, q23)), Scalar.Multiply(value.M33, q33));
-            result.M34 = value.M34;
-
-            // Fourth row
-            result.M41 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M41, q11), Scalar.Multiply(value.M42, q21)), Scalar.Multiply(value.M43, q31));
-            result.M42 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M41, q12), Scalar.Multiply(value.M42, q22)), Scalar.Multiply(value.M43, q32));
-            result.M43 = Scalar.Add(Scalar.Add(Scalar.Multiply(value.M41, q13), Scalar.Multiply(value.M42, q23)), Scalar.Multiply(value.M43, q33));
-            result.M44 = value.M44;
-
-            return result;
+            return new(
+                new(value.M11 * q1 + value.M12 * q2 + value.M13 * q3, value.M14),
+                new (value.M21 * q1 + value.M22 * q2 + value.M23 * q3, value.M24),
+                new (value.M31 * q1 + value.M32 * q2 + value.M33 * q3, value.M34),
+                new (value.M41 * q1 + value.M42 * q2 + value.M43 * q3, value.M44)
+                );
         }
 
         /// <summary>Transposes the rows and columns of a matrix.</summary>
@@ -2188,70 +1923,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The transposed matrix.</returns>
         public static unsafe Matrix4x4<T> Transpose(Matrix4x4<T> matrix)
         {
-            /*if (AdvSimd.Arm64.IsSupported)
-            {
-                // This implementation is based on the DirectX Math Library XMMatrixTranspose method
-                // https://github.com/microsoft/DirectXMath/blob/master/Inc/DirectXMathMatrix.inl
-
-                Vector128<T> M11 = AdvSimd.LoadVector128(&matrix.M11);
-                Vector128<T> M31 = AdvSimd.LoadVector128(&matrix.M31);
-
-                Vector128<T> P00 = AdvSimd.Arm64.ZipLow(M11, M31);
-                Vector128<T> P01 = AdvSimd.Arm64.ZipHigh(M11, M31);
-
-                Vector128<T> M21 = AdvSimd.LoadVector128(&matrix.M21);
-                Vector128<T> M41 = AdvSimd.LoadVector128(&matrix.M41);
-
-                Vector128<T> P10 = AdvSimd.Arm64.ZipLow(M21, M41);
-                Vector128<T> P11 = AdvSimd.Arm64.ZipHigh(M21, M41);
-
-                AdvSimd.Store(&matrix.M11, AdvSimd.Arm64.ZipLow(P00, P10));
-                AdvSimd.Store(&matrix.M21, AdvSimd.Arm64.ZipHigh(P00, P10));
-                AdvSimd.Store(&matrix.M31, AdvSimd.Arm64.ZipLow(P01, P11));
-                AdvSimd.Store(&matrix.M41, AdvSimd.Arm64.ZipHigh(P01, P11));
-
-                return matrix;
-            }
-            else if (Sse.IsSupported)
-            {
-                Vector128<T> row1 = Sse.LoadVector128(&matrix.M11);
-                Vector128<T> row2 = Sse.LoadVector128(&matrix.M21);
-                Vector128<T> row3 = Sse.LoadVector128(&matrix.M31);
-                Vector128<T> row4 = Sse.LoadVector128(&matrix.M41);
-
-                Vector128<T> l12 = Sse.UnpackLow(row1, row2);
-                Vector128<T> l34 = Sse.UnpackLow(row3, row4);
-                Vector128<T> h12 = Sse.UnpackHigh(row1, row2);
-                Vector128<T> h34 = Sse.UnpackHigh(row3, row4);
-
-                Sse.Store(&matrix.M11, Sse.MoveLowToHigh(l12, l34));
-                Sse.Store(&matrix.M21, Sse.MoveHighToLow(l34, l12));
-                Sse.Store(&matrix.M31, Sse.MoveLowToHigh(h12, h34));
-                Sse.Store(&matrix.M41, Sse.MoveHighToLow(h34, h12));
-
-                return matrix;
-            }*/
-
-            Matrix4x4<T> result;
-
-            result.M11 = matrix.M11;
-            result.M12 = matrix.M21;
-            result.M13 = matrix.M31;
-            result.M14 = matrix.M41;
-            result.M21 = matrix.M12;
-            result.M22 = matrix.M22;
-            result.M23 = matrix.M32;
-            result.M24 = matrix.M42;
-            result.M31 = matrix.M13;
-            result.M32 = matrix.M23;
-            result.M33 = matrix.M33;
-            result.M34 = matrix.M43;
-            result.M41 = matrix.M14;
-            result.M42 = matrix.M24;
-            result.M43 = matrix.M34;
-            result.M44 = matrix.M44;
-
-            return result;
+            return new(matrix.Column1, matrix.Column2, matrix.Column3, matrix.Column4);
         }
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>

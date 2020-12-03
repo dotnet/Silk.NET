@@ -18,183 +18,217 @@ namespace Silk.NET.Maths
             Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero
         );
 
+        /// <summary>
+        /// Row 1 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Row1;
+        
+        /// <summary>
+        /// Row 2 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Row2;
+        
+        /// <summary>
+        /// Row 3 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector4<T> Row3;
+
+        /// <summary>
+        /// Column 1 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector3<T> Column1 => new(Row1.X, Row2.X, Row3.X);
+        
+        /// <summary>
+        /// Column 2 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector3<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y);
+        
+        /// <summary>
+        /// Column 3 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector3<T> Column3 => new(Row1.Z, Row2.Z, Row3.Z);
+        
+        /// <summary>
+        /// Column 4 of the matrix.
+        /// </summary>
+        [IgnoreDataMember]
+        public Vector3<T> Column4 => new(Row1.W, Row2.W, Row3.W);
+
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
         [DataMember]
-        public T M11;
+        public T M11
+        {
+            get => Row1.X;
+            set => Row1.X = value;
+        }
 
         /// <summary>Value at row 1, column 2 of the matrix.</summary>
         [DataMember]
-        public T M12;
+        public T M12
+        {
+            get => Row1.Y;
+            set => Row1.Y = value;
+        }
 
         /// <summary>Value at row 1, column 3 of the matrix.</summary>
         [DataMember]
-        public T M13;
+        public T M13
+        {
+            get => Row1.Z;
+            set => Row1.Z = value;
+        }
 
         /// <summary>Value at row 1, column 4 of the matrix.</summary>
         [DataMember]
-        public T M14;
+        public T M14
+        {
+            get => Row1.W;
+            set => Row1.W = value;
+        }
 
         /// <summary>Value at row 2, column 1 of the matrix.</summary>
         [DataMember]
-        public T M21;
+        public T M21
+        {
+            get => Row2.X;
+            set => Row2.X = value;
+        }
 
         /// <summary>Value at row 2, column 2 of the matrix.</summary>
         [DataMember]
-        public T M22;
+        public T M22
+        {
+            get => Row2.Y;
+            set => Row2.Y = value;
+        }
 
         /// <summary>Value at row 2, column 3 of the matrix.</summary>
         [DataMember]
-        public T M23;
+        public T M23
+        {
+            get => Row2.Z;
+            set => Row2.Z = value;
+        }
 
         /// <summary>Value at row 2, column 4 of the matrix.</summary>
         [DataMember]
-        public T M24;
+        public T M24
+        {
+            get => Row2.W;
+            set => Row2.W = value;
+        }
 
         /// <summary>Value at row 3, column 1 of the matrix.</summary>
         [DataMember]
-        public T M31;
+        public T M31
+        {
+            get => Row3.X;
+            set => Row3.X = value;
+        }
 
         /// <summary>Value at row 3, column 2 of the matrix.</summary>
         [DataMember]
-        public T M32;
+        public T M32
+        {
+            get => Row3.Y;
+            set => Row3.Y = value;
+        }
 
         /// <summary>Value at row 3, column 3 of the matrix.</summary>
         [DataMember]
-        public T M33;
+        public T M33
+        {
+            get => Row3.Z;
+            set => Row3.Z = value;
+        }
 
         /// <summary>Value at row 3, column 4 of the matrix.</summary>
         [DataMember]
-        public T M34;
+        public T M34
+        {
+            get => Row3.W;
+            set => Row3.W = value;
+        }
+
+        /// <summary>
+        /// Constructs a Matrix3x4 from the given rows.
+        /// </summary>
+        /// <param name="row1"></param>
+        /// <param name="row2"></param>
+        /// <param name="row3"></param>
+        public Matrix3x4(Vector4<T> row1, Vector4<T> row2, Vector4<T> row3)
+        {
+            Row1 = row1;
+            Row2 = row2;
+            Row3 = row3;
+        }
 
         /// <summary>Constructs a Matrix3x4 from the given components.</summary>
-        public Matrix3x4(T m11, T m12, T m13, T m14,
-                         T m21, T m22, T m23, T m24,
-                         T m31, T m32, T m33, T m34)
-            => (M11, M12, M13, M14,
-                M21, M22, M23, M24,
-                M31, M32, M33, M34)
-            =  (m11, m12, m13, m14,
-                m21, m22, m23, m24,
-                m31, m32, m33, m34);
+        public Matrix3x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34)
+        {
+            Row1 = new(m11, m12, m13, m14);
+            Row2 = new(m21, m22, m23, m24);
+            Row3 = new(m31, m32, m33, m34);
+        }
 
         /// <summary>Constructs a Matrix3x4 from the given Matrix3x2.</summary>
         /// <param name="value">The source Matrix3x2.</param>
         public Matrix3x4(Matrix3x2<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = Scalar<T>.Zero;
-            M14 = Scalar<T>.Zero;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = Scalar<T>.Zero;
-            M24 = Scalar<T>.Zero;
-
-            M31 = Scalar<T>.Zero;
-            M32 = Scalar<T>.Zero;
-            M33 = Scalar<T>.One;
-            M34 = Scalar<T>.Zero;
+            Row1 = new(value.M11, value.M12, default, default);
+            Row2 = new(value.M21, value.M22, default, default);
+            Row3 = new(value.M31, value.M32, Scalar<T>.One, default);
         }
 
         /// <summary>Constructs a Matrix3x4 from the given Matrix4x3.</summary>
         /// <param name="value">The source Matrix4x3.</param>
         public Matrix3x4(Matrix4x3<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = value.M13;
-            M14 = Scalar<T>.Zero;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = value.M23;
-            M24 = Scalar<T>.Zero;
-
-            M31 = value.M31;
-            M32 = value.M32;
-            M33 = value.M33;
-            M34 = Scalar<T>.Zero;
+            Row1 = new(value.M11, value.M12, value.M13, default);
+            Row2 = new(value.M21, value.M22, value.M23, default);
+            Row3 = new(value.M31, value.M32, value.M33, default);
         }
 
         /// <summary>Constructs a Matrix3x4 from the given Matrix3x4.</summary>
         /// <param name="value">The source Matrix3x4.</param>
         public Matrix3x4(Matrix3x4<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = value.M13;
-            M14 = value.M14;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = value.M23;
-            M24 = value.M24;
-
-            M31 = value.M31;
-            M32 = value.M32;
-            M33 = value.M33;
-            M34 = value.M34;
+            Row1 = new(value.M11, value.M12, value.M13, value.M14);
+            Row2 = new(value.M21, value.M22, value.M23, value.M24);
+            Row3 = new(value.M31, value.M32, value.M33, value.M34);
         }
 
         /// <summary>Constructs a Matrix4x4 from the given Matrix3x3.</summary>
         /// <param name="value">The source Matrix3x3.</param>
         public Matrix3x4(Matrix3x3<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = value.M13;
-            M14 = Scalar<T>.Zero;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = value.M23;
-            M24 = Scalar<T>.Zero;
-
-            M31 = Scalar<T>.Zero;
-            M32 = Scalar<T>.Zero;
-            M33 = Scalar<T>.One;
-            M34 = Scalar<T>.Zero;
+            Row1 = new(value.M11, value.M12, value.M13, default);
+            Row2 = new(value.M21, value.M22, value.M23, default);
+            Row3 = new(value.M31, value.M32, value.M33, default);
         }
 
         /// <summary>Constructs a Matrix4x4 from the given Matrix2x4.</summary>
         /// <param name="value">The source Matrix3x4.</param>
         public Matrix3x4(Matrix2x4<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = value.M13;
-            M14 = value.M14;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = value.M23;
-            M24 = value.M24;
-
-            M31 = Scalar<T>.Zero;
-            M32 = Scalar<T>.Zero;
-            M33 = Scalar<T>.One;
-            M34 = Scalar<T>.Zero;
+            Row1 = new(value.M11, value.M12, value.M13, value.M14);
+            Row2 = new(value.M21, value.M22, value.M23, value.M24);
+            Row3 = Vector4<T>.UnitZ;
         }
         
         /// <summary>Constructs a Matrix4x4 from the given Matrix4x2.</summary>
         /// <param name="value">The source Matrix3x4.</param>
         public Matrix3x4(Matrix4x2<T> value)
         {
-            M11 = value.M11;
-            M12 = value.M12;
-            M13 = Scalar<T>.Zero;
-            M14 = Scalar<T>.Zero;
-
-            M21 = value.M21;
-            M22 = value.M22;
-            M23 = Scalar<T>.Zero;
-            M24 = Scalar<T>.Zero;
-
-            M31 = value.M31;
-            M32 = value.M32;
-            M33 = Scalar<T>.One;
-            M34 = Scalar<T>.Zero;
+            Row1 = new(value.M11, value.M12, default, default);
+            Row2 = new(value.M21, value.M22, default, default);
+            Row3 = new(value.M31, value.M32, Scalar<T>.One, default);
         }
         
         /// <summary>Returns the multiplicative identity matrix.</summary>
@@ -217,39 +251,7 @@ namespace Silk.NET.Maths
         /// <returns>The resulting matrix.</returns>
         public static unsafe Matrix3x4<T> operator +(Matrix3x4<T> value1, Matrix3x4<T> value2)
         {
-            /*if (AdvSimd.IsSupported)
-            {
-                AdvSimd.Store(&value1.M11, AdvSimd.Add(AdvSimd.LoadVector128(&value1.M11), AdvSimd.LoadVector128(&value2.M11)));
-                AdvSimd.Store(&value1.M21, AdvSimd.Add(AdvSimd.LoadVector128(&value1.M21), AdvSimd.LoadVector128(&value2.M21)));
-                AdvSimd.Store(&value1.M31, AdvSimd.Add(AdvSimd.LoadVector128(&value1.M31), AdvSimd.LoadVector128(&value2.M31)));
-                AdvSimd.Store(&value1.M41, AdvSimd.Add(AdvSimd.LoadVector128(&value1.M41), AdvSimd.LoadVector128(&value2.M41)));
-                return value1;
-            }
-            else if (Sse.IsSupported)
-            {
-                Sse.Store(&value1.M11, Sse.Add(Sse.LoadVector128(&value1.M11), Sse.LoadVector128(&value2.M11)));
-                Sse.Store(&value1.M21, Sse.Add(Sse.LoadVector128(&value1.M21), Sse.LoadVector128(&value2.M21)));
-                Sse.Store(&value1.M31, Sse.Add(Sse.LoadVector128(&value1.M31), Sse.LoadVector128(&value2.M31)));
-                Sse.Store(&value1.M41, Sse.Add(Sse.LoadVector128(&value1.M41), Sse.LoadVector128(&value2.M41)));
-                return value1;
-            }*/
-
-            Matrix3x4<T> m;
-
-            m.M11 = Scalar.Add(value1.M11, value2.M11);
-            m.M12 = Scalar.Add(value1.M12, value2.M12);
-            m.M13 = Scalar.Add(value1.M13, value2.M13);
-            m.M14 = Scalar.Add(value1.M14, value2.M14);
-            m.M21 = Scalar.Add(value1.M21, value2.M21);
-            m.M22 = Scalar.Add(value1.M22, value2.M22);
-            m.M23 = Scalar.Add(value1.M23, value2.M23);
-            m.M24 = Scalar.Add(value1.M24, value2.M24);
-            m.M31 = Scalar.Add(value1.M31, value2.M31);
-            m.M32 = Scalar.Add(value1.M32, value2.M32);
-            m.M33 = Scalar.Add(value1.M33, value2.M33);
-            m.M34 = Scalar.Add(value1.M34, value2.M34);
-            
-            return m;
+            return new(value1.Row1 + value2.Row1, value1.Row2 + value2.Row2, value1.Row3 + value2.Row3);
         }
 
         /// <summary>Returns a boolean indicating whether the given two matrices are equal.</summary>
@@ -288,24 +290,11 @@ namespace Silk.NET.Maths
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Matrix3x3<T> operator *(Matrix3x4<T> value1, Matrix4x3<T> value2)
         {
-            Matrix3x3<T> m;
-
-            // First row
-            m.M11 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M11), Scalar.Multiply(value1.M12, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M31), Scalar.Multiply(value1.M14, value2.M41)));
-            m.M12 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M12), Scalar.Multiply(value1.M12, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M32), Scalar.Multiply(value1.M14, value2.M42)));
-            m.M13 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M13), Scalar.Multiply(value1.M12, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M13, value2.M33), Scalar.Multiply(value1.M14, value2.M43)));
-
-            // Second row
-            m.M21 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M11), Scalar.Multiply(value1.M22, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M31), Scalar.Multiply(value1.M24, value2.M41)));
-            m.M22 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M12), Scalar.Multiply(value1.M22, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M32), Scalar.Multiply(value1.M24, value2.M42)));
-            m.M23 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M13), Scalar.Multiply(value1.M22, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M23, value2.M33), Scalar.Multiply(value1.M24, value2.M43)));
-
-            // Third row
-            m.M31 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M11), Scalar.Multiply(value1.M32, value2.M21)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M31), Scalar.Multiply(value1.M34, value2.M41)));
-            m.M32 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M12), Scalar.Multiply(value1.M32, value2.M22)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M32), Scalar.Multiply(value1.M34, value2.M42)));
-            m.M33 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M13), Scalar.Multiply(value1.M32, value2.M23)), Scalar.Add(Scalar.Multiply(value1.M33, value2.M33), Scalar.Multiply(value1.M34, value2.M43)));
-
-           return m;
+            return new(
+                    value1.M11 * value2.Row1 + value1.M12 * value2.Row2 + value1.M13 * value2.Row3 + value1.M14 * value2.Row4,
+                    value1.M21 * value2.Row1 + value1.M22 * value2.Row2 + value1.M23 * value2.Row3 + value1.M24 * value2.Row4,
+                    value1.M31 * value2.Row1 + value1.M32 * value2.Row2 + value1.M33 * value2.Row3 + value1.M34 * value2.Row4
+                );
         }
         
         /// <summary>Multiplies a vector by a matrix.</summary>
@@ -314,15 +303,7 @@ namespace Silk.NET.Maths
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Vector4<T> operator *(Vector3<T> value1, Matrix3x4<T> value2)
         {
-            Vector4<T> m;
-
-            // First row
-            m.X = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M11), Scalar.Multiply(value1.Y, value2.M21)), Scalar.Multiply(value1.Z, value2.M31));
-            m.Y = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M12), Scalar.Multiply(value1.Y, value2.M22)), Scalar.Multiply(value1.Z, value2.M32));
-            m.Z = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M13), Scalar.Multiply(value1.Y, value2.M23)), Scalar.Multiply(value1.Z, value2.M33));
-            m.W = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.X, value2.M14), Scalar.Multiply(value1.Y, value2.M24)), Scalar.Multiply(value1.Z, value2.M34));
-            
-           return m;
+            return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3;
         }
         
                 /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -331,27 +312,11 @@ namespace Silk.NET.Maths
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Matrix3x4<T> operator *(Matrix3x3<T> value1, Matrix3x4<T> value2)
         {
-            Matrix3x4<T> m;
-
-            // First row
-            m.M11 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M11), Scalar.Multiply(value1.M12, value2.M21)), Scalar.Multiply(value1.M13, value2.M31));
-            m.M12 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M12), Scalar.Multiply(value1.M12, value2.M22)), Scalar.Multiply(value1.M13, value2.M32));
-            m.M13 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M13), Scalar.Multiply(value1.M12, value2.M23)), Scalar.Multiply(value1.M13, value2.M33));
-            m.M14 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M11, value2.M14), Scalar.Multiply(value1.M12, value2.M24)), Scalar.Multiply(value1.M13, value2.M34));
-
-            // Second row
-            m.M21 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M11), Scalar.Multiply(value1.M22, value2.M21)), Scalar.Multiply(value1.M23, value2.M31));
-            m.M22 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M12), Scalar.Multiply(value1.M22, value2.M22)), Scalar.Multiply(value1.M23, value2.M32));
-            m.M23 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M13), Scalar.Multiply(value1.M22, value2.M23)), Scalar.Multiply(value1.M23, value2.M33));
-            m.M24 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M21, value2.M14), Scalar.Multiply(value1.M22, value2.M24)), Scalar.Multiply(value1.M23, value2.M34));
-
-            // Third row
-            m.M31 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M11), Scalar.Multiply(value1.M32, value2.M21)), Scalar.Multiply(value1.M33, value2.M31));
-            m.M32 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M12), Scalar.Multiply(value1.M32, value2.M22)), Scalar.Multiply(value1.M33, value2.M32));
-            m.M33 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M13), Scalar.Multiply(value1.M32, value2.M23)), Scalar.Multiply(value1.M33, value2.M33));
-            m.M34 = Scalar.Add(Scalar.Add(Scalar.Multiply(value1.M31, value2.M14), Scalar.Multiply(value1.M32, value2.M24)), Scalar.Multiply(value1.M33, value2.M34));
-
-            return m;
+            return new(
+                    value1.M11 * value2.Row1 + value1.M12 * value2.Row2 + value1.M13 * value2.Row3,
+                    value1.M21 * value2.Row1 + value1.M22 * value2.Row2 + value1.M23 * value2.Row3,
+                    value1.M31 * value2.Row1 + value1.M32 * value2.Row2 + value1.M33 * value2.Row3
+                );
         }
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>
@@ -360,23 +325,7 @@ namespace Silk.NET.Maths
         /// <returns>The scaled matrix.</returns>
         public static unsafe Matrix3x4<T> operator *(Matrix3x4<T> value1, T value2)
         {
-            Matrix3x4<T> m;
-
-            m.M11 = Scalar.Multiply(value1.M11, value2);
-            m.M12 = Scalar.Multiply(value1.M12, value2);
-            m.M13 = Scalar.Multiply(value1.M13, value2);
-            m.M14 = Scalar.Multiply(value1.M14, value2);
-            m.M21 = Scalar.Multiply(value1.M21, value2);
-            m.M22 = Scalar.Multiply(value1.M22, value2);
-            m.M23 = Scalar.Multiply(value1.M23, value2);
-            m.M24 = Scalar.Multiply(value1.M24, value2);
-            m.M31 = Scalar.Multiply(value1.M31, value2);
-            m.M32 = Scalar.Multiply(value1.M32, value2);
-            m.M33 = Scalar.Multiply(value1.M33, value2);
-            m.M34 = Scalar.Multiply(value1.M34, value2);
-            
-
-            return m;
+            return new(value1.Row1 * value2, value1.Row2 * value2, value1.Row3 * value2);
         }
 
         /// <summary>Subtracts the second matrix from the first.</summary>
@@ -385,22 +334,7 @@ namespace Silk.NET.Maths
         /// <returns>The result of the subtraction.</returns>
         public static unsafe Matrix3x4<T> operator -(Matrix3x4<T> value1, Matrix3x4<T> value2)
         {
-            Matrix3x4<T> m;
-
-            m.M11 = Scalar.Subtract(value1.M11, value2.M11);
-            m.M12 = Scalar.Subtract(value1.M12, value2.M12);
-            m.M13 = Scalar.Subtract(value1.M13, value2.M13);
-            m.M14 = Scalar.Subtract(value1.M14, value2.M14);
-            m.M21 = Scalar.Subtract(value1.M21, value2.M21);
-            m.M22 = Scalar.Subtract(value1.M22, value2.M22);
-            m.M23 = Scalar.Subtract(value1.M23, value2.M23);
-            m.M24 = Scalar.Subtract(value1.M24, value2.M24);
-            m.M31 = Scalar.Subtract(value1.M31, value2.M31);
-            m.M32 = Scalar.Subtract(value1.M32, value2.M32);
-            m.M33 = Scalar.Subtract(value1.M33, value2.M33);
-            m.M34 = Scalar.Subtract(value1.M34, value2.M34);
-            
-            return m;
+            return new(value1.Row1 - value2.Row1, value1.Row2 - value2.Row2, value1.Row3 - value2.Row3);
         }
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
@@ -408,22 +342,7 @@ namespace Silk.NET.Maths
         /// <returns>The negated matrix.</returns>
         public static unsafe Matrix3x4<T> operator -(Matrix3x4<T> value)
         {
-            Matrix3x4<T> m;
-
-            m.M11 = Scalar.Negate(value.M11);
-            m.M12 = Scalar.Negate(value.M12);
-            m.M13 = Scalar.Negate(value.M13);
-            m.M14 = Scalar.Negate(value.M14);
-            m.M21 = Scalar.Negate(value.M21);
-            m.M22 = Scalar.Negate(value.M22);
-            m.M23 = Scalar.Negate(value.M23);
-            m.M24 = Scalar.Negate(value.M24);
-            m.M31 = Scalar.Negate(value.M31);
-            m.M32 = Scalar.Negate(value.M32);
-            m.M33 = Scalar.Negate(value.M33);
-            m.M34 = Scalar.Negate(value.M34);
-            
-            return m;
+            return new(-value.Row1, -value.Row2, -value.Row3);
         }
 
         /// <summary>Adds two matrices together.</summary>
@@ -507,46 +426,11 @@ namespace Silk.NET.Maths
         /// <returns>The interpolated matrix.</returns>
         public static unsafe Matrix3x4<T> Lerp(Matrix3x4<T> matrix1, Matrix3x4<T> matrix2, T amount)
         {
-            /*if (AdvSimd.IsSupported)
-            {
-                Vector128<T> amountVec = Vector128.Create(amount);
-                AdvSimd.Store(&matrix1.M11, VectorMath.Lerp(AdvSimd.LoadVector128(&matrix1.M11), AdvSimd.LoadVector128(&matrix2.M11), amountVec));
-                AdvSimd.Store(&matrix1.M21, VectorMath.Lerp(AdvSimd.LoadVector128(&matrix1.M21), AdvSimd.LoadVector128(&matrix2.M21), amountVec));
-                AdvSimd.Store(&matrix1.M31, VectorMath.Lerp(AdvSimd.LoadVector128(&matrix1.M31), AdvSimd.LoadVector128(&matrix2.M31), amountVec));
-                AdvSimd.Store(&matrix1.M41, VectorMath.Lerp(AdvSimd.LoadVector128(&matrix1.M41), AdvSimd.LoadVector128(&matrix2.M41), amountVec));
-                return matrix1;
-            }
-            else if (Sse.IsSupported)
-            {
-                Vector128<T> amountVec = Vector128.Create(amount);
-                Sse.Store(&matrix1.M11, VectorMath.Lerp(Sse.LoadVector128(&matrix1.M11), Sse.LoadVector128(&matrix2.M11), amountVec));
-                Sse.Store(&matrix1.M21, VectorMath.Lerp(Sse.LoadVector128(&matrix1.M21), Sse.LoadVector128(&matrix2.M21), amountVec));
-                Sse.Store(&matrix1.M31, VectorMath.Lerp(Sse.LoadVector128(&matrix1.M31), Sse.LoadVector128(&matrix2.M31), amountVec));
-                Sse.Store(&matrix1.M41, VectorMath.Lerp(Sse.LoadVector128(&matrix1.M41), Sse.LoadVector128(&matrix2.M41), amountVec));
-                return matrix1;
-            }*/
-
-            Matrix3x4<T> result;
-
-            // First row
-            result.M11 = Scalar.Add(matrix1.M11, Scalar.Multiply(Scalar.Subtract(matrix2.M11, matrix1.M11), amount));
-            result.M12 = Scalar.Add(matrix1.M12, Scalar.Multiply(Scalar.Subtract(matrix2.M12, matrix1.M12), amount));
-            result.M13 = Scalar.Add(matrix1.M13, Scalar.Multiply(Scalar.Subtract(matrix2.M13, matrix1.M13), amount));
-            result.M14 = Scalar.Add(matrix1.M14, Scalar.Multiply(Scalar.Subtract(matrix2.M14, matrix1.M14), amount));
-
-            // Second row
-            result.M21 = Scalar.Add(matrix1.M21, Scalar.Multiply(Scalar.Subtract(matrix2.M21, matrix1.M21), amount));
-            result.M22 = Scalar.Add(matrix1.M22, Scalar.Multiply(Scalar.Subtract(matrix2.M22, matrix1.M22), amount));
-            result.M23 = Scalar.Add(matrix1.M23, Scalar.Multiply(Scalar.Subtract(matrix2.M23, matrix1.M23), amount));
-            result.M24 = Scalar.Add(matrix1.M24, Scalar.Multiply(Scalar.Subtract(matrix2.M24, matrix1.M24), amount));
-
-            // Third row
-            result.M31 = Scalar.Add(matrix1.M31, Scalar.Multiply(Scalar.Subtract(matrix2.M31, matrix1.M31), amount));
-            result.M32 = Scalar.Add(matrix1.M32, Scalar.Multiply(Scalar.Subtract(matrix2.M32, matrix1.M32), amount));
-            result.M33 = Scalar.Add(matrix1.M33, Scalar.Multiply(Scalar.Subtract(matrix2.M33, matrix1.M33), amount));
-            result.M34 = Scalar.Add(matrix1.M34, Scalar.Multiply(Scalar.Subtract(matrix2.M34, matrix1.M34), amount));
-
-            return result;
+            return new(
+                Vector4<T>.Lerp(matrix1.Row1, matrix2.Row1, amount),
+                Vector4<T>.Lerp(matrix1.Row2, matrix2.Row2, amount), 
+                Vector4<T>.Lerp(matrix1.Row3, matrix2.Row3, amount)
+            );
         }
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
