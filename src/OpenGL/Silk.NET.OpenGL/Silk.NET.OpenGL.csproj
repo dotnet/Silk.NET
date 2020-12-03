@@ -6,5 +6,9 @@
     <LangVersion>8</LangVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
+  </PropertyGroup>
+
   <Import Project="..\..\..\build\props\bindings.props" />
 </Project>

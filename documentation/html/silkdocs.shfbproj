@@ -1,0 +1,193 @@
+﻿<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Import the common properties to support NuGet restore -->
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <!-- A framework version is required for NuGet restore.  This can be any valid version -->
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <!-- The configuration and platform will be used to determine which assemblies to include from solution and
+				 project documentation sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{af3b18e9-f4ed-4197-9316-54be460ec249}</ProjectGuid>
+    <SHFBSchemaVersion>2017.9.26.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <FrameworkVersion>Cross-platform (.NET Core/.NET Standard)</FrameworkVersion>
+    <OutputPath>.\Help\</OutputPath>
+    <HtmlHelpName>Documentation</HtmlHelpName>
+    <Language>en-US</Language>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\..\src\Core\BuildTools\BuildTools.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Core\Silk.NET\Silk.NET.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Input\Extensions\Silk.NET.Input.Extensions\Silk.NET.Input.Extensions.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Input\Silk.NET.Input.Desktop\Silk.NET.Input.Desktop.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Creative\Silk.NET.OpenAL.Extensions.Creative.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Enumeration\Silk.NET.OpenAL.Extensions.Enumeration.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.EXT\Silk.NET.OpenAL.Extensions.EXT.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Soft\Silk.NET.OpenAL.Extensions.Soft.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenAL\Silk.NET.OpenAL\Silk.NET.OpenAL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.AMD\Silk.NET.OpenCL.Extensions.AMD.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.APPLE\Silk.NET.OpenCL.Extensions.APPLE.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.ARM\Silk.NET.OpenCL.Extensions.ARM.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.EXT\Silk.NET.OpenCL.Extensions.EXT.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.IMG\Silk.NET.OpenCL.Extensions.IMG.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.INTEL\Silk.NET.OpenCL.Extensions.INTEL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.KHR\Silk.NET.OpenCL.Extensions.KHR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.NV\Silk.NET.OpenCL.Extensions.NV.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Extensions\Silk.NET.OpenCL.Extensions.QCOM\Silk.NET.OpenCL.Extensions.QCOM.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenCL\Silk.NET.OpenCL\Silk.NET.OpenCL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.AMD\Silk.NET.OpenGL.Extensions.AMD.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.APPLE\Silk.NET.OpenGL.Extensions.APPLE.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ARB\Silk.NET.OpenGL.Extensions.ARB.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.EXT\Silk.NET.OpenGL.Extensions.EXT.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.INTEL\Silk.NET.OpenGL.Extensions.INTEL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.KHR\Silk.NET.OpenGL.Extensions.KHR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.MESA\Silk.NET.OpenGL.Extensions.MESA.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.NV\Silk.NET.OpenGL.Extensions.NV.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.OVR\Silk.NET.OpenGL.Extensions.OVR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.AMD\Silk.NET.OpenGL.Legacy.Extensions.AMD.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.APPLE\Silk.NET.OpenGL.Legacy.Extensions.APPLE.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.ARB\Silk.NET.OpenGL.Legacy.Extensions.ARB.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.ATI\Silk.NET.OpenGL.Legacy.Extensions.ATI.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.EXT\Silk.NET.OpenGL.Legacy.Extensions.EXT.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.GL3DFX\Silk.NET.OpenGL.Legacy.Extensions.GL3DFX.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.GREMEDY\Silk.NET.OpenGL.Legacy.Extensions.GREMEDY.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.HP\Silk.NET.OpenGL.Legacy.Extensions.HP.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.IBM\Silk.NET.OpenGL.Legacy.Extensions.IBM.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.INGR\Silk.NET.OpenGL.Legacy.Extensions.INGR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.INTEL\Silk.NET.OpenGL.Legacy.Extensions.INTEL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.KHR\Silk.NET.OpenGL.Legacy.Extensions.KHR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.MESA\Silk.NET.OpenGL.Legacy.Extensions.MESA.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.MESAX\Silk.NET.OpenGL.Legacy.Extensions.MESAX.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.NV\Silk.NET.OpenGL.Legacy.Extensions.NV.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.NVX\Silk.NET.OpenGL.Legacy.Extensions.NVX.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OES\Silk.NET.OpenGL.Legacy.Extensions.OES.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OML\Silk.NET.OpenGL.Legacy.Extensions.OML.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OVR\Silk.NET.OpenGL.Legacy.Extensions.OVR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.PGI\Silk.NET.OpenGL.Legacy.Extensions.PGI.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.REND\Silk.NET.OpenGL.Legacy.Extensions.REND.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.S3\Silk.NET.OpenGL.Legacy.Extensions.S3.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGI\Silk.NET.OpenGL.Legacy.Extensions.SGI.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGIS\Silk.NET.OpenGL.Legacy.Extensions.SGIS.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGIX\Silk.NET.OpenGL.Legacy.Extensions.SGIX.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SUN\Silk.NET.OpenGL.Legacy.Extensions.SUN.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SUNX\Silk.NET.OpenGL.Legacy.Extensions.SUNX.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.WIN\Silk.NET.OpenGL.Legacy.Extensions.WIN.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.AMD\Silk.NET.OpenGLES.Extensions.AMD.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ANDROID\Silk.NET.OpenGLES.Extensions.ANDROID.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ANGLE\Silk.NET.OpenGLES.Extensions.ANGLE.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.APPLE\Silk.NET.OpenGLES.Extensions.APPLE.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ARM\Silk.NET.OpenGLES.Extensions.ARM.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.DMP\Silk.NET.OpenGLES.Extensions.DMP.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.EXT\Silk.NET.OpenGLES.Extensions.EXT.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.FJ\Silk.NET.OpenGLES.Extensions.FJ.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.IMG\Silk.NET.OpenGLES.Extensions.IMG.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.INTEL\Silk.NET.OpenGLES.Extensions.INTEL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.KHR\Silk.NET.OpenGLES.Extensions.KHR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.MESA\Silk.NET.OpenGLES.Extensions.MESA.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.NV\Silk.NET.OpenGLES.Extensions.NV.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.OES\Silk.NET.OpenGLES.Extensions.OES.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.OVR\Silk.NET.OpenGLES.Extensions.OVR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.QCOM\Silk.NET.OpenGLES.Extensions.QCOM.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.VIV\Silk.NET.OpenGLES.Extensions.VIV.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Silk.NET.OpenGL.Legacy\Silk.NET.OpenGL.Legacy.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\OpenGL\Silk.NET.OpenGLES\Silk.NET.OpenGLES.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.AMD\Silk.NET.Vulkan.Extensions.AMD.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.ANDROID\Silk.NET.Vulkan.Extensions.ANDROID.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.EXT\Silk.NET.Vulkan.Extensions.EXT.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.FUCHSIA\Silk.NET.Vulkan.Extensions.FUCHSIA.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.GGP\Silk.NET.Vulkan.Extensions.GGP.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.GOOGLE\Silk.NET.Vulkan.Extensions.GOOGLE.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.INTEL\Silk.NET.Vulkan.Extensions.INTEL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.KHR\Silk.NET.Vulkan.Extensions.KHR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.MVK\Silk.NET.Vulkan.Extensions.MVK.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.NN\Silk.NET.Vulkan.Extensions.NN.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.NV\Silk.NET.Vulkan.Extensions.NV.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.NVX\Silk.NET.Vulkan.Extensions.NVX.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Vulkan\Silk.NET.Vulkan\Silk.NET.Vulkan.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.ANDROID\Silk.NET.EGL.Extensions.ANDROID.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.ANGLE\Silk.NET.EGL.Extensions.ANGLE.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.ARM\Silk.NET.EGL.Extensions.ARM.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.EXT\Silk.NET.EGL.Extensions.EXT.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.HI\Silk.NET.EGL.Extensions.HI.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.IMG\Silk.NET.EGL.Extensions.IMG.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.KHR\Silk.NET.EGL.Extensions.KHR.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.MESA\Silk.NET.EGL.Extensions.MESA.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.NOK\Silk.NET.EGL.Extensions.NOK.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.NV\Silk.NET.EGL.Extensions.NV.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.TIZEN\Silk.NET.EGL.Extensions.TIZEN.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Extensions\Silk.NET.EGL.Extensions.WL\Silk.NET.EGL.Extensions.WL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\EGL\Silk.NET.EGL\Silk.NET.EGL.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\Extensions\Silk.NET.Windowing.Extensions.Veldrid\Silk.NET.Windowing.Extensions.Veldrid.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\Extensions\Silk.NET.Windowing.Extensions\Silk.NET.Windowing.Extensions.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\Silk.NET.Windowing.Desktop\Silk.NET.Windowing.Desktop.csproj" />
+      <DocumentationSource sourceFile="..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+    </DocumentationSources>
+    <HelpFileFormat>HtmlHelp1</HelpFileFormat>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <CleanIntermediates>True</CleanIntermediates>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <IndentHtml>False</IndentHtml>
+    <BuildAssemblerVerbosity>OnlyErrors</BuildAssemblerVerbosity>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
+    <HelpTitle>Silk.Net</HelpTitle>
+    <HelpFileVersion>1.0.0.0</HelpFileVersion>
+    <NamingMethod>MemberName</NamingMethod>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <Preliminary>False</Preliminary>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors, TypeParameter, AutoDocumentDispose</MissingTags>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
+			 the build.  The others are optional common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <!-- Uncomment this to use the NuGet packages when SHFB is not installed locally, e.g. in the CI build pipeline.
+			Update the package versions to the latest releases.
+	<ItemGroup>
+		<PackageReference Include="EWSoftware.SHFB" Version="2019.9.15" />
+		<PackageReference Include="EWSoftware.SHFB.NETFramework" Version="4.8.0" />
+	</ItemGroup>
+	-->
+  <!-- Import the common build targets during NuGet restore because before the packages are being installed, $(SHFBROOT) is not set yet -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="'$(MSBuildRestoreSessionId)' != ''" />
+  <!-- Import the SHFB build targets during build -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" Condition="'$(MSBuildRestoreSessionId)' == ''" />
+  <!-- The pre-build and post-build event properties must appear *after* the targets file import in order to be
+			 evaluated correctly. -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+</Project>
