@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Runtime.CompilerServices;
-using static Silk.NET.Maths.Helper;
 
 namespace Silk.NET.Maths
 {

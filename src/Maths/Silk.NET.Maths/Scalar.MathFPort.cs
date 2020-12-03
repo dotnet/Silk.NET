@@ -14,7 +14,6 @@ using System.Runtime.Intrinsics.X86;
 #if AdvSIMD
 using System.Runtime.Intrinsics.Arm;
 #endif
-using static Silk.NET.Maths.Helper;
 
 namespace Silk.NET.Maths
 {

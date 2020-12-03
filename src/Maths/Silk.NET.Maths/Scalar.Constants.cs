@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using static Silk.NET.Maths.Helper;
 
 namespace Silk.NET.Maths
 {
@@ -105,7 +104,7 @@ namespace Silk.NET.Maths
         private const float FloatPi = 3.14159274f;
         private const float FloatTau = 6.283185307f;
 
-        [MethodImpl(MaxOpt)]
+        [MethodImpl(Scalar.MaxOpt)]
         static Scalar()
         {
             // This won't inline as nicely on platforms that aren't .NET 5, however there's no other way to yield the

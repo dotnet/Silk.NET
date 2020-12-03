@@ -5,12 +5,13 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using static Silk.NET.Maths.Helper;
 
 namespace Silk.NET.Maths
 {
     public static partial class Scalar
     {
+        public const MethodImplOptions MaxOpt = MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512;
+        
         internal static void ThrowUnsupportedType()
             => throw new NotSupportedException("The given type is unsupported for generic maths.");
         

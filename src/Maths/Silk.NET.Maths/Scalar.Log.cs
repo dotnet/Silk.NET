@@ -36,7 +36,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
-using static Silk.NET.Maths.Helper;
 
 namespace Silk.NET.Maths
 {
