@@ -116,84 +116,144 @@ Silk.NET.Maths.Cube<T>.Max.get -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Cube<T>.Origin -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Cube<T>.Size -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Matrix2x2<T>
+Silk.NET.Maths.Matrix2x2<T>.Column1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x2<T>.Column2.get -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Matrix2x2<T>.Equals(Silk.NET.Maths.Matrix2x2<T> other) -> bool
 Silk.NET.Maths.Matrix2x2<T>.GetDeterminant() -> T
 Silk.NET.Maths.Matrix2x2<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix2x2<T>.M11 -> T
-Silk.NET.Maths.Matrix2x2<T>.M12 -> T
-Silk.NET.Maths.Matrix2x2<T>.M21 -> T
-Silk.NET.Maths.Matrix2x2<T>.M22 -> T
+Silk.NET.Maths.Matrix2x2<T>.M11.get -> T
+Silk.NET.Maths.Matrix2x2<T>.M11.set -> void
+Silk.NET.Maths.Matrix2x2<T>.M12.get -> T
+Silk.NET.Maths.Matrix2x2<T>.M12.set -> void
+Silk.NET.Maths.Matrix2x2<T>.M21.get -> T
+Silk.NET.Maths.Matrix2x2<T>.M21.set -> void
+Silk.NET.Maths.Matrix2x2<T>.M22.get -> T
+Silk.NET.Maths.Matrix2x2<T>.M22.set -> void
 Silk.NET.Maths.Matrix2x2<T>.Matrix2x2() -> void
 Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(Silk.NET.Maths.Matrix3x2<T> value) -> void
 Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(Silk.NET.Maths.Matrix4x3<T> value) -> void
+Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(Silk.NET.Maths.Vector2<T> row1, Silk.NET.Maths.Vector2<T> row2) -> void
 Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(T m11, T m12, T m21, T m22) -> void
+Silk.NET.Maths.Matrix2x2<T>.Row1 -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x2<T>.Row2 -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Matrix2x3<T>
+Silk.NET.Maths.Matrix2x3<T>.Column1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x3<T>.Column2.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x3<T>.Column3.get -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Matrix2x3<T>.Equals(Silk.NET.Maths.Matrix2x3<T> other) -> bool
 Silk.NET.Maths.Matrix2x3<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix2x3<T>.M11 -> T
-Silk.NET.Maths.Matrix2x3<T>.M12 -> T
-Silk.NET.Maths.Matrix2x3<T>.M13 -> T
-Silk.NET.Maths.Matrix2x3<T>.M21 -> T
-Silk.NET.Maths.Matrix2x3<T>.M22 -> T
-Silk.NET.Maths.Matrix2x3<T>.M23 -> T
+Silk.NET.Maths.Matrix2x3<T>.M11.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M11.set -> void
+Silk.NET.Maths.Matrix2x3<T>.M12.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M12.set -> void
+Silk.NET.Maths.Matrix2x3<T>.M13.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M13.set -> void
+Silk.NET.Maths.Matrix2x3<T>.M21.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M21.set -> void
+Silk.NET.Maths.Matrix2x3<T>.M22.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M22.set -> void
+Silk.NET.Maths.Matrix2x3<T>.M23.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M23.set -> void
 Silk.NET.Maths.Matrix2x3<T>.Matrix2x3() -> void
 Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(Silk.NET.Maths.Matrix3x2<T> value) -> void
 Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(Silk.NET.Maths.Matrix4x3<T> value) -> void
+Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(Silk.NET.Maths.Vector3<T> row1, Silk.NET.Maths.Vector3<T> row2) -> void
 Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(T m11, T m12, T m13, T m21, T m22, T m23) -> void
+Silk.NET.Maths.Matrix2x3<T>.Row1 -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix2x3<T>.Row2 -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Matrix2x4<T>
+Silk.NET.Maths.Matrix2x4<T>.Column1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x4<T>.Column2.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x4<T>.Column3.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x4<T>.Column4.get -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Matrix2x4<T>.Equals(Silk.NET.Maths.Matrix2x4<T> other) -> bool
 Silk.NET.Maths.Matrix2x4<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix2x4<T>.M11 -> T
-Silk.NET.Maths.Matrix2x4<T>.M12 -> T
-Silk.NET.Maths.Matrix2x4<T>.M13 -> T
-Silk.NET.Maths.Matrix2x4<T>.M14 -> T
-Silk.NET.Maths.Matrix2x4<T>.M21 -> T
-Silk.NET.Maths.Matrix2x4<T>.M22 -> T
-Silk.NET.Maths.Matrix2x4<T>.M23 -> T
-Silk.NET.Maths.Matrix2x4<T>.M24 -> T
+Silk.NET.Maths.Matrix2x4<T>.M11.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M11.set -> void
+Silk.NET.Maths.Matrix2x4<T>.M12.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M12.set -> void
+Silk.NET.Maths.Matrix2x4<T>.M13.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M13.set -> void
+Silk.NET.Maths.Matrix2x4<T>.M14.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M14.set -> void
+Silk.NET.Maths.Matrix2x4<T>.M21.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M21.set -> void
+Silk.NET.Maths.Matrix2x4<T>.M22.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M22.set -> void
+Silk.NET.Maths.Matrix2x4<T>.M23.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M23.set -> void
+Silk.NET.Maths.Matrix2x4<T>.M24.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M24.set -> void
 Silk.NET.Maths.Matrix2x4<T>.Matrix2x4() -> void
 Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(Silk.NET.Maths.Matrix3x2<T> value) -> void
 Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(Silk.NET.Maths.Matrix3x3<T> value) -> void
 Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(Silk.NET.Maths.Matrix4x3<T> value) -> void
+Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(Silk.NET.Maths.Vector4<T> row1, Silk.NET.Maths.Vector4<T> row2) -> void
 Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24) -> void
+Silk.NET.Maths.Matrix2x4<T>.Row1 -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix2x4<T>.Row2 -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Matrix3x2<T>
+Silk.NET.Maths.Matrix3x2<T>.Column1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x2<T>.Column2.get -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Matrix3x2<T>.Equals(Silk.NET.Maths.Matrix3x2<T> other) -> bool
 Silk.NET.Maths.Matrix3x2<T>.GetDeterminant() -> T
 Silk.NET.Maths.Matrix3x2<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix3x2<T>.M11 -> T
-Silk.NET.Maths.Matrix3x2<T>.M12 -> T
-Silk.NET.Maths.Matrix3x2<T>.M21 -> T
-Silk.NET.Maths.Matrix3x2<T>.M22 -> T
-Silk.NET.Maths.Matrix3x2<T>.M31 -> T
-Silk.NET.Maths.Matrix3x2<T>.M32 -> T
+Silk.NET.Maths.Matrix3x2<T>.M11.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M11.set -> void
+Silk.NET.Maths.Matrix3x2<T>.M12.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M12.set -> void
+Silk.NET.Maths.Matrix3x2<T>.M21.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M21.set -> void
+Silk.NET.Maths.Matrix3x2<T>.M22.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M22.set -> void
+Silk.NET.Maths.Matrix3x2<T>.M31.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M31.set -> void
+Silk.NET.Maths.Matrix3x2<T>.M32.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M32.set -> void
 Silk.NET.Maths.Matrix3x2<T>.Matrix3x2() -> void
 Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(Silk.NET.Maths.Matrix3x3<T> value) -> void
 Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(Silk.NET.Maths.Matrix4x3<T> value) -> void
+Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(Silk.NET.Maths.Vector2<T> row1, Silk.NET.Maths.Vector2<T> row2, Silk.NET.Maths.Vector2<T> row3) -> void
 Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(T m11, T m12, T m21, T m22, T m31, T m32) -> void
+Silk.NET.Maths.Matrix3x2<T>.Row1 -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix3x2<T>.Row2 -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix3x2<T>.Row3 -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Matrix3x3<T>
+Silk.NET.Maths.Matrix3x3<T>.Column1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Column2.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Column3.get -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Matrix3x3<T>.Equals(Silk.NET.Maths.Matrix3x3<T> other) -> bool
 Silk.NET.Maths.Matrix3x3<T>.GetDeterminant() -> T
 Silk.NET.Maths.Matrix3x3<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix3x3<T>.M11 -> T
-Silk.NET.Maths.Matrix3x3<T>.M12 -> T
-Silk.NET.Maths.Matrix3x3<T>.M13 -> T
-Silk.NET.Maths.Matrix3x3<T>.M21 -> T
-Silk.NET.Maths.Matrix3x3<T>.M22 -> T
-Silk.NET.Maths.Matrix3x3<T>.M23 -> T
-Silk.NET.Maths.Matrix3x3<T>.M31 -> T
-Silk.NET.Maths.Matrix3x3<T>.M32 -> T
-Silk.NET.Maths.Matrix3x3<T>.M33 -> T
+Silk.NET.Maths.Matrix3x3<T>.M11.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M11.set -> void
+Silk.NET.Maths.Matrix3x3<T>.M12.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M12.set -> void
+Silk.NET.Maths.Matrix3x3<T>.M13.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M13.set -> void
+Silk.NET.Maths.Matrix3x3<T>.M21.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M21.set -> void
+Silk.NET.Maths.Matrix3x3<T>.M22.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M22.set -> void
+Silk.NET.Maths.Matrix3x3<T>.M23.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M23.set -> void
+Silk.NET.Maths.Matrix3x3<T>.M31.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M31.set -> void
+Silk.NET.Maths.Matrix3x3<T>.M32.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M32.set -> void
+Silk.NET.Maths.Matrix3x3<T>.M33.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M33.set -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3() -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix3x2<T> value) -> void
@@ -202,22 +262,42 @@ Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix4x3<T> value) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix4x4<T> value) -> void
+Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Vector3<T> row1, Silk.NET.Maths.Vector3<T> row2, Silk.NET.Maths.Vector3<T> row3) -> void
 Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33) -> void
+Silk.NET.Maths.Matrix3x3<T>.Row1 -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Row2 -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Row3 -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Matrix3x4<T>
+Silk.NET.Maths.Matrix3x4<T>.Column1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x4<T>.Column2.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x4<T>.Column3.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x4<T>.Column4.get -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Matrix3x4<T>.Equals(Silk.NET.Maths.Matrix3x4<T> other) -> bool
 Silk.NET.Maths.Matrix3x4<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix3x4<T>.M11 -> T
-Silk.NET.Maths.Matrix3x4<T>.M12 -> T
-Silk.NET.Maths.Matrix3x4<T>.M13 -> T
-Silk.NET.Maths.Matrix3x4<T>.M14 -> T
-Silk.NET.Maths.Matrix3x4<T>.M21 -> T
-Silk.NET.Maths.Matrix3x4<T>.M22 -> T
-Silk.NET.Maths.Matrix3x4<T>.M23 -> T
-Silk.NET.Maths.Matrix3x4<T>.M24 -> T
-Silk.NET.Maths.Matrix3x4<T>.M31 -> T
-Silk.NET.Maths.Matrix3x4<T>.M32 -> T
-Silk.NET.Maths.Matrix3x4<T>.M33 -> T
-Silk.NET.Maths.Matrix3x4<T>.M34 -> T
+Silk.NET.Maths.Matrix3x4<T>.M11.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M11.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M12.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M12.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M13.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M13.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M14.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M14.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M21.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M21.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M22.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M22.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M23.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M23.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M24.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M24.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M31.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M31.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M32.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M32.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M33.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M33.set -> void
+Silk.NET.Maths.Matrix3x4<T>.M34.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M34.set -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4() -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix3x2<T> value) -> void
@@ -225,40 +305,74 @@ Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix3x3<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Matrix4x3<T> value) -> void
+Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Vector4<T> row1, Silk.NET.Maths.Vector4<T> row2, Silk.NET.Maths.Vector4<T> row3) -> void
 Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34) -> void
+Silk.NET.Maths.Matrix3x4<T>.Row1 -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix3x4<T>.Row2 -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix3x4<T>.Row3 -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Matrix4x2<T>
+Silk.NET.Maths.Matrix4x2<T>.Column1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x2<T>.Column2.get -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Matrix4x2<T>.Equals(Silk.NET.Maths.Matrix4x2<T> other) -> bool
 Silk.NET.Maths.Matrix4x2<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix4x2<T>.M11 -> T
-Silk.NET.Maths.Matrix4x2<T>.M12 -> T
-Silk.NET.Maths.Matrix4x2<T>.M21 -> T
-Silk.NET.Maths.Matrix4x2<T>.M22 -> T
-Silk.NET.Maths.Matrix4x2<T>.M31 -> T
-Silk.NET.Maths.Matrix4x2<T>.M32 -> T
-Silk.NET.Maths.Matrix4x2<T>.M41 -> T
-Silk.NET.Maths.Matrix4x2<T>.M42 -> T
+Silk.NET.Maths.Matrix4x2<T>.M11.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M11.set -> void
+Silk.NET.Maths.Matrix4x2<T>.M12.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M12.set -> void
+Silk.NET.Maths.Matrix4x2<T>.M21.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M21.set -> void
+Silk.NET.Maths.Matrix4x2<T>.M22.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M22.set -> void
+Silk.NET.Maths.Matrix4x2<T>.M31.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M31.set -> void
+Silk.NET.Maths.Matrix4x2<T>.M32.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M32.set -> void
+Silk.NET.Maths.Matrix4x2<T>.M41.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M41.set -> void
+Silk.NET.Maths.Matrix4x2<T>.M42.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M42.set -> void
 Silk.NET.Maths.Matrix4x2<T>.Matrix4x2() -> void
 Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(Silk.NET.Maths.Matrix3x2<T> value) -> void
 Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(Silk.NET.Maths.Matrix3x3<T> value) -> void
 Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(Silk.NET.Maths.Matrix4x3<T> value) -> void
+Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(Silk.NET.Maths.Vector2<T> row1, Silk.NET.Maths.Vector2<T> row2, Silk.NET.Maths.Vector2<T> row3, Silk.NET.Maths.Vector2<T> row4) -> void
 Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(T m11, T m12, T m21, T m22, T m31, T m32, T m41, T m42) -> void
+Silk.NET.Maths.Matrix4x2<T>.Row1 -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix4x2<T>.Row2 -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix4x2<T>.Row3 -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix4x2<T>.Row4 -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.Column1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x3<T>.Column2.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x3<T>.Column3.get -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Matrix4x3<T>.Equals(Silk.NET.Maths.Matrix4x3<T> other) -> bool
 Silk.NET.Maths.Matrix4x3<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix4x3<T>.M11 -> T
-Silk.NET.Maths.Matrix4x3<T>.M12 -> T
-Silk.NET.Maths.Matrix4x3<T>.M13 -> T
-Silk.NET.Maths.Matrix4x3<T>.M21 -> T
-Silk.NET.Maths.Matrix4x3<T>.M22 -> T
-Silk.NET.Maths.Matrix4x3<T>.M23 -> T
-Silk.NET.Maths.Matrix4x3<T>.M31 -> T
-Silk.NET.Maths.Matrix4x3<T>.M32 -> T
-Silk.NET.Maths.Matrix4x3<T>.M33 -> T
-Silk.NET.Maths.Matrix4x3<T>.M41 -> T
-Silk.NET.Maths.Matrix4x3<T>.M42 -> T
-Silk.NET.Maths.Matrix4x3<T>.M43 -> T
+Silk.NET.Maths.Matrix4x3<T>.M11.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M11.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M12.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M12.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M13.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M13.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M21.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M21.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M22.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M22.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M23.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M23.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M31.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M31.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M32.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M32.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M33.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M33.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M41.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M41.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M42.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M42.set -> void
+Silk.NET.Maths.Matrix4x3<T>.M43.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M43.set -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3() -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix3x2<T> value) -> void
@@ -267,27 +381,52 @@ Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix4x3<T> value) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Matrix4x4<T> value) -> void
+Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Vector3<T> row1, Silk.NET.Maths.Vector3<T> row2, Silk.NET.Maths.Vector3<T> row3, Silk.NET.Maths.Vector3<T> row4) -> void
 Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33, T m41, T m42, T m43) -> void
+Silk.NET.Maths.Matrix4x3<T>.Row1 -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x3<T>.Row2 -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x3<T>.Row3 -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x3<T>.Row4 -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.Column1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Column2.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Column3.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Column4.get -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Matrix4x4<T>.Equals(Silk.NET.Maths.Matrix4x4<T> other) -> bool
 Silk.NET.Maths.Matrix4x4<T>.GetDeterminant() -> T
 Silk.NET.Maths.Matrix4x4<T>.IsIdentity.get -> bool
-Silk.NET.Maths.Matrix4x4<T>.M11 -> T
-Silk.NET.Maths.Matrix4x4<T>.M12 -> T
-Silk.NET.Maths.Matrix4x4<T>.M13 -> T
-Silk.NET.Maths.Matrix4x4<T>.M14 -> T
-Silk.NET.Maths.Matrix4x4<T>.M21 -> T
-Silk.NET.Maths.Matrix4x4<T>.M22 -> T
-Silk.NET.Maths.Matrix4x4<T>.M23 -> T
-Silk.NET.Maths.Matrix4x4<T>.M24 -> T
-Silk.NET.Maths.Matrix4x4<T>.M31 -> T
-Silk.NET.Maths.Matrix4x4<T>.M32 -> T
-Silk.NET.Maths.Matrix4x4<T>.M33 -> T
-Silk.NET.Maths.Matrix4x4<T>.M34 -> T
-Silk.NET.Maths.Matrix4x4<T>.M41 -> T
-Silk.NET.Maths.Matrix4x4<T>.M42 -> T
-Silk.NET.Maths.Matrix4x4<T>.M43 -> T
-Silk.NET.Maths.Matrix4x4<T>.M44 -> T
+Silk.NET.Maths.Matrix4x4<T>.M11.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M11.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M12.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M12.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M13.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M13.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M14.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M14.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M21.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M21.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M22.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M22.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M23.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M23.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M24.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M24.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M31.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M31.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M32.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M32.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M33.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M33.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M34.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M34.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M41.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M41.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M42.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M42.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M43.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M43.set -> void
+Silk.NET.Maths.Matrix4x4<T>.M44.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M44.set -> void
 Silk.NET.Maths.Matrix4x4<T>.Matrix4x4() -> void
 Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Matrix2x4<T> value) -> void
 Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Matrix3x2<T> value) -> void
@@ -295,7 +434,12 @@ Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Matrix3x3<T> value) -> void
 Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Matrix3x4<T> value) -> void
 Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Matrix4x2<T> value) -> void
 Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Matrix4x3<T> value) -> void
+Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Vector4<T> row1, Silk.NET.Maths.Vector4<T> row2, Silk.NET.Maths.Vector4<T> row3, Silk.NET.Maths.Vector4<T> row4) -> void
 Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34, T m41, T m42, T m43, T m44) -> void
+Silk.NET.Maths.Matrix4x4<T>.Row1 -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Row2 -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Row3 -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Row4 -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Plane<T>
 Silk.NET.Maths.Plane<T>.D -> T
 Silk.NET.Maths.Plane<T>.Equals(Silk.NET.Maths.Plane<T> other) -> bool
