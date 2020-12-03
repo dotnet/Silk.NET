@@ -37,7 +37,7 @@ namespace Silk.NET.Maths
         /// The diameter.
         /// </summary>
         [IgnoreDataMember]
-        public T Diameter => Scalar.Divide(Radius, Scalar<T>.Two);
+        public T Diameter => Scalar.Multiply(Radius, Scalar<T>.Two);
 
         /// <summary>
         /// The radius squared.
