@@ -460,7 +460,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The resulting matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix4x4<T> Add(Matrix4x4<T> value1, Matrix4x4<T> value2)
         {
             return value1 + value2;
@@ -1242,7 +1242,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="result">If successful, contains the inverted matrix.</param>
         /// <returns>True if the source matrix could be inverted; False otherwise.</returns>
         ///
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static unsafe bool Invert(Matrix4x4<T> matrix, out Matrix4x4<T> result)
         {
             // This implementation is based on the DirectX Math Library XMMatrixInverse method
@@ -1591,7 +1591,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix4x4<T> Multiply(Matrix4x4<T> value1, Matrix4x4<T> value2)
             => value1 * value2;
         
@@ -1599,7 +1599,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector4<T> Multiply(Vector4<T> value1, Matrix4x4<T> value2)
             => value1 * value2;
         
@@ -1607,7 +1607,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix2x4<T> Multiply(Matrix2x4<T> value1, Matrix4x4<T> value2)
             => value1 * value2;
         
@@ -1615,7 +1615,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix4x2<T> Multiply(Matrix4x4<T> value1, Matrix4x2<T> value2)
             => value1 * value2;
 
@@ -1623,14 +1623,14 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>
         /// <returns>The scaled matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix4x4<T> Multiply(Matrix4x4<T> value1, T value2)
             => value1 * value2;
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix4x4<T> Negate(Matrix4x4<T> value)
             => -value;
 
@@ -1638,11 +1638,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix4x4<T> Subtract(Matrix4x4<T> value1, Matrix4x4<T> value2)
             => value1 - value2;
 
-        /*[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /*[MethodImpl((MethodImplOptions)768)]
         private static Vector128<T> Permute(Vector128<T> value, byte control)
         {
             if (Avx.IsSupported)
@@ -1929,7 +1929,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public override readonly bool Equals(object? obj)
             => (obj is Matrix4x4<T> other) && Equals(other);
 

@@ -286,7 +286,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The matrix containing the summed values.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix3x2<T> Add(Matrix3x2<T> value1, Matrix3x2<T> value2)
             => value1 + value2;
 
@@ -682,7 +682,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix3x2<T> Multiply(Matrix3x2<T> value1, Matrix2x2<T> value2)
             => value1 * value2;
         
@@ -690,7 +690,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Multiply(Vector3<T> value1, Matrix3x2<T> value2)
             => value1 * value2;
         
@@ -698,7 +698,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix3x3<T> Multiply(Matrix3x2<T> value1, Matrix2x3<T> value2)
             => value1 * value2;
         
@@ -706,7 +706,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix2x2<T> Multiply(Matrix2x3<T> value1, Matrix3x2<T> value2)
             => value1 * value2;
         
@@ -714,7 +714,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix2x3<T> Multiply(Matrix2x3<T> value1, Matrix3x3<T> value2)
             => value1 * value2;
 
@@ -722,14 +722,14 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling value to use.</param>
         /// <returns>The resulting matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix3x2<T> Multiply(Matrix3x2<T> value1, T value2)
             => value1 * value2;
 
         /// <summary>Negates the given matrix by multiplying all values by -1.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix3x2<T> Negate(Matrix3x2<T> value)
             => -value;
 
@@ -737,14 +737,14 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The matrix containing the resulting values.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Matrix3x2<T> Subtract(Matrix3x2<T> value1, Matrix3x2<T> value2)
             => value1 - value2;
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public override readonly bool Equals(object? obj)
             => (obj is Matrix3x2<T> other) && Equals(other);
 

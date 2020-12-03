@@ -58,7 +58,7 @@ namespace Silk.NET.Maths
         /// <param name="point2">The second point defining the Plane.</param>
         /// <param name="point3">The third point defining the Plane.</param>
         /// <returns>The Plane containing the three points.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> CreateFromVertices(Vector3<T> point1, Vector3<T> point2, Vector3<T> point3)
         {
             var a = point1;
@@ -125,7 +125,7 @@ namespace Silk.NET.Maths
         /// <param name="plane">The Plane.</param>
         /// <param name="value">The Vector4.</param>
         /// <returns>The dot product.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static T Dot(Plane<T> plane, Vector4<T> value)
             => Scalar.Add(
                 Scalar.Add(
@@ -137,7 +137,7 @@ namespace Silk.NET.Maths
         /// <param name="plane">The plane.</param>
         /// <param name="value">The Vector3.</param>
         /// <returns>The resulting value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static T DotCoordinate(Plane<T> plane, Vector3<T> value)
             => Scalar.Add(Vector3<T>.Dot(plane.Normal, value), plane.D);
 
@@ -145,14 +145,14 @@ namespace Silk.NET.Maths
         /// <param name="plane">The plane.</param>
         /// <param name="value">The Vector3.</param>
         /// <returns>The resulting dot product.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static T DotNormal(Plane<T> plane, Vector3<T> value)
             => Vector3<T>.Dot(plane.Normal, value);
 
         /// <summary>Creates a new Plane whose normal vector is the source Plane's normal vector normalized.</summary>
         /// <param name="value">The source Plane.</param>
         /// <returns>The normalized Plane.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> Normalize(Plane<T> value)
         {
             /*if (Vector.IsHardwareAccelerated)
@@ -195,7 +195,7 @@ namespace Silk.NET.Maths
         /// This Plane must already be normalized, so that its Normal vector is of unit length, before this method is called.</param>
         /// <param name="matrix">The transformation matrix to apply to the Plane.</param>
         /// <returns>The transformed Plane.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> Transform(Plane<T> plane, Matrix4x4<T> matrix)
         {
             Matrix4x4<T>.Invert(matrix, out Matrix4x4<T> m);
@@ -214,7 +214,7 @@ namespace Silk.NET.Maths
         /// This Plane must already be normalized, so that its Normal vector is of unit length, before this method is called.</param>
         /// <param name="rotation">The Quaternion rotation to apply to the Plane.</param>
         /// <returns>A new Plane that results from applying the rotation.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> Transform(Plane<T> plane, Quaternion<T> rotation)
         {
             // Compute rotation matrix.
@@ -257,7 +257,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first Plane to compare.</param>
         /// <param name="value2">The second Plane to compare.</param>
         /// <returns>True if the Planes are equal; False otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static bool operator ==(Plane<T> value1, Plane<T> value2) 
             => value1.Normal == value2.Normal && Scalar.Equal(value1.D, value2.D);
 
@@ -265,14 +265,14 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first Plane to compare.</param>
         /// <param name="value2">The second Plane to compare.</param>
         /// <returns>True if the Planes are not equal; False if they are equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static bool operator !=(Plane<T> value1, Plane<T> value2) 
             => !(value1 == value2);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Plane instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this Plane; False otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public override readonly bool Equals(object? obj)
         {
             return (obj is Plane<T> other) && Equals(other);
@@ -281,7 +281,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Plane is equal to this Plane instance.</summary>
         /// <param name="other">The Plane to compare this instance to.</param>
         /// <returns>True if the other Plane is equal to this instance; False otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public readonly bool Equals(Plane<T> other)
         {
             return Normal.Equals(other.Normal) && Scalar.Equal(D, other.D);

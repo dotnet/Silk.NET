@@ -226,7 +226,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source Quaternion.</param>
         /// <param name="value2">The second source Quaternion.</param>
         /// <returns>The result of adding the Quaternions.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Quaternion<T> Add(Quaternion<T> value1, Quaternion<T> value2)
             => value1 + value2;
 
@@ -443,7 +443,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source Quaternion.</param>
         /// <param name="value2">The divisor.</param>
         /// <returns>The result of the division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Quaternion<T> Divide(Quaternion<T> value1, Quaternion<T> value2)
             => value1 / value2;
 
@@ -531,7 +531,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The Quaternion on the left side of the multiplication.</param>
         /// <param name="value2">The Quaternion on the right side of the multiplication.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Quaternion<T> Multiply(Quaternion<T> value1, Quaternion<T> value2)
             => value1 * value2;
 
@@ -539,14 +539,14 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source Quaternion.</param>
         /// <param name="value2">The scalar value.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Quaternion<T> Multiply(Quaternion<T> value1, T value2)
             => value1 * value2;
 
         /// <summary>Flips the sign of each component of the quaternion.</summary>
         /// <param name="value">The source Quaternion.</param>
         /// <returns>The negated Quaternion.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Quaternion<T> Negate(Quaternion<T> value)
             => -value;
 
@@ -620,7 +620,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source Quaternion.</param>
         /// <param name="value2">The second Quaternion, to be subtracted from the first.</param>
         /// <returns>The result of the subtraction.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Quaternion<T> Subtract(Quaternion<T> value1, Quaternion<T> value2)
             => value1 - value2;
 

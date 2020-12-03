@@ -45,14 +45,14 @@ namespace Silk.NET.Maths
         /// <summary>Returns a vector whose elements are the absolute values of each of the specified vector's elements.</summary>
         /// <param name="value">A vector.</param>
         /// <returns>The absolute value vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Abs(Vector2<T> value) => new(Scalar.Abs(value.X), Scalar.Abs(value.Y));
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first vector to add.</param>
         /// <param name="right">The second vector to add.</param>
         /// <returns>The summed vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Add(Vector2<T> left, Vector2<T> right)
             => new(Scalar.Add(left.X, right.X), Scalar.Add(left.Y, right.Y));
 
@@ -61,7 +61,7 @@ namespace Silk.NET.Maths
         /// <param name="min">The minimum value.</param>
         /// <param name="max">The maximum value.</param>
         /// <returns>The restricted vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Clamp(Vector2<T> value1, Vector2<T> min, Vector2<T> max) 
             // We must follow HLSL behavior in the case user specified min value is bigger than max value.
             => Min(Max(value1, min), max);
@@ -72,7 +72,7 @@ namespace Silk.NET.Maths
         /// <exception cref="ArgumentException">The number of elements in the current instance is greater than in the array.</exception>
         /// <exception cref="RankException"><paramref name="array"> is multidimensional.</paramref></exception>
         /// <remarks><paramref name="array"></paramref> must have at least two elements. The method copies the vector's elements starting at index 0.</remarks>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public readonly void CopyTo(T[]? array) => CopyTo(array, 0);
         
         /// <summary>Copies the elements of the vector to a specified array starting at a specified index position.</summary>
@@ -84,7 +84,7 @@ namespace Silk.NET.Maths
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"> is greater then or equal to the array length.</paramref></exception>
         /// <exception cref="RankException"><paramref name="array"> is multidimensional.</paramref></exception>
         /// <remarks>array must have a sufficient number of elements to accommodate the two vector elements. In other words, elements index and index + 1 must already exist in array.</remarks>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public readonly void CopyTo(T[]? array, int index)
         {
             if (array is null)
@@ -110,7 +110,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first point.</param>
         /// <param name="value2">The second point.</param>
         /// <returns>The distance.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static T Distance(Vector2<T> value1, Vector2<T> value2)
             => Scalar.Sqrt(DistanceSquared(value1, value2));
 
@@ -118,7 +118,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first point.</param>
         /// <param name="value2">The second point.</param>
         /// <returns>The distance squared.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static T DistanceSquared(Vector2<T> value1, Vector2<T> value2)
         {
             var difference = value1 - value2;
@@ -129,7 +129,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first vector.</param>
         /// <param name="right">The second vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Divide(Vector2<T> left, Vector2<T> right)
             => new(Scalar.Divide(left.X, right.X), Scalar.Divide(left.Y, right.Y));
 
@@ -137,7 +137,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The vector.</param>
         /// <param name="divisor">The scalar value.</param>
         /// <returns>The vector that results from the division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Divide(Vector2<T> left, T divisor)
             => new(Scalar.Divide(left.X, divisor), Scalar.Divide(left.Y, divisor));
 
@@ -145,7 +145,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first vector.</param>
         /// <param name="value2">The second vector.</param>
         /// <returns>The dot product.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static T Dot(Vector2<T> value1, Vector2<T> value2)
             => Scalar.Add(Scalar.Multiply(value1.X, value2.X), Scalar.Multiply(value1.Y, value2.Y));
 
@@ -157,7 +157,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Vector2 instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this Vector2; False otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public override readonly bool Equals(object? obj) => (obj is Vector2<T> other) && Equals(other);
         
         /// <summary>Returns the hash code for this instance.</summary>
@@ -166,12 +166,12 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns the length of the vector.</summary>
         /// <returns>The vector's length.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public readonly T Length() => Scalar.Sqrt(LengthSquared());
         
         /// <summary>Returns the length of the vector squared. This operation is cheaper than Length().</summary>
         /// <returns>The vector's length squared.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public readonly T LengthSquared() => Dot(this, this);
 
         /// <summary>Linearly interpolates between two vectors based on the given weighting.</summary>
@@ -179,7 +179,7 @@ namespace Silk.NET.Maths
         /// <param name="value2">The second source vector.</param>
         /// <param name="amount">Value between 0 and 1 indicating the weight of the second source vector.</param>
         /// <returns>The interpolated vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Lerp(Vector2<T> value1, Vector2<T> value2, T amount)
             => (value1 * Scalar.Subtract(Scalar<T>.One, amount)) + (value2 * amount);
 
@@ -187,7 +187,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source vector</param>
         /// <param name="value2">The second source vector</param>
         /// <returns>The maximized vector</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Max(Vector2<T> value1, Vector2<T> value2)
             => new(Scalar.Max(value1.X, value2.X), Scalar.Max(value1.Y, value2.Y));
         
@@ -195,7 +195,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source vector.</param>
         /// <param name="value2">The second source vector.</param>
         /// <returns>The minimized vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Min(Vector2<T> value1, Vector2<T> value2)
             => new(Scalar.Min(value1.X, value2.X), Scalar.Min(value1.Y, value2.Y));
 
@@ -203,7 +203,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Multiply(Vector2<T> left, Vector2<T> right)
             => new(Scalar.Multiply(left.X, right.X), Scalar.Multiply(left.Y, right.Y));
 
@@ -211,7 +211,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The source vector.</param>
         /// <param name="right">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Multiply(Vector2<T> left, T right)
             => new(Scalar.Multiply(left.X, right), Scalar.Multiply(left.Y, right));
 
@@ -219,27 +219,27 @@ namespace Silk.NET.Maths
         /// <param name="left">The scalar value.</param>
         /// <param name="right">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Multiply(T left, Vector2<T> right)
             => new(Scalar.Multiply(left, right.X), Scalar.Multiply(left, right.Y));
 
         /// <summary>Negates a given vector.</summary>
         /// <param name="value">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Negate(Vector2<T> value) => -value;
 
         /// <summary>Returns a vector with the same direction as the given vector, but with a length of 1.</summary>
         /// <param name="value">The vector to normalize.</param>
         /// <returns>The normalized vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Normalize(Vector2<T> value) => value / value.Length();
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> operator +(Vector2<T> left, Vector2<T> right)
             => new(Scalar.Add(left.X, right.X), Scalar.Add(left.Y, right.Y));
 
@@ -247,7 +247,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> operator /(Vector2<T> left, Vector2<T> right)
             => new(Scalar.Divide(left.X, right.X), Scalar.Divide(left.Y, right.Y));
 
@@ -255,7 +255,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source vector.</param>
         /// <param name="value2">The scalar value.</param>
         /// <returns>The result of the division.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> operator /(Vector2<T> value1, T value2)
             => new(Scalar.Divide(value1.X, value2), Scalar.Divide(value1.Y, value2));
 
@@ -263,7 +263,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first vector to compare.</param>
         /// <param name="right">The second vector to compare.</param>
         /// <returns>True if the vectors are equal; False otherwise.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static bool operator ==(Vector2<T> left, Vector2<T> right)
             => Scalar.Equal(left.X, right.X) && Scalar.Equal(left.Y, right.Y);
 
@@ -271,14 +271,14 @@ namespace Silk.NET.Maths
         /// <param name="left">The first vector to compare.</param>
         /// <param name="right">The second vector to compare.</param>
         /// <returns>True if the vectors are not equal; False if they are equal.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static bool operator !=(Vector2<T> left, Vector2<T> right) => !(left == right);
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> operator *(Vector2<T> left, Vector2<T> right)
             => new(Scalar.Multiply(left.X, right.X), Scalar.Multiply(left.Y, right.Y));
 
@@ -286,7 +286,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The source vector.</param>
         /// <param name="right">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> operator *(Vector2<T> left, T right)
             => new(Scalar.Multiply(left.X, right), Scalar.Multiply(left.Y, right));
 
@@ -294,35 +294,35 @@ namespace Silk.NET.Maths
         /// <param name="left">The scalar value.</param>
         /// <param name="right">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> operator *(T left, Vector2<T> right) => right * left;
 
         /// <summary>Subtracts the second vector from the first.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> operator -(Vector2<T> left, Vector2<T> right)
             => new(Scalar.Subtract(left.X, right.X), Scalar.Subtract(left.Y, right.Y));
 
         /// <summary>Negates a given vector.</summary>
         /// <param name="value">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> operator -(Vector2<T> value) => Zero - value;
 
         /// <summary>Returns the reflection of a vector off a surface that has the specified normal.</summary>
         /// <param name="vector">The source vector.</param>
         /// <param name="normal">The normal of the surface being reflected off.</param>
         /// <returns>The reflected vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Reflect(Vector2<T> vector, Vector2<T> normal) 
             => vector - Scalar.Multiply(Scalar<T>.Two, Dot(vector, normal)) * normal;
 
         /// <summary>Returns a vector whose elements are the square root of each of the source vector's elements.</summary>
         /// <param name="value">The source vector.</param>
         /// <returns>The square root vector.</returns>
-        /// [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        /// [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> SquareRoot(Vector2<T> value)
             => new(Scalar.Sqrt(value.X), Scalar.Sqrt(value.Y));
 
@@ -330,7 +330,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Subtract(Vector2<T> left, Vector2<T> right) => left - right;
 
         /// <summary>Returns a String representing this Vector2 instance.</summary>
@@ -432,7 +432,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector4<T> Multiply(Vector2<T> value1, Matrix2x4<T> value2)
             => value1 * value2;
         
@@ -440,7 +440,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector3<T> Multiply(Vector2<T> value1, Matrix2x3<T> value2)
             => value1 * value2;
         
@@ -448,7 +448,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl((MethodImplOptions)768)]
         public static Vector2<T> Multiply(Vector2<T> value1, Matrix2x2<T> value2)
             => value1 * value2;
                         
