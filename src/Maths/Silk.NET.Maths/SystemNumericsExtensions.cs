@@ -32,7 +32,7 @@
         /// <param name="value">The source plane</param>
         /// <returns>The converted plane</returns>
         public static System.Numerics.Plane ToSystem(this Plane<float> value)
-            => new(value.Normal.ToSystem(), value.D);
+            => new(value.Normal.ToSystem(), value.Distance);
 
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into a <see cref="System.Numerics.Quaternion"/>

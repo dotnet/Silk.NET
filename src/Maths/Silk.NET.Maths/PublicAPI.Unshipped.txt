@@ -441,7 +441,7 @@ Silk.NET.Maths.Matrix4x4<T>.Row2 -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Matrix4x4<T>.Row3 -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Matrix4x4<T>.Row4 -> Silk.NET.Maths.Vector4<T>
 Silk.NET.Maths.Plane<T>
-Silk.NET.Maths.Plane<T>.D -> T
+Silk.NET.Maths.Plane<T>.Distance -> T
 Silk.NET.Maths.Plane<T>.Equals(Silk.NET.Maths.Plane<T> other) -> bool
 Silk.NET.Maths.Plane<T>.Normal -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Plane<T>.Plane() -> void

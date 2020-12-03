@@ -877,9 +877,9 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             result.M32 = Scalar.Multiply(fb, c);
             result.M33 = Scalar.Add(Scalar.Multiply(fc, c), Scalar<T>.One);
 
-            result.M41 = Scalar.Multiply(fa, value.D);
-            result.M42 = Scalar.Multiply(fb, value.D);
-            result.M43 = Scalar.Multiply(fc, value.D);
+            result.M41 = Scalar.Multiply(fa, value.Distance);
+            result.M42 = Scalar.Multiply(fb, value.Distance);
+            result.M43 = Scalar.Multiply(fc, value.Distance);
 
             return result;
         }
@@ -1155,7 +1155,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T a = Scalar.Negate(p.Normal.X);
             T b = Scalar.Negate(p.Normal.Y);
             T c = Scalar.Negate(p.Normal.Z);
-            T d = Scalar.Negate(p.D);
+            T d = Scalar.Negate(p.Distance);
 
             Matrix4x4<T> result = Identity;
 

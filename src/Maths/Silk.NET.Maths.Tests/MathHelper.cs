@@ -56,7 +56,7 @@ namespace Silk.NET.Maths.Tests
 
         public static bool Equal(Plane<float> a, Plane<float> b)
         {
-            return Equal(a.Normal, b.Normal) && Equal(a.D, b.D);
+            return Equal(a.Normal, b.Normal) && Equal(a.Distance, b.Distance);
         }
 
         public static bool Equal(Quaternion<float> a, Quaternion<float> b)

@@ -105,7 +105,7 @@ namespace Silk.NET.Maths.Tests
         {
             Plane<float> target = new Plane<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
-            int expected = target.Normal.GetHashCode() + target.D.GetHashCode();
+            int expected = target.Normal.GetHashCode() + target.Distance.GetHashCode();
             int actual = target.GetHashCode();
             Assert.Equal(expected, actual);
         }
@@ -118,7 +118,7 @@ namespace Silk.NET.Maths.Tests
             Plane<float> target = new Plane<float>(a, b, c, d);
 
             Assert.True(
-                target.Normal.X == a && target.Normal.Y == b && target.Normal.Z == c && target.D == d,
+                target.Normal.X == a && target.Normal.Y == b && target.Normal.Z == c && target.Distance == d,
                 "Plane<float>.cstor did not return the expected value.");
         }
 
@@ -159,7 +159,7 @@ namespace Silk.NET.Maths.Tests
 
             Plane<float> target = new Plane<float>(normal, d);
             Assert.True(
-                target.Normal == normal && target.D == d,
+                target.Normal == normal && target.Distance == d,
                 "Plane<float>.cstor did not return the expected value.");
         }
 
@@ -171,7 +171,7 @@ namespace Silk.NET.Maths.Tests
             Plane<float> target = new Plane<float>(value);
 
             Assert.True(
-                target.Normal.X == value.X && target.Normal.Y == value.Y && target.Normal.Z == value.Z && target.D == value.W,
+                target.Normal.X == value.X && target.Normal.Y == value.Y && target.Normal.Z == value.Z && target.Distance == value.W,
                 "Plane<float>.cstor did not return the expected value.");
         }
 
@@ -215,7 +215,7 @@ namespace Silk.NET.Maths.Tests
 
             float f = target.Normal.LengthSquared();
             float invF = 1.0f / (float)Scalar.Sqrt(f);
-            Plane<float> expected = new Plane<float>(target.Normal * invF, target.D * invF);
+            Plane<float> expected = new Plane<float>(target.Normal * invF, target.Distance * invF);
 
             Plane<float> actual = Plane<float>.Normalize(target);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.Normalize returns unexpected value.");
@@ -244,12 +244,12 @@ namespace Silk.NET.Maths.Tests
             Matrix4x4<float> inv;
             Matrix4x4<float>.Invert(m, out inv);
             Matrix4x4<float> itm = Matrix4x4<float>.Transpose(inv);
-            float x = target.Normal.X, y = target.Normal.Y, z = target.Normal.Z, w = target.D;
+            float x = target.Normal.X, y = target.Normal.Y, z = target.Normal.Z, w = target.Distance;
             expected.Normal = new Vector3<float>(
                 x * itm.M11 + y * itm.M21 + z * itm.M31 + w * itm.M41,
                 x * itm.M12 + y * itm.M22 + z * itm.M32 + w * itm.M42,
                 x * itm.M13 + y * itm.M23 + z * itm.M33 + w * itm.M43);
-            expected.D = x * itm.M14 + y * itm.M24 + z * itm.M34 + w * itm.M44;
+            expected.Distance = x * itm.M14 + y * itm.M24 + z * itm.M34 + w * itm.M44;
 
             Plane<float> actual;
             actual = Plane<float>.Transform(target, m);
@@ -270,12 +270,12 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Plane<float> expected = new Plane<float>();
-            float x = target.Normal.X, y = target.Normal.Y, z = target.Normal.Z, w = target.D;
+            float x = target.Normal.X, y = target.Normal.Y, z = target.Normal.Z, w = target.Distance;
             expected.Normal = new Vector3<float>(
                 x * m.M11 + y * m.M21 + z * m.M31 + w * m.M41,
                 x * m.M12 + y * m.M22 + z * m.M32 + w * m.M42,
                 x * m.M13 + y * m.M23 + z * m.M33 + w * m.M43);
-            expected.D = x * m.M14 + y * m.M24 + z * m.M34 + w * m.M44;
+            expected.Distance = x * m.M14 + y * m.M24 + z * m.M34 + w * m.M44;
 
             Plane<float> actual;
             actual = Plane<float>.Transform(target, q);
@@ -331,7 +331,7 @@ namespace Silk.NET.Maths.Tests
                 CultureInfo.CurrentCulture,
                 "{{Normal:{0:G} D:{1}}}",
                 target.Normal,
-                target.D);
+                target.Distance);
 
             Assert.Equal(expected, target.ToString());
         }
@@ -369,7 +369,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(new IntPtr(basePtr), new IntPtr(planePtr));
 
             Assert.Equal(new IntPtr(basePtr + 0), new IntPtr(&plane.Normal));
-            Assert.Equal(new IntPtr(basePtr + 3), new IntPtr(&plane.D));
+            Assert.Equal(new IntPtr(basePtr + 3), new IntPtr(&plane.Distance));
         }
     }
 }

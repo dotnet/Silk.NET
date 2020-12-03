@@ -669,7 +669,7 @@ namespace Silk.NET.Maths.Tests
                         continue;
 
                     Matrix4x4<float> m = Matrix4x4<float>.CreateShadow(lightDir, plane);
-                    Vector3<float> pp = -plane.D * plane.Normal; // origin of the plane.
+                    Vector3<float> pp = -plane.Distance * plane.Normal; // origin of the plane.
 
                     //
                     foreach (Vector3<float> point in points)
@@ -730,7 +730,7 @@ namespace Silk.NET.Maths.Tests
             {
                 Plane<float> plane = Plane<float>.Normalize(p);
                 Matrix4x4<float> m = Matrix4x4<float>.CreateReflection(plane);
-                Vector3<float> pp = -plane.D * plane.Normal; // Position on the plane.
+                Vector3<float> pp = -plane.Distance * plane.Normal; // Position on the plane.
 
                 //
                 foreach (Vector3<float> point in points)
