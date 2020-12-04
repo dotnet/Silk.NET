@@ -192,6 +192,9 @@ namespace Silk.NET.Maths
             }
         }
 
+        /// <summary>
+        /// Constructs a Matrix4x3 from the given rows.
+        /// </summary>
         public Matrix4x3(Vector3<T> row1, Vector3<T> row2, Vector3<T> row3, Vector3<T> row4)
         {
             Row1 = row1;
@@ -665,7 +668,10 @@ namespace Silk.NET.Maths
                 Scalar.As<T, long>(from.M43)
             );
     }
-
+    
+    /// <summary>
+    /// Methods for working with <see cref="Matrix4x3{T}"/>
+    /// </summary>
     public static class Matrix4x3
     {
         /// <summary>Adds two matrices together.</summary>

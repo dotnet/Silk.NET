@@ -546,6 +546,10 @@ namespace Silk.NET.Maths
             );
     }
 
+    
+    /// <summary>
+    /// Methods for working with <see cref="Matrix2x4{T}"/>
+    /// </summary>
     public static class Matrix2x4
     {
         /// <summary>Adds two matrices together.</summary>

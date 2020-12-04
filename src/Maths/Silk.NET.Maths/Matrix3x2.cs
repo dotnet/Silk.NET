@@ -513,6 +513,10 @@ namespace Silk.NET.Maths
             );
     }
 
+    
+    /// <summary>
+    /// Methods for working with <see cref="Matrix3x2{T}"/>
+    /// </summary>
     public static class Matrix3x2
     {
 #if MATHF
@@ -627,8 +631,6 @@ namespace Silk.NET.Maths
         public static Matrix3x2<T> CreateRotation<T>(T radians, Vector2<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result;
-
             radians = Scalar.IEEERemainder(radians, Scalar<T>.Tau);
 
             T c, s;

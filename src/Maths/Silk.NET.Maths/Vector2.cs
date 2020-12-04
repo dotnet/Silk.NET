@@ -331,7 +331,10 @@ namespace Silk.NET.Maths
         public static explicit operator Vector2<long>(Vector2<T> from)
             => new(Scalar.As<T, long>(from.X), Scalar.As<T, long>(from.Y));
     }
-
+    
+    /// <summary>
+    /// Methods for working with <see cref="Vector2{T}"/>
+    /// </summary>
     public static class Vector2
     {
         /// <summary>Returns a vector whose elements are the absolute values of each of the specified vector's elements.</summary>

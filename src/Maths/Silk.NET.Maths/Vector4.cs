@@ -393,6 +393,9 @@ namespace Silk.NET.Maths
                 Scalar.As<T, long>(from.W));
     }
 
+    /// <summary>
+    /// Methods for working with <see cref="Vector4{T}"/>
+    /// </summary>
     public static class Vector4
     {
                 /// <summary>Returns a vector whose elements are the absolute values of each of the source vector's elements.</summary>

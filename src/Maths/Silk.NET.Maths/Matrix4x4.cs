@@ -817,6 +817,9 @@ namespace Silk.NET.Maths
             );
     }
 
+    /// <summary>
+    /// Methods for working with <see cref="Matrix4x4{T}"/>
+    /// </summary>
     public static class Matrix4x4
     {
         private const float BillboardEpsilon = 1e-4f;
@@ -838,9 +841,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         private struct VectorBasis<T>
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
+#pragma warning disable 649
             public unsafe Vector3<T>* Element0;
             public unsafe Vector3<T>* Element1;
             public unsafe Vector3<T>* Element2;
+#pragma warning restore 649
         }
         
         /// <summary>Adds two matrices together.</summary>

@@ -360,6 +360,9 @@ namespace Silk.NET.Maths
             => new(Scalar.As<T, long>(from.X), Scalar.As<T, long>(from.Y), Scalar.As<T, long>(from.Z));
     }
 
+    /// <summary>
+    /// Methods for working with <see cref="Vector3{T}"/>
+    /// </summary>
     public static class Vector3
     {
         

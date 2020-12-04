@@ -407,6 +407,9 @@ namespace Silk.NET.Maths
                 Scalar.As<T, long>(from.M22));
     }
 
+    /// <summary>
+    /// Methods for working with <see cref="Matrix2x2{T}"/>
+    /// </summary>
     public static class Matrix2x2
     {
         /// <summary>Adds two matrices together.</summary>

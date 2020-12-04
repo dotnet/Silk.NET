@@ -163,6 +163,9 @@ namespace Silk.NET.Maths
             }
         }
 
+        /// <summary>
+        /// Constructs a Matrix3x3 from the given rows.
+        /// </summary>
         public Matrix3x3(Vector3<T> row1, Vector3<T> row2, Vector3<T> row3)
         {
             Row1 = row1;
@@ -531,6 +534,10 @@ namespace Silk.NET.Maths
                 Scalar.As<T, long>(from.M31), Scalar.As<T, long>(from.M32), Scalar.As<T, long>(from.M33));
     }
 
+
+    /// <summary>
+    /// Methods for working with <see cref="Matrix3x3{T}"/>
+    /// </summary>
     public static class Matrix3x3
     {
         private const float BillboardEpsilon = 1e-4f;

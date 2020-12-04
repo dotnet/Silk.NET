@@ -196,7 +196,10 @@ namespace Silk.NET.Maths
         public static explicit operator Plane<long>(Plane<T> from)
             => new((Vector3<long>) from.Normal, Scalar.As<T, long>(from.Distance));
     }
-
+    
+    /// <summary>
+    /// Methods for working with <see cref="PLane{T}"/>
+    /// </summary>
     public static class Plane
     {
         /// <summary>Creates a Plane that contains the three given points.</summary>

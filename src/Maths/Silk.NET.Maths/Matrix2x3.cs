@@ -138,6 +138,9 @@ namespace Silk.NET.Maths
             Row2 = new(m21, m22, m23);
         }
 
+        /// <summary>
+        /// Constructs a Matrix2x3 from the given rows.
+        /// </summary>
         public Matrix2x3(Vector3<T> row1, Vector3<T> row2)
         {
             Row1 = row1;
@@ -444,6 +447,10 @@ namespace Silk.NET.Maths
                 Scalar.As<T, long>(from.M21), Scalar.As<T, long>(from.M22), Scalar.As<T, long>(from.M23));
     }
 
+    
+    /// <summary>
+    /// Methods for working with <see cref="Matrix2x3{T}"/>
+    /// </summary>
     public static class Matrix2x3
     {
         private const float BillboardEpsilon = 1e-4f;
