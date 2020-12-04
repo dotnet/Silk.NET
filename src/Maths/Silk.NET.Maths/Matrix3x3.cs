@@ -11,9 +11,6 @@ namespace Silk.NET.Maths
     public struct Matrix3x3<T> : IEquatable<Matrix3x3<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
-        private const float BillboardEpsilon = 1e-4f;
-        private const float DecomposeEpsilon = 0.0001f;
-
         private static readonly Matrix3x3<T> _identity = new
         (
             Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero,
@@ -305,12 +302,228 @@ namespace Silk.NET.Maths
             return new(-value.Row1, -value.Row2, -value.Row3);
         }
 
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
+        /// <param name="obj">The Object to compare against.</param>
+        /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public override readonly bool Equals(object? obj)
+            => (obj is Matrix3x3<T> other) && Equals(other);
+
+        /// <summary>Returns a boolean indicating whether this matrix instance is equal to the other given matrix.</summary>
+        /// <param name="other">The matrix to compare this instance to.</param>
+        /// <returns>True if the matrices are equal; False otherwise.</returns>
+        public readonly bool Equals(Matrix3x3<T> other)
+            => this == other;
+
+        /// <summary>Calculates the determinant of the matrix.</summary>
+        /// <returns>The determinant of the matrix.</returns>
+        public readonly T GetDeterminant()
+        { 
+            //   | a b c |
+            //   | d e f | = ( a ( ei - fh ) - b ( di - fg ) + c ( dh - eg ) )
+            //   | g h i |
+
+            T a = M11, b = M12, c = M13;
+            T d = M21, e = M22, f = M23;
+            T g = M31, h = M32, i = M33;
+
+            return Scalar.Add(
+                Scalar.Subtract(
+                    Scalar.Multiply(a, Scalar.Subtract(Scalar.Multiply(e, i), Scalar.Multiply(f, h))),
+                    Scalar.Multiply(b, Scalar.Subtract(Scalar.Multiply(d, i), Scalar.Multiply(f, g)))),
+                Scalar.Multiply(c, Scalar.Subtract(Scalar.Multiply(d, h), Scalar.Multiply(e, g))));
+        }
+
+        /// <summary>Returns the hash code for this instance.</summary>
+        /// <returns>The hash code.</returns>   
+        public override readonly int GetHashCode()
+        {
+            HashCode hash = default;
+
+            hash.Add(M11);
+            hash.Add(M12);
+            hash.Add(M13);
+
+            hash.Add(M21);
+            hash.Add(M22);
+            hash.Add(M23);
+
+            hash.Add(M31);
+            hash.Add(M32);
+            hash.Add(M33);
+
+            return hash.ToHashCode();
+        }
+
+        /// <summary>Returns a String representing this matrix instance.</summary>
+        /// <returns>The string representation.</returns>
+        public override readonly string ToString()
+        {
+            return string.Format(CultureInfo.CurrentCulture, "{{ {{M11:{0} M12:{1} M13:{2} }} {{M21:{3} M22:{4} M23:{5} }} {{M31:{6} M32:{7} M33:{8}}} }}",
+                                 M11, M12, M13,
+                                 M21, M22, M23,
+                                 M31, M32, M33);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="Half"/> matrix</returns>
+        public static explicit operator Matrix3x3<Half>(Matrix3x3<T> from)
+            => new(Scalar.As<T, Half>(from.M11), Scalar.As<T, Half>(from.M12), Scalar.As<T, Half>(from.M13),
+                Scalar.As<T, Half>(from.M21), Scalar.As<T, Half>(from.M22), Scalar.As<T, Half>(from.M23),
+                Scalar.As<T, Half>(from.M31), Scalar.As<T, Half>(from.M32), Scalar.As<T, Half>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="float"/> matrix</returns>
+        public static explicit operator Matrix3x3<float>(Matrix3x3<T> from)
+            => new(Scalar.As<T, float>(from.M11), Scalar.As<T, float>(from.M12),
+                Scalar.As<T, float>(from.M13), Scalar.As<T, float>(from.M21), Scalar.As<T, float>(from.M22),
+                Scalar.As<T, float>(from.M23), Scalar.As<T, float>(from.M31), Scalar.As<T, float>(from.M32),
+                Scalar.As<T, float>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="double"/> matrix</returns>
+        public static explicit operator Matrix3x3<double>(Matrix3x3<T> from)
+            => new(Scalar.As<T, double>(from.M11), Scalar.As<T, double>(from.M12),
+                Scalar.As<T, double>(from.M13), Scalar.As<T, double>(from.M21),
+                Scalar.As<T, double>(from.M22), Scalar.As<T, double>(from.M23),
+                Scalar.As<T, double>(from.M31), Scalar.As<T, double>(from.M32),
+                Scalar.As<T, double>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="decimal"/> matrix</returns>
+        public static explicit operator Matrix3x3<decimal>(Matrix3x3<T> from)
+            => new(Scalar.As<T, decimal>(from.M11), Scalar.As<T, decimal>(from.M12),
+                Scalar.As<T, decimal>(from.M13), Scalar.As<T, decimal>(from.M21),
+                Scalar.As<T, decimal>(from.M22), Scalar.As<T, decimal>(from.M23),
+                Scalar.As<T, decimal>(from.M31), Scalar.As<T, decimal>(from.M32),
+                Scalar.As<T, decimal>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="sbyte"/> matrix</returns>
+        public static explicit operator Matrix3x3<sbyte>(Matrix3x3<T> from)
+            => new(Scalar.As<T, sbyte>(from.M11), Scalar.As<T, sbyte>(from.M12),
+                Scalar.As<T, sbyte>(from.M13), Scalar.As<T, sbyte>(from.M21), Scalar.As<T, sbyte>(from.M22),
+                Scalar.As<T, sbyte>(from.M23), Scalar.As<T, sbyte>(from.M31), Scalar.As<T, sbyte>(from.M32),
+                Scalar.As<T, sbyte>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="byte"/> matrix</returns>
+        public static explicit operator Matrix3x3<byte>(Matrix3x3<T> from)
+            => new(Scalar.As<T, byte>(from.M11), Scalar.As<T, byte>(from.M12), Scalar.As<T, byte>(from.M13),
+                Scalar.As<T, byte>(from.M21), Scalar.As<T, byte>(from.M22), Scalar.As<T, byte>(from.M23),
+                Scalar.As<T, byte>(from.M31), Scalar.As<T, byte>(from.M32), Scalar.As<T, byte>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ushort"/> matrix</returns>
+        public static explicit operator Matrix3x3<ushort>(Matrix3x3<T> from)
+            => new(Scalar.As<T, ushort>(from.M11), Scalar.As<T, ushort>(from.M12),
+                Scalar.As<T, ushort>(from.M13), Scalar.As<T, ushort>(from.M21),
+                Scalar.As<T, ushort>(from.M22), Scalar.As<T, ushort>(from.M23),
+                Scalar.As<T, ushort>(from.M31), Scalar.As<T, ushort>(from.M32),
+                Scalar.As<T, ushort>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="short"/> matrix</returns>
+        public static explicit operator Matrix3x3<short>(Matrix3x3<T> from)
+            => new(Scalar.As<T, short>(from.M11), Scalar.As<T, short>(from.M12),
+                Scalar.As<T, short>(from.M13), Scalar.As<T, short>(from.M21), Scalar.As<T, short>(from.M22),
+                Scalar.As<T, short>(from.M23), Scalar.As<T, short>(from.M31), Scalar.As<T, short>(from.M32),
+                Scalar.As<T, short>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="uint"/> matrix</returns>
+        public static explicit operator Matrix3x3<uint>(Matrix3x3<T> from)
+            => new(Scalar.As<T, uint>(from.M11), Scalar.As<T, uint>(from.M12), Scalar.As<T, uint>(from.M13),
+                Scalar.As<T, uint>(from.M21), Scalar.As<T, uint>(from.M22), Scalar.As<T, uint>(from.M23),
+                Scalar.As<T, uint>(from.M31), Scalar.As<T, uint>(from.M32), Scalar.As<T, uint>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="int"/> matrix</returns>
+        public static explicit operator Matrix3x3<int>(Matrix3x3<T> from)
+            => new(Scalar.As<T, int>(from.M11), Scalar.As<T, int>(from.M12), Scalar.As<T, int>(from.M13),
+                Scalar.As<T, int>(from.M21), Scalar.As<T, int>(from.M22), Scalar.As<T, int>(from.M23),
+                Scalar.As<T, int>(from.M31), Scalar.As<T, int>(from.M32), Scalar.As<T, int>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ulong"/> matrix</returns>
+        public static explicit operator Matrix3x3<ulong>(Matrix3x3<T> from)
+            => new(Scalar.As<T, ulong>(from.M11), Scalar.As<T, ulong>(from.M12),
+                Scalar.As<T, ulong>(from.M13), Scalar.As<T, ulong>(from.M21), Scalar.As<T, ulong>(from.M22),
+                Scalar.As<T, ulong>(from.M23), Scalar.As<T, ulong>(from.M31), Scalar.As<T, ulong>(from.M32),
+                Scalar.As<T, ulong>(from.M33));
+
+        /// <summary>
+        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="long"/> matrix</returns>
+        public static explicit operator Matrix3x3<long>(Matrix3x3<T> from)
+            => new(Scalar.As<T, long>(from.M11), Scalar.As<T, long>(from.M12), Scalar.As<T, long>(from.M13),
+                Scalar.As<T, long>(from.M21), Scalar.As<T, long>(from.M22), Scalar.As<T, long>(from.M23),
+                Scalar.As<T, long>(from.M31), Scalar.As<T, long>(from.M32), Scalar.As<T, long>(from.M33));
+    }
+
+    public static class Matrix3x3
+    {
+        private const float BillboardEpsilon = 1e-4f;
+        private const float DecomposeEpsilon = 0.0001f;
+        
+        private struct CanonicalBasis<T>
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        {
+            public Vector3<T> Row0;
+            public Vector3<T> Row1;
+            public Vector3<T> Row2;
+        };
+
+        private struct VectorBasis<T>
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        {
+            public unsafe Vector3<T>* Element0;
+            public unsafe Vector3<T>* Element1;
+            public unsafe Vector3<T>* Element2;
+        }
+        
         /// <summary>Adds two matrices together.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The resulting matrix.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x3<T> Add(Matrix3x3<T> value1, Matrix3x3<T> value2)
+        public static Matrix3x3<T> Add<T>(Matrix3x3<T> value1, Matrix3x3<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             return value1 + value2;
         }
@@ -321,7 +534,8 @@ namespace Silk.NET.Maths
         /// <param name="cameraUpVector">The up vector of the camera.</param>
         /// <param name="cameraForwardVector">The forward vector of the camera.</param>
         /// <returns>The created billboard matrix</returns>
-        public static Matrix3x3<T> CreateBillboard(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> cameraUpVector, Vector3<T> cameraForwardVector)
+        public static Matrix3x3<T> CreateBillboard<T>(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> cameraUpVector, Vector3<T> cameraForwardVector)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Vector3<T> zaxis = objectPosition - cameraPosition;
             var norm = zaxis.LengthSquared;
@@ -345,7 +559,8 @@ namespace Silk.NET.Maths
         /// <param name="axis">The axis to rotate around.</param>
         /// <param name="angle">The angle to rotate around the given axis, in radians.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix3x3<T> CreateFromAxisAngle(Vector3<T> axis, T angle)
+        public static Matrix3x3<T> CreateFromAxisAngle<T>(Vector3<T> axis, T angle)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // a: angle
             // x, y, z: unit vector for axis.
@@ -377,7 +592,7 @@ namespace Silk.NET.Maths
             T xx = Scalar.Multiply(x, x), yy = Scalar.Multiply(y, y), zz = Scalar.Multiply(z, z);
             T xy = Scalar.Multiply(x, y), xz = Scalar.Multiply(x, z), yz = Scalar.Multiply(y, z);
 
-            Matrix3x3<T> result = Identity;
+            Matrix3x3<T> result = Matrix3x3<T>.Identity;
 
             result.M11 = Scalar.Add(xx, Scalar.Multiply(ca, Scalar.Subtract(Scalar<T>.One, xx)));
             result.M12 = Scalar.Add(Scalar.Subtract(xy, Scalar.Multiply(ca, xy)), Scalar.Multiply(sa, z));
@@ -397,9 +612,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a rotation matrix from the given Quaternion rotation value.</summary>
         /// <param name="quaternion">The source Quaternion.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix3x3<T> CreateFromQuaternion(Quaternion<T> quaternion)
+        public static Matrix3x3<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x3<T> result = Identity;
+            Matrix3x3<T> result = Matrix3x3<T>.Identity;
 
             T xx = Scalar.Multiply(quaternion.X, quaternion.X);
             T yy = Scalar.Multiply(quaternion.Y, quaternion.Y);
@@ -433,7 +649,8 @@ namespace Silk.NET.Maths
         /// <param name="pitch">Angle of rotation, in radians, around the X-axis.</param>
         /// <param name="roll">Angle of rotation, in radians, around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix3x3<T> CreateFromYawPitchRoll(T yaw, T pitch, T roll)
+        public static Matrix3x3<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Quaternion<T> q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
@@ -442,9 +659,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a matrix for rotating points around the X-axis.</summary>
         /// <param name="radians">The amount, in radians, by which to rotate around the X-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix3x3<T> CreateRotationX(T radians)
+        public static Matrix3x3<T> CreateRotationX<T>(T radians)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x3<T> result = Identity;
+            Matrix3x3<T> result = Matrix3x3<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -465,9 +683,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a matrix for rotating points around the Y-axis.</summary>
         /// <param name="radians">The amount, in radians, by which to rotate around the Y-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix3x3<T> CreateRotationY(T radians)
+        public static Matrix3x3<T> CreateRotationY<T>(T radians)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x3<T> result = Identity;
+            Matrix3x3<T> result = Matrix3x3<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -487,9 +706,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a matrix for rotating points around the Z-axis.</summary>
         /// <param name="radians">The amount, in radians, by which to rotate around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix3x3<T> CreateRotationZ(T radians)
+        public static Matrix3x3<T> CreateRotationZ<T>(T radians)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x3<T> result = Identity;
+            Matrix3x3<T> result = Matrix3x3<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -511,9 +731,10 @@ namespace Silk.NET.Maths
         /// <param name="yScale">Value to scale by on the Y-axis.</param>
         /// <param name="zScale">Value to scale by on the Z-axis.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix3x3<T> CreateScale(T xScale, T yScale, T zScale)
+        public static Matrix3x3<T> CreateScale<T>(T xScale, T yScale, T zScale)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x3<T> result = Identity;
+            Matrix3x3<T> result = Matrix3x3<T>.Identity;
             result.M11 = xScale;
             result.M22 = yScale;
             result.M33 = zScale;
@@ -523,9 +744,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a scaling matrix.</summary>
         /// <param name="scales">The vector containing the amount to scale by on each axis.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix3x3<T> CreateScale(Vector3<T> scales)
+        public static Matrix3x3<T> CreateScale<T>(Vector3<T> scales)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x3<T> result = Identity;
+            Matrix3x3<T> result = Matrix3x3<T>.Identity;
             result.M11 = scales.X;
             result.M22 = scales.Y;
             result.M33 = scales.Z;
@@ -535,9 +757,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a uniform scaling matrix that scales equally on each axis.</summary>
         /// <param name="scale">The uniform scaling factor.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix3x3<T> CreateScale(T scale)
+        public static Matrix3x3<T> CreateScale<T>(T scale)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x3<T> result = Identity;
+            Matrix3x3<T> result = Matrix3x3<T>.Identity;
 
             result.M11 = scale;
             result.M22 = scale;
@@ -551,7 +774,8 @@ namespace Silk.NET.Maths
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x3<T> Multiply(Matrix3x3<T> value1, Matrix3x3<T> value2)
+        public static Matrix3x3<T> Multiply<T>(Matrix3x3<T> value1, Matrix3x3<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
         
         /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -559,16 +783,8 @@ namespace Silk.NET.Maths
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix2x3<T> Multiply(Matrix2x3<T> value1, Matrix3x3<T> value2)
-            => value1 * value2;
-        
-        
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x2<T> Multiply(Matrix3x3<T> value1, Matrix3x2<T> value2)
+        public static Matrix2x3<T> Multiply<T>(Matrix2x3<T> value1, Matrix3x3<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
         
         
@@ -577,7 +793,8 @@ namespace Silk.NET.Maths
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix4x3<T> Multiply(Matrix4x3<T> value1, Matrix3x3<T> value2)
+        public static Matrix3x2<T> Multiply<T>(Matrix3x3<T> value1, Matrix3x2<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
         
         
@@ -586,7 +803,18 @@ namespace Silk.NET.Maths
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x4<T> Multiply(Matrix3x3<T> value1, Matrix3x4<T> value2)
+        public static Matrix4x3<T> Multiply<T>(Matrix4x3<T> value1, Matrix3x3<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 * value2;
+        
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix3x4<T> Multiply<T>(Matrix3x3<T> value1, Matrix3x4<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
         
         /// <summary>Multiplies a matrix by a scalar value.</summary>
@@ -594,7 +822,8 @@ namespace Silk.NET.Maths
         /// <param name="value2">The scaling factor.</param>
         /// <returns>The scaled matrix.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x3<T> Multiply(Matrix3x3<T> value1, T value2)
+        public static Matrix3x3<T> Multiply<T>(Matrix3x3<T> value1, T value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
         
         /// <summary>Multiplies a vector by a matrix.</summary>
@@ -602,14 +831,16 @@ namespace Silk.NET.Maths
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> Multiply(Vector3<T> value1, Matrix3x3<T> value2)
+        public static Vector3<T> Multiply<T>(Vector3<T> value1, Matrix3x3<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x3<T> Negate(Matrix3x3<T> value)
+        public static Matrix3x3<T> Negate<T>(Matrix3x3<T> value)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => -value;
 
         /// <summary>Subtracts the second matrix from the first.</summary>
@@ -617,7 +848,8 @@ namespace Silk.NET.Maths
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the subtraction.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x3<T> Subtract(Matrix3x3<T> value1, Matrix3x3<T> value2)
+        public static Matrix3x3<T> Subtract<T>(Matrix3x3<T> value1, Matrix3x3<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 - value2;
 
         /// <summary>Attempts to extract the scale, translation, and rotation components from the given scale/rotation/translation matrix.
@@ -626,7 +858,8 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scaling component of the transformation matrix.</param>
         /// <param name="rotation">The rotation component of the transformation matrix.</param>
         /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
-        public static bool Decompose(Matrix3x3<T> matrix, out Vector3<T> scale, out Quaternion<T> rotation)
+        public static bool Decompose<T>(Matrix3x3<T> matrix, out Vector3<T> scale, out Quaternion<T> rotation)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             bool result = true;
 
@@ -637,20 +870,20 @@ namespace Silk.NET.Maths
                     T* pfScales = (T*)scaleBase;
                     T det;
 
-                    VectorBasis vectorBasis;
+                    VectorBasis<T> vectorBasis;
                     Vector3<T>** pVectorBasis = (Vector3<T>**)&vectorBasis;
 
-                    Matrix3x3<T> matTemp = Identity;
-                    CanonicalBasis canonicalBasis = default;
+                    Matrix3x3<T> matTemp = Matrix3x3<T>.Identity;
+                    CanonicalBasis<T> canonicalBasis = default;
                     Vector3<T>* pCanonicalBasis = &canonicalBasis.Row0;
 
                     canonicalBasis.Row0 = new Vector3<T>(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero);
                     canonicalBasis.Row1 = new Vector3<T>(Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero);
                     canonicalBasis.Row2 = new Vector3<T>(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
 
-                    pVectorBasis[0] = (Vector3<T>*)&matTemp.Row1;
-                    pVectorBasis[1] = (Vector3<T>*)&matTemp.Row2;
-                    pVectorBasis[2] = (Vector3<T>*)&matTemp.Row3;
+                    pVectorBasis[0] = &matTemp.Row1;
+                    pVectorBasis[1] = &matTemp.Row2;
+                    pVectorBasis[2] = &matTemp.Row3;
 
                     *(pVectorBasis[0]) = new Vector3<T>(matrix.M11, matrix.M12, matrix.M13);
                     *(pVectorBasis[1]) = new Vector3<T>(matrix.M21, matrix.M22, matrix.M23);
@@ -817,7 +1050,8 @@ namespace Silk.NET.Maths
         /// <param name="matrix2">The second source matrix.</param>
         /// <param name="amount">The relative weight of the second source matrix.</param>
         /// <returns>The interpolated matrix.</returns>
-        public static unsafe Matrix3x3<T> Lerp(Matrix3x3<T> matrix1, Matrix3x3<T> matrix2, T amount)
+        public static unsafe Matrix3x3<T> Lerp<T>(Matrix3x3<T> matrix1, Matrix3x3<T> matrix2, T amount)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             return new(
                 Vector3.Lerp(matrix1.Row1, matrix2.Row1, amount),
@@ -830,7 +1064,8 @@ namespace Silk.NET.Maths
         /// <param name="value">The source matrix to transform.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed matrix.</returns>
-        public static Matrix3x3<T> Transform(Matrix3x3<T> value, Quaternion<T> rotation)
+        public static Matrix3x3<T> Transform<T>(Matrix3x3<T> value, Quaternion<T> rotation)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // Compute rotation matrix.
             T x2 = Scalar.Add(rotation.X, rotation.X);
@@ -869,216 +1104,10 @@ namespace Silk.NET.Maths
         /// <summary>Transposes the rows and columns of a matrix.</summary>
         /// <param name="matrix">The source matrix.</param>
         /// <returns>The transposed matrix.</returns>
-        public static unsafe Matrix3x3<T> Transpose(Matrix3x3<T> matrix)
+        public static unsafe Matrix3x3<T> Transpose<T>(Matrix3x3<T> matrix)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             return new(matrix.Column1, matrix.Column2, matrix.Column3);
         }
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
-        /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public override readonly bool Equals(object? obj)
-            => (obj is Matrix3x3<T> other) && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether this matrix instance is equal to the other given matrix.</summary>
-        /// <param name="other">The matrix to compare this instance to.</param>
-        /// <returns>True if the matrices are equal; False otherwise.</returns>
-        public readonly bool Equals(Matrix3x3<T> other)
-            => this == other;
-
-        /// <summary>Calculates the determinant of the matrix.</summary>
-        /// <returns>The determinant of the matrix.</returns>
-        public readonly T GetDeterminant()
-        { 
-            //   | a b c |
-            //   | d e f | = ( a ( ei - fh ) - b ( di - fg ) + c ( dh - eg ) )
-            //   | g h i |
-
-            T a = M11, b = M12, c = M13;
-            T d = M21, e = M22, f = M23;
-            T g = M31, h = M32, i = M33;
-
-            return Scalar.Add(
-                Scalar.Subtract(
-                    Scalar.Multiply(a, Scalar.Subtract(Scalar.Multiply(e, i), Scalar.Multiply(f, h))),
-                    Scalar.Multiply(b, Scalar.Subtract(Scalar.Multiply(d, i), Scalar.Multiply(f, g)))),
-                Scalar.Multiply(c, Scalar.Subtract(Scalar.Multiply(d, h), Scalar.Multiply(e, g))));
-        }
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        /// <returns>The hash code.</returns>   
-        public override readonly int GetHashCode()
-        {
-            HashCode hash = default;
-
-            hash.Add(M11);
-            hash.Add(M12);
-            hash.Add(M13);
-
-            hash.Add(M21);
-            hash.Add(M22);
-            hash.Add(M23);
-
-            hash.Add(M31);
-            hash.Add(M32);
-            hash.Add(M33);
-
-            return hash.ToHashCode();
-        }
-
-        /// <summary>Returns a String representing this matrix instance.</summary>
-        /// <returns>The string representation.</returns>
-        public override readonly string ToString()
-        {
-            return string.Format(CultureInfo.CurrentCulture, "{{ {{M11:{0} M12:{1} M13:{2} }} {{M21:{3} M22:{4} M23:{5} }} {{M31:{6} M32:{7} M33:{8}}} }}",
-                                 M11, M12, M13,
-                                 M21, M22, M23,
-                                 M31, M32, M33);
-        }
-        
-        private struct CanonicalBasis
-        {
-            public Vector3<T> Row0;
-            public Vector3<T> Row1;
-            public Vector3<T> Row2;
-        };
-
-        private struct VectorBasis
-        {
-            public unsafe Vector3<T>* Element0;
-            public unsafe Vector3<T>* Element1;
-            public unsafe Vector3<T>* Element2;
-        }
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="Half"/> matrix</returns>
-        public static explicit operator Matrix3x3<Half>(Matrix3x3<T> from)
-            => new(Scalar.As<T, Half>(from.M11), Scalar.As<T, Half>(from.M12), Scalar.As<T, Half>(from.M13),
-                Scalar.As<T, Half>(from.M21), Scalar.As<T, Half>(from.M22), Scalar.As<T, Half>(from.M23),
-                Scalar.As<T, Half>(from.M31), Scalar.As<T, Half>(from.M32), Scalar.As<T, Half>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="float"/> matrix</returns>
-        public static explicit operator Matrix3x3<float>(Matrix3x3<T> from)
-            => new(Scalar.As<T, float>(from.M11), Scalar.As<T, float>(from.M12),
-                Scalar.As<T, float>(from.M13), Scalar.As<T, float>(from.M21), Scalar.As<T, float>(from.M22),
-                Scalar.As<T, float>(from.M23), Scalar.As<T, float>(from.M31), Scalar.As<T, float>(from.M32),
-                Scalar.As<T, float>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="double"/> matrix</returns>
-        public static explicit operator Matrix3x3<double>(Matrix3x3<T> from)
-            => new(Scalar.As<T, double>(from.M11), Scalar.As<T, double>(from.M12),
-                Scalar.As<T, double>(from.M13), Scalar.As<T, double>(from.M21),
-                Scalar.As<T, double>(from.M22), Scalar.As<T, double>(from.M23),
-                Scalar.As<T, double>(from.M31), Scalar.As<T, double>(from.M32),
-                Scalar.As<T, double>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="decimal"/> matrix</returns>
-        public static explicit operator Matrix3x3<decimal>(Matrix3x3<T> from)
-            => new(Scalar.As<T, decimal>(from.M11), Scalar.As<T, decimal>(from.M12),
-                Scalar.As<T, decimal>(from.M13), Scalar.As<T, decimal>(from.M21),
-                Scalar.As<T, decimal>(from.M22), Scalar.As<T, decimal>(from.M23),
-                Scalar.As<T, decimal>(from.M31), Scalar.As<T, decimal>(from.M32),
-                Scalar.As<T, decimal>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="sbyte"/> matrix</returns>
-        public static explicit operator Matrix3x3<sbyte>(Matrix3x3<T> from)
-            => new(Scalar.As<T, sbyte>(from.M11), Scalar.As<T, sbyte>(from.M12),
-                Scalar.As<T, sbyte>(from.M13), Scalar.As<T, sbyte>(from.M21), Scalar.As<T, sbyte>(from.M22),
-                Scalar.As<T, sbyte>(from.M23), Scalar.As<T, sbyte>(from.M31), Scalar.As<T, sbyte>(from.M32),
-                Scalar.As<T, sbyte>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="byte"/> matrix</returns>
-        public static explicit operator Matrix3x3<byte>(Matrix3x3<T> from)
-            => new(Scalar.As<T, byte>(from.M11), Scalar.As<T, byte>(from.M12), Scalar.As<T, byte>(from.M13),
-                Scalar.As<T, byte>(from.M21), Scalar.As<T, byte>(from.M22), Scalar.As<T, byte>(from.M23),
-                Scalar.As<T, byte>(from.M31), Scalar.As<T, byte>(from.M32), Scalar.As<T, byte>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="ushort"/> matrix</returns>
-        public static explicit operator Matrix3x3<ushort>(Matrix3x3<T> from)
-            => new(Scalar.As<T, ushort>(from.M11), Scalar.As<T, ushort>(from.M12),
-                Scalar.As<T, ushort>(from.M13), Scalar.As<T, ushort>(from.M21),
-                Scalar.As<T, ushort>(from.M22), Scalar.As<T, ushort>(from.M23),
-                Scalar.As<T, ushort>(from.M31), Scalar.As<T, ushort>(from.M32),
-                Scalar.As<T, ushort>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="short"/> matrix</returns>
-        public static explicit operator Matrix3x3<short>(Matrix3x3<T> from)
-            => new(Scalar.As<T, short>(from.M11), Scalar.As<T, short>(from.M12),
-                Scalar.As<T, short>(from.M13), Scalar.As<T, short>(from.M21), Scalar.As<T, short>(from.M22),
-                Scalar.As<T, short>(from.M23), Scalar.As<T, short>(from.M31), Scalar.As<T, short>(from.M32),
-                Scalar.As<T, short>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="uint"/> matrix</returns>
-        public static explicit operator Matrix3x3<uint>(Matrix3x3<T> from)
-            => new(Scalar.As<T, uint>(from.M11), Scalar.As<T, uint>(from.M12), Scalar.As<T, uint>(from.M13),
-                Scalar.As<T, uint>(from.M21), Scalar.As<T, uint>(from.M22), Scalar.As<T, uint>(from.M23),
-                Scalar.As<T, uint>(from.M31), Scalar.As<T, uint>(from.M32), Scalar.As<T, uint>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="int"/> matrix</returns>
-        public static explicit operator Matrix3x3<int>(Matrix3x3<T> from)
-            => new(Scalar.As<T, int>(from.M11), Scalar.As<T, int>(from.M12), Scalar.As<T, int>(from.M13),
-                Scalar.As<T, int>(from.M21), Scalar.As<T, int>(from.M22), Scalar.As<T, int>(from.M23),
-                Scalar.As<T, int>(from.M31), Scalar.As<T, int>(from.M32), Scalar.As<T, int>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="ulong"/> matrix</returns>
-        public static explicit operator Matrix3x3<ulong>(Matrix3x3<T> from)
-            => new(Scalar.As<T, ulong>(from.M11), Scalar.As<T, ulong>(from.M12),
-                Scalar.As<T, ulong>(from.M13), Scalar.As<T, ulong>(from.M21), Scalar.As<T, ulong>(from.M22),
-                Scalar.As<T, ulong>(from.M23), Scalar.As<T, ulong>(from.M31), Scalar.As<T, ulong>(from.M32),
-                Scalar.As<T, ulong>(from.M33));
-
-        /// <summary>
-        /// Converts a <see cref="Matrix3x3{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="long"/> matrix</returns>
-        public static explicit operator Matrix3x3<long>(Matrix3x3<T> from)
-            => new(Scalar.As<T, long>(from.M11), Scalar.As<T, long>(from.M12), Scalar.As<T, long>(from.M13),
-                Scalar.As<T, long>(from.M21), Scalar.As<T, long>(from.M22), Scalar.As<T, long>(from.M23),
-                Scalar.As<T, long>(from.M31), Scalar.As<T, long>(from.M32), Scalar.As<T, long>(from.M33));
     }
 }

@@ -372,7 +372,7 @@ namespace Silk.NET.Maths.Tests
             Vector3<float> translation;
 
             Assert.False(Matrix4x4.Decompose(GenerateIncrementalMatrixNumber(), out scales, out rotation, out translation), "decompose should have failed.");
-            Assert.False(Matrix4x4.Decompose(new Matrix4x4<float>(Matrix3x2<float>.CreateSkew(1, 2)), out scales, out rotation, out translation), "decompose should have failed.");
+            Assert.False(Matrix4x4.Decompose(new Matrix4x4<float>(Matrix3x2.CreateSkew<float>(1, 2)), out scales, out rotation, out translation), "decompose should have failed.");
         }
         
         // Transform by quaternion test

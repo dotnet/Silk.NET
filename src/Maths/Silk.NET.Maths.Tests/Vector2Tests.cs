@@ -487,7 +487,7 @@ namespace Silk.NET.Maths.Tests
         public void Vector2Transform3x2Test()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix3x2<float> m = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30.0f));
+            Matrix3x2<float> m = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
             m.M31 = 10.0f;
             m.M32 = 20.0f;
 
@@ -524,7 +524,7 @@ namespace Silk.NET.Maths.Tests
         public void Vector2TransformNormal3x2Test()
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix3x2<float> m = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30.0f));
+            Matrix3x2<float> m = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
             m.M31 = 10.0f;
             m.M32 = 20.0f;
 

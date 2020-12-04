@@ -20,7 +20,7 @@ namespace Silk.NET.Maths.Tests
 
         static Matrix3x2<float> GenerateTestMatrix()
         {
-            Matrix3x2<float> m = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30.0f));
+            Matrix3x2<float> m = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
             m.Translation = new Vector2<float>(111.0f, 222.0f);
             return m;
         }
@@ -39,7 +39,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix3x2DeterminantTest()
         {
-            Matrix3x2<float> target = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30.0f));
+            Matrix3x2<float> target = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
 
             float val = 1.0f;
             float det = target.GetDeterminant();
@@ -60,7 +60,7 @@ namespace Silk.NET.Maths.Tests
             a.M31 = 6.5f;
             a.M32 = 1.0f;
             Matrix3x2<float> i;
-            Assert.True(Matrix3x2<float>.Invert(a, out i));
+            Assert.True(Matrix3x2.Invert<float>(a, out i));
 
             float detA = a.GetDeterminant();
             float detI = i.GetDeterminant();
@@ -78,7 +78,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix3x2InvertTest()
         {
-            Matrix3x2<float> mtx = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30.0f));
+            Matrix3x2<float> mtx = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
 
             Matrix3x2<float> expected = new Matrix3x2<float>();
             expected.M11 = 0.8660254f;
@@ -92,7 +92,7 @@ namespace Silk.NET.Maths.Tests
 
             Matrix3x2<float> actual;
 
-            Assert.True(Matrix3x2<float>.Invert(mtx, out actual));
+            Assert.True(Matrix3x2.Invert<float>(mtx, out actual));
             Assert.True(MathHelper.Equal(expected, actual), "Matrix3x2<float>.Invert did not return the expected value.");
 
             Matrix3x2<float> i = mtx * actual;
@@ -106,7 +106,7 @@ namespace Silk.NET.Maths.Tests
             Matrix3x2<float> mtx = Matrix3x2<float>.Identity;
 
             Matrix3x2<float> actual;
-            Assert.True(Matrix3x2<float>.Invert(mtx, out actual));
+            Assert.True(Matrix3x2.Invert<float>(mtx, out actual));
 
             Assert.True(MathHelper.Equal(actual, Matrix3x2<float>.Identity));
         }
@@ -115,10 +115,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix3x2InvertTranslationTest()
         {
-            Matrix3x2<float> mtx = Matrix3x2<float>.CreateTranslation(23, 42);
+            Matrix3x2<float> mtx = Matrix3x2.CreateTranslation<float>(23, 42);
 
             Matrix3x2<float> actual;
-            Assert.True(Matrix3x2<float>.Invert(mtx, out actual));
+            Assert.True(Matrix3x2.Invert<float>(mtx, out actual));
 
             Matrix3x2<float> i = mtx * actual;
             Assert.True(MathHelper.Equal(i, Matrix3x2<float>.Identity));
@@ -128,10 +128,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix3x2InvertRotationTest()
         {
-            Matrix3x2<float> mtx = Matrix3x2<float>.CreateRotation(2);
+            Matrix3x2<float> mtx = Matrix3x2.CreateRotation<float>(2);
 
             Matrix3x2<float> actual;
-            Assert.True(Matrix3x2<float>.Invert(mtx, out actual));
+            Assert.True(Matrix3x2.Invert<float>(mtx, out actual));
 
             Matrix3x2<float> i = mtx * actual;
             Assert.True(MathHelper.Equal(i, Matrix3x2<float>.Identity));
@@ -141,10 +141,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix3x2InvertScaleTest()
         {
-            Matrix3x2<float> mtx = Matrix3x2<float>.CreateScale(23, -42);
+            Matrix3x2<float> mtx = Matrix3x2.CreateScale<float>(23, -42);
 
             Matrix3x2<float> actual;
-            Assert.True(Matrix3x2<float>.Invert(mtx, out actual));
+            Assert.True(Matrix3x2.Invert<float>(mtx, out actual));
 
             Matrix3x2<float> i = mtx * actual;
             Assert.True(MathHelper.Equal(i, Matrix3x2<float>.Identity));
@@ -154,12 +154,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix3x2InvertAffineTest()
         {
-            Matrix3x2<float> mtx = Matrix3x2<float>.CreateRotation(2) *
-                            Matrix3x2<float>.CreateScale(23, -42) *
-                            Matrix3x2<float>.CreateTranslation(17, 53);
+            Matrix3x2<float> mtx = Matrix3x2.CreateRotation<float>(2) *
+                            Matrix3x2.CreateScale<float>(23, -42) *
+                            Matrix3x2.CreateTranslation<float>(17, 53);
 
             Matrix3x2<float> actual;
-            Assert.True(Matrix3x2<float>.Invert(mtx, out actual));
+            Assert.True(Matrix3x2.Invert<float>(mtx, out actual));
 
             Matrix3x2<float> i = mtx * actual;
             Assert.True(MathHelper.Equal(i, Matrix3x2<float>.Identity));
@@ -178,7 +178,7 @@ namespace Silk.NET.Maths.Tests
             expected.M22 = 0.642787635f;
 
             Matrix3x2<float> actual;
-            actual = Matrix3x2<float>.CreateRotation(radians);
+            actual = Matrix3x2.CreateRotation<float>(radians);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix3x2<float>.CreateRotation did not return the expected value.");
         }
 
@@ -189,12 +189,12 @@ namespace Silk.NET.Maths.Tests
             float radians = MathHelper.ToRadians(30.0f);
             Vector2<float> center = new Vector2<float>(23, 42);
 
-            Matrix3x2<float> rotateAroundZero = Matrix3x2<float>.CreateRotation(radians, Vector2<float>.Zero);
-            Matrix3x2<float> rotateAroundZeroExpected = Matrix3x2<float>.CreateRotation(radians);
+            Matrix3x2<float> rotateAroundZero = Matrix3x2.CreateRotation<float>(radians, Vector2<float>.Zero);
+            Matrix3x2<float> rotateAroundZeroExpected = Matrix3x2.CreateRotation<float>(radians);
             Assert.True(MathHelper.Equal(rotateAroundZero, rotateAroundZeroExpected));
 
-            Matrix3x2<float> rotateAroundCenter = Matrix3x2<float>.CreateRotation(radians, center);
-            Matrix3x2<float> rotateAroundCenterExpected = Matrix3x2<float>.CreateTranslation(-center) * Matrix3x2<float>.CreateRotation(radians) * Matrix3x2<float>.CreateTranslation(center);
+            Matrix3x2<float> rotateAroundCenter = Matrix3x2.CreateRotation<float>(radians, center);
+            Matrix3x2<float> rotateAroundCenterExpected = Matrix3x2.CreateTranslation<float>(-center) * Matrix3x2.CreateRotation<float>(radians) * Matrix3x2.CreateTranslation<float>(center);
             Assert.True(MathHelper.Equal(rotateAroundCenter, rotateAroundCenterExpected));
         }
 
@@ -203,34 +203,34 @@ namespace Silk.NET.Maths.Tests
         public void Matrix3x2CreateRotationRightAngleTest()
         {
             // 90 degree rotations must be exact!
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateRotation(0);
+            Matrix3x2<float> actual = Matrix3x2.CreateRotation<float>(0);
             Assert.Equal(new Matrix3x2<float>(1, 0, 0, 1, 0, 0), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi / 2);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi / 2);
             Assert.Equal(new Matrix3x2<float>(0, 1, -1, 0, 0, 0), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi);
             Assert.Equal(new Matrix3x2<float>(-1, 0, 0, -1, 0, 0), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi * 3 / 2);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi * 3 / 2);
             Assert.Equal(new Matrix3x2<float>(0, -1, 1, 0, 0, 0), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi * 2);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi * 2);
             Assert.Equal(new Matrix3x2<float>(1, 0, 0, 1, 0, 0), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi * 5 / 2);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi * 5 / 2);
             Assert.Equal(new Matrix3x2<float>(0, 1, -1, 0, 0, 0), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(-MathHelper.Pi / 2);
+            actual = Matrix3x2.CreateRotation<float>(-MathHelper.Pi / 2);
             Assert.Equal(new Matrix3x2<float>(0, -1, 1, 0, 0, 0), actual);
 
             // But merely close-to-90 rotations should not be excessively clamped.
             float delta = MathHelper.ToRadians(0.01f);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi + delta);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi + delta);
             Assert.False(MathHelper.Equal(new Matrix3x2<float>(-1, 0, 0, -1, 0, 0), actual));
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi - delta);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi - delta);
             Assert.False(MathHelper.Equal(new Matrix3x2<float>(-1, 0, 0, -1, 0, 0), actual));
         }
 
@@ -241,34 +241,34 @@ namespace Silk.NET.Maths.Tests
             Vector2<float> center = new Vector2<float>(3, 7);
 
             // 90 degree rotations must be exact!
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateRotation(0, center);
+            Matrix3x2<float> actual = Matrix3x2.CreateRotation<float>(0, center);
             Assert.Equal(new Matrix3x2<float>(1, 0, 0, 1, 0, 0), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi / 2, center);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi / 2, center);
             Assert.Equal(new Matrix3x2<float>(0, 1, -1, 0, 10, 4), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi, center);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi, center);
             Assert.Equal(new Matrix3x2<float>(-1, 0, 0, -1, 6, 14), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi * 3 / 2, center);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi * 3 / 2, center);
             Assert.Equal(new Matrix3x2<float>(0, -1, 1, 0, -4, 10), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi * 2, center);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi * 2, center);
             Assert.Equal(new Matrix3x2<float>(1, 0, 0, 1, 0, 0), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi * 5 / 2, center);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi * 5 / 2, center);
             Assert.Equal(new Matrix3x2<float>(0, 1, -1, 0, 10, 4), actual);
 
-            actual = Matrix3x2<float>.CreateRotation(-MathHelper.Pi / 2, center);
+            actual = Matrix3x2.CreateRotation<float>(-MathHelper.Pi / 2, center);
             Assert.Equal(new Matrix3x2<float>(0, -1, 1, 0, -4, 10), actual);
 
             // But merely close-to-90 rotations should not be excessively clamped.
             float delta = MathHelper.ToRadians(0.01f);
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi + delta, center);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi + delta, center);
             Assert.False(MathHelper.Equal(new Matrix3x2<float>(-1, 0, 0, -1, 6, 14), actual));
 
-            actual = Matrix3x2<float>.CreateRotation(MathHelper.Pi - delta, center);
+            actual = Matrix3x2.CreateRotation<float>(MathHelper.Pi - delta, center);
             Assert.False(MathHelper.Equal(new Matrix3x2<float>(-1, 0, 0, -1, 6, 14), actual));
         }
 
@@ -289,7 +289,7 @@ namespace Silk.NET.Maths.Tests
             Assert.True(MathHelper.Equal(detA, 0.0f), "Matrix3x2<float>.Invert did not return the expected value.");
 
             Matrix3x2<float> actual;
-            Assert.False(Matrix3x2<float>.Invert(a, out actual));
+            Assert.False(Matrix3x2.Invert<float>(a, out actual));
 
             // all the elements in Actual is NaN
             Assert.True(
@@ -326,7 +326,7 @@ namespace Silk.NET.Maths.Tests
             expected.M32 = a.M32 + (b.M32 - a.M32) * t;
 
             Matrix3x2<float> actual;
-            actual = Matrix3x2<float>.Lerp(a, b, t);
+            actual = Matrix3x2.Lerp<float>(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Matrix3x2<float>.Lerp did not return the expected value.");
         }
 
@@ -387,8 +387,8 @@ namespace Silk.NET.Maths.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Matrix3x2<float>.operator * did not return the expected value.");
 
             // Sanity check by comparison with 4x4 multiply.
-            a = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30)) * Matrix3x2<float>.CreateTranslation(23, 42);
-            b = Matrix3x2<float>.CreateScale(3, 7) * Matrix3x2<float>.CreateTranslation(666, -1);
+            a = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30)) * Matrix3x2.CreateTranslation<float>(23, 42);
+            b = Matrix3x2.CreateScale<float>(3, 7) * Matrix3x2.CreateTranslation<float>(666, -1);
 
             actual = a * b;
 
@@ -482,7 +482,7 @@ namespace Silk.NET.Maths.Tests
 
             Matrix3x2<float> actual;
 
-            actual = Matrix3x2<float>.Add(a, b);
+            actual = Matrix3x2.Add<float>(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -551,15 +551,15 @@ namespace Silk.NET.Maths.Tests
             expected.M31 = a.M31 * b.M11 + a.M32 * b.M21 + b.M31;
             expected.M32 = a.M31 * b.M12 + a.M32 * b.M22 + b.M32;
             Matrix3x2<float> actual;
-            actual = Matrix3x2<float>.Multiply(a, b);
+            actual = Matrix3x2.Multiply<float>(a, b);
 
             Assert.Equal(expected, actual);
 
             // Sanity check by comparison with 4x4 multiply.
-            a = Matrix3x2<float>.CreateRotation(MathHelper.ToRadians(30)) * Matrix3x2<float>.CreateTranslation(23, 42);
-            b = Matrix3x2<float>.CreateScale(3, 7) * Matrix3x2<float>.CreateTranslation(666, -1);
+            a = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30)) * Matrix3x2.CreateTranslation<float>(23, 42);
+            b = Matrix3x2.CreateScale<float>(3, 7) * Matrix3x2.CreateTranslation<float>(666, -1);
 
-            actual = Matrix3x2<float>.Multiply(a, b);
+            actual = Matrix3x2.Multiply<float>(a, b);
 
             Matrix4x4<float> a44 = new Matrix4x4<float>(a);
             Matrix4x4<float> b44 = new Matrix4x4<float>(b);
@@ -575,7 +575,7 @@ namespace Silk.NET.Maths.Tests
         {
             Matrix3x2<float> a = GenerateIncrementalMatrixNumber();
             Matrix3x2<float> expected = new Matrix3x2<float>(3, 6, 9, 12, 15, 18);
-            Matrix3x2<float> actual = Matrix3x2<float>.Multiply(a, 3);
+            Matrix3x2<float> actual = Matrix3x2.Multiply<float>(a, 3);
 
             Assert.Equal(expected, actual);
         }
@@ -606,7 +606,7 @@ namespace Silk.NET.Maths.Tests
             expected.M32 = -6.0f;
             Matrix3x2<float> actual;
 
-            actual = Matrix3x2<float>.Negate(m);
+            actual = Matrix3x2.Negate<float>(m);
             Assert.Equal(expected, actual);
         }
 
@@ -663,7 +663,7 @@ namespace Silk.NET.Maths.Tests
             expected.M32 = a.M32 - b.M32;
 
             Matrix3x2<float> actual;
-            actual = Matrix3x2<float>.Subtract(a, b);
+            actual = Matrix3x2.Subtract<float>(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -676,7 +676,7 @@ namespace Silk.NET.Maths.Tests
                 2.0f, 0.0f,
                 0.0f, 3.0f,
                 0.0f, 0.0f);
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateScale(scales);
+            Matrix3x2<float> actual = Matrix3x2.CreateScale<float>(scales);
             Assert.Equal(expected, actual);
         }
 
@@ -687,12 +687,12 @@ namespace Silk.NET.Maths.Tests
             Vector2<float> scale = new Vector2<float>(3, 4);
             Vector2<float> center = new Vector2<float>(23, 42);
 
-            Matrix3x2<float> scaleAroundZero = Matrix3x2<float>.CreateScale(scale, Vector2<float>.Zero);
-            Matrix3x2<float> scaleAroundZeroExpected = Matrix3x2<float>.CreateScale(scale);
+            Matrix3x2<float> scaleAroundZero = Matrix3x2.CreateScale<float>(scale, Vector2<float>.Zero);
+            Matrix3x2<float> scaleAroundZeroExpected = Matrix3x2.CreateScale<float>(scale);
             Assert.True(MathHelper.Equal(scaleAroundZero, scaleAroundZeroExpected));
 
-            Matrix3x2<float> scaleAroundCenter = Matrix3x2<float>.CreateScale(scale, center);
-            Matrix3x2<float> scaleAroundCenterExpected = Matrix3x2<float>.CreateTranslation(-center) * Matrix3x2<float>.CreateScale(scale) * Matrix3x2<float>.CreateTranslation(center);
+            Matrix3x2<float> scaleAroundCenter = Matrix3x2.CreateScale<float>(scale, center);
+            Matrix3x2<float> scaleAroundCenterExpected = Matrix3x2.CreateTranslation<float>(-center) * Matrix3x2.CreateScale<float>(scale) * Matrix3x2.CreateTranslation<float>(center);
             Assert.True(MathHelper.Equal(scaleAroundCenter, scaleAroundCenterExpected));
         }
 
@@ -705,7 +705,7 @@ namespace Silk.NET.Maths.Tests
                 2.0f, 0.0f,
                 0.0f, 2.0f,
                 0.0f, 0.0f);
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateScale(scale);
+            Matrix3x2<float> actual = Matrix3x2.CreateScale<float>(scale);
             Assert.Equal(expected, actual);
         }
 
@@ -716,12 +716,12 @@ namespace Silk.NET.Maths.Tests
             float scale = 5;
             Vector2<float> center = new Vector2<float>(23, 42);
 
-            Matrix3x2<float> scaleAroundZero = Matrix3x2<float>.CreateScale(scale, Vector2<float>.Zero);
-            Matrix3x2<float> scaleAroundZeroExpected = Matrix3x2<float>.CreateScale(scale);
+            Matrix3x2<float> scaleAroundZero = Matrix3x2.CreateScale<float>(scale, Vector2<float>.Zero);
+            Matrix3x2<float> scaleAroundZeroExpected = Matrix3x2.CreateScale<float>(scale);
             Assert.True(MathHelper.Equal(scaleAroundZero, scaleAroundZeroExpected));
 
-            Matrix3x2<float> scaleAroundCenter = Matrix3x2<float>.CreateScale(scale, center);
-            Matrix3x2<float> scaleAroundCenterExpected = Matrix3x2<float>.CreateTranslation(-center) * Matrix3x2<float>.CreateScale(scale) * Matrix3x2<float>.CreateTranslation(center);
+            Matrix3x2<float> scaleAroundCenter = Matrix3x2.CreateScale<float>(scale, center);
+            Matrix3x2<float> scaleAroundCenterExpected = Matrix3x2.CreateTranslation<float>(-center) * Matrix3x2.CreateScale<float>(scale) * Matrix3x2.CreateTranslation<float>(center);
             Assert.True(MathHelper.Equal(scaleAroundCenter, scaleAroundCenterExpected));
         }
 
@@ -735,7 +735,7 @@ namespace Silk.NET.Maths.Tests
                 2.0f, 0.0f,
                 0.0f, 3.0f,
                 0.0f, 0.0f);
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateScale(xScale, yScale);
+            Matrix3x2<float> actual = Matrix3x2.CreateScale<float>(xScale, yScale);
             Assert.Equal(expected, actual);
         }
 
@@ -746,12 +746,12 @@ namespace Silk.NET.Maths.Tests
             Vector2<float> scale = new Vector2<float>(3, 4);
             Vector2<float> center = new Vector2<float>(23, 42);
 
-            Matrix3x2<float> scaleAroundZero = Matrix3x2<float>.CreateScale(scale.X, scale.Y, Vector2<float>.Zero);
-            Matrix3x2<float> scaleAroundZeroExpected = Matrix3x2<float>.CreateScale(scale.X, scale.Y);
+            Matrix3x2<float> scaleAroundZero = Matrix3x2.CreateScale<float>(scale.X, scale.Y, Vector2<float>.Zero);
+            Matrix3x2<float> scaleAroundZeroExpected = Matrix3x2.CreateScale<float>(scale.X, scale.Y);
             Assert.True(MathHelper.Equal(scaleAroundZero, scaleAroundZeroExpected));
 
-            Matrix3x2<float> scaleAroundCenter = Matrix3x2<float>.CreateScale(scale.X, scale.Y, center);
-            Matrix3x2<float> scaleAroundCenterExpected = Matrix3x2<float>.CreateTranslation(-center) * Matrix3x2<float>.CreateScale(scale.X, scale.Y) * Matrix3x2<float>.CreateTranslation(center);
+            Matrix3x2<float> scaleAroundCenter = Matrix3x2.CreateScale<float>(scale.X, scale.Y, center);
+            Matrix3x2<float> scaleAroundCenterExpected = Matrix3x2.CreateTranslation<float>(-center) * Matrix3x2.CreateScale<float>(scale.X, scale.Y) * Matrix3x2.CreateTranslation<float>(center);
             Assert.True(MathHelper.Equal(scaleAroundCenter, scaleAroundCenterExpected));
         }
 
@@ -765,7 +765,7 @@ namespace Silk.NET.Maths.Tests
                 0.0f, 1.0f,
                 2.0f, 3.0f);
 
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateTranslation(position);
+            Matrix3x2<float> actual = Matrix3x2.CreateTranslation<float>(position);
             Assert.Equal(expected, actual);
         }
 
@@ -781,7 +781,7 @@ namespace Silk.NET.Maths.Tests
                 0.0f, 1.0f,
                 2.0f, 3.0f);
 
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateTranslation(xPosition, yPosition);
+            Matrix3x2<float> actual = Matrix3x2.CreateTranslation<float>(xPosition, yPosition);
             Assert.Equal(expected, actual);
         }
 
@@ -833,7 +833,7 @@ namespace Silk.NET.Maths.Tests
         public void Matrix3x2CreateSkewIdentityTest()
         {
             Matrix3x2<float> expected = Matrix3x2<float>.Identity;
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateSkew(0, 0);
+            Matrix3x2<float> actual = Matrix3x2.CreateSkew<float>(0, 0);
             Assert.Equal(expected, actual);
         }
 
@@ -842,11 +842,11 @@ namespace Silk.NET.Maths.Tests
         public void Matrix3x2CreateSkewXTest()
         {
             Matrix3x2<float> expected = new Matrix3x2<float>(1, 0, -0.414213562373095f, 1, 0, 0);
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateSkew(-MathHelper.Pi / 8, 0);
+            Matrix3x2<float> actual = Matrix3x2.CreateSkew<float>(-MathHelper.Pi / 8, 0);
             Assert.True(MathHelper.Equal(expected, actual));
 
             expected = new Matrix3x2<float>(1, 0, 0.414213562373095f, 1, 0, 0);
-            actual = Matrix3x2<float>.CreateSkew(MathHelper.Pi / 8, 0);
+            actual = Matrix3x2.CreateSkew<float>(MathHelper.Pi / 8, 0);
             Assert.True(MathHelper.Equal(expected, actual));
 
             Vector2<float> result = Vector2.Transform(new Vector2<float>(0, 0), actual);
@@ -867,11 +867,11 @@ namespace Silk.NET.Maths.Tests
         public void Matrix3x2CreateSkewYTest()
         {
             Matrix3x2<float> expected = new Matrix3x2<float>(1, -0.414213562373095f, 0, 1, 0, 0);
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateSkew(0, -MathHelper.Pi / 8);
+            Matrix3x2<float> actual = Matrix3x2.CreateSkew<float>(0, -MathHelper.Pi / 8);
             Assert.True(MathHelper.Equal(expected, actual));
 
             expected = new Matrix3x2<float>(1, 0.414213562373095f, 0, 1, 0, 0);
-            actual = Matrix3x2<float>.CreateSkew(0, MathHelper.Pi / 8);
+            actual = Matrix3x2.CreateSkew<float>(0, MathHelper.Pi / 8);
             Assert.True(MathHelper.Equal(expected, actual));
 
             Vector2<float> result = Vector2.Transform(new Vector2<float>(0, 0), actual);
@@ -892,7 +892,7 @@ namespace Silk.NET.Maths.Tests
         public void Matrix3x2CreateSkewXYTest()
         {
             Matrix3x2<float> expected = new Matrix3x2<float>(1, -0.414213562373095f, 1, 1, 0, 0);
-            Matrix3x2<float> actual = Matrix3x2<float>.CreateSkew(MathHelper.Pi / 4, -MathHelper.Pi / 8);
+            Matrix3x2<float> actual = Matrix3x2.CreateSkew<float>(MathHelper.Pi / 4, -MathHelper.Pi / 8);
             Assert.True(MathHelper.Equal(expected, actual));
 
             Vector2<float> result = Vector2.Transform(new Vector2<float>(0, 0), actual);
@@ -915,12 +915,12 @@ namespace Silk.NET.Maths.Tests
             float skewX = 1, skewY = 2;
             Vector2<float> center = new Vector2<float>(23, 42);
 
-            Matrix3x2<float> skewAroundZero = Matrix3x2<float>.CreateSkew(skewX, skewY, Vector2<float>.Zero);
-            Matrix3x2<float> skewAroundZeroExpected = Matrix3x2<float>.CreateSkew(skewX, skewY);
+            Matrix3x2<float> skewAroundZero = Matrix3x2.CreateSkew<float>(skewX, skewY, Vector2<float>.Zero);
+            Matrix3x2<float> skewAroundZeroExpected = Matrix3x2.CreateSkew<float>(skewX, skewY);
             Assert.True(MathHelper.Equal(skewAroundZero, skewAroundZeroExpected));
 
-            Matrix3x2<float> skewAroundCenter = Matrix3x2<float>.CreateSkew(skewX, skewY, center);
-            Matrix3x2<float> skewAroundCenterExpected = Matrix3x2<float>.CreateTranslation(-center) * Matrix3x2<float>.CreateSkew(skewX, skewY) * Matrix3x2<float>.CreateTranslation(center);
+            Matrix3x2<float> skewAroundCenter = Matrix3x2.CreateSkew<float>(skewX, skewY, center);
+            Matrix3x2<float> skewAroundCenterExpected = Matrix3x2.CreateTranslation<float>(-center) * Matrix3x2.CreateSkew<float>(skewX, skewY) * Matrix3x2.CreateTranslation<float>(center);
             Assert.True(MathHelper.Equal(skewAroundCenter, skewAroundCenterExpected));
         }
 

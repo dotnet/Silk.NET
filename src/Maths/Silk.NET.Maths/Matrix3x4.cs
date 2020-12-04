@@ -345,94 +345,6 @@ namespace Silk.NET.Maths
             return new(-value.Row1, -value.Row2, -value.Row3);
         }
 
-        /// <summary>Adds two matrices together.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The resulting matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x4<T> Add(Matrix3x4<T> value1, Matrix3x4<T> value2)
-        {
-            return value1 + value2;
-        }
-
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x3<T> Multiply(Matrix3x4<T> value1, Matrix4x3<T> value2)
-            => value1 * value2;
-        
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x4<T> Multiply(Matrix3x4<T> value1, Matrix4x4<T> value2)
-            => value1 * value2;
-
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x4<T> Multiply(Matrix3x3<T> value1, Matrix3x4<T> value2)
-            => value1 * value2;
-        
-        
-        /// <summary>Multiplies a matrix by another matrix.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix4x4<T> Multiply(Matrix4x3<T> value1, Matrix3x4<T> value2)
-            => value1 * value2;
-        
-        /// <summary>Multiplies a matrix by a scalar value.</summary>
-        /// <param name="value1">The source matrix.</param>
-        /// <param name="value2">The scaling factor.</param>
-        /// <returns>The scaled matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x4<T> Multiply(Matrix3x4<T> value1, T value2)
-            => value1 * value2;
-        
-        /// <summary>Multiplies a vector by a matrix.</summary>
-        /// <param name="value1">The vector.</param>
-        /// <param name="value2">The matrix.</param>
-        /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4<T> Multiply(Vector3<T> value1, Matrix3x4<T> value2)
-            => value1 * value2;
-
-        /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
-        /// <param name="value">The source matrix.</param>
-        /// <returns>The negated matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x4<T> Negate(Matrix3x4<T> value)
-            => -value;
-
-        /// <summary>Subtracts the second matrix from the first.</summary>
-        /// <param name="value1">The first source matrix.</param>
-        /// <param name="value2">The second source matrix.</param>
-        /// <returns>The result of the subtraction.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x4<T> Subtract(Matrix3x4<T> value1, Matrix3x4<T> value2)
-            => value1 - value2;
-
-        /// <summary>Linearly interpolates between the corresponding values of two matrices.</summary>
-        /// <param name="matrix1">The first source matrix.</param>
-        /// <param name="matrix2">The second source matrix.</param>
-        /// <param name="amount">The relative weight of the second source matrix.</param>
-        /// <returns>The interpolated matrix.</returns>
-        public static unsafe Matrix3x4<T> Lerp(Matrix3x4<T> matrix1, Matrix3x4<T> matrix2, T amount)
-        {
-            return new(
-                Vector4.Lerp(matrix1.Row1, matrix2.Row1, amount),
-                Vector4.Lerp(matrix1.Row2, matrix2.Row2, amount), 
-                Vector4.Lerp(matrix1.Row3, matrix2.Row3, amount)
-            );
-        }
-
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
@@ -671,5 +583,106 @@ namespace Silk.NET.Maths
                 Scalar.As<T, long>(from.M31),Scalar.As<T, long>(from.M32),
                 Scalar.As<T, long>(from.M33),Scalar.As<T, long>(from.M34)
             );
+    }
+
+    public static class Matrix3x4
+    {
+        /// <summary>Adds two matrices together.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The resulting matrix.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix3x4<T> Add<T>(Matrix3x4<T> value1, Matrix3x4<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        {
+            return value1 + value2;
+        }
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix3x3<T> Multiply<T>(Matrix3x4<T> value1, Matrix4x3<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 * value2;
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix3x4<T> Multiply<T>(Matrix3x4<T> value1, Matrix4x4<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 * value2;
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix3x4<T> Multiply<T>(Matrix3x3<T> value1, Matrix3x4<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 * value2;
+        
+        
+        /// <summary>Multiplies a matrix by another matrix.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix4x4<T> Multiply<T>(Matrix4x3<T> value1, Matrix3x4<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 * value2;
+        
+        /// <summary>Multiplies a matrix by a scalar value.</summary>
+        /// <param name="value1">The source matrix.</param>
+        /// <param name="value2">The scaling factor.</param>
+        /// <returns>The scaled matrix.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix3x4<T> Multiply<T>(Matrix3x4<T> value1, T value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 * value2;
+        
+        /// <summary>Multiplies a vector by a matrix.</summary>
+        /// <param name="value1">The vector.</param>
+        /// <param name="value2">The matrix.</param>
+        /// <returns>The result of the multiplication.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Vector4<T> Multiply<T>(Vector3<T> value1, Matrix3x4<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 * value2;
+
+        /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
+        /// <param name="value">The source matrix.</param>
+        /// <returns>The negated matrix.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix3x4<T> Negate<T>(Matrix3x4<T> value)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => -value;
+
+        /// <summary>Subtracts the second matrix from the first.</summary>
+        /// <param name="value1">The first source matrix.</param>
+        /// <param name="value2">The second source matrix.</param>
+        /// <returns>The result of the subtraction.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static Matrix3x4<T> Subtract<T>(Matrix3x4<T> value1, Matrix3x4<T> value2)
+                where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => value1 - value2;
+
+        /// <summary>Linearly interpolates between the corresponding values of two matrices.</summary>
+        /// <param name="matrix1">The first source matrix.</param>
+        /// <param name="matrix2">The second source matrix.</param>
+        /// <param name="amount">The relative weight of the second source matrix.</param>
+        /// <returns>The interpolated matrix.</returns>
+        public static unsafe Matrix3x4<T> Lerp<T>(Matrix3x4<T> matrix1, Matrix3x4<T> matrix2, T amount)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        {
+            return new(
+                Vector4.Lerp(matrix1.Row1, matrix2.Row1, amount),
+                Vector4.Lerp(matrix1.Row2, matrix2.Row2, amount), 
+                Vector4.Lerp(matrix1.Row3, matrix2.Row3, amount)
+            );
+        }
     }
 }
