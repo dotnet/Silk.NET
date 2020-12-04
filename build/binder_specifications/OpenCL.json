@@ -32496,7 +32496,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "cl_version_khr",
+                "Name": "int",
                 "Group": null,
                 "OriginalName": "cl_version_khr",
                 "OriginalGroup": null,
@@ -38985,7 +38985,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "cl_mipmap_filter_mode_img",
+                    "Name": "IMG",
                     "Group": null,
                     "OriginalName": "cl_mipmap_filter_mode_img",
                     "OriginalGroup": null,
@@ -39169,7 +39169,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "cl_mipmap_filter_mode_img",
+                    "Name": "IMG",
                     "Group": null,
                     "OriginalName": "cl_mipmap_filter_mode_img",
                     "OriginalGroup": null,

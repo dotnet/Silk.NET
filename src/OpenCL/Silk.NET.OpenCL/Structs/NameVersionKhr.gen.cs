@@ -18,14 +18,14 @@ namespace Silk.NET.OpenCL
     {
         public NameVersionKhr
         (
-            cl_version_khr version = default
+            int version = default
         )
         {
            Version = version;
         }
 
 /// <summary></summary>
-        public cl_version_khr Version;
+        public int Version;
         /// <summary></summary>
        public fixed char Name[64];
     }

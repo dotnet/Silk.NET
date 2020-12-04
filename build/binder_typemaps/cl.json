@@ -101,5 +101,7 @@
     "cl_mem_migration_flags_intel": "CLenum",
     "cl_mem_advice_intel": "cl_uint",
     "cl_version": "cl_uint",
-    "cl_mem_properties": "CLenum"
+    "cl_mem_properties": "CLenum",
+    "cl_mipmap_filter_mode_img": "CLenum",
+    "cl_version_khr": "int"
 }
