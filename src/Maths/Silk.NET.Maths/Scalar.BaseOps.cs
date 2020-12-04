@@ -5,12 +5,18 @@
 
 using System;
 using System.Runtime.CompilerServices;
+#if AdvSIMD
+using System.Runtime.Intrinsics.Arm;
+#endif
+#if SSE
+using System.Runtime.Intrinsics.X86;
+#endif
 
 namespace Silk.NET.Maths
 {
     public static partial class Scalar
     {
-        public const MethodImplOptions MaxOpt = MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512;
+        internal const MethodImplOptions MaxOpt = MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512;
         
         internal static void ThrowUnsupportedType()
             => throw new NotSupportedException("The given type is unsupported for generic maths.");
@@ -26,6 +32,18 @@ namespace Silk.NET.Maths
             );
 
         private static void ThrowIndexOutOfRange() => throw new IndexOutOfRangeException();
+
+        /// <summary>
+        /// Indicates whether members are hardware accelerated. Not all members support hardware acceleration.
+        /// </summary>
+        public static bool IsHardwareAccelerated => false
+#if SSE
+        || Sse.IsSupported
+#endif
+#if AdvSIMD
+        || AdvSimd.IsSupported
+#endif
+        ;
 
         /// <summary>
         /// Determines whether the specified value is finite (zero, subnormal, or normal).

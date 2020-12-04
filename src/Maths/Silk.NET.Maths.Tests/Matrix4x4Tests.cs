@@ -623,7 +623,7 @@ namespace Silk.NET.Maths.Tests
 
             foreach (Plane<float> p in planes)
             {
-                Plane<float> plane = Plane<float>.Normalize(p);
+                Plane<float> plane = Plane.Normalize(p);
 
                 // Try various direction of light directions.
                 var testDirections = new Vector3<float>[]
@@ -665,7 +665,7 @@ namespace Silk.NET.Maths.Tests
                         continue;
                     Vector3<float> lightDir = Vector3.Normalize(lightDirInfo);
 
-                    if (Plane<float>.DotNormal(plane, lightDir) < 0.1f)
+                    if (Plane.DotNormal(plane, lightDir) < 0.1f)
                         continue;
 
                     Matrix4x4<float> m = Matrix4x4<float>.CreateShadow(lightDir, plane);
@@ -728,7 +728,7 @@ namespace Silk.NET.Maths.Tests
 
             foreach (Plane<float> p in planes)
             {
-                Plane<float> plane = Plane<float>.Normalize(p);
+                Plane<float> plane = Plane.Normalize(p);
                 Matrix4x4<float> m = Matrix4x4<float>.CreateReflection(plane);
                 Vector3<float> pp = -plane.Distance * plane.Normal; // Position on the plane.
 

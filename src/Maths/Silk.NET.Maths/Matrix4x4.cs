@@ -853,7 +853,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>A new matrix expressing the reflection.</returns>
         public static Matrix4x4<T> CreateReflection(Plane<T> value)
         {
-            value = Plane<T>.Normalize(value);
+            value = Plane.Normalize(value);
 
             T a = value.Normal.X;
             T b = value.Normal.Y;
@@ -1149,7 +1149,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>A new Matrix that can be used to flatten geometry onto the specified plane from the specified direction.</returns>
         public static Matrix4x4<T> CreateShadow(Vector3<T> lightDirection, Plane<T> plane)
         {
-            Plane<T> p = Plane<T>.Normalize(plane);
+            Plane<T> p = Plane.Normalize(plane);
 
             T dot = Scalar.Add(Scalar.Add(Scalar.Multiply(p.Normal.X, lightDirection.X),Scalar.Multiply(p.Normal.Y, lightDirection.Y)), Scalar.Multiply(p.Normal.Z, lightDirection.Z));
             T a = Scalar.Negate(p.Normal.X);

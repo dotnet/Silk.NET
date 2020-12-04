@@ -130,7 +130,7 @@ namespace Silk.NET.Maths.Tests
             Vector3<float> point2 = new Vector3<float>(0.0f, 0.0f, 1.0f);
             Vector3<float> point3 = new Vector3<float>(1.0f, 0.0f, 1.0f);
 
-            Plane<float> target = Plane<float>.CreateFromVertices(point1, point2, point3);
+            Plane<float> target = Plane.CreateFromVertices(point1, point2, point3);
             Plane<float> expected = new Plane<float>(new Vector3<float>(0, 0, 1), -1.0f);
             Assert.Equal(target, expected);
         }
@@ -143,7 +143,7 @@ namespace Silk.NET.Maths.Tests
             Vector3<float> point2 = new Vector3<float>(1.0f, 0.0f, 0.0f);
             Vector3<float> point3 = new Vector3<float>(1.0f, 1.0f, 0.0f);
 
-            Plane<float> target = Plane<float>.CreateFromVertices(point1, point2, point3);
+            Plane<float> target = Plane.CreateFromVertices(point1, point2, point3);
             var invRoot2 = 1.0f / Scalar.Sqrt(2);
 
             Plane<float> expected = new Plane<float>(new Vector3<float>(invRoot2, 0, invRoot2), -invRoot2);
@@ -182,7 +182,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> value = new Vector4<float>(5, 4, 3, 2);
 
             float expected = 10 + 12 + 12 + 10;
-            float actual = Plane<float>.Dot(target, value);
+            float actual = Plane.Dot(target, value);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.Dot returns unexpected value.");
         }
 
@@ -193,7 +193,7 @@ namespace Silk.NET.Maths.Tests
             Vector3<float> value = new Vector3<float>(5, 4, 3);
 
             float expected = 10 + 12 + 12 + 5;
-            float actual = Plane<float>.DotCoordinate(target, value);
+            float actual = Plane.DotCoordinate(target, value);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.DotCoordinate returns unexpected value.");
         }
 
@@ -204,7 +204,7 @@ namespace Silk.NET.Maths.Tests
             Vector3<float> value = new Vector3<float>(5, 4, 3);
 
             float expected = 10 + 12 + 12;
-            float actual = Plane<float>.DotNormal(target, value);
+            float actual = Plane.DotNormal(target, value);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.DotCoordinate returns unexpected value.");
         }
 
@@ -217,11 +217,11 @@ namespace Silk.NET.Maths.Tests
             float invF = 1.0f / (float)Scalar.Sqrt(f);
             Plane<float> expected = new Plane<float>(target.Normal * invF, target.Distance * invF);
 
-            Plane<float> actual = Plane<float>.Normalize(target);
+            Plane<float> actual = Plane.Normalize(target);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.Normalize returns unexpected value.");
 
             // normalize, normalized normal.
-            actual = Plane<float>.Normalize(actual);
+            actual = Plane.Normalize(actual);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.Normalize returns unexpected value.");
         }
 
@@ -230,7 +230,7 @@ namespace Silk.NET.Maths.Tests
         public void PlaneTransformTest1()
         {
             Plane<float> target = new Plane<float>(1, 2, 3, 4);
-            target = Plane<float>.Normalize(target);
+            target = Plane.Normalize(target);
 
             Matrix4x4<float> m =
                 Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
@@ -252,7 +252,7 @@ namespace Silk.NET.Maths.Tests
             expected.Distance = x * itm.M14 + y * itm.M24 + z * itm.M34 + w * itm.M44;
 
             Plane<float> actual;
-            actual = Plane<float>.Transform(target, m);
+            actual = Plane.Transform(target, m);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.Transform did not return the expected value.");
         }
 
@@ -261,7 +261,7 @@ namespace Silk.NET.Maths.Tests
         public void PlaneTransformTest2()
         {
             Plane<float> target = new Plane<float>(1, 2, 3, 4);
-            target = Plane<float>.Normalize(target);
+            target = Plane.Normalize(target);
 
             Matrix4x4<float> m =
                 Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
@@ -278,7 +278,7 @@ namespace Silk.NET.Maths.Tests
             expected.Distance = x * m.M14 + y * m.M24 + z * m.M34 + w * m.M44;
 
             Plane<float> actual;
-            actual = Plane<float>.Transform(target, q);
+            actual = Plane.Transform(target, q);
             Assert.True(MathHelper.Equal(expected, actual), "Plane<float>.Transform did not return the expected value.");
         }
 
