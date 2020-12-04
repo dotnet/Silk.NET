@@ -107,7 +107,7 @@ namespace Silk.NET.Maths.Tests
             float expected = 64.0f;
             float actual;
 
-            actual = Vector4<float>.DistanceSquared(a, b);
+            actual = Vector4.DistanceSquared(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.DistanceSquared did not return the expected value.");
         }
 
@@ -121,7 +121,7 @@ namespace Silk.NET.Maths.Tests
             float expected = 8.0f;
             float actual;
 
-            actual = Vector4<float>.Distance(a, b);
+            actual = Vector4.Distance(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Distance did not return the expected value.");
         }
 
@@ -134,7 +134,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> b = new Vector4<float>(new Vector3<float>(1.051f, 2.05f, 3.478f), 0.0f);
             b.W = 1.0f;
 
-            float actual = Vector4<float>.Distance(a, b);
+            float actual = Vector4.Distance(a, b);
             Assert.Equal(0.0f, actual);
         }
 
@@ -148,7 +148,7 @@ namespace Silk.NET.Maths.Tests
             float expected = 70.0f;
             float actual;
 
-            actual = Vector4<float>.Dot(a, b);
+            actual = Vector4.Dot(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Dot did not return the expected value.");
         }
 
@@ -164,7 +164,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> d = new Vector4<float>(a, 0);
             Vector4<float> e = new Vector4<float>(c, 0);
 
-            float actual = Vector4<float>.Dot(d, e);
+            float actual = Vector4.Dot(d, e);
             Assert.True(MathHelper.Equal(0.0f, actual), "Vector4<float>f.Dot did not return the expected value.");
         }
 
@@ -224,7 +224,7 @@ namespace Silk.NET.Maths.Tests
 
             Vector4<float> expected = new Vector4<float>(-1.0f, 1.0f, -3.0f, 0.0f);
             Vector4<float> actual;
-            actual = Vector4<float>.Min(a, b);
+            actual = Vector4.Min(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Min did not return the expected value.");
         }
 
@@ -237,7 +237,7 @@ namespace Silk.NET.Maths.Tests
 
             Vector4<float> expected = new Vector4<float>(2.0f, 4.0f, -1.0f, 1000.0f);
             Vector4<float> actual;
-            actual = Vector4<float>.Max(a, b);
+            actual = Vector4.Max(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Max did not return the expected value.");
         }
 
@@ -249,17 +249,17 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> actual;
 
             // Min.
-            actual = Vector4<float>.Min(min, max);
+            actual = Vector4.Min(min, max);
             Assert.Equal(actual, min);
 
-            actual = Vector4<float>.Min(max, min);
+            actual = Vector4.Min(max, min);
             Assert.Equal(actual, min);
 
             // Max.
-            actual = Vector4<float>.Max(min, max);
+            actual = Vector4.Max(min, max);
             Assert.Equal(actual, max);
 
-            actual = Vector4<float>.Max(max, min);
+            actual = Vector4.Max(max, min);
             Assert.Equal(actual, max);
         }
 
@@ -274,26 +274,26 @@ namespace Silk.NET.Maths.Tests
             // Normal case.
             // Case N1: specified value is in the range.
             Vector4<float> expected = new Vector4<float>(0.5f, 0.3f, 0.33f, 0.44f);
-            Vector4<float> actual = Vector4<float>.Clamp(a, min, max);
+            Vector4<float> actual = Vector4.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
 
             // Normal case.
             // Case N2: specified value is bigger than max value.
             a = new Vector4<float>(2.0f, 3.0f, 4.0f, 5.0f);
             expected = max;
-            actual = Vector4<float>.Clamp(a, min, max);
+            actual = Vector4.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
 
             // Case N3: specified value is smaller than max value.
             a = new Vector4<float>(-2.0f, -3.0f, -4.0f, -5.0f);
             expected = min;
-            actual = Vector4<float>.Clamp(a, min, max);
+            actual = Vector4.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
 
             // Case N4: combination case.
             a = new Vector4<float>(-2.0f, 0.5f, 4.0f, -5.0f);
             expected = new Vector4<float>(min.X, a.Y, max.Z, min.W);
-            actual = Vector4<float>.Clamp(a, min, max);
+            actual = Vector4.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
 
             // User specified min value is bigger than max value.
@@ -303,20 +303,20 @@ namespace Silk.NET.Maths.Tests
             // Case W1: specified value is in the range.
             a = new Vector4<float>(0.5f, 0.3f, 0.33f, 0.44f);
             expected = max;
-            actual = Vector4<float>.Clamp(a, min, max);
+            actual = Vector4.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
 
             // Normal case.
             // Case W2: specified value is bigger than max and min value.
             a = new Vector4<float>(2.0f, 3.0f, 4.0f, 5.0f);
             expected = max;
-            actual = Vector4<float>.Clamp(a, min, max);
+            actual = Vector4.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
 
             // Case W3: specified value is smaller than min and max value.
             a = new Vector4<float>(-2.0f, -3.0f, -4.0f, -5.0f);
             expected = max;
-            actual = Vector4<float>.Clamp(a, min, max);
+            actual = Vector4.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
         }
 
@@ -332,7 +332,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(3.0f, 4.0f, 5.0f, 6.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Lerp(a, b, t);
+            actual = Vector4.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
         }
 
@@ -346,7 +346,7 @@ namespace Silk.NET.Maths.Tests
 
             float t = 0.0f;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> actual = Vector4<float>.Lerp(a, b, t);
+            Vector4<float> actual = Vector4.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
         }
 
@@ -360,7 +360,7 @@ namespace Silk.NET.Maths.Tests
 
             float t = 1.0f;
             Vector4<float> expected = new Vector4<float>(4.0f, 5.0f, 6.0f, 7.0f);
-            Vector4<float> actual = Vector4<float>.Lerp(a, b, t);
+            Vector4<float> actual = Vector4.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
         }
 
@@ -374,7 +374,7 @@ namespace Silk.NET.Maths.Tests
 
             float t = 2.0f;
             Vector4<float> expected = new Vector4<float>(8.0f, 10.0f, 12.0f, 14.0f);
-            Vector4<float> actual = Vector4<float>.Lerp(a, b, t);
+            Vector4<float> actual = Vector4.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
         }
 
@@ -388,7 +388,7 @@ namespace Silk.NET.Maths.Tests
 
             float t = -2.0f;
             Vector4<float> expected = -(b * 2);
-            Vector4<float> actual = Vector4<float>.Lerp(a, b, t);
+            Vector4<float> actual = Vector4.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
         }
 
@@ -401,7 +401,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> b = new Vector4<float>(float.PositiveInfinity, float.NegativeInfinity, 0, 0);
 
             float t = 0.408f;
-            Vector4<float> actual = Vector4<float>.Lerp(a, b, t);
+            Vector4<float> actual = Vector4.Lerp(a, b, t);
             Assert.True(float.IsPositiveInfinity(actual.X), "Vector4<float>f.Lerp did not return the expected value.");
             Assert.True(float.IsNegativeInfinity(actual.Y), "Vector4<float>f.Lerp did not return the expected value.");
         }
@@ -416,7 +416,7 @@ namespace Silk.NET.Maths.Tests
 
             float t = 0.85f;
             Vector4<float> expected = a;
-            Vector4<float> actual = Vector4<float>.Lerp(a, b, t);
+            Vector4<float> actual = Vector4.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
         }
 
@@ -431,7 +431,7 @@ namespace Silk.NET.Maths.Tests
             float t = 0.26402435f;
 
             Vector4<float> expected = new Vector4<float>(0.45155275f);
-            Vector4<float> actual = Vector4<float>.Lerp(a, b, t);
+            Vector4<float> actual = Vector4.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
         }
 
@@ -447,7 +447,7 @@ namespace Silk.NET.Maths.Tests
             float t = 1f;
 
             Vector4<float> expected = new Vector4<float>(0.33333334f);
-            Vector4<float> actual = Vector4<float>.Lerp(a, b, t);
+            Vector4<float> actual = Vector4.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
         }
 
@@ -469,7 +469,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(10.316987f, 22.183012f, 30.3660259f, 1.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Transform(v, m);
+            actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -490,7 +490,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(12.19198728f, 21.53349376f, 32.61602545f, 1.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Transform(v, m);
+            actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>.Transform did not return the expected value.");
         }
 
@@ -511,14 +511,14 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(2.19198728f, 1.53349376f, 2.61602545f, 0.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Transform(v, m);
+            actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
 
             //
             v.W = 1.0f;
 
             expected = new Vector4<float>(12.19198728f, 21.53349376f, 32.61602545f, 1.0f);
-            actual = Vector4<float>.Transform(v, m);
+            actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -531,7 +531,7 @@ namespace Silk.NET.Maths.Tests
             Matrix4x4<float> m = new Matrix4x4<float>();
             Vector4<float> expected = new Vector4<float>(0, 0, 0, 0);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, m);
+            Vector4<float> actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -544,7 +544,7 @@ namespace Silk.NET.Maths.Tests
             Matrix4x4<float> m = Matrix4x4<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, m);
+            Vector4<float> actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -563,8 +563,8 @@ namespace Silk.NET.Maths.Tests
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector4<float> expected = Vector4<float>.Transform(new Vector4<float>(v, 1.0f), m);
-            Vector4<float> actual = Vector4<float>.Transform(v, m);
+            Vector4<float> expected = Vector4.Transform(new Vector4<float>(v, 1.0f), m);
+            Vector4<float> actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -577,7 +577,7 @@ namespace Silk.NET.Maths.Tests
             Matrix4x4<float> m = new Matrix4x4<float>();
             Vector4<float> expected = new Vector4<float>(0, 0, 0, 0);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, m);
+            Vector4<float> actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -590,7 +590,7 @@ namespace Silk.NET.Maths.Tests
             Matrix4x4<float> m = Matrix4x4<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 1.0f);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, m);
+            Vector4<float> actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -609,8 +609,8 @@ namespace Silk.NET.Maths.Tests
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector4<float> expected = Vector4<float>.Transform(new Vector4<float>(v, 0.0f, 1.0f), m);
-            Vector4<float> actual = Vector4<float>.Transform(v, m);
+            Vector4<float> expected = Vector4.Transform(new Vector4<float>(v, 0.0f, 1.0f), m);
+            Vector4<float> actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -623,7 +623,7 @@ namespace Silk.NET.Maths.Tests
             Matrix4x4<float> m = new Matrix4x4<float>();
             Vector4<float> expected = new Vector4<float>(0, 0, 0, 0);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, m);
+            Vector4<float> actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -636,7 +636,7 @@ namespace Silk.NET.Maths.Tests
             Matrix4x4<float> m = Matrix4x4<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 0, 1.0f);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, m);
+            Vector4<float> actual = Vector4.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
         
@@ -654,10 +654,10 @@ namespace Silk.NET.Maths.Tests
 
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4<float>.Transform(v, m);
+            Vector4<float> expected = Vector4.Transform(v, m);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Transform(v, q);
+            actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -673,10 +673,10 @@ namespace Silk.NET.Maths.Tests
                 Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4<float>.Transform(v, m);
+            Vector4<float> expected = Vector4.Transform(v, m);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Transform(v, q);
+            actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>.Transform did not return the expected value.");
         }
         
@@ -692,16 +692,16 @@ namespace Silk.NET.Maths.Tests
                 Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4<float>.Transform(v, m);
+            Vector4<float> expected = Vector4.Transform(v, m);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Transform(v, q);
+            actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
 
             //
             v.W = 1.0f;
             expected.W = 1.0f;
-            actual = Vector4<float>.Transform(v, q);
+            actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -714,7 +714,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> q = new Quaternion<float>();
             Vector4<float> expected = v;
 
-            Vector4<float> actual = Vector4<float>.Transform(v, q);
+            Vector4<float> actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -727,7 +727,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> q = Quaternion<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, q);
+            Vector4<float> actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -744,8 +744,8 @@ namespace Silk.NET.Maths.Tests
                 Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4<float>.Transform(v, m);
-            Vector4<float> actual = Vector4<float>.Transform(v, q);
+            Vector4<float> expected = Vector4.Transform(v, m);
+            Vector4<float> actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -758,7 +758,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> q = new Quaternion<float>();
             Vector4<float> expected = new Vector4<float>(v, 1.0f);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, q);
+            Vector4<float> actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -771,7 +771,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> q = Quaternion<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 1.0f);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, q);
+            Vector4<float> actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -788,8 +788,8 @@ namespace Silk.NET.Maths.Tests
                 Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4<float>.Transform(v, m);
-            Vector4<float> actual = Vector4<float>.Transform(v, q);
+            Vector4<float> expected = Vector4.Transform(v, m);
+            Vector4<float> actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -802,7 +802,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> q = new Quaternion<float>();
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 0, 1.0f);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, q);
+            Vector4<float> actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -815,7 +815,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> q = Quaternion<float>.Identity;
             Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 0, 1.0f);
 
-            Vector4<float> actual = Vector4<float>.Transform(v, q);
+            Vector4<float> actual = Vector4.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
         }
 
@@ -832,7 +832,7 @@ namespace Silk.NET.Maths.Tests
                 0.7302967433402214846092930437344f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Normalize(a);
+            actual = Vector4.Normalize(a);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Normalize did not return the expected value.");
         }
 
@@ -844,7 +844,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> a = new Vector4<float>(1.0f, 0.0f, 0.0f, 0.0f);
 
             Vector4<float> expected = new Vector4<float>(1.0f, 0.0f, 0.0f, 0.0f);
-            Vector4<float> actual = Vector4<float>.Normalize(a);
+            Vector4<float> actual = Vector4.Normalize(a);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Normalize did not return the expected value.");
         }
 
@@ -856,7 +856,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> a = new Vector4<float>(0.0f, 0.0f, 0.0f, 0.0f);
 
             Vector4<float> expected = new Vector4<float>(0.0f, 0.0f, 0.0f, 0.0f);
-            Vector4<float> actual = Vector4<float>.Normalize(a);
+            Vector4<float> actual = Vector4.Normalize(a);
             Assert.True(float.IsNaN(actual.X) && float.IsNaN(actual.Y) && float.IsNaN(actual.Z) && float.IsNaN(actual.W), "Vector4<float>f.Normalize did not return the expected value.");
         }
 
@@ -1108,7 +1108,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(6.0f, 8.0f, 10.0f, 12.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Add(a, b);
+            actual = Vector4.Add(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -1120,7 +1120,7 @@ namespace Silk.NET.Maths.Tests
             float div = 2.0f;
             Vector4<float> expected = new Vector4<float>(0.5f, 1.0f, 1.5f, 2.0f);
             Vector4<float> actual;
-            actual = Vector4<float>.Divide(a, div);
+            actual = Vector4.Divide(a, div);
             Assert.Equal(expected, actual);
         }
 
@@ -1134,7 +1134,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(1.0f / 5.0f, 6.0f / 2.0f, 7.0f / 3.0f, 4.0f / 8.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Divide(a, b);
+            actual = Vector4.Divide(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -1179,7 +1179,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
             const float factor = 2.0f;
             Vector4<float> expected = new Vector4<float>(2.0f, 4.0f, 6.0f, 8.0f);
-            Vector4<float> actual = Vector4<float>.Multiply(factor, a);
+            Vector4<float> actual = Vector4.Multiply(factor, a);
             Assert.Equal(expected, actual);
         }
 
@@ -1190,7 +1190,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
             const float factor = 2.0f;
             Vector4<float> expected = new Vector4<float>(2.0f, 4.0f, 6.0f, 8.0f);
-            Vector4<float> actual = Vector4<float>.Multiply(a, factor);
+            Vector4<float> actual = Vector4.Multiply(a, factor);
             Assert.Equal(expected, actual);
         }
 
@@ -1204,7 +1204,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(5.0f, 12.0f, 21.0f, 32.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Multiply(a, b);
+            actual = Vector4.Multiply(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -1217,7 +1217,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(-1.0f, -2.0f, -3.0f, -4.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Negate(a);
+            actual = Vector4.Negate(a);
             Assert.Equal(expected, actual);
         }
 
@@ -1269,7 +1269,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> expected = new Vector4<float>(-4.0f, 4.0f, 0.0f, -5.0f);
             Vector4<float> actual;
 
-            actual = Vector4<float>.Subtract(a, b);
+            actual = Vector4.Subtract(a, b);
 
             Assert.Equal(expected, actual);
         }
@@ -1388,8 +1388,8 @@ namespace Silk.NET.Maths.Tests
         public void Vector4AbsTest()
         {
             Vector4<float> v1 = new Vector4<float>(-2.5f, 2.0f, 3.0f, 3.3f);
-            Vector4<float> v3 = Vector4<float>.Abs(new Vector4<float>(float.PositiveInfinity, 0.0f, float.NegativeInfinity, float.NaN));
-            Vector4<float> v = Vector4<float>.Abs(v1);
+            Vector4<float> v3 = Vector4.Abs(new Vector4<float>(float.PositiveInfinity, 0.0f, float.NegativeInfinity, float.NaN));
+            Vector4<float> v = Vector4.Abs(v1);
             Assert.Equal(2.5f, v.X);
             Assert.Equal(2.0f, v.Y);
             Assert.Equal(3.0f, v.Z);
@@ -1405,11 +1405,11 @@ namespace Silk.NET.Maths.Tests
         {
             Vector4<float> v1 = new Vector4<float>(-2.5f, 2.0f, 3.0f, 3.3f);
             Vector4<float> v2 = new Vector4<float>(5.5f, 4.5f, 6.5f, 7.5f);
-            Assert.Equal(2, (int)Vector4<float>.SquareRoot(v2).X);
-            Assert.Equal(2, (int)Vector4<float>.SquareRoot(v2).Y);
-            Assert.Equal(2, (int)Vector4<float>.SquareRoot(v2).Z);
-            Assert.Equal(2, (int)Vector4<float>.SquareRoot(v2).W);
-            Assert.Equal(float.NaN, Vector4<float>.SquareRoot(v1).X);
+            Assert.Equal(2, (int)Vector4.SquareRoot(v2).X);
+            Assert.Equal(2, (int)Vector4.SquareRoot(v2).Y);
+            Assert.Equal(2, (int)Vector4.SquareRoot(v2).Z);
+            Assert.Equal(2, (int)Vector4.SquareRoot(v2).W);
+            Assert.Equal(float.NaN, Vector4.SquareRoot(v1).X);
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts

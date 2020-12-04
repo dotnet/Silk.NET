@@ -376,7 +376,7 @@ namespace Silk.NET.Maths
         /// <returns>The interpolated matrix.</returns>
         public static unsafe Matrix2x4<T> Lerp(Matrix2x4<T> matrix1, Matrix2x4<T> matrix2, T amount)
         {
-            return new(Vector4<T>.Lerp(matrix1.Row1, matrix2.Row1, amount), Vector4<T>.Lerp(matrix1.Row2, matrix2.Row2, amount));
+            return new(Vector4.Lerp(matrix1.Row1, matrix2.Row1, amount), Vector4.Lerp(matrix1.Row2, matrix2.Row2, amount));
         }
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>

@@ -674,7 +674,7 @@ namespace Silk.NET.Maths.Tests
                     //
                     foreach (Vector3<float> point in points)
                     {
-                        Vector4<float> v4 = Vector4<float>.Transform(point, m);
+                        Vector4<float> v4 = Vector4.Transform(point, m);
 
                         Vector3<float> sp = new Vector3<float>(v4.X, v4.Y, v4.Z) / v4.W;
 

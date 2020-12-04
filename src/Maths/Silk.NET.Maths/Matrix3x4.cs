@@ -427,9 +427,9 @@ namespace Silk.NET.Maths
         public static unsafe Matrix3x4<T> Lerp(Matrix3x4<T> matrix1, Matrix3x4<T> matrix2, T amount)
         {
             return new(
-                Vector4<T>.Lerp(matrix1.Row1, matrix2.Row1, amount),
-                Vector4<T>.Lerp(matrix1.Row2, matrix2.Row2, amount), 
-                Vector4<T>.Lerp(matrix1.Row3, matrix2.Row3, amount)
+                Vector4.Lerp(matrix1.Row1, matrix2.Row1, amount),
+                Vector4.Lerp(matrix1.Row2, matrix2.Row2, amount), 
+                Vector4.Lerp(matrix1.Row3, matrix2.Row3, amount)
             );
         }
 
