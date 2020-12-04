@@ -212,6 +212,8 @@ namespace Silk.NET.BuildTools.Bind
                         var count = structField.Count.IsConstant
                             ? int.Parse
                             (
+                                structField.Count.ConstantName == "CL_NAME_VERSION_MAX_NAME_SIZE_KHR" ? "64" :
+                            
                                 profile.Constants
                                     .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
                                     ?

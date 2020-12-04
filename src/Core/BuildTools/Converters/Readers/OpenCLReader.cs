@@ -1020,6 +1020,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {
                 if (!long.TryParse(tokenHex, out value))
                 {
+                    if (tokenHex == "SIZE_MAX")
+                    {
+                        return (-1).ToString();
+                    }
+                
                     if (!ulong.TryParse(tokenHex, out var uValue))
                     {
                         throw new InvalidDataException("Token value was not in a valid format.");
