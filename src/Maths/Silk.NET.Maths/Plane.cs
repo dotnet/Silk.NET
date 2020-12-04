@@ -198,7 +198,7 @@ namespace Silk.NET.Maths
     }
     
     /// <summary>
-    /// Methods for working with <see cref="PLane{T}"/>
+    /// Methods for working with <see cref="Plane{T}"/>
     /// </summary>
     public static class Plane
     {

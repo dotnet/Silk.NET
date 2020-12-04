@@ -554,9 +554,11 @@ namespace Silk.NET.Maths
         private struct VectorBasis<T>
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
+#pragma warning disable 649
             public unsafe Vector3<T>* Element0;
             public unsafe Vector3<T>* Element1;
             public unsafe Vector3<T>* Element2;
+#pragma warning restore 649
         }
         
         /// <summary>Adds two matrices together.</summary>

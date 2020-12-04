@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -65,8 +65,8 @@ namespace Silk.NET.Maths
         /// <returns>True if this box contains the given box; False otherwise.</returns>
         /// <remarks>This does consider a box that touches the edge contained.</remarks>
         public bool Contains(Box2<T> other)
-            => Scalar.GreaterThanOrEqual(other.Min.X, this.Min.X) && Scalar.GreaterThanOrEqual(other.Min.Y, this.Min.Y)
-            && Scalar.LessThanOrEqual(other.Max.X, this.Max.X) && Scalar.LessThanOrEqual(other.Max.Y, this.Max.Y);
+            => Scalar.GreaterThanOrEqual(other.Min.X, Min.X) && Scalar.GreaterThanOrEqual(other.Min.Y, Min.Y)
+            && Scalar.LessThanOrEqual(other.Max.X, Max.X) && Scalar.LessThanOrEqual(other.Max.Y, Max.Y);
 
         /// <summary>
         /// Calculates the distance to the nearest edge from the point.
