@@ -14,10 +14,16 @@ namespace Silk.NET.OpenCL.Extensions.IMG
     {
         MemUseUncachedCpuMemoryImg = 0x67108864,
         MemUseCachedCpuMemoryImg = unchecked((int)0x134217728),
+        MipmapFilterAnyImg = 0x0,
+        MipmapFilterBoxImg = 0x1,
+        CommandGenerateMipmapImg = 0x40D6,
+        MemAllocFlagsImg = 0x40D7,
+        MemAllocRelaxRequirementsImg = 0x1,
+        GrallocResourceNotAcquiredImg = 0x40D4,
+        InvalidGrallocObjectImg = 0x40D5,
         MemUseGrallocPtrImg = unchecked((int)0x268435456),
         CommandAcquireGrallocObjectsImg = 0x40D2,
         CommandReleaseGrallocObjectsImg = 0x40D3,
-        GrallocResourceNotAcquiredImg = 0x40D4,
         NV21Img = 0x40D0,
         YV12Img = 0x40D1,
     }
