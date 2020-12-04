@@ -729,7 +729,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 )
                 .WithMembers
                 (
-                    List<MemberDeclarationSyntax>
+                    List
                     (
                         members
                     )
