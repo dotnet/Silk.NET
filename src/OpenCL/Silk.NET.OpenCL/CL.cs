@@ -11,25 +11,16 @@ namespace Silk.NET.OpenCL
     {
         public static CL GetApi()
         {
-<<<<<<< HEAD
              return new CL(CreateDefaultContext(new OpenCLLibraryNameContainer().GetLibraryName()));
-=======
-            return LibraryLoader<CL>.Load(new OpenCLLibraryNameContainer());
->>>>>>> master
         }
 
         public bool TryGetExtension<T>(out T ext)
             where T : NativeExtension<CL>
         {
-<<<<<<< HEAD
             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T)Activator.CreateInstance(typeof(T), Context)
                 : null;
              return ext != null;
-=======
-            ext = LibraryLoader<CL>.Load<T>(this);
-            return ext != null;
->>>>>>> master
         }
 
         public override bool IsExtensionPresent(string extension)
