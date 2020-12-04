@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
@@ -58,7 +59,7 @@ namespace Silk.NET.OpenXR
                 // do nothing, just move on.
             }
 
-            OpenXR.GetInstanceProcAddr(default, symbolName, ref Unsafe.As<IntPtr, FuncPtr>(ref sym));
+            OpenXR.GetInstanceProcAddr(default, symbolName, ref Unsafe.As<IntPtr, PfnVoidFunction>(ref sym));
             if (sym != default)
             {
                 return sym;
@@ -67,7 +68,7 @@ namespace Silk.NET.OpenXR
             if (OpenXR.CurrentInstance.HasValue)
             {
                 OpenXR.GetInstanceProcAddr
-                    (OpenXR.CurrentInstance.Value, symbolName, ref Unsafe.As<IntPtr, FuncPtr>(ref sym));
+                    (OpenXR.CurrentInstance.Value, symbolName, ref Unsafe.As<IntPtr, PfnVoidFunction>(ref sym));
                 if (sym != default)
                 {
                     return sym;

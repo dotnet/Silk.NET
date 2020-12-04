@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -24,7 +25,7 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingD3D11Khr,
             void* next = null,
-            IntPtr? device = null
+            void* device = null
         ) : this()
         {
             if (type is not null)
@@ -39,7 +40,7 @@ namespace Silk.NET.OpenXR
 
             if (device is not null)
             {
-                Device = device.Value;
+                Device = device;
             }
         }
 
@@ -57,6 +58,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "ID3D11Device*")]
         [NativeName("Type.Name", "ID3D11Device")]
         [NativeName("Name", "device")]
-        public IntPtr Device;
+        public void* Device;
     }
 }

@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -16,13 +18,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbVertexShaderOverloads
     {
-        public static unsafe void BindAttribLocation(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ReadOnlySpan<char> name)
+        public static unsafe void BindAttribLocation(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
             thisApi.BindAttribLocation(programObj, index, in name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, type, out name.GetPinnableReference());
@@ -34,13 +36,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -52,13 +54,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
@@ -70,13 +72,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -88,13 +90,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, type, name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
@@ -106,13 +108,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -124,13 +126,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
@@ -142,13 +144,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<ARB> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -160,7 +162,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, type, out name.GetPinnableReference());
@@ -172,13 +174,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -190,13 +192,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
@@ -208,13 +210,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -226,13 +228,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, length, out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, type, name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
@@ -244,13 +246,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -262,13 +264,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), size, out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
@@ -280,13 +282,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), type, out name.GetPinnableReference());
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] byte* name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), name);
         }
 
-        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+        public static unsafe void GetActiveAttrib(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> size, [Count(Count = 1), Flow(FlowDirection.Out)] Span<AttributeType> type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // SpanOverloader
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
@@ -298,7 +300,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetActiveAttrib(programObj, index, maxLength, out length.GetPinnableReference(), out size.GetPinnableReference(), out type.GetPinnableReference(), out name.GetPinnableReference());
         }
 
-        public static unsafe int GetAttribLocation(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] ReadOnlySpan<char> name)
+        public static unsafe int GetAttribLocation(this ArbVertexShader thisApi, [Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
             return thisApi.GetAttribLocation(programObj, in name.GetPinnableReference());

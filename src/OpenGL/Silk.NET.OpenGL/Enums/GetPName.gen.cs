@@ -780,6 +780,10 @@ namespace Silk.NET.OpenGL
         DeviceLuidExt = 0x9599,
         [NativeName("Name", "GL_DEVICE_NODE_MASK_EXT")]
         DeviceNodeMaskExt = 0x959A,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
+        ShadingRateImagePerPrimitiveNV = 0x95B1,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PALETTE_COUNT_NV")]
+        ShadingRateImagePaletteCountNV = 0x95B2,
         [NativeName("Name", "GL_MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_NV")]
         MaxTimelineSemaphoreValueDifferenceNV = 0x95B6,
         [NativeName("Name", "GL_SHADING_RATE_QCOM")]

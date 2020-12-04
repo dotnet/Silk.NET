@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -37,7 +38,7 @@ namespace Silk.NET.Assimp
             uint? mNumAnimMeshes = null,
             AnimMesh** mAnimMeshes = null,
             uint? mMethod = null,
-            AABB? mAABB = null
+            Aabb? mAABB = null
         ) : this()
         {
             if (mPrimitiveTypes is not null)
@@ -270,6 +271,6 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiAABB")]
         [NativeName("Type.Name", "aiAABB")]
         [NativeName("Name", "mAABB")]
-        public AABB MAABB;
+        public Aabb MAABB;
     }
 }

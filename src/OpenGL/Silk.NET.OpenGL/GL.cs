@@ -19,6 +19,15 @@ namespace Silk.NET.OpenGL
 {
     public partial class GL
     {
+        /// <summary>
+        ///     Creates a <see cref="GL" /> instance from an <see cref="IGLContextSource" />.
+        /// </summary>
+        /// <param name="contextSource">
+        /// <see cref="IGLContextSource" /> to create <see cref="GL" /> from.
+        /// </param>
+        /// <returns>
+        ///     A <see cref="GL" /> instance.
+        /// </returns>
         public static GL GetApi(IGLContextSource contextSource) => GetApi
         (
              contextSource.GLContext ??
@@ -53,6 +62,15 @@ namespace Silk.NET.OpenGL
         /// </returns>
         public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
 
+        /// <summary>
+        ///     Creates a <see cref="GL" /> instance from an <see cref="INativeContext" />.
+        /// </summary>
+        /// <param name="ctx">
+        ///     <see cref="INativeContext" /> to create <see cref="GL" /> from.
+        /// </param>
+        /// <returns>
+        ///     A <see cref="GL" /> instance.
+        /// </returns>
         public static GL GetApi(INativeContext ctx) => new GL(ctx);
 
         /// <summary>
@@ -375,7 +393,7 @@ namespace Silk.NET.OpenGL
             length = (uint) lengthTmp;
 
             GetActiveAttrib
-                (program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out string str);
+                (program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out var str);
 
             return str.Substring(0, (int) length);
         }

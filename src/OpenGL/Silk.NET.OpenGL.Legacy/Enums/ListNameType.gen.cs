@@ -29,10 +29,10 @@ namespace Silk.NET.OpenGL.Legacy
         [NativeName("Name", "GL_FLOAT")]
         Float = 0x1406,
         [NativeName("Name", "GL_2_BYTES")]
-        C2Bytes = 0x1407,
+        Gl2Bytes = 0x1407,
         [NativeName("Name", "GL_3_BYTES")]
-        C3Bytes = 0x1408,
+        Gl3Bytes = 0x1408,
         [NativeName("Name", "GL_4_BYTES")]
-        C4Bytes = 0x1409,
+        Gl4Bytes = 0x1409,
     }
 }

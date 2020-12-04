@@ -74,7 +74,7 @@ namespace Silk.NET.BuildTools
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Unhandled exception: {ex}");
+                Console.Error.WriteLine($"Unhandled exception: {ex}");
                 if (sw is not null)
                 {
                     Program.ConsoleWriter.Instance.Timings.Value =
@@ -194,6 +194,11 @@ namespace Silk.NET.BuildTools
                     fileStream.Flush();
                     Console.WriteLine("Written to cache for future use.");
                 }
+            }
+            else if (task.Controls.Any(x => x.Equals("no-bind", StringComparison.InvariantCultureIgnoreCase)))
+            {
+                // skip
+                profile = null;
             }
             else if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
             {

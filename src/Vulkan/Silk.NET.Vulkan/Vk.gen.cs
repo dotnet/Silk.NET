@@ -6,6 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -2108,15 +2109,15 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceProcAddr")]
-        public unsafe partial FuncPtr GetDeviceProcAddr([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
+        public unsafe partial PfnVoidFunction GetDeviceProcAddr([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceProcAddr")]
-        public partial FuncPtr GetDeviceProcAddr([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in byte pName);
+        public partial PfnVoidFunction GetDeviceProcAddr([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in byte pName);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceProcAddr")]
-        public partial FuncPtr GetDeviceProcAddr([Count(Count = 0)] Device device, [Flow(FlowDirection.In)] string pName);
+        public partial PfnVoidFunction GetDeviceProcAddr([Count(Count = 0)] Device device, [Flow(FlowDirection.In)] string pName);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceQueue")]
@@ -2176,15 +2177,15 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetInstanceProcAddr")]
-        public unsafe partial FuncPtr GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
+        public unsafe partial PfnVoidFunction GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetInstanceProcAddr")]
-        public partial FuncPtr GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte pName);
+        public partial PfnVoidFunction GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte pName);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetInstanceProcAddr")]
-        public partial FuncPtr GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pName);
+        public partial PfnVoidFunction GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pName);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures")]

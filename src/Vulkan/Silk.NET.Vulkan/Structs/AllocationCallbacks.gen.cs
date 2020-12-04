@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -23,11 +24,11 @@ namespace Silk.NET.Vulkan
         public AllocationCallbacks
         (
             void* pUserData = null,
-            FuncPtr? pfnAllocation = null,
-            FuncPtr? pfnReallocation = null,
-            FuncPtr? pfnFree = null,
-            FuncPtr? pfnInternalAllocation = null,
-            FuncPtr? pfnInternalFree = null
+            PfnAllocationFunction? pfnAllocation = null,
+            PfnReallocationFunction? pfnReallocation = null,
+            PfnFreeFunction? pfnFree = null,
+            PfnInternalAllocationNotification? pfnInternalAllocation = null,
+            PfnInternalFreeNotification? pfnInternalFree = null
         ) : this()
         {
             if (pUserData is not null)
@@ -70,26 +71,26 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "PFN_vkAllocationFunction")]
         [NativeName("Type.Name", "PFN_vkAllocationFunction")]
         [NativeName("Name", "pfnAllocation")]
-        public FuncPtr PfnAllocation;
+        public PfnAllocationFunction PfnAllocation;
 /// <summary></summary>
         [NativeName("Type", "PFN_vkReallocationFunction")]
         [NativeName("Type.Name", "PFN_vkReallocationFunction")]
         [NativeName("Name", "pfnReallocation")]
-        public FuncPtr PfnReallocation;
+        public PfnReallocationFunction PfnReallocation;
 /// <summary></summary>
         [NativeName("Type", "PFN_vkFreeFunction")]
         [NativeName("Type.Name", "PFN_vkFreeFunction")]
         [NativeName("Name", "pfnFree")]
-        public FuncPtr PfnFree;
+        public PfnFreeFunction PfnFree;
 /// <summary></summary>
         [NativeName("Type", "PFN_vkInternalAllocationNotification")]
         [NativeName("Type.Name", "PFN_vkInternalAllocationNotification")]
         [NativeName("Name", "pfnInternalAllocation")]
-        public FuncPtr PfnInternalAllocation;
+        public PfnInternalAllocationNotification PfnInternalAllocation;
 /// <summary></summary>
         [NativeName("Type", "PFN_vkInternalFreeNotification")]
         [NativeName("Type.Name", "PFN_vkInternalFreeNotification")]
         [NativeName("Name", "pfnInternalFree")]
-        public FuncPtr PfnInternalFree;
+        public PfnInternalFreeNotification PfnInternalFree;
     }
 }

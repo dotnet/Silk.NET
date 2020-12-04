@@ -6,6 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -590,27 +591,27 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] FuncPtr* function);
+        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] PfnVoidFunction* function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] ref FuncPtr function);
+        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] ref PfnVoidFunction function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte name, [Count(Count = 0)] FuncPtr* function);
+        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte name, [Count(Count = 0)] PfnVoidFunction* function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte name, [Count(Count = 0)] ref FuncPtr function);
+        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in byte name, [Count(Count = 0)] ref PfnVoidFunction function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] FuncPtr* function);
+        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] PfnVoidFunction* function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] ref FuncPtr function);
+        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] ref PfnVoidFunction function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProperties")]

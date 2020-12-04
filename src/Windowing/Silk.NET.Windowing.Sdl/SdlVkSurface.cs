@@ -34,7 +34,7 @@ namespace Silk.NET.Windowing.Sdl
 
         private unsafe byte** _requiredExtensions;
 
-        public unsafe char** GetRequiredExtensions(out uint count)
+        public unsafe byte** GetRequiredExtensions(out uint count)
         {
             fixed (uint* countPtr = &count)
             {
@@ -53,7 +53,7 @@ namespace Silk.NET.Windowing.Sdl
                     if (_view.Sdl.VulkanGetInstanceExtensions
                         (_view.SdlWindow, countPtr, _requiredExtensions) == SdlBool.True)
                     {
-                        return (char**) _requiredExtensions;
+                        return (byte**) _requiredExtensions;
                     }
                 }
             }

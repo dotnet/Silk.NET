@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -18,9 +19,9 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiAABB")]
-    public unsafe partial struct AABB
+    public unsafe partial struct Aabb
     {
-        public AABB
+        public Aabb
         (
             System.Numerics.Vector3? mMin = null,
             System.Numerics.Vector3? mMax = null

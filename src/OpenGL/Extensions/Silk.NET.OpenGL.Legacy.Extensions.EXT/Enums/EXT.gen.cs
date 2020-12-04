@@ -15,13 +15,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public enum EXT
     {
         [NativeName("Name", "GL_422_EXT")]
-        C422Ext = 0x80CC,
+        Gl422Ext = 0x80CC,
         [NativeName("Name", "GL_422_REV_EXT")]
-        C422RevExt = 0x80CD,
+        Gl422RevExt = 0x80CD,
         [NativeName("Name", "GL_422_AVERAGE_EXT")]
-        C422AverageExt = 0x80CE,
+        Gl422AverageExt = 0x80CE,
         [NativeName("Name", "GL_422_REV_AVERAGE_EXT")]
-        C422RevAverageExt = 0x80CF,
+        Gl422RevAverageExt = 0x80CF,
         [NativeName("Name", "GL_ABGR_EXT")]
         AbgrExt = 0x8000,
         [NativeName("Name", "GL_BGR_EXT")]
@@ -553,19 +553,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeName("Name", "GL_SAMPLE_MASK_EXT")]
         SampleMaskExt = 0x80A0,
         [NativeName("Name", "GL_1PASS_EXT")]
-        C1PassExt = 0x80A1,
+        Gl1PassExt = 0x80A1,
         [NativeName("Name", "GL_2PASS_0_EXT")]
-        C2Pass0Ext = 0x80A2,
+        Gl2Pass0Ext = 0x80A2,
         [NativeName("Name", "GL_2PASS_1_EXT")]
-        C2Pass1Ext = 0x80A3,
+        Gl2Pass1Ext = 0x80A3,
         [NativeName("Name", "GL_4PASS_0_EXT")]
-        C4Pass0Ext = 0x80A4,
+        Gl4Pass0Ext = 0x80A4,
         [NativeName("Name", "GL_4PASS_1_EXT")]
-        C4Pass1Ext = 0x80A5,
+        Gl4Pass1Ext = 0x80A5,
         [NativeName("Name", "GL_4PASS_2_EXT")]
-        C4Pass2Ext = 0x80A6,
+        Gl4Pass2Ext = 0x80A6,
         [NativeName("Name", "GL_4PASS_3_EXT")]
-        C4Pass3Ext = 0x80A7,
+        Gl4Pass3Ext = 0x80A7,
         [NativeName("Name", "GL_SAMPLE_BUFFERS_EXT")]
         SampleBuffersExt = 0x80A8,
         [NativeName("Name", "GL_SAMPLES_EXT")]

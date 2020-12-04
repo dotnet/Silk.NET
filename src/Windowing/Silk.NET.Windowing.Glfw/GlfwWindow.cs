@@ -669,6 +669,6 @@ namespace Silk.NET.Windowing.Glfw
             return surface[0];
         }
 
-        public char** GetRequiredExtensions(out uint count) => (char**) _glfw.GetRequiredInstanceExtensions(out count);
+        public byte** GetRequiredExtensions(out uint count) => (byte**) _glfw.GetRequiredInstanceExtensions(out count);
     }
 }

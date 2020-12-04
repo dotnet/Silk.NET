@@ -31,9 +31,9 @@ namespace Silk.NET.Windowing.Sdl.iOS
         public static unsafe void RunApp(IReadOnlyList<string> args, IntPtr callback)
         {
             BeginRun();
-            var argsPtr = SilkMarshal.MarshalStringArrayToPtr(args);
+            var argsPtr = SilkMarshal.StringArrayToPtr(args);
             CoreRunApp(args.Count, (byte**)argsPtr, callback);
-            SilkMarshal.FreeStringArrayPtr(argsPtr, args.Count);
+            SilkMarshal.Free(argsPtr);
             EndRun();
         }
             
@@ -49,7 +49,7 @@ namespace Silk.NET.Windowing.Sdl.iOS
         public static unsafe void RunApp(int numArgs, byte** args, Action<string[]> callback)
         {
             BeginRun();
-            CurrentMain = (inNumArgs, argsPtr) => callback(SilkMarshal.MarshalPtrToStringArray((IntPtr)argsPtr, inNumArgs));
+            CurrentMain = (inNumArgs, argsPtr) => callback(SilkMarshal.PtrToStringArray((IntPtr)argsPtr, inNumArgs));
             CoreRunApp(numArgs, args, GetCallMainPtr());
             CurrentMain = null;
             EndRun();
@@ -58,22 +58,22 @@ namespace Silk.NET.Windowing.Sdl.iOS
         public static unsafe void RunApp(IReadOnlyList<string> args, MainFunction callback)
         {
             BeginRun();
-            var argsPtr = SilkMarshal.MarshalStringArrayToPtr(args);
+            var argsPtr = SilkMarshal.StringArrayToPtr(args);
             CurrentMain = callback;
             CoreRunApp(args.Count, (byte**)argsPtr, GetCallMainPtr());
             CurrentMain = null;
-            SilkMarshal.FreeStringArrayPtr(argsPtr, args.Count);
+            SilkMarshal.Free(argsPtr);
             EndRun();
         }
 
         public static unsafe void RunApp(IReadOnlyList<string> args, Action<string[]> callback)
         {
             BeginRun();
-            var argsPtr = SilkMarshal.MarshalStringArrayToPtr(args);
-            CurrentMain = (numArgs, inArgsPtr) => callback(SilkMarshal.MarshalPtrToStringArray((IntPtr)inArgsPtr, numArgs));
+            var argsPtr = SilkMarshal.StringArrayToPtr(args);
+            CurrentMain = (numArgs, inArgsPtr) => callback(SilkMarshal.PtrToStringArray((IntPtr)inArgsPtr, numArgs));
             CoreRunApp(args.Count, (byte**)argsPtr, GetCallMainPtr());
             CurrentMain = null;
-            SilkMarshal.FreeStringArrayPtr(argsPtr, args.Count);
+            SilkMarshal.Free(argsPtr);
             EndRun();
         }
 

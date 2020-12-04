@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -26,7 +27,7 @@ namespace Silk.NET.OpenXR
             void* next = null,
             DebugUtilsMessageSeverityFlagsEXT? messageSeverities = null,
             DebugUtilsMessageTypeFlagsEXT? messageTypes = null,
-            FuncPtr? userCallback = null,
+            PfnDebugUtilsMessengerCallbackEXT? userCallback = null,
             void* userData = null
         ) : this()
         {
@@ -85,7 +86,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "PFN_xrDebugUtilsMessengerCallbackEXT")]
         [NativeName("Type.Name", "PFN_xrDebugUtilsMessengerCallbackEXT")]
         [NativeName("Name", "userCallback")]
-        public FuncPtr UserCallback;
+        public PfnDebugUtilsMessengerCallbackEXT UserCallback;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

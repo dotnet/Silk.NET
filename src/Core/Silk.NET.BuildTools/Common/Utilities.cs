@@ -176,8 +176,9 @@ namespace Silk.NET.BuildTools.Common
         /// <returns>The string after being validated.</returns>
         public static string CheckMemberName(this string name, string fPrefix)
         {
+            name = name.Replace("_", null).Replace(" ", null);
             // ReSharper disable StringLiteralTypo
-            if (!"ABCDEFGHIJKLMNOPQRSTUVWXYZ_".ToCharArray().Contains(name[0]))
+            if (!"ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray().Contains(name[0]))
             // ReSharper restore StringLiteralTypo
             {
                 return fPrefix.ToUpper() + name;

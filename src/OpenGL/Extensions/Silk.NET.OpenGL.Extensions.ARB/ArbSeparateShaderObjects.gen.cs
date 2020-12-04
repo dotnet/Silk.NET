@@ -6,11 +6,12 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL;
 using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
@@ -351,18 +352,20 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
-            var strings = (byte**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
-            var strings = (byte**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
+            SilkMarshal.Free((IntPtr) strings);
             return ret;
         }
 

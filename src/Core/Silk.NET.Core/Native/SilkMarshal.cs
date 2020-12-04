@@ -7,6 +7,8 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -32,13 +34,16 @@ namespace Silk.NET.Core.Native
 
         // Store the GlobalMemory instances so that on .NET 5 the pinned object heap isn't prematurely garbage collected
         // This means that the GlobalMemory is only freed when the user calls Free.
-        private static readonly ConcurrentDictionary<IntPtr, GlobalMemory> _marshalledMemory =
-            new ConcurrentDictionary<IntPtr, GlobalMemory>();
+        private static readonly ConcurrentDictionary<IntPtr, GlobalMemory> _marshalledMemory = new();
 
         // In addition, we should keep track of the memory we allocate dedicated to string arrays. If we don't, we won't
         // know to free the individual strings allocated within memory.
-        private static readonly ConcurrentDictionary<GlobalMemory, int> _stringArrays
-            = new ConcurrentDictionary<GlobalMemory, int>();
+        private static readonly ConcurrentDictionary<GlobalMemory, int> _stringArrays = new();
+
+        // Other kinds of GCHandle-pinned pointers may be passed into Free, like delegate pointers for example which
+        // must have GCHandles allocated on older runtimes to avoid an ExecutionEngineException.
+        // We should keep track of those.
+        private static readonly ConcurrentDictionary<IntPtr, GCHandle> _otherGCHandles = new();
 
         private static IntPtr RegisterMemory(GlobalMemory memory) => (_marshalledMemory[memory.Handle] = memory).Handle;
         
@@ -53,16 +58,22 @@ namespace Silk.NET.Core.Native
         public static IntPtr Allocate(int length) => RegisterMemory(GlobalMemory.Allocate(length));
 
         /// <summary>
-        /// Frees the specific region of global memory.
+        /// Frees the unmanaged construct represented by this pointer.
         /// </summary>
-        /// <param name="memory">The memory to free.</param>
+        /// <param name="ptr">The item to free.</param>
         /// <returns>
-        /// Whether the operation was successful or not. If false, the memory likely wasn't allocated with
-        /// <see cref="Allocate" />.
+        /// Whether the operation was successful or not. If false, the pointer likely didn't originate from a
+        /// <see cref="SilkMarshal"/> method.
         /// </returns>
-        public static bool Free(IntPtr memory)
+        public static bool Free(IntPtr ptr)
         {
-            var ret = _marshalledMemory.TryRemove(memory, out var val);
+            var ret = _otherGCHandles.TryRemove(ptr, out var gcHandle);
+            if (ret)
+            {
+                gcHandle.Free();
+            }
+            
+            ret = _marshalledMemory.TryRemove(ptr, out var val);
             if (val is null)
             {
                 return ret;
@@ -323,6 +334,25 @@ namespace Silk.NET.Core.Native
             _stringArrays.TryAdd(memory, input.Count);
             return RegisterMemory(memory);
         }
+        
+        /// <summary>
+        /// Converts & copies a pointer to an array of strings.
+        /// </summary>
+        /// <param name="ptr">The pointer to convert.</param>
+        /// <param name="arr">The array to fill with strings.</param>
+        /// <param name="encoding">The encoding of the string in memory</param>
+        public static unsafe void CopyPtrToStringArray
+        (
+            IntPtr ptr,
+            string[] arr,
+            NativeStringEncoding encoding = NativeStringEncoding.Ansi
+        )
+        {
+            for (var i = 0; i < arr.Length; i++)
+            {
+                arr[i] = PtrToString(((IntPtr*)ptr)![i]);
+            }
+        }
 
         /// <summary>
         /// Reads an array null-terminated string from unmanaged memory, with the given native encoding.
@@ -443,180 +473,229 @@ namespace Silk.NET.Core.Native
             => GlobalMemory.FromHGlobal(ptr, length);
 
         /// <summary>
-        /// Zero-initializes between 1-8 bytes from the given pointer, depending on the length.
+        /// Gets a function pointer for the given delegate.
         /// </summary>
-        /// <remarks>
-        /// This is useful to guard against uninitialized and unmodified memory being interpreted a string, and failing
-        /// because the runtime detects a mangled string.
-        /// </remarks>
-        /// <param name="memory">The memory to zero-initialize the start of.</param>
-        /// <param name="memoryLength">The length of the memory.</param>
-        public static unsafe void ZeroStart(byte* memory, int memoryLength)
+        /// <param name="delegate">The delegate to get a function pointer to.</param>
+        /// <param name="kind">
+        /// The method by which SilkMarshal should retrieve the pointer. If <see cref="DelegatePointerKind.Stub"/>, the
+        /// pointer is retrieved using <see cref="Marshal"/>'s <see cref="Marshal.GetFunctionPointerForDelegate"/> which
+        /// will generate an unmanaged-to-managed transition runtime stub. This may have some overhead, but is critical
+        /// if you want to pass this pointer to native code. If this pointer is not being sent to native code, and you
+        /// just want to use this delegate as a managed function pointer, <see cref="DelegatePointerKind.Passthrough"/>
+        /// may be used which will return a function pointer directly to the method instead of going through an
+        /// unmanaged stub. The method represented by the delegate must be static, however.
+        /// </param>
+        /// <param name="pinned">
+        /// Whether to pin the delegate such that the returned pointer remains valid for long periods of time.
+        /// </param>
+        /// <returns>A function pointer to the given delegate.</returns>
+        public static IntPtr DelegateToPtr(Delegate @delegate,
+            DelegatePointerKind kind = DelegatePointerKind.Stub,
+            bool pinned = true)
         {
-            if (memoryLength >= 8)
+            if (kind == DelegatePointerKind.Passthrough)
             {
-                *(ulong*) memory = default;
-            }
-            else if (memoryLength >= 4)
-            {
-                *(uint*) memory = default;
-            }
-            else if (memoryLength >= 2)
-            {
-                *(ushort*) memory = default;
-            }
-            else if (memoryLength >= 1)
-            {
-                *memory = default;
-            }
-            else
-            {
-                // no memory to initialize
-            }
-        }
-
-        // TODO !!!!!!!!!!!!!!! LEGACY METHODS START HERE, DELETE THEM ONCE SILK HAS STOPPED USING THEM !!!!!!!!!!!!!!!
-
-        /// <summary>
-        /// Converts a C# string to an ANSI string pointer.
-        /// </summary>
-        /// <param name="str">The input string.</param>
-        /// <returns>A pointer to a native ANSI string.</returns>
-        [Obsolete]
-        public static IntPtr MarshalStringToPtr(string str)
-        {
-            return Marshal.StringToHGlobalAnsi(str);
-        }
-
-        /// <summary>
-        /// Converts an ANSI string pointer to a C# string.
-        /// </summary>
-        /// <param name="str">A pointer to the ANSI string to convert.</param>
-        /// <returns>A C# string.</returns>
-        [Obsolete]
-        public static string MarshalPtrToString(IntPtr str)
-        {
-            return Marshal.PtrToStringAnsi(str);
-        }
-
-        /// <summary>
-        /// Free a string pointer.
-        /// </summary>
-        /// <param name="ptr">The pointer to free.</param>
-        [Obsolete]
-        public static void FreeStringPtr(IntPtr ptr)
-        {
-            Marshal.FreeHGlobal(ptr);
-        }
-
-        /// <summary>
-        /// Allocate a new string pointer.
-        /// </summary>
-        /// <param name="length">The length of the string pointer, in bytes.</param>
-        /// <returns>A pointer to the created string.</returns>
-        [Obsolete]
-        public static IntPtr NewStringPtr(int length)
-        {
-            return Marshal.AllocHGlobal(length);
-        }
-
-        /// <summary>
-        /// Allocate a new string pointer.
-        /// </summary>
-        /// <param name="length">The length of the string pointer, in bytes.</param>
-        /// <returns>A pointer to the created string.</returns>
-        [Obsolete]
-        public static IntPtr NewStringPtr(uint length)
-        {
-            return Marshal.AllocHGlobal((int) length);
-        }
-
-        /// <summary>
-        /// Convert an array of strings into a pointer.
-        /// </summary>
-        /// <param name="array">The array of strings to convert.</param>
-        /// <returns>The new pointer.</returns>
-        /// <exception cref="OutOfMemoryException">Thrown if enough memory cannot be allocated.</exception>
-        [Obsolete]
-        public static IntPtr MarshalStringArrayToPtr(IReadOnlyList<string> array)
-        {
-            var ptr = IntPtr.Zero;
-            if (array != null && array.Count != 0)
-            {
-                ptr = Marshal.AllocHGlobal(array.Count * IntPtr.Size);
-                if (ptr == IntPtr.Zero)
+                var method = @delegate.Method;
+                if (!method.IsStatic)
                 {
-                    throw new OutOfMemoryException();
+                    ThrowManagedNonStatic();
                 }
 
-                var i = 0;
-                try
-                {
-                    for (i = 0; i < array.Count; i++)
-                    {
-                        var str = MarshalStringToPtr(array[i]);
-                        Marshal.WriteIntPtr(ptr, i * IntPtr.Size, str);
-                    }
-                }
-                catch (OutOfMemoryException)
-                {
-                    for (i -= 1; i >= 0; --i)
-                    {
-                        Marshal.FreeHGlobal(Marshal.ReadIntPtr(ptr, i * IntPtr.Size));
-                    }
-
-                    Marshal.FreeHGlobal(ptr);
-
-                    throw;
-                }
+                return method.MethodHandle.GetFunctionPointer();
             }
 
-            return ptr;
-        }
-
-        /// <summary>
-        /// Convert a pointer to a string array.
-        /// </summary>
-        /// <param name="ptr">The pointer to convert.</param>
-        /// <param name="length">The number of strings in the pointer.</param>
-        /// <returns>An array of strings.</returns>
-        [Obsolete]
-        public static string[] MarshalPtrToStringArray(IntPtr ptr, int length)
-        {
-            var ret = new string[length];
-            CopyPtrToStringArray(ptr, ret);
-            return ret;
-        }
-
-        // TODO: Verify that this works without the array being an out parameter.
-        /// <summary>
-        /// Convert a pointer to an array of strings.
-        /// </summary>
-        /// <param name="ptr">The pointer to convert.</param>
-        /// <param name="arr">The array to fill with strings.</param>
-        [Obsolete]
-        public static void CopyPtrToStringArray(IntPtr ptr, string[] arr)
-        {
-            for (var i = 0; i < arr.Length; i++)
+            if (pinned)
             {
-                arr[i] = Marshal.PtrToStringAnsi(Marshal.ReadIntPtr(ptr, i * IntPtr.Size));
+                var gcHandle = GCHandle.Alloc(@delegate);
+                var ret = Marshal.GetFunctionPointerForDelegate(@delegate);
+                _otherGCHandles.TryAdd(ret, gcHandle);
+                return ret;
             }
+
+            return Marshal.GetFunctionPointerForDelegate(@delegate);
+
+            static void ThrowManagedNonStatic()
+                => throw new InvalidOperationException("Can't get a passthrough pointer to a non-static method group.");
+        }
+
+        private static void DelegateSafetyCheck(Delegate @delegate, CallingConvention conv)
+        {
+            var attr = @delegate.Method.GetCustomAttribute<UnmanagedFunctionPointerAttribute>();
+            var callConv = attr?.CallingConvention ?? CallingConvention.Winapi;
+            if (callConv == CallingConvention.Winapi && conv != CallingConvention.Winapi)
+            {
+                callConv = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
+                    ? CallingConvention.Cdecl
+                    : CallingConvention.StdCall;
+            }
+
+            if (callConv != conv)
+            {
+                Throw(nameof(conv), callConv, conv);
+            }
+
+            static void Throw(string nameof, CallingConvention delegateConv, CallingConvention desiredConv)
+                => throw new ArgumentException($"Attempted to create a {desiredConv} function pointer from a " +
+                                               $"{delegateConv} delegate.", nameof);
+        }
+
+        public static unsafe delegate*<void> DelegateToManaged(Delegate @delegate, bool pinned = true)
+            => (delegate*<void>)DelegateToPtr(@delegate, DelegatePointerKind.Passthrough);
+
+        /// <summary>
+        /// Gets a function pointer for the given delegate using the <c>__cdecl</c> calling convention.
+        /// </summary>
+        /// <param name="delegate">The delegate to get a function pointer to.</param>
+        /// <param name="kind">
+        /// The method by which SilkMarshal should retrieve the pointer. Should always be
+        /// <see cref="DelegatePointerKind.Stub"/> except in very rare edge cases.
+        /// </param>
+        /// <param name="pinned">
+        /// Whether to pin the delegate such that the returned pointer remains valid for long periods of time.
+        /// </param>
+        /// <param name="ignoreValidityChecks">
+        /// Whether to skip validity checks, such as calling convention mismatch checks. 
+        /// </param>
+        /// <returns>A function pointer to the given delegate.</returns>
+        public static unsafe delegate* unmanaged[Cdecl]<void> DelegateToCdecl(Delegate @delegate,
+            DelegatePointerKind kind = DelegatePointerKind.Stub,
+            bool pinned = true,
+            bool ignoreValidityChecks = false)
+        {
+            if (!ignoreValidityChecks)
+            {
+                DelegateSafetyCheck(@delegate, CallingConvention.Cdecl);
+            }
+            
+            return (delegate* unmanaged[Cdecl]<void>) DelegateToPtr(@delegate, kind, pinned);
         }
 
         /// <summary>
-        /// Free an array of strings.
+        /// Gets a function pointer for the given delegate using the <c>__stdcall</c> calling convention.
         /// </summary>
-        /// <param name="ptr">The pointer to free.</param>
-        /// <param name="length">The number of strings in the pointer.</param>
-        [Obsolete]
-        public static void FreeStringArrayPtr(IntPtr ptr, int length)
+        /// <param name="delegate">The delegate to get a function pointer to.</param>
+        /// <param name="kind">
+        /// The method by which SilkMarshal should retrieve the pointer. Should always be
+        /// <see cref="DelegatePointerKind.Stub"/> except in very rare edge cases.
+        /// </param>
+        /// <param name="pinned">
+        /// Whether to pin the delegate such that the returned pointer remains valid for long periods of time.
+        /// </param>
+        /// <param name="ignoreValidityChecks">
+        /// Whether to skip validity checks, such as calling convention mismatch checks. 
+        /// </param>
+        /// <returns>A function pointer to the given delegate.</returns>
+        public static unsafe delegate* unmanaged[Stdcall]<void> DelegateToStdcall(Delegate @delegate,
+            DelegatePointerKind kind = DelegatePointerKind.Stub,
+            bool pinned = true,
+            bool ignoreValidityChecks = false)
         {
-            for (var i = 0; i < length; i++)
+            if (!ignoreValidityChecks)
             {
-                Marshal.FreeHGlobal(Marshal.ReadIntPtr(ptr, i * IntPtr.Size));
+                DelegateSafetyCheck(@delegate, CallingConvention.StdCall);
             }
+            
+            return (delegate* unmanaged[Stdcall]<void>) DelegateToPtr(@delegate, kind, pinned);
+        }
 
-            Marshal.FreeHGlobal(ptr);
+        /// <summary>
+        /// Gets a function pointer for the given delegate using the <c>__fastcall</c> calling convention.
+        /// </summary>
+        /// <param name="delegate">The delegate to get a function pointer to.</param>
+        /// <param name="kind">
+        /// The method by which SilkMarshal should retrieve the pointer. Should always be
+        /// <see cref="DelegatePointerKind.Stub"/> except in very rare edge cases.
+        /// </param>
+        /// <param name="pinned">
+        /// Whether to pin the delegate such that the returned pointer remains valid for long periods of time.
+        /// </param>
+        /// <param name="ignoreValidityChecks">
+        /// Whether to skip validity checks, such as calling convention mismatch checks. 
+        /// </param>
+        /// <returns>A function pointer to the given delegate.</returns>
+        public static unsafe delegate* unmanaged[Fastcall]<void> DelegateToFastcall(Delegate @delegate,
+            DelegatePointerKind kind = DelegatePointerKind.Stub,
+            bool pinned = true,
+            bool ignoreValidityChecks = false)
+        {
+            if (!ignoreValidityChecks)
+            {
+                DelegateSafetyCheck(@delegate, CallingConvention.FastCall);
+            }
+            
+            return (delegate* unmanaged[Fastcall]<void>) DelegateToPtr(@delegate, kind, pinned);
+        }
+
+        /// <summary>
+        /// Gets a function pointer for the given delegate using the <c>__thiscall</c> calling convention.
+        /// </summary>
+        /// <param name="delegate">The delegate to get a function pointer to.</param>
+        /// <param name="kind">
+        /// The method by which SilkMarshal should retrieve the pointer. Should always be
+        /// <see cref="DelegatePointerKind.Stub"/> except in very rare edge cases.
+        /// </param>
+        /// <param name="pinned">
+        /// Whether to pin the delegate such that the returned pointer remains valid for long periods of time.
+        /// </param>
+        /// <param name="ignoreValidityChecks">
+        /// Whether to skip validity checks, such as calling convention mismatch checks. 
+        /// </param>
+        /// <returns>A function pointer to the given delegate.</returns>
+        public static unsafe delegate* unmanaged[Thiscall]<void> DelegateToThiscall(Delegate @delegate,
+            DelegatePointerKind kind = DelegatePointerKind.Stub,
+            bool pinned = true,
+            bool ignoreValidityChecks = false)
+        {
+            if (!ignoreValidityChecks)
+            {
+                DelegateSafetyCheck(@delegate, CallingConvention.ThisCall);
+            }
+            
+            return (delegate* unmanaged[Thiscall]<void>) DelegateToPtr(@delegate, kind, pinned);
+        }
+
+        public static T PtrToDelegate<T>(IntPtr p) where T : Delegate => Marshal.GetDelegateForFunctionPointer<T>(p);
+
+        [MethodImpl((MethodImplOptions)768)] public static unsafe ref Guid GuidOf<T>() => ref *TypeGuid<T>.Riid;
+        [MethodImpl((MethodImplOptions)768)] public static unsafe Guid* GuidPtrOf<T>() => TypeGuid<T>.Riid;
+        
+        // Begin adapted TerraFX code
+        // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT).
+        // See License.md in the repository root for more information.
+        // Ported from shared/uuids.h in the Windows SDK for Windows 10.0.19041.0
+        // Original source is Copyright © Microsoft. All rights reserved.
+
+        private static unsafe class TypeGuid<T>
+        {
+            public static readonly Guid* Riid = CreateRiid();
+            private static Guid* CreateRiid()
+            {
+                #if NET5_0
+                var p = (Guid*) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(T), sizeof(Guid));
+                #else
+                var p = (Guid*) Allocate(sizeof(Guid));
+                #endif
+
+                *p = typeof(T).GUID;
+
+                return p;
+            }
+        }
+        
+        // End adapted TerraFX code
+
+        /// <summary>
+        /// Converts the specified HRESULT error code to a corresponding <see cref="T:System.Exception"></see> object
+        /// and throws if a match was found.
+        /// </summary>
+        /// <param name="hResult">The HRESULT to be converted.</param>
+        public static void ThrowHResult(int hResult)
+        {
+            var ex = Marshal.GetExceptionForHR(hResult);
+            if (ex is not null)
+            {
+                throw ex;
+            }
         }
     }
 }

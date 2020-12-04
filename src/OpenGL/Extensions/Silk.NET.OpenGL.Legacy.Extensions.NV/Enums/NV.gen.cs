@@ -981,11 +981,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeName("Name", "GL_STANDARD_FONT_FORMAT_NV")]
         StandardFontFormatNV = 0x936C,
         [NativeName("Name", "GL_2_BYTES_NV")]
-        C2BytesNV = 0x1407,
+        Gl2BytesNV = 0x1407,
         [NativeName("Name", "GL_3_BYTES_NV")]
-        C3BytesNV = 0x1408,
+        Gl3BytesNV = 0x1408,
         [NativeName("Name", "GL_4_BYTES_NV")]
-        C4BytesNV = 0x1409,
+        Gl4BytesNV = 0x1409,
         [NativeName("Name", "GL_EYE_LINEAR_NV")]
         EyeLinearNV = 0x2400,
         [NativeName("Name", "GL_OBJECT_LINEAR_NV")]
@@ -1060,6 +1060,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         PrimitiveRestartNV = 0x8558,
         [NativeName("Name", "GL_PRIMITIVE_RESTART_INDEX_NV")]
         PrimitiveRestartIndexNV = 0x8559,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
+        ShadingRateImagePerPrimitiveNV = 0x95B1,
+        [NativeName("Name", "GL_SHADING_RATE_IMAGE_PALETTE_COUNT_NV")]
+        ShadingRateImagePaletteCountNV = 0x95B2,
         [NativeName("Name", "GL_QUERY_RESOURCE_TYPE_VIDMEM_ALLOC_NV")]
         QueryResourceTypeVidmemAllocNV = 0x9540,
         [NativeName("Name", "GL_QUERY_RESOURCE_MEMTYPE_VIDMEM_NV")]

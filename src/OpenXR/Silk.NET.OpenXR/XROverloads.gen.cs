@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -661,28 +663,28 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be added.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] Span<FuncPtr> function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] Span<PfnVoidFunction> function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, name, ref function.GetPinnableReference());
         }
 
         /// <summary>To be added.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 0)] FuncPtr* function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 0)] PfnVoidFunction* function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, in name.GetPinnableReference(), function);
         }
 
         /// <summary>To be added.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 0)] Span<FuncPtr> function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 0)] Span<PfnVoidFunction> function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, in name.GetPinnableReference(), ref function.GetPinnableReference());
         }
 
         /// <summary>To be added.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] Span<FuncPtr> function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] Span<PfnVoidFunction> function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, name, ref function.GetPinnableReference());

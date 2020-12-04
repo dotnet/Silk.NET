@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -26,7 +27,7 @@ namespace Silk.NET.OpenXR
             void* next = null,
             ulong? systemId = null,
             VulkanDeviceCreateFlagsKHR? createFlags = null,
-            FuncPtr? pfnGetInstanceProcAddr = null,
+            PfnVoidFunction? pfnGetInstanceProcAddr = null,
             Silk.NET.Core.Native.VkHandle? vulkanPhysicalDevice = null,
             void* vulkanCreateInfo = null,
             void* vulkanAllocator = null
@@ -97,7 +98,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "PFN_vkGetInstanceProcAddr")]
         [NativeName("Type.Name", "PFN_vkGetInstanceProcAddr")]
         [NativeName("Name", "pfnGetInstanceProcAddr")]
-        public FuncPtr PfnGetInstanceProcAddr;
+        public PfnVoidFunction PfnGetInstanceProcAddr;
 /// <summary></summary>
         [NativeName("Type", "VkPhysicalDevice")]
         [NativeName("Type.Name", "VkPhysicalDevice")]

@@ -26,7 +26,7 @@ namespace Silk.NET.Windowing.Sdl.Android
         internal static MainFunc CurrentMain { get; private set; }
 
         [DllImport("libmain.so", EntryPoint = "sdSetMain")]
-        internal static extern void SetupMain(FuncPtr funcPtr);
+        internal static extern void SetupMain(IntPtr funcPtr);
 
         static SilkActivity()
         {
@@ -55,7 +55,7 @@ namespace Silk.NET.Windowing.Sdl.Android
             }
 
             Instance = this;
-            SetupMain(FuncPtr.Of(CurrentMain));
+            SetupMain(SilkMarshal.DelegateToPtr(CurrentMain));
         }
 
         protected abstract void OnRun();

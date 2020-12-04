@@ -87,5 +87,6 @@
   "vdpauSurfaceNV": "GLvdpauSurfaceNV",
   "Path": "GLuint",
   "PathCommand": "GLubyte",
-  "PathElement": "GLvoid*"
+  "PathElement": "GLvoid*",
+  "char": "byte"
 }

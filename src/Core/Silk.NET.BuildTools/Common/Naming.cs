@@ -60,6 +60,8 @@ namespace Silk.NET.BuildTools.Common
             {
                 return name;
             }
+
+            name = name.TrimStart('_');
             
             if (name.StartsWith($"{task.FunctionPrefix.ToUpper()}_"))
             {
@@ -69,6 +71,24 @@ namespace Silk.NET.BuildTools.Common
             return name.ToUpper().StartsWith(task.FunctionPrefix.ToUpper())
                 ? name.Remove(0, task.FunctionPrefix.Length)
                 : name;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="prefix"></param>
+        /// <returns></returns>
+        public static string TranslateVariable(string name, string prefix)
+        {
+            var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var lower = "abcdefghijklmnopqrstuvwxyz";
+            if (name.Any(upper.Contains) && name.Any(lower.Contains))
+            {
+                return TranslateLite(name, prefix);
+            }
+
+            return Translate(name, prefix);
         }
 
         /// <summary>
@@ -112,7 +132,7 @@ namespace Silk.NET.BuildTools.Common
 
             if (char.IsDigit(builder[0]))
             {
-                builder.Insert(0, "C");
+                builder.Insert(0, prefix);
             }
 
             var newName = builder.ToString().Pascalize();
@@ -132,7 +152,7 @@ namespace Silk.NET.BuildTools.Common
 
             if (char.IsDigit(builder[0]))
             {
-                builder.Insert(0, "C");
+                builder.Insert(0, prefix);
             }
 
             var newName = builder.ToString().Pascalize();

@@ -207,7 +207,7 @@ namespace Silk.NET.BuildTools.Baking
 
         private static void CheckForDuplicates(Profile profile)
         {
-            foreach (var project in profile.Projects)
+            foreach (var project in (IDictionary<string, Project>)profile.Projects)
             {
                 foreach (var @class in project.Value.Classes)
                 {

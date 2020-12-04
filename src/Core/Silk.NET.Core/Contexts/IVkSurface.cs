@@ -23,6 +23,6 @@ namespace Silk.NET.Core.Contexts
         /// </summary>
         /// <param name="count">The number of extensions in the returned array</param>
         /// <returns>An array of strings, containing names for all required extensions</returns>
-        unsafe char** GetRequiredExtensions(out uint count);
+        unsafe byte** GetRequiredExtensions(out uint count);
     }
 }

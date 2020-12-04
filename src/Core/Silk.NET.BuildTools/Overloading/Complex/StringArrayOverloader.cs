@@ -40,9 +40,10 @@ namespace Silk.NET.BuildTools.Overloading
                     varied = true;
                     sb.AppendLine
                     (
-                        $"var {parameter.Name} = ({parameter.Type}) SilkMarshal.MarshalStringArrayToPtr({parameter.Name}Sa);"
+                        $"var {parameter.Name} = ({parameter.Type}) SilkMarshal.StringArrayToPtr({parameter.Name}Sa);"
                     );
                     ep.Add($"SilkMarshal.CopyPtrToStringArray((IntPtr) {parameter.Name}, {parameter.Name}Sa);");
+                    ep.Add($"SilkMarshal.Free((IntPtr) {parameter.Name});");
                 }
             }
 

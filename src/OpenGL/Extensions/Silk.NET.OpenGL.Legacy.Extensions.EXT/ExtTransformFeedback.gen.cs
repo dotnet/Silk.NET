@@ -6,11 +6,12 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
 using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
@@ -201,9 +202,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] EXT bufferMode)
         {
             // StringArrayOverloader
-            var varyings = (byte**) SilkMarshal.MarshalStringArrayToPtr(varyingsSa);
+            var varyings = (byte**) SilkMarshal.StringArrayToPtr(varyingsSa);
             TransformFeedbackVaryings(program, count, varyings, bufferMode);
             SilkMarshal.CopyPtrToStringArray((IntPtr) varyings, varyingsSa);
+            SilkMarshal.Free((IntPtr) varyings);
         }
 
         public ExtTransformFeedback(INativeContext ctx)
