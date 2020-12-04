@@ -22,10 +22,7 @@ namespace Silk.NET.Vulkan
         ValidationFeatureEnableBestPracticesExt = 2,
         [NativeName("Name", "VK_VALIDATION_FEATURE_ENABLE_DEBUG_PRINTF_EXT")]
         ValidationFeatureEnableDebugPrintfExt = 3,
-<<<<<<< HEAD
         [NativeName("Name", "VK_VALIDATION_FEATURE_ENABLE_SYNCHRONIZATION_VALIDATION_EXT")]
-=======
->>>>>>> master
         ValidationFeatureEnableSynchronizationValidationExt = 4,
     }
 }

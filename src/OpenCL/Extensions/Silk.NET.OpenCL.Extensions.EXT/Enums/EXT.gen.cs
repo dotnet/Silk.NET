@@ -14,7 +14,6 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     [NativeName("Name", "GLenum")]
     public enum EXT
     {
-<<<<<<< HEAD
         [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
         DeviceCxxForOpenclNumericVersionExt = 0x4230,
         [NativeName("Name", "CL_DEVICE_PARTITION_FAILED_EXT")]
@@ -24,12 +23,6 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         [NativeName("Name", "CL_INVALID_PARTITION_NAME_EXT")]
         InvalidPartitionNameExt = unchecked((int)0xFFFFFFFFFFFFFBDD),
         [NativeName("Name", "CL_DEVICE_PARENT_DEVICE_EXT")]
-=======
-        DeviceCxxForOpenclNumericVersionExt = 0x4230,
-        DevicePartitionFailedExt = unchecked((int)0xFFFFFFFFFFFFFBDF),
-        InvalidPartitionCountExt = unchecked((int)0xFFFFFFFFFFFFFBDE),
-        InvalidPartitionNameExt = unchecked((int)0xFFFFFFFFFFFFFBDD),
->>>>>>> master
         DeviceParentDeviceExt = 0x4054,
         [NativeName("Name", "CL_DEVICE_PARTITION_TYPES_EXT")]
         DevicePartitionTypesExt = 0x4055,
@@ -39,7 +32,6 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         DeviceReferenceCountExt = 0x4057,
         [NativeName("Name", "CL_DEVICE_PARTITION_STYLE_EXT")]
         DevicePartitionStyleExt = 0x4058,
-<<<<<<< HEAD
         [NativeName("Name", "CL_DEVICE_PARTITION_EQUALLY_EXT")]
         DevicePartitionEquallyExt = 0x4050,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_COUNTS_EXT")]
@@ -49,12 +41,6 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_AFFINITY_DOMAIN_EXT")]
         DevicePartitionByAffinityDomainExt = 0x4053,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_L1_CACHE_EXT")]
-=======
-        DevicePartitionEquallyExt = 0x4050,
-        DevicePartitionByCountsExt = 0x4051,
-        DevicePartitionByNamesExt = 0x4052,
-        DevicePartitionByAffinityDomainExt = 0x4053,
->>>>>>> master
         AffinityDomainL1CacheExt = 0x1,
         [NativeName("Name", "CL_AFFINITY_DOMAIN_L2_CACHE_EXT")]
         AffinityDomainL2CacheExt = 0x2,
