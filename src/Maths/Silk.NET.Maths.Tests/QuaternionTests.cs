@@ -63,7 +63,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLerpTest()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -86,7 +86,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLerpTest1()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -102,7 +102,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLerpTest2()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -118,7 +118,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLerpTest3()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.Negate(a);
 
@@ -289,7 +289,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionCreateFromAxisAngleTest()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             float angle = MathHelper.ToRadians(30.0f);
 
             Quaternion<float> expected = new Quaternion<float>(0.0691723f, 0.1383446f, 0.207516879f, 0.9659258f);
@@ -393,7 +393,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -416,7 +416,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest1()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -432,7 +432,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest2()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -448,7 +448,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest3()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = -a;
 
@@ -467,7 +467,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest4()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = -Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 

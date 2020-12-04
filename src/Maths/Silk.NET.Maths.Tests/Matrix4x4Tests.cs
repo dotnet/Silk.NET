@@ -518,8 +518,8 @@ namespace Silk.NET.Maths.Tests
             actual = Matrix4x4<float>.CreateFromAxisAngle(Vector3<float>.UnitZ, radians);
             Assert.True(MathHelper.Equal(expected, actual));
 
-            expected = Matrix4x4<float>.CreateFromQuaternion(Quaternion<float>.CreateFromAxisAngle(Vector3<float>.Normalize(Vector3<float>.One), radians));
-            actual = Matrix4x4<float>.CreateFromAxisAngle(Vector3<float>.Normalize(Vector3<float>.One), radians);
+            expected = Matrix4x4<float>.CreateFromQuaternion(Quaternion<float>.CreateFromAxisAngle(Vector3.Normalize(Vector3<float>.One), radians));
+            actual = Matrix4x4<float>.CreateFromAxisAngle(Vector3.Normalize(Vector3<float>.One), radians);
             Assert.True(MathHelper.Equal(expected, actual));
 
             const int rotCount = 16;
@@ -663,7 +663,7 @@ namespace Silk.NET.Maths.Tests
                 {
                     if (lightDirInfo.Length < 0.1f)
                         continue;
-                    Vector3<float> lightDir = Vector3<float>.Normalize(lightDirInfo);
+                    Vector3<float> lightDir = Vector3.Normalize(lightDirInfo);
 
                     if (Plane<float>.DotNormal(plane, lightDir) < 0.1f)
                         continue;
@@ -680,13 +680,13 @@ namespace Silk.NET.Maths.Tests
 
                         // Make sure transformed position is on the plane.
                         Vector3<float> v = sp - pp;
-                        float d = Vector3<float>.Dot(v, plane.Normal);
+                        float d = Vector3.Dot(v, plane.Normal);
                         Assert.True(MathHelper.Equal(d, 0), "Matrix4x4<float>.CreateShadow did not provide expected value.");
 
                         // make sure direction between transformed position and original position are same as light direction.
-                        if (Vector3<float>.Dot(point - pp, plane.Normal) > 0.0001f)
+                        if (Vector3.Dot(point - pp, plane.Normal) > 0.0001f)
                         {
-                            Vector3<float> dir = Vector3<float>.Normalize(point - sp);
+                            Vector3<float> dir = Vector3.Normalize(point - sp);
                             Assert.True(MathHelper.Equal(dir, lightDir), "Matrix4x4<float>.CreateShadow did not provide expected value.");
                         }
                     }
@@ -735,11 +735,11 @@ namespace Silk.NET.Maths.Tests
                 //
                 foreach (Vector3<float> point in points)
                 {
-                    Vector3<float> rp = Vector3<float>.Transform(point, m);
+                    Vector3<float> rp = Vector3.Transform(point, m);
 
                     // Manually compute reflection point and compare results.
                     Vector3<float> v = point - pp;
-                    float d = Vector3<float>.Dot(v, plane.Normal);
+                    float d = Vector3.Dot(v, plane.Normal);
                     Vector3<float> vp = point - 2.0f * d * plane.Normal;
                     Assert.True(MathHelper.Equal(rp, vp), "Matrix4x4<float>.Reflection did not provide expected value.");
                 }
@@ -846,8 +846,8 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(objectPosition.X, actual.M41);
             Assert.Equal(objectPosition.Y, actual.M42);
             Assert.Equal(objectPosition.Z, actual.M43);
-            Assert.True(Vector3<float>.Dot(Vector3<float>.Normalize(objectUpVector), new Vector3<float>(actual.M21, actual.M22, actual.M23)) > 0);
-            Assert.True(Vector3<float>.Dot(Vector3<float>.Normalize(objectForwardDirection), new Vector3<float>(-actual.M31, -actual.M32, -actual.M33)) > 0.999f);
+            Assert.True(Vector3.Dot(Vector3.Normalize(objectUpVector), new Vector3<float>(actual.M21, actual.M22, actual.M23)) > 0);
+            Assert.True(Vector3.Dot(Vector3.Normalize(objectForwardDirection), new Vector3<float>(-actual.M31, -actual.M32, -actual.M33)) > 0.999f);
         }
 
         // A test for CreateOrtho (float, float, float, float)
@@ -1387,7 +1387,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Matrix4x4FromQuaternionTest1()
         {
-            Vector3<float> axis = Vector3<float>.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
             Matrix4x4<float> expected = new Matrix4x4<float>();

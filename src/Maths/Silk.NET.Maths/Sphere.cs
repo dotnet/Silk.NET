@@ -54,7 +54,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector3<T> point)
         {
-            return Scalar.LessThanOrEqual(Vector3<T>.DistanceSquared(point, Center), Radius);
+            return Scalar.LessThanOrEqual(Vector3.DistanceSquared(point, Center), Radius);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a sphere that touches the edge contained.</remarks>
         public bool Contains(Sphere<T> other)
         {
-            var distanceSquared = Vector3<T>.DistanceSquared(Center, other.Center);
+            var distanceSquared = Vector3.DistanceSquared(Center, other.Center);
             var radiusDiff = Scalar.Subtract(Radius, other.Radius);
             return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
         }
@@ -77,7 +77,7 @@ namespace Silk.NET.Maths
         /// <returns>The distance squared.</returns>
         public T GetDistanceToNearestEdgeSquared(Vector3<T> point)
         {
-            return Scalar.Subtract(Vector3<T>.DistanceSquared(Center, point), SquaredRadius);
+            return Scalar.Subtract(Vector3.DistanceSquared(Center, point), SquaredRadius);
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Silk.NET.Maths
         /// <returns>The sphere.</returns>
         public Sphere<T> GetInflated(Vector3<T> point)
         {
-            return new(Center, Scalar.Max(Radius, Vector3<T>.Distance(Center, point)));
+            return new(Center, Scalar.Max(Radius, Vector3.Distance(Center, point)));
         }
         
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>

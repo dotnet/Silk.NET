@@ -67,7 +67,7 @@ namespace Silk.NET.Maths
             var ab = b - a;
             var ac = c - a;
 
-            var cross = Vector3<T>.Cross(ab, ac);
+            var cross = Vector3.Cross(ab, ac);
             Plane<T> p;
             p.Normal = cross;
             p.Distance = Scalar.Negate(Scalar.Add(
@@ -82,11 +82,11 @@ namespace Silk.NET.Maths
                 Vector3<T> b = point3 - point1;
 
                 // N = Cross(a, b)
-                Vector3<T> n = Vector3<T>.Cross(a, b);
-                Vector3<T> normal = Vector3<T>.Normalize(n);
+                Vector3<T> n = Vector3.Cross(a, b);
+                Vector3<T> normal = Vector3.Normalize(n);
 
                 // D = - Dot(N, point1)
-                T d = Scalar.Negate(Vector3<T>.Dot(normal, point1));
+                T d = Scalar.Negate(Vector3.Dot(normal, point1));
 
                 return new Plane<T>(normal, d);
             }
@@ -139,7 +139,7 @@ namespace Silk.NET.Maths
         /// <returns>The resulting value.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static T DotCoordinate(Plane<T> plane, Vector3<T> value)
-            => Scalar.Add(Vector3<T>.Dot(plane.Normal, value), plane.Distance);
+            => Scalar.Add(Vector3.Dot(plane.Normal, value), plane.Distance);
 
         /// <summary>Returns the dot product of a specified Vector3 and the Normal vector of this Plane.</summary>
         /// <param name="plane">The plane.</param>
@@ -147,7 +147,7 @@ namespace Silk.NET.Maths
         /// <returns>The resulting dot product.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static T DotNormal(Plane<T> plane, Vector3<T> value)
-            => Vector3<T>.Dot(plane.Normal, value);
+            => Vector3.Dot(plane.Normal, value);
 
         /// <summary>Creates a new Plane whose normal vector is the source Plane's normal vector normalized.</summary>
         /// <param name="value">The source Plane.</param>

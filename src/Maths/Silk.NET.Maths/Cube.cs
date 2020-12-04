@@ -128,8 +128,8 @@ namespace Silk.NET.Maths
         /// <returns>The cube.</returns>
         public Cube<T> GetInflated(Vector3<T> point)
         {
-            var min = Vector3<T>.Min(Origin, point);
-            var max = Vector3<T>.Max(Max, point);
+            var min = Vector3.Min(Origin, point);
+            var max = Vector3.Max(Max, point);
             return new(min, max - min);
         }
 

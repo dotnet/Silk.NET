@@ -159,7 +159,7 @@ namespace Silk.NET.Maths.Tests
         {
             Vector3<float> a = new Vector3<float>(1.55f, 1.55f, 1);
             Vector3<float> b = new Vector3<float>(2.5f, 3, 1.5f);
-            Vector3<float> c = Vector3<float>.Cross(a, b);
+            Vector3<float> c = Vector3.Cross(a, b);
 
             Vector4<float> d = new Vector4<float>(a, 0);
             Vector4<float> e = new Vector4<float>(c, 0);

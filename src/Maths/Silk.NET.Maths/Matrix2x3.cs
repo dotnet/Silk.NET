@@ -283,11 +283,11 @@ namespace Silk.NET.Maths
             }
             else
             {
-                zaxis = Vector3<T>.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
+                zaxis = Vector3.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
             }
 
-            Vector3<T> xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(cameraUpVector, zaxis));
-            Vector3<T> yaxis = Vector3<T>.Cross(zaxis, xaxis);
+            Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(cameraUpVector, zaxis));
+            Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
             return new(xaxis, yaxis);
         }
@@ -446,7 +446,7 @@ namespace Silk.NET.Maths
         /// <returns>The interpolated matrix.</returns>
         public static unsafe Matrix2x3<T> Lerp(Matrix2x3<T> matrix1, Matrix2x3<T> matrix2, T amount)
         {
-            return new(Vector3<T>.Lerp(matrix1.Row1, matrix2.Row2, amount), Vector3<T>.Lerp(matrix1.Row2, matrix2.Row2, amount));
+            return new(Vector3.Lerp(matrix1.Row1, matrix2.Row2, amount), Vector3.Lerp(matrix1.Row2, matrix2.Row2, amount));
         }
 
         /// <summary>Transforms the given matrix by applying the given Quaternion rotation.</summary>

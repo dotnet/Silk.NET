@@ -483,11 +483,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             }
             else
             {
-                zaxis = Vector3<T>.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
+                zaxis = Vector3.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
             }
 
-            Vector3<T> xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(cameraUpVector, zaxis));
-            Vector3<T> yaxis = Vector3<T>.Cross(zaxis, xaxis);
+            Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(cameraUpVector, zaxis));
+            Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
             return new(
                 new(xaxis, default),
@@ -515,7 +515,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             }
             else
             {
-                faceDir = Vector3<T>.Multiply(faceDir, Scalar.Reciprocal(Scalar.Sqrt(norm)));
+                faceDir = Vector3.Multiply(faceDir, Scalar.Reciprocal(Scalar.Sqrt(norm)));
             }
 
             Vector3<T> yaxis = rotateAxis;
@@ -523,14 +523,14 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             Vector3<T> zaxis;
 
             // Treat the case when angle between faceDir and rotateAxis is too close to 0.
-            T dot = Vector3<T>.Dot(rotateAxis, faceDir);
+            T dot = Vector3.Dot(rotateAxis, faceDir);
 
             if (Scalar.GreaterThan(Scalar.Abs(dot), Scalar.As<float, T>(BillboardMinAngle)))
             {
                 zaxis = objectForwardVector;
 
                 // Make sure passed values are useful for compute.
-                dot = Vector3<T>.Dot(rotateAxis, zaxis);
+                dot = Vector3.Dot(rotateAxis, zaxis);
 
                 if (Scalar.GreaterThan(Scalar.Abs(dot), Scalar.As<float, T>(BillboardMinAngle)))
                 {
@@ -540,13 +540,13 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                             : new Vector3<T>(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.MinusOne);
                 }
 
-                xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(rotateAxis, zaxis));
-                zaxis = Vector3<T>.Normalize(Vector3<T>.Cross(xaxis, rotateAxis));
+                xaxis = Vector3.Normalize(Vector3.Cross(rotateAxis, zaxis));
+                zaxis = Vector3.Normalize(Vector3.Cross(xaxis, rotateAxis));
             }
             else
             {
-                xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(rotateAxis, faceDir));
-                zaxis = Vector3<T>.Normalize(Vector3<T>.Cross(xaxis, yaxis));
+                xaxis = Vector3.Normalize(Vector3.Cross(rotateAxis, faceDir));
+                zaxis = Vector3.Normalize(Vector3.Cross(xaxis, yaxis));
             }
 
             return new(
@@ -661,9 +661,9 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The view matrix.</returns>
         public static Matrix4x4<T> CreateLookAt(Vector3<T> cameraPosition, Vector3<T> cameraTarget, Vector3<T> cameraUpVector)
         {
-            Vector3<T> zaxis = Vector3<T>.Normalize(cameraPosition - cameraTarget);
-            Vector3<T> xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(cameraUpVector, zaxis));
-            Vector3<T> yaxis = Vector3<T>.Cross(zaxis, xaxis);
+            Vector3<T> zaxis = Vector3.Normalize(cameraPosition - cameraTarget);
+            Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(cameraUpVector, zaxis));
+            Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
             Matrix4x4<T> result = Identity;
 
@@ -679,9 +679,9 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             result.M32 = yaxis.Z;
             result.M33 = zaxis.Z;
 
-            result.M41 = Scalar.Negate(Vector3<T>.Dot(xaxis, cameraPosition));
-            result.M42 = Scalar.Negate(Vector3<T>.Dot(yaxis, cameraPosition));
-            result.M43 = Scalar.Negate(Vector3<T>.Dot(zaxis, cameraPosition));
+            result.M41 = Scalar.Negate(Vector3.Dot(xaxis, cameraPosition));
+            result.M42 = Scalar.Negate(Vector3.Dot(yaxis, cameraPosition));
+            result.M43 = Scalar.Negate(Vector3.Dot(zaxis, cameraPosition));
 
             return result;
         }
@@ -1212,9 +1212,9 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>The world matrix.</returns>
         public static Matrix4x4<T> CreateWorld(Vector3<T> position, Vector3<T> forward, Vector3<T> up)
         {
-            Vector3<T> zaxis = Vector3<T>.Normalize(-forward);
-            Vector3<T> xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(up, zaxis));
-            Vector3<T> yaxis = Vector3<T>.Cross(zaxis, xaxis);
+            Vector3<T> zaxis = Vector3.Normalize(-forward);
+            Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(up, zaxis));
+            Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
             Matrix4x4<T> result = Identity;
 
@@ -1764,7 +1764,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                         *(pVectorBasis[a]) = pCanonicalBasis[a];
                     }
 
-                    *pVectorBasis[a] = Vector3<T>.Normalize(*pVectorBasis[a]);
+                    *pVectorBasis[a] = Vector3.Normalize(*pVectorBasis[a]);
 
                     if (!Scalar.GreaterThanOrEqual(pfScales[b], Scalar.As<float, T>(DecomposeEpsilon)))
                     {
@@ -1814,17 +1814,17 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                         }
                         #endregion
 
-                        *pVectorBasis[b] = Vector3<T>.Cross(*pVectorBasis[a], *(pCanonicalBasis + cc));
+                        *pVectorBasis[b] = Vector3.Cross(*pVectorBasis[a], *(pCanonicalBasis + cc));
                     }
 
-                    *pVectorBasis[b] = Vector3<T>.Normalize(*pVectorBasis[b]);
+                    *pVectorBasis[b] = Vector3.Normalize(*pVectorBasis[b]);
 
                     if (!Scalar.GreaterThanOrEqual(pfScales[c], Scalar.As<float, T>(DecomposeEpsilon)))
                     {
-                        *pVectorBasis[c] = Vector3<T>.Cross(*pVectorBasis[a], *pVectorBasis[b]);
+                        *pVectorBasis[c] = Vector3.Cross(*pVectorBasis[a], *pVectorBasis[b]);
                     }
 
-                    *pVectorBasis[c] = Vector3<T>.Normalize(*pVectorBasis[c]);
+                    *pVectorBasis[c] = Vector3.Normalize(*pVectorBasis[c]);
 
                     det = matTemp.GetDeterminant();
 

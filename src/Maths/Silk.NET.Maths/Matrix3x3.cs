@@ -332,11 +332,11 @@ namespace Silk.NET.Maths
             }
             else
             {
-                zaxis = Vector3<T>.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
+                zaxis = Vector3.Multiply(zaxis, Scalar.Reciprocal(Scalar.Sqrt(norm)));
             }
 
-            Vector3<T> xaxis = Vector3<T>.Normalize(Vector3<T>.Cross(cameraUpVector, zaxis));
-            Vector3<T> yaxis = Vector3<T>.Cross(zaxis, xaxis);
+            Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(cameraUpVector, zaxis));
+            Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
             return new(xaxis, yaxis, zaxis);
         }
@@ -718,7 +718,7 @@ namespace Silk.NET.Maths
                         *(pVectorBasis[a]) = pCanonicalBasis[a];
                     }
 
-                    *pVectorBasis[a] = Vector3<T>.Normalize(*pVectorBasis[a]);
+                    *pVectorBasis[a] = Vector3.Normalize(*pVectorBasis[a]);
 
                     if (!Scalar.GreaterThanOrEqual(pfScales[b], Scalar.As<float, T>(DecomposeEpsilon)))
                     {
@@ -768,17 +768,17 @@ namespace Silk.NET.Maths
                         }
                         #endregion
 
-                        *pVectorBasis[b] = Vector3<T>.Cross(*pVectorBasis[a], *(pCanonicalBasis + cc));
+                        *pVectorBasis[b] = Vector3.Cross(*pVectorBasis[a], *(pCanonicalBasis + cc));
                     }
 
-                    *pVectorBasis[b] = Vector3<T>.Normalize(*pVectorBasis[b]);
+                    *pVectorBasis[b] = Vector3.Normalize(*pVectorBasis[b]);
 
                     if (!Scalar.GreaterThanOrEqual(pfScales[c], Scalar.As<float, T>(DecomposeEpsilon)))
                     {
-                        *pVectorBasis[c] = Vector3<T>.Cross(*pVectorBasis[a], *pVectorBasis[b]);
+                        *pVectorBasis[c] = Vector3.Cross(*pVectorBasis[a], *pVectorBasis[b]);
                     }
 
-                    *pVectorBasis[c] = Vector3<T>.Normalize(*pVectorBasis[c]);
+                    *pVectorBasis[c] = Vector3.Normalize(*pVectorBasis[c]);
 
                     det = matTemp.GetDeterminant();
 
@@ -820,9 +820,9 @@ namespace Silk.NET.Maths
         public static unsafe Matrix3x3<T> Lerp(Matrix3x3<T> matrix1, Matrix3x3<T> matrix2, T amount)
         {
             return new(
-                Vector3<T>.Lerp(matrix1.Row1, matrix2.Row1, amount),
-                Vector3<T>.Lerp(matrix1.Row2, matrix2.Row2, amount),
-                Vector3<T>.Lerp(matrix1.Row3, matrix2.Row3, amount)
+                Vector3.Lerp(matrix1.Row1, matrix2.Row1, amount),
+                Vector3.Lerp(matrix1.Row2, matrix2.Row2, amount),
+                Vector3.Lerp(matrix1.Row3, matrix2.Row3, amount)
             );
         }
 
