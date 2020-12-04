@@ -233,13 +233,8 @@ namespace VulkanTriangle
                 PApplicationInfo = &appInfo
             };
 
-<<<<<<< HEAD
             var extensions = (byte**) _window.VkSurface!.GetRequiredExtensions(out var extCount);
             var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Length)];
-=======
-            var extensions = (byte**) _window.GetRequiredExtensions(out var extCount);
-            var newExtensions = stackalloc byte*[(int) (extCount + _instanceExtensions.Length)];
->>>>>>> master
             for (var i = 0; i < extCount; i++)
             {
                 newExtensions[i] = extensions[i];
@@ -274,11 +269,7 @@ namespace VulkanTriangle
             }
 
             _vk.CurrentInstance = _instance;
-<<<<<<< HEAD
             
-=======
-
->>>>>>> master
             if (!_vk.TryGetInstanceExtension(_instance, out _vkSurface))
             {
                 throw new NotSupportedException("KHR_surface extension not found.");

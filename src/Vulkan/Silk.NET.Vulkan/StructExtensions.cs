@@ -11,11 +11,7 @@ namespace Silk.NET.Vulkan
     {
         public static SurfaceKHR ToSurface(this VkNonDispatchableHandle handle)
         {
-<<<<<<< HEAD
             return new SurfaceKHR {Handle = handle.Handle};
-=======
-            return new SurfaceKHR { Handle = (ulong) handle.Handle.ToInt64() };
->>>>>>> master
         }
 
         public static VkHandle ToHandle(this Instance instance)

@@ -24,11 +24,7 @@ namespace Tutorial
             Bind();
             fixed (void* d = data)
             {
-<<<<<<< HEAD
                 _gl.BufferData(bufferType, (UIntPtr) (data.Length * sizeof(TDataType)), d, BufferUsageARB.StaticDraw);
-=======
-                _gl.BufferData(bufferType, (uint) (data.Length * sizeof(TDataType)), d, BufferUsageARB.StaticDraw);
->>>>>>> master
             }
         }
 

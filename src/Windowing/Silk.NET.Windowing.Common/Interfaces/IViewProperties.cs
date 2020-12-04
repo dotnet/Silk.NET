@@ -51,17 +51,7 @@ namespace Silk.NET.Windowing
         GraphicsAPI API { get; }
 
         /// <summary>
-<<<<<<< HEAD
         /// Whether or not VSync is enabled for this view.
-=======
-        /// The VSync mode.
-        /// </summary>
-        VSyncMode VSync { get; set; }
-
-        /// <summary>
-        /// The number of frames the window needs to be running slowly for before <see cref="IWindow.IsRunningSlowly"/>
-        /// is set to true.
->>>>>>> master
         /// </summary>
         bool VSync { get; set; }
 

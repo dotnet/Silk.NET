@@ -5,11 +5,7 @@
 
 using System;
 using System.Drawing;
-<<<<<<< HEAD
 using Silk.NET.Core;
-=======
-using Silk.NET.Windowing.Common.Structs;
->>>>>>> master
 
 namespace Silk.NET.Windowing
 {
@@ -99,34 +95,6 @@ namespace Silk.NET.Windowing
         }
 
         /// <summary>
-        /// Gets the full size of the given window including its borders.
-        /// </summary>
-        /// <param name="window">The window to get size information from.</param>
-        /// <returns>The full size of the window (including both content area and borders)</returns>
-        public static Size GetFullSize(this IWindow window) => Size.Add(window.Size, window.BorderSize.Size);
-
-        /// <summary>
-        /// Centers this window to the given monitor or, if null, the current monitor the window's on.
-        /// </summary>
-        /// <param name="window">The window to center.</param>
-        /// <param name="monitor">The specific monitor to center the window to, if any.</param>
-        public static void Center(this IWindow window, IMonitor? monitor = null)
-        {
-            monitor ??= window.Monitor;
-            var monitorBounds = monitor.Bounds;
-            var windowFullSize = window.GetFullSize();
-            window.Position = Point.Add
-            (
-                monitorBounds.Location,
-                new Size
-                (
-                    monitorBounds.Size.Width / 2 - windowFullSize.Width / 2,
-                    monitorBounds.Size.Height / 2 - windowFullSize.Height / 2
-                )
-            );
-        }
-
-        /// <summary>
         /// Sets the window icon to default on the given window.
         /// </summary>
         /// <param name="window">The window.</param>
@@ -137,16 +105,11 @@ namespace Silk.NET.Windowing
         /// </summary>
         /// <param name="window">The window.</param>
         /// <param name="icon">The icon to set.</param>
-<<<<<<< HEAD
         public static void SetWindowIcon(this IWindow window, ref RawImage icon) => window.SetWindowIcon
 #if NETSTANDARD2_1
             (System.Runtime.InteropServices.MemoryMarshal.CreateReadOnlySpan(ref icon, 1));
 #else
             (new[] {icon});
 #endif
-=======
-        public static void SetWindowIcon(this IWindow window, ref WindowIcon icon) => window.SetWindowIcon
-            (new[] { icon });
->>>>>>> master
     }
 }

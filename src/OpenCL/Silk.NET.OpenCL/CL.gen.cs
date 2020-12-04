@@ -652,7 +652,6 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clEnqueueSVMMemcpy")]
         public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] in T0 src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in IntPtr event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event) where T0 : unmanaged;
 
-<<<<<<< HEAD
         [NativeApi(EntryPoint = "clEnqueueSVMMemcpy")]
         public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] in T0 src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in IntPtr event_wait_list, [Flow(FlowDirection.Out)] out IntPtr @event) where T0 : unmanaged;
 
@@ -664,19 +663,6 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clEnqueueSVMMemcpy")]
         public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in IntPtr event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event) where T0 : unmanaged;
-=======
-        [NativeApi(EntryPoint = "clEnqueueReadBufferRect")]
-        public abstract unsafe int EnqueueReadBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr* buffer_origin, [Flow(FlowDirection.In)] UIntPtr* host_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.Out)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
-
-        [NativeApi(EntryPoint = "clEnqueueReadBufferRect")]
-        public abstract int EnqueueReadBufferRect<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] Span<UIntPtr> buffer_origin, [Flow(FlowDirection.In)] Span<UIntPtr> host_origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.Out)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clEnqueueWriteBufferRect")]
-        public abstract unsafe int EnqueueWriteBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr* buffer_origin, [Flow(FlowDirection.In)] UIntPtr* host_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
-
-        [NativeApi(EntryPoint = "clEnqueueWriteBufferRect")]
-        public abstract int EnqueueWriteBufferRect<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] Span<UIntPtr> buffer_origin, [Flow(FlowDirection.In)] Span<UIntPtr> host_origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
->>>>>>> master
 
         [NativeApi(EntryPoint = "clEnqueueSVMMemcpy")]
         public unsafe partial int EnqueueSvmmemcpy<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] out T0 dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] in IntPtr event_wait_list, [Flow(FlowDirection.Out)] out IntPtr @event) where T0 : unmanaged;
@@ -3468,7 +3454,6 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clGetPlatformIDs")]
         public unsafe partial int GetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* platforms, [Flow(FlowDirection.Out)] uint* num_platforms);
 
-<<<<<<< HEAD
         [NativeApi(EntryPoint = "clGetPlatformIDs")]
         public unsafe partial int GetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* platforms, [Flow(FlowDirection.Out)] out uint num_platforms);
 
@@ -3480,31 +3465,6 @@ namespace Silk.NET.OpenCL
 
         [NativeApi(EntryPoint = "clGetPlatformInfo")]
         public unsafe partial int GetPlatformInfo([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
-=======
-        public unsafe int EnqueueReadBufferRect([Flow(FlowDirection.In)] int command_queue, [Flow(FlowDirection.In)] int buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr* buffer_origin, [Flow(FlowDirection.In)] UIntPtr* host_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] uint buffer_row_pitch, [Flow(FlowDirection.In)] uint buffer_slice_pitch, [Flow(FlowDirection.In)] uint host_row_pitch, [Flow(FlowDirection.In)] uint host_slice_pitch, [Flow(FlowDirection.Out)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event)
-        {
-            // IntPtrOverloader
-            return EnqueueReadBufferRect(new IntPtr(command_queue), new IntPtr(buffer), blocking_read, buffer_origin, host_origin, region, new UIntPtr(buffer_row_pitch), new UIntPtr(buffer_slice_pitch), new UIntPtr(host_row_pitch), new UIntPtr(host_slice_pitch), ptr, num_events_in_wait_list, event_wait_list, @event);
-        }
-
-        public unsafe int EnqueueReadBufferRect<T0>([Flow(FlowDirection.In)] int command_queue, [Flow(FlowDirection.In)] int buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] Span<UIntPtr> buffer_origin, [Flow(FlowDirection.In)] Span<UIntPtr> host_origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] uint buffer_row_pitch, [Flow(FlowDirection.In)] uint buffer_slice_pitch, [Flow(FlowDirection.In)] uint host_row_pitch, [Flow(FlowDirection.In)] uint host_slice_pitch, [Flow(FlowDirection.Out)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged
-        {
-            // IntPtrOverloader
-            return EnqueueReadBufferRect(new IntPtr(command_queue), new IntPtr(buffer), blocking_read, buffer_origin, host_origin, region, new UIntPtr(buffer_row_pitch), new UIntPtr(buffer_slice_pitch), new UIntPtr(host_row_pitch), new UIntPtr(host_slice_pitch), ptr, num_events_in_wait_list, event_wait_list, @event);
-        }
-
-        public unsafe int EnqueueWriteBufferRect([Flow(FlowDirection.In)] int command_queue, [Flow(FlowDirection.In)] int buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr* buffer_origin, [Flow(FlowDirection.In)] UIntPtr* host_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] uint buffer_row_pitch, [Flow(FlowDirection.In)] uint buffer_slice_pitch, [Flow(FlowDirection.In)] uint host_row_pitch, [Flow(FlowDirection.In)] uint host_slice_pitch, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event)
-        {
-            // IntPtrOverloader
-            return EnqueueWriteBufferRect(new IntPtr(command_queue), new IntPtr(buffer), blocking_write, buffer_origin, host_origin, region, new UIntPtr(buffer_row_pitch), new UIntPtr(buffer_slice_pitch), new UIntPtr(host_row_pitch), new UIntPtr(host_slice_pitch), ptr, num_events_in_wait_list, event_wait_list, @event);
-        }
-
-        public unsafe int EnqueueWriteBufferRect<T0>([Flow(FlowDirection.In)] int command_queue, [Flow(FlowDirection.In)] int buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] Span<UIntPtr> buffer_origin, [Flow(FlowDirection.In)] Span<UIntPtr> host_origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] uint buffer_row_pitch, [Flow(FlowDirection.In)] uint buffer_slice_pitch, [Flow(FlowDirection.In)] uint host_row_pitch, [Flow(FlowDirection.In)] uint host_slice_pitch, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged
-        {
-            // IntPtrOverloader
-            return EnqueueWriteBufferRect(new IntPtr(command_queue), new IntPtr(buffer), blocking_write, buffer_origin, host_origin, region, new UIntPtr(buffer_row_pitch), new UIntPtr(buffer_slice_pitch), new UIntPtr(host_row_pitch), new UIntPtr(host_slice_pitch), ptr, num_events_in_wait_list, event_wait_list, @event);
-        }
->>>>>>> master
 
         [NativeApi(EntryPoint = "clGetPlatformInfo")]
         public unsafe partial int GetPlatformInfo([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out UIntPtr param_value_size_ret);
