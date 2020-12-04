@@ -319,7 +319,7 @@ namespace Silk.NET.Maths
         /// <returns>The normalized vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static Vector4<T> Normalize(Vector4<T> vector) 
-            => vector / vector.Length();
+            => vector / vector.Length;
 
         /// <summary>Returns a vector whose elements are the square root of each of the source vector's elements.</summary>
         /// <param name="value">The source vector.</param>
@@ -524,16 +524,20 @@ namespace Silk.NET.Maths
             => HashCode.Combine(X, Y, Z, W);
 
         /// <summary>Returns the length of the vector. This operation is cheaper than Length().</summary>
-        /// <returns>The vector's length.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public readonly T Length()
-            => Scalar.Sqrt(LengthSquared());
+        /// <value>The vector's length.</value>
+        public T Length
+        {
+            [MethodImpl((MethodImplOptions)768)]
+            get => Scalar.Sqrt(LengthSquared);
+        }
 
         /// <summary>Returns the length of the vector squared.</summary>
-        /// <returns>The vector's length squared.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public readonly T LengthSquared()
-            => Dot(this, this);
+        /// <value>The vector's length squared.</value>
+        public T LengthSquared
+        {
+            [MethodImpl((MethodImplOptions)768)]
+            get => Dot(this, this);
+        }
 
         /// <summary>Returns a String representing this Vector4 instance.</summary>
         /// <returns>The string representation.</returns>

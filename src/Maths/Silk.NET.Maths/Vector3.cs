@@ -313,7 +313,7 @@ namespace Silk.NET.Maths
         /// <returns>The normalized vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static Vector3<T> Normalize(Vector3<T> value) 
-            => value / value.Length();
+            => value / value.Length;
 
         /// <summary>Returns the reflection of a vector off a surface that has the specified normal.</summary>
         /// <param name="vector">The source vector.</param>
@@ -455,14 +455,20 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Returns the length of the vector.</summary>
-        /// <returns>The vector's length.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public readonly T Length() => Scalar.Sqrt(LengthSquared());
+        /// <value>The vector's length.</value>
+        public T Length
+        {
+            [MethodImpl((MethodImplOptions)768)]
+            get => Scalar.Sqrt(LengthSquared);
+        }
 
         /// <summary>Returns the length of the vector squared. This operation is cheaper than Length().</summary>
-        /// <returns>The vector's length squared.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public readonly T LengthSquared() => Dot(this, this);
+        /// <value>The vector's length squared.</value>
+        public T LengthSquared
+        {
+            [MethodImpl((MethodImplOptions)768)]
+            get => Dot(this, this);
+        }
 
         /// <summary>Returns a String representing this Vector3 instance.</summary>
         /// <returns>The string representation.</returns>

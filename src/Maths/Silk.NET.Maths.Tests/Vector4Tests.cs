@@ -180,7 +180,7 @@ namespace Silk.NET.Maths.Tests
             float expected = (float)System.Math.Sqrt(30.0f);
             float actual;
 
-            actual = target.Length();
+            actual = target.Length;
 
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Length did not return the expected value.");
         }
@@ -193,7 +193,7 @@ namespace Silk.NET.Maths.Tests
             Vector4<float> target = new Vector4<float>();
 
             float expected = 0.0f;
-            float actual = target.Length();
+            float actual = target.Length;
 
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Length did not return the expected value.");
         }
@@ -210,7 +210,7 @@ namespace Silk.NET.Maths.Tests
             float expected = 30;
             float actual;
 
-            actual = target.LengthSquared();
+            actual = target.LengthSquared;
 
             Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.LengthSquared did not return the expected value.");
         }

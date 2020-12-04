@@ -213,7 +213,7 @@ namespace Silk.NET.Maths.Tests
         {
             Plane<float> target = new Plane<float>(1, 2, 3, 4);
 
-            float f = target.Normal.LengthSquared();
+            float f = target.Normal.LengthSquared;
             float invF = 1.0f / (float)Scalar.Sqrt(f);
             Plane<float> expected = new Plane<float>(target.Normal * invF, target.Distance * invF);
 

@@ -475,7 +475,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateBillboard(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> cameraUpVector, Vector3<T> cameraForwardVector)
         {
             Vector3<T> zaxis = objectPosition - cameraPosition;
-            var norm = zaxis.LengthSquared();
+            var norm = zaxis.LengthSquared;
 
             if (!Scalar.GreaterThanOrEqual(norm, Scalar.As<float, T>(BillboardEpsilon)))
             {
@@ -507,7 +507,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         {
             // Treat the case when object and camera positions are too close.
             Vector3<T> faceDir = objectPosition - cameraPosition;
-            T norm = faceDir.LengthSquared();
+            T norm = faceDir.LengthSquared;
 
             if (!Scalar.GreaterThanOrEqual(norm, Scalar.As<float, T>(BillboardEpsilon)))
             {
@@ -1702,9 +1702,9 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                     *(pVectorBasis[1]) = new Vector3<T>(matrix.M21, matrix.M22, matrix.M23);
                     *(pVectorBasis[2]) = new Vector3<T>(matrix.M31, matrix.M32, matrix.M33);
 
-                    scale.X = pVectorBasis[0]->Length();
-                    scale.Y = pVectorBasis[1]->Length();
-                    scale.Z = pVectorBasis[2]->Length();
+                    scale.X = pVectorBasis[0]->Length;
+                    scale.Y = pVectorBasis[1]->Length;
+                    scale.Z = pVectorBasis[2]->Length;
 
                     uint a, b, c;
                     #region Ranking

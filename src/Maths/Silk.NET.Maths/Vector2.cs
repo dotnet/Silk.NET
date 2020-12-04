@@ -165,14 +165,19 @@ namespace Silk.NET.Maths
         public override readonly int GetHashCode() => HashCode.Combine(X, Y);
 
         /// <summary>Returns the length of the vector.</summary>
-        /// <returns>The vector's length.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public readonly T Length() => Scalar.Sqrt(LengthSquared());
-        
+        /// <value>The vector's length.</value>
+        public T Length
+        {
+            [MethodImpl((MethodImplOptions)768)]
+            get => Scalar.Sqrt(LengthSquared);
+        }
+
         /// <summary>Returns the length of the vector squared. This operation is cheaper than Length().</summary>
         /// <returns>The vector's length squared.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public readonly T LengthSquared() => Dot(this, this);
+        public readonly T LengthSquared
+        {
+            [MethodImpl((MethodImplOptions) 768)] get => Dot(this, this);
+        }
 
         /// <summary>Linearly interpolates between two vectors based on the given weighting.</summary>
         /// <param name="value1">The first source vector.</param>
@@ -233,7 +238,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The vector to normalize.</param>
         /// <returns>The normalized vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector2<T> Normalize(Vector2<T> value) => value / value.Length();
+        public static Vector2<T> Normalize(Vector2<T> value) => value / value.Length;
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>

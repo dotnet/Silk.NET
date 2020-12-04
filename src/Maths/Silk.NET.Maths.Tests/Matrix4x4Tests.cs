@@ -661,7 +661,7 @@ namespace Silk.NET.Maths.Tests
 
                 foreach (Vector3<float> lightDirInfo in testDirections)
                 {
-                    if (lightDirInfo.Length() < 0.1f)
+                    if (lightDirInfo.Length < 0.1f)
                         continue;
                     Vector3<float> lightDir = Vector3<float>.Normalize(lightDirInfo);
 

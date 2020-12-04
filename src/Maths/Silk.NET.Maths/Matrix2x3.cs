@@ -275,7 +275,7 @@ namespace Silk.NET.Maths
         public static Matrix2x3<T> CreateBillboard(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> cameraUpVector, Vector3<T> cameraForwardVector)
         {
             Vector3<T> zaxis = objectPosition - cameraPosition;
-            var norm = zaxis.LengthSquared();
+            var norm = zaxis.LengthSquared;
 
             if (!Scalar.GreaterThanOrEqual(norm, Scalar.As<float, T>(BillboardEpsilon)))
             {

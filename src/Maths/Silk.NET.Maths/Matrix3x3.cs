@@ -324,7 +324,7 @@ namespace Silk.NET.Maths
         public static Matrix3x3<T> CreateBillboard(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> cameraUpVector, Vector3<T> cameraForwardVector)
         {
             Vector3<T> zaxis = objectPosition - cameraPosition;
-            var norm = zaxis.LengthSquared();
+            var norm = zaxis.LengthSquared;
 
             if (!Scalar.GreaterThanOrEqual(norm, Scalar.As<float, T>(BillboardEpsilon)))
             {
@@ -656,9 +656,9 @@ namespace Silk.NET.Maths
                     *(pVectorBasis[1]) = new Vector3<T>(matrix.M21, matrix.M22, matrix.M23);
                     *(pVectorBasis[2]) = new Vector3<T>(matrix.M31, matrix.M32, matrix.M33);
 
-                    scale.X = pVectorBasis[0]->Length();
-                    scale.Y = pVectorBasis[1]->Length();
-                    scale.Z = pVectorBasis[2]->Length();
+                    scale.X = pVectorBasis[0]->Length;
+                    scale.Y = pVectorBasis[1]->Length;
+                    scale.Z = pVectorBasis[2]->Length;
 
                     uint a, b, c;
                     #region Ranking
