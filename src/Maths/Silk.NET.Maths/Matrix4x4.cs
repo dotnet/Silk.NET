@@ -198,8 +198,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Indexer for the rows of this matrix.
         /// </summary>
-        /// <param name="i">The row to select. Zero based.</param>
-        public unsafe Vector4<T> this[int i]
+        /// <param name="x">The row to select. Zero based.</param>
+        public unsafe Vector4<T> this[int x]
         {
             get
             {
@@ -211,22 +211,22 @@ namespace Silk.NET.Maths
                         ThrowHelper();
                 }
                 
-                VerifyBounds(i);
-                return Unsafe.Add(ref Row1, i);
+                VerifyBounds(x);
+                return Unsafe.Add(ref Row1, x);
             }
         }
 
         /// <summary>
         /// Indexer for the values in this matrix.
         /// </summary>
-        /// <param name="i">The row to select. Zero based.</param>
-        /// <param name="j">The column to select. Zero based.</param>
-        public unsafe T this[int i, int j]
+        /// <param name="x">The row to select. Zero based.</param>
+        /// <param name="y">The column to select. Zero based.</param>
+        public unsafe T this[int x, int y]
         {
             get
             {
-                var row = this[i];
-                return row[j];
+                var row = this[x];
+                return row[y];
             }
         }
 
@@ -988,7 +988,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T xx = Scalar.Multiply(x, x), yy = Scalar.Multiply(y, y), zz = Scalar.Multiply(z, z);
             T xy = Scalar.Multiply(x, y), xz = Scalar.Multiply(x, z), yz = Scalar.Multiply(y, z);
 
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             result.M11 = Scalar.Add(xx, Scalar.Multiply(ca, Scalar.Subtract(Scalar<T>.One, xx)));
             result.M12 = Scalar.Add(Scalar.Subtract(xy, Scalar.Multiply(ca, xy)), Scalar.Multiply(sa, z));
@@ -1011,7 +1011,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T xx = Scalar.Multiply(quaternion.X, quaternion.X);
             T yy = Scalar.Multiply(quaternion.Y, quaternion.Y);
@@ -1064,7 +1064,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(cameraUpVector, zaxis));
             Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             result.M11 = xaxis.X;
             result.M12 = yaxis.X;
@@ -1094,7 +1094,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateOrthographic<T>(T width, T height, T zNearPlane, T zFarPlane)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             result.M11 = Scalar.Divide(Scalar<T>.Two, width);
             result.M22 = Scalar.Divide(Scalar<T>.Two, height);
@@ -1115,7 +1115,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateOrthographicOffCenter<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             result.M11 = Scalar.Divide(Scalar<T>.Two, Scalar.Subtract(right, left));
 
@@ -1268,7 +1268,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T fb = Scalar.Multiply(Scalar<T>.MinusTwo, b);
             T fc = Scalar.Multiply(Scalar<T>.MinusTwo, c);
 
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             result.M11 = Scalar.Add(Scalar.Multiply(fa, a), Scalar<T>.One);
             result.M12 = Scalar.Multiply(fb, a);
@@ -1295,7 +1295,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateRotationX<T>(T radians)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -1320,7 +1320,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateRotationX<T>(T radians, Vector3<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -1349,7 +1349,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateRotationY<T>(T radians)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -1373,7 +1373,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateRotationY<T>(T radians, Vector3<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -1401,7 +1401,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateRotationZ<T>(T radians)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -1425,7 +1425,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateRotationZ<T>(T radians, Vector3<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -1455,7 +1455,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateScale<T>(T xScale, T yScale, T zScale)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
             result.M11 = xScale;
             result.M22 = yScale;
             result.M33 = zScale;
@@ -1471,7 +1471,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateScale<T>(T xScale, T yScale, T zScale, Vector3<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, xScale));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, yScale));
@@ -1492,7 +1492,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateScale<T>(Vector3<T> scales)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
             result.M11 = scales.X;
             result.M22 = scales.Y;
             result.M33 = scales.Z;
@@ -1506,7 +1506,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateScale<T>(Vector3<T> scales, Vector3<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scales.X));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scales.Y));
@@ -1527,7 +1527,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateScale<T>(T scale)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             result.M11 = scale;
             result.M22 = scale;
@@ -1543,7 +1543,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateScale<T>(T scale, Vector3<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scale));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scale));
@@ -1575,7 +1575,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T c = Scalar.Negate(p.Normal.Z);
             T d = Scalar.Negate(p.Distance);
 
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             result.M11 = Scalar.Add(Scalar.Multiply(a, lightDirection.X), dot);
             result.M21 = Scalar.Multiply(b, lightDirection.X);
@@ -1603,7 +1603,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateTranslation<T>(Vector3<T> position)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
             result.M41 = position.X;
             result.M42 = position.Y;
             result.M43 = position.Z;
@@ -1618,7 +1618,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         public static Matrix4x4<T> CreateTranslation<T>(T xPosition, T yPosition, T zPosition)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
             result.M41 = xPosition;
             result.M42 = yPosition;
             result.M43 = zPosition;
@@ -1637,7 +1637,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(up, zaxis));
             Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
-            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;
 
             result.M11 = xaxis.X;
             result.M12 = xaxis.Y;
@@ -1994,11 +1994,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                 result.M43 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a,fo_gn), Scalar.Multiply(b,eo_gm)), Scalar.Multiply(c, en_fm)), invDet));
 
                 T gl_hk = Scalar.Subtract(Scalar.Multiply(g, l), Scalar.Multiply(h, k));
-                T fl_hj = Scalar.Subtract(Scalar.Multiply(f, l), Scalar.Multiply(h, j));;
-                T fk_gj = Scalar.Subtract(Scalar.Multiply(f, k), Scalar.Multiply(g, j));;
-                T el_hi = Scalar.Subtract(Scalar.Multiply(e, l), Scalar.Multiply(h, i));;
-                T ek_gi = Scalar.Subtract(Scalar.Multiply(e, k), Scalar.Multiply(g, i));;
-                T ej_fi = Scalar.Subtract(Scalar.Multiply(e, j), Scalar.Multiply(f, i));;
+                T fl_hj = Scalar.Subtract(Scalar.Multiply(f, l), Scalar.Multiply(h, j));
+                T fk_gj = Scalar.Subtract(Scalar.Multiply(f, k), Scalar.Multiply(g, j));
+                T el_hi = Scalar.Subtract(Scalar.Multiply(e, l), Scalar.Multiply(h, i));
+                T ek_gi = Scalar.Subtract(Scalar.Multiply(e, k), Scalar.Multiply(g, i));
+                T ej_fi = Scalar.Subtract(Scalar.Multiply(e, j), Scalar.Multiply(f, i));
 
                 result.M14 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(b, gl_hk), Scalar.Multiply(c, fl_hj)), Scalar.Multiply(d, fk_gj)), invDet));
                 result.M24 =                     Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, gl_hk), Scalar.Multiply(c, el_hi)), Scalar.Multiply(d, ek_gi)), invDet);
@@ -2111,7 +2111,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                     VectorBasis<T> vectorBasis;
                     Vector3<T>** pVectorBasis = (Vector3<T>**)&vectorBasis;
 
-                    Matrix4x4<T> matTemp = Matrix4x4<T>.Identity;;
+                    Matrix4x4<T> matTemp = Matrix4x4<T>.Identity;
                     CanonicalBasis<T> canonicalBasis = default;
                     Vector3<T>* pCanonicalBasis = &canonicalBasis.Row0;
 

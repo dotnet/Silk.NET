@@ -2216,7 +2216,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return ((ushort)(object)x) > 0 ? 1 : 0;;
+                    return ((ushort)(object)x) > 0 ? 1 : 0;
                 }
 
                 return Int(x);

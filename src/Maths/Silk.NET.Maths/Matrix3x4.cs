@@ -159,8 +159,8 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Indexer for the rows of this matrix.
         /// </summary>
-        /// <param name="i">The row to select. Zero based.</param>
-        public unsafe Vector4<T> this[int i]
+        /// <param name="x">The row to select. Zero based.</param>
+        public unsafe Vector4<T> this[int x]
         {
             get
             {
@@ -172,22 +172,22 @@ namespace Silk.NET.Maths
                         ThrowHelper();
                 }
                 
-                VerifyBounds(i);
-                return Unsafe.Add(ref Row1, i);
+                VerifyBounds(x);
+                return Unsafe.Add(ref Row1, x);
             }
         }
 
         /// <summary>
         /// Indexer for the values in this matrix.
         /// </summary>
-        /// <param name="i">The row to select. Zero based.</param>
-        /// <param name="j">The column to select. Zero based.</param>
-        public unsafe T this[int i, int j]
+        /// <param name="x">The row to select. Zero based.</param>
+        /// <param name="y">The column to select. Zero based.</param>
+        public unsafe T this[int x, int y]
         {
             get
             {
-                var row = this[i];
-                return row[j];
+                var row = this[x];
+                return row[y];
             }
         }
 
