@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct TraceRaysIndirectCommandKHR
+    [NativeName("Name", "VkTraceRaysIndirectCommandKHR")]
+    public unsafe partial struct TraceRaysIndirectCommandKHR
     {
         public TraceRaysIndirectCommandKHR
         (
-            uint width = default,
-            uint height = default,
-            uint depth = default
-        )
+            uint? width = null,
+            uint? height = null,
+            uint? depth = null
+        ) : this()
         {
-           Width = width;
-           Height = height;
-           Depth = depth;
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "width")]
         public uint Width;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "height")]
         public uint Height;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "depth")]
         public uint Depth;
     }
 }

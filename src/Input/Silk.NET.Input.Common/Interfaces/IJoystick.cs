@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Represents a joystick device with a set amount of axes, buttons, and hats.
@@ -39,7 +39,7 @@ namespace Silk.NET.Input.Common
         /// <remarks>
         /// This event is only called when the button is first pressed, and not every frame where the button is still pressed.
         /// </remarks>
-        event Action<IJoystick, Button> ButtonDown;
+        event Action<IJoystick, Button>? ButtonDown;
 
         /// <summary>
         /// Called when a button on this joystick is released.
@@ -47,16 +47,16 @@ namespace Silk.NET.Input.Common
         /// <remarks>
         /// This event is only called when the button is first released, and not every frame where the button is still released.
         /// </remarks>
-        event Action<IJoystick, Button> ButtonUp;
+        event Action<IJoystick, Button>? ButtonUp;
 
         /// <summary>
         /// Called when an axis on this joystick is moved.
         /// </summary>
-        event Action<IJoystick, Axis> AxisMoved;
+        event Action<IJoystick, Axis>? AxisMoved;
 
         /// <summary>
         /// Called when a hat on this joystick is moved.
         /// </summary>
-        event Action<IJoystick, Hat> HatMoved;
+        event Action<IJoystick, Hat>? HatMoved;
     }
 }

@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// An interface representing a keyboard.
@@ -28,16 +28,31 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Called when a key is pressed.
         /// </summary>
-        event Action<IKeyboard, Key, int> KeyDown;
+        event Action<IKeyboard, Key, int>? KeyDown;
 
         /// <summary>
         /// Called when a key is released.
         /// </summary>
-        event Action<IKeyboard, Key, int> KeyUp;
+        event Action<IKeyboard, Key, int>? KeyUp;
 
         /// <summary>
         /// Called when a character is received.
         /// </summary>
-        event Action<IKeyboard, char> KeyChar;
+        event Action<IKeyboard, char>? KeyChar;
+
+        /// <summary>
+        /// Begins taking keyboard input. Required on mobile, where keyboard input is usually delivered via an on-screen
+        /// keyboard.
+        /// Not required on desktop (it does nothing), but recommended to ensure easy porting to other platforms.
+        /// </summary>
+        /// <seealso cref="EndInput"/>
+        void BeginInput();
+
+        /// <summary>
+        /// Ends taking keyboard input. Required on mobile, where this method closes the on-screen keyboard.
+        /// Not required on desktop (it does nothing), but recommended to ensure easy porting to other platforms.
+        /// </summary>
+        /// <seealso cref="BeginInput"/>
+        void EndInput();
     }
 }

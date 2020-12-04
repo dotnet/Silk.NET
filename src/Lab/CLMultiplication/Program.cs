@@ -67,7 +67,7 @@ namespace CLMultiplication
             AssertZero(err);
             program = cl.CreateProgramWithSource(ctx, (uint) kernelCode.Length, kernelCode, null, &err);
             AssertZero(err);
-            err = cl.BuildProgram(program, 0, null, (char*) null, null, null);
+            err = cl.BuildProgram(program, 0, null, (byte*) null, null, null);
             try
             {
                 AssertZero(err);
@@ -136,7 +136,7 @@ namespace CLMultiplication
             }
         }
 
-        private static unsafe void NotifyFunc(char* errinfo, void* privateinfo, UIntPtr cb, void* userdata)
+        private static unsafe void NotifyFunc(byte* errinfo, void* privateinfo, UIntPtr cb, void* userdata)
         {
             Console.WriteLine($"Notification: {Marshal.PtrToStringAnsi((IntPtr) errinfo)}");
         }

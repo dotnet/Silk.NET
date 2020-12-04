@@ -4,855 +4,320 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_fragment_lighting")]
-    public abstract unsafe partial class SgixFragmentLighting : NativeExtension<GL>
+    public unsafe partial class SgixFragmentLighting : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_fragment_lighting";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX")]
-        public abstract void FragmentColorMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX mode);
+        public partial void FragmentColorMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
-        public abstract void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
-        public abstract unsafe void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
-        public abstract void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
-        public abstract void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
-        public abstract unsafe void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
-        public abstract void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightModelfSGIX")]
-        public abstract void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
-        public abstract unsafe void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
-        public abstract void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightModeliSGIX")]
-        public abstract void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
-        public abstract unsafe void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
-        public abstract void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
-        public abstract void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
-        public abstract unsafe void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
-        public abstract void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
-        public abstract void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
-        public abstract unsafe void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
-        public abstract void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
-        public abstract unsafe void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
-        public abstract void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
-        public abstract unsafe void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
-        public abstract void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
-        public abstract unsafe void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
-        public abstract void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
-        public abstract unsafe void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
-        public abstract void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glLightEnviSGIX")]
-        public abstract void LightEnv([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX")]
-        public abstract void FragmentColorMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter mode);
+        public partial void FragmentColorMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX")]
+        public partial void FragmentColorMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX mode);
+
+        [NativeApi(EntryPoint = "glFragmentColorMaterialSGIX")]
+        public partial void FragmentColorMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter mode);
+
         [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
-        public abstract void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glFragmentLightfSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] float param);
+
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
-        public abstract unsafe void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
-        public abstract void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightfvSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
         [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
-        public abstract void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+
+        [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+
+        [NativeApi(EntryPoint = "glFragmentLightiSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+
         [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
-        public abstract unsafe void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
-        public abstract void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        public unsafe partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightivSGIX")]
+        public partial void FragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
         [NativeApi(EntryPoint = "glFragmentLightModelfSGIX")]
-        public abstract void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentLightModelfSGIX")]
+        public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(FlowDirection.In)] float param);
+
         [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
-        public abstract unsafe void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
-        public abstract void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
+        public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightModelfvSGIX")]
+        public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
         [NativeApi(EntryPoint = "glFragmentLightModeliSGIX")]
-        public abstract void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentLightModeliSGIX")]
+        public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+
         [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
-        public abstract unsafe void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
-        public abstract void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        public partial void FragmentLightModel([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
+        public unsafe partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glFragmentLightModelivSGIX")]
+        public partial void FragmentLightModel([Flow(FlowDirection.In)] FragmentLightModelParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
         [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
-        public abstract void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialfSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
+
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
-        public abstract unsafe void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
-        public abstract void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialfvSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
         [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
-        public abstract void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialiSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
+
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
-        public abstract unsafe void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
-        public abstract void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        public unsafe partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glFragmentMaterialivSGIX")]
+        public partial void FragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
-        public abstract unsafe void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
-        public abstract void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightfvSGIX")]
+        public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
-        public abstract unsafe void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
-        public abstract void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        public partial void GetFragmentLight([Flow(FlowDirection.In)] SGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        public unsafe partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentLightivSGIX")]
+        public partial void GetFragmentLight([Flow(FlowDirection.In)] FragmentLightNameSGIX light, [Flow(FlowDirection.In)] FragmentLightParameterSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
-        public abstract unsafe void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
-        public abstract void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialfvSGIX")]
+        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
-        public abstract unsafe void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
-        public abstract void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] SGIX face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        public unsafe partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetFragmentMaterialivSGIX")]
+        public partial void GetFragmentMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
         [NativeApi(EntryPoint = "glLightEnviSGIX")]
-        public abstract void LightEnv([Flow(FlowDirection.In)] LightEnvParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void LightEnv([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        public SgixFragmentLighting(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glLightEnviSGIX")]
+        public partial void LightEnv([Flow(FlowDirection.In)] LightEnvParameterSGIX pname, [Flow(FlowDirection.In)] int param);
+
+        public SgixFragmentLighting(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

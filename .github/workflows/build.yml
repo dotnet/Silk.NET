@@ -10,25 +10,28 @@ on:
 
 jobs:
   Build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
+      with:
+        submodules: 'true'
+    - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.401
-    - name: Test
-      run: dotnet test --verbosity normal
-    - name: Pack
-      run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0
-    - name: Setup NuGet
-      if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
-      uses: nuget/setup-nuget@v1
+        dotnet-version: 5.0.100
+    - name: Setup .NET Core 3.1
+      uses: actions/setup-dotnet@v1
       with:
-        nuget-version: '5.x'
-    - name: Setup Feed
+        dotnet-version: 3.1.404
+    - name: Setup NUKE
+      run: dotnet tool install Nuke.GlobalTool --global
+    - name: Test
+      # skip Clean, Restore, and Compile as this will build the affect the whole solution.
+      # dotnet test will compile the necessary projects for testing only.
+      run: nuke Test --skip Clean Restore Compile
+    - name: Pack
+      # TODO build native mixins such as BuildLibSilkDroid
+      run: nuke Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true --feature-sets Android iOS
+    - name: Push to NuGet
       if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
-      run: nuget sources add -Name Experimental -Source https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json -username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} -password ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
-    - name: Push Experimental Packages
-      if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
-      run: nuget push "build/output_packages/*.nupkg" -Source Experimental -ApiKey ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
+      run: nuke PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az

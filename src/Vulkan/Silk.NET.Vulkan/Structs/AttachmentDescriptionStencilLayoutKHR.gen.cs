@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct AttachmentDescriptionStencilLayoutKHR
+    [NativeName("Name", "VkAttachmentDescriptionStencilLayoutKHR")]
+    public unsafe partial struct AttachmentDescriptionStencilLayoutKHR
     {
         public AttachmentDescriptionStencilLayoutKHR
         (
-            StructureType sType = StructureType.AttachmentDescriptionStencilLayout,
-            void* pNext = default,
-            ImageLayout stencilInitialLayout = default,
-            ImageLayout stencilFinalLayout = default
-        )
+            StructureType? sType = StructureType.AttachmentDescriptionStencilLayout,
+            void* pNext = null,
+            ImageLayout? stencilInitialLayout = null,
+            ImageLayout? stencilFinalLayout = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           StencilInitialLayout = stencilInitialLayout;
-           StencilFinalLayout = stencilFinalLayout;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (stencilInitialLayout is not null)
+            {
+                StencilInitialLayout = stencilInitialLayout.Value;
+            }
+
+            if (stencilFinalLayout is not null)
+            {
+                StencilFinalLayout = stencilFinalLayout.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkImageLayout")]
+        [NativeName("Type.Name", "VkImageLayout")]
+        [NativeName("Name", "stencilInitialLayout")]
         public ImageLayout StencilInitialLayout;
 /// <summary></summary>
+        [NativeName("Type", "VkImageLayout")]
+        [NativeName("Type.Name", "VkImageLayout")]
+        [NativeName("Name", "stencilFinalLayout")]
         public ImageLayout StencilFinalLayout;
     }
 }

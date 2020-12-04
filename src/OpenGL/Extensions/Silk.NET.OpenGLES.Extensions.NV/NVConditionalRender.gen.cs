@@ -4,53 +4,35 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGLES;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_conditional_render")]
-    public abstract unsafe partial class NVConditionalRender : NativeExtension<GL>
+    public unsafe partial class NVConditionalRender : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_conditional_render";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
+        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
+        [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
+        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
+
         [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
-        public abstract void EndConditionalRender();
+        public partial void EndConditionalRender();
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
-
-        public NVConditionalRender(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVConditionalRender(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

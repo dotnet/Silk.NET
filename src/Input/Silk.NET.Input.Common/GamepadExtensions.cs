@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Contains handy extensions for fetching buttons on gamepads.

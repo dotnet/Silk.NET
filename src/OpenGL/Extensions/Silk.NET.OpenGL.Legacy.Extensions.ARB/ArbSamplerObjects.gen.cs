@@ -4,693 +4,156 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_sampler_objects")]
-    public abstract unsafe partial class ArbSamplerObjects : NativeExtension<GL>
+    public unsafe partial class ArbSamplerObjects : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sampler_objects";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="unit">
-        /// To be added.
-        /// </param>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBindSampler")]
-        public abstract void BindSampler([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint sampler);
+        public partial void BindSampler([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint sampler);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="samplers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteSamplers")]
-        public abstract unsafe void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
+        public unsafe partial void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="samplers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteSamplers")]
-        public abstract void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> samplers);
+        public partial void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint samplers);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="samplers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glGenSamplers")]
-        public abstract unsafe void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* samplers);
+        public unsafe partial void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* samplers);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="samplers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glGenSamplers")]
-        public abstract void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> samplers);
+        public partial void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out uint samplers);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public abstract unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public abstract void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
+        public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
+        public partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public abstract unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public abstract void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        public partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
+        public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+        [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
+        public partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
+        public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
+        public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
+        public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+
+        [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
+        public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+
         [NativeApi(EntryPoint = "glIsSampler")]
-        public abstract bool IsSampler([Flow(FlowDirection.In)] uint sampler);
+        public partial bool IsSampler([Flow(FlowDirection.In)] uint sampler);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteri")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int param);
+        public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public abstract unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameterf")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] float param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public abstract unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public abstract unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public abstract void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public abstract unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public abstract void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteri")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Flow(FlowDirection.In)] int param);
+        public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Flow(FlowDirection.In)] int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public abstract unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glSamplerParameteriv")]
+        public unsafe partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+
+        [NativeApi(EntryPoint = "glSamplerParameteriv")]
+        public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
+
         [NativeApi(EntryPoint = "glSamplerParameterf")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Flow(FlowDirection.In)] float param);
+        public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glSamplerParameterf")]
+        public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Flow(FlowDirection.In)] float param);
+
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public abstract unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+        public unsafe partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param);
+        public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glSamplerParameterfv")]
+        public unsafe partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+
+        [NativeApi(EntryPoint = "glSamplerParameterfv")]
+        public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float param);
+
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glSamplerParameterIiv")]
+        public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+
+        [NativeApi(EntryPoint = "glSamplerParameterIiv")]
+        public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
+
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
+        public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sampler">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param);
+        public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="samplers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
+        [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
+        public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
+
+        [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
+        public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint param);
+
         public unsafe void DeleteSampler([Count(Parameter = "count"), Flow(FlowDirection.In)] uint samplers)
         {
             // ArrayParameterOverloader
             DeleteSamplers(1, &samplers);
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="samplers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         public unsafe uint GenSampler()
         {
             const uint count = 1;
@@ -700,8 +163,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return ret;
         }
 
-        public ArbSamplerObjects(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbSamplerObjects(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,29 +6,47 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PresentTimeGOOGLE
+    [NativeName("Name", "VkPresentTimeGOOGLE")]
+    public unsafe partial struct PresentTimeGOOGLE
     {
         public PresentTimeGOOGLE
         (
-            uint presentID = default,
-            ulong desiredPresentTime = default
-        )
+            uint? presentID = null,
+            ulong? desiredPresentTime = null
+        ) : this()
         {
-           PresentID = presentID;
-           DesiredPresentTime = desiredPresentTime;
+            if (presentID is not null)
+            {
+                PresentID = presentID.Value;
+            }
+
+            if (desiredPresentTime is not null)
+            {
+                DesiredPresentTime = desiredPresentTime.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "presentID")]
         public uint PresentID;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "desiredPresentTime")]
         public ulong DesiredPresentTime;
     }
 }

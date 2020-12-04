@@ -6,25 +6,36 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SamplerYcbcrConversionKHR
+    [NativeName("Name", "VkSamplerYcbcrConversionKHR")]
+    public unsafe partial struct SamplerYcbcrConversionKHR
     {
         public SamplerYcbcrConversionKHR
         (
-            ulong handle = default
-        )
+            ulong? handle = null
+        ) : this()
         {
-           Handle = handle;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
         public ulong Handle;
     }
 }

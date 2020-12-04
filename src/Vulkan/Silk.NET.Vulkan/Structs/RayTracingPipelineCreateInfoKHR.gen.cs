@@ -6,73 +6,168 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct RayTracingPipelineCreateInfoKHR
+    [NativeName("Name", "VkRayTracingPipelineCreateInfoKHR")]
+    public unsafe partial struct RayTracingPipelineCreateInfoKHR
     {
         public RayTracingPipelineCreateInfoKHR
         (
-            StructureType sType = StructureType.RayTracingPipelineCreateInfoKhr,
-            void* pNext = default,
-            PipelineCreateFlags flags = default,
-            uint stageCount = default,
-            PipelineShaderStageCreateInfo* pStages = default,
-            uint groupCount = default,
-            RayTracingShaderGroupCreateInfoKHR* pGroups = default,
-            uint maxRecursionDepth = default,
-            PipelineLibraryCreateInfoKHR libraries = default,
-            RayTracingPipelineInterfaceCreateInfoKHR* pLibraryInterface = default,
-            PipelineLayout layout = default,
-            Pipeline basePipelineHandle = default,
-            int basePipelineIndex = default
-        )
+            StructureType? sType = StructureType.RayTracingPipelineCreateInfoKhr,
+            void* pNext = null,
+            PipelineCreateFlags? flags = null,
+            uint? stageCount = null,
+            PipelineShaderStageCreateInfo* pStages = null,
+            uint? groupCount = null,
+            RayTracingShaderGroupCreateInfoKHR* pGroups = null,
+            uint? maxRecursionDepth = null,
+            PipelineLibraryCreateInfoKHR? libraries = null,
+            RayTracingPipelineInterfaceCreateInfoKHR* pLibraryInterface = null,
+            PipelineLayout? layout = null,
+            Pipeline? basePipelineHandle = null,
+            int? basePipelineIndex = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           StageCount = stageCount;
-           PStages = pStages;
-           GroupCount = groupCount;
-           PGroups = pGroups;
-           MaxRecursionDepth = maxRecursionDepth;
-           Libraries = libraries;
-           PLibraryInterface = pLibraryInterface;
-           Layout = layout;
-           BasePipelineHandle = basePipelineHandle;
-           BasePipelineIndex = basePipelineIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (stageCount is not null)
+            {
+                StageCount = stageCount.Value;
+            }
+
+            if (pStages is not null)
+            {
+                PStages = pStages;
+            }
+
+            if (groupCount is not null)
+            {
+                GroupCount = groupCount.Value;
+            }
+
+            if (pGroups is not null)
+            {
+                PGroups = pGroups;
+            }
+
+            if (maxRecursionDepth is not null)
+            {
+                MaxRecursionDepth = maxRecursionDepth.Value;
+            }
+
+            if (libraries is not null)
+            {
+                Libraries = libraries.Value;
+            }
+
+            if (pLibraryInterface is not null)
+            {
+                PLibraryInterface = pLibraryInterface;
+            }
+
+            if (layout is not null)
+            {
+                Layout = layout.Value;
+            }
+
+            if (basePipelineHandle is not null)
+            {
+                BasePipelineHandle = basePipelineHandle.Value;
+            }
+
+            if (basePipelineIndex is not null)
+            {
+                BasePipelineIndex = basePipelineIndex.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkPipelineCreateFlags")]
+        [NativeName("Type.Name", "VkPipelineCreateFlags")]
+        [NativeName("Name", "flags")]
         public PipelineCreateFlags Flags;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "stageCount")]
         public uint StageCount;
 /// <summary></summary>
+        [NativeName("Type", "VkPipelineShaderStageCreateInfo*")]
+        [NativeName("Type.Name", "VkPipelineShaderStageCreateInfo")]
+        [NativeName("Name", "pStages")]
         public PipelineShaderStageCreateInfo* PStages;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "groupCount")]
         public uint GroupCount;
 /// <summary></summary>
+        [NativeName("Type", "VkRayTracingShaderGroupCreateInfoKHR*")]
+        [NativeName("Type.Name", "VkRayTracingShaderGroupCreateInfoKHR")]
+        [NativeName("Name", "pGroups")]
         public RayTracingShaderGroupCreateInfoKHR* PGroups;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxRecursionDepth")]
         public uint MaxRecursionDepth;
 /// <summary></summary>
+        [NativeName("Type", "VkPipelineLibraryCreateInfoKHR")]
+        [NativeName("Type.Name", "VkPipelineLibraryCreateInfoKHR")]
+        [NativeName("Name", "libraries")]
         public PipelineLibraryCreateInfoKHR Libraries;
 /// <summary></summary>
+        [NativeName("Type", "VkRayTracingPipelineInterfaceCreateInfoKHR*")]
+        [NativeName("Type.Name", "VkRayTracingPipelineInterfaceCreateInfoKHR")]
+        [NativeName("Name", "pLibraryInterface")]
         public RayTracingPipelineInterfaceCreateInfoKHR* PLibraryInterface;
 /// <summary></summary>
+        [NativeName("Type", "VkPipelineLayout")]
+        [NativeName("Type.Name", "VkPipelineLayout")]
+        [NativeName("Name", "layout")]
         public PipelineLayout Layout;
 /// <summary></summary>
+        [NativeName("Type", "VkPipeline")]
+        [NativeName("Type.Name", "VkPipeline")]
+        [NativeName("Name", "basePipelineHandle")]
         public Pipeline BasePipelineHandle;
 /// <summary></summary>
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "basePipelineIndex")]
         public int BasePipelineIndex;
     }
 }

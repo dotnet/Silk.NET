@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DescriptorSetVariableDescriptorCountAllocateInfoEXT
+    [NativeName("Name", "VkDescriptorSetVariableDescriptorCountAllocateInfoEXT")]
+    public unsafe partial struct DescriptorSetVariableDescriptorCountAllocateInfoEXT
     {
         public DescriptorSetVariableDescriptorCountAllocateInfoEXT
         (
-            StructureType sType = StructureType.DescriptorSetVariableDescriptorCountAllocateInfo,
-            void* pNext = default,
-            uint descriptorSetCount = default,
-            uint* pDescriptorCounts = default
-        )
+            StructureType? sType = StructureType.DescriptorSetVariableDescriptorCountAllocateInfo,
+            void* pNext = null,
+            uint? descriptorSetCount = null,
+            uint* pDescriptorCounts = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           DescriptorSetCount = descriptorSetCount;
-           PDescriptorCounts = pDescriptorCounts;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (descriptorSetCount is not null)
+            {
+                DescriptorSetCount = descriptorSetCount.Value;
+            }
+
+            if (pDescriptorCounts is not null)
+            {
+                PDescriptorCounts = pDescriptorCounts;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "descriptorSetCount")]
         public uint DescriptorSetCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t*")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "pDescriptorCounts")]
         public uint* PDescriptorCounts;
     }
 }

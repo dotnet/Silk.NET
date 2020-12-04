@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Mode used by a cursor.
@@ -27,6 +27,9 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Cursor is invisible, and is restricted to the center of the screen.
         /// </summary>
+        /// <remarks>
+        /// Only supported by GLFW, throws on SDL if used.
+        /// </remarks>
         Disabled,
 
         /// <summary>

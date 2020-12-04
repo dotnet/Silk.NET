@@ -4,483 +4,236 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_program_interface_query")]
-    public abstract unsafe partial class ArbProgramInterfaceQuery : NativeExtension<GL>
+    public unsafe partial class ArbProgramInterfaceQuery : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_program_interface_query";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public abstract unsafe void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public abstract void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="propCount">
-        /// To be added.
-        /// </param>
-        /// <param name="props">
-        /// To be added.
-        /// This parameter's element count is taken from propCount.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
+        public unsafe partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
+        public partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
+        public unsafe partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
+        public partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
+        public unsafe partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
+        public partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public abstract unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="propCount">
-        /// To be added.
-        /// </param>
-        /// <param name="props">
-        /// To be added.
-        /// This parameter's element count is taken from propCount.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public abstract void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] Span<ARB> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is computed from name.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ARB props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ARB props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ARB props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ARB props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ProgramResourceProperty props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ProgramResourceProperty props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ProgramResourceProperty props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ProgramResourceProperty props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ARB props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ARB props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ARB props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ARB props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ProgramResourceProperty props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ProgramResourceProperty props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ProgramResourceProperty props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
+        public partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] in ProgramResourceProperty props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
+
         [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
-        public abstract unsafe uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        public unsafe partial uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is computed from name.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
-        public abstract uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        public partial uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is computed from name.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
-        public abstract unsafe int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is computed from name.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
-        public abstract int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is computed from name.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
-        public abstract unsafe int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is computed from name.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
-        public abstract int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public abstract unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public abstract void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public abstract unsafe void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public abstract void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="propCount">
-        /// To be added.
-        /// </param>
-        /// <param name="props">
-        /// To be added.
-        /// This parameter's element count is taken from propCount.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public abstract unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="propCount">
-        /// To be added.
-        /// </param>
-        /// <param name="props">
-        /// To be added.
-        /// This parameter's element count is taken from propCount.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public abstract void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] Span<ProgramResourceProperty> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
-        public abstract uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+        public partial uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] string name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
+        public unsafe partial uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
+        public partial uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
+        public partial uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+
         [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
-        public abstract int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+        public unsafe partial int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
+        public partial int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
+        public partial int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] string name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
+        public unsafe partial int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
+        public partial int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
+        public partial int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+
         [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
-        public abstract int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+        public unsafe partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
+        public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
+        public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] string name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
+        public unsafe partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
+        public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
+        public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public abstract unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string name);
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="programInterface">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public abstract void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string name);
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
 
-        public ArbProgramInterfaceQuery(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte name);
+
+        [NativeApi(EntryPoint = "glGetProgramResourceName")]
+        public partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
+
+        public ArbProgramInterfaceQuery(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

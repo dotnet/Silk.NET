@@ -4,95 +4,50 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
 {
     [Extension("SUN_global_alpha")]
-    public abstract unsafe partial class SunGlobalAlpha : NativeExtension<GL>
+    public unsafe partial class SunGlobalAlpha : NativeExtension<GL>
     {
         public const string ExtensionName = "SUN_global_alpha";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorbSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] sbyte factor);
+        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] sbyte factor);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactoriSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] int factor);
+        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] int factor);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorfSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] float factor);
+        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] float factor);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactordSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] double factor);
+        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] double factor);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorubSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] byte factor);
+        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] byte factor);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorusSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] ushort factor);
+        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] ushort factor);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactoruiSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] uint factor);
+        public partial void ObalAlphaFactor([Flow(FlowDirection.In)] uint factor);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorsSUN")]
-        public abstract void ObalAlphaFactors([Flow(FlowDirection.In)] short factor);
+        public partial void ObalAlphaFactors([Flow(FlowDirection.In)] short factor);
 
-        public SunGlobalAlpha(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SunGlobalAlpha(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

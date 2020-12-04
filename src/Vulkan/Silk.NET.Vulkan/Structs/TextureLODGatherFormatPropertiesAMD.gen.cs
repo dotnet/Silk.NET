@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct TextureLODGatherFormatPropertiesAMD
+    [NativeName("Name", "VkTextureLODGatherFormatPropertiesAMD")]
+    public unsafe partial struct TextureLODGatherFormatPropertiesAMD
     {
         public TextureLODGatherFormatPropertiesAMD
         (
-            StructureType sType = StructureType.TextureLodGatherFormatPropertiesAmd,
-            void* pNext = default,
-            Bool32 supportsTextureGatherLodbiasAmd = default
-        )
+            StructureType? sType = StructureType.TextureLodGatherFormatPropertiesAmd,
+            void* pNext = null,
+            Bool32? supportsTextureGatherLodbiasAmd = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           SupportsTextureGatherLodbiasAmd = supportsTextureGatherLodbiasAmd;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (supportsTextureGatherLodbiasAmd is not null)
+            {
+                SupportsTextureGatherLodbiasAmd = supportsTextureGatherLodbiasAmd.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "supportsTextureGatherLODBiasAMD")]
         public Bool32 SupportsTextureGatherLodbiasAmd;
     }
 }

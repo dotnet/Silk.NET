@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DeferredOperationInfoKHR
+    [NativeName("Name", "VkDeferredOperationInfoKHR")]
+    public unsafe partial struct DeferredOperationInfoKHR
     {
         public DeferredOperationInfoKHR
         (
-            StructureType sType = StructureType.DeferredOperationInfoKhr,
-            void* pNext = default,
-            DeferredOperationKHR operationHandle = default
-        )
+            StructureType? sType = StructureType.DeferredOperationInfoKhr,
+            void* pNext = null,
+            DeferredOperationKHR? operationHandle = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           OperationHandle = operationHandle;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (operationHandle is not null)
+            {
+                OperationHandle = operationHandle.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDeferredOperationKHR")]
+        [NativeName("Type.Name", "VkDeferredOperationKHR")]
+        [NativeName("Name", "operationHandle")]
         public DeferredOperationKHR OperationHandle;
     }
 }

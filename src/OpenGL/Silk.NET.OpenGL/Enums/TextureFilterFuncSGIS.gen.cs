@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "TextureFilterFuncSGIS")]
     public enum TextureFilterFuncSGIS
     {
+        [NativeName("Name", "GL_FILTER4_SGIS")]
         Filter4Sgis = 0x8146,
     }
 }

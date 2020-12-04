@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Represents the keys on a keyboard.
@@ -618,11 +618,6 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// The menu key.
         /// </summary>
-        Menu = 348,
-
-        /// <summary>
-        /// The last valid key in this enum.
-        /// </summary>
-        LastKey = Menu
+        Menu = 348
     }
 }

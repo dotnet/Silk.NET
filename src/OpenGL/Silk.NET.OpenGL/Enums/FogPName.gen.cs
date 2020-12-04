@@ -5,11 +5,13 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "FogPName")]
     public enum FogPName
     {
     }

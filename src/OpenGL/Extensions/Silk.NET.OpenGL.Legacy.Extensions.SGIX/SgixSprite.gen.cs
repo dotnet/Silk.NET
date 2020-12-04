@@ -4,175 +4,62 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_sprite")]
-    public abstract unsafe partial class SgixSprite : NativeExtension<GL>
+    public unsafe partial class SgixSprite : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_sprite";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
-        public abstract unsafe void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glSpriteParameteriSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
-        public abstract unsafe void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] float param);
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
-        public abstract unsafe void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
+        public unsafe partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+
+        [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
+
         [NativeApi(EntryPoint = "glSpriteParameteriSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] int param);
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glSpriteParameteriSGIX")]
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] int param);
+
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
-        public abstract unsafe void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
-        public SgixSprite(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
+        public unsafe partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+
+        [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
+        public SgixSprite(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

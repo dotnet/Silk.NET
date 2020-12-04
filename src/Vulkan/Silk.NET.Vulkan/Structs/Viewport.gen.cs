@@ -6,45 +6,91 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct Viewport
+    [NativeName("Name", "VkViewport")]
+    public unsafe partial struct Viewport
     {
         public Viewport
         (
-            float x = default,
-            float y = default,
-            float width = default,
-            float height = default,
-            float minDepth = default,
-            float maxDepth = default
-        )
+            float? x = null,
+            float? y = null,
+            float? width = null,
+            float? height = null,
+            float? minDepth = null,
+            float? maxDepth = null
+        ) : this()
         {
-           X = x;
-           Y = y;
-           Width = width;
-           Height = height;
-           MinDepth = minDepth;
-           MaxDepth = maxDepth;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (width is not null)
+            {
+                Width = width.Value;
+            }
+
+            if (height is not null)
+            {
+                Height = height.Value;
+            }
+
+            if (minDepth is not null)
+            {
+                MinDepth = minDepth.Value;
+            }
+
+            if (maxDepth is not null)
+            {
+                MaxDepth = maxDepth.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "x")]
         public float X;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "y")]
         public float Y;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "width")]
         public float Width;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "height")]
         public float Height;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "minDepth")]
         public float MinDepth;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "maxDepth")]
         public float MaxDepth;
     }
 }

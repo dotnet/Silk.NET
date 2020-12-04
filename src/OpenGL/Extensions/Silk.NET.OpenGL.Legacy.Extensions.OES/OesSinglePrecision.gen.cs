@@ -4,196 +4,62 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.OES
 {
     [Extension("OES_single_precision")]
-    public abstract unsafe partial class OesSinglePrecision : NativeExtension<GL>
+    public unsafe partial class OesSinglePrecision : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_single_precision";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="depth">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glClearDepthfOES")]
-        public abstract void ClearDepth([Flow(FlowDirection.In)] float depth);
+        public partial void ClearDepth([Flow(FlowDirection.In)] float depth);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="plane">
-        /// To be added.
-        /// </param>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glClipPlanefOES")]
-        public abstract unsafe void ClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.In)] float* equation);
+        public unsafe partial void ClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.In)] float* equation);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="plane">
-        /// To be added.
-        /// </param>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glClipPlanefOES")]
-        public abstract void ClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> equation);
+        public partial void ClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.In)] in float equation);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="f">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glClipPlanefOES")]
+        public unsafe partial void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] float* equation);
+
+        [NativeApi(EntryPoint = "glClipPlanefOES")]
+        public partial void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] in float equation);
+
         [NativeApi(EntryPoint = "glDepthRangefOES")]
-        public abstract void DepthRange([Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
+        public partial void DepthRange([Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="l">
-        /// To be added.
-        /// </param>
-        /// <param name="r">
-        /// To be added.
-        /// </param>
-        /// <param name="b">
-        /// To be added.
-        /// </param>
-        /// <param name="t">
-        /// To be added.
-        /// </param>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="f">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFrustumfOES")]
-        public abstract void Frustum([Flow(FlowDirection.In)] float l, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float b, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
+        public partial void Frustum([Flow(FlowDirection.In)] float l, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float b, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="plane">
-        /// To be added.
-        /// </param>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glGetClipPlanefOES")]
-        public abstract unsafe void GetClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.Out)] float* equation);
+        public unsafe partial void GetClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.Out)] float* equation);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="plane">
-        /// To be added.
-        /// </param>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glGetClipPlanefOES")]
-        public abstract void GetClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> equation);
+        public partial void GetClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.Out)] out float equation);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="l">
-        /// To be added.
-        /// </param>
-        /// <param name="r">
-        /// To be added.
-        /// </param>
-        /// <param name="b">
-        /// To be added.
-        /// </param>
-        /// <param name="t">
-        /// To be added.
-        /// </param>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="f">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetClipPlanefOES")]
+        public unsafe partial void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] float* equation);
+
+        [NativeApi(EntryPoint = "glGetClipPlanefOES")]
+        public partial void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] out float equation);
+
         [NativeApi(EntryPoint = "glOrthofOES")]
-        public abstract void Ortho([Flow(FlowDirection.In)] float l, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float b, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
+        public partial void Ortho([Flow(FlowDirection.In)] float l, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float b, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="plane">
-        /// To be added.
-        /// </param>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
-        [NativeApi(EntryPoint = "glClipPlanefOES")]
-        public abstract unsafe void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] float* equation);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="plane">
-        /// To be added.
-        /// </param>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
-        [NativeApi(EntryPoint = "glClipPlanefOES")]
-        public abstract void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> equation);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="plane">
-        /// To be added.
-        /// </param>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetClipPlanefOES")]
-        public abstract unsafe void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] float* equation);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="plane">
-        /// To be added.
-        /// </param>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetClipPlanefOES")]
-        public abstract void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> equation);
-
-        public OesSinglePrecision(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesSinglePrecision(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

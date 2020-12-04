@@ -4,47 +4,50 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.Vulkan;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_buffer_device_address")]
-    public abstract unsafe partial class KhrBufferDeviceAddress : NativeExtension<Vk>
+    public unsafe partial class KhrBufferDeviceAddress : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_buffer_device_address";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferDeviceAddressKHR")]
-        public abstract unsafe ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
+        public unsafe partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferDeviceAddressKHR")]
-        public abstract ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferDeviceAddressInfo pInfo);
+        public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
-        public abstract unsafe ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
+        public unsafe partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR")]
-        public abstract ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferDeviceAddressInfo pInfo);
+        public partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
-        public abstract unsafe ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
+        public unsafe partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
-        public abstract ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DeviceMemoryOpaqueCaptureAddressInfo pInfo);
+        public partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceMemoryOpaqueCaptureAddressInfo pInfo);
 
-        public KhrBufferDeviceAddress(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrBufferDeviceAddress(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

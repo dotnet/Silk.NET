@@ -5,12 +5,14 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkPipelineCompilerControlFlagsAMD")]
     public enum PipelineCompilerControlFlagsAMD
     {
     }

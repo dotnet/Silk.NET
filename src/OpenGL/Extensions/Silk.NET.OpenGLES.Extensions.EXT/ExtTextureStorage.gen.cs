@@ -4,293 +4,80 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGLES;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_texture_storage")]
-    public abstract unsafe partial class ExtTextureStorage : NativeExtension<GL>
+    public unsafe partial class ExtTextureStorage : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_texture_storage";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTexStorage1DEXT")]
-        public abstract void TexStorage1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width);
+        public partial void TexStorage1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glTexStorage2DEXT")]
-        public abstract void TexStorage2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="depth">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glTexStorage3DEXT")]
-        public abstract void TexStorage3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glTextureStorage1DEXT")]
-        public abstract void TextureStorage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glTextureStorage2DEXT")]
-        public abstract void TextureStorage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="depth">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glTextureStorage3DEXT")]
-        public abstract void TextureStorage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTexStorage1DEXT")]
-        public abstract void TexStorage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width);
+        public partial void TexStorage1D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glTexStorage1DEXT")]
+        public partial void TexStorage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width);
+
+        [NativeApi(EntryPoint = "glTexStorage1DEXT")]
+        public partial void TexStorage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width);
+
         [NativeApi(EntryPoint = "glTexStorage2DEXT")]
-        public abstract void TexStorage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public partial void TexStorage2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="depth">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glTexStorage2DEXT")]
+        public partial void TexStorage2D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+        [NativeApi(EntryPoint = "glTexStorage2DEXT")]
+        public partial void TexStorage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+        [NativeApi(EntryPoint = "glTexStorage2DEXT")]
+        public partial void TexStorage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
         [NativeApi(EntryPoint = "glTexStorage3DEXT")]
-        public abstract void TexStorage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+        public partial void TexStorage3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glTexStorage3DEXT")]
+        public partial void TexStorage3D([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+
+        [NativeApi(EntryPoint = "glTexStorage3DEXT")]
+        public partial void TexStorage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+
+        [NativeApi(EntryPoint = "glTexStorage3DEXT")]
+        public partial void TexStorage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+
         [NativeApi(EntryPoint = "glTextureStorage1DEXT")]
-        public abstract void TextureStorage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width);
+        public partial void TextureStorage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glTextureStorage1DEXT")]
+        public partial void TextureStorage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width);
+
         [NativeApi(EntryPoint = "glTextureStorage2DEXT")]
-        public abstract void TextureStorage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public partial void TextureStorage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="depth">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glTextureStorage2DEXT")]
+        public partial void TextureStorage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
         [NativeApi(EntryPoint = "glTextureStorage3DEXT")]
-        public abstract void TextureStorage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+        public partial void TextureStorage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
-        public ExtTextureStorage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glTextureStorage3DEXT")]
+        public partial void TextureStorage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+
+        public ExtTextureStorage(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

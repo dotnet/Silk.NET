@@ -4,307 +4,89 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_viewport_array")]
-    public abstract unsafe partial class ArbViewportArray : NativeExtension<GL>
+    public unsafe partial class ArbViewportArray : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_viewport_array";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter's element count is computed from count.
-        /// </param>
         [NativeApi(EntryPoint = "glDepthRangeArrayv")]
-        public abstract unsafe void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] double* v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter's element count is computed from count.
-        /// </param>
         [NativeApi(EntryPoint = "glDepthRangeArrayv")]
-        public abstract void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref double v);
+        public partial void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in double v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glDepthRangeArraydvNV")]
-        public abstract void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<double> v);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="f">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDepthRangeIndexed")]
-        public abstract void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double n, [Flow(FlowDirection.In)] double f);
+        public partial void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double n, [Flow(FlowDirection.In)] double f);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDoublei_v")]
-        public abstract unsafe void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
+        public unsafe partial void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDoublei_v")]
-        public abstract void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
+        public partial void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetDoublei_v")]
+        public unsafe partial void GetDouble([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
+
+        [NativeApi(EntryPoint = "glGetDoublei_v")]
+        public partial void GetDouble([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
+
         [NativeApi(EntryPoint = "glGetFloati_v")]
-        public abstract unsafe void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
         [NativeApi(EntryPoint = "glGetFloati_v")]
-        public abstract void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
+        public partial void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter's element count is computed from count.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetFloati_v")]
+        public unsafe partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
+
+        [NativeApi(EntryPoint = "glGetFloati_v")]
+        public partial void GetFloat([Flow(FlowDirection.In)] GetPName target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
+
         [NativeApi(EntryPoint = "glScissorArrayv")]
-        public abstract unsafe void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter's element count is computed from count.
-        /// </param>
         [NativeApi(EntryPoint = "glScissorArrayv")]
-        public abstract void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int v);
+        public partial void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="left">
-        /// To be added.
-        /// </param>
-        /// <param name="bottom">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glScissorIndexed")]
-        public abstract void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glScissorIndexedv")]
-        public abstract unsafe void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glScissorIndexedv")]
-        public abstract void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in int v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter's element count is computed from count.
-        /// </param>
         [NativeApi(EntryPoint = "glViewportArrayv")]
-        public abstract unsafe void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter's element count is computed from count.
-        /// </param>
         [NativeApi(EntryPoint = "glViewportArrayv")]
-        public abstract void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref float v);
+        public partial void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in float v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="x">
-        /// To be added.
-        /// </param>
-        /// <param name="y">
-        /// To be added.
-        /// </param>
-        /// <param name="w">
-        /// To be added.
-        /// </param>
-        /// <param name="h">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedf")]
-        public abstract void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h);
+        public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedfv")]
-        public abstract unsafe void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedfv")]
-        public abstract void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
-        public ArbViewportArray(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbViewportArray(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -4,47 +4,32 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
 {
     [Extension("PGI_misc_hints")]
-    public abstract unsafe partial class PgiMiscHints : NativeExtension<GL>
+    public unsafe partial class PgiMiscHints : NativeExtension<GL>
     {
         public const string ExtensionName = "PGI_misc_hints";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glHintPGI")]
-        public abstract void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
+        public partial void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glHintPGI")]
-        public abstract void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
+        public partial void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
 
-        public PgiMiscHints(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public PgiMiscHints(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -4,52 +4,32 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_win32_keyed_mutex")]
-    public abstract unsafe partial class ExtWin32KeyedMutex : NativeExtension<GL>
+    public unsafe partial class ExtWin32KeyedMutex : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_win32_keyed_mutex";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="memory">
-        /// To be added.
-        /// </param>
-        /// <param name="key">
-        /// To be added.
-        /// </param>
-        /// <param name="timeout">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glAcquireKeyedMutexWin32EXT")]
-        public abstract bool AcquireKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key, [Flow(FlowDirection.In)] uint timeout);
+        public partial bool AcquireKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key, [Flow(FlowDirection.In)] uint timeout);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="memory">
-        /// To be added.
-        /// </param>
-        /// <param name="key">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glReleaseKeyedMutexWin32EXT")]
-        public abstract bool ReleaseKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key);
+        public partial bool ReleaseKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key);
 
-        public ExtWin32KeyedMutex(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtWin32KeyedMutex(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,27 +6,41 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL
 {
-    public unsafe struct NameVersion
+    [NativeName("Name", "cl_name_version")]
+    public unsafe partial struct NameVersion
     {
         public NameVersion
         (
-            uint version = default
-        )
+            uint? version = null
+        ) : this()
         {
-           Version = version;
+            if (version is not null)
+            {
+                Version = version.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "cl_version")]
+        [NativeName("Type.Name", "cl_version")]
+        [NativeName("Name", "version")]
         public uint Version;
         /// <summary></summary>
-       public fixed char Name[64];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "name")]
+        public fixed byte Name[64];
     }
 }

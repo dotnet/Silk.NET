@@ -4,83 +4,94 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.Vulkan;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.INTEL
 {
     [Extension("VK_INTEL_performance_query")]
-    public abstract unsafe partial class IntelPerformanceQuery : NativeExtension<Vk>
+    public unsafe partial class IntelPerformanceQuery : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_INTEL_performance_query";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
-        public abstract unsafe Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
+        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
-        public abstract Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
+        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceConfigurationAcquireInfoINTEL* pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
+        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
+        public partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
-        public abstract unsafe Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceMarkerInfoINTEL* pMarkerInfo);
+        public unsafe partial Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceMarkerInfoINTEL* pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
-        public abstract Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref PerformanceMarkerInfoINTEL pMarkerInfo);
+        public partial Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceMarkerInfoINTEL pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
-        public abstract unsafe Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceOverrideInfoINTEL* pOverrideInfo);
+        public unsafe partial Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceOverrideInfoINTEL* pOverrideInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
-        public abstract Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref PerformanceOverrideInfoINTEL pOverrideInfo);
+        public partial Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceOverrideInfoINTEL pOverrideInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
-        public abstract unsafe Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceStreamMarkerInfoINTEL* pMarkerInfo);
+        public unsafe partial Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] PerformanceStreamMarkerInfoINTEL* pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
-        public abstract Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref PerformanceStreamMarkerInfoINTEL pMarkerInfo);
+        public partial Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in PerformanceStreamMarkerInfoINTEL pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPerformanceParameterINTEL")]
-        public abstract unsafe Result GetPerformanceParameter([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceParameterTypeINTEL parameter, [Count(Count = 0), Flow(FlowDirection.Out)] PerformanceValueINTEL* pValue);
+        public unsafe partial Result GetPerformanceParameter([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceParameterTypeINTEL parameter, [Count(Count = 0), Flow(FlowDirection.Out)] PerformanceValueINTEL* pValue);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPerformanceParameterINTEL")]
-        public abstract Result GetPerformanceParameter([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceParameterTypeINTEL parameter, [Count(Count = 0), Flow(FlowDirection.Out)] out PerformanceValueINTEL pValue);
+        public partial Result GetPerformanceParameter([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceParameterTypeINTEL parameter, [Count(Count = 0), Flow(FlowDirection.Out)] out PerformanceValueINTEL pValue);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkInitializePerformanceApiINTEL")]
-        public abstract unsafe Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] InitializePerformanceApiInfoINTEL* pInitializeInfo);
+        public unsafe partial Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] InitializePerformanceApiInfoINTEL* pInitializeInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkInitializePerformanceApiINTEL")]
-        public abstract Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref InitializePerformanceApiInfoINTEL pInitializeInfo);
+        public partial Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in InitializePerformanceApiInfoINTEL pInitializeInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueSetPerformanceConfigurationINTEL")]
-        public abstract Result QueueSetPerformanceConfiguration([Count(Count = 0)] Queue queue, [Count(Count = 0)] PerformanceConfigurationINTEL configuration);
+        public partial Result QueueSetPerformanceConfiguration([Count(Count = 0)] Queue queue, [Count(Count = 0)] PerformanceConfigurationINTEL configuration);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkReleasePerformanceConfigurationINTEL")]
-        public abstract Result ReleasePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceConfigurationINTEL configuration);
+        public partial Result ReleasePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0)] PerformanceConfigurationINTEL configuration);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkUninitializePerformanceApiINTEL")]
-        public abstract void UninitializePerformanceAp([Count(Count = 0)] Device device);
+        public partial void UninitializePerformanceAp([Count(Count = 0)] Device device);
 
-        public IntelPerformanceQuery(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelPerformanceQuery(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

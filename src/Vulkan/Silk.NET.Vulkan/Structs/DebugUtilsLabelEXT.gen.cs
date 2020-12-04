@@ -6,35 +6,63 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DebugUtilsLabelEXT
+    [NativeName("Name", "VkDebugUtilsLabelEXT")]
+    public unsafe partial struct DebugUtilsLabelEXT
     {
         public DebugUtilsLabelEXT
         (
-            StructureType sType = StructureType.DebugUtilsLabelExt,
-            void* pNext = default,
-            byte* pLabelName = default
-        )
+            StructureType? sType = StructureType.DebugUtilsLabelExt,
+            void* pNext = null,
+            byte* pLabelName = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           PLabelName = pLabelName;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pLabelName is not null)
+            {
+                PLabelName = pLabelName;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "char*")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "pLabelName")]
         public byte* PLabelName;
         /// <summary></summary>
-       public fixed float Color[4];
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "color")]
+        public fixed float Color[4];
     }
 }

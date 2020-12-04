@@ -3,9 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Silk.NET.Windowing.Common;
+using Silk.NET.Windowing;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// An interface representing an input platform.

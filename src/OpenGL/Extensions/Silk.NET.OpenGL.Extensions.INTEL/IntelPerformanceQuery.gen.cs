@@ -4,477 +4,1089 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.INTEL
 {
     [Extension("INTEL_performance_query")]
-    public abstract unsafe partial class IntelPerformanceQuery : NativeExtension<GL>
+    public unsafe partial class IntelPerformanceQuery : NativeExtension<GL>
     {
         public const string ExtensionName = "INTEL_performance_query";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryHandle">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBeginPerfQueryINTEL")]
-        public abstract void BeginPerfQuery([Flow(FlowDirection.In)] uint queryHandle);
+        public partial void BeginPerfQuery([Flow(FlowDirection.In)] uint queryHandle);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="queryHandle">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glCreatePerfQueryINTEL")]
-        public abstract unsafe void CreatePerfQuery([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] uint* queryHandle);
+        public unsafe partial void CreatePerfQuery([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] uint* queryHandle);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="queryHandle">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glCreatePerfQueryINTEL")]
-        public abstract void CreatePerfQuery([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] Span<uint> queryHandle);
+        public partial void CreatePerfQuery([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] out uint queryHandle);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryHandle">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDeletePerfQueryINTEL")]
-        public abstract void DeletePerfQuery([Flow(FlowDirection.In)] uint queryHandle);
+        public partial void DeletePerfQuery([Flow(FlowDirection.In)] uint queryHandle);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryHandle">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glEndPerfQueryINTEL")]
-        public abstract void EndPerfQuery([Flow(FlowDirection.In)] uint queryHandle);
+        public partial void EndPerfQuery([Flow(FlowDirection.In)] uint queryHandle);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetFirstPerfQueryIdINTEL")]
-        public abstract unsafe void GetFirstPerfQueryId([Flow(FlowDirection.Out)] uint* queryId);
+        public unsafe partial void GetFirstPerfQueryId([Flow(FlowDirection.Out)] uint* queryId);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetFirstPerfQueryIdINTEL")]
-        public abstract void GetFirstPerfQueryId([Flow(FlowDirection.Out)] Span<uint> queryId);
+        public partial void GetFirstPerfQueryId([Flow(FlowDirection.Out)] out uint queryId);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="nextQueryId">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetNextPerfQueryIdINTEL")]
-        public abstract unsafe void GetNextPerfQueryId([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] uint* nextQueryId);
+        public unsafe partial void GetNextPerfQueryId([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] uint* nextQueryId);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="nextQueryId">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetNextPerfQueryIdINTEL")]
-        public abstract void GetNextPerfQueryId([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] Span<uint> nextQueryId);
+        public partial void GetNextPerfQueryId([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] out uint nextQueryId);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="counterId">
-        /// To be added.
-        /// </param>
-        /// <param name="counterNameLength">
-        /// To be added.
-        /// </param>
-        /// <param name="counterName">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDescLength">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDesc">
-        /// To be added.
-        /// </param>
-        /// <param name="counterOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="counterTypeEnum">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDataTypeEnum">
-        /// To be added.
-        /// </param>
-        /// <param name="rawCounterMaxValue">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
-        public abstract unsafe void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] char* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] char* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="counterId">
-        /// To be added.
-        /// </param>
-        /// <param name="counterNameLength">
-        /// To be added.
-        /// </param>
-        /// <param name="counterName">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDescLength">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDesc">
-        /// To be added.
-        /// </param>
-        /// <param name="counterOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="counterTypeEnum">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDataTypeEnum">
-        /// To be added.
-        /// </param>
-        /// <param name="rawCounterMaxValue">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
-        public abstract void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] Span<char> counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] Span<char> counterDesc, [Flow(FlowDirection.Out)] Span<uint> counterOffset, [Flow(FlowDirection.Out)] Span<uint> counterDataSize, [Flow(FlowDirection.Out)] Span<uint> counterTypeEnum, [Flow(FlowDirection.Out)] Span<uint> counterDataTypeEnum, [Flow(FlowDirection.Out)] Span<ulong> rawCounterMaxValue);
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryHandle">
-        /// To be added.
-        /// </param>
-        /// <param name="flags">
-        /// To be added.
-        /// </param>
-        /// <param name="dataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// </param>
-        /// <param name="bytesWritten">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] byte* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] out byte counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] byte* counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] out byte counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public unsafe partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+
+        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
+        public partial void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] out uint counterOffset, [Flow(FlowDirection.Out)] out uint counterDataSize, [Flow(FlowDirection.Out)] out uint counterTypeEnum, [Flow(FlowDirection.Out)] out uint counterDataTypeEnum, [Flow(FlowDirection.Out)] out ulong rawCounterMaxValue);
+
         [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL")]
-        public abstract unsafe void GetPerfQueryData([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] void* data, [Flow(FlowDirection.Out)] uint* bytesWritten);
+        public unsafe partial void GetPerfQueryData([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] void* data, [Flow(FlowDirection.Out)] uint* bytesWritten);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryHandle">
-        /// To be added.
-        /// </param>
-        /// <param name="flags">
-        /// To be added.
-        /// </param>
-        /// <param name="dataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// </param>
-        /// <param name="bytesWritten">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL")]
-        public abstract void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] Span<T0> data, [Flow(FlowDirection.Out)] Span<uint> bytesWritten) where T0 : unmanaged;
+        public unsafe partial void GetPerfQueryData([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] void* data, [Flow(FlowDirection.Out)] out uint bytesWritten);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL")]
+        public unsafe partial void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] out T0 data, [Flow(FlowDirection.Out)] uint* bytesWritten) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL")]
+        public partial void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] out T0 data, [Flow(FlowDirection.Out)] out uint bytesWritten) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
-        public abstract unsafe void GetPerfQueryIdByName([Flow(FlowDirection.Out)] char* queryName, [Flow(FlowDirection.Out)] uint* queryId);
+        public unsafe partial void GetPerfQueryIdByName([Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* queryId);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
-        public abstract void GetPerfQueryIdByName([Flow(FlowDirection.Out)] Span<char> queryName, [Flow(FlowDirection.Out)] Span<uint> queryId);
+        public unsafe partial void GetPerfQueryIdByName([Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint queryId);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="queryNameLength">
-        /// To be added.
-        /// </param>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="dataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="noCounters">
-        /// To be added.
-        /// </param>
-        /// <param name="noInstances">
-        /// To be added.
-        /// </param>
-        /// <param name="capsMask">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
-        public abstract unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] char* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="queryNameLength">
-        /// To be added.
-        /// </param>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="dataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="noCounters">
-        /// To be added.
-        /// </param>
-        /// <param name="noInstances">
-        /// To be added.
-        /// </param>
-        /// <param name="capsMask">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
-        public abstract void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] Span<char> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<uint> capsMask);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="counterId">
-        /// To be added.
-        /// </param>
-        /// <param name="counterNameLength">
-        /// To be added.
-        /// </param>
-        /// <param name="counterName">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDescLength">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDesc">
-        /// To be added.
-        /// </param>
-        /// <param name="counterOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="counterTypeEnum">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDataTypeEnum">
-        /// To be added.
-        /// </param>
-        /// <param name="rawCounterMaxValue">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
-        public abstract unsafe void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="counterId">
-        /// To be added.
-        /// </param>
-        /// <param name="counterNameLength">
-        /// To be added.
-        /// </param>
-        /// <param name="counterName">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDescLength">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDesc">
-        /// To be added.
-        /// </param>
-        /// <param name="counterOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="counterTypeEnum">
-        /// To be added.
-        /// </param>
-        /// <param name="counterDataTypeEnum">
-        /// To be added.
-        /// </param>
-        /// <param name="rawCounterMaxValue">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
-        public abstract void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] Span<uint> counterOffset, [Flow(FlowDirection.Out)] Span<uint> counterDataSize, [Flow(FlowDirection.Out)] Span<uint> counterTypeEnum, [Flow(FlowDirection.Out)] Span<uint> counterDataTypeEnum, [Flow(FlowDirection.Out)] Span<ulong> rawCounterMaxValue);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
-        public abstract unsafe void GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* queryId);
+        public unsafe partial void GetPerfQueryIdByName([Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* queryId);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
-        public abstract void GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] Span<uint> queryId);
+        public partial void GetPerfQueryIdByName([Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint queryId);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="queryNameLength">
-        /// To be added.
-        /// </param>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="dataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="noCounters">
-        /// To be added.
-        /// </param>
-        /// <param name="noInstances">
-        /// To be added.
-        /// </param>
-        /// <param name="capsMask">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
+        public unsafe partial void GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* queryId);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
+        public partial void GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint queryId);
+
         [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
-        public abstract unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="queryNameLength">
-        /// To be added.
-        /// </param>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="dataSize">
-        /// To be added.
-        /// </param>
-        /// <param name="noCounters">
-        /// To be added.
-        /// </param>
-        /// <param name="noInstances">
-        /// To be added.
-        /// </param>
-        /// <param name="capsMask">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
-        public abstract void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<uint> capsMask);
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="queryHandle">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] byte* queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] out byte queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public unsafe partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+
+        [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
+        public partial void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] out uint dataSize, [Flow(FlowDirection.Out)] out uint noCounters, [Flow(FlowDirection.Out)] out uint noInstances, [Flow(FlowDirection.Out)] out uint capsMask);
+
         public unsafe uint CreatePerfQuery()
         {
             const uint queryId = 1;
@@ -484,12 +1096,6 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
             return ret;
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
         public unsafe uint GetFirstPerfQueryId()
         {
             // ReturnTypeOverloader
@@ -498,15 +1104,6 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
             return ret;
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        /// <param name="nextQueryId">
-        /// To be added.
-        /// </param>
         public unsafe uint GetNextPerfQueryId()
         {
             const uint queryId = 1;
@@ -516,16 +1113,7 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
             return ret;
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        public unsafe uint GetPerfQueryIdByName([Flow(FlowDirection.Out)] char* queryName)
+        public unsafe uint GetPerfQueryIdByName([Flow(FlowDirection.Out)] byte* queryName)
         {
             // ReturnTypeOverloader
             uint ret = default;
@@ -533,25 +1121,8 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
             return ret;
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryName">
-        /// To be added.
-        /// </param>
-        /// <param name="queryId">
-        /// To be added.
-        /// </param>
-        public unsafe uint GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName)
-        {
-            // ReturnTypeOverloader
-            uint ret = default;
-            GetPerfQueryIdByName(queryName, &ret);
-            return ret;
-        }
-
-        public IntelPerformanceQuery(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelPerformanceQuery(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

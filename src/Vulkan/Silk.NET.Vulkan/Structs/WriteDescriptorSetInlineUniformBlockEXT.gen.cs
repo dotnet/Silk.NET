@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct WriteDescriptorSetInlineUniformBlockEXT
+    [NativeName("Name", "VkWriteDescriptorSetInlineUniformBlockEXT")]
+    public unsafe partial struct WriteDescriptorSetInlineUniformBlockEXT
     {
         public WriteDescriptorSetInlineUniformBlockEXT
         (
-            StructureType sType = StructureType.WriteDescriptorSetInlineUniformBlockExt,
-            void* pNext = default,
-            uint dataSize = default,
-            void* pData = default
-        )
+            StructureType? sType = StructureType.WriteDescriptorSetInlineUniformBlockExt,
+            void* pNext = null,
+            uint? dataSize = null,
+            void* pData = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           DataSize = dataSize;
-           PData = pData;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (dataSize is not null)
+            {
+                DataSize = dataSize.Value;
+            }
+
+            if (pData is not null)
+            {
+                PData = pData;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "dataSize")]
         public uint DataSize;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pData")]
         public void* PData;
     }
 }

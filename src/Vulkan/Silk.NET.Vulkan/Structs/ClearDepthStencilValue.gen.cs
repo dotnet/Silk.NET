@@ -6,29 +6,47 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ClearDepthStencilValue
+    [NativeName("Name", "VkClearDepthStencilValue")]
+    public unsafe partial struct ClearDepthStencilValue
     {
         public ClearDepthStencilValue
         (
-            float depth = default,
-            uint stencil = default
-        )
+            float? depth = null,
+            uint? stencil = null
+        ) : this()
         {
-           Depth = depth;
-           Stencil = stencil;
+            if (depth is not null)
+            {
+                Depth = depth.Value;
+            }
+
+            if (stencil is not null)
+            {
+                Stencil = stencil.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "depth")]
         public float Depth;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "stencil")]
         public uint Stencil;
     }
 }

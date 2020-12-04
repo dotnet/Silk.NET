@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SwapchainImageCreateInfoANDROID
+    [NativeName("Name", "VkSwapchainImageCreateInfoANDROID")]
+    public unsafe partial struct SwapchainImageCreateInfoANDROID
     {
         public SwapchainImageCreateInfoANDROID
         (
-            StructureType sType = StructureType.SwapchainImageCreateInfoAndroid,
-            void* pNext = default,
-            SwapchainImageUsageFlagsANDROID usage = default
-        )
+            StructureType? sType = StructureType.SwapchainImageCreateInfoAndroid,
+            void* pNext = null,
+            SwapchainImageUsageFlagsANDROID? usage = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Usage = usage;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkSwapchainImageUsageFlagsANDROID")]
+        [NativeName("Type.Name", "VkSwapchainImageUsageFlagsANDROID")]
+        [NativeName("Name", "usage")]
         public SwapchainImageUsageFlagsANDROID Usage;
     }
 }

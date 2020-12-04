@@ -5,16 +5,10 @@
 
 using System.Drawing;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     public interface IViewProperties
     {
-        /// <summary>
-        /// If true, both updates and rendering will happen on the same thread. If false, both updating and rendering
-        /// will be run on their own threads.
-        /// </summary>
-        bool UseSingleThreadedWindow { get; }
-
         /// <summary>
         /// If true, SwapBuffers will be called automatically at the end of each Render event.
         /// </summary>
@@ -57,15 +51,9 @@ namespace Silk.NET.Windowing.Common
         GraphicsAPI API { get; }
 
         /// <summary>
-        /// The VSync mode.
+        /// Whether or not VSync is enabled for this view.
         /// </summary>
-        VSyncMode VSync { get; set; }
-
-        /// <summary>
-        /// The number of frames the window needs to be running slowly for before <see cref="IWindow.IsRunningSlowly"/>
-        /// is set to true.
-        /// </summary>
-        int RunningSlowTolerance { get; set; }
+        bool VSync { get; set; }
 
         /// <summary>
         /// The video mode.

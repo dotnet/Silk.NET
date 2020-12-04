@@ -4,29 +4,30 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Common.Structs;
 using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.Drawing;
 using System.Threading;
+using Silk.NET.Core;
 using Image = SixLabors.ImageSharp.Image;
 
 namespace BlankWindow
 {
     internal class Program
     {
+        public const bool Quieter = false;
+        
         public static IWindow window;
 
         private static void Main()
         {
             var options = WindowOptions.Default;
 
-            options.UseSingleThreadedWindow = true;
             //options.ShouldSwapAutomatically = false;
 
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond = 60.0;
+            options.VSync = true;
             // options.VSync = VSyncMode.On;
 
             // options.WindowState = WindowState.Fullscreen;
@@ -88,7 +89,7 @@ namespace BlankWindow
                 arr = span.ToArray();
             }
 
-            var icon = new WindowIcon(image.Width, image.Height, arr);
+            var icon = new RawImage(image.Width, image.Height, arr);
             window.SetWindowIcon(ref icon);
             Console.WriteLine("Finished loading");
         }
@@ -105,7 +106,10 @@ namespace BlankWindow
 
         public static void Render(double delta)
         {
-            Console.WriteLine($"Render {1 / delta}");
+            if (!Quieter)
+            {
+                Console.WriteLine($"Render {1 / delta}");
+            }
         }
 
         public static void Update(double delta)
@@ -116,7 +120,11 @@ namespace BlankWindow
             //    _rsz = false;
             //}
 
-            Console.WriteLine($"Update {1 / delta}");
+            if (!Quieter)
+            {
+                Console.WriteLine($"Update {1 / delta}");
+            }
+
             //Debug.WriteLine(window.VSync);
         }
     }

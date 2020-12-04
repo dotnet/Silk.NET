@@ -4,147 +4,48 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_detail_texture")]
-    public abstract unsafe partial class SgisDetailTexture : NativeExtension<GL>
+    public unsafe partial class SgisDetailTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_detail_texture";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
-        public abstract unsafe void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
-        public abstract void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
+        public partial void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
-        public abstract unsafe void GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
-        public abstract void GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
-        public abstract unsafe void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glDetailTexFuncSGIS")]
-        public abstract void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
+        public partial void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float points);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
-        public abstract unsafe void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
+        public unsafe partial void GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
-        public abstract void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
+        public partial void GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
+        public unsafe partial void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
+
+        [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
+        public partial void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
+
         public unsafe float GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target)
         {
             // ReturnTypeOverloader
@@ -153,26 +54,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             return ret;
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="points">
-        /// To be added.
-        /// This parameter's element count is computed from target.
-        /// </param>
-        public unsafe float GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target)
-        {
-            // ReturnTypeOverloader
-            float ret = default;
-            GetDetailTexFunc(target, &ret);
-            return ret;
-        }
-
-        public SgisDetailTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgisDetailTexture(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -4,118 +4,48 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [Extension("APPLE_vertex_array_object")]
-    public abstract unsafe partial class AppleVertexArrayObject : NativeExtension<GL>
+    public unsafe partial class AppleVertexArrayObject : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_vertex_array_object";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="array">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBindVertexArrayAPPLE")]
-        public abstract void BindVertexArray([Flow(FlowDirection.In)] uint array);
+        public partial void BindVertexArray([Flow(FlowDirection.In)] uint array);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
-        public abstract unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
+        public unsafe partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexArraysAPPLE")]
-        public abstract void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays);
+        public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint arrays);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
-        public abstract unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
+        public unsafe partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glGenVertexArraysAPPLE")]
-        public abstract void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays);
+        public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint arrays);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="array">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsVertexArrayAPPLE")]
-        public abstract bool IsVertexArray([Flow(FlowDirection.In)] uint array);
+        public partial bool IsVertexArray([Flow(FlowDirection.In)] uint array);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(FlowDirection.In)] uint arrays)
         {
             // ArrayParameterOverloader
             DeleteVertexArrays(1, &arrays);
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         public unsafe uint GenVertexArray()
         {
             const uint n = 1;
@@ -125,8 +55,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
             return ret;
         }
 
-        public AppleVertexArrayObject(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleVertexArrayObject(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

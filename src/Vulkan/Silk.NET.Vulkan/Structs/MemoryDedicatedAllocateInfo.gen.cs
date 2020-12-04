@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MemoryDedicatedAllocateInfo
+    [NativeName("Name", "VkMemoryDedicatedAllocateInfo")]
+    public unsafe partial struct MemoryDedicatedAllocateInfo
     {
         public MemoryDedicatedAllocateInfo
         (
-            StructureType sType = StructureType.MemoryDedicatedAllocateInfo,
-            void* pNext = default,
-            Image image = default,
-            Buffer buffer = default
-        )
+            StructureType? sType = StructureType.MemoryDedicatedAllocateInfo,
+            void* pNext = null,
+            Image? image = null,
+            Buffer? buffer = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Image = image;
-           Buffer = buffer;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (image is not null)
+            {
+                Image = image.Value;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkImage")]
+        [NativeName("Type.Name", "VkImage")]
+        [NativeName("Name", "image")]
         public Image Image;
 /// <summary></summary>
+        [NativeName("Type", "VkBuffer")]
+        [NativeName("Type.Name", "VkBuffer")]
+        [NativeName("Name", "buffer")]
         public Buffer Buffer;
     }
 }

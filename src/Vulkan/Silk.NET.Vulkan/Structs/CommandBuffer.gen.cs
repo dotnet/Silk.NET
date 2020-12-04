@@ -6,25 +6,36 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct CommandBuffer
+    [NativeName("Name", "VkCommandBuffer")]
+    public unsafe partial struct CommandBuffer
     {
         public CommandBuffer
         (
-            IntPtr handle = default
-        )
+            IntPtr? handle = null
+        ) : this()
         {
-           Handle = handle;
+            if (handle is not null)
+            {
+                Handle = handle.Value;
+            }
         }
 
 
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
         public IntPtr Handle;
     }
 }

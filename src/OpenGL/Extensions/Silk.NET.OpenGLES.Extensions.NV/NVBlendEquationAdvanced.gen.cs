@@ -4,41 +4,32 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGLES;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_blend_equation_advanced")]
-    public abstract unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
+    public unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_blend_equation_advanced";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glBlendBarrierNV")]
-        public abstract void BlendBarrier();
+        public partial void BlendBarrier();
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBlendParameteriNV")]
-        public abstract void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
+        public partial void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
 
-        public NVBlendEquationAdvanced(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVBlendEquationAdvanced(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

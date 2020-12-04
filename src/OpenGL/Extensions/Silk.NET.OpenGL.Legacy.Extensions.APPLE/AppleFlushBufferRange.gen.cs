@@ -4,104 +4,35 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [Extension("APPLE_flush_buffer_range")]
-    public abstract unsafe partial class AppleFlushBufferRange : NativeExtension<GL>
+    public unsafe partial class AppleFlushBufferRange : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_flush_buffer_range";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBufferParameteriAPPLE")]
-        public abstract void BufferParameter([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
+        public partial void BufferParameter([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="offset">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE")]
-        public abstract void FlushMappedBufferRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="offset">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE")]
-        public abstract void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="offset">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size)
-        {
-            // IntPtrOverloader
-            FlushMappedBufferRange(target, new IntPtr(offset), new UIntPtr(size));
-        }
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="offset">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size)
-        {
-            // IntPtrOverloader
-            FlushMappedBufferRange(target, new IntPtr(offset), new UIntPtr(size));
-        }
-
-        public AppleFlushBufferRange(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleFlushBufferRange(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

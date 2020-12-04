@@ -4,55 +4,38 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_cl_event")]
-    public abstract unsafe partial class ArbClEvent : NativeExtension<GL>
+    public unsafe partial class ArbClEvent : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_cl_event";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="context">
-        /// To be added.
-        /// </param>
-        /// <param name="@event">
-        /// To be added.
-        /// </param>
-        /// <param name="flags">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
-        public abstract unsafe IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] IntPtr* context, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] IntPtr* context, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.In)] uint flags);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="context">
-        /// To be added.
-        /// </param>
-        /// <param name="@event">
-        /// To be added.
-        /// </param>
-        /// <param name="flags">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
-        public abstract IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] Span<IntPtr> context, [Flow(FlowDirection.Out)] Span<IntPtr> @event, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] IntPtr* context, [Flow(FlowDirection.Out)] out IntPtr @event, [Flow(FlowDirection.In)] uint flags);
 
-        public ArbClEvent(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
+        public unsafe partial IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] out IntPtr context, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.In)] uint flags);
+
+        [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
+        public partial IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] out IntPtr context, [Flow(FlowDirection.Out)] out IntPtr @event, [Flow(FlowDirection.In)] uint flags);
+
+        public ArbClEvent(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

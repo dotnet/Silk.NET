@@ -7,8 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Extensions.EXT.Enumeration;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
@@ -16,19 +18,19 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("ALC_ENUMERATION_EXT")]
     [NativeApi(Prefix = "alc")]
-    public abstract class CaptureEnumerationEnumeration : ContextExtensionBase
+    public partial class CaptureEnumerationEnumeration : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected CaptureEnumerationEnumeration(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected CaptureEnumerationEnumeration(INativeContext ctx)
+            : base(ctx)
         {
         }
 
         /// <inheritdoc />
-        public abstract unsafe string GetString(Device* device, GetCaptureEnumerationContextString param);
+        public unsafe partial string GetString(Device* device, GetCaptureEnumerationContextString param);
 
         /// <inheritdoc />
-        public abstract unsafe char* GetStringList(Device* device, GetCaptureContextStringList param);
+        public unsafe partial byte* GetStringList(Device* device, GetCaptureContextStringList param);
 
         /// <inheritdoc cref="GetStringList(Silk.NET.OpenAL.Device*,GetCaptureContextStringList)" />
         public IEnumerable<string> GetStringList(GetCaptureContextStringList param)
@@ -36,7 +38,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
             unsafe
             {
                 var result = GetStringList(null, param);
-                if (result == (char*) 0)
+                if (result == (byte*) 0)
                 {
                     return new List<string>();
                 }

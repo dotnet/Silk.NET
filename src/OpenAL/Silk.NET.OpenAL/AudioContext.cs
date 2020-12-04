@@ -16,7 +16,7 @@ namespace Silk.NET.OpenAL
     /// </summary>
     public sealed class AudioContext : IDisposable
     {
-        private static readonly ALContext ContextAPI = LibraryLoader.Load<ALContext>(new OpenALLibraryNameContainer());
+        private static readonly ALContext ContextAPI = ALContext.GetApi();
 
         private static readonly object AudioContextLock = new object();
 

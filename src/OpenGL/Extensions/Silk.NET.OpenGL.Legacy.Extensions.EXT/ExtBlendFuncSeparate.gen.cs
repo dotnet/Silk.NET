@@ -4,59 +4,74 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_blend_func_separate")]
-    public abstract unsafe partial class ExtBlendFuncSeparate : NativeExtension<GL>
+    public unsafe partial class ExtBlendFuncSeparate : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_func_separate";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sfactorRGB">
-        /// To be added.
-        /// </param>
-        /// <param name="dfactorRGB">
-        /// To be added.
-        /// </param>
-        /// <param name="sfactorAlpha">
-        /// To be added.
-        /// </param>
-        /// <param name="dfactorAlpha">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="sfactorRGB">
-        /// To be added.
-        /// </param>
-        /// <param name="dfactorRGB">
-        /// To be added.
-        /// </param>
-        /// <param name="sfactorAlpha">
-        /// To be added.
-        /// </param>
-        /// <param name="dfactorAlpha">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
-        public ExtBlendFuncSeparate(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] EXT sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] EXT dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] EXT sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] EXT dfactorAlpha);
+
+        [NativeApi(EntryPoint = "glBlendFuncSeparateEXT")]
+        public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+
+        public ExtBlendFuncSeparate(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

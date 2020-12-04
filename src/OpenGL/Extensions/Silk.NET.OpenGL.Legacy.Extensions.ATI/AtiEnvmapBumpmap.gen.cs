@@ -4,187 +4,72 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     [Extension("ATI_envmap_bumpmap")]
-    public abstract unsafe partial class AtiEnvmapBumpmap : NativeExtension<GL>
+    public unsafe partial class AtiEnvmapBumpmap : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_envmap_bumpmap";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
-        public abstract unsafe void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
-        public abstract void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int param);
+        public partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
+        public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* param);
+
+        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
+        public partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int param);
+
         [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
-        public abstract unsafe void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* param);
+        public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
-        public abstract void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float param);
+        public partial void GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
+        public unsafe partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* param);
+
+        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
+        public partial void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float param);
+
         [NativeApi(EntryPoint = "glTexBumpParameterivATI")]
-        public abstract unsafe void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glTexBumpParameterivATI")]
-        public abstract void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        public partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glTexBumpParameterivATI")]
+        public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+
+        [NativeApi(EntryPoint = "glTexBumpParameterivATI")]
+        public partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
+
         [NativeApi(EntryPoint = "glTexBumpParameterfvATI")]
-        public abstract unsafe void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+        public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glTexBumpParameterfvATI")]
-        public abstract void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param);
+        public partial void TexBumpParameter([Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
-        public abstract unsafe void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* param);
+        [NativeApi(EntryPoint = "glTexBumpParameterfvATI")]
+        public unsafe partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetTexBumpParameterivATI")]
-        public abstract void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int param);
+        [NativeApi(EntryPoint = "glTexBumpParameterfvATI")]
+        public partial void TexBumpParameter([Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float param);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
-        public abstract unsafe void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetTexBumpParameterfvATI")]
-        public abstract void GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float param);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         public unsafe int GetTexBumpParameter([Flow(FlowDirection.In)] ATI pname)
         {
             // ReturnTypeOverloader
@@ -193,26 +78,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
             return ret;
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="param">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        public unsafe int GetTexBumpParameter([Flow(FlowDirection.In)] GetTexBumpParameterATI pname)
-        {
-            // ReturnTypeOverloader
-            int ret = default;
-            GetTexBumpParameter(pname, &ret);
-            return ret;
-        }
-
-        public AtiEnvmapBumpmap(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AtiEnvmapBumpmap(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

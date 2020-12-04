@@ -42,6 +42,8 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 1. Make your commits in small, incremental steps with clear descriptions.
 1. Tag a maintainer when you're done and ask for a review!
 
+Some projects may not build properly without being configured to use Desktop MSBuild (i.e. the MSBuild shipped with Visual Studio). As a result, you will ideally need to be on Windows and have Visual Studio 2019 Community (or greater) installed with .NET Core and Xamarin workloads. If you don't have this (i.e. because you're on Linux or Mac), you can still develop Silk.NET in a limited capacity but you will not be able to work on mobile workloads.
+
 # Documentation
 
 Nothing here yet, but don't worry - we're working on it.
