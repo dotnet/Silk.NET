@@ -196,6 +196,41 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
+        /// Indexer for the rows of this matrix.
+        /// </summary>
+        /// <param name="i">The row to select. Zero based.</param>
+        public unsafe Vector4<T> this[int i]
+        {
+            get
+            {
+                static void VerifyBounds(int i)
+                {
+                    static void ThrowHelper() => throw new IndexOutOfRangeException();
+                    
+                    if (i > 3 || i < 0)
+                        ThrowHelper();
+                }
+                
+                VerifyBounds(i);
+                return Unsafe.Add(ref Row1, i);
+            }
+        }
+
+        /// <summary>
+        /// Indexer for the values in this matrix.
+        /// </summary>
+        /// <param name="i">The row to select. Zero based.</param>
+        /// <param name="j">The column to select. Zero based.</param>
+        public unsafe T this[int i, int j]
+        {
+            get
+            {
+                var row = this[i];
+                return row[j];
+            }
+        }
+
+        /// <summary>
         /// Constructs a Matrix4x4 from the given rows
         /// </summary>
         public Matrix4x4(Vector4<T> row1, Vector4<T> row2, Vector4<T> row3, Vector4<T> row4)

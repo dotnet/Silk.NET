@@ -54,6 +54,27 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns the vector (0,0,1).</summary>
         public static Vector3<T> UnitZ => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
+        
+        /// <summary>
+        /// Indexer for the components of this vector.
+        /// </summary>
+        /// <param name="i">The component to select. Zero based.</param>
+        public T this[int i]
+        {
+            get
+            {
+                static void VerifyBounds(int i)
+                {
+                    static void ThrowHelper() => throw new IndexOutOfRangeException();
+                    
+                    if (i > 2 || i < 0)
+                        ThrowHelper();
+                }
+                
+                VerifyBounds(i);
+                return Unsafe.Add(ref X, i);
+            }
+        }
 
         /// <summary>Adds two vectors together.</summary>
         /// <param name="left">The first source vector.</param>

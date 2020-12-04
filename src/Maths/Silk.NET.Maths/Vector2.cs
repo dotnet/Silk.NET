@@ -42,6 +42,27 @@ namespace Silk.NET.Maths
         /// <summary>Returns a vector whose 2 elements are equal to zero.</summary>
         public static Vector2<T> Zero => default;
 
+        /// <summary>
+        /// Indexer for the components of this vector.
+        /// </summary>
+        /// <param name="i">The component to select. Zero based.</param>
+        public T this[int i]
+        {
+            get
+            {
+                static void VerifyBounds(int i)
+                {
+                    static void ThrowHelper() => throw new IndexOutOfRangeException();
+                    
+                    if (i > 1 || i < 0)
+                        ThrowHelper();
+                }
+                
+                VerifyBounds(i);
+                return Unsafe.Add(ref X, i);
+            }
+        }
+
         /// <summary>Copies the elements of the vector to a specified array.</summary>
         /// <param name="array">The destination array.</param>
         /// <exception cref="ArgumentNullException"><paramref name="array"> is <c>null</c></paramref></exception>

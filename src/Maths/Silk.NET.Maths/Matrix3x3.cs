@@ -127,6 +127,41 @@ namespace Silk.NET.Maths
             readonly get => Row3.Z;
             set => Row3.Z = value;
         }
+        
+        /// <summary>
+        /// Indexer for the rows of this matrix.
+        /// </summary>
+        /// <param name="i">The row to select. Zero based.</param>
+        public unsafe Vector3<T> this[int i]
+        {
+            get
+            {
+                static void VerifyBounds(int i)
+                {
+                    static void ThrowHelper() => throw new IndexOutOfRangeException();
+                    
+                    if (i > 2 || i < 0)
+                        ThrowHelper();
+                }
+                
+                VerifyBounds(i);
+                return Unsafe.Add(ref Row1, i);
+            }
+        }
+
+        /// <summary>
+        /// Indexer for the values in this matrix.
+        /// </summary>
+        /// <param name="i">The row to select. Zero based.</param>
+        /// <param name="j">The column to select. Zero based.</param>
+        public unsafe T this[int i, int j]
+        {
+            get
+            {
+                var row = this[i];
+                return row[j];
+            }
+        }
 
         public Matrix3x3(Vector3<T> row1, Vector3<T> row2, Vector3<T> row3)
         {

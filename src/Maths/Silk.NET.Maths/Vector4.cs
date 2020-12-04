@@ -28,6 +28,27 @@ namespace Silk.NET.Maths
         /// <summary>The W component of the vector.</summary>
         [DataMember]
         public T W;
+        
+        /// <summary>
+        /// Indexer for the components of this vector.
+        /// </summary>
+        /// <param name="i">The component to select. Zero based.</param>
+        public T this[int i]
+        {
+            get
+            {
+                static void VerifyBounds(int i)
+                {
+                    static void ThrowHelper() => throw new IndexOutOfRangeException();
+                    
+                    if (i > 3 || i < 0)
+                        ThrowHelper();
+                }
+                
+                VerifyBounds(i);
+                return Unsafe.Add(ref X, i);
+            }
+        }
 
         /// <summary>Constructs a vector whose elements are all the single specified value.</summary>
         /// <param name="value">The element to fill the vector with.</param>
