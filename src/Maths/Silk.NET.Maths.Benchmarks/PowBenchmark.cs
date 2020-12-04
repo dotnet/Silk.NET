@@ -97,7 +97,7 @@ namespace Silk.NET.Maths.Benchmark
         [Benchmark]
         public float SilkInt()
         {
-            return Scalar.Pow<int>(X, Y);
+            return Scalar.Pow(X, Y);
         }
 
         private const int NumbersTested = 1;

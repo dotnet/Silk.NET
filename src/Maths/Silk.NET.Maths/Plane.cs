@@ -352,7 +352,7 @@ namespace Silk.NET.Maths
         public static Plane<T> Transform<T>(Plane<T> plane, Matrix4x4<T> matrix)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T>.Invert(matrix, out Matrix4x4<T> m);
+            Matrix4x4.Invert(matrix, out Matrix4x4<T> m);
 
             T x = plane.Normal.X, y = plane.Normal.Y, z = plane.Normal.Z, w = plane.Distance;
 

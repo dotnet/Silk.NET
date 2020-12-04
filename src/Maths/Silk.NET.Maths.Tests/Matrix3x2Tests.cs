@@ -563,7 +563,7 @@ namespace Silk.NET.Maths.Tests
 
             Matrix4x4<float> a44 = new Matrix4x4<float>(a);
             Matrix4x4<float> b44 = new Matrix4x4<float>(b);
-            Matrix4x4<float> expected44 = Matrix4x4<float>.Multiply(a44, b44);
+            Matrix4x4<float> expected44 = Matrix4x4.Multiply<float>(a44, b44);
             Matrix4x4<float> actual44 = new Matrix4x4<float>(actual);
 
             Assert.True(MathHelper.Equal(expected44, actual44), "Matrix3x2<float>.Multiply did not return the expected value.");

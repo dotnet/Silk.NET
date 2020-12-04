@@ -233,17 +233,17 @@ namespace Silk.NET.Maths.Tests
             target = Plane.Normalize(target);
 
             Matrix4x4<float> m =
-                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
             Plane<float> expected = new Plane<float>();
             Matrix4x4<float> inv;
-            Matrix4x4<float>.Invert(m, out inv);
-            Matrix4x4<float> itm = Matrix4x4<float>.Transpose(inv);
+            Matrix4x4.Invert(m, out inv);
+            Matrix4x4<float> itm = Matrix4x4.Transpose(inv);
             float x = target.Normal.X, y = target.Normal.Y, z = target.Normal.Z, w = target.Distance;
             expected.Normal = new Vector3<float>(
                 x * itm.M11 + y * itm.M21 + z * itm.M31 + w * itm.M41,
@@ -264,9 +264,9 @@ namespace Silk.NET.Maths.Tests
             target = Plane.Normalize(target);
 
             Matrix4x4<float> m =
-                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+                Matrix4x4.CreateRotationX(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationY(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationZ(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Plane<float> expected = new Plane<float>();

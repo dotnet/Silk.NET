@@ -468,9 +468,9 @@ namespace Silk.NET.Maths.Tests
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
             Matrix4x4<float> m =
-                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
@@ -505,9 +505,9 @@ namespace Silk.NET.Maths.Tests
         {
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
             Matrix4x4<float> m =
-                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
@@ -542,9 +542,9 @@ namespace Silk.NET.Maths.Tests
             Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
 
             Matrix4x4<float> m =
-                Matrix4x4<float>.CreateRotationX(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationY(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4<float>.CreateRotationZ(MathHelper.ToRadians(30.0f));
+                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector2<float> expected = Vector2.Transform(v, m);

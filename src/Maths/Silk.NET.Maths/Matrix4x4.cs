@@ -11,14 +11,6 @@ namespace Silk.NET.Maths
     public struct Matrix4x4<T> : IEquatable<Matrix4x4<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
-        private const float BillboardEpsilon = 1e-4f;
-#if MATHF
-        private const float BillboardMinAngle = 1.0f - (0.1f * (MathF.PI / 180.0f)); // 0.1 degrees
-#else
-private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0f)); // 0.1 degrees
-#endif
-        private const float DecomposeEpsilon = 0.0001f;
-
         private static readonly Matrix4x4<T> _identity = new
         (
             Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.Zero,
@@ -456,12 +448,373 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             );
         }
 
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
+        /// <param name="obj">The Object to compare against.</param>
+        /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public override readonly bool Equals(object? obj)
+            => (obj is Matrix4x4<T> other) && Equals(other);
+
+        /// <summary>Returns a boolean indicating whether this matrix instance is equal to the other given matrix.</summary>
+        /// <param name="other">The matrix to compare this instance to.</param>
+        /// <returns>True if the matrices are equal; False otherwise.</returns>
+        public readonly bool Equals(Matrix4x4<T> other)
+            => this == other;
+
+        /// <summary>Calculates the determinant of the matrix.</summary>
+        /// <returns>The determinant of the matrix.</returns>
+        public readonly T GetDeterminant()
+        {
+            // | a b c d |     | f g h |     | e g h |     | e f h |     | e f g |
+            // | e f g h | = a | j k l | - b | i k l | + c | i j l | - d | i j k |
+            // | i j k l |     | n o p |     | m o p |     | m n p |     | m n o |
+            // | m n o p |
+            //
+            //   | f g h |
+            // a | j k l | = a ( f ( kp - lo ) - g ( jp - ln ) + h ( jo - kn ) )
+            //   | n o p |
+            //
+            //   | e g h |
+            // b | i k l | = b ( e ( kp - lo ) - g ( ip - lm ) + h ( io - km ) )
+            //   | m o p |
+            //
+            //   | e f h |
+            // c | i j l | = c ( e ( jp - ln ) - f ( ip - lm ) + h ( in - jm ) )
+            //   | m n p |
+            //
+            //   | e f g |
+            // d | i j k | = d ( e ( jo - kn ) - f ( io - km ) + g ( in - jm ) )
+            //   | m n o |
+            //
+            // Cost of operation
+            // 17 adds and 28 muls.
+            //
+            // add: 6 + 8 + 3 = 17
+            // mul: 12 + 16 = 28
+
+            T a = M11, b = M12, c = M13, d = M14;
+            T e = M21, f = M22, g = M23, h = M24;
+            T i = M31, j = M32, k = M33, l = M34;
+            T m = M41, n = M42, o = M43, p = M44;
+
+            T kp_lo = Scalar.Subtract(Scalar.Multiply(k, p), Scalar.Multiply(l, o));
+            T jp_ln = Scalar.Subtract(Scalar.Multiply(j, p), Scalar.Multiply(l, n));
+            T jo_kn = Scalar.Subtract(Scalar.Multiply(j, o), Scalar.Multiply(k, n));
+            T ip_lm = Scalar.Subtract(Scalar.Multiply(i, p), Scalar.Multiply(l, m));
+            T io_km = Scalar.Subtract(Scalar.Multiply(i, o), Scalar.Multiply(k, m));
+            T in_jm = Scalar.Subtract(Scalar.Multiply(i, n), Scalar.Multiply(j, m));
+
+            return Scalar.Add(
+                Scalar.Subtract(
+                    Scalar.Multiply(a,
+                        Scalar.Add(
+                            Scalar.Subtract(Scalar.Multiply(f, kp_lo), Scalar.Multiply(g, jp_ln)),
+                            Scalar.Multiply(h, jo_kn))),
+                    Scalar.Multiply(b,
+                        Scalar.Add(
+                            Scalar.Subtract(Scalar.Multiply(e, kp_lo), Scalar.Multiply(g, ip_lm)),
+                            Scalar.Multiply(h, io_km)))),
+                Scalar.Subtract(
+                    Scalar.Multiply(c,
+                        Scalar.Add(
+                            Scalar.Subtract(Scalar.Multiply(e, jp_ln), Scalar.Multiply(f, ip_lm)),
+                            Scalar.Multiply(h, in_jm))),
+                    Scalar.Multiply(d,
+                        Scalar.Add(
+                            Scalar.Subtract(Scalar.Multiply(e, jo_kn), Scalar.Multiply(f, io_km)),
+                            Scalar.Multiply(g, in_jm)))));
+        }
+
+        /// <summary>Returns the hash code for this instance.</summary>
+        /// <returns>The hash code.</returns>   
+        public override readonly int GetHashCode()
+        {
+            HashCode hash = default;
+
+            hash.Add(M11);
+            hash.Add(M12);
+            hash.Add(M13);
+            hash.Add(M14);
+
+            hash.Add(M21);
+            hash.Add(M22);
+            hash.Add(M23);
+            hash.Add(M24);
+
+            hash.Add(M31);
+            hash.Add(M32);
+            hash.Add(M33);
+            hash.Add(M34);
+
+            hash.Add(M41);
+            hash.Add(M42);
+            hash.Add(M43);
+            hash.Add(M44);
+
+            return hash.ToHashCode();
+        }
+
+        /// <summary>Returns a String representing this matrix instance.</summary>
+        /// <returns>The string representation.</returns>
+        public override readonly string ToString()
+        {
+            return string.Format(CultureInfo.CurrentCulture, "{{ {{M11:{0} M12:{1} M13:{2} M14:{3}}} {{M21:{4} M22:{5} M23:{6} M24:{7}}} {{M31:{8} M32:{9} M33:{10} M34:{11}}} {{M41:{12} M42:{13} M43:{14} M44:{15}}} }}",
+                                 M11, M12, M13, M14,
+                                 M21, M22, M23, M24,
+                                 M31, M32, M33, M34,
+                                 M41, M42, M43, M44);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="Half"/> matrix</returns>
+        public static explicit operator Matrix4x4<Half>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, Half>(from.M11),Scalar.As<T, Half>(from.M12),
+                Scalar.As<T, Half>(from.M13),Scalar.As<T, Half>(from.M14),
+                Scalar.As<T, Half>(from.M21),Scalar.As<T, Half>(from.M22),
+                Scalar.As<T, Half>(from.M23),Scalar.As<T, Half>(from.M24),
+                Scalar.As<T, Half>(from.M31),Scalar.As<T, Half>(from.M32),
+                Scalar.As<T, Half>(from.M33),Scalar.As<T, Half>(from.M34),
+                Scalar.As<T, Half>(from.M41),Scalar.As<T, Half>(from.M42),
+                Scalar.As<T, Half>(from.M43),Scalar.As<T, Half>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="float"/> matrix</returns>
+        public static explicit operator Matrix4x4<float>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, float>(from.M11),Scalar.As<T, float>(from.M12),
+                Scalar.As<T, float>(from.M13),Scalar.As<T, float>(from.M14),
+                Scalar.As<T, float>(from.M21),Scalar.As<T, float>(from.M22),
+                Scalar.As<T, float>(from.M23),Scalar.As<T, float>(from.M24),
+                Scalar.As<T, float>(from.M31),Scalar.As<T, float>(from.M32),
+                Scalar.As<T, float>(from.M33),Scalar.As<T, float>(from.M34),
+                Scalar.As<T, float>(from.M41),Scalar.As<T, float>(from.M42),
+                Scalar.As<T, float>(from.M43),Scalar.As<T, float>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="double"/> matrix</returns>
+        public static explicit operator Matrix4x4<double>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, double>(from.M11),Scalar.As<T, double>(from.M12),
+                Scalar.As<T, double>(from.M13),Scalar.As<T, double>(from.M14),
+                Scalar.As<T, double>(from.M21),Scalar.As<T, double>(from.M22),
+                Scalar.As<T, double>(from.M23),Scalar.As<T, double>(from.M24),
+                Scalar.As<T, double>(from.M31),Scalar.As<T, double>(from.M32),
+                Scalar.As<T, double>(from.M33),Scalar.As<T, double>(from.M34),
+                Scalar.As<T, double>(from.M41),Scalar.As<T, double>(from.M42),
+                Scalar.As<T, double>(from.M43),Scalar.As<T, double>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="decimal"/> matrix</returns>
+        public static explicit operator Matrix4x4<decimal>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, decimal>(from.M11),Scalar.As<T, decimal>(from.M12),
+                Scalar.As<T, decimal>(from.M13),Scalar.As<T, decimal>(from.M14),
+                Scalar.As<T, decimal>(from.M21),Scalar.As<T, decimal>(from.M22),
+                Scalar.As<T, decimal>(from.M23),Scalar.As<T, decimal>(from.M24),
+                Scalar.As<T, decimal>(from.M31),Scalar.As<T, decimal>(from.M32),
+                Scalar.As<T, decimal>(from.M33),Scalar.As<T, decimal>(from.M34),
+                Scalar.As<T, decimal>(from.M41),Scalar.As<T, decimal>(from.M42),
+                Scalar.As<T, decimal>(from.M43),Scalar.As<T, decimal>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="sbyte"/> matrix</returns>
+        public static explicit operator Matrix4x4<sbyte>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, sbyte>(from.M11),Scalar.As<T, sbyte>(from.M12),
+                Scalar.As<T, sbyte>(from.M13),Scalar.As<T, sbyte>(from.M14),
+                Scalar.As<T, sbyte>(from.M21),Scalar.As<T, sbyte>(from.M22),
+                Scalar.As<T, sbyte>(from.M23),Scalar.As<T, sbyte>(from.M24),
+                Scalar.As<T, sbyte>(from.M31),Scalar.As<T, sbyte>(from.M32),
+                Scalar.As<T, sbyte>(from.M33),Scalar.As<T, sbyte>(from.M34),
+                Scalar.As<T, sbyte>(from.M41),Scalar.As<T, sbyte>(from.M42),
+                Scalar.As<T, sbyte>(from.M43),Scalar.As<T, sbyte>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="byte"/> matrix</returns>
+        public static explicit operator Matrix4x4<byte>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, byte>(from.M11),Scalar.As<T, byte>(from.M12),
+                Scalar.As<T, byte>(from.M13),Scalar.As<T, byte>(from.M14),
+                Scalar.As<T, byte>(from.M21),Scalar.As<T, byte>(from.M22),
+                Scalar.As<T, byte>(from.M23),Scalar.As<T, byte>(from.M24),
+                Scalar.As<T, byte>(from.M31),Scalar.As<T, byte>(from.M32),
+                Scalar.As<T, byte>(from.M33),Scalar.As<T, byte>(from.M34),
+                Scalar.As<T, byte>(from.M41),Scalar.As<T, byte>(from.M42),
+                Scalar.As<T, byte>(from.M43),Scalar.As<T, byte>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ushort"/> matrix</returns>
+        public static explicit operator Matrix4x4<ushort>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, ushort>(from.M11),Scalar.As<T, ushort>(from.M12),
+                Scalar.As<T, ushort>(from.M13),Scalar.As<T, ushort>(from.M14),
+                Scalar.As<T, ushort>(from.M21),Scalar.As<T, ushort>(from.M22),
+                Scalar.As<T, ushort>(from.M23),Scalar.As<T, ushort>(from.M24),
+                Scalar.As<T, ushort>(from.M31),Scalar.As<T, ushort>(from.M32),
+                Scalar.As<T, ushort>(from.M33),Scalar.As<T, ushort>(from.M34),
+                Scalar.As<T, ushort>(from.M41),Scalar.As<T, ushort>(from.M42),
+                Scalar.As<T, ushort>(from.M43),Scalar.As<T, ushort>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="short"/> matrix</returns>
+        public static explicit operator Matrix4x4<short>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, short>(from.M11),Scalar.As<T, short>(from.M12),
+                Scalar.As<T, short>(from.M13),Scalar.As<T, short>(from.M14),
+                Scalar.As<T, short>(from.M21),Scalar.As<T, short>(from.M22),
+                Scalar.As<T, short>(from.M23),Scalar.As<T, short>(from.M24),
+                Scalar.As<T, short>(from.M31),Scalar.As<T, short>(from.M32),
+                Scalar.As<T, short>(from.M33),Scalar.As<T, short>(from.M34),
+                Scalar.As<T, short>(from.M41),Scalar.As<T, short>(from.M42),
+                Scalar.As<T, short>(from.M43),Scalar.As<T, short>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="uint"/> matrix</returns>
+        public static explicit operator Matrix4x4<uint>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, uint>(from.M11),Scalar.As<T, uint>(from.M12),
+                Scalar.As<T, uint>(from.M13),Scalar.As<T, uint>(from.M14),
+                Scalar.As<T, uint>(from.M21),Scalar.As<T, uint>(from.M22),
+                Scalar.As<T, uint>(from.M23),Scalar.As<T, uint>(from.M24),
+                Scalar.As<T, uint>(from.M31),Scalar.As<T, uint>(from.M32),
+                Scalar.As<T, uint>(from.M33),Scalar.As<T, uint>(from.M34),
+                Scalar.As<T, uint>(from.M41),Scalar.As<T, uint>(from.M42),
+                Scalar.As<T, uint>(from.M43),Scalar.As<T, uint>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="int"/> matrix</returns>
+        public static explicit operator Matrix4x4<int>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, int>(from.M11),Scalar.As<T, int>(from.M12),
+                Scalar.As<T, int>(from.M13),Scalar.As<T, int>(from.M14),
+                Scalar.As<T, int>(from.M21),Scalar.As<T, int>(from.M22),
+                Scalar.As<T, int>(from.M23),Scalar.As<T, int>(from.M24),
+                Scalar.As<T, int>(from.M31),Scalar.As<T, int>(from.M32),
+                Scalar.As<T, int>(from.M33),Scalar.As<T, int>(from.M34),
+                Scalar.As<T, int>(from.M41),Scalar.As<T, int>(from.M42),
+                Scalar.As<T, int>(from.M43),Scalar.As<T, int>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="ulong"/> matrix</returns>
+        public static explicit operator Matrix4x4<ulong>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, ulong>(from.M11),Scalar.As<T, ulong>(from.M12),
+                Scalar.As<T, ulong>(from.M13),Scalar.As<T, ulong>(from.M14),
+                Scalar.As<T, ulong>(from.M21),Scalar.As<T, ulong>(from.M22),
+                Scalar.As<T, ulong>(from.M23),Scalar.As<T, ulong>(from.M24),
+                Scalar.As<T, ulong>(from.M31),Scalar.As<T, ulong>(from.M32),
+                Scalar.As<T, ulong>(from.M33),Scalar.As<T, ulong>(from.M34),
+                Scalar.As<T, ulong>(from.M41),Scalar.As<T, ulong>(from.M42),
+                Scalar.As<T, ulong>(from.M43),Scalar.As<T, ulong>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="long"/> matrix</returns>
+        public static explicit operator Matrix4x4<long>(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, long>(from.M11),Scalar.As<T, long>(from.M12),
+                Scalar.As<T, long>(from.M13),Scalar.As<T, long>(from.M14),
+                Scalar.As<T, long>(from.M21),Scalar.As<T, long>(from.M22),
+                Scalar.As<T, long>(from.M23),Scalar.As<T, long>(from.M24),
+                Scalar.As<T, long>(from.M31),Scalar.As<T, long>(from.M32),
+                Scalar.As<T, long>(from.M33),Scalar.As<T, long>(from.M34),
+                Scalar.As<T, long>(from.M41),Scalar.As<T, long>(from.M42),
+                Scalar.As<T, long>(from.M43),Scalar.As<T, long>(from.M44)
+            );
+    }
+
+    public static class Matrix4x4
+    {
+        private const float BillboardEpsilon = 1e-4f;
+#if MATHF
+        private const float BillboardMinAngle = 1.0f - (0.1f * (MathF.PI / 180.0f)); // 0.1 degrees
+#else
+private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0f)); // 0.1 degrees
+#endif
+        private const float DecomposeEpsilon = 0.0001f;
+        
+        private struct CanonicalBasis<T>
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        {
+            public Vector3<T> Row0;
+            public Vector3<T> Row1;
+            public Vector3<T> Row2;
+        };
+
+        private struct VectorBasis<T>
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        {
+            public unsafe Vector3<T>* Element0;
+            public unsafe Vector3<T>* Element1;
+            public unsafe Vector3<T>* Element2;
+        }
+        
         /// <summary>Adds two matrices together.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The resulting matrix.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix4x4<T> Add(Matrix4x4<T> value1, Matrix4x4<T> value2)
+        public static Matrix4x4<T> Add<T>(Matrix4x4<T> value1, Matrix4x4<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             return value1 + value2;
         }
@@ -472,7 +825,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="cameraUpVector">The up vector of the camera.</param>
         /// <param name="cameraForwardVector">The forward vector of the camera.</param>
         /// <returns>The created billboard matrix</returns>
-        public static Matrix4x4<T> CreateBillboard(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> cameraUpVector, Vector3<T> cameraForwardVector)
+        public static Matrix4x4<T> CreateBillboard<T>(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> cameraUpVector, Vector3<T> cameraForwardVector)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Vector3<T> zaxis = objectPosition - cameraPosition;
             var norm = zaxis.LengthSquared;
@@ -503,7 +857,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="cameraForwardVector">Forward vector of the camera.</param>
         /// <param name="objectForwardVector">Forward vector of the object.</param>
         /// <returns>The created billboard matrix.</returns>
-        public static Matrix4x4<T> CreateConstrainedBillboard(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> rotateAxis, Vector3<T> cameraForwardVector, Vector3<T> objectForwardVector)
+        public static Matrix4x4<T> CreateConstrainedBillboard<T>(Vector3<T> objectPosition, Vector3<T> cameraPosition, Vector3<T> rotateAxis, Vector3<T> cameraForwardVector, Vector3<T> objectForwardVector)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // Treat the case when object and camera positions are too close.
             Vector3<T> faceDir = objectPosition - cameraPosition;
@@ -560,7 +915,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="axis">The axis to rotate around.</param>
         /// <param name="angle">The angle to rotate around the given axis, in radians.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateFromAxisAngle(Vector3<T> axis, T angle)
+        public static Matrix4x4<T> CreateFromAxisAngle<T>(Vector3<T> axis, T angle)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // a: angle
             // x, y, z: unit vector for axis.
@@ -592,7 +948,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T xx = Scalar.Multiply(x, x), yy = Scalar.Multiply(y, y), zz = Scalar.Multiply(z, z);
             T xy = Scalar.Multiply(x, y), xz = Scalar.Multiply(x, z), yz = Scalar.Multiply(y, z);
 
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             result.M11 = Scalar.Add(xx, Scalar.Multiply(ca, Scalar.Subtract(Scalar<T>.One, xx)));
             result.M12 = Scalar.Add(Scalar.Subtract(xy, Scalar.Multiply(ca, xy)), Scalar.Multiply(sa, z));
@@ -612,9 +968,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Creates a rotation matrix from the given Quaternion rotation value.</summary>
         /// <param name="quaternion">The source Quaternion.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateFromQuaternion(Quaternion<T> quaternion)
+        public static Matrix4x4<T> CreateFromQuaternion<T>(Quaternion<T> quaternion)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T xx = Scalar.Multiply(quaternion.X, quaternion.X);
             T yy = Scalar.Multiply(quaternion.Y, quaternion.Y);
@@ -648,7 +1005,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="pitch">Angle of rotation, in radians, around the X-axis.</param>
         /// <param name="roll">Angle of rotation, in radians, around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateFromYawPitchRoll(T yaw, T pitch, T roll)
+        public static Matrix4x4<T> CreateFromYawPitchRoll<T>(T yaw, T pitch, T roll)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Quaternion<T> q = Quaternion<T>.CreateFromYawPitchRoll(yaw, pitch, roll);
             return CreateFromQuaternion(q);
@@ -659,13 +1017,14 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="cameraTarget">The target towards which the camera is pointing.</param>
         /// <param name="cameraUpVector">The direction that is "up" from the camera's point of view.</param>
         /// <returns>The view matrix.</returns>
-        public static Matrix4x4<T> CreateLookAt(Vector3<T> cameraPosition, Vector3<T> cameraTarget, Vector3<T> cameraUpVector)
+        public static Matrix4x4<T> CreateLookAt<T>(Vector3<T> cameraPosition, Vector3<T> cameraTarget, Vector3<T> cameraUpVector)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Vector3<T> zaxis = Vector3.Normalize(cameraPosition - cameraTarget);
             Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(cameraUpVector, zaxis));
             Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             result.M11 = xaxis.X;
             result.M12 = yaxis.X;
@@ -692,9 +1051,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="zNearPlane">Minimum Z-value of the view volume.</param>
         /// <param name="zFarPlane">Maximum Z-value of the view volume.</param>
         /// <returns>The orthographic projection matrix.</returns>
-        public static Matrix4x4<T> CreateOrthographic(T width, T height, T zNearPlane, T zFarPlane)
+        public static Matrix4x4<T> CreateOrthographic<T>(T width, T height, T zNearPlane, T zFarPlane)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             result.M11 = Scalar.Divide(Scalar<T>.Two, width);
             result.M22 = Scalar.Divide(Scalar<T>.Two, height);
@@ -712,9 +1072,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="zNearPlane">Minimum Z-value of the view volume.</param>
         /// <param name="zFarPlane">Maximum Z-value of the view volume.</param>
         /// <returns>The orthographic projection matrix.</returns>
-        public static Matrix4x4<T> CreateOrthographicOffCenter(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane)
+        public static Matrix4x4<T> CreateOrthographicOffCenter<T>(T left, T right, T bottom, T top, T zNearPlane, T zFarPlane)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             result.M11 = Scalar.Divide(Scalar<T>.Two, Scalar.Subtract(right, left));
 
@@ -735,7 +1096,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4x4<T> CreatePerspective(T width, T height, T nearPlaneDistance, T farPlaneDistance)
+        public static Matrix4x4<T> CreatePerspective<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             if (!Scalar.GreaterThan(nearPlaneDistance, Scalar<T>.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
@@ -773,7 +1135,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4x4<T> CreatePerspectiveFieldOfView(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
+        public static Matrix4x4<T> CreatePerspectiveFieldOfView<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             if (!Scalar.GreaterThan(fieldOfView, Scalar<T>.Zero) || Scalar.GreaterThanOrEqual(fieldOfView , Scalar<T>.Pi))
                 throw new ArgumentOutOfRangeException(nameof(fieldOfView));
@@ -817,7 +1180,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to of the far view plane.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4x4<T> CreatePerspectiveOffCenter(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
+        public static Matrix4x4<T> CreatePerspectiveOffCenter<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             if (!Scalar.GreaterThan(nearPlaneDistance, Scalar<T>.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
@@ -851,7 +1215,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Creates a Matrix that reflects the coordinate system about a specified Plane.</summary>
         /// <param name="value">The Plane about which to create a reflection.</param>
         /// <returns>A new matrix expressing the reflection.</returns>
-        public static Matrix4x4<T> CreateReflection(Plane<T> value)
+        public static Matrix4x4<T> CreateReflection<T>(Plane<T> value)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             value = Plane.Normalize(value);
 
@@ -863,7 +1228,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T fb = Scalar.Multiply(Scalar<T>.MinusTwo, b);
             T fc = Scalar.Multiply(Scalar<T>.MinusTwo, c);
 
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             result.M11 = Scalar.Add(Scalar.Multiply(fa, a), Scalar<T>.One);
             result.M12 = Scalar.Multiply(fb, a);
@@ -887,9 +1252,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Creates a matrix for rotating points around the X-axis.</summary>
         /// <param name="radians">The amount, in radians, by which to rotate around the X-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateRotationX(T radians)
+        public static Matrix4x4<T> CreateRotationX<T>(T radians)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -911,9 +1277,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="radians">The amount, in radians, by which to rotate around the X-axis.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateRotationX(T radians, Vector3<T> centerPoint)
+        public static Matrix4x4<T> CreateRotationX<T>(T radians, Vector3<T> centerPoint)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -939,9 +1306,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Creates a matrix for rotating points around the Y-axis.</summary>
         /// <param name="radians">The amount, in radians, by which to rotate around the Y-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateRotationY(T radians)
+        public static Matrix4x4<T> CreateRotationY<T>(T radians)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -962,9 +1330,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="radians">The amount, in radians, by which to rotate around the Y-axis.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateRotationY(T radians, Vector3<T> centerPoint)
+        public static Matrix4x4<T> CreateRotationY<T>(T radians, Vector3<T> centerPoint)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -989,9 +1358,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Creates a matrix for rotating points around the Z-axis.</summary>
         /// <param name="radians">The amount, in radians, by which to rotate around the Z-axis.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateRotationZ(T radians)
+        public static Matrix4x4<T> CreateRotationZ<T>(T radians)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -1012,9 +1382,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="radians">The amount, in radians, by which to rotate around the Z-axis.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The rotation matrix.</returns>
-        public static Matrix4x4<T> CreateRotationZ(T radians, Vector3<T> centerPoint)
+        public static Matrix4x4<T> CreateRotationZ<T>(T radians, Vector3<T> centerPoint)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
@@ -1041,9 +1412,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="yScale">Value to scale by on the Y-axis.</param>
         /// <param name="zScale">Value to scale by on the Z-axis.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix4x4<T> CreateScale(T xScale, T yScale, T zScale)
+        public static Matrix4x4<T> CreateScale<T>(T xScale, T yScale, T zScale)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
             result.M11 = xScale;
             result.M22 = yScale;
             result.M33 = zScale;
@@ -1056,9 +1428,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="zScale">Value to scale by on the Z-axis.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix4x4<T> CreateScale(T xScale, T yScale, T zScale, Vector3<T> centerPoint)
+        public static Matrix4x4<T> CreateScale<T>(T xScale, T yScale, T zScale, Vector3<T> centerPoint)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, xScale));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, yScale));
@@ -1076,9 +1449,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Creates a scaling matrix.</summary>
         /// <param name="scales">The vector containing the amount to scale by on each axis.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix4x4<T> CreateScale(Vector3<T> scales)
+        public static Matrix4x4<T> CreateScale<T>(Vector3<T> scales)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
             result.M11 = scales.X;
             result.M22 = scales.Y;
             result.M33 = scales.Z;
@@ -1089,9 +1463,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="scales">The vector containing the amount to scale by on each axis.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix4x4<T> CreateScale(Vector3<T> scales, Vector3<T> centerPoint)
+        public static Matrix4x4<T> CreateScale<T>(Vector3<T> scales, Vector3<T> centerPoint)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scales.X));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scales.Y));
@@ -1109,9 +1484,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Creates a uniform scaling matrix that scales equally on each axis.</summary>
         /// <param name="scale">The uniform scaling factor.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix4x4<T> CreateScale(T scale)
+        public static Matrix4x4<T> CreateScale<T>(T scale)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             result.M11 = scale;
             result.M22 = scale;
@@ -1124,9 +1500,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="scale">The uniform scaling factor.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>The scaling matrix.</returns>
-        public static Matrix4x4<T> CreateScale(T scale, Vector3<T> centerPoint)
+        public static Matrix4x4<T> CreateScale<T>(T scale, Vector3<T> centerPoint)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scale));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scale));
@@ -1147,7 +1524,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="lightDirection">The direction from which the light that will cast the shadow is coming.</param>
         /// <param name="plane">The Plane onto which the new matrix should flatten geometry so as to cast a shadow.</param>
         /// <returns>A new Matrix that can be used to flatten geometry onto the specified plane from the specified direction.</returns>
-        public static Matrix4x4<T> CreateShadow(Vector3<T> lightDirection, Plane<T> plane)
+        public static Matrix4x4<T> CreateShadow<T>(Vector3<T> lightDirection, Plane<T> plane)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Plane<T> p = Plane.Normalize(plane);
 
@@ -1157,7 +1535,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             T c = Scalar.Negate(p.Normal.Z);
             T d = Scalar.Negate(p.Distance);
 
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             result.M11 = Scalar.Add(Scalar.Multiply(a, lightDirection.X), dot);
             result.M21 = Scalar.Multiply(b, lightDirection.X);
@@ -1182,9 +1560,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Creates a translation matrix.</summary>
         /// <param name="position">The amount to translate in each axis.</param>
         /// <returns>The translation matrix.</returns>
-        public static Matrix4x4<T> CreateTranslation(Vector3<T> position)
+        public static Matrix4x4<T> CreateTranslation<T>(Vector3<T> position)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
             result.M41 = position.X;
             result.M42 = position.Y;
             result.M43 = position.Z;
@@ -1196,9 +1575,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="yPosition">The amount to translate on the Y-axis.</param>
         /// <param name="zPosition">The amount to translate on the Z-axis.</param>
         /// <returns>The translation matrix.</returns>
-        public static Matrix4x4<T> CreateTranslation(T xPosition, T yPosition, T zPosition)
+        public static Matrix4x4<T> CreateTranslation<T>(T xPosition, T yPosition, T zPosition)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;;
             result.M41 = xPosition;
             result.M42 = yPosition;
             result.M43 = zPosition;
@@ -1210,13 +1590,14 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="forward">Forward direction of the object.</param>
         /// <param name="up">Upward direction of the object; usually [0, 1, 0].</param>
         /// <returns>The world matrix.</returns>
-        public static Matrix4x4<T> CreateWorld(Vector3<T> position, Vector3<T> forward, Vector3<T> up)
+        public static Matrix4x4<T> CreateWorld<T>(Vector3<T> position, Vector3<T> forward, Vector3<T> up)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             Vector3<T> zaxis = Vector3.Normalize(-forward);
             Vector3<T> xaxis = Vector3.Normalize(Vector3.Cross(up, zaxis));
             Vector3<T> yaxis = Vector3.Cross(zaxis, xaxis);
 
-            Matrix4x4<T> result = Identity;
+            Matrix4x4<T> result = Matrix4x4<T>.Identity;;
 
             result.M11 = xaxis.X;
             result.M12 = xaxis.Y;
@@ -1243,7 +1624,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <returns>True if the source matrix could be inverted; False otherwise.</returns>
         ///
         [MethodImpl((MethodImplOptions)768)]
-        public static unsafe bool Invert(Matrix4x4<T> matrix, out Matrix4x4<T> result)
+        public static unsafe bool Invert<T>(Matrix4x4<T> matrix, out Matrix4x4<T> result)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // This implementation is based on the DirectX Math Library XMMatrixInverse method
             // https://github.com/microsoft/DirectXMath/blob/master/Inc/DirectXMathMatrix.inl
@@ -1592,7 +1974,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix4x4<T> Multiply(Matrix4x4<T> value1, Matrix4x4<T> value2)
+        public static Matrix4x4<T> Multiply<T>(Matrix4x4<T> value1, Matrix4x4<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
         
         /// <summary>Multiplies a vector by a matrix.</summary>
@@ -1600,7 +1983,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector4<T> Multiply(Vector4<T> value1, Matrix4x4<T> value2)
+        public static Vector4<T> Multiply<T>(Vector4<T> value1, Matrix4x4<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
         
         /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -1608,7 +1992,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix2x4<T> Multiply(Matrix2x4<T> value1, Matrix4x4<T> value2)
+        public static Matrix2x4<T> Multiply<T>(Matrix2x4<T> value1, Matrix4x4<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
         
         /// <summary>Multiplies a matrix by another matrix.</summary>
@@ -1616,7 +2001,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix4x2<T> Multiply(Matrix4x4<T> value1, Matrix4x2<T> value2)
+        public static Matrix4x2<T> Multiply<T>(Matrix4x4<T> value1, Matrix4x2<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>
@@ -1624,14 +2010,16 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value2">The scaling factor.</param>
         /// <returns>The scaled matrix.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix4x4<T> Multiply(Matrix4x4<T> value1, T value2)
+        public static Matrix4x4<T> Multiply<T>(Matrix4x4<T> value1, T value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
 
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix4x4<T> Negate(Matrix4x4<T> value)
+        public static Matrix4x4<T> Negate<T>(Matrix4x4<T> value)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => -value;
 
         /// <summary>Subtracts the second matrix from the first.</summary>
@@ -1639,7 +2027,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the subtraction.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Matrix4x4<T> Subtract(Matrix4x4<T> value1, Matrix4x4<T> value2)
+        public static Matrix4x4<T> Subtract<T>(Matrix4x4<T> value1, Matrix4x4<T> value2)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 - value2;
 
         /*[MethodImpl((MethodImplOptions)768)]
@@ -1667,7 +2056,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="rotation">The rotation component of the transformation matrix.</param>
         /// <param name="translation">The translation component of the transformation matrix</param>
         /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
-        public static bool Decompose(Matrix4x4<T> matrix, out Vector3<T> scale, out Quaternion<T> rotation, out Vector3<T> translation)
+        public static bool Decompose<T>(Matrix4x4<T> matrix, out Vector3<T> scale, out Quaternion<T> rotation, out Vector3<T> translation)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             bool result = true;
 
@@ -1678,11 +2068,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                     T* pfScales = (T*)scaleBase;
                     T det;
 
-                    VectorBasis vectorBasis;
+                    VectorBasis<T> vectorBasis;
                     Vector3<T>** pVectorBasis = (Vector3<T>**)&vectorBasis;
 
-                    Matrix4x4<T> matTemp = Identity;
-                    CanonicalBasis canonicalBasis = default;
+                    Matrix4x4<T> matTemp = Matrix4x4<T>.Identity;;
+                    CanonicalBasis<T> canonicalBasis = default;
                     Vector3<T>* pCanonicalBasis = &canonicalBasis.Row0;
 
                     canonicalBasis.Row0 = new Vector3<T>(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero);
@@ -1863,7 +2253,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="matrix2">The second source matrix.</param>
         /// <param name="amount">The relative weight of the second source matrix.</param>
         /// <returns>The interpolated matrix.</returns>
-        public static unsafe Matrix4x4<T> Lerp(Matrix4x4<T> matrix1, Matrix4x4<T> matrix2, T amount)
+        public static unsafe Matrix4x4<T> Lerp<T>(Matrix4x4<T> matrix1, Matrix4x4<T> matrix2, T amount)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             return new(
                     Vector4.Lerp(matrix1.Row1, matrix2.Row1, amount),
@@ -1877,7 +2268,8 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <param name="value">The source matrix to transform.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed matrix.</returns>
-        public static Matrix4x4<T> Transform(Matrix4x4<T> value, Quaternion<T> rotation)
+        public static Matrix4x4<T> Transform<T>(Matrix4x4<T> value, Quaternion<T> rotation)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             // Compute rotation matrix.
             T x2 = Scalar.Add(rotation.X, rotation.X);
@@ -1921,356 +2313,10 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
         /// <summary>Transposes the rows and columns of a matrix.</summary>
         /// <param name="matrix">The source matrix.</param>
         /// <returns>The transposed matrix.</returns>
-        public static unsafe Matrix4x4<T> Transpose(Matrix4x4<T> matrix)
+        public static unsafe Matrix4x4<T> Transpose<T>(Matrix4x4<T> matrix)
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             return new(matrix.Column1, matrix.Column2, matrix.Column3, matrix.Column4);
         }
-
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
-        /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public override readonly bool Equals(object? obj)
-            => (obj is Matrix4x4<T> other) && Equals(other);
-
-        /// <summary>Returns a boolean indicating whether this matrix instance is equal to the other given matrix.</summary>
-        /// <param name="other">The matrix to compare this instance to.</param>
-        /// <returns>True if the matrices are equal; False otherwise.</returns>
-        public readonly bool Equals(Matrix4x4<T> other)
-            => this == other;
-
-        /// <summary>Calculates the determinant of the matrix.</summary>
-        /// <returns>The determinant of the matrix.</returns>
-        public readonly T GetDeterminant()
-        {
-            // | a b c d |     | f g h |     | e g h |     | e f h |     | e f g |
-            // | e f g h | = a | j k l | - b | i k l | + c | i j l | - d | i j k |
-            // | i j k l |     | n o p |     | m o p |     | m n p |     | m n o |
-            // | m n o p |
-            //
-            //   | f g h |
-            // a | j k l | = a ( f ( kp - lo ) - g ( jp - ln ) + h ( jo - kn ) )
-            //   | n o p |
-            //
-            //   | e g h |
-            // b | i k l | = b ( e ( kp - lo ) - g ( ip - lm ) + h ( io - km ) )
-            //   | m o p |
-            //
-            //   | e f h |
-            // c | i j l | = c ( e ( jp - ln ) - f ( ip - lm ) + h ( in - jm ) )
-            //   | m n p |
-            //
-            //   | e f g |
-            // d | i j k | = d ( e ( jo - kn ) - f ( io - km ) + g ( in - jm ) )
-            //   | m n o |
-            //
-            // Cost of operation
-            // 17 adds and 28 muls.
-            //
-            // add: 6 + 8 + 3 = 17
-            // mul: 12 + 16 = 28
-
-            T a = M11, b = M12, c = M13, d = M14;
-            T e = M21, f = M22, g = M23, h = M24;
-            T i = M31, j = M32, k = M33, l = M34;
-            T m = M41, n = M42, o = M43, p = M44;
-
-            T kp_lo = Scalar.Subtract(Scalar.Multiply(k, p), Scalar.Multiply(l, o));
-            T jp_ln = Scalar.Subtract(Scalar.Multiply(j, p), Scalar.Multiply(l, n));
-            T jo_kn = Scalar.Subtract(Scalar.Multiply(j, o), Scalar.Multiply(k, n));
-            T ip_lm = Scalar.Subtract(Scalar.Multiply(i, p), Scalar.Multiply(l, m));
-            T io_km = Scalar.Subtract(Scalar.Multiply(i, o), Scalar.Multiply(k, m));
-            T in_jm = Scalar.Subtract(Scalar.Multiply(i, n), Scalar.Multiply(j, m));
-
-            return Scalar.Add(
-                Scalar.Subtract(
-                    Scalar.Multiply(a,
-                        Scalar.Add(
-                            Scalar.Subtract(Scalar.Multiply(f, kp_lo), Scalar.Multiply(g, jp_ln)),
-                            Scalar.Multiply(h, jo_kn))),
-                    Scalar.Multiply(b,
-                        Scalar.Add(
-                            Scalar.Subtract(Scalar.Multiply(e, kp_lo), Scalar.Multiply(g, ip_lm)),
-                            Scalar.Multiply(h, io_km)))),
-                Scalar.Subtract(
-                    Scalar.Multiply(c,
-                        Scalar.Add(
-                            Scalar.Subtract(Scalar.Multiply(e, jp_ln), Scalar.Multiply(f, ip_lm)),
-                            Scalar.Multiply(h, in_jm))),
-                    Scalar.Multiply(d,
-                        Scalar.Add(
-                            Scalar.Subtract(Scalar.Multiply(e, jo_kn), Scalar.Multiply(f, io_km)),
-                            Scalar.Multiply(g, in_jm)))));
-        }
-
-        /// <summary>Returns the hash code for this instance.</summary>
-        /// <returns>The hash code.</returns>   
-        public override readonly int GetHashCode()
-        {
-            HashCode hash = default;
-
-            hash.Add(M11);
-            hash.Add(M12);
-            hash.Add(M13);
-            hash.Add(M14);
-
-            hash.Add(M21);
-            hash.Add(M22);
-            hash.Add(M23);
-            hash.Add(M24);
-
-            hash.Add(M31);
-            hash.Add(M32);
-            hash.Add(M33);
-            hash.Add(M34);
-
-            hash.Add(M41);
-            hash.Add(M42);
-            hash.Add(M43);
-            hash.Add(M44);
-
-            return hash.ToHashCode();
-        }
-
-        /// <summary>Returns a String representing this matrix instance.</summary>
-        /// <returns>The string representation.</returns>
-        public override readonly string ToString()
-        {
-            return string.Format(CultureInfo.CurrentCulture, "{{ {{M11:{0} M12:{1} M13:{2} M14:{3}}} {{M21:{4} M22:{5} M23:{6} M24:{7}}} {{M31:{8} M32:{9} M33:{10} M34:{11}}} {{M41:{12} M42:{13} M43:{14} M44:{15}}} }}",
-                                 M11, M12, M13, M14,
-                                 M21, M22, M23, M24,
-                                 M31, M32, M33, M34,
-                                 M41, M42, M43, M44);
-        }
-        
-        private struct CanonicalBasis
-        {
-            public Vector3<T> Row0;
-            public Vector3<T> Row1;
-            public Vector3<T> Row2;
-        };
-
-        private struct VectorBasis
-        {
-            public unsafe Vector3<T>* Element0;
-            public unsafe Vector3<T>* Element1;
-            public unsafe Vector3<T>* Element2;
-        }
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="Half"/> matrix</returns>
-        public static explicit operator Matrix4x4<Half>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, Half>(from.M11),Scalar.As<T, Half>(from.M12),
-                Scalar.As<T, Half>(from.M13),Scalar.As<T, Half>(from.M14),
-                Scalar.As<T, Half>(from.M21),Scalar.As<T, Half>(from.M22),
-                Scalar.As<T, Half>(from.M23),Scalar.As<T, Half>(from.M24),
-                Scalar.As<T, Half>(from.M31),Scalar.As<T, Half>(from.M32),
-                Scalar.As<T, Half>(from.M33),Scalar.As<T, Half>(from.M34),
-                Scalar.As<T, Half>(from.M41),Scalar.As<T, Half>(from.M42),
-                Scalar.As<T, Half>(from.M43),Scalar.As<T, Half>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="float"/> matrix</returns>
-        public static explicit operator Matrix4x4<float>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, float>(from.M11),Scalar.As<T, float>(from.M12),
-                Scalar.As<T, float>(from.M13),Scalar.As<T, float>(from.M14),
-                Scalar.As<T, float>(from.M21),Scalar.As<T, float>(from.M22),
-                Scalar.As<T, float>(from.M23),Scalar.As<T, float>(from.M24),
-                Scalar.As<T, float>(from.M31),Scalar.As<T, float>(from.M32),
-                Scalar.As<T, float>(from.M33),Scalar.As<T, float>(from.M34),
-                Scalar.As<T, float>(from.M41),Scalar.As<T, float>(from.M42),
-                Scalar.As<T, float>(from.M43),Scalar.As<T, float>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="double"/> matrix</returns>
-        public static explicit operator Matrix4x4<double>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, double>(from.M11),Scalar.As<T, double>(from.M12),
-                Scalar.As<T, double>(from.M13),Scalar.As<T, double>(from.M14),
-                Scalar.As<T, double>(from.M21),Scalar.As<T, double>(from.M22),
-                Scalar.As<T, double>(from.M23),Scalar.As<T, double>(from.M24),
-                Scalar.As<T, double>(from.M31),Scalar.As<T, double>(from.M32),
-                Scalar.As<T, double>(from.M33),Scalar.As<T, double>(from.M34),
-                Scalar.As<T, double>(from.M41),Scalar.As<T, double>(from.M42),
-                Scalar.As<T, double>(from.M43),Scalar.As<T, double>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="decimal"/> matrix</returns>
-        public static explicit operator Matrix4x4<decimal>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, decimal>(from.M11),Scalar.As<T, decimal>(from.M12),
-                Scalar.As<T, decimal>(from.M13),Scalar.As<T, decimal>(from.M14),
-                Scalar.As<T, decimal>(from.M21),Scalar.As<T, decimal>(from.M22),
-                Scalar.As<T, decimal>(from.M23),Scalar.As<T, decimal>(from.M24),
-                Scalar.As<T, decimal>(from.M31),Scalar.As<T, decimal>(from.M32),
-                Scalar.As<T, decimal>(from.M33),Scalar.As<T, decimal>(from.M34),
-                Scalar.As<T, decimal>(from.M41),Scalar.As<T, decimal>(from.M42),
-                Scalar.As<T, decimal>(from.M43),Scalar.As<T, decimal>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="sbyte"/> matrix</returns>
-        public static explicit operator Matrix4x4<sbyte>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, sbyte>(from.M11),Scalar.As<T, sbyte>(from.M12),
-                Scalar.As<T, sbyte>(from.M13),Scalar.As<T, sbyte>(from.M14),
-                Scalar.As<T, sbyte>(from.M21),Scalar.As<T, sbyte>(from.M22),
-                Scalar.As<T, sbyte>(from.M23),Scalar.As<T, sbyte>(from.M24),
-                Scalar.As<T, sbyte>(from.M31),Scalar.As<T, sbyte>(from.M32),
-                Scalar.As<T, sbyte>(from.M33),Scalar.As<T, sbyte>(from.M34),
-                Scalar.As<T, sbyte>(from.M41),Scalar.As<T, sbyte>(from.M42),
-                Scalar.As<T, sbyte>(from.M43),Scalar.As<T, sbyte>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="byte"/> matrix</returns>
-        public static explicit operator Matrix4x4<byte>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, byte>(from.M11),Scalar.As<T, byte>(from.M12),
-                Scalar.As<T, byte>(from.M13),Scalar.As<T, byte>(from.M14),
-                Scalar.As<T, byte>(from.M21),Scalar.As<T, byte>(from.M22),
-                Scalar.As<T, byte>(from.M23),Scalar.As<T, byte>(from.M24),
-                Scalar.As<T, byte>(from.M31),Scalar.As<T, byte>(from.M32),
-                Scalar.As<T, byte>(from.M33),Scalar.As<T, byte>(from.M34),
-                Scalar.As<T, byte>(from.M41),Scalar.As<T, byte>(from.M42),
-                Scalar.As<T, byte>(from.M43),Scalar.As<T, byte>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="ushort"/> matrix</returns>
-        public static explicit operator Matrix4x4<ushort>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, ushort>(from.M11),Scalar.As<T, ushort>(from.M12),
-                Scalar.As<T, ushort>(from.M13),Scalar.As<T, ushort>(from.M14),
-                Scalar.As<T, ushort>(from.M21),Scalar.As<T, ushort>(from.M22),
-                Scalar.As<T, ushort>(from.M23),Scalar.As<T, ushort>(from.M24),
-                Scalar.As<T, ushort>(from.M31),Scalar.As<T, ushort>(from.M32),
-                Scalar.As<T, ushort>(from.M33),Scalar.As<T, ushort>(from.M34),
-                Scalar.As<T, ushort>(from.M41),Scalar.As<T, ushort>(from.M42),
-                Scalar.As<T, ushort>(from.M43),Scalar.As<T, ushort>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="short"/> matrix</returns>
-        public static explicit operator Matrix4x4<short>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, short>(from.M11),Scalar.As<T, short>(from.M12),
-                Scalar.As<T, short>(from.M13),Scalar.As<T, short>(from.M14),
-                Scalar.As<T, short>(from.M21),Scalar.As<T, short>(from.M22),
-                Scalar.As<T, short>(from.M23),Scalar.As<T, short>(from.M24),
-                Scalar.As<T, short>(from.M31),Scalar.As<T, short>(from.M32),
-                Scalar.As<T, short>(from.M33),Scalar.As<T, short>(from.M34),
-                Scalar.As<T, short>(from.M41),Scalar.As<T, short>(from.M42),
-                Scalar.As<T, short>(from.M43),Scalar.As<T, short>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="uint"/> matrix</returns>
-        public static explicit operator Matrix4x4<uint>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, uint>(from.M11),Scalar.As<T, uint>(from.M12),
-                Scalar.As<T, uint>(from.M13),Scalar.As<T, uint>(from.M14),
-                Scalar.As<T, uint>(from.M21),Scalar.As<T, uint>(from.M22),
-                Scalar.As<T, uint>(from.M23),Scalar.As<T, uint>(from.M24),
-                Scalar.As<T, uint>(from.M31),Scalar.As<T, uint>(from.M32),
-                Scalar.As<T, uint>(from.M33),Scalar.As<T, uint>(from.M34),
-                Scalar.As<T, uint>(from.M41),Scalar.As<T, uint>(from.M42),
-                Scalar.As<T, uint>(from.M43),Scalar.As<T, uint>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="int"/> matrix</returns>
-        public static explicit operator Matrix4x4<int>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, int>(from.M11),Scalar.As<T, int>(from.M12),
-                Scalar.As<T, int>(from.M13),Scalar.As<T, int>(from.M14),
-                Scalar.As<T, int>(from.M21),Scalar.As<T, int>(from.M22),
-                Scalar.As<T, int>(from.M23),Scalar.As<T, int>(from.M24),
-                Scalar.As<T, int>(from.M31),Scalar.As<T, int>(from.M32),
-                Scalar.As<T, int>(from.M33),Scalar.As<T, int>(from.M34),
-                Scalar.As<T, int>(from.M41),Scalar.As<T, int>(from.M42),
-                Scalar.As<T, int>(from.M43),Scalar.As<T, int>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="ulong"/> matrix</returns>
-        public static explicit operator Matrix4x4<ulong>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, ulong>(from.M11),Scalar.As<T, ulong>(from.M12),
-                Scalar.As<T, ulong>(from.M13),Scalar.As<T, ulong>(from.M14),
-                Scalar.As<T, ulong>(from.M21),Scalar.As<T, ulong>(from.M22),
-                Scalar.As<T, ulong>(from.M23),Scalar.As<T, ulong>(from.M24),
-                Scalar.As<T, ulong>(from.M31),Scalar.As<T, ulong>(from.M32),
-                Scalar.As<T, ulong>(from.M33),Scalar.As<T, ulong>(from.M34),
-                Scalar.As<T, ulong>(from.M41),Scalar.As<T, ulong>(from.M42),
-                Scalar.As<T, ulong>(from.M43),Scalar.As<T, ulong>(from.M44)
-            );
-        
-        /// <summary>
-        /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
-        /// </summary>
-        /// <param name="from">The source matrix</param>
-        /// <returns>The <see cref="long"/> matrix</returns>
-        public static explicit operator Matrix4x4<long>(Matrix4x4<T> from)
-            => new
-            (
-                Scalar.As<T, long>(from.M11),Scalar.As<T, long>(from.M12),
-                Scalar.As<T, long>(from.M13),Scalar.As<T, long>(from.M14),
-                Scalar.As<T, long>(from.M21),Scalar.As<T, long>(from.M22),
-                Scalar.As<T, long>(from.M23),Scalar.As<T, long>(from.M24),
-                Scalar.As<T, long>(from.M31),Scalar.As<T, long>(from.M32),
-                Scalar.As<T, long>(from.M33),Scalar.As<T, long>(from.M34),
-                Scalar.As<T, long>(from.M41),Scalar.As<T, long>(from.M42),
-                Scalar.As<T, long>(from.M43),Scalar.As<T, long>(from.M44)
-            );
     }
 }
