@@ -650,7 +650,10 @@ namespace Silk.NET.OpenCL
         MigrateMemObjectHost = 0x1,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
         MigrateMemObjectContentUndefined = 0x2,
+<<<<<<< HEAD
         [NativeName("Name", "CL_MEM_OBJECT_IMAGE2D_ARRAY")]
+=======
+>>>>>>> master
         MemObjectImage2DArray = 0x10F3,
         [NativeName("Name", "CL_MEM_OBJECT_IMAGE1D")]
         MemObjectImage1D = 0x10F4,
@@ -780,9 +783,13 @@ namespace Silk.NET.OpenCL
         MemSvmAtomics = 0x2048,
         [NativeName("Name", "CL_MEM_KERNEL_READ_AND_WRITE")]
         MemKernelReadAndWrite = 0x4096,
+<<<<<<< HEAD
         [NativeName("Name", "CL_DEPTH")]
         Depth = 0x10BD,
         [NativeName("Name", "CL_sRGB")]
+=======
+        Depth = 0x10BD,
+>>>>>>> master
         SRgb = 0x10BF,
         [NativeName("Name", "CL_sRGBx")]
         SRgbx = 0x10C0,

@@ -24,6 +24,7 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         ImportTypeDmaBufArm = 0x40B4,
         [NativeName("Name", "CL_IMPORT_TYPE_PROTECTED_ARM")]
         ImportTypeProtectedArm = 0x40B5,
+<<<<<<< HEAD
         [NativeName("Name", "CL_IMPORT_TYPE_ANDROID_HARDWARE_BUFFER_ARM")]
         ImportTypeAndroidHardwareBufferArm = 0x41E2,
         [NativeName("Name", "CL_IMPORT_DMA_BUF_DATA_CONSISTENCY_WITH_HOST_ARM")]
@@ -31,9 +32,15 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeName("Name", "CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM")]
         ImportMemoryWholeAllocationArm = -1,
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]
+=======
+        ImportTypeAndroidHardwareBufferArm = 0x41E2,
+        ImportDmaBufDataConsistencyWithHostArm = 0x41E3,
+        ImportMemoryWholeAllocationArm = -1,
+>>>>>>> master
         PrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]
         PrintfBuffersizeArm = 0x40B1,
+<<<<<<< HEAD
         [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_ARM")]
         DeviceSchedulingControlsCapabilitiesArm = 0x41E4,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_ARM")]
@@ -43,6 +50,12 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
         QueueKernelBatchingArm = 0x41E7,
         [NativeName("Name", "CL_DEVICE_SVM_CAPABILITIES_ARM")]
+=======
+        DeviceSchedulingControlsCapabilitiesArm = 0x41E4,
+        KernelExecInfoWorkgroupBatchSizeArm = 0x41E5,
+        KernelExecInfoWorkgroupBatchSizeModifierArm = 0x41E6,
+        QueueKernelBatchingArm = 0x41E7,
+>>>>>>> master
         DeviceSvmCapabilitiesArm = 0x40B6,
         [NativeName("Name", "CL_MEM_USES_SVM_POINTER_ARM")]
         MemUsesSvmPointerArm = 0x40B7,

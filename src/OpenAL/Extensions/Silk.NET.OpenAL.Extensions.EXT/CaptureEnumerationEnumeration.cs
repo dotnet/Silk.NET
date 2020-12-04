@@ -38,7 +38,11 @@ namespace Silk.NET.OpenAL.Extensions.EXT
             unsafe
             {
                 var result = GetStringList(null, param);
+<<<<<<< HEAD
                 if (result == (byte*) 0)
+=======
+                if (result == (char*) 0)
+>>>>>>> master
                 {
                     return new List<string>();
                 }

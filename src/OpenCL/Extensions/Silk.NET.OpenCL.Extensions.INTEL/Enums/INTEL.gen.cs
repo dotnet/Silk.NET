@@ -32,6 +32,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         AcceleratorTypeNotSupportedIntel = unchecked((int)0xFFFFFFFFFFFFFBB7),
         [NativeName("Name", "CL_DEVICE_ME_VERSION_INTEL")]
         DeviceMEVersionIntel = 0x407E,
+<<<<<<< HEAD
         [NativeName("Name", "CL_ME_VERSION_LEGACY_INTEL")]
         MEVersionLegacyIntel = 0x0,
         [NativeName("Name", "CL_ME_VERSION_ADVANCED_VER_1_INTEL")]
@@ -39,12 +40,21 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_ME_VERSION_ADVANCED_VER_2_INTEL")]
         MEVersionAdvancedVer2Intel = 0x2,
         [NativeName("Name", "CL_ME_CHROMA_INTRA_PREDICT_ENABLED_INTEL")]
+=======
+        MEVersionLegacyIntel = 0x0,
+        MEVersionAdvancedVer1Intel = 0x1,
+        MEVersionAdvancedVer2Intel = 0x2,
+>>>>>>> master
         MEChromaIntraPredictEnabledIntel = 0x1,
         [NativeName("Name", "CL_ME_LUMA_INTRA_PREDICT_ENABLED_INTEL")]
         MELumaIntraPredictEnabledIntel = 0x2,
+<<<<<<< HEAD
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_16x16_INTEL")]
         MESkipBlockType16x16Intel = 0x0,
         [NativeName("Name", "CL_ME_SKIP_BLOCK_TYPE_8x8_INTEL")]
+=======
+        MESkipBlockType16x16Intel = 0x0,
+>>>>>>> master
         MESkipBlockType8x8Intel = 0x1,
         [NativeName("Name", "CL_ME_COST_PENALTY_NONE_INTEL")]
         MECostPenaltyNoneIntel = 0x0,
@@ -90,7 +100,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         MEChromaPredictorModeVerticalIntel = 0x2,
         [NativeName("Name", "CL_ME_CHROMA_PREDICTOR_MODE_PLANE_INTEL")]
         MEChromaPredictorModePlaneIntel = 0x3,
+<<<<<<< HEAD
         [NativeName("Name", "CL_ME_FORWARD_INPUT_MODE_INTEL")]
+=======
+>>>>>>> master
         MEForwardInputModeIntel = 0x1,
         [NativeName("Name", "CL_ME_BACKWARD_INPUT_MODE_INTEL")]
         MEBackwardInputModeIntel = 0x2,
@@ -362,6 +375,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         CommandReleaseDX9ObjectsIntel = 0x402B,
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
         EglYuvPlaneIntel = 0x4107,
+<<<<<<< HEAD
         [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
         MemChannelIntel = 0x4213,
         [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
@@ -375,6 +389,14 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_ME_MB_TYPE_4x4_INTEL")]
         MEMBType4x4Intel = 0x2,
         [NativeName("Name", "CL_ME_SUBPIXEL_MODE_INTEGER_INTEL")]
+=======
+        MemChannelIntel = 0x4213,
+        MemForceHostMemoryIntel = 0x1048576,
+        AcceleratorTypeMotionEstimationIntel = 0x0,
+        MEMBType16x16Intel = 0x0,
+        MEMBType8x8Intel = 0x1,
+        MEMBType4x4Intel = 0x2,
+>>>>>>> master
         MESubpixelModeIntegerIntel = 0x0,
         [NativeName("Name", "CL_ME_SUBPIXEL_MODE_HPEL_INTEL")]
         MESubpixelModeHpelIntel = 0x1,

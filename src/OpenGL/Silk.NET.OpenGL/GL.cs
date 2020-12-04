@@ -19,6 +19,17 @@ namespace Silk.NET.OpenGL
 {
     public partial class GL
     {
+<<<<<<< HEAD
+=======
+        [Obsolete
+        (
+            "Parameterless GetApi calls are deprecated and will be removed in a future release. Please create" +
+            "your GL instances using a context"
+        )]  
+        public static GL GetApi()
+            => LibraryLoader<GL>.Load(new GLCoreLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
+
+>>>>>>> master
         /// <summary>
         ///     Creates a <see cref="GL" /> instance from an <see cref="IGLContextSource" />.
         /// </summary>
@@ -44,6 +55,20 @@ namespace Silk.NET.OpenGL
         ///     A <see cref="GL" /> instance.
         /// </returns>
         public static GL GetApi(IGLContext ctx) => GetApi((INativeContext) ctx);
+<<<<<<< HEAD
+
+        /// <summary>
+        ///     Creates a <see cref="GL" /> instance using a function that returns a native OpenGL context.
+        /// </summary>
+        /// <param name="getProcAddress">
+        /// <para>
+        ///     Function returning a native OpenGL context.
+        /// </para>
+        /// <para>
+        ///     The <c>string</c> parameter of the <paramref name="getProcAddress" /> function should be the name
+        ///     of the native function with needs to be called.
+        /// </para>
+=======
 
         /// <summary>
         ///     Creates a <see cref="GL" /> instance using a function that returns a native OpenGL context.
@@ -67,6 +92,19 @@ namespace Silk.NET.OpenGL
         /// </summary>
         /// <param name="ctx">
         ///     <see cref="INativeContext" /> to create <see cref="GL" /> from.
+>>>>>>> master
+        /// </param>
+        /// <returns>
+        ///     A <see cref="GL" /> instance.
+        /// </returns>
+<<<<<<< HEAD
+        public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
+
+        /// <summary>
+        ///     Creates a <see cref="GL" /> instance from an <see cref="INativeContext" />.
+        /// </summary>
+        /// <param name="ctx">
+        ///     <see cref="INativeContext" /> to create <see cref="GL" /> from.
         /// </param>
         /// <returns>
         ///     A <see cref="GL" /> instance.
@@ -74,6 +112,15 @@ namespace Silk.NET.OpenGL
         public static GL GetApi(INativeContext ctx) => new GL(ctx);
 
         /// <summary>
+=======
+        public static GL GetApi(INativeContext ctx) => LibraryActivator.CreateInstance<GL>
+        (
+            new GLCoreLibraryNameContainer().GetLibraryName(),
+            SilkManager.Get(ctx)
+        );
+
+        /// <summary>
+>>>>>>> master
         ///     Attempts to load a native OpenGL extension of type <typeparamref name="T" />.
         /// </summary>
         /// <param name="ext">
@@ -426,7 +473,11 @@ namespace Silk.NET.OpenGL
             length = (uint) lengthTmp;
 
             GetActiveUniform
+<<<<<<< HEAD
                 (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out string str);
+=======
+                (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out var str);
+>>>>>>> master
 
             return str.Substring(0, (int) length);
         }

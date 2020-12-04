@@ -115,9 +115,15 @@ namespace InputTest
                     gamepad.ButtonUp += InputGamepadOnButtonUp;
                     gamepad.ThumbstickMoved += GamepadOnThumbstickMoved;
                     gamepad.TriggerMoved += GamepadOnTriggerMoved;
+<<<<<<< HEAD
                     //Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
                     //GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
                     //Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
+=======
+                    Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
+                    GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
+                    Console.WriteLine("Button Count: " + count + " Expected Button Count: " + Enum.GetValues(typeof(GamepadButton)).Length);
+>>>>>>> master
                 }
                 else
                 {

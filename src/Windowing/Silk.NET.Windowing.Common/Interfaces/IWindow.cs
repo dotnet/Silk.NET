@@ -26,7 +26,11 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Gets the monitor on which this window is active.
         /// </summary>
+<<<<<<< HEAD
         IMonitor? Monitor { get; set; }
+=======
+        IMonitor Monitor { get; set; }
+>>>>>>> master
 
         /// <summary>
         /// Gets or sets whether the window has been requested to close.

@@ -33,6 +33,10 @@ dotnet_style_qualification_for_field = false:warning
 dotnet_style_qualification_for_method = false:warning
 dotnet_style_qualification_for_property = false:warning
 dotnet_style_require_accessibility_modifiers = for_non_interface_members:hint
+<<<<<<< HEAD
+=======
+csharp_style_expression_bodied_methods = false:hint
+>>>>>>> master
 csharp_style_inlined_variable_declaration = true:hint
 dotnet_sort_system_directives_first = true
 
@@ -61,6 +65,7 @@ resharper_invert_if_highlighting = none
 resharper_web_config_module_not_resolved_highlighting = warning
 resharper_web_config_type_not_resolved_highlighting = warning
 resharper_web_config_wrong_module_highlighting = warning
+<<<<<<< HEAD
 
 # Silk Touch options
 silk_touch_vtable_generate = true
@@ -72,3 +77,10 @@ silk_touch_vtable_preload = false
 indent_style = space
 indent_size = 4
 tab_width = 4
+=======
+
+[*.{appxmanifest, asax, ascx, aspx, build, config, cs, cshtml, csproj, dbml, discomap, dtd, fs, fsi, fsscript, fsx, htm, html, jsproj, lsproj, master, ml, mli, njsproj, nuspec, proj, props, razor, resw, resx, skin, StyleCop, targets, tasks, vb, vbproj, xaml, xamlx, xml, xoml, xsd}]
+indent_style = space
+indent_size = 4
+tab_width = 4
+>>>>>>> master

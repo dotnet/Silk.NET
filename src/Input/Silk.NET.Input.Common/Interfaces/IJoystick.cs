@@ -39,7 +39,11 @@ namespace Silk.NET.Input
         /// <remarks>
         /// This event is only called when the button is first pressed, and not every frame where the button is still pressed.
         /// </remarks>
+<<<<<<< HEAD
         event Action<IJoystick, Button>? ButtonDown;
+=======
+        event Action<IJoystick, Button> ButtonDown;
+>>>>>>> master
 
         /// <summary>
         /// Called when a button on this joystick is released.
@@ -47,12 +51,20 @@ namespace Silk.NET.Input
         /// <remarks>
         /// This event is only called when the button is first released, and not every frame where the button is still released.
         /// </remarks>
+<<<<<<< HEAD
         event Action<IJoystick, Button>? ButtonUp;
+=======
+        event Action<IJoystick, Button> ButtonUp;
+>>>>>>> master
 
         /// <summary>
         /// Called when an axis on this joystick is moved.
         /// </summary>
+<<<<<<< HEAD
         event Action<IJoystick, Axis>? AxisMoved;
+=======
+        event Action<IJoystick, Axis> AxisMoved;
+>>>>>>> master
 
         /// <summary>
         /// Called when a hat on this joystick is moved.

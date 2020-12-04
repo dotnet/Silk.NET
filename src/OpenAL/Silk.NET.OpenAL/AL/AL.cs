@@ -19,6 +19,14 @@ namespace Silk.NET.OpenAL
     [NativeApi(Prefix = "al")]
     public partial class AL : NativeAPI
     {
+<<<<<<< HEAD
+=======
+        static AL()
+        {
+            LibraryLoader.CreateBuilder<ALContext>(new ALLoader(null));
+        }
+
+>>>>>>> master
         /// <inheritdoc cref="NativeLibraryBase" />
         protected AL(INativeContext ctx)
             : base(ctx)
@@ -196,8 +204,13 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
+<<<<<<< HEAD
         public partial void SetSourceProperty(uint source, SourceBoolean param, [UnmanagedType(UnmanagedType.I4)] bool value);
         
+=======
+        public abstract void SetSourceProperty(uint source, SourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
+
+>>>>>>> master
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
         public partial void SetSourceProperty(uint source, SourceInteger param, int value);
@@ -208,8 +221,13 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourceiv")]
+<<<<<<< HEAD
         public unsafe partial void SetSourceProperty(uint source, SourceInteger param, int* value);
         
+=======
+        public abstract unsafe void SetSourceProperty(uint source, SourceInteger param, int* value);
+
+>>>>>>> master
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
         public partial void SetSourceProperty(uint source, SourceInteger param, uint value);
