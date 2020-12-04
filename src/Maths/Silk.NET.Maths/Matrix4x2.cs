@@ -468,10 +468,10 @@ namespace Silk.NET.Maths
         {
             return new
             (
-                Vector2<T>.Lerp(matrix1.Row1, matrix2.Row1, amount),
-                Vector2<T>.Lerp(matrix1.Row2, matrix2.Row2, amount),
-                Vector2<T>.Lerp(matrix1.Row3, matrix2.Row3, amount), 
-                Vector2<T>.Lerp(matrix1.Row4, matrix2.Row4, amount)
+                Vector2.Lerp(matrix1.Row1, matrix2.Row1, amount),
+                Vector2.Lerp(matrix1.Row2, matrix2.Row2, amount),
+                Vector2.Lerp(matrix1.Row3, matrix2.Row3, amount), 
+                Vector2.Lerp(matrix1.Row4, matrix2.Row4, amount)
             );
         }
 

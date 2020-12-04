@@ -110,7 +110,7 @@ namespace Silk.NET.Maths
         /// <returns>The calculated box.</returns>
         public Box2<T> GetInflated(Vector2<T> point)
         {
-            return new(Vector2<T>.Min(Min, point), Vector2<T>.Max(Max, point));
+            return new(Vector2.Min(Min, point), Vector2.Max(Max, point));
         }
 
         /// <summary>Returns a boolean indicating whether the given Box2 is equal to this Box2 instance.</summary>

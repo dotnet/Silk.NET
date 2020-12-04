@@ -673,9 +673,9 @@ namespace Silk.NET.Maths
         /// <returns>The interpolated matrix.</returns>
         public static Matrix3x2<T> Lerp(Matrix3x2<T> matrix1, Matrix3x2<T> matrix2, T amount)
         {
-            return new(Vector2<T>.Lerp(matrix1.Row1, matrix2.Row1, amount), 
-                Vector2<T>.Lerp(matrix1.Row2, matrix2.Row2, amount),
-                Vector2<T>.Lerp(matrix1.Row3, matrix2.Row3, amount));
+            return new(Vector2.Lerp(matrix1.Row1, matrix2.Row1, amount), 
+                Vector2.Lerp(matrix1.Row2, matrix2.Row2, amount),
+                Vector2.Lerp(matrix1.Row3, matrix2.Row3, amount));
         }
 
         /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>

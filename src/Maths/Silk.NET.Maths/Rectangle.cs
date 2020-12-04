@@ -124,8 +124,8 @@ namespace Silk.NET.Maths
         /// <returns>The calculated rectangle.</returns>
         public Rectangle<T> GetInflated(Vector2<T> point)
         {
-            var min = Vector2<T>.Min(Origin, point);
-            var max = Vector2<T>.Max(Max, point);
+            var min = Vector2.Min(Origin, point);
+            var max = Vector2.Max(Max, point);
             return new(min, max - min);
         }
 

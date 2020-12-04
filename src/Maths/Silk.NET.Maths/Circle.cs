@@ -59,7 +59,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector2<T> point)
         {
-            return Scalar.LessThanOrEqual(Vector2<T>.DistanceSquared(point, Center), Radius);
+            return Scalar.LessThanOrEqual(Vector2.DistanceSquared(point, Center), Radius);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a circle that touches the edge contained.</remarks>
         public bool Contains(Circle<T> other)
         {
-            var distanceSquared = Vector2<T>.DistanceSquared(Center, other.Center);
+            var distanceSquared = Vector2.DistanceSquared(Center, other.Center);
             var radiusDiff = Scalar.Subtract(Radius, other.Radius);
             return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
         }
@@ -82,7 +82,7 @@ namespace Silk.NET.Maths
         /// <returns>The distance squared.</returns>
         public T GetDistanceToNearestEdgeSquared(Vector2<T> point)
         {
-            return Scalar.Subtract(Vector2<T>.DistanceSquared(Center, point), SquaredRadius);
+            return Scalar.Subtract(Vector2.DistanceSquared(Center, point), SquaredRadius);
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Silk.NET.Maths
         /// <returns>The circle.</returns>
         public Circle<T> GetInflated(Vector2<T> point)
         {
-            return new(Center, Scalar.Max(Radius, Vector2<T>.Distance(Center, point)));
+            return new(Center, Scalar.Max(Radius, Vector2.Distance(Center, point)));
         }
 
         /// <summary>Returns a boolean indicating whether the given Circle is equal to this Circle instance.</summary>

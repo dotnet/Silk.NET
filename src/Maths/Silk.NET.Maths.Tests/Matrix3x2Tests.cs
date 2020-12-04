@@ -849,16 +849,16 @@ namespace Silk.NET.Maths.Tests
             actual = Matrix3x2<float>.CreateSkew(MathHelper.Pi / 8, 0);
             Assert.True(MathHelper.Equal(expected, actual));
 
-            Vector2<float> result = Vector2<float>.Transform(new Vector2<float>(0, 0), actual);
+            Vector2<float> result = Vector2.Transform(new Vector2<float>(0, 0), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(0, 0), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(0, 1), actual);
+            result = Vector2.Transform(new Vector2<float>(0, 1), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(0.414213568f, 1), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(0, -1), actual);
+            result = Vector2.Transform(new Vector2<float>(0, -1), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(-0.414213568f, -1), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(3, 10), actual);
+            result = Vector2.Transform(new Vector2<float>(3, 10), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(7.14213568f, 10), result));
         }
 
@@ -874,16 +874,16 @@ namespace Silk.NET.Maths.Tests
             actual = Matrix3x2<float>.CreateSkew(0, MathHelper.Pi / 8);
             Assert.True(MathHelper.Equal(expected, actual));
 
-            Vector2<float> result = Vector2<float>.Transform(new Vector2<float>(0, 0), actual);
+            Vector2<float> result = Vector2.Transform(new Vector2<float>(0, 0), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(0, 0), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(1, 0), actual);
+            result = Vector2.Transform(new Vector2<float>(1, 0), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(1, 0.414213568f), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(-1, 0), actual);
+            result = Vector2.Transform(new Vector2<float>(-1, 0), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(-1, -0.414213568f), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(10, 3), actual);
+            result = Vector2.Transform(new Vector2<float>(10, 3), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(10, 7.14213568f), result));
         }
 
@@ -895,16 +895,16 @@ namespace Silk.NET.Maths.Tests
             Matrix3x2<float> actual = Matrix3x2<float>.CreateSkew(MathHelper.Pi / 4, -MathHelper.Pi / 8);
             Assert.True(MathHelper.Equal(expected, actual));
 
-            Vector2<float> result = Vector2<float>.Transform(new Vector2<float>(0, 0), actual);
+            Vector2<float> result = Vector2.Transform(new Vector2<float>(0, 0), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(0, 0), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(1, 0), actual);
+            result = Vector2.Transform(new Vector2<float>(1, 0), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(1, -0.414213562373095f), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(0, 1), actual);
+            result = Vector2.Transform(new Vector2<float>(0, 1), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(1, 1), result));
 
-            result = Vector2<float>.Transform(new Vector2<float>(1, 1), actual);
+            result = Vector2.Transform(new Vector2<float>(1, 1), actual);
             Assert.True(MathHelper.Equal(new Vector2<float>(2, 0.585786437626905f), result));
         }
 
