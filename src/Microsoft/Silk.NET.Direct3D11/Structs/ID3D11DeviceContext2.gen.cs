@@ -1380,19 +1380,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Core.Native.TagRect* pRects)
+        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Rectangle<long>* pRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[45])(@this, NumRects, pRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[45])(@this, NumRects, pRects);
         }
 
         /// <summary>To be added.</summary>
-        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Core.Native.TagRect pRects)
+        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
             }
         }
 
@@ -3248,41 +3248,41 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Core.Native.TagRect* pRects)
+        public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Maths.Rectangle<long>* pRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[96])(@this, pNumRects, pRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRects, pRects);
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Core.Native.TagRect pRects)
+        public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Core.Native.TagRect* pRects)
+        public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Maths.Rectangle<long>* pRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumRectsPtr = &pNumRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Core.Native.TagRect pRects)
+        public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumRectsPtr = &pNumRects)
             {
-                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint*, Silk.NET.Core.Native.TagRect*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
                 }
             }
         }
@@ -5149,133 +5149,133 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Core.Native.TagRect* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pView, Color, pRect, NumRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRect, NumRects);
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Core.Native.TagRect pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Core.Native.TagRect* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorPtr = &Color)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Core.Native.TagRect pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorPtr = &Color)
             {
-                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Core.Native.TagRect* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Core.Native.TagRect pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
             {
-                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Core.Native.TagRect* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
             {
                 fixed (float* ColorPtr = &Color)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Core.Native.TagRect pRect, uint NumRects)
+        public readonly void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
             {
                 fixed (float* ColorPtr = &Color)
                 {
-                    fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+                    fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
                     }
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, Silk.NET.Core.Native.TagRect* pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, Silk.NET.Maths.Rectangle<long>* pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceView, pRects, NumRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRects, NumRects);
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, ref Silk.NET.Core.Native.TagRect pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, ref Silk.NET.Maths.Rectangle<long> pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void DiscardView1(ref ID3D11View pResourceView, Silk.NET.Core.Native.TagRect* pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ref ID3D11View pResourceView, Silk.NET.Maths.Rectangle<long>* pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pResourceViewPtr = &pResourceView)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly void DiscardView1(ref ID3D11View pResourceView, ref Silk.NET.Core.Native.TagRect pRects, uint NumRects)
+        public readonly void DiscardView1(ref ID3D11View pResourceView, ref Silk.NET.Maths.Rectangle<long> pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pResourceViewPtr = &pResourceView)
             {
-                fixed (Silk.NET.Core.Native.TagRect* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Core.Native.TagRect*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
                 }
             }
         }

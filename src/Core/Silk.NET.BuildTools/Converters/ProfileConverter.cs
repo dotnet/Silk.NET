@@ -22,13 +22,25 @@ namespace Silk.NET.BuildTools.Converters
         {
             var obj = reader.Load(input);
             Console.WriteLine("Reading enums...");
-            var enums = reader.ReadEnums(obj, task).OrderBy(x => x.Name).ToArray();
+            var enums = reader.ReadEnums(obj, task)
+                .OrderBy(x => x.Name)
+                .Where(x => task.ExcludedNativeNames is null || !task.ExcludedNativeNames.Contains(x.NativeName))
+                .ToArray();
             Console.WriteLine("Reading functions...");
-            var functions = reader.ReadFunctions(obj, task).OrderBy(x => x.Name).ToArray();
+            var functions = reader.ReadFunctions(obj, task)
+                .OrderBy(x => x.Name)
+                .Where(x => task.ExcludedNativeNames is null || !task.ExcludedNativeNames.Contains(x.NativeName))
+                .ToArray();
             Console.WriteLine("Reading structs...");
-            var structs = reader.ReadStructs(obj, task).OrderBy(x => x.Name).ToArray();
+            var structs = reader.ReadStructs(obj, task)
+                .OrderBy(x => x.Name)
+                .Where(x => task.ExcludedNativeNames is null || !task.ExcludedNativeNames.Contains(x.NativeName))
+                .ToArray();
             Console.WriteLine("Reading constants...");
-            var constants = reader.ReadConstants(obj, task).OrderBy(x => x.Name).ToArray();
+            var constants = reader.ReadConstants(obj, task)
+                .OrderBy(x => x.Name)
+                .Where(x => task.ExcludedNativeNames is null || !task.ExcludedNativeNames.Contains(x.NativeName))
+                .ToArray();
             Console.WriteLine("Creating profiles...");
             var profiles = enums.Select(x => (x.ProfileName, x.ProfileVersion))
                 .Concat(functions.Select(x => (x.ProfileName, x.ProfileVersion)))

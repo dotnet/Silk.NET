@@ -4,9 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
@@ -22,8 +22,8 @@ namespace Silk.NET.Windowing
         public WindowOptions(ViewOptions opts)
         {
             IsVisible = true;
-            Position = new Point(50, 50);
-            Size = new Size(1280, 720);
+            Position = new Vector2<int>(50, 50);
+            Size = new Vector2<int>(1280, 720);
             FramesPerSecond = opts.FramesPerSecond;
             UpdatesPerSecond = opts.UpdatesPerSecond;
             API = opts.API;
@@ -54,10 +54,10 @@ namespace Silk.NET.Windowing
         public int? PreferredDepthBufferBits { get; set; }
 
         /// <inheritdoc />
-        public Point Position { get; set; }
+        public Vector2<int> Position { get; set; }
 
         /// <inheritdoc cref="IWindowProperties" />
-        public Size Size { get; set; }
+        public Vector2<int> Size { get; set; }
 
         /// <inheritdoc />
         public double FramesPerSecond { get; set; }
@@ -89,8 +89,8 @@ namespace Silk.NET.Windowing
         public WindowOptions
         (
             bool isVisible,
-            Point position,
-            Size size,
+            Vector2<int> position,
+            Vector2<int> size,
             double framesPerSecond,
             double updatesPerSecond,
             GraphicsAPI api,
@@ -135,14 +135,14 @@ namespace Silk.NET.Windowing
             
             Default = new WindowOptions
             (
-                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
+                true, new Vector2<int>(50, 50), new Vector2<int>(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
                 name, WindowState.Normal,
                 WindowBorder.Resizable, true, true, VideoMode.Default
             );
 
             DefaultVulkan = new WindowOptions
             (
-                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
+                true, new Vector2<int>(50, 50), new Vector2<int>(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
                 name, WindowState.Normal,
                 WindowBorder.Resizable, false, false, VideoMode.Default
             );

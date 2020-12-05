@@ -492,22 +492,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int ReleaseDC(Silk.NET.Core.Native.TagRect* pDirtyRect)
+        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Rectangle<long>* pDirtyRect)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[12])(@this, pDirtyRect);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[12])(@this, pDirtyRect);
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly int ReleaseDC(ref Silk.NET.Core.Native.TagRect pDirtyRect)
+        public readonly int ReleaseDC(ref Silk.NET.Maths.Rectangle<long> pDirtyRect)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Core.Native.TagRect* pDirtyRectPtr = &pDirtyRect)
+            fixed (Silk.NET.Maths.Rectangle<long>* pDirtyRectPtr = &pDirtyRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
             }
             return ret;
         }

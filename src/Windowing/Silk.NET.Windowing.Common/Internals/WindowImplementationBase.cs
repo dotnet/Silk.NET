@@ -6,6 +6,7 @@
 using System;
 using System.Drawing;
 using Silk.NET.Core;
+using Silk.NET.Maths;
 
 
 namespace Silk.NET.Windowing.Internals
@@ -28,19 +29,19 @@ namespace Silk.NET.Windowing.Internals
 
         // Property bases - these have extra functionality baked into their getters and setters
         protected abstract bool CoreIsVisible { get; set; }
-        protected abstract Point CorePosition { get; set; }
+        protected abstract Vector2<int> CorePosition { get; set; }
         protected abstract string CoreTitle { get; set; }
         protected abstract WindowState CoreWindowState { get; set; }
         protected abstract WindowBorder CoreWindowBorder { get; set; }
         protected abstract bool IsClosingSettable { set; }
-        protected abstract Size SizeSettable { set; }
-        protected abstract Rectangle CoreBorderSize { get; }
+        protected abstract Vector2<int> SizeSettable { set; }
+        protected abstract Rectangle<int> CoreBorderSize { get; }
 
         // Function bases - again extra functionality on top
         protected abstract void CoreInitialize(WindowOptions opts);
 
         // Events
-        public abstract event Action<Point>? Move;
+        public abstract event Action<Vector2<int>>? Move;
         public abstract event Action<WindowState>? StateChanged;
         public abstract event Action<string[]>? FileDrop;
 
@@ -51,8 +52,8 @@ namespace Silk.NET.Windowing.Internals
         public abstract void SetWindowIcon(ReadOnlySpan<RawImage> icons);
 
         // Cache updates for dervied classes
-        protected void UpdatePosition(Point point) => ExtendedOptionsCache.Position = point;
-        protected void UpdateSize(Size size) => ExtendedOptionsCache.Size = size;
+        protected void UpdatePosition(Vector2<int> point) => ExtendedOptionsCache.Position = point;
+        protected void UpdateSize(Vector2<int> size) => ExtendedOptionsCache.Size = size;
         protected void UpdateState(WindowState state) => ExtendedOptionsCache.WindowState = state;
 
         // Lifetime controls
@@ -70,18 +71,18 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Point transformations
-        public override Point PointToClient(Point point)
+        public override Vector2<int> PointToClient(Vector2<int> point)
         {
-            return new Point(point.X - Position.X, point.Y - Position.Y);
+            return new Vector2<int>(point.X - Position.X, point.Y - Position.Y);
         }
 
-        public override Point PointToScreen(Point point)
+        public override Vector2<int> PointToScreen(Vector2<int> point)
         {
-            return new Point(point.X + Position.X, point.Y + Position.Y);
+            return new Vector2<int>(point.X + Position.X, point.Y + Position.Y);
         }
 
         // Properties with different accessors on IWindow than on IView
-        Size IWindowProperties.Size
+        Vector2<int> IWindowProperties.Size
         {
             get => IsInitialized ? ExtendedOptionsCache.Size = CoreSize : ExtendedOptionsCache.Size;
             set
@@ -115,7 +116,7 @@ namespace Silk.NET.Windowing.Internals
             }
         }
 
-        public Point Position
+        public Vector2<int> Position
         {
             get => IsInitialized ? ExtendedOptionsCache.Position = CorePosition : ExtendedOptionsCache.Position;
             set
@@ -177,6 +178,6 @@ namespace Silk.NET.Windowing.Internals
 
         // Other property implementations
         public bool TransparentFramebuffer => ExtendedOptionsCache.TransparentFramebuffer;
-        public Rectangle BorderSize => IsInitialized ? CoreBorderSize : default;
+        public Rectangle<int> BorderSize => IsInitialized ? CoreBorderSize : default;
     }
 }

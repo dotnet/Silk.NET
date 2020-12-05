@@ -561,48 +561,48 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int LockRect(uint Level, LockedRect* pLockedRect, Silk.NET.Core.Native.TagRect* pRect, uint Flags)
+        public readonly unsafe int LockRect(uint Level, LockedRect* pLockedRect, Silk.NET.Maths.Rectangle<long>* pRect, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Core.Native.TagRect*, uint, int>)LpVtbl[19])(@this, Level, pLockedRect, pRect, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Rectangle<long>*, uint, int>)LpVtbl[19])(@this, Level, pLockedRect, pRect, Flags);
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int LockRect(uint Level, LockedRect* pLockedRect, ref Silk.NET.Core.Native.TagRect pRect, uint Flags)
+        public readonly unsafe int LockRect(uint Level, LockedRect* pLockedRect, ref Silk.NET.Maths.Rectangle<long> pRect, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Core.Native.TagRect*, uint, int>)LpVtbl[19])(@this, Level, pLockedRect, pRectPtr, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Rectangle<long>*, uint, int>)LpVtbl[19])(@this, Level, pLockedRect, pRectPtr, Flags);
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int LockRect(uint Level, ref LockedRect pLockedRect, Silk.NET.Core.Native.TagRect* pRect, uint Flags)
+        public readonly unsafe int LockRect(uint Level, ref LockedRect pLockedRect, Silk.NET.Maths.Rectangle<long>* pRect, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (LockedRect* pLockedRectPtr = &pLockedRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Core.Native.TagRect*, uint, int>)LpVtbl[19])(@this, Level, pLockedRectPtr, pRect, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Rectangle<long>*, uint, int>)LpVtbl[19])(@this, Level, pLockedRectPtr, pRect, Flags);
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly int LockRect(uint Level, ref LockedRect pLockedRect, ref Silk.NET.Core.Native.TagRect pRect, uint Flags)
+        public readonly int LockRect(uint Level, ref LockedRect pLockedRect, ref Silk.NET.Maths.Rectangle<long> pRect, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (LockedRect* pLockedRectPtr = &pLockedRect)
             {
-                fixed (Silk.NET.Core.Native.TagRect* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Core.Native.TagRect*, uint, int>)LpVtbl[19])(@this, Level, pLockedRectPtr, pRectPtr, Flags);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Rectangle<long>*, uint, int>)LpVtbl[19])(@this, Level, pLockedRectPtr, pRectPtr, Flags);
                 }
             }
             return ret;
@@ -618,22 +618,22 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int AddDirtyRect(Silk.NET.Core.Native.TagRect* pDirtyRect)
+        public readonly unsafe int AddDirtyRect(Silk.NET.Maths.Rectangle<long>* pDirtyRect)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[21])(@this, pDirtyRect);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[21])(@this, pDirtyRect);
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly int AddDirtyRect(ref Silk.NET.Core.Native.TagRect pDirtyRect)
+        public readonly int AddDirtyRect(ref Silk.NET.Maths.Rectangle<long> pDirtyRect)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Core.Native.TagRect* pDirtyRectPtr = &pDirtyRect)
+            fixed (Silk.NET.Maths.Rectangle<long>* pDirtyRectPtr = &pDirtyRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Silk.NET.Core.Native.TagRect*, int>)LpVtbl[21])(@this, pDirtyRectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[21])(@this, pDirtyRectPtr);
             }
             return ret;
         }

@@ -4,7 +4,9 @@ using Silk.NET.Windowing;
 using System;
 using System.Drawing;
 using System.Linq;
-using System.Numerics;
+using Silk.NET.Maths;
+using Matrix4x4 = System.Numerics.Matrix4x4;
+using Vector3 = System.Numerics.Vector3;
 
 namespace Tutorial
 {
@@ -98,10 +100,10 @@ namespace Tutorial
 
             var options = new WindowOptions
             (
-                true, new Point(50, 50), new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default, "Silk.NET Window AOT",
+                true, new(50, 50), new(1280, 720), 0.0, 0.0, GraphicsAPI.Default, "Silk.NET Window AOT",
                 WindowState.Normal, WindowBorder.Resizable, true, true, VideoMode.Default
             );
-            options.Size = new Size(800, 600);
+            options.Size = new Vector2<int>(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
 

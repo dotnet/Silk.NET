@@ -75,7 +75,7 @@ namespace MonitorPlayground
                     window.Close();
                 }
 
-                input.Mice[0].Position = new PointF(window.Size.Width / 2f, window.Size.Height / 2f);
+                input.Mice[0].Position = new PointF(window.Size.X / 2f, window.Size.Y / 2f);
             };
 
             window.Run();

@@ -24,7 +24,7 @@ namespace Silk.NET.Direct3D12
         public DiscardRegion
         (
             uint? numRects = null,
-            Silk.NET.Core.Native.TagRect* pRects = null,
+            Silk.NET.Maths.Rectangle<long>* pRects = null,
             uint? firstSubresource = null,
             uint? numSubresources = null
         ) : this()
@@ -59,7 +59,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "const D3D12_RECT *")]
         [NativeName("Type.Name", "const D3D12_RECT *")]
         [NativeName("Name", "pRects")]
-        public Silk.NET.Core.Native.TagRect* PRects;
+        public Silk.NET.Maths.Rectangle<long>* PRects;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
