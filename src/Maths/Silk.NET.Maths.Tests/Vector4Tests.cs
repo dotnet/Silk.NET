@@ -10,13 +10,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public unsafe void Vector4MarshalSizeTest()
         {
-            Assert.Equal(16, sizeof(Vector4<float>));
+            Assert.Equal(16, sizeof(Vector4D<float>));
         }
 
         [Fact]
         public void Vector4CopyToTest()
         {
-            Vector4<float> v1 = new Vector4<float>(2.5f, 2.0f, 3.0f, 3.3f);
+            Vector4D<float> v1 = new Vector4D<float>(2.5f, 2.0f, 3.0f, 3.3f);
 
             float[] a = new float[5];
             float[] b = new float[4];
@@ -42,19 +42,19 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector4GetHashCodeTest()
         {
-            Vector4<float> v1 = new Vector4<float>(2.5f, 2.0f, 3.0f, 3.3f);
-            Vector4<float> v2 = new Vector4<float>(2.5f, 2.0f, 3.0f, 3.3f);
-            Vector4<float> v3 = new Vector4<float>(2.5f, 2.0f, 3.0f, 3.3f);
-            Vector4<float> v5 = new Vector4<float>(3.3f, 3.0f, 2.0f, 2.5f);
+            Vector4D<float> v1 = new Vector4D<float>(2.5f, 2.0f, 3.0f, 3.3f);
+            Vector4D<float> v2 = new Vector4D<float>(2.5f, 2.0f, 3.0f, 3.3f);
+            Vector4D<float> v3 = new Vector4D<float>(2.5f, 2.0f, 3.0f, 3.3f);
+            Vector4D<float> v5 = new Vector4D<float>(3.3f, 3.0f, 2.0f, 2.5f);
             Assert.Equal(v1.GetHashCode(), v1.GetHashCode());
             Assert.Equal(v1.GetHashCode(), v2.GetHashCode());
             Assert.NotEqual(v1.GetHashCode(), v5.GetHashCode());
             Assert.Equal(v1.GetHashCode(), v3.GetHashCode());
-            Vector4<float> v4 = new Vector4<float>(0.0f, 0.0f, 0.0f, 0.0f);
-            Vector4<float> v6 = new Vector4<float>(1.0f, 0.0f, 0.0f, 0.0f);
-            Vector4<float> v7 = new Vector4<float>(0.0f, 1.0f, 0.0f, 0.0f);
-            Vector4<float> v8 = new Vector4<float>(1.0f, 1.0f, 1.0f, 1.0f);
-            Vector4<float> v9 = new Vector4<float>(1.0f, 1.0f, 0.0f, 0.0f);
+            Vector4D<float> v4 = new Vector4D<float>(0.0f, 0.0f, 0.0f, 0.0f);
+            Vector4D<float> v6 = new Vector4D<float>(1.0f, 0.0f, 0.0f, 0.0f);
+            Vector4D<float> v7 = new Vector4D<float>(0.0f, 1.0f, 0.0f, 0.0f);
+            Vector4D<float> v8 = new Vector4D<float>(1.0f, 1.0f, 1.0f, 1.0f);
+            Vector4D<float> v9 = new Vector4D<float>(1.0f, 1.0f, 0.0f, 0.0f);
             Assert.NotEqual(v4.GetHashCode(), v6.GetHashCode());
             Assert.NotEqual(v4.GetHashCode(), v7.GetHashCode());
             Assert.NotEqual(v4.GetHashCode(), v8.GetHashCode());
@@ -70,7 +70,7 @@ namespace Silk.NET.Maths.Tests
             string separator = CultureInfo.CurrentCulture.NumberFormat.NumberGroupSeparator;
             CultureInfo enUsCultureInfo = new CultureInfo("en-US");
 
-            Vector4<float> v1 = new Vector4<float>(2.5f, 2.0f, 3.0f, 3.3f);
+            Vector4D<float> v1 = new Vector4D<float>(2.5f, 2.0f, 3.0f, 3.3f);
 
             string v1str = v1.ToString();
             string expectedv1 = string.Format(CultureInfo.CurrentCulture
@@ -97,92 +97,92 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expectedv3formatted, v3strformatted);
         }
 
-        // A test for DistanceSquared (Vector4<float>f, Vector4<float>f)
+        // A test for DistanceSquared (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4DistanceSquaredTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 6.0f, 7.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 6.0f, 7.0f, 8.0f);
 
             float expected = 64.0f;
             float actual;
 
-            actual = Vector4.DistanceSquared(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.DistanceSquared did not return the expected value.");
+            actual = Vector4D.DistanceSquared(a, b);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.DistanceSquared did not return the expected value.");
         }
 
-        // A test for Distance (Vector4<float>f, Vector4<float>f)
+        // A test for Distance (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4DistanceTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 6.0f, 7.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 6.0f, 7.0f, 8.0f);
 
             float expected = 8.0f;
             float actual;
 
-            actual = Vector4.Distance(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Distance did not return the expected value.");
+            actual = Vector4D.Distance(a, b);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Distance did not return the expected value.");
         }
 
-        // A test for Distance (Vector4<float>f, Vector4<float>f)
+        // A test for Distance (Vector4D<float>f, Vector4D<float>f)
         // Distance from the same point
         [Fact]
         public void Vector4DistanceTest1()
         {
-            Vector4<float> a = new Vector4<float>(new Vector2<float>(1.051f, 2.05f), 3.478f, 1.0f);
-            Vector4<float> b = new Vector4<float>(new Vector3<float>(1.051f, 2.05f, 3.478f), 0.0f);
+            Vector4D<float> a = new Vector4D<float>(new Vector2D<float>(1.051f, 2.05f), 3.478f, 1.0f);
+            Vector4D<float> b = new Vector4D<float>(new Vector3D<float>(1.051f, 2.05f, 3.478f), 0.0f);
             b.W = 1.0f;
 
-            float actual = Vector4.Distance(a, b);
+            float actual = Vector4D.Distance(a, b);
             Assert.Equal(0.0f, actual);
         }
 
-        // A test for Dot (Vector4<float>f, Vector4<float>f)
+        // A test for Dot (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4DotTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 6.0f, 7.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 6.0f, 7.0f, 8.0f);
 
             float expected = 70.0f;
             float actual;
 
-            actual = Vector4.Dot(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Dot did not return the expected value.");
+            actual = Vector4D.Dot(a, b);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Dot did not return the expected value.");
         }
 
-        // A test for Dot (Vector4<float>f, Vector4<float>f)
+        // A test for Dot (Vector4D<float>f, Vector4D<float>f)
         // Dot test for perpendicular vector
         [Fact]
         public void Vector4DotTest1()
         {
-            Vector3<float> a = new Vector3<float>(1.55f, 1.55f, 1);
-            Vector3<float> b = new Vector3<float>(2.5f, 3, 1.5f);
-            Vector3<float> c = Vector3.Cross(a, b);
+            Vector3D<float> a = new Vector3D<float>(1.55f, 1.55f, 1);
+            Vector3D<float> b = new Vector3D<float>(2.5f, 3, 1.5f);
+            Vector3D<float> c = Vector3D.Cross(a, b);
 
-            Vector4<float> d = new Vector4<float>(a, 0);
-            Vector4<float> e = new Vector4<float>(c, 0);
+            Vector4D<float> d = new Vector4D<float>(a, 0);
+            Vector4D<float> e = new Vector4D<float>(c, 0);
 
-            float actual = Vector4.Dot(d, e);
-            Assert.True(MathHelper.Equal(0.0f, actual), "Vector4<float>f.Dot did not return the expected value.");
+            float actual = Vector4D.Dot(d, e);
+            Assert.True(MathHelper.Equal(0.0f, actual), "Vector4D<float>f.Dot did not return the expected value.");
         }
 
         // A test for Length ()
         [Fact]
         public void Vector4LengthTest()
         {
-            Vector3<float> a = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> a = new Vector3D<float>(1.0f, 2.0f, 3.0f);
             float w = 4.0f;
 
-            Vector4<float> target = new Vector4<float>(a, w);
+            Vector4D<float> target = new Vector4D<float>(a, w);
 
             float expected = (float)System.Math.Sqrt(30.0f);
             float actual;
 
             actual = target.Length;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Length did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Length did not return the expected value.");
         }
 
         // A test for Length ()
@@ -190,837 +190,837 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector4LengthTest1()
         {
-            Vector4<float> target = new Vector4<float>();
+            Vector4D<float> target = new Vector4D<float>();
 
             float expected = 0.0f;
             float actual = target.Length;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Length did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Length did not return the expected value.");
         }
 
         // A test for LengthSquared ()
         [Fact]
         public void Vector4LengthSquaredTest()
         {
-            Vector3<float> a = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> a = new Vector3D<float>(1.0f, 2.0f, 3.0f);
             float w = 4.0f;
 
-            Vector4<float> target = new Vector4<float>(a, w);
+            Vector4D<float> target = new Vector4D<float>(a, w);
 
             float expected = 30;
             float actual;
 
             actual = target.LengthSquared;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.LengthSquared did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.LengthSquared did not return the expected value.");
         }
 
-        // A test for Min (Vector4<float>f, Vector4<float>f)
+        // A test for Min (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4MinTest()
         {
-            Vector4<float> a = new Vector4<float>(-1.0f, 4.0f, -3.0f, 1000.0f);
-            Vector4<float> b = new Vector4<float>(2.0f, 1.0f, -1.0f, 0.0f);
+            Vector4D<float> a = new Vector4D<float>(-1.0f, 4.0f, -3.0f, 1000.0f);
+            Vector4D<float> b = new Vector4D<float>(2.0f, 1.0f, -1.0f, 0.0f);
 
-            Vector4<float> expected = new Vector4<float>(-1.0f, 1.0f, -3.0f, 0.0f);
-            Vector4<float> actual;
-            actual = Vector4.Min(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Min did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(-1.0f, 1.0f, -3.0f, 0.0f);
+            Vector4D<float> actual;
+            actual = Vector4D.Min(a, b);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Min did not return the expected value.");
         }
 
-        // A test for Max (Vector4<float>f, Vector4<float>f)
+        // A test for Max (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4MaxTest()
         {
-            Vector4<float> a = new Vector4<float>(-1.0f, 4.0f, -3.0f, 1000.0f);
-            Vector4<float> b = new Vector4<float>(2.0f, 1.0f, -1.0f, 0.0f);
+            Vector4D<float> a = new Vector4D<float>(-1.0f, 4.0f, -3.0f, 1000.0f);
+            Vector4D<float> b = new Vector4D<float>(2.0f, 1.0f, -1.0f, 0.0f);
 
-            Vector4<float> expected = new Vector4<float>(2.0f, 4.0f, -1.0f, 1000.0f);
-            Vector4<float> actual;
-            actual = Vector4.Max(a, b);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Max did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(2.0f, 4.0f, -1.0f, 1000.0f);
+            Vector4D<float> actual;
+            actual = Vector4D.Max(a, b);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Max did not return the expected value.");
         }
 
         [Fact]
         public void Vector4MinMaxCodeCoverageTest()
         {
-            Vector4<float> min = Vector4<float>.Zero;
-            Vector4<float> max = Vector4<float>.One;
-            Vector4<float> actual;
+            Vector4D<float> min = Vector4D<float>.Zero;
+            Vector4D<float> max = Vector4D<float>.One;
+            Vector4D<float> actual;
 
             // Min.
-            actual = Vector4.Min(min, max);
+            actual = Vector4D.Min(min, max);
             Assert.Equal(actual, min);
 
-            actual = Vector4.Min(max, min);
+            actual = Vector4D.Min(max, min);
             Assert.Equal(actual, min);
 
             // Max.
-            actual = Vector4.Max(min, max);
+            actual = Vector4D.Max(min, max);
             Assert.Equal(actual, max);
 
-            actual = Vector4.Max(max, min);
+            actual = Vector4D.Max(max, min);
             Assert.Equal(actual, max);
         }
 
-        // A test for Clamp (Vector4<float>f, Vector4<float>f, Vector4<float>f)
+        // A test for Clamp (Vector4D<float>f, Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4ClampTest()
         {
-            Vector4<float> a = new Vector4<float>(0.5f, 0.3f, 0.33f, 0.44f);
-            Vector4<float> min = new Vector4<float>(0.0f, 0.1f, 0.13f, 0.14f);
-            Vector4<float> max = new Vector4<float>(1.0f, 1.1f, 1.13f, 1.14f);
+            Vector4D<float> a = new Vector4D<float>(0.5f, 0.3f, 0.33f, 0.44f);
+            Vector4D<float> min = new Vector4D<float>(0.0f, 0.1f, 0.13f, 0.14f);
+            Vector4D<float> max = new Vector4D<float>(1.0f, 1.1f, 1.13f, 1.14f);
 
             // Normal case.
             // Case N1: specified value is in the range.
-            Vector4<float> expected = new Vector4<float>(0.5f, 0.3f, 0.33f, 0.44f);
-            Vector4<float> actual = Vector4.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(0.5f, 0.3f, 0.33f, 0.44f);
+            Vector4D<float> actual = Vector4D.Clamp(a, min, max);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
 
             // Normal case.
             // Case N2: specified value is bigger than max value.
-            a = new Vector4<float>(2.0f, 3.0f, 4.0f, 5.0f);
+            a = new Vector4D<float>(2.0f, 3.0f, 4.0f, 5.0f);
             expected = max;
-            actual = Vector4.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
+            actual = Vector4D.Clamp(a, min, max);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
 
             // Case N3: specified value is smaller than max value.
-            a = new Vector4<float>(-2.0f, -3.0f, -4.0f, -5.0f);
+            a = new Vector4D<float>(-2.0f, -3.0f, -4.0f, -5.0f);
             expected = min;
-            actual = Vector4.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
+            actual = Vector4D.Clamp(a, min, max);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
 
             // Case N4: combination case.
-            a = new Vector4<float>(-2.0f, 0.5f, 4.0f, -5.0f);
-            expected = new Vector4<float>(min.X, a.Y, max.Z, min.W);
-            actual = Vector4.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
+            a = new Vector4D<float>(-2.0f, 0.5f, 4.0f, -5.0f);
+            expected = new Vector4D<float>(min.X, a.Y, max.Z, min.W);
+            actual = Vector4D.Clamp(a, min, max);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
 
             // User specified min value is bigger than max value.
-            max = new Vector4<float>(0.0f, 0.1f, 0.13f, 0.14f);
-            min = new Vector4<float>(1.0f, 1.1f, 1.13f, 1.14f);
+            max = new Vector4D<float>(0.0f, 0.1f, 0.13f, 0.14f);
+            min = new Vector4D<float>(1.0f, 1.1f, 1.13f, 1.14f);
 
             // Case W1: specified value is in the range.
-            a = new Vector4<float>(0.5f, 0.3f, 0.33f, 0.44f);
+            a = new Vector4D<float>(0.5f, 0.3f, 0.33f, 0.44f);
             expected = max;
-            actual = Vector4.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
+            actual = Vector4D.Clamp(a, min, max);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
 
             // Normal case.
             // Case W2: specified value is bigger than max and min value.
-            a = new Vector4<float>(2.0f, 3.0f, 4.0f, 5.0f);
+            a = new Vector4D<float>(2.0f, 3.0f, 4.0f, 5.0f);
             expected = max;
-            actual = Vector4.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
+            actual = Vector4D.Clamp(a, min, max);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
 
             // Case W3: specified value is smaller than min and max value.
-            a = new Vector4<float>(-2.0f, -3.0f, -4.0f, -5.0f);
+            a = new Vector4D<float>(-2.0f, -3.0f, -4.0f, -5.0f);
             expected = max;
-            actual = Vector4.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Clamp did not return the expected value.");
+            actual = Vector4D.Clamp(a, min, max);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Clamp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         [Fact]
         public void Vector4LerpTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 6.0f, 7.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 6.0f, 7.0f, 8.0f);
 
             float t = 0.5f;
 
-            Vector4<float> expected = new Vector4<float>(3.0f, 4.0f, 5.0f, 6.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(3.0f, 4.0f, 5.0f, 6.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
+            actual = Vector4D.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         // Lerp test with factor zero
         [Fact]
         public void Vector4LerpTest1()
         {
-            Vector4<float> a = new Vector4<float>(new Vector3<float>(1.0f, 2.0f, 3.0f), 4.0f);
-            Vector4<float> b = new Vector4<float>(4.0f, 5.0f, 6.0f, 7.0f);
+            Vector4D<float> a = new Vector4D<float>(new Vector3D<float>(1.0f, 2.0f, 3.0f), 4.0f);
+            Vector4D<float> b = new Vector4D<float>(4.0f, 5.0f, 6.0f, 7.0f);
 
             float t = 0.0f;
-            Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> actual = Vector4.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> actual = Vector4D.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         // Lerp test with factor one
         [Fact]
         public void Vector4LerpTest2()
         {
-            Vector4<float> a = new Vector4<float>(new Vector3<float>(1.0f, 2.0f, 3.0f), 4.0f);
-            Vector4<float> b = new Vector4<float>(4.0f, 5.0f, 6.0f, 7.0f);
+            Vector4D<float> a = new Vector4D<float>(new Vector3D<float>(1.0f, 2.0f, 3.0f), 4.0f);
+            Vector4D<float> b = new Vector4D<float>(4.0f, 5.0f, 6.0f, 7.0f);
 
             float t = 1.0f;
-            Vector4<float> expected = new Vector4<float>(4.0f, 5.0f, 6.0f, 7.0f);
-            Vector4<float> actual = Vector4.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(4.0f, 5.0f, 6.0f, 7.0f);
+            Vector4D<float> actual = Vector4D.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         // Lerp test with factor > 1
         [Fact]
         public void Vector4LerpTest3()
         {
-            Vector4<float> a = new Vector4<float>(new Vector3<float>(0.0f, 0.0f, 0.0f), 0.0f);
-            Vector4<float> b = new Vector4<float>(4.0f, 5.0f, 6.0f, 7.0f);
+            Vector4D<float> a = new Vector4D<float>(new Vector3D<float>(0.0f, 0.0f, 0.0f), 0.0f);
+            Vector4D<float> b = new Vector4D<float>(4.0f, 5.0f, 6.0f, 7.0f);
 
             float t = 2.0f;
-            Vector4<float> expected = new Vector4<float>(8.0f, 10.0f, 12.0f, 14.0f);
-            Vector4<float> actual = Vector4.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(8.0f, 10.0f, 12.0f, 14.0f);
+            Vector4D<float> actual = Vector4D.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         // Lerp test with factor < 0
         [Fact]
         public void Vector4LerpTest4()
         {
-            Vector4<float> a = new Vector4<float>(new Vector3<float>(0.0f, 0.0f, 0.0f), 0.0f);
-            Vector4<float> b = new Vector4<float>(4.0f, 5.0f, 6.0f, 7.0f);
+            Vector4D<float> a = new Vector4D<float>(new Vector3D<float>(0.0f, 0.0f, 0.0f), 0.0f);
+            Vector4D<float> b = new Vector4D<float>(4.0f, 5.0f, 6.0f, 7.0f);
 
             float t = -2.0f;
-            Vector4<float> expected = -(b * 2);
-            Vector4<float> actual = Vector4.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
+            Vector4D<float> expected = -(b * 2);
+            Vector4D<float> actual = Vector4D.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         // Lerp test with special float value
         [Fact]
         public void Vector4LerpTest5()
         {
-            Vector4<float> a = new Vector4<float>(45.67f, 90.0f, 0, 0);
-            Vector4<float> b = new Vector4<float>(float.PositiveInfinity, float.NegativeInfinity, 0, 0);
+            Vector4D<float> a = new Vector4D<float>(45.67f, 90.0f, 0, 0);
+            Vector4D<float> b = new Vector4D<float>(float.PositiveInfinity, float.NegativeInfinity, 0, 0);
 
             float t = 0.408f;
-            Vector4<float> actual = Vector4.Lerp(a, b, t);
-            Assert.True(float.IsPositiveInfinity(actual.X), "Vector4<float>f.Lerp did not return the expected value.");
-            Assert.True(float.IsNegativeInfinity(actual.Y), "Vector4<float>f.Lerp did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Lerp(a, b, t);
+            Assert.True(float.IsPositiveInfinity(actual.X), "Vector4D<float>f.Lerp did not return the expected value.");
+            Assert.True(float.IsNegativeInfinity(actual.Y), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         // Lerp test from the same point
         [Fact]
         public void Vector4LerpTest6()
         {
-            Vector4<float> a = new Vector4<float>(4.0f, 5.0f, 6.0f, 7.0f);
-            Vector4<float> b = new Vector4<float>(4.0f, 5.0f, 6.0f, 7.0f);
+            Vector4D<float> a = new Vector4D<float>(4.0f, 5.0f, 6.0f, 7.0f);
+            Vector4D<float> b = new Vector4D<float>(4.0f, 5.0f, 6.0f, 7.0f);
 
             float t = 0.85f;
-            Vector4<float> expected = a;
-            Vector4<float> actual = Vector4.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
+            Vector4D<float> expected = a;
+            Vector4D<float> actual = Vector4D.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         // Lerp test with values known to be innacurate with the old lerp impl
         [Fact]
         public void Vector4LerpTest7()
         {
-            Vector4<float> a = new Vector4<float>(0.44728136f);
-            Vector4<float> b = new Vector4<float>(0.46345946f);
+            Vector4D<float> a = new Vector4D<float>(0.44728136f);
+            Vector4D<float> b = new Vector4D<float>(0.46345946f);
 
             float t = 0.26402435f;
 
-            Vector4<float> expected = new Vector4<float>(0.45155275f);
-            Vector4<float> actual = Vector4.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(0.45155275f);
+            Vector4D<float> actual = Vector4D.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
-        // A test for Lerp (Vector4<float>f, Vector4<float>f, float)
+        // A test for Lerp (Vector4D<float>f, Vector4D<float>f, float)
         // Lerp test with values known to be innacurate with the old lerp impl
         // (Old code incorrectly gets 0.33333588)
         [Fact]
         public void Vector4LerpTest8()
         {
-            Vector4<float> a = new Vector4<float>(-100);
-            Vector4<float> b = new Vector4<float>(0.33333334f);
+            Vector4D<float> a = new Vector4D<float>(-100);
+            Vector4D<float> b = new Vector4D<float>(0.33333334f);
 
             float t = 1f;
 
-            Vector4<float> expected = new Vector4<float>(0.33333334f);
-            Vector4<float> actual = Vector4.Lerp(a, b, t);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Lerp did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(0.33333334f);
+            Vector4D<float> actual = Vector4D.Lerp(a, b, t);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Lerp did not return the expected value.");
         }
 
         
-        // A test for Transform (Vector2<float>f, Matrix4x4)
+        // A test for Transform (Vector2D<float>f, Matrix4X4)
         [Fact]
         public void Vector4TransformTest1()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector4<float> expected = new Vector4<float>(10.316987f, 22.183012f, 30.3660259f, 1.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(10.316987f, 22.183012f, 30.3660259f, 1.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector3<float>f, Matrix4x4)
+        // A test for Transform (Vector3D<float>f, Matrix4X4)
         [Fact]
         public void Vector4TransformTest2()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector4<float> expected = new Vector4<float>(12.19198728f, 21.53349376f, 32.61602545f, 1.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(12.19198728f, 21.53349376f, 32.61602545f, 1.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>.Transform did not return the expected value.");
+            actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector4<float>f, Matrix4x4)
+        // A test for Transform (Vector4D<float>f, Matrix4X4)
         [Fact]
         public void Vector4TransformVector4Test()
         {
-            Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
+            Vector4D<float> v = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector4<float> expected = new Vector4<float>(2.19198728f, 1.53349376f, 2.61602545f, 0.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(2.19198728f, 1.53349376f, 2.61602545f, 0.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
 
             //
             v.W = 1.0f;
 
-            expected = new Vector4<float>(12.19198728f, 21.53349376f, 32.61602545f, 1.0f);
-            actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            expected = new Vector4D<float>(12.19198728f, 21.53349376f, 32.61602545f, 1.0f);
+            actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector4<float>f, Matrix4x4)
-        // Transform Vector4<float> with zero matrix
+        // A test for Transform (Vector4D<float>f, Matrix4X4)
+        // Transform Vector4D<float> with zero matrix
         [Fact]
         public void Vector4TransformVector4Test1()
         {
-            Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
-            Matrix4x4<float> m = new Matrix4x4<float>();
-            Vector4<float> expected = new Vector4<float>(0, 0, 0, 0);
+            Vector4D<float> v = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
+            Matrix4X4<float> m = new Matrix4X4<float>();
+            Vector4D<float> expected = new Vector4D<float>(0, 0, 0, 0);
 
-            Vector4<float> actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector4<float>f, Matrix4x4)
-        // Transform Vector4<float> with identity matrix
+        // A test for Transform (Vector4D<float>f, Matrix4X4)
+        // Transform Vector4D<float> with identity matrix
         [Fact]
         public void Vector4TransformVector4Test2()
         {
-            Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
-            Matrix4x4<float> m = Matrix4x4<float>.Identity;
-            Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
+            Vector4D<float> v = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
+            Matrix4X4<float> m = Matrix4X4<float>.Identity;
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
-            Vector4<float> actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector3<float>f, Matrix4x4)
-        // Transform Vector3<float>f test
+        // A test for Transform (Vector3D<float>f, Matrix4X4)
+        // Transform Vector3D<float>f test
         [Fact]
         public void Vector4TransformVector3Test()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector4<float> expected = Vector4.Transform(new Vector4<float>(v, 1.0f), m);
-            Vector4<float> actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> expected = Vector4D.Transform(new Vector4D<float>(v, 1.0f), m);
+            Vector4D<float> actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector3<float>f, Matrix4x4)
-        // Transform Vector3<float> with zero matrix
+        // A test for Transform (Vector3D<float>f, Matrix4X4)
+        // Transform Vector3D<float> with zero matrix
         [Fact]
         public void Vector4TransformVector3Test1()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            Matrix4x4<float> m = new Matrix4x4<float>();
-            Vector4<float> expected = new Vector4<float>(0, 0, 0, 0);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
+            Matrix4X4<float> m = new Matrix4X4<float>();
+            Vector4D<float> expected = new Vector4D<float>(0, 0, 0, 0);
 
-            Vector4<float> actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector3<float>f, Matrix4x4)
-        // Transform Vector3<float> with identity matrix
+        // A test for Transform (Vector3D<float>f, Matrix4X4)
+        // Transform Vector3D<float> with identity matrix
         [Fact]
         public void Vector4TransformVector3Test2()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
-            Matrix4x4<float> m = Matrix4x4<float>.Identity;
-            Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 1.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
+            Matrix4X4<float> m = Matrix4X4<float>.Identity;
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 2.0f, 3.0f, 1.0f);
 
-            Vector4<float> actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector2<float>f, Matrix4x4)
-        // Transform Vector2<float>f test
+        // A test for Transform (Vector2D<float>f, Matrix4X4)
+        // Transform Vector2D<float>f test
         [Fact]
         public void Vector4TransformVector2Test()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector4<float> expected = Vector4.Transform(new Vector4<float>(v, 0.0f, 1.0f), m);
-            Vector4<float> actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> expected = Vector4D.Transform(new Vector4D<float>(v, 0.0f, 1.0f), m);
+            Vector4D<float> actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector2<float>f, Matrix4x4)
-        // Transform Vector2<float>f with zero matrix
+        // A test for Transform (Vector2D<float>f, Matrix4X4)
+        // Transform Vector2D<float>f with zero matrix
         [Fact]
         public void Vector4TransformVector2Test1()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix4x4<float> m = new Matrix4x4<float>();
-            Vector4<float> expected = new Vector4<float>(0, 0, 0, 0);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
+            Matrix4X4<float> m = new Matrix4X4<float>();
+            Vector4D<float> expected = new Vector4D<float>(0, 0, 0, 0);
 
-            Vector4<float> actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector2<float>f, Matrix4x4)
-        // Transform Vector2<float> with identity matrix
+        // A test for Transform (Vector2D<float>f, Matrix4X4)
+        // Transform Vector2D<float> with identity matrix
         [Fact]
         public void Vector4TransformVector2Test2()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix4x4<float> m = Matrix4x4<float>.Identity;
-            Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 0, 1.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
+            Matrix4X4<float> m = Matrix4X4<float>.Identity;
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 2.0f, 0, 1.0f);
 
-            Vector4<float> actual = Vector4.Transform(v, m);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, m);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
         
         
-        // A test for Transform (Vector2<float>f, Quaternion)
+        // A test for Transform (Vector2D<float>f, Quaternion)
         [Fact]
         public void Vector4TransformVector2QuaternionTest3()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
 
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4.Transform(v, m);
-            Vector4<float> actual;
+            Vector4D<float> expected = Vector4D.Transform(v, m);
+            Vector4D<float> actual;
 
-            actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector3<float>f, Quaternion)
+        // A test for Transform (Vector3D<float>f, Quaternion)
         [Fact]
         public void Vector4TransformVector3Quaternion()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4.Transform(v, m);
-            Vector4<float> actual;
+            Vector4D<float> expected = Vector4D.Transform(v, m);
+            Vector4D<float> actual;
 
-            actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>.Transform did not return the expected value.");
+            actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>.Transform did not return the expected value.");
         }
         
-        // A test for Transform (Vector4<float>f, Quaternion)
+        // A test for Transform (Vector4D<float>f, Quaternion)
         [Fact]
         public void Vector4TransformVector4QuaternionTest()
         {
-            Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
+            Vector4D<float> v = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4.Transform(v, m);
-            Vector4<float> actual;
+            Vector4D<float> expected = Vector4D.Transform(v, m);
+            Vector4D<float> actual;
 
-            actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
 
             //
             v.W = 1.0f;
             expected.W = 1.0f;
-            actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector4<float>f, Quaternion)
-        // Transform Vector4<float> with zero quaternion
+        // A test for Transform (Vector4D<float>f, Quaternion)
+        // Transform Vector4D<float> with zero quaternion
         [Fact]
         public void Vector4TransformVector4QuaternionTest1()
         {
-            Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
+            Vector4D<float> v = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
             Quaternion<float> q = new Quaternion<float>();
-            Vector4<float> expected = v;
+            Vector4D<float> expected = v;
 
-            Vector4<float> actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector4<float>f, Quaternion)
-        // Transform Vector4<float> with identity matrix
+        // A test for Transform (Vector4D<float>f, Quaternion)
+        // Transform Vector4D<float> with identity matrix
         [Fact]
         public void Vector4TransformVector4QuaternionTest2()
         {
-            Vector4<float> v = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
+            Vector4D<float> v = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
             Quaternion<float> q = Quaternion<float>.Identity;
-            Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 0.0f);
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 2.0f, 3.0f, 0.0f);
 
-            Vector4<float> actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector3<float>f, Quaternion)
-        // Transform Vector3<float>f test
+        // A test for Transform (Vector3D<float>f, Quaternion)
+        // Transform Vector3D<float>f test
         [Fact]
         public void Vector4TransformVector3QuaternionTest()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4.Transform(v, m);
-            Vector4<float> actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> expected = Vector4D.Transform(v, m);
+            Vector4D<float> actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector3<float>f, Quaternion)
-        // Transform Vector3<float> with zero quaternion
+        // A test for Transform (Vector3D<float>f, Quaternion)
+        // Transform Vector3D<float> with zero quaternion
         [Fact]
         public void Vector4TransformVector3QuaternionTest1()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
             Quaternion<float> q = new Quaternion<float>();
-            Vector4<float> expected = new Vector4<float>(v, 1.0f);
+            Vector4D<float> expected = new Vector4D<float>(v, 1.0f);
 
-            Vector4<float> actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector3<float>f, Quaternion)
-        // Transform Vector3<float> with identity quaternion
+        // A test for Transform (Vector3D<float>f, Quaternion)
+        // Transform Vector3D<float> with identity quaternion
         [Fact]
         public void Vector4TransformVector3QuaternionTest2()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
             Quaternion<float> q = Quaternion<float>.Identity;
-            Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 3.0f, 1.0f);
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 2.0f, 3.0f, 1.0f);
 
-            Vector4<float> actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector2<float>f, Quaternion)
-        // Transform Vector2<float>f by quaternion test
+        // A test for Transform (Vector2D<float>f, Quaternion)
+        // Transform Vector2D<float>f by quaternion test
         [Fact]
         public void Vector4TransformVector2QuaternionTest()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector4<float> expected = Vector4.Transform(v, m);
-            Vector4<float> actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> expected = Vector4D.Transform(v, m);
+            Vector4D<float> actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector2<float>f, Quaternion)
-        // Transform Vector2<float>f with zero quaternion
+        // A test for Transform (Vector2D<float>f, Quaternion)
+        // Transform Vector2D<float>f with zero quaternion
         [Fact]
         public void Vector4TransformVector2QuaternionTest1()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
             Quaternion<float> q = new Quaternion<float>();
-            Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 0, 1.0f);
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 2.0f, 0, 1.0f);
 
-            Vector4<float> actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Transform (Vector2<float>f, Matrix4x4)
-        // Transform Vector2<float> with identity Quaternion
+        // A test for Transform (Vector2D<float>f, Matrix4X4)
+        // Transform Vector2D<float> with identity Quaternion
         [Fact]
         public void Vector4TransformVector2QuaternionTest2()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
             Quaternion<float> q = Quaternion<float>.Identity;
-            Vector4<float> expected = new Vector4<float>(1.0f, 2.0f, 0, 1.0f);
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 2.0f, 0, 1.0f);
 
-            Vector4<float> actual = Vector4.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Transform did not return the expected value.");
+            Vector4D<float> actual = Vector4D.Transform(v, q);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-        // A test for Normalize (Vector4<float>f)
+        // A test for Normalize (Vector4D<float>f)
         [Fact]
         public void Vector4NormalizeTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
-            Vector4<float> expected = new Vector4<float>(
+            Vector4D<float> expected = new Vector4D<float>(
                 0.1825741858350553711523232609336f,
                 0.3651483716701107423046465218672f,
                 0.5477225575051661134569697828008f,
                 0.7302967433402214846092930437344f);
-            Vector4<float> actual;
+            Vector4D<float> actual;
 
-            actual = Vector4.Normalize(a);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Normalize did not return the expected value.");
+            actual = Vector4D.Normalize(a);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Normalize did not return the expected value.");
         }
 
-        // A test for Normalize (Vector4<float>f)
+        // A test for Normalize (Vector4D<float>f)
         // Normalize vector of length one
         [Fact]
         public void Vector4NormalizeTest1()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 0.0f, 0.0f, 0.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 0.0f, 0.0f, 0.0f);
 
-            Vector4<float> expected = new Vector4<float>(1.0f, 0.0f, 0.0f, 0.0f);
-            Vector4<float> actual = Vector4.Normalize(a);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.Normalize did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(1.0f, 0.0f, 0.0f, 0.0f);
+            Vector4D<float> actual = Vector4D.Normalize(a);
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Normalize did not return the expected value.");
         }
 
-        // A test for Normalize (Vector4<float>f)
+        // A test for Normalize (Vector4D<float>f)
         // Normalize vector of length zero
         [Fact]
         public void Vector4NormalizeTest2()
         {
-            Vector4<float> a = new Vector4<float>(0.0f, 0.0f, 0.0f, 0.0f);
+            Vector4D<float> a = new Vector4D<float>(0.0f, 0.0f, 0.0f, 0.0f);
 
-            Vector4<float> expected = new Vector4<float>(0.0f, 0.0f, 0.0f, 0.0f);
-            Vector4<float> actual = Vector4.Normalize(a);
-            Assert.True(float.IsNaN(actual.X) && float.IsNaN(actual.Y) && float.IsNaN(actual.Z) && float.IsNaN(actual.W), "Vector4<float>f.Normalize did not return the expected value.");
+            Vector4D<float> expected = new Vector4D<float>(0.0f, 0.0f, 0.0f, 0.0f);
+            Vector4D<float> actual = Vector4D.Normalize(a);
+            Assert.True(float.IsNaN(actual.X) && float.IsNaN(actual.Y) && float.IsNaN(actual.Z) && float.IsNaN(actual.W), "Vector4D<float>f.Normalize did not return the expected value.");
         }
 
-        // A test for operator - (Vector4<float>f)
+        // A test for operator - (Vector4D<float>f)
         [Fact]
         public void Vector4UnaryNegationTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
-            Vector4<float> expected = new Vector4<float>(-1.0f, -2.0f, -3.0f, -4.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(-1.0f, -2.0f, -3.0f, -4.0f);
+            Vector4D<float> actual;
 
             actual = -a;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.operator - did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.operator - did not return the expected value.");
         }
 
-        // A test for operator - (Vector4<float>f, Vector4<float>f)
+        // A test for operator - (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4SubtractionTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 6.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 2.0f, 3.0f, 9.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 6.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 2.0f, 3.0f, 9.0f);
 
-            Vector4<float> expected = new Vector4<float>(-4.0f, 4.0f, 0.0f, -5.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(-4.0f, 4.0f, 0.0f, -5.0f);
+            Vector4D<float> actual;
 
             actual = a - b;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.operator - did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.operator - did not return the expected value.");
         }
 
-        // A test for operator * (Vector4<float>f, float)
+        // A test for operator * (Vector4D<float>f, float)
         [Fact]
         public void Vector4MultiplyOperatorTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             const float factor = 2.0f;
 
-            Vector4<float> expected = new Vector4<float>(2.0f, 4.0f, 6.0f, 8.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(2.0f, 4.0f, 6.0f, 8.0f);
+            Vector4D<float> actual;
 
             actual = a * factor;
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.operator * did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.operator * did not return the expected value.");
         }
 
-        // A test for operator * (float, Vector4<float>f)
+        // A test for operator * (float, Vector4D<float>f)
         [Fact]
         public void Vector4MultiplyOperatorTest2()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             const float factor = 2.0f;
-            Vector4<float> expected = new Vector4<float>(2.0f, 4.0f, 6.0f, 8.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(2.0f, 4.0f, 6.0f, 8.0f);
+            Vector4D<float> actual;
 
             actual = factor * a;
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.operator * did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.operator * did not return the expected value.");
         }
 
-        // A test for operator * (Vector4<float>f, Vector4<float>f)
+        // A test for operator * (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4MultiplyOperatorTest3()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 6.0f, 7.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 6.0f, 7.0f, 8.0f);
 
-            Vector4<float> expected = new Vector4<float>(5.0f, 12.0f, 21.0f, 32.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(5.0f, 12.0f, 21.0f, 32.0f);
+            Vector4D<float> actual;
 
             actual = a * b;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.operator * did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.operator * did not return the expected value.");
         }
 
-        // A test for operator / (Vector4<float>f, float)
+        // A test for operator / (Vector4D<float>f, float)
         [Fact]
         public void Vector4DivisionTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             float div = 2.0f;
 
-            Vector4<float> expected = new Vector4<float>(0.5f, 1.0f, 1.5f, 2.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(0.5f, 1.0f, 1.5f, 2.0f);
+            Vector4D<float> actual;
 
             actual = a / div;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.operator / did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.operator / did not return the expected value.");
         }
 
-        // A test for operator / (Vector4<float>f, Vector4<float>f)
+        // A test for operator / (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4DivisionTest1()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 6.0f, 7.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 2.0f, 3.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 6.0f, 7.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 2.0f, 3.0f, 8.0f);
 
-            Vector4<float> expected = new Vector4<float>(1.0f / 5.0f, 6.0f / 2.0f, 7.0f / 3.0f, 4.0f / 8.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(1.0f / 5.0f, 6.0f / 2.0f, 7.0f / 3.0f, 4.0f / 8.0f);
+            Vector4D<float> actual;
 
             actual = a / b;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.operator / did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.operator / did not return the expected value.");
         }
 
-        // A test for operator / (Vector4<float>f, Vector4<float>f)
+        // A test for operator / (Vector4D<float>f, Vector4D<float>f)
         // Divide by zero
         [Fact]
         public void Vector4DivisionTest2()
         {
-            Vector4<float> a = new Vector4<float>(-2.0f, 3.0f, float.MaxValue, float.NaN);
+            Vector4D<float> a = new Vector4D<float>(-2.0f, 3.0f, float.MaxValue, float.NaN);
 
             float div = 0.0f;
 
-            Vector4<float> actual = a / div;
+            Vector4D<float> actual = a / div;
 
-            Assert.True(float.IsNegativeInfinity(actual.X), "Vector4<float>f.operator / did not return the expected value.");
-            Assert.True(float.IsPositiveInfinity(actual.Y), "Vector4<float>f.operator / did not return the expected value.");
-            Assert.True(float.IsPositiveInfinity(actual.Z), "Vector4<float>f.operator / did not return the expected value.");
-            Assert.True(float.IsNaN(actual.W), "Vector4<float>f.operator / did not return the expected value.");
+            Assert.True(float.IsNegativeInfinity(actual.X), "Vector4D<float>f.operator / did not return the expected value.");
+            Assert.True(float.IsPositiveInfinity(actual.Y), "Vector4D<float>f.operator / did not return the expected value.");
+            Assert.True(float.IsPositiveInfinity(actual.Z), "Vector4D<float>f.operator / did not return the expected value.");
+            Assert.True(float.IsNaN(actual.W), "Vector4D<float>f.operator / did not return the expected value.");
         }
 
-        // A test for operator / (Vector4<float>f, Vector4<float>f)
+        // A test for operator / (Vector4D<float>f, Vector4D<float>f)
         // Divide by zero
         [Fact]
         public void Vector4DivisionTest3()
         {
-            Vector4<float> a = new Vector4<float>(0.047f, -3.0f, float.NegativeInfinity, float.MinValue);
-            Vector4<float> b = new Vector4<float>();
+            Vector4D<float> a = new Vector4D<float>(0.047f, -3.0f, float.NegativeInfinity, float.MinValue);
+            Vector4D<float> b = new Vector4D<float>();
 
-            Vector4<float> actual = a / b;
+            Vector4D<float> actual = a / b;
 
-            Assert.True(float.IsPositiveInfinity(actual.X), "Vector4<float>f.operator / did not return the expected value.");
-            Assert.True(float.IsNegativeInfinity(actual.Y), "Vector4<float>f.operator / did not return the expected value.");
-            Assert.True(float.IsNegativeInfinity(actual.Z), "Vector4<float>f.operator / did not return the expected value.");
-            Assert.True(float.IsNegativeInfinity(actual.W), "Vector4<float>f.operator / did not return the expected value.");
+            Assert.True(float.IsPositiveInfinity(actual.X), "Vector4D<float>f.operator / did not return the expected value.");
+            Assert.True(float.IsNegativeInfinity(actual.Y), "Vector4D<float>f.operator / did not return the expected value.");
+            Assert.True(float.IsNegativeInfinity(actual.Z), "Vector4D<float>f.operator / did not return the expected value.");
+            Assert.True(float.IsNegativeInfinity(actual.W), "Vector4D<float>f.operator / did not return the expected value.");
         }
 
-        // A test for operator + (Vector4<float>f, Vector4<float>f)
+        // A test for operator + (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4AdditionTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 6.0f, 7.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 6.0f, 7.0f, 8.0f);
 
-            Vector4<float> expected = new Vector4<float>(6.0f, 8.0f, 10.0f, 12.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(6.0f, 8.0f, 10.0f, 12.0f);
+            Vector4D<float> actual;
 
             actual = a + b;
 
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4<float>f.operator + did not return the expected value.");
+            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.operator + did not return the expected value.");
         }
 
         [Fact]
         public void OperatorAddTest()
         {
-            Vector4<float> v1 = new Vector4<float>(2.5f, 2.0f, 3.0f, 3.3f);
-            Vector4<float> v2 = new Vector4<float>(5.5f, 4.5f, 6.5f, 7.5f);
+            Vector4D<float> v1 = new Vector4D<float>(2.5f, 2.0f, 3.0f, 3.3f);
+            Vector4D<float> v2 = new Vector4D<float>(5.5f, 4.5f, 6.5f, 7.5f);
 
-            Vector4<float> v3 = v1 + v2;
-            Vector4<float> v5 = new Vector4<float>(-1.0f, 0.0f, 0.0f, float.NaN);
-            Vector4<float> v4 = v1 + v5;
+            Vector4D<float> v3 = v1 + v2;
+            Vector4D<float> v5 = new Vector4D<float>(-1.0f, 0.0f, 0.0f, float.NaN);
+            Vector4D<float> v4 = v1 + v5;
             Assert.Equal(8.0f, v3.X);
             Assert.Equal(6.5f, v3.Y);
             Assert.Equal(9.5f, v3.Z);
@@ -1031,7 +1031,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(float.NaN, v4.W);
         }
 
-        // A test for Vector4<float>f (float, float, float, float)
+        // A test for Vector4D<float>f (float, float, float, float)
         [Fact]
         public void Vector4ConstructorTest()
         {
@@ -1040,44 +1040,44 @@ namespace Silk.NET.Maths.Tests
             float z = 3.0f;
             float w = 4.0f;
 
-            Vector4<float> target = new Vector4<float>(x, y, z, w);
+            Vector4D<float> target = new Vector4D<float>(x, y, z, w);
 
             Assert.True(MathHelper.Equal(target.X, x) && MathHelper.Equal(target.Y, y) && MathHelper.Equal(target.Z, z) && MathHelper.Equal(target.W, w),
-                "Vector4<float>f constructor(x,y,z,w) did not return the expected value.");
+                "Vector4D<float>f constructor(x,y,z,w) did not return the expected value.");
         }
 
-        // A test for Vector4<float>f (Vector2<float>f, float, float)
+        // A test for Vector4D<float>f (Vector2D<float>f, float, float)
         [Fact]
         public void Vector4ConstructorTest1()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
             float z = 3.0f;
             float w = 4.0f;
 
-            Vector4<float> target = new Vector4<float>(a, z, w);
+            Vector4D<float> target = new Vector4D<float>(a, z, w);
             Assert.True(MathHelper.Equal(target.X, a.X) && MathHelper.Equal(target.Y, a.Y) && MathHelper.Equal(target.Z, z) && MathHelper.Equal(target.W, w),
-                "Vector4<float>f constructor(Vector2<float>f,z,w) did not return the expected value.");
+                "Vector4D<float>f constructor(Vector2D<float>f,z,w) did not return the expected value.");
         }
 
-        // A test for Vector4<float>f (Vector3<float>f, float)
+        // A test for Vector4D<float>f (Vector3D<float>f, float)
         [Fact]
         public void Vector4ConstructorTest2()
         {
-            Vector3<float> a = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> a = new Vector3D<float>(1.0f, 2.0f, 3.0f);
             float w = 4.0f;
 
-            Vector4<float> target = new Vector4<float>(a, w);
+            Vector4D<float> target = new Vector4D<float>(a, w);
 
             Assert.True(MathHelper.Equal(target.X, a.X) && MathHelper.Equal(target.Y, a.Y) && MathHelper.Equal(target.Z, a.Z) && MathHelper.Equal(target.W, w),
-                "Vector4<float>f constructor(Vector3<float>f,w) did not return the expected value.");
+                "Vector4D<float>f constructor(Vector3D<float>f,w) did not return the expected value.");
         }
 
-        // A test for Vector4<float>f ()
+        // A test for Vector4D<float>f ()
         // Constructor with no parameter
         [Fact]
         public void Vector4ConstructorTest4()
         {
-            Vector4<float> a = new Vector4<float>();
+            Vector4D<float> a = new Vector4D<float>();
 
             Assert.Equal(0.0f, a.X);
             Assert.Equal(0.0f, a.Y);
@@ -1085,56 +1085,56 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(0.0f, a.W);
         }
 
-        // A test for Vector4<float>f ()
+        // A test for Vector4D<float>f ()
         // Constructor with special floating values
         [Fact]
         public void Vector4ConstructorTest5()
         {
-            Vector4<float> target = new Vector4<float>(float.NaN, float.MaxValue, float.PositiveInfinity, float.Epsilon);
+            Vector4D<float> target = new Vector4D<float>(float.NaN, float.MaxValue, float.PositiveInfinity, float.Epsilon);
 
-            Assert.True(float.IsNaN(target.X), "Vector4<float>f.constructor (float, float, float, float) did not return the expected value.");
-            Assert.True(float.Equals(float.MaxValue, target.Y), "Vector4<float>f.constructor (float, float, float, float) did not return the expected value.");
-            Assert.True(float.IsPositiveInfinity(target.Z), "Vector4<float>f.constructor (float, float, float, float) did not return the expected value.");
-            Assert.True(float.Equals(float.Epsilon, target.W), "Vector4<float>f.constructor (float, float, float, float) did not return the expected value.");
+            Assert.True(float.IsNaN(target.X), "Vector4D<float>f.constructor (float, float, float, float) did not return the expected value.");
+            Assert.True(float.Equals(float.MaxValue, target.Y), "Vector4D<float>f.constructor (float, float, float, float) did not return the expected value.");
+            Assert.True(float.IsPositiveInfinity(target.Z), "Vector4D<float>f.constructor (float, float, float, float) did not return the expected value.");
+            Assert.True(float.Equals(float.Epsilon, target.W), "Vector4D<float>f.constructor (float, float, float, float) did not return the expected value.");
         }
 
-        // A test for Add (Vector4<float>f, Vector4<float>f)
+        // A test for Add (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4AddTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 6.0f, 7.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 6.0f, 7.0f, 8.0f);
 
-            Vector4<float> expected = new Vector4<float>(6.0f, 8.0f, 10.0f, 12.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(6.0f, 8.0f, 10.0f, 12.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Add(a, b);
+            actual = Vector4D.Add(a, b);
             Assert.Equal(expected, actual);
         }
 
-        // A test for Divide (Vector4<float>f, float)
+        // A test for Divide (Vector4D<float>f, float)
         [Fact]
         public void Vector4DivideTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
             float div = 2.0f;
-            Vector4<float> expected = new Vector4<float>(0.5f, 1.0f, 1.5f, 2.0f);
-            Vector4<float> actual;
-            actual = Vector4.Divide(a, div);
+            Vector4D<float> expected = new Vector4D<float>(0.5f, 1.0f, 1.5f, 2.0f);
+            Vector4D<float> actual;
+            actual = Vector4D.Divide(a, div);
             Assert.Equal(expected, actual);
         }
 
-        // A test for Divide (Vector4<float>f, Vector4<float>f)
+        // A test for Divide (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4DivideTest1()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 6.0f, 7.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 2.0f, 3.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 6.0f, 7.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 2.0f, 3.0f, 8.0f);
 
-            Vector4<float> expected = new Vector4<float>(1.0f / 5.0f, 6.0f / 2.0f, 7.0f / 3.0f, 4.0f / 8.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(1.0f / 5.0f, 6.0f / 2.0f, 7.0f / 3.0f, 4.0f / 8.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Divide(a, b);
+            actual = Vector4D.Divide(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -1142,8 +1142,8 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector4EqualsTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             // case 1: compare between same values
             object obj = b;
@@ -1172,61 +1172,61 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
         }
 
-        // A test for Multiply (float, Vector4<float>f)
+        // A test for Multiply (float, Vector4D<float>f)
         [Fact]
         public void Vector4MultiplyTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
             const float factor = 2.0f;
-            Vector4<float> expected = new Vector4<float>(2.0f, 4.0f, 6.0f, 8.0f);
-            Vector4<float> actual = Vector4.Multiply(factor, a);
+            Vector4D<float> expected = new Vector4D<float>(2.0f, 4.0f, 6.0f, 8.0f);
+            Vector4D<float> actual = Vector4D.Multiply(factor, a);
             Assert.Equal(expected, actual);
         }
 
-        // A test for Multiply (Vector4<float>f, float)
+        // A test for Multiply (Vector4D<float>f, float)
         [Fact]
         public void Vector4MultiplyTest2()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
             const float factor = 2.0f;
-            Vector4<float> expected = new Vector4<float>(2.0f, 4.0f, 6.0f, 8.0f);
-            Vector4<float> actual = Vector4.Multiply(a, factor);
+            Vector4D<float> expected = new Vector4D<float>(2.0f, 4.0f, 6.0f, 8.0f);
+            Vector4D<float> actual = Vector4D.Multiply(a, factor);
             Assert.Equal(expected, actual);
         }
 
-        // A test for Multiply (Vector4<float>f, Vector4<float>f)
+        // A test for Multiply (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4MultiplyTest3()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 6.0f, 7.0f, 8.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 6.0f, 7.0f, 8.0f);
 
-            Vector4<float> expected = new Vector4<float>(5.0f, 12.0f, 21.0f, 32.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(5.0f, 12.0f, 21.0f, 32.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Multiply(a, b);
+            actual = Vector4D.Multiply(a, b);
             Assert.Equal(expected, actual);
         }
 
-        // A test for Negate (Vector4<float>f)
+        // A test for Negate (Vector4D<float>f)
         [Fact]
         public void Vector4NegateTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
-            Vector4<float> expected = new Vector4<float>(-1.0f, -2.0f, -3.0f, -4.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(-1.0f, -2.0f, -3.0f, -4.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Negate(a);
+            actual = Vector4D.Negate(a);
             Assert.Equal(expected, actual);
         }
 
-        // A test for operator != (Vector4<float>f, Vector4<float>f)
+        // A test for operator != (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4InequalityTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             // case 1: compare between same values
             bool expected = false;
@@ -1240,12 +1240,12 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
         }
 
-        // A test for operator == (Vector4<float>f, Vector4<float>f)
+        // A test for operator == (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4EqualityTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             // case 1: compare between same values
             bool expected = true;
@@ -1259,17 +1259,17 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
         }
 
-        // A test for Subtract (Vector4<float>f, Vector4<float>f)
+        // A test for Subtract (Vector4D<float>f, Vector4D<float>f)
         [Fact]
         public void Vector4SubtractTest()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 6.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(5.0f, 2.0f, 3.0f, 9.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 6.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(5.0f, 2.0f, 3.0f, 9.0f);
 
-            Vector4<float> expected = new Vector4<float>(-4.0f, 4.0f, 0.0f, -5.0f);
-            Vector4<float> actual;
+            Vector4D<float> expected = new Vector4D<float>(-4.0f, 4.0f, 0.0f, -5.0f);
+            Vector4D<float> actual;
 
-            actual = Vector4.Subtract(a, b);
+            actual = Vector4D.Subtract(a, b);
 
             Assert.Equal(expected, actual);
         }
@@ -1278,56 +1278,56 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector4UnitWTest()
         {
-            Vector4<float> val = new Vector4<float>(0.0f, 0.0f, 0.0f, 1.0f);
-            Assert.Equal(val, Vector4<float>.UnitW);
+            Vector4D<float> val = new Vector4D<float>(0.0f, 0.0f, 0.0f, 1.0f);
+            Assert.Equal(val, Vector4D<float>.UnitW);
         }
 
         // A test for UnitX
         [Fact]
         public void Vector4UnitXTest()
         {
-            Vector4<float> val = new Vector4<float>(1.0f, 0.0f, 0.0f, 0.0f);
-            Assert.Equal(val, Vector4<float>.UnitX);
+            Vector4D<float> val = new Vector4D<float>(1.0f, 0.0f, 0.0f, 0.0f);
+            Assert.Equal(val, Vector4D<float>.UnitX);
         }
 
         // A test for UnitY
         [Fact]
         public void Vector4UnitYTest()
         {
-            Vector4<float> val = new Vector4<float>(0.0f, 1.0f, 0.0f, 0.0f);
-            Assert.Equal(val, Vector4<float>.UnitY);
+            Vector4D<float> val = new Vector4D<float>(0.0f, 1.0f, 0.0f, 0.0f);
+            Assert.Equal(val, Vector4D<float>.UnitY);
         }
 
         // A test for UnitZ
         [Fact]
         public void Vector4UnitZTest()
         {
-            Vector4<float> val = new Vector4<float>(0.0f, 0.0f, 1.0f, 0.0f);
-            Assert.Equal(val, Vector4<float>.UnitZ);
+            Vector4D<float> val = new Vector4D<float>(0.0f, 0.0f, 1.0f, 0.0f);
+            Assert.Equal(val, Vector4D<float>.UnitZ);
         }
 
         // A test for One
         [Fact]
         public void Vector4OneTest()
         {
-            Vector4<float> val = new Vector4<float>(1.0f, 1.0f, 1.0f, 1.0f);
-            Assert.Equal(val, Vector4<float>.One);
+            Vector4D<float> val = new Vector4D<float>(1.0f, 1.0f, 1.0f, 1.0f);
+            Assert.Equal(val, Vector4D<float>.One);
         }
 
         // A test for Zero
         [Fact]
         public void Vector4ZeroTest()
         {
-            Vector4<float> val = new Vector4<float>(0.0f, 0.0f, 0.0f, 0.0f);
-            Assert.Equal(val, Vector4<float>.Zero);
+            Vector4D<float> val = new Vector4D<float>(0.0f, 0.0f, 0.0f, 0.0f);
+            Assert.Equal(val, Vector4D<float>.Zero);
         }
 
-        // A test for Equals (Vector4<float>f)
+        // A test for Equals (Vector4D<float>f)
         [Fact]
         public void Vector4EqualsTest1()
         {
-            Vector4<float> a = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
-            Vector4<float> b = new Vector4<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> a = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
+            Vector4D<float> b = new Vector4D<float>(1.0f, 2.0f, 3.0f, 4.0f);
 
             // case 1: compare between same values
             Assert.True(a.Equals(b));
@@ -1337,45 +1337,45 @@ namespace Silk.NET.Maths.Tests
             Assert.False(a.Equals(b));
         }
 
-        // A test for Vector4<float>f (float)
+        // A test for Vector4D<float>f (float)
         [Fact]
         public void Vector4ConstructorTest6()
         {
             float value = 1.0f;
-            Vector4<float> target = new Vector4<float>(value);
+            Vector4D<float> target = new Vector4D<float>(value);
 
-            Vector4<float> expected = new Vector4<float>(value, value, value, value);
+            Vector4D<float> expected = new Vector4D<float>(value, value, value, value);
             Assert.Equal(expected, target);
 
             value = 2.0f;
-            target = new Vector4<float>(value);
-            expected = new Vector4<float>(value, value, value, value);
+            target = new Vector4D<float>(value);
+            expected = new Vector4D<float>(value, value, value, value);
             Assert.Equal(expected, target);
         }
 
-        // A test for Vector4<float>f comparison involving NaN values
+        // A test for Vector4D<float>f comparison involving NaN values
         [Fact]
         public void Vector4EqualsNanTest()
         {
-            Vector4<float> a = new Vector4<float>(float.NaN, 0, 0, 0);
-            Vector4<float> b = new Vector4<float>(0, float.NaN, 0, 0);
-            Vector4<float> c = new Vector4<float>(0, 0, float.NaN, 0);
-            Vector4<float> d = new Vector4<float>(0, 0, 0, float.NaN);
+            Vector4D<float> a = new Vector4D<float>(float.NaN, 0, 0, 0);
+            Vector4D<float> b = new Vector4D<float>(0, float.NaN, 0, 0);
+            Vector4D<float> c = new Vector4D<float>(0, 0, float.NaN, 0);
+            Vector4D<float> d = new Vector4D<float>(0, 0, 0, float.NaN);
 
-            Assert.False(a == Vector4<float>.Zero);
-            Assert.False(b == Vector4<float>.Zero);
-            Assert.False(c == Vector4<float>.Zero);
-            Assert.False(d == Vector4<float>.Zero);
+            Assert.False(a == Vector4D<float>.Zero);
+            Assert.False(b == Vector4D<float>.Zero);
+            Assert.False(c == Vector4D<float>.Zero);
+            Assert.False(d == Vector4D<float>.Zero);
 
-            Assert.True(a != Vector4<float>.Zero);
-            Assert.True(b != Vector4<float>.Zero);
-            Assert.True(c != Vector4<float>.Zero);
-            Assert.True(d != Vector4<float>.Zero);
+            Assert.True(a != Vector4D<float>.Zero);
+            Assert.True(b != Vector4D<float>.Zero);
+            Assert.True(c != Vector4D<float>.Zero);
+            Assert.True(d != Vector4D<float>.Zero);
 
-            Assert.False(a.Equals(Vector4<float>.Zero));
-            Assert.False(b.Equals(Vector4<float>.Zero));
-            Assert.False(c.Equals(Vector4<float>.Zero));
-            Assert.False(d.Equals(Vector4<float>.Zero));
+            Assert.False(a.Equals(Vector4D<float>.Zero));
+            Assert.False(b.Equals(Vector4D<float>.Zero));
+            Assert.False(c.Equals(Vector4D<float>.Zero));
+            Assert.False(d.Equals(Vector4D<float>.Zero));
 
             // Counterintuitive result - IEEE rules for NaN comparison are weird!
             Assert.False(a.Equals(a));
@@ -1387,9 +1387,9 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector4AbsTest()
         {
-            Vector4<float> v1 = new Vector4<float>(-2.5f, 2.0f, 3.0f, 3.3f);
-            Vector4<float> v3 = Vector4.Abs(new Vector4<float>(float.PositiveInfinity, 0.0f, float.NegativeInfinity, float.NaN));
-            Vector4<float> v = Vector4.Abs(v1);
+            Vector4D<float> v1 = new Vector4D<float>(-2.5f, 2.0f, 3.0f, 3.3f);
+            Vector4D<float> v3 = Vector4D.Abs(new Vector4D<float>(float.PositiveInfinity, 0.0f, float.NegativeInfinity, float.NaN));
+            Vector4D<float> v = Vector4D.Abs(v1);
             Assert.Equal(2.5f, v.X);
             Assert.Equal(2.0f, v.Y);
             Assert.Equal(3.0f, v.Z);
@@ -1403,20 +1403,20 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector4SqrtTest()
         {
-            Vector4<float> v1 = new Vector4<float>(-2.5f, 2.0f, 3.0f, 3.3f);
-            Vector4<float> v2 = new Vector4<float>(5.5f, 4.5f, 6.5f, 7.5f);
-            Assert.Equal(2, (int)Vector4.SquareRoot(v2).X);
-            Assert.Equal(2, (int)Vector4.SquareRoot(v2).Y);
-            Assert.Equal(2, (int)Vector4.SquareRoot(v2).Z);
-            Assert.Equal(2, (int)Vector4.SquareRoot(v2).W);
-            Assert.Equal(float.NaN, Vector4.SquareRoot(v1).X);
+            Vector4D<float> v1 = new Vector4D<float>(-2.5f, 2.0f, 3.0f, 3.3f);
+            Vector4D<float> v2 = new Vector4D<float>(5.5f, 4.5f, 6.5f, 7.5f);
+            Assert.Equal(2, (int)Vector4D.SquareRoot(v2).X);
+            Assert.Equal(2, (int)Vector4D.SquareRoot(v2).Y);
+            Assert.Equal(2, (int)Vector4D.SquareRoot(v2).Z);
+            Assert.Equal(2, (int)Vector4D.SquareRoot(v2).W);
+            Assert.Equal(float.NaN, Vector4D.SquareRoot(v1).X);
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts
         [Fact]
         public unsafe void Vector4SizeofTest()
         {
-            Assert.Equal(16, sizeof(Vector4<float>));
+            Assert.Equal(16, sizeof(Vector4D<float>));
             Assert.Equal(32, sizeof(Vector4_2x));
             Assert.Equal(20, sizeof(Vector4PlusFloat));
             Assert.Equal(40, sizeof(Vector4PlusFloat_2x));
@@ -1425,14 +1425,14 @@ namespace Silk.NET.Maths.Tests
         [StructLayout(LayoutKind.Sequential)]
         struct Vector4_2x
         {
-            private Vector4<float> _a;
-            private Vector4<float> _b;
+            private Vector4D<float> _a;
+            private Vector4D<float> _b;
         }
 
         [StructLayout(LayoutKind.Sequential)]
         struct Vector4PlusFloat
         {
-            private Vector4<float> _v;
+            private Vector4D<float> _v;
             private float _f;
         }
 
@@ -1446,7 +1446,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void SetFieldsTest()
         {
-            Vector4<float> v3 = new Vector4<float>(4f, 5f, 6f, 7f);
+            Vector4D<float> v3 = new Vector4D<float>(4f, 5f, 6f, 7f);
             v3.X = 1.0f;
             v3.Y = 2.0f;
             v3.Z = 3.0f;
@@ -1455,7 +1455,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(2.0f, v3.Y);
             Assert.Equal(3.0f, v3.Z);
             Assert.Equal(4.0f, v3.W);
-            Vector4<float> v4 = v3;
+            Vector4D<float> v4 = v3;
             v4.Y = 0.5f;
             v4.Z = 2.2f;
             v4.W = 3.5f;
@@ -1489,7 +1489,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(5f, obj.RootEmbeddedObject.Y);
             Assert.Equal(1f, obj.RootEmbeddedObject.Z);
             Assert.Equal(-5f, obj.RootEmbeddedObject.W);
-            obj.L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector = new Vector4<float>(1, 2, 3, 4);
+            obj.L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector = new Vector4D<float>(1, 2, 3, 4);
             Assert.Equal(1f, obj.RootEmbeddedObject.X);
             Assert.Equal(2f, obj.RootEmbeddedObject.Y);
             Assert.Equal(3f, obj.RootEmbeddedObject.Z);
@@ -1505,7 +1505,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(5f, obj.RootEmbeddedObject.Y);
             Assert.Equal(1f, obj.RootEmbeddedObject.Z);
             Assert.Equal(-5f, obj.RootEmbeddedObject.W);
-            obj.L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector = new Vector4<float>(1, 2, 3, 4);
+            obj.L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector = new Vector4D<float>(1, 2, 3, 4);
             Assert.Equal(1f, obj.RootEmbeddedObject.X);
             Assert.Equal(2f, obj.RootEmbeddedObject.Y);
             Assert.Equal(3f, obj.RootEmbeddedObject.Z);
@@ -1514,13 +1514,13 @@ namespace Silk.NET.Maths.Tests
 
         private class EmbeddedVectorObject
         {
-            public Vector4<float> FieldVector;
+            public Vector4D<float> FieldVector;
         }
 
         private class DeeplyEmbeddedClass
         {
             public readonly Level0 L0 = new Level0();
-            public Vector4<float> RootEmbeddedObject { get { return L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector; } }
+            public Vector4D<float> RootEmbeddedObject { get { return L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector; } }
             public class Level0
             {
                 public readonly Level1 L1 = new Level1();
@@ -1544,7 +1544,7 @@ namespace Silk.NET.Maths.Tests
                                         public readonly Level7 L7 = new Level7();
                                         public class Level7
                                         {
-                                            public Vector4<float> EmbeddedVector = new Vector4<float>(1, 5, 1, -5);
+                                            public Vector4D<float> EmbeddedVector = new Vector4D<float>(1, 5, 1, -5);
                                         }
                                     }
                                 }
@@ -1570,13 +1570,13 @@ namespace Silk.NET.Maths.Tests
                 obj.L0.L1.L2.L3.L4.L5 = new Level0.Level1.Level2.Level3.Level4.Level5();
                 obj.L0.L1.L2.L3.L4.L5.L6 = new Level0.Level1.Level2.Level3.Level4.Level5.Level6();
                 obj.L0.L1.L2.L3.L4.L5.L6.L7 = new Level0.Level1.Level2.Level3.Level4.Level5.Level6.Level7();
-                obj.L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector = new Vector4<float>(1, 5, 1, -5);
+                obj.L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector = new Vector4D<float>(1, 5, 1, -5);
 
                 return obj;
             }
 
             public Level0 L0;
-            public Vector4<float> RootEmbeddedObject { get { return L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector; } }
+            public Vector4D<float> RootEmbeddedObject { get { return L0.L1.L2.L3.L4.L5.L6.L7.EmbeddedVector; } }
             public struct Level0
             {
                 private float _buffer0, _buffer1;
@@ -1613,7 +1613,7 @@ namespace Silk.NET.Maths.Tests
                                         private byte _buffer1, _buffer2;
                                         public struct Level7
                                         {
-                                            public Vector4<float> EmbeddedVector;
+                                            public Vector4D<float> EmbeddedVector;
                                         }
                                     }
                                 }

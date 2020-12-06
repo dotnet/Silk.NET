@@ -5,8 +5,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Internals;
@@ -37,12 +37,12 @@ namespace Silk.NET.Input.Glfw
         public override IReadOnlyList<MouseButton> SupportedButtons { get; } = _buttons;
         public override IReadOnlyList<ScrollWheel> ScrollWheels { get; }
 
-        public override unsafe PointF Position
+        public override unsafe Vector2 Position
         {
             get
             {
                 GlfwProvider.GLFW.Value.GetCursorPos(_handle, out var x, out var y);
-                return new PointF((float) x, (float) y);
+                return new Vector2((float) x, (float) y);
             }
             set => GlfwProvider.GLFW.Value.SetCursorPos(_handle, value.X, value.Y);
         }
@@ -61,7 +61,7 @@ namespace Silk.NET.Input.Glfw
             return GlfwProvider.GLFW.Value.GetMouseButton(_handle, index) == (int) InputAction.Press;
         }
 
-        public override event Action<IMouse, PointF>? MouseMove;
+        public override event Action<IMouse, Vector2>? MouseMove;
         public override event Action<IMouse, ScrollWheel>? Scroll;
 
         public unsafe void Dispose()
@@ -83,7 +83,7 @@ namespace Silk.NET.Input.Glfw
                 ((ScrollWheel[]) ScrollWheels)[0] = val;
                 Scroll?.Invoke(this, val);
             };
-            events.CursorPos += _cursorPos = (_, x, y) => MouseMove?.Invoke(this, new PointF((float) x, (float) y));
+            events.CursorPos += _cursorPos = (_, x, y) => MouseMove?.Invoke(this, new Vector2((float) x, (float) y));
             events.MouseButton += _mouseButton = (_, btn, action, mods) =>
             {
                 switch (action)

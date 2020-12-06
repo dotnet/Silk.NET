@@ -20,14 +20,14 @@ namespace Silk.NET.Windowing.Sdl
             _view = view;
         }
 
-        public Vector2<int> FramebufferSize
+        public Vector2D<int> FramebufferSize
         {
             get
             {
                 var ret = stackalloc int[2];
                 _view.Sdl.GLGetDrawableSize(_view.SdlWindow, ret, &ret[1]);
                 _view.Sdl.ThrowError();
-                return *(Vector2<int>*) ret;
+                return *(Vector2D<int>*) ret;
             }
         }
 

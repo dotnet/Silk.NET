@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
@@ -33,8 +32,8 @@ namespace Silk.NET.Windowing.Glfw
         private GlfwCallbacks.WindowFocusCallback? _onFocusChanged;
         private GlfwCallbacks.WindowIconifyCallback? _onMinimized;
         private GlfwCallbacks.WindowMaximizeCallback? _onMaximized;
-        private Vector2<int> _nonFullscreenPosition;
-        private Vector2<int> _nonFullscreenSize;
+        private Vector2D<int> _nonFullscreenPosition;
+        private Vector2D<int> _nonFullscreenSize;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -44,12 +43,12 @@ namespace Silk.NET.Windowing.Glfw
             _localTitleCache = optionsCache.Title;
         }
 
-        protected override Vector2<int> CoreSize
+        protected override Vector2D<int> CoreSize
         {
             get
             {
                 _glfw.GetWindowSize(_glfwWindow, out var width, out var height);
-                return new Vector2<int>(width, height);
+                return new Vector2D<int>(width, height);
             }
         }
         
@@ -105,12 +104,12 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
-        protected override Vector2<int> CorePosition
+        protected override Vector2D<int> CorePosition
         {
             get
             {
                 _glfw.GetWindowPos(_glfwWindow, out var x, out var y);
-                return new Vector2<int>(x, y);
+                return new Vector2D<int>(x, y);
             }
             set => _glfw.SetWindowPos(_glfwWindow, value.X, value.Y);
         }
@@ -231,7 +230,7 @@ namespace Silk.NET.Windowing.Glfw
             set => _glfw.SetWindowShouldClose(_glfwWindow, value);
         }
 
-        protected override Vector2<int> SizeSettable
+        protected override Vector2D<int> SizeSettable
         {
             set => _glfw.SetWindowSize(_glfwWindow, value.X, value.Y);
         }
@@ -338,7 +337,7 @@ namespace Silk.NET.Windowing.Glfw
             GLFW.Glfw.ThrowExceptions();
         }
 
-        public override event Action<Vector2<int>>? Move;
+        public override event Action<Vector2D<int>>? Move;
         public override event Action<WindowState>? StateChanged;
         public override event Action<string[]>? FileDrop;
 
@@ -399,7 +398,7 @@ namespace Silk.NET.Windowing.Glfw
                         {
                             var pos = Position;
                             var size = Size;
-                            if (m.Bounds.Contains(new Vector2<int>(pos.X + size.X / 2, pos.Y + size.Y / 2)))
+                            if (m.Bounds.Contains(new Vector2D<int>(pos.X + size.X / 2, pos.Y + size.Y / 2)))
                             {
                                 return m;
                             }
@@ -478,12 +477,12 @@ namespace Silk.NET.Windowing.Glfw
 
         public override bool IsEventDriven { get; set; }
 
-        public override Vector2<int> FramebufferSize
+        public override Vector2D<int> FramebufferSize
         {
             get
             {
                 _glfw.GetFramebufferSize(_glfwWindow, out var width, out var height);
-                return new Vector2<int>(width, height);
+                return new Vector2D<int>(width, height);
             }
         }
 
@@ -519,21 +518,21 @@ namespace Silk.NET.Windowing.Glfw
         {
             _onMove = (window, x, y) =>
             {
-                var point = new Vector2<int>(x, y);
+                var point = new Vector2D<int>(x, y);
                 UpdatePosition(point);
                 Move?.Invoke(point);
             };
 
             _onResize = (window, width, height) =>
             {
-                var size = new Vector2<int>(width, height);
+                var size = new Vector2D<int>(width, height);
                 UpdateSize(size);
                 Resize?.Invoke(size);
             };
 
             _onFramebufferResize = (window, width, height) =>
             {
-                FramebufferResize?.Invoke(new Vector2<int>(width, height));
+                FramebufferResize?.Invoke(new Vector2D<int>(width, height));
             };
 
             _onClosing = window => Closing?.Invoke();
@@ -644,8 +643,8 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
-        public override event Action<Vector2<int>>? Resize;
-        public override event Action<Vector2<int>>? FramebufferResize;
+        public override event Action<Vector2D<int>>? Resize;
+        public override event Action<Vector2D<int>>? FramebufferResize;
         public override event Action? Closing;
         public override event Action<bool>? FocusChanged;
 

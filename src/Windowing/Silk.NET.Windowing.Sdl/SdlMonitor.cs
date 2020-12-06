@@ -34,7 +34,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 DisplayMode mode;
                 SdlProvider.SDL.Value.GetCurrentDisplayMode(Index, &mode);
-                return new VideoMode(new Vector2<int>(mode.W, mode.H), mode.RefreshRate);
+                return new VideoMode(new Vector2D<int>(mode.W, mode.H), mode.RefreshRate);
             }
         }
 
@@ -52,7 +52,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 DisplayMode mode;
                 sdl.GetDisplayMode(Index, i, &mode);
-                ret[i] = new VideoMode(new Vector2<int>(mode.W, mode.H), mode.RefreshRate);
+                ret[i] = new VideoMode(new Vector2D<int>(mode.W, mode.H), mode.RefreshRate);
             }
 
             return ret;

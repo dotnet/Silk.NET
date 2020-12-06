@@ -71,7 +71,7 @@ namespace Silk.NET.Windowing
         /// </summary>
         /// <param name="window">The window to get size information from.</param>
         /// <returns>The full size of the window (including both content area and borders)</returns>
-        public static Vector2<int> GetFullSize(this IWindow window) => Vector2.Add(window.Size, window.BorderSize.Size);
+        public static Vector2D<int> GetFullSize(this IWindow window) => Vector2D.Add(window.Size, window.BorderSize.Size);
 
         /// <summary>
         /// Centers this window to the given monitor or, if null, the current monitor the window's on.
@@ -83,10 +83,10 @@ namespace Silk.NET.Windowing
             monitor ??= window.Monitor;
             var monitorBounds = monitor.Bounds;
             var windowFullSize = window.GetFullSize();
-            window.Position = Vector2.Add
+            window.Position = Vector2D.Add
             (
                 monitorBounds.Origin,
-                new Vector2<int>
+                new Vector2D<int>
                 (
                     monitorBounds.Size.X / 2 - windowFullSize.X / 2,
                     monitorBounds.Size.Y / 2 - windowFullSize.Y / 2

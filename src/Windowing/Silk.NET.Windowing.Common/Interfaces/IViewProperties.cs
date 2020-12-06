@@ -34,7 +34,7 @@ namespace Silk.NET.Windowing
         /// This will be replaced with an integer vector once System.Numerics supports them.
         /// </para>
         /// </remarks>
-        Vector2<int> Size { get; }
+        Vector2D<int> Size { get; }
 
         /// <summary>
         /// The number of rendering operations to run every second.

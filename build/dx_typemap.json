@@ -33,5 +33,5 @@
     "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType",
     "IDXGIAdapter": "Silk.NET.DXGI.IDXGIAdapter",
     "IDXGISwapChain": "Silk.NET.DXGI.IDXGISwapChain",
-    "D3D12_RAYTRACING_AABB": "Silk.NET.Maths.Box3<float>"
+    "D3D12_RAYTRACING_AABB": "Silk.NET.Maths.Box3D<float>"
 }

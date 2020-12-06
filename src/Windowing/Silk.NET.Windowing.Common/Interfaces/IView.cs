@@ -32,17 +32,17 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// The size of the framebuffer. May differ from the window size.
         /// </summary>
-        Vector2<int> FramebufferSize { get; }
+        Vector2D<int> FramebufferSize { get; }
 
         /// <summary>
         /// Raised when the window is resized.
         /// </summary>
-        event Action<Vector2<int>>? Resize;
+        event Action<Vector2D<int>>? Resize;
 
         /// <summary>
         /// Raised when the window's framebuffer is resized.
         /// </summary>
-        event Action<Vector2<int>>? FramebufferResize;
+        event Action<Vector2D<int>>? FramebufferResize;
 
         /// <summary>
         /// Raised when the window is about to close.
@@ -111,7 +111,7 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects screen coordinates as input.</remarks>
-        Vector2<int> PointToClient(Vector2<int> point);
+        Vector2D<int> PointToClient(Vector2D<int> point);
 
         /// <summary>
         /// Converts this point to screen coordinates.
@@ -119,7 +119,7 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects client coordinates as input.</remarks>
-        Vector2<int> PointToScreen(Vector2<int> point);
+        Vector2D<int> PointToScreen(Vector2D<int> point);
 
         /// <summary>
         /// Converts this point to framebuffer coordinates.
@@ -127,7 +127,7 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects client coordinates as input.</remarks>
-        Vector2<int> PointToFramebuffer(Vector2<int> point);
+        Vector2D<int> PointToFramebuffer(Vector2D<int> point);
 
         /// <summary>
         /// Invokes this delegate on the window's main thread, with the provided arguments.

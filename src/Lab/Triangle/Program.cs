@@ -125,7 +125,7 @@ namespace Triangle
         {
         }
 
-        private static void Resize(Vector2<int> size)
+        private static void Resize(Vector2D<int> size)
         {
             _gl.Viewport(size);
         }

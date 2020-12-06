@@ -146,8 +146,8 @@
     "_LARGE_INTEGER": "long",
     "IUnknown": "Silk.NET.Core.Native.IUnknown",
     "tagRECT": "Silk.NET.Maths.Rectangle<long>",
-    "tagPOINT": "Silk.NET.Maths.Vector2<long>",
-    "tagSIZE": "Silk.NET.Maths.Vector2<long>",
-    "tagPALETTEENTRY": "Silk.NET.Maths.Vector4<byte>",
+    "tagPOINT": "Silk.NET.Maths.Vector2D<long>",
+    "tagSIZE": "Silk.NET.Maths.Vector2D<long>",
+    "tagPALETTEENTRY": "Silk.NET.Maths.Vector4D<byte>",
     "_SECURITY_ATTRIBUTES": "Silk.NET.Core.Native.SecurityAttributes"
 }

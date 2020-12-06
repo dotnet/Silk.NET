@@ -5,7 +5,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Numerics;
 
 namespace Silk.NET.Input
 {
@@ -28,7 +28,7 @@ namespace Silk.NET.Input
         /// <summary>
         /// The position of the cursor.
         /// </summary>
-        PointF Position { get; set; }
+        Vector2 Position { get; set; }
 
         /// <summary>
         /// The cursor to use.
@@ -67,17 +67,17 @@ namespace Silk.NET.Input
         /// <summary>
         /// Called when a single click is performed.
         /// </summary>
-        event Action<IMouse, MouseButton, PointF> Click;
+        event Action<IMouse, MouseButton, Vector2> Click;
 
         /// <summary>
         /// Called when a double click is performed.
         /// </summary>
-        event Action<IMouse, MouseButton, PointF> DoubleClick;
+        event Action<IMouse, MouseButton, Vector2> DoubleClick;
 
         /// <summary>
         /// Called when the mouse is moved.
         /// </summary>
-        event Action<IMouse, PointF> MouseMove;
+        event Action<IMouse, Vector2> MouseMove;
 
         /// <summary>
         /// Called when the mouse wheel scrolls.

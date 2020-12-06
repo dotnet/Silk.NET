@@ -826,19 +826,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Vector2<long> Size)
+        public readonly unsafe void VideoProcessorSetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Vector2D<long> Size)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2<long>, void>)LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<long>, void>)LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
         }
 
         /// <summary>To be added.</summary>
-        public readonly void VideoProcessorSetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Maths.Vector2<long> Size)
+        public readonly void VideoProcessorSetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Maths.Vector2D<long> Size)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2<long>, void>)LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Vector2D<long>, void>)LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
             }
         }
 
@@ -1284,92 +1284,92 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, Silk.NET.Maths.Vector2<long>* pSize)
+        public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, Silk.NET.Maths.Vector2D<long>* pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2<long>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSize);
+            ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<long>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSize);
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, ref Silk.NET.Maths.Vector2<long> pSize)
+        public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, int* pEnabled, ref Silk.NET.Maths.Vector2D<long> pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Vector2<long>* pSizePtr = &pSize)
+            fixed (Silk.NET.Maths.Vector2D<long>* pSizePtr = &pSize)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2<long>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSizePtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<long>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabled, pSizePtr);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, ref int pEnabled, Silk.NET.Maths.Vector2<long>* pSize)
+        public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, ref int pEnabled, Silk.NET.Maths.Vector2D<long>* pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2<long>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSize);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<long>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSize);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, ref int pEnabled, ref Silk.NET.Maths.Vector2<long> pSize)
+        public readonly unsafe void VideoProcessorGetOutputConstriction(ID3D11VideoProcessor* pVideoProcessor, ref int pEnabled, ref Silk.NET.Maths.Vector2D<long> pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                fixed (Silk.NET.Maths.Vector2<long>* pSizePtr = &pSize)
+                fixed (Silk.NET.Maths.Vector2D<long>* pSizePtr = &pSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2<long>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSizePtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<long>*, void>)LpVtbl[24])(@this, pVideoProcessor, pEnabledPtr, pSizePtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int* pEnabled, Silk.NET.Maths.Vector2<long>* pSize)
+        public readonly unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int* pEnabled, Silk.NET.Maths.Vector2D<long>* pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2<long>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSize);
+                ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<long>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSize);
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int* pEnabled, ref Silk.NET.Maths.Vector2<long> pSize)
+        public readonly unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, int* pEnabled, ref Silk.NET.Maths.Vector2D<long> pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
-                fixed (Silk.NET.Maths.Vector2<long>* pSizePtr = &pSize)
+                fixed (Silk.NET.Maths.Vector2D<long>* pSizePtr = &pSize)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2<long>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSizePtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<long>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabled, pSizePtr);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, ref int pEnabled, Silk.NET.Maths.Vector2<long>* pSize)
+        public readonly unsafe void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, ref int pEnabled, Silk.NET.Maths.Vector2D<long>* pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2<long>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSize);
+                    ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<long>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSize);
                 }
             }
         }
 
         /// <summary>To be added.</summary>
-        public readonly void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, ref int pEnabled, ref Silk.NET.Maths.Vector2<long> pSize)
+        public readonly void VideoProcessorGetOutputConstriction(ref ID3D11VideoProcessor pVideoProcessor, ref int pEnabled, ref Silk.NET.Maths.Vector2D<long> pSize)
         {
             var @this = (ID3D11VideoContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
             {
                 fixed (int* pEnabledPtr = &pEnabled)
                 {
-                    fixed (Silk.NET.Maths.Vector2<long>* pSizePtr = &pSize)
+                    fixed (Silk.NET.Maths.Vector2D<long>* pSizePtr = &pSize)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2<long>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSizePtr);
+                        ((delegate* unmanaged[Cdecl]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Vector2D<long>*, void>)LpVtbl[24])(@this, pVideoProcessorPtr, pEnabledPtr, pSizePtr);
                     }
                 }
             }

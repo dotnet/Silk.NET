@@ -28,7 +28,7 @@ namespace Tutorial
         private static Camera Camera;
 
         //Used to track change in mouse movement to allow for moving of the Camera
-        private static PointF LastMousePosition;
+        private static Vector2D<T>LastMousePosition;
 
         private static readonly float[] Vertices =
         {
@@ -85,7 +85,7 @@ namespace Tutorial
         private static void Main(string[] args)
         {
             var options = WindowOptions.Default;
-            options.Size = new Vector2<int>(800, 600);
+            options.Size = new Vector2D<int>(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
 
@@ -205,7 +205,7 @@ namespace Tutorial
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
         }
 
-        private static unsafe void OnMouseMove(IMouse mouse, PointF position)
+        private static unsafe void OnMouseMove(IMouse mouse, Vector2D<T>position)
         {
             var lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }

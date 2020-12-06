@@ -10,13 +10,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public unsafe void Vector2MarshalSizeTest()
         {
-            Assert.Equal(8, sizeof(Vector2<float>));
+            Assert.Equal(8, sizeof(Vector2D<float>));
         }
 
         [Fact]
         public void Vector2CopyToTest()
         {
-            Vector2<float> v1 = new Vector2<float>(2.0f, 3.0f);
+            Vector2D<float> v1 = new Vector2D<float>(2.0f, 3.0f);
 
             float[] a = new float[3];
             float[] b = new float[2];
@@ -38,16 +38,16 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2GetHashCodeTest()
         {
-            Vector2<float> v1 = new Vector2<float>(2.0f, 3.0f);
-            Vector2<float> v2 = new Vector2<float>(2.0f, 3.0f);
-            Vector2<float> v3 = new Vector2<float>(3.0f, 2.0f);
+            Vector2D<float> v1 = new Vector2D<float>(2.0f, 3.0f);
+            Vector2D<float> v2 = new Vector2D<float>(2.0f, 3.0f);
+            Vector2D<float> v3 = new Vector2D<float>(3.0f, 2.0f);
             Assert.Equal(v1.GetHashCode(), v1.GetHashCode());
             Assert.Equal(v1.GetHashCode(), v2.GetHashCode());
             Assert.NotEqual(v1.GetHashCode(), v3.GetHashCode());
-            Vector2<float> v4 = new Vector2<float>(0.0f, 0.0f);
-            Vector2<float> v6 = new Vector2<float>(1.0f, 0.0f);
-            Vector2<float> v7 = new Vector2<float>(0.0f, 1.0f);
-            Vector2<float> v8 = new Vector2<float>(1.0f, 1.0f);
+            Vector2D<float> v4 = new Vector2D<float>(0.0f, 0.0f);
+            Vector2D<float> v6 = new Vector2D<float>(1.0f, 0.0f);
+            Vector2D<float> v7 = new Vector2D<float>(0.0f, 1.0f);
+            Vector2D<float> v8 = new Vector2D<float>(1.0f, 1.0f);
             Assert.NotEqual(v4.GetHashCode(), v6.GetHashCode());
             Assert.NotEqual(v4.GetHashCode(), v7.GetHashCode());
             Assert.NotEqual(v4.GetHashCode(), v8.GetHashCode());
@@ -62,7 +62,7 @@ namespace Silk.NET.Maths.Tests
             string separator = CultureInfo.CurrentCulture.NumberFormat.NumberGroupSeparator;
             CultureInfo enUsCultureInfo = new CultureInfo("en-US");
 
-            Vector2<float> v1 = new Vector2<float>(2.0f, 3.0f);
+            Vector2D<float> v1 = new Vector2D<float>(2.0f, 3.0f);
 
             string v1str = v1.ToString();
             string expectedv1 = string.Format(CultureInfo.CurrentCulture
@@ -93,13 +93,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DistanceTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(3.0f, 4.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(3.0f, 4.0f);
 
             float expected = (float)System.Math.Sqrt(8);
             float actual;
 
-            actual = Vector2.Distance(a, b);
+            actual = Vector2D.Distance(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Distance did not return the expected value.");
         }
 
@@ -108,10 +108,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DistanceTest2()
         {
-            Vector2<float> a = new Vector2<float>(1.051f, 2.05f);
-            Vector2<float> b = new Vector2<float>(1.051f, 2.05f);
+            Vector2D<float> a = new Vector2D<float>(1.051f, 2.05f);
+            Vector2D<float> b = new Vector2D<float>(1.051f, 2.05f);
 
-            float actual = Vector2.Distance(a, b);
+            float actual = Vector2D.Distance(a, b);
             Assert.Equal(0.0f, actual);
         }
 
@@ -119,13 +119,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DistanceSquaredTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(3.0f, 4.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(3.0f, 4.0f);
 
             float expected = 8.0f;
             float actual;
 
-            actual = Vector2.DistanceSquared(a, b);
+            actual = Vector2D.DistanceSquared(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.DistanceSquared did not return the expected value.");
         }
 
@@ -133,13 +133,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DotTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(3.0f, 4.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(3.0f, 4.0f);
 
             float expected = 11.0f;
             float actual;
 
-            actual = Vector2.Dot(a, b);
+            actual = Vector2D.Dot(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Dot did not return the expected value.");
         }
 
@@ -148,11 +148,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DotTest1()
         {
-            Vector2<float> a = new Vector2<float>(1.55f, 1.55f);
-            Vector2<float> b = new Vector2<float>(-1.55f, 1.55f);
+            Vector2D<float> a = new Vector2D<float>(1.55f, 1.55f);
+            Vector2D<float> b = new Vector2D<float>(-1.55f, 1.55f);
 
             float expected = 0.0f;
-            float actual = Vector2.Dot(a, b);
+            float actual = Vector2D.Dot(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -161,10 +161,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DotTest2()
         {
-            Vector2<float> a = new Vector2<float>(float.MinValue, float.MinValue);
-            Vector2<float> b = new Vector2<float>(float.MaxValue, float.MaxValue);
+            Vector2D<float> a = new Vector2D<float>(float.MinValue, float.MinValue);
+            Vector2D<float> b = new Vector2D<float>(float.MaxValue, float.MaxValue);
 
-            float actual = Vector2.Dot(a, b);
+            float actual = Vector2D.Dot(a, b);
             Assert.True(float.IsNegativeInfinity(actual), "Vector2f.Dot did not return the expected value.");
         }
 
@@ -172,9 +172,9 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LengthTest()
         {
-            Vector2<float> a = new Vector2<float>(2.0f, 4.0f);
+            Vector2D<float> a = new Vector2D<float>(2.0f, 4.0f);
 
-            Vector2<float> target = a;
+            Vector2D<float> target = a;
 
             float expected = (float)System.Math.Sqrt(20);
             float actual;
@@ -189,7 +189,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LengthTest1()
         {
-            Vector2<float> target = new Vector2<float>();
+            Vector2D<float> target = new Vector2D<float>();
             target.X = 0.0f;
             target.Y = 0.0f;
 
@@ -205,9 +205,9 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LengthSquaredTest()
         {
-            Vector2<float> a = new Vector2<float>(2.0f, 4.0f);
+            Vector2D<float> a = new Vector2D<float>(2.0f, 4.0f);
 
-            Vector2<float> target = a;
+            Vector2D<float> target = a;
 
             float expected = 20.0f;
             float actual;
@@ -222,7 +222,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LengthSquaredTest1()
         {
-            Vector2<float> a = new Vector2<float>(0.0f, 0.0f);
+            Vector2D<float> a = new Vector2D<float>(0.0f, 0.0f);
 
             float expected = 0.0f;
             float actual = a.LengthSquared;
@@ -234,34 +234,34 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2MinTest()
         {
-            Vector2<float> a = new Vector2<float>(-1.0f, 4.0f);
-            Vector2<float> b = new Vector2<float>(2.0f, 1.0f);
+            Vector2D<float> a = new Vector2D<float>(-1.0f, 4.0f);
+            Vector2D<float> b = new Vector2D<float>(2.0f, 1.0f);
 
-            Vector2<float> expected = new Vector2<float>(-1.0f, 1.0f);
-            Vector2<float> actual;
-            actual = Vector2.Min(a, b);
+            Vector2D<float> expected = new Vector2D<float>(-1.0f, 1.0f);
+            Vector2D<float> actual;
+            actual = Vector2D.Min(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Min did not return the expected value.");
         }
 
         [Fact]
         public void Vector2MinMaxCodeCoverageTest()
         {
-            Vector2<float> min = new Vector2<float>(0, 0);
-            Vector2<float> max = new Vector2<float>(1, 1);
-            Vector2<float> actual;
+            Vector2D<float> min = new Vector2D<float>(0, 0);
+            Vector2D<float> max = new Vector2D<float>(1, 1);
+            Vector2D<float> actual;
 
             // Min.
-            actual = Vector2.Min(min, max);
+            actual = Vector2D.Min(min, max);
             Assert.Equal(actual, min);
 
-            actual = Vector2.Min(max, min);
+            actual = Vector2D.Min(max, min);
             Assert.Equal(actual, min);
 
             // Max.
-            actual = Vector2.Max(min, max);
+            actual = Vector2D.Max(min, max);
             Assert.Equal(actual, max);
 
-            actual = Vector2.Max(max, min);
+            actual = Vector2D.Max(max, min);
             Assert.Equal(actual, max);
         }
 
@@ -269,12 +269,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2MaxTest()
         {
-            Vector2<float> a = new Vector2<float>(-1.0f, 4.0f);
-            Vector2<float> b = new Vector2<float>(2.0f, 1.0f);
+            Vector2D<float> a = new Vector2D<float>(-1.0f, 4.0f);
+            Vector2D<float> b = new Vector2D<float>(2.0f, 1.0f);
 
-            Vector2<float> expected = new Vector2<float>(2.0f, 4.0f);
-            Vector2<float> actual;
-            actual = Vector2.Max(a, b);
+            Vector2D<float> expected = new Vector2D<float>(2.0f, 4.0f);
+            Vector2D<float> actual;
+            actual = Vector2D.Max(a, b);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Max did not return the expected value.");
         }
 
@@ -282,52 +282,52 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2ClampTest()
         {
-            Vector2<float> a = new Vector2<float>(0.5f, 0.3f);
-            Vector2<float> min = new Vector2<float>(0.0f, 0.1f);
-            Vector2<float> max = new Vector2<float>(1.0f, 1.1f);
+            Vector2D<float> a = new Vector2D<float>(0.5f, 0.3f);
+            Vector2D<float> min = new Vector2D<float>(0.0f, 0.1f);
+            Vector2D<float> max = new Vector2D<float>(1.0f, 1.1f);
 
             // Normal case.
             // Case N1: specified value is in the range.
-            Vector2<float> expected = new Vector2<float>(0.5f, 0.3f);
-            Vector2<float> actual = Vector2.Clamp(a, min, max);
+            Vector2D<float> expected = new Vector2D<float>(0.5f, 0.3f);
+            Vector2D<float> actual = Vector2D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
             // Normal case.
             // Case N2: specified value is bigger than max value.
-            a = new Vector2<float>(2.0f, 3.0f);
+            a = new Vector2D<float>(2.0f, 3.0f);
             expected = max;
-            actual = Vector2.Clamp(a, min, max);
+            actual = Vector2D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
             // Case N3: specified value is smaller than max value.
-            a = new Vector2<float>(-1.0f, -2.0f);
+            a = new Vector2D<float>(-1.0f, -2.0f);
             expected = min;
-            actual = Vector2.Clamp(a, min, max);
+            actual = Vector2D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
             // Case N4: combination case.
-            a = new Vector2<float>(-2.0f, 4.0f);
-            expected = new Vector2<float>(min.X, max.Y);
-            actual = Vector2.Clamp(a, min, max);
+            a = new Vector2D<float>(-2.0f, 4.0f);
+            expected = new Vector2D<float>(min.X, max.Y);
+            actual = Vector2D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
             // User specified min value is bigger than max value.
-            max = new Vector2<float>(0.0f, 0.1f);
-            min = new Vector2<float>(1.0f, 1.1f);
+            max = new Vector2D<float>(0.0f, 0.1f);
+            min = new Vector2D<float>(1.0f, 1.1f);
 
             // Case W1: specified value is in the range.
-            a = new Vector2<float>(0.5f, 0.3f);
+            a = new Vector2D<float>(0.5f, 0.3f);
             expected = max;
-            actual = Vector2.Clamp(a, min, max);
+            actual = Vector2D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
 
             // Normal case.
             // Case W2: specified value is bigger than max and min value.
-            a = new Vector2<float>(2.0f, 3.0f);
+            a = new Vector2D<float>(2.0f, 3.0f);
             expected = max;
-            actual = Vector2.Clamp(a, min, max);
+            actual = Vector2D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
 
             // Case W3: specified value is smaller than min and max value.
-            a = new Vector2<float>(-1.0f, -2.0f);
+            a = new Vector2D<float>(-1.0f, -2.0f);
             expected = max;
-            actual = Vector2.Clamp(a, min, max);
+            actual = Vector2D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
         }
 
@@ -335,14 +335,14 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(3.0f, 4.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(3.0f, 4.0f);
 
             float t = 0.5f;
 
-            Vector2<float> expected = new Vector2<float>(2.0f, 3.0f);
-            Vector2<float> actual;
-            actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> expected = new Vector2D<float>(2.0f, 3.0f);
+            Vector2D<float> actual;
+            actual = Vector2D.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
 
@@ -351,12 +351,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest1()
         {
-            Vector2<float> a = new Vector2<float>(0.0f, 0.0f);
-            Vector2<float> b = new Vector2<float>(3.18f, 4.25f);
+            Vector2D<float> a = new Vector2D<float>(0.0f, 0.0f);
+            Vector2D<float> b = new Vector2D<float>(3.18f, 4.25f);
 
             float t = 0.0f;
-            Vector2<float> expected = Vector2<float>.Zero;
-            Vector2<float> actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> expected = Vector2D<float>.Zero;
+            Vector2D<float> actual = Vector2D.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
 
@@ -365,12 +365,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest2()
         {
-            Vector2<float> a = new Vector2<float>(0.0f, 0.0f);
-            Vector2<float> b = new Vector2<float>(3.18f, 4.25f);
+            Vector2D<float> a = new Vector2D<float>(0.0f, 0.0f);
+            Vector2D<float> b = new Vector2D<float>(3.18f, 4.25f);
 
             float t = 1.0f;
-            Vector2<float> expected = new Vector2<float>(3.18f, 4.25f);
-            Vector2<float> actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> expected = new Vector2D<float>(3.18f, 4.25f);
+            Vector2D<float> actual = Vector2D.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
 
@@ -379,12 +379,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest3()
         {
-            Vector2<float> a = new Vector2<float>(0.0f, 0.0f);
-            Vector2<float> b = new Vector2<float>(3.18f, 4.25f);
+            Vector2D<float> a = new Vector2D<float>(0.0f, 0.0f);
+            Vector2D<float> b = new Vector2D<float>(3.18f, 4.25f);
 
             float t = 2.0f;
-            Vector2<float> expected = b * 2.0f;
-            Vector2<float> actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> expected = b * 2.0f;
+            Vector2D<float> actual = Vector2D.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
 
@@ -393,12 +393,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest4()
         {
-            Vector2<float> a = new Vector2<float>(0.0f, 0.0f);
-            Vector2<float> b = new Vector2<float>(3.18f, 4.25f);
+            Vector2D<float> a = new Vector2D<float>(0.0f, 0.0f);
+            Vector2D<float> b = new Vector2D<float>(3.18f, 4.25f);
 
             float t = -2.0f;
-            Vector2<float> expected = -(b * 2.0f);
-            Vector2<float> actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> expected = -(b * 2.0f);
+            Vector2D<float> actual = Vector2D.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
 
@@ -407,11 +407,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest5()
         {
-            Vector2<float> a = new Vector2<float>(45.67f, 90.0f);
-            Vector2<float> b = new Vector2<float>(float.PositiveInfinity, float.NegativeInfinity);
+            Vector2D<float> a = new Vector2D<float>(45.67f, 90.0f);
+            Vector2D<float> b = new Vector2D<float>(float.PositiveInfinity, float.NegativeInfinity);
 
             float t = 0.408f;
-            Vector2<float> actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> actual = Vector2D.Lerp(a, b, t);
             Assert.True(float.IsPositiveInfinity(actual.X), "Vector2f.Lerp did not return the expected value.");
             Assert.True(float.IsNegativeInfinity(actual.Y), "Vector2f.Lerp did not return the expected value.");
         }
@@ -421,13 +421,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest6()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(1.0f, 2.0f);
 
             float t = 0.5f;
 
-            Vector2<float> expected = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> expected = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> actual = Vector2D.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
 
@@ -436,13 +436,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest7()
         {
-            Vector2<float> a = new Vector2<float>(0.44728136f);
-            Vector2<float> b = new Vector2<float>(0.46345946f);
+            Vector2D<float> a = new Vector2D<float>(0.44728136f);
+            Vector2D<float> b = new Vector2D<float>(0.46345946f);
 
             float t = 0.26402435f;
 
-            Vector2<float> expected = new Vector2<float>(0.45155275f);
-            Vector2<float> actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> expected = new Vector2D<float>(0.45155275f);
+            Vector2D<float> actual = Vector2D.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
 
@@ -452,86 +452,86 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2LerpTest8()
         {
-            Vector2<float> a = new Vector2<float>(-100);
-            Vector2<float> b = new Vector2<float>(0.33333334f);
+            Vector2D<float> a = new Vector2D<float>(-100);
+            Vector2D<float> b = new Vector2D<float>(0.33333334f);
 
             float t = 1f;
 
-            Vector2<float> expected = new Vector2<float>(0.33333334f);
-            Vector2<float> actual = Vector2.Lerp(a, b, t);
+            Vector2D<float> expected = new Vector2D<float>(0.33333334f);
+            Vector2D<float> actual = Vector2D.Lerp(a, b, t);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Lerp did not return the expected value.");
         }
         
-        // A test for Transform(Vector2f, Matrix4x4)
+        // A test for Transform(Vector2f, Matrix4X4)
         [Fact]
         public void Vector2TransformTest()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector2<float> expected = new Vector2<float>(10.316987f, 22.183012f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(10.316987f, 22.183012f);
+            Vector2D<float> actual;
 
-            actual = Vector2.Transform(v, m);
+            actual = Vector2D.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }
 
-        // A test for Transform(Vector2f, Matrix3x2)
+        // A test for Transform(Vector2f, Matrix3X2)
         [Fact]
         public void Vector2Transform3x2Test()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix3x2<float> m = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
+            Matrix3X2<float> m = Matrix3X2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
             m.M31 = 10.0f;
             m.M32 = 20.0f;
 
-            Vector2<float> expected = new Vector2<float>(9.866025f, 22.23205f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(9.866025f, 22.23205f);
+            Vector2D<float> actual;
 
-            actual = Vector2.Transform(v, m);
+            actual = Vector2D.Transform(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }
 
         
-        // A test for TransformNormal (Vector2f, Matrix4x4)
+        // A test for TransformNormal (Vector2f, Matrix4X4)
         [Fact]
         public void Vector2TransformNormalTest()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             m.M41 = 10.0f;
             m.M42 = 20.0f;
             m.M43 = 30.0f;
 
-            Vector2<float> expected = new Vector2<float>(0.3169873f, 2.18301272f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(0.3169873f, 2.18301272f);
+            Vector2D<float> actual;
 
-            actual = Vector2.TransformNormal(v, m);
+            actual = Vector2D.TransformNormal(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Tranform did not return the expected value.");
         }
 
-        // A test for TransformNormal (Vector2f, Matrix3x2)
+        // A test for TransformNormal (Vector2f, Matrix3X2)
         [Fact]
         public void Vector2TransformNormal3x2Test()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
-            Matrix3x2<float> m = Matrix3x2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
+            Matrix3X2<float> m = Matrix3X2.CreateRotation<float>(MathHelper.ToRadians(30.0f));
             m.M31 = 10.0f;
             m.M32 = 20.0f;
 
-            Vector2<float> expected = new Vector2<float>(-0.133974612f, 2.232051f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(-0.133974612f, 2.232051f);
+            Vector2D<float> actual;
 
-            actual = Vector2.TransformNormal(v, m);
+            actual = Vector2D.TransformNormal(v, m);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }
 
@@ -539,16 +539,16 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2TransformByQuaternionTest()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
 
-            Matrix4x4<float> m =
-                Matrix4x4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4x4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
+            Matrix4X4<float> m =
+                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
+                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
-            Vector2<float> expected = Vector2.Transform(v, m);
-            Vector2<float> actual = Vector2.Transform(v, q);
+            Vector2D<float> expected = Vector2D.Transform(v, m);
+            Vector2D<float> actual = Vector2D.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }
         
@@ -557,11 +557,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2TransformByQuaternionTest1()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
             Quaternion<float> q = new Quaternion<float>();
-            Vector2<float> expected = v;
+            Vector2D<float> expected = v;
 
-            Vector2<float> actual = Vector2.Transform(v, q);
+            Vector2D<float> actual = Vector2D.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }
         
@@ -570,11 +570,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2TransformByQuaternionTest2()
         {
-            Vector2<float> v = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
             Quaternion<float> q = Quaternion<float>.Identity;
-            Vector2<float> expected = v;
+            Vector2D<float> expected = v;
 
-            Vector2<float> actual = Vector2.Transform(v, q);
+            Vector2D<float> actual = Vector2D.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Transform did not return the expected value.");
         }
 
@@ -582,11 +582,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2NormalizeTest()
         {
-            Vector2<float> a = new Vector2<float>(2.0f, 3.0f);
-            Vector2<float> expected = new Vector2<float>(0.554700196225229122018341733457f, 0.8320502943378436830275126001855f);
-            Vector2<float> actual;
+            Vector2D<float> a = new Vector2D<float>(2.0f, 3.0f);
+            Vector2D<float> expected = new Vector2D<float>(0.554700196225229122018341733457f, 0.8320502943378436830275126001855f);
+            Vector2D<float> actual;
 
-            actual = Vector2.Normalize(a);
+            actual = Vector2D.Normalize(a);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Normalize did not return the expected value.");
         }
 
@@ -595,8 +595,8 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2NormalizeTest1()
         {
-            Vector2<float> a = new Vector2<float>(); // no parameter, default to 0.0f
-            Vector2<float> actual = Vector2.Normalize(a);
+            Vector2D<float> a = new Vector2D<float>(); // no parameter, default to 0.0f
+            Vector2D<float> actual = Vector2D.Normalize(a);
             Assert.True(float.IsNaN(actual.X) && float.IsNaN(actual.Y), "Vector2f.Normalize did not return the expected value.");
         }
 
@@ -605,9 +605,9 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2NormalizeTest2()
         {
-            Vector2<float> a = new Vector2<float>(float.MaxValue, float.MaxValue);
-            Vector2<float> actual = Vector2.Normalize(a);
-            Vector2<float> expected = new Vector2<float>(0, 0);
+            Vector2D<float> a = new Vector2D<float>(float.MaxValue, float.MaxValue);
+            Vector2D<float> actual = Vector2D.Normalize(a);
+            Vector2D<float> expected = new Vector2D<float>(0, 0);
             Assert.Equal(expected, actual);
         }
 
@@ -615,10 +615,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2UnaryNegationTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
 
-            Vector2<float> expected = new Vector2<float>(-1.0f, -2.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(-1.0f, -2.0f);
+            Vector2D<float> actual;
 
             actual = -a;
 
@@ -632,9 +632,9 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2UnaryNegationTest1()
         {
-            Vector2<float> a = new Vector2<float>(float.PositiveInfinity, float.NegativeInfinity);
+            Vector2D<float> a = new Vector2D<float>(float.PositiveInfinity, float.NegativeInfinity);
 
-            Vector2<float> actual = -a;
+            Vector2D<float> actual = -a;
 
             Assert.True(float.IsNegativeInfinity(actual.X), "Vector2f.operator - did not return the expected value.");
             Assert.True(float.IsPositiveInfinity(actual.Y), "Vector2f.operator - did not return the expected value.");
@@ -645,8 +645,8 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2UnaryNegationTest2()
         {
-            Vector2<float> a = new Vector2<float>(float.NaN, 0.0f);
-            Vector2<float> actual = -a;
+            Vector2D<float> a = new Vector2D<float>(float.NaN, 0.0f);
+            Vector2D<float> actual = -a;
 
             Assert.True(float.IsNaN(actual.X), "Vector2f.operator - did not return the expected value.");
             Assert.True(float.Equals(0.0f, actual.Y), "Vector2f.operator - did not return the expected value.");
@@ -656,11 +656,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2SubtractionTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 3.0f);
-            Vector2<float> b = new Vector2<float>(2.0f, 1.5f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 3.0f);
+            Vector2D<float> b = new Vector2D<float>(2.0f, 1.5f);
 
-            Vector2<float> expected = new Vector2<float>(-1.0f, 1.5f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(-1.0f, 1.5f);
+            Vector2D<float> actual;
 
             actual = a - b;
 
@@ -671,11 +671,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2MultiplyOperatorTest()
         {
-            Vector2<float> a = new Vector2<float>(2.0f, 3.0f);
+            Vector2D<float> a = new Vector2D<float>(2.0f, 3.0f);
             const float factor = 2.0f;
 
-            Vector2<float> expected = new Vector2<float>(4.0f, 6.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(4.0f, 6.0f);
+            Vector2D<float> actual;
 
             actual = a * factor;
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.operator * did not return the expected value.");
@@ -685,11 +685,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2MultiplyOperatorTest2()
         {
-            Vector2<float> a = new Vector2<float>(2.0f, 3.0f);
+            Vector2D<float> a = new Vector2D<float>(2.0f, 3.0f);
             const float factor = 2.0f;
 
-            Vector2<float> expected = new Vector2<float>(4.0f, 6.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(4.0f, 6.0f);
+            Vector2D<float> actual;
 
             actual = factor * a;
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.operator * did not return the expected value.");
@@ -699,11 +699,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2MultiplyOperatorTest3()
         {
-            Vector2<float> a = new Vector2<float>(2.0f, 3.0f);
-            Vector2<float> b = new Vector2<float>(4.0f, 5.0f);
+            Vector2D<float> a = new Vector2D<float>(2.0f, 3.0f);
+            Vector2D<float> b = new Vector2D<float>(4.0f, 5.0f);
 
-            Vector2<float> expected = new Vector2<float>(8.0f, 15.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(8.0f, 15.0f);
+            Vector2D<float> actual;
 
             actual = a * b;
 
@@ -714,12 +714,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DivisionTest()
         {
-            Vector2<float> a = new Vector2<float>(2.0f, 3.0f);
+            Vector2D<float> a = new Vector2D<float>(2.0f, 3.0f);
 
             float div = 2.0f;
 
-            Vector2<float> expected = new Vector2<float>(1.0f, 1.5f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(1.0f, 1.5f);
+            Vector2D<float> actual;
 
             actual = a / div;
 
@@ -730,11 +730,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DivisionTest1()
         {
-            Vector2<float> a = new Vector2<float>(2.0f, 3.0f);
-            Vector2<float> b = new Vector2<float>(4.0f, 5.0f);
+            Vector2D<float> a = new Vector2D<float>(2.0f, 3.0f);
+            Vector2D<float> b = new Vector2D<float>(4.0f, 5.0f);
 
-            Vector2<float> expected = new Vector2<float>(2.0f / 4.0f, 3.0f / 5.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(2.0f / 4.0f, 3.0f / 5.0f);
+            Vector2D<float> actual;
 
             actual = a / b;
 
@@ -746,11 +746,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DivisionTest2()
         {
-            Vector2<float> a = new Vector2<float>(-2.0f, 3.0f);
+            Vector2D<float> a = new Vector2D<float>(-2.0f, 3.0f);
 
             float div = 0.0f;
 
-            Vector2<float> actual = a / div;
+            Vector2D<float> actual = a / div;
 
             Assert.True(float.IsNegativeInfinity(actual.X), "Vector2f.operator / did not return the expected value.");
             Assert.True(float.IsPositiveInfinity(actual.Y), "Vector2f.operator / did not return the expected value.");
@@ -761,10 +761,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DivisionTest3()
         {
-            Vector2<float> a = new Vector2<float>(0.047f, -3.0f);
-            Vector2<float> b = new Vector2<float>();
+            Vector2D<float> a = new Vector2D<float>(0.047f, -3.0f);
+            Vector2D<float> b = new Vector2D<float>();
 
-            Vector2<float> actual = a / b;
+            Vector2D<float> actual = a / b;
 
             Assert.True(float.IsInfinity(actual.X), "Vector2f.operator / did not return the expected value.");
             Assert.True(float.IsInfinity(actual.Y), "Vector2f.operator / did not return the expected value.");
@@ -774,11 +774,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2AdditionTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(3.0f, 4.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(3.0f, 4.0f);
 
-            Vector2<float> expected = new Vector2<float>(4.0f, 6.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(4.0f, 6.0f);
+            Vector2D<float> actual;
 
             actual = a + b;
 
@@ -792,7 +792,7 @@ namespace Silk.NET.Maths.Tests
             float x = 1.0f;
             float y = 2.0f;
 
-            Vector2<float> target = new Vector2<float>(x, y);
+            Vector2D<float> target = new Vector2D<float>(x, y);
             Assert.True(MathHelper.Equal(target.X, x) && MathHelper.Equal(target.Y, y), "Vector2f(x,y) constructor did not return the expected value.");
         }
 
@@ -801,7 +801,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2ConstructorTest2()
         {
-            Vector2<float> target = new Vector2<float>();
+            Vector2D<float> target = new Vector2D<float>();
             Assert.Equal(0.0f, target.X);
             Assert.Equal(0.0f, target.Y);
         }
@@ -811,7 +811,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2ConstructorTest3()
         {
-            Vector2<float> target = new Vector2<float>(float.NaN, float.MaxValue);
+            Vector2D<float> target = new Vector2D<float>(float.NaN, float.MaxValue);
             Assert.Equal(target.X, float.NaN);
             Assert.Equal(target.Y, float.MaxValue);
         }
@@ -821,14 +821,14 @@ namespace Silk.NET.Maths.Tests
         public void Vector2ConstructorTest4()
         {
             float value = 1.0f;
-            Vector2<float> target = new Vector2<float>(value);
+            Vector2D<float> target = new Vector2D<float>(value);
 
-            Vector2<float> expected = new Vector2<float>(value, value);
+            Vector2D<float> expected = new Vector2D<float>(value, value);
             Assert.Equal(expected, target);
 
             value = 2.0f;
-            target = new Vector2<float>(value);
-            expected = new Vector2<float>(value, value);
+            target = new Vector2D<float>(value);
+            expected = new Vector2D<float>(value, value);
             Assert.Equal(expected, target);
         }
 
@@ -836,13 +836,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2AddTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(5.0f, 6.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(5.0f, 6.0f);
 
-            Vector2<float> expected = new Vector2<float>(6.0f, 8.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(6.0f, 8.0f);
+            Vector2D<float> actual;
 
-            actual = Vector2.Add(a, b);
+            actual = Vector2D.Add(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -850,11 +850,11 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DivideTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
             float div = 2.0f;
-            Vector2<float> expected = new Vector2<float>(0.5f, 1.0f);
-            Vector2<float> actual;
-            actual = Vector2.Divide(a, div);
+            Vector2D<float> expected = new Vector2D<float>(0.5f, 1.0f);
+            Vector2D<float> actual;
+            actual = Vector2D.Divide(a, div);
             Assert.Equal(expected, actual);
         }
 
@@ -862,13 +862,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2DivideTest1()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 6.0f);
-            Vector2<float> b = new Vector2<float>(5.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 6.0f);
+            Vector2D<float> b = new Vector2D<float>(5.0f, 2.0f);
 
-            Vector2<float> expected = new Vector2<float>(1.0f / 5.0f, 6.0f / 2.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(1.0f / 5.0f, 6.0f / 2.0f);
+            Vector2D<float> actual;
 
-            actual = Vector2.Divide(a, b);
+            actual = Vector2D.Divide(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -876,8 +876,8 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2EqualsTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(1.0f, 2.0f);
 
             // case 1: compare between same values
             object obj = b;
@@ -910,10 +910,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2MultiplyTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
             const float factor = 2.0f;
-            Vector2<float> expected = new Vector2<float>(2.0f, 4.0f);
-            Vector2<float> actual = Vector2.Multiply(a, factor);
+            Vector2D<float> expected = new Vector2D<float>(2.0f, 4.0f);
+            Vector2D<float> actual = Vector2D.Multiply(a, factor);
             Assert.Equal(expected, actual);
         }
 
@@ -921,10 +921,10 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2MultiplyTest2()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
             const float factor = 2.0f;
-            Vector2<float> expected = new Vector2<float>(2.0f, 4.0f);
-            Vector2<float> actual = Vector2.Multiply(factor, a);
+            Vector2D<float> expected = new Vector2D<float>(2.0f, 4.0f);
+            Vector2D<float> actual = Vector2D.Multiply(factor, a);
             Assert.Equal(expected, actual);
         }
 
@@ -932,13 +932,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2MultiplyTest3()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(5.0f, 6.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(5.0f, 6.0f);
 
-            Vector2<float> expected = new Vector2<float>(5.0f, 12.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(5.0f, 12.0f);
+            Vector2D<float> actual;
 
-            actual = Vector2.Multiply(a, b);
+            actual = Vector2D.Multiply(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -946,12 +946,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2NegateTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
 
-            Vector2<float> expected = new Vector2<float>(-1.0f, -2.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(-1.0f, -2.0f);
+            Vector2D<float> actual;
 
-            actual = Vector2.Negate(a);
+            actual = Vector2D.Negate(a);
             Assert.Equal(expected, actual);
         }
 
@@ -959,8 +959,8 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2InequalityTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(1.0f, 2.0f);
 
             // case 1: compare between same values
             bool expected = false;
@@ -978,8 +978,8 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2EqualityTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(1.0f, 2.0f);
 
             // case 1: compare between same values
             bool expected = true;
@@ -997,13 +997,13 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2SubtractTest()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 6.0f);
-            Vector2<float> b = new Vector2<float>(5.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 6.0f);
+            Vector2D<float> b = new Vector2D<float>(5.0f, 2.0f);
 
-            Vector2<float> expected = new Vector2<float>(-4.0f, 4.0f);
-            Vector2<float> actual;
+            Vector2D<float> expected = new Vector2D<float>(-4.0f, 4.0f);
+            Vector2D<float> actual;
 
-            actual = Vector2.Subtract(a, b);
+            actual = Vector2D.Subtract(a, b);
             Assert.Equal(expected, actual);
         }
 
@@ -1011,40 +1011,40 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2UnitXTest()
         {
-            Vector2<float> val = new Vector2<float>(1.0f, 0.0f);
-            Assert.Equal(val, Vector2<float>.UnitX);
+            Vector2D<float> val = new Vector2D<float>(1.0f, 0.0f);
+            Assert.Equal(val, Vector2D<float>.UnitX);
         }
 
         // A test for UnitY
         [Fact]
         public void Vector2UnitYTest()
         {
-            Vector2<float> val = new Vector2<float>(0.0f, 1.0f);
-            Assert.Equal(val, Vector2<float>.UnitY);
+            Vector2D<float> val = new Vector2D<float>(0.0f, 1.0f);
+            Assert.Equal(val, Vector2D<float>.UnitY);
         }
 
         // A test for One
         [Fact]
         public void Vector2OneTest()
         {
-            Vector2<float> val = new Vector2<float>(1.0f, 1.0f);
-            Assert.Equal(val, Vector2<float>.One);
+            Vector2D<float> val = new Vector2D<float>(1.0f, 1.0f);
+            Assert.Equal(val, Vector2D<float>.One);
         }
 
         // A test for Zero
         [Fact]
         public void Vector2ZeroTest()
         {
-            Vector2<float> val = new Vector2<float>(0.0f, 0.0f);
-            Assert.Equal(val, Vector2<float>.Zero);
+            Vector2D<float> val = new Vector2D<float>(0.0f, 0.0f);
+            Assert.Equal(val, Vector2D<float>.Zero);
         }
 
         // A test for Equals (Vector2f)
         [Fact]
         public void Vector2EqualsTest1()
         {
-            Vector2<float> a = new Vector2<float>(1.0f, 2.0f);
-            Vector2<float> b = new Vector2<float>(1.0f, 2.0f);
+            Vector2D<float> a = new Vector2D<float>(1.0f, 2.0f);
+            Vector2D<float> b = new Vector2D<float>(1.0f, 2.0f);
 
             // case 1: compare between same values
             bool expected = true;
@@ -1062,17 +1062,17 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2EqualsNanTest()
         {
-            Vector2<float> a = new Vector2<float>(float.NaN, 0);
-            Vector2<float> b = new Vector2<float>(0, float.NaN);
+            Vector2D<float> a = new Vector2D<float>(float.NaN, 0);
+            Vector2D<float> b = new Vector2D<float>(0, float.NaN);
 
-            Assert.False(a == Vector2<float>.Zero);
-            Assert.False(b == Vector2<float>.Zero);
+            Assert.False(a == Vector2D<float>.Zero);
+            Assert.False(b == Vector2D<float>.Zero);
 
-            Assert.True(a != Vector2<float>.Zero);
-            Assert.True(b != Vector2<float>.Zero);
+            Assert.True(a != Vector2D<float>.Zero);
+            Assert.True(b != Vector2D<float>.Zero);
 
-            Assert.False(a.Equals(Vector2<float>.Zero));
-            Assert.False(b.Equals(Vector2<float>.Zero));
+            Assert.False(a.Equals(Vector2D<float>.Zero));
+            Assert.False(b.Equals(Vector2D<float>.Zero));
 
             // Counterintuitive result - IEEE rules for NaN comparison are weird!
             Assert.False(a.Equals(a));
@@ -1083,24 +1083,24 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2ReflectTest()
         {
-            Vector2<float> a = Vector2.Normalize(new Vector2<float>(1.0f, 1.0f));
+            Vector2D<float> a = Vector2D.Normalize(new Vector2D<float>(1.0f, 1.0f));
 
             // Reflect on XZ plane.
-            Vector2<float> n = new Vector2<float>(0.0f, 1.0f);
-            Vector2<float> expected = new Vector2<float>(a.X, -a.Y);
-            Vector2<float> actual = Vector2.Reflect(a, n);
+            Vector2D<float> n = new Vector2D<float>(0.0f, 1.0f);
+            Vector2D<float> expected = new Vector2D<float>(a.X, -a.Y);
+            Vector2D<float> actual = Vector2D.Reflect(a, n);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Reflect did not return the expected value.");
 
             // Reflect on XY plane.
-            n = new Vector2<float>(0.0f, 0.0f);
-            expected = new Vector2<float>(a.X, a.Y);
-            actual = Vector2.Reflect(a, n);
+            n = new Vector2D<float>(0.0f, 0.0f);
+            expected = new Vector2D<float>(a.X, a.Y);
+            actual = Vector2D.Reflect(a, n);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Reflect did not return the expected value.");
 
             // Reflect on YZ plane.
-            n = new Vector2<float>(1.0f, 0.0f);
-            expected = new Vector2<float>(-a.X, a.Y);
-            actual = Vector2.Reflect(a, n);
+            n = new Vector2D<float>(1.0f, 0.0f);
+            expected = new Vector2D<float>(-a.X, a.Y);
+            actual = Vector2D.Reflect(a, n);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Reflect did not return the expected value.");
         }
 
@@ -1109,12 +1109,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2ReflectTest1()
         {
-            Vector2<float> n = new Vector2<float>(0.45f, 1.28f);
-            n = Vector2.Normalize(n);
-            Vector2<float> a = n;
+            Vector2D<float> n = new Vector2D<float>(0.45f, 1.28f);
+            n = Vector2D.Normalize(n);
+            Vector2D<float> a = n;
 
-            Vector2<float> expected = -n;
-            Vector2<float> actual = Vector2.Reflect(a, n);
+            Vector2D<float> expected = -n;
+            Vector2D<float> actual = Vector2D.Reflect(a, n);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Reflect did not return the expected value.");
         }
 
@@ -1123,21 +1123,21 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2ReflectTest2()
         {
-            Vector2<float> n = new Vector2<float>(0.45f, 1.28f);
-            n = Vector2.Normalize(n);
-            Vector2<float> a = -n;
+            Vector2D<float> n = new Vector2D<float>(0.45f, 1.28f);
+            n = Vector2D.Normalize(n);
+            Vector2D<float> a = -n;
 
-            Vector2<float> expected = n;
-            Vector2<float> actual = Vector2.Reflect(a, n);
+            Vector2D<float> expected = n;
+            Vector2D<float> actual = Vector2D.Reflect(a, n);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Reflect did not return the expected value.");
         }
 
         [Fact]
         public void Vector2AbsTest()
         {
-            Vector2<float> v1 = new Vector2<float>(-2.5f, 2.0f);
-            Vector2<float> v3 = Vector2.Abs(new Vector2<float>(0.0f, float.NegativeInfinity));
-            Vector2<float> v = Vector2.Abs(v1);
+            Vector2D<float> v1 = new Vector2D<float>(-2.5f, 2.0f);
+            Vector2D<float> v3 = Vector2D.Abs(new Vector2D<float>(0.0f, float.NegativeInfinity));
+            Vector2D<float> v = Vector2D.Abs(v1);
             Assert.Equal(2.5f, v.X);
             Assert.Equal(2.0f, v.Y);
             Assert.Equal(0.0f, v3.X);
@@ -1147,18 +1147,18 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void Vector2SqrtTest()
         {
-            Vector2<float> v1 = new Vector2<float>(-2.5f, 2.0f);
-            Vector2<float> v2 = new Vector2<float>(5.5f, 4.5f);
-            Assert.Equal(2, (int)Vector2.SquareRoot(v2).X);
-            Assert.Equal(2, (int)Vector2.SquareRoot(v2).Y);
-            Assert.Equal(float.NaN, Vector2.SquareRoot(v1).X);
+            Vector2D<float> v1 = new Vector2D<float>(-2.5f, 2.0f);
+            Vector2D<float> v2 = new Vector2D<float>(5.5f, 4.5f);
+            Assert.Equal(2, (int)Vector2D.SquareRoot(v2).X);
+            Assert.Equal(2, (int)Vector2D.SquareRoot(v2).Y);
+            Assert.Equal(float.NaN, Vector2D.SquareRoot(v1).X);
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts
         [Fact]
         public unsafe void Vector2SizeofTest()
         {
-            Assert.Equal(8, sizeof(Vector2<float>));
+            Assert.Equal(8, sizeof(Vector2D<float>));
             Assert.Equal(16, sizeof(Vector2_2x));
             Assert.Equal(12, sizeof(Vector2PlusFloat));
             Assert.Equal(24, sizeof(Vector2PlusFloat_2x));
@@ -1167,14 +1167,14 @@ namespace Silk.NET.Maths.Tests
         [StructLayout(LayoutKind.Sequential)]
         struct Vector2_2x
         {
-            private Vector2<float> _a;
-            private Vector2<float> _b;
+            private Vector2D<float> _a;
+            private Vector2D<float> _b;
         }
 
         [StructLayout(LayoutKind.Sequential)]
         struct Vector2PlusFloat
         {
-            private Vector2<float> _v;
+            private Vector2D<float> _v;
             private float _f;
         }
 
@@ -1188,12 +1188,12 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void SetFieldsTest()
         {
-            Vector2<float> v3 = new Vector2<float>(4f, 5f);
+            Vector2D<float> v3 = new Vector2D<float>(4f, 5f);
             v3.X = 1.0f;
             v3.Y = 2.0f;
             Assert.Equal(1.0f, v3.X);
             Assert.Equal(2.0f, v3.Y);
-            Vector2<float> v4 = v3;
+            Vector2D<float> v4 = v3;
             v4.Y = 0.5f;
             Assert.Equal(1.0f, v4.X);
             Assert.Equal(0.5f, v4.Y);
@@ -1212,7 +1212,7 @@ namespace Silk.NET.Maths.Tests
 
         private class EmbeddedVectorObject
         {
-            public Vector2<float> FieldVector;
+            public Vector2D<float> FieldVector;
         }
     }
 }

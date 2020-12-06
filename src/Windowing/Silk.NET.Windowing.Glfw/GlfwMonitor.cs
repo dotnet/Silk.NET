@@ -30,7 +30,7 @@ namespace Silk.NET.Windowing.Glfw
                 return new GlfwWindow(opts, null, this);
             }
 
-            opts.Position = new Vector2<int>(opts.Position.X + Bounds.Origin.X, opts.Position.Y + Bounds.Origin.Y);
+            opts.Position = new Vector2D<int>(opts.Position.X + Bounds.Origin.X, opts.Position.Y + Bounds.Origin.Y);
             return new GlfwWindow(opts, null, null);
         }
 
@@ -53,7 +53,7 @@ namespace Silk.NET.Windowing.Glfw
                 var videoMode = GlfwProvider.GLFW.Value.GetVideoMode(Handle);
                 return new VideoMode
                 (
-                    new Vector2<int>(videoMode->Width, videoMode->Height),
+                    new Vector2D<int>(videoMode->Width, videoMode->Height),
                     videoMode->RefreshRate
                 );
             }
@@ -80,7 +80,7 @@ namespace Silk.NET.Windowing.Glfw
                 videoModes.Add
                 (
                     new VideoMode
-                        (new Vector2<int>(rawVideoModes[i].Width, rawVideoModes[i].Height), rawVideoModes[i].RefreshRate)
+                        (new Vector2D<int>(rawVideoModes[i].Width, rawVideoModes[i].Height), rawVideoModes[i].RefreshRate)
                 );
             }
 

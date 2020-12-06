@@ -57,7 +57,7 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-        public Vector2<int> Position
+        public Vector2D<int> Position
         {
             get
             {
@@ -65,7 +65,7 @@ namespace Silk.NET.Windowing.Sdl
                 {
                     var ret = stackalloc int[2];
                     Sdl.GetWindowPosition(SdlWindow, ret, &ret[1]);
-                    return _extendedOptionsCache.Position = *(Vector2<int>*) ret;
+                    return _extendedOptionsCache.Position = *(Vector2D<int>*) ret;
                 }
 
                 return _extendedOptionsCache.Position;
@@ -82,7 +82,7 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-        public new Vector2<int> Size
+        public new Vector2D<int> Size
         {
             get => IsInitialized ? _extendedOptionsCache.Size = base.Size : _extendedOptionsCache.Size;
             set
@@ -240,7 +240,7 @@ namespace Silk.NET.Windowing.Sdl
                             var size = Size;
                             Rectangle<int> bounds;
                             Sdl.GetDisplayUsableBounds(i, &bounds);
-                            if (bounds.Contains(new Vector2<int>(pos.X + size.X / 2, pos.Y + size.Y / 2)))
+                            if (bounds.Contains(new Vector2D<int>(pos.X + size.X / 2, pos.Y + size.Y / 2)))
                             {
                                 return new SdlMonitor(i);
                             }
@@ -274,7 +274,7 @@ namespace Silk.NET.Windowing.Sdl
             set => IsClosingVal = value;
         }
 
-        public event Action<Vector2<int>>? Move;
+        public event Action<Vector2D<int>>? Move;
         public event Action<WindowState>? StateChanged;
         public event Action<string[]>? FileDrop;
 
@@ -348,7 +348,7 @@ namespace Silk.NET.Windowing.Sdl
                             //    break;
                             case WindowEventID.WindoweventMoved:
                             {
-                                Move?.Invoke(new Vector2<int>(@event.Window.Data1, @event.Window.Data2));
+                                Move?.Invoke(new Vector2D<int>(@event.Window.Data1, @event.Window.Data2));
                                 break;
                             }
                             case WindowEventID.WindoweventResized:

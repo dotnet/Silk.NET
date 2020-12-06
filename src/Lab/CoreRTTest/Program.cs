@@ -7,6 +7,7 @@ using System.Linq;
 using Silk.NET.Maths;
 using Matrix4x4 = System.Numerics.Matrix4x4;
 using Vector3 = System.Numerics.Vector3;
+using Vector2 = System.Numerics.Vector2;
 
 namespace Tutorial
 {
@@ -32,7 +33,7 @@ namespace Tutorial
         private static Camera Camera;
 
         //Used to track change in mouse movement to allow for moving of the Camera
-        private static PointF LastMousePosition;
+        private static Vector2 LastMousePosition;
 
         //Track when the window started so we can use the time elapsed to rotate the cube
         private static DateTime StartTime;
@@ -103,7 +104,7 @@ namespace Tutorial
                 true, new(50, 50), new(1280, 720), 0.0, 0.0, GraphicsAPI.Default, "Silk.NET Window AOT",
                 WindowState.Normal, WindowBorder.Resizable, true, true, VideoMode.Default
             );
-            options.Size = new Vector2<int>(800, 600);
+            options.Size = new Vector2D<int>(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
 
@@ -230,7 +231,7 @@ namespace Tutorial
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
         }
 
-        private static unsafe void OnMouseMove(IMouse mouse, PointF position)
+        private static unsafe void OnMouseMove(IMouse mouse, Vector2 position)
         {
             const float lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }

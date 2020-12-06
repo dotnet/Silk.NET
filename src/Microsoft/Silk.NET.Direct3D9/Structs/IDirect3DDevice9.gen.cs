@@ -1236,82 +1236,82 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2<long>* pDestPoint)
+        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<long>* pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRect, pDestinationSurface, pDestPoint);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRect, pDestinationSurface, pDestPoint);
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2<long> pDestPoint)
+        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2D<long> pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Vector2<long>* pDestPointPtr = &pDestPoint)
+            fixed (Silk.NET.Maths.Vector2D<long>* pDestPointPtr = &pDestPoint)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRect, pDestinationSurface, pDestPointPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRect, pDestinationSurface, pDestPointPtr);
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2<long>* pDestPoint)
+        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<long>* pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (IDirect3DSurface9* pDestinationSurfacePtr = &pDestinationSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRect, pDestinationSurfacePtr, pDestPoint);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRect, pDestinationSurfacePtr, pDestPoint);
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2<long> pDestPoint)
+        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<long> pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (IDirect3DSurface9* pDestinationSurfacePtr = &pDestinationSurface)
             {
-                fixed (Silk.NET.Maths.Vector2<long>* pDestPointPtr = &pDestPoint)
+                fixed (Silk.NET.Maths.Vector2D<long>* pDestPointPtr = &pDestPoint)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRect, pDestinationSurfacePtr, pDestPointPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRect, pDestinationSurfacePtr, pDestPointPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2<long>* pDestPoint)
+        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<long>* pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Silk.NET.Maths.Rectangle<long>* pSourceRectPtr = &pSourceRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRectPtr, pDestinationSurface, pDestPoint);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRectPtr, pDestinationSurface, pDestPoint);
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2<long> pDestPoint)
+        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2D<long> pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Silk.NET.Maths.Rectangle<long>* pSourceRectPtr = &pSourceRect)
             {
-                fixed (Silk.NET.Maths.Vector2<long>* pDestPointPtr = &pDestPoint)
+                fixed (Silk.NET.Maths.Vector2D<long>* pDestPointPtr = &pDestPoint)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRectPtr, pDestinationSurface, pDestPointPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRectPtr, pDestinationSurface, pDestPointPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2<long>* pDestPoint)
+        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<long>* pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1319,14 +1319,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DSurface9* pDestinationSurfacePtr = &pDestinationSurface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRectPtr, pDestinationSurfacePtr, pDestPoint);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRectPtr, pDestinationSurfacePtr, pDestPoint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2<long> pDestPoint)
+        public readonly unsafe int UpdateSurface(IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<long> pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1334,9 +1334,9 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DSurface9* pDestinationSurfacePtr = &pDestinationSurface)
                 {
-                    fixed (Silk.NET.Maths.Vector2<long>* pDestPointPtr = &pDestPoint)
+                    fixed (Silk.NET.Maths.Vector2D<long>* pDestPointPtr = &pDestPoint)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRectPtr, pDestinationSurfacePtr, pDestPointPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurface, pSourceRectPtr, pDestinationSurfacePtr, pDestPointPtr);
                     }
                 }
             }
@@ -1344,34 +1344,34 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2<long>* pDestPoint)
+        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<long>* pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (IDirect3DSurface9* pSourceSurfacePtr = &pSourceSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRect, pDestinationSurface, pDestPoint);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRect, pDestinationSurface, pDestPoint);
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2<long> pDestPoint)
+        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2D<long> pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (IDirect3DSurface9* pSourceSurfacePtr = &pSourceSurface)
             {
-                fixed (Silk.NET.Maths.Vector2<long>* pDestPointPtr = &pDestPoint)
+                fixed (Silk.NET.Maths.Vector2D<long>* pDestPointPtr = &pDestPoint)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRect, pDestinationSurface, pDestPointPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRect, pDestinationSurface, pDestPointPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2<long>* pDestPoint)
+        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<long>* pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1379,14 +1379,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DSurface9* pDestinationSurfacePtr = &pDestinationSurface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRect, pDestinationSurfacePtr, pDestPoint);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRect, pDestinationSurfacePtr, pDestPoint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2<long> pDestPoint)
+        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Rectangle<long>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<long> pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1394,9 +1394,9 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DSurface9* pDestinationSurfacePtr = &pDestinationSurface)
                 {
-                    fixed (Silk.NET.Maths.Vector2<long>* pDestPointPtr = &pDestPoint)
+                    fixed (Silk.NET.Maths.Vector2D<long>* pDestPointPtr = &pDestPoint)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRect, pDestinationSurfacePtr, pDestPointPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRect, pDestinationSurfacePtr, pDestPointPtr);
                     }
                 }
             }
@@ -1404,7 +1404,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2<long>* pDestPoint)
+        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<long>* pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1412,14 +1412,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Silk.NET.Maths.Rectangle<long>* pSourceRectPtr = &pSourceRect)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRectPtr, pDestinationSurface, pDestPoint);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRectPtr, pDestinationSurface, pDestPoint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2<long> pDestPoint)
+        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2D<long> pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1427,9 +1427,9 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Silk.NET.Maths.Rectangle<long>* pSourceRectPtr = &pSourceRect)
                 {
-                    fixed (Silk.NET.Maths.Vector2<long>* pDestPointPtr = &pDestPoint)
+                    fixed (Silk.NET.Maths.Vector2D<long>* pDestPointPtr = &pDestPoint)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRectPtr, pDestinationSurface, pDestPointPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRectPtr, pDestinationSurface, pDestPointPtr);
                     }
                 }
             }
@@ -1437,7 +1437,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2<long>* pDestPoint)
+        public readonly unsafe int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<long>* pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1447,7 +1447,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (IDirect3DSurface9* pDestinationSurfacePtr = &pDestinationSurface)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRectPtr, pDestinationSurfacePtr, pDestPoint);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRectPtr, pDestinationSurfacePtr, pDestPoint);
                     }
                 }
             }
@@ -1455,7 +1455,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be added.</summary>
-        public readonly int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2<long> pDestPoint)
+        public readonly int UpdateSurface(ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<long> pDestPoint)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1465,9 +1465,9 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (IDirect3DSurface9* pDestinationSurfacePtr = &pDestinationSurface)
                     {
-                        fixed (Silk.NET.Maths.Vector2<long>* pDestPointPtr = &pDestPoint)
+                        fixed (Silk.NET.Maths.Vector2D<long>* pDestPointPtr = &pDestPoint)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRectPtr, pDestinationSurfacePtr, pDestPointPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, IDirect3DSurface9*, Silk.NET.Maths.Rectangle<long>*, IDirect3DSurface9*, Silk.NET.Maths.Vector2D<long>*, int>)LpVtbl[30])(@this, pSourceSurfacePtr, pSourceRectPtr, pDestinationSurfacePtr, pDestPointPtr);
                         }
                     }
                 }
@@ -2559,43 +2559,43 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int SetPaletteEntries(uint PaletteNumber, Silk.NET.Maths.Vector4<byte>* pEntries)
+        public readonly unsafe int SetPaletteEntries(uint PaletteNumber, Silk.NET.Maths.Vector4D<byte>* pEntries)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, Silk.NET.Maths.Vector4<byte>*, int>)LpVtbl[71])(@this, PaletteNumber, pEntries);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, Silk.NET.Maths.Vector4D<byte>*, int>)LpVtbl[71])(@this, PaletteNumber, pEntries);
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly int SetPaletteEntries(uint PaletteNumber, ref Silk.NET.Maths.Vector4<byte> pEntries)
+        public readonly int SetPaletteEntries(uint PaletteNumber, ref Silk.NET.Maths.Vector4D<byte> pEntries)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Vector4<byte>* pEntriesPtr = &pEntries)
+            fixed (Silk.NET.Maths.Vector4D<byte>* pEntriesPtr = &pEntries)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, Silk.NET.Maths.Vector4<byte>*, int>)LpVtbl[71])(@this, PaletteNumber, pEntriesPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, Silk.NET.Maths.Vector4D<byte>*, int>)LpVtbl[71])(@this, PaletteNumber, pEntriesPtr);
             }
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly unsafe int GetPaletteEntries(uint PaletteNumber, Silk.NET.Maths.Vector4<byte>* pEntries)
+        public readonly unsafe int GetPaletteEntries(uint PaletteNumber, Silk.NET.Maths.Vector4D<byte>* pEntries)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, Silk.NET.Maths.Vector4<byte>*, int>)LpVtbl[72])(@this, PaletteNumber, pEntries);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, Silk.NET.Maths.Vector4D<byte>*, int>)LpVtbl[72])(@this, PaletteNumber, pEntries);
             return ret;
         }
 
         /// <summary>To be added.</summary>
-        public readonly int GetPaletteEntries(uint PaletteNumber, ref Silk.NET.Maths.Vector4<byte> pEntries)
+        public readonly int GetPaletteEntries(uint PaletteNumber, ref Silk.NET.Maths.Vector4D<byte> pEntries)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Vector4<byte>* pEntriesPtr = &pEntries)
+            fixed (Silk.NET.Maths.Vector4D<byte>* pEntriesPtr = &pEntries)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, Silk.NET.Maths.Vector4<byte>*, int>)LpVtbl[72])(@this, PaletteNumber, pEntriesPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, uint, Silk.NET.Maths.Vector4D<byte>*, int>)LpVtbl[72])(@this, PaletteNumber, pEntriesPtr);
             }
             return ret;
         }

@@ -20,7 +20,7 @@ namespace Silk.NET.Windowing
         public bool IsEventDriven { get; set; }
 
         /// <inheritdoc />
-        Vector2<int> IViewProperties.Size
+        Vector2D<int> IViewProperties.Size
             => throw new InvalidOperationException("Can't get the size of a non-existent view.");
 
         /// <inheritdoc />

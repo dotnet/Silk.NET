@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.Internals;
@@ -40,20 +39,20 @@ namespace Silk.NET.Input.Sdl
 
         public override IReadOnlyList<ScrollWheel> ScrollWheels { get; } = new ScrollWheel[1];
 
-        public override unsafe PointF Position
+        public override unsafe Vector2 Position
         {
             get
             {
                 int x, y;
                 _ctx.Sdl.GetMouseState(&x, &y);
-                return new PointF(x, y);
+                return new Vector2(x, y);
             }
             set => _ctx.Sdl.WarpMouseInWindow((Window*) _ctx.Handle, (int) value.X, (int) value.Y);
         }
 
         public override ICursor Cursor { get; }
         public override bool IsButtonPressed(MouseButton btn) => _downButtons.Contains(btn);
-        public override event Action<IMouse, PointF>? MouseMove;
+        public override event Action<IMouse, Vector2>? MouseMove;
         public override event Action<IMouse, ScrollWheel>? Scroll;
 
         public void Update()
@@ -73,11 +72,11 @@ namespace Silk.NET.Input.Sdl
                     if (IsRaw)
                     {
                         var aggr = AggregatePoint += new Vector2(@event.Motion.Xrel, @event.Motion.Yrel);
-                        MouseMove?.Invoke(this, Unsafe.As<Vector2, PointF>(ref aggr));
+                        MouseMove?.Invoke(this, aggr);
                     }
                     else
                     {
-                        MouseMove?.Invoke(this, new PointF(@event.Motion.X, @event.Motion.Y));
+                        MouseMove?.Invoke(this, new Vector2(@event.Motion.X, @event.Motion.Y));
                     }
 
                     break;

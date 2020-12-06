@@ -47,7 +47,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Raised when the window is moved.
         /// </summary>
-        event Action<Vector2<int>>? Move;
+        event Action<Vector2D<int>>? Move;
 
         /// <summary>
         /// Raised when the window state is changed.

@@ -5,7 +5,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Numerics;
 
 namespace Silk.NET.Input.Internals
 {
@@ -17,25 +17,25 @@ namespace Silk.NET.Input.Internals
         public abstract bool IsConnected { get; }
         public abstract IReadOnlyList<MouseButton> SupportedButtons { get; }
         public abstract IReadOnlyList<ScrollWheel> ScrollWheels { get; }
-        public abstract PointF Position { get; set; }
+        public abstract Vector2 Position { get; set; }
         public abstract ICursor Cursor { get; }
         public int DoubleClickTime { get; set; } = 500;
         public int DoubleClickRange { get; set; } = 4;
         public abstract bool IsButtonPressed(MouseButton btn);
-        public abstract event Action<IMouse, PointF>? MouseMove;
+        public abstract event Action<IMouse, Vector2>? MouseMove;
         public abstract event Action<IMouse, ScrollWheel>? Scroll;
 
         // Fields
         private MouseButton? _firstClickButton;
-        private PointF _firstClickPosition = PointF.Empty;
+        private Vector2 _firstClickPosition = Vector2.Zero;
         private DateTime? _firstClickTime;
         private bool _firstClick = true;
 
         // Events
         public event Action<IMouse, MouseButton>? MouseDown;
         public event Action<IMouse, MouseButton>? MouseUp;
-        public event Action<IMouse, MouseButton, PointF>? Click;
-        public event Action<IMouse, MouseButton, PointF>? DoubleClick;
+        public event Action<IMouse, MouseButton, Vector2>? Click;
+        public event Action<IMouse, MouseButton, Vector2>? DoubleClick;
 
         protected void HandleMouseDown(IMouse mouse, MouseButton button)
         {

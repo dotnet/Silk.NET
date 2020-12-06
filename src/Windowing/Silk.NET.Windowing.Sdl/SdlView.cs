@@ -44,8 +44,8 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         // Events
-        public override event Action<Vector2<int>>? Resize;
-        public override event Action<Vector2<int>>? FramebufferResize;
+        public override event Action<Vector2D<int>>? Resize;
+        public override event Action<Vector2D<int>>? FramebufferResize;
         public override event Action? Closing;
         public override event Action<bool>? FocusChanged;
 
@@ -65,7 +65,7 @@ namespace Silk.NET.Windowing.Sdl
         protected SdlView? ParentView { get; }
         protected SdlMonitor? InitialMonitor { get; set; }
 
-        public override Vector2<int> FramebufferSize => (_ctx as SdlGLContext)?.FramebufferSize ?? CoreSize;
+        public override Vector2D<int> FramebufferSize => (_ctx as SdlGLContext)?.FramebufferSize ?? CoreSize;
 
         public override VideoMode VideoMode
         {
@@ -73,18 +73,18 @@ namespace Silk.NET.Windowing.Sdl
             {
                 DisplayMode mode;
                 return Sdl.GetWindowDisplayMode(SdlWindow, &mode) == 1
-                    ? new VideoMode(new Vector2<int>(mode.W, mode.H), mode.RefreshRate)
+                    ? new VideoMode(new Vector2D<int>(mode.W, mode.H), mode.RefreshRate)
                     : default;
             }
         }
 
-        protected override Vector2<int> CoreSize
+        protected override Vector2D<int> CoreSize
         {
             get
             {
                 var ret = stackalloc int[2];
                 Sdl.GetWindowSize(SdlWindow, ret, &ret[1]);
-                return *(Vector2<int>*) ret;
+                return *(Vector2D<int>*) ret;
             }
         }
 
@@ -266,18 +266,18 @@ namespace Silk.NET.Windowing.Sdl
         }
 
 
-        public override Vector2<int> PointToClient(Vector2<int> point)
+        public override Vector2D<int> PointToClient(Vector2D<int> point)
         {
             int x, y;
             Sdl.GetWindowPosition(SdlWindow, &x, &y);
-            return new Vector2<int>(point.X - x, point.Y - y);
+            return new Vector2D<int>(point.X - x, point.Y - y);
         }
 
-        public override Vector2<int> PointToScreen(Vector2<int> point)
+        public override Vector2D<int> PointToScreen(Vector2D<int> point)
         {
             int x, y;
             Sdl.GetWindowPosition(SdlWindow, &x, &y);
-            return new Vector2<int>(point.X + x, point.Y + y);
+            return new Vector2D<int>(point.X + x, point.Y + y);
         }
 
         [SuppressMessage("ReSharper", "SwitchStatementHandlesSomeKnownEnumValuesWithDefault")]
@@ -315,7 +315,7 @@ namespace Silk.NET.Windowing.Sdl
                         {
                             case WindowEventID.WindoweventResized:
                             {
-                                Resize?.Invoke(new Vector2<int>(@event.Window.Data1, @event.Window.Data2));
+                                Resize?.Invoke(new Vector2D<int>(@event.Window.Data1, @event.Window.Data2));
                                 FramebufferResize?.Invoke(FramebufferSize);
                                 break;
                             }

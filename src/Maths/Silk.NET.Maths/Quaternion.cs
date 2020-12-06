@@ -48,7 +48,7 @@ namespace Silk.NET.Maths
         /// <summary>Constructs a Quaternion from the given vector and rotation parts.</summary>
         /// <param name="vectorPart">The vector part of the Quaternion.</param>
         /// <param name="scalarPart">The rotation part of the Quaternion.</param>
-        public Quaternion(Vector3<T> vectorPart, T scalarPart)
+        public Quaternion(Vector3D<T> vectorPart, T scalarPart)
         {
             X = vectorPart.X;
             Y = vectorPart.Y;
@@ -286,7 +286,7 @@ namespace Silk.NET.Maths
         /// This vector must be normalized before calling this function or the resulting Quaternion will be incorrect.</param>
         /// <param name="angle">The angle, in radians, to rotate around the vector.</param>
         /// <returns>The created Quaternion.</returns>
-        public static Quaternion<T> CreateFromAxisAngle(Vector3<T> axis, T angle)
+        public static Quaternion<T> CreateFromAxisAngle(Vector3D<T> axis, T angle)
         {
             Quaternion<T> ans;
 
@@ -305,7 +305,7 @@ namespace Silk.NET.Maths
         /// <summary>Creates a Quaternion from the given rotation matrix.</summary>
         /// <param name="matrix">The rotation matrix.</param>
         /// <returns>The created Quaternion.</returns>
-        public static Quaternion<T> CreateFromRotationMatrix(Matrix4x4<T> matrix)
+        public static Quaternion<T> CreateFromRotationMatrix(Matrix4X4<T> matrix)
         {
             T trace = Scalar.Add(Scalar.Add(matrix.M11, matrix.M22), matrix.M33);
 
@@ -357,7 +357,7 @@ namespace Silk.NET.Maths
         /// <summary>Creates a Quaternion from the given rotation matrix.</summary>
         /// <param name="matrix">The rotation matrix.</param>
         /// <returns>The created Quaternion.</returns>
-        public static Quaternion<T> CreateFromRotationMatrix(Matrix3x3<T> matrix)
+        public static Quaternion<T> CreateFromRotationMatrix(Matrix3X3<T> matrix)
         {
             T trace = Scalar.Add(Scalar.Add(matrix.M11, matrix.M22), matrix.M33);
 

@@ -63,7 +63,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="color">
         ///     New clear color for the OpenGL context.
         /// </param>
-        public void ClearColor<T>(Vector4<T> color) where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        public void ClearColor<T>(Vector4D<T> color) where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => ClearColor(Scalar.As<T, float>(color.X) / 255.0f,
                           Scalar.As<T, float>(color.Y) / 255.0f,
                           Scalar.As<T, float>(color.Z) / 255.0f,
@@ -84,7 +84,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="color">
         ///     New blend color for the OpenGL context.
         /// </param>
-        public void BlendColor<T>(Vector4<T> color) where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+        public void BlendColor<T>(Vector4D<T> color) where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => BlendColor(Scalar.As<T, float>(color.X) / 255.0f,
                           Scalar.As<T, float>(color.Y) / 255.0f,
                           Scalar.As<T, float>(color.Z) / 255.0f,
@@ -345,7 +345,7 @@ namespace Silk.NET.OpenGL.Legacy
         ///     </see>
         ///  </para>
         /// </remarks>
-        public void Viewport(Vector2<int> size) => Viewport(0, 0, (uint) size.X, (uint) size.Y);
+        public void Viewport(Vector2D<int> size) => Viewport(0, 0, (uint) size.X, (uint) size.Y);
 
         /// <summary>
         ///      Set the viewport for the OpenGL context.
@@ -390,7 +390,7 @@ namespace Silk.NET.OpenGL.Legacy
         ///     </see>
         ///  </para>
         /// </remarks>
-        public void Viewport(Vector2<int> location, Vector2<int> size)
+        public void Viewport(Vector2D<int> location, Vector2D<int> size)
             => Viewport(location.X, location.Y, (uint) size.X, (uint) size.Y);
 
         /// <summary>

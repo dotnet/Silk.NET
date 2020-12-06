@@ -16,7 +16,7 @@ namespace Silk.NET.Maths
     {
         /// <summary>The normal vector of the Plane.</summary>
         [DataMember]
-        public Vector3<T> Normal;
+        public Vector3D<T> Normal;
 
         /// <summary>The distance of the Plane along its normal from the origin.</summary>
         [DataMember]
@@ -29,25 +29,25 @@ namespace Silk.NET.Maths
         /// <param name="distance">The distance of the Plane along its normal from the origin.</param>
         public Plane(T x, T y, T z, T distance)
         {
-            Normal = new Vector3<T>(x, y, z);
+            Normal = new Vector3D<T>(x, y, z);
             Distance = distance;
         }
 
         /// <summary>Constructs a Plane from the given normal and distance along the normal from the origin.</summary>
         /// <param name="normal">The Plane's normal vector.</param>
         /// <param name="distance">The Plane's distance from the origin along its normal vector.</param>
-        public Plane(Vector3<T> normal, T distance)
+        public Plane(Vector3D<T> normal, T distance)
         {
             Normal = normal;
             Distance = distance;
         }
 
-        /// <summary>Constructs a Plane from the given Vector4.</summary>
+        /// <summary>Constructs a Plane from the given Vector4D.</summary>
         /// <param name="value">A vector whose first 3 elements describe the normal vector,
         /// and whose W component defines the distance along that normal from the origin.</param>
-        public Plane(Vector4<T> value)
+        public Plane(Vector4D<T> value)
         {
-            Normal = new Vector3<T>(value.X, value.Y, value.Z);
+            Normal = new Vector3D<T>(value.X, value.Y, value.Z);
             Distance = value.W;
         }
 
@@ -106,7 +106,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="Half"/> matrix</returns>
         public static explicit operator Plane<Half>(Plane<T> from)
-            => new((Vector3<Half>) from.Normal, Scalar.As<T, Half>(from.Distance));
+            => new((Vector3D<Half>) from.Normal, Scalar.As<T, Half>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
@@ -114,7 +114,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="float"/> matrix</returns>
         public static explicit operator Plane<float>(Plane<T> from)
-            => new((Vector3<float>) from.Normal, Scalar.As<T, float>(from.Distance));
+            => new((Vector3D<float>) from.Normal, Scalar.As<T, float>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
@@ -122,7 +122,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="double"/> matrix</returns>
         public static explicit operator Plane<double>(Plane<T> from)
-            => new((Vector3<double>) from.Normal, Scalar.As<T, double>(from.Distance));
+            => new((Vector3D<double>) from.Normal, Scalar.As<T, double>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
@@ -130,7 +130,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="decimal"/> matrix</returns>
         public static explicit operator Plane<decimal>(Plane<T> from)
-            => new((Vector3<decimal>) from.Normal, Scalar.As<T, decimal>(from.Distance));
+            => new((Vector3D<decimal>) from.Normal, Scalar.As<T, decimal>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
@@ -138,7 +138,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="sbyte"/> matrix</returns>
         public static explicit operator Plane<sbyte>(Plane<T> from)
-            => new((Vector3<sbyte>) from.Normal, Scalar.As<T, sbyte>(from.Distance));
+            => new((Vector3D<sbyte>) from.Normal, Scalar.As<T, sbyte>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
@@ -146,7 +146,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="byte"/> matrix</returns>
         public static explicit operator Plane<byte>(Plane<T> from)
-            => new((Vector3<byte>) from.Normal, Scalar.As<T, byte>(from.Distance));
+            => new((Vector3D<byte>) from.Normal, Scalar.As<T, byte>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
@@ -154,7 +154,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ushort"/> matrix</returns>
         public static explicit operator Plane<ushort>(Plane<T> from)
-            => new((Vector3<ushort>) from.Normal, Scalar.As<T, ushort>(from.Distance));
+            => new((Vector3D<ushort>) from.Normal, Scalar.As<T, ushort>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
@@ -162,7 +162,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="short"/> matrix</returns>
         public static explicit operator Plane<short>(Plane<T> from)
-            => new((Vector3<short>) from.Normal, Scalar.As<T, short>(from.Distance));
+            => new((Vector3D<short>) from.Normal, Scalar.As<T, short>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
@@ -170,7 +170,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="uint"/> matrix</returns>
         public static explicit operator Plane<uint>(Plane<T> from)
-            => new((Vector3<uint>) from.Normal, Scalar.As<T, uint>(from.Distance));
+            => new((Vector3D<uint>) from.Normal, Scalar.As<T, uint>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
@@ -178,7 +178,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="int"/> matrix</returns>
         public static explicit operator Plane<int>(Plane<T> from)
-            => new((Vector3<int>) from.Normal, Scalar.As<T, int>(from.Distance));
+            => new((Vector3D<int>) from.Normal, Scalar.As<T, int>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
@@ -186,7 +186,7 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ulong"/> matrix</returns>
         public static explicit operator Plane<ulong>(Plane<T> from)
-            => new((Vector3<ulong>) from.Normal, Scalar.As<T, ulong>(from.Distance));
+            => new((Vector3D<ulong>) from.Normal, Scalar.As<T, ulong>(from.Distance));
         
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
@@ -194,6 +194,6 @@ namespace Silk.NET.Maths
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="long"/> matrix</returns>
         public static explicit operator Plane<long>(Plane<T> from)
-            => new((Vector3<long>) from.Normal, Scalar.As<T, long>(from.Distance));
+            => new((Vector3D<long>) from.Normal, Scalar.As<T, long>(from.Distance));
     }
 }

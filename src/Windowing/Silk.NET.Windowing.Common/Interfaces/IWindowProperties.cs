@@ -25,7 +25,7 @@ namespace Silk.NET.Windowing
         /// This will be replaced with an integer vector once System.Numerics supports them.
         /// </para>
         /// </remarks>
-        Vector2<int> Position { get; set; }
+        Vector2D<int> Position { get; set; }
 
         /// <summary>
         /// The size of the window in pixels.
@@ -35,7 +35,7 @@ namespace Silk.NET.Windowing
         /// This will be replaced with an integer vector once System.Numerics supports them.
         /// </para>
         /// </remarks>
-        new Vector2<int> Size { get; set; }
+        new Vector2D<int> Size { get; set; }
 
         /// <summary>
         /// The window title.
