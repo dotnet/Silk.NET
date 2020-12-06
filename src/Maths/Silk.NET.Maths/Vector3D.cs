@@ -9,8 +9,8 @@ namespace Silk.NET.Maths
     /// <summary>A structure encapsulating three values and provides hardware accelerated methods.</summary>
     [Serializable]
     [DataContract]
-    public struct Vector3<T>
-        : IEquatable<Vector3<T>>, IFormattable
+    public struct Vector3D<T>
+        : IEquatable<Vector3D<T>>, IFormattable
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         /// <summary>The X component of the vector.</summary>
@@ -27,33 +27,33 @@ namespace Silk.NET.Maths
 
         /// <summary>Constructs a vector whose elements are all the single specified value.</summary>
         /// <param name="value">The element to fill the vector with.</param>
-        public Vector3(T value) => (X, Y, Z) = (value, value, value);
+        public Vector3D(T value) => (X, Y, Z) = (value, value, value);
 
-        /// <summary>Constructs a Vector3 from the given Vector2D and a third value.</summary>
+        /// <summary>Constructs a Vector3D from the given Vector2D and a third value.</summary>
         /// <param name="value">The Vector to extract X and Y components from.</param>
         /// <param name="z">The Z component.</param>
-        public Vector3(Vector2D<T> value, T z) => (X, Y, Z) = (value.X, value.Y, z);
+        public Vector3D(Vector2D<T> value, T z) => (X, Y, Z) = (value.X, value.Y, z);
 
         /// <summary>Constructs a vector with the given individual elements.</summary>
         /// <param name="x">The X component.</param>
         /// <param name="y">The Y component.</param>
         /// <param name="z">The Z component.</param>
-        public Vector3(T x, T y, T z) => (X, Y, Z) = (x, y, z);
+        public Vector3D(T x, T y, T z) => (X, Y, Z) = (x, y, z);
 
         /// <summary>Returns the vector (0,0,0).</summary>
-        public static Vector3<T> Zero => default;
+        public static Vector3D<T> Zero => default;
 
         /// <summary>Returns the vector (1,1,1).</summary>
-        public static Vector3<T> One => new(Scalar<T>.One);
+        public static Vector3D<T> One => new(Scalar<T>.One);
 
         /// <summary>Returns the vector (1,0,0).</summary>
-        public static Vector3<T> UnitX => new(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero);
+        public static Vector3D<T> UnitX => new(Scalar<T>.One, Scalar<T>.Zero, Scalar<T>.Zero);
 
         /// <summary>Returns the vector (0,1,0).</summary>
-        public static Vector3<T> UnitY => new(Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero);
+        public static Vector3D<T> UnitY => new(Scalar<T>.Zero, Scalar<T>.One, Scalar<T>.Zero);
 
         /// <summary>Returns the vector (0,0,1).</summary>
-        public static Vector3<T> UnitZ => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
+        public static Vector3D<T> UnitZ => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
         
         /// <summary>
         /// Indexer for the components of this vector.
@@ -81,7 +81,7 @@ namespace Silk.NET.Maths
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> operator +(Vector3<T> left, Vector3<T> right)
+        public static Vector3D<T> operator +(Vector3D<T> left, Vector3D<T> right)
             => new(Scalar.Add(left.X, right.X), Scalar.Add(left.Y, right.Y), Scalar.Add(left.Z, right.Z));
 
         /// <summary>Divides the first vector by the second.</summary>
@@ -89,7 +89,7 @@ namespace Silk.NET.Maths
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> operator /(Vector3<T> left, Vector3<T> right)
+        public static Vector3D<T> operator /(Vector3D<T> left, Vector3D<T> right)
             => new(Scalar.Divide(left.X, right.X), Scalar.Divide(left.Y, right.Y),
                 Scalar.Divide(left.Z, right.Z));
 
@@ -98,7 +98,7 @@ namespace Silk.NET.Maths
         /// <param name="value2">The scalar value.</param>
         /// <returns>The result of the division.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> operator /(Vector3<T> value1, T value2)
+        public static Vector3D<T> operator /(Vector3D<T> value1, T value2)
             => new(Scalar.Divide(value1.X, value2), Scalar.Divide(value1.Y, value2),
                 Scalar.Divide(value1.Z, value2));
 
@@ -107,7 +107,7 @@ namespace Silk.NET.Maths
         /// <param name="right">The second vector to compare.</param>
         /// <returns>True if the vectors are equal; False otherwise.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static bool operator ==(Vector3<T> left, Vector3<T> right)
+        public static bool operator ==(Vector3D<T> left, Vector3D<T> right)
             => Scalar.Equal(left.X, right.X) 
             && Scalar.Equal(left.Y, right.Y) 
             && Scalar.Equal(left.Z, right.Z);
@@ -117,14 +117,14 @@ namespace Silk.NET.Maths
         /// <param name="right">The second vector to compare.</param>
         /// <returns>True if the vectors are not equal; False if they are equal.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static bool operator !=(Vector3<T> left, Vector3<T> right) => !(left == right);
+        public static bool operator !=(Vector3D<T> left, Vector3D<T> right) => !(left == right);
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> operator *(Vector3<T> left, Vector3<T> right)
+        public static Vector3D<T> operator *(Vector3D<T> left, Vector3D<T> right)
             => new(Scalar.Multiply(left.X, right.X), Scalar.Multiply(left.Y, right.Y),
                 Scalar.Multiply(left.Z, right.Z));
 
@@ -133,7 +133,7 @@ namespace Silk.NET.Maths
         /// <param name="right">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> operator *(Vector3<T> left, T right)
+        public static Vector3D<T> operator *(Vector3D<T> left, T right)
             => new(Scalar.Multiply(left.X, right), Scalar.Multiply(left.Y, right),
                 Scalar.Multiply(left.Z, right));
 
@@ -142,7 +142,7 @@ namespace Silk.NET.Maths
         /// <param name="right">The source vector.</param>
         /// <returns>The scaled vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> operator *(T left, Vector3<T> right) 
+        public static Vector3D<T> operator *(T left, Vector3D<T> right) 
             => right * left;
 
         /// <summary>Subtracts the second vector from the first.</summary>
@@ -150,7 +150,7 @@ namespace Silk.NET.Maths
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> operator -(Vector3<T> left, Vector3<T> right)
+        public static Vector3D<T> operator -(Vector3D<T> left, Vector3D<T> right)
             => new(Scalar.Subtract(left.X, right.X), Scalar.Subtract(left.Y, right.Y),
                 Scalar.Subtract(left.Z, right.Z));
 
@@ -158,7 +158,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The source vector.</param>
         /// <returns>The negated vector.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static Vector3<T> operator -(Vector3<T> value)
+        public static Vector3D<T> operator -(Vector3D<T> value)
             => Zero - value;
 
         /// <summary>Copies the contents of the vector into the given array.</summary>
@@ -194,19 +194,19 @@ namespace Silk.NET.Maths
             array[index + 2] = Z;
         }
 
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Vector3 instance.</summary>
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this Vector3D instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Vector3; False otherwise.</returns>
+        /// <returns>True if the Object is equal to this Vector3D; False otherwise.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public override readonly bool Equals(object? obj)
         {
-            return (obj is Vector3<T> other) && Equals(other);
+            return (obj is Vector3D<T> other) && Equals(other);
         }
 
-        /// <summary>Returns a boolean indicating whether the given Vector3 is equal to this Vector3 instance.</summary>
-        /// <param name="other">The Vector3 to compare this instance to.</param>
-        /// <returns>True if the other Vector3 is equal to this instance; False otherwise.</returns>
-        public readonly bool Equals(Vector3<T> other)
+        /// <summary>Returns a boolean indicating whether the given Vector3D is equal to this Vector3D instance.</summary>
+        /// <param name="other">The Vector3D to compare this instance to.</param>
+        /// <returns>True if the other Vector3D is equal to this instance; False otherwise.</returns>
+        public readonly bool Equals(Vector3D<T> other)
         {
             return this == other;
         }
@@ -231,19 +231,19 @@ namespace Silk.NET.Maths
         public T LengthSquared
         {
             [MethodImpl((MethodImplOptions)768)]
-            get => Vector3.Dot(this, this);
+            get => Vector3D.Dot(this, this);
         }
 
-        /// <summary>Returns a String representing this Vector3 instance.</summary>
+        /// <summary>Returns a String representing this Vector3D instance.</summary>
         /// <returns>The string representation.</returns>
         public override readonly string ToString() => ToString("G", CultureInfo.CurrentCulture);
 
-        /// <summary>Returns a String representing this Vector3 instance, using the specified format to format individual elements.</summary>
+        /// <summary>Returns a String representing this Vector3D instance, using the specified format to format individual elements.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <returns>The string representation.</returns>
         public readonly string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
 
-        /// <summary>Returns a String representing this Vector3 instance, using the specified format to format individual elements and the given IFormatProvider.</summary>
+        /// <summary>Returns a String representing this Vector3D instance, using the specified format to format individual elements and the given IFormatProvider.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <param name="formatProvider">The format provider to use when formatting elements.</param>
         /// <returns>The string representation.</returns>
@@ -264,99 +264,99 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="Half"/> matrix</returns>
-        public static explicit operator Vector3<Half>(Vector3<T> from)
+        public static explicit operator Vector3D<Half>(Vector3D<T> from)
             => new(Scalar.As<T, Half>(from.X), Scalar.As<T, Half>(from.Y), Scalar.As<T, Half>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="float"/> matrix</returns>
-        public static explicit operator Vector3<float>(Vector3<T> from)
+        public static explicit operator Vector3D<float>(Vector3D<T> from)
             => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="double"/> matrix</returns>
-        public static explicit operator Vector3<double>(Vector3<T> from)
+        public static explicit operator Vector3D<double>(Vector3D<T> from)
             => new(Scalar.As<T, double>(from.X), Scalar.As<T, double>(from.Y), Scalar.As<T, double>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="decimal"/> matrix</returns>
-        public static explicit operator Vector3<decimal>(Vector3<T> from)
+        public static explicit operator Vector3D<decimal>(Vector3D<T> from)
             => new(Scalar.As<T, decimal>(from.X), Scalar.As<T, decimal>(from.Y), Scalar.As<T, decimal>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="sbyte"/> matrix</returns>
-        public static explicit operator Vector3<sbyte>(Vector3<T> from)
+        public static explicit operator Vector3D<sbyte>(Vector3D<T> from)
             => new(Scalar.As<T, sbyte>(from.X), Scalar.As<T, sbyte>(from.Y), Scalar.As<T, sbyte>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="byte"/> matrix</returns>
-        public static explicit operator Vector3<byte>(Vector3<T> from)
+        public static explicit operator Vector3D<byte>(Vector3D<T> from)
             => new(Scalar.As<T, byte>(from.X), Scalar.As<T, byte>(from.Y), Scalar.As<T, byte>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ushort"/> matrix</returns>
-        public static explicit operator Vector3<ushort>(Vector3<T> from)
+        public static explicit operator Vector3D<ushort>(Vector3D<T> from)
             => new(Scalar.As<T, ushort>(from.X), Scalar.As<T, ushort>(from.Y), Scalar.As<T, ushort>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="short"/> matrix</returns>
-        public static explicit operator Vector3<short>(Vector3<T> from)
+        public static explicit operator Vector3D<short>(Vector3D<T> from)
             => new(Scalar.As<T, short>(from.X), Scalar.As<T, short>(from.Y), Scalar.As<T, short>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="uint"/> matrix</returns>
-        public static explicit operator Vector3<uint>(Vector3<T> from)
+        public static explicit operator Vector3D<uint>(Vector3D<T> from)
             => new(Scalar.As<T, uint>(from.X), Scalar.As<T, uint>(from.Y), Scalar.As<T, uint>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="int"/> matrix</returns>
-        public static explicit operator Vector3<int>(Vector3<T> from)
+        public static explicit operator Vector3D<int>(Vector3D<T> from)
             => new(Scalar.As<T, int>(from.X), Scalar.As<T, int>(from.Y), Scalar.As<T, int>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ulong"/> matrix</returns>
-        public static explicit operator Vector3<ulong>(Vector3<T> from)
+        public static explicit operator Vector3D<ulong>(Vector3D<T> from)
             => new(Scalar.As<T, ulong>(from.X), Scalar.As<T, ulong>(from.Y), Scalar.As<T, ulong>(from.Z));
         
         /// <summary>
-        /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
+        /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="long"/> matrix</returns>
-        public static explicit operator Vector3<long>(Vector3<T> from)
+        public static explicit operator Vector3D<long>(Vector3D<T> from)
             => new(Scalar.As<T, long>(from.X), Scalar.As<T, long>(from.Y), Scalar.As<T, long>(from.Z));
     }
 }
