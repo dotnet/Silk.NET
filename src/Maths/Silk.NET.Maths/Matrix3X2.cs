@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -23,7 +23,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Row1;
-        
+
         /// <summary>
         /// Row 2 of the matrix.
         /// </summary>
@@ -35,13 +35,13 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Row3;
-        
+
         /// <summary>
         /// Column 1 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Column1 => new(Row1.X, Row2.X, Row3.X);
-        
+
         /// <summary>
         /// Column 2 of the matrix.
         /// </summary>
@@ -95,7 +95,7 @@ namespace Silk.NET.Maths
             readonly get => Row3.Y;
             set => Row3.Y = value;
         }
-        
+
         /// <summary>
         /// Indexer for the rows of this matrix.
         /// </summary>
@@ -107,11 +107,11 @@ namespace Silk.NET.Maths
                 static void VerifyBounds(int i)
                 {
                     static void ThrowHelper() => throw new IndexOutOfRangeException();
-                    
+
                     if (i > 2 || i < 0)
                         ThrowHelper();
                 }
-                
+
                 VerifyBounds(x);
                 return Unsafe.Add(ref Row1, x);
             }
@@ -150,7 +150,7 @@ namespace Silk.NET.Maths
             Row2 = row2;
             Row3 = row3;
         }
-        
+
         /// <summary>Constructs a Matrix3X2 from the given Matrix4x3.</summary>
         /// <param name="value">The source Matrix4x3.</param>
         public Matrix3X2(Matrix4X3<T> value)
@@ -159,7 +159,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
             Row3 = new(value.M31, value.M32);
         }
-        
+
         /// <summary>Constructs a Matrix3X2 from the given Matrix3X4.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix3X2(Matrix3X4<T> value)
@@ -168,7 +168,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
             Row3 = new(value.M31, value.M32);
         }
-        
+
         /// <summary>Constructs a Matrix3X2 from the given Matrix3X3.</summary>
         /// <param name="value">The source Matrix3X3.</param>
         public Matrix3X2(Matrix3X3<T> value)
@@ -177,7 +177,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
             Row3 = new(value.M31, value.M32);
         }
-        
+
         /// <summary>Constructs a Matrix4X4 from the given Matrix3X4.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix3X2(Matrix2X4<T> value)
@@ -186,7 +186,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
             Row3 = Vector2D<T>.Zero;
         }
-        
+
         /// <summary>Constructs a Matrix4X4 from the given Matrix3X4.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix3X2(Matrix4X2<T> value)
@@ -250,7 +250,7 @@ namespace Silk.NET.Maths
                 value1.M21 * value2.Row1 * value1.M22 * value2.Row2,
                 value1.M31 * value2.Row1 * value1.M32 * value2.Row2);
         }
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
@@ -259,7 +259,7 @@ namespace Silk.NET.Maths
         {
             return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3;
         }
-        
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
@@ -272,7 +272,7 @@ namespace Silk.NET.Maths
                 value1.M31 * value2.Row1 + value1.M32 * value2.Row2
                 );
         }
-        
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
@@ -315,7 +315,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public override readonly bool Equals(object? obj)
             => (obj is Matrix3X2<T> other) && Equals(other);
 
@@ -379,7 +379,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, Half>(from.M21), Scalar.As<T, Half>(from.M22),
                 Scalar.As<T, Half>(from.M31), Scalar.As<T, Half>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
         /// </summary>
@@ -391,7 +391,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, float>(from.M21), Scalar.As<T, float>(from.M22),
                 Scalar.As<T, float>(from.M31), Scalar.As<T, float>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
@@ -403,7 +403,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, double>(from.M21), Scalar.As<T, double>(from.M22),
                 Scalar.As<T, double>(from.M31), Scalar.As<T, double>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
         /// </summary>
@@ -415,7 +415,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, decimal>(from.M21), Scalar.As<T, decimal>(from.M22),
                 Scalar.As<T, decimal>(from.M31), Scalar.As<T, decimal>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
         /// </summary>
@@ -427,7 +427,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, sbyte>(from.M21), Scalar.As<T, sbyte>(from.M22),
                 Scalar.As<T, sbyte>(from.M31), Scalar.As<T, sbyte>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
         /// </summary>
@@ -439,7 +439,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, byte>(from.M21), Scalar.As<T, byte>(from.M22),
                 Scalar.As<T, byte>(from.M31), Scalar.As<T, byte>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
         /// </summary>
@@ -451,7 +451,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, ushort>(from.M21), Scalar.As<T, ushort>(from.M22),
                 Scalar.As<T, ushort>(from.M31), Scalar.As<T, ushort>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
         /// </summary>
@@ -463,7 +463,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, short>(from.M21), Scalar.As<T, short>(from.M22),
                 Scalar.As<T, short>(from.M31), Scalar.As<T, short>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
         /// </summary>
@@ -475,7 +475,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, uint>(from.M21), Scalar.As<T, uint>(from.M22),
                 Scalar.As<T, uint>(from.M31), Scalar.As<T, uint>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
         /// </summary>
@@ -487,7 +487,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, int>(from.M21), Scalar.As<T, int>(from.M22),
                 Scalar.As<T, int>(from.M31), Scalar.As<T, int>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
         /// </summary>
@@ -499,7 +499,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, ulong>(from.M21), Scalar.As<T, ulong>(from.M22),
                 Scalar.As<T, ulong>(from.M31), Scalar.As<T, ulong>(from.M32)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
         /// </summary>

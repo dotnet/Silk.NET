@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -17,10 +17,10 @@ namespace Silk.NET.Maths
 #if MATHF
         private const float BillboardMinAngle = 1.0f - (0.1f * (MathF.PI / 180.0f)); // 0.1 degrees
 #else
-        private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0f)); // 0.1 degrees
+        private const float BillboardMinAngle = 1.0f - (0.1f * (((float) Math.PI) / 180.0f)); // 0.1 degrees
 #endif
         private const float DecomposeEpsilon = 0.0001f;
-        
+
         private struct CanonicalBasis<T>
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -38,12 +38,12 @@ namespace Silk.NET.Maths
             public unsafe Vector3D<T>* Element2;
 #pragma warning restore 649
         }
-        
+
         /// <summary>Adds two matrices together.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The resulting matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix4X4<T> Add<T>(Matrix4X4<T> value1, Matrix4X4<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -229,7 +229,7 @@ namespace Silk.NET.Maths
 
             return result;
         }
-        
+
 
         /// <summary>Creates a rotation matrix from the specified yaw, pitch, and roll.</summary>
         /// <param name="yaw">Angle of rotation, in radians, around the Y-axis.</param>
@@ -369,13 +369,13 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreatePerspectiveFieldOfView<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            if (!Scalar.GreaterThan(fieldOfView, Scalar<T>.Zero) || Scalar.GreaterThanOrEqual(fieldOfView , Scalar<T>.Pi))
+            if (!Scalar.GreaterThan(fieldOfView, Scalar<T>.Zero) || Scalar.GreaterThanOrEqual(fieldOfView, Scalar<T>.Pi))
                 throw new ArgumentOutOfRangeException(nameof(fieldOfView));
 
             if (!Scalar.GreaterThan(nearPlaneDistance, Scalar<T>.Zero))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
-            if (!Scalar.GreaterThan(farPlaneDistance , Scalar<T>.Zero))
+            if (!Scalar.GreaterThan(farPlaneDistance, Scalar<T>.Zero))
                 throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
 
             if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
@@ -569,7 +569,7 @@ namespace Silk.NET.Maths
             T c = Scalar.Cos(radians);
             T s = Scalar.Sin(radians);
 
-            T x = Scalar.Subtract(Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One,c)), Scalar.Multiply(centerPoint.Z, s));
+            T x = Scalar.Subtract(Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.Z, s));
             T z = Scalar.Add(Scalar.Multiply(centerPoint.Z, Scalar.Subtract(Scalar<T>.One, c)), Scalar.Multiply(centerPoint.X, s));
 
             // [  c  0 -s  0 ]
@@ -750,7 +750,7 @@ namespace Silk.NET.Maths
 
             return result;
         }
-        
+
         /// <summary>Creates a Matrix that flattens geometry into a specified Plane as if casting a shadow from a specified light source.</summary>
         /// <param name="lightDirection">The direction from which the light that will cast the shadow is coming.</param>
         /// <param name="plane">The Plane onto which the new matrix should flatten geometry so as to cast a shadow.</param>
@@ -760,7 +760,7 @@ namespace Silk.NET.Maths
         {
             Plane<T> p = Plane.Normalize(plane);
 
-            T dot = Scalar.Add(Scalar.Add(Scalar.Multiply(p.Normal.X, lightDirection.X),Scalar.Multiply(p.Normal.Y, lightDirection.Y)), Scalar.Multiply(p.Normal.Z, lightDirection.Z));
+            T dot = Scalar.Add(Scalar.Add(Scalar.Multiply(p.Normal.X, lightDirection.X), Scalar.Multiply(p.Normal.Y, lightDirection.Y)), Scalar.Multiply(p.Normal.Z, lightDirection.Z));
             T a = Scalar.Negate(p.Normal.X);
             T b = Scalar.Negate(p.Normal.Y);
             T c = Scalar.Negate(p.Normal.Z);
@@ -809,7 +809,7 @@ namespace Silk.NET.Maths
         public static Matrix4X4<T> CreateTranslation<T>(T xPosition, T yPosition, T zPosition)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix4X4<T> result = Matrix4X4<T>.Identity;;
+            Matrix4X4<T> result = Matrix4X4<T>.Identity; ;
             result.M41 = xPosition;
             result.M42 = yPosition;
             result.M43 = zPosition;
@@ -854,7 +854,7 @@ namespace Silk.NET.Maths
         /// <param name="result">If successful, contains the inverted matrix.</param>
         /// <returns>True if the source matrix could be inverted; False otherwise.</returns>
         ///
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static unsafe bool Invert<T>(Matrix4X4<T> matrix, out Matrix4X4<T> result)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -1141,10 +1141,10 @@ namespace Silk.NET.Maths
                 T io_km = Scalar.Subtract(Scalar.Multiply(i, o), Scalar.Multiply(k, m));
                 T in_jm = Scalar.Subtract(Scalar.Multiply(i, n), Scalar.Multiply(j, m));
 
-                T a11 =                     Scalar.Add(Scalar.Subtract(Scalar.Multiply(f, kp_lo), Scalar.Multiply(g, jp_ln)), Scalar.Multiply(h, jo_kn));
+                T a11 = Scalar.Add(Scalar.Subtract(Scalar.Multiply(f, kp_lo), Scalar.Multiply(g, jp_ln)), Scalar.Multiply(h, jo_kn));
                 T a12 = Scalar.Negate(Scalar.Add(Scalar.Subtract(Scalar.Multiply(e, kp_lo), Scalar.Multiply(g, ip_lm)), Scalar.Multiply(h, io_km)));
-                T a13 =                     Scalar.Add(Scalar.Subtract(Scalar.Multiply(e, jp_ln), Scalar.Multiply(f, ip_lm)), Scalar.Multiply(h, in_jm));
-                T a14 = Scalar.Negate(Scalar.Add(Scalar.Subtract(Scalar.Multiply(e, jo_kn) , Scalar.Multiply(f, io_km)), Scalar.Multiply(g, in_jm)));
+                T a13 = Scalar.Add(Scalar.Subtract(Scalar.Multiply(e, jp_ln), Scalar.Multiply(f, ip_lm)), Scalar.Multiply(h, in_jm));
+                T a14 = Scalar.Negate(Scalar.Add(Scalar.Subtract(Scalar.Multiply(e, jo_kn), Scalar.Multiply(f, io_km)), Scalar.Multiply(g, in_jm)));
 
                 T det = Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(a, a11), Scalar.Multiply(b, a12)), Scalar.Multiply(c, a13)), Scalar.Multiply(d, a14));
 
@@ -1161,16 +1161,16 @@ namespace Silk.NET.Maths
 
                 // TODO: Vectorize
                 result = default;
-                
+
                 result.M11 = Scalar.Multiply(a11, invDet);
                 result.M21 = Scalar.Multiply(a12, invDet);
                 result.M31 = Scalar.Multiply(a13, invDet);
                 result.M41 = Scalar.Multiply(a14, invDet);
 
                 result.M12 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(b, kp_lo), Scalar.Multiply(c, jp_ln)), Scalar.Multiply(d, jo_kn)), invDet));
-                result.M22 =                     Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, kp_lo), Scalar.Multiply(c, ip_lm)), Scalar.Multiply(d, io_km)), invDet);
+                result.M22 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, kp_lo), Scalar.Multiply(c, ip_lm)), Scalar.Multiply(d, io_km)), invDet);
                 result.M32 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, jp_ln), Scalar.Multiply(b, ip_lm)), Scalar.Multiply(d, in_jm)), invDet));
-                result.M42 =                     Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, jo_kn), Scalar.Multiply(b, io_km)), Scalar.Multiply(c, in_jm)), invDet);
+                result.M42 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, jo_kn), Scalar.Multiply(b, io_km)), Scalar.Multiply(c, in_jm)), invDet);
 
                 T gp_ho = Scalar.Subtract(Scalar.Multiply(g, p), Scalar.Multiply(h, o));
                 T fp_hn = Scalar.Subtract(Scalar.Multiply(f, p), Scalar.Multiply(h, n));
@@ -1178,11 +1178,11 @@ namespace Silk.NET.Maths
                 T ep_hm = Scalar.Subtract(Scalar.Multiply(e, p), Scalar.Multiply(h, m));
                 T eo_gm = Scalar.Subtract(Scalar.Multiply(e, o), Scalar.Multiply(g, m));
                 T en_fm = Scalar.Subtract(Scalar.Multiply(e, n), Scalar.Multiply(f, m));
-                
-                result.M13 =                     Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(b,gp_ho), Scalar.Multiply(c,fp_hn)), Scalar.Multiply(d, fo_gn)),  invDet);
-                result.M23 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a,gp_ho), Scalar.Multiply(c,ep_hm)), Scalar.Multiply(d, eo_gm)), invDet));
-                result.M33 =                     Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a,fp_hn), Scalar.Multiply(b,ep_hm)), Scalar.Multiply(d, en_fm)), invDet);
-                result.M43 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a,fo_gn), Scalar.Multiply(b,eo_gm)), Scalar.Multiply(c, en_fm)), invDet));
+
+                result.M13 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(b, gp_ho), Scalar.Multiply(c, fp_hn)), Scalar.Multiply(d, fo_gn)), invDet);
+                result.M23 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, gp_ho), Scalar.Multiply(c, ep_hm)), Scalar.Multiply(d, eo_gm)), invDet));
+                result.M33 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fp_hn), Scalar.Multiply(b, ep_hm)), Scalar.Multiply(d, en_fm)), invDet);
+                result.M43 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fo_gn), Scalar.Multiply(b, eo_gm)), Scalar.Multiply(c, en_fm)), invDet));
 
                 T gl_hk = Scalar.Subtract(Scalar.Multiply(g, l), Scalar.Multiply(h, k));
                 T fl_hj = Scalar.Subtract(Scalar.Multiply(f, l), Scalar.Multiply(h, j));
@@ -1192,9 +1192,9 @@ namespace Silk.NET.Maths
                 T ej_fi = Scalar.Subtract(Scalar.Multiply(e, j), Scalar.Multiply(f, i));
 
                 result.M14 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(b, gl_hk), Scalar.Multiply(c, fl_hj)), Scalar.Multiply(d, fk_gj)), invDet));
-                result.M24 =                     Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, gl_hk), Scalar.Multiply(c, el_hi)), Scalar.Multiply(d, ek_gi)), invDet);
+                result.M24 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, gl_hk), Scalar.Multiply(c, el_hi)), Scalar.Multiply(d, ek_gi)), invDet);
                 result.M34 = Scalar.Negate(Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fl_hj), Scalar.Multiply(b, el_hi)), Scalar.Multiply(d, ej_fi)), invDet));
-                result.M44 =                     Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fk_gj), Scalar.Multiply(b, ek_gi)), Scalar.Multiply(c, ej_fi)), invDet);
+                result.M44 = Scalar.Multiply(Scalar.Add(Scalar.Subtract(Scalar.Multiply(a, fk_gj), Scalar.Multiply(b, ek_gi)), Scalar.Multiply(c, ej_fi)), invDet);
 
                 return true;
             }
@@ -1204,34 +1204,34 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix4X4<T> Multiply<T>(Matrix4X4<T> value1, Matrix4X4<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Multiply<T>(Vector4D<T> value1, Matrix4X4<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix2X4<T> Multiply<T>(Matrix2X4<T> value1, Matrix4X4<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix4X2<T> Multiply<T>(Matrix4X4<T> value1, Matrix4X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
@@ -1240,7 +1240,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>
         /// <returns>The scaled matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix4X4<T> Multiply<T>(Matrix4X4<T> value1, T value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
@@ -1248,7 +1248,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix4X4<T> Negate<T>(Matrix4X4<T> value)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => -value;
@@ -1257,7 +1257,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the subtraction.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix4X4<T> Subtract<T>(Matrix4X4<T> value1, Matrix4X4<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 - value2;
@@ -1296,11 +1296,11 @@ namespace Silk.NET.Maths
             {
                 fixed (Vector3D<T>* scaleBase = &scale)
                 {
-                    T* pfScales = (T*)scaleBase;
+                    T* pfScales = (T*) scaleBase;
                     T det;
 
                     VectorBasis<T> vectorBasis;
-                    Vector3D<T>** pVectorBasis = (Vector3D<T>**)&vectorBasis;
+                    Vector3D<T>** pVectorBasis = (Vector3D<T>**) &vectorBasis;
 
                     Matrix4X4<T> matTemp = Matrix4X4<T>.Identity;
                     CanonicalBasis<T> canonicalBasis = default;
@@ -1315,9 +1315,9 @@ namespace Silk.NET.Maths
                         matrix.M42,
                         matrix.M43);
 
-                    pVectorBasis[0] = (Vector3D<T>*)&matTemp.Row1;
-                    pVectorBasis[1] = (Vector3D<T>*)&matTemp.Row2;
-                    pVectorBasis[2] = (Vector3D<T>*)&matTemp.Row3;
+                    pVectorBasis[0] = (Vector3D<T>*) &matTemp.Row1;
+                    pVectorBasis[1] = (Vector3D<T>*) &matTemp.Row2;
+                    pVectorBasis[2] = (Vector3D<T>*) &matTemp.Row3;
 
                     *(pVectorBasis[0]) = new Vector3D<T>(matrix.M11, matrix.M12, matrix.M13);
                     *(pVectorBasis[1]) = new Vector3D<T>(matrix.M21, matrix.M22, matrix.M23);
@@ -1535,9 +1535,9 @@ namespace Silk.NET.Maths
 
             return new(
                 new(value.M11 * q1 + value.M12 * q2 + value.M13 * q3, value.M14),
-                new (value.M21 * q1 + value.M22 * q2 + value.M23 * q3, value.M24),
-                new (value.M31 * q1 + value.M32 * q2 + value.M33 * q3, value.M34),
-                new (value.M41 * q1 + value.M42 * q2 + value.M43 * q3, value.M44)
+                new(value.M21 * q1 + value.M22 * q2 + value.M23 * q3, value.M24),
+                new(value.M31 * q1 + value.M32 * q2 + value.M33 * q3, value.M34),
+                new(value.M41 * q1 + value.M42 * q2 + value.M43 * q3, value.M44)
                 );
         }
 

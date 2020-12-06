@@ -23,7 +23,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector2D<T> Max;
-        
+
         /// <summary>
         /// Constructs a Box2D from a min and a max
         /// </summary>
@@ -55,7 +55,7 @@ namespace Silk.NET.Maths
         /// <returns>True if this box contains the point; False otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector2D<T> point)
-            => Scalar.GreaterThanOrEqual(point.X, Min.X) && Scalar.GreaterThanOrEqual(point.Y, Min.Y) 
+            => Scalar.GreaterThanOrEqual(point.X, Min.X) && Scalar.GreaterThanOrEqual(point.Y, Min.Y)
             && Scalar.LessThanOrEqual(point.X, Max.X) && Scalar.LessThanOrEqual(point.Y, Max.Y);
 
         /// <summary>

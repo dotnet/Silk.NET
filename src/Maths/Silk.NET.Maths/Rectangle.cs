@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -22,7 +22,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector2D<T> Size;
-        
+
         /// <summary>
         /// Constructs a Rectangle from an origin and an size
         /// </summary>
@@ -33,7 +33,7 @@ namespace Silk.NET.Maths
             Origin = origin;
             Size = size;
         }
-        
+
         /// <summary>
         /// The center of this rectangle.
         /// </summary>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -10,7 +10,7 @@ namespace Silk.NET.Maths
     [Serializable]
     [DataContract]
     public struct Ray2D<T>
-        : IEquatable<Ray2D<T>> 
+        : IEquatable<Ray2D<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         /// <summary>
@@ -18,7 +18,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector2D<T> Origin;
-        
+
         /// <summary>
         /// The direction of this Ray.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Silk.NET.Maths
         {
             return Origin + (Direction * distance);
         }
-        
+
         /// <summary>Returns a boolean indicating whether the given Ray2D is equal to this Ray2D instance.</summary>
         /// <param name="other">The Ray2D to compare this instance to.</param>
         /// <returns>True if the other Ray2D is equal to this instance; False otherwise.</returns>

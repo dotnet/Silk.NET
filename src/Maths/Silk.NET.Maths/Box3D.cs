@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -23,7 +23,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [DataMember]
         public Vector3D<T> Max;
-        
+
         /// <summary>
         /// Constructs a Box3D from a min and a max
         /// </summary>
@@ -55,7 +55,7 @@ namespace Silk.NET.Maths
         /// <returns>True if this box contains the point; False otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector3D<T> point)
-            => Scalar.GreaterThanOrEqual(point.X, Min.X) && Scalar.GreaterThanOrEqual(point.Y, Min.Y) 
+            => Scalar.GreaterThanOrEqual(point.X, Min.X) && Scalar.GreaterThanOrEqual(point.Y, Min.Y)
             && Scalar.GreaterThanOrEqual(point.Z, Min.Z)
             && Scalar.LessThanOrEqual(point.X, Max.X) && Scalar.LessThanOrEqual(point.Y, Max.Y)
             && Scalar.LessThanOrEqual(point.Z, Max.Z);
@@ -117,7 +117,7 @@ namespace Silk.NET.Maths
         {
             return new(Vector3D.Min(Min, point), Vector3D.Max(Max, point));
         }
-        
+
         /// <summary>Returns a boolean indicating whether the given Box3D is equal to this Box3D instance.</summary>
         /// <param name="other">The Box3D to compare this instance to.</param>
         /// <returns>True if the other Box3D is equal to this instance; False otherwise.</returns>

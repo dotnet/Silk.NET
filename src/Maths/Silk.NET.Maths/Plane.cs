@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -55,22 +55,22 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first Plane to compare.</param>
         /// <param name="value2">The second Plane to compare.</param>
         /// <returns>True if the Planes are equal; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static bool operator ==(Plane<T> value1, Plane<T> value2) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static bool operator ==(Plane<T> value1, Plane<T> value2)
             => value1.Normal == value2.Normal && Scalar.Equal(value1.Distance, value2.Distance);
 
         /// <summary>Returns a boolean indicating whether the two given Planes are not equal.</summary>
         /// <param name="value1">The first Plane to compare.</param>
         /// <param name="value2">The second Plane to compare.</param>
         /// <returns>True if the Planes are not equal; False if they are equal.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static bool operator !=(Plane<T> value1, Plane<T> value2) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static bool operator !=(Plane<T> value1, Plane<T> value2)
             => !(value1 == value2);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Plane instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this Plane; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public override readonly bool Equals(object? obj)
         {
             return (obj is Plane<T> other) && Equals(other);
@@ -79,7 +79,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Plane is equal to this Plane instance.</summary>
         /// <param name="other">The Plane to compare this instance to.</param>
         /// <returns>True if the other Plane is equal to this instance; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public readonly bool Equals(Plane<T> other)
         {
             return Normal.Equals(other.Normal) && Scalar.Equal(Distance, other.Distance);
@@ -107,7 +107,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="Half"/> matrix</returns>
         public static explicit operator Plane<Half>(Plane<T> from)
             => new((Vector3D<Half>) from.Normal, Scalar.As<T, Half>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
         /// </summary>
@@ -115,7 +115,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="float"/> matrix</returns>
         public static explicit operator Plane<float>(Plane<T> from)
             => new((Vector3D<float>) from.Normal, Scalar.As<T, float>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
@@ -123,7 +123,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="double"/> matrix</returns>
         public static explicit operator Plane<double>(Plane<T> from)
             => new((Vector3D<double>) from.Normal, Scalar.As<T, double>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
         /// </summary>
@@ -131,7 +131,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="decimal"/> matrix</returns>
         public static explicit operator Plane<decimal>(Plane<T> from)
             => new((Vector3D<decimal>) from.Normal, Scalar.As<T, decimal>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
         /// </summary>
@@ -139,7 +139,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="sbyte"/> matrix</returns>
         public static explicit operator Plane<sbyte>(Plane<T> from)
             => new((Vector3D<sbyte>) from.Normal, Scalar.As<T, sbyte>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
         /// </summary>
@@ -147,7 +147,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="byte"/> matrix</returns>
         public static explicit operator Plane<byte>(Plane<T> from)
             => new((Vector3D<byte>) from.Normal, Scalar.As<T, byte>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
         /// </summary>
@@ -155,7 +155,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="ushort"/> matrix</returns>
         public static explicit operator Plane<ushort>(Plane<T> from)
             => new((Vector3D<ushort>) from.Normal, Scalar.As<T, ushort>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
         /// </summary>
@@ -163,7 +163,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="short"/> matrix</returns>
         public static explicit operator Plane<short>(Plane<T> from)
             => new((Vector3D<short>) from.Normal, Scalar.As<T, short>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
         /// </summary>
@@ -171,7 +171,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="uint"/> matrix</returns>
         public static explicit operator Plane<uint>(Plane<T> from)
             => new((Vector3D<uint>) from.Normal, Scalar.As<T, uint>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
         /// </summary>
@@ -179,7 +179,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="int"/> matrix</returns>
         public static explicit operator Plane<int>(Plane<T> from)
             => new((Vector3D<int>) from.Normal, Scalar.As<T, int>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
         /// </summary>
@@ -187,7 +187,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="ulong"/> matrix</returns>
         public static explicit operator Plane<ulong>(Plane<T> from)
             => new((Vector3D<ulong>) from.Normal, Scalar.As<T, ulong>(from.Distance));
-        
+
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
         /// </summary>

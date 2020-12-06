@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -54,7 +54,7 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns the vector (0,0,1).</summary>
         public static Vector3D<T> UnitZ => new(Scalar<T>.Zero, Scalar<T>.Zero, Scalar<T>.One);
-        
+
         /// <summary>
         /// Indexer for the components of this vector.
         /// </summary>
@@ -66,11 +66,11 @@ namespace Silk.NET.Maths
                 static void VerifyBounds(int i)
                 {
                     static void ThrowHelper() => throw new IndexOutOfRangeException();
-                    
+
                     if (i > 2 || i < 0)
                         ThrowHelper();
                 }
-                
+
                 VerifyBounds(i);
                 return Unsafe.Add(ref X, i);
             }
@@ -80,7 +80,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> operator +(Vector3D<T> left, Vector3D<T> right)
             => new(Scalar.Add(left.X, right.X), Scalar.Add(left.Y, right.Y), Scalar.Add(left.Z, right.Z));
 
@@ -88,7 +88,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> operator /(Vector3D<T> left, Vector3D<T> right)
             => new(Scalar.Divide(left.X, right.X), Scalar.Divide(left.Y, right.Y),
                 Scalar.Divide(left.Z, right.Z));
@@ -97,7 +97,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source vector.</param>
         /// <param name="value2">The scalar value.</param>
         /// <returns>The result of the division.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> operator /(Vector3D<T> value1, T value2)
             => new(Scalar.Divide(value1.X, value2), Scalar.Divide(value1.Y, value2),
                 Scalar.Divide(value1.Z, value2));
@@ -106,24 +106,24 @@ namespace Silk.NET.Maths
         /// <param name="left">The first vector to compare.</param>
         /// <param name="right">The second vector to compare.</param>
         /// <returns>True if the vectors are equal; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static bool operator ==(Vector3D<T> left, Vector3D<T> right)
-            => Scalar.Equal(left.X, right.X) 
-            && Scalar.Equal(left.Y, right.Y) 
+            => Scalar.Equal(left.X, right.X)
+            && Scalar.Equal(left.Y, right.Y)
             && Scalar.Equal(left.Z, right.Z);
 
         /// <summary>Returns a boolean indicating whether the two given vectors are not equal.</summary>
         /// <param name="left">The first vector to compare.</param>
         /// <param name="right">The second vector to compare.</param>
         /// <returns>True if the vectors are not equal; False if they are equal.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static bool operator !=(Vector3D<T> left, Vector3D<T> right) => !(left == right);
 
         /// <summary>Multiplies two vectors together.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> operator *(Vector3D<T> left, Vector3D<T> right)
             => new(Scalar.Multiply(left.X, right.X), Scalar.Multiply(left.Y, right.Y),
                 Scalar.Multiply(left.Z, right.Z));
@@ -132,7 +132,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The source vector.</param>
         /// <param name="right">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> operator *(Vector3D<T> left, T right)
             => new(Scalar.Multiply(left.X, right), Scalar.Multiply(left.Y, right),
                 Scalar.Multiply(left.Z, right));
@@ -141,15 +141,15 @@ namespace Silk.NET.Maths
         /// <param name="left">The scalar value.</param>
         /// <param name="right">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector3D<T> operator *(T left, Vector3D<T> right) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector3D<T> operator *(T left, Vector3D<T> right)
             => right * left;
 
         /// <summary>Subtracts the second vector from the first.</summary>
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> operator -(Vector3D<T> left, Vector3D<T> right)
             => new(Scalar.Subtract(left.X, right.X), Scalar.Subtract(left.Y, right.Y),
                 Scalar.Subtract(left.Z, right.Z));
@@ -157,13 +157,13 @@ namespace Silk.NET.Maths
         /// <summary>Negates a given vector.</summary>
         /// <param name="value">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> operator -(Vector3D<T> value)
             => Zero - value;
 
         /// <summary>Copies the contents of the vector into the given array.</summary>
-        [MethodImpl((MethodImplOptions)768)]
-        public readonly void CopyTo(T[]? array) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public readonly void CopyTo(T[]? array)
             => CopyTo(array, 0);
 
         /// <summary>Copies the contents of the vector into the given array, starting from index.</summary>
@@ -171,7 +171,7 @@ namespace Silk.NET.Maths
         /// <exception cref="RankException">If array is multidimensional.</exception>
         /// <exception cref="ArgumentOutOfRangeException">If index is greater than end of the array or index is less than zero.</exception>
         /// <exception cref="ArgumentException">If number of elements in source vector is greater than those available in destination array.</exception>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public readonly void CopyTo(T[]? array, int index)
         {
             if (array is null)
@@ -197,7 +197,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Vector3D instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this Vector3D; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public override readonly bool Equals(object? obj)
         {
             return (obj is Vector3D<T> other) && Equals(other);
@@ -222,7 +222,7 @@ namespace Silk.NET.Maths
         /// <value>The vector's length.</value>
         public T Length
         {
-            [MethodImpl((MethodImplOptions)768)]
+            [MethodImpl((MethodImplOptions) 768)]
             get => Scalar.Sqrt(LengthSquared);
         }
 
@@ -230,7 +230,7 @@ namespace Silk.NET.Maths
         /// <value>The vector's length squared.</value>
         public T LengthSquared
         {
-            [MethodImpl((MethodImplOptions)768)]
+            [MethodImpl((MethodImplOptions) 768)]
             get => Vector3D.Dot(this, this);
         }
 
@@ -270,7 +270,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="Half"/> matrix</returns>
         public static explicit operator Vector3D<Half>(Vector3D<T> from)
             => new(Scalar.As<T, Half>(from.X), Scalar.As<T, Half>(from.Y), Scalar.As<T, Half>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
         /// </summary>
@@ -278,7 +278,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="float"/> matrix</returns>
         public static explicit operator Vector3D<float>(Vector3D<T> from)
             => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
@@ -286,7 +286,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="double"/> matrix</returns>
         public static explicit operator Vector3D<double>(Vector3D<T> from)
             => new(Scalar.As<T, double>(from.X), Scalar.As<T, double>(from.Y), Scalar.As<T, double>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
         /// </summary>
@@ -294,7 +294,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="decimal"/> matrix</returns>
         public static explicit operator Vector3D<decimal>(Vector3D<T> from)
             => new(Scalar.As<T, decimal>(from.X), Scalar.As<T, decimal>(from.Y), Scalar.As<T, decimal>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
         /// </summary>
@@ -302,7 +302,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="sbyte"/> matrix</returns>
         public static explicit operator Vector3D<sbyte>(Vector3D<T> from)
             => new(Scalar.As<T, sbyte>(from.X), Scalar.As<T, sbyte>(from.Y), Scalar.As<T, sbyte>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
         /// </summary>
@@ -310,7 +310,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="byte"/> matrix</returns>
         public static explicit operator Vector3D<byte>(Vector3D<T> from)
             => new(Scalar.As<T, byte>(from.X), Scalar.As<T, byte>(from.Y), Scalar.As<T, byte>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
         /// </summary>
@@ -318,7 +318,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="ushort"/> matrix</returns>
         public static explicit operator Vector3D<ushort>(Vector3D<T> from)
             => new(Scalar.As<T, ushort>(from.X), Scalar.As<T, ushort>(from.Y), Scalar.As<T, ushort>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
         /// </summary>
@@ -326,7 +326,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="short"/> matrix</returns>
         public static explicit operator Vector3D<short>(Vector3D<T> from)
             => new(Scalar.As<T, short>(from.X), Scalar.As<T, short>(from.Y), Scalar.As<T, short>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
         /// </summary>
@@ -334,7 +334,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="uint"/> matrix</returns>
         public static explicit operator Vector3D<uint>(Vector3D<T> from)
             => new(Scalar.As<T, uint>(from.X), Scalar.As<T, uint>(from.Y), Scalar.As<T, uint>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
         /// </summary>
@@ -342,7 +342,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="int"/> matrix</returns>
         public static explicit operator Vector3D<int>(Vector3D<T> from)
             => new(Scalar.As<T, int>(from.X), Scalar.As<T, int>(from.Y), Scalar.As<T, int>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
         /// </summary>
@@ -350,7 +350,7 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="ulong"/> matrix</returns>
         public static explicit operator Vector3D<ulong>(Vector3D<T> from)
             => new(Scalar.As<T, ulong>(from.X), Scalar.As<T, ulong>(from.Y), Scalar.As<T, ulong>(from.Z));
-        
+
         /// <summary>
         /// Converts a <see cref="Vector3D{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
         /// </summary>

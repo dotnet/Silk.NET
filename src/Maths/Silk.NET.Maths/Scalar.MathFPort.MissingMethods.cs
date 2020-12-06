@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -43,13 +43,13 @@ namespace Silk.NET.Maths
             switch (x)
             {
                 case 1:
-                {
-                    return double.PositiveInfinity;
-                }
+                    {
+                        return double.PositiveInfinity;
+                    }
                 case -1:
-                {
-                    return double.NegativeInfinity;
-                }
+                    {
+                        return double.NegativeInfinity;
+                    }
             }
 
             var sign = false;

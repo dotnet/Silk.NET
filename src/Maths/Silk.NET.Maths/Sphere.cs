@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -44,8 +44,8 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public T SquaredRadius => Scalar.Multiply(Radius, Radius);
-        
-        
+
+
         /// <summary>
         /// Calculates whether this sphere contains a point.
         /// </summary>
@@ -106,7 +106,7 @@ namespace Silk.NET.Maths
         {
             return new(Center, Scalar.Max(Radius, Vector3D.Distance(Center, point)));
         }
-        
+
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>
         /// <param name="other">The Sphere to compare this instance to.</param>
         /// <returns>True if the other Sphere is equal to this instance; False otherwise.</returns>

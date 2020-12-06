@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -18,24 +18,24 @@ namespace Silk.NET.Maths
         /// Row 1 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T>Row1;
+        public Vector2D<T> Row1;
         /// <summary>
         /// Row 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T>Row2;
+        public Vector2D<T> Row2;
 
         /// <summary>
         /// Column 1 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T>Column1 => new(M11, M21);
+        public Vector2D<T> Column1 => new(M11, M21);
 
         /// <summary>
         /// Column 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T>Column2 => new(M12, M22);
+        public Vector2D<T> Column2 => new(M12, M22);
 
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
@@ -69,23 +69,23 @@ namespace Silk.NET.Maths
             readonly get => Row2.Y;
             set => Row2.Y = value;
         }
-        
+
         /// <summary>
         /// Indexer for the rows of this matrix.
         /// </summary>
         /// <param name="x">The row to select. Zero based.</param>
-        public unsafe Vector2D<T>this[int x]
+        public unsafe Vector2D<T> this[int x]
         {
             get
             {
                 static void VerifyBounds(int i)
                 {
                     static void ThrowHelper() => throw new IndexOutOfRangeException();
-                    
+
                     if (i > 1 || i < 0)
                         ThrowHelper();
                 }
-                
+
                 VerifyBounds(x);
                 return Unsafe.Add(ref Row1, x);
             }
@@ -113,7 +113,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Constructs a Matrix2X2 from the given rows.</summary>
-        public Matrix2X2(Vector2D<T> row1, Vector2D<T>row2)
+        public Matrix2X2(Vector2D<T> row1, Vector2D<T> row2)
         {
             Row1 = row1;
             Row2 = row2;
@@ -142,7 +142,7 @@ namespace Silk.NET.Maths
             Row1 = new(value.M11, value.M12);
             Row2 = new(value.M21, value.M22);
         }
-        
+
         /// <summary>Constructs a Matrix4x4 from the given Matrix3X4.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix2X2(Matrix2X4<T> value)
@@ -150,7 +150,7 @@ namespace Silk.NET.Maths
             Row1 = new(value.M11, value.M12);
             Row2 = new(value.M21, value.M22);
         }
-        
+
         /// <summary>Constructs a Matrix4x4 from the given Matrix3X4.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix2X2(Matrix4X2<T> value)
@@ -215,12 +215,12 @@ namespace Silk.NET.Maths
                 value1.M11 * value2.Row1 + value1.M12 * value2.Row2, value1.M21 * value2.Row1 + value1.M22 * value2.Row2
             );
         }
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static unsafe Vector2D<T>operator *(Vector2D<T> value1, Matrix2X2<T> value2)
+        public static unsafe Vector2D<T> operator *(Vector2D<T> value1, Matrix2X2<T> value2)
         {
             return value1 * value2.Row1 + value1 * value2.Row2;
         }
@@ -250,11 +250,11 @@ namespace Silk.NET.Maths
         {
             return new(-value.Row1, -value.Row2);
         }
-                
+
         /// <summary>Calculates the determinant of the matrix.</summary>
         /// <returns>The determinant of the matrix.</returns>
         public readonly T GetDeterminant()
-        { 
+        {
             //   | a b |
             //   | c d | = ad - bc
 
@@ -267,7 +267,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public override readonly bool Equals(object? obj) => (obj is Matrix2X2<T> other) && Equals(other);
 
         /// <summary>Returns a boolean indicating whether this matrix instance is equal to the other given matrix.</summary>

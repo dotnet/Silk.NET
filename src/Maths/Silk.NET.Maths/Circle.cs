@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -32,8 +32,8 @@ namespace Silk.NET.Maths
             Center = center;
             Radius = radius;
         }
-        
-                /// <summary>
+
+        /// <summary>
         /// The diameter.
         /// </summary>
         [IgnoreDataMember]
@@ -44,13 +44,13 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public T SquaredRadius => Scalar.Multiply(Radius, Radius);
-        
+
         /// <summary>
         /// The circumference.
         /// </summary>
         [IgnoreDataMember]
         public T Circumference => Scalar.Multiply(Scalar<T>.Tau, Radius);
-        
+
         /// <summary>
         /// Calculates whether this circle contains a point.
         /// </summary>

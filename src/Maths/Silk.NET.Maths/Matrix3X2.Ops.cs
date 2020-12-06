@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -16,14 +16,14 @@ namespace Silk.NET.Maths
 #if MATHF
         private const float RotationEpsilon = 0.001f * MathF.PI / 180f;     // 0.1% of a degree
 #else
-        private const float RotationEpsilon = 0.001f * ((float)Math.PI) / 180f;     // 0.1% of a degree
+        private const float RotationEpsilon = 0.001f * ((float) Math.PI) / 180f;     // 0.1% of a degree
 #endif
-        
+
         /// <summary>Adds each matrix element in value1 with its corresponding element in value2.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The matrix containing the summed values.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X2<T> Add<T>(Matrix3X2<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 + value2;
@@ -48,13 +48,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 / 2 + RotationEpsilon)))
             {
@@ -66,13 +66,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                                                                                 ((float)Math.PI)
+                                                                                 ((float) Math.PI)
 #endif
                                                                              + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 - RotationEpsilon)))
             {
@@ -84,13 +84,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                    ((float)Math.PI)
+                    ((float) Math.PI)
 #endif
                 / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
 #if MATHF
                 MathF.PI
 #else
-                    ((float)Math.PI)
+                    ((float) Math.PI)
 #endif
                 / 2 + RotationEpsilon)))
             {
@@ -139,13 +139,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 / 2 + RotationEpsilon)))
             {
@@ -157,13 +157,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                                                                                 ((float)Math.PI)
+                                                                                 ((float) Math.PI)
 #endif
                                                                              + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif    
                 - RotationEpsilon)))
             {
@@ -175,13 +175,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                    ((float)Math.PI)
+                    ((float) Math.PI)
 #endif
                 / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
 #if MATHF
                 MathF.PI
 #else
-                    ((float)Math.PI)
+                    ((float) Math.PI)
 #endif
                 / 2 + RotationEpsilon)))
             {
@@ -402,7 +402,7 @@ namespace Silk.NET.Maths
             T invDet = Scalar.Reciprocal(det);
 
             result = default;
-            
+
             result.M11 = Scalar.Multiply(matrix.M22, invDet);
             result.M12 = Scalar.Negate(Scalar.Multiply(matrix.M12, invDet));
 
@@ -423,7 +423,7 @@ namespace Silk.NET.Maths
         public static Matrix3X2<T> Lerp<T>(Matrix3X2<T> matrix1, Matrix3X2<T> matrix2, T amount)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            return new(Vector2D.Lerp(matrix1.Row1, matrix2.Row1, amount), 
+            return new(Vector2D.Lerp(matrix1.Row1, matrix2.Row1, amount),
                 Vector2D.Lerp(matrix1.Row2, matrix2.Row2, amount),
                 Vector2D.Lerp(matrix1.Row3, matrix2.Row3, amount));
         }
@@ -432,43 +432,43 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X2<T> Multiply<T>(Matrix3X2<T> value1, Matrix2X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector2D<T> Multiply<T>(Vector3D<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X3<T> Multiply<T>(Matrix3X2<T> value1, Matrix2X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix2X2<T> Multiply<T>(Matrix2X3<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix2X3<T> Multiply<T>(Matrix2X3<T> value1, Matrix3X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
@@ -477,7 +477,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling value to use.</param>
         /// <returns>The resulting matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X2<T> Multiply<T>(Matrix3X2<T> value1, T value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
@@ -485,7 +485,7 @@ namespace Silk.NET.Maths
         /// <summary>Negates the given matrix by multiplying all values by -1.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X2<T> Negate<T>(Matrix3X2<T> value)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => -value;
@@ -494,7 +494,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The matrix containing the resulting values.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X2<T> Subtract<T>(Matrix3X2<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 - value2;

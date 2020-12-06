@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -21,40 +21,40 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Row 1 of the matrix.
         /// </summary>
-        [IgnoreDataMember] 
-        public Vector3D<T>Row1;
-        
+        [IgnoreDataMember]
+        public Vector3D<T> Row1;
+
         /// <summary>
         /// Row 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T>Row2;
-        
+        public Vector3D<T> Row2;
+
         /// <summary>
         /// Row 3 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T>Row3;
+        public Vector3D<T> Row3;
 
         /// <summary>
         /// Column 1 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T>Column1 => new(Row1.X, Row2.X, Row3.X);
-        
-        
+        public Vector3D<T> Column1 => new(Row1.X, Row2.X, Row3.X);
+
+
         /// <summary>
         /// Column 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T>Column2 => new(Row1.Y, Row2.Y, Row3.Y);
-        
-        
+        public Vector3D<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y);
+
+
         /// <summary>
         /// Column 3 of the matrix.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T>Column3 => new(Row1.Z, Row2.Z, Row3.Z);
+        public Vector3D<T> Column3 => new(Row1.Z, Row2.Z, Row3.Z);
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
         [DataMember]
@@ -127,23 +127,23 @@ namespace Silk.NET.Maths
             readonly get => Row3.Z;
             set => Row3.Z = value;
         }
-        
+
         /// <summary>
         /// Indexer for the rows of this matrix.
         /// </summary>
         /// <param name="x">The row to select. Zero based.</param>
-        public unsafe Vector3D<T>this[int x]
+        public unsafe Vector3D<T> this[int x]
         {
             get
             {
                 static void VerifyBounds(int i)
                 {
                     static void ThrowHelper() => throw new IndexOutOfRangeException();
-                    
+
                     if (i > 2 || i < 0)
                         ThrowHelper();
                 }
-                
+
                 VerifyBounds(x);
                 return Unsafe.Add(ref Row1, x);
             }
@@ -166,13 +166,13 @@ namespace Silk.NET.Maths
         /// <summary>
         /// Constructs a Matrix3X3 from the given rows.
         /// </summary>
-        public Matrix3X3(Vector3D<T> row1, Vector3D<T>row2, Vector3D<T>row3)
+        public Matrix3X3(Vector3D<T> row1, Vector3D<T> row2, Vector3D<T> row3)
         {
             Row1 = row1;
             Row2 = row2;
             Row3 = row3;
         }
-        
+
         /// <summary>Constructs a Matrix3X3 from the given components.</summary>
         public Matrix3X3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33)
         {
@@ -225,7 +225,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22, value.M23);
             Row3 = Vector3D<T>.UnitZ;
         }
-        
+
         /// <summary>Constructs a Matrix3X3 from the given Matrix4X2.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix3X3(Matrix4X2<T> value)
@@ -243,7 +243,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22, value.M23);
             Row3 = new(value.M31, value.M32, value.M33);
         }
-        
+
         /// <summary>Returns the multiplicative identity matrix.</summary>
         public static Matrix3X3<T> Identity => _identity;
 
@@ -304,16 +304,16 @@ namespace Silk.NET.Maths
                     value1.M31 * value2.Row1 + value1.M32 * value2.Row2 + value1.M33 * value2.Row3
                 );
         }
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static unsafe Vector3D<T>operator *(Vector3D<T> value1, Matrix3X3<T> value2)
+        public static unsafe Vector3D<T> operator *(Vector3D<T> value1, Matrix3X3<T> value2)
         {
             return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3;
         }
-        
+
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>
@@ -343,7 +343,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public override readonly bool Equals(object? obj)
             => (obj is Matrix3X3<T> other) && Equals(other);
 
@@ -356,7 +356,7 @@ namespace Silk.NET.Maths
         /// <summary>Calculates the determinant of the matrix.</summary>
         /// <returns>The determinant of the matrix.</returns>
         public readonly T GetDeterminant()
-        { 
+        {
             //   | a b c |
             //   | d e f | = ( a ( ei - fh ) - b ( di - fg ) + c ( dh - eg ) )
             //   | g h i |

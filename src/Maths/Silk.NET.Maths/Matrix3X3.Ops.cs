@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
     {
         private const float BillboardEpsilon = 1e-4f;
         private const float DecomposeEpsilon = 0.0001f;
-        
+
         private struct CanonicalBasis<T>
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -33,12 +33,12 @@ namespace Silk.NET.Maths
             public unsafe Vector3D<T>* Element2;
 #pragma warning restore 649
         }
-        
+
         /// <summary>Adds two matrices together.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The resulting matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X3<T> Add<T>(Matrix3X3<T> value1, Matrix3X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -159,7 +159,7 @@ namespace Silk.NET.Maths
 
             return result;
         }
-        
+
 
         /// <summary>Creates a rotation matrix from the specified yaw, pitch, and roll.</summary>
         /// <param name="yaw">Angle of rotation, in radians, around the Y-axis.</param>
@@ -290,64 +290,64 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X3<T> Multiply<T>(Matrix3X3<T> value1, Matrix3X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix2X3<T> Multiply<T>(Matrix2X3<T> value1, Matrix3X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
-        
+
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X2<T> Multiply<T>(Matrix3X3<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
-        
+
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix4X3<T> Multiply<T>(Matrix4X3<T> value1, Matrix3X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
-        
+
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X4<T> Multiply<T>(Matrix3X3<T> value1, Matrix3X4<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a matrix by a scalar value.</summary>
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling factor.</param>
         /// <returns>The scaled matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X3<T> Multiply<T>(Matrix3X3<T> value1, T value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> Multiply<T>(Vector3D<T> value1, Matrix3X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
@@ -355,7 +355,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a new matrix with the negated elements of the given matrix.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X3<T> Negate<T>(Matrix3X3<T> value)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => -value;
@@ -364,7 +364,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the subtraction.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Matrix3X3<T> Subtract<T>(Matrix3X3<T> value1, Matrix3X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 - value2;
@@ -384,11 +384,11 @@ namespace Silk.NET.Maths
             {
                 fixed (Vector3D<T>* scaleBase = &scale)
                 {
-                    T* pfScales = (T*)scaleBase;
+                    T* pfScales = (T*) scaleBase;
                     T det;
 
                     VectorBasis<T> vectorBasis;
-                    Vector3D<T>** pVectorBasis = (Vector3D<T>**)&vectorBasis;
+                    Vector3D<T>** pVectorBasis = (Vector3D<T>**) &vectorBasis;
 
                     Matrix3X3<T> matTemp = Matrix3X3<T>.Identity;
                     CanonicalBasis<T> canonicalBasis = default;

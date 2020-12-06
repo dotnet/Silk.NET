@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -23,13 +23,13 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public Vector4D<T> Row1;
-        
+
         /// <summary>
         /// Row 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector4D<T> Row2;
-        
+
         /// <summary>
         /// Row 3 of the matrix.
         /// </summary>
@@ -41,19 +41,19 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Column1 => new(Row1.X, Row2.X, Row3.X);
-        
+
         /// <summary>
         /// Column 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Column2 => new(Row1.Y, Row2.Y, Row3.Y);
-        
+
         /// <summary>
         /// Column 3 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector3D<T> Column3 => new(Row1.Z, Row2.Z, Row3.Z);
-        
+
         /// <summary>
         /// Column 4 of the matrix.
         /// </summary>
@@ -155,7 +155,7 @@ namespace Silk.NET.Maths
             readonly get => Row3.W;
             set => Row3.W = value;
         }
-        
+
         /// <summary>
         /// Indexer for the rows of this matrix.
         /// </summary>
@@ -167,11 +167,11 @@ namespace Silk.NET.Maths
                 static void VerifyBounds(int i)
                 {
                     static void ThrowHelper() => throw new IndexOutOfRangeException();
-                    
+
                     if (i > 2 || i < 0)
                         ThrowHelper();
                 }
-                
+
                 VerifyBounds(x);
                 return Unsafe.Add(ref Row1, x);
             }
@@ -256,7 +256,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22, value.M23, value.M24);
             Row3 = Vector4D<T>.UnitZ;
         }
-        
+
         /// <summary>Constructs a Matrix4X4 from the given Matrix4X2.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix3X4(Matrix4X2<T> value)
@@ -265,7 +265,7 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22, default, default);
             Row3 = new(value.M31, value.M32, Scalar<T>.One, default);
         }
-        
+
         /// <summary>Returns the multiplicative identity matrix.</summary>
         public static Matrix3X4<T> Identity => _identity;
 
@@ -331,7 +331,7 @@ namespace Silk.NET.Maths
                     value1.M31 * value2.Row1 + value1.M32 * value2.Row2 + value1.M33 * value2.Row3 + value1.M34 * value2.Row4
                 );
         }
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
@@ -340,8 +340,8 @@ namespace Silk.NET.Maths
         {
             return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3;
         }
-        
-                /// <summary>Multiplies a matrix by another matrix.</summary>
+
+        /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The result of the multiplication.</returns>
@@ -383,7 +383,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public override readonly bool Equals(object? obj)
             => (obj is Matrix3X4<T> other) && Equals(other);
 
@@ -426,7 +426,7 @@ namespace Silk.NET.Maths
                                  M21, M22, M23, M24,
                                  M31, M32, M33, M34);
         }
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="Half"/>
         /// </summary>
@@ -435,14 +435,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<Half>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, Half>(from.M11),Scalar.As<T, Half>(from.M12),
-                Scalar.As<T, Half>(from.M13),Scalar.As<T, Half>(from.M14),
-                Scalar.As<T, Half>(from.M21),Scalar.As<T, Half>(from.M22),
-                Scalar.As<T, Half>(from.M23),Scalar.As<T, Half>(from.M24),
-                Scalar.As<T, Half>(from.M31),Scalar.As<T, Half>(from.M32),
-                Scalar.As<T, Half>(from.M33),Scalar.As<T, Half>(from.M34)
+                Scalar.As<T, Half>(from.M11), Scalar.As<T, Half>(from.M12),
+                Scalar.As<T, Half>(from.M13), Scalar.As<T, Half>(from.M14),
+                Scalar.As<T, Half>(from.M21), Scalar.As<T, Half>(from.M22),
+                Scalar.As<T, Half>(from.M23), Scalar.As<T, Half>(from.M24),
+                Scalar.As<T, Half>(from.M31), Scalar.As<T, Half>(from.M32),
+                Scalar.As<T, Half>(from.M33), Scalar.As<T, Half>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
         /// </summary>
@@ -451,14 +451,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<float>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, float>(from.M11),Scalar.As<T, float>(from.M12),
-                Scalar.As<T, float>(from.M13),Scalar.As<T, float>(from.M14),
-                Scalar.As<T, float>(from.M21),Scalar.As<T, float>(from.M22),
-                Scalar.As<T, float>(from.M23),Scalar.As<T, float>(from.M24),
-                Scalar.As<T, float>(from.M31),Scalar.As<T, float>(from.M32),
-                Scalar.As<T, float>(from.M33),Scalar.As<T, float>(from.M34)
+                Scalar.As<T, float>(from.M11), Scalar.As<T, float>(from.M12),
+                Scalar.As<T, float>(from.M13), Scalar.As<T, float>(from.M14),
+                Scalar.As<T, float>(from.M21), Scalar.As<T, float>(from.M22),
+                Scalar.As<T, float>(from.M23), Scalar.As<T, float>(from.M24),
+                Scalar.As<T, float>(from.M31), Scalar.As<T, float>(from.M32),
+                Scalar.As<T, float>(from.M33), Scalar.As<T, float>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
@@ -467,14 +467,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<double>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, double>(from.M11),Scalar.As<T, double>(from.M12),
-                Scalar.As<T, double>(from.M13),Scalar.As<T, double>(from.M14),
-                Scalar.As<T, double>(from.M21),Scalar.As<T, double>(from.M22),
-                Scalar.As<T, double>(from.M23),Scalar.As<T, double>(from.M24),
-                Scalar.As<T, double>(from.M31),Scalar.As<T, double>(from.M32),
-                Scalar.As<T, double>(from.M33),Scalar.As<T, double>(from.M34)
+                Scalar.As<T, double>(from.M11), Scalar.As<T, double>(from.M12),
+                Scalar.As<T, double>(from.M13), Scalar.As<T, double>(from.M14),
+                Scalar.As<T, double>(from.M21), Scalar.As<T, double>(from.M22),
+                Scalar.As<T, double>(from.M23), Scalar.As<T, double>(from.M24),
+                Scalar.As<T, double>(from.M31), Scalar.As<T, double>(from.M32),
+                Scalar.As<T, double>(from.M33), Scalar.As<T, double>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
         /// </summary>
@@ -483,14 +483,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<decimal>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, decimal>(from.M11),Scalar.As<T, decimal>(from.M12),
-                Scalar.As<T, decimal>(from.M13),Scalar.As<T, decimal>(from.M14),
-                Scalar.As<T, decimal>(from.M21),Scalar.As<T, decimal>(from.M22),
-                Scalar.As<T, decimal>(from.M23),Scalar.As<T, decimal>(from.M24),
-                Scalar.As<T, decimal>(from.M31),Scalar.As<T, decimal>(from.M32),
-                Scalar.As<T, decimal>(from.M33),Scalar.As<T, decimal>(from.M34)
+                Scalar.As<T, decimal>(from.M11), Scalar.As<T, decimal>(from.M12),
+                Scalar.As<T, decimal>(from.M13), Scalar.As<T, decimal>(from.M14),
+                Scalar.As<T, decimal>(from.M21), Scalar.As<T, decimal>(from.M22),
+                Scalar.As<T, decimal>(from.M23), Scalar.As<T, decimal>(from.M24),
+                Scalar.As<T, decimal>(from.M31), Scalar.As<T, decimal>(from.M32),
+                Scalar.As<T, decimal>(from.M33), Scalar.As<T, decimal>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
         /// </summary>
@@ -499,14 +499,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<sbyte>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, sbyte>(from.M11),Scalar.As<T, sbyte>(from.M12),
-                Scalar.As<T, sbyte>(from.M13),Scalar.As<T, sbyte>(from.M14),
-                Scalar.As<T, sbyte>(from.M21),Scalar.As<T, sbyte>(from.M22),
-                Scalar.As<T, sbyte>(from.M23),Scalar.As<T, sbyte>(from.M24),
-                Scalar.As<T, sbyte>(from.M31),Scalar.As<T, sbyte>(from.M32),
-                Scalar.As<T, sbyte>(from.M33),Scalar.As<T, sbyte>(from.M34)
+                Scalar.As<T, sbyte>(from.M11), Scalar.As<T, sbyte>(from.M12),
+                Scalar.As<T, sbyte>(from.M13), Scalar.As<T, sbyte>(from.M14),
+                Scalar.As<T, sbyte>(from.M21), Scalar.As<T, sbyte>(from.M22),
+                Scalar.As<T, sbyte>(from.M23), Scalar.As<T, sbyte>(from.M24),
+                Scalar.As<T, sbyte>(from.M31), Scalar.As<T, sbyte>(from.M32),
+                Scalar.As<T, sbyte>(from.M33), Scalar.As<T, sbyte>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
         /// </summary>
@@ -515,14 +515,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<byte>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, byte>(from.M11),Scalar.As<T, byte>(from.M12),
-                Scalar.As<T, byte>(from.M13),Scalar.As<T, byte>(from.M14),
-                Scalar.As<T, byte>(from.M21),Scalar.As<T, byte>(from.M22),
-                Scalar.As<T, byte>(from.M23),Scalar.As<T, byte>(from.M24),
-                Scalar.As<T, byte>(from.M31),Scalar.As<T, byte>(from.M32),
-                Scalar.As<T, byte>(from.M33),Scalar.As<T, byte>(from.M34)
+                Scalar.As<T, byte>(from.M11), Scalar.As<T, byte>(from.M12),
+                Scalar.As<T, byte>(from.M13), Scalar.As<T, byte>(from.M14),
+                Scalar.As<T, byte>(from.M21), Scalar.As<T, byte>(from.M22),
+                Scalar.As<T, byte>(from.M23), Scalar.As<T, byte>(from.M24),
+                Scalar.As<T, byte>(from.M31), Scalar.As<T, byte>(from.M32),
+                Scalar.As<T, byte>(from.M33), Scalar.As<T, byte>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
         /// </summary>
@@ -531,14 +531,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<ushort>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, ushort>(from.M11),Scalar.As<T, ushort>(from.M12),
-                Scalar.As<T, ushort>(from.M13),Scalar.As<T, ushort>(from.M14),
-                Scalar.As<T, ushort>(from.M21),Scalar.As<T, ushort>(from.M22),
-                Scalar.As<T, ushort>(from.M23),Scalar.As<T, ushort>(from.M24),
-                Scalar.As<T, ushort>(from.M31),Scalar.As<T, ushort>(from.M32),
-                Scalar.As<T, ushort>(from.M33),Scalar.As<T, ushort>(from.M34)
+                Scalar.As<T, ushort>(from.M11), Scalar.As<T, ushort>(from.M12),
+                Scalar.As<T, ushort>(from.M13), Scalar.As<T, ushort>(from.M14),
+                Scalar.As<T, ushort>(from.M21), Scalar.As<T, ushort>(from.M22),
+                Scalar.As<T, ushort>(from.M23), Scalar.As<T, ushort>(from.M24),
+                Scalar.As<T, ushort>(from.M31), Scalar.As<T, ushort>(from.M32),
+                Scalar.As<T, ushort>(from.M33), Scalar.As<T, ushort>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
         /// </summary>
@@ -547,14 +547,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<short>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, short>(from.M11),Scalar.As<T, short>(from.M12),
-                Scalar.As<T, short>(from.M13),Scalar.As<T, short>(from.M14),
-                Scalar.As<T, short>(from.M21),Scalar.As<T, short>(from.M22),
-                Scalar.As<T, short>(from.M23),Scalar.As<T, short>(from.M24),
-                Scalar.As<T, short>(from.M31),Scalar.As<T, short>(from.M32),
-                Scalar.As<T, short>(from.M33),Scalar.As<T, short>(from.M34)
+                Scalar.As<T, short>(from.M11), Scalar.As<T, short>(from.M12),
+                Scalar.As<T, short>(from.M13), Scalar.As<T, short>(from.M14),
+                Scalar.As<T, short>(from.M21), Scalar.As<T, short>(from.M22),
+                Scalar.As<T, short>(from.M23), Scalar.As<T, short>(from.M24),
+                Scalar.As<T, short>(from.M31), Scalar.As<T, short>(from.M32),
+                Scalar.As<T, short>(from.M33), Scalar.As<T, short>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
         /// </summary>
@@ -563,14 +563,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<uint>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, uint>(from.M11),Scalar.As<T, uint>(from.M12),
-                Scalar.As<T, uint>(from.M13),Scalar.As<T, uint>(from.M14),
-                Scalar.As<T, uint>(from.M21),Scalar.As<T, uint>(from.M22),
-                Scalar.As<T, uint>(from.M23),Scalar.As<T, uint>(from.M24),
-                Scalar.As<T, uint>(from.M31),Scalar.As<T, uint>(from.M32),
-                Scalar.As<T, uint>(from.M33),Scalar.As<T, uint>(from.M34)
+                Scalar.As<T, uint>(from.M11), Scalar.As<T, uint>(from.M12),
+                Scalar.As<T, uint>(from.M13), Scalar.As<T, uint>(from.M14),
+                Scalar.As<T, uint>(from.M21), Scalar.As<T, uint>(from.M22),
+                Scalar.As<T, uint>(from.M23), Scalar.As<T, uint>(from.M24),
+                Scalar.As<T, uint>(from.M31), Scalar.As<T, uint>(from.M32),
+                Scalar.As<T, uint>(from.M33), Scalar.As<T, uint>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
         /// </summary>
@@ -579,14 +579,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<int>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, int>(from.M11),Scalar.As<T, int>(from.M12),
-                Scalar.As<T, int>(from.M13),Scalar.As<T, int>(from.M14),
-                Scalar.As<T, int>(from.M21),Scalar.As<T, int>(from.M22),
-                Scalar.As<T, int>(from.M23),Scalar.As<T, int>(from.M24),
-                Scalar.As<T, int>(from.M31),Scalar.As<T, int>(from.M32),
-                Scalar.As<T, int>(from.M33),Scalar.As<T, int>(from.M34)
+                Scalar.As<T, int>(from.M11), Scalar.As<T, int>(from.M12),
+                Scalar.As<T, int>(from.M13), Scalar.As<T, int>(from.M14),
+                Scalar.As<T, int>(from.M21), Scalar.As<T, int>(from.M22),
+                Scalar.As<T, int>(from.M23), Scalar.As<T, int>(from.M24),
+                Scalar.As<T, int>(from.M31), Scalar.As<T, int>(from.M32),
+                Scalar.As<T, int>(from.M33), Scalar.As<T, int>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
         /// </summary>
@@ -595,14 +595,14 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<ulong>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, ulong>(from.M11),Scalar.As<T, ulong>(from.M12),
-                Scalar.As<T, ulong>(from.M13),Scalar.As<T, ulong>(from.M14),
-                Scalar.As<T, ulong>(from.M21),Scalar.As<T, ulong>(from.M22),
-                Scalar.As<T, ulong>(from.M23),Scalar.As<T, ulong>(from.M24),
-                Scalar.As<T, ulong>(from.M31),Scalar.As<T, ulong>(from.M32),
-                Scalar.As<T, ulong>(from.M33),Scalar.As<T, ulong>(from.M34)
+                Scalar.As<T, ulong>(from.M11), Scalar.As<T, ulong>(from.M12),
+                Scalar.As<T, ulong>(from.M13), Scalar.As<T, ulong>(from.M14),
+                Scalar.As<T, ulong>(from.M21), Scalar.As<T, ulong>(from.M22),
+                Scalar.As<T, ulong>(from.M23), Scalar.As<T, ulong>(from.M24),
+                Scalar.As<T, ulong>(from.M31), Scalar.As<T, ulong>(from.M32),
+                Scalar.As<T, ulong>(from.M33), Scalar.As<T, ulong>(from.M34)
             );
-        
+
         /// <summary>
         /// Converts a <see cref="Matrix3X4{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
         /// </summary>
@@ -611,12 +611,12 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix3X4<long>(Matrix3X4<T> from)
             => new
             (
-                Scalar.As<T, long>(from.M11),Scalar.As<T, long>(from.M12),
-                Scalar.As<T, long>(from.M13),Scalar.As<T, long>(from.M14),
-                Scalar.As<T, long>(from.M21),Scalar.As<T, long>(from.M22),
-                Scalar.As<T, long>(from.M23),Scalar.As<T, long>(from.M24),
-                Scalar.As<T, long>(from.M31),Scalar.As<T, long>(from.M32),
-                Scalar.As<T, long>(from.M33),Scalar.As<T, long>(from.M34)
+                Scalar.As<T, long>(from.M11), Scalar.As<T, long>(from.M12),
+                Scalar.As<T, long>(from.M13), Scalar.As<T, long>(from.M14),
+                Scalar.As<T, long>(from.M21), Scalar.As<T, long>(from.M22),
+                Scalar.As<T, long>(from.M23), Scalar.As<T, long>(from.M24),
+                Scalar.As<T, long>(from.M31), Scalar.As<T, long>(from.M32),
+                Scalar.As<T, long>(from.M33), Scalar.As<T, long>(from.M34)
             );
     }
 }

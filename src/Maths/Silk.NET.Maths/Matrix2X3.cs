@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -34,13 +34,13 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Column1 => new Vector2D<T>(M11, M21);
-        
+
         /// <summary>
         /// Column 2 of the matrix.
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Column2 => new Vector2D<T>(M12, M22);
-        
+
         /// <summary>
         /// Column 3 of the matrix.
         /// </summary>
@@ -94,7 +94,7 @@ namespace Silk.NET.Maths
             readonly get => Row2.Z;
             set => Row2.Z = value;
         }
-        
+
         /// <summary>
         /// Indexer for the rows of this matrix.
         /// </summary>
@@ -106,11 +106,11 @@ namespace Silk.NET.Maths
                 static void VerifyBounds(int i)
                 {
                     static void ThrowHelper() => throw new IndexOutOfRangeException();
-                    
+
                     if (i > 1 || i < 0)
                         ThrowHelper();
                 }
-                
+
                 VerifyBounds(x);
                 return Unsafe.Add(ref Row1, x);
             }
@@ -162,7 +162,7 @@ namespace Silk.NET.Maths
             Row1 = new Vector3D<T>(value.M11, value.M12, value.M13);
             Row2 = new Vector3D<T>(value.M21, value.M22, value.M23);
         }
-        
+
         /// <summary>Constructs a Matrix2X3 from the given Matrix3X4.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix2X3(Matrix3X4<T> value)
@@ -170,7 +170,7 @@ namespace Silk.NET.Maths
             Row1 = new Vector3D<T>(value.M11, value.M12, value.M13);
             Row2 = new Vector3D<T>(value.M21, value.M22, value.M23);
         }
-        
+
         /// <summary>Constructs a Matrix4X4 from the given Matrix3X4.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix2X3(Matrix2X4<T> value)
@@ -178,7 +178,7 @@ namespace Silk.NET.Maths
             Row1 = new Vector3D<T>(value.M11, value.M12, value.M13);
             Row2 = new Vector3D<T>(value.M21, value.M22, value.M23);
         }
-        
+
         /// <summary>Constructs a Matrix4X4 from the given Matrix3X4.</summary>
         /// <param name="value">The source Matrix3X4.</param>
         public Matrix2X3(Matrix4X2<T> value)
@@ -239,7 +239,7 @@ namespace Silk.NET.Maths
         {
             return new(value1.M11 * value2.Row1 + value1.M12 * value2.Row2 + value1.M13 * value2.Row3, value1.M21 * value2.Row1 + value1.M22 * value2.Row2 + value1.M23 * value2.Row3);
         }
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
@@ -248,7 +248,7 @@ namespace Silk.NET.Maths
         {
             return value1.X * value2.Row1 + value1.Y * value2.Row2;
         }
-        
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
@@ -257,7 +257,7 @@ namespace Silk.NET.Maths
         {
             return new(value1.M11 * value2.Row1 + value1.M12 * value2.Row2, value1.M21 * value2.Row1 + value2.M22 * value2.Row2);
         }
-        
+
         /// <summary>Multiplies a matrix by another matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
@@ -296,7 +296,7 @@ namespace Silk.NET.Maths
         /// <summary>Returns a boolean indicating whether the given Object is equal to this matrix instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this matrix; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public override readonly bool Equals(object? obj)
             => (obj is Matrix2X3<T> other) && Equals(other);
 

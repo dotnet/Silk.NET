@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -16,9 +16,9 @@ namespace Silk.NET.Maths
         /// <summary>Returns a vector whose elements are the absolute values of each of the source vector's elements.</summary>
         /// <param name="value">The source vector.</param>
         /// <returns>The absolute value vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Abs<T>(Vector4D<T> value)
-            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>            
+            where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => new(
                 Scalar.Abs(value.X),
                 Scalar.Abs(value.Y),
@@ -30,8 +30,8 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The summed vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Add<T>(Vector4D<T> left, Vector4D<T> right) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Add<T>(Vector4D<T> left, Vector4D<T> right)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => left + right;
 
@@ -40,18 +40,18 @@ namespace Silk.NET.Maths
         /// <param name="min">The minimum value.</param>
         /// <param name="max">The maximum value.</param>
         /// <returns>The restricted vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Clamp<T>(Vector4D<T> value1, Vector4D<T> min, Vector4D<T> max)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
-        // We must follow HLSL behavior in the case user specified min value is bigger than max value.
+            // We must follow HLSL behavior in the case user specified min value is bigger than max value.
             => Min(Max(value1, min), max);
 
         /// <summary>Returns the Euclidean distance between the two given points.</summary>
         /// <param name="value1">The first point.</param>
         /// <param name="value2">The second point.</param>
         /// <returns>The distance.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static T Distance<T>(Vector4D<T> value1, Vector4D<T> value2) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static T Distance<T>(Vector4D<T> value1, Vector4D<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => Scalar.Sqrt(DistanceSquared(value1, value2));
 
@@ -59,7 +59,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first point.</param>
         /// <param name="value2">The second point.</param>
         /// <returns>The distance squared.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static T DistanceSquared<T>(Vector4D<T> value1, Vector4D<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -71,8 +71,8 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The vector resulting from the division.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Divide<T>(Vector4D<T> left, Vector4D<T> right) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Divide<T>(Vector4D<T> left, Vector4D<T> right)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => left / right;
 
@@ -80,8 +80,8 @@ namespace Silk.NET.Maths
         /// <param name="left">The source vector.</param>
         /// <param name="divisor">The scalar value.</param>
         /// <returns>The result of the division.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Divide<T>(Vector4D<T> left, T divisor) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Divide<T>(Vector4D<T> left, T divisor)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => left / divisor;
 
@@ -89,7 +89,7 @@ namespace Silk.NET.Maths
         /// <param name="vector1">The first vector.</param>
         /// <param name="vector2">The second vector.</param>
         /// <returns>The dot product.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static T Dot<T>(Vector4D<T> vector1, Vector4D<T> vector2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => Scalar.Add(
@@ -103,8 +103,8 @@ namespace Silk.NET.Maths
         /// <param name="value2">The second source vector.</param>
         /// <param name="amount">Value between 0 and 1 indicating the weight of the second source vector.</param>
         /// <returns>The interpolated vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Lerp<T>(Vector4D<T> value1, Vector4D<T> value2, T amount) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Lerp<T>(Vector4D<T> value1, Vector4D<T> value2, T amount)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => (value1 * Scalar.Subtract(Scalar<T>.One, amount)) + (value2 * amount);
 
@@ -112,7 +112,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source vector.</param>
         /// <param name="value2">The second source vector.</param>
         /// <returns>The maximized vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Max<T>(Vector4D<T> value1, Vector4D<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => new(Scalar.Max(value1.X, value2.X), Scalar.Max(value1.Y, value2.Y),
@@ -122,7 +122,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source vector.</param>
         /// <param name="value2">The second source vector.</param>
         /// <returns>The minimized vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Min<T>(Vector4D<T> value1, Vector4D<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => new(Scalar.Min(value1.X, value2.X), Scalar.Min(value1.Y, value2.Y),
@@ -132,34 +132,34 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The product vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Multiply<T>(Vector4D<T> left, Vector4D<T> right) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Multiply<T>(Vector4D<T> left, Vector4D<T> right)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => left * right;
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Multiply<T>(Vector4D<T> value1, Matrix4X4<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector3D<T> Multiply<T>(Vector4D<T> value1, Matrix4X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector2D<T> Multiply<T>(Vector4D<T> value1, Matrix4X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
@@ -168,8 +168,8 @@ namespace Silk.NET.Maths
         /// <param name="left">The source vector.</param>
         /// <param name="right">The scalar value.</param>
         /// <returns>The scaled vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Multiply<T>(Vector4D<T> left, T right) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Multiply<T>(Vector4D<T> left, T right)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => left * right;
 
@@ -177,31 +177,31 @@ namespace Silk.NET.Maths
         /// <param name="left">The scalar value.</param>
         /// <param name="right">The source vector.</param>
         /// <returns>The scaled vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Multiply<T>(T left, Vector4D<T> right) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Multiply<T>(T left, Vector4D<T> right)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => left * right;
 
         /// <summary>Negates a given vector.</summary>
         /// <param name="value">The source vector.</param>
         /// <returns>The negated vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Negate<T>(Vector4D<T> value) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Negate<T>(Vector4D<T> value)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => -value;
 
         /// <summary>Returns a vector with the same direction as the given vector, but with a length of 1.</summary>
         /// <param name="vector">The vector to normalize.</param>
         /// <returns>The normalized vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector4D<T> Normalize<T>(Vector4D<T> vector) 
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector4D<T> Normalize<T>(Vector4D<T> vector)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => vector / vector.Length;
 
         /// <summary>Returns a vector whose elements are the square root of each of the source vector's elements.</summary>
         /// <param name="value">The source vector.</param>
         /// <returns>The square root vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> SquareRoot<T>(Vector4D<T> value)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -213,7 +213,7 @@ namespace Silk.NET.Maths
         /// <param name="left">The first source vector.</param>
         /// <param name="right">The second source vector.</param>
         /// <returns>The difference vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Subtract<T>(Vector4D<T> left, Vector4D<T> right)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => left - right;
@@ -222,7 +222,7 @@ namespace Silk.NET.Maths
         /// <param name="position">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
         /// <returns>The transformed vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Transform<T>(Vector2D<T> position, Matrix4X4<T> matrix)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -238,7 +238,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The source vector to be rotated.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Transform<T>(Vector2D<T> value, Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -268,7 +268,7 @@ namespace Silk.NET.Maths
         /// <param name="position">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
         /// <returns>The transformed vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Transform<T>(Vector3D<T> position, Matrix4X4<T> matrix)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -279,12 +279,12 @@ namespace Silk.NET.Maths
                 Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(position.X, matrix.M14), Scalar.Multiply(position.Y, matrix.M24)), Scalar.Multiply(position.Z, matrix.M34)), matrix.M44)
             );
         }
-        
+
         /// <summary>Transforms a vector by the given Quaternion rotation value.</summary>
         /// <param name="value">The source vector to be rotated.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Transform<T>(Vector3D<T> value, Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -314,7 +314,7 @@ namespace Silk.NET.Maths
         /// <param name="vector">The source vector.</param>
         /// <param name="matrix">The transformation matrix.</param>
         /// <returns>The transformed vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Transform<T>(Vector4D<T> vector, Matrix4X4<T> matrix)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
@@ -330,7 +330,7 @@ namespace Silk.NET.Maths
         /// <param name="value">The source vector to be rotated.</param>
         /// <param name="rotation">The rotation to apply.</param>
         /// <returns>The transformed vector.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Transform<T>(Vector4D<T> value, Quaternion<T> rotation)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {

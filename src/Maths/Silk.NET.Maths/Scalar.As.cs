@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -24,11 +24,11 @@ namespace Silk.NET.Maths
         /// <typeparam name="TTo">The type converted into</typeparam>
         /// <returns>The converted value</returns>
         [MethodImpl(MaxOpt)]
-        public static TTo As<TFrom, TTo>(TFrom val) where TTo:unmanaged where TFrom:unmanaged
+        public static TTo As<TFrom, TTo>(TFrom val) where TTo : unmanaged where TFrom : unmanaged
         {
             if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(Half))
             {
-                return (TTo)(object)(Half)(Half)(object)val;
+                return (TTo) (object) (Half) (Half) (object) val;
             }
 
             return FromHalfToFloat(val);
@@ -37,9 +37,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(Half)(object)val;
+                    return (TTo) (object) (float) (Half) (object) val;
                 }
-                
+
                 return FromHalfToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -47,9 +47,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(Half)(object)val;
+                    return (TTo) (object) (double) (Half) (object) val;
                 }
-                
+
                 return FromHalfToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -57,9 +57,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(float)(Half)(object)val;
+                    return (TTo) (object) (decimal) (float) (Half) (object) val;
                 }
-                
+
                 return FromHalfToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -67,9 +67,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(Half)(object)val;
+                    return (TTo) (object) (sbyte) (Half) (object) val;
                 }
-                
+
                 return FromHalfToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -77,9 +77,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(Half)(object)val;
+                    return (TTo) (object) (byte) (Half) (object) val;
                 }
-                
+
                 return FromHalfToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -87,9 +87,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(Half)(object)val;
+                    return (TTo) (object) (short) (Half) (object) val;
                 }
-                
+
                 return FromHalfToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -97,9 +97,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(Half)(object)val;
+                    return (TTo) (object) (ushort) (Half) (object) val;
                 }
-                
+
                 return FromHalfToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -107,9 +107,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(Half)(object)val;
+                    return (TTo) (object) (int) (Half) (object) val;
                 }
-                
+
                 return FromHalfToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -117,9 +117,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(Half)(object)val;
+                    return (TTo) (object) (uint) (Half) (object) val;
                 }
-                
+
                 return FromHalfToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -127,9 +127,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(Half)(object)val;
+                    return (TTo) (object) (long) (Half) (object) val;
                 }
-                
+
                 return FromHalfToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -137,9 +137,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(Half) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(Half)(object)val;
+                    return (TTo) (object) (ulong) (Half) (object) val;
                 }
-                
+
                 return FromFloatToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -147,9 +147,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(float)(object)val;
+                    return (TTo) (object) (Half) (float) (object) val;
                 }
-                
+
                 return FromFloatToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -157,9 +157,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(float)(object)val;
+                    return (TTo) (object) (float) (float) (object) val;
                 }
-                
+
                 return FromFloatToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -167,9 +167,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(float)(object)val;
+                    return (TTo) (object) (double) (float) (object) val;
                 }
-                
+
                 return FromFloatToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -177,9 +177,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(float)(object)val;
+                    return (TTo) (object) (decimal) (float) (object) val;
                 }
-                
+
                 return FromFloatToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -187,9 +187,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(float)(object)val;
+                    return (TTo) (object) (sbyte) (float) (object) val;
                 }
-                
+
                 return FromFloatToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -197,9 +197,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(float)(object)val;
+                    return (TTo) (object) (byte) (float) (object) val;
                 }
-                
+
                 return FromFloatToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -207,9 +207,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(float)(object)val;
+                    return (TTo) (object) (short) (float) (object) val;
                 }
-                
+
                 return FromFloatToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -217,9 +217,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(float)(object)val;
+                    return (TTo) (object) (ushort) (float) (object) val;
                 }
-                
+
                 return FromFloatToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -227,9 +227,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(float)(object)val;
+                    return (TTo) (object) (int) (float) (object) val;
                 }
-                
+
                 return FromFloatToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -237,9 +237,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(float)(object)val;
+                    return (TTo) (object) (uint) (float) (object) val;
                 }
-                
+
                 return FromFloatToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -247,9 +247,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(float)(object)val;
+                    return (TTo) (object) (long) (float) (object) val;
                 }
-                
+
                 return FromFloatToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -257,9 +257,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(float) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(float)(object)val;
+                    return (TTo) (object) (ulong) (float) (object) val;
                 }
-                
+
                 return FromDoubleToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -267,9 +267,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(double)(object)val;
+                    return (TTo) (object) (Half) (double) (object) val;
                 }
-                
+
                 return FromDoubleToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -277,9 +277,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(double)(object)val;
+                    return (TTo) (object) (float) (double) (object) val;
                 }
-                
+
                 return FromDoubleToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -287,9 +287,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(double)(object)val;
+                    return (TTo) (object) (double) (double) (object) val;
                 }
-                
+
                 return FromDoubleToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -297,9 +297,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(double)(object)val;
+                    return (TTo) (object) (decimal) (double) (object) val;
                 }
-                
+
                 return FromDoubleToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -307,9 +307,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(double)(object)val;
+                    return (TTo) (object) (sbyte) (double) (object) val;
                 }
-                
+
                 return FromDoubleToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -317,9 +317,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(double)(object)val;
+                    return (TTo) (object) (byte) (double) (object) val;
                 }
-                
+
                 return FromDoubleToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -327,9 +327,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(double)(object)val;
+                    return (TTo) (object) (short) (double) (object) val;
                 }
-                
+
                 return FromDoubleToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -337,9 +337,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(double)(object)val;
+                    return (TTo) (object) (ushort) (double) (object) val;
                 }
-                
+
                 return FromDoubleToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -347,9 +347,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(double)(object)val;
+                    return (TTo) (object) (int) (double) (object) val;
                 }
-                
+
                 return FromDoubleToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -357,9 +357,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(double)(object)val;
+                    return (TTo) (object) (uint) (double) (object) val;
                 }
-                
+
                 return FromDoubleToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -367,9 +367,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(double)(object)val;
+                    return (TTo) (object) (long) (double) (object) val;
                 }
-                
+
                 return FromDoubleToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -377,9 +377,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(double) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(double)(object)val;
+                    return (TTo) (object) (ulong) (double) (object) val;
                 }
-                
+
                 return FromDecimalToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -387,9 +387,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(float)(decimal)(object)val;
+                    return (TTo) (object) (Half) (float) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -397,9 +397,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(decimal)(object)val;
+                    return (TTo) (object) (float) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -407,9 +407,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(decimal)(object)val;
+                    return (TTo) (object) (double) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -417,9 +417,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(decimal)(object)val;
+                    return (TTo) (object) (decimal) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -427,9 +427,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(decimal)(object)val;
+                    return (TTo) (object) (sbyte) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -437,9 +437,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(decimal)(object)val;
+                    return (TTo) (object) (byte) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -447,9 +447,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(decimal)(object)val;
+                    return (TTo) (object) (short) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -457,9 +457,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(decimal)(object)val;
+                    return (TTo) (object) (ushort) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -467,9 +467,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(decimal)(object)val;
+                    return (TTo) (object) (int) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -477,9 +477,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(decimal)(object)val;
+                    return (TTo) (object) (uint) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -487,9 +487,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(decimal)(object)val;
+                    return (TTo) (object) (long) (decimal) (object) val;
                 }
-                
+
                 return FromDecimalToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -497,9 +497,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(decimal) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(decimal)(object)val;
+                    return (TTo) (object) (ulong) (decimal) (object) val;
                 }
-                
+
                 return FromSbyteToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -507,9 +507,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(sbyte)(object)val;
+                    return (TTo) (object) (Half) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -517,9 +517,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(sbyte)(object)val;
+                    return (TTo) (object) (float) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -527,9 +527,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(sbyte)(object)val;
+                    return (TTo) (object) (double) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -537,9 +537,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(sbyte)(object)val;
+                    return (TTo) (object) (decimal) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -547,9 +547,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(sbyte)(object)val;
+                    return (TTo) (object) (sbyte) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -557,9 +557,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(sbyte)(object)val;
+                    return (TTo) (object) (byte) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -567,9 +567,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(sbyte)(object)val;
+                    return (TTo) (object) (short) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -577,9 +577,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(sbyte)(object)val;
+                    return (TTo) (object) (ushort) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -587,9 +587,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(sbyte)(object)val;
+                    return (TTo) (object) (int) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -597,9 +597,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(sbyte)(object)val;
+                    return (TTo) (object) (uint) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -607,9 +607,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(sbyte)(object)val;
+                    return (TTo) (object) (long) (sbyte) (object) val;
                 }
-                
+
                 return FromSbyteToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -617,9 +617,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(sbyte) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(sbyte)(object)val;
+                    return (TTo) (object) (ulong) (sbyte) (object) val;
                 }
-                
+
                 return FromByteToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -627,9 +627,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(byte)(object)val;
+                    return (TTo) (object) (Half) (byte) (object) val;
                 }
-                
+
                 return FromByteToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -637,9 +637,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(byte)(object)val;
+                    return (TTo) (object) (float) (byte) (object) val;
                 }
-                
+
                 return FromByteToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -647,9 +647,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(byte)(object)val;
+                    return (TTo) (object) (double) (byte) (object) val;
                 }
-                
+
                 return FromByteToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -657,9 +657,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(byte)(object)val;
+                    return (TTo) (object) (decimal) (byte) (object) val;
                 }
-                
+
                 return FromByteToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -667,9 +667,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(byte)(object)val;
+                    return (TTo) (object) (sbyte) (byte) (object) val;
                 }
-                
+
                 return FromByteToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -677,9 +677,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(byte)(object)val;
+                    return (TTo) (object) (byte) (byte) (object) val;
                 }
-                
+
                 return FromByteToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -687,9 +687,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(byte)(object)val;
+                    return (TTo) (object) (short) (byte) (object) val;
                 }
-                
+
                 return FromByteToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -697,9 +697,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(byte)(object)val;
+                    return (TTo) (object) (ushort) (byte) (object) val;
                 }
-                
+
                 return FromByteToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -707,9 +707,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(byte)(object)val;
+                    return (TTo) (object) (int) (byte) (object) val;
                 }
-                
+
                 return FromByteToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -717,9 +717,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(byte)(object)val;
+                    return (TTo) (object) (uint) (byte) (object) val;
                 }
-                
+
                 return FromByteToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -727,9 +727,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(byte)(object)val;
+                    return (TTo) (object) (long) (byte) (object) val;
                 }
-                
+
                 return FromByteToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -737,9 +737,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(byte) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(byte)(object)val;
+                    return (TTo) (object) (ulong) (byte) (object) val;
                 }
-                
+
                 return FromShortToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -747,9 +747,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(short)(object)val;
+                    return (TTo) (object) (Half) (short) (object) val;
                 }
-                
+
                 return FromShortToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -757,9 +757,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(short)(object)val;
+                    return (TTo) (object) (float) (short) (object) val;
                 }
-                
+
                 return FromShortToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -767,9 +767,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(short)(object)val;
+                    return (TTo) (object) (double) (short) (object) val;
                 }
-                
+
                 return FromShortToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -777,9 +777,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(short)(object)val;
+                    return (TTo) (object) (decimal) (short) (object) val;
                 }
-                
+
                 return FromShortToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -787,9 +787,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(short)(object)val;
+                    return (TTo) (object) (sbyte) (short) (object) val;
                 }
-                
+
                 return FromShortToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -797,9 +797,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(short)(object)val;
+                    return (TTo) (object) (byte) (short) (object) val;
                 }
-                
+
                 return FromShortToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -807,9 +807,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(short)(object)val;
+                    return (TTo) (object) (short) (short) (object) val;
                 }
-                
+
                 return FromShortToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -817,9 +817,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(short)(object)val;
+                    return (TTo) (object) (ushort) (short) (object) val;
                 }
-                
+
                 return FromShortToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -827,9 +827,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(short)(object)val;
+                    return (TTo) (object) (int) (short) (object) val;
                 }
-                
+
                 return FromShortToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -837,9 +837,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(short)(object)val;
+                    return (TTo) (object) (uint) (short) (object) val;
                 }
-                
+
                 return FromShortToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -847,9 +847,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(short)(object)val;
+                    return (TTo) (object) (long) (short) (object) val;
                 }
-                
+
                 return FromShortToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -857,9 +857,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(short) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(short)(object)val;
+                    return (TTo) (object) (ulong) (short) (object) val;
                 }
-                
+
                 return FromUshortToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -867,9 +867,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(ushort)(object)val;
+                    return (TTo) (object) (Half) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -877,9 +877,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(ushort)(object)val;
+                    return (TTo) (object) (float) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -887,9 +887,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(ushort)(object)val;
+                    return (TTo) (object) (double) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -897,9 +897,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(ushort)(object)val;
+                    return (TTo) (object) (decimal) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -907,9 +907,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(ushort)(object)val;
+                    return (TTo) (object) (sbyte) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -917,9 +917,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(ushort)(object)val;
+                    return (TTo) (object) (byte) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -927,9 +927,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(ushort)(object)val;
+                    return (TTo) (object) (short) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -937,9 +937,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(ushort)(object)val;
+                    return (TTo) (object) (ushort) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -947,9 +947,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(ushort)(object)val;
+                    return (TTo) (object) (int) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -957,9 +957,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(ushort)(object)val;
+                    return (TTo) (object) (uint) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -967,9 +967,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(ushort)(object)val;
+                    return (TTo) (object) (long) (ushort) (object) val;
                 }
-                
+
                 return FromUshortToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -977,9 +977,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ushort) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(ushort)(object)val;
+                    return (TTo) (object) (ulong) (ushort) (object) val;
                 }
-                
+
                 return FromIntToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -987,9 +987,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(int)(object)val;
+                    return (TTo) (object) (Half) (int) (object) val;
                 }
-                
+
                 return FromIntToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -997,9 +997,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(int)(object)val;
+                    return (TTo) (object) (float) (int) (object) val;
                 }
-                
+
                 return FromIntToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1007,9 +1007,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(int)(object)val;
+                    return (TTo) (object) (double) (int) (object) val;
                 }
-                
+
                 return FromIntToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1017,9 +1017,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(int)(object)val;
+                    return (TTo) (object) (decimal) (int) (object) val;
                 }
-                
+
                 return FromIntToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1027,9 +1027,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(int)(object)val;
+                    return (TTo) (object) (sbyte) (int) (object) val;
                 }
-                
+
                 return FromIntToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1037,9 +1037,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(int)(object)val;
+                    return (TTo) (object) (byte) (int) (object) val;
                 }
-                
+
                 return FromIntToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1047,9 +1047,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(int)(object)val;
+                    return (TTo) (object) (short) (int) (object) val;
                 }
-                
+
                 return FromIntToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1057,12 +1057,12 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(int)(object)val;
+                    return (TTo) (object) (ushort) (int) (object) val;
                 }
-                
+
                 return FromIntToInt(val);
             }
-            
+
             [MethodImpl(MaxOpt)]
             static TTo FromIntToInt(TFrom val)
             {
@@ -1078,9 +1078,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(int)(object)val;
+                    return (TTo) (object) (uint) (int) (object) val;
                 }
-                
+
                 return FromIntToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1088,9 +1088,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(int)(object)val;
+                    return (TTo) (object) (long) (int) (object) val;
                 }
-                
+
                 return FromIntToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1098,9 +1098,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(int) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(int)(object)val;
+                    return (TTo) (object) (ulong) (int) (object) val;
                 }
-                
+
                 return FromUintToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1108,9 +1108,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(uint)(object)val;
+                    return (TTo) (object) (Half) (uint) (object) val;
                 }
-                
+
                 return FromUintToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1118,9 +1118,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(uint)(object)val;
+                    return (TTo) (object) (float) (uint) (object) val;
                 }
-                
+
                 return FromUintToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1128,9 +1128,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(uint)(object)val;
+                    return (TTo) (object) (double) (uint) (object) val;
                 }
-                
+
                 return FromUintToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1138,9 +1138,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(uint)(object)val;
+                    return (TTo) (object) (decimal) (uint) (object) val;
                 }
-                
+
                 return FromUintToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1148,9 +1148,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(uint)(object)val;
+                    return (TTo) (object) (sbyte) (uint) (object) val;
                 }
-                
+
                 return FromUintToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1158,9 +1158,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(uint)(object)val;
+                    return (TTo) (object) (byte) (uint) (object) val;
                 }
-                
+
                 return FromUintToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1168,9 +1168,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(uint)(object)val;
+                    return (TTo) (object) (short) (uint) (object) val;
                 }
-                
+
                 return FromUintToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1178,9 +1178,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(uint)(object)val;
+                    return (TTo) (object) (ushort) (uint) (object) val;
                 }
-                
+
                 return FromUintToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1188,9 +1188,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(uint)(object)val;
+                    return (TTo) (object) (int) (uint) (object) val;
                 }
-                
+
                 return FromUintToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1198,9 +1198,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(uint)(object)val;
+                    return (TTo) (object) (uint) (uint) (object) val;
                 }
-                
+
                 return FromUintToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1208,9 +1208,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(uint)(object)val;
+                    return (TTo) (object) (long) (uint) (object) val;
                 }
-                
+
                 return FromUintToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1218,9 +1218,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(uint) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(uint)(object)val;
+                    return (TTo) (object) (ulong) (uint) (object) val;
                 }
-                
+
                 return FromLongToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1228,9 +1228,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(long)(object)val;
+                    return (TTo) (object) (Half) (long) (object) val;
                 }
-                
+
                 return FromLongToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1238,9 +1238,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(long)(object)val;
+                    return (TTo) (object) (float) (long) (object) val;
                 }
-                
+
                 return FromLongToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1248,9 +1248,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(long)(object)val;
+                    return (TTo) (object) (double) (long) (object) val;
                 }
-                
+
                 return FromLongToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1258,9 +1258,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(long)(object)val;
+                    return (TTo) (object) (decimal) (long) (object) val;
                 }
-                
+
                 return FromLongToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1268,9 +1268,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(long)(object)val;
+                    return (TTo) (object) (sbyte) (long) (object) val;
                 }
-                
+
                 return FromLongToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1278,9 +1278,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(long)(object)val;
+                    return (TTo) (object) (byte) (long) (object) val;
                 }
-                
+
                 return FromLongToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1288,9 +1288,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(long)(object)val;
+                    return (TTo) (object) (short) (long) (object) val;
                 }
-                
+
                 return FromLongToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1298,9 +1298,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(long)(object)val;
+                    return (TTo) (object) (ushort) (long) (object) val;
                 }
-                
+
                 return FromLongToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1308,9 +1308,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(long)(object)val;
+                    return (TTo) (object) (int) (long) (object) val;
                 }
-                
+
                 return FromLongToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1318,9 +1318,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(long)(object)val;
+                    return (TTo) (object) (uint) (long) (object) val;
                 }
-                
+
                 return FromLongToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1328,9 +1328,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(long)(object)val;
+                    return (TTo) (object) (long) (long) (object) val;
                 }
-                
+
                 return FromLongToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1338,9 +1338,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(long) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(long)(object)val;
+                    return (TTo) (object) (ulong) (long) (object) val;
                 }
-                
+
                 return FromUlongToHalf(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1348,9 +1348,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(Half))
                 {
-                    return (TTo)(object)(Half)(ulong)(object)val;
+                    return (TTo) (object) (Half) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToFloat(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1358,9 +1358,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(float))
                 {
-                    return (TTo)(object)(float)(ulong)(object)val;
+                    return (TTo) (object) (float) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToDouble(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1368,9 +1368,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(double))
                 {
-                    return (TTo)(object)(double)(ulong)(object)val;
+                    return (TTo) (object) (double) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToDecimal(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1378,9 +1378,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(decimal))
                 {
-                    return (TTo)(object)(decimal)(ulong)(object)val;
+                    return (TTo) (object) (decimal) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToSbyte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1388,9 +1388,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(sbyte))
                 {
-                    return (TTo)(object)(sbyte)(ulong)(object)val;
+                    return (TTo) (object) (sbyte) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToByte(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1398,9 +1398,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(byte))
                 {
-                    return (TTo)(object)(byte)(ulong)(object)val;
+                    return (TTo) (object) (byte) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToShort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1408,9 +1408,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(short))
                 {
-                    return (TTo)(object)(short)(ulong)(object)val;
+                    return (TTo) (object) (short) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToUshort(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1418,9 +1418,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(ushort))
                 {
-                    return (TTo)(object)(ushort)(ulong)(object)val;
+                    return (TTo) (object) (ushort) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToInt(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1428,9 +1428,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(int))
                 {
-                    return (TTo)(object)(int)(ulong)(object)val;
+                    return (TTo) (object) (int) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToUint(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1438,9 +1438,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(uint))
                 {
-                    return (TTo)(object)(uint)(ulong)(object)val;
+                    return (TTo) (object) (uint) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToLong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1448,9 +1448,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(long))
                 {
-                    return (TTo)(object)(long)(ulong)(object)val;
+                    return (TTo) (object) (long) (ulong) (object) val;
                 }
-                
+
                 return FromUlongToUlong(val);
             }
             [MethodImpl(MaxOpt)]
@@ -1458,9 +1458,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(TFrom) == typeof(ulong) && typeof(TTo) == typeof(ulong))
                 {
-                    return (TTo)(object)(ulong)(ulong)(object)val;
+                    return (TTo) (object) (ulong) (ulong) (object) val;
                 }
-                
+
                 ThrowUnsupportedType();
                 return default;
             }
