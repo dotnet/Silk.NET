@@ -622,6 +622,24 @@ namespace Silk.NET.Maths
         /// Converts a <see cref="Matrix4x4{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="System.Numerics"/> matrix</returns>
+        public static explicit operator System.Numerics.Matrix4x4(Matrix4x4<T> from)
+            => new
+            (
+                Scalar.As<T, float>(from.M11),Scalar.As<T, float>(from.M12),
+                Scalar.As<T, float>(from.M13),Scalar.As<T, float>(from.M14),
+                Scalar.As<T, float>(from.M21),Scalar.As<T, float>(from.M22),
+                Scalar.As<T, float>(from.M23),Scalar.As<T, float>(from.M24),
+                Scalar.As<T, float>(from.M31),Scalar.As<T, float>(from.M32),
+                Scalar.As<T, float>(from.M33),Scalar.As<T, float>(from.M34),
+                Scalar.As<T, float>(from.M41),Scalar.As<T, float>(from.M42),
+                Scalar.As<T, float>(from.M43),Scalar.As<T, float>(from.M44)
+            );
+        
+        /// <summary>
+        /// Converts a <see cref="Matrix4x4{T}"/> into a <see cref="System.Numerics.Matrix4x4"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="float"/> matrix</returns>
         public static explicit operator Matrix4x4<float>(Matrix4x4<T> from)
             => new
@@ -816,7 +834,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, long>(from.M43),Scalar.As<T, long>(from.M44)
             );
     }
-
+    
     /// <summary>
     /// Methods for working with <see cref="Matrix4x4{T}"/>
     /// </summary>
@@ -1960,9 +1978,9 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                 if (!Scalar.GreaterThanOrEqual(Scalar.Abs(det), Scalar<T>.Epsilon))
                 {
                     result = new Matrix4x4<T>(Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN,
-                                           Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN,
-                                           Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN,
-                                           Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN);
+                        Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN,
+                        Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN,
+                        Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN, Scalar<T>.NaN);
                     return false;
                 }
 
@@ -2297,11 +2315,11 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             return new(
-                    Vector4.Lerp(matrix1.Row1, matrix2.Row1, amount),
-                    Vector4.Lerp(matrix1.Row2, matrix2.Row2, amount),
-                    Vector4.Lerp(matrix1.Row3, matrix2.Row3, amount),
-                    Vector4.Lerp(matrix1.Row4, matrix2.Row4, amount)
-                );
+                Vector4.Lerp(matrix1.Row1, matrix2.Row1, amount),
+                Vector4.Lerp(matrix1.Row2, matrix2.Row2, amount),
+                Vector4.Lerp(matrix1.Row3, matrix2.Row3, amount),
+                Vector4.Lerp(matrix1.Row4, matrix2.Row4, amount)
+            );
         }
 
         /// <summary>Transforms the given matrix by applying the given Quaternion rotation.</summary>
@@ -2347,7 +2365,7 @@ private const float BillboardMinAngle = 1.0f - (0.1f * (((float)Math.PI) / 180.0
                 new (value.M21 * q1 + value.M22 * q2 + value.M23 * q3, value.M24),
                 new (value.M31 * q1 + value.M32 * q2 + value.M33 * q3, value.M34),
                 new (value.M41 * q1 + value.M42 * q2 + value.M43 * q3, value.M44)
-                );
+            );
         }
 
         /// <summary>Transposes the rows and columns of a matrix.</summary>
