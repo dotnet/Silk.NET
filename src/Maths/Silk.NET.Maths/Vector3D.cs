@@ -284,7 +284,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="from">The source vector</param>
         /// <returns>The <see cref="System.Numerics"/> vector</returns>
-        public static explicit operator System.Numerics.Vector3(Vector3<T> from)
+        public static explicit operator System.Numerics.Vector3(Vector3D<T> from)
             => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z));
         
         /// <summary>

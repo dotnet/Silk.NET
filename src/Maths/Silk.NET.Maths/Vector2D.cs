@@ -257,7 +257,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="from">The source vector</param>
         /// <returns>The <see cref="System.Numerics"/> vector</returns>
-        public static explicit operator System.Numerics.Vector2(Vector2<T> from)
+        public static explicit operator System.Numerics.Vector2(Vector2D<T> from)
             => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y));
         
         /// <summary>

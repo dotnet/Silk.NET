@@ -24,8 +24,8 @@ namespace Silk.NET.Maths
         public static Rectangle<T> FromLTRB<T>(T left, T top, T right, T bottom)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Vector2<T> o = new(left, top);
-            return new Rectangle<T>(o, new Vector2<T>(right, bottom) - o);
+            Vector2D<T> o = new(left, top);
+            return new Rectangle<T>(o, new Vector2D<T>(right, bottom) - o);
         }
     }
 }
