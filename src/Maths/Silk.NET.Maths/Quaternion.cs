@@ -679,6 +679,15 @@ namespace Silk.NET.Maths
                 Scalar.As<T, float>(from.W));
         
         /// <summary>
+        /// Converts a <see cref="Quaternion{T}"/> into <see cref="System.Numerics.Quaternion"/>
+        /// </summary>
+        /// <param name="from">The source quaternion</param>
+        /// <returns>The <see cref="System.Numerics"/> quaternion</returns>
+        public static explicit operator System.Numerics.Quaternion(Quaternion<T> from)
+            => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z),
+                Scalar.As<T, float>(from.W));
+        
+        /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
         /// <param name="from">The source matrix</param>

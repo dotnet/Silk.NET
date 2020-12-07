@@ -117,6 +117,14 @@ namespace Silk.NET.Maths
             => new((Vector3<float>) from.Normal, Scalar.As<T, float>(from.Distance));
         
         /// <summary>
+        /// Converts a <see cref="Plane{T}"/> into <see cref="System.Numerics.Plane"/>
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="System.Numerics"/> matrix</returns>
+        public static explicit operator System.Numerics.Plane(Plane<T> from)
+            => new((System.Numerics.Vector3) from.Normal, Scalar.As<T, float>(from.Distance));
+        
+        /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
