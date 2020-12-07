@@ -1,61 +1,62 @@
-override Silk.NET.Maths.Box2D<T>.Equals(object obj) -> bool
+#nullable enable
+override Silk.NET.Maths.Box2D<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Box2D<T>.GetHashCode() -> int
-override Silk.NET.Maths.Box3D<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Box3D<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Box3D<T>.GetHashCode() -> int
-override Silk.NET.Maths.Circle<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Circle<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Circle<T>.GetHashCode() -> int
-override Silk.NET.Maths.Cube<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Cube<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Cube<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix2X2<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix2X2<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix2X2<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix2X2<T>.ToString() -> string
-override Silk.NET.Maths.Matrix2X3<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix2X2<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix2X3<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix2X3<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix2X3<T>.ToString() -> string
-override Silk.NET.Maths.Matrix2X4<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix2X3<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix2X4<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix2X4<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix2X4<T>.ToString() -> string
-override Silk.NET.Maths.Matrix3X2<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix2X4<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix3X2<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix3X2<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix3X2<T>.ToString() -> string
-override Silk.NET.Maths.Matrix3X3<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix3X2<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix3X3<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix3X3<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix3X3<T>.ToString() -> string
-override Silk.NET.Maths.Matrix3X4<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix3X3<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix3X4<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix3X4<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix3X4<T>.ToString() -> string
-override Silk.NET.Maths.Matrix4X2<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix3X4<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix4X2<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix4X2<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix4X2<T>.ToString() -> string
-override Silk.NET.Maths.Matrix4X3<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix4X2<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix4X3<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix4X3<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix4X3<T>.ToString() -> string
-override Silk.NET.Maths.Matrix4X4<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix4X3<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix4X4<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix4X4<T>.GetHashCode() -> int
-override Silk.NET.Maths.Matrix4X4<T>.ToString() -> string
-override Silk.NET.Maths.Plane<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Matrix4X4<T>.ToString() -> string!
+override Silk.NET.Maths.Plane<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Plane<T>.GetHashCode() -> int
-override Silk.NET.Maths.Plane<T>.ToString() -> string
-override Silk.NET.Maths.Quaternion<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Plane<T>.ToString() -> string!
+override Silk.NET.Maths.Quaternion<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Quaternion<T>.GetHashCode() -> int
-override Silk.NET.Maths.Quaternion<T>.ToString() -> string
-override Silk.NET.Maths.Ray2D<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Quaternion<T>.ToString() -> string!
+override Silk.NET.Maths.Ray2D<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Ray2D<T>.GetHashCode() -> int
-override Silk.NET.Maths.Ray3D<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Ray3D<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Ray3D<T>.GetHashCode() -> int
-override Silk.NET.Maths.Rectangle<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Rectangle<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Rectangle<T>.GetHashCode() -> int
-override Silk.NET.Maths.Sphere<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Sphere<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Sphere<T>.GetHashCode() -> int
-override Silk.NET.Maths.Vector2D<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Vector2D<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Vector2D<T>.GetHashCode() -> int
-override Silk.NET.Maths.Vector2D<T>.ToString() -> string
-override Silk.NET.Maths.Vector3D<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Vector2D<T>.ToString() -> string!
+override Silk.NET.Maths.Vector3D<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Vector3D<T>.GetHashCode() -> int
-override Silk.NET.Maths.Vector3D<T>.ToString() -> string
-override Silk.NET.Maths.Vector4D<T>.Equals(object obj) -> bool
+override Silk.NET.Maths.Vector3D<T>.ToString() -> string!
+override Silk.NET.Maths.Vector4D<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Vector4D<T>.GetHashCode() -> int
-override Silk.NET.Maths.Vector4D<T>.ToString() -> string
+override Silk.NET.Maths.Vector4D<T>.ToString() -> string!
 Silk.NET.Maths.Box2D<T>
 Silk.NET.Maths.Box2D<T>.Box2D() -> void
 Silk.NET.Maths.Box2D<T>.Box2D(Silk.NET.Maths.Vector2D<T> min, Silk.NET.Maths.Vector2D<T> max) -> void
@@ -501,6 +502,7 @@ Silk.NET.Maths.Ray3D<T>.GetPoint(T distance) -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Ray3D<T>.Origin -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Ray3D<T>.Ray3D() -> void
 Silk.NET.Maths.Ray3D<T>.Ray3D(Silk.NET.Maths.Vector3D<T> origin, Silk.NET.Maths.Vector3D<T> direction) -> void
+Silk.NET.Maths.Rectangle
 Silk.NET.Maths.Rectangle<T>
 Silk.NET.Maths.Rectangle<T>.Center.get -> Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Rectangle<T>.Contains(Silk.NET.Maths.Rectangle<T> other) -> bool
@@ -535,14 +537,14 @@ Silk.NET.Maths.Sphere<T>.SquaredRadius.get -> T
 Silk.NET.Maths.SystemNumericsExtensions
 Silk.NET.Maths.Vector2D
 Silk.NET.Maths.Vector2D<T>
-Silk.NET.Maths.Vector2D<T>.CopyTo(T[] array) -> void
-Silk.NET.Maths.Vector2D<T>.CopyTo(T[] array, int index) -> void
+Silk.NET.Maths.Vector2D<T>.CopyTo(T[]? array) -> void
+Silk.NET.Maths.Vector2D<T>.CopyTo(T[]? array, int index) -> void
 Silk.NET.Maths.Vector2D<T>.Equals(Silk.NET.Maths.Vector2D<T> other) -> bool
 Silk.NET.Maths.Vector2D<T>.Length.get -> T
 Silk.NET.Maths.Vector2D<T>.LengthSquared.get -> T
 Silk.NET.Maths.Vector2D<T>.this[int i].get -> T
-Silk.NET.Maths.Vector2D<T>.ToString(string format) -> string
-Silk.NET.Maths.Vector2D<T>.ToString(string format, System.IFormatProvider formatProvider) -> string
+Silk.NET.Maths.Vector2D<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Vector2D<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
 Silk.NET.Maths.Vector2D<T>.Vector2D() -> void
 Silk.NET.Maths.Vector2D<T>.Vector2D(T value) -> void
 Silk.NET.Maths.Vector2D<T>.Vector2D(T x, T y) -> void
@@ -550,14 +552,14 @@ Silk.NET.Maths.Vector2D<T>.X -> T
 Silk.NET.Maths.Vector2D<T>.Y -> T
 Silk.NET.Maths.Vector3D
 Silk.NET.Maths.Vector3D<T>
-Silk.NET.Maths.Vector3D<T>.CopyTo(T[] array) -> void
-Silk.NET.Maths.Vector3D<T>.CopyTo(T[] array, int index) -> void
+Silk.NET.Maths.Vector3D<T>.CopyTo(T[]? array) -> void
+Silk.NET.Maths.Vector3D<T>.CopyTo(T[]? array, int index) -> void
 Silk.NET.Maths.Vector3D<T>.Equals(Silk.NET.Maths.Vector3D<T> other) -> bool
 Silk.NET.Maths.Vector3D<T>.Length.get -> T
 Silk.NET.Maths.Vector3D<T>.LengthSquared.get -> T
 Silk.NET.Maths.Vector3D<T>.this[int i].get -> T
-Silk.NET.Maths.Vector3D<T>.ToString(string format) -> string
-Silk.NET.Maths.Vector3D<T>.ToString(string format, System.IFormatProvider formatProvider) -> string
+Silk.NET.Maths.Vector3D<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Vector3D<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
 Silk.NET.Maths.Vector3D<T>.Vector3D() -> void
 Silk.NET.Maths.Vector3D<T>.Vector3D(Silk.NET.Maths.Vector2D<T> value, T z) -> void
 Silk.NET.Maths.Vector3D<T>.Vector3D(T value) -> void
@@ -567,14 +569,14 @@ Silk.NET.Maths.Vector3D<T>.Y -> T
 Silk.NET.Maths.Vector3D<T>.Z -> T
 Silk.NET.Maths.Vector4D
 Silk.NET.Maths.Vector4D<T>
-Silk.NET.Maths.Vector4D<T>.CopyTo(T[] array) -> void
-Silk.NET.Maths.Vector4D<T>.CopyTo(T[] array, int index) -> void
+Silk.NET.Maths.Vector4D<T>.CopyTo(T[]? array) -> void
+Silk.NET.Maths.Vector4D<T>.CopyTo(T[]? array, int index) -> void
 Silk.NET.Maths.Vector4D<T>.Equals(Silk.NET.Maths.Vector4D<T> other) -> bool
 Silk.NET.Maths.Vector4D<T>.Length.get -> T
 Silk.NET.Maths.Vector4D<T>.LengthSquared.get -> T
 Silk.NET.Maths.Vector4D<T>.this[int i].get -> T
-Silk.NET.Maths.Vector4D<T>.ToString(string format) -> string
-Silk.NET.Maths.Vector4D<T>.ToString(string format, System.IFormatProvider formatProvider) -> string
+Silk.NET.Maths.Vector4D<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Vector4D<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
 Silk.NET.Maths.Vector4D<T>.Vector4D() -> void
 Silk.NET.Maths.Vector4D<T>.Vector4D(Silk.NET.Maths.Vector2D<T> value, T z, T w) -> void
 Silk.NET.Maths.Vector4D<T>.Vector4D(Silk.NET.Maths.Vector3D<T> value, T w) -> void
@@ -742,6 +744,7 @@ static Silk.NET.Maths.Matrix3X2<T>.explicit operator Silk.NET.Maths.Matrix3X2<Sy
 static Silk.NET.Maths.Matrix3X2<T>.explicit operator Silk.NET.Maths.Matrix3X2<uint>(Silk.NET.Maths.Matrix3X2<T> from) -> Silk.NET.Maths.Matrix3X2<uint>
 static Silk.NET.Maths.Matrix3X2<T>.explicit operator Silk.NET.Maths.Matrix3X2<ulong>(Silk.NET.Maths.Matrix3X2<T> from) -> Silk.NET.Maths.Matrix3X2<ulong>
 static Silk.NET.Maths.Matrix3X2<T>.explicit operator Silk.NET.Maths.Matrix3X2<ushort>(Silk.NET.Maths.Matrix3X2<T> from) -> Silk.NET.Maths.Matrix3X2<ushort>
+static Silk.NET.Maths.Matrix3X2<T>.explicit operator System.Numerics.Matrix3x2(Silk.NET.Maths.Matrix3X2<T> from) -> System.Numerics.Matrix3x2
 static Silk.NET.Maths.Matrix3X2<T>.Identity.get -> Silk.NET.Maths.Matrix3X2<T>
 static Silk.NET.Maths.Matrix3X2<T>.operator !=(Silk.NET.Maths.Matrix3X2<T> value1, Silk.NET.Maths.Matrix3X2<T> value2) -> bool
 static Silk.NET.Maths.Matrix3X2<T>.operator *(Silk.NET.Maths.Matrix3X2<T> value1, Silk.NET.Maths.Matrix2X2<T> value2) -> Silk.NET.Maths.Matrix3X2<T>
@@ -982,6 +985,7 @@ static Silk.NET.Maths.Plane<T>.explicit operator Silk.NET.Maths.Plane<System.Hal
 static Silk.NET.Maths.Plane<T>.explicit operator Silk.NET.Maths.Plane<uint>(Silk.NET.Maths.Plane<T> from) -> Silk.NET.Maths.Plane<uint>
 static Silk.NET.Maths.Plane<T>.explicit operator Silk.NET.Maths.Plane<ulong>(Silk.NET.Maths.Plane<T> from) -> Silk.NET.Maths.Plane<ulong>
 static Silk.NET.Maths.Plane<T>.explicit operator Silk.NET.Maths.Plane<ushort>(Silk.NET.Maths.Plane<T> from) -> Silk.NET.Maths.Plane<ushort>
+static Silk.NET.Maths.Plane<T>.explicit operator System.Numerics.Plane(Silk.NET.Maths.Plane<T> from) -> System.Numerics.Plane
 static Silk.NET.Maths.Plane<T>.operator !=(Silk.NET.Maths.Plane<T> value1, Silk.NET.Maths.Plane<T> value2) -> bool
 static Silk.NET.Maths.Plane<T>.operator ==(Silk.NET.Maths.Plane<T> value1, Silk.NET.Maths.Plane<T> value2) -> bool
 static Silk.NET.Maths.Quaternion<T>.Add(Silk.NET.Maths.Quaternion<T> value1, Silk.NET.Maths.Quaternion<T> value2) -> Silk.NET.Maths.Quaternion<T>
@@ -1005,6 +1009,7 @@ static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<
 static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<uint>(Silk.NET.Maths.Quaternion<T> from) -> Silk.NET.Maths.Quaternion<uint>
 static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<ulong>(Silk.NET.Maths.Quaternion<T> from) -> Silk.NET.Maths.Quaternion<ulong>
 static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<ushort>(Silk.NET.Maths.Quaternion<T> from) -> Silk.NET.Maths.Quaternion<ushort>
+static Silk.NET.Maths.Quaternion<T>.explicit operator System.Numerics.Quaternion(Silk.NET.Maths.Quaternion<T> from) -> System.Numerics.Quaternion
 static Silk.NET.Maths.Quaternion<T>.Identity.get -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.Inverse(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.Lerp(Silk.NET.Maths.Quaternion<T> quaternion1, Silk.NET.Maths.Quaternion<T> quaternion2, T amount) -> Silk.NET.Maths.Quaternion<T>
@@ -1026,6 +1031,7 @@ static Silk.NET.Maths.Ray2D<T>.operator !=(Silk.NET.Maths.Ray2D<T> value1, Silk.
 static Silk.NET.Maths.Ray2D<T>.operator ==(Silk.NET.Maths.Ray2D<T> value1, Silk.NET.Maths.Ray2D<T> value2) -> bool
 static Silk.NET.Maths.Ray3D<T>.operator !=(Silk.NET.Maths.Ray3D<T> value1, Silk.NET.Maths.Ray3D<T> value2) -> bool
 static Silk.NET.Maths.Ray3D<T>.operator ==(Silk.NET.Maths.Ray3D<T> value1, Silk.NET.Maths.Ray3D<T> value2) -> bool
+static Silk.NET.Maths.Rectangle.FromLTRB<T>(T left, T top, T right, T bottom) -> Silk.NET.Maths.Rectangle<T>
 static Silk.NET.Maths.Rectangle<T>.operator !=(Silk.NET.Maths.Rectangle<T> value1, Silk.NET.Maths.Rectangle<T> value2) -> bool
 static Silk.NET.Maths.Rectangle<T>.operator ==(Silk.NET.Maths.Rectangle<T> value1, Silk.NET.Maths.Rectangle<T> value2) -> bool
 static Silk.NET.Maths.Scalar.Abs<T>(T x) -> T
@@ -1137,6 +1143,7 @@ static Silk.NET.Maths.Vector2D<T>.explicit operator Silk.NET.Maths.Vector2D<Syst
 static Silk.NET.Maths.Vector2D<T>.explicit operator Silk.NET.Maths.Vector2D<uint>(Silk.NET.Maths.Vector2D<T> from) -> Silk.NET.Maths.Vector2D<uint>
 static Silk.NET.Maths.Vector2D<T>.explicit operator Silk.NET.Maths.Vector2D<ulong>(Silk.NET.Maths.Vector2D<T> from) -> Silk.NET.Maths.Vector2D<ulong>
 static Silk.NET.Maths.Vector2D<T>.explicit operator Silk.NET.Maths.Vector2D<ushort>(Silk.NET.Maths.Vector2D<T> from) -> Silk.NET.Maths.Vector2D<ushort>
+static Silk.NET.Maths.Vector2D<T>.explicit operator System.Numerics.Vector2(Silk.NET.Maths.Vector2D<T> from) -> System.Numerics.Vector2
 static Silk.NET.Maths.Vector2D<T>.One.get -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D<T>.operator !=(Silk.NET.Maths.Vector2D<T> left, Silk.NET.Maths.Vector2D<T> right) -> bool
 static Silk.NET.Maths.Vector2D<T>.operator *(Silk.NET.Maths.Vector2D<T> left, Silk.NET.Maths.Vector2D<T> right) -> Silk.NET.Maths.Vector2D<T>
@@ -1189,6 +1196,7 @@ static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<Syst
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<uint>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<uint>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<ulong>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<ulong>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<ushort>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<ushort>
+static Silk.NET.Maths.Vector3D<T>.explicit operator System.Numerics.Vector3(Silk.NET.Maths.Vector3D<T> from) -> System.Numerics.Vector3
 static Silk.NET.Maths.Vector3D<T>.One.get -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D<T>.operator !=(Silk.NET.Maths.Vector3D<T> left, Silk.NET.Maths.Vector3D<T> right) -> bool
 static Silk.NET.Maths.Vector3D<T>.operator *(Silk.NET.Maths.Vector3D<T> left, Silk.NET.Maths.Vector3D<T> right) -> Silk.NET.Maths.Vector3D<T>
@@ -1243,6 +1251,7 @@ static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<Syst
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<uint>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<uint>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<ulong>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<ulong>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<ushort>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<ushort>
+static Silk.NET.Maths.Vector4D<T>.explicit operator System.Numerics.Vector4(Silk.NET.Maths.Vector4D<T> from) -> System.Numerics.Vector4
 static Silk.NET.Maths.Vector4D<T>.One.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.operator !=(Silk.NET.Maths.Vector4D<T> left, Silk.NET.Maths.Vector4D<T> right) -> bool
 static Silk.NET.Maths.Vector4D<T>.operator *(Silk.NET.Maths.Vector4D<T> left, Silk.NET.Maths.Vector4D<T> right) -> Silk.NET.Maths.Vector4D<T>
