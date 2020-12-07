@@ -896,8 +896,8 @@ namespace Silk.NET.OpenGL
         ///     </see>
         ///  </para>
         /// </remarks>
-        public void Viewport(Rectangle rectangle)
-            => Viewport(rectangle.X, rectangle.Y, (uint) rectangle.X, (uint) rectangle.Y);
+        public void Viewport(System.Drawing.Rectangle rectangle)
+            => Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height);
 
         /// <summary>
         ///     Set the viewport for the OpenGL context.

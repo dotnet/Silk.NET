@@ -389,6 +389,7 @@ namespace Silk.NET.OpenGLES
         public void Viewport(Vector2D<int> location, Vector2D<int> size)
             => Viewport(location.X, location.Y, (uint) size.X, (uint) size.Y);
 
+
         /// <summary>
         ///     Set the viewport for the OpenGL context.
         /// </summary>
@@ -406,7 +407,7 @@ namespace Silk.NET.OpenGLES
         ///     </see>
         ///  </para>
         /// </remarks>
-        public void Viewport(Rectangle rectangle)
+        public void Viewport(System.Drawing.Rectangle rectangle)
             => Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height);
 
         /// <summary>
