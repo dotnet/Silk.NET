@@ -393,7 +393,7 @@ namespace Silk.NET.Maths
             );
 
         /// <summary>
-        /// Converts a <see cref="Matrix3x2{T}"/> into a <see cref="System.Numerics.3x2"/> one.
+        /// Converts a <see cref="Matrix3X2{T}"/> into a <see cref="System.Numerics.Matrix3x2"/> one.
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="System.Numerics"/> matrix</returns>
@@ -405,7 +405,7 @@ namespace Silk.NET.Maths
             );
         
         /// <summary>
-        /// Converts a <see cref="Matrix3x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
+        /// Converts a <see cref="Matrix3X2{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="double"/> matrix</returns>

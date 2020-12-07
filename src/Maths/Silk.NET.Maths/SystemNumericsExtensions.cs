@@ -43,7 +43,7 @@ namespace Silk.NET.Maths
             => new(value.X, value.Y, value.Z, value.W);
 
         /// <summary>
-        /// Converts a <see cref="Vector2DD{T}"/> into a <see cref="System.Numerics.Vector2"/>
+        /// Converts a <see cref="Vector2D{T}"/> into a <see cref="System.Numerics.Vector2"/>
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>
@@ -51,7 +51,7 @@ namespace Silk.NET.Maths
             => new(value.X, value.Y);
 
         /// <summary>
-        /// Converts a <see cref="Vector3DD{T}"/> into a <see cref="System.Numerics.Vector3"/>
+        /// Converts a <see cref="Vector3D{T}"/> into a <see cref="System.Numerics.Vector3"/>
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>
@@ -104,7 +104,7 @@ namespace Silk.NET.Maths
             => new(value.X, value.Y, value.Z, value.W);
 
         /// <summary>
-        /// Converts a <see cref="System.Numerics.Vector2"/> into a <see cref="Vector2DD{T}"/>
+        /// Converts a <see cref="System.Numerics.Vector2"/> into a <see cref="Vector2D{T}"/>
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>
@@ -112,7 +112,7 @@ namespace Silk.NET.Maths
             => new(value.X, value.Y);
 
         /// <summary>
-        /// Converts a <see cref="System.Numerics.Vector3"/> into a <see cref="Vector3DD{T}"/>
+        /// Converts a <see cref="System.Numerics.Vector3"/> into a <see cref="Vector3D{T}"/>
         /// </summary>
         /// <param name="value">The source vector</param>
         /// <returns>The converted vector</returns>

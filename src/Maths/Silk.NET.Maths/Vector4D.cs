@@ -303,7 +303,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, float>(from.W));
 
         /// <summary>
-        /// Converts a <see cref="Vector4{T}"/> into <see cref="System.Numerics.Vector4"/>
+        /// Converts a <see cref="Vector4D{T}"/> into <see cref="System.Numerics.Vector4"/>
         /// </summary>
         /// <param name="from">The source vector</param>
         /// <returns>The <see cref="System.Numerics"/> vector</returns>
@@ -312,7 +312,7 @@ namespace Silk.NET.Maths
                 Scalar.As<T, float>(from.W));
         
         /// <summary>
-        /// Converts a <see cref="Vector4{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
+        /// Converts a <see cref="Vector4D{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="double"/> matrix</returns>
