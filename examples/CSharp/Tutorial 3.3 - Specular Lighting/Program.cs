@@ -4,8 +4,6 @@ using Silk.NET.Windowing;
 using System.Drawing;
 using System.Linq;
 using Silk.NET.Maths;
-using Matrix4x4 = System.Numerics.Matrix4x4;
-using Vector3 = System.Numerics.Vector3;
 
 namespace Tutorial
 {

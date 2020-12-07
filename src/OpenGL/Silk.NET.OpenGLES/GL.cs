@@ -10,10 +10,6 @@ using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Maths;
-using Matrix4x4 = System.Numerics.Matrix4x4;
-using Vector2 = System.Numerics.Vector2;
-using Vector3 = System.Numerics.Vector3;
-using Vector4 = System.Numerics.Vector4;
 
 namespace Silk.NET.OpenGLES
 {

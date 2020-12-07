@@ -4,7 +4,6 @@ using Silk.NET.Windowing;
 using System.Drawing;
 using System.Numerics;
 using Silk.NET.Maths;
-using Vector3 = System.Numerics.Vector3;
 
 namespace Tutorial
 {
