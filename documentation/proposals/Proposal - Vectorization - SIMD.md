@@ -3,8 +3,8 @@ High Performance, Generic, Maths.
 This both exposes more High Performance SIMD API for those that want it, and lays the foundation for using this in our own codebase.
 
 # Contributors
-- Kai Jellinghaus, Silk.NET Contributor / Maintainer (2020)
-- Dylan P, Ultz Limited
+- Kai Jellinghaus, Silk.NET maintainer
+- Dylan Perks, Ultz Limited
 
 # Current Status
 - [x] Proposed
