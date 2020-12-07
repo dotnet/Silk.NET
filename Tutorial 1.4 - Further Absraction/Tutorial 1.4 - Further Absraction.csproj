@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Tutorial_1._4___Further_Absraction</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Silk.NET.OpenGL.Abstactions\Silk.NET.OpenGL.Abstactions.csproj" />
+    <ProjectReference Include="..\src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
+    <ProjectReference Include="..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+    <ProjectReference Include="..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+    <ProjectReference Include="..\src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
+    <ProjectReference Include="..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="shader.frag">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="shader.vert">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
